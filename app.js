@@ -56,6 +56,22 @@ const subjectDataMap = {
                 description: 'Complete accounting theory for hospitality'
             }
         ]
+    },
+    ebusiness: {
+        data: typeof ebusinessData !== 'undefined' ? ebusinessData : {},
+        name: 'E-Business',
+        shortName: 'E-Biz',
+        icon: 'fa-globe',
+        color: '#f59e0b',
+        description: 'E-Commerce, Distribution Chain, Digital Marketing, SEO, PMS, Security',
+        storageKey: 'ebusiness-progress',
+        lessons: [
+            {
+                id: 'final-exam-prep',
+                name: 'Final Exam Preparation',
+                description: 'Complete E-Business theory covering all 15 units'
+            }
+        ]
     }
 };
 
@@ -80,6 +96,8 @@ let correctAnswers = 0;
 let wrongAnswers = 0;
 let quizStartTime = null;
 let wrongAnswersList = [];
+let currentShuffledOptions = []; // Store shuffled options for current question
+let currentShuffledCorrectIndex = 0; // Store correct answer index after shuffle
 
 // Fill state
 let fillQuestions = [];
@@ -706,6 +724,9 @@ function updateThemeIcons(theme) {
     });
 }
 
+// Track if flashcard event listeners are already set up
+let flashcardListenersInitialized = false;
+
 // ========== FLASHCARDS ==========
 function initFlashcards() {
     flashcards = getAllFlashcards();
@@ -718,25 +739,31 @@ function initFlashcards() {
     updateFlashcardProgress();
     updateFlashcardStats();
     
-    // Event listeners
-    document.getElementById('flashcard').addEventListener('click', flipCard);
-    document.getElementById('btnPrev').addEventListener('click', prevCard);
-    document.getElementById('btnNext').addEventListener('click', nextCard);
-    document.getElementById('btnCorrect').addEventListener('click', markKnown);
-    document.getElementById('btnWrong').addEventListener('click', markUnknown);
+    // Only add event listeners once to prevent duplicates
+    if (!flashcardListenersInitialized) {
+        document.getElementById('flashcard').addEventListener('click', flipCard);
+        document.getElementById('btnPrev').addEventListener('click', prevCard);
+        document.getElementById('btnNext').addEventListener('click', nextCard);
+        document.getElementById('btnCorrect').addEventListener('click', markKnown);
+        document.getElementById('btnWrong').addEventListener('click', markUnknown);
+        flashcardListenersInitialized = true;
+    }
 }
 
 function getAllFlashcards() {
     if (!currentData) return [];
     let all = [];
     Object.keys(currentData).forEach(category => {
-        currentData[category].flashcards.forEach(card => {
-            all.push({
-                ...card,
-                category: category,
-                categoryName: currentData[category].name
+        // Safety check: ensure flashcards array exists
+        if (currentData[category] && currentData[category].flashcards && Array.isArray(currentData[category].flashcards)) {
+            currentData[category].flashcards.forEach(card => {
+                all.push({
+                    ...card,
+                    category: category,
+                    categoryName: currentData[category].name
+                });
             });
-        });
+        }
     });
     return all;
 }
@@ -746,7 +773,13 @@ function flipCard() {
 }
 
 function updateFlashcard() {
-    if (flashcards.length === 0) return;
+    if (!flashcards || flashcards.length === 0) {
+        document.getElementById('cardCategory').textContent = 'No Cards';
+        document.getElementById('cardQuestion').textContent = 'No flashcards available for this lesson.';
+        document.getElementById('cardAnswer').textContent = 'Try selecting a different lesson or category.';
+        document.getElementById('cardExplanation').textContent = '';
+        return;
+    }
     
     const card = flashcards[currentCardIndex];
     document.getElementById('cardCategory').textContent = card.categoryName;
@@ -759,6 +792,12 @@ function updateFlashcard() {
 }
 
 function updateFlashcardProgress() {
+    if (!flashcards || flashcards.length === 0) {
+        document.getElementById('cardProgress').textContent = '0 / 0';
+        document.getElementById('cardProgressBar').style.width = '0%';
+        return;
+    }
+    
     const progress = `${currentCardIndex + 1} / ${flashcards.length}`;
     document.getElementById('cardProgress').textContent = progress;
     
@@ -843,22 +882,28 @@ function getQuizQuestions(category, count) {
     
     if (category === 'all') {
         Object.keys(currentData).forEach(cat => {
-            currentData[cat].quiz.forEach(q => {
-                questions.push({
-                    ...q,
-                    category: cat,
-                    categoryName: currentData[cat].name
+            // Safety check: ensure quiz array exists
+            if (currentData[cat] && currentData[cat].quiz && Array.isArray(currentData[cat].quiz)) {
+                currentData[cat].quiz.forEach(q => {
+                    questions.push({
+                        ...q,
+                        category: cat,
+                        categoryName: currentData[cat].name
+                    });
                 });
-            });
+            }
         });
     } else {
-        currentData[category].quiz.forEach(q => {
-            questions.push({
-                ...q,
-                category: category,
-                categoryName: currentData[category].name
+        // Safety check: ensure category and quiz exist
+        if (currentData[category] && currentData[category].quiz && Array.isArray(currentData[category].quiz)) {
+            currentData[category].quiz.forEach(q => {
+                questions.push({
+                    ...q,
+                    category: category,
+                    categoryName: currentData[category].name
+                });
             });
-        });
+        }
     }
     
     if (count !== 'all') {
@@ -888,12 +933,25 @@ function showQuestion() {
     const container = document.getElementById('answersContainer');
     container.innerHTML = '';
     
+    // Shuffle answer options to randomize correct answer position
+    const optionsWithIndex = q.options.map((option, index) => ({
+        text: option,
+        originalIndex: index
+    }));
+    shuffleArray(optionsWithIndex);
+    
+    // Store shuffled options globally for use in selectAnswer
+    currentShuffledOptions = optionsWithIndex;
+    
+    // Find the new position of the correct answer after shuffling
+    currentShuffledCorrectIndex = optionsWithIndex.findIndex(opt => opt.originalIndex === q.correct);
+    
     const letters = ['A', 'B', 'C', 'D'];
-    q.options.forEach((option, index) => {
+    optionsWithIndex.forEach((option, index) => {
         const btn = document.createElement('button');
         btn.className = 'answer-btn';
-        btn.innerHTML = `<span class="answer-letter">${letters[index]}</span><span>${option}</span>`;
-        btn.addEventListener('click', () => selectAnswer(index, q.correct));
+        btn.innerHTML = `<span class="answer-letter">${letters[index]}</span><span>${option.text}</span>`;
+        btn.addEventListener('click', () => selectAnswer(index));
         container.appendChild(btn);
     });
     
@@ -901,24 +959,25 @@ function showQuestion() {
     document.getElementById('wrongCount').textContent = wrongAnswers;
 }
 
-function selectAnswer(selected, correct) {
+function selectAnswer(selected) {
     const buttons = document.querySelectorAll('.answer-btn');
     buttons.forEach(btn => btn.classList.add('disabled'));
     
-    const isCorrect = selected === correct;
+    const isCorrect = selected === currentShuffledCorrectIndex;
     
     if (isCorrect) {
         buttons[selected].classList.add('correct');
         correctAnswers++;
     } else {
         buttons[selected].classList.add('wrong');
-        buttons[correct].classList.add('correct');
+        buttons[currentShuffledCorrectIndex].classList.add('correct');
         wrongAnswers++;
         
+        // Use shuffled options text for correct display
         wrongAnswersList.push({
             question: quizQuestions[currentQuestionIndex].question,
-            yourAnswer: quizQuestions[currentQuestionIndex].options[selected],
-            correctAnswer: quizQuestions[currentQuestionIndex].options[correct]
+            yourAnswer: currentShuffledOptions[selected].text,
+            correctAnswer: currentShuffledOptions[currentShuffledCorrectIndex].text
         });
     }
     
@@ -1021,6 +1080,9 @@ window.startQuiz = startQuiz;
 window.retryQuiz = retryQuiz;
 window.showQuizSetup = showQuizSetup;
 
+// Track if fill event listeners are already set up
+let fillListenersInitialized = false;
+
 // ========== FILL IN THE BLANK ==========
 function initFill() {
     fillQuestions = getAllFillQuestions();
@@ -1033,13 +1095,17 @@ function initFill() {
     updateFillProgress();
     updateFillStats();
     
-    document.getElementById('checkFill').addEventListener('click', checkFillAnswer);
-    document.getElementById('fillInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') checkFillAnswer();
-    });
-    document.getElementById('btnHint').addEventListener('click', showHint);
-    document.getElementById('btnSkip').addEventListener('click', skipFill);
-    document.getElementById('btnNextFill').addEventListener('click', nextFill);
+    // Only add event listeners once to prevent duplicates
+    if (!fillListenersInitialized) {
+        document.getElementById('checkFill').addEventListener('click', checkFillAnswer);
+        document.getElementById('fillInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkFillAnswer();
+        });
+        document.getElementById('btnHint').addEventListener('click', showHint);
+        document.getElementById('btnSkip').addEventListener('click', skipFill);
+        document.getElementById('btnNextFill').addEventListener('click', nextFill);
+        fillListenersInitialized = true;
+    }
 }
 
 function getAllFillQuestions() {
@@ -1060,6 +1126,14 @@ function getAllFillQuestions() {
 }
 
 function showFillQuestion() {
+    // Safety check: if no fill questions exist
+    if (!fillQuestions || fillQuestions.length === 0) {
+        document.getElementById('fillSentence').innerHTML = '<p style="color: var(--text-muted);">No fill-in-the-blank questions available for this lesson.</p>';
+        document.getElementById('fillInput').disabled = true;
+        document.getElementById('checkFill').disabled = true;
+        return;
+    }
+    
     if (currentFillIndex >= fillQuestions.length) {
         showToast('You completed all Fill-in-the-blank questions!');
         currentFillIndex = 0;

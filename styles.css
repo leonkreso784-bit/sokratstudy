@@ -206,6 +206,29 @@ body {
     gap: 0.75rem;
 }
 
+/* Logo Image Styles */
+.logo-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-image {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* Keep old styles for backwards compatibility */
 .logo-icon-wrapper {
     width: 44px;
     height: 44px;
@@ -521,20 +544,21 @@ body {
 .subjects-sidebar {
     position: fixed;
     top: 0;
-    right: -400px;
+    right: 0;
     width: 100%;
     max-width: 400px;
     height: 100%;
     background: var(--bg-secondary);
     z-index: 1000;
-    transition: right 0.3s ease;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
 }
 
 .subjects-sidebar.active {
-    right: 0;
+    transform: translateX(0);
 }
 
 .sidebar-header {
@@ -544,6 +568,24 @@ body {
     padding: 1.25rem 1.5rem;
     padding-top: calc(1.25rem + var(--safe-top));
     border-bottom: 1px solid var(--border);
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sidebar-logo .logo-wrapper {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-logo span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .sidebar-header h2 {
@@ -1000,6 +1042,18 @@ body {
 .about-hero-section {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+/* About Page Logo */
+.logo-wrapper-large {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+.logo-wrapper-large:hover {
+    transform: scale(1.05);
 }
 
 .about-icon-large {
@@ -4746,11 +4800,6 @@ div.subject-card {
     .subjects-sidebar {
         max-width: 100%;
         width: 100%;
-        right: -100%;
-    }
-    
-    .subjects-sidebar.active {
-        right: 0;
     }
     
     .sidebar-header {
@@ -6458,5 +6507,377 @@ div.subject-card {
     .learn-card {
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+}
+
+/* =====================================================
+   ENHANCED RESPONSIVE DESIGN - ALL DEVICES
+   Added for better tablet and large phone support
+   ===================================================== */
+
+/* ===== CATEGORIES RESPONSIVE GRID ===== */
+@media (min-width: 480px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-overview {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .quick-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===== FLASHCARD IMPROVEMENTS ===== */
+@media (min-width: 480px) {
+    .flashcard-container {
+        padding: 0 1rem;
+    }
+    
+    .flashcard-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .flashcard-controls {
+        max-width: 500px;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .flashcard-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .flashcard-wrapper {
+        max-width: 600px;
+    }
+    
+    .flashcard-controls {
+        max-width: 600px;
+        gap: 1rem;
+    }
+    
+    .control-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== QUIZ IMPROVEMENTS ===== */
+@media (min-width: 480px) {
+    .quiz-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .quiz-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .results-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .results-actions .action-btn {
+        flex: 0 1 auto;
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .quiz-container {
+        max-width: 650px;
+    }
+    
+    .question-card {
+        padding: 2rem;
+    }
+    
+    .question-card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .answer-btn {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .score-circle {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .score-circle span {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===== FILL SECTION IMPROVEMENTS ===== */
+@media (min-width: 480px) {
+    .fill-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .fill-input-wrapper {
+        flex-direction: row;
+    }
+    
+    .fill-input-wrapper input {
+        flex: 1;
+    }
+    
+    .check-btn {
+        width: auto;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fill-container {
+        max-width: 650px;
+    }
+    
+    .fill-card {
+        padding: 2rem;
+    }
+    
+    .fill-sentence {
+        font-size: 1.2rem;
+    }
+    
+    .fill-controls {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== PROGRESS SECTION IMPROVEMENTS ===== */
+@media (min-width: 480px) {
+    .progress-overview {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .progress-card.main {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .progress-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .progress-overview {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .progress-card.main {
+        grid-column: span 3;
+    }
+    
+    .category-bars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .progress-overview {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .progress-card.main {
+        grid-column: span 4;
+    }
+}
+
+/* ===== SUBJECT SIDEBAR TABLET IMPROVEMENTS ===== */
+@media (min-width: 768px) {
+    .subjects-sidebar {
+        max-width: 450px;
+    }
+    
+    .subject-item {
+        padding: 1.25rem;
+    }
+    
+    .subject-item-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .subject-item-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .subject-item-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== LESSONS PAGE TABLET/DESKTOP IMPROVEMENTS ===== */
+@media (min-width: 768px) {
+    .lessons-content {
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .lessons-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .lesson-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lessons-content {
+        max-width: 1000px;
+    }
+    
+    .lessons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== STUDY PAGE CONTENT CENTERING ===== */
+@media (min-width: 768px) {
+    .study-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+    }
+    
+    #home .hero {
+        padding: 2rem;
+    }
+    
+    #home .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .study-content {
+        max-width: 1100px;
+    }
+}
+
+/* ===== IMPROVED TOUCH TARGETS FOR MOBILE ===== */
+@media (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    .answer-btn,
+    .control-btn,
+    .action-btn,
+    .filter-btn,
+    .category-btn {
+        min-height: 48px;
+    }
+    
+    .flashcard {
+        min-height: 280px;
+    }
+}
+
+/* ===== BETTER SPACING FOR LANDSCAPE TABLETS ===== */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .study-content {
+        padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    }
+    
+    .flashcard-wrapper {
+        max-width: 70%;
+    }
+    
+    .quiz-container {
+        max-width: 70%;
+    }
+}
+
+/* ===== LOGO RESPONSIVE STYLES ===== */
+@media (max-width: 480px) {
+    .logo-image {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem !important;
+    }
+    
+    .sidebar-logo-img {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .sidebar-logo span {
+        font-size: 1rem;
+    }
+    
+    .about-logo-large {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-text {
+        font-size: 1.6rem !important;
+    }
+    
+    .about-logo-large {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-image {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .about-logo-large {
+        width: 140px;
+        height: 140px;
     }
 }

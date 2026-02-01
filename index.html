@@ -56,9 +56,7 @@
         <!-- Landing Header -->
         <header class="landing-header">
             <div class="landing-logo">
-                <div class="logo-icon-wrapper">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
+                <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
                 <span class="logo-text">Sokrat Study</span>
             </div>
             <div class="landing-header-actions">
@@ -156,7 +154,10 @@
     <div class="subjects-overlay" id="subjectsOverlay"></div>
     <aside class="subjects-sidebar" id="subjectsSidebar">
         <div class="sidebar-header">
-            <h2><i class="fas fa-compass"></i> Choose Subject</h2>
+            <div class="sidebar-logo">
+                <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study" class="logo-image"></div>
+                <span>Choose Subject</span>
+            </div>
             <button class="close-sidebar-btn" id="closeSidebar" aria-label="Close sidebar">
                 <i class="fas fa-times" aria-hidden="true"></i>
                 <span class="visually-hidden">Close</span>
@@ -207,6 +208,22 @@
                         <div class="subject-item-meta">
                             <span><i class="fas fa-book"></i> 1 Lesson</span>
                             <span><i class="fas fa-question-circle"></i> 60+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+                
+                <!-- E-Business -->
+                <div class="subject-item" data-subject="ebusiness">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>E-Business</h3>
+                        <p>E-Commerce, Digital Marketing, SEO, PMS, Security</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 1 Lesson</span>
+                            <span><i class="fas fa-question-circle"></i> 120+ Questions</span>
                         </div>
                     </div>
                     <i class="fas fa-chevron-right subject-arrow"></i>
@@ -685,9 +702,7 @@
         </header>
         <main class="about-content">
             <div class="about-hero-section">
-                <div class="about-icon-large">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
+                <div class="logo-wrapper logo-wrapper-large"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
                 <p class="about-tagline">Created by students, for students</p>
             </div>
 
@@ -757,7 +772,8 @@
     <script src="data/accounting/financial-analysis.js?v=20260117"></script>
     <script src="data/accounting/final-practice.js?v=20260117"></script>
     <script src="data/accounting/index.js?v=20260117"></script>
+    <script src="data-ebusiness.js?v=20260201"></script>
     
-    <script src="app.js?v=20260117"></script>
+    <script src="app.js?v=20260201"></script>
 </body>
 </html>
