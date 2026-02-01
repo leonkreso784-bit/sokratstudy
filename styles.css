@@ -1055,7 +1055,17 @@ body {
 .logo-wrapper-large {
     width: 120px;
     height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
     margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
 }
 
@@ -6837,54 +6847,82 @@ div.subject-card {
 
 /* ===== LOGO RESPONSIVE STYLES ===== */
 @media (max-width: 480px) {
-    .logo-image {
-        width: 48px;
-        height: 48px;
+    .logo-wrapper {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
     }
     
     .logo-text {
         font-size: 1.25rem !important;
     }
     
-    .sidebar-logo-img {
-        width: 44px;
-        height: 44px;
+    .sidebar-logo .logo-wrapper {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        max-width: 36px;
+        max-height: 36px;
     }
     
     .sidebar-logo span {
         font-size: 1rem;
     }
     
-    .about-logo-large {
+    .logo-wrapper-large {
         width: 100px;
         height: 100px;
+        min-width: 100px;
+        min-height: 100px;
+        max-width: 100px;
+        max-height: 100px;
     }
 }
 
 @media (min-width: 768px) {
-    .logo-image {
-        width: 60px;
-        height: 60px;
+    .logo-wrapper {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 50px;
+        max-height: 50px;
     }
     
     .logo-text {
         font-size: 1.6rem !important;
     }
     
-    .about-logo-large {
+    .logo-wrapper-large {
         width: 150px;
         height: 150px;
+        min-width: 150px;
+        min-height: 150px;
+        max-width: 150px;
+        max-height: 150px;
     }
 }
 
 @media (min-width: 1024px) {
-    .logo-image {
-        width: 56px;
-        height: 56px;
+    .logo-wrapper {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        max-width: 48px;
+        max-height: 48px;
     }
     
-    .about-logo-large {
+    .logo-wrapper-large {
         width: 140px;
         height: 140px;
+        min-width: 140px;
+        min-height: 140px;
+        max-width: 140px;
+        max-height: 140px;
     }
 }
