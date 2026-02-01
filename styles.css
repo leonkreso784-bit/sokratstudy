@@ -210,16 +210,23 @@ body {
 .logo-wrapper {
     width: 44px;
     height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .logo-image {
     width: 150%;
     height: 150%;
+    min-width: 150%;
+    min-height: 150%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
