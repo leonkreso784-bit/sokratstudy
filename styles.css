@@ -2622,7 +2622,8 @@ div.subject-card {
 
 .flashcard {
     width: 100%;
-    height: 280px;
+    min-height: 280px;
+    height: auto;
     cursor: pointer;
     position: relative;
     touch-action: manipulation;
@@ -2630,7 +2631,8 @@ div.subject-card {
 
 .flashcard-inner {
     width: 100%;
-    height: 100%;
+    min-height: 280px;
+    height: auto;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     position: relative;
@@ -2644,7 +2646,8 @@ div.subject-card {
 .flashcard-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 280px;
+    height: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     border-radius: var(--radius-lg);
@@ -2654,6 +2657,7 @@ div.subject-card {
     align-items: center;
     padding: 1.25rem;
     box-shadow: var(--shadow-lg);
+    overflow-y: auto;
 }
 
 .flashcard-front {
@@ -2674,27 +2678,35 @@ div.subject-card {
     background: rgba(255,255,255,0.2);
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 500;
 }
 
 .flashcard-front p {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.4;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .flip-hint {
     position: absolute;
     bottom: 0.75rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     opacity: 0.8;
 }
 
 .flashcard-back p {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.4;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .flashcard-back .explanation {
@@ -2702,7 +2714,7 @@ div.subject-card {
     padding: 0.75rem;
     background: var(--bg-tertiary);
     border-radius: var(--radius);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
 }
 
@@ -5041,17 +5053,52 @@ div.subject-card {
     }
     
     .flashcard {
-        min-height: 200px;
-        max-height: 350px;
-        padding: 1.25rem;
+        min-height: 220px;
+        height: auto;
+    }
+    
+    .flashcard-inner {
+        min-height: 220px;
+        height: auto;
+    }
+    
+    .flashcard-front,
+    .flashcard-back {
+        min-height: 220px;
+        height: auto;
+        padding: 1rem 0.75rem;
+    }
+    
+    .flashcard-front p {
+        font-size: 0.85rem;
+        line-height: 1.35;
+    }
+    
+    .flashcard-back p {
+        font-size: 0.8rem;
+        line-height: 1.35;
     }
     
     .flashcard-content h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .flashcard-content p {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+    }
+    
+    .card-category {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .flip-hint {
+        font-size: 0.7rem;
+    }
+    
+    .flashcard-back .explanation {
+        font-size: 0.7rem;
+        padding: 0.5rem;
     }
     
     .flashcard-navigation {
@@ -6880,6 +6927,35 @@ div.subject-card {
         min-height: 100px;
         max-width: 100px;
         max-height: 100px;
+    }
+    
+    /* Flashcard mobile fixes */
+    .flashcard {
+        min-height: 200px;
+    }
+    
+    .flashcard-inner {
+        min-height: 200px;
+    }
+    
+    .flashcard-front,
+    .flashcard-back {
+        min-height: 200px;
+        padding: 0.75rem;
+    }
+    
+    .flashcard-front p {
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .flashcard-back p {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .flashcard-back .explanation {
+        font-size: 0.65rem !important;
     }
 }
 
