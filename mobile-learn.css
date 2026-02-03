@@ -1,32 +1,64 @@
 /* =====================================================
    MOBILE LEARN STYLES
    Separate file for easier maintenance
-   Optimized for iPhone and all mobile devices
+   Optimized for iPhone 16 and all mobile devices
    ===================================================== */
+
+/* ===== iOS WEBKIT FIXES ===== */
+@supports (-webkit-touch-callout: none) {
+    /* iOS specific styles */
+    #learn,
+    #learn .learn-container,
+    #learn .learn-content,
+    #learn .learn-card {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
 
 /* ===== MOBILE ONLY (max-width: 767px) ===== */
 @media screen and (max-width: 767px) {
     
     /* ===== LEARN SECTION BASE ===== */
     #learn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         width: 100% !important;
         max-width: 100vw !important;
+        min-height: 100vh !important;
         padding: 0 !important;
         margin: 0 !important;
         overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
     }
     
     #learn .learn-container {
+        display: block !important;
+        visibility: visible !important;
         width: 100% !important;
         max-width: 100% !important;
         padding: 8px !important;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: calc(100px + env(safe-area-inset-bottom, 20px)) !important;
         margin: 0 !important;
         box-sizing: border-box !important;
     }
     
+    /* ===== LEARN CONTENT CONTAINER ===== */
+    #learn .learn-content,
+    #learnContent {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        min-height: 200px !important;
+    }
+    
     /* ===== LEARN TITLE/HEADER ===== */
     #learn .learn-container > h1 {
+        display: block !important;
         font-size: 0.9rem !important;
         padding: 10px 12px !important;
         margin: 0 0 8px 0 !important;

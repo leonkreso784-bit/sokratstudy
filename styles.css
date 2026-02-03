@@ -7002,3 +7002,84 @@ div.subject-card {
         max-height: 140px;
     }
 }
+
+/* ===== iOS/IPHONE SPECIFIC FIXES FOR LEARN ===== */
+@supports (-webkit-touch-callout: none) {
+    /* iOS only */
+    #learn,
+    .learn-container,
+    .learn-content,
+    .learn-card {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .learn-card-content {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ===== MOBILE LEARN GUARANTEED VISIBILITY ===== */
+@media screen and (max-width: 767px) {
+    #learn.section.active {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #learn .learn-container {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    #learn .learn-content,
+    #learnContent {
+        display: block !important;
+        visibility: visible !important;
+        min-height: 100px !important;
+    }
+    
+    #learn .learn-card {
+        display: block !important;
+        visibility: visible !important;
+        margin-bottom: 12px !important;
+    }
+    
+    #learn .learn-card-header {
+        display: flex !important;
+        visibility: visible !important;
+    }
+    
+    #learn .learn-card-content {
+        display: block !important;
+        visibility: visible !important;
+        min-height: 50px !important;
+    }
+}
+
+/* ===== IPHONE 16 PRO / PRO MAX SPECIFIC ===== */
+@media screen and (min-width: 393px) and (max-width: 440px) {
+    #learn .learn-container {
+        padding: 10px !important;
+        padding-bottom: calc(100px + env(safe-area-inset-bottom, 34px)) !important;
+    }
+    
+    #learn .learn-card {
+        margin-bottom: 10px !important;
+    }
+    
+    #learn .learn-card-content {
+        padding: 12px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+    
+    #learn .learn-card-content h3 {
+        font-size: 14px !important;
+    }
+    
+    #learn .learn-card-content p,
+    #learn .learn-card-content li {
+        font-size: 11px !important;
+    }
+}

@@ -1236,11 +1236,34 @@ function updateFillStats() {
 // ========== LEARN MODE ==========
 function renderLearnContent() {
     const container = document.getElementById('learnContent');
-    if (!container || !currentData) return;
+    if (!container) {
+        console.error('Learn content container not found');
+        return;
+    }
+    if (!currentData) {
+        console.error('No current data for learn content');
+        container.innerHTML = '<div class="learn-card"><div class="learn-card-content"><p>No content available. Please select a lesson.</p></div></div>';
+        return;
+    }
+    
     container.innerHTML = '';
     
-    Object.keys(currentData).forEach(category => {
+    const categories = Object.keys(currentData);
+    if (categories.length === 0) {
+        container.innerHTML = '<div class="learn-card"><div class="learn-card-content"><p>No categories found in this lesson.</p></div></div>';
+        return;
+    }
+    
+    categories.forEach(category => {
         const data = currentData[category];
+        if (!data) return;
+        
+        // Safe access to properties with defaults
+        const icon = data.icon || 'fa-book';
+        const name = data.name || category;
+        const flashcardsCount = data.flashcards ? data.flashcards.length : 0;
+        const learnContent = data.learn && data.learn.content ? data.learn.content : '<p>No learn content available for this category.</p>';
+        const learnImage = data.learn && data.learn.image ? data.learn.image : null;
         
         const card = document.createElement('div');
         card.className = 'learn-card';
@@ -1248,12 +1271,12 @@ function renderLearnContent() {
         
         card.innerHTML = `
             <div class="learn-card-header">
-                <h2 class="learn-card-title"><i class="fas ${data.icon}"></i> ${data.name}</h2>
-                <span>${data.flashcards.length} terms</span>
+                <h2 class="learn-card-title"><i class="fas ${icon}"></i> ${name}</h2>
+                <span>${flashcardsCount} terms</span>
             </div>
             <div class="learn-card-content">
-                ${data.learn.image ? `<img src="${data.learn.image}" alt="${data.name}" class="learn-image">` : ''}
-                ${data.learn.content}
+                ${learnImage ? `<img src="${learnImage}" alt="${name}" class="learn-image">` : ''}
+                ${learnContent}
             </div>
         `;
         
@@ -1261,24 +1284,32 @@ function renderLearnContent() {
     });
     
     // MOBILE FIX: Clean up content for better mobile display
-    cleanupLearnContentForMobile();
+    // Use setTimeout to ensure DOM is ready on iOS
+    setTimeout(() => {
+        cleanupLearnContentForMobile();
+    }, 50);
     
-    // Filter functionality
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    // Filter functionality - remove old listeners first
+    const filterBtns = document.querySelectorAll('.learn-filter .filter-btn');
+    filterBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+    });
+    
+    // Add new listeners
+    document.querySelectorAll('.learn-filter .filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.learn-filter .filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
             const filter = btn.dataset.filter;
             document.querySelectorAll('.learn-card').forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
             });
         });
     });
+    
+    console.log('Learn content rendered:', categories.length, 'categories');
 }
 
 // ========== PROGRESS PAGE ==========
@@ -1698,44 +1729,81 @@ window.getAnalytics = getAnalyticsSummary;
 // ========== MOBILE LEARN CONTENT CLEANUP ==========
 // This function removes inline styles that interfere with mobile CSS
 function cleanupLearnContentForMobile() {
-    if (window.innerWidth > 767) return; // Only on mobile
+    // Only run on mobile devices
+    if (window.innerWidth > 767) return;
     
     const container = document.getElementById('learnContent');
-    if (!container) return;
+    if (!container) {
+        console.log('Mobile cleanup: No learn content container found');
+        return;
+    }
     
-    // STEP 1: Remove ALL inline styles from EVERYTHING first
-    container.querySelectorAll('*').forEach(el => {
-        el.removeAttribute('style');
-    });
+    // Check if there are any learn cards
+    const cards = container.querySelectorAll('.learn-card');
+    if (cards.length === 0) {
+        console.log('Mobile cleanup: No learn cards found');
+        return;
+    }
     
-    // STEP 2: Force 10px font size on ALL text elements
-    const allText = container.querySelectorAll('p, span, li, td, th, strong, em, a, div, h4, h5');
-    allText.forEach(el => {
-        el.style.fontSize = '10px';
-        el.style.lineHeight = '1.35';
-        el.style.maxWidth = '100%';
-    });
-    
-    // STEP 3: Force box styles
-    const boxes = container.querySelectorAll('.formula-box, .tip-box, .warning-box, .example-box, [class*="-box"]');
-    boxes.forEach(box => {
-        box.style.cssText = 'width:100%!important;max-width:100%!important;padding:4px 6px!important;margin:4px 0!important;font-size:10px!important;overflow:hidden!important;box-sizing:border-box!important;';
-    });
-    
-    // STEP 4: Force h3 headings
-    container.querySelectorAll('h3').forEach(h => {
-        h.style.cssText = 'font-size:12px!important;margin:8px 0 4px 0!important;';
-    });
-    
-    // STEP 5: Force tables
-    container.querySelectorAll('table').forEach(t => {
-        t.style.cssText = 'width:100%!important;font-size:9px!important;';
-    });
-    container.querySelectorAll('th, td').forEach(c => {
-        c.style.cssText = 'padding:3px 4px!important;font-size:9px!important;';
-    });
-    
-    console.log('Mobile cleanup: 10px fonts applied');
+    try {
+        // STEP 1: Remove ALL inline styles from EVERYTHING first
+        container.querySelectorAll('*').forEach(el => {
+            el.removeAttribute('style');
+        });
+        
+        // STEP 2: Force visibility on all elements
+        container.style.display = 'block';
+        container.style.visibility = 'visible';
+        
+        cards.forEach(card => {
+            card.style.display = 'block';
+            card.style.visibility = 'visible';
+            card.style.marginBottom = '10px';
+        });
+        
+        // STEP 3: Force font sizes on text elements
+        const allText = container.querySelectorAll('p, span, li, td, th, strong, em, a, div:not(.learn-card):not(.learn-card-header):not(.learn-card-content), h4, h5');
+        allText.forEach(el => {
+            el.style.fontSize = '11px';
+            el.style.lineHeight = '1.4';
+            el.style.maxWidth = '100%';
+            el.style.wordWrap = 'break-word';
+        });
+        
+        // STEP 4: Force box styles
+        const boxes = container.querySelectorAll('.formula-box, .tip-box, .warning-box, .example-box');
+        boxes.forEach(box => {
+            box.style.width = '100%';
+            box.style.maxWidth = '100%';
+            box.style.padding = '6px 8px';
+            box.style.margin = '6px 0';
+            box.style.fontSize = '10px';
+            box.style.overflow = 'hidden';
+            box.style.boxSizing = 'border-box';
+            box.style.display = 'block';
+        });
+        
+        // STEP 5: Force h3 headings
+        container.querySelectorAll('h3').forEach(h => {
+            h.style.fontSize = '13px';
+            h.style.margin = '10px 0 6px 0';
+        });
+        
+        // STEP 6: Force tables
+        container.querySelectorAll('table').forEach(t => {
+            t.style.width = '100%';
+            t.style.fontSize = '10px';
+            t.style.display = 'table';
+        });
+        container.querySelectorAll('th, td').forEach(c => {
+            c.style.padding = '4px';
+            c.style.fontSize = '10px';
+        });
+        
+        console.log('Mobile cleanup: Applied to', cards.length, 'learn cards');
+    } catch (error) {
+        console.error('Mobile cleanup error:', error);
+    }
 }
 
 // Re-apply mobile cleanup on window resize
