@@ -285,27 +285,7 @@
         font-size: 0.85rem;
     }
     
-    /* Learn section small phones */
-    .learn-card-content {
-        padding: 1rem;
-    }
     
-    .learn-card-content h3 {
-        font-size: 1.2rem;
-    }
-    
-    .learn-card-content h4 {
-        font-size: 1.1rem;
-    }
-    
-    .formula-box {
-        padding: 1rem;
-        font-size: 0.85rem;
-    }
-    
-    .tip-box, .example-box, .warning-box {
-        padding: 1rem;
-    }
 }
 
 /* ===== iPhone 14/15/16 (390px) ===== */
@@ -632,234 +612,6 @@
         gap: 0.6rem;
     }
     
-    /* ===== LEARN SECTION MOBILE - COMPLETE OPTIMIZATION ===== */
-    
-    /* Learn Container */
-    .learn-container {
-        padding: 0;
-        padding-bottom: calc(85px + env(safe-area-inset-bottom, 0px));
-    }
-    
-    .learn-container h1 {
-        font-size: 1.1rem;
-        padding: 0.75rem 1rem;
-        margin-bottom: 0.75rem;
-        text-align: left;
-        justify-content: flex-start;
-        background: var(--bg-secondary);
-        border-radius: var(--radius);
-        margin: 0 0.5rem 0.75rem;
-    }
-    
-    .learn-container h1 i {
-        font-size: 1.2rem;
-        color: var(--primary);
-    }
-    
-    /* Learn Filter - Horizontal Scrollable Pills */
-    .learn-filter {
-        padding: 0 0.5rem 0.75rem;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-    }
-    
-    .filter-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        min-height: 44px;
-        border-radius: 22px;
-        scroll-snap-align: start;
-        -webkit-tap-highlight-color: transparent;
-    }
-    
-    .filter-btn:active {
-        transform: scale(0.96);
-        opacity: 0.9;
-    }
-    
-    /* Learn Cards - Full Width */
-    .learn-card {
-        margin: 0 0.5rem 1rem;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-    
-    /* Learn Card Header */
-    .learn-card-header {
-        padding: 0.875rem 1rem;
-        border-radius: 12px 12px 0 0;
-    }
-    
-    .learn-card-header h2,
-    .learn-card-header h3,
-    .learn-card-title {
-        font-size: 0.95rem;
-        gap: 0.4rem;
-    }
-    
-    .learn-card-header i {
-        font-size: 1rem;
-    }
-    
-    /* Learn Card Content - Optimized for Reading */
-    .learn-card-content {
-        padding: 1rem;
-        line-height: 1.75;
-    }
-    
-    .learn-card-content h3 {
-        font-size: 1.15rem;
-        margin-bottom: 0.875rem;
-        padding-bottom: 0.5rem;
-        border-bottom-width: 1px;
-    }
-    
-    .learn-card-content h4 {
-        font-size: 1.05rem;
-        margin-top: 1.25rem;
-        margin-bottom: 0.75rem;
-        padding-top: 0.75rem;
-    }
-    
-    .learn-card-content h5 {
-        font-size: 0.95rem;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .learn-card-content p {
-        font-size: 0.9rem;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-    }
-    
-    /* Lists Mobile */
-    .learn-card-content ul {
-        margin: 0.875rem 0;
-    }
-    
-    .learn-card-content ul li {
-        font-size: 0.9rem;
-        line-height: 1.65;
-        padding: 0.4rem 0;
-        padding-left: 1.5rem;
-    }
-    
-    .learn-card-content ul li::before {
-        font-size: 0.85rem;
-    }
-    
-    .learn-card-content ol {
-        margin: 0.875rem 0;
-        padding-left: 1.25rem;
-    }
-    
-    .learn-card-content ol li {
-        font-size: 0.9rem;
-        line-height: 1.65;
-        padding: 0.35rem 0;
-    }
-    
-    .learn-card-content hr {
-        margin: 1.25rem 0;
-    }
-    
-    /* Formula Box Mobile */
-    .formula-box {
-        padding: 0.875rem 1rem;
-        font-size: 0.8rem;
-        line-height: 1.8;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        border-width: 1px;
-        border-radius: 8px;
-        margin: 1rem 0;
-    }
-    
-    .formula-box strong {
-        font-size: 0.85rem;
-    }
-    
-    /* Tip/Warning/Example Boxes Mobile */
-    .tip-box,
-    .warning-box,
-    .example-box {
-        padding: 0.875rem 1rem;
-        margin: 1rem 0;
-        border-left-width: 3px;
-        border-radius: 0 8px 8px 0;
-    }
-    
-    .tip-box h4,
-    .warning-box h4,
-    .example-box h4 {
-        font-size: 0.9rem;
-        margin-bottom: 0.4rem;
-        margin-top: 0;
-    }
-    
-    .tip-box p,
-    .warning-box p,
-    .example-box p {
-        font-size: 0.85rem;
-        line-height: 1.6;
-        margin-bottom: 0.4rem;
-    }
-    
-    .tip-box ul,
-    .warning-box ul,
-    .example-box ul {
-        margin: 0.4rem 0 0 0;
-    }
-    
-    .tip-box ul li,
-    .warning-box ul li,
-    .example-box ul li {
-        font-size: 0.85rem;
-        padding: 0.25rem 0;
-    }
-    
-    /* Tables Mobile - Scrollable */
-    .learn-card-content table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 0.8rem;
-        margin: 1rem 0;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-    }
-    
-    .learn-card-content table th,
-    .learn-card-content table td {
-        padding: 0.6rem 0.75rem;
-        min-width: 70px;
-        white-space: nowrap;
-    }
-    
-    .learn-card-content table th {
-        background: var(--bg-tertiary);
-        font-weight: 600;
-    }
-    
-    /* Images Mobile */
-    .learn-image {
-        max-width: 100%;
-        margin: 1rem auto;
-        border-radius: 8px;
-    }
-    
-    /* Highlight text */
-    .learn-card-content .highlight {
-        padding: 0.15rem 0.35rem;
-        font-size: 0.85rem;
-        border-radius: 3px;
-    }
-
     /* ===== PROGRESS SECTION MOBILE ===== */
     .progress-container {
         padding: 0;
@@ -1447,32 +1199,7 @@
     }
 }
 
-/* --- LEARN SECTION MOBILE --- */
-@media (max-width: 767px) {
-    .learn-section {
-        padding: 0.75rem;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
-    }
-    
-    .learn-header {
-        padding: 0.75rem;
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-    }
-    
-    .learn-header h2 {
-        font-size: 1.1rem;
-    }
-    
-    .learn-controls {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .learn-content {
-        padding: 0;
-    }
+
     
     .topic-card {
         padding: 1rem;
@@ -1837,15 +1564,7 @@
         font-size: 0.8rem;
     }
     
-    /* LEARN Section Extra Small Screens */
-    .learn-container h1 {
-        font-size: 1rem;
-        padding: 0.6rem 0.75rem;
-    }
     
-    .learn-container h1 i {
-        font-size: 1.1rem;
-    }
     
     .filter-btn {
         padding: 0.5rem 0.75rem;
@@ -1853,75 +1572,18 @@
         min-height: 40px;
     }
     
-    .learn-card {
-        margin: 0 0.35rem 0.875rem;
-    }
     
-    .learn-card-header {
-        padding: 0.75rem 0.875rem;
-    }
     
-    .learn-card-header h2,
-    .learn-card-header h3,
-    .learn-card-title {
-        font-size: 0.9rem;
-    }
     
-    .learn-card-content {
-        padding: 0.875rem;
-    }
     
-    .learn-card-content h3 {
-        font-size: 1.05rem;
-    }
     
-    .learn-card-content h4 {
-        font-size: 0.95rem;
-    }
     
-    .learn-card-content h5 {
-        font-size: 0.9rem;
-    }
     
-    .learn-card-content p,
-    .learn-card-content ul li,
-    .learn-card-content ol li {
-        font-size: 0.85rem;
-        line-height: 1.6;
-    }
     
-    .formula-box {
-        padding: 0.75rem;
-        font-size: 0.75rem;
-    }
     
-    .tip-box,
-    .warning-box,
-    .example-box {
-        padding: 0.75rem;
-    }
     
-    .tip-box h4,
-    .warning-box h4,
-    .example-box h4 {
-        font-size: 0.85rem;
-    }
     
-    .tip-box p,
-    .warning-box p,
-    .example-box p,
-    .tip-box ul li,
-    .warning-box ul li,
-    .example-box ul li {
-        font-size: 0.8rem;
-    }
     
-    .learn-card-content table th,
-    .learn-card-content table td {
-        padding: 0.5rem 0.6rem;
-        font-size: 0.75rem;
-        min-width: 60px;
-    }
 }
 
 /* --- LANDSCAPE MOBILE --- */
@@ -1946,10 +1608,6 @@
     
     .quiz-section,
     .fill-section,
-    .learn-section,
-    .flashcards-section {
-        padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
-    }
 }
 
 /* --- ENSURE STUDY MOBILE NAV ALWAYS VISIBLE WHEN IN STUDY PAGE --- */
@@ -1966,646 +1624,15 @@
     }
 }
 
-/* =====================================================
-   MOBILE LEARN SECTION - COMPLETE REBUILD
-   Clean, organized styles for all mobile devices
-   Optimized for readability on phones
-   ===================================================== */
-
-@media screen and (max-width: 767px) {
-    /* ===== LEARN SECTION BASE ===== */
-    #learn {
-        width: 100%;
-        padding: 0;
-        overflow-x: hidden;
-    }
-    
-    #learn .learn-container {
-        padding: 12px;
-        padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
-        max-width: 100%;
-    }
-    
-    /* ===== LEARN HEADER/TITLE ===== */
-    #learn .learn-container > h1 {
-        font-size: 1.15rem;
-        padding: 14px 18px;
-        margin: 0 0 14px 0;
-        background: linear-gradient(135deg, var(--primary), #8b5cf6);
-        border-radius: 14px;
-        color: white;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    }
-    
-    #learn .learn-container > h1 i {
-        font-size: 1.2rem;
-    }
-    
-    /* ===== FILTER BUTTONS ===== */
-    #learn .learn-filter {
-        display: flex;
-        gap: 10px;
-        padding: 4px 0 14px 0;
-        margin-bottom: 10px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    
-    #learn .learn-filter::-webkit-scrollbar {
-        display: none;
-    }
-    
-    #learn .filter-btn {
-        padding: 10px 16px;
-        font-size: 0.85rem;
-        min-height: 40px;
-        border-radius: 20px;
-        flex-shrink: 0;
-        white-space: nowrap;
-        font-weight: 500;
-        transition: all 0.2s ease;
-    }
-    
-    #learn .filter-btn.active {
-        transform: scale(1.02);
-        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
-    }
-    
-    /* ===== LEARN CONTENT CONTAINER ===== */
-    #learn .learn-content {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        padding: 0;
-    }
-    
-    /* ===== LEARN CARDS ===== */
-    #learn .learn-card {
-        margin: 0;
-        border-radius: 16px;
-        overflow: hidden;
-        background: var(--bg-secondary);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border: 1px solid var(--border);
-    }
-    
-    /* ===== CARD HEADER ===== */
-    #learn .learn-card-header {
-        padding: 14px 16px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    
-    #learn .learn-card-header h2,
-    #learn .learn-card-header h3,
-    #learn .learn-card-title {
-        font-size: 1rem;
-        color: white;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 600;
-    }
-    
-    #learn .learn-card-header span {
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.9);
-        background: rgba(255, 255, 255, 0.15);
-        padding: 4px 10px;
-        border-radius: 12px;
-    }
-    
-    #learn .learn-card-header i {
-        font-size: 1.1rem;
-    }
-    
-    /* ===== CARD CONTENT - COMPACT ===== */
-    #learn .learn-card-content {
-        padding: 10px 12px !important;
-        font-size: 0.78rem !important;
-        line-height: 1.45 !important;
-        color: var(--text-primary);
-    }
-    
-    /* Force all content to fit */
-    #learn .learn-card-content * {
-        max-width: 100% !important;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        box-sizing: border-box;
-    }
-    
-    /* ===== HEADINGS IN CONTENT - COMPACT ===== */
-    #learn .learn-card-content h3 {
-        font-size: 0.88rem !important;
-        color: var(--primary);
-        margin: 10px 0 6px 0 !important;
-        padding-bottom: 5px;
-        border-bottom: 1px solid var(--primary);
-        font-weight: 600;
-        line-height: 1.3;
-    }
-    
-    #learn .learn-card-content h3:first-child {
-        margin-top: 0;
-    }
-    
-    #learn .learn-card-content h4 {
-        font-size: 0.82rem !important;
-        color: var(--text-primary);
-        margin: 8px 0 5px 0 !important;
-        font-weight: 600;
-        line-height: 1.3;
-    }
-    
-    #learn .learn-card-content h5 {
-        font-size: 0.78rem !important;
-        color: var(--primary);
-        margin: 6px 0 4px 0 !important;
-        font-weight: 600;
-        line-height: 1.3;
-    }
-    
-    /* ===== PARAGRAPHS - COMPACT ===== */
-    #learn .learn-card-content p {
-        font-size: 0.75rem !important;
-        line-height: 1.45 !important;
-        margin: 0 0 6px 0 !important;
-        color: var(--text-secondary);
-    }
-    
-    /* ===== LISTS - COMPACT ===== */
-    #learn .learn-card-content ul {
-        margin: 6px 0 !important;
-        padding-left: 0;
-        list-style: none;
-    }
-    
-    #learn .learn-card-content ul li {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        padding: 3px 0 3px 20px !important;
-        position: relative;
-        color: var(--text-secondary);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-    }
-    
-    #learn .learn-card-content ul li:last-child {
-        border-bottom: none;
-    }
-    
-    #learn .learn-card-content ul li::before {
-        content: '✓';
-        position: absolute;
-        left: 0;
-        color: var(--success);
-        font-weight: bold;
-        font-size: 0.72rem;
-    }
-    
-    #learn .learn-card-content ol {
-        margin: 6px 0 !important;
-        padding-left: 18px;
-    }
-    
-    #learn .learn-card-content ol li {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        padding: 2px 0 !important;
-        color: var(--text-secondary);
-    }
-    
-    /* ===== HORIZONTAL RULES ===== */
-    #learn .learn-card-content hr {
-        margin: 16px 0;
-        border: none;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--border), transparent);
-    }
-    
-    /* ===== FORMULA BOX - FULL WIDTH ===== */
-    #learn .formula-box,
-    #learn .learn-card-content .formula-box,
-    #learn .learn-card-content div.formula-box,
-    .learn-card-content .formula-box {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        background: rgba(99, 102, 241, 0.06) !important;
-        padding: 5px 8px !important;
-        margin: 4px 0 !important;
-        border-radius: 4px !important;
-        border: none !important;
-        border-left: 2px solid var(--primary) !important;
-        font-size: 11px !important;
-        line-height: 1.35 !important;
-        overflow: hidden !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-        white-space: normal !important;
-    }
-    
-    #learn .formula-box *,
-    #learn .learn-card-content .formula-box *,
-    .learn-card-content .formula-box * {
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-        font-size: inherit !important;
-    }
-    
-    #learn .formula-box strong,
-    #learn .learn-card-content .formula-box strong,
-    .learn-card-content .formula-box strong {
-        color: var(--primary);
-        font-weight: 600;
-        font-size: 11px !important;
-    }
-    
-    #learn .formula-box p,
-    #learn .learn-card-content .formula-box p,
-    .learn-card-content .formula-box p {
-        font-size: 11px !important;
-        margin: 2px 0 !important;
-        line-height: 1.3 !important;
-    }
-    
-    #learn .formula-box br {
-        display: block !important;
-        margin: 1px 0 !important;
-    }
-    
-    /* ===== TIP BOX - FULL WIDTH ===== */
-    #learn .tip-box,
-    #learn .learn-card-content .tip-box,
-    #learn .learn-card-content div.tip-box,
-    .learn-card-content .tip-box {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        background: rgba(16, 185, 129, 0.08) !important;
-        border: none !important;
-        border-left: 2px solid var(--secondary) !important;
-        padding: 5px 8px !important;
-        margin: 4px 0 !important;
-        border-radius: 0 4px 4px 0 !important;
-        overflow: hidden !important;
-    }
-    
-    #learn .tip-box *,
-    #learn .learn-card-content .tip-box *,
-    .learn-card-content .tip-box * {
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-        font-size: inherit !important;
-    }
-    
-    #learn .tip-box h4,
-    #learn .learn-card-content .tip-box h4,
-    .learn-card-content .tip-box h4 {
-        color: var(--secondary);
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        font-weight: 600;
-    }
-    
-    #learn .tip-box p,
-    #learn .learn-card-content .tip-box p,
-    .learn-card-content .tip-box p {
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        line-height: 1.3 !important;
-    }
-    
-    #learn .tip-box ul,
-    #learn .learn-card-content .tip-box ul,
-    .learn-card-content .tip-box ul {
-        margin: 2px 0 0 0 !important;
-    }
-    
-    #learn .tip-box ul li,
-    #learn .learn-card-content .tip-box ul li,
-    .learn-card-content .tip-box ul li {
-        font-size: 11px !important;
-        padding: 1px 0 1px 14px !important;
-        border-bottom: none;
-    }
-    
-    /* ===== WARNING BOX - FULL WIDTH ===== */
-    #learn .warning-box,
-    #learn .learn-card-content .warning-box,
-    #learn .learn-card-content div.warning-box,
-    .learn-card-content .warning-box {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        background: rgba(239, 68, 68, 0.08) !important;
-        border: none !important;
-        border-left: 2px solid var(--danger) !important;
-        padding: 5px 8px !important;
-        margin: 4px 0 !important;
-        border-radius: 0 4px 4px 0 !important;
-        overflow: hidden !important;
-    }
-    
-    #learn .warning-box *,
-    #learn .learn-card-content .warning-box *,
-    .learn-card-content .warning-box * {
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-        font-size: inherit !important;
-    }
-    
-    #learn .warning-box h4,
-    #learn .learn-card-content .warning-box h4,
-    .learn-card-content .warning-box h4 {
-        color: var(--danger);
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        font-weight: 600;
-    }
-    
-    #learn .warning-box p,
-    #learn .learn-card-content .warning-box p,
-    .learn-card-content .warning-box p {
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        line-height: 1.3 !important;
-    }
-    
-    /* ===== EXAMPLE BOX - FULL WIDTH ===== */
-    #learn .example-box,
-    #learn .learn-card-content .example-box,
-    #learn .learn-card-content div.example-box,
-    .learn-card-content .example-box {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        background: rgba(245, 158, 11, 0.08) !important;
-        border: none !important;
-        border-left: 2px solid var(--accent) !important;
-        padding: 5px 8px !important;
-        margin: 4px 0 !important;
-        border-radius: 0 4px 4px 0 !important;
-        overflow: hidden !important;
-    }
-    
-    #learn .example-box *,
-    #learn .learn-card-content .example-box *,
-    .learn-card-content .example-box * {
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-        font-size: inherit !important;
-    }
-    
-    #learn .example-box h4,
-    #learn .learn-card-content .example-box h4,
-    .learn-card-content .example-box h4 {
-        color: var(--accent);
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        font-weight: 600;
-    }
-    
-    #learn .example-box p,
-    #learn .learn-card-content .example-box p,
-    .learn-card-content .example-box p {
-        font-size: 11px !important;
-        margin: 0 0 2px 0 !important;
-        line-height: 1.3 !important;
-    }
-    
-    #learn .example-box ul li,
-    #learn .learn-card-content .example-box ul li,
-    .learn-card-content .example-box ul li {
-        font-size: 11px !important;
-        padding: 1px 0 1px 14px !important;
-    }
-    
-    /* ===== TABLES - COMPACT ===== */
-    #learn .learn-card-content table {
-        width: 100%;
-        margin: 8px 0 !important;
-        border-collapse: collapse;
-        font-size: 0.7rem !important;
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border-radius: 4px;
-    }
-    
-    #learn .learn-card-content th,
-    #learn .learn-card-content td {
-        padding: 5px 8px !important;
-        border: 1px solid var(--border);
-        text-align: left;
-        white-space: nowrap;
-        font-size: 0.7rem !important;
-    }
-    
-    #learn .learn-card-content th {
-        background: var(--primary);
-        font-weight: 600;
-        color: white;
-    }
-    
-    #learn .learn-card-content td {
-        color: var(--text-secondary);
-        background: var(--bg-secondary);
-    }
-    
-    #learn .learn-card-content tr:nth-child(even) td {
-        background: var(--bg-tertiary);
-    }
-    
-    /* ===== IMAGES ===== */
-    #learn .learn-image,
-    #learn .learn-card-content img {
-        max-width: 100%;
-        height: auto;
-        margin: 16px auto;
-        display: block;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* ===== HIGHLIGHT TEXT ===== */
-    #learn .learn-card-content .highlight {
-        background: linear-gradient(120deg, rgba(99, 102, 241, 0.15), rgba(99, 102, 241, 0.25));
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-weight: 600;
-        color: var(--primary);
-    }
-    
-    /* ===== STRONG/BOLD TEXT ===== */
-    #learn .learn-card-content strong {
-        color: var(--text-primary);
-        font-weight: 600;
-    }
-    
-    /* ===== CODE BLOCKS ===== */
-    #learn .learn-card-content code,
-    #learn .learn-card-content pre {
-        font-family: 'Courier New', monospace;
-        font-size: 0.82rem;
-        background: var(--bg-tertiary);
-        padding: 2px 6px;
-        border-radius: 4px;
-        overflow-x: auto;
-    }
-    
-    #learn .learn-card-content pre {
-        padding: 10px;
-        margin: 10px 0;
-    }
-}
-
-/* ===== EXTRA SMALL SCREENS (iPhone SE, etc.) ===== */
-@media screen and (max-width: 374px) {
-    #learn .learn-container {
-        padding: 8px;
-        padding-bottom: calc(95px + env(safe-area-inset-bottom, 0px));
-    }
-    
-    #learn .learn-container > h1 {
-        font-size: 1rem;
-        padding: 12px 14px;
-    }
-    
-    #learn .filter-btn {
-        padding: 8px 12px;
-        font-size: 0.78rem;
-        min-height: 34px;
-    }
-    
-    #learn .learn-card-header {
-        padding: 12px 14px;
-    }
-    
-    #learn .learn-card-header h2,
-    #learn .learn-card-header h3,
-    #learn .learn-card-title {
-        font-size: 0.92rem;
-    }
-    
-    #learn .learn-card-content {
-        padding: 14px;
-        font-size: 0.88rem;
-    }
-    
-    #learn .learn-card-content h3 {
-        font-size: 1.02rem;
-    }
-    
-    #learn .learn-card-content h4 {
-        font-size: 0.94rem;
-    }
-    
-    #learn .learn-card-content h5 {
-        font-size: 0.9rem;
-    }
-    
-    #learn .learn-card-content p,
-    #learn .learn-card-content li {
-        font-size: 0.86rem;
-    }
-    
-    #learn .formula-box,
-    #learn .tip-box,
-    #learn .warning-box,
-    #learn .example-box {
-        padding: 10px 12px;
-        font-size: 0.8rem;
-    }
-    
-    #learn .learn-card-content table {
-        font-size: 0.75rem;
-    }
-    
-    #learn .learn-card-content th,
-    #learn .learn-card-content td {
-        padding: 6px 8px;
-    }
-}
-
-/* ===== DARK MODE ADJUSTMENTS FOR LEARN ===== */
-[data-theme="dark"] #learn .formula-box strong {
-    color: #a5b4fc;
-}
-
-[data-theme="dark"] #learn .tip-box {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.2));
-}
-
-[data-theme="dark"] #learn .warning-box {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.18));
-}
-
-[data-theme="dark"] #learn .example-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(99, 102, 241, 0.18));
-}
-
-[data-theme="dark"] #learn .learn-card-content .highlight {
-    background: linear-gradient(120deg, rgba(99, 102, 241, 0.25), rgba(99, 102, 241, 0.35));
-}
-
 /* ===== LANDSCAPE MODE ===== */
 @media screen and (max-width: 900px) and (orientation: landscape) {
-    #learn .learn-container {
-        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
-    }
     
-    #learn .learn-card-content {
-        padding: 12px;
-    }
 }
 
 /* ===== ACCESSIBILITY - ENSURE GOOD CONTRAST ===== */
-#learn .learn-card-content h5 {
-    color: var(--text-primary);
-}
 
-#learn .formula-box strong,
-#learn .tip-box strong,
-#learn .warning-box strong,
-#learn .example-box strong {
-    font-weight: 700;
-}
 
-.learn-card-content,
-.learn-card-content p,
-.learn-card-content li,
-.learn-card-content span {
-    color: var(--text-primary);
-}
 
-.learn-card-content strong {
-    color: var(--text-primary);
-    font-weight: 700;
-}
 
 /* =====================================================
    COMPREHENSIVE RESPONSIVE DESIGN - ALL DEVICES
@@ -2773,10 +1800,6 @@
         margin: 0 auto;
     }
     
-    .learn-container {
-        max-width: 700px;
-        margin: 0 auto;
-    }
     
     .bottom-nav {
         max-width: 600px;
@@ -2822,10 +1845,6 @@
         margin: 0 auto;
     }
     
-    .learn-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
     
     .bottom-nav {
         max-width: 700px;
@@ -2871,10 +1890,6 @@
         margin: 0 auto;
     }
     
-    .learn-container {
-        max-width: 900px;
-        margin: 0 auto;
-    }
     
     .bottom-nav {
         max-width: 800px;
@@ -2938,10 +1953,6 @@
         margin: 0 auto;
     }
     
-    .learn-container {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
     
     .bottom-nav {
         max-width: 900px;
@@ -3052,10 +2063,6 @@
         padding: 0;
     }
     
-    .learn-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
 }
 
 /* =====================================================
@@ -3487,83 +2494,10 @@
     }
 }
 
-/* ===== iOS/IPHONE SPECIFIC FIXES FOR LEARN ===== */
-@supports (-webkit-touch-callout: none) {
-    /* iOS only */
-    #learn,
-    .learn-container,
-    .learn-content,
-    .learn-card {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    
-    .learn-card-content {
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* ===== MOBILE LEARN GUARANTEED VISIBILITY ===== */
-@media screen and (max-width: 767px) {
-    #learn.section.active {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    #learn .learn-container {
-        display: block !important;
-        visibility: visible !important;
-    }
-    
-    #learn .learn-content,
-    #learnContent {
-        display: block !important;
-        visibility: visible !important;
-        min-height: 100px !important;
-    }
-    
-    #learn .learn-card {
-        display: block !important;
-        visibility: visible !important;
-        margin-bottom: 12px !important;
-    }
-    
-    #learn .learn-card-header {
-        display: flex !important;
-        visibility: visible !important;
-    }
-    
-    #learn .learn-card-content {
-        display: block !important;
-        visibility: visible !important;
-        min-height: 50px !important;
-    }
-}
-
 /* ===== IPHONE 16 PRO / PRO MAX SPECIFIC ===== */
 @media screen and (min-width: 393px) and (max-width: 440px) {
-    #learn .learn-container {
-        padding: 10px !important;
-        padding-bottom: calc(100px + env(safe-area-inset-bottom, 34px)) !important;
-    }
     
-    #learn .learn-card {
-        margin-bottom: 10px !important;
-    }
     
-    #learn .learn-card-content {
-        padding: 12px !important;
-        font-size: 12px !important;
-        line-height: 1.5 !important;
-    }
     
-    #learn .learn-card-content h3 {
-        font-size: 14px !important;
-    }
     
-    #learn .learn-card-content p,
-    #learn .learn-card-content li {
-        font-size: 11px !important;
-    }
 }
