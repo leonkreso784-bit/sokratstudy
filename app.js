@@ -678,15 +678,40 @@ function syncMobileNav(section) {
 }
 
 function switchSection(section) {
+    console.log('switchSection called with:', section);
+    
     // Don't allow switching if no subject selected
     if (!currentSubject) {
         showSubjectSelector();
         return;
     }
     
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(section).classList.add('active');
+    // Remove active from ALL sections
+    const allSections = document.querySelectorAll('.section');
+    console.log('Found sections:', allSections.length);
+    allSections.forEach(s => {
+        s.classList.remove('active');
+        console.log('Removed active from:', s.id);
+    });
+    
+    // Add active to target section
+    const targetSection = document.getElementById(section);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        console.log('Added active to:', section);
+    } else {
+        console.error('Section not found:', section);
+    }
+    
     currentSection = section;
+    
+    // Update nav buttons
+    document.querySelectorAll('.study-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.section === section);
+    });
+    document.querySelectorAll('.study-mobile-nav .mobile-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.section === section);
+    });
     
     // Save position when section changes
     saveCurrentPosition(currentPage, { subject: currentSubject, lesson: currentLesson });
