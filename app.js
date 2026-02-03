@@ -1283,11 +1283,11 @@ function renderLearnContent() {
         container.appendChild(card);
     });
     
-    // MOBILE FIX: Clean up content for better mobile display
-    // Use setTimeout to ensure DOM is ready on iOS
-    setTimeout(() => {
-        cleanupLearnContentForMobile();
-    }, 50);
+    // MOBILE FIX: Add mobile class to learn cards for CSS styling
+    if (window.innerWidth <= 767) {
+        container.classList.add('mobile-view');
+        cards.forEach(card => card.classList.add('mobile-card'));
+    }
     
     // Filter functionality - remove old listeners first
     const filterBtns = document.querySelectorAll('.learn-filter .filter-btn');
@@ -1726,94 +1726,17 @@ window.resetAnalytics = function() {
 
 window.getAnalytics = getAnalyticsSummary;
 
-// ========== MOBILE LEARN CONTENT CLEANUP ==========
-// This function removes inline styles that interfere with mobile CSS
+// Mobile cleanup function - now just adds CSS classes, no inline style manipulation
 function cleanupLearnContentForMobile() {
-    // Only run on mobile devices
     if (window.innerWidth > 767) return;
     
     const container = document.getElementById('learnContent');
-    if (!container) {
-        console.log('Mobile cleanup: No learn content container found');
-        return;
-    }
-    
-    // Check if there are any learn cards
-    const cards = container.querySelectorAll('.learn-card');
-    if (cards.length === 0) {
-        console.log('Mobile cleanup: No learn cards found');
-        return;
-    }
-    
-    try {
-        // STEP 1: Remove ALL inline styles from EVERYTHING first
-        container.querySelectorAll('*').forEach(el => {
-            el.removeAttribute('style');
+    if (container) {
+        container.classList.add('mobile-view');
+        container.querySelectorAll('.learn-card').forEach(card => {
+            card.classList.add('mobile-card');
         });
-        
-        // STEP 2: Force visibility on all elements
-        container.style.display = 'block';
-        container.style.visibility = 'visible';
-        
-        cards.forEach(card => {
-            card.style.display = 'block';
-            card.style.visibility = 'visible';
-            card.style.marginBottom = '10px';
-        });
-        
-        // STEP 3: Force font sizes on text elements
-        const allText = container.querySelectorAll('p, span, li, td, th, strong, em, a, div:not(.learn-card):not(.learn-card-header):not(.learn-card-content), h4, h5');
-        allText.forEach(el => {
-            el.style.fontSize = '11px';
-            el.style.lineHeight = '1.4';
-            el.style.maxWidth = '100%';
-            el.style.wordWrap = 'break-word';
-        });
-        
-        // STEP 4: Force box styles
-        const boxes = container.querySelectorAll('.formula-box, .tip-box, .warning-box, .example-box');
-        boxes.forEach(box => {
-            box.style.width = '100%';
-            box.style.maxWidth = '100%';
-            box.style.padding = '6px 8px';
-            box.style.margin = '6px 0';
-            box.style.fontSize = '10px';
-            box.style.overflow = 'hidden';
-            box.style.boxSizing = 'border-box';
-            box.style.display = 'block';
-        });
-        
-        // STEP 5: Force h3 headings
-        container.querySelectorAll('h3').forEach(h => {
-            h.style.fontSize = '13px';
-            h.style.margin = '10px 0 6px 0';
-        });
-        
-        // STEP 6: Force tables
-        container.querySelectorAll('table').forEach(t => {
-            t.style.width = '100%';
-            t.style.fontSize = '10px';
-            t.style.display = 'table';
-        });
-        container.querySelectorAll('th, td').forEach(c => {
-            c.style.padding = '4px';
-            c.style.fontSize = '10px';
-        });
-        
-        console.log('Mobile cleanup: Applied to', cards.length, 'learn cards');
-    } catch (error) {
-        console.error('Mobile cleanup error:', error);
     }
 }
 
-// Re-apply mobile cleanup on window resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        cleanupLearnContentForMobile();
-    }, 250);
-});
-
-// Make cleanup function globally available
 window.cleanupLearnContentForMobile = cleanupLearnContentForMobile;
