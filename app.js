@@ -467,34 +467,6 @@ function showSubjectSelector() {
 window.selectSubject = selectSubject;
 window.showSubjectSelector = showSubjectSelector;
 
-// ========== SECTION NAVIGATION ==========
-function switchSection(section) {
-    currentSection = section;
-    
-    // Save position when section changes
-    saveCurrentPosition(currentPage, { subject: currentSubject, lesson: currentLesson });
-    
-    // Update nav buttons
-    document.querySelectorAll('.study-nav-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.section === section);
-    });
-    
-    // Update mobile nav buttons
-    document.querySelectorAll('.study-mobile-nav .mobile-nav-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.section === section);
-    });
-    
-    // Show/hide sections
-    document.querySelectorAll('.study-content .section').forEach(s => {
-        s.classList.remove('active');
-    });
-    
-    const targetSection = document.getElementById(section);
-    if (targetSection) {
-        targetSection.classList.add('active');
-    }
-}
-
 // ========== NAVIGATION (Old - kept for compatibility) ==========
 function initNavigation() {
     // Study nav buttons already set up in setupEventListeners
