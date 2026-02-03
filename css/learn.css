@@ -1,35 +1,59 @@
 /* =====================================================
-   LEARN SECTION - DESKTOP BASE STYLES
-   These are the base styles, responsive overrides in responsive.css
+   LEARN SECTION - COMPLETE RESPONSIVE STYLES
+   Sokrat Study - Learn section for ALL devices
+   
+   Breakpoints:
+   - Mobile: < 480px (small phones)
+   - Mobile: 480px - 767px (large phones)
+   - Tablet: 768px - 1023px
+   - Desktop: 1024px+
    ===================================================== */
 
-/* ===== LEARN SECTION ===== */
+/* =====================================================
+   BASE STYLES (Mobile First)
+   ===================================================== */
+
 .learn-container {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 20px));
+    box-sizing: border-box;
 }
 
-.learn-container h1 {
+/* Page Title */
+.learn-container > h1 {
+    font-size: 1.1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 12px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    font-size: 1.3rem;
+    gap: 8px;
 }
+
+.learn-container > h1 i {
+    font-size: 1.1rem;
+}
+
+/* =====================================================
+   FILTER BUTTONS
+   ===================================================== */
 
 .learn-filter {
     display: flex;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 4px 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 0.5rem;
 }
 
 .learn-filter::-webkit-scrollbar {
@@ -37,7 +61,7 @@
 }
 
 .filter-btn {
-    padding: 0.5rem 1rem;
+    padding: 10px 16px;
     border: 2px solid var(--border);
     background: var(--bg-secondary);
     border-radius: 25px;
@@ -46,10 +70,11 @@
     font-weight: 500;
     font-size: 0.85rem;
     color: var(--text-primary);
-    transition: var(--transition);
+    transition: all 0.2s ease;
     white-space: nowrap;
-    min-height: var(--touch-target);
     flex-shrink: 0;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .filter-btn:hover,
@@ -59,105 +84,132 @@
     color: white;
 }
 
+.filter-btn:active {
+    transform: scale(0.96);
+}
+
+/* =====================================================
+   LEARN CONTENT CONTAINER
+   ===================================================== */
+
 .learn-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 16px;
 }
+
+/* =====================================================
+   LEARN CARDS
+   ===================================================== */
 
 .learn-card {
     background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
 }
 
-.learn-card:hover {
-    box-shadow: var(--shadow-lg);
-}
-
+/* Card Header */
 .learn-card-header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    padding: 1rem 1.5rem;
+    padding: 14px 16px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .learn-card-header h2,
 .learn-card-header h3,
 .learn-card-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
 }
+
+.learn-card-header i {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.learn-card-header span {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   CARD CONTENT - THE MAIN READING AREA
+   ===================================================== */
 
 .learn-card-content {
-    padding: 2rem 2.5rem;
-    line-height: 1.9;
+    padding: 16px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
+/* Headings */
 .learn-card-content h3 {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--border);
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 20px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+    font-weight: 600;
+}
+
+.learn-card-content h3:first-child {
+    margin-top: 0;
 }
 
 .learn-card-content h4 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--text-primary);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+    margin: 16px 0 10px 0;
+    font-weight: 600;
 }
 
 .learn-card-content h5 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--primary);
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.learn-card-content p {
-    color: var(--text-secondary);
-    line-height: 1.9;
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-}
-
-.learn-card-content hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2.5rem 0;
-}
-
-.learn-card-content .highlight {
-    background: linear-gradient(120deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.2) 100%);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    margin: 14px 0 8px 0;
     font-weight: 600;
-    color: var(--primary);
 }
 
+/* Paragraphs */
+.learn-card-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+    color: var(--text-secondary);
+}
+
+/* Lists */
 .learn-card-content ul {
     list-style: none;
-    margin: 1.25rem 0;
+    margin: 12px 0;
     padding-left: 0;
 }
 
 .learn-card-content ul li {
-    padding: 0.6rem 0;
-    padding-left: 1.75rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    padding: 6px 0 6px 24px;
     position: relative;
     color: var(--text-secondary);
-    line-height: 1.7;
 }
 
 .learn-card-content ul li::before {
@@ -166,113 +218,535 @@
     left: 0;
     color: var(--success);
     font-weight: bold;
+    font-size: 0.85rem;
 }
 
 .learn-card-content ol {
-    margin: 1.25rem 0;
-    padding-left: 1.5rem;
+    margin: 12px 0;
+    padding-left: 20px;
 }
 
 .learn-card-content ol li {
-    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    padding: 5px 0;
     color: var(--text-secondary);
-    line-height: 1.7;
 }
 
-.learn-card-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
+/* Highlight */
+.learn-card-content .highlight {
+    background: rgba(99, 102, 241, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: var(--primary);
 }
 
-.learn-card-content table th,
-.learn-card-content table td {
-    padding: 12px 15px;
-    text-align: left;
+/* Horizontal Rule */
+.learn-card-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
 }
 
-.learn-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 1.5rem auto;
-    display: block;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+/* =====================================================
+   INFO BOXES (Tip, Warning, Example, Formula)
+   ===================================================== */
+
+.tip-box,
+.warning-box,
+.example-box,
+.formula-box {
+    padding: 14px;
+    margin: 16px 0;
+    border-radius: 10px;
+    border-left: 4px solid;
 }
 
 .tip-box {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
-    border-left: 4px solid var(--secondary);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 var(--radius) var(--radius) 0;
-    margin: 2rem 0;
-}
-
-.tip-box h4 {
-    color: var(--secondary);
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.tip-box ul {
-    margin: 0.75rem 0 0 0;
+    background: rgba(16, 185, 129, 0.1);
+    border-left-color: var(--secondary);
 }
 
 .warning-box {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.15));
-    border-left: 4px solid var(--danger);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 var(--radius) var(--radius) 0;
-    margin: 2rem 0;
-}
-
-.warning-box h4 {
-    color: var(--danger);
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-left-color: var(--danger);
 }
 
 .example-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(99, 102, 241, 0.15));
-    border-left: 4px solid var(--primary);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 var(--radius) var(--radius) 0;
-    margin: 2rem 0;
-}
-
-.example-box h4 {
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-    margin-top: 0;
-}
-
-.example-box p {
-    margin-bottom: 0.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-left-color: var(--primary);
 }
 
 .formula-box {
     background: var(--bg-tertiary);
-    padding: 1.5rem 2rem;
-    border-radius: var(--radius);
+    border-left-color: var(--primary);
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    text-align: left;
-    margin: 2rem 0;
-    border: 2px dashed var(--border);
-    line-height: 2;
-    color: var(--text-primary);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.formula-box strong {
-    color: var(--primary-dark);
-    font-weight: 700;
+.tip-box h4,
+.warning-box h4,
+.example-box h4 {
+    font-size: 0.9rem;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tip-box h4 { color: var(--secondary); }
+.warning-box h4 { color: var(--danger); }
+.example-box h4 { color: var(--primary); }
+
+.tip-box p,
+.warning-box p,
+.example-box p,
+.formula-box p {
+    font-size: 0.88rem;
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.tip-box ul,
+.warning-box ul,
+.example-box ul {
+    margin: 8px 0 0 0;
+}
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.learn-card-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.learn-card-content th,
+.learn-card-content td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.learn-card-content th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+}
+
+.learn-card-content tr:nth-child(even) {
+    background: var(--bg-tertiary);
+}
+
+/* =====================================================
+   IMAGES
+   ===================================================== */
+
+.learn-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================================================
+   TABLET STYLES (768px+)
+   ===================================================== */
+
+@media screen and (min-width: 768px) {
+    .learn-container {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .learn-container > h1 {
+        font-size: 1.3rem;
+        padding: 16px 24px;
+    }
+    
+    .learn-filter {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .learn-content {
+        gap: 20px;
+    }
+    
+    .learn-card {
+        border-radius: 16px;
+    }
+    
+    .learn-card-header {
+        padding: 16px 24px;
+    }
+    
+    .learn-card-header h2,
+    .learn-card-header h3,
+    .learn-card-title {
+        font-size: 1.05rem;
+    }
+    
+    .learn-card-content {
+        padding: 24px;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .learn-card-content h3 {
+        font-size: 1.25rem;
+        margin: 24px 0 14px 0;
+    }
+    
+    .learn-card-content h4 {
+        font-size: 1.1rem;
+        margin: 20px 0 12px 0;
+    }
+    
+    .learn-card-content p {
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+    }
+    
+    .learn-card-content ul li,
+    .learn-card-content ol li {
+        font-size: 0.95rem;
+        padding: 8px 0 8px 28px;
+    }
+    
+    .tip-box,
+    .warning-box,
+    .example-box,
+    .formula-box {
+        padding: 18px;
+        margin: 20px 0;
+    }
+    
+    .tip-box h4,
+    .warning-box h4,
+    .example-box h4 {
+        font-size: 0.95rem;
+    }
+    
+    .tip-box p,
+    .warning-box p,
+    .example-box p {
+        font-size: 0.92rem;
+    }
+    
+    .learn-image {
+        max-width: 400px;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+/* =====================================================
+   DESKTOP STYLES (1024px+)
+   ===================================================== */
+
+@media screen and (min-width: 1024px) {
+    .learn-container {
+        padding: 24px;
+        max-width: 900px;
+    }
+    
+    .learn-container > h1 {
+        font-size: 1.4rem;
+        padding: 18px 28px;
+        margin-bottom: 20px;
+    }
+    
+    .learn-filter {
+        gap: 12px;
+        margin-bottom: 24px;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+    
+    .learn-content {
+        gap: 24px;
+    }
+    
+    .learn-card-header {
+        padding: 18px 28px;
+    }
+    
+    .learn-card-header h2,
+    .learn-card-header h3,
+    .learn-card-title {
+        font-size: 1.15rem;
+    }
+    
+    .learn-card-content {
+        padding: 32px;
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+    
+    .learn-card-content h3 {
+        font-size: 1.35rem;
+        margin: 28px 0 16px 0;
+    }
+    
+    .learn-card-content h4 {
+        font-size: 1.15rem;
+    }
+    
+    .learn-card-content h5 {
+        font-size: 1.05rem;
+    }
+    
+    .learn-card-content p {
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+    
+    .learn-card-content ul li,
+    .learn-card-content ol li {
+        font-size: 1rem;
+    }
+    
+    .tip-box,
+    .warning-box,
+    .example-box,
+    .formula-box {
+        padding: 20px 24px;
+        margin: 24px 0;
+    }
+    
+    .formula-box {
+        font-size: 0.95rem;
+    }
+}
+
+/* =====================================================
+   SMALL PHONES (max-width: 380px)
+   ===================================================== */
+
+@media screen and (max-width: 380px) {
+    .learn-container {
+        padding: 10px;
+    }
+    
+    .learn-container > h1 {
+        font-size: 1rem;
+        padding: 10px 14px;
+    }
+    
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    .learn-card-header {
+        padding: 12px 14px;
+    }
+    
+    .learn-card-header h2,
+    .learn-card-header h3,
+    .learn-card-title {
+        font-size: 0.9rem;
+    }
+    
+    .learn-card-content {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+    
+    .learn-card-content h3 {
+        font-size: 1.05rem;
+    }
+    
+    .learn-card-content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .learn-card-content p,
+    .learn-card-content ul li,
+    .learn-card-content ol li {
+        font-size: 0.88rem;
+    }
+    
+    .tip-box,
+    .warning-box,
+    .example-box,
+    .formula-box {
+        padding: 12px;
+    }
+    
+    .formula-box {
+        font-size: 0.8rem;
+    }
+}
+
+/* =====================================================
+   iPHONE 16 / PRO / PRO MAX (393px - 440px)
+   ===================================================== */
+
+@media screen and (min-width: 393px) and (max-width: 440px) {
+    .learn-container {
+        padding: 14px;
+        padding-bottom: calc(90px + env(safe-area-inset-bottom, 34px));
+    }
+    
+    .learn-container > h1 {
+        font-size: 1.1rem;
+        padding: 14px 18px;
+    }
+    
+    .learn-card-content {
+        padding: 16px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .learn-card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .learn-card-content p,
+    .learn-card-content ul li,
+    .learn-card-content ol li {
+        font-size: 0.92rem;
+    }
+}
+
+/* =====================================================
+   iOS SAFARI SPECIFIC FIXES
+   ===================================================== */
+
+@supports (-webkit-touch-callout: none) {
+    .learn-container {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .learn-card-content {
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    .formula-box {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* =====================================================
+   LANDSCAPE MODE (phones)
+   ===================================================== */
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    .learn-container {
+        padding: 12px 24px;
+        padding-bottom: 80px;
+    }
+    
+    .learn-card-content {
+        column-count: 2;
+        column-gap: 24px;
+    }
+    
+    .learn-card-content h3 {
+        column-span: all;
+    }
+    
+    .tip-box,
+    .warning-box,
+    .example-box,
+    .formula-box {
+        break-inside: avoid;
+    }
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+[data-theme="dark"] .learn-card {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .learn-card-content {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .learn-card-content p,
+[data-theme="dark"] .learn-card-content li {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .tip-box {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .warning-box {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+[data-theme="dark"] .example-box {
+    background: rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="dark"] .formula-box {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="dark"] .formula-box strong {
-    color: #a5b4fc; /* Lighter purple for dark mode */
+    color: #a5b4fc;
 }
-
+
+[data-theme="dark"] .learn-card-content th {
+    background: var(--primary);
+}
+
+[data-theme="dark"] .learn-card-content tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .learn-card,
+    .filter-btn {
+        transition: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .learn-card {
+        border-width: 2px;
+    }
+    
+    .learn-card-content p,
+    .learn-card-content li {
+        color: var(--text-primary);
+    }
+}
