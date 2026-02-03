@@ -6,6 +6,7 @@
 const subjectDataMap = {
     te2: {
         data: typeof studyData !== 'undefined' ? studyData : {},
+        finalData: typeof te2FinalData !== 'undefined' ? te2FinalData : {},
         name: 'Tourism Economics',
         shortName: 'TE',
         icon: 'fa-plane',
@@ -16,7 +17,14 @@ const subjectDataMap = {
             {
                 id: 'exam-prep',
                 name: 'Exam Preparation',
-                description: 'Complete study material for the exam'
+                description: 'Complete study material for the exam',
+                dataKey: 'data'
+            },
+            {
+                id: 'final-test-prep',
+                name: 'Final Test Preparation',
+                description: 'Comprehensive review for the final examination',
+                dataKey: 'finalData'
             }
         ]
     },
@@ -288,8 +296,12 @@ function initStudyPage(subjectId, lessonId) {
     const subject = subjectDataMap[subjectId];
     if (!subject) return;
     
-    // Get the full data
-    let fullData = subject.data;
+    // Find the lesson to get its dataKey
+    const lesson = subject.lessons.find(l => l.id === lessonId);
+    const dataKey = lesson?.dataKey || 'data';
+    
+    // Get the full data based on lesson's dataKey
+    let fullData = subject[dataKey] || subject.data;
     
     // Check if this subject has lesson-specific category filtering
     const subjectLessonMap = lessonCategoryMap[subjectId];
