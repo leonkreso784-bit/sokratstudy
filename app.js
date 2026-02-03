@@ -582,12 +582,37 @@ function updateLearnFilters() {
     
     container.innerHTML = '<button class="filter-btn active" data-filter="all">All</button>';
     
+    // Track used names to avoid duplicates
+    const usedNames = new Set();
+    
     Object.keys(currentData).forEach(category => {
         const data = currentData[category];
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.dataset.filter = category;
-        btn.textContent = data.name.split(' ')[0];
+        
+        // Get a unique short name for the filter button
+        let shortName = data.name.split(' ')[0];
+        
+        // If first word is already used, try second word or use abbreviation
+        if (usedNames.has(shortName)) {
+            const words = data.name.split(' ');
+            if (words.length > 1) {
+                // Try using second word or combination
+                shortName = words[1].substring(0, 8);
+            } else {
+                // Add number suffix
+                let suffix = 2;
+                while (usedNames.has(shortName + suffix)) suffix++;
+                shortName = shortName + suffix;
+            }
+        }
+        
+        // Limit to 10 characters max
+        shortName = shortName.substring(0, 10);
+        usedNames.add(shortName);
+        
+        btn.textContent = shortName;
         container.appendChild(btn);
     });
     

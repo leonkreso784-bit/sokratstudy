@@ -34,8 +34,8 @@
 /* Study sections (Subject Selector, Home, Flashcards, Quiz, Fill, Progress) */
 @import url('css/study-sections.css');
 
-/* Learn section (separate file for easier maintenance) */
-@import url('css/learn.css');
-
 /* Responsive styles (all media queries) */
 @import url('css/responsive.css');
+
+/* Learn section - LAST to override responsive.css conflicts */
+@import url('css/learn.css');
