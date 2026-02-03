@@ -3,9 +3,10 @@
 // New Architecture: Landing → Subjects → Lessons → Study Activities
 
 // ========== HELPER FUNCTION TO GET DATA ==========
-function getSubjectData(subjectId, dataKey) {
+function getSubjectData(subjectId, lessonId) {
     if (subjectId === 'te2') {
-        if (dataKey === 'finalData') {
+        // For final test prep, use te2FinalData
+        if (lessonId === 'final-test-prep') {
             return typeof te2FinalData !== 'undefined' ? te2FinalData : {};
         }
         return typeof studyData !== 'undefined' ? studyData : {};
@@ -35,14 +36,12 @@ const subjectDataMap = {
             {
                 id: 'exam-prep',
                 name: 'Exam Preparation',
-                description: 'Complete study material for the exam',
-                dataKey: 'data'
+                description: 'Complete study material for the exam'
             },
             {
                 id: 'final-test-prep',
                 name: 'Final Test Preparation',
-                description: 'Comprehensive review for the final examination',
-                dataKey: 'finalData'
+                description: 'Comprehensive review for the final examination'
             }
         ]
     },
@@ -57,14 +56,12 @@ const subjectDataMap = {
             {
                 id: 'second-exam-prep',
                 name: 'Second Exam Preparation',
-                description: 'Core concepts: Planning, Failure, Economy, Social Entrepreneurship, Trends',
-                dataKey: 'data'
+                description: 'Core concepts: Planning, Failure, Economy, Social Entrepreneurship, Trends'
             },
             {
                 id: 'final-exam-prep',
                 name: 'Final Exam Preparation',
-                description: 'Complete review: History, Psychology, Innovation, Franchising, Tourism, Value Measurement',
-                dataKey: 'data'
+                description: 'Complete review: History, Psychology, Innovation, Franchising, Tourism, Value Measurement'
             }
         ]
     },
@@ -79,8 +76,7 @@ const subjectDataMap = {
             {
                 id: 'accounting-fundamentals',
                 name: 'Accounting Fundamentals',
-                description: 'Complete accounting theory for hospitality',
-                dataKey: 'data'
+                description: 'Complete accounting theory for hospitality'
             }
         ]
     },
@@ -95,8 +91,7 @@ const subjectDataMap = {
             {
                 id: 'final-exam-prep',
                 name: 'Final Exam Preparation',
-                description: 'Complete E-Business theory covering all 15 units',
-                dataKey: 'data'
+                description: 'Complete E-Business theory covering all 15 units'
             }
         ]
     }
@@ -318,14 +313,11 @@ function initStudyPage(subjectId, lessonId) {
         return;
     }
     
-    // Find the lesson to get its dataKey
-    const lesson = subject.lessons.find(l => l.id === lessonId);
-    const dataKey = lesson?.dataKey || 'data';
-    
     // Get the full data using helper function (ensures fresh data reference)
-    let fullData = getSubjectData(subjectId, dataKey);
+    // Pass lessonId to get correct data source (e.g., te2FinalData for final-test-prep)
+    let fullData = getSubjectData(subjectId, lessonId);
     
-    console.log('Loading data for:', subjectId, lessonId, 'dataKey:', dataKey);
+    console.log('Loading data for:', subjectId, lessonId);
     console.log('Data categories:', Object.keys(fullData));
     
     // Check if this subject has lesson-specific category filtering
@@ -1307,12 +1299,6 @@ function renderLearnContent() {
         
         container.appendChild(card);
     });
-    
-    // MOBILE FIX: Add mobile class to learn cards for CSS styling
-    if (window.innerWidth <= 767) {
-        container.classList.add('mobile-view');
-        cards.forEach(card => card.classList.add('mobile-card'));
-    }
     
     // Filter functionality - remove old listeners first
     const filterBtns = document.querySelectorAll('.learn-filter .filter-btn');
