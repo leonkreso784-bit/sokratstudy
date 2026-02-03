@@ -1,0 +1,278 @@
+/* =====================================================
+   LEARN SECTION - DESKTOP BASE STYLES
+   These are the base styles, responsive overrides in responsive.css
+   ===================================================== */
+
+/* ===== LEARN SECTION ===== */
+.learn-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.learn-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.learn-filter {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 0.5rem;
+}
+
+.learn-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border);
+    background: var(--bg-secondary);
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+    white-space: nowrap;
+    min-height: var(--touch-target);
+    flex-shrink: 0;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+}
+
+.learn-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.learn-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.learn-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.learn-card-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 1rem 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.learn-card-header h2,
+.learn-card-header h3,
+.learn-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.learn-card-content {
+    padding: 2rem 2.5rem;
+    line-height: 1.9;
+}
+
+.learn-card-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.learn-card-content h4 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.learn-card-content h5 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.learn-card-content p {
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+}
+
+.learn-card-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+}
+
+.learn-card-content .highlight {
+    background: linear-gradient(120deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.2) 100%);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.learn-card-content ul {
+    list-style: none;
+    margin: 1.25rem 0;
+    padding-left: 0;
+}
+
+.learn-card-content ul li {
+    padding: 0.6rem 0;
+    padding-left: 1.75rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.learn-card-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.learn-card-content ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+}
+
+.learn-card-content ol li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.learn-card-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.learn-card-content table th,
+.learn-card-content table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.learn-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.tip-box {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+    border-left: 4px solid var(--secondary);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 2rem 0;
+}
+
+.tip-box h4 {
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tip-box ul {
+    margin: 0.75rem 0 0 0;
+}
+
+.warning-box {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.15));
+    border-left: 4px solid var(--danger);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 2rem 0;
+}
+
+.warning-box h4 {
+    color: var(--danger);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.example-box {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(99, 102, 241, 0.15));
+    border-left: 4px solid var(--primary);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 2rem 0;
+}
+
+.example-box h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+.example-box p {
+    margin-bottom: 0.5rem;
+}
+
+.formula-box {
+    background: var(--bg-tertiary);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    text-align: left;
+    margin: 2rem 0;
+    border: 2px dashed var(--border);
+    line-height: 2;
+    color: var(--text-primary);
+}
+
+.formula-box strong {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .formula-box strong {
+    color: #a5b4fc; /* Lighter purple for dark mode */
+}
+

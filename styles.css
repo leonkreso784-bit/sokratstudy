@@ -5,11 +5,14 @@
    This file imports all CSS modules for better organization.
    
    Structure:
-   1. variables.css - CSS Variables, Reset, Base styles
-   2. landing.css   - Landing page, hero, features
-   3. sidebar.css   - Subjects sidebar
-   4. pages.css     - Lessons, Study, About pages
-   5. sections.css  - Header, Nav, Sections, Components, Responsive
+   1. variables.css      - CSS Variables, Reset, Base styles
+   2. landing.css        - Landing page, hero, features
+   3. sidebar.css        - Subjects sidebar
+   4. pages.css          - Lessons, Study, About pages
+   5. components.css     - Header, Navigation, Main Content
+   6. study-sections.css - Subject Selector, Home, Quiz, etc.
+   7. learn.css          - Learn section (separate for easy maintenance)
+   8. responsive.css     - All media queries
    
    ===================================================== */
 
@@ -25,5 +28,14 @@
 /* Pages (Lessons, Study, About) */
 @import url('css/pages.css');
 
-/* Sections, components, and responsive styles */
-@import url('css/sections.css');
+/* Components (Header, Navigation, Main Content) */
+@import url('css/components.css');
+
+/* Study sections (Subject Selector, Home, Flashcards, Quiz, Fill, Progress) */
+@import url('css/study-sections.css');
+
+/* Learn section (separate file for easier maintenance) */
+@import url('css/learn.css');
+
+/* Responsive styles (all media queries) */
+@import url('css/responsive.css');

@@ -1,0 +1,248 @@
+/* =====================================================
+   SECTIONS, COMPONENTS & RESPONSIVE STYLES
+   Sokrat Study - All study sections and responsive design
+   
+   Contents:
+   - Header & Navigation (line ~20)
+   - Mobile Bottom Navigation (line ~150)
+   - Main Content & Sections (line ~220)
+   - Subject Selector (line ~250)
+   - About Us Section (line ~570)
+   - Home Section (line ~930)
+   - Learn Section (line ~1120)
+   - Flashcards Section (line ~1400)
+   - Quiz Section (line ~1620)
+   - Fill Section (line ~1950)
+   - Progress Section (line ~2110)
+   - Toast & Footer (line ~2300)
+   - Responsive Styles (line ~2350+)
+   ===================================================== */
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--bg-secondary);
+    padding: 0.75rem 1rem;
+    padding-left: calc(1rem + var(--safe-left));
+    padding-right: calc(1rem + var(--safe-right));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: var(--safe-top);
+    z-index: 100;
+    gap: 0.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 36px !important;
+    max-height: 36px !important;
+    max-width: 60px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    flex-shrink: 0;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+
+/* Desktop navigation - ALWAYS hidden on mobile */
+.nav-menu {
+    display: none;
+    gap: 0.5rem;
+}
+
+/* Mobile navigation - hidden by default */
+.mobile-nav {
+    display: none;
+}
+
+/* MOBILE: Hide desktop nav ALWAYS, show mobile nav when visible */
+@media (max-width: 767px) {
+    .nav-menu,
+    .nav-menu.nav-visible,
+    #mainNav {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
+    
+    .mobile-nav.nav-visible {
+        display: flex !important;
+        visibility: visible !important;
+        width: auto !important;
+        height: auto !important;
+        position: fixed !important;
+        pointer-events: auto !important;
+    }
+}
+
+/* DESKTOP: Show desktop nav when visible, hide mobile nav */
+@media (min-width: 768px) {
+    .nav-menu.nav-visible {
+        display: flex !important;
+    }
+    
+    .mobile-nav,
+    .mobile-nav.nav-visible {
+        display: none !important;
+    }
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: var(--touch-target);
+}
+
+.nav-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+.nav-btn.active {
+    background: #312e81;
+    color: #e0e7ff;
+}
+
+.theme-toggle {
+    background: var(--bg-tertiary);
+    border: none;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(20deg);
+}
+
+/* ===== MOBILE BOTTOM NAVIGATION ===== */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-bottom: var(--safe-bottom);
+    border-top: 1px solid var(--border);
+}
+
+.mobile-nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.25rem;
+    min-height: 60px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.65rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    gap: 0.25rem;
+    position: relative;
+}
+
+.mobile-nav-btn i {
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.mobile-nav-btn.active {
+    color: #312e81;
+}
+
+[data-theme="dark"] .mobile-nav-btn.active {
+    color: #a5b4fc;
+}
+
+.mobile-nav-btn.active i {
+    transform: scale(1.1);
+}
+
+.mobile-nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 50%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 0 0 3px 3px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-btn.active::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    padding: 1rem;
+    padding-left: calc(1rem + var(--safe-left));
+    padding-right: calc(1rem + var(--safe-right));
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Subject selector needs flex when active */
+#subject-selector.active {
+    display: flex !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
