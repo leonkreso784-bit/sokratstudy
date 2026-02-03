@@ -2,11 +2,29 @@
 // Supports multiple subjects: TE2 and Business Entrepreneurship
 // New Architecture: Landing → Subjects → Lessons → Study Activities
 
+// ========== HELPER FUNCTION TO GET DATA ==========
+function getSubjectData(subjectId, dataKey) {
+    if (subjectId === 'te2') {
+        if (dataKey === 'finalData') {
+            return typeof te2FinalData !== 'undefined' ? te2FinalData : {};
+        }
+        return typeof studyData !== 'undefined' ? studyData : {};
+    }
+    if (subjectId === 'entrepreneurship') {
+        return typeof entrepreneurshipData !== 'undefined' ? entrepreneurshipData : {};
+    }
+    if (subjectId === 'accounting') {
+        return typeof accountingData !== 'undefined' ? accountingData : {};
+    }
+    if (subjectId === 'ebusiness') {
+        return typeof ebusinessData !== 'undefined' ? ebusinessData : {};
+    }
+    return {};
+}
+
 // ========== SUBJECT DATA MAPPING ==========
 const subjectDataMap = {
     te2: {
-        data: typeof studyData !== 'undefined' ? studyData : {},
-        finalData: typeof te2FinalData !== 'undefined' ? te2FinalData : {},
         name: 'Tourism Economics',
         shortName: 'TE',
         icon: 'fa-plane',
@@ -29,7 +47,6 @@ const subjectDataMap = {
         ]
     },
     entrepreneurship: {
-        data: typeof entrepreneurshipData !== 'undefined' ? entrepreneurshipData : {},
         name: 'Business Entrepreneurship',
         shortName: 'Entrep',
         icon: 'fa-rocket',
@@ -40,17 +57,18 @@ const subjectDataMap = {
             {
                 id: 'second-exam-prep',
                 name: 'Second Exam Preparation',
-                description: 'Core concepts: Planning, Failure, Economy, Social Entrepreneurship, Trends'
+                description: 'Core concepts: Planning, Failure, Economy, Social Entrepreneurship, Trends',
+                dataKey: 'data'
             },
             {
                 id: 'final-exam-prep',
                 name: 'Final Exam Preparation',
-                description: 'Complete review: History, Psychology, Innovation, Franchising, Tourism, Value Measurement'
+                description: 'Complete review: History, Psychology, Innovation, Franchising, Tourism, Value Measurement',
+                dataKey: 'data'
             }
         ]
     },
     accounting: {
-        data: typeof accountingData !== 'undefined' ? accountingData : {},
         name: 'Accounting Theory',
         shortName: 'Accounting',
         icon: 'fa-coins',
@@ -61,12 +79,12 @@ const subjectDataMap = {
             {
                 id: 'accounting-fundamentals',
                 name: 'Accounting Fundamentals',
-                description: 'Complete accounting theory for hospitality'
+                description: 'Complete accounting theory for hospitality',
+                dataKey: 'data'
             }
         ]
     },
     ebusiness: {
-        data: typeof ebusinessData !== 'undefined' ? ebusinessData : {},
         name: 'E-Business',
         shortName: 'E-Biz',
         icon: 'fa-globe',
@@ -77,7 +95,8 @@ const subjectDataMap = {
             {
                 id: 'final-exam-prep',
                 name: 'Final Exam Preparation',
-                description: 'Complete E-Business theory covering all 15 units'
+                description: 'Complete E-Business theory covering all 15 units',
+                dataKey: 'data'
             }
         ]
     }
@@ -294,14 +313,20 @@ const lessonCategoryMap = {
 // ========== STUDY PAGE ==========
 function initStudyPage(subjectId, lessonId) {
     const subject = subjectDataMap[subjectId];
-    if (!subject) return;
+    if (!subject) {
+        console.error('Subject not found:', subjectId);
+        return;
+    }
     
     // Find the lesson to get its dataKey
     const lesson = subject.lessons.find(l => l.id === lessonId);
     const dataKey = lesson?.dataKey || 'data';
     
-    // Get the full data based on lesson's dataKey
-    let fullData = subject[dataKey] || subject.data;
+    // Get the full data using helper function (ensures fresh data reference)
+    let fullData = getSubjectData(subjectId, dataKey);
+    
+    console.log('Loading data for:', subjectId, lessonId, 'dataKey:', dataKey);
+    console.log('Data categories:', Object.keys(fullData));
     
     // Check if this subject has lesson-specific category filtering
     const subjectLessonMap = lessonCategoryMap[subjectId];
