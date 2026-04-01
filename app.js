@@ -20,6 +20,12 @@ function getSubjectData(subjectId, lessonId) {
     if (subjectId === 'ebusiness') {
         return typeof ebusinessData !== 'undefined' ? ebusinessData : {};
     }
+    if (subjectId === 'econ-hospitality') {
+        if (lessonId === 'first-midterm') {
+            return typeof economicsHospitalityData !== 'undefined' ? economicsHospitalityData : {};
+        }
+        return {};
+    }
     return {};
 }
 
@@ -92,6 +98,26 @@ const subjectDataMap = {
                 id: 'final-exam-prep',
                 name: 'Final Exam Preparation',
                 description: 'Complete E-Business theory covering all 15 units'
+            }
+        ]
+    },
+    'econ-hospitality': {
+        name: 'Economics in Hospitality',
+        shortName: 'EIH',
+        icon: 'fa-hotel',
+        color: '#0ea5e9',
+        description: 'Economic analysis of Croatian hospitality industry, seasonality, productivity, and policy responses',
+        storageKey: 'econ-hospitality-progress',
+        lessons: [
+            {
+                id: 'first-midterm',
+                name: 'First Midterm',
+                description: 'Seminar-based preparation: macro importance, seasonality, case studies, competitiveness'
+            },
+            {
+                id: 'second-midterm',
+                name: 'Second Midterm',
+                description: 'Coming soon'
             }
         ]
     }
@@ -281,6 +307,7 @@ function renderLessonsPage(subjectId) {
     subject.lessons.forEach((lesson, index) => {
         const card = document.createElement('div');
         card.className = 'lesson-card';
+        const isComingSoon = subjectId === 'econ-hospitality' && lesson.id === 'second-midterm';
         card.innerHTML = `
             <div class="lesson-number">${index + 1}</div>
             <div class="lesson-info">
@@ -289,9 +316,18 @@ function renderLessonsPage(subjectId) {
             </div>
             <i class="fas fa-chevron-right lesson-arrow"></i>
         `;
-        card.addEventListener('click', () => {
-            navigateTo('study', { subject: subjectId, lesson: lesson.id });
-        });
+        if (isComingSoon) {
+            card.style.opacity = '0.65';
+            card.style.cursor = 'not-allowed';
+            card.querySelector('.lesson-arrow').className = 'fas fa-clock lesson-arrow';
+            card.addEventListener('click', () => {
+                showToast('Second Midterm is coming soon.');
+            });
+        } else {
+            card.addEventListener('click', () => {
+                navigateTo('study', { subject: subjectId, lesson: lesson.id });
+            });
+        }
         grid.appendChild(card);
     });
 }
