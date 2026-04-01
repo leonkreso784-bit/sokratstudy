@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link rel="stylesheet" href="styles.css?v=20260401a">
+    <link rel="stylesheet" href="styles.css?v=20260401b">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -59,6 +59,7 @@
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
             <div class="gradient-orb orb-3"></div>
+            <div class="gradient-orb orb-4"></div>
             <div class="grid-overlay"></div>
         </div>
 
@@ -68,27 +69,23 @@
                 <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
                 <span class="logo-text">Sokrat Study</span>
             </div>
-            <div class="landing-header-actions">
-                <button class="theme-toggle" id="themeToggleLanding" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+
         </header>
 
         <!-- Hero Section -->
         <main class="landing-hero">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-sparkles"></i>
-                    <span>Smart Learning Platform</span>
+                    <span class="badge-dot"></span>
+                    <span>Free exam toolkit &mdash; 6 subjects ready</span>
                 </div>
                 <h1 class="hero-title">
-                    Master Your
-                    <span class="gradient-text">Knowledge</span>
+                    Study Smart.<br>
+                    <span class="gradient-text">Score Higher.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Interactive flashcards, quizzes, and comprehensive study materials 
-                    designed to help you excel in your exams.
+                    Flashcards, quizzes, and in-depth lessons across 6 university subjects.
+                    Built for students who want results, not just notes.
                 </p>
                 <div class="hero-actions">
                     <button class="cta-button primary" id="openStudyBtn">
@@ -126,30 +123,52 @@
             </div>
         </main>
 
-        <!-- Features Section -->
+        <!-- Stats Bar -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Subjects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">400+</span>
+                <span class="stat-label">Questions</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">5</span>
+                <span class="stat-label">Study Modes</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Free</span>
+            </div>
+        </div>
+
         <!-- Features Section -->
         <section class="landing-features" aria-labelledby="features-heading">
             <h2 id="features-heading" class="visually-hidden">App Features</h2>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-book-reader" aria-hidden="true"></i>
+                    <i class="fas fa-layer-group" aria-hidden="true"></i>
                 </div>
-                <h3>Multiple Subjects</h3>
-                <p>Study various subjects with organized lessons and materials</p>
+                <h3>6 Subjects Ready</h3>
+                <p>Tourism, Accounting, Marketing, E-Business, Entrepreneurship and Hospitality</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-trophy" aria-hidden="true"></i>
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
                 </div>
-                <h3>Track Progress</h3>
-                <p>Monitor your learning journey with detailed analytics</p>
+                <h3>5 Study Modes</h3>
+                <p>Learn, Flashcards, Quiz, Fill-in-Blanks and Progress &mdash; all in one place</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                 </div>
-                <h3>Study Anywhere</h3>
-                <p>Fully responsive design for learning on any device</p>
+                <h3>Works Everywhere</h3>
+                <p>Install as a PWA, works offline and fully optimized for mobile</p>
             </div>
         </section>
 
@@ -283,9 +302,7 @@
                 <span class="breadcrumb">Sokrat Study</span>
                 <h1 id="currentSubjectTitle">Subject Name</h1>
             </div>
-            <button class="theme-toggle" id="themeToggleLessons" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
+
         </header>
         
         <main class="lessons-content">
@@ -309,9 +326,7 @@
                 <span class="breadcrumb" id="studyBreadcrumb">Subject > Lesson</span>
                 <h1 id="currentLessonTitle">Lesson Name</h1>
             </div>
-            <button class="theme-toggle" id="themeToggleStudy" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
+
         </header>
 
         <!-- Navigation Tabs -->
@@ -818,6 +833,6 @@
     <script src="data-econ-hospitality.js?v=20260401a"></script>
     <script src="data-marketing.js?v=20260401a"></script>
     
-    <script src="app.js?v=20260401c"></script>
+    <script src="app.js?v=20260401d"></script>
 </body>
 </html>

@@ -819,24 +819,8 @@ function switchSection(section) {
 
 // ========== THEME ==========
 function initTheme() {
-    const savedTheme = localStorage.getItem('sokrat-theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcons(savedTheme);
-}
-
-function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const newTheme = current === 'light' ? 'dark' : 'light';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('sokrat-theme', newTheme);
-    updateThemeIcons(newTheme);
-}
-
-function updateThemeIcons(theme) {
-    document.querySelectorAll('.theme-toggle i').forEach(icon => {
-        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-    });
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('sokrat-theme', 'dark');
 }
 
 // Track if flashcard event listeners are already set up
