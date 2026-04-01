@@ -26,6 +26,12 @@ function getSubjectData(subjectId, lessonId) {
         }
         return {};
     }
+    if (subjectId === 'marketing') {
+        if (lessonId === 'first-midterm') {
+            return typeof marketingData !== 'undefined' ? marketingData : {};
+        }
+        return {};
+    }
     return {};
 }
 
@@ -113,6 +119,26 @@ const subjectDataMap = {
                 id: 'first-midterm',
                 name: 'First Midterm',
                 description: 'Seminar-based preparation: macro importance, seasonality, case studies, competitiveness'
+            },
+            {
+                id: 'second-midterm',
+                name: 'Second Midterm',
+                description: 'Coming soon'
+            }
+        ]
+    },
+    marketing: {
+        name: 'Marketing',
+        shortName: 'MKT',
+        icon: 'fa-bullhorn',
+        color: '#ec4899',
+        description: 'Marketing concept, environment, market exchange, segmentation, consumer behaviour, and market research',
+        storageKey: 'marketing-progress',
+        lessons: [
+            {
+                id: 'first-midterm',
+                name: 'First Midterm',
+                description: 'Comprehensive preparation from 6 presentations'
             },
             {
                 id: 'second-midterm',
@@ -307,7 +333,7 @@ function renderLessonsPage(subjectId) {
     subject.lessons.forEach((lesson, index) => {
         const card = document.createElement('div');
         card.className = 'lesson-card';
-        const isComingSoon = subjectId === 'econ-hospitality' && lesson.id === 'second-midterm';
+        const isComingSoon = lesson.id === 'second-midterm';
         card.innerHTML = `
             <div class="lesson-number">${index + 1}</div>
             <div class="lesson-info">
