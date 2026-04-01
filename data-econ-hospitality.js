@@ -89,22 +89,70 @@ const economicsHospitalityData = {
         learn: {
             title: "Unit 1 - Basics of Hospitality Industry",
             content: `
-                <h3>Service vs Hospitality</h3>
+                <h3>1) Hospitality Mindset: Beyond Basic Service</h3>
                 <div class="formula-box">
-                    <p><strong>Service:</strong> transactional, procedural, reactive</p>
-                    <p><strong>Hospitality:</strong> personal, emotional, proactive</p>
+                    <p><strong>Service:</strong> transactional, standardized, reactive, process-focused</p>
+                    <p><strong>Hospitality:</strong> personal, emotional, proactive, relationship-focused</p>
                 </div>
 
-                <h4>Why It Matters in Economics</h4>
+                <h4>Why this distinction matters</h4>
                 <ul>
-                    <li>Guest experience affects willingness to pay and repeat demand</li>
-                    <li>People skills are productive assets in hospitality firms</li>
-                    <li>Service failures create direct revenue loss and reputation costs</li>
+                    <li>Service delivers what is promised; hospitality shapes how the guest feels</li>
+                    <li>Hospitality converts one-time buyers into repeat guests</li>
+                    <li>Experience quality becomes a source of competitive advantage</li>
+                </ul>
+
+                <h3>2) Why Hospitality is a Professional Skill</h3>
+                <p>Hospitality is a set of soft skills and managerial attitudes: communication, empathy, anticipation, problem-solving, and emotional intelligence.</p>
+                <ul>
+                    <li>These skills are trainable and measurable</li>
+                    <li>They are transferable to other service sectors</li>
+                    <li>They increase perceived value and willingness to pay</li>
+                </ul>
+
+                <h3>3) Two Perspectives from the Presentation</h3>
+                <h4>Customer view</h4>
+                <ul>
+                    <li>Hospitality creates trust, enjoyment, and relaxation</li>
+                    <li>Trust reduces perceived risk and supports premium pricing</li>
+                    <li>Satisfied guests are more likely to return and recommend</li>
+                </ul>
+
+                <h4>Management view</h4>
+                <ul>
+                    <li>Hospitality quality must be systematically managed</li>
+                    <li>Guest journey must be designed end-to-end with no critical failures</li>
+                    <li>Operations must support consistency under peak demand</li>
+                </ul>
+
+                <h3>4) Economic Specifics of Hospitality Activity</h3>
+                <div class="example-box">
+                    <p><strong>Local export logic:</strong> when foreign guests consume local hospitality services, the destination effectively exports without shipping goods abroad.</p>
+                </div>
+                <ul>
+                    <li>Hospitality combines production and service work in one process</li>
+                    <li>Production is often made-to-order and consumed immediately</li>
+                    <li>Demand quality depends strongly on human interaction</li>
+                </ul>
+
+                <h3>5) Complexity of Hospitality Services</h3>
+                <p>Hospitality service is multi-layered and includes different job families and outputs.</p>
+                <ul>
+                    <li><strong>Basic services:</strong> accommodation, food, beverages</li>
+                    <li><strong>Supplementary services:</strong> reception, messages, guest communication, property upkeep</li>
+                    <li><strong>Additional services:</strong> transport support, animation, sports, wellness, sales and extras</li>
+                </ul>
+
+                <h4>Operational implications</h4>
+                <ul>
+                    <li>High coordination needs across departments</li>
+                    <li>Quality depends on training and service culture</li>
+                    <li>Weak communication leads directly to cost and reputation loss</li>
                 </ul>
 
                 <div class="tip-box">
-                    <h4><i class="fas fa-lightbulb"></i> Midterm Focus</h4>
-                    <p>Know both perspectives: <strong>customer value</strong> and <strong>management responsibility</strong>.</p>
+                    <h4><i class="fas fa-lightbulb"></i> Unit 1 Exam Focus</h4>
+                    <p>Be able to explain: <strong>service vs hospitality</strong>, <strong>hospitality as skill</strong>, <strong>customer vs management view</strong>, and <strong>local export logic</strong>.</p>
                 </div>
             `
         }
@@ -192,21 +240,58 @@ const economicsHospitalityData = {
         learn: {
             title: "Unit 2 - Business Economics as Discipline",
             content: `
-                <h3>Where Business Economics Fits</h3>
+                <h3>1) Business Economics in the Economic Science System</h3>
+                <p>Economics studies rational allocation of scarce resources. Business economics focuses on the firm as the core microeconomic decision unit.</p>
                 <ul>
-                    <li><strong>Micro level:</strong> firms, consumers, pricing, decisions</li>
-                    <li><strong>Macro level:</strong> growth, inflation, unemployment</li>
+                    <li><strong>Macroeconomics:</strong> economy-wide indicators (growth, inflation, unemployment)</li>
+                    <li><strong>Microeconomics:</strong> firms, consumers, prices, market behavior</li>
+                    <li><strong>Business economics:</strong> applied microeconomics at company level</li>
                 </ul>
 
-                <div class="example-box">
-                    <p><strong>Business economics:</strong> improving firm outcomes using validated rules and analysis.</p>
+                <h3>2) Business Economics as Science and Teaching Discipline</h3>
+                <h4>As science</h4>
+                <ul>
+                    <li>Analyzes factors influencing company performance</li>
+                    <li>Develops rules to improve business outcomes</li>
+                    <li>Builds models for decision support under uncertainty</li>
+                </ul>
+
+                <h4>As teaching subject</h4>
+                <ul>
+                    <li>Transfers validated knowledge to future managers and entrepreneurs</li>
+                    <li>Explains business system logic and management processes</li>
+                    <li>Connects theory with real company cases</li>
+                </ul>
+
+                <h3>3) General vs Special Business Economics</h3>
+                <div class="formula-box">
+                    <p><strong>General:</strong> problems common to all companies</p>
+                    <p><strong>Special:</strong> sector, ownership, and function-specific economics</p>
                 </div>
 
-                <h4>Main Divisions</h4>
+                <h4>Examples of special economics</h4>
                 <ul>
-                    <li><strong>General:</strong> common to all firms</li>
-                    <li><strong>Special:</strong> sector-specific (e.g., hospitality), ownership, and functions</li>
+                    <li>By activity: industrial, trade, transport, hotel, banking</li>
+                    <li>By ownership: public vs private</li>
+                    <li>By function: procurement, production, sales, logistics</li>
                 </ul>
+
+                <h3>4) Theory-Practice Relationship</h3>
+                <ul>
+                    <li>Theory explains and predicts business behavior</li>
+                    <li>Practice tests assumptions and reveals new problems</li>
+                    <li>New problems drive new theory and better managerial tools</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Common Mistake</h4>
+                    <p>Students often mix macro and micro scope. In this course, most questions are at <strong>firm level</strong>.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4><i class="fas fa-lightbulb"></i> Unit 2 Exam Focus</h4>
+                    <p>Know the hierarchy: <strong>economics -> macro/micro -> business economics -> hospitality economics</strong>.</p>
+                </div>
             `
         }
     },
@@ -293,20 +378,53 @@ const economicsHospitalityData = {
         learn: {
             title: "Unit 3 - Hospitality Firm as a System",
             content: `
-                <h3>Firm Logic in Hospitality</h3>
-                <div class="formula-box">
-                    <p><strong>Hospitality firm =</strong> people + assets + organization + market logic</p>
-                </div>
+                <h3>1) Conceptual Definition of Hospitality Business</h3>
+                <p>A hospitality business is an independent, complex economic-legal-technical-social system that produces services for market needs and aims to generate profit and achieve strategic goals.</p>
 
-                <h4>Core Distinction</h4>
+                <h3>2) Firm as a Multi-System Structure</h3>
                 <ul>
-                    <li><strong>Entrepreneurship:</strong> creates and renews ventures</li>
-                    <li><strong>Management:</strong> stabilizes and coordinates operations</li>
+                    <li><strong>Technological system:</strong> transforms inputs into hospitality outputs</li>
+                    <li><strong>Economic system:</strong> allocates resources and creates value</li>
+                    <li><strong>Legal system:</strong> rights, obligations, contracts, compliance</li>
+                    <li><strong>Sociological system:</strong> people, teams, culture, motivation</li>
                 </ul>
 
+                <h3>3) Essential Firm Components</h3>
+                <div class="formula-box">
+                    <p><strong>Objective component:</strong> buildings, equipment, materials, money</p>
+                    <p><strong>Subjective component:</strong> people, knowledge, creativity</p>
+                    <p><strong>Organizational component:</strong> integration of work and resources</p>
+                </div>
+
+                <h3>4) Entrepreneur, Management, and Entrepreneurship</h3>
+                <h4>Entrepreneur profile</h4>
+                <ul>
+                    <li>Business judgement and opportunity recognition</li>
+                    <li>Risk-taking and innovation orientation</li>
+                    <li>Decision capability and leadership under uncertainty</li>
+                </ul>
+
+                <h4>Entrepreneurship vs Management</h4>
+                <ul>
+                    <li><strong>Entrepreneurship:</strong> initiates change and new ventures</li>
+                    <li><strong>Management:</strong> coordinates ongoing processes and execution</li>
+                </ul>
+
+                <h3>5) Classification of Hospitality Businesses</h3>
+                <ul>
+                    <li><strong>By subject:</strong> accommodation + food + beverage, or partial combinations</li>
+                    <li><strong>By size:</strong> small, medium, large</li>
+                    <li><strong>By ownership:</strong> private/public/mixed</li>
+                    <li><strong>By legal form:</strong> company forms and organizational structures</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>Practical takeaway:</strong> strategy and structure must match the chosen business model and market segment.</p>
+                </div>
+
                 <div class="tip-box">
-                    <h4><i class="fas fa-check-circle"></i> Exam Angle</h4>
-                    <p>Be ready to explain firm dimensions and why hospitality firms are more than just service points.</p>
+                    <h4><i class="fas fa-check-circle"></i> Unit 3 Exam Focus</h4>
+                    <p>Prepare definitions: <strong>hospitality business</strong>, <strong>entrepreneur</strong>, <strong>entrepreneurship vs management</strong>, and <strong>firm classification criteria</strong>.</p>
                 </div>
             `
         }
@@ -394,19 +512,59 @@ const economicsHospitalityData = {
         learn: {
             title: "Unit 4 - Assets of Reproduction",
             content: `
-                <h3>Fixed vs Current Assets</h3>
+                <h3>1) Concept and Types of Assets</h3>
+                <p>In hospitality, assets can appear as money/securities, property, and rights. By business involvement, they are split into fixed and current assets.</p>
                 <ul>
-                    <li><strong>Fixed:</strong> long-term use, gradual value transfer</li>
-                    <li><strong>Current:</strong> short-cycle use, full value transfer</li>
+                    <li><strong>Fixed assets:</strong> used longer than one year, value transferred gradually</li>
+                    <li><strong>Current assets:</strong> used within short cycle, value transferred fully</li>
                 </ul>
 
-                <h4>Hospitality Asset Discipline</h4>
-                <div class="warning-box">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Operational Risk</h4>
-                    <p>Poor maintenance and weak storage controls increase costs and service disruption risk.</p>
+                <h3>2) Why Asset Structure Matters</h3>
+                <div class="formula-box">
+                    <p><strong>Operational continuity</strong> depends on smooth conversion among asset forms.</p>
+                </div>
+                <ul>
+                    <li>Insufficient working assets create service disruptions</li>
+                    <li>Outdated fixed assets reduce quality and productivity</li>
+                    <li>Poor structure increases total operating cost</li>
+                </ul>
+
+                <h3>3) Fixed Assets in Hospitality Practice</h3>
+                <h4>Intangible fixed assets</h4>
+                <ul>
+                    <li>Research and development related spending</li>
+                    <li>Concessions, trademarks, similar rights</li>
+                    <li>Goodwill and other long-term intangibles</li>
+                </ul>
+
+                <h4>Tangible fixed assets</h4>
+                <ul>
+                    <li>Land, buildings, and facility structures</li>
+                    <li>Equipment and installations (heating, cooling, utility systems)</li>
+                    <li>Furniture, tools, vehicles, and supporting infrastructure</li>
+                </ul>
+
+                <h3>4) Maintenance, Renewal, and Risk Protection</h3>
+                <ul>
+                    <li>Current and investment maintenance are mandatory for continuity</li>
+                    <li>Storage discipline protects food/material quality and reduces losses</li>
+                    <li>Insurance coverage (fire, flood, damage, theft) protects asset base</li>
+                </ul>
+
+                <h3>5) Depreciation and Economic Logic</h3>
+                <div class="example-box">
+                    <p>Depreciation translates long-term asset usage into periodic cost, enabling realistic profitability measurement.</p>
                 </div>
 
-                <p>Management goal: maintain an optimal structure that supports continuity and growth.</p>
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Frequent Exam Trap</h4>
+                    <p>Students mix asset type with liquidity category. Always separate <strong>what asset is</strong> from <strong>how long it is used</strong>.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4><i class="fas fa-lightbulb"></i> Unit 4 Exam Focus</h4>
+                    <p>Know definitions of fixed/current assets, examples in hospitality, and why maintenance + depreciation are economically critical.</p>
+                </div>
             `
         }
     },
@@ -493,23 +651,52 @@ const economicsHospitalityData = {
         learn: {
             title: "Unit 5 - Theory of Costs in Hospitality",
             content: `
-                <h3>Why Cost Theory Matters</h3>
-                <p>Profitability in hospitality depends on understanding cost behavior, not only on raising revenue.</p>
-
+                <h3>1) Why Cost Theory is Central in Hospitality</h3>
+                <p>Hospitality profitability depends on cost behavior understanding: where costs come from, how they move, and how managers control them.</p>
                 <div class="formula-box">
-                    <p><strong>Cost focus:</strong> origin + classification + behavior + control</p>
+                    <p><strong>Cost management scope:</strong> origin + classification + allocation + behavior + control</p>
                 </div>
 
-                <h4>Cost vs Expenditure</h4>
+                <h3>2) Core Terms: Cost, Expenditure, Consumption</h3>
                 <ul>
-                    <li><strong>Cost:</strong> resource consumption for business effect</li>
-                    <li><strong>Expenditure:</strong> monetary outflow</li>
-                    <li>They can be linked, but not always at the same time</li>
+                    <li><strong>Cost:</strong> value-expressed consumption of resources for business effect</li>
+                    <li><strong>Expenditure:</strong> any monetary outflow from firm cash/bank</li>
+                    <li><strong>Consumption:</strong> physical use of resources in process</li>
                 </ul>
 
+                <h3>3) Timing Relationships Between Cost and Expenditure</h3>
+                <h4>Possible patterns</h4>
+                <ul>
+                    <li>Cost before expenditure (e.g., utility use invoiced later)</li>
+                    <li>Cost and expenditure simultaneously (immediate paid service)</li>
+                    <li>Expenditure before cost (purchase first, consumption later)</li>
+                </ul>
+
+                <h3>4) When They Are Not Economically Identical</h3>
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Distinction</h4>
+                    <p>Not every expenditure is a cost of the same period, and not every cost requires immediate cash outflow.</p>
+                </div>
+                <ul>
+                    <li>Land purchase: expenditure exists, but no depreciation expense from land use</li>
+                    <li>Donated asset: no expenditure at acquisition, but depreciation cost exists later</li>
+                </ul>
+
+                <h3>5) Why Cost Classification Matters for Decisions</h3>
+                <ul>
+                    <li>Pricing and menu decisions</li>
+                    <li>Budget planning and control</li>
+                    <li>Profitability analysis by service/product</li>
+                    <li>Capacity and resource utilization decisions</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>Managerial message:</strong> revenue growth without cost discipline rarely creates stable long-term profitability.</p>
+                </div>
+
                 <div class="tip-box">
-                    <h4><i class="fas fa-lightbulb"></i> Midterm Focus</h4>
-                    <p>Be able to explain practical cases where expenditure exists but cost recognition differs.</p>
+                    <h4><i class="fas fa-lightbulb"></i> Unit 5 Exam Focus</h4>
+                    <p>Prepare to explain practical examples where <strong>cost</strong> and <strong>expenditure</strong> differ in meaning and timing.</p>
                 </div>
             `
         }
