@@ -1,445 +1,515 @@
 // ===== ECONOMICS IN HOSPITALITY - FIRST MIDTERM =====
-// Source basis: Economics in Hospitality seminar presentation (Leon Kreso)
+// Source basis: Unit 1-5 PDF presentations from economics in hospitality folder.
 
 const economicsHospitalityData = {
-    macroImportance: {
-        name: "Macroeconomic Importance",
-        icon: "fa-chart-pie",
+    unit1HospitalityBasics: {
+        name: "Unit 1: Hospitality Basics",
+        icon: "fa-concierge-bell",
         color: "#0ea5e9",
 
         flashcards: [
             {
-                question: "What is Croatia's travel receipts-to-GDP ratio, and why is it important?",
-                answer: "Croatia's travel receipts-to-GDP ratio is 18.7%, the highest in the EU. It shows very strong tourism dependence and a major macroeconomic role of hospitality.",
-                explanation: "This indicator compares tourism receipts to national output."
+                question: "What is the key difference between service and hospitality?",
+                answer: "Service is transactional and standardized, while hospitality is personal, proactive, emotional, and focused on anticipating guest needs.",
+                explanation: "Hospitality creates memorable guest experiences beyond basic service delivery."
             },
             {
-                question: "How much tourism revenue did Croatia generate in 2023?",
-                answer: "Croatia generated about EUR 14.6 billion in tourism revenue in 2023.",
-                explanation: "Tourism is one of Croatia's key service exports."
+                question: "Why is hospitality considered a skill?",
+                answer: "Because it depends on soft skills, mindset, communication, empathy, and customer-oriented behavior that can be trained and transferred to other fields.",
+                explanation: "Hospitality skillset has value beyond hotels and restaurants."
             },
             {
-                question: "What were the approximate arrivals and overnights in the reference year?",
-                answer: "Around 20.6 million arrivals and 108 million overnights.",
-                explanation: "Large absolute tourism volume for a country under 4 million residents."
+                question: "What is the customer view of hospitality?",
+                answer: "Hospitality delivers enjoyment, trust, relaxation, and willingness to pay by meeting and exceeding expectations.",
+                explanation: "Customer perception is central to repeat visits and loyalty."
             },
             {
-                question: "What is direct tourism GVA and total GDP impact in Croatia?",
-                answer: "Direct tourism GVA is about EUR 7.7 billion (11.3% of GDP), while total impact including indirect effects is around 24.5% of GDP.",
-                explanation: "Direct and total impact differ because of multiplier effects."
+                question: "What is the management view of hospitality?",
+                answer: "Management must design and deliver a consistent guest experience that brings customers back and avoids service failures.",
+                explanation: "Hospitality quality must be operationalized, not left to chance."
             },
             {
-                question: "How large is direct tourism employment in Croatia?",
-                answer: "About 216,718 direct jobs, roughly 12.5% of total employment.",
-                explanation: "Hospitality and tourism are key labor-market sectors."
+                question: "How is hospitality activity economically specific?",
+                answer: "It performs a local export by selling services to foreign tourists and combines production and service processes in one operation.",
+                explanation: "Hospitality has mixed production-service characteristics."
+            },
+            {
+                question: "What are the key characteristics of hospitality services?",
+                answer: "Intangibility, heterogeneity, inseparability from provider, perishability, and strong dependence on human performance.",
+                explanation: "These traits shape pricing, quality control, and staffing."
             }
         ],
 
         quiz: [
             {
-                question: "Croatia's travel receipts-to-GDP ratio is approximately:",
-                options: ["3.5%", "9.1%", "18.7%", "24.5%"],
+                question: "Hospitality is best described as:",
+                options: [
+                    "Only standardized procedures",
+                    "A personal and proactive guest approach",
+                    "Only technical efficiency",
+                    "Only food production"
+                ],
+                correct: 1
+            },
+            {
+                question: "A core difference is that service is often reactive, while hospitality is:",
+                options: ["Passive", "Proactive", "Random", "Automated"],
+                correct: 1
+            },
+            {
+                question: "Selling hospitality services to foreign tourists is often considered:",
+                options: ["Import", "Neutral exchange", "Local export", "Barter"],
                 correct: 2
             },
             {
-                question: "Tourism revenue in Croatia (2023) was closest to:",
-                options: ["EUR 4.6B", "EUR 7.7B", "EUR 14.6B", "EUR 23.4B"],
-                correct: 2
-            },
-            {
-                question: "Direct tourism employment in Croatia is around:",
-                options: ["70,000", "120,000", "216,718", "519,000"],
-                correct: 2
+                question: "Which trait means a service cannot be tested before consumption?",
+                options: ["Tangibility", "Intangibility", "Durability", "Ownership transfer"],
+                correct: 1
             }
         ],
 
         fillBlanks: [
             {
-                sentence: "Croatia leads the EU with _______ travel receipts-to-GDP ratio.",
-                answer: "18.7%",
-                hint: "Starts with 18..."
+                sentence: "Service is transactional; hospitality is _______.",
+                answer: "personal",
+                hint: "Human-centered word..."
             },
             {
-                sentence: "Tourism revenue in 2023 was approximately EUR _______.",
-                answer: "14.6 billion",
-                hint: "14-point-6..."
+                sentence: "Hospitality is typically _______ in anticipating needs, not reactive.",
+                answer: "proactive",
+                hint: "Starts with pro..."
             },
             {
-                sentence: "Direct tourism jobs were about _______ workers.",
-                answer: "216,718",
-                hint: "About two hundred sixteen thousand..."
+                sentence: "Selling to foreign tourists is a form of local _______.",
+                answer: "export",
+                hint: "Opposite of import..."
             }
         ],
 
         learn: {
-            title: "Macroeconomic Importance of Hospitality",
+            title: "Unit 1 - Basics of Hospitality Industry",
             content: `
-                <h3>Core Macro Indicators</h3>
+                <h3>Service vs Hospitality</h3>
                 <div class="formula-box">
-                    <p><strong>Travel Receipts / GDP:</strong> 18.7% (EU-highest)</p>
-                    <p><strong>Tourism Revenue (2023):</strong> EUR 14.6B</p>
-                    <p><strong>Scale:</strong> 20.6M arrivals, 108M overnights</p>
+                    <p><strong>Service:</strong> transactional, procedural, reactive</p>
+                    <p><strong>Hospitality:</strong> personal, emotional, proactive</p>
                 </div>
 
-                <h4>Value Added and Employment</h4>
+                <h4>Why It Matters in Economics</h4>
                 <ul>
-                    <li><strong>Direct tourism GVA:</strong> EUR 7.7B (about 11.3% of GDP)</li>
-                    <li><strong>Total impact:</strong> around 24.5% of GDP (including indirect effects)</li>
-                    <li><strong>Direct jobs:</strong> 216,718 (about 12.5% of employment)</li>
+                    <li>Guest experience affects willingness to pay and repeat demand</li>
+                    <li>People skills are productive assets in hospitality firms</li>
+                    <li>Service failures create direct revenue loss and reputation costs</li>
                 </ul>
 
                 <div class="tip-box">
                     <h4><i class="fas fa-lightbulb"></i> Midterm Focus</h4>
-                    <p>Know the difference between <strong>direct contribution</strong> and <strong>total impact</strong>.</p>
+                    <p>Know both perspectives: <strong>customer value</strong> and <strong>management responsibility</strong>.</p>
                 </div>
             `
         }
     },
 
-    seasonalityStructure: {
-        name: "Seasonality Structure",
-        icon: "fa-sun",
-        color: "#f97316",
+    unit2BusinessEconomics: {
+        name: "Unit 2: Business Economics",
+        icon: "fa-chart-line",
+        color: "#14b8a6",
 
         flashcards: [
             {
-                question: "What is the main structural seasonality issue in Croatian tourism?",
-                answer: "More than 75% of annual overnights are concentrated in only four months (June-September).",
-                explanation: "This concentration creates strong seasonal pressure."
+                question: "What is the core goal of economics as a science?",
+                answer: "Rational use of limited resources to satisfy unlimited needs as effectively as possible.",
+                explanation: "Scarcity and allocation are central economic problems."
             },
             {
-                question: "How concentrated are July and August together?",
-                answer: "About 60.4 million overnights in 62 days.",
-                explanation: "Peak summer dominates annual results."
+                question: "What is the difference between macroeconomics and microeconomics?",
+                answer: "Macroeconomics studies aggregate economy-wide issues; microeconomics studies households, consumers, firms, demand, supply, and prices.",
+                explanation: "Business economics belongs to the microeconomic domain."
             },
             {
-                question: "What is August's approximate share of annual overnights?",
-                answer: "Around 31.9 million overnights, about 30% of annual total.",
-                explanation: "Single-month concentration is very high."
+                question: "How is business economics defined as a science?",
+                answer: "A key microeconomic discipline that studies management at firm level and identifies rules for improving business success.",
+                explanation: "It links theory with managerial decision-making."
             },
             {
-                question: "What accommodation structure reinforces seasonality?",
-                answer: "Private apartments around 65% of beds, campsites around 21%, hotels only about 13.7%.",
-                explanation: "Private and camp capacity is naturally summer-heavy."
+                question: "What is the purpose of business economics as a teaching subject?",
+                answer: "To transfer validated knowledge and train future professionals to understand and manage business systems.",
+                explanation: "Education translates science into managerial capability."
             },
             {
-                question: "What geographic concentration is observed?",
-                answer: "About 90% of arrivals are concentrated on the Adriatic coast.",
-                explanation: "Strong regional concentration adds vulnerability."
+                question: "How is business economics divided?",
+                answer: "Into general business economics (common firm problems) and special business economics (sector, ownership, or function-specific problems).",
+                explanation: "Hospitality economics is a special business economics field."
+            },
+            {
+                question: "Why is business economics both theoretical and practical?",
+                answer: "Theory explains and predicts, while practice verifies assumptions and generates new insights from real business problems.",
+                explanation: "Theory-practice feedback loop is essential."
             }
         ],
 
         quiz: [
             {
-                question: "Overnights concentrated in Jun-Sep are roughly:",
-                options: ["35%", "50%", "75%+", "90%+"],
+                question: "Business economics is primarily classified as:",
+                options: ["Macroeconomic science", "Microeconomic science", "Only finance", "Only accounting"],
+                correct: 1
+            },
+            {
+                question: "Macroeconomics studies topics such as:",
+                options: ["Individual consumer choice only", "Economic growth, inflation, unemployment", "Menu engineering only", "Room cleaning standards"],
+                correct: 1
+            },
+            {
+                question: "General business economics studies:",
+                options: ["Only banks", "Only hotels", "Problems common to all firms", "Only public enterprises"],
                 correct: 2
             },
             {
-                question: "Private apartments account for about how much bed capacity?",
-                options: ["13.7%", "21%", "65%", "75%"],
-                correct: 2
-            },
-            {
-                question: "Hotels represent approximately what share of bed stock?",
-                options: ["13.7%", "31.9%", "60.4%", "65%"],
-                correct: 0
+                question: "As a teaching subject, business economics mainly aims to:",
+                options: ["Replace management", "Train experts in business system logic", "Eliminate theory", "Focus only on taxes"],
+                correct: 1
             }
         ],
 
         fillBlanks: [
             {
-                sentence: "More than _______ of annual overnights happen in Jun-Sep.",
-                answer: "75%",
-                hint: "Three quarters plus..."
+                sentence: "Business economics is one of the most important _______ sciences.",
+                answer: "microeconomic",
+                hint: "Small-level economics..."
             },
             {
-                sentence: "Private apartments represent around _______ of beds.",
-                answer: "65%",
-                hint: "Mid-sixties..."
+                sentence: "Macroeconomics deals with the economy as a _______.",
+                answer: "whole",
+                hint: "Total system..."
             },
             {
-                sentence: "Hotels account for only about _______ of capacity.",
-                answer: "13.7%",
-                hint: "Just under 14..."
+                sentence: "Business economics connects theory and _______.",
+                answer: "practice",
+                hint: "Real-world application..."
             }
         ],
 
         learn: {
-            title: "Seasonality: Structure and Consequences",
+            title: "Unit 2 - Business Economics as Discipline",
             content: `
-                <h3>Extreme Concentration</h3>
-                <div class="warning-box">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Structural Risk</h4>
-                    <p><strong>75%+</strong> of overnights are generated in only <strong>4 summer months</strong>.</p>
-                </div>
-
-                <h4>Why It Happens</h4>
+                <h3>Where Business Economics Fits</h3>
                 <ul>
-                    <li>Capacity mix is dominated by <strong>private apartments</strong> (seasonal by design)</li>
-                    <li>Hotels (better for year-round business) are a relatively small share</li>
-                    <li>Demand is geographically concentrated on the coast</li>
+                    <li><strong>Micro level:</strong> firms, consumers, pricing, decisions</li>
+                    <li><strong>Macro level:</strong> growth, inflation, unemployment</li>
                 </ul>
 
                 <div class="example-box">
-                    <p><strong>Implication:</strong> high summer performance, weak off-season resilience.</p>
+                    <p><strong>Business economics:</strong> improving firm outcomes using validated rules and analysis.</p>
                 </div>
+
+                <h4>Main Divisions</h4>
+                <ul>
+                    <li><strong>General:</strong> common to all firms</li>
+                    <li><strong>Special:</strong> sector-specific (e.g., hospitality), ownership, and functions</li>
+                </ul>
             `
         }
     },
 
-    caseStudies: {
-        name: "Dubrovnik, Split, Istria",
-        icon: "fa-map-marked-alt",
-        color: "#22c55e",
+    unit3HospitalityBusinesses: {
+        name: "Unit 3: Hospitality Businesses",
+        icon: "fa-hotel",
+        color: "#6366f1",
 
         flashcards: [
             {
-                question: "What defines Dubrovnik's tourism model in the case study?",
-                answer: "Overtourism pressure: around 40,000 residents vs about 1.4M arrivals, major cruise inflow, high pressure on heritage and housing.",
-                explanation: "A high-value destination with high carrying-capacity stress."
+                question: "How is a modern hospitality business conceptually defined?",
+                answer: "An independent, complex economic, legal, technical, and social system producing hospitality services to satisfy market needs and achieve profit and strategic goals.",
+                explanation: "Hospitality firm is a multi-dimensional business system."
             },
             {
-                question: "What characterizes Split's model?",
-                answer: "Growing city-break model driven by transport connectivity and low-cost flights, with increasing year-round traffic.",
-                explanation: "Split is becoming more diversified than purely summer seaside demand."
+                question: "Which system dimensions describe a hospitality business?",
+                answer: "Technological, economic, legal, and sociological systems.",
+                explanation: "The firm operates simultaneously in multiple system logics."
             },
             {
-                question: "Why is Istria presented as best practice?",
-                answer: "Higher hotel/resort quality, strong gastronomy and active tourism, and an extended season (roughly April-October).",
-                explanation: "Istria demonstrates value-oriented, longer-season strategy."
+                question: "What are the essential components of the firm?",
+                answer: "Objective component (assets), subjective component (people, ideas), and organizational component (how resources and work are integrated).",
+                explanation: "Organization quality determines output quality."
+            },
+            {
+                question: "Who is an entrepreneur in hospitality context?",
+                answer: "A person with business judgement, innovation orientation, and risk-taking capacity who creates and develops ventures.",
+                explanation: "Entrepreneurship and management are related but distinct."
+            },
+            {
+                question: "What is the key difference between entrepreneurship and management?",
+                answer: "Entrepreneurship drives change and innovation; management coordinates ongoing operations and resource use.",
+                explanation: "Both are needed, but with different core missions."
+            },
+            {
+                question: "By which criteria can hospitality businesses be classified?",
+                answer: "By business subject, size, ownership, and legal form.",
+                explanation: "Classification supports analysis and strategy design."
             }
         ],
 
         quiz: [
             {
-                question: "Which destination is highlighted as best-practice in season extension?",
-                options: ["Dubrovnik", "Split", "Istria", "Zagreb"],
+                question: "A hospitality business is best viewed as:",
+                options: ["Only a legal entity", "Only a technical facility", "A complex economic-social-legal system", "Only a kitchen and rooms"],
                 correct: 2
             },
             {
-                question: "Split's growth is strongly associated with:",
-                options: ["Cruise-only model", "Low-cost air routes and city-break demand", "Winter skiing", "No private accommodation"],
+                question: "Entrepreneurship primarily emphasizes:",
+                options: ["Routine coordination", "Innovation and opportunity", "Only reporting", "Only compliance"],
                 correct: 1
             },
             {
-                question: "A key Dubrovnik challenge is:",
-                options: ["No tourist demand", "Overtourism pressure", "Lack of sea access", "No heritage assets"],
+                question: "Management is mainly focused on:",
+                options: ["Eliminating all risk", "Continuous operational coordination", "Only market entry", "Only ownership transfer"],
                 correct: 1
+            },
+            {
+                question: "Hospitality businesses can be divided by all EXCEPT:",
+                options: ["Size", "Ownership", "Legal form", "Weather conditions"],
+                correct: 3
             }
         ],
 
         fillBlanks: [
             {
-                sentence: "Istria's effective season is often described as _______ to October.",
-                answer: "April",
-                hint: "Spring month..."
+                sentence: "Entrepreneurship is oriented toward innovation and _______.",
+                answer: "change",
+                hint: "Transformational word..."
             },
             {
-                sentence: "Dubrovnik case emphasizes the risk of _______.",
-                answer: "overtourism",
-                hint: "Too many visitors..."
+                sentence: "Management coordinates the ongoing _______ process.",
+                answer: "business",
+                hint: "Operations and execution..."
             },
             {
-                sentence: "Split is developing a stronger city-_______ model.",
-                answer: "break",
-                hint: "Short urban trips..."
+                sentence: "A hospitality firm is a complex _______.",
+                answer: "system",
+                hint: "Interconnected structure..."
             }
         ],
 
         learn: {
-            title: "Case Studies: Three Destination Models",
+            title: "Unit 3 - Hospitality Firm as a System",
             content: `
-                <h3>Comparative Destination Logic</h3>
+                <h3>Firm Logic in Hospitality</h3>
+                <div class="formula-box">
+                    <p><strong>Hospitality firm =</strong> people + assets + organization + market logic</p>
+                </div>
+
+                <h4>Core Distinction</h4>
                 <ul>
-                    <li><strong>Dubrovnik:</strong> premium demand + carrying-capacity pressure</li>
-                    <li><strong>Split:</strong> expanding city-break and transport hub dynamics</li>
-                    <li><strong>Istria:</strong> diversified product and longer active season</li>
+                    <li><strong>Entrepreneurship:</strong> creates and renews ventures</li>
+                    <li><strong>Management:</strong> stabilizes and coordinates operations</li>
                 </ul>
 
                 <div class="tip-box">
                     <h4><i class="fas fa-check-circle"></i> Exam Angle</h4>
-                    <p>Know which model is <strong>volume pressure</strong> (Dubrovnik) and which is <strong>season extension</strong> (Istria).</p>
+                    <p>Be ready to explain firm dimensions and why hospitality firms are more than just service points.</p>
                 </div>
             `
         }
     },
 
-    productivityAndDigital: {
-        name: "Productivity and Digital Gap",
-        icon: "fa-microchip",
-        color: "#8b5cf6",
+    unit4AssetsInHospitality: {
+        name: "Unit 4: Assets and Reproduction",
+        icon: "fa-warehouse",
+        color: "#f59e0b",
 
         flashcards: [
             {
-                question: "What is the low-spending tourist problem?",
-                answer: "Revenue growth is often driven by visitor volume, while average spending per tourist stagnates.",
-                explanation: "Volume growth without enough value growth reduces long-term quality."
+                question: "How are assets broadly classified by involvement in business process?",
+                answer: "Into fixed assets (long-term) and short-term/current assets (working assets).",
+                explanation: "This division is central for planning and control."
             },
             {
-                question: "How do hotel guests compare to private apartment guests in spending?",
-                answer: "Hotel guests spend around 30% more on average.",
-                explanation: "Accommodation mix directly affects value-added outcomes."
+                question: "What is the main difference between fixed and short-term assets?",
+                answer: "Fixed assets are used over more than one year and transfer value gradually; short-term assets are consumed within one cycle and transfer value fully.",
+                explanation: "Different asset behavior drives different accounting treatment."
             },
             {
-                question: "Why is platform dependence a productivity issue for small operators?",
-                answer: "Heavy reliance on large OTAs (e.g., Booking/Airbnb) can extract margins via 15-25% commissions.",
-                explanation: "Commission leakage lowers retained value per booking."
+                question: "What does good asset management require in hospitality?",
+                answer: "Rational use, proper storage, maintenance, investment renewal, and risk insurance for business continuity.",
+                explanation: "Asset misuse directly increases cost and lowers service quality."
             },
             {
-                question: "What is the digital capability gap?",
-                answer: "Large hotel systems are more digitally advanced, while many smaller private providers still lack strong direct-booking and data capabilities.",
-                explanation: "Digital maturity is uneven across the sector."
+                question: "What are examples of tangible fixed assets in hospitality?",
+                answer: "Land, buildings, equipment, installations, tools, furniture, and transport assets.",
+                explanation: "These assets support long-term service capacity."
+            },
+            {
+                question: "What is amortization (depreciation) economically?",
+                answer: "Systematic transfer of fixed asset value to costs over useful life.",
+                explanation: "Depreciation links long-term assets with period costs."
+            },
+            {
+                question: "Why is optimal asset structure important?",
+                answer: "It enables smooth conversion among asset forms and stable operational continuity.",
+                explanation: "Poor structure creates bottlenecks and liquidity stress."
             }
         ],
 
         quiz: [
             {
-                question: "Hotel guests typically spend about how much more than private apartment guests?",
-                options: ["10%", "20%", "30%", "50%"],
+                question: "Assets used for more than one year are generally:",
+                options: ["Current assets", "Fixed assets", "Liabilities", "Equity"],
+                correct: 1
+            },
+            {
+                question: "Short-term assets transfer value to output:",
+                options: ["Gradually over years", "Only when sold", "In full during one cycle", "Never"],
                 correct: 2
             },
             {
-                question: "Typical OTA commission range discussed in seminar material is:",
-                options: ["2-5%", "8-10%", "15-25%", "30-40%"],
+                question: "Which is a tangible fixed asset example?",
+                options: ["Brand goodwill", "Trade receivable", "Hotel building", "Cash register balance"],
                 correct: 2
             },
             {
-                question: "A key policy objective is to move from:",
-                options: ["value to volume", "volume to value", "hotels to camps", "digital to analog"],
+                question: "Depreciation primarily represents:",
+                options: ["Tax payment", "Asset value transfer into costs", "Debt cancellation", "Revenue recognition"],
                 correct: 1
             }
         ],
 
         fillBlanks: [
             {
-                sentence: "Many small operators depend heavily on _______ platforms.",
-                answer: "OTA",
-                hint: "Online travel agency acronym..."
+                sentence: "Assets used longer than one year are usually _______ assets.",
+                answer: "fixed",
+                hint: "Long-term class..."
             },
             {
-                sentence: "Hotel guests spend roughly _______ more than private apartment guests.",
-                answer: "30%",
-                hint: "Three-zero..."
+                sentence: "Current assets transfer their value in _______.",
+                answer: "full",
+                hint: "Not partial..."
             },
             {
-                sentence: "The strategic shift is from volume to _______.",
-                answer: "value",
-                hint: "Higher quality and yield..."
+                sentence: "Amortization is also called _______.",
+                answer: "depreciation",
+                hint: "Accounting term..."
             }
         ],
 
         learn: {
-            title: "Productivity and Value Added",
+            title: "Unit 4 - Assets of Reproduction",
             content: `
-                <h3>Core Economic Issue</h3>
-                <p>High volume does not automatically mean high productivity.</p>
+                <h3>Fixed vs Current Assets</h3>
+                <ul>
+                    <li><strong>Fixed:</strong> long-term use, gradual value transfer</li>
+                    <li><strong>Current:</strong> short-cycle use, full value transfer</li>
+                </ul>
 
-                <div class="formula-box">
-                    <strong>Preferred growth model:</strong><br>
-                    Revenue per visitor and value added per bed, not just headcount.
+                <h4>Hospitality Asset Discipline</h4>
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Operational Risk</h4>
+                    <p>Poor maintenance and weak storage controls increase costs and service disruption risk.</p>
                 </div>
 
-                <h4>Digital Gap Dynamics</h4>
-                <ul>
-                    <li>Large systems: stronger direct channels and tech stack</li>
-                    <li>Small operators: higher dependence on OTA distribution</li>
-                    <li>Commissions reduce retained local value</li>
-                </ul>
+                <p>Management goal: maintain an optimal structure that supports continuity and growth.</p>
             `
         }
     },
 
-    competitivenessAndPolicy: {
-        name: "Competitiveness and Policy",
-        icon: "fa-balance-scale",
+    unit5CostTheory: {
+        name: "Unit 5: Cost Theory",
+        icon: "fa-calculator",
         color: "#ef4444",
 
         flashcards: [
             {
-                question: "How does Croatia compare with Greece in travel receipts-to-GDP?",
-                answer: "Croatia is much higher (about 18.7%) versus Greece (about 9.1%).",
-                explanation: "Croatia's economy is relatively more tourism-exposed."
+                question: "What is the role of cost theory in hospitality economics?",
+                answer: "It analyzes origin, structure, behavior, and management relevance of costs for profitability and decision quality.",
+                explanation: "Cost insight is central to business performance control."
             },
             {
-                question: "How do revenue-per-arrival figures compare?",
-                answer: "They are relatively close in the seminar benchmark: Croatia around EUR 710 and Greece around EUR 730.",
-                explanation: "Croatia has room for premium-value improvements."
+                question: "How are costs generally defined?",
+                answer: "Value-expressed consumption of resources used to realize business effects in line with firm goals.",
+                explanation: "Costs must be connected to purposeful business activity."
             },
             {
-                question: "What are key policy tools mentioned for structural improvement?",
-                answer: "Tourism Strategy 2030, new tourism law (Dec 2023), product diversification, and targeted season extension.",
-                explanation: "Policy and product structure must work together."
+                question: "What is the difference between costs and expenditures?",
+                answer: "Costs relate to resource consumption for business effects; expenditures are money outflows that may or may not be costs.",
+                explanation: "Timing and economic purpose can differ."
             },
             {
-                question: "What season-extension target is discussed?",
-                answer: "A realistic medium target is extending effective season from about 5 to 7 months.",
-                explanation: "Gradual extension is emphasized over instant transformation."
+                question: "Can costs and expenditures occur at different times?",
+                answer: "Yes. Cost may precede expenditure, coincide with expenditure, or follow expenditure depending on transaction and consumption timing.",
+                explanation: "Economic and cash logic are not always synchronized."
             },
             {
-                question: "How can digital nomad policy support tourism resilience?",
-                answer: "By diversifying demand beyond classic summer leisure flows and supporting year-round occupancy patterns.",
-                explanation: "Demand diversification reduces concentration risk."
+                question: "When can expenditure exist without an immediate cost?",
+                answer: "For example when acquiring non-depreciable land: cash outflow occurs, but no depreciation cost is recognized from land use itself.",
+                explanation: "Not all expenditures convert into periodic costs in same way."
+            },
+            {
+                question: "Why is cost classification important?",
+                answer: "It supports pricing, budgeting, control, profitability analysis, and managerial decisions.",
+                explanation: "Classification makes costs actionable for management."
             }
         ],
 
         quiz: [
             {
-                question: "Croatia's benchmark travel receipts-to-GDP in the seminar is:",
-                options: ["7.7%", "9.1%", "11.3%", "18.7%"],
-                correct: 3
-            },
-            {
-                question: "A realistic structural target is extending season from 5 to:",
-                options: ["6 months", "7 months", "9 months", "12 months"],
-                correct: 1
-            },
-            {
-                question: "A core strategic direction is:",
-                options: ["more volume at any cost", "reduce all tourism activity", "shift from volume to value", "close private accommodation"],
+                question: "Cost theory primarily studies:",
+                options: ["Only taxes", "Only wages", "Origin and behavior of costs", "Only asset valuation"],
                 correct: 2
+            },
+            {
+                question: "Expenditure is best described as:",
+                options: ["Any money outflow", "Only profitable spending", "Only payroll", "Only variable cost"],
+                correct: 0
+            },
+            {
+                question: "Costs and expenditures:",
+                options: ["Always coincide in time", "Never coincide", "May coincide or differ in timing", "Are legally identical"],
+                correct: 2
+            },
+            {
+                question: "The main managerial value of cost classification is:",
+                options: ["Decorative reporting", "Better control and decisions", "Avoiding all risk", "Replacing strategy"],
+                correct: 1
             }
         ],
 
         fillBlanks: [
             {
-                sentence: "Croatia's strategy emphasizes a shift from volume to _______.",
-                answer: "value",
-                hint: "Higher yield per guest..."
+                sentence: "Costs are resources consumed to achieve business _______.",
+                answer: "effects",
+                hint: "Outputs/results..."
             },
             {
-                sentence: "The realistic extension target is from 5 to _______ months.",
-                answer: "7",
-                hint: "Single-digit number..."
+                sentence: "Expenditure means a money _______.",
+                answer: "outflow",
+                hint: "Cash leaving the firm..."
             },
             {
-                sentence: "Tourism Strategy _______ is one key policy framework.",
-                answer: "2030",
-                hint: "Year-based strategy..."
+                sentence: "Costs and expenditures can differ in _______.",
+                answer: "timing",
+                hint: "When they are recognized..."
             }
         ],
 
         learn: {
-            title: "Competitiveness, Vulnerability, and Strategic Response",
+            title: "Unit 5 - Theory of Costs in Hospitality",
             content: `
-                <h3>Comparative Position</h3>
-                <p>Croatia performs exceptionally on tourism intensity, but structural dependence remains high.</p>
+                <h3>Why Cost Theory Matters</h3>
+                <p>Profitability in hospitality depends on understanding cost behavior, not only on raising revenue.</p>
 
-                <div class="warning-box">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Structural Vulnerability</h4>
-                    <p>Strong concentration in summer months and accommodation mix can limit long-run resilience.</p>
+                <div class="formula-box">
+                    <p><strong>Cost focus:</strong> origin + classification + behavior + control</p>
                 </div>
 
-                <h4>Policy and Strategy Priorities</h4>
+                <h4>Cost vs Expenditure</h4>
                 <ul>
-                    <li><strong>Tourism Strategy 2030</strong> and quality-oriented transformation</li>
-                    <li><strong>Season extension</strong> via gastronomy, active, cultural, health, and nautical products</li>
-                    <li><strong>Value over volume</strong> as the central growth philosophy</li>
+                    <li><strong>Cost:</strong> resource consumption for business effect</li>
+                    <li><strong>Expenditure:</strong> monetary outflow</li>
+                    <li>They can be linked, but not always at the same time</li>
                 </ul>
 
                 <div class="tip-box">
-                    <h4><i class="fas fa-flag-checkered"></i> First Midterm Summary</h4>
-                    <p>Remember three pillars: <strong>macro strength</strong>, <strong>seasonality risk</strong>, <strong>value-based transition</strong>.</p>
+                    <h4><i class="fas fa-lightbulb"></i> Midterm Focus</h4>
+                    <p>Be able to explain practical cases where expenditure exists but cost recognition differs.</p>
                 </div>
             `
         }
