@@ -169,6 +169,7 @@
     color: var(--text-primary);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    overflow-x: hidden;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -363,7 +364,8 @@
    ===================================================== */
 
 #learn .learn-card-content table {
-    width: 100%;
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
     margin: 14px 0;
     font-size: 0.85rem;
@@ -378,6 +380,17 @@
     text-align: left;
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
+}
+
+/* Long tokens like formulas/URLs can otherwise overflow on smaller phones. */
+#learn .learn-card-content code,
+#learn .learn-card-content pre,
+#learn .learn-card-content .formula,
+#learn .learn-card-content .equation {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 #learn .learn-card-content th {
@@ -579,12 +592,49 @@
     #learn .learn-card-content ol li {
         font-size: 0.86rem;
     }
-    
+
+    #learn .learn-card-header {
+        align-items: flex-start;
+    }
+
+    #learn .learn-card-header h2,
+    #learn .learn-card-header h3,
+    #learn .learn-card-title {
+        line-height: 1.35;
+    }
+
     #learn .tip-box,
     #learn .warning-box,
     #learn .example-box,
     #learn .formula-box {
         padding: 10px 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #learn .learn-filter {
+        scroll-snap-type: x proximity;
+    }
+
+    #learn .filter-btn {
+        scroll-snap-align: start;
+    }
+
+    #learn .learn-card-content table {
+        font-size: 0.82rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #learn .learn-card-header span {
+        font-size: 0.74rem;
+        padding: 3px 8px;
+    }
+
+    #learn .learn-card-header h2,
+    #learn .learn-card-header h3,
+    #learn .learn-card-title {
+        font-size: 0.94rem;
     }
 }
 

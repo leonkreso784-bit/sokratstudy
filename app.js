@@ -750,6 +750,8 @@ function switchSection(section) {
         initFill();
     } else if (section === 'progress') {
         renderProgressPage();
+    } else if (section === 'learn') {
+        cleanupLearnContentForMobile();
     }
 }
 
@@ -1343,6 +1345,9 @@ function renderLearnContent() {
     });
     
     console.log('Learn content rendered:', categories.length, 'categories');
+
+    // Apply mobile class hooks once Learn cards are in the DOM.
+    cleanupLearnContentForMobile();
 }
 
 // ========== PROGRESS PAGE ==========
@@ -1761,15 +1766,23 @@ window.getAnalytics = getAnalyticsSummary;
 
 // Mobile cleanup function - now just adds CSS classes, no inline style manipulation
 function cleanupLearnContentForMobile() {
-    if (window.innerWidth > 767) return;
-    
     const container = document.getElementById('learnContent');
-    if (container) {
+    if (!container) return;
+
+    if (window.innerWidth <= 767) {
         container.classList.add('mobile-view');
         container.querySelectorAll('.learn-card').forEach(card => {
             card.classList.add('mobile-card');
+        });
+    } else {
+        container.classList.remove('mobile-view');
+        container.querySelectorAll('.learn-card').forEach(card => {
+            card.classList.remove('mobile-card');
         });
     }
 }
 
 window.cleanupLearnContentForMobile = cleanupLearnContentForMobile;
+
+window.addEventListener('resize', cleanupLearnContentForMobile);
+window.addEventListener('orientationchange', cleanupLearnContentForMobile);
