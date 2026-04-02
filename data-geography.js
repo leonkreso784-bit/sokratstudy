@@ -102,6 +102,10 @@ const geographyData = {
                     <p>2 county centres + 2 bigger islands + 1 national park + 1 nature park + 4 top destinations</p>
                 </div>
 
+                <h3>Mandatory Map Focus</h3>
+                <p>Use both maps in Learn mode: county-centre orientation and protected-areas orientation.</p>
+                <img src="assets/geography/map-protected-areas.jpg" alt="Croatia protected areas map" class="learn-image">
+
                 <h3>Practical Rule</h3>
                 <p>Toponym must be connected to the right location (dot/circle/marker). Name without location is not accepted.</p>
 

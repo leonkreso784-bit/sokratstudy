@@ -467,6 +467,9 @@ window.switchSection = switchSection;
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initTheme();
+
+    // Initialize image zoom viewer for Learn section
+    initLearnImageModal();
     
     // Set up event listeners
     setupEventListeners();
@@ -1403,7 +1406,7 @@ function renderLearnContent() {
                 <span>${flashcardsCount} terms</span>
             </div>
             <div class="learn-card-content">
-                ${learnImage ? `<img src="${learnImage}" alt="${name}" class="learn-image">` : ''}
+                ${learnImage ? `<img src="${learnImage}" alt="${name}" class="learn-image learn-zoomable" loading="lazy">` : ''}
                 ${learnContent}
             </div>
         `;
@@ -1433,8 +1436,85 @@ function renderLearnContent() {
     
     console.log('Learn content rendered:', categories.length, 'categories');
 
+    // Make all Learn images clickable and keyboard accessible.
+    enhanceLearnImages(container);
+
     // Apply mobile class hooks once Learn cards are in the DOM.
     cleanupLearnContentForMobile();
+}
+
+function enhanceLearnImages(container) {
+    if (!container) return;
+
+    container.querySelectorAll('.learn-card-content img').forEach(img => {
+        img.classList.add('learn-image', 'learn-zoomable');
+        img.setAttribute('loading', img.getAttribute('loading') || 'lazy');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', `Open image: ${img.alt || 'Learn image'}`);
+
+        if (img.dataset.zoomBound === '1') return;
+
+        img.addEventListener('click', () => {
+            openLearnImageModal(img.src, img.alt || 'Learn image');
+        });
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openLearnImageModal(img.src, img.alt || 'Learn image');
+            }
+        });
+
+        img.dataset.zoomBound = '1';
+    });
+}
+
+function initLearnImageModal() {
+    const modal = document.getElementById('imageModal');
+    const closeBtn = document.getElementById('imageModalClose');
+    const backdrop = document.getElementById('imageModalBackdrop');
+
+    if (!modal || !closeBtn || !backdrop) return;
+    if (modal.dataset.initialized === '1') return;
+
+    closeBtn.addEventListener('click', closeLearnImageModal);
+    backdrop.addEventListener('click', closeLearnImageModal);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeLearnImageModal();
+        }
+    });
+
+    modal.dataset.initialized = '1';
+}
+
+function openLearnImageModal(src, altText) {
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('imageModalImg');
+    const caption = document.getElementById('imageModalCaption');
+    if (!modal || !img || !caption) return;
+
+    img.src = src;
+    img.alt = altText || 'Expanded learn image';
+    caption.textContent = altText || 'Learn image';
+
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+}
+
+function closeLearnImageModal() {
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('imageModalImg');
+    const caption = document.getElementById('imageModalCaption');
+    if (!modal || !img || !caption) return;
+
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    img.src = '';
+    caption.textContent = '';
 }
 
 // ========== PROGRESS PAGE ==========
