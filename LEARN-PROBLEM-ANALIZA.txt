@@ -1,0 +1,124 @@
+================================================================================
+KOMPLETNA ANALIZA - Zašto Learn sekcija NIJE responsive
+================================================================================
+Datum: 4. veljače 2026.
+Projekt: Sokrat Study Quiz App
+================================================================================
+
+
+PRONAĐENI PROBLEMI:
+================================================================================
+
+1. KRITIČNI PROBLEM: Vercel Cache Headers
+--------------------------------------------------------------------------------
+Lokacija: vercel.json (linije 34-40)
+
+Trenutni kod:
+{
+  "source": "/(.*).css",
+  "headers": [
+    {
+      "key": "Cache-Control",
+      "value": "public, max-age=31536000, immutable"
+    }
+  ]
+}
+
+PROBLEM: max-age=31536000 = 1 GODINA cache! 
+Plus "immutable" znači da browser NIKAD neće provjeriti nove verzije 
+dok cache ne istekne.
+
+RJEŠENJE: 
+- Promijeniti na "max-age=0, must-revalidate" ili 
+- Promijeniti ime CSS fajla (npr. styles-v2.css)
+
+
+2. Browser Cache na Mobitelu
+--------------------------------------------------------------------------------
+Čak i s verzijom ?v=20260203m na URL-u, ako je stari CSS već cachiran 
+s "immutable" headerom, browser ga neće ponovno dohvatiti.
+
+RJEŠENJE:
+- Hard refresh na mobitelu (teško napraviti)
+- Obrisati sve podatke stranice u Safari Settings
+- Koristiti Private/Incognito mode za test
+
+
+3. @import u styles.css - Problematično
+--------------------------------------------------------------------------------
+CSS koristi @import za učitavanje modula:
+
+@import url('css/responsive.css');
+@import url('css/learn.css');
+
+PROBLEM: Svaki importirani fajl se POSEBNO cache-ira, i verzija ?v= 
+na styles.css NE propagira na importirane fajlove!
+
+RJEŠENJE:
+- Dodati verziju na svaki import: @import url('css/learn.css?v=20260203m');
+- Ili bundlati sve CSS u jedan fajl
+
+
+4. Vercel CDN Edge Cache
+--------------------------------------------------------------------------------
+Vercel ima vlastiti CDN koji cache-ira fajlove na edge serverima. 
+Čak i ako GitHub ima novu verziju, Vercel CDN može servirati staru.
+
+RJEŠENJE:
+- Redeploy na Vercel dashboard
+- Koristiti Vercel CLI: vercel --force
+- Promijeniti ime fajla
+
+
+5. Inline CSS ne Rješava Sve
+--------------------------------------------------------------------------------
+Stavio sam inline <style> u HTML, ali:
+- Ako je HTML također cachiran, neće pomoći
+- Inline stilovi imaju istu specifičnost kao eksterni, osim ako koriste !important
+
+
+6. Service Worker / PWA Cache
+--------------------------------------------------------------------------------
+Aplikacija ima manifest.json - moguće je da postoji Service Worker 
+koji cache-ira resurse.
+
+RJEŠENJE:
+- Provjeriti da nema service worker registracije
+- Unregister service worker u browser DevTools
+
+
+================================================================================
+RANG LISTA RJEŠENJA (od najbržeg do najtrajnijeg):
+================================================================================
+
+#   Rješenje                                    Vrijeme     Trajnost
+--------------------------------------------------------------------------------
+1   Promijeni vercel.json cache na no-cache    2 min       Trajno
+2   Redeploy na Vercel s --force               1 min       Jednokratno
+3   Dodaj verziju na sve @import URL-ove       5 min       Trajno
+4   Preimenuj CSS fajlove                      3 min       Trajno
+5   Bundlaj sve CSS u jedan fajl               15 min      Trajno
+6   Testiraj u Incognito/Private mode          30 sek      Test only
+
+
+================================================================================
+PREPORUČENA STRATEGIJA:
+================================================================================
+
+1. PRVO:   Promijeni vercel.json da ukloni agresivni cache
+2. DRUGO:  Dodaj verziju na svaki @import u styles.css
+3. TREĆE:  Redeploy na Vercel
+4. ČETVRTO: Testiraj u Private/Incognito mode
+
+
+================================================================================
+DODATNE NAPOMENE:
+================================================================================
+
+- Svi CSS stilovi za Learn sekciju su ispravni u kodu
+- Problem je 100% u CACHE-u, ne u samom CSS-u
+- learn.css ima sve potrebne responsive stilove
+- responsive.css je očišćen od svih learn stilova (0 referenci)
+- Inline stilovi su dodani u index.html kao backup
+
+================================================================================

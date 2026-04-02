@@ -1,0 +1,41 @@
+/* =====================================================
+   SOKRAT STUDY - MAIN STYLESHEET
+   =====================================================
+   
+   This file imports all CSS modules for better organization.
+   
+   Structure:
+   1. variables.css      - CSS Variables, Reset, Base styles
+   2. landing.css        - Landing page, hero, features
+   3. sidebar.css        - Subjects sidebar
+   4. pages.css          - Lessons, Study, About pages
+   5. components.css     - Header, Navigation, Main Content
+   6. study-sections.css - Subject Selector, Home, Quiz, etc.
+   7. learn.css          - Learn section (separate for easy maintenance)
+   8. responsive.css     - All media queries
+   
+   ===================================================== */
+
+/* Core variables and base styles */
+@import url('css/variables.css');
+
+/* Landing page styles */
+@import url('css/landing.css');
+
+/* Subjects sidebar */
+@import url('css/sidebar.css');
+
+/* Pages (Lessons, Study, About) */
+@import url('css/pages.css');
+
+/* Components (Header, Navigation, Main Content) */
+@import url('css/components.css');
+
+/* Study sections (Subject Selector, Home, Flashcards, Quiz, Fill, Progress) */
+@import url('css/study-sections.css');
+
+/* Responsive styles (all media queries) */
+@import url('css/responsive.css');
+
+/* Learn section - LAST to override responsive.css conflicts */
+@import url('css/learn.css');

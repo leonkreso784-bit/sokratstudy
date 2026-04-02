@@ -1,0 +1,27 @@
+{
+  "name": "sokrat-study",
+  "version": "2.0.0",
+  "description": "Interactive study application for Tourism Economics, Business Entrepreneurship, and Accounting - Flashcards, Quizzes, Fill-in-the-blank exercises",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "tourism",
+    "economics",
+    "entrepreneurship",
+    "accounting",
+    "education",
+    "flashcards",
+    "quiz",
+    "study"
+  ],
+  "author": "Leon Kreso",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonkreso784-bit/t2economyintourism.git"
+  },
+  "homepage": "https://t2economyintourism.vercel.app"
+}

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- PWA & iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sokrat Study">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- SEO & Social -->
+    <meta name="description" content="Sokrat Study - Interactive learning app for Tourism Economics, Business Entrepreneurship, and Accounting. Flashcards, Quizzes, and comprehensive study materials!">
+    <meta name="keywords" content="study, flashcards, quiz, tourism economics, entrepreneurship, accounting, education, exam preparation">
+    <meta name="author" content="Leon Kreso">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sokrat Study - Master Your Knowledge">
+    <meta property="og:description" content="Interactive study app with flashcards, quizzes, and comprehensive materials for Tourism Economics, Entrepreneurship, and Accounting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t2economyintourism.vercel.app">
+    <meta property="og:image" content="https://t2economyintourism.vercel.app/icon-512.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sokrat Study - Master Your Knowledge">
+    <meta name="twitter:description" content="Interactive study app with flashcards, quizzes, and comprehensive materials.">
+    <meta name="twitter:image" content="https://t2economyintourism.vercel.app/icon-512.png">
+    
+    <title>Sokrat Study - Master Your Knowledge</title>
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="styles.css?v=20260401b">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Learn styles are managed in css/learn.css to avoid inline conflicts on mobile. -->
+</head>
+<body>
+    
+    <!-- ==================== LANDING PAGE ==================== -->
+    <section id="landing-page" class="landing-page active">
+        <!-- Animated Background -->
+        <div class="landing-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="gradient-orb orb-4"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <!-- Landing Header -->
+        <header class="landing-header">
+            <div class="landing-logo">
+                <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
+                <span class="logo-text">Sokrat Study</span>
+            </div>
+
+        </header>
+
+        <!-- Hero Section -->
+        <main class="landing-hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Free exam toolkit &mdash; 6 subjects ready</span>
+                </div>
+                <h1 class="hero-title">
+                    Study Smart.<br>
+                    <span class="gradient-text">Score Higher.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Flashcards, quizzes, and in-depth lessons across 6 university subjects.
+                    Built for students who want results, not just notes.
+                </p>
+                <div class="hero-actions">
+                    <button class="cta-button primary" id="openStudyBtn">
+                        <i class="fas fa-book-open"></i>
+                        <span>Start Studying</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="cta-button secondary" onclick="showAboutUs()">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="float-card card-1">
+                        <i class="fas fa-brain"></i>
+                        <span>Learn</span>
+                    </div>
+                    <div class="float-card card-2">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Flashcards</span>
+                    </div>
+                    <div class="float-card card-3">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Quiz</span>
+                    </div>
+                    <div class="float-card card-4">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Stats Bar -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Subjects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">400+</span>
+                <span class="stat-label">Questions</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">5</span>
+                <span class="stat-label">Study Modes</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Free</span>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="landing-features" aria-labelledby="features-heading">
+            <h2 id="features-heading" class="visually-hidden">App Features</h2>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-layer-group" aria-hidden="true"></i>
+                </div>
+                <h3>6 Subjects Ready</h3>
+                <p>Tourism, Accounting, Marketing, E-Business, Entrepreneurship and Hospitality</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                </div>
+                <h3>5 Study Modes</h3>
+                <p>Learn, Flashcards, Quiz, Fill-in-Blanks and Progress &mdash; all in one place</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                </div>
+                <h3>Works Everywhere</h3>
+                <p>Install as a PWA, works offline and fully optimized for mobile</p>
+            </div>
+        </section>
+
+        <!-- Landing Footer -->
+        <footer class="landing-footer">
+            <p>Built with <i class="fas fa-heart"></i> for students by <strong>Leon Kreso</strong></p>
+        </footer>
+    </section>
+
+    <!-- ==================== SUBJECTS SIDEBAR/MODAL ==================== -->
+    <div class="subjects-overlay" id="subjectsOverlay"></div>
+    <aside class="subjects-sidebar" id="subjectsSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study" class="logo-image"></div>
+                <span>Choose Subject</span>
+            </div>
+            <button class="close-sidebar-btn" id="closeSidebar" aria-label="Close sidebar">
+                <i class="fas fa-times" aria-hidden="true"></i>
+                <span class="visually-hidden">Close</span>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="subjects-list" id="subjectsList">
+                <!-- Tourism Economics -->
+                <div class="subject-item" data-subject="te2">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Tourism Economics</h3>
+                        <p>Pricing, TSA, Expenditure, Environment, Sustainability</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 2 Lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 100+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+                
+                <!-- Business Entrepreneurship -->
+                <div class="subject-item" data-subject="entrepreneurship">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Business Entrepreneurship</h3>
+                        <p>Planning, Innovation, Social Entrepreneurship, Final Exam</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 2 Lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 80+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+                
+                <!-- Accounting Theory -->
+                <div class="subject-item" data-subject="accounting">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #059669, #10b981);">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Accounting Theory</h3>
+                        <p>Cash Control, Budgeting, SEC Reports, Financial Analysis</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 1 Lesson</span>
+                            <span><i class="fas fa-question-circle"></i> 60+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+                
+                <!-- E-Business -->
+                <div class="subject-item" data-subject="ebusiness">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>E-Business</h3>
+                        <p>E-Commerce, Digital Marketing, SEO, PMS, Security</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 1 Lesson</span>
+                            <span><i class="fas fa-question-circle"></i> 120+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+
+                <!-- Economics in Hospitality -->
+                <div class="subject-item" data-subject="econ-hospitality">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #0ea5e9, #22d3ee);">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Economics in Hospitality</h3>
+                        <p>Croatian industry analysis, seasonality, productivity, policy</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 2 Lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 80+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+
+                <!-- Marketing -->
+                <div class="subject-item" data-subject="marketing">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Marketing</h3>
+                        <p>Concepts, environment, segmentation, consumer behavior, market research</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 2 Lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 100+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+
+                <!-- Tourism Geography -->
+                <div class="subject-item" data-subject="geography">
+                    <div class="subject-item-icon" style="background: linear-gradient(135deg, #14b8a6, #2dd4bf);">
+                        <i class="fas fa-earth-europe"></i>
+                    </div>
+                    <div class="subject-item-info">
+                        <h3>Tourism Geography</h3>
+                        <p>Blind map of Croatia, protected areas, UNESCO, city image recognition</p>
+                        <div class="subject-item-meta">
+                            <span><i class="fas fa-book"></i> 2 Lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 100+ Questions</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right subject-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ==================== LESSONS PAGE ==================== -->
+    <section id="lessons-page" class="lessons-page">
+        <header class="lessons-header">
+            <button class="back-btn" id="backToLanding">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="lessons-title">
+                <span class="breadcrumb">Sokrat Study</span>
+                <h1 id="currentSubjectTitle">Subject Name</h1>
+            </div>
+
+        </header>
+        
+        <main class="lessons-content">
+            <div class="lessons-intro">
+                <p id="subjectDescription">Select a lesson to start studying</p>
+            </div>
+            <div class="lessons-grid" id="lessonsGrid">
+                <!-- Lessons will be rendered dynamically -->
+            </div>
+        </main>
+    </section>
+
+    <!-- ==================== STUDY PAGE (Activities) ==================== -->
+    <section id="study-page" class="study-page">
+        <!-- Study Header -->
+        <header class="study-header">
+            <button class="back-btn" id="backToLessons" aria-label="Go back to lessons">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <div class="study-title">
+                <span class="breadcrumb" id="studyBreadcrumb">Subject > Lesson</span>
+                <h1 id="currentLessonTitle">Lesson Name</h1>
+            </div>
+
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="study-nav">
+            <button class="study-nav-btn active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="study-nav-btn" data-section="learn">
+                <i class="fas fa-book-open"></i>
+                <span>Learn</span>
+            </button>
+            <button class="study-nav-btn" data-section="flashcards">
+                <i class="fas fa-clone"></i>
+                <span>Flashcards</span>
+            </button>
+            <button class="study-nav-btn" data-section="quiz">
+                <i class="fas fa-question-circle"></i>
+                <span>Quiz</span>
+            </button>
+            <button class="study-nav-btn" data-section="fill">
+                <i class="fas fa-pen"></i>
+                <span>Fill</span>
+            </button>
+            <button class="study-nav-btn" data-section="progress">
+                <i class="fas fa-chart-line"></i>
+                <span>Progress</span>
+            </button>
+        </nav>
+
+        <!-- Study Content Area -->
+        <main class="study-content">
+            <!-- HOME SECTION -->
+            <section id="home" class="section active">
+            <div class="hero">
+                <h1 id="homeTitle">🎓 Welcome to Sokrat Study</h1>
+                <p class="subtitle" id="homeSubtitle">Your interactive study guide</p>
+                
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <i class="fas fa-brain"></i>
+                        <span class="stat-number" id="totalQuestions">50+</span>
+                        <p>Questions</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <span class="stat-number" id="totalCategories">6</span>
+                        <p>Categories</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <span class="stat-number" id="bestScore">0%</span>
+                        <p>Best Score</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-fire"></i>
+                        <span class="stat-number" id="streak">0</span>
+                        <p>Day Streak</p>
+                    </div>
+                </div>
+
+                <div class="category-selector">
+                    <h2>📚 Choose a category to study</h2>
+                    <div class="categories">
+                        <!-- Categories loaded dynamically by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="quick-start">
+                    <h2>🚀 Quick Start</h2>
+                    <div class="quick-actions">
+                        <button class="action-btn primary" onclick="startQuickQuiz()">
+                            <i class="fas fa-bolt"></i>
+                            Quick Quiz (10 questions)
+                        </button>
+                        <button class="action-btn secondary" onclick="startFlashcards()">
+                            <i class="fas fa-clone"></i>
+                            All Flashcards
+                        </button>
+                        <button class="action-btn tertiary" onclick="startLearning()">
+                            <i class="fas fa-book-reader"></i>
+                            Start Learning
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARN SECTION -->
+        <section id="learn" class="section">
+            <div class="learn-container">
+                <h1><i class="fas fa-book-open"></i> Learn - Complete Material</h1>
+                
+                <div class="learn-filter">
+                    <!-- Filter buttons loaded dynamically by JavaScript -->
+                </div>
+
+                <div class="learn-content" id="learnContent">
+                    <!-- Content will be loaded by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FLASHCARDS SECTION -->
+        <section id="flashcards" class="section">
+            <div class="flashcard-container">
+                <h1><i class="fas fa-clone"></i> Flashcards</h1>
+                
+                <div class="flashcard-progress">
+                    <span id="cardProgress">1 / 50</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cardProgressBar"></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-wrapper">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="card-category" id="cardCategory">Category</div>
+                                <p id="cardQuestion">Question will appear here</p>
+                                <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click for answer</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <p id="cardAnswer">Answer will appear here</p>
+                                <div class="explanation" id="cardExplanation"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button class="control-btn wrong" id="btnWrong">
+                        <i class="fas fa-times"></i> Don't Know
+                    </button>
+                    <button class="control-btn prev" id="btnPrev">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="control-btn next" id="btnNext">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="control-btn correct" id="btnCorrect">
+                        <i class="fas fa-check"></i> Know
+                    </button>
+                </div>
+
+                <div class="flashcard-stats">
+                    <div class="stat correct">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="knownCount">0</span> Know
+                    </div>
+                    <div class="stat wrong">
+                        <i class="fas fa-times-circle"></i>
+                        <span id="unknownCount">0</span> Don't Know
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="section">
+            <div class="quiz-container">
+                <div class="quiz-setup" id="quizSetup">
+                    <h1><i class="fas fa-question-circle"></i> Quiz Mode</h1>
+                    <p>Test your knowledge!</p>
+                    
+                    <div class="quiz-options">
+                        <div class="option-group">
+                            <label>Number of questions:</label>
+                            <select id="questionCount">
+                                <option value="5">5 questions</option>
+                                <option value="10" selected>10 questions</option>
+                                <option value="20">20 questions</option>
+                                <option value="all">All questions</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label>Category:</label>
+                            <select id="quizCategory">
+                                <!-- Categories loaded dynamically by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label>Difficulty:</label>
+                            <select id="quizDifficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button class="start-quiz-btn" onclick="startQuiz()">
+                        <i class="fas fa-play"></i> Start Quiz
+                    </button>
+                </div>
+
+                <div class="quiz-game hidden" id="quizGame">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <span id="quizProgress">Question 1/10</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quizProgressBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question-category" id="questionCategory">Category</div>
+                        <h2 id="questionText">Question?</h2>
+                        <div class="answers" id="answersContainer">
+                            <!-- Answers loaded by JS -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <span><i class="fas fa-check text-success"></i> <span id="correctCount">0</span></span>
+                        <span><i class="fas fa-times text-danger"></i> <span id="wrongCount">0</span></span>
+                    </div>
+                </div>
+
+                <div class="quiz-results hidden" id="quizResults">
+                    <div class="results-card">
+                        <div class="results-icon" id="resultsIcon">🎉</div>
+                        <h1 id="resultsTitle">Excellent!</h1>
+                        <div class="score-circle">
+                            <span id="finalScore">85%</span>
+                        </div>
+                        <p id="resultsMessage">Fantastic result!</p>
+                        
+                        <div class="results-stats">
+                            <div class="result-stat">
+                                <i class="fas fa-check-circle"></i>
+                                <span id="finalCorrect">8</span>
+                                <small>Correct</small>
+                            </div>
+                            <div class="result-stat">
+                                <i class="fas fa-times-circle"></i>
+                                <span id="finalWrong">2</span>
+                                <small>Wrong</small>
+                            </div>
+                            <div class="result-stat">
+                                <i class="fas fa-clock"></i>
+                                <span id="totalTime">2:30</span>
+                                <small>Time</small>
+                            </div>
+                        </div>
+
+                        <div class="wrong-answers-review" id="wrongAnswersReview">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Review Wrong Answers</h3>
+                            <div id="wrongAnswersList"></div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button class="action-btn primary" onclick="retryQuiz()">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                            <button class="action-btn secondary" onclick="showQuizSetup()">
+                                <i class="fas fa-cog"></i> New Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILL IN THE BLANK SECTION -->
+        <section id="fill" class="section">
+            <div class="fill-container">
+                <h1><i class="fas fa-pen"></i> Fill in the Blank</h1>
+                
+                <div class="fill-progress">
+                    <span id="fillProgress">1 / 20</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="fillProgressBar"></div>
+                    </div>
+                </div>
+
+                <div class="fill-card">
+                    <div class="fill-category" id="fillCategory">Category</div>
+                    <p class="fill-sentence" id="fillSentence">
+                        <!-- Sentence with blank -->
+                    </p>
+                    <div class="fill-input-wrapper">
+                        <input type="text" id="fillInput" placeholder="Type your answer..." autocomplete="off">
+                        <button class="check-btn" id="checkFill">
+                            <i class="fas fa-check"></i> Check
+                        </button>
+                    </div>
+                    <div class="fill-feedback hidden" id="fillFeedback">
+                        <p id="feedbackText"></p>
+                        <p class="correct-answer">Correct answer: <strong id="correctFillAnswer"></strong></p>
+                    </div>
+                    <div class="fill-hint hidden" id="fillHint">
+                        <i class="fas fa-lightbulb"></i> <span id="hintText"></span>
+                    </div>
+                </div>
+
+                <div class="fill-controls">
+                    <button class="control-btn hint" id="btnHint">
+                        <i class="fas fa-lightbulb"></i> Hint
+                    </button>
+                    <button class="control-btn skip" id="btnSkip">
+                        Skip <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="control-btn next hidden" id="btnNextFill">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="fill-stats">
+                    <div class="stat correct">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="fillCorrect">0</span> Correct
+                    </div>
+                    <div class="stat wrong">
+                        <i class="fas fa-times-circle"></i>
+                        <span id="fillWrong">0</span> Wrong
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRESS SECTION -->
+        <section id="progress" class="section">
+            <div class="progress-container">
+                <h1><i class="fas fa-chart-line"></i> Your Progress</h1>
+                
+                <div class="progress-overview">
+                    <div class="progress-card main">
+                        <h2>Overall Progress</h2>
+                        <div class="big-progress-circle">
+                            <svg viewBox="0 0 36 36">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle-progress" id="overallProgress"
+                                    stroke-dasharray="0, 100"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                            <span id="overallPercent">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3><i class="fas fa-clone"></i> Flashcards</h3>
+                        <p><span id="flashcardsLearned">0</span> / <span id="flashcardsTotal">50</span> learned</p>
+                        <div class="mini-progress">
+                            <div class="mini-fill" id="flashcardsProgress"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3><i class="fas fa-question-circle"></i> Quiz</h3>
+                        <p>Average score: <span id="avgQuizScore">0%</span></p>
+                        <p>Total quizzes: <span id="totalQuizzes">0</span></p>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3><i class="fas fa-pen"></i> Fill in the Blank</h3>
+                        <p>Accuracy: <span id="fillAccuracy">0%</span></p>
+                        <p>Solved: <span id="fillSolved">0</span></p>
+                    </div>
+                </div>
+
+                <div class="category-progress">
+                    <h2>Progress by Category</h2>
+                    <div class="category-bars" id="categoryBars">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+
+                <div class="study-history">
+                    <h2>Study History</h2>
+                    <div class="history-list" id="historyList">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetProgress()">
+                    <i class="fas fa-trash-alt"></i> Reset Progress
+                </button>
+            </div>
+        </section>
+        </main>
+
+        <!-- Mobile Bottom Navigation for Study Page -->
+        <nav class="mobile-nav study-mobile-nav">
+            <button class="mobile-nav-btn active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="learn">
+                <i class="fas fa-book-open"></i>
+                <span>Learn</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="flashcards">
+                <i class="fas fa-clone"></i>
+                <span>Cards</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="quiz">
+                <i class="fas fa-question-circle"></i>
+                <span>Quiz</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="fill">
+                <i class="fas fa-pen"></i>
+                <span>Fill</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="progress">
+                <i class="fas fa-chart-line"></i>
+                <span>Progress</span>
+            </button>
+        </nav>
+    </section>
+
+    <!-- ==================== ABOUT US PAGE ==================== -->
+    <section id="about-page" class="about-page">
+        <header class="about-header">
+            <button class="back-btn" id="backFromAbout">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>About Sokrat Study</h1>
+            <div style="width: 44px;"></div>
+        </header>
+        <main class="about-content">
+            <div class="about-hero-section">
+                <div class="logo-wrapper logo-wrapper-large"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
+                <p class="about-tagline">Created by students, for students</p>
+            </div>
+
+            <div class="about-cards">
+                <!-- Mission -->
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h2>Our Mission</h2>
+                    <p>Sokrat Study is an educational platform developed by <strong>Leon Kreso</strong>, with a simple but powerful goal: to make learning <em>easier</em>, more <em>accessible</em>, and more <em>effective</em> for students everywhere.</p>
+                </div>
+
+                <!-- What We Do -->
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fas fa-book-reader"></i></div>
+                    <h2>What We Do</h2>
+                    <p>The platform helps learners prepare for exams by sharing high-quality study materials, summaries, and scripts across different subjects.</p>
+                    <div class="about-features">
+                        <span><i class="fas fa-file-alt"></i> Study Materials</span>
+                        <span><i class="fas fa-list-check"></i> Summaries</span>
+                        <span><i class="fas fa-brain"></i> Interactive Quizzes</span>
+                        <span><i class="fas fa-clone"></i> Flashcards</span>
+                    </div>
+                </div>
+
+                <!-- Contribute -->
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h2>Contribute</h2>
+                    <p>Students are encouraged to contribute by sending their learning materials, notes, or exam scripts.</p>
+                    <a href="mailto:leonkreso784@gmail.com" class="email-link">
+                        <i class="fas fa-envelope"></i> leonkreso784@gmail.com
+                    </a>
+                </div>
+
+                <!-- Creator -->
+                <div class="about-card creator">
+                    <div class="creator-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="creator-info">
+                        <h3>Leon Kreso</h3>
+                        <p>Developer</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Learn Image Viewer Modal -->
+    <div class="image-modal hidden" id="imageModal" aria-hidden="true">
+        <button class="image-modal-close" id="imageModalClose" aria-label="Close image viewer">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="image-modal-backdrop" id="imageModalBackdrop"></div>
+        <figure class="image-modal-content">
+            <img id="imageModalImg" src="" alt="Expanded learn image">
+            <figcaption id="imageModalCaption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-info-circle"></i>
+        <span id="toastMessage">Message</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 All Rights Reserved by Leon Kreso</p>
+    </footer>
+
+    <script src="data-te2.js?v=20260203f"></script>
+    <script src="data-te2-final.js?v=20260203f"></script>
+    <script src="data-entrepreneurship.js?v=20260203f"></script>
+    
+    <!-- Accounting Modules (Modular Structure) -->
+    <script src="data/accounting/cash-control.js?v=20260117"></script>
+    <script src="data/accounting/budgeting.js?v=20260117"></script>
+    <script src="data/accounting/sec-reports.js?v=20260117"></script>
+    <script src="data/accounting/accounting-cycle.js?v=20260117"></script>
+    <script src="data/accounting/hotel-statements.js?v=20260117"></script>
+    <script src="data/accounting/financial-analysis.js?v=20260117"></script>
+    <script src="data/accounting/final-practice.js?v=20260117"></script>
+    <script src="data/accounting/index.js?v=20260117"></script>
+    <script src="data-ebusiness.js?v=20260201"></script>
+    <script src="data-econ-hospitality.js?v=20260401a"></script>
+    <script src="data-marketing.js?v=20260401a"></script>
+    <script src="data-geography.js?v=20260402b"></script>
+    
+    <script src="app.js?v=20260402b"></script>
+</body>
+</html>
