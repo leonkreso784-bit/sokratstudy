@@ -180,6 +180,41 @@ const geographyData = {
                 question: "Which destination from this set is coastal and in Top 10 2024 list?",
                 options: ["Sisak", "Poreč", "Bjelovar", "Čakovec"],
                 correct: 1
+            },
+            {
+                question: "Which is the #1 destination by tourist nights in Croatia (2024)?",
+                options: ["Zagreb", "Split", "Dubrovnik", "Rovinj"],
+                correct: 2
+            },
+            {
+                question: "Which Istrian town is in Croatia's Top 10 destinations 2024?",
+                options: ["Pazin", "Motovun", "Umag", "Labin"],
+                correct: 2
+            },
+            {
+                question: "Medulin is located in which region?",
+                options: ["Dalmatia", "Kvarner", "Istria", "Slavonia"],
+                correct: 2
+            },
+            {
+                question: "Funtana is closest to which other Top 10 destination?",
+                options: ["Dubrovnik", "Poreč", "Split", "Zadar"],
+                correct: 1
+            },
+            {
+                question: "Which island is in the Kvarner gulf?",
+                options: ["Hvar", "Brač", "Krk", "Korčula"],
+                correct: 2
+            },
+            {
+                question: "Which nature park is located near Zagreb?",
+                options: ["Papuk", "Medvednica", "Kopački rit", "Biokovo"],
+                correct: 1
+            },
+            {
+                question: "Papuk is both a nature park and a:",
+                options: ["National park", "UNESCO Geopark", "Strict reserve", "Marine reserve"],
+                correct: 1
             }
         ],
 
@@ -258,7 +293,7 @@ const geographyData = {
             },
             {
                 question: "What are key characteristics of the Adriatic in Croatian hydrography?",
-                answer: "High salinity, warm currents, excellent transparency, low tide amplitude.",
+                answer: "High salinity (38‰), warm currents, excellent transparency, low tide amplitude.",
                 explanation: "These support coastal tourism attractiveness."
             },
             {
@@ -270,6 +305,36 @@ const geographyData = {
                 question: "How large is tourism's share in Croatia's GDP (slide range)?",
                 answer: "Around 20% to 25%.",
                 explanation: "A very high dependence compared with many EU economies."
+            },
+            {
+                question: "What are the four biogeographic regions of Croatia?",
+                answer: "Alpine, Continental, Mediterranean, Pannonian.",
+                explanation: "Shown in the biogeographic regions slide of lecture 2."
+            },
+            {
+                question: "What are maquis (makija) in Croatian geography?",
+                answer: "Degraded Mediterranean coastal forest, typical representative is holm oak.",
+                explanation: "Example of semi-covered karst vegetation. Found on Cres and coastal areas."
+            },
+            {
+                question: "What are the Pan-European transport corridors relevant to Croatia?",
+                answer: "Defined at Helsinki conference 1997 — strategic routes in Central/Eastern Europe. Croatia's highways A1-A12 connect to these.",
+                explanation: "From lecture 3 on cultural regions and transport."
+            },
+            {
+                question: "What population processes affect Croatian tourism?",
+                answer: "Aging, low birth rate, emigration, deruralization, urbanization, immigration (seasonal workforce).",
+                explanation: "Tourism relies on 31% of all work permits issued."
+            },
+            {
+                question: "Which countries send the most workers to Croatia (2025)?",
+                answer: "Bosnia and Herzegovina, Nepal, Serbia, Philippines, India.",
+                explanation: "170,723 total work permits, with construction and tourism each at 31%."
+            },
+            {
+                question: "What is littoralization?",
+                answer: "Population concentration along the coast, leading to uneven population density.",
+                explanation: "Combined with deruralization and capital city dominance. Affects tourism labor supply."
             }
         ],
 
@@ -298,6 +363,41 @@ const geographyData = {
                 question: "Population processes mentioned as tourism-relevant include:",
                 options: ["Only natural growth", "Urbanization, aging, migration", "Only depopulation", "Only immigration"],
                 correct: 1
+            },
+            {
+                question: "Adriatic salinity is approximately:",
+                options: ["18‰", "28‰", "38‰", "48‰"],
+                correct: 2
+            },
+            {
+                question: "What biogeographic regions exist in Croatia?",
+                options: ["Only Mediterranean", "Alpine, Continental, Mediterranean, Pannonian", "Mediterranean and Continental only", "Alpine and Pannonian only"],
+                correct: 1
+            },
+            {
+                question: "Maquis is an example of:",
+                options: ["Bare karst", "Covered karst", "Semi-covered karst vegetation", "Alpine forest"],
+                correct: 2
+            },
+            {
+                question: "The largest share of work permits in Croatia (2025) goes to:",
+                options: ["Agriculture and IT", "Construction and Tourism (each ~31%)", "Mining and Transport", "Education and Healthcare"],
+                correct: 1
+            },
+            {
+                question: "Littoralization refers to:",
+                options: ["Population moving to mountains", "Population concentrating along the coast", "Population moving to capital only", "Even population distribution"],
+                correct: 1
+            },
+            {
+                question: "Croatia's GDP per capita (2025) is approximately what % of EU average?",
+                options: ["50%", "65%", "80%", "95%"],
+                correct: 2
+            },
+            {
+                question: "Which is NOT mentioned as a Croatian wind in the Adriatic slides?",
+                options: ["Bura", "Jugo", "Maestral", "Foehn"],
+                correct: 3
             }
         ],
 
@@ -308,9 +408,9 @@ const geographyData = {
                 hint: "Starts with D..."
             },
             {
-                sentence: "Tourism share in Croatia's GDP is roughly _______ to _______ percent.",
-                answer: "20 25",
-                hint: "Two numbers from slides..."
+                sentence: "Tourism share in Croatia's GDP is roughly _______ to 25 percent.",
+                answer: "20",
+                hint: "Two-digit number..."
             },
             {
                 sentence: "Pag is used as an example of _______ karst.",
@@ -321,29 +421,55 @@ const geographyData = {
                 sentence: "In Croatian hydrography, Adriatic salinity is around _______ per mille.",
                 answer: "38",
                 hint: "Two-digit number..."
+            },
+            {
+                sentence: "Maquis is degraded coastal forest, with holm _______ as typical representative.",
+                answer: "oak",
+                hint: "A type of tree..."
+            },
+            {
+                sentence: "Construction and tourism each account for _______ percent of work permits.",
+                answer: "31",
+                hint: "Almost a third..."
+            },
+            {
+                sentence: "Croatia's GDP per capita in 2025 was about _______ EUR.",
+                answer: "23200",
+                hint: "About 80% of EU average..."
+            },
+            {
+                sentence: "_______ is the term for population concentrating along the coast.",
+                answer: "Littoralization",
+                hint: "From 'littoral' (coast)..."
             }
         ],
 
         learn: {
             title: "Core Features of Croatia for Midterm",
             content: `
-                <h3>Physical Base</h3>
+                <h3>Physical Base (Lecture 2)</h3>
                 <ul>
-                    <li>Dinaric relief and karst landscapes</li>
-                    <li>Climate gradients between coast and inland</li>
-                    <li>Hydrography: Adriatic + inland rivers</li>
+                    <li><strong>Relief:</strong> Dinaric mountain system (Alpide belt), key features: Velebit, Žumberak, Biokovo</li>
+                    <li><strong>Karst:</strong> Covered (Plitvice forests), Semi-covered (maquis/holm oak), Bare (Pag)</li>
+                    <li><strong>Climate:</strong> Temperate (C), Mediterranean coast, Continental inland</li>
+                    <li><strong>Hydrography:</strong> Adriatic (38‰ salinity, warm currents, excellent transparency, low tides); Inland rivers: Danube navigable, karst rivers (Mrežnica, Cetina)</li>
+                    <li><strong>Biogeographic regions:</strong> Alpine, Continental, Mediterranean, Pannonian</li>
                 </ul>
 
-                <h3>Human + Tourism Base</h3>
+                <h3>Human/Social Features (Lecture 3)</h3>
                 <ul>
-                    <li>Strong tourism role in national GDP</li>
-                    <li>Seasonality and labor-market pressures</li>
-                    <li>Transport corridors and coastal concentration</li>
+                    <li><strong>Economy:</strong> GDP/cap ~23,200 EUR (80% EU avg), tourism = 20-25% of GDP</li>
+                    <li><strong>Transport:</strong> Highways A1-A12, Učka tunnel, Krk bridge, Pelješac bridge, Pan-European corridors</li>
+                    <li><strong>Air traffic:</strong> Zagreb and Split as main airports</li>
+                    <li><strong>Sea traffic:</strong> Coastal shipping, cruise ships, charter, private boats</li>
+                    <li><strong>Population:</strong> Uneven density, capital dominance (Zagreb), 4-5 regional centres, littoralization, deruralization, depopulation</li>
+                    <li><strong>Labor force:</strong> 170,723 work permits (2025): 31% construction, 31% tourism. Top countries: BiH, Nepal, Serbia, Philippines, India</li>
+                    <li><strong>Tourism stats:</strong> Return to pre-pandemic growth, 89% foreign tourists, distinct summer seasonality</li>
                 </ul>
 
                 <div class="tip-box">
                     <h4><i class="fas fa-lightbulb"></i> Exam Tip</h4>
-                    <p>Pair each physical feature with a tourism implication (e.g., karst -> protected areas, diving, scenery tourism).</p>
+                    <p>Pair each physical feature with a tourism implication (e.g., karst → protected areas/diving/scenery; Adriatic transparency → bathing tourism; Dinarides → mountain/adventure tourism).</p>
                 </div>
             `
         }
@@ -366,19 +492,54 @@ const geographyData = {
                 explanation: "They appear in protected area overview."
             },
             {
-                question: "Name three national parks from lecture set.",
-                answer: "Examples: Plitvička jezera, Krka, Kornati, Mljet, Paklenica, Brijuni, Risnjak, Sjeverni Velebit.",
-                explanation: "Any correct triplet is acceptable."
+                question: "Name all 8 national parks of Croatia.",
+                answer: "Plitvička jezera, Krka, Kornati, Brijuni, Mljet, Paklenica, Risnjak, Sjeverni Velebit.",
+                explanation: "All 8 are shown in lecture 6."
             },
             {
-                question: "Name three nature parks from lecture set.",
-                answer: "Examples: Učka, Medvednica, Papuk, Kopački rit, Velebit, Telašćica, Biokovo, Lonjsko polje.",
-                explanation: "Use map of protected areas for location training."
+                question: "Name at least 6 nature parks from lecture set.",
+                answer: "Kopački rit, Medvednica, Papuk, Žumberak, Lonjsko polje, Učka, Telašćica, Velebit, Vransko jezero, Dinara, Biokovo, Lastovsko otočje.",
+                explanation: "Croatia has 12 nature parks total."
             },
             {
                 question: "Which UNESCO site in Croatia is also a national park?",
                 answer: "Plitvice Lakes.",
                 explanation: "It appears in both natural protection and UNESCO context."
+            },
+            {
+                question: "What sub-regions make up the North Croatian Coast?",
+                answer: "Istria and Kvarner.",
+                explanation: "From lecture 4 on coastal tourist region."
+            },
+            {
+                question: "What sub-regions make up Southern Croatian Coast (Dalmatia)?",
+                answer: "Northern Dalmatia (Zadar, Šibenik), Central Dalmatia (Trogir, Split, Makarska), South Dalmatia (Dubrovnik).",
+                explanation: "From lecture 4 detailed coastal breakdown."
+            },
+            {
+                question: "What are the three types of Istria shown in lectures?",
+                answer: "Red Istria (western/southern coast, red-brown soils), Gray Istria (central, gray clay/flysch), White Istria (Učka/eastern, rocky).",
+                explanation: "Three-colour model from lecture 4."
+            },
+            {
+                question: "Name key destinations in the Kvarner region from slides.",
+                answer: "Opatija, Rijeka/Trsat, Crikvenica, Rab, Cres/Lubenice, Lošinj, Punat.",
+                explanation: "From lecture 4, Kvarner tourist region page."
+            },
+            {
+                question: "Name key Pannonian region destinations from Central Croatia slides.",
+                answer: "Zagreb, Varaždin, Karlovac, Hrvatsko Zagorje, Trakošćan, Medvednica.",
+                explanation: "From lecture 5, Pannonian tourist region."
+            },
+            {
+                question: "Name key Pannonian destinations from Eastern Croatia (Slavonija).",
+                answer: "Osijek, Vukovar, Đakovo, Ilok, Vinkovci, Kopački rit, Papuk.",
+                explanation: "From lecture 5."
+            },
+            {
+                question: "List all 10 UNESCO tangible heritage sites in Croatia.",
+                answer: "1) Diocletian's Palace (Split), 2) Euphrasius Basilica (Poreč), 3) Plitvice Lakes, 4) Trogir, 5) Old City Dubrovnik, 6) Cathedral Šibenik, 7) Stari Grad Plain (Hvar), 8) Medieval tombstones, 9) Venetian Defence (Zadar + St. Nicholas Šibenik), 10) Beech forests (Paklenica, Velebit).",
+                explanation: "From lecture 6, UNESCO heritage slide."
             }
         ],
 
@@ -407,6 +568,71 @@ const geographyData = {
                 question: "Which area belongs to Coastal tourist region context?",
                 options: ["Zagorje thermal belt", "Gorski kotar", "Kvarner", "Baranja lowlands"],
                 correct: 2
+            },
+            {
+                question: "Red Istria refers to:",
+                options: ["Central Istria with gray soil", "Eastern rocky peninsula", "Western/southern coast with red-brown soil", "Northern alpine area"],
+                correct: 2
+            },
+            {
+                question: "Which nature park is described as UNESCO Geopark?",
+                options: ["Medvednica", "Biokovo", "Papuk", "Učka"],
+                correct: 2
+            },
+            {
+                question: "The Euphrasius Basilica UNESCO site is in:",
+                options: ["Split", "Zadar", "Poreč", "Dubrovnik"],
+                correct: 2
+            },
+            {
+                question: "Which island has the UNESCO Stari Grad Plain?",
+                options: ["Brač", "Korčula", "Hvar", "Vis"],
+                correct: 2
+            },
+            {
+                question: "Trogir is UNESCO-listed as:",
+                options: ["Nature park", "Romanesque town", "Ancient fortress", "Island reserve"],
+                correct: 1
+            },
+            {
+                question: "Kopački rit nature park is in which part of Croatia?",
+                options: ["Istria", "Dalmatia", "Eastern Slavonia (Baranja)", "Gorski kotar"],
+                correct: 2
+            },
+            {
+                question: "How many nature parks does Croatia have?",
+                options: ["8", "10", "12", "15"],
+                correct: 2
+            },
+            {
+                question: "Opatija belongs to which tourist sub-region?",
+                options: ["Istria", "Kvarner", "Northern Dalmatia", "Zagorje"],
+                correct: 1
+            },
+            {
+                question: "St. Nicholas Fortress (UNESCO Venetian Defence) is near:",
+                options: ["Split", "Dubrovnik", "Šibenik", "Trogir"],
+                correct: 2
+            },
+            {
+                question: "Which destination is associated with the Makarska Riviera?",
+                options: ["Trogir", "Omiš", "Makarska", "Nin"],
+                correct: 2
+            },
+            {
+                question: "Ston is known for:",
+                options: ["Snow tourism", "Salt pans and defensive walls", "UNESCO basilica", "Island hopping"],
+                correct: 1
+            },
+            {
+                question: "The Mountainous tourist region includes:",
+                options: ["Istria coast", "Gorski kotar and Velebit", "Baranja wetlands", "Zagreb area"],
+                correct: 1
+            },
+            {
+                question: "Lonjsko polje nature park is known for:",
+                options: ["Marine life", "Stork village Čigoč", "Skiing", "Wine production"],
+                correct: 1
             }
         ],
 
@@ -430,24 +656,109 @@ const geographyData = {
                 sentence: "Krka is categorized as a national _______.",
                 answer: "park",
                 hint: "NP category..."
+            },
+            {
+                sentence: "The three types of Istria by soil are Red, Gray, and _______.",
+                answer: "White",
+                hint: "Učka/eastern area..."
+            },
+            {
+                sentence: "The Euphrasius Basilica UNESCO site is located in _______.",
+                answer: "Poreč",
+                hint: "Istrian coastal town..."
+            },
+            {
+                sentence: "Stari Grad Plain UNESCO site is on the island of _______.",
+                answer: "Hvar",
+                hint: "Famous Dalmatian island..."
+            },
+            {
+                sentence: "Papuk is both a nature park and a UNESCO _______.",
+                answer: "Geopark",
+                hint: "Geological heritage..."
+            },
+            {
+                sentence: "Čigoč stork village is in _______ polje nature park.",
+                answer: "Lonjsko",
+                hint: "Pannonian wetland..."
+            },
+            {
+                sentence: "Croatia has _______ tangible UNESCO World Heritage sites.",
+                answer: "10",
+                hint: "Two-digit number..."
             }
         ],
 
         learn: {
-            title: "Regional Tourism and Protected Areas",
+            title: "Regional Tourism, Protected Areas, and UNESCO",
             content: `
-                <h3>Tourist Region Logic</h3>
-                <p>Lecture structure groups Croatian tourism into coastal, mountainous and pannonian systems, each with different products and seasonality profiles.</p>
-
-                <h3>Protected Areas</h3>
+                <h3>Tourist Macro-Regions</h3>
                 <ul>
-                    <li>8 national parks and 12 nature parks are key map anchors</li>
-                    <li>Protected areas are major tourism resources and branding assets</li>
-                    <li>Spatial protection categories matter for sustainable tourism planning</li>
+                    <li><strong>Coastal:</strong> Istria (Red/Gray/White), Kvarner (Opatija, Rijeka, islands), Northern Dalmatia (Zadar, Šibenik, Nin), Central Dalmatia (Trogir, Split, Makarska, islands), South Dalmatia (Dubrovnik, Korčula, Ston)</li>
+                    <li><strong>Mountainous:</strong> Gorski kotar, Velebit range, Plitvice Lakes, Paklenica</li>
+                    <li><strong>Pannonian:</strong> Central Croatia (Zagreb, Varaždin, Zagorje), Eastern Croatia (Osijek, Vukovar, Đakovo, Baranja)</li>
                 </ul>
 
-                <h3>UNESCO Connection</h3>
-                <p>UNESCO sites connect heritage protection with destination identity and global visibility.</p>
+                <h3>8 National Parks</h3>
+                <ol>
+                    <li>Plitvička jezera (UNESCO) — covered karst, travertine lakes</li>
+                    <li>Krka — waterfalls, Visovac island monastery</li>
+                    <li>Kornati — 89 islands archipelago</li>
+                    <li>Brijuni — islands near Pula, Roman ruins</li>
+                    <li>Mljet — island park, saltwater lakes</li>
+                    <li>Paklenica — Velebit canyon, climbing (UNESCO beech forests)</li>
+                    <li>Risnjak — Gorski kotar mountain park</li>
+                    <li>Sjeverni Velebit — northern Velebit (UNESCO beech forests)</li>
+                </ol>
+
+                <h3>12 Nature Parks</h3>
+                <ol>
+                    <li>Kopački rit (Baranja wetland)</li>
+                    <li>Medvednica (mountain above Zagreb)</li>
+                    <li>Papuk (UNESCO Geopark, Slavonia)</li>
+                    <li>Žumberak-Samoborsko gorje</li>
+                    <li>Lonjsko polje (stork village Čigoč)</li>
+                    <li>Učka (above Kvarner coast)</li>
+                    <li>Velebit (broader Velebit range)</li>
+                    <li>Telašćica (Dugi Otok bay)</li>
+                    <li>Vransko jezero (largest natural lake)</li>
+                    <li>Dinara (highest peak 1831m)</li>
+                    <li>Biokovo (above Makarska)</li>
+                    <li>Lastovsko otočje (remote island archipelago)</li>
+                </ol>
+
+                <h3>10 UNESCO Tangible Heritage Sites</h3>
+                <ol>
+                    <li>Diocletian's Palace — Split</li>
+                    <li>Euphrasius Basilica — Poreč</li>
+                    <li>Plitvice Lakes</li>
+                    <li>Romanesque Town — Trogir</li>
+                    <li>Old City — Dubrovnik</li>
+                    <li>Cathedral of St. James — Šibenik</li>
+                    <li>Stari Grad Plain — Island Hvar</li>
+                    <li>Medieval tombstone graveyards (Stećci)</li>
+                    <li>Venetian Defence System — Zadar walls + St. Nicholas fortress Šibenik</li>
+                    <li>Ancient beech forests — Paklenica + Sjeverni Velebit</li>
+                </ol>
+
+                <h3>Top 10 Tourist Destinations 2024</h3>
+                <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>1. Dubrovnik</td><td>4,192,151 nights</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>2. Rovinj</td><td>4,068,712</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>3. Poreč</td><td>3,216,077</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>4. Split</td><td>3,070,825</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>5. Umag</td><td>2,666,930</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>6. Zagreb</td><td>2,646,443</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>7. Medulin</td><td>2,615,538</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>8. Zadar</td><td>2,299,125</td></tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);"><td>9. Funtana</td><td>2,098,664</td></tr>
+                    <tr><td>10. Pula</td><td>2,020,931</td></tr>
+                </table>
+
+                <div class="tip-box">
+                    <h4><i class="fas fa-lightbulb"></i> Exam Tip</h4>
+                    <p>Know the Top 10 by heart — 4 of them appear on your blind map. Also memorize ALL 8 NPs and at least the most important nature parks (Medvednica, Učka, Kopački rit, Biokovo, Papuk, Lonjsko polje).</p>
+                </div>
             `
         }
     },

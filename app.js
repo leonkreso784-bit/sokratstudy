@@ -1993,6 +1993,7 @@ let blindMapState = {
 // Formula: x = 243 + (lon - 13.50) * 85.4, y = 109 + (46.55 - lat) * 121.9
 const blindMapLocations = {
     cities: [
+        // County centres + Top 10 destinations + important tourist cities
         { name: 'Zagreb', x: 456, y: 199, aliases: ['zagreb'] },
         { name: 'Split', x: 494, y: 480, aliases: ['split'] },
         { name: 'Rijeka', x: 323, y: 258, aliases: ['rijeka'] },
@@ -2005,6 +2006,40 @@ const blindMapLocations = {
         { name: 'Karlovac', x: 418, y: 238, aliases: ['karlovac'] },
         { name: 'Varaždin', x: 486, y: 139, aliases: ['varazdin', 'varaždin'] },
         { name: 'Slavonski Brod', x: 629, y: 278, aliases: ['slavonski brod', 'sl. brod'] },
+        // Top 10 destinations 2024 (missing ones)
+        { name: 'Rovinj', x: 255, y: 288, aliases: ['rovinj'] },
+        { name: 'Poreč', x: 251, y: 270, aliases: ['porec', 'poreč'] },
+        { name: 'Umag', x: 244, y: 245, aliases: ['umag'] },
+        { name: 'Medulin', x: 280, y: 320, aliases: ['medulin'] },
+        { name: 'Funtana', x: 252, y: 277, aliases: ['funtana'] },
+        // Additional county centres
+        { name: 'Sisak', x: 488, y: 241, aliases: ['sisak'] },
+        { name: 'Gospić', x: 403, y: 353, aliases: ['gospic', 'gospić'] },
+        { name: 'Čakovec', x: 494, y: 130, aliases: ['cakovec', 'čakovec'] },
+        { name: 'Krapina', x: 445, y: 157, aliases: ['krapina'] },
+        { name: 'Koprivnica', x: 527, y: 156, aliases: ['koprivnica'] },
+        { name: 'Bjelovar', x: 528, y: 188, aliases: ['bjelovar'] },
+        { name: 'Virovitica', x: 575, y: 197, aliases: ['virovitica'] },
+        { name: 'Požega', x: 600, y: 258, aliases: ['pozega', 'požega'] },
+        { name: 'Pazin', x: 280, y: 269, aliases: ['pazin'] },
+        // Important tourist destinations from slides
+        { name: 'Opatija', x: 312, y: 257, aliases: ['opatija'] },
+        { name: 'Trogir', x: 478, y: 479, aliases: ['trogir'] },
+        { name: 'Makarska', x: 543, y: 506, aliases: ['makarska'] },
+        { name: 'Nin', x: 386, y: 390, aliases: ['nin'] },
+        { name: 'Ston', x: 601, y: 561, aliases: ['ston'] },
+    ],
+    islands: [
+        { name: 'Krk', x: 335, y: 295, aliases: ['krk'] },
+        { name: 'Cres', x: 320, y: 303, aliases: ['cres'] },
+        { name: 'Rab', x: 351, y: 328, aliases: ['rab'] },
+        { name: 'Pag', x: 375, y: 366, aliases: ['pag'] },
+        { name: 'Lošinj', x: 326, y: 355, aliases: ['losinj', 'lošinj'] },
+        { name: 'Brač', x: 512, y: 510, aliases: ['brac', 'brač'] },
+        { name: 'Hvar', x: 494, y: 521, aliases: ['hvar'] },
+        { name: 'Vis', x: 472, y: 535, aliases: ['vis'] },
+        { name: 'Korčula', x: 554, y: 547, aliases: ['korcula', 'korčula'] },
+        { name: 'Lastovo', x: 533, y: 570, aliases: ['lastovo'] },
     ],
     nationalParks: [
         { name: 'Plitvička jezera', x: 424, y: 313, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
@@ -2015,6 +2050,20 @@ const blindMapLocations = {
         { name: 'Paklenica', x: 409, y: 375, aliases: ['paklenica'] },
         { name: 'Risnjak', x: 337, y: 247, aliases: ['risnjak'] },
         { name: 'Sjeverni Velebit', x: 369, y: 325, aliases: ['sjeverni velebit', 'north velebit'] },
+    ],
+    natureParks: [
+        { name: 'Kopački rit', x: 695, y: 224, aliases: ['kopacki rit', 'kopački rit'] },
+        { name: 'Medvednica', x: 454, y: 191, aliases: ['medvednica'] },
+        { name: 'Papuk', x: 599, y: 235, aliases: ['papuk'] },
+        { name: 'Žumberak', x: 409, y: 209, aliases: ['zumberak', 'žumberak'] },
+        { name: 'Lonjsko polje', x: 514, y: 254, aliases: ['lonjsko polje'] },
+        { name: 'Učka', x: 301, y: 261, aliases: ['ucka', 'učka'] },
+        { name: 'Telašćica', x: 385, y: 434, aliases: ['telascica', 'telašćica'] },
+        { name: 'Velebit', x: 378, y: 326, aliases: ['velebit'] },
+        { name: 'Vransko jezero', x: 418, y: 433, aliases: ['vransko jezero'] },
+        { name: 'Dinara', x: 491, y: 432, aliases: ['dinara'] },
+        { name: 'Biokovo', x: 546, y: 500, aliases: ['biokovo'] },
+        { name: 'Lastovsko otočje', x: 529, y: 573, aliases: ['lastovsko otocje', 'lastovsko otočje'] },
     ],
     regions: [
         { name: 'Istra', x: 286, y: 274, aliases: ['istra', 'istria'] },
