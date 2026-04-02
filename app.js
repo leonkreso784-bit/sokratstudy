@@ -2045,14 +2045,76 @@ function initBlindMap() {
     
     const canvas = document.getElementById('blindMapCanvas');
     if (canvas) {
+        // Size canvas to fit container while keeping 10:7 aspect ratio
+        resizeBlindMapCanvas();
         drawBlindMapCanvas();
         canvas.removeEventListener('click', handleBlindMapClick);
         canvas.addEventListener('click', handleBlindMapClick);
+        // Touch support for iOS/mobile
+        canvas.removeEventListener('touchend', handleBlindMapTouch);
+        canvas.addEventListener('touchend', handleBlindMapTouch, { passive: false });
     }
+    // Resize canvas on orientation change / window resize
+    window.removeEventListener('resize', _blindMapResizeHandler);
+    window._blindMapResizeHandler = function() {
+        resizeBlindMapCanvas();
+        drawBlindMapCanvas();
+        // Redraw pin if one was selected
+        if (blindMapState.selectedLocation) {
+            const c = document.getElementById('blindMapCanvas');
+            if (c) {
+                const ctx = c.getContext('2d');
+                const x = blindMapState.selectedLocation.x;
+                const y = blindMapState.selectedLocation.y;
+                ctx.fillStyle = '#6366f1';
+                ctx.beginPath(); ctx.arc(x, y, 8, 0, Math.PI * 2); ctx.fill();
+                ctx.strokeStyle = '#4338ca'; ctx.lineWidth = 3; ctx.stroke();
+            }
+        }
+    };
+    window.addEventListener('resize', window._blindMapResizeHandler);
     
     blindMapState = { selectedLocation: null, currentQuestion: 0, score: 0, answers: [] };
     blindMapQuestions = shuffleArray(blindMapLocations[blindMapDifficulty] || blindMapLocations.cities);
     updateBlindMapUI();
+}
+
+function resizeBlindMapCanvas() {
+    const canvas = document.getElementById('blindMapCanvas');
+    if (!canvas) return;
+    const wrapper = canvas.parentElement;
+    const containerWidth = wrapper ? wrapper.clientWidth : 900;
+    // Internal resolution: always 1000x700 for coordinate consistency
+    canvas.width = 1000;
+    canvas.height = 700;
+    // CSS display size matches container
+    canvas.style.width = containerWidth + 'px';
+    canvas.style.height = Math.round(containerWidth * 0.7) + 'px';
+}
+
+function handleBlindMapTouch(event) {
+    event.preventDefault();
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+    // Create a synthetic mouse-like event for the handler
+    const canvas = document.getElementById('blindMapCanvas');
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = Math.round((touch.clientX - rect.left) * scaleX);
+    const y = Math.round((touch.clientY - rect.top) * scaleY);
+    
+    blindMapState.selectedLocation = { x, y };
+    document.getElementById('mapCoords').textContent = 'Clicked: X=' + x + ', Y=' + y;
+    
+    drawBlindMapCanvas();
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#6366f1';
+    ctx.beginPath(); ctx.arc(x, y, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = '#4338ca'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.beginPath(); ctx.arc(x, y, 14, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(99, 102, 241, 0.3)'; ctx.lineWidth = 2; ctx.stroke();
 }
 
 function drawBlindMapCanvas() {
@@ -2063,11 +2125,22 @@ function drawBlindMapCanvas() {
 
     // Use the actual blind map image
     if (!window._blindMapImg) {
-        window._blindMapImg = new Image();
-        window._blindMapImg.src = 'blind-map.png';
-        window._blindMapImg.onload = function() {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+            window._blindMapImg = img;
             drawBlindMapCanvas();
         };
+        img.onerror = function() {
+            // Fallback: draw a dark background with text
+            ctx.fillStyle = '#0f0d2e';
+            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Map could not be loaded', W/2, H/2);
+        };
+        img.src = 'blind-map.png';
         // Draw dark background while loading
         ctx.fillStyle = '#0f0d2e';
         ctx.fillRect(0, 0, W, H);
@@ -2079,7 +2152,6 @@ function drawBlindMapCanvas() {
     }
 
     const img = window._blindMapImg;
-    if (!img.complete) return;
 
     // Draw the image scaled to fill the canvas
     ctx.drawImage(img, 0, 0, W, H);
@@ -2254,6 +2326,8 @@ window.clearMapSelection = clearMapSelection;
 window.skipMapQuestion = skipMapQuestion;
 window.initBlindMap = initBlindMap;
 window.handleBlindMapClick = handleBlindMapClick;
+window.handleBlindMapTouch = handleBlindMapTouch;
+window.resizeBlindMapCanvas = resizeBlindMapCanvas;
 window.setBlindMapDifficulty = setBlindMapDifficulty;
 
 window.addEventListener('resize', cleanupLearnContentForMobile);

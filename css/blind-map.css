@@ -72,14 +72,22 @@
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     border: 2px solid var(--border);
+    /* Force aspect ratio container for mobile */
+    aspect-ratio: 10 / 7;
+    background: #0f0d2e;
 }
 
 .blank-map-canvas {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    background: white;
+    background: #0f0d2e;
     cursor: crosshair;
+    /* iOS: prevent double-tap zoom on canvas */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* Map Marker */
@@ -281,6 +289,17 @@
 @media (max-width: 640px) {
     .map-action-buttons { grid-template-columns: 1fr; }
     .blind-map-header h1 { font-size: 1.3rem; }
+    .blind-map-container { padding: 0.5rem; }
+    .map-answer-section { padding: 1rem; }
+    .map-question { font-size: 1rem; }
+    .map-difficulty-selector { gap: 0.35rem; }
+    .map-diff-btn { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+    .map-submit-btn,
+    .map-clear-btn,
+    .map-skip-btn {
+        min-height: 48px;
+        font-size: 0.95rem;
+    }
 }
 
 @media (min-width: 768px) {
