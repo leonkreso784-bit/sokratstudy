@@ -27,6 +27,43 @@
     font-size: 0.95rem;
 }
 
+/* Difficulty Selector */
+.map-difficulty-selector {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.map-diff-btn {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md, 12px);
+    background: var(--card-bg, #fff);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.map-diff-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.map-diff-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary, var(--primary)));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
 /* Map Canvas */
 .map-wrapper {
     position: relative;

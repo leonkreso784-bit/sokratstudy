@@ -715,6 +715,14 @@
                         <p>Accuracy: <span id="fillAccuracy">0%</span></p>
                         <p>Solved: <span id="fillSolved">0</span></p>
                     </div>
+
+                    <!-- Blind Map Progress (Geography Only) -->
+                    <div class="progress-card" id="blindMapProgressSection" style="display: none;">
+                        <h3><i class="fas fa-map-marked-alt"></i> Blind Map</h3>
+                        <p>Accuracy: <span id="blindMapAccuracy">0%</span></p>
+                        <p>Attempts: <span id="blindMapAttempts">0</span></p>
+                        <p>Score: <span id="blindMapScore">0</span></p>
+                    </div>
                 </div>
 
                 <div class="category-progress">
@@ -742,7 +750,19 @@
             <div class="blind-map-container">
                 <div class="blind-map-header">
                     <h1>Interactive Blind Map</h1>
-                    <p>Click on the map to locate the place, then enter its name</p>
+                    <p>Click on the map to find the requested location</p>
+                </div>
+
+                <div class="map-difficulty-selector">
+                    <button class="map-diff-btn active" onclick="setBlindMapDifficulty('cities')" data-level="cities">
+                        <i class="fas fa-city"></i> Cities
+                    </button>
+                    <button class="map-diff-btn" onclick="setBlindMapDifficulty('nationalParks')" data-level="nationalParks">
+                        <i class="fas fa-tree"></i> National Parks
+                    </button>
+                    <button class="map-diff-btn" onclick="setBlindMapDifficulty('regions')" data-level="regions">
+                        <i class="fas fa-map"></i> Regions
+                    </button>
                 </div>
 
                 <div class="map-wrapper">
@@ -751,21 +771,16 @@
 
                 <div class="map-answer-section">
                     <div class="map-question" id="mapQuestion">
-                        Click on the location of: <strong id="mapTaskName">Loading...</strong>
+                        <i class="fas fa-crosshairs"></i> Click on the location of: <strong id="mapTaskName">Loading...</strong>
                     </div>
 
                     <div class="map-coordinates">
                         <span id="mapCoords">No location selected</span>
                     </div>
 
-                    <div class="map-input-group">
-                        <label class="map-input-label" for="mapLocationInput">Enter the location name:</label>
-                        <input type="text" id="mapLocationInput" class="map-location-input" placeholder="e.g., Zagreb, Plitvice Lakes..." autocomplete="off">
-                    </div>
-
                     <div class="map-action-buttons">
                         <button class="map-submit-btn" id="mapSubmitBtn" onclick="submitMapAnswer()">
-                            <i class="fas fa-check"></i> Submit Answer
+                            <i class="fas fa-check"></i> Submit
                         </button>
                         <button class="map-clear-btn" id="mapClearBtn" onclick="clearMapSelection()">
                             <i class="fas fa-times"></i> Clear

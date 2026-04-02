@@ -442,6 +442,17 @@ function initStudyPage(subjectId, lessonId) {
     renderLearnContent();
     renderProgressPage();
     
+    // Show blind map button for Geography
+    if (subjectId === 'geography') {
+        document.getElementById('blindMapNavBtn')?.style.removeProperty('display');
+        document.getElementById('blindMapMobileBtn')?.style.removeProperty('display');
+    } else {
+        const bmNav = document.getElementById('blindMapNavBtn');
+        const bmMob = document.getElementById('blindMapMobileBtn');
+        if (bmNav) bmNav.style.display = 'none';
+        if (bmMob) bmMob.style.display = 'none';
+    }
+    
     // Show home section by default
     switchSection('home');
 }
@@ -1549,6 +1560,23 @@ function renderProgressPage() {
     document.getElementById('fillAccuracy').textContent = `${fillAcc}%`;
     document.getElementById('fillSolved').textContent = progress.fillSolved;
     
+    // Geography-specific: Blind Map progress
+    if (currentSubject === 'geography') {
+        const bmSection = document.getElementById('blindMapProgressSection');
+        if (bmSection) {
+            bmSection.style.display = 'block';
+            const bmAnswered = blindMapState.answers.length;
+            const bmCorrect = blindMapState.answers.filter(a => a.correct).length;
+            const bmAcc = bmAnswered > 0 ? Math.round((bmCorrect / bmAnswered) * 100) : 0;
+            document.getElementById('blindMapAccuracy').textContent = `${bmAcc}%`;
+            document.getElementById('blindMapAttempts').textContent = bmAnswered;
+            document.getElementById('blindMapScore').textContent = blindMapState.score;
+        }
+    } else {
+        const bmSection = document.getElementById('blindMapProgressSection');
+        if (bmSection) bmSection.style.display = 'none';
+    }
+    
     // Category bars
     const barsContainer = document.getElementById('categoryBars');
     if (!barsContainer || !currentData) return;
@@ -1961,6 +1989,54 @@ let blindMapState = {
     answers: []
 };
 
+// Blind map location data with canvas coordinates
+const blindMapLocations = {
+    cities: [
+        { name: 'Zagreb', x: 500, y: 200, aliases: ['zagreb'] },
+        { name: 'Split', x: 310, y: 490, aliases: ['split'] },
+        { name: 'Rijeka', x: 280, y: 220, aliases: ['rijeka'] },
+        { name: 'Osijek', x: 790, y: 180, aliases: ['osijek'] },
+        { name: 'Zadar', x: 250, y: 400, aliases: ['zadar'] },
+        { name: 'Dubrovnik', x: 450, y: 620, aliases: ['dubrovnik'] },
+        { name: 'Pula', x: 155, y: 250, aliases: ['pula'] },
+        { name: 'Šibenik', x: 280, y: 450, aliases: ['sibenik', 'šibenik'] },
+        { name: 'Vukovar', x: 830, y: 180, aliases: ['vukovar'] },
+        { name: 'Karlovac', x: 420, y: 230, aliases: ['karlovac'] },
+        { name: 'Varaždin', x: 530, y: 90, aliases: ['varazdin', 'varaždin'] },
+        { name: 'Slavonski Brod', x: 720, y: 250, aliases: ['slavonski brod', 'sl. brod'] },
+    ],
+    nationalParks: [
+        { name: 'Plitvička jezera', x: 380, y: 270, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
+        { name: 'Krka', x: 275, y: 440, aliases: ['krka'] },
+        { name: 'Brijuni', x: 135, y: 250, aliases: ['brijuni'] },
+        { name: 'Kornati', x: 240, y: 430, aliases: ['kornati'] },
+        { name: 'Mljet', x: 400, y: 600, aliases: ['mljet'] },
+        { name: 'Paklenica', x: 240, y: 350, aliases: ['paklenica'] },
+        { name: 'Risnjak', x: 310, y: 190, aliases: ['risnjak'] },
+        { name: 'Sjeverni Velebit', x: 270, y: 310, aliases: ['sjeverni velebit', 'north velebit'] },
+    ],
+    regions: [
+        { name: 'Istra', x: 175, y: 210, aliases: ['istra', 'istria'] },
+        { name: 'Dalmacija', x: 310, y: 480, aliases: ['dalmacija', 'dalmatia'] },
+        { name: 'Slavonija', x: 720, y: 200, aliases: ['slavonija', 'slavonia'] },
+        { name: 'Zagorje', x: 480, y: 120, aliases: ['zagorje'] },
+        { name: 'Lika', x: 350, y: 290, aliases: ['lika'] },
+        { name: 'Kvarner', x: 250, y: 270, aliases: ['kvarner'] },
+    ]
+};
+
+let blindMapDifficulty = 'cities';
+let blindMapQuestions = [];
+
+function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
 function initBlindMap() {
     if (currentSubject !== 'geography') return;
     document.getElementById('blindMapNavBtn')?.style.removeProperty('display');
@@ -1974,6 +2050,7 @@ function initBlindMap() {
     }
     
     blindMapState = { selectedLocation: null, currentQuestion: 0, score: 0, answers: [] };
+    blindMapQuestions = shuffleArray(blindMapLocations[blindMapDifficulty] || blindMapLocations.cities);
     updateBlindMapUI();
 }
 
@@ -1982,22 +2059,141 @@ function drawBlindMapCanvas() {
     if (!canvas) return;
     
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#f8f9fa';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = '#ddd';
+    const W = canvas.width;
+    const H = canvas.height;
+    
+    // Background
+    ctx.fillStyle = '#e8f4f8';
+    ctx.fillRect(0, 0, W, H);
+    
+    // Sea
+    ctx.fillStyle = '#b3d9e8';
+    ctx.fillRect(0, 0, W, H);
+    
+    // Croatia mainland shape (simplified polygon)
+    ctx.beginPath();
+    ctx.moveTo(310, 60);   // NW border
+    ctx.lineTo(420, 40);   // N
+    ctx.lineTo(530, 50);   // NE (Medimurje)
+    ctx.lineTo(600, 80);   // Varazdin area
+    ctx.lineTo(680, 60);   // Border NE
+    ctx.lineTo(750, 100);  // Baranja
+    ctx.lineTo(800, 130);  // Osijek area
+    ctx.lineTo(830, 180);  // Vukovar
+    ctx.lineTo(790, 220);  // Slavonia south
+    ctx.lineTo(720, 250);  // Slavonski Brod
+    ctx.lineTo(650, 260);  // Sisak area
+    ctx.lineTo(580, 230);  // Central
+    ctx.lineTo(500, 200);  // Zagreb area
+    ctx.lineTo(420, 180);  // Karlovac
+    ctx.lineTo(350, 200);  // Gorski Kotar
+    ctx.lineTo(280, 220);  // Rijeka area
+    ctx.lineTo(250, 280);  // Kvarner
+    ctx.lineTo(230, 340);  // Senj
+    ctx.lineTo(250, 400);  // Zadar region
+    ctx.lineTo(280, 450);  // Sibenik
+    ctx.lineTo(310, 490);  // Split region
+    ctx.lineTo(340, 520);  // Makarska
+    ctx.lineTo(370, 560);  // Ploce
+    ctx.lineTo(420, 590);  // Dubrovnik region
+    ctx.lineTo(460, 620);  // Dubrovnik
+    ctx.lineTo(440, 640);  // SE tip
+    ctx.lineTo(400, 620);  // Coast return
+    ctx.lineTo(350, 580);  // Coast
+    ctx.lineTo(300, 530);  // Coast
+    ctx.lineTo(260, 470);  // Coast
+    ctx.lineTo(230, 420);  // Coast
+    ctx.lineTo(200, 360);  // Coast
+    ctx.lineTo(190, 300);  // Coast
+    ctx.lineTo(210, 240);  // Istria top
+    ctx.lineTo(170, 200);  // Istria west
+    ctx.lineTo(150, 250);  // Pula area
+    ctx.lineTo(160, 180);  // Istria NW
+    ctx.lineTo(200, 150);  // Istria north
+    ctx.lineTo(250, 120);  // Border
+    ctx.lineTo(310, 60);   // Close
+    ctx.closePath();
+    
+    // Fill land
+    ctx.fillStyle = '#f5f0e1';
+    ctx.fill();
+    ctx.strokeStyle = '#8B7355';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+    
+    // Istria peninsula (detail)
+    ctx.beginPath();
+    ctx.moveTo(200, 150);
+    ctx.lineTo(160, 180);
+    ctx.lineTo(140, 220);
+    ctx.lineTo(150, 260);
+    ctx.lineTo(180, 280);
+    ctx.lineTo(210, 250);
+    ctx.lineTo(220, 210);
+    ctx.lineTo(200, 150);
+    ctx.closePath();
+    ctx.fillStyle = '#f5f0e1';
+    ctx.fill();
+    ctx.strokeStyle = '#8B7355';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Islands (simplified)
+    // Krk
+    drawIsland(ctx, 200, 300, 35, 20);
+    // Cres
+    drawIsland(ctx, 175, 330, 15, 40);
+    // Pag
+    drawIsland(ctx, 210, 370, 12, 35);
+    // Brac
+    drawIsland(ctx, 280, 510, 35, 12);
+    // Hvar
+    drawIsland(ctx, 290, 540, 40, 10);
+    // Korcula
+    drawIsland(ctx, 350, 570, 30, 10);
+    // Vis
+    drawIsland(ctx, 240, 540, 20, 10);
+    
+    // Country label
+    ctx.fillStyle = 'rgba(139, 115, 85, 0.15)';
+    ctx.font = 'bold 60px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('HRVATSKA', 450, 350);
+    
+    // Adriatic Sea label
+    ctx.fillStyle = 'rgba(50, 100, 150, 0.2)';
+    ctx.font = 'italic 30px Georgia';
+    ctx.fillText('Jadransko more', 120, 450);
+    
+    // Compass
+    ctx.fillStyle = '#8B7355';
+    ctx.font = 'bold 16px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('N', 900, 75);
+    ctx.beginPath();
+    ctx.moveTo(900, 80);
+    ctx.lineTo(895, 100);
+    ctx.lineTo(905, 100);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(900, 120);
+    ctx.lineTo(895, 100);
+    ctx.lineTo(905, 100);
+    ctx.closePath();
+    ctx.strokeStyle = '#8B7355';
     ctx.lineWidth = 1;
-    for (let i = 0; i < canvas.width; i += 50) {
-        ctx.beginPath();
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, canvas.height);
-        ctx.stroke();
-    }
-    for (let i = 0; i < canvas.height; i += 50) {
-        ctx.beginPath();
-        ctx.moveTo(0, i);
-        ctx.lineTo(canvas.width, i);
-        ctx.stroke();
-    }
+    ctx.stroke();
+}
+
+function drawIsland(ctx, x, y, w, h) {
+    ctx.beginPath();
+    ctx.ellipse(x, y, w, h, -0.3, 0, Math.PI * 2);
+    ctx.fillStyle = '#ede8d8';
+    ctx.fill();
+    ctx.strokeStyle = '#8B7355';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
 }
 
 function handleBlindMapClick(event) {
@@ -2013,25 +2209,37 @@ function handleBlindMapClick(event) {
     
     drawBlindMapCanvas();
     const ctx = canvas.getContext('2d');
+    // Draw pin marker
     ctx.fillStyle = '#6366f1';
     ctx.beginPath();
     ctx.arc(x, y, 8, 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = '#4f46e5';
+    ctx.strokeStyle = '#4338ca';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    // Pin glow
+    ctx.beginPath();
+    ctx.arc(x, y, 14, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(99, 102, 241, 0.3)';
     ctx.lineWidth = 2;
     ctx.stroke();
 }
 
 function submitMapAnswer() {
-    const input = document.getElementById('mapLocationInput');
-    const answer = input.value.trim().toLowerCase();
-    
-    if (!blindMapState.selectedLocation || !answer) {
-        showToast('Select a location on the map and enter a name');
+    if (!blindMapState.selectedLocation) {
+        showToast('Click on the map to select a location first');
         return;
     }
     
-    const isCorrect = validateBlindMapAnswer(answer);
+    const currentQ = blindMapQuestions[blindMapState.currentQuestion];
+    if (!currentQ) return;
+    
+    const dx = blindMapState.selectedLocation.x - currentQ.x;
+    const dy = blindMapState.selectedLocation.y - currentQ.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const threshold = 45; // px tolerance
+    const isCorrect = distance <= threshold;
+    
     const feedback = document.getElementById('mapFeedback');
     const message = document.getElementById('feedbackMessage');
     
@@ -2039,23 +2247,58 @@ function submitMapAnswer() {
     feedback.classList.toggle('incorrect', !isCorrect);
     feedback.classList.add('show');
     
-    message.innerHTML = isCorrect ? '<i class="fas fa-check"></i> Correct!' : '<i class="fas fa-times"></i> Incorrect!';
+    if (isCorrect) {
+        message.innerHTML = `<i class="fas fa-check"></i> Correct! That's ${currentQ.name}!`;
+        blindMapState.score += 10;
+    } else {
+        message.innerHTML = `<i class="fas fa-times"></i> That's not right. ${currentQ.name} is elsewhere. (${Math.round(distance)}px off)`;
+        // Show correct location
+        const canvas = document.getElementById('blindMapCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#22c55e';
+        ctx.beginPath();
+        ctx.arc(currentQ.x, currentQ.y, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 13px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(currentQ.name, currentQ.x, currentQ.y - 14);
+    }
     
-    if (isCorrect) blindMapState.score += 10;
     blindMapState.answers.push({ q: blindMapState.currentQuestion, correct: isCorrect });
-    
     document.getElementById('mapScore').textContent = blindMapState.score;
-    input.value = '';
-    setTimeout(() => { blindMapState.selectedLocation = null; }, 500);
+    
+    setTimeout(() => {
+        blindMapState.selectedLocation = null;
+        blindMapState.currentQuestion++;
+        if (blindMapState.currentQuestion >= blindMapQuestions.length) {
+            showMapResults();
+        } else {
+            feedback.classList.remove('show');
+            drawBlindMapCanvas();
+            updateBlindMapUI();
+        }
+    }, 1500);
+}
+
+function showMapResults() {
+    const correct = blindMapState.answers.filter(a => a.correct).length;
+    const total = blindMapQuestions.length;
+    const pct = Math.round((correct / total) * 100);
+    const feedback = document.getElementById('mapFeedback');
+    const message = document.getElementById('feedbackMessage');
+    feedback.classList.remove('correct', 'incorrect');
+    feedback.classList.add('show', pct >= 50 ? 'correct' : 'incorrect');
+    message.innerHTML = `<i class="fas fa-flag-checkered"></i> Finished! ${correct}/${total} correct (${pct}%). Score: ${blindMapState.score}`;
 }
 
 function validateBlindMapAnswer(answer) {
-    const cities = ['zagreb', 'split', 'dubrovnik', 'zadar', 'rijeka', 'osijek', 'vukovar', 'pula', 'sibenik', 'makarska'];
-    return cities.some(c => answer.includes(c));
+    const currentQ = blindMapQuestions[blindMapState.currentQuestion];
+    if (!currentQ) return false;
+    return currentQ.aliases.some(a => answer === a);
 }
 
 function clearMapSelection() {
-    document.getElementById('mapLocationInput').value = '';
     document.getElementById('mapCoords').textContent = 'No location selected';
     blindMapState.selectedLocation = null;
     drawBlindMapCanvas();
@@ -2064,16 +2307,57 @@ function clearMapSelection() {
 function skipMapQuestion() {
     clearMapSelection();
     document.getElementById('mapFeedback').classList.remove('show');
-    blindMapState.currentQuestion++;
-    updateBlindMapUI();
+    
+    // Show correct answer before skipping
+    const currentQ = blindMapQuestions[blindMapState.currentQuestion];
+    if (currentQ) {
+        const canvas = document.getElementById('blindMapCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.arc(currentQ.x, currentQ.y, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 13px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(currentQ.name, currentQ.x, currentQ.y - 14);
+    }
+    
+    blindMapState.answers.push({ q: blindMapState.currentQuestion, correct: false });
+    
+    setTimeout(() => {
+        blindMapState.currentQuestion++;
+        if (blindMapState.currentQuestion >= blindMapQuestions.length) {
+            showMapResults();
+        } else {
+            drawBlindMapCanvas();
+            updateBlindMapUI();
+        }
+    }, 1000);
 }
 
 function updateBlindMapUI() {
-    const total = 10;
-    document.getElementById('mapProgressCount').textContent = `${blindMapState.currentQuestion + 1}/${total}`;
+    const total = blindMapQuestions.length || 1;
+    const idx = Math.min(blindMapState.currentQuestion, total - 1);
+    document.getElementById('mapProgressCount').textContent = `${idx + 1}/${total}`;
     document.getElementById('mapScore').textContent = blindMapState.score;
-    const pct = ((blindMapState.currentQuestion + 1) / total) * 100;
+    const pct = ((idx + 1) / total) * 100;
     document.getElementById('mapProgressFill').style.width = pct + '%';
+    
+    // Show current question task
+    const currentQ = blindMapQuestions[idx];
+    const taskEl = document.getElementById('mapTaskName');
+    if (taskEl && currentQ) {
+        taskEl.textContent = `Find: ${currentQ.name}`;
+    }
+}
+
+function setBlindMapDifficulty(level) {
+    blindMapDifficulty = level;
+    document.querySelectorAll('.map-diff-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.level === level);
+    });
+    initBlindMap();
 }
 
 window.submitMapAnswer = submitMapAnswer;
@@ -2081,6 +2365,7 @@ window.clearMapSelection = clearMapSelection;
 window.skipMapQuestion = skipMapQuestion;
 window.initBlindMap = initBlindMap;
 window.handleBlindMapClick = handleBlindMapClick;
+window.setBlindMapDifficulty = setBlindMapDifficulty;
 
 window.addEventListener('resize', cleanupLearnContentForMobile);
 window.addEventListener('orientationchange', cleanupLearnContentForMobile);
