@@ -1989,39 +1989,39 @@ let blindMapState = {
     answers: []
 };
 
-// Blind map location data with canvas coordinates
+// Blind map location data — coordinates match the canvas map
 const blindMapLocations = {
     cities: [
-        { name: 'Zagreb', x: 500, y: 200, aliases: ['zagreb'] },
-        { name: 'Split', x: 310, y: 490, aliases: ['split'] },
-        { name: 'Rijeka', x: 280, y: 220, aliases: ['rijeka'] },
-        { name: 'Osijek', x: 790, y: 180, aliases: ['osijek'] },
-        { name: 'Zadar', x: 250, y: 400, aliases: ['zadar'] },
-        { name: 'Dubrovnik', x: 450, y: 620, aliases: ['dubrovnik'] },
-        { name: 'Pula', x: 155, y: 250, aliases: ['pula'] },
-        { name: 'Šibenik', x: 280, y: 450, aliases: ['sibenik', 'šibenik'] },
-        { name: 'Vukovar', x: 830, y: 180, aliases: ['vukovar'] },
-        { name: 'Karlovac', x: 420, y: 230, aliases: ['karlovac'] },
-        { name: 'Varaždin', x: 530, y: 90, aliases: ['varazdin', 'varaždin'] },
-        { name: 'Slavonski Brod', x: 720, y: 250, aliases: ['slavonski brod', 'sl. brod'] },
+        { name: 'Zagreb', x: 345, y: 145, aliases: ['zagreb'] },
+        { name: 'Split', x: 242, y: 468, aliases: ['split'] },
+        { name: 'Rijeka', x: 162, y: 235, aliases: ['rijeka'] },
+        { name: 'Osijek', x: 710, y: 130, aliases: ['osijek'] },
+        { name: 'Zadar', x: 210, y: 370, aliases: ['zadar'] },
+        { name: 'Dubrovnik', x: 395, y: 595, aliases: ['dubrovnik'] },
+        { name: 'Pula', x: 92, y: 355, aliases: ['pula'] },
+        { name: 'Šibenik', x: 228, y: 430, aliases: ['sibenik', 'šibenik'] },
+        { name: 'Vukovar', x: 800, y: 155, aliases: ['vukovar'] },
+        { name: 'Karlovac', x: 315, y: 192, aliases: ['karlovac'] },
+        { name: 'Varaždin', x: 330, y: 80, aliases: ['varazdin', 'varaždin'] },
+        { name: 'Slavonski Brod', x: 650, y: 255, aliases: ['slavonski brod', 'sl. brod'] },
     ],
     nationalParks: [
-        { name: 'Plitvička jezera', x: 380, y: 270, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
-        { name: 'Krka', x: 275, y: 440, aliases: ['krka'] },
-        { name: 'Brijuni', x: 135, y: 250, aliases: ['brijuni'] },
-        { name: 'Kornati', x: 240, y: 430, aliases: ['kornati'] },
-        { name: 'Mljet', x: 400, y: 600, aliases: ['mljet'] },
-        { name: 'Paklenica', x: 240, y: 350, aliases: ['paklenica'] },
-        { name: 'Risnjak', x: 310, y: 190, aliases: ['risnjak'] },
-        { name: 'Sjeverni Velebit', x: 270, y: 310, aliases: ['sjeverni velebit', 'north velebit'] },
+        { name: 'Plitvička jezera', x: 368, y: 268, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
+        { name: 'Krka', x: 255, y: 440, aliases: ['krka'] },
+        { name: 'Brijuni', x: 78, y: 338, aliases: ['brijuni'] },
+        { name: 'Kornati', x: 205, y: 420, aliases: ['kornati'] },
+        { name: 'Mljet', x: 375, y: 558, aliases: ['mljet'] },
+        { name: 'Paklenica', x: 212, y: 345, aliases: ['paklenica'] },
+        { name: 'Risnjak', x: 188, y: 195, aliases: ['risnjak'] },
+        { name: 'Sjeverni Velebit', x: 195, y: 305, aliases: ['sjeverni velebit', 'north velebit'] },
     ],
     regions: [
-        { name: 'Istra', x: 175, y: 210, aliases: ['istra', 'istria'] },
-        { name: 'Dalmacija', x: 310, y: 480, aliases: ['dalmacija', 'dalmatia'] },
-        { name: 'Slavonija', x: 720, y: 200, aliases: ['slavonija', 'slavonia'] },
-        { name: 'Zagorje', x: 480, y: 120, aliases: ['zagorje'] },
-        { name: 'Lika', x: 350, y: 290, aliases: ['lika'] },
-        { name: 'Kvarner', x: 250, y: 270, aliases: ['kvarner'] },
+        { name: 'Istra', x: 100, y: 290, aliases: ['istra', 'istria'] },
+        { name: 'Dalmacija', x: 265, y: 480, aliases: ['dalmacija', 'dalmatia'] },
+        { name: 'Slavonija', x: 650, y: 190, aliases: ['slavonija', 'slavonia'] },
+        { name: 'Zagorje', x: 290, y: 100, aliases: ['zagorje'] },
+        { name: 'Lika', x: 345, y: 300, aliases: ['lika'] },
+        { name: 'Kvarner', x: 172, y: 265, aliases: ['kvarner'] },
     ]
 };
 
@@ -2062,126 +2062,445 @@ function drawBlindMapCanvas() {
     const W = canvas.width;
     const H = canvas.height;
     
-    // Background
-    ctx.fillStyle = '#e8f4f8';
+    // Sea background  
+    ctx.fillStyle = '#c2dfe3';
     ctx.fillRect(0, 0, W, H);
     
-    // Sea
-    ctx.fillStyle = '#b3d9e8';
-    ctx.fillRect(0, 0, W, H);
+    // Water pattern (subtle waves)
+    ctx.strokeStyle = 'rgba(160, 200, 215, 0.4)';
+    ctx.lineWidth = 0.5;
+    for (let y = 0; y < H; y += 25) {
+        ctx.beginPath();
+        for (let x = 0; x < W; x += 5) {
+            ctx.lineTo(x, y + Math.sin(x / 30 + y / 50) * 3);
+        }
+        ctx.stroke();
+    }
     
-    // Croatia mainland shape (simplified polygon)
+    // ==== CROATIA MAINLAND — detailed outline ====
+    // Canvas: 1000x700. Croatia mapped: lon 13.5-19.4 → x 60-940, lat 42.4-46.55 → y 610-30
+    // Conversion: x = (lon - 13.5) * 149.15 + 60, y = 610 - (lat - 42.4) * 139.76
+    
+    const croatiaMainland = [
+        // Start: NW Slovenia border near Bregana (Slovenian border, west)
+        [190, 78],  // Macelj border
+        [220, 72],  // NW Zagorje
+        [260, 58],  // Cakovec / Medimurje
+        [295, 48],  // Mursko Sredisce (northernmost)
+        [330, 52],  // Lendava border area
+        [355, 60],  // Legrad
+        [380, 72],  // Koprivnica area
+        [420, 68],  // Virovitica N border
+        [465, 65],  // Slatina N border
+        [510, 58],  // Nasice N border
+        [555, 52],  // Donji Miholjac
+        [600, 48],  // Beli Manastir area
+        [640, 42],  // Baranja N tip
+        [670, 50],  // Batina
+        [690, 70],  // Danube bend
+        [710, 95],  // Osijek NE approach
+        [730, 105], // NE border
+        [760, 120], // Ilok approach
+        [785, 130], // Ilok
+        [800, 145], // Vukovar area
+        [810, 160], // Danube curve
+        [805, 180], // Sotín
+        [790, 195], // Tovarnik border
+        [770, 210], // Sid border area
+        [748, 222], // Zupanja approach
+        [725, 232], // Zupanja
+        [700, 240], // Slavonski Samac
+        [675, 248], // Slavonski Brod E
+        [645, 255], // Slavonski Brod
+        [615, 262], // Nova Gradiska E
+        [585, 268], // Nova Gradiska
+        [558, 272], // Okucani
+        [530, 275], // Pakrac S
+        [508, 278], // Novska
+        [485, 280], // Kutina area
+        [460, 282], // Sisak approach
+        [440, 278], // Sisak
+        [425, 268], // Petrinja
+        [415, 255], // Glina area
+        [405, 240], // Slunj approach — Bosnian border goes south
+        [395, 258], // Kordun
+        [388, 278], // Plitvice area
+        [380, 298], // Udbina
+        [372, 315], // Gracac approach
+        [360, 335], // Gracac
+        [348, 352], // Obrovac approach
+        [332, 368], // Maslenica
+        [320, 385], // Zadar hinterland
+        [310, 400], // Benkovac
+        [305, 418], // Knin area
+        [298, 435], // Drnis approach
+        [292, 450], // Sibenik hinterland
+        [285, 465], // Sinj approach (inland)
+        [280, 478], // Sinj
+        [275, 492], // Split hinterland
+        [272, 505], // Imotski approach
+        [268, 520], // Vrgorac
+        [270, 535], // Metkovic approach
+        [280, 548], // Metkovic / Neretva
+        [292, 555], // Ploce hinterland
+        [305, 560], // Neum gap (BiH corridor starts)
+        [318, 558], // After Neum
+        [330, 555], // Ston approach
+        [345, 558], // Ston
+        [358, 565], // Dubrovnik county
+        [375, 575], // Slano
+        [388, 585], // Dubrovnik hinterland
+        [398, 595], // Gruda
+        [408, 605], // Cavtat area
+        [418, 615], // Prevlaka approach
+        [425, 625], // Prevlaka (SE tip)
+        // Coast return (going NW along Adriatic)
+        [415, 618], // Cavtat coast
+        [400, 605], // Zaton
+        [385, 593], // Dubrovnik coast
+        [372, 582], // Trsteno
+        [358, 572], // Slano coast
+        [342, 560], // Ston coast
+        [325, 552], // Mali Ston
+        [310, 548], // Neum gap coast  
+        [295, 542], // Ploce coast
+        [278, 530], // Gradac
+        [265, 515], // Makarska coast
+        [255, 498], // Baska Voda
+        [248, 482], // Omis
+        [242, 468], // Split coast S
+        [238, 455], // Split
+        [235, 440], // Kastela / Trogir
+        [230, 425], // Primosten
+        [225, 410], // Sibenik coast
+        [218, 395], // Vodice
+        [212, 378], // Biograd
+        [208, 362], // Zadar coast S
+        [205, 348], // Zadar
+        [200, 332], // Nin
+        [195, 316], // Starigrad
+        [190, 300], // Karlobag
+        [185, 285], // Senj
+        [178, 270], // Novi Vinodolski
+        [170, 258], // Crikvenica
+        [162, 248], // Rijeka outskirts
+        [155, 238], // Opatija
+        [148, 230], // Abbazia coast
+        // Istria coast (going around peninsula)
+        [140, 222], // Matulji
+        [132, 215], // Kastav
+        [125, 225], // Opatija riviera
+        [118, 235], // Lovran
+        [110, 248], // Moscenicka Draga
+        [105, 262], // Labin approach
+        [100, 278], // Rabac
+        [96, 295],  // Labin coast
+        [92, 312],  // Plomin
+        [90, 328],  // East Istria
+        [88, 342],  // Raša
+        [90, 355],  // Pula approach E
+        [95, 365],  // Medulin approach
+        [100, 375], // Premantura
+        [98, 380],  // Cape Kamenjak (southernmost Istria)
+        [92, 375],  // Return W
+        [85, 365],  // Pula SW
+        [80, 352],  // Pula W coast
+        [78, 338],  // Fazana
+        [76, 322],  // Brijuni coast
+        [78, 308],  // Vrsar approach
+        [80, 292],  // Rovinj
+        [82, 278],  // Vrsar
+        [85, 262],  // Porec approach
+        [88, 248],  // Porec
+        [92, 235],  // Novigrad
+        [98, 222],  // Umag approach
+        [105, 210], // Umag
+        [112, 198], // Slovenian border coast
+        [120, 188], // NW tip (Savudrija)
+        // Back inland along Slovenian border
+        [130, 178], // Dragonja border
+        [142, 168], // Buzet approach
+        [152, 155], // Buzet / Cicarija
+        [160, 142], // Lanisce
+        [165, 130], // Rupa border
+        [168, 118], // Slovenian border N
+        [172, 105], // Bregana approach
+        [178, 92],  // Krapina area
+        [190, 78],  // Close 
+    ];
+    
+    // Draw mainland
     ctx.beginPath();
-    ctx.moveTo(310, 60);   // NW border
-    ctx.lineTo(420, 40);   // N
-    ctx.lineTo(530, 50);   // NE (Medimurje)
-    ctx.lineTo(600, 80);   // Varazdin area
-    ctx.lineTo(680, 60);   // Border NE
-    ctx.lineTo(750, 100);  // Baranja
-    ctx.lineTo(800, 130);  // Osijek area
-    ctx.lineTo(830, 180);  // Vukovar
-    ctx.lineTo(790, 220);  // Slavonia south
-    ctx.lineTo(720, 250);  // Slavonski Brod
-    ctx.lineTo(650, 260);  // Sisak area
-    ctx.lineTo(580, 230);  // Central
-    ctx.lineTo(500, 200);  // Zagreb area
-    ctx.lineTo(420, 180);  // Karlovac
-    ctx.lineTo(350, 200);  // Gorski Kotar
-    ctx.lineTo(280, 220);  // Rijeka area
-    ctx.lineTo(250, 280);  // Kvarner
-    ctx.lineTo(230, 340);  // Senj
-    ctx.lineTo(250, 400);  // Zadar region
-    ctx.lineTo(280, 450);  // Sibenik
-    ctx.lineTo(310, 490);  // Split region
-    ctx.lineTo(340, 520);  // Makarska
-    ctx.lineTo(370, 560);  // Ploce
-    ctx.lineTo(420, 590);  // Dubrovnik region
-    ctx.lineTo(460, 620);  // Dubrovnik
-    ctx.lineTo(440, 640);  // SE tip
-    ctx.lineTo(400, 620);  // Coast return
-    ctx.lineTo(350, 580);  // Coast
-    ctx.lineTo(300, 530);  // Coast
-    ctx.lineTo(260, 470);  // Coast
-    ctx.lineTo(230, 420);  // Coast
-    ctx.lineTo(200, 360);  // Coast
-    ctx.lineTo(190, 300);  // Coast
-    ctx.lineTo(210, 240);  // Istria top
-    ctx.lineTo(170, 200);  // Istria west
-    ctx.lineTo(150, 250);  // Pula area
-    ctx.lineTo(160, 180);  // Istria NW
-    ctx.lineTo(200, 150);  // Istria north
-    ctx.lineTo(250, 120);  // Border
-    ctx.lineTo(310, 60);   // Close
+    ctx.moveTo(croatiaMainland[0][0], croatiaMainland[0][1]);
+    for (let i = 1; i < croatiaMainland.length; i++) {
+        ctx.lineTo(croatiaMainland[i][0], croatiaMainland[i][1]);
+    }
     ctx.closePath();
     
-    // Fill land
-    ctx.fillStyle = '#f5f0e1';
+    // Land fill with subtle gradient
+    const landGrad = ctx.createLinearGradient(0, 0, W, H);
+    landGrad.addColorStop(0, '#f0ead6');
+    landGrad.addColorStop(1, '#e8dfc8');
+    ctx.fillStyle = landGrad;
     ctx.fill();
-    ctx.strokeStyle = '#8B7355';
-    ctx.lineWidth = 2.5;
-    ctx.stroke();
     
-    // Istria peninsula (detail)
-    ctx.beginPath();
-    ctx.moveTo(200, 150);
-    ctx.lineTo(160, 180);
-    ctx.lineTo(140, 220);
-    ctx.lineTo(150, 260);
-    ctx.lineTo(180, 280);
-    ctx.lineTo(210, 250);
-    ctx.lineTo(220, 210);
-    ctx.lineTo(200, 150);
-    ctx.closePath();
-    ctx.fillStyle = '#f5f0e1';
-    ctx.fill();
-    ctx.strokeStyle = '#8B7355';
+    // Border
+    ctx.strokeStyle = '#7a6b52';
     ctx.lineWidth = 2;
     ctx.stroke();
     
-    // Islands (simplified)
+    // ==== ISLANDS ====
+    function drawDetailedIsland(points, fill) {
+        ctx.beginPath();
+        ctx.moveTo(points[0][0], points[0][1]);
+        for (let i = 1; i < points.length; i++) {
+            ctx.lineTo(points[i][0], points[i][1]);
+        }
+        ctx.closePath();
+        ctx.fillStyle = fill || '#ebe5d4';
+        ctx.fill();
+        ctx.strokeStyle = '#7a6b52';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+    }
+    
     // Krk
-    drawIsland(ctx, 200, 300, 35, 20);
-    // Cres
-    drawIsland(ctx, 175, 330, 15, 40);
-    // Pag
-    drawIsland(ctx, 210, 370, 12, 35);
-    // Brac
-    drawIsland(ctx, 280, 510, 35, 12);
-    // Hvar
-    drawIsland(ctx, 290, 540, 40, 10);
-    // Korcula
-    drawIsland(ctx, 350, 570, 30, 10);
+    drawDetailedIsland([
+        [168, 268], [180, 260], [195, 258], [205, 265], 
+        [208, 278], [200, 290], [188, 295], [175, 292], 
+        [165, 282], [168, 268]
+    ]);
+    
+    // Cres (elongated N-S)
+    drawDetailedIsland([
+        [148, 260], [155, 252], [162, 255], [165, 268],
+        [162, 290], [158, 310], [152, 325], [145, 335],
+        [138, 330], [140, 312], [142, 290], [145, 270],
+        [148, 260]
+    ]);
+    
+    // Rab
+    drawDetailedIsland([
+        [178, 302], [192, 298], [198, 305], [195, 312],
+        [182, 316], [175, 310], [178, 302]
+    ]);
+    
+    // Pag (long narrow)
+    drawDetailedIsland([
+        [185, 325], [195, 320], [200, 325], [205, 338],
+        [208, 355], [206, 368], [200, 375], [194, 370],
+        [190, 355], [187, 340], [185, 325]
+    ]);
+    
+    // Dugi Otok
+    drawDetailedIsland([
+        [178, 385], [185, 380], [192, 385], [195, 400],
+        [192, 415], [185, 420], [178, 412], [176, 398],
+        [178, 385]
+    ]);
+    
+    // Brac (large, wide)
+    drawDetailedIsland([
+        [222, 475], [235, 468], [252, 465], [268, 468],
+        [275, 475], [272, 485], [258, 490], [240, 492],
+        [225, 488], [220, 480], [222, 475]
+    ]);
+    
+    // Hvar (long narrow)
+    drawDetailedIsland([
+        [210, 492], [225, 488], [245, 490], [265, 495],
+        [278, 500], [282, 508], [275, 512], [255, 510],
+        [235, 505], [218, 500], [210, 495], [210, 492]
+    ]);
+    
     // Vis
-    drawIsland(ctx, 240, 540, 20, 10);
+    drawDetailedIsland([
+        [188, 505], [200, 500], [215, 502], [222, 508],
+        [218, 515], [205, 518], [192, 515], [188, 505]
+    ]);
     
-    // Country label
-    ctx.fillStyle = 'rgba(139, 115, 85, 0.15)';
-    ctx.font = 'bold 60px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('HRVATSKA', 450, 350);
+    // Korcula (long)
+    drawDetailedIsland([
+        [298, 530], [315, 525], [332, 528], [345, 532],
+        [350, 538], [342, 542], [325, 540], [308, 538],
+        [298, 535], [298, 530]
+    ]);
     
-    // Adriatic Sea label
-    ctx.fillStyle = 'rgba(50, 100, 150, 0.2)';
-    ctx.font = 'italic 30px Georgia';
-    ctx.fillText('Jadransko more', 120, 450);
+    // Mljet
+    drawDetailedIsland([
+        [355, 555], [370, 550], [388, 552], [395, 558],
+        [390, 565], [375, 568], [360, 565], [355, 558],
+        [355, 555]
+    ]);
     
-    // Compass
-    ctx.fillStyle = '#8B7355';
-    ctx.font = 'bold 16px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('N', 900, 75);
+    // Lastovo
+    drawDetailedIsland([
+        [310, 555], [320, 550], [328, 555], [325, 562],
+        [315, 565], [308, 560], [310, 555]
+    ]);
+    
+    // ==== NEIGHBOURING COUNTRIES (faded) ====
+    // Slovenia (partial)
     ctx.beginPath();
-    ctx.moveTo(900, 80);
-    ctx.lineTo(895, 100);
-    ctx.lineTo(905, 100);
+    ctx.moveTo(120, 188);
+    ctx.lineTo(112, 178);
+    ctx.lineTo(105, 165);
+    ctx.lineTo(110, 150);
+    ctx.lineTo(125, 135);
+    ctx.lineTo(145, 120);
+    ctx.lineTo(165, 110);
+    ctx.lineTo(190, 78);
+    ctx.lineTo(220, 72);
+    ctx.lineTo(260, 58);
+    ctx.lineTo(295, 48);
+    ctx.lineTo(295, 15);
+    ctx.lineTo(60, 15);
+    ctx.lineTo(60, 195);
+    ctx.lineTo(105, 210);
+    ctx.lineTo(112, 198);
+    ctx.lineTo(120, 188);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(200, 200, 190, 0.35)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(150, 140, 120, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // Hungary (partial, north)
+    ctx.beginPath();
+    ctx.moveTo(295, 48);
+    ctx.lineTo(330, 52);
+    ctx.lineTo(355, 60);
+    ctx.lineTo(380, 72);
+    ctx.lineTo(420, 68);
+    ctx.lineTo(465, 65);
+    ctx.lineTo(510, 58);
+    ctx.lineTo(555, 52);
+    ctx.lineTo(600, 48);
+    ctx.lineTo(640, 42);
+    ctx.lineTo(670, 50);
+    ctx.lineTo(670, 15);
+    ctx.lineTo(295, 15);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(200, 200, 190, 0.35)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(150, 140, 120, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // Serbia (partial, east)
+    ctx.beginPath();
+    ctx.moveTo(670, 50);
+    ctx.lineTo(690, 70);
+    ctx.lineTo(710, 95);
+    ctx.lineTo(730, 105);
+    ctx.lineTo(760, 120);
+    ctx.lineTo(785, 130);
+    ctx.lineTo(800, 145);
+    ctx.lineTo(810, 160);
+    ctx.lineTo(805, 180);
+    ctx.lineTo(790, 195);
+    ctx.lineTo(770, 210);
+    ctx.lineTo(940, 210);
+    ctx.lineTo(940, 15);
+    ctx.lineTo(670, 15);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(200, 200, 190, 0.35)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(150, 140, 120, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // BiH (partial)
+    ctx.beginPath();
+    ctx.moveTo(770, 210);
+    ctx.lineTo(748, 222);
+    ctx.lineTo(725, 232);
+    ctx.lineTo(700, 240);
+    ctx.lineTo(675, 248);
+    ctx.lineTo(645, 255);
+    ctx.lineTo(615, 262);
+    ctx.lineTo(585, 268);
+    ctx.lineTo(558, 272);
+    ctx.lineTo(530, 275);
+    ctx.lineTo(508, 278);
+    ctx.lineTo(485, 280);
+    ctx.lineTo(460, 282);
+    ctx.lineTo(440, 278);
+    ctx.lineTo(425, 268);
+    ctx.lineTo(415, 255);
+    ctx.lineTo(405, 240);
+    ctx.lineTo(395, 258);
+    ctx.lineTo(388, 278);
+    ctx.lineTo(380, 298);
+    ctx.lineTo(372, 315);
+    ctx.lineTo(360, 335);
+    ctx.lineTo(348, 352);
+    ctx.lineTo(332, 368);
+    ctx.lineTo(320, 385);
+    ctx.lineTo(310, 400);
+    ctx.lineTo(305, 418);
+    ctx.lineTo(298, 435);
+    ctx.lineTo(292, 450);
+    ctx.lineTo(285, 465);
+    ctx.lineTo(280, 478);
+    ctx.lineTo(275, 492);
+    ctx.lineTo(272, 505);
+    ctx.lineTo(268, 520);
+    ctx.lineTo(270, 535);
+    ctx.lineTo(280, 548);
+    ctx.lineTo(305, 560);
+    ctx.lineTo(940, 560);
+    ctx.lineTo(940, 210);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(200, 200, 190, 0.3)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(150, 140, 120, 0.25)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // ==== LABELS ====
+    // Croatia
+    ctx.fillStyle = 'rgba(100, 85, 60, 0.12)';
+    ctx.font = 'bold 48px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('HRVATSKA', 420, 200);
+    
+    // Adriatic
+    ctx.fillStyle = 'rgba(60, 110, 140, 0.18)';
+    ctx.font = 'italic 22px Georgia';
+    ctx.save();
+    ctx.translate(110, 480);
+    ctx.rotate(-0.6);
+    ctx.fillText('Jadransko more', 0, 0);
+    ctx.restore();
+    
+    // Neighbour labels (very faded)
+    ctx.fillStyle = 'rgba(120, 120, 110, 0.2)';
+    ctx.font = '14px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('SLOVENIJA', 120, 80);
+    ctx.fillText('MAĐARSKA', 470, 38);
+    ctx.fillText('SRBIJA', 870, 120);
+    ctx.fillText('BIH', 550, 380);
+    
+    // Compass rose
+    ctx.fillStyle = '#7a6b52';
+    ctx.font = 'bold 14px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('N', 930, 625);
+    ctx.beginPath();
+    ctx.moveTo(930, 630);
+    ctx.lineTo(925, 648);
+    ctx.lineTo(935, 648);
     ctx.closePath();
     ctx.fill();
     ctx.beginPath();
-    ctx.moveTo(900, 120);
-    ctx.lineTo(895, 100);
-    ctx.lineTo(905, 100);
+    ctx.moveTo(930, 665);
+    ctx.lineTo(925, 648);
+    ctx.lineTo(935, 648);
     ctx.closePath();
-    ctx.strokeStyle = '#8B7355';
+    ctx.strokeStyle = '#7a6b52';
     ctx.lineWidth = 1;
     ctx.stroke();
 }
@@ -2191,7 +2510,7 @@ function drawIsland(ctx, x, y, w, h) {
     ctx.ellipse(x, y, w, h, -0.3, 0, Math.PI * 2);
     ctx.fillStyle = '#ede8d8';
     ctx.fill();
-    ctx.strokeStyle = '#8B7355';
+    ctx.strokeStyle = '#7a6b52';
     ctx.lineWidth = 1.5;
     ctx.stroke();
 }
