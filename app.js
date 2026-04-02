@@ -2055,7 +2055,9 @@ function initBlindMap() {
         canvas.addEventListener('touchend', handleBlindMapTouch, { passive: false });
     }
     // Resize canvas on orientation change / window resize
-    window.removeEventListener('resize', _blindMapResizeHandler);
+    if (window._blindMapResizeHandler) {
+        window.removeEventListener('resize', window._blindMapResizeHandler);
+    }
     window._blindMapResizeHandler = function() {
         resizeBlindMapCanvas();
         drawBlindMapCanvas();
