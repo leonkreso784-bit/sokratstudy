@@ -1224,6 +1224,18 @@ div.subject-card {
     line-height: 1.5;
 }
 
+.quiz-question-image {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 0 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    background: var(--bg-tertiary);
+}
+
 .answers {
     display: flex;
     flex-direction: column;
@@ -1813,4 +1825,4 @@ div.subject-card {
     }
 }
 
-/* ===== UTILITIES ===== */
+/* ===== UTILITIES ===== */

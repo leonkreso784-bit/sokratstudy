@@ -32,6 +32,12 @@ function getSubjectData(subjectId, lessonId) {
         }
         return {};
     }
+    if (subjectId === 'geography') {
+        if (lessonId === 'first-midterm') {
+            return typeof geographyData !== 'undefined' ? geographyData : {};
+        }
+        return {};
+    }
     return {};
 }
 
@@ -139,6 +145,26 @@ const subjectDataMap = {
                 id: 'first-midterm',
                 name: 'First Midterm',
                 description: 'Comprehensive preparation from 6 presentations'
+            },
+            {
+                id: 'second-midterm',
+                name: 'Second Midterm',
+                description: 'Coming soon'
+            }
+        ]
+    },
+    geography: {
+        name: 'Tourism Geography',
+        shortName: 'Geo',
+        icon: 'fa-earth-europe',
+        color: '#14b8a6',
+        description: 'Croatia tourist geography, blind map drills, protected areas, UNESCO and image-based city recognition',
+        storageKey: 'geography-progress',
+        lessons: [
+            {
+                id: 'first-midterm',
+                name: 'First Midterm',
+                description: 'Blind map + Croatia geography + image questions from lecture materials'
             },
             {
                 id: 'second-midterm',
@@ -1028,6 +1054,21 @@ function showQuestion() {
     
     document.getElementById('questionCategory').textContent = q.categoryName;
     document.getElementById('questionText').textContent = q.question;
+
+    const existingImage = document.getElementById('questionImage');
+    if (existingImage) {
+        existingImage.remove();
+    }
+
+    if (q.image) {
+        const img = document.createElement('img');
+        img.id = 'questionImage';
+        img.className = 'quiz-question-image';
+        img.src = q.image;
+        img.alt = q.imageAlt || 'Quiz question image';
+        img.loading = 'lazy';
+        document.getElementById('questionText').insertAdjacentElement('afterend', img);
+    }
     
     const container = document.getElementById('answersContainer');
     container.innerHTML = '';
