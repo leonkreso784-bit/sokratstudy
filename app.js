@@ -1989,39 +1989,40 @@ let blindMapState = {
     answers: []
 };
 
-// Blind map location data — coordinates match blind-map.png on 1000x700 canvas
+// Blind map location data — coordinates calculated from actual blind-map.png pixel analysis
+// Formula: x = 243 + (lon - 13.50) * 85.4, y = 109 + (46.55 - lat) * 121.9
 const blindMapLocations = {
     cities: [
-        { name: 'Zagreb', x: 420, y: 185, aliases: ['zagreb'] },
-        { name: 'Split', x: 455, y: 475, aliases: ['split'] },
-        { name: 'Rijeka', x: 290, y: 240, aliases: ['rijeka'] },
-        { name: 'Osijek', x: 690, y: 175, aliases: ['osijek'] },
-        { name: 'Zadar', x: 370, y: 395, aliases: ['zadar'] },
-        { name: 'Dubrovnik', x: 585, y: 610, aliases: ['dubrovnik'] },
-        { name: 'Pula', x: 210, y: 350, aliases: ['pula'] },
-        { name: 'Šibenik', x: 420, y: 445, aliases: ['sibenik', 'šibenik', 'sibenik'] },
-        { name: 'Vukovar', x: 725, y: 170, aliases: ['vukovar'] },
-        { name: 'Karlovac', x: 380, y: 210, aliases: ['karlovac'] },
-        { name: 'Varaždin', x: 445, y: 100, aliases: ['varazdin', 'varaždin'] },
-        { name: 'Slavonski Brod', x: 570, y: 225, aliases: ['slavonski brod', 'sl. brod'] },
+        { name: 'Zagreb', x: 456, y: 199, aliases: ['zagreb'] },
+        { name: 'Split', x: 494, y: 480, aliases: ['split'] },
+        { name: 'Rijeka', x: 323, y: 258, aliases: ['rijeka'] },
+        { name: 'Osijek', x: 686, y: 231, aliases: ['osijek'] },
+        { name: 'Zadar', x: 391, y: 405, aliases: ['zadar'] },
+        { name: 'Dubrovnik', x: 635, y: 584, aliases: ['dubrovnik'] },
+        { name: 'Pula', x: 273, y: 314, aliases: ['pula'] },
+        { name: 'Šibenik', x: 448, y: 453, aliases: ['sibenik', 'šibenik', 'sibenik'] },
+        { name: 'Vukovar', x: 713, y: 255, aliases: ['vukovar'] },
+        { name: 'Karlovac', x: 418, y: 238, aliases: ['karlovac'] },
+        { name: 'Varaždin', x: 486, y: 139, aliases: ['varazdin', 'varaždin'] },
+        { name: 'Slavonski Brod', x: 629, y: 278, aliases: ['slavonski brod', 'sl. brod'] },
     ],
     nationalParks: [
-        { name: 'Plitvička jezera', x: 350, y: 265, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
-        { name: 'Krka', x: 425, y: 435, aliases: ['krka'] },
-        { name: 'Brijuni', x: 190, y: 330, aliases: ['brijuni'] },
-        { name: 'Kornati', x: 360, y: 420, aliases: ['kornati'] },
-        { name: 'Mljet', x: 550, y: 585, aliases: ['mljet'] },
-        { name: 'Paklenica', x: 350, y: 350, aliases: ['paklenica'] },
-        { name: 'Risnjak', x: 290, y: 215, aliases: ['risnjak'] },
-        { name: 'Sjeverni Velebit', x: 320, y: 295, aliases: ['sjeverni velebit', 'north velebit'] },
+        { name: 'Plitvička jezera', x: 424, y: 313, aliases: ['plitvice', 'plitvicka jezera', 'plitvička jezera'] },
+        { name: 'Krka', x: 454, y: 444, aliases: ['krka'] },
+        { name: 'Brijuni', x: 265, y: 309, aliases: ['brijuni'] },
+        { name: 'Kornati', x: 397, y: 444, aliases: ['kornati'] },
+        { name: 'Mljet', x: 587, y: 570, aliases: ['mljet'] },
+        { name: 'Paklenica', x: 409, y: 375, aliases: ['paklenica'] },
+        { name: 'Risnjak', x: 337, y: 247, aliases: ['risnjak'] },
+        { name: 'Sjeverni Velebit', x: 369, y: 325, aliases: ['sjeverni velebit', 'north velebit'] },
     ],
     regions: [
-        { name: 'Istra', x: 220, y: 280, aliases: ['istra', 'istria'] },
-        { name: 'Dalmacija', x: 470, y: 480, aliases: ['dalmacija', 'dalmatia'] },
-        { name: 'Slavonija', x: 600, y: 200, aliases: ['slavonija', 'slavonia'] },
-        { name: 'Zagorje', x: 420, y: 120, aliases: ['zagorje'] },
-        { name: 'Lika', x: 340, y: 310, aliases: ['lika'] },
-        { name: 'Kvarner', x: 280, y: 250, aliases: ['kvarner'] },
+        { name: 'Istra', x: 286, y: 274, aliases: ['istra', 'istria'] },
+        { name: 'Dalmacija', x: 499, y: 481, aliases: ['dalmacija', 'dalmatia'] },
+        { name: 'Slavonija', x: 627, y: 261, aliases: ['slavonija', 'slavonia'] },
+        { name: 'Zagorje', x: 448, y: 164, aliases: ['zagorje'] },
+        { name: 'Lika', x: 397, y: 347, aliases: ['lika'] },
+        { name: 'Kvarner', x: 328, y: 274, aliases: ['kvarner'] },
     ]
 };
 
