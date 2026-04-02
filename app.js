@@ -843,6 +843,8 @@ function switchSection(section) {
         renderProgressPage();
     } else if (section === 'learn') {
         cleanupLearnContentForMobile();
+    } else if (section === 'blind-map') {
+        initBlindMap();
     }
 }
 
@@ -1950,6 +1952,135 @@ function cleanupLearnContentForMobile() {
 }
 
 window.cleanupLearnContentForMobile = cleanupLearnContentForMobile;
+
+// ========== BLIND MAP - GEOGRAPHY INTERACTIVE MAP ==========
+let blindMapState = {
+    selectedLocation: null,
+    currentQuestion: 0,
+    score: 0,
+    answers: []
+};
+
+function initBlindMap() {
+    if (currentSubject !== 'geography') return;
+    document.getElementById('blindMapNavBtn')?.style.removeProperty('display');
+    document.getElementById('blindMapMobileBtn')?.style.removeProperty('display');
+    
+    const canvas = document.getElementById('blindMapCanvas');
+    if (canvas) {
+        drawBlindMapCanvas();
+        canvas.removeEventListener('click', handleBlindMapClick);
+        canvas.addEventListener('click', handleBlindMapClick);
+    }
+    
+    blindMapState = { selectedLocation: null, currentQuestion: 0, score: 0, answers: [] };
+    updateBlindMapUI();
+}
+
+function drawBlindMapCanvas() {
+    const canvas = document.getElementById('blindMapCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#f8f9fa';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = '#ddd';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < canvas.width; i += 50) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+    }
+    for (let i = 0; i < canvas.height; i += 50) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+    }
+}
+
+function handleBlindMapClick(event) {
+    const canvas = event.target;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = Math.round((event.clientX - rect.left) * scaleX);
+    const y = Math.round((event.clientY - rect.top) * scaleY);
+    
+    blindMapState.selectedLocation = { x, y };
+    document.getElementById('mapCoords').textContent = `Clicked: X=${x}, Y=${y}`;
+    
+    drawBlindMapCanvas();
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#6366f1';
+    ctx.beginPath();
+    ctx.arc(x, y, 8, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#4f46e5';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+}
+
+function submitMapAnswer() {
+    const input = document.getElementById('mapLocationInput');
+    const answer = input.value.trim().toLowerCase();
+    
+    if (!blindMapState.selectedLocation || !answer) {
+        showToast('Select a location on the map and enter a name');
+        return;
+    }
+    
+    const isCorrect = validateBlindMapAnswer(answer);
+    const feedback = document.getElementById('mapFeedback');
+    const message = document.getElementById('feedbackMessage');
+    
+    feedback.classList.toggle('correct', isCorrect);
+    feedback.classList.toggle('incorrect', !isCorrect);
+    feedback.classList.add('show');
+    
+    message.innerHTML = isCorrect ? '<i class="fas fa-check"></i> Correct!' : '<i class="fas fa-times"></i> Incorrect!';
+    
+    if (isCorrect) blindMapState.score += 10;
+    blindMapState.answers.push({ q: blindMapState.currentQuestion, correct: isCorrect });
+    
+    document.getElementById('mapScore').textContent = blindMapState.score;
+    input.value = '';
+    setTimeout(() => { blindMapState.selectedLocation = null; }, 500);
+}
+
+function validateBlindMapAnswer(answer) {
+    const cities = ['zagreb', 'split', 'dubrovnik', 'zadar', 'rijeka', 'osijek', 'vukovar', 'pula', 'sibenik', 'makarska'];
+    return cities.some(c => answer.includes(c));
+}
+
+function clearMapSelection() {
+    document.getElementById('mapLocationInput').value = '';
+    document.getElementById('mapCoords').textContent = 'No location selected';
+    blindMapState.selectedLocation = null;
+    drawBlindMapCanvas();
+}
+
+function skipMapQuestion() {
+    clearMapSelection();
+    document.getElementById('mapFeedback').classList.remove('show');
+    blindMapState.currentQuestion++;
+    updateBlindMapUI();
+}
+
+function updateBlindMapUI() {
+    const total = 10;
+    document.getElementById('mapProgressCount').textContent = `${blindMapState.currentQuestion + 1}/${total}`;
+    document.getElementById('mapScore').textContent = blindMapState.score;
+    const pct = ((blindMapState.currentQuestion + 1) / total) * 100;
+    document.getElementById('mapProgressFill').style.width = pct + '%';
+}
+
+window.submitMapAnswer = submitMapAnswer;
+window.clearMapSelection = clearMapSelection;
+window.skipMapQuestion = skipMapQuestion;
+window.initBlindMap = initBlindMap;
+window.handleBlindMapClick = handleBlindMapClick;
 
 window.addEventListener('resize', cleanupLearnContentForMobile);
 window.addEventListener('orientationchange', cleanupLearnContentForMobile);

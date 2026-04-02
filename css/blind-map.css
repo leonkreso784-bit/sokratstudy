@@ -1,0 +1,252 @@
+/* =====================================================
+   BLIND MAP SECTION (Geography Interactive Map)
+   ===================================================== */
+
+.blind-map-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.blind-map-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.blind-map-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.blind-map-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Map Canvas */
+.map-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border);
+}
+
+.blank-map-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: white;
+    cursor: crosshair;
+}
+
+/* Map Marker */
+.map-marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.map-marker.correct {
+    background: radial-gradient(circle, var(--success), #059669);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+    animation: correctMarkerPulse 1s ease;
+}
+
+.map-marker.incorrect {
+    background: radial-gradient(circle, var(--danger), #dc2626);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+    animation: incorrectMarkerShake 0.5s ease;
+}
+
+/* Answer Section */
+.map-answer-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.map-question {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.map-coordinates {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-family: monospace;
+}
+
+.map-input-group {
+    margin-bottom: 1rem;
+}
+
+.map-input-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.map-location-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.map-location-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Action Buttons */
+.map-action-buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.map-submit-btn,
+.map-clear-btn,
+.map-skip-btn {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    min-height: var(--touch-target);
+}
+
+.map-submit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.map-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
+}
+
+.map-clear-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+
+.map-clear-btn:hover { background: var(--danger); color: white; }
+
+.map-skip-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.map-skip-btn:hover { background: var(--primary); color: white; }
+
+/* Feedback */
+.map-feedback {
+    display: none;
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+}
+
+.map-feedback.show { display: block; }
+
+.map-feedback.correct {
+    background: rgba(34, 197, 94, 0.1);
+    border: 2px solid var(--success);
+}
+
+.map-feedback.incorrect {
+    background: rgba(239, 68, 68, 0.1);
+    border: 2px solid var(--danger);
+}
+
+.map-feedback-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.map-feedback-icon { font-size: 1.5rem; }
+.map-feedback.correct .map-feedback-icon { color: var(--success); }
+.map-feedback.incorrect .map-feedback-icon { color: var(--danger); }
+
+.map-feedback-message { font-weight: 600; font-size: 1rem; }
+.map-feedback-details { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem; }
+
+/* Progress */
+.map-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.map-progress-bar {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+/* Animations */
+@keyframes correctMarkerPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.3); box-shadow: 0 0 25px rgba(34, 197, 94, 0.6); }
+}
+
+@keyframes incorrectMarkerShake {
+    0%, 100% { transform: translate(-50%, -50%); }
+    25% { transform: translate(calc(-50% + 3px), -50%); }
+    75% { transform: translate(calc(-50% - 3px), -50%); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .map-action-buttons { grid-template-columns: 1fr; }
+    .blind-map-header h1 { font-size: 1.3rem; }
+}
+
+@media (min-width: 768px) {
+    .blind-map-container { padding: 2rem; }
+    .map-answer-section { padding: 2rem; }
+}

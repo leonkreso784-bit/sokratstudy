@@ -371,6 +371,10 @@
                 <i class="fas fa-chart-line"></i>
                 <span>Progress</span>
             </button>
+            <button class="study-nav-btn" data-section="blind-map" id="blindMapNavBtn" style="display: none;">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Map</span>
+            </button>
         </nav>
 
         <!-- Study Content Area -->
@@ -732,6 +736,65 @@
                 </button>
             </div>
         </section>
+
+        <!-- BLIND MAP SECTION (Geography Only) -->
+        <section id="blind-map" class="section">
+            <div class="blind-map-container">
+                <div class="blind-map-header">
+                    <h1>Interactive Blind Map</h1>
+                    <p>Click on the map to locate the place, then enter its name</p>
+                </div>
+
+                <div class="map-wrapper">
+                    <canvas id="blindMapCanvas" class="blank-map-canvas" width="1000" height="700"></canvas>
+                </div>
+
+                <div class="map-answer-section">
+                    <div class="map-question" id="mapQuestion">
+                        Click on the location of: <strong id="mapTaskName">Loading...</strong>
+                    </div>
+
+                    <div class="map-coordinates">
+                        <span id="mapCoords">No location selected</span>
+                    </div>
+
+                    <div class="map-input-group">
+                        <label class="map-input-label" for="mapLocationInput">Enter the location name:</label>
+                        <input type="text" id="mapLocationInput" class="map-location-input" placeholder="e.g., Zagreb, Plitvice Lakes..." autocomplete="off">
+                    </div>
+
+                    <div class="map-action-buttons">
+                        <button class="map-submit-btn" id="mapSubmitBtn" onclick="submitMapAnswer()">
+                            <i class="fas fa-check"></i> Submit Answer
+                        </button>
+                        <button class="map-clear-btn" id="mapClearBtn" onclick="clearMapSelection()">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button class="map-skip-btn" id="mapSkipBtn" onclick="skipMapQuestion()">
+                            <i class="fas fa-forward"></i> Skip
+                        </button>
+                    </div>
+
+                    <div class="map-feedback" id="mapFeedback">
+                        <div class="map-feedback-content">
+                            <span class="map-feedback-icon"><i class="fas fa-check-circle"></i></span>
+                            <div class="map-feedback-text">
+                                <div class="map-feedback-message" id="feedbackMessage">Waiting for answer...</div>
+                                <div class="map-feedback-details" id="feedbackDetails"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-progress">
+                    <span class="map-progress-text">Progress: <span id="mapProgressCount">0/0</span></span>
+                    <span class="map-score-display">Score: <span id="mapScore">0</span> pts</span>
+                </div>
+                <div class="map-progress-bar">
+                    <div class="map-progress-fill" id="mapProgressFill" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
         </main>
 
         <!-- Mobile Bottom Navigation for Study Page -->
@@ -759,6 +822,10 @@
             <button class="mobile-nav-btn" data-section="progress">
                 <i class="fas fa-chart-line"></i>
                 <span>Progress</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="blind-map" id="blindMapMobileBtn" style="display: none;">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Map</span>
             </button>
         </nav>
     </section>

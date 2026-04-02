@@ -31,8 +31,13 @@
 /* Components (Header, Navigation, Main Content) */
 @import url('css/components.css');
 
-/* Study sections (Subject Selector, Home, Flashcards, Quiz, Fill, Progress) */
-@import url('css/study-sections.css');
+/* Study sections (split into modular files) */
+@import url('css/subject-selector.css');
+@import url('css/home-section.css');
+@import url('css/flashcards-section.css');
+@import url('css/quiz-section.css');
+@import url('css/fill-blanks-section.css');
+@import url('css/blind-map.css');
 
 /* Responsive styles (all media queries) */
 @import url('css/responsive.css');
