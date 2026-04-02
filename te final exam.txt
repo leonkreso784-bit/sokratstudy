@@ -1,0 +1,104 @@
+TE 1
+The word ‘tour’ - Latin word tornus, meaning ‘a tool for making a circle.’
+Key dimensions of tourism: movement,lenght of stay motivation.
+BASIC CONCEPTS OF TOURISM: travel trade, transport, accommodation, catering, catering facilities, tourist attractions.
+5 A'S: ATTRACTIONS *ACCESS *AMENITIES *ACCOMMODATION *ACTIVITIES
+KEY PLAYERS IN THE TOURISM INDUSTRY; local residents, local companies, media, employees,
+government, competitors, tourists, business, associations, activists, tourism developers.
+Visitors = tourists + day trippers
+Tourists: visitors who travel for more than 24 h. short holidays (1-3 nights), long holidays (more than 3 nights)
+Day-trippers - visitors who stay in the destination less than 24 h,
+2 TYPES OF TOURISM- 1. international (1.1 outbound tourism- Leaving your homeland, 1.2 inbound tourism-  incoming tourists) 2. Domestic(Traveling within the same country)
+IMPACTS OF TOURISM DEVELOPMENT: Economic Environmental Social Cultural
+WHY ARE TOURISTS IMPORTANT? • Boosts the revenue of the economy, • Creates thousands of jobs, • Develops the infrastructures of a country, • Plants a sense of cultural exchange between foreigners and citizen
+UNWTO- united nations world tourism organisation
+Tourism economics is a branch of economics that studies the economic effects of tourism activity
+27 september- tourism day
+Features of tourism market: Intangible product, No transfer of the ownership, Closely interrelated production, An assembled product, No movement of product, Unstable demand, Wider coverage
+CHARACTERISTIC OF TOURISM MARKET
+1.Meeting the needs of tourists is not possible without the travel of tourists. 
+2The products and services offered on a tourist market can not be separated from the area where they are 'produced' 
+3.The product offered on the tourist market is not homogenous.
+4.Tourists are always an integral part of the 'production' of the tourism product and its consumption is not possible without their personal presence.
+5.Tourists in a receptive destination spend money instead of earning it
+TOURISM DEMAND - ability of consumers to buy different amounts of a product at different prices 
+during any period of time.
+2 TYPES OF TOURISM DEMAND-1. Demand for travel to destination (visitor arrivals, overnights, expenditure) 2. Demand for a particular tourism related product or service (hotel rooms, restaurants meals)
+Demand for travel to destination- •Price factors (transport, accommodation, excursions,)              •Non - price factors (socio-economic, demographic factors)
+variables affecting the demand of any good/service: • price • consumer income • the numeber of consumers in the market • the price of related products • consumer tastes • level of marketing/promotion expenditure • other variables
+FACTORS INFLUENCING TOURISM DEMAND: Size of market, Income, Tastes, Advertising and promotion, Seasonality ,Product availability, Prices of substitute and complementary products, amount of leisure time available
+law of demand- price and tourism demand have an inverse relationship
+The bandwagon effect – people demand a certain product or service because others are purchasing it (because it is ‘fashionable’). 
+The snob effect – as some consumer seek to be different and exclusive by demanding less of a product as more people consume it. 
+The veblen effect – when some individuals seek to impress others by demanding more of certain ‘high status’ product or services as their price rises (prestige).
+TOURISM DEMAND AND ELASTICITY: 1. Price Elasticity of Demand = (% Change in Quantity Demanded)/(% Change in Price) 
+2. Income Elasticity of Demand =(% Change in Quantity Demanded)/(% Change in Income)
+3. Cross-price Elasticity of Demand =(% Change in Quantity Demanded of product A )/(% Change in price of product B )
+4. Marketing Elasticity of Demand =(% Change in Quantity Demanded)/(% Change in Marketing expenditure)
+forecasting tourism- is important, for both government policy development and business planning, to have reliable short-term and long-term forecasts
+Three broad methods of forecasting: 1. Qualitative forecasting - based on persons sharing their experience, practical knowledge and intuition. 2. Quantitative forecasting – mathematical techniques to predict the values of variables of interest. 3. Artificial Intelligence- AI-based system are built to bridge the gap between qualitative and quantitative
+Regression analysis - the most common method of estimating demand(1. Specify the model to be estimated. 2. Collect the data for the variables in the model. 3. Determine the form of the model        4. Evaluate the regression results)
+Depended variables • Tourists arrivals • Tourist expenditures • Length of stay 
+Independent variables •Income •Relative prices •Transport cost •Marketing/promotion expenses •Qualitative factors
+inputs take three basic forms: - Natural resources - Human resources - Human-made resources
+Inputs into tourism supply are either Variable (Can be changed at short notice) Fixed (Cannot be easily adjusted)
+Production costs in tourism Explicit costs (direct payments made by the firms to outside suppliers of inputs) Implicit costs(opportunity costs that firms face in the use of their own resources)
+COSTS FORMULA: Total costs-•TC = FC + VC Average cost•AC = TC/Q Average fixed cost•AFC = FC/Q
+Average variable cost•AVC = VC/Q Marginal cost•MC = dTC/dQ     (output=Q)
+PRODUCT -Total product (TP), Average product (AP), Marginal product (MP)
+Economy of scale- a given percentage increases in all inputs results in a larger percentage increase in the firm’s output.
+Diseconomy of scale- when a given percentage increases in all inputs leads to a smaller percentage increase in output.
+Supply chain - The network of organisations, people, activities, information and resources involved in moving a product or a service from a supplier to customer.
+5 words associated with „markets”-  Revenue, Costs, Consumers tastes, Technology, Stocks 
+tourism market structure- the nature of the market within which a tourism firm operates.( ➢Market structure affects: ➢ The firm’s conduct (decision-making processes) ➢The firm’s performance (potential to make profit)
+Major determinants of market structure: 1. Number of sellers 2. Number of buyers 3. Nature of goods and services 4. Entry and exit barriers in a particular market 5. Information about market conditions 6. Economy of scale 7. Level of product and service differentiation between firms
+4 different market structure: ▪ perfect competition(large number of buyers and sellers in the market) ▪ monopolistic competition  (large number of buyers and sellers in the market)▪ oligopoly (A small number of firms dominate the market.)▪ monopoly (There is only one seller in the market.)
+Competitive strategies- Cost leadership,( produce or deliver goods or services at the lowest costs.) Product differentiation (better product performance or better product perception),Focus (focus on a particular geographical area, or a customer segment)
+
+
+
+
+
+
+TE 2
+Price is not the most critical variable of the tourism firm
+Determinants of tourism prices; The firm’s objective ,The firm’s ownership characteristic,The market structure, Method of the distribution, The firms position in the market place,The degree of competition, The firm’s cost structure.
+Setting higher prices may result in fewer buyers and smaller potential revenue if the product faces elastic demand
+Setting a lower prices may result in more buyers, but a small revenue potential if the product demand is inelastic.
+Three pricing strategies: COST BASED (setting prices based on the costs for producting, distributing and selling), MARKET BASED (setting prices of goods/services based on the current market conditions.) COMPETITION-BASED PRICING (setting prices based on competitors)
+NON-PROFIT GOALS- Firms can pursue goals that are not profit driven
+Basic measure- measure by type of visitor, trip, visitor night
+Seven effects of increased tourist expenditure • Increased local production and output • Create new business and employment • Generates foreign exchange earnings • Creates new investment opportunities •Increased government revenue • Assists regional development • Reduces poverty
+Direct Expenditure - suppliers who sell goods and services directly to tourists.
+Indirect Expenditure - when firms receiving tourist expenditure purchase inputs from other firms
+Induced Expenditure  (managers, workers and their families)- spend their incomes “downstream”- (supermarkets, bookstores, ..)
+Multiplier = Total Impact / Direct Expenditure
+The total effect is the sum of the direct, indirect, and induced effects 
+total effects increases in ➢ output ➢ sales ➢ value added ➢ GDP ➢ household income ➢employment
+five types of multipliers- sales multiplier, output multiplier, income multiplier, value-added multiplier, employment multiplier.
+Economic contribution of tourism- Gross domestic (regional) product, - Household income, - Value added, - Foreign change earnings, - Employment…
+The problem with measuring the economic significance of tourism spending is that ‘tourism’ does not exist as a distinct sector in any system economic statistic or of national accounts.
+TSA – tourism satellite accounts - a standard statistical framework and the main tool for the economic measurement of tourism.
+Key measures in TSA- Tourism expenditure, Tourism consumption, Tourism output, Tourism gross added value – TGVA , Tourism gross domestic product – TGDP, Tourism gross operating surplus – TOGP, Tourism employment, Tourism exports, Tourism imports.
+Economic contribution vs. economic impact
+	- Economic contribution refers to tourism’s spending makes to key economic variables.
+- Economic impact refers to the changes in the economic contribution resulting from    specific events or activities
+The impact of tourism on the country's economy depends on:  1. the content and quality of direct tourist product  2. the extent to which the country's economy is able to offer products and services
+Tourism affect the environment through its interplay with ▪ NATURAL RESOURCES ▪ HUMAN RESOURCES ▪ BUILT RESOURCES
+3 major sources of market failure:
+Lack of property rights to environmental resources, Externalities ,Public goods.
+Tourism Carrying Capacity- The maximum number of people that may visit a tourist destination at the same time
+Economic instruments are controls imposed on environmentally damaging activity
+Strategies for pollution control: Voluntary agreements, Merger, Tax on output and on pollution
+Potential benefits of tourism growth- Economic, Socio-cultural, Environment
+costs of Tourism Growth- Economic Costs of Tourism Increased prices, cost of living/property taxes for residents. Socio-cultural costs of Tourism • hectic community and lifestyle, • Loss of ‘authenticity’. Environmental Costs of Tourism(water quality • coastal erosion...)
+A green economy is defined as one that “results in improved human-wellbeing
+What is Sustainable Tourism? ➢ viable, long-term economic operations ➢ respect for host communities ➢ benefits that are distributed fairly ➢ making optimal use of environmental resources
+Sustainable developmemt= scial+economic+enviromental 
+The growth management approach- Argues that tourism’s problems can be solved by better, more efficient management of tourism development, supported by improvements in technology
+ Good Growth management is argued to achieve ➢ Economic sustainability ➢ Socio-cultural sustainability ➢ Environmental sustainability
+The ‘heterodox’ alternative view - e slow tourism, ethical and responsible tourism, regenerative tourism, and degrowth
+Sustainable tourism seeks to lessen the harm done by tourism,
+Regenerative tourism minimize the negative impact of tourism but also to actively contribute to the regeneration of local ecosystems, economies, and cultures. seeks to leave a destination better than it was found.
+
+

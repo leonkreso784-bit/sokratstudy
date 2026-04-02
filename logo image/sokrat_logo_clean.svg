@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <g stroke="#3BB6D9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer circle -->
+    <circle cx="256" cy="256" r="220"/>
+    
+    <!-- Socrates head (simplified clean line art) -->
+    <!-- Head outline -->
+    <path d="M305 150
+             C260 140, 210 165, 200 210
+             C190 260, 215 300, 245 330
+             C260 350, 300 360, 330 340"/>
+    
+    <!-- Forehead & nose -->
+    <path d="M300 170
+             C320 185, 320 210, 300 220"/>
+    
+    <!-- Eye -->
+    <path d="M285 215 C295 210, 305 210, 315 215"/>
+    
+    <!-- Beard -->
+    <path d="M280 260
+             C300 300, 285 335, 255 360"/>
+    
+    <!-- Neck -->
+    <path d="M245 330 C235 380, 265 395, 285 410"/>
+  </g>
+</svg>

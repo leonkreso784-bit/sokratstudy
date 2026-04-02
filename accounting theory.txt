@@ -1,0 +1,573 @@
+Review Questions – Cash and Internal Control
+1. What items are included in cash?
+
+Cash includes currency and coins on hand, bank deposits, checks received from customers, money orders, and other negotiable instruments that are readily available for use. It also includes undeposited cash receipts and cash in house banks.
+
+2. What is the definition of internal control? What are its objectives?
+
+Internal control is a system of policies and procedures designed to protect assets, ensure accurate accounting records, promote operational efficiency, and encourage adherence to management policies.
+
+The main objectives of internal control are:
+
+Safeguarding assets
+
+Ensuring reliability and accuracy of accounting records
+
+Promoting operational efficiency
+
+Ensuring compliance with laws and company policies
+
+3. What assets are intended to be safeguarded?
+
+Assets intended to be safeguarded include cash, inventory, equipment, furnishings, supplies, and other property owned by the business, as well as accounting records and financial information.
+
+4. What is collusion?
+
+Collusion occurs when two or more employees work together to circumvent internal control procedures, usually to commit fraud or theft that would be difficult for one person to accomplish alone.
+
+5. What is the advantage of bonding employees?
+
+Bonding employees provides financial protection against losses caused by employee dishonesty and acts as a deterrent to theft or fraud, since bonded employees know losses can be recovered by the company.
+
+6. What is an internal control procedure for house banks?
+
+An internal control procedure for house banks is to assign responsibility for each house bank to one specific employee and to require that the bank be counted and reconciled at the beginning and end of each shift.
+
+7. What is the purpose of the cashier’s daily report?
+
+The purpose of the cashier’s daily report is to summarize all cash transactions for the day, reconcile cash received with recorded sales, and provide documentation for accounting and management review.
+
+8. What is the purpose of a bank reconciliation?
+
+The purpose of a bank reconciliation is to explain differences between the bank statement balance and the company’s cash records, detect errors or irregularities, and ensure the accuracy of the cash account.
+
+9. What is the definition of the following terms?
+
+a. Canceled checks
+Checks that have been paid by the bank and returned to the check writer as proof of payment.
+
+b. Deposit in transit
+Cash receipts that have been recorded by the company but not yet recorded by the bank.
+
+c. Outstanding checks
+Checks that have been written and recorded by the company but not yet paid by the bank.
+
+d. NSF check
+A Non-Sufficient Funds (NSF) check is a check returned by the bank because the issuer does not have enough funds in their account.
+
+10. Why does the balance shown on the bank statement generally not equal the balance shown in the checkbook or accounting records?
+
+The balances differ due to timing differences such as outstanding checks, deposits in transit, bank service charges, NSF checks, and errors, which are recorded by either the bank or the company at different times.
+
+Review Questions – Budgeting and Cost Analysis
+1. What is a budget? What advantages does budgeting offer?
+
+A budget is a formal financial plan that outlines expected revenues, expenses, and profits for a specific period of time.
+
+Budgeting offers the following advantages:
+
+Provides a plan for future operations
+
+Improves coordination and communication among departments
+
+Helps control costs and expenses
+
+Serves as a standard for performance evaluation
+
+Encourages management discipline and accountability
+
+2. Why can the predicting of sales be difficult?
+
+Sales prediction is difficult because it is affected by uncertain factors such as economic conditions, competition, consumer behavior, seasonality, pricing changes, and unexpected events.
+
+3. If budgeting is not an exact science, why should it be done?
+
+Budgeting should be done because it provides a reasonable estimate for planning and control, helps management anticipate problems, allocate resources efficiently, and make informed decisions even when exact results cannot be guaranteed.
+
+4. What is sales forecasting? What are its uncertainties and its importance?
+
+Sales forecasting is the process of estimating future sales revenue for a given period.
+
+Its uncertainties include:
+
+Market fluctuations
+
+Changes in consumer demand
+
+Competitive actions
+
+Economic conditions
+
+Its importance lies in the fact that it forms the foundation for budgeting, staffing, purchasing, pricing, and profit planning.
+
+5. What factors should be considered in forecasting sales for a new business?
+
+Factors include:
+
+Market size and demand
+
+Location
+
+Target customers
+
+Competition
+
+Pricing strategy
+
+Management experience
+
+Economic conditions
+
+Marketing and promotional plans
+
+6. What formula uses occupancy percentage and average room rate to forecast room sales?
+
+Room Sales = Number of Available Rooms × Occupancy Percentage × Average Room Rate (ADR)
+
+7. What formula uses turnover and average check to forecast food sales?
+
+Food Sales = Number of Seats × Turnover × Average Check
+
+8. What three kinds of expenses are closely related to sales?
+
+The three kinds of expenses closely related to sales are:
+
+Food cost
+
+Labor cost
+
+Other variable operating expenses
+
+9. What is the total cost equation?
+
+Total Cost = Fixed Costs + Variable Costs
+
+10. What is a variable expense? A fixed expense? A semi-variable expense?
+
+A variable expense changes directly in proportion to sales volume.
+
+A fixed expense remains constant regardless of sales volume within a relevant range.
+
+A semi-variable expense contains both fixed and variable components.
+
+11. What is the difference between breakeven and breakeven point?
+
+Breakeven is the condition where total revenues equal total costs, resulting in zero profit or loss.
+The breakeven point is the specific level of sales or volume at which breakeven occurs.
+
+12. What is the breakeven point formula?
+
+Breakeven Point (in sales) = Fixed Costs ÷ Contribution Margin Ratio
+
+(Alternatively, in units: Fixed Costs ÷ Contribution Margin per Unit)
+
+Review Questions – Budgeting, Forecasting, Costs & Breakeven
+1. What is a budget? What advantages does budgeting offer?
+
+A budget is a formal written financial plan that expresses management’s expectations for revenues, expenses, and profits for a future period.
+
+The advantages of budgeting include:
+
+Provides a plan and direction for operations
+
+Improves coordination and communication between departments
+
+Helps control costs and evaluate performance
+
+Assists management in decision-making
+
+Encourages efficient use of resources
+
+2. Why can the predicting of sales be difficult?
+
+Predicting sales can be difficult because sales are influenced by many uncontrollable factors, such as economic conditions, competition, consumer preferences, seasonality, pricing changes, and unexpected events.
+
+3. If budgeting is not an exact science, why should it be done?
+
+Budgeting should be done because it provides a reasonable basis for planning and control, helps management anticipate future conditions, and allows corrective action even though exact results cannot be predicted.
+
+4. What is sales forecasting? What are its uncertainties and its importance?
+
+Sales forecasting is the process of estimating future sales revenues for a given period.
+
+Its uncertainties include changes in:
+
+Market conditions
+
+Customer demand
+
+Competition
+
+Economic environment
+
+Its importance lies in the fact that it is the foundation of the budget, affecting staffing, purchasing, pricing, and profit planning.
+
+5. What factors should be considered in forecasting sales for a new business?
+
+Factors to consider include:
+
+Location
+
+Target market and customer demand
+
+Level of competition
+
+Pricing strategy
+
+Management experience
+
+Economic conditions
+
+Marketing and promotional plans
+
+6. What formula uses occupancy percentage and average room rate to forecast room sales?
+
+Room Sales = Number of Available Rooms × Occupancy Percentage × Average Room Rate (ADR)
+
+7. What formula uses turnover and average check to forecast food sales?
+
+Food Sales = Number of Seats × Turnover × Average Check
+
+8. What three kinds of expenses are closely related to sales?
+
+The three kinds of expenses closely related to sales are:
+
+Food cost
+
+Labor cost
+
+Other variable operating expenses
+
+9. What is the total cost equation?
+
+Total Cost = Fixed Costs + Variable Costs
+
+10. What is a variable expense? A fixed expense? A semi-variable expense?
+
+A variable expense changes in direct proportion to the level of sales or activity.
+
+A fixed expense remains constant regardless of changes in sales volume within a relevant range.
+
+A semi-variable expense contains both fixed and variable components.
+
+11. What is the difference between breakeven and breakeven point?
+
+Breakeven refers to the condition where total revenues equal total costs, resulting in no profit or loss.
+The breakeven point is the specific sales volume or revenue level at which breakeven occurs.
+
+12. What is the breakeven point formula?
+
+Breakeven Point (in sales) = Fixed Costs ÷ Contribution Margin Ratio
+
+(Alternatively: Breakeven Point (in units) = Fixed Costs ÷ Contribution Margin per Unit)
+
+Review Questions – SEC, Annual Reports, Audits
+1. What two types of annual reports does the SEC require?
+
+The SEC requires:
+
+the Form 10-K, a detailed annual report filed with the SEC, and
+
+the annual report to shareholders, which is a more summarized and reader-friendly report.
+
+2. What kind of agency is the SEC? What is its primary mission?
+
+The SEC is a federal government regulatory agency.
+Its primary mission is to protect investors, maintain fair and efficient markets, and ensure full and fair disclosure of financial information.
+
+3. What is the significance of October 1929?
+
+October 1929 marks the stock market crash, which led to the Great Depression and exposed serious weaknesses in financial reporting and market regulation.
+
+4. Why was the SEC created?
+
+The SEC was created to restore investor confidence, prevent fraud and market manipulation, and regulate the securities markets following the 1929 stock market crash.
+
+5. What is the importance of the Sarbanes-Oxley Act of 2002? What do sections 302, 401, 404, 409, and 802 cover?
+
+The Sarbanes-Oxley Act (SOX) of 2002 was enacted to increase corporate accountability, improve financial reporting accuracy, and strengthen internal controls.
+
+Section 302 – Management certification of financial statements
+
+Section 401 – Disclosure of off-balance-sheet items and accurate reporting
+
+Section 404 – Management assessment and reporting on internal controls
+
+Section 409 – Real-time disclosure of material changes
+
+Section 802 – Criminal penalties for altering or destroying records
+
+6. What is a 10-K report?
+
+A 10-K report is a comprehensive annual filing submitted to the SEC that includes audited financial statements, management discussion and analysis, risk factors, and detailed disclosures about the company’s operations and finances.
+
+7. What types of opinions can a certified public accounting firm give in its auditor’s report?
+
+The four types of audit opinions are:
+
+Unqualified opinion
+
+Qualified opinion
+
+Adverse opinion
+
+Disclaimer of opinion
+
+8. What are consolidated financial statements?
+
+Consolidated financial statements combine the financial results of a parent company and its subsidiaries into a single set of statements as if they were one economic entity.
+
+9. What are notes to the financial statements? At a minimum, what do the notes include?
+
+Notes to the financial statements provide additional information and explanations necessary to understand the financial statements.
+
+At a minimum, the notes include:
+
+Summary of significant accounting policies
+
+Detailed explanations of major accounts
+
+Information on contingencies and commitments
+
+10. What is the standard content of an annual report to shareholders?
+
+The standard content includes:
+
+Letter from management
+
+Financial statements
+
+Notes to the financial statements
+
+Auditor’s report
+
+Management’s discussion and analysis (MD&A)
+
+Review Questions – Accounting Cycle and Adjustments
+1. What is an accounting cycle?
+
+An accounting cycle is the sequence of accounting procedures used to record, process, and report financial transactions during an accounting period, from the initial transaction to the preparation of financial statements and closing entries.
+
+2. What are cash basis accounting and accrual basis accounting?
+
+Cash basis accounting records revenues and expenses when cash is received or paid.
+
+Accrual basis accounting records revenues when earned and expenses when incurred, regardless of when cash is received or paid.
+
+3. What is the posting procedure for special journals?
+
+In special journals, individual transactions are not posted separately. Instead, column totals are posted periodically to the general ledger, reducing the number of postings required.
+
+4. What is a working trial balance? What is its purpose?
+
+A working trial balance is an internal document that lists all account balances before adjustments.
+
+Its purpose is to:
+
+Verify that debits equal credits
+
+Provide a basis for preparing adjusting entries and financial statements
+
+5. What is the purpose of adjusting entries and correcting entries?
+
+Adjusting entries ensure that revenues and expenses are recognized in the correct accounting period.
+
+Correcting entries are used to fix errors made in previously recorded transactions.
+
+6. What are some typical adjustment areas any hospitality business might have at month end?
+
+Typical adjustment areas include:
+
+Accrued payroll
+
+Inventory adjustments
+
+Prepaid expenses
+
+Depreciation
+
+Unearned revenues
+
+Accrued expenses
+
+7. Why does a business using the perpetual inventory system need to adjust the Cost of Food Sales account after storeroom issues are recorded?
+
+Because storeroom issues represent actual usage, adjustments are needed to ensure that the Cost of Food Sales reflects the true cost of food consumed, not just purchased.
+
+8. Why does any business have an unpaid payroll on the same day that payroll checks are given to its employees?
+
+Because employees earn wages up to the end of the pay period, but payment may occur later, creating accrued payroll expense that has not yet been paid.
+
+9. What does the computerized year-end process accomplish?
+
+The computerized year-end process:
+
+Automatically posts closing entries
+
+Resets temporary accounts to zero
+
+Transfers net income or loss to retained earnings
+
+10. What does the post-closing trial balance signify?
+
+A post-closing trial balance confirms that:
+
+Only permanent accounts remain open
+
+Debits equal credits
+
+The ledger is ready for the next accounting period
+
+Review Questions – Hotel Income Statements and Departments
+1. What are the components of labor cost in the hotel industry?
+
+Labor cost includes wages and salaries, employee benefits, payroll taxes, service charge distributions, and employee meals and uniforms, where applicable.
+
+2. What is the name of the external statement showing revenues and expenses and given to shareholders?
+
+The statement is called the Income Statement.
+
+3. What are possible revenue sources for the Other Operated Departments line item?
+
+Possible revenue sources include spa operations, golf courses, parking, laundry and dry cleaning, health clubs, retail shops, and recreational facilities operated by the hotel.
+
+4. What revenue sources might be included in the line item Rentals and Other Income?
+
+This line item may include space rentals, commission income, vending machine income, lease income, and miscellaneous non-operating revenues.
+
+5. What types of personnel might be in the A&G department?
+
+Personnel in the Administrative and General (A&G) department include general management, accounting staff, human resources, information systems, and clerical personnel.
+
+6. What is a direct expense?
+
+A direct expense is an expense that can be specifically identified with and charged to a particular department.
+
+7. What types of personnel might be in the sales and marketing department?
+
+Personnel include sales managers, marketing managers, advertising staff, public relations staff, and reservation sales personnel.
+
+8. Which department will get charged for repairs to furniture in the Rooms department?
+
+The Rooms department will be charged for repairs to its furniture.
+
+9. What is the name of the internal income statement given to managers?
+
+The internal income statement is called the Statement of Income and Expense (also referred to as the Departmental Income Statement).
+
+10. What four specific expenses are purposely excluded from the internal income statement?
+
+The four expenses excluded are:
+
+Depreciation
+
+Interest
+
+Income taxes
+
+Rent or lease expense (or replacement reserve, depending on ownership structure)
+
+11. Which departments are listed as Undistributed Operating Expenses on the internal income statement?
+
+They include:
+
+Administrative and General
+
+Sales and Marketing
+
+Property Operations and Maintenance
+
+Utilities
+
+12. What is the line item called Replacement Reserves on the internal income statement?
+
+Replacement Reserves represent funds set aside for future replacement of furniture, fixtures, and equipment (FF&E).
+
+13. What ratio measures actual room sales against a hotel’s potential room sales?
+
+The Occupancy Percentage.
+
+14. What is the definition of gaming revenue in a casino operation?
+
+Gaming revenue is the net amount retained by the casino, calculated as total wagers minus winnings paid to players.
+
+15. When is the Complimentary Allowances account used in a casino operation?
+
+It is used when complimentary goods or services (such as rooms, food, or entertainment) are provided to players and must be recorded as a reduction of gaming revenue.
+
+Review Questions – Analyzing Hospitality Financial Statements
+1. What specific items might be included in the notes to the financial statements?
+
+Notes may include:
+
+Significant accounting policies
+
+Details of long-term debt
+
+Lease commitments
+
+Contingent liabilities
+
+Pension and benefit plans
+
+Related-party transactions
+
+Subsequent events
+
+2. What are the differences between an audit, a review, and a compilation service in the preparation of financial statements?
+
+An audit provides the highest level of assurance and includes detailed testing of records.
+
+A review provides limited assurance and relies mainly on inquiry and analytical procedures.
+
+A compilation provides no assurance and simply presents financial data supplied by management.
+
+3. Why is the net income amount on the income statement not representative of cash income?
+
+Because net income is calculated using the accrual basis of accounting, which includes non-cash items (such as depreciation) and timing differences between revenues earned and cash received.
+
+4. What are the differences between common-size analysis, comparative analysis, and ratio analysis?
+
+Common-size analysis expresses each financial statement item as a percentage of a base amount.
+
+Comparative analysis compares financial results across periods.
+
+Ratio analysis evaluates relationships between financial statement items to assess performance and financial condition.
+
+5. What are the purposes of the income statement, balance sheet, and the statement of cash flows?
+
+The income statement shows profitability over a period.
+
+The balance sheet shows financial position at a specific point in time.
+
+The statement of cash flows shows sources and uses of cash during a period.
+
+6. What are the names and representations of the three subtotals of income and final total of income on the income statement?
+
+They are:
+
+Gross Profit – revenues minus cost of sales
+
+Income from Operations – profit from core operations
+
+Income Before Income Taxes – income before tax expense
+
+Net Income – final profit after all expenses
+
+7. What does the term liquidity mean? Which ratios are used to measure liquidity?
+
+Liquidity is the ability of a business to meet its short-term obligations.
+
+Liquidity ratios include:
+
+Current Ratio
+
+Quick (Acid-Test) Ratio
+
+8. What are the purposes of the operating activities section, investing activities section, and financing activities section of the statement of cash flows?
+
+Operating activities show cash flows from day-to-day operations.
+
+Investing activities show cash flows related to the purchase and sale of long-term assets.
+
+Financing activities show cash flows related to borrowing, repaying debt, and owner investments.
