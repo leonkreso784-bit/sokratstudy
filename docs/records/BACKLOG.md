@@ -41,6 +41,11 @@
 > plan: kod je na grani `feat/tinder-kadar`, **nista od toga nije na produkciji**, a nastavak zivi u
 > [archive/KARTICE_TELEFON.md](../archive/KARTICE_TELEFON.md).
 >
+> ⚠️ **CI je CRVEN na vrhu te grane i to nije flake** (utvrdjeno 08.09., poslije parkiranja): ⑨ je ukinuo
+> obuzdavanje kartice, pa na `math` (KaTeX, nelomljivo) dokument prekoraci sirinu — `smoke.spec`
+> `innerW=375 docW=618`. **Lokalno na Windowsu prolazi**, na Linux runneru ne. Puna prica, mjere i
+> posljedica za BUG-045/046 su u arhivi — ovdje se NE otvara.
+>
 > **⑨ (08.09.) — UZROK JE UKLONJEN, NE ZAOBIĐEN.** Gornji zapis ostaje jer nosi ZAŠTO, ali njegov
 > zaključak („jedini put je razdvojiti gestu i skrol po licu = redizajn") je **ispunjen s druge strane**:
 > Leon je predložio da se makne SKROL, a ne gesta. Kartica na dodiru više nije skroler (`overflow: visible`,

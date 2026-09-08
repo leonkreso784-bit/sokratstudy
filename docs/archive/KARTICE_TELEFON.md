@@ -15,7 +15,7 @@ uz rad koji stoji na grani i čeka.
 
 | | |
 |---|---|
-| **grana** | `feat/tinder-kadar`, vrh **`9b7272c`** (pushana) |
+| **grana** | `feat/tinder-kadar`, vrh **`f3f0116`** (pushana) |
 | **preview** | `studymaster-git-feat-tinder-kadar-leon-kresos-projects.vercel.app` |
 | **produkcija** | **`c53c28c` — NIŠTA od ovoga nije na njoj** |
 | pomoćna grana | `fix/kadar-nalicje` — A/B prekidači `?bez=pany,perspektive,transformacije,overflowauto` (sonda za iPhone) |
@@ -24,6 +24,43 @@ uz rad koji stoji na grani i čeka.
 **BUG-046** (pilula kategorije — 11 od 20 boja gradiva padalo je AA, najgori 3,31) i **BUG-045**
 (Service Worker nikad nije spremao runtime-assete). Oba su gotova i s branama; oba čekaju na grani.
 Kad se bude odlučivalo o produkciji, to su dvije stavke koje s karticama nemaju veze.
+
+### ⚠️ CI JE CRVEN NA VRHU OVE GRANE — i to nije flake
+
+Utvrđeno **2026-09-08**, nakon parkiranja. **Produkcija (`c53c28c`) je zelena i ovo je ne dira.**
+Pada isključivo `Playwright shard 1/2`; `build`, `authed` i `shard 2/2` su zeleni u oba runa.
+
+| commit | ishod | što je palo |
+|---|---|---|
+| `728f64b` i sve prije | ✅ | — |
+| **`9b7272c`** (F1/12 ⑨) | ❌ | `phone.spec ⑩` — kartica **597 od 734 px** sigurne širine (852 px polegnuto) |
+| **`f3f0116`** (docs-only) | ❌ | `smoke.spec` — **`math/flashcards: H-OVERFLOW innerW=375 docW=618`** |
+
+**Dva testa, jedan korijen — i to je ⑨.** ⑨ je namjerno ukinuo obuzdavanje kartice
+(`minmax(0, 1fr)` → `1fr`, `height` → `min-height`, lica na `overflow: visible`). Od tada širinu
+kartice diktira njezino **najšire dijete**, jer `1fr` = `minmax(auto, 1fr)`, a `auto` minimum je
+min-content. Na predmetu `math` to je **KaTeX formula** — nelomljiva. Otud dva lica istog kvara:
+polegnuto kartica ne dosegne traženi postotak širine, a na 375 px dokument naraste na 618 px —
+dakle vodoravni skrol cijele stranice, točno ono što je ⑨ trebao ukloniti.
+
+⚠️ **Zašto ovo puna lokalna suita NE VIDI:** na ovom Windowsu prolazi. Isti test, ciljano, na
+praznom stroju: `subjects=24 problems=0 errors=0`, **1 passed (43,6 s)**. Windows fontovi tu
+formulu iscrtaju dovoljno usko da stane; Linux runner je ne stane. **To je udžbenički primjer
+pravila „zeleno lokalno nije zeleno"** (`docs/workflow/TESTING.md`) — i razlog zašto se ovo
+poglavlje ne smije zatvoriti riječima „suita je prošla".
+
+**Mehanizam s `1fr` je zaključen iz samog ⑨** (opisuje ga u poruci commita) — **nije izmjeren na
+Linuxu**; za to treba artefakt runa (traži admin prava) ili proba u CI-ju.
+
+⚠️ **Posljedica koja nadživljava poglavlje:** **BUG-045 (`3708e2d`)** i **BUG-046 (`2641834`)** sjede
+na ovom istom vrhu. Ako ikad zatrebaju, idu **cherry-pickom** — **nikad uzimanjem vrha grane**, jer
+vrh nosi ovo prekoračenje.
+
+**Kako se pali CI ovdje uopće čita:** `gh` nije instaliran, a logovi (`/actions/jobs/{id}/logs`) i
+artefakti (`/actions/artifacts/{id}/zip`) traže admin prava. Ali repo je javan, `playwright.config.js`
+u CI-ju vrti `['github']` reporter, pa **`GET /repos/{o}/{r}/check-runs/{id}/annotations` javno vraća
+punu poruku pada** — ime testa, tvrdnju i brojke. Put: `actions/runs` → `runs/{id}/jobs` →
+`check-runs/{id}/annotations`.
 
 ## 2 · Što je izvedeno i izmjereno
 
