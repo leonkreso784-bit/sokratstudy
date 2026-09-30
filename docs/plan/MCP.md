@@ -100,7 +100,7 @@ Odluke (Leon, ankete i razgovor 30.09., poslije prvog pravog pokusa):
 |---|---|---|
 | **②/2** alati | `procitaj_materijale` → `zapocni_nacrt` (lekcije s bojom) → `napisi_learn` → `dodaj_kartice` (pada bez Learna) → `dodaj_pitanja` (pada bez kartice) → `predaj_nacrt` · `procitaj_nacrt`; upute cjevovoda u `instructions` poslužitelja. **Alati po lekciji** (ne 200 kartica u jednom pozivu) · svaki poziv koji piše nosi **ključ ponavljanja** | unit nad modulom alata + e2e: Node MCP klijent s pravim tokenom prođe cjevovod na stagingu · isti poziv poslan dvaput ne duplicira lekciju · **N9:** unit traži da svaki `rpc(...)` u alatima ide kroz `prevediOdbijanje` i pada kad takvih poziva nema |
 | **②/3** ✅ STAGING (30.09.) oblik materijala | nacrt → payload (kategorija po lekciji, v2 id-evi, bez slika i videa u prvom izdanju); veza kartica→pitanje = opcionalno polje `card` u shemi (aditivno) | `validate:schema` + validator ②/0a nad izlazom |
-| **②/4** pregled i prihvat | „Nacrti od AI-ja" u Mojim materijalima, **isti renderer** (s ②/0c–d), stanje **„u izradi" uživo** · **Prihvati** = jedna transakcija, **samo obična sesija**, validator ②/0a ponovno, polica iz nacrta (promjenjiva), polazna verzija gradiva (sukob = odbij, ne prepiši) · **Odbaci** · prihvat istog nacrta dvaput = jedan materijal · `zapocni_nacrt` prima **policu** i **opseg** · `predaj_nacrt` vraća **link na nacrt** · upute: pitaj policu i opseg, Learn = skripta · baza provjerava da `card` postoji (N4) · po želji pokus s `icons` u `serverInfo` | nacrt → prihvat → materijal se uči · OAuth token ne može prihvatiti · nacrt ubačen izravnim RPC-om mimo poslužitelja ne prolazi prihvat · paralelna izmjena materijala → prihvat odbija · nacrt bez police/opsega danas prolazi → poslije imenovana greška · pitanje s nepostojećim `card` kroz izravni RPC danas prolazi → poslije pada |
+| **②/4** pregled i prihvat | „Nacrti od AI-ja" u Mojim materijalima, **isti renderer** (s ②/0c–d), stanje **„u izradi" uživo** · **Prihvati** = jedna transakcija, **samo obična sesija**, validator ②/0a ponovno, polica iz nacrta (promjenjiva), polazna verzija gradiva (sukob = odbij, ne prepiši) · **Odbaci** · prihvat istog nacrta dvaput = jedan materijal · `zapocni_nacrt` prima **policu** i **opseg** · `predaj_nacrt` vraća **link na nacrt** · upute: pitaj policu i opseg, Learn = skripta, završni test se raspodijeli po lekcijama · baza provjerava da `card` postoji (N4) · po želji pokus s `icons` u `serverInfo` | nacrt → prihvat → materijal se uči · OAuth token ne može prihvatiti · nacrt ubačen izravnim RPC-om mimo poslužitelja ne prolazi prihvat · paralelna izmjena materijala → prihvat odbija · nacrt bez police/opsega danas prolazi → poslije imenovana greška · pitanje s nepostojećim `card` kroz izravni RPC danas prolazi → poslije pada |
 | **②/4b** nacrt izmjene | AI otvara nacrt nad **postojećim vlastitim** materijalom (polazna verzija materijala zapisana u nacrt); pregled pokazuje promjene; Prihvati piše preko materijala samo ako se nije mijenjao | nacrt izmjene tuđeg materijala · kataloškog predmeta → odbijen · korisnik izmijeni materijal poslije početka nacrta → prihvat odbija, materijal netaknut |
 | **②/5** ulaz | „Spoji svoj AI" (ADR-026: jedna radnja, dva ulaza) → **izbornik AI aplikacija**, upute po aplikaciji — **samo one koje stvarno rade** (provjeriti Gemini i postoji li deep-link za dodavanje konektora) + kopiraj URL; lažni tekst `studio.js:235` nestaje | spec |
 
@@ -124,7 +124,7 @@ izvora lekcija (razlika su pitanja „Provjeri znanje"), dakle gotovo cijeli izv
 svih 20 pitanja završnog testa ugrađeno je u kviz, kartice i dopune. Nalazi: jedna jezična greška koja mijenja smisao
 („potiču" umjesto „potječu", Learn + kviz) · izostavljen uvod (simboli, način rada) · Learn ne dodaje objašnjenja izvan
 izvora (sigurno, ali „detaljno" traži više) · dopune s oblikom odgovora (`1 : 2 : 1`, padež „UV zračenje"/„zračenja") =
-rizik ③/5 · lekcija **samo s kvizom** (npr. „Završni test") danas je nemoguća jer kartice traže Learn (§3).
+rizik ③/5 · lekcija **samo s kvizom** (npr. „Završni test") je nemoguća jer kartice traže Learn → odluka u §3.
 
 Rizik: prestrog prag ④ → AI zapne; zato ③/0 ide prvo.
 
@@ -181,8 +181,10 @@ pravi „jedan klik" za korisnika.
   objaviti dok se kartica ne skrati (ostala 3 PROD materijala prolaze).
 - **N17** (GTM/Sentry u `script-src` kao hostovi): suziti tek nakon mjerenja što loaderi učitavaju.
 - `mcp-admin/` (lokalni pokus izvan repozitorija): obrisati ili arhivirati (nalaz N6).
-- **Prije ②/4:** gdje Leon gleda nacrte na stagingu (lokalno uz `sokrat-supabase-override`, `js/auth.js:42`, ili drugačije).
-- **Lekcija samo s kvizom** (npr. „Završni test" iz izvora): danas nemoguća jer kartice traže Learn, a pitanja karticu.
+- ~~Gdje Leon gleda nacrte na stagingu~~ → **lokalno, `localhost:5051`** iz stabla `.f6`, uz `sokrat-supabase-override`
+  (`js/auth.js:42`); link iz `predaj_nacrt` na stagingu vodi tamo (anketa 30.09.).
+- ~~Lekcija samo s kvizom~~ → **ne gradi se**: upute kažu AI-ju da pitanja završnog testa ugradi u lekcije kojima
+  pripadaju (kao u prvom pokusu); brane ③ ostaju jednostavne (anketa 30.09.).
 - Staging: predan nacrt „Biologija 4. razred" istječe 07.10.; njegova ručna objava na `test-admin` smije se obrisati
   uz Leonov OK · 9 starih testnih računa od 29.09. (ne dirati bez njegove riječi).
 
