@@ -111,6 +111,37 @@ end;
 $$;
 revoke execute on function public._nacrt_moj(uuid) from public, anon, authenticated;
 
+-- ②/4.1 (②/3-N4 iz revizije — NIJE MCP_SECURITY N4): pitanje koje nosi `card` mora upućivati na karticu ISTE lekcije. Alat to provjerava
+-- (`alat_kartica_ne_postoji`), ali token isti RPC zove i mimo poslužitelja (N5) → provjera je i u
+-- bazi. Samo na putu NACRTA (upis + prihvat), ne u `publish_node`: u Studiju korisnik smije obrisati
+-- karticu, a pitanje koje je iz nje nastalo ostaje valjano gradivo. `card` sam je opcionalan.
+create or replace function public._provjeri_kartice_nacrta(p jsonb)
+returns void
+language plpgsql
+stable
+set search_path = public, pg_temp
+as $$
+declare v_mjesto text;
+begin
+  select c.key || '.' || a.niz || '[' || (e.ord - 1) || '].card = ' || (e.v ->> 'card') into v_mjesto
+    from jsonb_each(case when jsonb_typeof(p) = 'object' then p else '{}'::jsonb end) c
+   cross join lateral (values ('quiz'), ('fillBlanks')) a(niz)
+   cross join lateral jsonb_array_elements(case when jsonb_typeof(c.value -> a.niz) = 'array' then c.value -> a.niz else '[]'::jsonb end)
+         with ordinality e(v, ord)
+   where jsonb_typeof(c.value) = 'object'
+     and jsonb_typeof(e.v) = 'object' and e.v ? 'card'
+     and not exists (
+       select 1 from jsonb_array_elements(case when jsonb_typeof(c.value -> 'flashcards') = 'array' then c.value -> 'flashcards' else '[]'::jsonb end) f
+        where f ->> 'id' = e.v ->> 'card')
+   limit 1;
+  if v_mjesto is not null then
+    raise exception 'nacrt_kartica_ne_postoji: pitanje upućuje na karticu koje u lekciji nema (%)', left(v_mjesto, 200)
+      using errcode = '22023';
+  end if;
+end;
+$$;
+revoke execute on function public._provjeri_kartice_nacrta(jsonb) from public, anon, authenticated;
+
 -- ─── 3. RPC-ovi za AI ───────────────────────────────────────────────────────────────────────────
 
 -- Novi nacrt. Kvota se broji pod savjetodavnom bravom po korisniku, inače dva usporedna poziva
@@ -191,6 +222,7 @@ begin
   -- ②/0a: strogi profil (bez sirovog HTML-a, opasnih adresa i vanjskih slika; granice) provodi
   -- BAZA, jer token isti RPC zove i mimo poslužitelja (N5). Veličina ide prva — jeftinija je.
   perform public._provjeri_sadrzaj(p_payload);
+  perform public._provjeri_kartice_nacrta(p_payload);   -- ②/4.1 (N4)
   if p_verzija is null then
     raise exception 'nacrt_bez_verzije: pošalji verziju od koje kreneš (mcp_procitaj_nacrt)' using errcode = '22023';
   end if;

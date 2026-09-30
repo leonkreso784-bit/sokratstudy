@@ -5,6 +5,34 @@ testirano, što slijedi.
 
 ---
 
+## 2026-09-30 (OPUS, `sokratstudy.f6`) — F6 ②/4.1 prihvat i odbacivanje nacrta u bazi (✅ STAGING)
+
+- **Plan:** dogovori 30.09. upisani u `docs/plan/MCP.md` (polica i opseg na početku, nacrt izmjene ②/4b, link natrag,
+  „u izradi", izbornik AI-ja, F7 katalog, Learn je baza ③/7, usporedba s PDF-om). Ankete: nacrti se na stagingu
+  gledaju na `localhost:5051`; lekcija „samo kviz" se ne gradi; ②/4 = tri cigle; polica postojeća ili nova po imenu;
+  nacrt se nakon prihvata briše; „u izradi" = provjera svakih ~5 s; prihvaća se samo predan. Leonove izmjene su
+  frontend i dolaze kasnije — fokus je MCP.
+- **`supabase/f6-prihvat.sql` (novo):** `prihvati_nacrt(nacrt, polica, nova_polica)` = `create_node` (+ nova polica)
+  + `publish_node` + brisanje nacrta u jednoj transakciji; `odbaci_nacrt`. Samo `authenticated`; druga ograda
+  `_nacrt_korisnik()` odbija token s `client_id`. Tuđa, obrisana, nepostojeća polica i materijal umjesto police →
+  ista greška `nacrt_polica_ne_postoji` (bez nje `create_node` razlikuje `node_denied`/`node_not_found` = curi postojanje).
+- **`f6-nacrt.sql`:** `_provjeri_kartice_nacrta` (revizor ②/3-N4: pitanje → kartica iste lekcije) u
+  `mcp_upisi_nacrt` i prihvatu; **ne** u `publish_node` (Studio smije obrisati karticu). Prijevod za AI u `alati.ts`.
+- **Brana `npm run mcp:prihvat`** (35 provjera): na starom kodu 24/31 palo → sad **35/0**. Mutacije na stagingu, sve
+  crvene: M1 bez brisanja (4) · M2 bez provjere police (2) · M3b bez obje ograde (10; AI prihvatio) · M4 upis bez
+  provjere kartica (1) · M5 prihvat bez nje (2) · R1 `_nacrt_moj` bez `for update` (3/3 vrtnje) · N2 bez `deleted_at` (1).
+  **M3** (grant `mcp_klijent`, prava funkcija) = 0 padova, AI dobiva `403 nacrt_samo_korisnik` → druga ograda drži
+  sama; stalna brana za nju ne postoji (hook svakom tokenu s `client_id` daje `mcp_klijent`, pa „AI s ulogom
+  authenticated" nema) — revizor R2, svjesno. Poslije mutacija svih 6 tijela na stagingu md5-isto datotekama.
+- **Ostale brane:** `mcp:brava` 53/0 (+4 zabrane) · `mcp:nacrt` 49/0 · `mcp:alati` 40/0 · `mcp:probe` 9/0 · unit
+  417/0; N9 bez novog prijevoda crven.
+- `brana-revizor`: PASS uz R1 (usporedni prihvat nemjeren) + N1 (AI-odbijanje primalo 404 PGRST202) + N2 (obrisana
+  polica) + N4 (`publish_node` smije viseći `card`) → sve zatvoreno testom i mutacijom.
+- ⚠️ **Pouka — utrka bez brave NIJE deterministička:** isti pokus (8 usporednih prihvata, mutacija R1) dao je 1, 3 i
+  8 materijala; jedan krug bio je zelen **3/3 na mutaciji** jer je prvi prihvat stigao završiti prije nego su ostali
+  pročitali nacrt. Pomoglo: 4 kruga (topli spojevi u kasnijim krugovima uvijek probiju). Usporedni test bez mutacije
+  koja ga obara ne dokazuje ništa, pa ni „8/8 pokrenuto usporedno (klijent)".
+
 ## 2026-09-30 (OPUS, `sokratstudy.f6`) — F6 ②/3 oblik materijala (✅ STAGING)
 
 - **Nacrt JEST gradivo** (anketa: „nacrt u obliku gradiva"): izlaz alata prolazi i katalošku shemu (`subject-content`,

@@ -67,7 +67,7 @@ const ULOGA = 'mcp_klijent';
  * Podiže se SVJESNO, uz novu provjeru; spuštanje bez razloga znači da je nešto tiho otpalo.
  */
 // 41 → 45 (②/1, 29.09.): mrtav redak otvorenih funkcija + tri pomoćnika nacrta u ZABRANJENI_RPC.
-const OCEKIVANO_PROVJERA = 48;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu
+const OCEKIVANO_PROVJERA = 52;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika
 
 /**
  * `PUT /auth/v1/user` — ŠTO POSTAVKA „traži trenutnu lozinku" ZATVARA, A ŠTO NE (①/2b, 21.09.).
@@ -231,7 +231,14 @@ const ZABRANJENI_RPC = {
   // Strogi profil sadržaja (②/0a) — zovu ga `mcp_upisi_nacrt` i `publish_node` iznutra; shemu čita
   // samo `service_role` (živi drift u `ugc:sadrzaj`). AI ih izravno ne zove.
   _ugc_shema: {},
-  _provjeri_sadrzaj: { p: {} }
+  _provjeri_sadrzaj: { p: {} },
+  // ②/4.1: nacrt u materijal pretvara SAMO korisnik iz obične sesije (`f6-prihvat.sql`). Grant je dan
+  // `authenticated`, a ovdje se mjeri da ga token AI-ja NE dobiva. Drugu ogradu (`_nacrt_korisnik`
+  // unutar funkcije) ova brana ne vidi — dokazana je mutacijom „grant mcp_klijent" (PROGRESS ②/4.1).
+  prihvati_nacrt: { p_id: NULA, p_polica: null, p_nova_polica: 'brava-proba' },
+  odbaci_nacrt: { p_id: NULA },
+  _nacrt_korisnik: {},
+  _provjeri_kartice_nacrta: { p: {} }
 };
 
 /** Funkcije koje NISU ruta: okidači (zovu se iz triggera) i interni pomoćnici (service_role). */

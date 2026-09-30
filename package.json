@@ -19,6 +19,7 @@
     "test:delete-account": "node scripts/delete-account-check.js",
     "mcp:brava": "node scripts/mcp-brava-check.js",
     "mcp:nacrt": "node scripts/mcp-nacrt-check.js",
+    "mcp:prihvat": "node scripts/mcp-prihvat-check.js",
     "mcp:alati": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mcp-alati-check.js",
     "ugc:sadrzaj": "node scripts/ugc-sadrzaj-check.js",
     "build:ugc-sql": "node scripts/build-ugc-sql.js",

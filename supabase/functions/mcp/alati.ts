@@ -118,6 +118,7 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   nacrt_los_oblik: { vrsta: 'ispravi', poruka: 'The draft content must be a JSON object (lessons keyed by id).' },
   nacrt_los_kljuc: { vrsta: 'ispravi', poruka: 'The repeat key is required: 1–100 characters from A-Z a-z 0-9 _ . : -' },
   nacrt_bez_verzije: { vrsta: 'ispravi', poruka: 'Send the draft version you started from (read the draft first).' },
+  nacrt_kartica_ne_postoji: { vrsta: 'ispravi', poruka: 'A question points to a flashcard this lesson does not have. Use a card_id returned by dodaj_kartice for THIS lesson.' },
   nacrt_prazan: { vrsta: 'ispravi', poruka: 'An empty draft cannot be submitted. Write at least one lesson first.' },
   nacrt_sukob: { vrsta: 'ponovno', poruka: 'The draft changed since you read it. Read it again, merge your change, and write with the new version.' },
   nacrt_ne_postoji: { vrsta: 'stop', poruka: 'This draft does not exist (or it expired after 7 days untouched). Start a new draft.' },
