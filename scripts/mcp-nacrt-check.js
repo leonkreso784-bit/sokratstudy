@@ -14,6 +14,8 @@
 //   ⑤ kvota (Leon, 29.09.): 3 u izradi · 10 nepregledanih
 //   ⑥ „sam nestane": u izradi netaknut 7 dana = nepostojeći i ne troši kvotu; PREDAN ne istječe
 //   ⑦ ŽIVO GRADIVO NETAKNUTO: vlasnikovi `nodes` + `node_content` bajt-isti nakon SVIH poziva
+//   ⑨ ②/4.2 polica i opseg na početku: obavezni, točno jedna polica, samo VLASTITA polica — u BAZI,
+//      jer token isti RPC zove i mimo alata (N5); ponovljen ključ ne mijenja policu ni opseg
 //
 // ⚠️ Greške se sude po IMENU iz poruke (`nacrt_ne_postoji` …), ne po HTTP broju: PostgREST istim
 //    brojem vraća i „nema rute" (PGRST202) — brana na broj bila bi zelena i na nepostojećoj funkciji.
@@ -28,7 +30,7 @@ const {
 const { valjanTocno, lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 48;   // +14 (②/1b, blok ⑧) · +1 (②/1b F2: 409 i trajanje sukoba)
+const OCEKIVANO_PROVJERA = 56;   // +14 (②/1b, blok ⑧) · +1 (②/1b F2: 409 i trajanje sukoba) · +8 (②/4.2, blok ⑨)
 
 let failed = 0;
 let touched = 0;
@@ -90,7 +92,9 @@ async function ostari(id, dana) {
 // ②/1b: svaki početak nosi KLJUČ PONAVLJANJA (obavezan), svaki upis VERZIJU od koje kreće.
 // Pomoćnici drže stare blokove čitljivima; blok ⑧ ih zove izravno kad mjeri upravo te dvije stvari.
 let kljucBr = 0;
-const zapocni = (t, ime, kljuc) => rpc(t, 'mcp_zapocni_nacrt', { p_name: ime, p_kljuc: kljuc || ('k-' + Date.now() + '-' + (++kljucBr)) });
+// ②/4.2: polica i opseg su obavezni — stari blokovi daju novu policu po imenu i standardni opseg.
+const zapocni = (t, ime, kljuc, dodatak) => rpc(t, 'mcp_zapocni_nacrt', Object.assign({ p_name: ime,
+  p_kljuc: kljuc || ('k-' + Date.now() + '-' + (++kljucBr)), p_polica: null, p_nova_polica: 'Polica', p_opseg: 'standardno' }, dodatak || {}));
 async function verzijaOd(t, id) { const r = await rpc(t, 'mcp_procitaj_nacrt', { p_id: id }); return r.json && r.json.verzija; }
 async function upisi(t, id, payload, verzija) {
   return rpc(t, 'mcp_upisi_nacrt', { p_id: id, p_payload: payload, p_verzija: verzija != null ? verzija : ((await verzijaOd(t, id)) || 1) });
@@ -314,6 +318,24 @@ const rest = (token, put, opts = {}) => http('/rest/v1/' + put, Object.assign({}
   await ostari(k1.json, 8);
   const poIsteku = await zapocni(aD, 'Isti', 'razgovor-1');
   record('nacrt istekao pa isti ključ → NOVI nacrt (istekao ne oživi)', typeof poIsteku.json === 'string' && poIsteku.json !== k1.json, opis(poIsteku));
+
+  console.log('\n— ⑨ ②/4.2 polica i opseg (izravno na bazi, mimo alata) —');
+  const staraDva = await rpc(aA, 'mcp_zapocni_nacrt', { p_name: 'dva', p_kljuc: 'stari-2' });
+  record('stari potpis mcp_zapocni_nacrt(name, ključ) BEZ police i opsega ne postoji', staraDva.status === 404 && /PGRST202/.test(staraDva.tekst), opis(staraDva));
+  odbijenKao('bez opsega odbijeno', await zapocni(aA, 'x', 'p9-1', { p_opseg: null }), 'nacrt_opseg');
+  odbijenKao('bez police odbijeno', await zapocni(aA, 'x', 'p9-2', { p_nova_polica: null }), 'nacrt_polica');
+  odbijenKao('i postojeća i nova polica odjednom odbijeno', await zapocni(aA, 'x', 'p9-3', { p_polica: polica }), 'nacrt_polica');
+  const tudjaPolica = (await rpc(jB, 'create_node', { p_parent: null, p_kind: 'folder', p_name: 'Tuđa' })).json;
+  odbijenKao('TUĐA polica odbijena', await zapocni(aA, 'x', 'p9-4', { p_polica: tudjaPolica, p_nova_polica: null }), 'nacrt_polica_ne_postoji');
+  odbijenKao('materijal umjesto police odbijen istom greškom', await zapocni(aA, 'x', 'p9-5', { p_polica: mat, p_nova_polica: null }), 'nacrt_polica_ne_postoji');
+  const s9 = await zapocni(aA, 'S policom', 'p9-6', { p_polica: polica, p_nova_polica: null, p_opseg: 'detaljno' });
+  const r9 = typeof s9.json === 'string' ? (await (await http('/rest/v1/node_drafts?id=eq.' + s9.json + '&select=polica_id,nova_polica,opseg', { headers: svcHeaders() })).json())[0] : null;
+  record('vlastita polica + opseg → u bazi polica_id i opseg (nova_polica prazna)', !!r9 && r9.polica_id === polica && r9.nova_polica === null && r9.opseg === 'detaljno',
+    opis(s9) + ' · ' + JSON.stringify(r9));
+  const s9b = await zapocni(aA, 'S policom', 'p9-6', { p_polica: null, p_nova_polica: 'Druga', p_opseg: 'sazeto' });
+  const r9b = (await (await http('/rest/v1/node_drafts?id=eq.' + s9.json + '&select=polica_id,nova_polica,opseg', { headers: svcHeaders() })).json())[0];
+  record('isti ključ s DRUGOM policom i opsegom → isti nacrt, polica i opseg NEPROMIJENJENI', s9b.json === s9.json && !!r9b &&
+    r9b.polica_id === polica && r9b.opseg === 'detaljno', opis(s9b) + ' · ' + JSON.stringify(r9b));
 
   console.log('\n— ⑦ živo gradivo —');
   const poslije = await otisakGradiva(A.id);

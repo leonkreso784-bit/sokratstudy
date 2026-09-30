@@ -30,7 +30,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 39;
+const OCEKIVANO_PROVJERA = 42;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -82,7 +82,7 @@ function odbijenKao(ime, r, kod, vrsta) {
 
 /** Nacrt izravno iz tablice (service ključ) — čitanje natrag, ne vjerujemo odgovoru alata. */
 async function nacrtUBazi(id) {
-  const r = await http('/rest/v1/node_drafts?id=eq.' + id + '&select=id,owner_id,client_id,status,payload,verzija', { headers: svcHeaders() });
+  const r = await http('/rest/v1/node_drafts?id=eq.' + id + '&select=id,owner_id,client_id,status,payload,verzija,polica_id,nova_polica,opseg', { headers: svcHeaders() });
   return ((await r.json()) || [])[0] || null;
 }
 async function brojNacrta(uid) {
@@ -141,7 +141,7 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
 
   console.log('\n— ② cjevovod —');
   const lekcije = [{ name: 'Uvod u makro', color: '#6366F1' }, { name: 'BDP', color: '#10b981' }];
-  const z = await alat(t, 'zapocni_nacrt', { name: 'Makroekonomija (test)', repeat_key: 'razgovor-1:start', lessons: lekcije });
+  const z = await alat(t, 'zapocni_nacrt', { name: 'Makroekonomija (test)', repeat_key: 'razgovor-1:start', shelf_id: polica, scope: 'detailed', lessons: lekcije });
   const draftId = z.tijelo && z.tijelo.draft_id;
   record('zapocni_nacrt → nacrt s dvije lekcije', z.status === 200 && !z.isError && !!draftId && (z.tijelo.lessons || []).length === 2, opis(z));
   if (!draftId) {
@@ -154,6 +154,10 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   record('… u bazi: vlasnik iz tokena, client_id tokena, lekcije l1/l2 s bojom', !!d && d.owner_id === A.id && d.client_id === oa.client_id &&
     JSON.stringify(lekcijeOd(d.payload)) === '["l1","l2"]' && d.payload.l1.color === '#6366f1',
   d ? 'owner ok=' + (d.owner_id === A.id) + ' · client ok=' + (d.client_id === oa.client_id) + ' · ' + JSON.stringify(d.payload).slice(0, 90) : 'nema retka');
+  // ②/4.2: polica i opseg biraju se na početku i putuju s nacrtom; AI dobiva opseg natrag.
+  record('②/4.2 u bazi polica i opseg iz poziva (polica_id, detaljno) · alat vraća scope + scope_hint', !!d && d.polica_id === polica &&
+    d.nova_polica === null && d.opseg === 'detaljno' && z.tijelo.scope === 'detailed' && /whole source/i.test(z.tijelo.scope_hint || ''),
+  d ? 'polica ' + (d.polica_id === polica) + ' · opseg ' + d.opseg + ' · scope ' + z.tijelo.scope : '—');
   const L = 'l2';
   record('⑦ kostur je gradivo: schemaVersion 2, svaka lekcija ikonu i prazne nizove', d.payload.schemaVersion === 2 &&
     lekcijeOd(d.payload).every((x) => /^fa-[a-z0-9-]+$/.test(d.payload[x].icon || '') && Array.isArray(d.payload[x].flashcards)),
@@ -189,7 +193,7 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   d = await nacrtUBazi(draftId);
   record('ponovljen dodaj_kartice (isti ključ) → i dalje 2 kartice, verzija ista', !k2.isError && d && d.payload[L].flashcards.length === 2 && d.verzija === vPoKarticama,
     'kartica ' + (d && d.payload[L].flashcards.length) + ' · verzija ' + vPoKarticama + '→' + (d && d.verzija));
-  const z2 = await alat(t, 'zapocni_nacrt', { name: 'Makroekonomija (test)', repeat_key: 'razgovor-1:start', lessons: lekcije });
+  const z2 = await alat(t, 'zapocni_nacrt', { name: 'Makroekonomija (test)', repeat_key: 'razgovor-1:start', shelf_id: polica, scope: 'detailed', lessons: lekcije });
   record('ponovljen zapocni_nacrt (isti ključ) → ISTI nacrt', !z2.isError && z2.tijelo && z2.tijelo.draft_id === draftId, opis(z2));
   d = await nacrtUBazi(draftId);
   record('… korisnik i dalje ima 1 nacrt, 2 lekcije, a Learn i kartice netaknuti', (await brojNacrta(A.id)) === 1 && lekcijeOd(d.payload).length === 2 &&
@@ -255,6 +259,10 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const pr = await alat(t, 'predaj_nacrt', { draft_id: draftId });
   d = await nacrtUBazi(draftId);
   record('predaj_nacrt → u bazi status predan', !pr.isError && d.status === 'predan', opis(pr));
+  // Tajna `SOKRAT_APP_URL` na stagingu = lokalni poslužitelj (anketa 30.09.); `.env` je smije pregaziti.
+  const ocekivanUrl = (process.env.STAGING_SOKRAT_APP_URL || 'http://localhost:5051').replace(/\/+$/, '') + '/#/materials/nacrt/' + draftId;
+  record('②/4.2 predaj_nacrt vraća review_url na OVAJ nacrt (adresa iz tajne funkcije)', !!pr.tijelo && pr.tijelo.review_url === ocekivanUrl,
+    (pr.tijelo && pr.tijelo.review_url) + (pr.tijelo && pr.tijelo.review_url === ocekivanUrl ? '' : ' ← očekivano ' + ocekivanUrl));
   odbijenKao('upis nakon predaje → nacrt_predan / stop (predan je zamrznut)', await alat(t, 'napisi_learn',
     { draft_id: draftId, lesson_id: L, repeat_key: 'razgovor-1:kasno', blocks: [{ type: 'paragraph', text: 'kasno' }] }), 'nacrt_predan', 'stop');
   const dPoslije = await nacrtUBazi(draftId);
@@ -262,6 +270,8 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   odbijenKao('loš ulaz (bez repeat_key) → alat_los_ulaz / ispravi, bez upisa', await alat(t, 'zapocni_nacrt',
     { name: 'X', lessons: lekcije }), 'alat_los_ulaz', 'ispravi');
   record('… i nijedan nov nacrt nije nastao', (await brojNacrta(A.id)) === 1, 'nacrta ' + (await brojNacrta(A.id)));
+  odbijenKao('②/4.2 polica koje korisnik nema → nacrt_polica_ne_postoji / ispravi', await alat(t, 'zapocni_nacrt',
+    { name: 'X', repeat_key: 'razgovor-2:start', shelf_id: '00000000-0000-4000-8000-000000000000', scope: 'standard', lessons: lekcije }), 'nacrt_polica_ne_postoji', 'ispravi');
 
   console.log('\n— ⑥ živo gradivo —');
   const poslije = await otisakGradiva(A.id);

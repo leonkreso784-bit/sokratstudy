@@ -34,6 +34,8 @@ import type { Klijent } from './alati.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
 const RESURS = Deno.env.get('MCP_RESOURCE_URL') ?? `${SUPABASE_URL}/functions/v1/mcp`;
+// ②/4.2: stranica na koju vodi link iz `predaj_nacrt` (staging = lokalni poslužitelj). Bez nje → produkcija.
+const APP_URL = Deno.env.get('SOKRAT_APP_URL') ?? '';
 
 /** Validator za oglas: propušta sve (v. zaglavlje „ULAZ ALATA"). */
 const SAMO_OGLAS = { getValidator: () => (x: unknown) => ({ valid: true as const, data: x, errorMessage: undefined }) };
@@ -44,7 +46,7 @@ Deno.serve(
     withSupabase({ auth: 'user' }, async (req, { supabase }) => {
       const mcp = createMcpHandler(() => {
         const server = new McpServer(POSLUZITELJ, { instructions: UPUTE });
-        registrirajAlate(server as never, supabase as unknown as Klijent, (s) => fromJsonSchema(s as never, SAMO_OGLAS as never));
+        registrirajAlate(server as never, supabase as unknown as Klijent, (s) => fromJsonSchema(s as never, SAMO_OGLAS as never), { appUrl: APP_URL });
         return server;
       });
       return mcp.fetch(req);

@@ -220,13 +220,16 @@ function lazniKlijent(redovi, greska) {
         if (ime === 'mcp_zapocni_nacrt') {
           for (const d of nacrti.values()) if (d.kljuc === a.p_kljuc) return odg(d.id);
           const id = '00000000-0000-4000-8000-' + String(++idBr).padStart(12, '0');
-          nacrti.set(id, { id, name: a.p_name, kljuc: a.p_kljuc, status: 'u_izradi', payload: {}, verzija: 1 });
+          nacrti.set(id, { id, name: a.p_name, kljuc: a.p_kljuc, status: 'u_izradi', payload: {}, verzija: 1,
+            polica_id: a.p_polica, nova_polica: a.p_nova_polica, opseg: a.p_opseg });
           return odg(id);
         }
         if (ime === 'mcp_moji_nacrti') return odg([...nacrti.values()].map((x) => ({ id: x.id, name: x.name, status: x.status, verzija: x.verzija, velicina: 2 })));
         const d = nacrti.get(a.p_id);
         if (!d) return greska('nacrt_ne_postoji');
-        if (ime === 'mcp_procitaj_nacrt') return odg(JSON.parse(JSON.stringify({ id: d.id, name: d.name, status: d.status, payload: d.payload, verzija: d.verzija })));
+        if (ime === 'mcp_procitaj_nacrt') return odg(JSON.parse(JSON.stringify({ id: d.id, name: d.name, status: d.status, payload: d.payload, verzija: d.verzija,
+          opseg: d.opseg === undefined ? null : d.opseg, polica_id: d.polica_id === undefined ? null : d.polica_id,
+          nova_polica: d.nova_polica === undefined ? null : d.nova_polica })));
         if (ime === 'mcp_upisi_nacrt') {
           if (d.status !== 'u_izradi') return greska('nacrt_predan: predan nacrt se više ne mijenja');
           if (opcije.sukobi && opcije.sukobi > 0) { opcije.sukobi--; d.verzija++; }   // netko drugi upisao u međuvremenu
@@ -245,6 +248,8 @@ function lazniKlijent(redovi, greska) {
   }
   const izlaz = (r) => { try { return JSON.parse(r.content[0].text); } catch (e) { return { _tekst: r.content && r.content[0] && r.content[0].text }; } };
   const LEKCIJE = [{ name: 'Uvod', color: '#6366f1' }, { name: 'BDP', color: '#10b981' }];
+  // ②/4.2: polica i opseg biraju se NA POČETKU (Leon, ankete 30.09.) — svaki početak ih nosi.
+  const PO = { new_shelf: 'Makro', scope: 'standard' };
   const LEARN = { blocks: [{ type: 'heading', text: 'BDP' }, { type: 'paragraph', text: 'Bruto domaći proizvod je …' }] };
   const KARTICE = [{ question: 'Što je BDP?', answer: 'Vrijednost proizvodnje u zemlji.' }, { question: 'Tko ga mjeri?', answer: 'DZS.' }];
   // ②/3: svako pitanje nosi `card` = id kartice iz koje je nastalo. Id-evi kartica su deterministički
@@ -255,7 +260,7 @@ function lazniKlijent(redovi, greska) {
 
   /** Cijeli cjevovod nad lažnom bazom; vraća id nacrta i id lekcije. */
   async function cjevovod(k) {
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'Makro', repeat_key: 'start-1', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'Makro', repeat_key: 'start-1', lessons: LEKCIJE, ...PO }));
     const draft_id = z.draft_id; const lesson_id = z.lessons && z.lessons[1] && z.lessons[1].lesson_id;
     await A.izvediAlat('napisi_learn', k, { draft_id, lesson_id, repeat_key: 'learn-1', blocks: LEARN.blocks });
     await A.izvediAlat('dodaj_kartice', k, { draft_id, lesson_id, repeat_key: 'kartice-1', cards: KARTICE });
@@ -298,7 +303,7 @@ function lazniKlijent(redovi, greska) {
 
   await test('②/2 redoslijed: kartice PADAJU bez Learna, pitanja PADAJU bez kartica, nepoznata lekcija pada', async () => {
     const k = lazniNacrt();
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
     const l = z.lessons[1].lesson_id;
     const r1 = await A.izvediAlat('dodaj_kartice', k, { draft_id: z.draft_id, lesson_id: l, repeat_key: 'kartice-1', cards: KARTICE });
     assert.strictEqual(r1.isError, true); assert.strictEqual(izlaz(r1).error, 'alat_nema_learna');
@@ -317,7 +322,7 @@ function lazniKlijent(redovi, greska) {
     const { draft_id, lesson_id } = await cjevovod(k);
     const prije = JSON.stringify(k.nacrti.get(draft_id).payload);
     const upisa = k.zapis.upisa;
-    const z2 = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'Makro', repeat_key: 'start-1', lessons: LEKCIJE }));
+    const z2 = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'Makro', repeat_key: 'start-1', lessons: LEKCIJE, ...PO }));
     assert.strictEqual(z2.draft_id, draft_id, 'ponovljen početak = novi nacrt');
     assert.strictEqual(k.nacrti.size, 1);
     await A.izvediAlat('napisi_learn', k, { draft_id, lesson_id, repeat_key: 'learn-1', blocks: LEARN.blocks });
@@ -332,25 +337,25 @@ function lazniKlijent(redovi, greska) {
 
   await test('②/2 sukob verzije: alat pročita ponovno i uspije; stalni sukob = „ponovno", ne kvar', async () => {
     const k = lazniNacrt({ sukobi: 1 });
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
     assert.ok(z.draft_id, JSON.stringify(z));
     assert.strictEqual(Object.keys(k.nacrti.get(z.draft_id).payload).filter((x) => x !== 'schemaVersion').length, 2, 'upis nakon sukoba se izgubio');
     const k2 = lazniNacrt({ sukobi: 99 });
-    const r = await A.izvediAlat('zapocni_nacrt', k2, { name: 'X', repeat_key: 's', lessons: LEKCIJE });
+    const r = await A.izvediAlat('zapocni_nacrt', k2, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO });
     assert.strictEqual(r.isError, true); assert.strictEqual(izlaz(r).error, 'nacrt_sukob'); assert.strictEqual(izlaz(r).kind, 'ponovno');
   });
 
   await test('②/2 ulaz se provjerava u JEZGRI: bez ključa, nepoznato polje, 501 znak, kriva boja, loš ključ, `correct` izvan opcija', async () => {
     const k = lazniNacrt();
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
     const l = z.lessons[0].lesson_id;
     await A.izvediAlat('napisi_learn', k, { draft_id: z.draft_id, lesson_id: l, repeat_key: 'l', blocks: LEARN.blocks });
     const lose = [
       ['dodaj_kartice', { draft_id: z.draft_id, lesson_id: l, cards: KARTICE }],
       ['dodaj_kartice', { draft_id: z.draft_id, lesson_id: l, repeat_key: 'k', cards: KARTICE, zlo: 1 }],
       ['dodaj_kartice', { draft_id: z.draft_id, lesson_id: l, repeat_key: 'k', cards: [{ question: 'q', answer: 'x'.repeat(501) }] }],
-      ['zapocni_nacrt', { name: 'Y', repeat_key: 's2', lessons: [{ name: 'L', color: 'red' }] }],
-      ['zapocni_nacrt', { name: 'Y', repeat_key: 'ima razmak', lessons: LEKCIJE }],
+      ['zapocni_nacrt', { name: 'Y', repeat_key: 's2', lessons: [{ name: 'L', color: 'red' }], ...PO }],
+      ['zapocni_nacrt', { name: 'Y', repeat_key: 'ima razmak', lessons: LEKCIJE, ...PO }],
       ['dodaj_pitanja', { draft_id: z.draft_id, lesson_id: l, repeat_key: 'q', quiz: [{ question: 'q', options: ['a', 'b'], correct: 2, card: 'k1' }] }]
     ];
     for (const [alat, arg] of lose) {
@@ -432,7 +437,7 @@ function lazniKlijent(redovi, greska) {
     for (const a of A.ALATI) {
       const pozivi = {
         procitaj_materijale: [() => ({})],
-        zapocni_nacrt: [(ids) => ({ name: 'Makro', repeat_key: 'novi-start', lessons: LEKCIJE })],
+        zapocni_nacrt: [(ids) => ({ name: 'Makro', repeat_key: 'novi-start', lessons: LEKCIJE, ...PO })],
         napisi_learn: [(ids) => ({ draft_id: ids.draft_id, lesson_id: ids.lesson_id, repeat_key: 'learn-x', blocks: [{ type: 'paragraph', text: 'novo' }] })],
         dodaj_kartice: [(ids) => ({ draft_id: ids.draft_id, lesson_id: ids.lesson_id, repeat_key: 'kartice-x', cards: KARTICE })],
         dodaj_pitanja: [(ids) => Object.assign({ draft_id: ids.draft_id, lesson_id: ids.lesson_id, repeat_key: 'pitanja-x' }, PITANJA)],
@@ -549,7 +554,7 @@ function lazniKlijent(redovi, greska) {
 
   await test('②/3 dodaj_kartice vraća id-eve kartica (AI ih treba za `card`) — isti kao u nacrtu', async () => {
     const k = lazniNacrt();
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
     await A.izvediAlat('napisi_learn', k, { draft_id: z.draft_id, lesson_id: 'l1', repeat_key: 'l', blocks: LEARN.blocks });
     const r = izlaz(await A.izvediAlat('dodaj_kartice', k, { draft_id: z.draft_id, lesson_id: 'l1', repeat_key: 'kk', cards: KARTICE }));
     assert.deepStrictEqual((r.cards || []).map((c) => c.card_id), k.nacrti.get(z.draft_id).payload.l1.flashcards.map((c) => c.id));
@@ -578,7 +583,7 @@ function lazniKlijent(redovi, greska) {
 
   await test('②/3 bez slika i videa u prvom izdanju: blok `image`/`video` pada, ostali tipovi prolaze', async () => {
     const k = lazniNacrt();
-    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE }));
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
     for (const b of [{ type: 'video', url: 'https://youtu.be/x' }, { type: 'image', src: 'https://x/y.png' }, { type: 'legacy-html', html: '<b>x</b>' }]) {
       const r = await A.izvediAlat('napisi_learn', k, { draft_id: z.draft_id, lesson_id: 'l1', repeat_key: 'b-' + b.type, blocks: [b] });
       assert.strictEqual(izlaz(r).error, 'alat_los_ulaz', b.type + ' prošao');
@@ -629,6 +634,96 @@ function lazniKlijent(redovi, greska) {
     assert.strictEqual(alat, renderer, 'alat i renderer imaju različit marker');
     const k = lazniNacrt(); const { draft_id, lesson_id } = await cjevovod(k);
     assert.ok(k.nacrti.get(draft_id).payload[lesson_id].fillBlanks[0].sentence.includes(renderer), 'spremljena dopuna nema marker renderera');
+  });
+
+  // ══ ②/4.2 POLICA, OPSEG, LINK NATRAG (Leon, ankete 30.09.) ═════════════════════════════════════
+  console.log('\n  — ②/4.2 polica, opseg, link natrag —');
+  const UUID_P = '11111111-2222-4333-8444-555555555555';
+
+  await test('②/4.2 zapocni_nacrt TRAŽI opseg i TOČNO jednu policu (postojeću ili novu po imenu)', async () => {
+    const lose = [
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, new_shelf: 'P' },                                        // bez opsega
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, scope: 'standard' },                                     // bez police
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, scope: 'standard', shelf_id: UUID_P, new_shelf: 'P' },  // obje
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, scope: 'huge', new_shelf: 'P' },                         // nepoznat opseg
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, scope: 'standard', shelf_id: 'nije-uuid' },              // krivi id
+      { name: 'X', repeat_key: 'a', lessons: LEKCIJE, scope: 'standard', new_shelf: '' }                       // prazno ime
+    ];
+    for (const arg of lose) {
+      const k = lazniNacrt();
+      const r = await A.izvediAlat('zapocni_nacrt', k, arg);
+      assert.deepStrictEqual([r.isError, izlaz(r).error], [true, 'alat_los_ulaz'], 'prošlo: ' + JSON.stringify(arg).slice(0, 90));
+      assert.strictEqual(k.nacrti.size, 0, 'odbijen početak ipak stvorio nacrt');
+    }
+    // Kontrola: bez nje test prolazi i na starom kodu (stara shema odbija SVAKO nepoznato polje).
+    for (const ok of [{ new_shelf: 'P', scope: 'standard' }, { shelf_id: UUID_P, scope: 'summary' }]) {
+      const r = await A.izvediAlat('zapocni_nacrt', lazniNacrt(), Object.assign({ name: 'X', repeat_key: 'a', lessons: LEKCIJE }, ok));
+      assert.ok(!r.isError, 'kontrola: ispravan početak odbijen: ' + r.content[0].text);
+    }
+  });
+
+  await test('②/4.2 polica i opseg idu u bazu (p_polica · p_nova_polica · p_opseg), opseg preveden na bazin rječnik', async () => {
+    const slucajevi = [
+      [{ new_shelf: 'Biologija', scope: 'summary' }, { polica_id: null, nova_polica: 'Biologija', opseg: 'sazeto' }],
+      [{ shelf_id: UUID_P, scope: 'standard' }, { polica_id: UUID_P, nova_polica: null, opseg: 'standardno' }],
+      [{ shelf_id: UUID_P, scope: 'detailed' }, { polica_id: UUID_P, nova_polica: null, opseg: 'detaljno' }]
+    ];
+    for (const [ulaz, ocek] of slucajevi) {
+      const k = lazniNacrt();
+      const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, Object.assign({ name: 'X', repeat_key: 'a', lessons: LEKCIJE }, ulaz)));
+      const d = k.nacrti.get(z.draft_id);
+      assert.ok(d, 'nacrt nije nastao: ' + JSON.stringify(z));
+      assert.deepStrictEqual({ polica_id: d.polica_id, nova_polica: d.nova_polica, opseg: d.opseg }, ocek, JSON.stringify(ulaz));
+    }
+  });
+
+  await test('②/4.2 alati PONAVLJAJU opseg AI-ju (zapocni · napisi_learn · dodaj_kartice · procitaj_nacrt), uputa se razlikuje po opsegu', async () => {
+    const upute = {};
+    for (const scope of ['summary', 'standard', 'detailed']) {
+      const k = lazniNacrt();
+      const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 'a', lessons: LEKCIJE, new_shelf: 'P', scope }));
+      const l = z.lessons && z.lessons[0] && z.lessons[0].lesson_id;
+      const learn = izlaz(await A.izvediAlat('napisi_learn', k, { draft_id: z.draft_id, lesson_id: l, repeat_key: 'l', blocks: LEARN.blocks }));
+      const kart = izlaz(await A.izvediAlat('dodaj_kartice', k, { draft_id: z.draft_id, lesson_id: l, repeat_key: 'k', cards: KARTICE }));
+      const cit = izlaz(await A.izvediAlat('procitaj_nacrt', k, { draft_id: z.draft_id }));
+      for (const [ime, o] of [['zapocni_nacrt', z], ['napisi_learn', learn], ['dodaj_kartice', kart], ['procitaj_nacrt', cit]]) {
+        assert.strictEqual(o.scope, scope, ime + ' ne ponavlja opseg: ' + JSON.stringify(o).slice(0, 120));
+        assert.ok(typeof o.scope_hint === 'string' && o.scope_hint.length > 40, ime + ' bez upute za opseg');
+      }
+      upute[scope] = z.scope_hint;
+    }
+    assert.strictEqual(new Set(Object.values(upute)).size, 3, 'ista uputa za različite opsege');
+    for (const u of Object.values(upute)) assert.ok(/whole source/i.test(u), 'uputa ne kaže da se pokriva CIJELI izvor (ADR-031): ' + u);
+  });
+
+  await test('②/4.2 predaj_nacrt vraća review_url na nacrt; adresa iz okoline, pogrešna → zadana produkcijska', async () => {
+    const k = lazniNacrt(); const { draft_id } = await cjevovod(k);
+    const stanje = new Map(k.nacrti);
+    const url = async (okolina) => izlaz(await A.izvediAlat('predaj_nacrt', lazniNacrt({}, stanje), { draft_id }, okolina)).review_url;
+    assert.strictEqual(await url({ appUrl: 'http://localhost:5051/' }), 'http://localhost:5051/#/materials/nacrt/' + draft_id);
+    assert.strictEqual(await url(undefined), 'https://www.sokratstudy.com/#/materials/nacrt/' + draft_id);
+    assert.strictEqual(await url({ appUrl: 'javascript:alert(1)' }), 'https://www.sokratstudy.com/#/materials/nacrt/' + draft_id);
+    assert.strictEqual(await url({ appUrl: 'https://drugi.example/x?y#z' }), 'https://drugi.example/x/#/materials/nacrt/' + draft_id, 'upit i sidro adrese nisu odrezani');
+    const reg = [];
+    A.registrirajAlate({ registerTool: (ime, cfg, cb) => reg.push([ime, cb]) }, lazniNacrt({}, stanje), (s) => s, { appUrl: 'http://localhost:5051' });
+    const r = izlaz(await reg.find((x) => x[0] === 'predaj_nacrt')[1]({ draft_id }));
+    assert.strictEqual(r.review_url, 'http://localhost:5051/#/materials/nacrt/' + draft_id, 'registrirajAlate ne prosljeđuje okolinu alatu');
+  });
+
+  await test('②/4.2 omot čita SOKRAT_APP_URL iz okoline i predaje ga jezgri', () => {
+    const src = kod(INDEX);
+    assert.ok(/Deno\.env\.get\(\s*['"]SOKRAT_APP_URL['"]\s*\)/.test(src), 'index.ts ne čita SOKRAT_APP_URL');
+    assert.ok(/registrirajAlate\([^;]*appUrl:\s*APP_URL/.test(src), 'index.ts ne predaje appUrl u registrirajAlate');
+  });
+
+  await test('②/4.2 UPUTE: pitaj policu i opseg PRIJE zapocni_nacrt · Learn = skripta, ne sažetak · završni test po lekcijama · link korisniku', () => {
+    const U = A.UPUTE;
+    const prije = U.slice(0, Math.max(0, U.indexOf('1. zapocni_nacrt')));
+    for (const x of ['procitaj_materijale', 'shelf', 'summary', 'standard', 'detailed']) assert.ok(prije.includes(x), 'prije koraka 1 nema „' + x + '"');
+    assert.ok(/not a summary/i.test(U), 'upute ne kažu da Learn nije sažetak');
+    assert.ok(/final test/i.test(U), 'upute ne kažu gdje idu pitanja završnog testa');
+    const korak5 = U.split('\n').find((r) => /^\s*5\. predaj_nacrt/.test(r)) || '';
+    assert.ok(/review_url/.test(korak5), 'korak 5 ne kaže da korisniku da link: ' + korak5);
   });
 
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');

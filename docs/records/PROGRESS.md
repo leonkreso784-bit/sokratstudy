@@ -5,6 +5,22 @@ testirano, što slijedi.
 
 ---
 
+## 2026-09-30 (OPUS, `sokratstudy.f6`) — F6 ②/4.2 alati: polica, opseg, link natrag (STAGING, čeka deploy funkcije)
+
+- **Alati (`alati.ts` 0.3.0):** `zapocni_nacrt` traži `scope` (summary · standard · detailed → baza `sazeto` ·
+  `standardno` · `detaljno`) i točno jednu policu (`shelf_id` ili `new_shelf`); `scope` + `scope_hint` se vraćaju iz
+  `zapocni_nacrt`, `napisi_learn`, `dodaj_kartice`, `procitaj_nacrt`; `predaj_nacrt` vraća `review_url`
+  (`SOKRAT_APP_URL` + `/#/materials/nacrt/<id>`, ne-http(s) → produkcija). UPUTE: prije koraka 1 pitaj policu i
+  opseg · Learn je skripta, ne sažetak · završni test po lekcijama · korisniku daj `review_url`.
+- **SQL (`f6-nacrt.sql`, staging):** stupci `polica_id` (FK, on delete set null) · `nova_polica` · `opseg`, najviše
+  jedna polica; `mcp_zapocni_nacrt(ime, ključ, polica, nova_polica, opseg)` — stari potpis obrisan; samo vlastita živa
+  polica; ponovljen ključ ne mijenja policu ni opseg. `mcp_procitaj_nacrt` vraća opseg i policu.
+- **Brane:** unit 43/0 (20 crvenih na starom; test „traži opseg" dobio kontrolu jer je na starom kodu prolazio iz
+  krivog razloga) · `mcp:nacrt` 57/0 (+8, blok ⑨; crven 16 padova na starom SQL-u) · `mcp:prihvat` 35/0 ·
+  `mcp:brava` 53/0 · `ugc:sadrzaj` 829/0 · `mcp:alati` **43/0 protiv lokalnog dvojnika** (isti SDK, nova jezgra).
+- **Tajna `SOKRAT_APP_URL=http://localhost:5051`** na stagingu (ja, Supabase CLI). Deploy funkcije `mcp` = Leon.
+- ⚠️ Od SQL-a do deploya živa funkcija v10 NE MOŽE započeti nacrt (stari potpis) — ostali alati rade.
+
 ## 2026-09-30 (OPUS, `sokratstudy.f6`) — F6 ②/4.1 prihvat i odbacivanje nacrta u bazi (✅ STAGING)
 
 - **Plan:** dogovori 30.09. upisani u `docs/plan/MCP.md` (polica i opseg na početku, nacrt izmjene ②/4b, link natrag,
@@ -12,8 +28,8 @@ testirano, što slijedi.
   gledaju na `localhost:5051`; lekcija „samo kviz" se ne gradi; ②/4 = tri cigle; polica postojeća ili nova po imenu;
   nacrt se nakon prihvata briše; „u izradi" = provjera svakih ~5 s; prihvaća se samo predan. Leonove izmjene su
   frontend i dolaze kasnije — fokus je MCP.
-- **`supabase/f6-prihvat.sql` (novo):** `prihvati_nacrt(nacrt, polica, nova_polica)` = `create_node` (+ nova polica)
-  + `publish_node` + brisanje nacrta u jednoj transakciji; `odbaci_nacrt`. Samo `authenticated`; druga ograda
+- **`supabase/f6-prihvat.sql` (novo):** `prihvati_nacrt(nacrt, polica, nova_polica)` = `create_node` (+ nova polica) +
+  `publish_node` + brisanje nacrta u jednoj transakciji; `odbaci_nacrt`. Samo `authenticated`; druga ograda
   `_nacrt_korisnik()` odbija token s `client_id`. Tuđa, obrisana, nepostojeća polica i materijal umjesto police →
   ista greška `nacrt_polica_ne_postoji` (bez nje `create_node` razlikuje `node_denied`/`node_not_found` = curi postojanje).
 - **`f6-nacrt.sql`:** `_provjeri_kartice_nacrta` (revizor ②/3-N4: pitanje → kartica iste lekcije) u

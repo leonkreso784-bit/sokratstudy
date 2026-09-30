@@ -76,7 +76,7 @@ const noviKljuc = () => 'p-' + Date.now() + '-' + (++kljucBr);
 
 /** AI (token `ai`) napravi nacrt, upiše sadržaj i (po želji) preda. Vraća id nacrta. */
 async function nacrtOdAI(ai, ime, tijelo, predaj) {
-  const id = (await rpc(ai, 'mcp_zapocni_nacrt', { p_name: ime, p_kljuc: noviKljuc() })).json;
+  const id = (await rpc(ai, 'mcp_zapocni_nacrt', { p_name: ime, p_kljuc: noviKljuc(), p_polica: null, p_nova_polica: 'Polica', p_opseg: 'standardno' })).json;
   if (typeof id !== 'string') throw new Error('zapocni nije vratio id nacrta');
   const u = await rpc(ai, 'mcp_upisi_nacrt', { p_id: id, p_payload: tijelo, p_verzija: 1 });
   if (u.status !== 200) throw new Error('upis nacrta: ' + opis(u));
@@ -240,7 +240,7 @@ const odbaci = (t, id) => rpc(t, 'odbaci_nacrt', { p_id: id });
   odbijenKao('podmetnuto pitanje s nepostojećom karticom: prihvat odbijen', await prihvati(jA, n6, policaA), 'nacrt_kartica_ne_postoji');
 
   console.log('\n— ⑦ N4 na upisu —');
-  const n7 = (await rpc(aA, 'mcp_zapocni_nacrt', { p_name: 'N4', p_kljuc: noviKljuc() })).json;
+  const n7 = (await rpc(aA, 'mcp_zapocni_nacrt', { p_name: 'N4', p_kljuc: noviKljuc(), p_polica: null, p_nova_polica: 'Polica', p_opseg: 'standardno' })).json;
   odbijenKao('AI izravnim RPC-om upiše pitanje s nepostojećom karticom → odbijeno', await rpc(aA, 'mcp_upisi_nacrt',
     { p_id: n7, p_payload: sadrzaj('N', 'nema-je'), p_verzija: 1 }), 'nacrt_kartica_ne_postoji');
   const bezVeze = sadrzaj('N');

@@ -97,7 +97,7 @@ async function sviZivi() {
   const aA = (await oauthToken(jA, 'Sokrat sadrzaj (test)')).token;
 
   console.log('— ① nacrt: mcp_upisi_nacrt (pravi AI-token) —');
-  const nacrt = (await rpc(aA, 'mcp_zapocni_nacrt', { p_name: 'Validator', p_kljuc: 'ugc-sadrzaj-' + Date.now() })).json;
+  const nacrt = (await rpc(aA, 'mcp_zapocni_nacrt', { p_name: 'Validator', p_kljuc: 'ugc-sadrzaj-' + Date.now(), p_polica: null, p_nova_polica: 'Polica', p_opseg: 'standardno' })).json;
   let verzija = 1;   // ②/1b: upis nosi polaznu verziju; odbijen upis je ne mijenja
   if (typeof nacrt !== 'string') throw new Error('nacrt nije nastao');
   for (const p of pada) {

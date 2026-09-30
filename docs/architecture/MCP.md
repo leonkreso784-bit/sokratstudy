@@ -67,17 +67,26 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
 - Obična sesija nacrte **samo čita** (RLS `node_drafts_select_own`); ne može pisati ni RPC-om ni izravno.
 - **Kvota** (pod savjetodavnom bravom po korisniku): 3 u izradi, 10 nepregledanih. **Istjecanje:** nacrt u izradi
   netaknut 7 dana je nepostojeći za sve i briše se pri vlasnikovom sljedećem započinjanju; predan ostaje.
-- AI **ne bira policu** — bira je korisnik pri Prihvati.
-- **Prihvati još ne postoji** (plan ②/4). Do tada nijedan put ne vodi iz nacrta u živo gradivo.
+- **Polica i opseg na početku (②/4.2):** `mcp_zapocni_nacrt` traži opseg (`sazeto` · `standardno` · `detaljno`) i
+  točno jednu policu — `polica_id` (samo VLASTITA živa polica) ili `nova_polica` (ime; nastaje tek pri Prihvati).
+  Obje žive u nacrtu (`node_drafts.polica_id` / `nova_polica` / `opseg`); korisnik policu smije promijeniti pri Prihvati.
+- **Prihvati i Odbaci (②/4.1, `supabase/f6-prihvat.sql`):** samo obična sesija (grant `authenticated` + `_nacrt_korisnik()`
+  odbija token s `client_id`). Prihvat = `create_node` (+ nova polica) + `publish_node` u jednoj transakciji, pa se nacrt
+  briše; prihvaća se samo predan. Pitanje s `card` mora upućivati na karticu iste lekcije (`_provjeri_kartice_nacrta`,
+  na upisu i prihvatu — ne u `publish_node`).
 
 ## 6 · Poslužitelj (`supabase/functions/mcp/`)
 
 - `index.ts` = omot (prijava + MCP prijenos, `@modelcontextprotocol/server@2.0.0`, `@supabase/server@1.7.0`, pinano točno).
 - `alati.ts` = čista jezgra bez Deno-uvoza, testira se u Nodeu (`tests/unit/mcp-alati.test.js`). Stupci se čitaju
   izričito, nikad `*`.
-- **Sedam alata (②/2):** `procitaj_materijale` · `zapocni_nacrt` (lekcije s bojom) · `napisi_learn` · `dodaj_kartice`
-  (pada bez Learna) · `dodaj_pitanja` (kviz + dopune, pada bez kartica) · `procitaj_nacrt` (popis · sažetak · lekcija) ·
-  `predaj_nacrt`. Upute cjevovoda su u `instructions` (`UPUTE`). Svi se registriraju iz jezgre (`registrirajAlate`).
+- **Sedam alata (②/2):** `procitaj_materijale` · `zapocni_nacrt` (lekcije s bojom, polica `shelf_id`/`new_shelf`, opseg
+  `scope`) · `napisi_learn` · `dodaj_kartice` (pada bez Learna) · `dodaj_pitanja` (kviz + dopune, pada bez kartica) ·
+  `procitaj_nacrt` (popis · sažetak · lekcija) · `predaj_nacrt` (vraća `review_url`). Upute cjevovoda su u
+  `instructions` (`UPUTE`). Svi se registriraju iz jezgre (`registrirajAlate`).
+- **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz
+  dug cjevovod zaboravi što je korisnik tražio. **Link natrag:** `review_url` = `SOKRAT_APP_URL` (tajna funkcije; staging
+  `http://localhost:5051`, bez nje produkcija) + `/#/materials/nacrt/<id>`; sve što nije http(s) → produkcija.
 - **Upis:** pročitaj → izmijeni → `mcp_upisi_nacrt` s verzijom; na `nacrt_sukob` ponovi (do 3×). Jednak rezultat = bez upisa.
 - **Isti poziv dvaput = jednom:** svaki alat koji stvara traži `repeat_key`; nacrt se veže na ključ u bazi, a id-evi
   blokova, kartica i pitanja izvode se iz lekcije i ključa (`idIzKljuca`), pa ponovljen poziv prepiše iste stavke,

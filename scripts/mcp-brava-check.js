@@ -175,7 +175,7 @@ const OTVORENO = {
   //    s grantom prošao kao „već otvoren" — a to je nova ruta s vlastitim tijelom, dakle i vlastitom
   //    (možda nijednom) provjerom vlasnika. `②/1b` je upravo takve stare potpise brisao.
   funkcije: {
-    'mcp_zapocni_nacrt(text,text)': 'novi nacrt (ime, ključ ponavljanja); vlasnik iz tokena, kvota 3 u izradi / 10 nepregledanih (②/1, ②/1b)',
+    'mcp_zapocni_nacrt(text,text,uuid,text,text)': 'novi nacrt (ime, ključ ponavljanja, polica ILI nova polica, opseg); vlasnik iz tokena, samo VLASTITA polica, kvota 3 u izradi / 10 nepregledanih (②/1, ②/1b, ②/4.2)',
     'mcp_upisi_nacrt(uuid,jsonb,integer)': 'zamjena sadržaja vlastitog nacrta u izradi od zadane verzije, najviše 1 MB (②/1, ②/1b)',
     'mcp_predaj_nacrt(uuid)': 'zamrzne vlastiti nacrt za korisnikov pregled (②/1)',
     'mcp_procitaj_nacrt(uuid)': 'čitanje vlastitog nacrta — AI nastavlja gdje je stao (②/1)',

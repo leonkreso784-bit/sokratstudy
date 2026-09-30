@@ -52,6 +52,16 @@ alter table public.node_drafts add column if not exists verzija int not null def
 alter table public.node_drafts add column if not exists kljuc text check (kljuc ~ '^[A-Za-z0-9_.:-]{1,100}$');
 create unique index if not exists node_drafts_kljuc_uq on public.node_drafts (owner_id, kljuc) where kljuc is not null;
 
+-- ②/4.2 (Leon, ankete 30.09.): polica i opseg biraju se NA POČETKU i putuju s nacrtom. Polica =
+-- postojeća (`polica_id`) ILI nova po imenu (`nova_polica`, nastaje tek pri Prihvati). Obje su nullable:
+-- nacrti iz vremena prije ②/4.2 ih nemaju, a obrisana polica se ovdje samo zaboravi (korisnik bira
+-- drugu pri Prihvati). Obavezni su za NOV nacrt — to provodi `mcp_zapocni_nacrt`.
+alter table public.node_drafts add column if not exists polica_id uuid references public.nodes(id) on delete set null;
+alter table public.node_drafts add column if not exists nova_polica text check (char_length(btrim(nova_polica)) between 1 and 200);
+alter table public.node_drafts add column if not exists opseg text check (opseg in ('sazeto', 'standardno', 'detaljno'));
+alter table public.node_drafts drop constraint if exists node_drafts_jedna_polica;
+alter table public.node_drafts add constraint node_drafts_jedna_polica check (polica_id is null or nova_polica is null);
+
 alter table public.node_drafts enable row level security;
 
 -- Istekao = u izradi i netaknut 7 dana. JEDNO mjesto definicije, zove ga i politika i svaki RPC.
@@ -151,19 +161,31 @@ revoke execute on function public._provjeri_kartice_nacrta(jsonb) from public, a
 -- ISTI nacrt, vraćen bez trošenja kvote — prekinut razgovor koji ponovi „započni" ne stvara duplikat.
 -- Obavezan: bez njega bi zaštita ovisila o tome hoće li ga pozivatelj poslati. Stari potpis bez
 -- ključa se BRIŠE (preopterećenje bi ostavilo stari put otvoren, a `mcp:brava` sudi po imenu).
+--
+-- ②/4.2: polica (`p_polica` ILI `p_nova_polica`, točno jedno) i `p_opseg` su obavezni. Postojeća polica
+-- mora biti VLASTITA živa polica — tuđa, obrisana, nepostojeća i materijal daju istu grešku (isti razlog
+-- kao u prihvatu). Ponovljen ključ vraća postojeći nacrt i NE mijenja mu policu ni opseg.
 drop function if exists public.mcp_zapocni_nacrt(text);
-create or replace function public.mcp_zapocni_nacrt(p_name text, p_kljuc text)
+drop function if exists public.mcp_zapocni_nacrt(text, text);
+create or replace function public.mcp_zapocni_nacrt(p_name text, p_kljuc text, p_polica uuid, p_nova_polica text, p_opseg text)
 returns uuid
 language plpgsql
 security definer
 set search_path = public, pg_temp
 as $$
-declare v_client text; v_uid uuid; v_izrada int; v_ukupno int; v_id uuid;
+declare v_client text; v_uid uuid; v_izrada int; v_ukupno int; v_id uuid; v_nova text;
 begin
   v_client := public._nacrt_pozivatelj();
   v_uid := auth.uid();
   if p_kljuc is null or p_kljuc !~ '^[A-Za-z0-9_.:-]{1,100}$' then
     raise exception 'nacrt_los_kljuc: ključ ponavljanja je obavezan (1–100 znakova A-Z a-z 0-9 _ . : -)' using errcode = '22023';
+  end if;
+  if p_opseg is null or p_opseg not in ('sazeto', 'standardno', 'detaljno') then
+    raise exception 'nacrt_opseg: opseg je obavezan (sazeto, standardno, detaljno)' using errcode = '22023';
+  end if;
+  v_nova := nullif(btrim(coalesce(p_nova_polica, '')), '');
+  if (p_polica is null) = (v_nova is null) or char_length(coalesce(v_nova, '')) > 200 then
+    raise exception 'nacrt_polica: točno jedna polica — postojeća ili nova po imenu (do 200 znakova)' using errcode = '22023';
   end if;
   perform pg_advisory_xact_lock(hashtextextended('node_drafts:' || v_uid::text, 0));
 
@@ -173,6 +195,14 @@ begin
 
   select id into v_id from public.node_drafts where owner_id = v_uid and kljuc = p_kljuc;
   if found then return v_id; end if;
+
+  if p_polica is not null then
+    perform 1 from public.nodes
+     where id = p_polica and owner_id = v_uid and kind = 'folder' and deleted_at is null;
+    if not found then
+      raise exception 'nacrt_polica_ne_postoji: te police nema među korisnikovim policama' using errcode = 'P0002';
+    end if;
+  end if;
 
   select count(*) filter (where status = 'u_izradi'), count(*)
     into v_izrada, v_ukupno
@@ -184,8 +214,8 @@ begin
     raise exception 'nacrt_kvota_nepregledano: 10 nacrta čeka pregled — korisnik ih mora prihvatiti ili odbaciti' using errcode = '53400';
   end if;
 
-  insert into public.node_drafts (owner_id, client_id, name, kljuc)
-  values (v_uid, v_client, btrim(p_name), p_kljuc)
+  insert into public.node_drafts (owner_id, client_id, name, kljuc, polica_id, nova_polica, opseg)
+  values (v_uid, v_client, btrim(p_name), p_kljuc, p_polica, v_nova, p_opseg)
   returning id into v_id;
   return v_id;
 end;
@@ -274,7 +304,8 @@ begin
   perform public._nacrt_pozivatelj();
   d := public._nacrt_moj(p_id);
   return jsonb_build_object('id', d.id, 'name', d.name, 'status', d.status, 'payload', d.payload,
-                            'verzija', d.verzija, 'updated_at', d.updated_at, 'submitted_at', d.submitted_at);
+                            'verzija', d.verzija, 'updated_at', d.updated_at, 'submitted_at', d.submitted_at,
+                            'opseg', d.opseg, 'polica_id', d.polica_id, 'nova_polica', d.nova_polica);   -- ②/4.2
 end;
 $$;
 
@@ -304,7 +335,7 @@ do $$
 declare f text;
 begin
   foreach f in array array[
-    'mcp_zapocni_nacrt(text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid)',
+    'mcp_zapocni_nacrt(text, text, uuid, text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid)',
     'mcp_procitaj_nacrt(uuid)', 'mcp_moji_nacrti()'
   ] loop
     execute format('revoke execute on function public.%s from public, anon, authenticated', f);
