@@ -4,6 +4,37 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 
 ---
 
+## ADR-039 — Materijal od AI-ja ide na policu SAM, cijel, bez ekrana za pregled; izmjene na korisnikovu riječ
+**Datum:** 2026-10-01 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** mijenja [ADR-031](#adr-031) („sve ide u nacrt,
+korisnik prihvaća") i [ADR-038](#adr-038) t.1 („materijal nastaje tek korisnikovim Prihvati iz obične sesije") ·
+smjer [ADR-035](#adr-035) · **Faza:** F6 ②/4 u [plan/MCP.md](../plan/MCP.md)
+
+**Kontekst.** Prvi pravi pokus s ②/4.2 (01.10., „Kemija 3. razred", 12 lekcija / 194 kartice, ~7 min): Claude je javio
+„gotovo", a na polici nije bilo ničega — nacrt čeka ekran za Prihvati (②/4.3). Leon: ekran ne treba. Pregled je
+trebao zaustaviti loš sadržaj prije nego ga itko vidi, a osobni materijal je **privatan** — vidi ga samo vlasnik, javna
+objava je zasebna buduća faza. Najgori ishod je loš materijal u vlastitoj polici, koji se briše jednim klikom.
+
+**Odluke (Leon, 2026-10-01):**
+1. **Nov materijal ide na policu sam, ali CIJEL, na kraju.** AI i dalje gradi u nacrtu (`node_drafts`, skriven od
+   korisnika); `predaj_nacrt` ga u **jednoj transakciji** pretvori u materijal u polici iz nacrta i nacrt obriše.
+   Nikad pola-materijal na polici (prekid usred gradnje ostavlja samo nacrt, koji istječe). **Ekran ②/4.3 otpada.**
+2. **AI smije mijenjati postojeći vlastiti materijal — ono što mu korisnik kaže.** Bez ekrana za pregled. Stara verzija
+   ostaje u povijesti verzija (`node_content_versions`), pa je izmjena povratna; ako se materijal promijenio otkad ga je
+   AI pročitao, upis se **odbija, ne prepisuje**.
+3. **Smjer, ne posao sad:** platforma postaje društvena (javna objava, blog, profili); korisnici će moći vidjeti
+   **analitiku jedni drugih — samo ako to sami dopuste**. Ništa od toga ne ulazi u F6.
+
+**Što ostaje netaknuto:** doseg = samo vlastito gradivo (tuđe i katalog nikad) · token AI-ja ne dobiva ništa izvan
+nacrta i tog jednog prijelaza · validator ②/0a i četiri brane ③ vrijede **na prijelazu u materijal** (sad bez
+čovjeka u petlji su one jedina kontrola kvalitete — ③ time dobiva na važnosti) · materijal je privatan.
+
+**Posljedice:** ograda iz ②/4.1 („samo obična sesija smije prihvatiti") se za `predaj_nacrt` **svjesno** diže, i to samo
+za nov materijal u vlastitu policu; `prihvati_nacrt`/`odbaci_nacrt` iz obične sesije ostaju (npr. za nacrt koji je AI
+predao prije ove odluke). `review_url` postaje link na **materijal**, ne na nacrt. ②/4b više nije „nacrt izmjene +
+prihvat" nego izravna izmjena s provjerom verzije.
+
+---
+
 ## ADR-038 — MCP: nacrt u zasebnoj tablici · naša domena · DCR uz popis hostova · sigurnost u bazi, kvaliteta u poslužitelju
 **Datum:** 2026-09-17 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-031](#adr-031) (cjevovod, nacrt, četiri brane), [ADR-030](#adr-030), [ADR-026](#adr-026) (MCP invarijante), [ADR-024](#adr-024) (osobni otok), ADR-027 · **Faza:** F6 u [plan/MCP.md](../plan/MCP.md)
 

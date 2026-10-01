@@ -16,7 +16,7 @@
 > | od čega se branimo, što je zaštićeno, otvoreni nalazi | [architecture/MCP_SECURITY.md](../architecture/MCP_SECURITY.md) |
 > | kako se mjeri (računi, naredbe, mutacije, pravi AI) | [workflow/MCP_TESTING.md](../workflow/MCP_TESTING.md) |
 > | kako su izvedeni ①, S1 i S2 | [archive/MCP_KONEKTOR.md](../archive/MCP_KONEKTOR.md) |
-> | zašto baš tako | ADR-030 · ADR-031 · [ADR-038](../records/DECISIONS.md#adr-038) |
+> | zašto baš tako | ADR-030 · ADR-031 · [ADR-038](../records/DECISIONS.md#adr-038) · [ADR-039](../records/DECISIONS.md#adr-039) (na policu bez pregleda) |
 
 ---
 
@@ -100,6 +100,11 @@ Odluke (Leon, ankete i razgovor 30.09., poslije prvog pravog pokusa):
 - **②/4 (anketa 30.09., drugi krug):** polica = **postojeća ili nova po imenu** (nova nastaje tek pri Prihvati) ·
   nakon Prihvati se nacrt **briše** · „u izradi" = **provjera svakih ~5 s** (bez Realtimea) · prihvaća se **samo
   predan** nacrt. ②/4 ide u tri cigle (4.1 baza · 4.2 alati · 4.3 ekran).
+- **⚠️ 01.10. ([ADR-039](../records/DECISIONS.md#adr-039), Leon) — gornje tri točke o nacrtu izmjene, „u izradi" i
+  Prihvati su NADGLAŠENE:** nema ekrana za pregled. `predaj_nacrt` sam stavi materijal na policu, cijel (②/4.3′); AI
+  mijenja postojeći vlastiti materijal izravno, na korisnikovu riječ, s provjerom verzije (②/4b). Povod: prvi pokus
+  ②/4.2 („Kemija 3. razred", 12 lekcija / 194 kartice / 76 kviz, opseg „detaljno", polica zapamćena) — Claude je
+  rekao „gotovo", a polica je bila prazna. Smjer za kasnije (ne F6): analitika vidljiva drugima **samo uz pristanak**.
 
 | cigla | posao | crveno na starom kodu |
 |---|---|---|
@@ -108,8 +113,9 @@ Odluke (Leon, ankete i razgovor 30.09., poslije prvog pravog pokusa):
 | **②/4** pregled i prihvat | „Nacrti od AI-ja" u Mojim materijalima, **isti renderer** (s ②/0c–d), stanje **„u izradi" uživo** · **Prihvati** = jedna transakcija, **samo obična sesija**, validator ②/0a ponovno, polica iz nacrta (promjenjiva), polazna verzija gradiva (sukob = odbij, ne prepiši) · **Odbaci** · prihvat istog nacrta dvaput = jedan materijal · `zapocni_nacrt` prima **policu** i **opseg** · `predaj_nacrt` vraća **link na nacrt** · upute: pitaj policu i opseg, Learn = skripta, završni test se raspodijeli po lekcijama · baza provjerava da `card` postoji (N4) · po želji pokus s `icons` u `serverInfo` | nacrt → prihvat → materijal se uči · OAuth token ne može prihvatiti · nacrt ubačen izravnim RPC-om mimo poslužitelja ne prolazi prihvat · paralelna izmjena materijala → prihvat odbija · nacrt bez police/opsega danas prolazi → poslije imenovana greška · pitanje s nepostojećim `card` kroz izravni RPC danas prolazi → poslije pada |
 | ↳ **②/4.1** baza | `prihvati_nacrt(nacrt, polica \| nova polica)` i `odbaci_nacrt` — samo `authenticated` + `_nacrt_korisnik()` odbija token s `client_id`; prihvat = `create_node` + `publish_node` u jednoj transakciji, nacrt se briše; `_provjeri_kartice_nacrta` na upisu i prihvatu | `mcp:prihvat` (✅ gore) |
 | ↳ **②/4.2** alati | `zapocni_nacrt` + polica (id ili novo ime) i opseg · `predaj_nacrt` vraća link · upute · deploy funkcije = Leon | unit + `mcp:alati` |
-| ↳ **②/4.3** ekran | „Nacrti od AI-ja": pregled istim rendererom, Prihvati (polica iz nacrta, promjenjiva), Odbaci, „u izradi" provjerom svakih ~5 s dok je stranica otvorena | Playwright na stagingu (`localhost:5051`) |
-| **②/4b** nacrt izmjene | AI otvara nacrt nad **postojećim vlastitim** materijalom (polazna verzija materijala zapisana u nacrt); pregled pokazuje promjene; Prihvati piše preko materijala samo ako se nije mijenjao | nacrt izmjene tuđeg materijala · kataloškog predmeta → odbijen · korisnik izmijeni materijal poslije početka nacrta → prihvat odbija, materijal netaknut |
+| ~~↳ **②/4.3** ekran~~ | ⛔ **OTPALO 01.10. ([ADR-039](../records/DECISIONS.md#adr-039))** — materijal ide na policu sam | — |
+| ↳ **②/4.3′** predaja = na policu | `predaj_nacrt` u jednoj transakciji: provjere (validator ②/0a, kartice) → materijal u polici iz nacrta (postojeća ili nova po imenu) → nacrt obrisan; smije i token AI-ja, **samo** za nov materijal u **vlastitu** policu; `review_url` → link na materijal; upute: „materijal je na polici" | `predaj_nacrt` danas ostavlja nacrt → poslije materijal u polici, nacrt nema · tuđa/obrisana polica → odbijeno, ništa nije nastalo · predaja dvaput = jedan materijal · nacrt s neispravnim sadržajem → odbijen, nema materijala · token AI-ja i dalje ne može prepisati postojeći materijal tim putem |
+| **②/4b** izmjena postojećeg | AI na korisnikovu riječ mijenja **postojeći vlastiti** materijal, izravno (ADR-039 t.2): čita s verzijom, piše s verzijom; stara verzija u povijesti | izmjena tuđeg materijala · kataloškog predmeta → odbijena · korisnik izmijeni materijal nakon što ga je AI pročitao → upis odbijen, materijal netaknut · izmjena se vidi u povijesti verzija |
 | **②/5** ulaz | „Spoji svoj AI" (ADR-026: jedna radnja, dva ulaza) → **izbornik AI aplikacija**, upute po aplikaciji — **samo one koje stvarno rade** (provjeriti Gemini i postoji li deep-link za dodavanje konektora) + kopiraj URL; lažni tekst `studio.js:235` nestaje | spec |
 
 ### ③ Četiri brane (ADR-031) — u poslužitelju, iz istih modula koje čita preglednik, i ponovno pri Prihvati
