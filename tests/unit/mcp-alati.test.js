@@ -201,7 +201,8 @@ function lazniKlijent(redovi, greska) {
   let idBr = 0;   // zajednički za sve lažne baze: kopirano stanje i novi nacrt ne smiju dijeliti id
   function lazniNacrt(opcije = {}, pocetno) {
     const nacrti = new Map(pocetno ? JSON.parse(JSON.stringify([...pocetno])) : []);
-    const zapis = { upisa: 0, pozivi: [] };
+    const zapis = { upisa: 0, pozivi: [], predaje: [] };
+    const predani = new Map();   // nacrt → materijal (bilješka ②/4.3′)
     const odg = (data) => Promise.resolve({ data, error: null });
     const greska = (message) => Promise.resolve({ data: null, error: { message } });
     const brojPoziva = {};
@@ -226,6 +227,7 @@ function lazniKlijent(redovi, greska) {
         }
         if (ime === 'mcp_moji_nacrti') return odg([...nacrti.values()].map((x) => ({ id: x.id, name: x.name, status: x.status, verzija: x.verzija, velicina: 2 })));
         const d = nacrti.get(a.p_id);
+        if (!d && ime === 'mcp_predaj_nacrt' && predani.has(a.p_id)) return odg(predani.get(a.p_id));   // ponovljena predaja
         if (!d) return greska('nacrt_ne_postoji');
         if (ime === 'mcp_procitaj_nacrt') return odg(JSON.parse(JSON.stringify({ id: d.id, name: d.name, status: d.status, payload: d.payload, verzija: d.verzija,
           opseg: d.opseg === undefined ? null : d.opseg, polica_id: d.polica_id === undefined ? null : d.polica_id,
@@ -239,8 +241,12 @@ function lazniKlijent(redovi, greska) {
           return odg(d.verzija);
         }
         if (ime === 'mcp_predaj_nacrt') {
-          if (d.status !== 'u_izradi') return greska('nacrt_predan: nacrt je već predan');
-          d.status = 'predan'; return odg('2026-09-30T12:00:00Z');
+          // ②/4.3′: nacrt postaje materijal (polica iz poziva ILI zapamćena), nacrt nestaje, bilješka pamti id.
+          const polica = a.p_polica || a.p_nova_polica || d.polica_id || d.nova_polica;
+          if (!polica) return greska('nacrt_bez_police: nacrt nema policu');
+          const mid = '11111111-1111-4111-8111-' + String(++idBr).padStart(12, '0');
+          predani.set(d.id, mid); zapis.predaje.push({ id: d.id, p_polica: a.p_polica, p_nova_polica: a.p_nova_polica });
+          nacrti.delete(d.id); return odg(mid);
         }
         return greska('PGRST202 nepoznata funkcija ' + ime);
       }
@@ -483,12 +489,35 @@ function lazniKlijent(redovi, greska) {
     assert.deepStrictEqual(pokriveno, RPC_IZ_SQL, 'alati ne zovu točno RPC-ove koje f6-nacrt.sql otvara mcp_klijentu');
   });
 
-  await test('②/2 predaja zamrzava: upis nakon predaje vraća PREVEDEN `nacrt_predan` (vrsta „stop")', async () => {
+  await test('②/4.3′ predaja: materijal na polici, nacrt nestao (upis poslije = `nacrt_ne_postoji` / stop), ponovljena = ISTI materijal', async () => {
     const k = lazniNacrt();
     const { draft_id, lesson_id } = await cjevovod(k);
-    assert.ok(!(await A.izvediAlat('predaj_nacrt', k, { draft_id })).isError);
+    const p1 = izlaz(await A.izvediAlat('predaj_nacrt', k, { draft_id }));
+    assert.ok(/^[0-9a-f-]{36}$/.test(p1.material_id || ''), 'predaja ne vraća id materijala: ' + JSON.stringify(p1));
+    assert.strictEqual(p1.status, 'on_shelf');
     const r = await A.izvediAlat('napisi_learn', k, { draft_id, lesson_id, repeat_key: 'poslije', blocks: [{ type: 'paragraph', text: 'kasno' }] });
-    assert.deepStrictEqual([r.isError, izlaz(r).error, izlaz(r).kind], [true, 'nacrt_predan', 'stop']);
+    assert.deepStrictEqual([r.isError, izlaz(r).error, izlaz(r).kind], [true, 'nacrt_ne_postoji', 'stop']);
+    const p2 = izlaz(await A.izvediAlat('predaj_nacrt', k, { draft_id }));
+    assert.deepStrictEqual([p2.material_id, p2.review_url], [p1.material_id, p1.review_url], 'ponovljena predaja ne vraća isti materijal i link');
+  });
+
+  await test('②/4.3′ polica pri predaji: shelf_id ILI new_shelf idu u bazu; oboje = odbijeno BEZ poziva baze; bez police = „korisnik"', async () => {
+    const SHELF = '22222222-2222-4222-8222-222222222222';
+    for (const [arg, ocek] of [[{}, [null, null]], [{ shelf_id: SHELF }, [SHELF, null]], [{ new_shelf: 'Kemija' }, [null, 'Kemija']]]) {
+      const k = lazniNacrt(); const { draft_id } = await cjevovod(k);
+      const r = await A.izvediAlat('predaj_nacrt', k, Object.assign({ draft_id }, arg));
+      assert.ok(!r.isError, JSON.stringify(arg) + ': ' + r.content[0].text);
+      assert.deepStrictEqual([k.zapis.predaje[0].p_polica, k.zapis.predaje[0].p_nova_polica], ocek, 'polica nije prosljeđena: ' + JSON.stringify(arg));
+    }
+    const k = lazniNacrt(); const { draft_id } = await cjevovod(k);
+    const prije = k.zapis.pozivi.length;
+    const oba = await A.izvediAlat('predaj_nacrt', k, { draft_id, shelf_id: SHELF, new_shelf: 'Dvije' });
+    assert.deepStrictEqual([oba.isError, izlaz(oba).error], [true, 'alat_los_ulaz']);
+    assert.strictEqual(k.zapis.pozivi.length, prije, 'oboje odjednom, a alat je ipak zvao bazu');
+    k.nacrti.get(draft_id).nova_polica = null; k.nacrti.get(draft_id).polica_id = null;   // nacrt iz vremena prije ②/4.2
+    const bez = izlaz(await A.izvediAlat('predaj_nacrt', k, { draft_id }));
+    assert.deepStrictEqual([bez.error, bez.kind], ['nacrt_bez_police', 'korisnik']);
+    assert.ok(/ask the user/i.test(bez.message) && /shelf_id|new_shelf/.test(bez.message), 'poruka ne kaže AI-ju što da učini: ' + bez.message);
   });
 
   await test('②/2 omot registrira SVE alate iz jezgre (nijedan alat ne živi samo u index.ts)', () => {
@@ -500,10 +529,13 @@ function lazniKlijent(redovi, greska) {
     assert.ok(reg.every((r) => typeof r[2] === 'function' && r[1].inputSchema && r[1].description));
   });
 
-  await test('②/2 upute (`instructions`) opisuju cjevovod redom i kažu da korisnik pregledava', () => {
+  await test('②/2 upute (`instructions`) opisuju cjevovod redom; ②/4.3′: materijal ide na policu CIJEL i privatan je (ADR-039)', () => {
     const redom = ['zapocni_nacrt', 'napisi_learn', 'dodaj_kartice', 'dodaj_pitanja', 'predaj_nacrt'].map((x) => A.UPUTE.indexOf(x));
     assert.ok(redom.every((x, j) => x >= 0 && (j === 0 || x > redom[j - 1])), 'redoslijed u uputama: ' + redom);
-    assert.ok(/user.*(review|accept)/i.test(A.UPUTE), 'upute ne kažu da korisnik pregledava');
+    assert.ok(/whole material goes onto the user's shelf/i.test(A.UPUTE) && /never half/i.test(A.UPUTE), 'upute ne kažu da materijal ide na policu cijel');
+    assert.ok(/private/i.test(A.UPUTE), 'upute ne kažu da je materijal privatan');
+    assert.ok(!/accepts? (it|the draft)|review(s)? (it|the draft) in Sokrat/i.test(A.UPUTE + A.ALATI.map((x) => x.opis).join(' ')),
+      'upute ili opis alata i dalje obećavaju pregled/prihvat koji je otpao (ADR-039)');
   });
 
   // ══ ②/3 OBLIK MATERIJALA: nacrt JEST gradivo (anketa 30.09.: „nacrt u obliku gradiva") ══════════
@@ -696,18 +728,35 @@ function lazniKlijent(redovi, greska) {
     for (const u of Object.values(upute)) assert.ok(/whole source/i.test(u), 'uputa ne kaže da se pokriva CIJELI izvor (ADR-031): ' + u);
   });
 
-  await test('②/4.2 predaj_nacrt vraća review_url na nacrt; adresa iz okoline, pogrešna → zadana produkcijska', async () => {
+  await test('②/4.3′ predaj_nacrt vraća review_url na MATERIJAL; adresa iz okoline, pogrešna → zadana produkcijska', async () => {
     const k = lazniNacrt(); const { draft_id } = await cjevovod(k);
     const stanje = new Map(k.nacrti);
-    const url = async (okolina) => izlaz(await A.izvediAlat('predaj_nacrt', lazniNacrt({}, stanje), { draft_id }, okolina)).review_url;
-    assert.strictEqual(await url({ appUrl: 'http://localhost:5051/' }), 'http://localhost:5051/#/materials/nacrt/' + draft_id);
-    assert.strictEqual(await url(undefined), 'https://www.sokratstudy.com/#/materials/nacrt/' + draft_id);
-    assert.strictEqual(await url({ appUrl: 'javascript:alert(1)' }), 'https://www.sokratstudy.com/#/materials/nacrt/' + draft_id);
-    assert.strictEqual(await url({ appUrl: 'https://drugi.example/x?y#z' }), 'https://drugi.example/x/#/materials/nacrt/' + draft_id, 'upit i sidro adrese nisu odrezani');
+    const predaja = async (okolina) => izlaz(await A.izvediAlat('predaj_nacrt', lazniNacrt({}, stanje), { draft_id }, okolina));
+    const ruta = (mid) => '/#/subject/node%3A' + mid + '/content';
+    let p = await predaja({ appUrl: 'http://localhost:5051/' });
+    assert.strictEqual(p.review_url, 'http://localhost:5051' + ruta(p.material_id));
+    p = await predaja(undefined); assert.strictEqual(p.review_url, 'https://www.sokratstudy.com' + ruta(p.material_id));
+    p = await predaja({ appUrl: 'javascript:alert(1)' }); assert.strictEqual(p.review_url, 'https://www.sokratstudy.com' + ruta(p.material_id));
+    p = await predaja({ appUrl: 'https://drugi.example/x?y#z' });
+    assert.strictEqual(p.review_url, 'https://drugi.example/x' + ruta(p.material_id), 'upit i sidro adrese nisu odrezani');
     const reg = [];
     A.registrirajAlate({ registerTool: (ime, cfg, cb) => reg.push([ime, cb]) }, lazniNacrt({}, stanje), (s) => s, { appUrl: 'http://localhost:5051' });
     const r = izlaz(await reg.find((x) => x[0] === 'predaj_nacrt')[1]({ draft_id }));
-    assert.strictEqual(r.review_url, 'http://localhost:5051/#/materials/nacrt/' + draft_id, 'registrirajAlate ne prosljeđuje okolinu alatu');
+    assert.strictEqual(r.review_url, 'http://localhost:5051' + ruta(r.material_id), 'registrirajAlate ne prosljeđuje okolinu alatu');
+  });
+
+  await test('②/4.3′ link na materijal = ruta koju APLIKACIJA otvara: pravi parseRoute (js/navigation.js) → study, node:<id>, LESSON_ID iz js/my-materials.js', () => {
+    const vm = require('vm');
+    const ctx = { console, window: {}, document: { addEventListener() {}, querySelectorAll() { return []; } }, history: {}, location: { hash: '' }, localStorage: { getItem() { return null; } } };
+    vm.createContext(ctx);
+    vm.runInContext(fs.readFileSync(path.join(KORIJEN, 'js', 'navigation.js'), 'utf8') + ';this.__parseRoute = parseRoute;', ctx);
+    const lekcija = (fs.readFileSync(path.join(KORIJEN, 'js', 'my-materials.js'), 'utf8').match(/const LESSON_ID = '([^']+)'/) || [])[1];
+    assert.ok(lekcija, 'LESSON_ID nije nađen u js/my-materials.js');
+    assert.strictEqual(A.LEKCIJA_MATERIJALA, lekcija, 'alat i aplikacija se ne slažu oko lekcije materijala');
+    const mid = '11111111-1111-4111-8111-000000000042';
+    const url = A.adresaMaterijala({ appUrl: 'http://localhost:5051' }, mid);
+    const r = ctx.__parseRoute(url.slice(url.indexOf('#')));
+    assert.deepStrictEqual(JSON.parse(JSON.stringify(r)), { page: 'study', data: { subject: 'node:' + mid, lesson: lekcija, section: 'home' } });
   });
 
   await test('②/4.2 omot čita SOKRAT_APP_URL iz okoline i predaje ga jezgri', () => {

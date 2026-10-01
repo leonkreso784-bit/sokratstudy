@@ -67,7 +67,7 @@ const ULOGA = 'mcp_klijent';
  * Podiže se SVJESNO, uz novu provjeru; spuštanje bez razloga znači da je nešto tiho otpalo.
  */
 // 41 → 45 (②/1, 29.09.): mrtav redak otvorenih funkcija + tri pomoćnika nacrta u ZABRANJENI_RPC.
-const OCEKIVANO_PROVJERA = 52;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika
+const OCEKIVANO_PROVJERA = 53;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika · +1 (②/4.3′): `_nacrt_u_materijal`
 
 /**
  * `PUT /auth/v1/user` — ŠTO POSTAVKA „traži trenutnu lozinku" ZATVARA, A ŠTO NE (①/2b, 21.09.).
@@ -177,7 +177,7 @@ const OTVORENO = {
   funkcije: {
     'mcp_zapocni_nacrt(text,text,uuid,text,text)': 'novi nacrt (ime, ključ ponavljanja, polica ILI nova polica, opseg); vlasnik iz tokena, samo VLASTITA polica, kvota 3 u izradi / 10 nepregledanih (②/1, ②/1b, ②/4.2)',
     'mcp_upisi_nacrt(uuid,jsonb,integer)': 'zamjena sadržaja vlastitog nacrta u izradi od zadane verzije, najviše 1 MB (②/1, ②/1b)',
-    'mcp_predaj_nacrt(uuid)': 'zamrzne vlastiti nacrt za korisnikov pregled (②/1)',
+    'mcp_predaj_nacrt(uuid,uuid,text)': 'vlastiti nacrt → NOV materijal u VLASTITOJ polici, cijel, u jednoj transakciji; ponovljena predaja = isti materijal (②/4.3′, ADR-039 — što smije, mjeri `mcp:predaja`)',
     'mcp_procitaj_nacrt(uuid)': 'čitanje vlastitog nacrta — AI nastavlja gdje je stao (②/1)',
     'mcp_moji_nacrti()': 'popis vlastitih nacrta bez sadržaja (②/1)'
   }
@@ -238,7 +238,9 @@ const ZABRANJENI_RPC = {
   prihvati_nacrt: { p_id: NULA, p_polica: null, p_nova_polica: 'brava-proba' },
   odbaci_nacrt: { p_id: NULA },
   _nacrt_korisnik: {},
-  _provjeri_kartice_nacrta: { p: {} }
+  _provjeri_kartice_nacrta: { p: {} },
+  // ②/4.3′: nacrt → materijal; zovu ga `mcp_predaj_nacrt` i `prihvati_nacrt` iznutra, nikome nije grantan.
+  _nacrt_u_materijal: { d: {}, p_polica: null, p_nova_polica: 'brava-proba' }
 };
 
 /** Funkcije koje NISU ruta: okidači (zovu se iz triggera) i interni pomoćnici (service_role). */

@@ -30,7 +30,7 @@ const {
 const { valjanTocno, lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 56;   // +14 (②/1b, blok ⑧) · +1 (②/1b F2: 409 i trajanje sukoba) · +8 (②/4.2, blok ⑨)
+const OCEKIVANO_PROVJERA = 55;   // +14 (②/1b, blok ⑧) · +1 (②/1b F2: 409 i trajanje sukoba) · +8 (②/4.2, blok ⑨) · −1 (②/4.3′: „ne predaje drugi put" seli u `mcp:predaja` ③)
 
 let failed = 0;
 let touched = 0;
@@ -87,6 +87,17 @@ async function ostari(id, dana) {
     body: JSON.stringify({ updated_at: kad })
   });
   if (!r.ok) throw new Error('ostari ' + r.status + ': ' + (await r.text()).slice(0, 120));
+}
+
+/** ②/4.3′ (ADR-039): AI-jeva predaja nacrt pretvori u MATERIJAL (mjeri `mcp:predaja`), pa status „predan"
+ *  imaju samo nacrti predani PRIJE te odluke. Takav se ovdje glumi service ključem — on i dalje mora biti
+ *  zamrznut, ne istjecati i trošiti kvotu nepregledanih. */
+async function oznaciPredan(id) {
+  const r = await http('/rest/v1/node_drafts?id=eq.' + id, {
+    method: 'PATCH', headers: Object.assign(svcHeaders(), { Prefer: 'return=minimal' }),
+    body: JSON.stringify({ status: 'predan', submitted_at: new Date().toISOString() })
+  });
+  if (!r.ok) throw new Error('oznaciPredan ' + r.status + ': ' + (await r.text()).slice(0, 120));
 }
 
 // ②/1b: svaki početak nosi KLJUČ PONAVLJANJA (obavezan), svaki upis VERZIJU od koje kreće.
@@ -197,12 +208,11 @@ const rest = (token, put, opts = {}) => http('/rest/v1/' + put, Object.assign({}
   await upisi(aA, idA, sadrzaj);
   const prazan = (await zapocni(aA, 'Prazan')).json;
   odbijenKao('prazan nacrt se ne predaje', await rpc(aA, 'mcp_predaj_nacrt', { p_id: prazan }), 'nacrt_prazan');
-  const pred = await rpc(aA, 'mcp_predaj_nacrt', { p_id: idA });
+  await oznaciPredan(idA);
   const poPredaji = await rpc(aA, 'mcp_procitaj_nacrt', { p_id: idA });
-  record('predaja: status predan + vrijeme predaje', pred.status === 200 && poPredaji.json && poPredaji.json.status === 'predan'
-    && !!poPredaji.json.submitted_at, opis(pred));
+  record('stari predan nacrt (prije ADR-039): AI ga čita, status predan + vrijeme predaje', poPredaji.status === 200 && poPredaji.json &&
+    poPredaji.json.status === 'predan' && !!poPredaji.json.submitted_at, opis(poPredaji));
   odbijenKao('predan nacrt se više NE MIJENJA', await upisi(aA, idA, tijeloZa('kasno')), 'nacrt_predan');
-  odbijenKao('predan nacrt se ne predaje drugi put', await rpc(aA, 'mcp_predaj_nacrt', { p_id: idA }), 'nacrt_predan');
 
   console.log('\n— ⑤ kvota (korisnik C) —');
   const izrada = [];
@@ -223,7 +233,7 @@ const rest = (token, put, opts = {}) => http('/rest/v1/' + put, Object.assign({}
     uBazi.length + ' redaka u tablici');
   // Predan nacrt NE istječe: ostari ga i provjeri da je i dalje tu.
   await upisi(aC, izrada[1], tijeloZa('C1'));
-  await rpc(aC, 'mcp_predaj_nacrt', { p_id: izrada[1] });
+  await oznaciPredan(izrada[1]);
   await ostari(izrada[1], 30);
   const stari = await rpc(aC, 'mcp_procitaj_nacrt', { p_id: izrada[1] });
   record('PREDAN nacrt star 30 dana i dalje postoji (čeka korisnikov pregled)',
@@ -232,13 +242,13 @@ const rest = (token, put, opts = {}) => http('/rest/v1/' + put, Object.assign({}
   // Do 10 nepregledanih: sad su živa 3 (C1 predan, C2 i C-poslije u izradi). Predaj ih i dopuni.
   for (const id of [izrada[2], noviC.json]) {
     await upisi(aC, id, tijeloZa('C'));
-    await rpc(aC, 'mcp_predaj_nacrt', { p_id: id });
+    await oznaciPredan(id);
   }
   let dopuna = 0;
   while ((await rpc(aC, 'mcp_moji_nacrti', {})).json.length < 10 && dopuna < 12) {
     const id = (await zapocni(aC, 'D' + dopuna)).json;
     await upisi(aC, id, tijeloZa('D'));
-    await rpc(aC, 'mcp_predaj_nacrt', { p_id: id });
+    await oznaciPredan(id);
     dopuna++;
   }
   const deset = (await rpc(aC, 'mcp_moji_nacrti', {})).json;

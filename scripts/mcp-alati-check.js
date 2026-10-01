@@ -7,7 +7,8 @@
 // cijeli cjevovod na Edge Functionu `mcp`, a svaki učinak se PROČITA NATRAG iz baze (200 nije dokaz):
 //
 //   ① popis alata = točno onaj iz jezgre (`alati.ts`), i svaki koji stvara traži `repeat_key`
-//   ② cjevovod: započni → Learn → kartice → pitanja → pročitaj → predaj; nacrt u bazi prolazi strogi profil
+//   ② cjevovod: započni → Learn → kartice → pitanja → pročitaj → predaj; nacrt u bazi prolazi strogi profil;
+//      predaja (②/4.3′) = materijal u odabranoj polici + link na njega, ponovljena = isti materijal
 //   ③ redoslijed: kartice bez Learna i pitanja bez kartica PADAJU imenovano
 //   ④ isti poziv dvaput NE duplicira: ni nacrt, ni lekciju, ni kartice (i verzija se ne mijenja)
 //   ⑤ N9 uživo: odbijanje iz BAZE (validator, predan nacrt) stiže AI-ju prevedeno — HTTP 200 +
@@ -88,14 +89,20 @@ async function nacrtUBazi(id) {
 async function brojNacrta(uid) {
   return ((await (await http('/rest/v1/node_drafts?owner_id=eq.' + uid + '&select=id', { headers: svcHeaders() })).json()) || []).length;
 }
-async function otisakGradiva(uid) {
-  const nodes = await (await http('/rest/v1/nodes?owner_id=eq.' + uid + '&select=*&order=id', { headers: svcHeaders() })).json();
+/** Otisak živog gradiva. `samo` = id-evi čvorova koji su postojali PRIJE (②/4.3′: predaja smije dodati
+ *  NOV materijal, ali postojeće ne smije dirnuti — zato se otisak uzima nad istim skupom). */
+async function otisakGradiva(uid, samo) {
+  const nodes = (await (await http('/rest/v1/nodes?owner_id=eq.' + uid + '&select=*&order=id', { headers: svcHeaders() })).json())
+    .filter((x) => !samo || samo.includes(x.id));
   const ids = nodes.map((x) => x.id);
   const c = ids.length
     ? await (await http('/rest/v1/node_content?node_id=in.(' + ids.join(',') + ')&select=*&order=node_id', { headers: svcHeaders() })).json()
     : [];
-  return { broj: nodes.length + '+' + c.length, hash: crypto.createHash('sha256').update(JSON.stringify([nodes, c])).digest('hex').slice(0, 16) };
+  return { ids, broj: nodes.length + '+' + c.length, hash: crypto.createHash('sha256').update(JSON.stringify([nodes, c])).digest('hex').slice(0, 16) };
 }
+const kanon = (v) => Array.isArray(v) ? v.map(kanon) : (v && typeof v === 'object'
+  ? Object.keys(v).sort().reduce((o, k) => (o[k] = kanon(v[k]), o), {}) : v);
+const svc = async (put) => ((await (await http('/rest/v1/' + put, { headers: svcHeaders() })).json()) || [])[0] || null;
 const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, Authorization: 'Bearer ' + token } });
 
 (async () => {
@@ -255,27 +262,35 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   // Samo NEPOSTOJEĆI: tuđi nacrt mjeri `mcp:nacrt` ② na RPC-u (alat samo prosljeđuje poziv).
   odbijenKao('nepostojeći nacrt → nacrt_ne_postoji / stop', await alat(t, 'procitaj_nacrt', { draft_id: '00000000-0000-4000-8000-000000000000' }), 'nacrt_ne_postoji', 'stop');
 
-  console.log('\n— ② predaja —');
+  console.log('\n— ② predaja = materijal na polici (②/4.3′, ADR-039) —');
   const pr = await alat(t, 'predaj_nacrt', { draft_id: draftId });
-  d = await nacrtUBazi(draftId);
-  record('predaj_nacrt → u bazi status predan', !pr.isError && d.status === 'predan', opis(pr));
+  const mid = pr.tijelo && pr.tijelo.material_id;
+  const matUBazi = mid ? await svc('nodes?id=eq.' + mid + '&select=id,owner_id,parent_id,kind,name,deleted_at') : null;
+  const sadrUBazi = mid ? await svc('node_content?node_id=eq.' + mid + '&select=payload') : null;
+  const nacrtPoslije = await nacrtUBazi(draftId);
+  record('predaj_nacrt → materijal (study) u ODABRANOJ polici, sadržaj = nacrt, nacrta više nema',
+    !pr.isError && !!matUBazi && matUBazi.owner_id === A.id && matUBazi.parent_id === polica && matUBazi.kind === 'study' && !matUBazi.deleted_at &&
+    !!sadrUBazi && JSON.stringify(kanon(sadrUBazi.payload)) === JSON.stringify(kanon(d.payload)) && !nacrtPoslije,
+  opis(pr) + ' · materijal ' + (matUBazi ? 'u polici=' + (matUBazi.parent_id === polica) : 'nema') + ' · nacrt ' + (nacrtPoslije ? 'JOŠ POSTOJI' : 'nestao'));
   // Tajna `SOKRAT_APP_URL` na stagingu = lokalni poslužitelj (anketa 30.09.); `.env` je smije pregaziti.
-  const ocekivanUrl = (process.env.STAGING_SOKRAT_APP_URL || 'http://localhost:5051').replace(/\/+$/, '') + '/#/materials/nacrt/' + draftId;
-  record('②/4.2 predaj_nacrt vraća review_url na OVAJ nacrt (adresa iz tajne funkcije)', !!pr.tijelo && pr.tijelo.review_url === ocekivanUrl,
-    (pr.tijelo && pr.tijelo.review_url) + (pr.tijelo && pr.tijelo.review_url === ocekivanUrl ? '' : ' ← očekivano ' + ocekivanUrl));
-  odbijenKao('upis nakon predaje → nacrt_predan / stop (predan je zamrznut)', await alat(t, 'napisi_learn',
-    { draft_id: draftId, lesson_id: L, repeat_key: 'razgovor-1:kasno', blocks: [{ type: 'paragraph', text: 'kasno' }] }), 'nacrt_predan', 'stop');
-  const dPoslije = await nacrtUBazi(draftId);
-  record('… nacrt poslije odbijenog upisa bajt-isti', JSON.stringify(dPoslije.payload) === JSON.stringify(d.payload) && dPoslije.verzija === d.verzija, 'verzija ' + dPoslije.verzija);
+  const ocekivanUrl = (process.env.STAGING_SOKRAT_APP_URL || 'http://localhost:5051').replace(/\/+$/, '') + '/#/subject/node%3A' + mid + '/content';
+  record('②/4.3′ predaj_nacrt vraća review_url na OVAJ materijal (adresa iz tajne funkcije)', !!mid && pr.tijelo.review_url === ocekivanUrl,
+    (pr.tijelo && pr.tijelo.review_url) + (mid && pr.tijelo.review_url === ocekivanUrl ? '' : ' ← očekivano ' + ocekivanUrl));
+  odbijenKao('upis nakon predaje → nacrt_ne_postoji / stop (nacrt je postao materijal)', await alat(t, 'napisi_learn',
+    { draft_id: draftId, lesson_id: L, repeat_key: 'razgovor-1:kasno', blocks: [{ type: 'paragraph', text: 'kasno' }] }), 'nacrt_ne_postoji', 'stop');
+  const pr2 = await alat(t, 'predaj_nacrt', { draft_id: draftId });
+  const uPolici = (await (await http('/rest/v1/nodes?parent_id=eq.' + polica + '&deleted_at=is.null&select=id', { headers: svcHeaders() })).json()) || [];
+  record('ponovljena predaja → ISTI materijal i link, u polici nema drugog', !pr2.isError && !!mid && pr2.tijelo.material_id === mid &&
+    pr2.tijelo.review_url === pr.tijelo.review_url && uPolici.length === 2, opis(pr2) + ' · u polici ' + uPolici.length + ' čvora');
   odbijenKao('loš ulaz (bez repeat_key) → alat_los_ulaz / ispravi, bez upisa', await alat(t, 'zapocni_nacrt',
     { name: 'X', lessons: lekcije }), 'alat_los_ulaz', 'ispravi');
-  record('… i nijedan nov nacrt nije nastao', (await brojNacrta(A.id)) === 1, 'nacrta ' + (await brojNacrta(A.id)));
+  record('… i nijedan nov nacrt nije nastao (predani je postao materijal → 0)', (await brojNacrta(A.id)) === 0, 'nacrta ' + (await brojNacrta(A.id)));
   odbijenKao('②/4.2 polica koje korisnik nema → nacrt_polica_ne_postoji / ispravi', await alat(t, 'zapocni_nacrt',
     { name: 'X', repeat_key: 'razgovor-2:start', shelf_id: '00000000-0000-4000-8000-000000000000', scope: 'standard', lessons: lekcije }), 'nacrt_polica_ne_postoji', 'ispravi');
 
   console.log('\n— ⑥ živo gradivo —');
-  const poslije = await otisakGradiva(A.id);
-  record('nodes + node_content korisnika bajt-isti nakon SVIH poziva alata', prije.hash === poslije.hash && prije.broj === '2+1',
+  const poslije = await otisakGradiva(A.id, prije.ids);
+  record('POSTOJEĆI nodes + node_content korisnika bajt-isti nakon SVIH poziva alata (predaja smije samo DODATI)', prije.hash === poslije.hash && prije.broj === '2+1',
     'prije ' + prije.broj + ' ' + prije.hash + ' · poslije ' + poslije.broj + ' ' + poslije.hash);
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,

@@ -4,6 +4,8 @@
 -- `publish_node` pišu ŽIVO, a živo je upravo ono što AI ne smije (ADR-038, posljedica 1). Zato
 -- AI dobiva JEDAN nov put, u zasebnu tablicu `node_drafts`, i nijedan u žive tablice. Materijal
 -- nastaje tek korisnikovim „Prihvati" iz OBIČNE sesije (②/4).
+-- ⚠️ ADR-039 (2026-10-01) to MIJENJA: `mcp_predaj_nacrt` sam stavlja materijal na policu, cijel, u
+--    jednoj transakciji (§ „②/4.3′" niže) — jedini AI-jev prijelaz u živo, i samo za NOV materijal.
 --
 -- ODLUKE (Leon, anketa 2026-09-29):
 --   • kvota: najviše 3 nacrta U IZRADI i 10 NEPREGLEDANIH (u izradi + predani) po korisniku ·
@@ -269,26 +271,117 @@ begin
 end;
 $$;
 
--- Predaja: nacrt se zamrzne i čeka korisnikov pregled.
-create or replace function public.mcp_predaj_nacrt(p_id uuid)
-returns timestamptz
+-- ─── ②/4.3′ PREDAJA = MATERIJAL NA POLICI (ADR-039, Leon 2026-10-01) ───────────────────────────
+-- Ekrana za pregled nema: `mcp_predaj_nacrt` nacrt u JEDNOJ transakciji pretvori u materijal u polici
+-- i nacrt obriše. Nikad pola-materijal: pad bilo kojeg koraka (validator, polica, kartice) poništi
+-- sve, nacrt ostaje. AI time dobiva TOČNO jedan prijelaz u živo, i on samo STVARA nov materijal u
+-- vlastitoj polici — postojeći čvor ne prima ni kao argument, pa ga ovim putem ne može prepisati.
+--
+-- ODLUKE (Leon, anketa 2026-10-01):
+--   • predaja ponovljena nakon uspjeha (AI-ju se izgubio odgovor) vraća ISTI materijal — zato bilješka
+--     nacrt → materijal ispod, 7 dana; bez nje bi AI dobio „ne postoji" i krenuo ispočetka (duplikat)
+--   • nacrt bez police (iz vremena prije ②/4.2) ili s obrisanom policom: AI pita korisnika i preda
+--     ponovno s `p_polica` / `p_nova_polica`; dok polica ne valja, ništa ne nastaje
+--   • prima i nacrt koji je PREDAN po starom (čekao ekran ②/4.3, koji je otpao)
+
+-- Bilješka „ovaj nacrt je postao ovaj materijal". Bez sadržaja; nikome ne grantana — piše je i čita
+-- samo `mcp_predaj_nacrt`. Obrisan materijal (meko) se ne vraća; stariji od 7 dana se briše.
+create table if not exists public.node_drafts_predani (
+  draft_id   uuid primary key,
+  owner_id   uuid not null references auth.users(id) on delete cascade,
+  node_id    uuid not null references public.nodes(id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+create index if not exists node_drafts_predani_owner_idx on public.node_drafts_predani (owner_id, created_at);
+create index if not exists node_drafts_predani_node_idx on public.node_drafts_predani (node_id);
+alter table public.node_drafts_predani enable row level security;
+revoke all on public.node_drafts_predani from public, anon, authenticated, mcp_klijent;
+
+-- Nacrt → materijal u polici (zajedničko za `mcp_predaj_nacrt` i `prihvati_nacrt`, f6-prihvat.sql).
+-- Pozivatelj je već zaključao vlastiti živi nacrt (`_nacrt_moj`) i dao TOČNO jedno: postojeću policu
+-- ILI ime nove. Živo gradivo se piše POSTOJEĆIM putem (`create_node` + `publish_node`): isti strogi
+-- profil, ista granica od 1 MB i ista povijest verzija kao objava iz Studija.
+create or replace function public._nacrt_u_materijal(d public.node_drafts, p_polica uuid, p_nova_polica text)
+returns uuid
+language plpgsql
+set search_path = public, pg_temp
+as $$
+declare v_polica uuid; v_node uuid; v_ver bigint;
+begin
+  if d.payload = '{}'::jsonb then
+    raise exception 'nacrt_prazan: prazan nacrt se ne predaje' using errcode = '22023';
+  end if;
+  perform public._provjeri_kartice_nacrta(d.payload);   -- druga linija za N4 (upis ga već provjerava)
+
+  if p_polica is not null then
+    -- Vlastita ŽIVA POLICA. Tuđa, obrisana, nepostojeća i materijal-umjesto-police → ista greška.
+    perform 1 from public.nodes
+     where id = p_polica and owner_id = auth.uid() and kind = 'folder' and deleted_at is null;
+    if not found then
+      raise exception 'nacrt_polica_ne_postoji: te police nema među korisnikovim policama' using errcode = 'P0002';
+    end if;
+    v_polica := p_polica;
+  else
+    v_polica := public.create_node(null, 'folder', p_nova_polica);
+  end if;
+
+  v_node := public.create_node(v_polica, 'study', d.name);
+  select version into v_ver from public.node_content where node_id = v_node;
+  perform public.publish_node(v_node, d.payload, v_ver);   -- strogi profil + 1 MB + povijest verzija
+
+  delete from public.node_drafts where id = d.id;
+  return v_node;
+end;
+$$;
+revoke execute on function public._nacrt_u_materijal(public.node_drafts, uuid, text) from public, anon, authenticated;
+
+-- Predaja: nacrt postaje materijal u polici. Vraća id materijala.
+-- Polica: `p_polica` / `p_nova_polica` (najviše jedno) PREGAZE onu zapamćenu u nacrtu; bez njih ide
+-- zapamćena; bez ičega → `nacrt_bez_police` (AI pita korisnika).
+-- Stari potpis (samo id, vraćao vrijeme predaje) se BRIŠE — povratni tip se mijenja, a preopterećenje
+-- bi ostavilo stari put otvoren (`mcp:brava` sudi po punom potpisu).
+drop function if exists public.mcp_predaj_nacrt(uuid);
+create or replace function public.mcp_predaj_nacrt(p_id uuid, p_polica uuid default null, p_nova_polica text default null)
+returns uuid
 language plpgsql
 security definer
 set search_path = public, pg_temp
 as $$
-declare d public.node_drafts; v_kad timestamptz;
+declare d public.node_drafts; v_nova text; v_polica uuid; v_node uuid;
 begin
   perform public._nacrt_pozivatelj();
-  d := public._nacrt_moj(p_id);
-  if d.status <> 'u_izradi' then
-    raise exception 'nacrt_predan: nacrt je već predan' using errcode = '55000';
+  v_nova := nullif(btrim(coalesce(p_nova_polica, '')), '');
+  if (p_polica is not null and v_nova is not null) or char_length(coalesce(v_nova, '')) > 200 then
+    raise exception 'nacrt_polica: najviše jedna polica — postojeća ili nova po imenu (do 200 znakova)' using errcode = '22023';
   end if;
-  if d.payload = '{}'::jsonb then
-    raise exception 'nacrt_prazan: prazan nacrt se ne predaje' using errcode = '22023';
+
+  begin
+    d := public._nacrt_moj(p_id);   -- zaključan: usporedna predaja istog nacrta čeka ovdje
+  exception when sqlstate 'P0002' then
+    -- Nacrta nema. Ako ga je ISTI korisnik već predao, vrati taj materijal (ponovljena predaja, i
+    -- usporedna: druga čeka bravu gore, nakon prve nacrta više nema, a bilješka je upravo upisana).
+    select l.node_id into v_node
+      from public.node_drafts_predani l
+      join public.nodes n on n.id = l.node_id and n.deleted_at is null
+     where l.draft_id = p_id and l.owner_id = auth.uid() and l.created_at > now() - interval '7 days';
+    if v_node is not null then return v_node; end if;
+    raise;   -- tuđi, istekao, nepostojeći → ista greška kao i dosad
+  end;
+
+  if p_polica is not null or v_nova is not null then
+    v_polica := p_polica;
+  elsif d.polica_id is not null then
+    v_polica := d.polica_id;
+  elsif d.nova_polica is not null then
+    v_nova := d.nova_polica;
+  else
+    raise exception 'nacrt_bez_police: nacrt nema policu — pitaj korisnika i predaj s policom' using errcode = '22023';
   end if;
-  update public.node_drafts set status = 'predan', submitted_at = now(), updated_at = now()
-   where id = d.id returning submitted_at into v_kad;
-  return v_kad;
+
+  v_node := public._nacrt_u_materijal(d, v_polica, v_nova);
+  delete from public.node_drafts_predani where owner_id = auth.uid() and created_at <= now() - interval '7 days';
+  insert into public.node_drafts_predani (draft_id, owner_id, node_id) values (d.id, auth.uid(), v_node);
+  return v_node;
 end;
 $$;
 
@@ -335,7 +428,7 @@ do $$
 declare f text;
 begin
   foreach f in array array[
-    'mcp_zapocni_nacrt(text, text, uuid, text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid)',
+    'mcp_zapocni_nacrt(text, text, uuid, text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid, uuid, text)',
     'mcp_procitaj_nacrt(uuid)', 'mcp_moji_nacrti()'
   ] loop
     execute format('revoke execute on function public.%s from public, anon, authenticated', f);

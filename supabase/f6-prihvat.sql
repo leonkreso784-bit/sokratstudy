@@ -17,7 +17,10 @@
 --    strogi profil, ista granica od 1 MB i ista povijest verzija kao kad korisnik objavi iz Studija.
 --    Ovdje se samo dodaje ono čega tamo nema: veza pitanje → kartica (N4, `_provjeri_kartice_nacrta`).
 --
--- Primijenjeno na STAGING 2026-09-30. PROD tek uz Leonov izričit OK (faza ⑥).
+-- ⚠️ ADR-039 (2026-10-01): AI-jeva predaja sama stavlja materijal na policu (②/4.3′, f6-nacrt.sql),
+--    pa ekrana za Prihvati nema. Ove dvije funkcije ostaju za nacrt koji je predan PRIJE te odluke.
+--
+-- Primijenjeno na STAGING 2026-09-30 (②/4.3′ 2026-10-01). PROD tek uz Leonov izričit OK (faza ⑥).
 
 -- Druga, neovisna ograda uz grant (zrcalo `_nacrt_pozivatelj`): ako netko sutra grantira ove
 -- funkcije ulozi `mcp_klijent`, token AI-ja i dalje ne prihvaća. `client_id` = token od AI-ja.
@@ -43,7 +46,7 @@ language plpgsql
 security definer
 set search_path = public, pg_temp
 as $$
-declare d public.node_drafts; v_nova text; v_polica uuid; v_node uuid; v_ver bigint;
+declare d public.node_drafts; v_nova text;
 begin
   perform public._nacrt_korisnik();
   d := public._nacrt_moj(p_id);   -- vlastiti i živ, zaključan; tuđi i nepostojeći → ista greška
@@ -59,26 +62,9 @@ begin
     raise exception 'nacrt_polica: ime police je dulje od 200 znakova' using errcode = '22023';
   end if;
 
-  perform public._provjeri_kartice_nacrta(d.payload);   -- druga linija za N4 (upis ga već provjerava)
-
-  if p_polica is not null then
-    -- Vlastita ŽIVA POLICA. Tuđa, obrisana, nepostojeća i materijal-umjesto-police → ista greška.
-    perform 1 from public.nodes
-     where id = p_polica and owner_id = auth.uid() and kind = 'folder' and deleted_at is null;
-    if not found then
-      raise exception 'nacrt_polica_ne_postoji: te police nema među tvojim policama' using errcode = 'P0002';
-    end if;
-    v_polica := p_polica;
-  else
-    v_polica := public.create_node(null, 'folder', v_nova);
-  end if;
-
-  v_node := public.create_node(v_polica, 'study', d.name);
-  select version into v_ver from public.node_content where node_id = v_node;
-  perform public.publish_node(v_node, d.payload, v_ver);   -- strogi profil + 1 MB + povijest verzija
-
-  delete from public.node_drafts where id = d.id;
-  return v_node;
+  -- Kartice, polica, materijal, sadržaj i brisanje nacrta: isti put kao AI-jeva predaja (②/4.3′,
+  -- `_nacrt_u_materijal` u f6-nacrt.sql) — jedno mjesto, dva pozivatelja.
+  return public._nacrt_u_materijal(d, p_polica, v_nova);
 end;
 $$;
 

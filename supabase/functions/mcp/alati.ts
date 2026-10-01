@@ -10,14 +10,15 @@
 //     → RLS (`nodes_select_own`) vraća isključivo njegove čvorove. Ovaj modul NIKAD ne dobiva
 //     admin-klijent i ne zna za javni katalog (ni čitanje).
 //   • ②/2: AI PIŠE, ali SAMO u vlastiti nacrt i SAMO kroz pet `mcp_*` RPC-ova (`f6-nacrt.sql`) —
-//     nikad u žive tablice. Svaki RPC ide kroz `pozovi()`, jedino mjesto koje zove `.rpc(` i koje
+//     nikad izravno u žive tablice — jedini prijelaz u živo je `mcp_predaj_nacrt` (②/4.3′, ADR-039), koji
+//     u bazi STVARA nov materijal u vlastitoj polici. Svaki RPC ide kroz `pozovi()`, jedino mjesto koje zove `.rpc(` i koje
 //     grešku baze predaje `prevediOdbijanje` (N9; unit pada na `.rpc(` izvan njega i na nuli).
 
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
   'Sokrat Study is a study platform. This connector works ONLY with the signed-in user\'s own study materials.',
-  'You can read the user\'s shelves and materials (procitaj_materijale), and you can BUILD a new study material as a DRAFT.',
-  'A draft is never live: the user reviews it in Sokrat and decides whether to accept it. You cannot publish.',
+  'You can read the user\'s shelves and materials (procitaj_materijale), and you can BUILD a new study material.',
+  'You build it as a DRAFT that the user does not see yet. When you submit it (step 5), the whole material goes onto the user\'s shelf at once — never half of it. It is private: only the user sees it. You cannot publish anything publicly.',
   'Before you start, ask the user two things:',
   '  • which shelf the material goes on — call procitaj_materijale to show their existing shelves (use its id as shelf_id), or take a name for a new shelf (new_shelf);',
   '  • how deep it should be — scope: summary (the key points), standard (a full study script) or detailed (exam preparation). Every scope covers the WHOLE source; only the depth differs.',
@@ -26,7 +27,7 @@ export const UPUTE = [
   '  2. napisi_learn — for each lesson write the full study text (Learn) first. Everything else is built from it. Learn is the script the user studies from, not a summary: explain every term and idea of the source, at the depth the scope asks for.',
   '  3. dodaj_kartice — flashcards for that lesson: a term or question, and a short explanation (under 200 characters is best).',
   '  4. dodaj_pitanja — quiz questions and fill-in-the-blank sentences built from those flashcards. Every question names its flashcard in "card" (a card_id returned by dodaj_kartice). In a fill-in sentence write each gap as ___ and give one answer per gap, in order.',
-  '  5. predaj_nacrt — submit the finished draft. After that it is frozen until the user accepts or discards it. Give the user the review_url it returns: that is where they review and accept the draft.',
+  '  5. predaj_nacrt — submit the finished draft: the material is now on the user\'s shelf and the draft is gone. Tell the user it is on their shelf and give them the review_url it returns: that link opens the material. If it says the shelf is missing, ask the user which shelf and call predaj_nacrt again with shelf_id or new_shelf.',
   'Cover the WHOLE source, not a sample. Send at most one lesson per call.',
   'If the source ends with a final test or review questions, do not make a separate lesson for them: put each question into the lesson it belongs to, built from that lesson\'s flashcards.',
   'Every writing call takes a repeat_key: if you are unsure whether a call went through, send the SAME call with the SAME repeat_key again — nothing is duplicated. Use a NEW repeat_key for new content.',
@@ -35,7 +36,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.3.0' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.4.0' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -125,13 +126,14 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   nacrt_kartica_ne_postoji: { vrsta: 'ispravi', poruka: 'A question points to a flashcard this lesson does not have. Use a card_id returned by dodaj_kartice for THIS lesson.' },
   nacrt_opseg: { vrsta: 'ispravi', poruka: 'The scope must be one of: summary, standard, detailed. Ask the user which one they want.' },
   nacrt_polica: { vrsta: 'ispravi', poruka: 'Give exactly one shelf: shelf_id of an existing shelf (from procitaj_materijale) or new_shelf with a name.' },
-  nacrt_polica_ne_postoji: { vrsta: 'ispravi', poruka: 'The user has no shelf with that shelf_id. Call procitaj_materijale and use one of their shelves, or give new_shelf.' },
+  nacrt_polica_ne_postoji: { vrsta: 'ispravi', poruka: 'The user has no shelf with that shelf_id (it may have been deleted). Ask the user which shelf to use (procitaj_materijale lists them), then call again with shelf_id or new_shelf.' },
+  nacrt_bez_police: { vrsta: 'korisnik', poruka: 'This draft has no shelf. Ask the user which shelf it goes on, then call predaj_nacrt again with shelf_id (from procitaj_materijale) or new_shelf.' },
   nacrt_prazan: { vrsta: 'ispravi', poruka: 'An empty draft cannot be submitted. Write at least one lesson first.' },
   nacrt_sukob: { vrsta: 'ponovno', poruka: 'The draft changed since you read it. Read it again, merge your change, and write with the new version.' },
   nacrt_ne_postoji: { vrsta: 'stop', poruka: 'This draft does not exist (or it expired after 7 days untouched). Start a new draft.' },
-  nacrt_predan: { vrsta: 'stop', poruka: 'This draft is already submitted and frozen. The user must accept or discard it; start a new draft for more changes.' },
+  nacrt_predan: { vrsta: 'stop', poruka: 'This draft was submitted earlier and is frozen. Put it on the shelf with predaj_nacrt; start a new draft for more changes.' },
   nacrt_kvota_u_izradi: { vrsta: 'korisnik', poruka: 'The user already has 3 drafts in progress. Submit one of them before starting another.' },
-  nacrt_kvota_nepregledano: { vrsta: 'korisnik', poruka: '10 drafts are waiting for the user\'s review. Ask the user to accept or discard some in Sokrat.' },
+  nacrt_kvota_nepregledano: { vrsta: 'korisnik', poruka: 'The user has 10 unfinished drafts. Finish and submit some of them (procitaj_nacrt lists them), or ask the user to discard some.' },
   nacrt_samo_ai: { vrsta: 'stop', poruka: 'Drafts can only be written through a connected AI.' },
   nacrt_bez_identiteta: { vrsta: 'stop', poruka: 'The connection has no signed-in user. Ask the user to reconnect Sokrat.' }
 };
@@ -220,19 +222,21 @@ function opsegZa(d: { opseg?: Opseg | null }): { scope?: string; scope_hint?: st
   return e ? { scope: e[0], scope_hint: e[1].uputa } : {};
 }
 
-// ─── ②/4.2 LINK NATRAG ──────────────────────────────────────────────────────────────────────────
-// `predaj_nacrt` vraća adresu na kojoj korisnik pregleda nacrt (nalaz prvog pokusa: upute su
-// obećavale „pregledaj u Sokratu", a nitko nije znao gdje). Adresa stranice dolazi iz okoline
-// (`SOKRAT_APP_URL`: staging = lokalni poslužitelj, anketa 30.09.); sve što nije http(s) → produkcija.
+// ─── ②/4.2 LINK NATRAG → ②/4.3′ LINK NA MATERIJAL (ADR-039) ─────────────────────────────────────
+// `predaj_nacrt` vraća adresu MATERIJALA na polici (ekrana za pregled nacrta nema). Ruta je ona koju
+// aplikacija već dijeli (`js/navigation.js` K1: `#/subject/node%3A<id>/<lekcija>`, a osobni materijal
+// ima jednu lekciju, `LESSON_ID` u `js/my-materials.js` — unit ga čita odande). Adresa stranice dolazi
+// iz okoline (`SOKRAT_APP_URL`: staging = lokalni poslužitelj, anketa 30.09.); sve što nije http(s) → produkcija.
 export interface Okolina { appUrl?: string }
 const ZADANA_ADRESA = 'https://www.sokratstudy.com';
-export function adresaPregleda(okolina: Okolina | undefined, draftId: string): string {
+export const LEKCIJA_MATERIJALA = 'content';
+export function adresaMaterijala(okolina: Okolina | undefined, materialId: string): string {
   let baza = ZADANA_ADRESA;
   try {
     const u = new URL(String((okolina && okolina.appUrl) || ''));
     if (u.protocol === 'https:' || u.protocol === 'http:') baza = (u.origin + u.pathname).replace(/\/+$/, '');
   } catch (e) { /* nije adresa → zadana */ }
-  return baza + '/#/materials/nacrt/' + encodeURIComponent(draftId);
+  return baza + '/#/subject/' + encodeURIComponent('node:' + materialId) + '/' + LEKCIJA_MATERIJALA;
 }
 interface Lekcija {
   name: string; color?: string; icon?: string;
@@ -507,13 +511,18 @@ export const ALATI: Alat[] = [
     }
   },
   {
-    ime: 'predaj_nacrt', naslov: 'Submit the draft for review', samoCitanje: false,
-    opis: 'Step 5. Submits the finished draft. It is then frozen: the user reviews it in Sokrat and accepts or discards it.',
-    ulaz: objekt({ draft_id: DRAFT_ID }, ['draft_id']),
+    ime: 'predaj_nacrt', naslov: 'Put the finished material on the shelf', samoCitanje: false,
+    opis: 'Step 5. Submits the finished draft: the WHOLE material goes onto the shelf chosen at the start, and the draft is gone. ' +
+      'Only if the user wants a different shelf, or the call says the shelf is missing, give shelf_id OR new_shelf (at most one). ' +
+      'Calling it again for the same draft returns the same material — nothing is duplicated.',
+    ulaz: objekt({ draft_id: DRAFT_ID,
+      shelf_id: { type: 'string', pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', description: 'Optional: id of an existing shelf (from procitaj_materijale) instead of the one chosen at the start' },
+      new_shelf: tekst(1, 200, 'Optional: name of a NEW shelf instead of the one chosen at the start') }, ['draft_id']),
     izvedi: async (k, a, okolina) => {
-      const kad = await pozovi<string>(k, 'mcp_predaj_nacrt', { p_id: a.draft_id });
-      return { draft_id: a.draft_id, status: 'predan', submitted_at: kad, review_url: adresaPregleda(okolina, a.draft_id),
-        next: 'Give the user the review_url: there they review the draft and accept it (or discard it).' };
+      if (a.shelf_id !== undefined && a.new_shelf !== undefined) odbij('alat_los_ulaz', 'give at most one of input.shelf_id or input.new_shelf');
+      const materijal = await pozovi<string>(k, 'mcp_predaj_nacrt', { p_id: a.draft_id, p_polica: a.shelf_id ?? null, p_nova_polica: a.new_shelf ?? null });
+      return { material_id: materijal, status: 'on_shelf', review_url: adresaMaterijala(okolina, materijal),
+        next: 'Tell the user the material is on their shelf in Sokrat, and give them the review_url: it opens the material.' };
     }
   }
 ];

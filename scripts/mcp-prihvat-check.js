@@ -74,17 +74,23 @@ function sadrzaj(oznaka, card) {
 let kljucBr = 0;
 const noviKljuc = () => 'p-' + Date.now() + '-' + (++kljucBr);
 
-/** AI (token `ai`) napravi nacrt, upiše sadržaj i (po želji) preda. Vraća id nacrta. */
+/** AI (token `ai`) napravi nacrt, upiše sadržaj i (po želji) ga ostavi PREDANIM. Vraća id nacrta.
+ *  ⚠️ ②/4.3′ (ADR-039): AI-jeva predaja danas nacrt pretvara u materijal (mjeri `mcp:predaja`), pa
+ *  „predan" nacrt koji čeka Prihvati postoji samo iz vremena PRIJE te odluke — glumi ga service ključ. */
 async function nacrtOdAI(ai, ime, tijelo, predaj) {
   const id = (await rpc(ai, 'mcp_zapocni_nacrt', { p_name: ime, p_kljuc: noviKljuc(), p_polica: null, p_nova_polica: 'Polica', p_opseg: 'standardno' })).json;
   if (typeof id !== 'string') throw new Error('zapocni nije vratio id nacrta');
   const u = await rpc(ai, 'mcp_upisi_nacrt', { p_id: id, p_payload: tijelo, p_verzija: 1 });
   if (u.status !== 200) throw new Error('upis nacrta: ' + opis(u));
-  if (predaj !== false) {
-    const p = await rpc(ai, 'mcp_predaj_nacrt', { p_id: id });
-    if (p.status !== 200) throw new Error('predaja nacrta: ' + opis(p));
-  }
+  if (predaj !== false) await podmetniPolja(id, { status: 'predan', submitted_at: new Date().toISOString() });
   return id;
+}
+
+async function podmetniPolja(id, polja) {
+  const r = await http('/rest/v1/node_drafts?id=eq.' + id, {
+    method: 'PATCH', headers: Object.assign(svcHeaders(), { Prefer: 'return=minimal' }), body: JSON.stringify(polja)
+  });
+  if (!r.ok) throw new Error('podmetni ' + r.status + ': ' + (await r.text()).slice(0, 120));
 }
 
 /** Ubaci sadržaj u nacrt MIMO svih pravila (service ključ) — glumi nacrt iz vremena prije brane. */
