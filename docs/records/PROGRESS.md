@@ -5,6 +5,19 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-01 (OPUS, `sokratstudy.f6`) — F6 ②/4.3′ predaja = materijal na polici (ADR-039, ✅ STAGING)
+
+- **Anketa (Leon):** ponovljena predaja vraća ISTI materijal (bilješka nacrt → materijal, 7 dana) · nacrt bez police
+  ili s obrisanom policom → AI pita korisnika i preda s `shelf_id`/`new_shelf` · stari predani nacrti (Kemija,
+  Biologija) idu na policu tako da ih Leon preda kroz Claudea.
+- **SQL** (`f6-nacrt.sql`, `f6-prihvat.sql`): `_nacrt_u_materijal` = jedno mjesto prijelaza nacrt → materijal, dva
+  pozivatelja. Primijenio Leon (SQL Editor) — moj `apply_migration` na staging dvaput `declined`.
+- **Alat `0.4.0`:** `review_url` → `#/subject/node%3A<id>/content`; upute: materijal na polici, cijel, privatan.
+- **Brane:** nova `mcp:predaja` 33/0 (26 crveno na starom); unit 45/0 (6 crveno na starom `alati.ts`); `mcp:nacrt`
+  55/0 i `mcp:prihvat` 34/0 (stari „predan" nacrt sad glumi service ključ); `mcp:brava` 53/0 (uhvatila neimenovan
+  `_nacrt_u_materijal`); uživo na v13: `mcp:alati` 42/0, `mcp:probe` 9/0.
+- **Otvoreno:** mutacije M1–M4 (`mutacije-STAGING/`, untracked) čekaju primjenu na stagingu · Leonov test s Claudeom.
+
 ## 2026-10-01 (OPUS, `sokratstudy.f6`) — F6 ②/4.2 UŽIVO na stagingu + BUG-053 (napredak puca na v2 dokumentu)
 
 - **②/4.2 uživo:** Leon deployao `mcp` **v12** (prvi pokušaj nije sletio: gore je bila v11 = `0.2.0` od 30.09.
