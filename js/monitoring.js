@@ -23,6 +23,14 @@
     // (Bez build-koraka: ručna konstanta; kasnije može iz auto-version-bump skripte, F3 3C.)
     var APP_RELEASE = 'sokrat-study@20260699';
 
+    // Okruženje po ADRESI (BUG-053): bez njega Sentry SVE zove „production", pa je pad s
+    // localhost + staging-baze izgledao kao kvar na produkciji i pojeo pola istrage.
+    function appEnvironment(host) {
+        if (host === 'www.sokratstudy.com' || host === 'sokratstudy.com') return 'production';
+        if (/\.vercel\.app$/i.test(host || '')) return 'preview';
+        return 'development';
+    }
+
     var enabled = false;     // pristanak dan?
     var sentryReady = false; // SDK učitan?
     var loading = false;
@@ -45,7 +53,7 @@
         window.sentryOnLoad = function () {
             try {
                 if (window.Sentry && window.Sentry.init) {
-                    window.Sentry.init({ release: APP_RELEASE, sendDefaultPii: false });
+                    window.Sentry.init({ release: APP_RELEASE, environment: appEnvironment(location.hostname), sendDefaultPii: false });
                 }
             } catch (e) { /* ignore */ }
         };

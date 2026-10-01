@@ -1438,19 +1438,10 @@ async function initStudyPage(subjectId, lessonId, targetSection) {
     }
     showStudyLoading(false);
 
+    // BUG-053: `nav.data` puni SAMO `getStudyData` — samo lekcije, svaka s nizovima (meta-ključ v2
+    // dokumenta i lekcija bez `quiz` ne smiju doći ni do jednog načina učenja).
     const subjectLessonMap = lessonCategoryMap[subjectId];
-    if (subjectLessonMap && subjectLessonMap[lessonId]) {
-        const allowedCategories = subjectLessonMap[lessonId];
-        const filteredData = {};
-        for (const key of allowedCategories) {
-            if (fullData[key]) {
-                filteredData[key] = fullData[key];
-            }
-        }
-        AppState.nav.data = filteredData;
-    } else {
-        AppState.nav.data = fullData;
-    }
+    AppState.nav.data = getStudyData(fullData, subjectLessonMap && subjectLessonMap[lessonId]);
 
     // K2b: `#studyBreadcrumb` je obrisan — pisao je „Predmet > Lekcije" dok je globalni
     // drugi red već crtao `Predmeti › Predmet › Lekcija`, i to kao NAVIGACIJU, a ovaj je

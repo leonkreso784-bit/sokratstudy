@@ -64,9 +64,11 @@ test('SokratMonitor: after consent → loader injected + init(release) + error f
   const res = await page.evaluate(() => ({
     release: (window.__sentryInit || {}).release,
     pii: (window.__sentryInit || {}).sendDefaultPii,
+    env: (window.__sentryInit || {}).environment,
     events: window.__sentryEvents || [],
   }));
   expect(res.release).toBe('sokrat-study@20260699'); // release proslijeđen u init
+  expect(res.env).toBe('development');                // BUG-053: localhost NIJE „production"
   expect(res.pii).toBe(false);                        // privacy: bez PII
   expect(res.events).toContain('boom-after-consent'); // bufferirana greška flushana
   expect(errors).toEqual([]);

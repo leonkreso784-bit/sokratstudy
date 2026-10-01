@@ -5,6 +5,16 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-01 (OPUS, `sokratstudy.f6`) — F6 ②/4.2 UŽIVO na stagingu + BUG-053 (napredak puca na v2 dokumentu)
+
+- **②/4.2 uživo:** Leon deployao `mcp` **v12** (prvi pokušaj nije sletio: gore je bila v11 = `0.2.0` od 30.09.
+  17:47; `mcp:alati` je to uhvatio na UPUTAMA). Na v12 (`0.3.0`): `mcp:alati` **43/0**, `mcp:probe` **9/0**.
+- **BUG-053 (Sentry `JAVASCRIPT-4`):** `progress.js` čitao `Object.keys(nav.data)` → `(2).quiz.length` na materijalu
+  iz AI nacrta (staging `c627b8a7…`). Popravak na ulazu: `getStudyData()` je jedini put u `nav.data`. Sentry dobiva
+  `environment` (okidač je bio localhost, a pisalo je „production"). Unit 61/61 · preflight 0 · Playwright
+  (monitoring · smoke · app-state · escaping · quiz-reset, port 5051) 42/0.
+- **Sljedeće:** Leon testira s pravim Claudeom (polica · opseg · link) → ②/4.3 ekran uz OK.
+
 ## 2026-09-30 (OPUS, `sokratstudy.f6`) — F6 ②/4.2 alati: polica, opseg, link natrag (STAGING, čeka deploy funkcije)
 
 - **Alati (`alati.ts` 0.3.0):** `zapocni_nacrt` traži `scope` (summary · standard · detailed → baza `sazeto` ·

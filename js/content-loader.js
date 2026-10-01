@@ -10,7 +10,7 @@
 // ⚠ CACHE: data/* su pod immutable cacheom (vercel.json). Pri izmjeni BILO KOJEG
 // data/* sadržaja bumpaj CONTENT_VERSION — inače preglednik servira stari cache.
 
-const CONTENT_VERSION = '20260930024124';
+const CONTENT_VERSION = '20261001195501';
 
 // subjectId -> true (sadržaj učitan) ; subjectId -> Promise (učitavanje u tijeku)
 const _contentLoaded = {};
@@ -169,10 +169,31 @@ function getCategories(content) {
     });
 }
 
+// ── BUG-053 — JEDINI ulaz u `AppState.nav.data` ────────────────────────────────
+// Pravilo iznad je čitač morao ZAPAMTITI; `progress.js` nije, pa je v2 dokument (svaki materijal iz
+// AI nacrta) srušio napredak na `(2).quiz.length`. Zato se dokument čisti NA ULAZU: van idu samo
+// lekcije, svaka s nizovima `flashcards`/`quiz`/`fillBlanks` — nijedan čitač, ni budući, ne vidi meta-
+// ključ ni lekciju bez niza. Lekcija je PLITKA kopija: keširani dokument ostaje netaknut (dijele ga
+// sve lekcije predmeta). `allowed` = popis lekcija koje ruta smije (njegovim redom).
+// Editori ovo NE koriste: Studio/admin čitaju svoj dokument i meta im mora ostati.
+const STUDY_ARRAYS = ['flashcards', 'quiz', 'fillBlanks'];
+function getStudyData(content, allowed) {
+    const cats = getCategories(content);
+    const keys = Array.isArray(allowed) ? allowed.filter(function (k) { return cats.indexOf(k) !== -1; }) : cats;
+    const out = {};
+    keys.forEach(function (k) {
+        const lesson = Object.assign({}, content[k]);
+        STUDY_ARRAYS.forEach(function (f) { if (!Array.isArray(lesson[f])) lesson[f] = []; });
+        out[k] = lesson;
+    });
+    return out;
+}
+
 if (typeof window !== 'undefined') {
     window.CONTENT_VERSION = CONTENT_VERSION;
     window.loadSubjectContent = loadSubjectContent;
     window.loadScriptOnce = loadScriptOnce;
     window.isSubjectContentLoaded = isSubjectContentLoaded;
     window.getCategories = getCategories;
+    window.getStudyData = getStudyData;
 }

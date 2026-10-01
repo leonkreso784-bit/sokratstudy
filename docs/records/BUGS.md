@@ -17,6 +17,25 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
 
 ## Aktivni
 
+### BUG-053 — Napredak puca na materijalu iz AI nacrta: `schemaVersion` je čitan kao lekcija
+
+- Status: ✅ **riješen na grani `feat/f6-mcp` 01.10.** (lokalno, nije na produkciji) · Težina: **visok**, ali
+  **latentan**: na produkciji 01.10. nijedan dokument nema `schemaVersion` (baza + datoteke provjerene); pogodio bi
+  SVAKI materijal nastao prihvatom AI nacrta (②/4) · Našao: **Sentry** (`JAVASCRIPT-4`), na Leonovom pokusu na stagingu.
+- **Reprodukcija:** otvori materijal čiji dokument nosi `schemaVersion: 2` (staging `c627b8a7…`) → početna/napredak →
+  `TypeError: Cannot read properties of undefined (reading 'length')` u `Array.reduce`.
+- **Uzrok:** `js/progress.js` (3 mjesta) iterirao je `Object.keys(nav.data)` mimo `getCategories` → `(2).quiz.length`.
+  Pravilo „meta-ključ nije lekcija" je svaki čitač morao zapamtiti; devet jest, jedan nije.
+- **Zašto je izgledalo kao produkcija:** `js/monitoring.js` nije slao `environment`, pa Sentry `localhost` + staging
+  zove „production".
+- **Rješenje:** `getStudyData()` (`js/content-loader.js`) = **jedini ulaz** u `AppState.nav.data`: samo lekcije, svaka
+  s nizovima `flashcards`/`quiz`/`fillBlanks`, plitka kopija (keširani dokument netaknut). `progress.js` usput na
+  `getCategories`. Sentry dobiva `environment` po adresi (production · preview · development). Brana
+  `tests/unit/get-categories.test.js`: 8 novih testova crveno na starom kodu + test „jedini ulaz" (svaka dodjela
+  `nav.data =` u `js/` ide kroz `getStudyData`; mutacija na staru dodjelu → crveno).
+- **Lekcija:** pravilo koje svaki čitač mora zapamtiti prekršit će sljedeći čitač — podatak se čisti **na ulazu**, a
+  brana tvrdi da je ulaz jedini. I: monitoring bez okruženja šalje istragu na krivo mjesto.
+
 ### BUG-052 — Brisanje računa puca za svakoga tko je objavio materijal, a slike se obrišu prije toga
 
 - Status: ✅ **riješen na PROD-u 29.09.** (SQL uz Leonov OK, provjereno `pg_get_constraintdef`: ON DELETE SET NULL); grana s branom čeka merge ·
