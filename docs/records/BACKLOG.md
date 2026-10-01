@@ -13,6 +13,31 @@
 > Njihovi zapisi ostaju **ovdje i nedirnuti** jer nose obrazloženje i mjerenja; spec nosi **redoslijed
 > i dokaz**. Kad cigla padne, ovdje se stavlja ✅ s brojkom — ne briše se.
 
+### 🔥 NAŠ AI + API KREDITI — popis i plan NAKON MCP-a (Leon, 2026-10-01)
+
+**Odluka (Leon):** put „kopiraj-zalijepi s korisnikovim AI-jem" **ne dolazi u obzir**. MCP ne doseže sve (Claude,
+plaćeni ChatGPT, znanje spajanja) → Sokrat dobiva **vlastiti AI**, plaćen **legitimnim** kreditima, što više.
+**Ne:** više računa / ključeva za zbrajanje besplatnih kvota (krši uvjete, ban svih povezanih računa). Mijenja
+ADR-031 („ne plaćamo tokene") → nov ADR + faza u planu. **Kad: nakon MCP-a (F6).** Dotad samo ovaj zapis.
+
+**Istraživanje 01.10.** (izvori u sesiji `bb99d98a`, ponoviti provjeru prije prijave — uvjeti se mijenjaju):
+- **Cijena materijala** (~50k ulaz + 30k izlaz, +30–50 % za HR): Gemini Flash-Lite / GPT-5 nano ~0,02 USD ·
+  Mistral Small ~0,03 · Gemini Flash ~0,15 · Claude Haiku ~0,10–0,20. → „naš AI" = naša Edge Function +
+  jeftin API, **ne** vlastiti model (samohostan / WebLLM je skuplji i slabiji do velikog prometa).
+- **Bez firme, odmah:** Google Cloud Free Trial **300 USD / 90 d** (Gemini preko Vertex AI, EU regija; NE AI Studio)
+  — aktivirati tek kad AI-cigla krene · **Azure for Students 100 USD/god** (@uniri, obnavlja se; ⚠️ produkcija
+  dopuštena? neprovjereno) · besplatni slojevi za razvoj: Cerebras 1M tok/dan, Mistral 10 USD/mj (EU; isključiti
+  trening), Cloudflare Workers AI.
+- **Najveća poluga = INKUBATOR:** Microsoft 100–150k i AWS Activate do 200k traže **partner-kod** (inkubator /
+  akcelerator) → pitati Rijeku / STEP RI jesu li partneri; i HAMAG-BICRO PoC (fizička osoba preko „prepoznatog centra").
+- **S firmom (j.d.o.o.):** Google for Startups 2k · Microsoft 1k+4k · AWS Activate 1–5k (uklj. Claude/Bedrock) ·
+  Cloudflare 10k (2,5k Workers AI) · Vercel do 30k · ≈ 10–20k USD ukupno; 100k+ gotovo svugdje traži i investitora.
+- ⚠️ **Besplatni Gemini API je ZABRANJEN za aplikacije s korisnicima iz EEA** (samo plaćeno / Vertex) ·
+  **DeepSeek izbjegavati** (podaci u Kini, zabrana u Italiji) · GitHub Models ugašen 30.07.2026. · GDPR: DPA + SCC/DPF
+  s pružateljem, spomen u politici privatnosti; maloljetni korisnici = otvoreno.
+- **Što ide u plan (nakon MCP-a):** popis kredita s rokovima i koracima · ADR · Edge Function s ključem (ADR-016) +
+  granica po korisniku · izbor modela mjerenjem na pravom materijalu (kvaliteta HR) · brane ③ na istom write-putu.
+
 ### 🔥 Produkcija javno poslužuje `.md` — `CLAUDE.md`, `docs/**` (2026-09-30, izmjereno)
 
 **Izmjereno 30.09. (samo GET):** `www.sokratstudy.com/CLAUDE.md`, `/docs/README.md`, `/docs/records/PROGRESS.md`,
