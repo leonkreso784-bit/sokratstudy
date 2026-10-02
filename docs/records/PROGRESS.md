@@ -5,6 +5,25 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-02/03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.1 izmjena postojećeg materijala: BAZA (ADR-039 t.2, ✅ STAGING)
+
+- **Anketa (Leon, 02.10., sve četiri preporuke):** kopija u nacrt izmjene s polaznom verzijom → jedan upis · doseg
+  sadržaj + lekcije + ime (ne premještanje) · AI alat „vrati verziju" · `client_id` u povijesti. **Nalaz:** povijest
+  verzija nije imala ni ekran ni vraćanje — ADR-039 „izmjena je povratna" bilo je neispunjeno (vraćanje sad kroz AI,
+  gumb u aplikaciji = kasnija cigla).
+- **SQL** (`f6-nacrt.sql`, § „②/4b"): `mcp_procitaj_materijal` · `mcp_zapocni_izmjenu` · `mcp_preimenuj_nacrt` ·
+  `mcp_vrati_izmjenu` (samo `mcp_klijent`) + `_materijal_moj` · `_bez_visecih_kartica` · `_izmjena_u_materijal`;
+  `mcp_predaj_nacrt` grana za nacrt izmjene (`izmjena_sukob` ako se verzija promijenila); okidač povijesti bilježi
+  `client_id`, `verzija`, `op` (`mcp_izmjena`/`mcp_vrati`). Primijenio Leon (SQL Editor), provjereno u bazi.
+- **Brane:** nova `mcp:izmjena` 41/0 (**30 crveno na starom kodu**); `mcp:brava` 56/0 (+3 pomoćnika), `mcp:nacrt`
+  55/0, `mcp:prihvat` 34/0, `mcp:predaja` 33/0. Brana je prvi put pala na sebi (void RPC = HTTP 204), ispravljeno.
+- **Mutacije 4/4 crveno** (Leon lijepio): M1 bez provjere verzije (AI prepisao korisnikov rad, 5 → 6) · M2 bez vlasnika
+  (stranac pročitao i kopirao tuđi materijal) · M3 povijest bez traga AI-ja (② i vraćanje `izmjena_nema`) · M4 bez
+  provjere brisanja (upis u obrisan materijal). Vraćeno cijelim `f6-nacrt.sql`, `prosrc` bez `MUTACIJA`, sve brane zelene.
+- **`test:unit`: 1 očekivano crveno** (N9 dinamički — 4 nova RPC-a još bez alata) → zatvara ②/4b.2.
+- **Nalaz, nedirnut:** `mcp_zapocni_nacrt` prima ime do 200 znakova, materijal do 120 → predaja s dužim imenom = „kvar".
+- **Sljedeće:** ②/4b.2 alati (+ unit, `mcp:alati`; deploy = Leon). Otvoreno: Leonov test s Claudeom (Kemija, Biologija).
+
 ## 2026-10-01 (OPUS, `sokratstudy.f6`) — F6 ②/4.3′ predaja = materijal na polici (ADR-039, ✅ STAGING)
 
 - **Anketa (Leon):** ponovljena predaja vraća ISTI materijal (bilješka nacrt → materijal, 7 dana) · nacrt bez police
