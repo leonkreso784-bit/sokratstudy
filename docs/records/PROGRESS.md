@@ -5,7 +5,11 @@ testirano, što slijedi.
 
 ---
 
-## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.2 izmjena postojećeg materijala: ALATI (kod ✅, deploy čeka Leona)
+## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.2 izmjena postojećeg materijala: ALATI (✅ STAGING, `mcp` v14)
+
+- **Uživo nakon Leonova deploya (v13 → v14, `0.5.0`):** `mcp:alati` 53/0 (⑧: kopija → izmjene u nacrtu, živo netaknuto
+  → predaja verzija 2→3 + jedan redak `mcp_izmjena` s `client_id` → vrati 4, ponovljeno 4 → sukob, korisnikov rad
+  bajt-isti), `mcp:probe` 9/0.
 
 - **Devet alata, `0.5.0`:** `procitaj_materijal` · `zapocni_izmjenu` · `izmijeni_stavke` (id + samo promijenjena polja;
   ostala ostaju, i slika/boja iz Studija) · `obrisi_stavke` · `dodaj_lekciju` · `uredi_lekciju` · `obrisi_lekciju` ·
@@ -16,7 +20,7 @@ testirano, što slijedi.
 - **Brane:** unit `mcp-alati` 54/0 (**12 crveno na starom `alati.ts`**); N9 dinamički zatvoren (9/9 RPC-ova, 82 poziva,
   20 u grani ponovnog pokušaja); `test:unit` 61/61. `mcp:alati` dobio blok ⑧ (osnovica 42 → 53) — vrti se tek nakon
   deploya.
-- **Sljedeće:** Leon deploya `mcp` na staging → ja `mcp:alati` + `mcp:probe` uživo → kraj cigle uz OK.
+- **Sljedeće:** kraj cigle uz Leonov OK. Otvoreno: Learn-prvo u nacrtu izmjene (Leonova odluka) · provjera imena ≤120 u bazi (sljedeći SQL krug).
 
 ## 2026-10-02/03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.1 izmjena postojećeg materijala: BAZA (ADR-039 t.2, ✅ STAGING)
 
