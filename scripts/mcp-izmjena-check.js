@@ -203,7 +203,7 @@ async function izmjena(t, nodeId, novi, ime) {
   const poslije2 = await sadrzajMaterijala(M);
   record('materijal sad ima sadržaj iz nacrta, verzija +1', isto(poslije2.payload, novi2) && poslije2.version === prije2.version + 1,
     'verzija ' + prije2.version + ' → ' + poslije2.version);
-  record('ime materijala promijenjeno (preimenuj u nacrtu)', im2.status === 200 && (await imeMaterijala(M)) === 'Stanica i dioba', await imeMaterijala(M));
+  record('ime materijala promijenjeno (preimenuj u nacrtu; void RPC = HTTP 204)', [200, 204].includes(im2.status) && (await imeMaterijala(M)) === 'Stanica i dioba', await imeMaterijala(M));
   record('nacrt izmjene je obrisan', !!n2 && !(await nacrtPostoji(n2)));
   const pov2 = (await povijest(M)).slice(povPrije2);
   const r2pov = pov2[0] || {};
