@@ -16,6 +16,10 @@
 //   ⑥ živo gradivo korisnika bajt-isto nakon svih poziva
 //   ⑦ ②/3 oblik: nacrt u bazi JEST gradivo — prolazi i KATALOŠKU shemu (`validate:schema`), v2 + ikona;
 //      svako pitanje nosi `card` koja postoji; dopuna `___` → `_______`, `answers` = odgovor PO praznini (D2)
+//   ⑧ ②/4b.2 izmjena postojećeg materijala ALATIMA: čitanje s verzijom → kopija → lekcija/kartica/imena u
+//      nacrtu (živo netaknuto) → predaja upiše jednom (+ redak povijesti s client_id-em) → vrati (ponovljeno
+//      isto, oglašen kao razoran) → korisnik spremi poslije kopije = sukob, njegov rad bajt-isti.
+//      Semantiku baze do kraja mjeri `mcp:izmjena`; ovdje se mjeri da je ALATI doista voze.
 //
 // Adresa: `MCP_ALATI_URL` ili `<STAGING>/functions/v1/mcp`.
 // Ishod: exit 1 = alati ne drže · exit 0 + SKIP = nema STAGING_* / SERVICE u `.env`.
@@ -31,7 +35,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 42;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica
+const OCEKIVANO_PROVJERA = 53;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -83,7 +87,7 @@ function odbijenKao(ime, r, kod, vrsta) {
 
 /** Nacrt izravno iz tablice (service ključ) — čitanje natrag, ne vjerujemo odgovoru alata. */
 async function nacrtUBazi(id) {
-  const r = await http('/rest/v1/node_drafts?id=eq.' + id + '&select=id,owner_id,client_id,status,payload,verzija,polica_id,nova_polica,opseg', { headers: svcHeaders() });
+  const r = await http('/rest/v1/node_drafts?id=eq.' + id + '&select=id,owner_id,client_id,status,name,payload,verzija,polica_id,nova_polica,opseg,izvor_id,polazna_verzija', { headers: svcHeaders() });
   return ((await r.json()) || [])[0] || null;
 }
 async function brojNacrta(uid) {
@@ -142,9 +146,9 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const imena = alati.map((a) => a.name).sort();
   const ocekivano = JEZGRA.ALATI.map((a) => a.ime).sort();
   record('tools/list = točno alati iz jezgre (' + ocekivano.length + ')', JSON.stringify(imena) === JSON.stringify(ocekivano), imena.join(', ') || lista.tekst);
-  const stvaraju = JEZGRA.ALATI.filter((a) => !a.samoCitanje && a.ime !== 'predaj_nacrt').map((a) => a.ime);
+  const stvaraju = JEZGRA.ALATI.filter((a) => !a.samoCitanje && (a.ulaz.properties || {}).repeat_key).map((a) => a.ime);
   const bezKljuca = stvaraju.filter((ime) => { const x = alati.find((a) => a.name === ime); return !x || !((x.inputSchema || {}).required || []).includes('repeat_key'); });
-  record('svaki alat koji stvara oglašava obavezan repeat_key', stvaraju.length === 4 && bezKljuca.length === 0, bezKljuca.join(', ') || stvaraju.join(', '));
+  record('svaki alat koji stvara oglašava obavezan repeat_key', stvaraju.length === 6 && bezKljuca.length === 0, bezKljuca.join(', ') || stvaraju.join(', '));
 
   console.log('\n— ② cjevovod —');
   const lekcije = [{ name: 'Uvod u makro', color: '#6366F1' }, { name: 'BDP', color: '#10b981' }];
@@ -292,6 +296,69 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const poslije = await otisakGradiva(A.id, prije.ids);
   record('POSTOJEĆI nodes + node_content korisnika bajt-isti nakon SVIH poziva alata (predaja smije samo DODATI)', prije.hash === poslije.hash && prije.broj === '2+1',
     'prije ' + prije.broj + ' ' + prije.hash + ' · poslije ' + poslije.broj + ' ' + poslije.hash);
+
+  // ⑧ ②/4b.2 — POSLIJE ⑥, jer ovdje AI na korisnikovu riječ SMIJE mijenjati živi materijal (i to se mjeri).
+  console.log('\n— ⑧ izmjena postojećeg materijala (②/4b.2) —');
+  const zivo = async () => svc('node_content?node_id=eq.' + mat + '&select=payload,version');
+  const imeMat = async () => ((await svc('nodes?id=eq.' + mat + '&select=name')) || {}).name;
+  const povijestAI = async () => (await (await http('/rest/v1/node_content_versions?node_id=eq.' + mat +
+    '&select=op,client_id,verzija&order=id', { headers: svcHeaders() })).json()) || [];
+  const zv0 = await zivo();
+  const cm = await alat(t, 'procitaj_materijal', { material_id: mat });
+  record('procitaj_materijal → ime, verzija i lekcije kakve su u bazi', !cm.isError && cm.tijelo.name === 'Materijal' &&
+    cm.tijelo.version === zv0.version && JSON.stringify((cm.tijelo.lessons || []).map((x) => x.lesson_id)) === JSON.stringify(lekcijeOd(zv0.payload)), opis(cm));
+  const zi = await alat(t, 'zapocni_izmjenu', { material_id: mat, repeat_key: 'razgovor-3:izmjena' });
+  const izId = zi.tijelo && zi.tijelo.draft_id;
+  let di = izId ? await nacrtUBazi(izId) : null;
+  record('zapocni_izmjenu → nacrt izmjene OVOG materijala s polaznom verzijom i istim sadržajem', !zi.isError && !!di && di.izvor_id === mat &&
+    di.polazna_verzija === zv0.version && JSON.stringify(kanon(di.payload)) === JSON.stringify(kanon(zv0.payload)),
+  di ? 'izvor ' + (di.izvor_id === mat) + ' · polazna ' + di.polazna_verzija + '/' + zv0.version : opis(zi));
+  const nl = await alat(t, 'dodaj_lekciju', { draft_id: izId, repeat_key: 'razgovor-3:lekcija', name: 'Nova lekcija', color: '#0EA5E9' });
+  const nlId = nl.tijelo && nl.tijelo.lesson_id;
+  await alat(t, 'napisi_learn', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:learn', blocks: [{ type: 'paragraph', text: 'Dodano kroz izmjenu.' }] });
+  const nk = await alat(t, 'dodaj_kartice', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:kartice', cards: [{ question: 'Pojam?', answer: 'Objašnjenje.' }] });
+  const kid = nk.tijelo && nk.tijelo.cards && nk.tijelo.cards[0].card_id;
+  const ik = await alat(t, 'izmijeni_stavke', { draft_id: izId, lesson_id: nlId, cards: [{ id: kid, answer: 'Bolje objašnjenje.' }] });
+  const ul = await alat(t, 'uredi_lekciju', { draft_id: izId, lesson_id: 'l1', name: 'Živo (uređeno)' });
+  const pm = await alat(t, 'preimenuj_materijal', { draft_id: izId, name: 'Materijal (uređen)' });
+  di = await nacrtUBazi(izId);
+  record('lekcija dodana, kartica izmijenjena po id-u, lekcija i materijal preimenovani — u NACRTU', !nl.isError && !ik.isError && !ul.isError && !pm.isError && !!di &&
+    di.payload[nlId] && di.payload[nlId].flashcards[0].answer === 'Bolje objašnjenje.' && di.payload.l1.name === 'Živo (uređeno)' && di.name === 'Materijal (uređen)',
+  [nl, ik, ul, pm].filter((x) => x.isError).map(opis).join(' | ') || (di ? JSON.stringify(di.payload[nlId] || {}).slice(0, 100) : 'nema nacrta'));
+  const zv1 = await zivo();
+  record('… a ŽIVI materijal je do predaje netaknut (sadržaj, verzija, ime)', JSON.stringify(zv1) === JSON.stringify(zv0) && (await imeMat()) === 'Materijal',
+    'verzija ' + zv0.version + '→' + zv1.version);
+  const povPrije = (await povijestAI()).length;
+  const pi = await alat(t, 'predaj_nacrt', { draft_id: izId });
+  const zv2 = await zivo();
+  const pov = await povijestAI();
+  const zadnji = pov[pov.length - 1] || {};
+  record('predaj_nacrt (izmjena) → materijal = nacrt, novo ime, verzija +1, nacrt nestao', !pi.isError && pi.tijelo.material_id === mat &&
+    JSON.stringify(kanon(zv2.payload)) === JSON.stringify(kanon(di.payload)) && zv2.version === zv0.version + 1 &&
+    (await imeMat()) === 'Materijal (uređen)' && !(await nacrtUBazi(izId)), opis(pi) + ' · verzija ' + zv0.version + '→' + zv2.version);
+  record('… povijest: TOČNO jedan nov redak `mcp_izmjena`, client_id ovog AI-ja, polazna verzija', pov.length === povPrije + 1 &&
+    zadnji.op === 'mcp_izmjena' && zadnji.client_id === oa.client_id && zadnji.verzija === zv0.version,
+  (pov.length - povPrije) + ' redak · ' + JSON.stringify(zadnji));
+  const vr = await alat(t, 'vrati_izmjenu', { material_id: mat });
+  const zv3 = await zivo();
+  record('vrati_izmjenu → sadržaj prije izmjene kao NOVA verzija (+2 od polazne)', !vr.isError && vr.tijelo.version === zv0.version + 2 &&
+    JSON.stringify(kanon(zv3.payload)) === JSON.stringify(kanon(zv0.payload)) && zv3.version === zv0.version + 2, opis(vr));
+  const vr2 = await alat(t, 'vrati_izmjenu', { material_id: mat });
+  record('ponovljen vrati_izmjenu → ista verzija, bez novog upisa', !vr2.isError && vr2.tijelo.version === zv3.version && (await zivo()).version === zv3.version, opis(vr2));
+  const lst = await mcp(t, 'tools/list');
+  const vrAn = (((lst.json && lst.json.result && lst.json.result.tools) || []).find((x) => x.name === 'vrati_izmjenu') || {}).annotations || {};
+  record('vrati_izmjenu se oglašava kao razoran (klijent smije tražiti potvrdu korisnika)', vrAn.destructiveHint === true, JSON.stringify(vrAn));
+  // Sukob: korisnik spremi u Studiju poslije AI-jeve kopije → AI-jeva izmjena se NE upisuje.
+  const zs = await alat(t, 'zapocni_izmjenu', { material_id: mat, repeat_key: 'razgovor-3:izmjena-2' });
+  const sId = zs.tijelo && zs.tijelo.draft_id;
+  await alat(t, 'uredi_lekciju', { draft_id: sId, lesson_id: 'l1', name: 'AI-jevo ime lekcije' });
+  const korisnikov = lekcija({ name: 'Korisnik spremio u Studiju' });
+  await rpc(jA, 'publish_node', { p_node_id: mat, p_payload: korisnikov, p_base_version: (await zivo()).version });
+  const zv4 = await zivo();
+  odbijenKao('korisnik spremio poslije kopije → predaj_nacrt izmjena_sukob / korisnik', await alat(t, 'predaj_nacrt', { draft_id: sId }), 'izmjena_sukob', 'korisnik');
+  const zv5 = await zivo();
+  record('… materijal = korisnikov sadržaj i verzija, bajt-isto', JSON.stringify(zv5) === JSON.stringify(zv4) &&
+    JSON.stringify(kanon(zv5.payload)) === JSON.stringify(kanon(korisnikov)), 'verzija ' + zv4.version + '→' + zv5.version);
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
     touched === OCEKIVANO_PROVJERA ? '' : 'izvedeno ' + touched +

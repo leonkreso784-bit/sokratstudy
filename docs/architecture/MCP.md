@@ -74,6 +74,11 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   odbija token s `client_id`). Prihvat = `create_node` (+ nova polica) + `publish_node` u jednoj transakciji, pa se nacrt
   briše; prihvaća se samo predan. Pitanje s `card` mora upućivati na karticu iste lekcije (`_provjeri_kartice_nacrta`,
   na upisu i prihvatu — ne u `publish_node`).
+- **Izmjena postojećeg materijala (②/4b, ADR-039 t.2):** `mcp_procitaj_materijal` (vlastiti živi materijal s verzijom;
+  `node_content` AI-ju ostaje zatvoren) · `mcp_zapocni_izmjenu` (kopija u nacrt izmjene: `izvor_id` + `polazna_verzija`)
+  · `mcp_preimenuj_nacrt` (1–120) · `mcp_vrati_izmjenu`. Nacrt izmjene upisuje SAMO `mcp_predaj_nacrt`, kroz `publish_node`,
+  i to samo uz polaznu verziju — inače `izmjena_sukob` i materijal ostaje netaknut (korisnikov rad u Studiju se ne prepisuje).
+  Povijest bilježi `op`/`client_id`/`verzija`. Tuđi, obrisan, nepostojeći materijal i polica → ista greška.
 
 ## 6 · Poslužitelj (`supabase/functions/mcp/`)
 
@@ -84,6 +89,14 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   `scope`) · `napisi_learn` · `dodaj_kartice` (pada bez Learna) · `dodaj_pitanja` (kviz + dopune, pada bez kartica) ·
   `procitaj_nacrt` (popis · sažetak · lekcija) · `predaj_nacrt` (vraća `review_url`). Upute cjevovoda su u
   `instructions` (`UPUTE`). Svi se registriraju iz jezgre (`registrirajAlate`).
+- **Devet alata izmjene (②/4b.2, `0.5.0`):** `procitaj_materijal` · `zapocni_izmjenu` · `izmijeni_stavke` (id + samo
+  polja koja se mijenjaju; ostala ostaju, i ona koja AI ne piše, npr. slika ili boja iz Studija) · `obrisi_stavke`
+  (kartica iz koje su pitanja briše se samo zajedno s njima) · `dodaj_lekciju` · `uredi_lekciju` · `obrisi_lekciju`
+  (zadnja ne) · `preimenuj_materijal` · `vrati_izmjenu` (jedini oglašen kao razoran: mijenja živo bez nacrta). Nacrt
+  izmjene se dalje mijenja i alatima gradnje. Stavka bez id-a pri kopiji dobije stalan id izveden iz mjesta. Alati
+  po id-u nemaju `repeat_key`: ponovljeni daju isto stanje (brisanje već obrisanog nije greška).
+- **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
+  baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz
   dug cjevovod zaboravi što je korisnik tražio. **Link natrag:** `review_url` = `SOKRAT_APP_URL` (tajna funkcije; staging
   `http://localhost:5051`, bez nje produkcija) + `/#/materials/nacrt/<id>`; sve što nije http(s) → produkcija.

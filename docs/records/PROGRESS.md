@@ -5,6 +5,19 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.2 izmjena postojećeg materijala: ALATI (kod ✅, deploy čeka Leona)
+
+- **Devet alata, `0.5.0`:** `procitaj_materijal` · `zapocni_izmjenu` · `izmijeni_stavke` (id + samo promijenjena polja;
+  ostala ostaju, i slika/boja iz Studija) · `obrisi_stavke` · `dodaj_lekciju` · `uredi_lekciju` · `obrisi_lekciju` ·
+  `preimenuj_materijal` · `vrati_izmjenu` (jedini oglašen kao razoran). Upute: izmjena samo na korisnikovu riječ, redom
+  čitaj → kopiraj → mijenjaj → predaj; sukob i povijest objašnjeni. Stavka bez id-a pri kopiji dobije stalan id.
+- **Ime ≤120 (Leon, anketa danas: „alat na 120 sad"):** `zapocni_nacrt` (ime i nova polica), `predaj_nacrt` (nova
+  polica), `preimenuj_materijal` odbijaju duže prije poziva baze. Provjera u `mcp_zapocni_nacrt` = sljedeći SQL krug.
+- **Brane:** unit `mcp-alati` 54/0 (**12 crveno na starom `alati.ts`**); N9 dinamički zatvoren (9/9 RPC-ova, 82 poziva,
+  20 u grani ponovnog pokušaja); `test:unit` 61/61. `mcp:alati` dobio blok ⑧ (osnovica 42 → 53) — vrti se tek nakon
+  deploya.
+- **Sljedeće:** Leon deploya `mcp` na staging → ja `mcp:alati` + `mcp:probe` uživo → kraj cigle uz OK.
+
 ## 2026-10-02/03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.1 izmjena postojećeg materijala: BAZA (ADR-039 t.2, ✅ STAGING)
 
 - **Anketa (Leon, 02.10., sve četiri preporuke):** kopija u nacrt izmjene s polaznom verzijom → jedan upis · doseg

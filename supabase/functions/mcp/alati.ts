@@ -9,15 +9,17 @@
 //   • Čita se SAMO kroz klijent koji je `withSupabase({ auth: 'user' })` vezao na korisnikov token
 //     → RLS (`nodes_select_own`) vraća isključivo njegove čvorove. Ovaj modul NIKAD ne dobiva
 //     admin-klijent i ne zna za javni katalog (ni čitanje).
-//   • ②/2: AI PIŠE, ali SAMO u vlastiti nacrt i SAMO kroz pet `mcp_*` RPC-ova (`f6-nacrt.sql`) —
-//     nikad izravno u žive tablice — jedini prijelaz u živo je `mcp_predaj_nacrt` (②/4.3′, ADR-039), koji
-//     u bazi STVARA nov materijal u vlastitoj polici. Svaki RPC ide kroz `pozovi()`, jedino mjesto koje zove `.rpc(` i koje
+//   • ②/2: AI PIŠE, ali SAMO u vlastiti nacrt i SAMO kroz `mcp_*` RPC-ove (`f6-nacrt.sql`) —
+//     nikad izravno u žive tablice — prijelaz u živo je `mcp_predaj_nacrt` (②/4.3′, ADR-039), koji u bazi
+//     STVARA nov materijal u vlastitoj polici ili (②/4b) upisuje nacrt izmjene u njegov materijal, uz istu
+//     verziju; jedina druga izmjena živog je `mcp_vrati_izmjenu` (AI-jeva zadnja izmjena natrag).
+//     Svaki RPC ide kroz `pozovi()`, jedino mjesto koje zove `.rpc(` i koje
 //     grešku baze predaje `prevediOdbijanje` (N9; unit pada na `.rpc(` izvan njega i na nuli).
 
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
   'Sokrat Study is a study platform. This connector works ONLY with the signed-in user\'s own study materials.',
-  'You can read the user\'s shelves and materials (procitaj_materijale), and you can BUILD a new study material.',
+  'You can read the user\'s shelves and materials (procitaj_materijale), BUILD a new study material, and change an existing one when the user asks.',
   'You build it as a DRAFT that the user does not see yet. When you submit it (step 5), the whole material goes onto the user\'s shelf at once — never half of it. It is private: only the user sees it. You cannot publish anything publicly.',
   'Before you start, ask the user two things:',
   '  • which shelf the material goes on — call procitaj_materijale to show their existing shelves (use its id as shelf_id), or take a name for a new shelf (new_shelf);',
@@ -30,13 +32,19 @@ export const UPUTE = [
   '  5. predaj_nacrt — submit the finished draft: the material is now on the user\'s shelf and the draft is gone. Tell the user it is on their shelf and give them the review_url it returns: that link opens the material. If it says the shelf is missing, ask the user which shelf and call predaj_nacrt again with shelf_id or new_shelf.',
   'Cover the WHOLE source, not a sample. Send at most one lesson per call.',
   'If the source ends with a final test or review questions, do not make a separate lesson for them: put each question into the lesson it belongs to, built from that lesson\'s flashcards.',
-  'Every writing call takes a repeat_key: if you are unsure whether a call went through, send the SAME call with the SAME repeat_key again — nothing is duplicated. Use a NEW repeat_key for new content.',
+  'Every call that adds something takes a repeat_key: if you are unsure whether a call went through, send the SAME call with the SAME repeat_key again — nothing is duplicated. Use a NEW repeat_key for new content. Calls that change or delete by id can simply be repeated.',
   'procitaj_nacrt shows your drafts and what each lesson already has, so you can continue where you stopped.',
+  'You can also CHANGE one of the user\'s existing materials, but only when the user asks for a change:',
+  '  1. procitaj_materijal — read the material (and a lesson) to find what to change.',
+  '  2. zapocni_izmjenu — copy it into an edit draft. Until step 4 the user\'s material stays exactly as it was.',
+  '  3. change the draft: izmijeni_stavke and obrisi_stavke (items by id — procitaj_nacrt with draft_id and lesson_id shows the ids), napisi_learn (replaces the whole Learn text of a lesson), dodaj_kartice, dodaj_pitanja, dodaj_lekciju, uredi_lekciju, obrisi_lekciju, preimenuj_materijal. Change only what the user asked for.',
+  '  4. predaj_nacrt — writes all changes into the material at once; the previous version stays in its history. If the user changed the material in Sokrat meanwhile, nothing is written: tell them, and start again from step 1 if they still want the change.',
+  'vrati_izmjenu undoes your last edit of a material, only when the user asks for it.',
   'If a tool returns an error, its "kind" says what to do: ispravi = fix exactly what the message says and call again · ponovno = read the draft again and retry · korisnik = ask the user · stop = do not repeat this call · kvar = temporary failure, try once more.',
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.4.0' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.0' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -176,10 +184,14 @@ export function prevediOdbijanje(greska: { message?: string } | null | undefined
  *  uspoređuje sa SQL-om. Redoslijed cjevovoda je pravilo poslužitelja, ne baze (ADR-038 ④). */
 export const ODBIJANJA_ALATA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }> = {
   alat_los_ulaz: { vrsta: 'ispravi', poruka: 'The input does not match this tool. Fix exactly this and call again:' },
-  alat_nema_lekcije: { vrsta: 'ispravi', poruka: 'This draft has no lesson with that lesson_id. Use a lesson_id returned by zapocni_nacrt or procitaj_nacrt.' },
+  alat_nema_lekcije: { vrsta: 'ispravi', poruka: 'There is no lesson with that lesson_id. Use a lesson_id returned by zapocni_nacrt, zapocni_izmjenu, procitaj_nacrt or procitaj_materijal.' },
   alat_nema_learna: { vrsta: 'ispravi', poruka: 'Write the Learn text of this lesson first (napisi_learn). Flashcards are built from it.' },
   alat_nema_kartica: { vrsta: 'ispravi', poruka: 'Add flashcards to this lesson first (dodaj_kartice). Questions are built from the flashcards.' },
-  alat_kartica_ne_postoji: { vrsta: 'ispravi', poruka: 'This lesson has no flashcard with that card id. Use a card_id returned by dodaj_kartice (or procitaj_nacrt) for THIS lesson.' }
+  alat_kartica_ne_postoji: { vrsta: 'ispravi', poruka: 'This lesson has no flashcard with that card id. Use a card_id returned by dodaj_kartice (or procitaj_nacrt) for THIS lesson.' },
+  // ②/4b.2 izmjena postojećeg materijala
+  alat_stavka_ne_postoji: { vrsta: 'ispravi', poruka: 'This lesson has no item with that id. Read the lesson (procitaj_nacrt with draft_id and lesson_id) and use the ids it shows.' },
+  alat_kartica_u_upotrebi: { vrsta: 'ispravi', poruka: 'Questions are built from this flashcard. Delete those questions in the same call (add their ids), or point them to another card with izmijeni_stavke first:' },
+  alat_zadnja_lekcija: { vrsta: 'korisnik', poruka: 'This is the only lesson of the material; a material cannot be left without lessons. Ask the user what they want instead.' }
 };
 
 /** Odbijanje koje alat vraća AI-ju kao rezultat s `isError` (nikad kao 500). */
@@ -197,8 +209,11 @@ function odbij(kod: string, dodatak?: string): never {
   throw new Odbijanje({ kod, vrsta: o.vrsta, poruka: o.poruka + (dodatak ? ' ' + dodatak : '') });
 }
 
-/** Pet RPC-ova nacrta — jedini upis koji AI ima (`f6-nacrt.sql` §4; unit ga uspoređuje s grantom). */
-export type RpcNacrta = 'mcp_zapocni_nacrt' | 'mcp_upisi_nacrt' | 'mcp_predaj_nacrt' | 'mcp_procitaj_nacrt' | 'mcp_moji_nacrti';
+/** RPC-ovi nacrta — jedini upis koji AI ima (`f6-nacrt.sql` §4; unit ga uspoređuje s grantom).
+ *  ②/4b: četiri za izmjenu postojećeg vlastitog materijala (čitanje s verzijom, kopija u nacrt izmjene,
+ *  ime nacrta, vraćanje AI-jeve zadnje izmjene). Upis u materijal i dalje ide SAMO kroz `mcp_predaj_nacrt`. */
+export type RpcNacrta = 'mcp_zapocni_nacrt' | 'mcp_upisi_nacrt' | 'mcp_predaj_nacrt' | 'mcp_procitaj_nacrt' | 'mcp_moji_nacrti' |
+  'mcp_procitaj_materijal' | 'mcp_zapocni_izmjenu' | 'mcp_preimenuj_nacrt' | 'mcp_vrati_izmjenu';
 
 /** Minimalni oblik supabase-js klijenta za alate cjevovoda — test ga podmeće. */
 export interface Klijent extends CitacCvorova {
@@ -212,7 +227,7 @@ async function pozovi<T>(klijent: Klijent, ime: RpcNacrta, args: Record<string, 
   return data as T;
 }
 
-interface Nacrt { id: string; name: string; status: 'u_izradi' | 'predan'; payload: Record<string, Lekcija>; verzija: number; opseg?: Opseg | null }
+interface Nacrt { id: string; name: string; status: 'u_izradi' | 'predan'; payload: Record<string, Lekcija>; verzija: number; opseg?: Opseg | null; izvor_id?: string | null }
 
 // ─── ②/4.2 OPSEG (Leon, anketa 30.09.) ──────────────────────────────────────────────────────────
 // Tri razine; SVE pokrivaju cijeli izvor (ADR-031), razlika je samo DUBINA. AI vidi engleska imena,
@@ -373,6 +388,12 @@ const DRAFT_ID: Shema = { type: 'string', pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-
 const LESSON_ID: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', description: 'lesson_id from zapocni_nacrt or procitaj_nacrt' };
 const objekt = (props: Record<string, Shema>, required: string[], opis?: string): Shema =>
   Object.assign({ type: 'object', properties: props, required, additionalProperties: false }, opis ? { description: opis } : {});
+/** Ime materijala i police postaje `nodes.name` (`f1-nodes.sql`: 1–120). Duže je prije prolazilo alat i
+ *  padalo tek pri predaji kao „kvar" (nalaz ②/4b.1, Leon 03.10.: alat na 120, baza u sljedećem SQL krugu). */
+const IME_CVORA = 120;
+const UUID = '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$';
+const MATERIAL_ID: Shema = { type: 'string', pattern: UUID, description: 'id of one of the user\'s study materials (from procitaj_materijale)' };
+const ITEM_ID: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', description: 'id of the item (procitaj_nacrt with draft_id and lesson_id shows them)' };
 
 // Granice po pozivu: jedna lekcija, ne cijeli materijal (plan ②/2) — i znatno ispod granica baze.
 const KARTICA = objekt({ question: tekst(1, 500, 'Term or question'), answer: tekst(1, 500, 'Short explanation (under 200 characters is best)'),
@@ -388,6 +409,23 @@ const DOPUNA = objekt({ sentence: tekst(1, 1000, 'Sentence with each gap written
   answers: { type: 'array', minItems: 1, maxItems: 10, items: tekst(1, 200), description: 'The answer for EACH gap, in order (one per gap)' },
   hint: tekst(1, 500), card: CARD }, ['sentence', 'answers', 'card']);
 const FILL_MARK = '_______';   // isti marker kao renderer (`js/fill-blanks.js`) i kataloška shema
+/** Dopuna u obliku gradiva (D2): `___` → marker, jedan odgovor po praznini; `answer` = prvi (keširana
+ *  stara skripta čita samo njega), `answers` tek od dvije praznine — kao u katalogu. `put` imenuje stavku u poruci. */
+function uObliku(x: Record<string, unknown>, put: string): Record<string, unknown> {
+  const { sentence, answers, ...ostalo } = x as { sentence: string; answers: string[] } & Record<string, unknown>;
+  delete ostalo.answer;
+  const s = sentence.replace(/_{3,}/g, FILL_MARK);
+  const praznina = s.split(FILL_MARK).length - 1;
+  if (praznina === 0) odbij('alat_los_ulaz', put + '.sentence has no gap — write each gap as ___');
+  if (praznina !== answers.length) odbij('alat_los_ulaz', put + ' has ' + praznina + ' gap(s) but ' + answers.length + ' answer(s) — give exactly one answer per gap, in order');
+  return Object.assign(ostalo, { sentence: s, answer: answers[0] }, praznina > 1 ? { answers } : {});
+}
+// ②/4b.2: izmjena stavke = `id` + SAMO polja koja se mijenjaju; ostala ostaju (i ona koja AI ne zna
+// pisati, npr. slika ili boja kartice iz Studija). Granice polja = granice dodavanja.
+const djelomicno = (s: Shema): Shema => objekt(Object.assign({ id: ITEM_ID }, s.properties as Record<string, Shema>), ['id']);
+const KARTICA_IZMJENA = djelomicno(KARTICA);
+const KVIZ_IZMJENA = djelomicno(KVIZ);
+const DOPUNA_IZMJENA = djelomicno(DOPUNA);
 // ②/3: bez slika i videa u prvom izdanju — samo tekstualni blokovi (plan ②/3).
 export const TIPOVI_BLOKA = ['heading', 'paragraph', 'list', 'callout', 'table', 'formula'];
 const BLOK: Shema = { type: 'object', required: ['type'], properties: { type: { type: 'string', enum: TIPOVI_BLOKA } },
@@ -397,6 +435,8 @@ const BLOK: Shema = { type: 'object', required: ['type'], properties: { type: { 
 
 export interface Alat {
   ime: string; naslov: string; opis: string; ulaz: Shema; samoCitanje: boolean;
+  /** Mijenja korisnikov ŽIVI materijal izravno, bez nacrta (`vrati_izmjenu`) → klijent smije tražiti potvrdu korisnika. */
+  razorno?: boolean;
   izvedi(klijent: Klijent, a: Record<string, any>, okolina?: Okolina): Promise<unknown>;
 }
 
@@ -412,9 +452,9 @@ export const ALATI: Alat[] = [
     opis: 'Step 1. Starts a new DRAFT study material with its lessons (each lesson has a name and its own colour). ' +
       'Give the shelf the user chose (shelf_id of an existing shelf OR new_shelf with a name, exactly one) and the scope. ' +
       'Returns draft_id and a lesson_id for every lesson. Repeating the call with the same repeat_key returns the same draft.',
-    ulaz: objekt({ name: tekst(1, 200, 'Name of the material'), repeat_key: KLJUC,
+    ulaz: objekt({ name: tekst(1, IME_CVORA, 'Name of the material'), repeat_key: KLJUC,
       shelf_id: { type: 'string', pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', description: 'id of an existing shelf (from procitaj_materijale)' },
-      new_shelf: tekst(1, 200, 'Name of a NEW shelf; it is created when the user accepts the draft'),
+      new_shelf: tekst(1, IME_CVORA, 'Name of a NEW shelf; it is created when the material is submitted'),
       scope: { type: 'string', enum: Object.keys(OPSEZI), description: 'How deep: summary · standard · detailed (exam preparation). Ask the user. Every scope covers the whole source.' },
       lessons: { type: 'array', minItems: 1, maxItems: 100, items: objekt({ name: tekst(1, 200),
         color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['name', 'color']) } },
@@ -480,16 +520,7 @@ export const ALATI: Alat[] = [
       if (kviz.length + dopune.length === 0) odbij('alat_los_ulaz', 'input needs at least one quiz or fill_blanks item');
       kviz.forEach((q, i) => { if (q.correct >= q.options.length) odbij('alat_los_ulaz', 'input.quiz[' + i + '].correct points past the last option'); });
       const q = kviz.map((x, i) => Object.assign({ id: idIzKljuca('q', a.lesson_id + '/' + a.repeat_key, i) }, x));
-      // Dopuna u obliku gradiva (D2): `___` → marker, jedan odgovor po praznini; `answer` = prvi (keširana
-      // stara skripta čita samo njega), `answers` tek od dvije praznine — kao u katalogu.
-      const f = dopune.map((x, i) => {
-        const { sentence, answers, ...ostalo } = x as { sentence: string; answers: string[] } & Record<string, unknown>;
-        const s = sentence.replace(/_{3,}/g, FILL_MARK);
-        const praznina = s.split(FILL_MARK).length - 1;
-        if (praznina === 0) odbij('alat_los_ulaz', 'input.fill_blanks[' + i + '].sentence has no gap — write each gap as ___');
-        if (praznina !== answers.length) odbij('alat_los_ulaz', 'input.fill_blanks[' + i + '] has ' + praznina + ' gap(s) but ' + answers.length + ' answer(s) — give exactly one answer per gap, in order');
-        return Object.assign({ id: idIzKljuca('f', a.lesson_id + '/' + a.repeat_key, i), sentence: s, answer: answers[0] }, praznina > 1 ? { answers } : {}, ostalo);
-      });
+      const f = dopune.map((x, i) => Object.assign({ id: idIzKljuca('f', a.lesson_id + '/' + a.repeat_key, i) }, uObliku(x, 'input.fill_blanks[' + i + ']')));
       const d = await izmijeni(k, a.draft_id, (p) => {
         const l = lekcijaIz(p, a.lesson_id);
         if (!(l.flashcards || []).length) odbij('alat_nema_kartica');
@@ -525,12 +556,190 @@ export const ALATI: Alat[] = [
       'Calling it again for the same draft returns the same material — nothing is duplicated.',
     ulaz: objekt({ draft_id: DRAFT_ID,
       shelf_id: { type: 'string', pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', description: 'Optional: id of an existing shelf (from procitaj_materijale) instead of the one chosen at the start' },
-      new_shelf: tekst(1, 200, 'Optional: name of a NEW shelf instead of the one chosen at the start') }, ['draft_id']),
+      new_shelf: tekst(1, IME_CVORA, 'Optional: name of a NEW shelf instead of the one chosen at the start') }, ['draft_id']),
     izvedi: async (k, a, okolina) => {
       if (a.shelf_id !== undefined && a.new_shelf !== undefined) odbij('alat_los_ulaz', 'give at most one of input.shelf_id or input.new_shelf');
       const materijal = await pozovi<string>(k, 'mcp_predaj_nacrt', { p_id: a.draft_id, p_polica: a.shelf_id ?? null, p_nova_polica: a.new_shelf ?? null });
       return { material_id: materijal, status: 'on_shelf', review_url: adresaMaterijala(okolina, materijal),
-        next: 'Tell the user the material is on their shelf in Sokrat, and give them the review_url: it opens the material.' };
+        next: 'Tell the user the material is on their shelf in Sokrat (for an edit: that it is updated), and give them the review_url: it opens the material.' };
+    }
+  },
+
+  // ═══ ②/4b.2 IZMJENA POSTOJEĆEG VLASTITOG MATERIJALA (ADR-039 t.2; anketa 02.10.) ══════════════
+  // Kopija → jedan upis: `zapocni_izmjenu` kopira materijal u nacrt izmjene (s polaznom verzijom), AI ga
+  // mijenja istim alatima kao nov nacrt (+ izmjena/brisanje po id-u i lekcije), a `predaj_nacrt` upisuje
+  // JEDNOM — baza odbije (`izmjena_sukob`) ako je korisnik u međuvremenu mijenjao materijal. Do predaje
+  // korisnik ne vidi ništa. Doseg = sadržaj + lekcije + ime; premještanje među policama NE.
+  {
+    ime: 'procitaj_materijal', naslov: 'Read one of my study materials', samoCitanje: true,
+    opis: 'Reads one of the user\'s own study materials. Without lesson_id: its name, version and what each lesson has. ' +
+      'With lesson_id: the full content of that lesson. Read-only — to change the material, use zapocni_izmjenu.',
+    ulaz: objekt({ material_id: MATERIAL_ID, lesson_id: LESSON_ID }, ['material_id']),
+    izvedi: async (k, a) => {
+      const m = await pozovi<{ id: string; name: string; verzija: number; updated_at?: string; payload: Record<string, Lekcija> }>(k, 'mcp_procitaj_materijal', { p_id: a.material_id });
+      const p = m.payload || {};
+      if (a.lesson_id) return { material_id: m.id, version: m.verzija, lesson_id: a.lesson_id, lesson: lekcijaIz(p, a.lesson_id) };
+      return { material_id: m.id, name: m.name, version: m.verzija, updated_at: m.updated_at, lessons: sazetakLekcija(p) };
+    }
+  },
+  {
+    ime: 'zapocni_izmjenu', naslov: 'Start editing one of my study materials', samoCitanje: false,
+    opis: 'Starts an EDIT of one of the user\'s own study materials, when the user asks for a change. It copies the material into an edit draft and returns draft_id. ' +
+      'Change the draft with izmijeni_stavke, obrisi_stavke, napisi_learn, dodaj_kartice, dodaj_pitanja, dodaj_lekciju, uredi_lekciju, obrisi_lekciju and preimenuj_materijal; ' +
+      'the user sees nothing until predaj_nacrt writes it into the material. Repeating the call with the same repeat_key returns the same draft.',
+    ulaz: objekt({ material_id: MATERIAL_ID, repeat_key: KLJUC }, ['material_id', 'repeat_key']),
+    izvedi: async (k, a) => {
+      const id = await pozovi<string>(k, 'mcp_zapocni_izmjenu', { p_id: a.material_id, p_kljuc: a.repeat_key });
+      // Stavka bez id-a (gradivo starije od id-eva) se ne bi dala adresirati → dobije stalan id izveden iz
+      // mjesta. Upisuje se samo kad ga nešto nema; ponovljen početak zatekne sve s id-em i ne piše.
+      const d = await izmijeni(k, id, (p) => {
+        for (const [lid, l] of Object.entries(p)) {
+          if (lid === 'schemaVersion' || !l || typeof l !== 'object') continue;
+          for (const niz of ['flashcards', 'quiz', 'fillBlanks'] as const) {
+            (l[niz] || []).forEach((x, i) => { if (x && typeof x === 'object' && x.id == null) x.id = idIzKljuca('s', lid + '/' + niz, i); });
+          }
+          ((l.learn && l.learn.blocks) || []).forEach((b, i) => { if (b && typeof b === 'object' && b.id == null) b.id = idIzKljuca('b', lid + '/learn', i); });
+        }
+        return p;
+      });
+      return { draft_id: d.id, edit_of: a.material_id, name: d.name, lessons: sazetakLekcija(d.payload),
+        next: 'Read a lesson with procitaj_nacrt (draft_id and lesson_id) to see the ids of its items, make the changes the user asked for, then call predaj_nacrt. ' +
+          'Change only what the user asked for.' };
+    }
+  },
+  {
+    ime: 'izmijeni_stavke', naslov: 'Change flashcards or questions in a draft', samoCitanje: false,
+    opis: 'Changes existing flashcards, quiz questions or fill-in sentences of ONE lesson of a draft, by id. ' +
+      'Send the id and ONLY the fields that change; every other field stays as it is. A fill-in sentence still needs one answer per gap.',
+    ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID,
+      cards: { type: 'array', maxItems: 50, items: KARTICA_IZMJENA }, quiz: { type: 'array', maxItems: 50, items: KVIZ_IZMJENA },
+      fill_blanks: { type: 'array', maxItems: 50, items: DOPUNA_IZMJENA } }, ['draft_id', 'lesson_id']),
+    izvedi: async (k, a) => {
+      const skupine: ['flashcards' | 'quiz' | 'fillBlanks', string, Record<string, unknown>[]][] =
+        [['flashcards', 'cards', a.cards || []], ['quiz', 'quiz', a.quiz || []], ['fillBlanks', 'fill_blanks', a.fill_blanks || []]];
+      if (skupine.every(([, , x]) => x.length === 0)) odbij('alat_los_ulaz', 'input needs at least one item in cards, quiz or fill_blanks');
+      const d = await izmijeni(k, a.draft_id, (p) => {
+        const l = lekcijaIz(p, a.lesson_id);
+        const pitanja: Record<string, unknown>[] = [];
+        for (const [niz, ulaz, nove] of skupine) {
+          nove.forEach((x, i) => {
+            const put = 'input.' + ulaz + '[' + i + ']';
+            const stavke = l[niz] || [];
+            const j = stavke.findIndex((s) => s && s.id === x.id);
+            if (j < 0) odbij('alat_stavka_ne_postoji', 'Unknown in ' + ulaz + ': ' + x.id);
+            let n: Record<string, unknown> = Object.assign({}, stavke[j], x);
+            if (niz === 'quiz') {
+              if (!Array.isArray(n.options) || (n.correct as number) >= (n.options as unknown[]).length) odbij('alat_los_ulaz', put + '.correct points past the last option');
+            }
+            if (niz === 'fillBlanks') {
+              const stari = stavke[j] as { answer?: string; answers?: string[] };
+              n = uObliku(Object.assign(n, { answers: x.answers || stari.answers || (stari.answer !== undefined ? [stari.answer] : []) }), put);
+            }
+            stavke[j] = n;
+            if (niz !== 'flashcards' && x.card !== undefined) pitanja.push(n);
+          });
+        }
+        const kartice = new Set((l.flashcards || []).map((c) => c.id));
+        for (const x of pitanja) if (!kartice.has(x.card)) odbij('alat_kartica_ne_postoji', 'Unknown: ' + x.card);
+        return p;
+      });
+      return { draft_id: d.id, lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id) };
+    }
+  },
+  {
+    ime: 'obrisi_stavke', naslov: 'Delete flashcards or questions from a draft', samoCitanje: false,
+    opis: 'Deletes flashcards, quiz questions or fill-in sentences of ONE lesson of a draft, by id. ' +
+      'A flashcard that questions are built from can only be deleted together with those questions (or after pointing them to another card).',
+    ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID, ids: { type: 'array', minItems: 1, maxItems: 100, items: ITEM_ID } },
+      ['draft_id', 'lesson_id', 'ids']),
+    izvedi: async (k, a) => {
+      const brisi = new Set(a.ids as string[]);
+      let nadeno = new Set<unknown>();
+      const d = await izmijeni(k, a.draft_id, (p) => {
+        const l = lekcijaIz(p, a.lesson_id);
+        nadeno = new Set();
+        for (const niz of ['flashcards', 'quiz', 'fillBlanks'] as const) {
+          if (!l[niz]) continue;
+          l[niz] = l[niz]!.filter((x) => { const b = !!x && brisi.has(x.id as string); if (b) nadeno.add(x.id); return !b; });
+        }
+        const kartice = new Set((l.flashcards || []).map((c) => c.id));
+        const visi = [...(l.quiz || []), ...(l.fillBlanks || [])].filter((x) => x && x.card !== undefined && !kartice.has(x.card)).map((x) => x.id);
+        if (visi.length) odbij('alat_kartica_u_upotrebi', visi.join(', '));
+        return p;
+      });
+      // Već obrisano nije greška: ponovljen poziv (izgubljen odgovor) mora proći bez učinka.
+      return { draft_id: d.id, deleted: (a.ids as string[]).filter((x) => nadeno.has(x)),
+        not_found: (a.ids as string[]).filter((x) => !nadeno.has(x)),
+        lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id) };
+    }
+  },
+  {
+    ime: 'dodaj_lekciju', naslov: 'Add a lesson to a draft', samoCitanje: false,
+    opis: 'Adds a new, empty lesson (name and its own colour) at the end of a draft. Returns its lesson_id; then write its Learn text, flashcards and questions as usual.',
+    ulaz: objekt({ draft_id: DRAFT_ID, repeat_key: KLJUC, name: tekst(1, 200),
+      color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['draft_id', 'repeat_key', 'name', 'color']),
+    izvedi: async (k, a) => {
+      // Id lekcije iz ključa: ponovljen poziv nađe istu lekciju i ne doda drugu.
+      const lid = idIzKljuca('l', a.repeat_key, 0);
+      const d = await izmijeni(k, a.draft_id, (p) => {
+        if (!Object.prototype.hasOwnProperty.call(p, lid)) {
+          p[lid] = { name: a.name, icon: 'fa-book', color: a.color.toLowerCase(), flashcards: [], quiz: [], fillBlanks: [] };
+        }
+        return p;
+      });
+      return { draft_id: d.id, lesson_id: lid, lessons: sazetakLekcija(d.payload) };
+    }
+  },
+  {
+    ime: 'uredi_lekciju', naslov: 'Rename or recolour a lesson in a draft', samoCitanje: false,
+    opis: 'Changes the name and/or the colour of ONE lesson of a draft.',
+    ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID, name: tekst(1, 200),
+      color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['draft_id', 'lesson_id']),
+    izvedi: async (k, a) => {
+      if (a.name === undefined && a.color === undefined) odbij('alat_los_ulaz', 'give input.name, input.color or both');
+      const d = await izmijeni(k, a.draft_id, (p) => {
+        const l = lekcijaIz(p, a.lesson_id);
+        if (a.name !== undefined) l.name = a.name;
+        if (a.color !== undefined) l.color = a.color.toLowerCase();
+        return p;
+      });
+      return { draft_id: d.id, lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id) };
+    }
+  },
+  {
+    ime: 'obrisi_lekciju', naslov: 'Delete a lesson from a draft', samoCitanje: false,
+    opis: 'Deletes ONE lesson, with everything in it, from a draft. The last lesson of a material cannot be deleted.',
+    ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID }, ['draft_id', 'lesson_id']),
+    izvedi: async (k, a) => {
+      let bila = false;
+      const d = await izmijeni(k, a.draft_id, (p) => {
+        bila = Object.prototype.hasOwnProperty.call(p, a.lesson_id) && a.lesson_id !== 'schemaVersion';
+        if (!bila) return p;   // već obrisana: ponovljen poziv prolazi bez učinka
+        if (Object.keys(p).filter((x) => x !== 'schemaVersion').length === 1) odbij('alat_zadnja_lekcija');
+        delete p[a.lesson_id];
+        return p;
+      });
+      return { draft_id: d.id, deleted: bila, lessons: sazetakLekcija(d.payload) };
+    }
+  },
+  {
+    ime: 'preimenuj_materijal', naslov: 'Rename the material in a draft', samoCitanje: false,
+    opis: 'Changes the name of the material a draft becomes (a new draft or an edit). The material itself is renamed when predaj_nacrt runs.',
+    ulaz: objekt({ draft_id: DRAFT_ID, name: tekst(1, IME_CVORA, 'New name of the material') }, ['draft_id', 'name']),
+    izvedi: async (k, a) => {
+      await pozovi<null>(k, 'mcp_preimenuj_nacrt', { p_id: a.draft_id, p_name: a.name });
+      return { draft_id: a.draft_id, name: a.name.trim() };
+    }
+  },
+  {
+    ime: 'vrati_izmjenu', naslov: 'Undo your last edit of a material', samoCitanje: false, razorno: true,
+    opis: 'Undoes YOUR (the AI\'s) last edit of one of the user\'s materials: the content from before it comes back as a new version. ' +
+      'Only when the user asks for it. Refused if the user changed the material after that edit — their work is never overwritten.',
+    ulaz: objekt({ material_id: MATERIAL_ID }, ['material_id']),
+    izvedi: async (k, a, okolina) => {
+      const verzija = await pozovi<number>(k, 'mcp_vrati_izmjenu', { p_id: a.material_id });
+      return { material_id: a.material_id, version: verzija, review_url: adresaMaterijala(okolina, a.material_id),
+        next: 'Tell the user the material is back as it was before your last edit, and give them the review_url.' };
     }
   }
 ];
@@ -564,7 +773,7 @@ export function registrirajAlate(
   for (const a of ALATI) {
     server.registerTool(a.ime, {
       title: a.naslov, description: a.opis, inputSchema: uShemu(a.ulaz),
-      annotations: a.samoCitanje ? { readOnlyHint: true } : { readOnlyHint: false, destructiveHint: false, idempotentHint: true }
+      annotations: a.samoCitanje ? { readOnlyHint: true } : { readOnlyHint: false, destructiveHint: !!a.razorno, idempotentHint: true }
     }, (args) => izvediAlat(a.ime, klijent, args, okolina));
   }
 }
