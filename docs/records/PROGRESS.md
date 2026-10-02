@@ -16,7 +16,10 @@ testirano, što slijedi.
 - **Brane:** nova `mcp:predaja` 33/0 (26 crveno na starom); unit 45/0 (6 crveno na starom `alati.ts`); `mcp:nacrt`
   55/0 i `mcp:prihvat` 34/0 (stari „predan" nacrt sad glumi service ključ); `mcp:brava` 53/0 (uhvatila neimenovan
   `_nacrt_u_materijal`); uživo na v13: `mcp:alati` 42/0, `mcp:probe` 9/0.
-- **Otvoreno:** mutacije M1–M4 (`mutacije-STAGING/`, untracked) čekaju primjenu na stagingu · Leonov test s Claudeom.
+- **Mutacije 02.10.: 4/4 crveno** (Leon lijepio u SQL Editor — `apply_migration` na staging `declined` i uz allow-pravilo i
+  restart = klasifikator): M1 bez brave · M2 bez bilješke · M3 bilješka bez vlasnika (stranac dobio id) · M4 polica bez
+  vlasnika (`node_denied`; druga ograda u `create_node` ipak ništa nije stvorila). Vraćeno, provjereno u `prosrc`, 33/0.
+- **Otvoreno:** Leonov test s Claudeom (Kemija, Biologija).
 
 ## 2026-10-01 (OPUS, `sokratstudy.f6`) — F6 ②/4.2 UŽIVO na stagingu + BUG-053 (napredak puca na v2 dokumentu)
 
