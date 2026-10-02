@@ -135,7 +135,15 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   nacrt_kvota_u_izradi: { vrsta: 'korisnik', poruka: 'The user already has 3 drafts in progress. Submit one of them before starting another.' },
   nacrt_kvota_nepregledano: { vrsta: 'korisnik', poruka: 'The user has 10 unfinished drafts. Finish and submit some of them (procitaj_nacrt lists them), or ask the user to discard some.' },
   nacrt_samo_ai: { vrsta: 'stop', poruka: 'Drafts can only be written through a connected AI.' },
-  nacrt_bez_identiteta: { vrsta: 'stop', poruka: 'The connection has no signed-in user. Ask the user to reconnect Sokrat.' }
+  nacrt_bez_identiteta: { vrsta: 'stop', poruka: 'The connection has no signed-in user. Ask the user to reconnect Sokrat.' },
+  // ②/4b izmjena postojećeg materijala
+  nacrt_kljuc_zauzet: { vrsta: 'ispravi', poruka: 'This repeat_key already belongs to another draft. Use a NEW repeat_key for this call.' },
+  nacrt_ime: { vrsta: 'ispravi', poruka: 'The material name must be 1–120 characters.' },
+  nacrt_je_izmjena: { vrsta: 'stop', poruka: 'This draft is an edit of an existing material; it can only be written back into that material with predaj_nacrt.' },
+  izmjena_polica: { vrsta: 'ispravi', poruka: 'An edit stays where the material is. Call predaj_nacrt again without shelf_id or new_shelf.' },
+  materijal_ne_postoji: { vrsta: 'korisnik', poruka: 'The user has no study material with that id (it may have been deleted). Call procitaj_materijale and ask the user which material they mean.' },
+  izmjena_sukob: { vrsta: 'korisnik', poruka: 'The user changed this material after you read it, so your edit was NOT saved and their work is untouched. Tell the user, read the material again, and start a new edit if they still want it.' },
+  izmjena_nema: { vrsta: 'stop', poruka: 'This material has no AI edit that could be undone.' }
 };
 
 /** Greška iz supabase-js (`{ message }`) → `{ kod, vrsta, poruka }`. Razlog se zadržava samo za

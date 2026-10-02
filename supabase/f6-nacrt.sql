@@ -5,7 +5,8 @@
 -- AI dobiva JEDAN nov put, u zasebnu tablicu `node_drafts`, i nijedan u žive tablice. Materijal
 -- nastaje tek korisnikovim „Prihvati" iz OBIČNE sesije (②/4).
 -- ⚠️ ADR-039 (2026-10-01) to MIJENJA: `mcp_predaj_nacrt` sam stavlja materijal na policu, cijel, u
---    jednoj transakciji (§ „②/4.3′" niže) — jedini AI-jev prijelaz u živo, i samo za NOV materijal.
+--    jednoj transakciji (§ „②/4.3′" niže) — AI-jev prijelaz u živo za NOV materijal. ②/4b (02.10.) dodaje
+--    drugi, za IZMJENU vlastitog materijala: isti `mcp_predaj_nacrt`, s provjerom verzije (§ „②/4b").
 --
 -- ODLUKE (Leon, anketa 2026-09-29):
 --   • kvota: najviše 3 nacrta U IZRADI i 10 NEPREGLEDANIH (u izradi + predani) po korisniku ·
@@ -63,6 +64,17 @@ alter table public.node_drafts add column if not exists nova_polica text check (
 alter table public.node_drafts add column if not exists opseg text check (opseg in ('sazeto', 'standardno', 'detaljno'));
 alter table public.node_drafts drop constraint if exists node_drafts_jedna_polica;
 alter table public.node_drafts add constraint node_drafts_jedna_polica check (polica_id is null or nova_polica is null);
+
+-- ②/4b (Leon, anketa 2026-10-02): NACRT IZMJENE postojećeg materijala. `izvor_id` = materijal koji se
+-- mijenja, `polazna_verzija` = `node_content.version` u trenutku kopiranja. Predaja upisuje samo ako je
+-- verzija i dalje ista (§ „②/4b" niže). Izmjena ostaje gdje je materijal → nema police. Obrisan
+-- materijal (tvrdo) briše i svoj nacrt izmjene; meko obrisan ga ostavlja, a predaja ga odbije.
+alter table public.node_drafts add column if not exists izvor_id uuid references public.nodes(id) on delete cascade;
+alter table public.node_drafts add column if not exists polazna_verzija bigint;
+alter table public.node_drafts drop constraint if exists node_drafts_izmjena;
+alter table public.node_drafts add constraint node_drafts_izmjena check (
+  (izvor_id is null) = (polazna_verzija is null)
+  and (izvor_id is null or (polica_id is null and nova_polica is null)));
 
 alter table public.node_drafts enable row level security;
 
@@ -195,8 +207,13 @@ begin
   -- ključa, pa istekao nacrt ne „oživi" ponovljenim ključem.
   delete from public.node_drafts where owner_id = v_uid and not public._nacrt_zivi(status, updated_at);
 
-  select id into v_id from public.node_drafts where owner_id = v_uid and kljuc = p_kljuc;
+  select id into v_id from public.node_drafts where owner_id = v_uid and kljuc = p_kljuc and izvor_id is null;
   if found then return v_id; end if;
+  -- ②/4b: isti ključ već nosi nacrt IZMJENE → ne vraćaj njega kao „nov materijal".
+  perform 1 from public.node_drafts where owner_id = v_uid and kljuc = p_kljuc;
+  if found then
+    raise exception 'nacrt_kljuc_zauzet: taj ključ ponavljanja već pripada drugom nacrtu — uzmi nov ključ' using errcode = '22023';
+  end if;
 
   if p_polica is not null then
     perform 1 from public.nodes
@@ -275,7 +292,8 @@ $$;
 -- Ekrana za pregled nema: `mcp_predaj_nacrt` nacrt u JEDNOJ transakciji pretvori u materijal u polici
 -- i nacrt obriše. Nikad pola-materijal: pad bilo kojeg koraka (validator, polica, kartice) poništi
 -- sve, nacrt ostaje. AI time dobiva TOČNO jedan prijelaz u živo, i on samo STVARA nov materijal u
--- vlastitoj polici — postojeći čvor ne prima ni kao argument, pa ga ovim putem ne može prepisati.
+-- vlastitoj polici — postojeći čvor ne prima ni kao argument. ②/4b: postojeći materijal mijenja SAMO
+-- nacrt izmjene (`izvor_id`, nastao u `mcp_zapocni_izmjenu` iz vlastitog materijala), i to s provjerom verzije.
 --
 -- ODLUKE (Leon, anketa 2026-10-01):
 --   • predaja ponovljena nakon uspjeha (AI-ju se izgubio odgovor) vraća ISTI materijal — zato bilješka
@@ -308,6 +326,10 @@ set search_path = public, pg_temp
 as $$
 declare v_polica uuid; v_node uuid; v_ver bigint;
 begin
+  -- ②/4b: nacrt izmjene nikad ne postaje NOV materijal (ni kroz korisnikov prihvat) — upisuje se samo u svoj izvor.
+  if d.izvor_id is not null then
+    raise exception 'nacrt_je_izmjena: nacrt izmjene ne postaje nov materijal — upisuje se u materijal iz kojeg je nastao' using errcode = '55000';
+  end if;
   if d.payload = '{}'::jsonb then
     raise exception 'nacrt_prazan: prazan nacrt se ne predaje' using errcode = '22023';
   end if;
@@ -368,17 +390,24 @@ begin
     raise;   -- tuđi, istekao, nepostojeći → ista greška kao i dosad
   end;
 
-  if p_polica is not null or v_nova is not null then
-    v_polica := p_polica;
-  elsif d.polica_id is not null then
-    v_polica := d.polica_id;
-  elsif d.nova_polica is not null then
-    v_nova := d.nova_polica;
+  if d.izvor_id is not null then
+    -- ②/4b: nacrt IZMJENE se upisuje u svoj materijal, s provjerom verzije; polica se ne bira.
+    if p_polica is not null or v_nova is not null then
+      raise exception 'izmjena_polica: izmjena ostaje gdje je materijal — predaj je bez police' using errcode = '22023';
+    end if;
+    v_node := public._izmjena_u_materijal(d);
   else
-    raise exception 'nacrt_bez_police: nacrt nema policu — pitaj korisnika i predaj s policom' using errcode = '22023';
+    if p_polica is not null or v_nova is not null then
+      v_polica := p_polica;
+    elsif d.polica_id is not null then
+      v_polica := d.polica_id;
+    elsif d.nova_polica is not null then
+      v_nova := d.nova_polica;
+    else
+      raise exception 'nacrt_bez_police: nacrt nema policu — pitaj korisnika i predaj s policom' using errcode = '22023';
+    end if;
+    v_node := public._nacrt_u_materijal(d, v_polica, v_nova);
   end if;
-
-  v_node := public._nacrt_u_materijal(d, v_polica, v_nova);
   delete from public.node_drafts_predani where owner_id = auth.uid() and created_at <= now() - interval '7 days';
   insert into public.node_drafts_predani (draft_id, owner_id, node_id) values (d.id, auth.uid(), v_node);
   return v_node;
@@ -398,15 +427,16 @@ begin
   d := public._nacrt_moj(p_id);
   return jsonb_build_object('id', d.id, 'name', d.name, 'status', d.status, 'payload', d.payload,
                             'verzija', d.verzija, 'updated_at', d.updated_at, 'submitted_at', d.submitted_at,
-                            'opseg', d.opseg, 'polica_id', d.polica_id, 'nova_polica', d.nova_polica);   -- ②/4.2
+                            'opseg', d.opseg, 'polica_id', d.polica_id, 'nova_polica', d.nova_polica,   -- ②/4.2
+                            'izvor_id', d.izvor_id, 'polazna_verzija', d.polazna_verzija);              -- ②/4b
 end;
 $$;
 
 -- Popis vlastitih živih nacrta, BEZ sadržaja (AI nađe svoj nacrt i vidi kvotu).
--- ②/1b: vraća i `verzija` (promjena povratnog tipa traži drop).
+-- ②/1b: vraća i `verzija` (promjena povratnog tipa traži drop). ②/4b: i `izvor_id` (nacrt izmjene).
 drop function if exists public.mcp_moji_nacrti();
 create or replace function public.mcp_moji_nacrti()
-returns table (id uuid, name text, status text, updated_at timestamptz, velicina int, verzija int)
+returns table (id uuid, name text, status text, updated_at timestamptz, velicina int, verzija int, izvor_id uuid)
 language plpgsql
 security definer
 set search_path = public, pg_temp
@@ -414,10 +444,250 @@ as $$
 begin
   perform public._nacrt_pozivatelj();
   return query
-    select d.id, d.name, d.status, d.updated_at, octet_length(d.payload::text), d.verzija
+    select d.id, d.name, d.status, d.updated_at, octet_length(d.payload::text), d.verzija, d.izvor_id
       from public.node_drafts d
      where d.owner_id = auth.uid() and public._nacrt_zivi(d.status, d.updated_at)
      order by d.updated_at desc;
+end;
+$$;
+
+-- ─── ②/4b IZMJENA POSTOJEĆEG MATERIJALA (ADR-039 t.2; Leon, anketa 2026-10-02) ─────────────────
+-- AI na korisnikovu riječ mijenja VLASTITI materijal. Odluke:
+--   ① KOPIJA → JEDAN UPIS: `mcp_zapocni_izmjenu` kopira materijal u nacrt izmjene i zapamti polaznu
+--     verziju; AI radi istim alatima kao kod gradnje (`mcp_upisi_nacrt`); `mcp_predaj_nacrt` u JEDNOJ
+--     transakciji upiše kroz `publish_node` (strogi profil, 1 MB, povijest) — ali SAMO ako je verzija
+--     materijala i dalje polazna. Inače `izmjena_sukob`, materijal netaknut: korisnikova izmjena u
+--     Studiju se nikad ne prepisuje. Nikad pola-izmjena, jedan redak povijesti po izmjeni.
+--   ② doseg = sadržaj + lekcije + ime materijala (`mcp_preimenuj_nacrt`); premještanje NE.
+--   ③ `mcp_vrati_izmjenu`: stanje prije AI-jeve zadnje izmjene vraća se kao NOVA verzija, s istom
+--     provjerom sukoba. Vraća SADRŽAJ, ne ime (ime nema povijest).
+--   ④ povijest bilježi `client_id` (koji AI) i `verzija` (koju je verziju redak bio) — okidač niže.
+-- Doseg: materijal mora biti VLASTITI, živ, study. Tuđi, obrisani, nepostojeći i polica → ISTA greška
+-- (`materijal_ne_postoji`), da AI pogađanjem id-eva ne dozna da tuđi postoji. Katalog (`subject_content`)
+-- ovim funkcijama nije ni dohvatljiv: one čitaju samo `nodes` / `node_content`.
+
+-- Povijest: tko (koji AI) i koja verzija. `op` dolazi iz `sokrat.op` (postavlja ga samo funkcija u
+-- ovoj datoteci, lokalno za transakciju); bez nje je 'update' kao i dosad. Oznaka je AUDIT, ne brava:
+-- `mcp_vrati_izmjenu` vraća samo vlasnikov vlastiti stari sadržaj, pa krivotvorena oznaka ne otvara ništa.
+-- Zamjenjuje okidač iz `f1-nodes.sql` §3.
+alter table public.node_content_versions add column if not exists client_id text;
+alter table public.node_content_versions add column if not exists verzija bigint;
+create or replace function public.snapshot_node_content()
+returns trigger language plpgsql security definer set search_path = public, pg_temp as $$
+begin
+    insert into public.node_content_versions(node_id, payload, op, edited_by, client_id, verzija)
+    values (old.node_id, old.payload, coalesce(nullif(current_setting('sokrat.op', true), ''), 'update'),
+            auth.uid(), nullif(auth.jwt() ->> 'client_id', ''), old.version);
+    return new;
+end;
+$$;
+
+-- Vlastiti ŽIVI materijal (study). Sve ostalo → ista greška.
+create or replace function public._materijal_moj(p_id uuid)
+returns public.nodes
+language plpgsql
+stable
+set search_path = public, pg_temp
+as $$
+declare n public.nodes;
+begin
+  select * into n from public.nodes
+   where id = p_id and owner_id = auth.uid() and kind = 'study' and deleted_at is null;
+  if not found then
+    raise exception 'materijal_ne_postoji: tog materijala nema među korisnikovim materijalima' using errcode = 'P0002';
+  end if;
+  return n;
+end;
+$$;
+revoke execute on function public._materijal_moj(uuid) from public, anon, authenticated;
+
+-- Pitanje iz Studija smije upućivati na karticu koju je korisnik poslije obrisao (v. `_provjeri_kartice_nacrta`),
+-- ali na putu nacrta to je greška. Pri kopiranju u nacrt izmjene se zato SAMO TA veza (`card`) skida s pitanja;
+-- pitanje ostaje. Bez ovoga materijal s takvim pitanjem AI ne bi mogao mijenjati uopće.
+create or replace function public._bez_visecih_kartica(p jsonb)
+returns jsonb
+language plpgsql
+immutable
+set search_path = public, pg_temp
+as $$
+declare k text; l jsonb; niz text; arr jsonb; kartice text[]; v_out jsonb := p;
+begin
+  if jsonb_typeof(p) <> 'object' then return p; end if;
+  for k, l in select key, value from jsonb_each(p) loop
+    continue when jsonb_typeof(l) <> 'object';
+    select coalesce(array_agg(f ->> 'id'), '{}') into kartice
+      from jsonb_array_elements(case when jsonb_typeof(l -> 'flashcards') = 'array' then l -> 'flashcards' else '[]'::jsonb end) f;
+    foreach niz in array array['quiz', 'fillBlanks'] loop
+      continue when jsonb_typeof(l -> niz) is distinct from 'array';
+      select coalesce(jsonb_agg(case
+               when jsonb_typeof(e.v) = 'object' and e.v ? 'card' and not coalesce((e.v ->> 'card') = any(kartice), false)
+               then e.v - 'card' else e.v end order by e.ord), '[]'::jsonb)
+        into arr from jsonb_array_elements(l -> niz) with ordinality e(v, ord);
+      l := jsonb_set(l, array[niz], arr);
+    end loop;
+    v_out := jsonb_set(v_out, array[k], l);
+  end loop;
+  return v_out;
+end;
+$$;
+revoke execute on function public._bez_visecih_kartica(jsonb) from public, anon, authenticated;
+
+-- Čitanje vlastitog materijala S VERZIJOM (AI vidi što mijenja). `node_content` AI-ju ostaje zatvoren:
+-- ovo je jedini put do sadržaja, i vodi samo do vlastitog živog materijala.
+create or replace function public.mcp_procitaj_materijal(p_id uuid)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare n public.nodes; c public.node_content;
+begin
+  perform public._nacrt_pozivatelj();
+  n := public._materijal_moj(p_id);
+  select * into c from public.node_content where node_id = n.id;
+  return jsonb_build_object('id', n.id, 'name', n.name, 'parent_id', n.parent_id,
+                            'verzija', coalesce(c.version, 0), 'updated_at', c.updated_at,
+                            'payload', coalesce(c.payload, '{}'::jsonb));
+end;
+$$;
+
+-- Početak izmjene: kopija materijala u nacrt izmjene, s polaznom verzijom. Vraća id nacrta.
+-- Isti ključ = isti nacrt (kao `mcp_zapocni_nacrt`). Nova izmjena ISTOG materijala zamjenjuje staru
+-- (jedna izmjena po materijalu — dvije bi se ionako srušile na sukobu verzije).
+create or replace function public.mcp_zapocni_izmjenu(p_id uuid, p_kljuc text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare v_client text; v_uid uuid; n public.nodes; c public.node_content; v_id uuid; v_izvor uuid;
+        v_izrada int; v_ukupno int;
+begin
+  v_client := public._nacrt_pozivatelj();
+  v_uid := auth.uid();
+  if p_kljuc is null or p_kljuc !~ '^[A-Za-z0-9_.:-]{1,100}$' then
+    raise exception 'nacrt_los_kljuc: ključ ponavljanja je obavezan (1–100 znakova A-Z a-z 0-9 _ . : -)' using errcode = '22023';
+  end if;
+  perform pg_advisory_xact_lock(hashtextextended('node_drafts:' || v_uid::text, 0));
+  delete from public.node_drafts where owner_id = v_uid and not public._nacrt_zivi(status, updated_at);
+
+  select id, izvor_id into v_id, v_izvor from public.node_drafts where owner_id = v_uid and kljuc = p_kljuc;
+  if found then
+    if v_izvor is distinct from p_id then
+      raise exception 'nacrt_kljuc_zauzet: taj ključ ponavljanja već pripada drugom nacrtu — uzmi nov ključ' using errcode = '22023';
+    end if;
+    return v_id;
+  end if;
+
+  n := public._materijal_moj(p_id);
+  select * into c from public.node_content where node_id = n.id;
+  if not found then
+    raise exception 'materijal_ne_postoji: tog materijala nema među korisnikovim materijalima' using errcode = 'P0002';
+  end if;
+  if octet_length(c.payload::text) > 1048576 then
+    raise exception 'nacrt_prevelik: najviše 1 MB' using errcode = '54000';
+  end if;
+
+  delete from public.node_drafts where owner_id = v_uid and izvor_id = n.id;
+
+  select count(*) filter (where status = 'u_izradi'), count(*)
+    into v_izrada, v_ukupno
+    from public.node_drafts where owner_id = v_uid;
+  if v_izrada >= 3 then
+    raise exception 'nacrt_kvota_u_izradi: najviše 3 nacrta u izradi — predaj ili pričekaj' using errcode = '53400';
+  end if;
+  if v_ukupno >= 10 then
+    raise exception 'nacrt_kvota_nepregledano: 10 nacrta čeka pregled — korisnik ih mora prihvatiti ili odbaciti' using errcode = '53400';
+  end if;
+
+  insert into public.node_drafts (owner_id, client_id, name, kljuc, payload, izvor_id, polazna_verzija)
+  values (v_uid, v_client, n.name, p_kljuc, public._bez_visecih_kartica(c.payload), n.id, c.version)
+  returning id into v_id;
+  return v_id;
+end;
+$$;
+
+-- Ime nacrta (nova materijala ILI izmjene). Granica 120 = granica imena čvora (`nodes.name`).
+create or replace function public.mcp_preimenuj_nacrt(p_id uuid, p_name text)
+returns void
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare d public.node_drafts; v_ime text := btrim(coalesce(p_name, ''));
+begin
+  perform public._nacrt_pozivatelj();
+  d := public._nacrt_moj(p_id);
+  if d.status <> 'u_izradi' then
+    raise exception 'nacrt_predan: predan nacrt se više ne mijenja' using errcode = '55000';
+  end if;
+  if char_length(v_ime) not between 1 and 120 then
+    raise exception 'nacrt_ime: ime materijala ima 1–120 znakova' using errcode = '22023';
+  end if;
+  update public.node_drafts set name = v_ime, updated_at = now() where id = d.id;
+end;
+$$;
+
+-- Nacrt izmjene → materijal (zove ga samo `mcp_predaj_nacrt`, s već zaključanim vlastitim nacrtom).
+create or replace function public._izmjena_u_materijal(d public.node_drafts)
+returns uuid
+language plpgsql
+set search_path = public, pg_temp
+as $$
+declare n public.nodes; v_cur bigint; v_staro jsonb;
+begin
+  perform public._provjeri_kartice_nacrta(d.payload);
+  n := public._materijal_moj(d.izvor_id);   -- u međuvremenu (meko) obrisan → odbij
+  select version, payload into v_cur, v_staro from public.node_content where node_id = n.id for update;
+  if v_cur is distinct from d.polazna_verzija then
+    raise exception 'izmjena_sukob: materijal je promijenjen otkad je izmjena počela (verzija %, polazna %)', v_cur, d.polazna_verzija
+      using errcode = 'PT409';   -- NE 40001 (v. `mcp_upisi_nacrt`)
+  end if;
+  if d.payload is distinct from v_staro then
+    perform set_config('sokrat.op', 'mcp_izmjena', true);
+    perform public.publish_node(n.id, d.payload, v_cur);   -- strogi profil + 1 MB + povijest (stara verzija)
+    perform set_config('sokrat.op', '', true);
+  end if;
+  if d.name is distinct from n.name then
+    perform public.rename_node(n.id, d.name);
+  end if;
+  delete from public.node_drafts where id = d.id;
+  return n.id;
+end;
+$$;
+revoke execute on function public._izmjena_u_materijal(public.node_drafts) from public, anon, authenticated;
+
+-- Poništi AI-jevu zadnju izmjenu: sadržaj prije nje postaje NOVA verzija. Samo ako materijal od te
+-- izmjene nitko nije mijenjao (inače `izmjena_sukob` — korisnikov rad se ne prepisuje). Ponovljeno
+-- vraćanje vrati istu verziju (izgubljen odgovor). Vraća trenutnu verziju materijala.
+create or replace function public.mcp_vrati_izmjenu(p_id uuid)
+returns bigint
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare n public.nodes; v_cur bigint; r public.node_content_versions; v_nova bigint;
+begin
+  perform public._nacrt_pozivatelj();
+  n := public._materijal_moj(p_id);
+  select version into v_cur from public.node_content where node_id = n.id for update;
+  select * into r from public.node_content_versions
+   where node_id = n.id and op = 'mcp_izmjena' order by id desc limit 1;
+  if not found then
+    raise exception 'izmjena_nema: ovaj materijal nema AI izmjene koju bi se moglo vratiti' using errcode = 'P0002';
+  end if;
+  if v_cur = r.verzija + 1 then
+    perform set_config('sokrat.op', 'mcp_vrati', true);
+    v_nova := public.publish_node(n.id, r.payload, v_cur);
+    perform set_config('sokrat.op', '', true);
+    return v_nova;
+  end if;
+  if v_cur = r.verzija + 2 and exists (select 1 from public.node_content_versions
+       where node_id = n.id and op = 'mcp_vrati' and verzija = r.verzija + 1 and id > r.id) then
+    return v_cur;   -- već vraćeno
+  end if;
+  raise exception 'izmjena_sukob: materijal je promijenjen poslije AI-jeve izmjene (verzija %, izmjena je dala %)', v_cur, r.verzija + 1
+    using errcode = 'PT409';
 end;
 $$;
 
@@ -429,7 +699,9 @@ declare f text;
 begin
   foreach f in array array[
     'mcp_zapocni_nacrt(text, text, uuid, text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid, uuid, text)',
-    'mcp_procitaj_nacrt(uuid)', 'mcp_moji_nacrti()'
+    'mcp_procitaj_nacrt(uuid)', 'mcp_moji_nacrti()',
+    -- ②/4b
+    'mcp_procitaj_materijal(uuid)', 'mcp_zapocni_izmjenu(uuid, text)', 'mcp_preimenuj_nacrt(uuid, text)', 'mcp_vrati_izmjenu(uuid)'
   ] loop
     execute format('revoke execute on function public.%s from public, anon, authenticated', f);
     execute format('grant execute on function public.%s to mcp_klijent', f);

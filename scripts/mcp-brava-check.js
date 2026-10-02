@@ -67,7 +67,7 @@ const ULOGA = 'mcp_klijent';
  * Podiže se SVJESNO, uz novu provjeru; spuštanje bez razloga znači da je nešto tiho otpalo.
  */
 // 41 → 45 (②/1, 29.09.): mrtav redak otvorenih funkcija + tri pomoćnika nacrta u ZABRANJENI_RPC.
-const OCEKIVANO_PROVJERA = 53;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika · +1 (②/4.3′): `_nacrt_u_materijal`
+const OCEKIVANO_PROVJERA = 56;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika · +1 (②/4.3′): `_nacrt_u_materijal` · +3 (②/4b): tri pomoćnika izmjene
 
 /**
  * `PUT /auth/v1/user` — ŠTO POSTAVKA „traži trenutnu lozinku" ZATVARA, A ŠTO NE (①/2b, 21.09.).
@@ -177,9 +177,14 @@ const OTVORENO = {
   funkcije: {
     'mcp_zapocni_nacrt(text,text,uuid,text,text)': 'novi nacrt (ime, ključ ponavljanja, polica ILI nova polica, opseg); vlasnik iz tokena, samo VLASTITA polica, kvota 3 u izradi / 10 nepregledanih (②/1, ②/1b, ②/4.2)',
     'mcp_upisi_nacrt(uuid,jsonb,integer)': 'zamjena sadržaja vlastitog nacrta u izradi od zadane verzije, najviše 1 MB (②/1, ②/1b)',
-    'mcp_predaj_nacrt(uuid,uuid,text)': 'vlastiti nacrt → NOV materijal u VLASTITOJ polici, cijel, u jednoj transakciji; ponovljena predaja = isti materijal (②/4.3′, ADR-039 — što smije, mjeri `mcp:predaja`)',
+    'mcp_predaj_nacrt(uuid,uuid,text)': 'vlastiti nacrt → NOV materijal u VLASTITOJ polici, cijel, u jednoj transakciji; ponovljena predaja = isti materijal (②/4.3′, ADR-039 — što smije, mjeri `mcp:predaja`); nacrt IZMJENE → upis u svoj materijal samo uz istu verziju (②/4b, mjeri `mcp:izmjena`)',
     'mcp_procitaj_nacrt(uuid)': 'čitanje vlastitog nacrta — AI nastavlja gdje je stao (②/1)',
-    'mcp_moji_nacrti()': 'popis vlastitih nacrta bez sadržaja (②/1)'
+    'mcp_moji_nacrti()': 'popis vlastitih nacrta bez sadržaja (②/1)',
+    // ②/4b (02.10.): izmjena POSTOJEĆEG vlastitog materijala (ADR-039 t.2). Što smiju, mjeri `mcp:izmjena`.
+    'mcp_procitaj_materijal(uuid)': 'čitanje VLASTITOG živog materijala s verzijom — jedini put AI-ja do sadržaja; `node_content` ostaje zatvoren (②/4b)',
+    'mcp_zapocni_izmjenu(uuid,text)': 'kopija vlastitog materijala u nacrt izmjene s polaznom verzijom; ključ ponavljanja, kvota kao nacrt (②/4b)',
+    'mcp_preimenuj_nacrt(uuid,text)': 'ime vlastitog nacrta u izradi, 1–120 znakova (②/4b)',
+    'mcp_vrati_izmjenu(uuid)': 'poništi AI-jevu zadnju izmjenu vlastitog materijala kao novu verziju, samo ako ga od tad nitko nije mijenjao (②/4b)'
   }
 };
 
@@ -240,7 +245,11 @@ const ZABRANJENI_RPC = {
   _nacrt_korisnik: {},
   _provjeri_kartice_nacrta: { p: {} },
   // ②/4.3′: nacrt → materijal; zovu ga `mcp_predaj_nacrt` i `prihvati_nacrt` iznutra, nikome nije grantan.
-  _nacrt_u_materijal: { d: {}, p_polica: null, p_nova_polica: 'brava-proba' }
+  _nacrt_u_materijal: { d: {}, p_polica: null, p_nova_polica: 'brava-proba' },
+  // ②/4b: pomoćnici izmjene — zovu ih samo `mcp_*` funkcije iznutra, nikome nisu grantani.
+  _materijal_moj: { p_id: NULA },
+  _bez_visecih_kartica: { p: {} },
+  _izmjena_u_materijal: { d: {} }
 };
 
 /** Funkcije koje NISU ruta: okidači (zovu se iz triggera) i interni pomoćnici (service_role). */

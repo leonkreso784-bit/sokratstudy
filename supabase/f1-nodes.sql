@@ -159,6 +159,8 @@ create table if not exists public.node_content_versions (
 );
 create index if not exists node_content_versions_node_idx on public.node_content_versions (node_id, edited_at desc);
 
+-- ⚠️ ZAMIJENJENO 2026-10-02 (F6 ②/4b): živa definicija je u `f6-nacrt.sql` (bilježi i `client_id`,
+--    `verzija` i oznaku `op`). Ova je povijest prvog izdanja; f6-nacrt.sql ide poslije.
 create or replace function public.snapshot_node_content()
 returns trigger language plpgsql security definer set search_path = public, pg_temp as $$
 begin
