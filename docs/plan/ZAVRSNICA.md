@@ -34,7 +34,7 @@ i [archive/MCP.md](../archive/MCP.md) (oba ⛔ zamijenjena ovim planom; ondje os
 | 8 | **POVIJEST** — povijest učenja i grafikoni | …vidjeti kad je što zadnji put učio i kako napreduje kroz vrijeme |
 | → | **ODRŽAVANJE** | — |
 
-Redoslijed 1 je presuđen (KONEKTOR prvi); redoslijed 2–8 je prijedlog dok ga Leon ne potvrdi (§3).
+Redoslijed je presuđen (Leon, anketa 03.10.): KONEKTOR → DIJELJENJE → BEZ MREŽE → ZNAK → ostalo redom tablice.
 
 ---
 
@@ -76,7 +76,7 @@ Oblik je presuđen unaprijed (bivši F7/1) i potvrđen 03.10.: **link s tajnim t
 | **D/3** | primatelj: otvori, uči, „Spremi u moju policu" (kopija, ne veza) | …kolega uči iz linka i ima kopiju u svojoj polici |
 | **D/4** | izgled Mojih materijala — mali prolaz uz gumbe za dijeljenje i skidanje (ne redizajn) | Leonova presuda na telefonu |
 
-Otvoreno prije D/1: mora li primatelj biti prijavljen (§3).
+**Primatelj (Leon, anketa 03.10.): uči bez prijave; za „Spremi u moju policu" i napredak traži se prijava.**
 
 ### 3 · BEZ MREŽE
 
@@ -88,8 +88,8 @@ radi u zrakoplovnom načinu u instaliranoj aplikaciji.
 
 **Obara živo pravilo „znak je nepromjenjiv"** ([ADR-040](../records/DECISIONS.md#adr-040)). Ime Sokrat Study ostaje.
 Dodiri: `assets/logo.svg`, favikoni, PWA ikone (stara ostaje do reinstalacije — nije bug), `og-cover.png`
-(`npm run build:og`), mail predlošci. Usput: znak je danas 45 KB za 32 px (§4 stare stalne trake). Otvoreno: tko
-dizajnira i ostaje li indigo (§3).
+(`npm run build:og`), mail predlošci. Usput: znak je danas 45 KB za 32 px (§4 stare stalne trake). **Dizajn donosi Leon (anketa 03.10.: *„imam logo"*)** —
+posao ovdje je ugradnja svugdje; boja marke slijedi njegov znak.
 
 ### 5 · DVOJEZIČNOST
 
@@ -117,10 +117,8 @@ Bivši F7/2 i F7/3: plitka povijest učenja · kretanje kroz vrijeme na ekranu n
 
 ## 3 · Čeka Leonovu riječ
 
-1. **Redoslijed faza 2–8** — prijedlog je gore.
-2. **Dijeljenje:** mora li primatelj linka biti prijavljen?
-3. **Znak:** tko ga dizajnira; ostaje li indigo kao boja marke.
-4. **F2/4 mail-obavijesti** (grana `feat/f2-mail`) — ulazi li u završnicu ili čeka održavanje.
+Ništa — sve četiri točke presuđene anketom 03.10.: redoslijed (§1) · primatelj linka (faza 2) · znak donosi Leon
+(faza 4) · **F2/4 mail-obavijesti (grana `feat/f2-mail`) čekaju održavanje**, ne ulaze u završnicu.
 
 ## 4 · Što je izvan ovog plana
 
