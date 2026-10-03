@@ -4,8 +4,8 @@
 **Zašto:** [ADR-040](../records/DECISIONS.md#adr-040) · **Zamjenjuje:** [archive/RASPORED.md](../archive/RASPORED.md)
 i [archive/MCP.md](../archive/MCP.md) (oba ⛔ zamijenjena ovim planom; ondje ostaju povijest, odluke anketa i mjerenja).
 
-> **Novi smjer u jednoj rečenici.** Leonov glavni posao od 2026-10-03 je **hotel.sim** — zaseban projekt u
-> `Documents\hotelsim`, izvan ovog repozitorija. Sokrat se **dovršava usporedo**, s manje vremena, kroz faze
+> **Novi smjer u jednoj rečenici.** Leonov glavni posao od 2026-10-03 je **Xenokrat** — zaseban projekt u
+> `Documents\xenokrat`, izvan ovog repozitorija. Sokrat se **dovršava usporedo**, s manje vremena, kroz faze
 > niže, a kad ih prođe ide u **održavanje** (bugovi, sigurnost, sadržaj; nov razvoj samo Leonovom riječju).
 >
 > **Što ovaj dokument JEST:** redoslijed i uvjet završetka. **Što NIJE:** mjesto za mjerenja i obrazloženja
@@ -122,7 +122,7 @@ Ništa — sve četiri točke presuđene anketom 03.10.: redoslijed (§1) · pri
 
 ## 4 · Što je izvan ovog plana
 
-- **hotel.sim** — vlastiti repozitorij i vlastiti plan (`Documents\hotelsim`); [ideas/HOTEL_SIM.md](../ideas/HOTEL_SIM.md) je od 03.10. samo pokazivač.
+- **Xenokrat** — vlastiti repozitorij i vlastiti plan (`Documents\xenokrat`); [ideas/HOTEL_SIM.md](../ideas/HOTEL_SIM.md) je od 03.10. samo pokazivač.
 - **Zamrznuto (ADR-040):** tržište gradiva (ADR-035: javna objava, prodaja, natjecanje) · organizacije i exam modul
   (ADR-036) · monetizacija. Ne grade se; nisu poništeni.
 - **Ne dira se bez Leonove riječi:** produkcija javno poslužuje `.md` (BACKLOG) · brisanje 9 starih testnih računa na

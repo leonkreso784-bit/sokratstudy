@@ -4,7 +4,7 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 
 ---
 
-## ADR-040 — Novi smjer: glavni projekt je hotel.sim (zaseban repo); Sokrat se dovršava u užem opsegu pa ide u održavanje
+## ADR-040 — Novi smjer: glavni projekt je Xenokrat (zaseban repo); Sokrat se dovršava u užem opsegu pa ide u održavanje
 **Datum:** 2026-10-03 · **Status:** ✅ ODLUČENO (Leon, sesija planiranja, ankete) · **Vezano:** mijenja [ADR-029](#adr-029),
 [ADR-025](#adr-025) (dijeljenje), [ADR-031](#adr-031) (brane), [ADR-036](#adr-036) (o simulaciji) · zamrzava [ADR-035](#adr-035),
 [ADR-036](#adr-036) · obara živo pravilo „znak je nepromjenjiv" · **Plan:** [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md)
@@ -14,7 +14,7 @@ vođenja hotela, ali prvo želi vidjeti demo; Leon želi nešto pokazati već id
 dana. Sokrat je na produkciji i radi, a MCP je na stagingu blizu kraja.
 
 **Odluke (Leon, 2026-10-03):**
-1. **hotel.sim je zaseban proizvod u zasebnom repozitoriju** (`Documents\hotelsim`, privatni GitHub). Ne nosi Sokratov
+1. **Xenokrat je zaseban proizvod u zasebnom repozitoriju** (`Documents\xenokrat`, privatni GitHub). Ne nosi Sokratov
    kod ni njegova pravila; smije posuditi ono što znamo (Supabase, RLS, način rada s branama). Leon od sada **više
    radi na simulaciji nego na Sokratu**; Sokrat teče usporedo.
 2. **Sokrat se dovršava, pa ide u održavanje.** Dovršetak: MCP do produkcije u **užem opsegu** · dijeljenje linkom s
