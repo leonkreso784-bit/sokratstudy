@@ -28,15 +28,15 @@
     <meta name="theme-color" content="#f7f9fc">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261003051209">
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=20261003051209">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261003051209">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261003052658">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=20261003052658">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261003052658">
     <link rel="manifest" href="manifest.json">
 
     <title>Studio — Sokrat Study</title>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="styles.bundle.css?v=20261003051209">
+    <link rel="stylesheet" href="styles.bundle.css?v=20261003052658">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
 
@@ -59,14 +59,14 @@
             integrity="sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla+3" crossorigin="anonymous"></script>
 
     <!-- Privola je odluka o CIJELOJ stranici, ne o jednoj adresi: ista traka, isti izbor. -->
-    <link rel="stylesheet" href="css/consent.css?v=20261003051209">
-    <script src="js/monitoring.js?v=20261003051209" defer></script>
-    <script src="js/consent.js?v=20261003051209" defer></script>
+    <link rel="stylesheet" href="css/consent.css?v=20261003052658">
+    <script src="js/monitoring.js?v=20261003052658" defer></script>
+    <script src="js/consent.js?v=20261003052658" defer></script>
 </head>
 <body>
-<script src="js/boot.js?v=20261003051209"></script>
+<script src="js/boot.js?v=20261003052658"></script>
 <!-- ADR-034: štipanje s dva prsta gasi JS, jer Safari metu ignorira — zašto piše u js/no-zoom.js -->
-<script src="js/no-zoom.js?v=20261003051209" defer></script>
+<script src="js/no-zoom.js?v=20261003052658" defer></script>
 
     <!-- Ista ljuska kao u aplikaciji (K2b): `#editor-page` je `position:fixed` s
          `inset: var(--chrome-h) 0 0 0`, pa traka mora postojati i ovdje — inače bi
@@ -74,7 +74,7 @@
     <div class="chrome" id="chrome">
     <header class="topbar" id="top" role="banner">
         <a class="topbar-logo" href="index.html" id="topbarHome" aria-label="Sokrat Study">
-            <img src="assets/logo.svg?v=20261003051209" alt="" class="logo-image">
+            <img src="assets/logo.svg?v=20261003052658" alt="" class="logo-image">
             <span class="logo-text">Sokrat Study</span>
         </a>
         <div class="topbar-spacer"></div>
@@ -131,31 +131,31 @@
          ⚠️ `js/navigation.js` NIJE ovdje: ruter i devet stranica pripadaju aplikaciji, a
          editor od njega treba samo `navigateTo`/`goBack` — to prevodi `js/editor-page.js`.
          ⚠️ `js/admin-reveal.js` MORA prije `js/admin.js` (studioBridge se veže pri parsiranju). -->
-    <script src="data/catalog.js?v=20261003051209"></script>
-    <script src="js/i18n.js?v=20261003051209"></script>
-    <script src="js/theme.js?v=20261003051209"></script>
-    <script src="js/app-state.js?v=20261003051209"></script>
-    <script src="js/config.js?v=20261003051209"></script>
-    <script src="js/content-loader.js?v=20261003051209"></script>
-    <script src="js/content-repo.js?v=20261003051209"></script>
-    <script src="js/components/sokrat-toast.js?v=20261003051209"></script>
-    <script src="js/components/sokrat-modal.js?v=20261003051209"></script>
-    <script src="js/components/sokrat-confirm.js?v=20261003051209"></script>
-    <script src="js/utils.js?v=20261003051209"></script>
-    <script src="js/math.js?v=20261003051209"></script>
-    <script src="js/blocks-renderer.js?v=20261003051209"></script>
-    <script src="js/auth.js?v=20261003051209"></script>
-    <script src="js/draft-store.js?v=20261003051209"></script>
-    <script src="js/node-images.js?v=20261003051209"></script>
-    <script src="js/block-editor-media.js?v=20261003051209"></script>
-    <script src="js/block-editor.js?v=20261003051209"></script>
-    <script src="js/card-limits.js?v=20261003051209"></script>
-    <script src="js/admin-reveal.js?v=20261003051209"></script>
-    <script src="js/admin.js?v=20261003051209"></script>
-    <script src="js/admin-editors.js?v=20261003051209"></script>
-    <script src="js/connect-ai.js?v=20261003051209"></script>
-    <script src="js/studio.js?v=20261003051209"></script>
-    <script src="js/editor-page.js?v=20261003051209"></script>
-    <script src="js/sw-register.js?v=20261003051209" defer></script>
+    <script src="data/catalog.js?v=20261003052658"></script>
+    <script src="js/i18n.js?v=20261003052658"></script>
+    <script src="js/theme.js?v=20261003052658"></script>
+    <script src="js/app-state.js?v=20261003052658"></script>
+    <script src="js/config.js?v=20261003052658"></script>
+    <script src="js/content-loader.js?v=20261003052658"></script>
+    <script src="js/content-repo.js?v=20261003052658"></script>
+    <script src="js/components/sokrat-toast.js?v=20261003052658"></script>
+    <script src="js/components/sokrat-modal.js?v=20261003052658"></script>
+    <script src="js/components/sokrat-confirm.js?v=20261003052658"></script>
+    <script src="js/utils.js?v=20261003052658"></script>
+    <script src="js/math.js?v=20261003052658"></script>
+    <script src="js/blocks-renderer.js?v=20261003052658"></script>
+    <script src="js/auth.js?v=20261003052658"></script>
+    <script src="js/draft-store.js?v=20261003052658"></script>
+    <script src="js/node-images.js?v=20261003052658"></script>
+    <script src="js/block-editor-media.js?v=20261003052658"></script>
+    <script src="js/block-editor.js?v=20261003052658"></script>
+    <script src="js/card-limits.js?v=20261003052658"></script>
+    <script src="js/admin-reveal.js?v=20261003052658"></script>
+    <script src="js/admin.js?v=20261003052658"></script>
+    <script src="js/admin-editors.js?v=20261003052658"></script>
+    <script src="js/connect-ai.js?v=20261003052658"></script>
+    <script src="js/studio.js?v=20261003052658"></script>
+    <script src="js/editor-page.js?v=20261003052658"></script>
+    <script src="js/sw-register.js?v=20261003052658" defer></script>
 </body>
 </html>

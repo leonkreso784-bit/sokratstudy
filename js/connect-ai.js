@@ -124,6 +124,42 @@
     return m;
   }
 
+  /**
+   * ②/5.2 — animirani tutorial za Claude (Leon, anketa 03.10.): pojednostavljena SHEMA njihovog
+   * ekrana, bez njihovog znaka, u četiri scene koje prate četiri koraka ispod (korak koji se upravo
+   * pokazuje svijetli). Nazivi u shemi su Claudeovi (korisnik ih tako vidi), zadnja scena je NAŠA
+   * stranica za odobrenje s istim riječima (`oauth.*`). Ukras je → `aria-hidden`; sve što kaže stoji i
+   * u koracima. Kretanje živi u css/connect-ai.css; uz `prefers-reduced-motion` animacije nema, koraci ostaju.
+   */
+  function animacijaHtml(url) {
+    const kursor = '<span class="cai-anim__cur"></span>';
+    return '<div class="cai-anim" aria-hidden="true">' +
+      '<div class="cai-anim__win"><div class="cai-anim__bar"><i></i><i></i><i></i></div>' +
+      '<div class="cai-anim__stage">' +
+      // 1 · Customize → Connectors
+      '<div class="cai-anim__s cai-anim__s1"><div class="cai-anim__side">' +
+      '<span>' + esc(tt('connectAi.animChats', 'Chats')) + '</span><span>' + esc(tt('connectAi.animProjects', 'Projects')) + '</span>' +
+      '<span class="cai-anim__hit">' + esc(tt('connectAi.animCustomize', 'Customize')) + kursor + '</span></div>' +
+      '<div class="cai-anim__ghost"><i></i><i></i><i></i></div></div>' +
+      // 2 · Add custom connector
+      '<div class="cai-anim__s cai-anim__s2"><p class="cai-anim__h">' + esc(tt('connectAi.animConnectors', 'Connectors')) + '</p>' +
+      '<div class="cai-anim__ghost"><i></i><i></i></div>' +
+      '<span class="cai-anim__btn cai-anim__hit">+ ' + esc(tt('connectAi.animAdd', 'Add custom connector')) + kursor + '</span></div>' +
+      // 3 · zalijepi adresu → Add
+      '<div class="cai-anim__s cai-anim__s3"><div class="cai-anim__dlg">' +
+      '<p class="cai-anim__lbl">' + esc(tt('connectAi.animUrl', 'Remote MCP server URL')) + '</p>' +
+      '<p class="cai-anim__field"><span>' + esc(url) + '</span></p>' +
+      '<span class="cai-anim__btn cai-anim__hit">' + esc(tt('connectAi.animAddBtn', 'Add')) + kursor + '</span></div></div>' +
+      // 4 · Connect → naša stranica za odobrenje → Dopusti
+      '<div class="cai-anim__s cai-anim__s4"><div class="cai-anim__dlg cai-anim__ok">' +
+      '<p class="cai-anim__h">' + esc(tt('oauth.title', 'Connect your AI to Sokrat Study')) + '</p>' +
+      '<div class="cai-anim__row"><span class="cai-anim__btn cai-anim__btn--ghost">' + esc(tt('oauth.deny', 'Deny')) + '</span>' +
+      '<span class="cai-anim__btn cai-anim__hit">' + esc(tt('oauth.allow', 'Allow')) + kursor + '</span></div>' +
+      '<p class="cai-anim__done"><i class="fas fa-check" aria-hidden="true"></i> ' + esc(tt('connectAi.animDone', 'Connected')) + '</p>' +
+      '</div></div>' +
+      '</div></div></div>';
+  }
+
   /** Tekst se upisuje pri SVAKOM otvaranju (jezik se smije promijeniti između dva otvaranja). */
   function crtaj(m) {
     const url = adresa() || '';
@@ -139,7 +175,8 @@
           (on ? '' : ' tabindex="-1"') + '>' + esc(x.ime) + '</button>';
       }).join('') +
       '  </div>' +
-      '  <ol class="cai__steps" role="tabpanel">' +
+      (a.id === 'claude' ? animacijaHtml(url) : '') +
+      '  <ol class="cai__steps' + (a.id === 'claude' ? ' cai__steps--anim' : '') + '" role="tabpanel">' +
       a.koraci.map(function (k) { return '<li>' + esc(tt(k, k)) + '</li>'; }).join('') +
       '  </ol>' +
       '  <div class="cai__url">' +

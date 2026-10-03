@@ -5,6 +5,17 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/5.2 animirani tutorial za Claude (kod ✅, lokalno; čeka Leonov OK)
+
+- **Što:** na vrhu prozora (samo kartica Claude) shema Claudeova ekrana bez njihovog znaka, četiri scene po 4 s u petlji
+  od 16 s: Customize → Add custom connector → zalijepljena adresa + Add → NAŠA stranica za odobrenje (iste riječi kao
+  `odobrenje.html`) + „Povezano"; korak koji se pokazuje svijetli u popisu ispod. Samo CSS (`opacity`/`transform`/boja),
+  kursor stoji unutar mete (pogađa na svakoj širini). Uz `prefers-reduced-motion` animacije nema, koraci ostaju.
+- **Kadrovi** (sve animacije na isto vrijeme, 320 i 393 px, tamna i svijetla tema) našli grešku: koraci 2–4 svijetlili
+  su UNAPRIJED (0 % ključnog kadra + `both`) → popravljeno, i dobilo test.
+- **Brane:** unit `connect-ai` 14/0 (5 novih, **sva crvena na kodu iz 5.1**); `preflight` zelen; prijavljeni Playwright
+  154/154.
+
 ## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/5.1 „Spoji svoj AI": prozor i dva ulaza (kod ✅, lokalno)
 
 - **Istraženo:** Claude (sve razine, besplatni = 1 konektor; nema poveznice koja upisuje adresu) · ChatGPT (Plus+,

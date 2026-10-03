@@ -10134,6 +10134,280 @@ body.mm-dragging {
 a.cai__open, a.cai-entry {
   text-decoration: none;
 }
+.cai-anim {
+  margin: 0 0 0.9rem;
+}
+.cai-anim__win {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  background: var(--color-surface-2);
+}
+.cai-anim__bar {
+  display: flex;
+  gap: 5px;
+  padding: 7px 9px;
+  border-bottom: 1px solid var(--color-line);
+}
+.cai-anim__bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-line);
+}
+.cai-anim__stage {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  font-size: 0.72rem;
+  color: var(--color-ink-1);
+}
+.cai-anim__s {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 14px;
+  opacity: 0;
+  animation: cai-scena 16s linear infinite both;
+}
+.cai-anim__s1 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  animation-delay: 0s;
+}
+.cai-anim__s2 {
+  animation-delay: 4s;
+}
+.cai-anim__s3 {
+  align-items: center;
+  animation-delay: 8s;
+}
+.cai-anim__s4 {
+  align-items: center;
+  animation-delay: 12s;
+}
+.cai-anim__side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 38%;
+  padding-right: 10px;
+  border-right: 1px solid var(--color-line);
+}
+.cai-anim__side > span {
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+.cai-anim__ghost {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 12px;
+}
+.cai-anim__s2 .cai-anim__ghost {
+  flex: 0 0 auto;
+  padding-left: 0;
+}
+.cai-anim__ghost i {
+  display: block;
+  height: 7px;
+  border-radius: 4px;
+  background: var(--color-line);
+}
+.cai-anim__ghost i:nth-child(2) {
+  width: 80%;
+}
+.cai-anim__ghost i:nth-child(3) {
+  width: 60%;
+}
+.cai-anim__h {
+  margin: 0;
+  color: var(--color-ink-0);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.cai-anim__lbl {
+  margin: 0;
+}
+.cai-anim__dlg {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: min(100%, 17rem);
+  padding: 10px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  background: var(--color-surface-1);
+  box-shadow: var(--shadow-e1);
+}
+.cai-anim__field {
+  margin: 0;
+  padding: 5px 7px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface-2);
+  color: var(--color-ink-0);
+  font-family: ui-monospace, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cai-anim__field span {
+  animation: cai-zalijepi 16s linear infinite both;
+  animation-delay: 8s;
+}
+.cai-anim__row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.cai-anim__btn {
+  align-self: flex-start;
+  padding: 4px 9px;
+  border: 1px solid var(--color-line);
+  border-radius: 7px;
+  background: var(--color-surface-1);
+  color: var(--color-ink-0);
+  font-weight: 600;
+}
+.cai-anim__dlg > .cai-anim__btn {
+  align-self: flex-end;
+}
+.cai-anim__btn--ghost {
+  background: transparent;
+}
+.cai-anim__hit {
+  position: relative;
+  animation: cai-klik 16s linear infinite both;
+}
+.cai-anim__s1 .cai-anim__hit {
+  animation-delay: 0s;
+}
+.cai-anim__s2 .cai-anim__hit {
+  animation-delay: 4s;
+}
+.cai-anim__s3 .cai-anim__hit {
+  animation-delay: 8s;
+}
+.cai-anim__s4 .cai-anim__hit {
+  animation-delay: 12s;
+}
+.cai-anim__cur {
+  position: absolute;
+  right: -4px;
+  bottom: -9px;
+  width: 12px;
+  height: 16px;
+  background: var(--color-ink-0);
+  clip-path: polygon(0 0, 100% 62%, 58% 66%, 76% 100%, 60% 100%, 44% 70%, 0 92%);
+  animation: cai-kursor 16s ease-out infinite both;
+  animation-delay: inherit;
+}
+.cai-anim__done {
+  margin: 0;
+  color: var(--color-ok);
+  font-weight: 700;
+  animation: cai-gotovo 16s linear infinite both;
+  animation-delay: 12s;
+}
+.cai__steps--anim li {
+  margin-inline-start: -0.4rem;
+  padding: 1px 0.4rem;
+  border-radius: 6px;
+  animation: cai-korak 16s linear infinite both;
+}
+.cai__steps--anim li:nth-child(2) {
+  animation-delay: 4s;
+}
+.cai__steps--anim li:nth-child(3) {
+  animation-delay: 8s;
+}
+.cai__steps--anim li:nth-child(4) {
+  animation-delay: 12s;
+}
+@keyframes cai-scena {
+  0% {
+    opacity: 0;
+  }
+  2%, 23% {
+    opacity: 1;
+  }
+  25%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes cai-kursor {
+  0%, 3% {
+    transform: translate(46px, 30px);
+  }
+  12%, 100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes cai-klik {
+  0%, 13% {
+    transform: scale(1);
+    background-color: var(--color-surface-1);
+    color: var(--color-ink-0);
+  }
+  15% {
+    transform: scale(0.93);
+    background-color: var(--color-brand-500);
+    color: var(--color-on-brand);
+  }
+  18%, 24% {
+    transform: scale(1);
+    background-color: var(--color-brand-500);
+    color: var(--color-on-brand);
+  }
+  25%, 100% {
+    transform: scale(1);
+    background-color: var(--color-surface-1);
+    color: var(--color-ink-0);
+  }
+}
+@keyframes cai-zalijepi {
+  0%, 6% {
+    opacity: 0;
+  }
+  7%, 100% {
+    opacity: 1;
+  }
+}
+@keyframes cai-gotovo {
+  0%, 17% {
+    opacity: 0;
+  }
+  19%, 24% {
+    opacity: 1;
+  }
+  25%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes cai-korak {
+  0% {
+    background-color: transparent;
+  }
+  1%, 24% {
+    background-color: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
+  }
+  25%, 100% {
+    background-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cai-anim {
+    display: none;
+  }
+  .cai__steps--anim li {
+    animation: none;
+  }
+}
 .mm-ai {
   display: flex;
   flex-wrap: wrap;

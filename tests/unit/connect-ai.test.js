@@ -130,6 +130,69 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     }
   });
 
+  // ── ②/5.2 animirani tutorial ──────────────────────────────────────────────────────────────
+  /** Otvori prozor u lažnom dokumentu i vrati njegov markup za zadanu aplikaciju. */
+  function markup(app) {
+    const m = { innerHTML: '', setAttribute() {}, addEventListener() {}, open() {} };
+    const kontekst = {
+      console, URL, Date, Promise, navigator: {},
+      _readSupabaseOverride: () => STAGING,
+      SokratAuth: { getClient: () => null },
+      document: { getElementById: () => null, createElement: () => m, body: { appendChild() {} } }
+    };
+    kontekst.window = kontekst;
+    vm.createContext(kontekst);
+    vm.runInContext(IZVOR, kontekst);
+    kontekst.SokratConnectAi.otvori(app);
+    return m.innerHTML;
+  }
+  const CSS = fs.readFileSync(path.join(KORIJEN, 'css', 'connect-ai.css'), 'utf8');
+
+  await test('②/5.2 animacija je SAMO na kartici Claude, ukras je (aria-hidden), ima četiri scene i u polju pravu adresu', () => {
+    const c = markup('claude'); const g = markup('chatgpt');
+    assert.ok(/class="cai-anim" aria-hidden="true"/.test(c), 'Claude bez animacije ili bez aria-hidden');
+    assert.ok(!/cai-anim/.test(g), 'animacija i na ChatGPT-u (nije tražena)');
+    for (const s of [1, 2, 3, 4]) assert.ok(c.includes('cai-anim__s' + s), 'nema scene ' + s);
+    assert.ok(c.includes('<p class="cai-anim__field"><span>https://czljmvigkgiajzjxtndq.supabase.co/functions/v1/mcp</span>'), 'polje ne nosi adresu konektora');
+    assert.strictEqual((c.match(/cai-anim__cur/g) || []).length, 4, 'kursor nije u svakoj sceni');
+    assert.ok(/cai__steps cai__steps--anim/.test(c) && !/steps--anim/.test(g), 'koraci ne prate animaciju (ili prate i na ChatGPT-u)');
+  });
+
+  await test('②/5.2 zadnja scena = NAŠA stranica za odobrenje: iste riječi (oauth.title/allow/deny) kao odobrenje.html', () => {
+    const c = markup('claude');
+    for (const k of ['oauth.title', 'oauth.allow', 'oauth.deny']) assert.ok(IZVOR.includes("tt('" + k + "'"), 'animacija ne koristi ' + k);
+    const odob = fs.readFileSync(path.join(KORIJEN, 'odobrenje.html'), 'utf8');
+    for (const k of ['oauth.title', 'oauth.allow', 'oauth.deny']) {
+      assert.ok(odob.includes('data-i18n="' + k + '"'), 'odobrenje.html više ne nosi ' + k + ' — animacija bi pokazivala drugo');
+    }
+    assert.ok(c.includes('Allow') && c.includes('Deny'), 'Allow/Deny nisu u sceni');
+  });
+
+  await test('②/5.2 bez kretanja (prefers-reduced-motion) animacije nema i koraci ne trepću', () => {
+    const blok = (CSS.match(/@media \(prefers-reduced-motion: reduce\)\s*\{([\s\S]*?)\n\}/) || [])[1] || '';
+    assert.ok(/\.cai-anim\s*\{\s*display:\s*none;?\s*\}/.test(blok), 'animacija se ne gasi: ' + blok);
+    assert.ok(/\.cai__steps--anim li\s*\{\s*animation:\s*none;?\s*\}/.test(blok), 'koraci i dalje trepću bez kretanja');
+  });
+
+  await test('②/5.2 korak NE svijetli prije svog reda (0 % ključnog kadra ugašen; izmjereno kadrom 03.10.)', () => {
+    const kf = (CSS.match(/@keyframes cai-korak\s*\{([\s\S]*?)\n\}/) || [])[1] || '';
+    assert.ok(/(^|\n)\s*0%\s*\{\s*background-color:\s*transparent;?\s*\}/.test(kf), 'cai-korak 0 % nije ugašen: ' + kf);
+    // ista zamka za ostale s kašnjenjem: 0 % mora biti „nevidljivo" stanje
+    const nula = (ime) => ((CSS.match(new RegExp('@keyframes ' + ime + '\\s*\\{([\\s\\S]*?)\\n\\}')) || [])[1] || '').match(/(^|\n)\s*0%[^{]*\{([^}]*)\}/);
+    assert.ok(/opacity:\s*0/.test((nula('cai-scena') || [])[2] || ''), 'scena je vidljiva prije svog reda');
+    assert.ok(/opacity:\s*0/.test((nula('cai-gotovo') || [])[2] || ''), '„Povezano" vidljivo prije svog reda');
+  });
+
+  await test('②/5.2 animiraju se samo opacity, transform i boja (bez skupog rasporeda)', () => {
+    const svi = [...CSS.matchAll(/@keyframes (cai-[a-z]+)\s*\{([\s\S]*?)\n\}/g)];
+    assert.ok(svi.length >= 6, 'premalo ključnih kadrova: ' + svi.length);
+    for (const [, ime, tijelo] of svi) {
+      const svojstva = new Set([...tijelo.matchAll(/([a-z-]+)\s*:/g)].map((m) => m[1]));
+      const lose = [...svojstva].filter((s) => !['opacity', 'transform', 'background-color', 'color'].includes(s));
+      assert.deepStrictEqual(lose, [], ime + ' animira ' + lose.join(', '));
+    }
+  });
+
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');
   process.exit(pao ? 1 : 0);
 })();
