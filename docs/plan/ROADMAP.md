@@ -1,7 +1,7 @@
 # ROADMAP — Milestones
 
 > ## ⚠️ ČITAJ PRVO — SVE ISPOD PRVE CRTE JE POVIJESNI ZAPIS
-> **[FRONTEND_REDIZAJN.md](../archive/FRONTEND_REDIZAJN.md) je ISPUNJEN i NA PRODUKCIJI (2026-09-01).** Tekući spec je **[ZAVRSNICA.md](./ZAVRSNICA.md)** (od 2026-10-03, ADR-040: Sokrat se dovršava pa ide u održavanje; glavni projekt je hotel.sim izvan ovog repozitorija). Prethodni planovi [RASPORED.md](../archive/RASPORED.md) i [MCP.md](../archive/MCP.md) su zamijenjeni.
+> **[FRONTEND_REDIZAJN.md](../archive/FRONTEND_REDIZAJN.md) je ISPUNJEN i NA PRODUKCIJI (2026-09-01).** Tekući spec je **[ZAVRSNICA.md](./ZAVRSNICA.md)** (od 2026-10-03, ADR-040: Sokrat se dovršava pa ide u održavanje; glavni projekt je HotelixSim izvan ovog repozitorija). Prethodni planovi [RASPORED.md](../archive/RASPORED.md) i [MCP.md](../archive/MCP.md) su zamijenjeni.
 > Prethodne dvije faze su ispunjene i na produkciji → [MATERIJAL_FAZA.md](../archive/MATERIJAL_FAZA.md)
 > (2026-08-07) i [MJERA_I_ZABORAV.md](../archive/MJERA_I_ZABORAV.md) (2026-08-08).
 > Što proizvod jest piše u [product/UGC_SPEC.md](../product/UGC_SPEC.md).

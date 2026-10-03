@@ -184,8 +184,8 @@ i dvaput vratio uvjerljiv krivi broj umjesto da padne.
 Oba speca u `docs/archive/`; isporučeno zna CHANGELOG. **Next.js odbijen (ADR-028)** · **🚚 SEOBA OTKAZANA**
 (Leon, 01.09.) → `BACKLOG.md` §SELF-HOST = arhiv, ne plan.
 
-> **🧭 NOVI SMJER (2026-10-03, ADR-040):** Leonov **glavni projekt je hotel.sim** — zaseban repo
-> `Documents\hotelsim`. **Sokrat se dovršava usporedo, pa ide u ODRŽAVANJE.**
+> **🧭 NOVI SMJER (2026-10-03, ADR-040):** Leonov **glavni projekt je HotelixSim** — zaseban repo
+> `Documents\hotelixsim`. **Sokrat se dovršava usporedo, pa ide u ODRŽAVANJE.**
 > Aktivni spec: **`docs/plan/ZAVRSNICA.md`** (faze i uvjeti ondje); `RASPORED.md` i `MCP.md` su u `docs/archive/`. **Zamrznuto:** tržište gradiva (ADR-035), organizacije i exam (ADR-036).
 
 **Živa pravila IZGLEDA** (nadžive fazu; obrazloženja u spec-arhivi):

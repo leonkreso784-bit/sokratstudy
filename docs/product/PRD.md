@@ -2,7 +2,7 @@
 
 **Status:** živi dokument · **Verzija PRD-a:** 0.8 · **Zadnja izmjena:** listopad 2026
 
-> ⚠️ **Novi smjer ([ADR-040](../records/DECISIONS.md)):** Sokrat se dovršava (`plan/ZAVRSNICA.md`) i ide u održavanje; Leonov glavni projekt je hotel.sim, zaseban proizvod izvan ovog repozitorija. Faze u §4 iza „MCP" (objava, natjecanje, organizacija, exam, monetizacija) su **zamrznute** osim dijeljenja linkom.
+> ⚠️ **Novi smjer ([ADR-040](../records/DECISIONS.md)):** Sokrat se dovršava (`plan/ZAVRSNICA.md`) i ide u održavanje; Leonov glavni projekt je HotelixSim, zaseban proizvod izvan ovog repozitorija. Faze u §4 iza „MCP" (objava, natjecanje, organizacija, exam, monetizacija) su **zamrznute** osim dijeljenja linkom.
 
 ## 1. Vizija
 Sokrat Study je platforma na kojoj **svatko gradi vlastiti materijal i iz njega uči** —

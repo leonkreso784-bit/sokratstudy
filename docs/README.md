@@ -74,7 +74,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 
 | Dokument | Svrha |
 |---|---|
-| [ZAVRSNICA.md](./plan/ZAVRSNICA.md) | 🟩 **tekući spec (od 2026-10-03, ADR-040)** — Sokrat se dovršava pa ide u održavanje: KONEKTOR (uži MCP → produkcija) · DIJELJENJE · BEZ MREŽE · ZNAK · DVOJEZIČNOST · ČIŠĆENJE · RECEPTI · POVIJEST. Glavni posao je hotel.sim, izvan ovog repozitorija |
+| [ZAVRSNICA.md](./plan/ZAVRSNICA.md) | 🟩 **tekući spec (od 2026-10-03, ADR-040)** — Sokrat se dovršava pa ide u održavanje: KONEKTOR (uži MCP → produkcija) · DIJELJENJE · BEZ MREŽE · ZNAK · DVOJEZIČNOST · ČIŠĆENJE · RECEPTI · POVIJEST. Glavni posao je HotelixSim, izvan ovog repozitorija |
 | [ROADMAP.md](./plan/ROADMAP.md) | Milestones + status (**povijesni zapis**, ne plan rada) |
 
 > Prethodne dvije faze ispunjene su i deployane, pa su im planovi istog dana otišli u arhivu
@@ -120,7 +120,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 
 | Dokument | Svrha |
 |---|---|
-| [ideas/HOTEL_SIM.md](./ideas/HOTEL_SIM.md) | **Pokazivač** — simulacija vođenja hotela je od 2026-10-03 **Leonov glavni projekt** u zasebnom repozitoriju (`Documents\hotelsim`, ADR-040); izvorni zapis ideje preselio je ondje |
+| [ideas/HOTEL_SIM.md](./ideas/HOTEL_SIM.md) | **Pokazivač** — simulacija vođenja hotela je od 2026-10-03 **Leonov glavni projekt** u zasebnom repozitoriju (`Documents\hotelixsim`, ADR-040); izvorni zapis ideje preselio je ondje |
 | [ideas/MODULI.md](./ideas/MODULI.md) | **ES moduli bez build-koraka** — `js/` sloj nema nijedan `import`/`export`, pa je graf ovisnosti ručno održavan u dvije `.html` datoteke. Argument + mjere + zašto `bump` (ADR-017) ostaje netaknut. Radi se **tek nakon C7**. |
 
 ## `archive/` — ispunjeno i napušteno
