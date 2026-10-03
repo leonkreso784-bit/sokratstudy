@@ -88,9 +88,10 @@
         // ovu datoteku; ovdje je samo njezino sučelje (skini / obriši / popis).
         // `row-menu.js` = izbornik „⋯" (F2/5c): ide PRIJE police i radionice, koje ga obje crtaju.
         polica: ['js/row-menu.js', 'js/offline-store.js'],
-        materials: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/my-materials.js'],
+        // `connect-ai.js` = gumb „Spoji svoj AI" (F6 ②/5.1); crta ga `my-materials.js`, pa ide prije.
+        materials: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/connect-ai.js', 'js/my-materials.js'],
         // Profil montira „Moje materijale" i otkriva admin-karticu → nosi oboje sa sobom.
-        profile: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/my-materials.js', 'js/image-crop.js', 'js/profile-images.js',
+        profile: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/connect-ai.js', 'js/my-materials.js', 'js/image-crop.js', 'js/profile-images.js',
             'js/admin-reveal.js', 'js/mail-admin.js', 'js/profile.js'],
         // ⚠️ Sinkronizacija napretka NE visi o stranici nego o PRIJAVI: dovlači ju `auth.js`
         // čim se pojavi korisnik. Da stoji uz profil, napredak se ne bi sinkronizirao onome

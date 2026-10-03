@@ -326,6 +326,9 @@
           '    <i class="fas fa-rotate-left" aria-hidden="true"></i><span>' + esc(mt('materials.undo', 'Undo delete')) + '</span></button>'
         : '') +
       '</div>' +
+      // F6 ②/5.1: drugi ulaz u „Spoji svoj AI" (ADR-026) — puni ga `SokratConnectAi.ugradi` u draw().
+      // IZVAN `.mm-bar`: traka nosi samo „+ Novo" (F2/5b-3, brana `radionica` ⑥).
+      '<div class="mm-ai" data-cai-mount hidden></div>' +
       '<div class="mm-body">' + inner + '</div>';
   }
 
@@ -476,6 +479,8 @@
       : shellHtml(stateHtml('fa-folder-open',
           mt('materials.emptyTitle', 'Nothing here yet'),
           mt('materials.emptySub', 'Create a folder to organise your studies, or a material to start building.')));
+    // Bez konektora (produkcija do ⑥) gumba ovdje nema — Studio pokazuje „Uskoro".
+    if (window.SokratConnectAi) window.SokratConnectAi.ugradi(el.querySelector('[data-cai-mount]'), { bezKonektora: 'sakrij' });
     if (_edit) {
       const input = el.querySelector('[data-mm-input]');
       if (input) { input.focus(); input.select(); }

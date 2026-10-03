@@ -114,6 +114,8 @@
 @import "./auth.css";
 @import "./profile.css";
 @import "./my-materials.css";
+/* F6 ②/5.1: „Spoji svoj AI" — prozor i dva ulaza (Studio + Moji materijali). */
+@import "./connect-ai.css";
 /* P1: kontrola skidanja na stranici lekcija (faza POLICA). */
 @import "./offline.css";
 @import "./math.css";

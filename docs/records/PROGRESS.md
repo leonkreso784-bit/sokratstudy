@@ -5,6 +5,24 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/5.1 „Spoji svoj AI": prozor i dva ulaza (kod ✅, lokalno)
+
+- **Istraženo:** Claude (sve razine, besplatni = 1 konektor; nema poveznice koja upisuje adresu) · ChatGPT (Plus+,
+  Developer mode, `/mcp` + OAuth/DCR) · Gemini samo SAD/18+/engleski → ne nudi se. **Anketa (Leon):** Claude + ChatGPT ·
+  prvi put upute pa prečac · Studio + Moji materijali · animirani tutorial na vrhu prozora (5.2) · do ⑥ samo uz staging.
+- **Kod:** `js/connect-ai.js` (`SokratConnectAi.ugradi` = jedna radnja za oba ulaza; prozor `<sokrat-modal>` s
+  koracima, „Kopiraj adresu", „Otvori Claude/ChatGPT"; prečac iz `listGrants`, ime iz DCR-a samo za prepoznavanje) ·
+  `css/connect-ai.css` · Studio: onemogućeni gumb → `ugradi` (na produkciji i dalje onemogućen uz „Uskoro") · Moji
+  materijali: gumb u traci (na produkciji ga nema) · `editor.html` + paketi `materials`/`profile` · 19 i18n ključeva.
+- **`docs/product/MCP.md` usklađen s ADR-039/②/4b** (bio je zastario: „sve ide u nacrt", „korisnik prihvaća").
+- **Brane:** nov unit `connect-ai` 9/0 (**9/9 crveno na starom kodu**); `preflight` zelen (62/62 unit); `phone.authed`
+  13/13 uz staging; slike 393 px i 1280 px pregledane (poveznice su prvo izgledale kao tekst — dodana `primary`;
+  gumb poravnat s „+ Novo"). Puni `test:responsive`: 820 prošlo, **2 pala, oba zbog ove cigle** → popravljeno:
+  `radionica` ⑥ (traka smije nositi samo „+ Novo", F2/5b-3) → AI gumb preseljen ISPOD trake; `cascade` (uzorak
+  onemogućenog `.st-btn` bio je stari AI gumb) → test sam postavi uzorak na isto mjesto. Poslije: prijavljeni dio
+  154/154, `preflight` zelen.
+- **Usput:** Leonov konektor se nije spajao jer lokalni poslužitelj na 5051 nije radio (Site URL staginga) — pokrenut.
+
 ## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/4b.2 izmjena postojećeg materijala: ALATI (✅ STAGING, `mcp` v14)
 
 - **Uživo nakon Leonova deploya (v13 → v14, `0.5.0`):** `mcp:alati` 53/0 (⑧: kopija → izmjene u nacrtu, živo netaknuto

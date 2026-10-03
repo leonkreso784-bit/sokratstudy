@@ -156,6 +156,7 @@ const SokratStudio = (function () {
              : emptyCanvas()) + '</main>' +
       '  <aside class="st-inspector" id="stInspector">' + inspectorStub(false) + '</aside>' +
       '</div>';
+    mountAi();
 
     // C0: iz OSOBNOG čvora „natrag" vodi na stranicu vlastitog materijala — odande se i ušlo.
     // Prije C0 je stablo živjelo na profilu pa je tvrdi 'profile' bio točan; sada ondje stoji samo
@@ -265,14 +266,19 @@ const SokratStudio = (function () {
     return top +
       '<div class="st-icard"><h3>⬆ Publish</h3><p>' +
       esc(t('studio.publishHint', 'Objava = publish-RPC: atomično, verzija, konflikt se ne gazi.')) + '</p></div>' +
-      // M4 — panel je OBEĆAVAO tuđu značajku: „napiši Learn, kartice nastaju automatski" znači da
-      // MI vrtimo model i plaćamo ga. Odlučeno je drugo (ADR-026): AI dolazi s KORISNIKOVE strane —
-      // gumb ga spaja s AI-em koji već koristi, kroz MCP. Tekst sad govori to, i pošteno kaže da
-      // još ne radi. Ostaje `disabled` dok MCP ne postoji; ništa se ne obećava o vježbama (ADR-025 §1).
+      // M4 → F6 ②/5.1: AI dolazi s KORISNIKOVE strane (ADR-026) — gumb ga spaja kroz MCP. Gumb crta
+      // `SokratConnectAi.ugradi` (isti kao na „Mojim materijalima"); dok konektor ovdje ne radi
+      // (produkcija do ⑥) stoji onemogućen uz „Uskoro". Ništa se ne obećava o vježbama (ADR-025 §1).
       '<div class="st-premium"><h4>✨ ' + esc(t('studio.aiTitle', 'Tvoj AI')) +
-      ' <span class="st-pill">' + esc(t('studio.soon', 'USKORO')) + '</span></h4>' +
-      '<p>' + esc(t('studio.aiHint', 'Spoji AI koji već koristiš pa mu daj svoje bilješke — gradi materijal izravno ovdje.')) + '</p>' +
-      '<button class="st-btn primary" style="width:100%" disabled>' + esc(t('studio.aiBtn', 'Spoji svoj AI')) + '</button></div>';
+      (aiDostupan() ? '' : ' <span class="st-pill">' + esc(t('studio.soon', 'USKORO')) + '</span>') + '</h4>' +
+      '<p>' + esc(t('studio.aiHint', 'Spoji AI koji već koristiš pa mu daj svoje bilješke — gotov materijal stavit će ti na policu.')) + '</p>' +
+      '<div class="st-ai-entry" data-cai-mount></div></div>';
+  }
+  function aiDostupan() { return !!(window.SokratConnectAi && window.SokratConnectAi.dostupno()); }
+  /** Gumb „Spoji svoj AI" u inspektoru — nakon SVAKOG crtanja inspektora (innerHTML ga briše). */
+  function mountAi() {
+    var el = document.querySelector('#stInspector [data-cai-mount]');
+    if (el && window.SokratConnectAi) window.SokratConnectAi.ugradi(el, { bezKonektora: 'onemoguci' });
   }
 
   /**
@@ -924,7 +930,7 @@ const SokratStudio = (function () {
 
     // #7: inspektor je mode-svjestan → osvježi ga SAMO kad se edit-stanje promijeni (ne na svaku op).
     var insp = byId('stInspector');
-    if (insp && _inspEd !== isEd) { _inspEd = isEd; insp.innerHTML = inspectorStub(isEd); }
+    if (insp && _inspEd !== isEd) { _inspEd = isEd; insp.innerHTML = inspectorStub(isEd); mountAi(); }
 
     if (!chip) return;
     if (!hasLesson) { chip.textContent = '—'; chip.classList.remove('dirty'); return; }
