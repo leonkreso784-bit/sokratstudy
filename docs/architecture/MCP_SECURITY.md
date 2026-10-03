@@ -1,7 +1,7 @@
 # MCP — sigurnost: prijetnje, invarijante, nalazi, uvjeti puštanja
 
 > **Cilj:** korisnikov AI stvara i uređuje **isključivo njegove nacrte**; **korisnik** pregledava i objavljuje.
-> Kako je sustav građen: [MCP.md](./MCP.md) · redoslijed popravaka: [plan/MCP.md](../plan/MCP.md) ·
+> Kako je sustav građen: [MCP.md](./MCP.md) · redoslijed popravaka: [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) faza KONEKTOR (povijest: [archive/MCP.md](../archive/MCP.md)) ·
 > kako se mjeri: [workflow/MCP_TESTING.md](../workflow/MCP_TESTING.md).
 >
 > **Pravilo ovog dokumenta:** nalaz je ono što je **izmjereno ili pročitano u kodu s retkom**. Pretpostavka

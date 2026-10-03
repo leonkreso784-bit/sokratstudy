@@ -1,6 +1,6 @@
 # MCP — plan razvoja (F6)
 
-**Status:** 🟩 AKTIVAN · **Otvoren:** 2026-09-29 (Leon: *„uhvatio bi se sada jako ozbiljno na razvoj"*) ·
+**Status:** ⛔ ZAMIJENJEN 2026-10-03 planom [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) faza KONEKTOR (ADR-040, uži opseg) — ovdje ostaju povijest, odluke anketa i mjerenja · bio aktivan od **Otvoren:** 2026-09-29 (Leon: *„uhvatio bi se sada jako ozbiljno na razvoj"*) ·
 **Zamjenjuje:** `RASPORED.md` §F6 (raspored je za to vrijeme ⏸️ pauziran, nastavlja se s F7).
 
 > **Cilj (Leon, sigurnosni zahtjev 29.09.):** siguran MCP kroz koji korisnikov AI stvara i uređuje

@@ -1,7 +1,7 @@
 # MCP — kako je građeno
 
 > **Opisuje, ne definira** (ADR-027): istina je u kodu i branama navedenima uz svaki dio.
-> Redoslijed rada: [plan/MCP.md](../plan/MCP.md) · prijetnje i uvjeti: [MCP_SECURITY.md](./MCP_SECURITY.md) ·
+> Redoslijed rada: [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) faza KONEKTOR (povijest: [archive/MCP.md](../archive/MCP.md)) · prijetnje i uvjeti: [MCP_SECURITY.md](./MCP_SECURITY.md) ·
 > odluke: ADR-030 · ADR-031 · [ADR-038](../records/DECISIONS.md#adr-038).
 >
 > **Stanje:** sve ispod živi na **STAGINGU** (`czljmvigkgiajzjxtndq`). Na produkciji MCP ne postoji

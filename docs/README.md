@@ -74,8 +74,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 
 | Dokument | Svrha |
 |---|---|
-| [MCP.md](./plan/MCP.md) | 🟩 **tekući spec (F6)** — redoslijed cigli MCP-a sa sigurnosnim uvjetom završetka svake: sigurnosna analiza → ②/0 temelj → ② cjevovod → ③ brane → ④ limiti → ⑤ pravi AI → ⑥ produkcija |
-| [RASPORED.md](./plan/RASPORED.md) | ⏸️ **pauziran dok traje F6** — sedam faza kroz sesije (F1 uređaj · F2 račun · F3 dvojezičnost · F4 CSS-dug · F5 vježbe · F6 → `MCP.md` · F7 objava); nastavlja se s F7 |
+| [ZAVRSNICA.md](./plan/ZAVRSNICA.md) | 🟩 **tekući spec (od 2026-10-03, ADR-040)** — Sokrat se dovršava pa ide u održavanje: KONEKTOR (uži MCP → produkcija) · DIJELJENJE · BEZ MREŽE · ZNAK · DVOJEZIČNOST · ČIŠĆENJE · RECEPTI · POVIJEST. Glavni posao je hotel.sim, izvan ovog repozitorija |
 | [ROADMAP.md](./plan/ROADMAP.md) | Milestones + status (**povijesni zapis**, ne plan rada) |
 
 > Prethodne dvije faze ispunjene su i deployane, pa su im planovi istog dana otišli u arhivu
@@ -101,7 +100,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 | [CHANGELOG.md](./records/CHANGELOG.md) | Verzije i što se mijenjalo |
 | [PROGRESS.md](./records/PROGRESS.md) | Dnevnik rada po sesijama |
 | `RAD.xlsx` (records/) | **Analiza rada** — commiti, isporuke, faze, vizije + 8 grafova; generira `python scripts/rad-xlsx.py` na kraju svake faze (samo odrađeno ulazi) |
-| [DECISIONS.md](./records/DECISIONS.md) | Arhitektonske odluke (ADR-001…038) i zašto |
+| [DECISIONS.md](./records/DECISIONS.md) | Arhitektonske odluke (ADR-001…040) i zašto |
 | [BUGS.md](./records/BUGS.md) | Bugovi + lekcije naučene — **aktivni + riješeni od 2026-08-31** |
 | [BUGS_ARCHIVE.md](./records/BUGS_ARCHIVE.md) | **Arhiva bugova BUG-001…038** (riješeni do 2026-08-30) — cijeli zapisi s lekcijama, referenca |
 | [BACKLOG.md](./records/BACKLOG.md) | Parkiralište ideja |
@@ -121,7 +120,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 
 | Dokument | Svrha |
 |---|---|
-| [ideas/HOTEL_SIM.md](./ideas/HOTEL_SIM.md) | **Simulacija vođenja hotela** — poslovna igra za FMTU (zaseban proizvod, posuđeni Sokratovi primitivi). Materijal za prijedlog dekanu + kandidat za diplomski. |
+| [ideas/HOTEL_SIM.md](./ideas/HOTEL_SIM.md) | **Pokazivač** — simulacija vođenja hotela je od 2026-10-03 **Leonov glavni projekt** u zasebnom repozitoriju (`Documents\hotelsim`, ADR-040); izvorni zapis ideje preselio je ondje |
 | [ideas/MODULI.md](./ideas/MODULI.md) | **ES moduli bez build-koraka** — `js/` sloj nema nijedan `import`/`export`, pa je graf ovisnosti ručno održavan u dvije `.html` datoteke. Argument + mjere + zašto `bump` (ADR-017) ostaje netaknut. Radi se **tek nakon C7**. |
 
 ## `archive/` — ispunjeno i napušteno
@@ -141,8 +140,10 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 | [FOUNDATION_PLAN.md](./archive/FOUNDATION_PLAN.md) | Platformski temelj F0–F6; F1–F4 isporučeni, F5/F6 nadglašeni |
 | [CRUD_PLAN.md](./archive/CRUD_PLAN.md) | Admin CRUD javnog kataloga — ispunjen kroz EDITOR_PLAN |
 | [TEAM.md](./archive/TEAM.md) | Model rada s content-suradnikom (ADR-023) — ⚰️ **suradnja otkazana 2026-09-04**; gradivo koje je proizvela ostaje na produkciji |
-| [RACUN.md](./archive/RACUN.md) | Blok RAČUN — **R1 (dijalog + upitnik + Google) isporučen 2026-09-02**; R2/R3 preseljeni u `plan/RASPORED.md` F2. Referenca za obrazloženje zašto je R1 izveden odjednom |
-| [MCP_KONEKTOR.md](./archive/MCP_KONEKTOR.md) | F6 ① konektor + OAuth, S1, S2 — **ispunjeno na stagingu**; izdvojeno iz `plan/RASPORED.md` §F6 2026-09-29 (zapisi „RASPORED §F6" pokazuju ovamo) |
+| [RACUN.md](./archive/RACUN.md) | Blok RAČUN — **R1 (dijalog + upitnik + Google) isporučen 2026-09-02**; R2/R3 preseljeni u `RASPORED.md` F2 (danas u arhivi). Referenca za obrazloženje zašto je R1 izveden odjednom |
+| [RASPORED.md](./archive/RASPORED.md) | Raspored F1–F7 (2026-09-04) — **⛔ zamijenjen 2026-10-03** planom `plan/ZAVRSNICA.md` (ADR-040); F1 i F2 isporučeni, F3 većim dijelom; povijest cigli i odluke anketa ostaju ovdje |
+| [MCP.md](./archive/MCP.md) | Plan MCP-a F6 (2026-09-29) — **⛔ zamijenjen 2026-10-03** fazom KONEKTOR u `plan/ZAVRSNICA.md` (uži opseg); ①, ②/0–②/5.1 gotovi na stagingu, odluke anketa i mjerenja ostaju ovdje |
+| [MCP_KONEKTOR.md](./archive/MCP_KONEKTOR.md) | F6 ① konektor + OAuth, S1, S2 — **ispunjeno na stagingu**; izdvojeno iz `RASPORED.md` §F6 2026-09-29 (zapisi „RASPORED §F6" pokazuju ovamo) |
 | [HRV_PLAN.md](./archive/HRV_PLAN.md) | HRV program (klon-program + UI toggle, ADR-012) — cigle 1–5c ✅, ostatak pauziran |
 | [EXERCISES_DB_FIX_PLAN.md](./archive/EXERCISES_DB_FIX_PLAN.md) | BUG-012 fix plan (✅ 2026-06-27) |
 | [SONNET_REVIEW_2026-06.md](./archive/SONNET_REVIEW_2026-06.md) | Vanjski review — potrošen input |

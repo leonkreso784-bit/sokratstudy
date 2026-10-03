@@ -5,6 +5,21 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-03 (OPUS, `sokratstudy.f6`) — SESIJA PLANIRANJA: novi smjer (ADR-040), plan ZAVRSNICA, hotel.sim kao zaseban projekt
+
+- **Bez koda.** Leon opisao novi smjer, presuđeno kroz šest anketa: glavni projekt je **hotel.sim** (zaseban repo
+  `Documents\hotelsim`, više Leonova vremena); Sokrat se **dovršava usporedo** pa ide u **održavanje**.
+- **Sokrat:** jedini aktivni plan je `docs/plan/ZAVRSNICA.md` — KONEKTOR (uži MCP → produkcija; ②/5.2 tutorial se vraća) ·
+  DIJELJENJE (link s tajnim tokenom + mali prolaz izgleda) · BEZ MREŽE · ZNAK (novi logo, ime ostaje) · DVOJEZIČNOST ·
+  ČIŠĆENJE · RECEPTI · POVIJEST. `RASPORED.md` i `MCP.md` → `docs/archive/` s pečatom „zamijenjen". ADR-035/036 zamrznuti.
+- **ADR-040** upisan; oznake na ADR-025/029/031/035/036; CLAUDE.md, PRD, ROADMAP, README i poveznice usklađeni;
+  `ideas/HOTEL_SIM.md` postao pokazivač.
+- **hotel.sim:** folder s gitom, `docs/VIZIJA.md` (dobiveni hotel, fer start, pet osi situacija, BitLife sloboda, AI u
+  četiri uloge, relativna ocjena), `docs/PLAN.md` (PROTOTIP do ~10.10. s jednim pravim AI trenutkom · PREZENTACIJA za
+  ~mjesec · PILOT · VIZIJA), `CLAUDE.md`. GitHub repo još nije napravljen (nema `gh`, GitHub MCP pada).
+- **Otvoreno:** redoslijed faza 2–8 ZAVRSNICE · prijava za dijeljeni link · tko dizajnira znak i ostaje li indigo ·
+  F2/4 mail-obavijesti · inkubator/dekan (koji projekt) · vrijeme „1–7 dana" u simulaciji · backend simulacije.
+
 ## 2026-10-03 (OPUS, `sokratstudy.f6`) — F6 ②/5.2 animirani tutorial za Claude (kod ✅, lokalno; čeka Leonov OK)
 
 - **Što:** na vrhu prozora (samo kartica Claude) shema Claudeova ekrana bez njihovog znaka, četiri scene po 4 s u petlji

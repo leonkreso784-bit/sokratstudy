@@ -3,7 +3,7 @@
 **Status:** ✅ ISPUNJENO na STAGINGU (① konektor + OAuth, S1 CI mjera žice, S2 `test:unit` se nabraja sam).
 Izdvojeno 2026-09-29 iz `plan/RASPORED.md` §F6, doslovno, kad je F6 dobio vlastiti plan.
 
-> **Referenca, ne istina.** Što vrijedi sad: [plan/MCP.md](../plan/MCP.md) (redoslijed) ·
+> **Referenca, ne istina.** Što vrijedi sad: [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) faza KONEKTOR (redoslijed; do 03.10. [MCP.md](./MCP.md)) ·
 > [architecture/MCP.md](../architecture/MCP.md) (kako je građeno) ·
 > [architecture/MCP_SECURITY.md](../architecture/MCP_SECURITY.md) (prijetnje i uvjeti).
 > Zapisi „RASPORED §F6" u `records/` pokazuju na ovaj tekst.
@@ -150,7 +150,7 @@ Rizici: beta poslužitelj, mlad `@supabase/server` · **greška u hooku = nitko 
 tokena) → nekoliko redaka, prvo staging, izlaz = isključiti hook u dashboardu · `PUT /user` ovisi o postavci ·
 ograničeno CPU vrijeme Edge Functiona · besplatni Claude = jedan konektor · rewrite za MCP promet neprovjeren.
 
-**② Cjevovod u nacrt i ③ četiri brane** — nastavljaju u [plan/MCP.md](../plan/MCP.md); ovdje ih nema da ne postoje dvije kopije (ADR-027).
+**② Cjevovod u nacrt i ③ četiri brane** — nastavljaju u [plan/MCP.md](./MCP.md); ovdje ih nema da ne postoje dvije kopije (ADR-027).
 
 **PROD — zadnje, svaki korak uz Leonov izričit OK:** SQL u SQL Editoru → OAuth poslužitelj + hook u dashboardu →
 funkcija → klijent.

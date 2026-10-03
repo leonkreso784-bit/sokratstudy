@@ -1,6 +1,6 @@
 # RASPORED — sve što čeka, razrezano na faze kroz sesije
 
-**Status:** ⏸️ PAUZIRAN (2026-09-29) — prvenstvo ima [MCP.md](./MCP.md) (F6); raspored se nastavlja s F7 kad F6 završi · **Otvoren:** 2026-09-04 (Leon: *„napravi strukturiran plan koji će ići
+**Status:** ⛔ ZAMIJENJEN 2026-10-03 planom [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) (ADR-040): F3 ostatak, F4, F5 i F7/2–3 nastavljaju ondje; F7/1 dijeljenje postaje faza DIJELJENJE · ranije pauziran 2026-09-29 zbog [MCP.md](./MCP.md) · **Otvoren:** 2026-09-04 (Leon: *„napravi strukturiran plan koji će ići
 fazama kroz sesije da ga imamo da riješimo ovu listu kako treba"*)
 
 > **Što ovaj dokument JEST:** **redoslijed i izlazni uvjet.** Odgovara na dva pitanja — *što sada*

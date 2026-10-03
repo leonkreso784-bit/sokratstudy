@@ -5,7 +5,7 @@
 > mijenja i njegov postojeći materijal. Od 01.10. nema ekrana za pregled nacrta
 > ([ADR-039](../records/DECISIONS.md#adr-039)): korisnik materijal pregledava ondje gdje i uči.
 > Zašto je to glavni put stvaranja: ADR-030 · ADR-031 · [ADR-038](../records/DECISIONS.md#adr-038).
-> Kako se gradi: [plan/MCP.md](../plan/MCP.md) · sigurnost: [architecture/MCP_SECURITY.md](../architecture/MCP_SECURITY.md).
+> Kako se gradi: [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) faza KONEKTOR (povijest: [archive/MCP.md](../archive/MCP.md)) · sigurnost: [architecture/MCP_SECURITY.md](../architecture/MCP_SECURITY.md).
 
 ## Invarijante proizvoda
 

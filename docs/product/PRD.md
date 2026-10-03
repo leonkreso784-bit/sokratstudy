@@ -1,6 +1,8 @@
 # PRD — Sokrat Study
 
-**Status:** živi dokument · **Verzija PRD-a:** 0.7 · **Zadnja izmjena:** 2026-09-07
+**Status:** živi dokument · **Verzija PRD-a:** 0.8 · **Zadnja izmjena:** listopad 2026
+
+> ⚠️ **Novi smjer ([ADR-040](../records/DECISIONS.md)):** Sokrat se dovršava (`plan/ZAVRSNICA.md`) i ide u održavanje; Leonov glavni projekt je hotel.sim, zaseban proizvod izvan ovog repozitorija. Faze u §4 iza „MCP" (objava, natjecanje, organizacija, exam, monetizacija) su **zamrznute** osim dijeljenja linkom.
 
 ## 1. Vizija
 Sokrat Study je platforma na kojoj **svatko gradi vlastiti materijal i iz njega uči** —
@@ -84,7 +86,7 @@ ne kroz našu cijev — pa ni kvote troška nisu na nama.
 - ~~Nema naplate dok platforma ne dobije skalu.~~ **Nadglašeno ([ADR-036](../records/DECISIONS.md)):** naplata kreće od
   **organizacija prije skale** (firma odlučuje u jednom razgovoru), dok potrošačka naplata i dalje
   čeka masu. **Objava se ne naplaćuje nikad**, ni brojem ni veličinom.
-- **Nema javnog dijeljenja osobnog materijala** — sve je privatno (ADR-024/025).
+- **Nema javne biblioteke osobnog materijala** — materijal je privatan; po [ADR-040](../records/DECISIONS.md) smije se **podijeliti linkom s tajnim tokenom** (faza DIJELJENJE u [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md)). Javna objava, prodaja i natjecanje su **zamrznuti** (ADR-035).
 - Nema složenih uloga: postoje **vlasnik podatka** (`owner_id = auth.uid()`) i **administrator**
   javnog kataloga (`profiles.role` + `is_admin()`). Sadržajni suradnik radi kroz PR, ne kroz aplikaciju.
 

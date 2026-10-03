@@ -182,10 +182,11 @@ i dvaput vratio uvjerljiv krivi broj umjesto da padne.
 ### 🎯 FRONTEND REDIZAJN + MREŽA = ✅ **NA PRODUKCIJI (2026-09-01)**
 
 Oba speca u `docs/archive/`; isporučeno zna CHANGELOG. **Next.js odbijen (ADR-028)** · **🚚 SEOBA OTKAZANA**
-(Leon, 01.09.) → `BACKLOG.md` §SELF-HOST = arhiv, ne plan. Aktivni spec: **`docs/plan/MCP.md`** (F6; sigurnost:
-`architecture/MCP_SECURITY.md`); `RASPORED.md` ⏸️ do kraja F6 (F1–F5 · F7 objava).
+(Leon, 01.09.) → `BACKLOG.md` §SELF-HOST = arhiv, ne plan.
 
-**F1 ✅ · F2 gotov na granama (PROD čeka Leona) · F3/1 ✅ (ADR-037) · F3/2 ①–④ ✅ · **F6 MCP: cijeli ① na STAGINGU** (dalje ②, nacrt). KARTICE parkirane (Leon 08.09., `feat/tinder-kadar`; BUG-045/046 ondje → samo cherry-pick).**
+> **🧭 NOVI SMJER (2026-10-03, ADR-040):** Leonov **glavni projekt je hotel.sim** — zaseban repo
+> `Documents\hotelsim`. **Sokrat se dovršava usporedo, pa ide u ODRŽAVANJE.**
+> Aktivni spec: **`docs/plan/ZAVRSNICA.md`** (faze i uvjeti ondje); `RASPORED.md` i `MCP.md` su u `docs/archive/`. **Zamrznuto:** tržište gradiva (ADR-035), organizacije i exam (ADR-036).
 
 **Živa pravila IZGLEDA** (nadžive fazu; obrazloženja u spec-arhivi):
 
@@ -194,8 +195,7 @@ Oba speca u `docs/archive/`; isporučeno zna CHANGELOG. **Next.js odbijen (ADR-0
   smjer, naravno"*): grotesk svugdje (**serif nadglašen**), praznina, tipografija nosi, monokrom
   + jedan akcent. Spec §7.3–7.8.
 - **Traka nosi TOČNO DVA odredišta: vlastito gradivo i profil** (F2/0 — **okreće T2**, Leon: *„gore treba biti profil i UGC"*). Ulaz je u TRAJNOM KROMU, na svakoj stranici; **drugi ulaz u istu traku vraća kvar koji je K2b uklonio**, zato brana traži točno jedan.
-- **🔒 ZNAK JE NEPROMJENJIV** (Leon: *„sokrat logo je nezamjenjiv"*) — ne prepravlja se nego
-  dobiva PROSTOR, i **zadržava indigo kroz sve teme = konstanta marke**.
+- ~~**🔒 ZNAK JE NEPROMJENJIV**~~ — **oboreno (ADR-040): novi znak, ime ostaje** (faza ZNAK).
 - **Broj predmeta se NIKAD ne piše rukom.** Jedini ručno pisan je statični fallback u
   `index.html` i njega čuva `npm run verify`; landing je taj razred greške već imao **na
   produkciji** (pisao 17 kad ih je bilo 22).
@@ -270,14 +270,15 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
 
 ## Ključne odluke — samo one koje MIJENJAJU današnji rad
 
-> Puni tekst i sve starije: **`docs/records/DECISIONS.md` (ADR-001…038)**.
+> Puni tekst i sve starije: **`docs/records/DECISIONS.md` (ADR-001…040)**.
 > Ovdje su ADR-ovi koji su **živa ograničenja**, ne povijesno obrazloženje.
 
+- **ADR-040:** **novi smjer** (Leon, 2026-10-03) — v. 🧭 gore · dijeljenje linkom obara ADR-025 · brane ADR-031 sužene · ADR-035/036 **zamrznuti**.
 - **ADR-034:** **stranica se NE zumira** (Leon, 2026-09-05) — ni štipanje ni dodir ni fokus; nadjačava WCAG 1.4.4; **F1/11 ✅** (`ISKLJUCENO_ODLUKOM` u `axe-gate.js`).
 - **ADR-031:** **MCP je CJEVOVOD, ne CRUD** (Leon, 2026-08-30): `Learn` je podloga svega → AI prvo prepozna lekcije/sekcije i napiše skriptu → iz nje kartice (**pojam/pitanje → objašnjenje**, boja po lekciji da se vidi kojoj pripada) → iz kartica dopune i kviz, uz **pokrivenost, ne uzorak**. **AI je KORISNIKOV** (ne plaćamo tokene → kvalitetu držimo samo branama), **materijal dolazi kroz chat** (datoteku nikad ne vidimo), **sve ide u NACRT**, doseg = **samo vlastito gradivo** (ni čitanje kataloga). **Četiri tvrde brane u write-putu:** duljina kartice · svaka kartica daje bar jedno pitanje · svaka lekcija dobiva boju · dopuna ima jednoznačan odgovor.
 - **ADR-030:** **AI kroz MCP je GLAVNI put stvaranja; editor je DORADA** (Leon, 2026-08-13) — smije IZGUBITI funkcije, ne dobiti ih. MCP je proizvod, ne spike, i najveći neriješeni komad plana; **kontrola kvalitete seli s ekrana u write-put** (`js/card-limits.js` = **treći čitatelj, nikad treća kopija**); nikad katalog/`is_admin()`/`service_role`; **vježbe izvan MCP-a** (ADR-018).
 
-- **ADR-029:** **UGC je GLAVNI proizvod**, javni katalog (broj predmeta zna `npm run verify`) je **jedan izvor gradiva**, ne srce platforme. „Moji materijali" prestaju biti pododjeljak profila i postaju **ravnopravno odredište** (stranica + ulaz u navigaciji i na landingu). **Ne popušta ništa sigurnosno** — ADR-024/025/018 stoje netaknuti; ovo je odluka o **istaknutosti**. **➕ Dopuna 2026-08-14:** *„UGC PRIJE kataloga"* ublaženo u **„ravnopravno, i to u herou"** — doslovna primjena skrivala je jedini dokaz da sadržaja ima. **Ublažavanje, ne ispunjenje.**
+- **ADR-029:** **UGC je GLAVNI proizvod**, javni katalog (broj predmeta zna `npm run verify`) je **jedan izvor gradiva**, ne srce platforme. „Moji materijali" prestaju biti pododjeljak profila i postaju **ravnopravno odredište** (stranica + ulaz u navigaciji i na landingu). **Ne popušta ništa sigurnosno** — ADR-024/025/018 stoje netaknuti; ovo je odluka o **istaknutosti**. ⚠️ Od ADR-040 vrijedi **unutar Sokrata**.
 - **ADR-028:** frontend ide na **Tailwind v4, ali SAMO preko CLI-ja** (generirani CSS se commita, kao i dosad `styles.bundle.css`) — **CDN nikad** (kompajler u pregledniku se tuče sa SW-om i immutable cacheom). **Tailwind NIKAD ne ulazi u `data/`** — gradivo zadržava semantičke klase, inače stil živi u podatku. **Dinamički sastavljene klase (`'bg-' + boja`) su zabranjene** — Tailwind skenira izvor, ne runtime; paleta od 8 boja ostaje na CSS varijablama.
 - **ADR-027:** znanje ide u **kod i testove**; proza nosi samo **ZAŠTO**. Jedna činjenica = **jedno mjesto**. Rub koji prepoznaš isti čas dobiva test — inače je zapis samo uredno dokumentiran propust (povod: BUG-023).
 - **ADR-026:** korisnik gradi **„materijal"**, spremnik je **„polica"** (EN ostaje `folder`); „gradivo" = javni katalog. **Mobilno autorstvo ide preko korisnikovog AI-a (MCP)**, ne preko editora na dodir. MCP invarijante: nikad katalog, nikad `is_admin()`, nikad `service_role`.

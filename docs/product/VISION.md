@@ -120,7 +120,7 @@ integrator), a u platformu bi ušao kao treći način smještaja predmeta (`exam
 
 **Zašto je vizija, a ne cigla.** Dva razloga, oba Leonova:
 1. **Pravno pitanje o objavi NCVVO materijala nije potvrđeno** — dok nije, ne objavljuje se ništa
-   ([RASPORED.md](../plan/RASPORED.md) §5: *„neću otvarat maturu"*).
+   ([RASPORED.md](../archive/RASPORED.md) §5: *„neću otvarat maturu"*).
 2. **Fokus.** Sedam faza rasporeda (uređaj → račun → dvojezičnost → čišćenje → vježbe → MCP → objava)
    ide prije bilo kojeg novog tržišta; matura bi se natjecala za istu jedinu ruku.
 

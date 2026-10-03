@@ -1083,7 +1083,7 @@ i popravljeni kaskadni test · `docs/records/RAD.xlsx` + generator · svi zapisi
   jednom: **račun > lokalni izbor > uređaj > `academic`**. `chalk` i `mint` ostaju izbori;
   odluka da je **zadana svijetla** (2026-08-13) **ostaje** — crno dobiva onaj tko ga je uređajem
   već tražio, ne svaki posjetitelj.
-- Plan: [RASPORED.md](../plan/RASPORED.md) §F1, sada **sedam cigli** umjesto četiri.
+- Plan: [RASPORED.md](../archive/RASPORED.md) §F1, sada **sedam cigli** umjesto četiri.
 
 ### Izmjereno unaprijed (da cigla ne otkriva u hodu)
 - **Ljestvica indiga se na tamnom OBRĆE** — zrcalno F1/1: ondje je tekst tražio tamniji indigo,

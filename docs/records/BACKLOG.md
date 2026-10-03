@@ -639,7 +639,7 @@ dashboardu**, pa se mijenjaju na dva mjesta. Zasebna, sitna cigla.
 palete zaredom pale na živom ekranu"*. Ova odluka to **ne poništava** — tamna se daje onome tko je
 uređajem već tražio, ne svakom posjetitelju. Tko dođe s Googlea na svijetlom telefonu vidi isto što i danas.
 
-**Plan izvedbe: [RASPORED.md](../plan/RASPORED.md) §F1.**
+**Plan izvedbe: [RASPORED.md](../archive/RASPORED.md) §F1.**
 
 > ### ✅ F1/2 ISPORUČENA 2026-09-04 — tema `carbon` (hr „Ugljen")
 > Blok `:root[data-theme="carbon"]` s doslovnim heksovima predloška; ono što mail ne definira
