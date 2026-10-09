@@ -15,6 +15,13 @@
 //     verziju; jedina druga izmjena živog je `mcp_vrati_izmjenu` (AI-jeva zadnja izmjena natrag).
 //     Svaki RPC ide kroz `pozovi()`, jedino mjesto koje zove `.rpc(` i koje
 //     grešku baze predaje `prevediOdbijanje` (N9; unit pada na `.rpc(` izvan njega i na nuli).
+//
+// ─── PRAVILA SADRŽAJA (ZAVRSNICA K/1) ───────────────────────────────────────────────────────────
+//   Pragovi kartice, paleta i normFill dolaze iz `_shared/pravila.ts`, GENERIRANOG iz preglednikovih
+//   izvora (`npm run build:pravila`) — ovdje se nijedna od tih brojki ne piše rukom
+//   (`tests/unit/pravila-izvor.test.js`).
+
+import { KARTICA_HARD, KARTICA_SOFT } from '../_shared/pravila.ts';
 
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
@@ -27,7 +34,7 @@ export const UPUTE = [
   'Build a material from the user\'s source (notes, a PDF they shared in the chat) in this order, one lesson at a time:',
   '  1. zapocni_nacrt — name the material, give the shelf and scope, and list its lessons, each with its own colour (#rrggbb).',
   '  2. napisi_learn — for each lesson write the full study text (Learn) first. Everything else is built from it. Learn is the script the user studies from, not a summary: explain every term and idea of the source, at the depth the scope asks for.',
-  '  3. dodaj_kartice — flashcards for that lesson: a term or question, and a short explanation (under 200 characters is best).',
+  '  3. dodaj_kartice — flashcards for that lesson: a term or question, and a short explanation (under ' + KARTICA_SOFT + ' characters is best).',
   '  4. dodaj_pitanja — quiz questions and fill-in-the-blank sentences built from those flashcards. Every question names its flashcard in "card" (a card_id returned by dodaj_kartice). In a fill-in sentence write each gap as ___ and give one answer per gap, in order.',
   '  5. predaj_nacrt — submit the finished draft: the material is now on the user\'s shelf and the draft is gone. Tell the user it is on their shelf and give them the review_url it returns: that link opens the material. If it says the shelf is missing, ask the user which shelf and call predaj_nacrt again with shelf_id or new_shelf.',
   'Cover the WHOLE source, not a sample. Send at most one lesson per call.',
@@ -396,7 +403,7 @@ const MATERIAL_ID: Shema = { type: 'string', pattern: UUID, description: 'id of 
 const ITEM_ID: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', description: 'id of the item (procitaj_nacrt with draft_id and lesson_id shows them)' };
 
 // Granice po pozivu: jedna lekcija, ne cijeli materijal (plan ②/2) — i znatno ispod granica baze.
-const KARTICA = objekt({ question: tekst(1, 500, 'Term or question'), answer: tekst(1, 500, 'Short explanation (under 200 characters is best)'),
+const KARTICA = objekt({ question: tekst(1, KARTICA_HARD, 'Term or question'), answer: tekst(1, KARTICA_HARD, 'Short explanation (under ' + KARTICA_SOFT + ' characters is best)'),
   explanation: tekst(1, 2000, 'Optional longer detail') }, ['question', 'answer']);
 // ②/3: svako pitanje nosi `card` = id kartice iz koje je nastalo (ADR-031: pitanja iz kartica).
 const CARD: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', description: 'card_id (from dodaj_kartice) of the flashcard this question is built from' };

@@ -5,6 +5,22 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/1: pravila sadržaja imaju jedan izvor (kod ✅, lokalno)
+
+- **Što:** MCP poslužitelj više ne nosi svoje brojke. `scripts/build-pravila.js` (kalup `build:ugc-sql`) iz preglednikovih
+  izvora generira `supabase/functions/_shared/pravila.ts`: SOFT/HARD i mjera kartice iz `js/card-limits.js`, `KURIRANE_BOJE`
+  iz `js/utils.js`, `normFill` iz `js/fill-blanks.js`. Oblik u izvoru se traži točno jednom, inače generator pada zatvoreno.
+  `alati.ts` uvozi `KARTICA_HARD`/`KARTICA_SOFT` (ulaz `dodaj_kartice` i `izmijeni_stavke`, upute AI-ju); `build:pravila -- --check`
+  ušao u preflight. Preglednik nije diran → bez bumpa.
+- **Brana:** `tests/unit/pravila-izvor.test.js` 7/0 — generirano == izvori · MCP se PONAŠA kao preglednik (rubovi 200/201/500/501,
+  paleta, normFill) · svaka kartica u ulazima alata (prebrojano: 2) ima strop == HARD · nema gole brojke u `alati.ts` ·
+  treća kopija, shema u bazi (`ugc-content.schema.json`), ima isti strop. `preflight` zelen; `test:responsive` 822/0 (132 preskočeno). **Crveno na starom kodu** (nema `pravila.ts`);
+  **obrnute provjere 7/7** (HARD, SOFT, normFill, boja, ručna izmjena generiranog, gola brojka u `alati.ts`, shema 600).
+- ⚠️ **Ostaje:** ulaz alata i shema u bazi mjere SIROVU duljinu, preglednik podrezanu (editor sprema `trim()`) — AI-jevih
+  500 znakova + razmak se odbija iako bi ih ekran pustio. Rub, ne razilaženje stropa; rješava K/2 (mjera kroz `mjeriKarticu`).
+- **Staging:** `mcp` funkcija nije redeployana (ponašanje isto, 500/200); ide uz K/2.
+- **Sljedeće:** K/2 duljina (501 odbija s mjestom, 201–500 upozorenje AI-ju).
+
 ## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/0: animirani tutorial ②/5.2 izbačen (kod ✅, lokalno)
 
 - **Što:** revert commita `5b3f4c3` (Leon 03.10.: *izbaciti*); prozor „Spoji svoj AI" iz 5.1 ostaje. `css/connect-ai.css`,

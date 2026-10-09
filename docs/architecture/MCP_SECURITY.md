@@ -106,6 +106,8 @@ s kontrolom · prioritet je za **puštanje korisnicima**, ne za današnji stagin
   `node_content_versions` (rast povijesti → S-C).
 - `schema/subject-content.schema.json` postoji (zabranjuje nepoznata polja, provjerava boje), ali se vrti **samo u
   CI-ju nad datotekama kataloga** i dopušta `legacy-html`. `js/card-limits.js` postoji samo u pregledniku.
+  → **K/1 (09.10.):** MCP ga dobiva GENERIRANOG (`supabase/functions/_shared/pravila.ts`, `npm run build:pravila`,
+  `--check` u preflightu) zajedno s paletom i `normFill`; jednakost sa shemom u bazi mjeri `tests/unit/pravila-izvor.test.js`.
 - **S-B:** stvarna definicija na stagingu (`pg_get_functiondef`) je **istovjetna** datoteci; EXECUTE ima `authenticated`,
   **nema** `mcp_klijent` (AI-token admina → 403, izmjereno).
 - **Popravak:** plan ②/0a–b. `pg_jsonschema` 0.3.3 je **dostupan** na stagingu (nije instaliran); produkcija nije
