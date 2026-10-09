@@ -5,6 +5,17 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/0: animirani tutorial ②/5.2 izbačen (kod ✅, lokalno)
+
+- **Što:** revert commita `5b3f4c3` (Leon 03.10.: *izbaciti*); prozor „Spoji svoj AI" iz 5.1 ostaje. `css/connect-ai.css`,
+  `js/connect-ai.js`, ključevi `connectAi.anim*` u `i18n.js` i 5 testova tutoriala vraćeni na stanje 5.1; `styles.bundle.css`
+  nakon `build:css` jednak onom iz 5.1. Povijest ostaje: unos 5.2 niže u ovom dnevniku i red ②/5 u `archive/MCP.md`
+  (dobio oznaku „izbačena").
+- **Brane:** unit `connect-ai` 9/0 (kao na 5.1) · nula ostataka (`cai-anim`, `connectAi.anim`) u `js/`, `css/`, `tests/`,
+  `*.html`, bundleu · `preflight` zelen · `test:responsive` 822 prošlo / 0 palo / 132 preskočeno (44 min, uklj.
+  prijavljeni projekt).
+- **Sljedeće:** K/1 jedan izvor (`card-limits.js`, paleta i `normFill` u Deno-u, drift-brana).
+
 ## 2026-10-03 (OPUS, `sokratstudy.f6`) — SESIJA PLANIRANJA: novi smjer (ADR-040), plan ZAVRSNICA, HotelixSim kao zaseban projekt
 
 - **Bez koda.** Leon opisao novi smjer, presuđeno kroz šest anketa: glavni projekt je **HotelixSim** (zaseban repo
