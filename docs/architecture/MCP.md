@@ -99,6 +99,10 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   `_shared/pravila.ts`, generiranog iz `js/` (`npm run build:pravila`). Pitanje i odgovor kartice se **podrežu prije
   provjere** i takvi spremaju (kao editor); iznad HARD = odbijanje s mjestom (`input.cards[i].answer`), SOFT+1…HARD =
   upisano uz `warnings` (mjesto, duljina, kamo s detaljem) u odgovoru `dodaj_kartice` i `izmijeni_stavke`.
+- **Pitanje po kartici (K/3, `0.5.2`):** `predaj_nacrt` prvo čita nacrt i odbija (`alat_kartica_bez_pitanja` / ispravi)
+  ako neka kartica nema ni kviz ni dopunu s `card` = njezin id; poruka imenuje `lesson_id/card_id` i tekst. Kod
+  izmjene se sude samo kartice kojih nije bilo u izvornom materijalu (id-evi po istom `dodijeliIdeve` kao pri kopiji);
+  nacrt koji više ne postoji (ponovljena predaja) propušta se do baze, koja vrati isti materijal.
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

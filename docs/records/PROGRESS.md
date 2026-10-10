@@ -5,6 +5,23 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/3: svaka kartica daje bar jedno pitanje (kod ✅, STAGING ✅)
+
+- **Što:** `predaj_nacrt` čita nacrt i odbija predaju (`alat_kartica_bez_pitanja`, vrsta `ispravi`) ako neka kartica nema ni
+  kviz ni dopunu koja je imenuje u `card`; poruka nabraja `lesson_id/card_id "pitanje"` (do 20). **Izmjena (odluka u ciglu,
+  razumna zadana):** sude se samo kartice kojih NIJE bilo u izvornom materijalu — korisnik u Studiju smije imati karticu
+  bez pitanja, a AI-jeva izmjena zbog nje ne smije zapeti. Id-eve zatečenih kartica daje ista funkcija kao kopija
+  (`dodijeliIdeve`, izvučena iz `zapocni_izmjenu`). Ponovljena predaja (nacrt više ne postoji) prolazi do baze → isti materijal.
+  Upute AI-ju (korak 4) navode pravilo. Poslužitelj `0.5.2`.
+- **Brana:** `mcp-alati` 61/0 — 3 nova testa, **sva crvena na starom kodu**; zajednički primjer dobio pitanje za drugu
+  karticu (stari testovi su ga s pravom počeli odbijati). **Obrnute provjere 8/8** (bez brane · izmjena ne pamti zatečene ·
+  dopuna se ne broji · čitanje guta svaku grešku · bez propuštanja predanog nacrta · izvor bez id-eva · poruka bez teksta ·
+  upute bez pravila). `preflight` zelen · `test:responsive` 822/0 (132 preskočeno).
+- **✅ STAGING (`mcp` `0.5.2`):** `mcp:alati` **62/0** uz blok ⑩ (+3: predaja s karticom bez pitanja odbijena · poruka
+  imenuje baš nju, nacrt ostaje · s pitanjem prolazi). Prvi prolaz poslije deploya: **9 crvenih** u starim scenarijima
+  (AI je dodavao kartice bez pitanja) = brana uživo radi; scenariji dobili pitanja. Zatečena kartica bez pitanja u
+  materijalu iz Studija (⑧) predaju izmjene NE koči — izmjereno uživo.
+
 ## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/2: duljina kartice po mjeri preglednika (kod ✅, lokalno)
 
 - **Što:** `dodaj_kartice` i `izmijeni_stavke` podrežu pitanje i odgovor kartice PRIJE provjere ulaza i takve ih spremaju

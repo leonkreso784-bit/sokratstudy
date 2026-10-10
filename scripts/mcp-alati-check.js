@@ -35,7 +35,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 58;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨
+const OCEKIVANO_PROVJERA = 61;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -266,6 +266,19 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   // Samo NEPOSTOJEĆI: tuđi nacrt mjeri `mcp:nacrt` ② na RPC-u (alat samo prosljeđuje poziv).
   odbijenKao('nepostojeći nacrt → nacrt_ne_postoji / stop', await alat(t, 'procitaj_nacrt', { draft_id: '00000000-0000-4000-8000-000000000000' }), 'nacrt_ne_postoji', 'stop');
 
+  // ⑩ ZAVRSNICA K/3 (ADR-031) — treća kartica (`razgovor-1:k2`) još nema pitanje: predaja mora pasti i imenovati je.
+  console.log('\n— ⑩ svaka kartica daje bar jedno pitanje (K/3) —');
+  const k3Id = k3.tijelo && k3.tijelo.cards && k3.tijelo.cards[0] && k3.tijelo.cards[0].card_id;
+  const prBez = await alat(t, 'predaj_nacrt', { draft_id: draftId });
+  odbijenKao('kartica bez pitanja → predaj_nacrt alat_kartica_bez_pitanja / ispravi', prBez, 'alat_kartica_bez_pitanja', 'ispravi');
+  const porukaBez = (prBez.tijelo && prBez.tijelo.message) || '';
+  record('… poruka imenuje BAŠ tu karticu (ne one s pitanjem), a nacrt nije predan', !!k3Id && porukaBez.includes(L + '/' + k3Id) &&
+    !cardIds.some((c) => porukaBez.includes(c)) && !!(await nacrtUBazi(draftId)), porukaBez.slice(-120));
+  const pk3 = await alat(t, 'dodaj_pitanja', { draft_id: draftId, lesson_id: L, repeat_key: 'razgovor-1:p3',
+    quiz: [{ question: 'Tko mjeri BDP?', options: ['DZS', 'HNB', 'MF'], correct: 0, card: k3Id }] });
+  record('… pitanje za tu karticu se upiše (sad je svaka pokrivena)', !pk3.isError, opis(pk3));
+  d = await nacrtUBazi(draftId);
+
   console.log('\n— ② predaja = materijal na polici (②/4.3′, ADR-039) —');
   const pr = await alat(t, 'predaj_nacrt', { draft_id: draftId });
   const mid = pr.tijelo && pr.tijelo.material_id;
@@ -319,6 +332,9 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const nk = await alat(t, 'dodaj_kartice', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:kartice', cards: [{ question: 'Pojam?', answer: 'Objašnjenje.' }] });
   const kid = nk.tijelo && nk.tijelo.cards && nk.tijelo.cards[0].card_id;
   const ik = await alat(t, 'izmijeni_stavke', { draft_id: izId, lesson_id: nlId, cards: [{ id: kid, answer: 'Bolje objašnjenje.' }] });
+  // K/3: NOVA kartica u izmjeni treba pitanje (zatečene kartice materijala se ne sude).
+  await alat(t, 'dodaj_pitanja', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:pitanja',
+    quiz: [{ question: 'Pojam?', options: ['Bolje objašnjenje.', 'Ništa'], correct: 0, card: kid }] });
   const ul = await alat(t, 'uredi_lekciju', { draft_id: izId, lesson_id: 'l1', name: 'Živo (uređeno)' });
   const pm = await alat(t, 'preimenuj_materijal', { draft_id: izId, name: 'Materijal (uređen)' });
   di = await nacrtUBazi(izId);

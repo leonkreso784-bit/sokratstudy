@@ -308,7 +308,10 @@ function lazniKlijent(redovi, greska) {
   // ②/3: svako pitanje nosi `card` = id kartice iz koje je nastalo. Id-evi kartica su deterministički
   // (izvedeni iz lekcije i ključa ponavljanja), pa ih test zna unaprijed: lekcija l2, ključ 'kartice-1', prva kartica.
   const K0 = typeof A.idIzKljuca === 'function' ? A.idIzKljuca('k', 'l2/kartice-1', 0) : 'nema';
-  const PITANJA = { quiz: [{ question: 'BDP mjeri?', options: ['proizvodnju', 'uvoz'], correct: 0, card: K0 }],
+  const K1 = typeof A.idIzKljuca === 'function' ? A.idIzKljuca('k', 'l2/kartice-1', 1) : 'nema';
+  // K/3: SVAKA kartica daje bar jedno pitanje, inače predaja pada — zato i K1 ima svoje.
+  const PITANJA = { quiz: [{ question: 'BDP mjeri?', options: ['proizvodnju', 'uvoz'], correct: 0, card: K0 },
+    { question: 'Tko mjeri BDP?', options: ['DZS', 'HNB'], correct: 0, card: K1 }],
     fill_blanks: [{ sentence: 'BDP mjeri ___.', answers: ['proizvodnju'], card: K0 }] };
 
   /** Cijeli cjevovod nad lažnom bazom; vraća id nacrta i id lekcije. */
@@ -355,7 +358,7 @@ function lazniKlijent(redovi, greska) {
     assert.ok(provjeri(d.payload), 'payload pada na shemi: ' + JSON.stringify(provjeri.errors && provjeri.errors[0]));
     const l = d.payload[lesson_id];
     assert.deepStrictEqual([l.name, l.color, l.learn.blocks.length, l.flashcards.length, l.quiz.length, l.fillBlanks.length],
-      ['BDP', '#10b981', 2, 2, 1, 1]);
+      ['BDP', '#10b981', 2, 2, 2, 1]);
     assert.strictEqual(Object.keys(d.payload).filter((x) => x !== 'schemaVersion').length, 2, 'obje lekcije');
   });
 
@@ -1076,6 +1079,47 @@ function lazniKlijent(redovi, greska) {
     assert.ok(!r.isError, r.content[0].text);
     assert.deepStrictEqual((izlaz(r).warnings || []).map((x) => [x.at, x.length]), [['input.cards[0].answer', SOFT + 1]]);
     assert.strictEqual(lekcijaNacrta(k, draft_id).flashcards[0].answer, 'v'.repeat(SOFT + 1), 'izmjena spremljena nepodrezano');
+  });
+
+  // ── ZAVRSNICA K/3 (ADR-031): svaka kartica daje bar jedno pitanje — predaja pada na kartici bez kviza i bez dopune ──
+  // Nov materijal: sude se SVE kartice. Izmjena: samo kartice kojih nije bilo u izvornom materijalu — korisnik u
+  // Studiju smije imati kartice bez pitanja, i AI-jeva izmjena zbog njih ne smije zapeti.
+  await test('K/3 nov materijal: kartica bez pitanja → predaja odbijena S MJESTOM, ništa nije predano; s pitanjem prolazi', async () => {
+    const k = lazniNacrt();
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'K3', repeat_key: 'k3-1', lessons: LEKCIJE, ...PO }));
+    const draft_id = z.draft_id; const lesson_id = z.lessons[1].lesson_id;
+    await A.izvediAlat('napisi_learn', k, { draft_id, lesson_id, repeat_key: 'l', blocks: LEARN.blocks });
+    const kc = izlaz(await A.izvediAlat('dodaj_kartice', k, { draft_id, lesson_id, repeat_key: 'k', cards: KARTICE })).cards.map((c) => c.card_id);
+    await A.izvediAlat('dodaj_pitanja', k, { draft_id, lesson_id, repeat_key: 'p1', quiz: [{ question: 'BDP mjeri?', options: ['proizvodnju', 'uvoz'], correct: 0, card: kc[0] }] });
+    let r = await A.izvediAlat('predaj_nacrt', k, { draft_id });
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_kartica_bez_pitanja', 'ispravi'], 'kartica bez pitanja predana: ' + r.content[0].text);
+    const poruka = izlaz(r).message;
+    assert.ok(poruka.includes(lesson_id + '/' + kc[1]) && poruka.includes('Tko ga mjeri?') && !poruka.includes(kc[0]), 'poruka ne imenuje točno karticu bez pitanja: ' + poruka);
+    assert.deepStrictEqual([k.zapis.predaje.length, k.nacrti.has(draft_id)], [0, true], 'odbijena predaja je ipak predala');
+    // dopuna je jednako dobro pitanje kao kviz
+    await A.izvediAlat('dodaj_pitanja', k, { draft_id, lesson_id, repeat_key: 'p2', fill_blanks: [{ sentence: 'BDP mjeri ___.', answers: ['DZS'], card: kc[1] }] });
+    r = await A.izvediAlat('predaj_nacrt', k, { draft_id });
+    assert.ok(!r.isError, 'svaka kartica ima pitanje, a predaja odbijena: ' + r.content[0].text);
+    assert.strictEqual(izlaz(await A.izvediAlat('predaj_nacrt', k, { draft_id })).material_id, izlaz(r).material_id, 'ponovljena predaja više ne vraća isti materijal');
+  });
+
+  await test('K/3 izmjena: zatečena kartica bez pitanja (i bez id-a) NE koči predaju; NOVA kartica bez pitanja koči', async () => {
+    const k = lazniNacrt(); const { draft_id } = await izmjena(k, 'k3-izm');
+    // MAT/content: „Proton?" nema id ni pitanje (gradivo iz Studija) — izmjena bez ikakve promjene mora proći
+    const k2 = lazniNacrt(); const iz2 = await izmjena(k2, 'k3-izm-0');
+    const r0 = await A.izvediAlat('predaj_nacrt', k2, { draft_id: iz2.draft_id });
+    assert.ok(!r0.isError, 'zatečena kartica bez pitanja zakočila izmjenu: ' + r0.content[0].text);
+    const nova = izlaz(await A.izvediAlat('dodaj_kartice', k, { draft_id, lesson_id: 'content', repeat_key: 'nova', cards: [{ question: 'Neutron?', answer: 'Neutralna čestica.' }] })).cards[0].card_id;
+    const r = await A.izvediAlat('predaj_nacrt', k, { draft_id });
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_kartica_bez_pitanja', 'ispravi'], 'nova kartica bez pitanja predana');
+    assert.ok(izlaz(r).message.includes(nova) && !/Proton/.test(izlaz(r).message), 'poruka: ' + izlaz(r).message);
+    await A.izvediAlat('dodaj_pitanja', k, { draft_id, lesson_id: 'content', repeat_key: 'pn', quiz: [{ question: 'Naboj neutrona?', options: ['0', '+'], correct: 0, card: nova }] });
+    assert.ok(!(await A.izvediAlat('predaj_nacrt', k, { draft_id })).isError, 'izmjena s pitanjem za novu karticu odbijena');
+  });
+
+  await test('K/3 upute: korak 4 kaže da SVAKA kartica treba bar jedno pitanje', () => {
+    const korak4 = (Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE)).split('\n').find((r) => /^\s*4\. dodaj_pitanja/.test(r)) || '';
+    assert.ok(/every flashcard/i.test(korak4) && /at least one/i.test(korak4), 'korak 4: ' + korak4.slice(0, 160));
   });
 
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');
