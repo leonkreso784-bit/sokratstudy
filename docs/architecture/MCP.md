@@ -103,6 +103,9 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   ako neka kartica nema ni kviz ni dopunu s `card` = njezin id; poruka imenuje `lesson_id/card_id` i tekst. Kod
   izmjene se sude samo kartice kojih nije bilo u izvornom materijalu (id-evi po istom `dodijeliIdeve` kao pri kopiji);
   nacrt koji više ne postoji (ponovljena predaja) propušta se do baze, koja vrati isti materijal.
+- **Boja lekcije iz palete (K/4, `0.5.3`):** `zapocni_nacrt`, `dodaj_lekciju` i `uredi_lekciju` oglašavaju boju kao `enum` =
+  `KURIRANE_BOJE` (iz `js/utils.js` kroz `_shared/pravila.ts`); izvan nje = `alat_los_ulaz` s mjestom i popisom. Velika
+  slova se svode prije provjere (`maloBoje`). Studio i dalje bira slobodno (ADR-025): izmjena bez boje zatečenu ne dira.
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

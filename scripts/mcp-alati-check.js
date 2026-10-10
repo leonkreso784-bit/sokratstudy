@@ -35,7 +35,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 61;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩
+const OCEKIVANO_PROVJERA = 64;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -326,7 +326,7 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   record('zapocni_izmjenu → nacrt izmjene OVOG materijala s polaznom verzijom i istim sadržajem', !zi.isError && !!di && di.izvor_id === mat &&
     di.polazna_verzija === zv0.version && JSON.stringify(kanon(di.payload)) === JSON.stringify(kanon(zv0.payload)),
   di ? 'izvor ' + (di.izvor_id === mat) + ' · polazna ' + di.polazna_verzija + '/' + zv0.version : opis(zi));
-  const nl = await alat(t, 'dodaj_lekciju', { draft_id: izId, repeat_key: 'razgovor-3:lekcija', name: 'Nova lekcija', color: '#0EA5E9' });
+  const nl = await alat(t, 'dodaj_lekciju', { draft_id: izId, repeat_key: 'razgovor-3:lekcija', name: 'Nova lekcija', color: '#06B6D4' });
   const nlId = nl.tijelo && nl.tijelo.lesson_id;
   await alat(t, 'napisi_learn', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:learn', blocks: [{ type: 'paragraph', text: 'Dodano kroz izmjenu.' }] });
   const nk = await alat(t, 'dodaj_kartice', { draft_id: izId, lesson_id: nlId, repeat_key: 'razgovor-3:kartice', cards: [{ question: 'Pojam?', answer: 'Objašnjenje.' }] });
@@ -402,6 +402,22 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   odbijenKao('HARD+1 → alat_los_ulaz / ispravi', dk2, 'alat_los_ulaz', 'ispravi');
   record('… odbijanje imenuje mjesto, a nacrt je netaknut', /input\.cards\[0\]\.answer/.test((dk2.tijelo && dk2.tijelo.message) || '') &&
     ((await nacrtUBazi(dId)) || {}).verzija === (dd && dd.verzija), opis(dk2));
+
+  // ⑪ ZAVRSNICA K/4 (ADR-031) — boja lekcije samo iz KURIRANE palete; oglas i odbijanje UŽIVO.
+  console.log('\n— ⑪ boja lekcije iz palete (K/4) —');
+  const bojePolja = [];
+  const traziBoje = (s) => {
+    if (!s || typeof s !== 'object') return;
+    if (s.properties && s.properties.color && s.properties.name) bojePolja.push(s.properties.color);
+    for (const v of Object.values(s)) if (v && typeof v === 'object') traziBoje(v);
+  };
+  ((lst.json && lst.json.result && lst.json.result.tools) || []).forEach((x) => traziBoje(x.inputSchema));
+  record('svako oglašeno polje boje lekcije (tools/list) = KURIRANE_BOJE iz js/utils.js', bojePolja.length >= 3 &&
+    bojePolja.every((b) => JSON.stringify(b.enum) === JSON.stringify([...PR.KURIRANE_BOJE])), bojePolja.length + ' polja · ' + JSON.stringify(bojePolja[0] && bojePolja[0].enum));
+  const nacrtaPrije = await brojNacrta(A.id);
+  odbijenKao('boja izvan palete → zapocni_nacrt alat_los_ulaz / ispravi', await alat(t, 'zapocni_nacrt', { name: 'Boja (test)', repeat_key: 'razgovor-5:boja',
+    new_shelf: 'Boje', scope: 'summary', lessons: [{ name: 'A', color: '#123456' }] }), 'alat_los_ulaz', 'ispravi');
+  record('… i nijedan nacrt nije nastao', (await brojNacrta(A.id)) === nacrtaPrije, 'nacrta ' + nacrtaPrije + '→' + (await brojNacrta(A.id)));
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
     touched === OCEKIVANO_PROVJERA ? '' : 'izvedeno ' + touched +

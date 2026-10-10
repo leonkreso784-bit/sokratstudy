@@ -21,7 +21,7 @@
 //   izvora (`npm run build:pravila`) — ovdje se nijedna od tih brojki ne piše rukom
 //   (`tests/unit/pravila-izvor.test.js`).
 
-import { KARTICA_HARD, KARTICA_SOFT, mjeriKarticu } from '../_shared/pravila.ts';
+import { KARTICA_HARD, KARTICA_SOFT, KURIRANE_BOJE, mjeriKarticu } from '../_shared/pravila.ts';
 
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
@@ -32,7 +32,7 @@ export const UPUTE = [
   '  • which shelf the material goes on — call procitaj_materijale to show their existing shelves (use its id as shelf_id), or take a name for a new shelf (new_shelf);',
   '  • how deep it should be — scope: summary (the key points), standard (a full study script) or detailed (exam preparation). Every scope covers the WHOLE source; only the depth differs.',
   'Build a material from the user\'s source (notes, a PDF they shared in the chat) in this order, one lesson at a time:',
-  '  1. zapocni_nacrt — name the material, give the shelf and scope, and list its lessons, each with its own colour (#rrggbb).',
+  '  1. zapocni_nacrt — name the material, give the shelf and scope, and list its lessons, each with its own colour from this palette: ' + KURIRANE_BOJE.join(', ') + ' (neighbouring lessons get different colours).',
   '  2. napisi_learn — for each lesson write the full study text (Learn) first. Everything else is built from it. Learn is the script the user studies from, not a summary: explain every term and idea of the source, at the depth the scope asks for.',
   '  3. dodaj_kartice — flashcards for that lesson: a term or question, and a short explanation (under ' + KARTICA_SOFT + ' characters is best).',
   '  4. dodaj_pitanja — quiz questions and fill-in-the-blank sentences built from those flashcards; every flashcard needs at least one question (predaj_nacrt refuses a flashcard without one). Every question names its flashcard in "card" (a card_id returned by dodaj_kartice). In a fill-in sentence write each gap as ___ and give one answer per gap, in order.',
@@ -51,7 +51,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.2' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.3' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -488,6 +488,21 @@ function uObliku(x: Record<string, unknown>, put: string): Record<string, unknow
 // pisati, npr. slika ili boja kartice iz Studija). Granice polja = granice dodavanja.
 const djelomicno = (s: Shema): Shema => objekt(Object.assign({ id: ITEM_ID }, s.properties as Record<string, Shema>), ['id']);
 const KARTICA_IZMJENA = djelomicno(KARTICA);
+// K/4 (ADR-031): svaka lekcija dobiva boju iz KURIRANE palete (`KURIRANE_BOJE` ← js/utils.js, ista koju korisnik
+// vidi na zidu) — da se na prvi pogled vidi kojoj lekciji kartica pripada, a AI ne izmišlja nečitljive tonove.
+// Oglašava se kao `enum`, pa AI unaprijed zna izbor; boja izvan nje = `alat_los_ulaz` s mjestom i popisom.
+// Velika slova su ista boja: `maloBoje` ih svodi prije provjere. Studio i dalje bira slobodno (ADR-025) —
+// izmjena koja lekciji ne šalje boju zatečenu boju ne dira.
+const BOJA_LEKCIJE: Shema = { type: 'string', enum: [...KURIRANE_BOJE], description: 'Lesson colour, one of: ' + KURIRANE_BOJE.join(', ') };
+function maloBoje(a: unknown): unknown {
+  const o = a as Record<string, unknown> | null;
+  if (!o || typeof o !== 'object' || Array.isArray(o)) return a;
+  const malo = (v: unknown) => (typeof v === 'string' ? v.toLowerCase() : v);
+  const van: Record<string, unknown> = Object.assign({}, o);
+  if (o.color !== undefined) van.color = malo(o.color);
+  if (Array.isArray(o.lessons)) van.lessons = o.lessons.map((l) => (l && typeof l === 'object' && !Array.isArray(l)) ? Object.assign({}, l, { color: malo((l as Record<string, unknown>).color) }) : l);
+  return van;
+}
 const KVIZ_IZMJENA = djelomicno(KVIZ);
 const DOPUNA_IZMJENA = djelomicno(DOPUNA);
 // ②/3: bez slika i videa u prvom izdanju — samo tekstualni blokovi (plan ②/3).
@@ -523,8 +538,9 @@ export const ALATI: Alat[] = [
       new_shelf: tekst(1, IME_CVORA, 'Name of a NEW shelf; it is created when the material is submitted'),
       scope: { type: 'string', enum: Object.keys(OPSEZI), description: 'How deep: summary · standard · detailed (exam preparation). Ask the user. Every scope covers the whole source.' },
       lessons: { type: 'array', minItems: 1, maxItems: 100, items: objekt({ name: tekst(1, 200),
-        color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['name', 'color']) } },
+        color: BOJA_LEKCIJE }, ['name', 'color']) } },
     ['name', 'repeat_key', 'scope', 'lessons']),
+    pripremi: maloBoje,
     izvedi: async (k, a) => {
       // Točno jedna polica — shema to ne zna izraziti (podskup bez oneOf), a baza bi odbila tek iza poziva.
       if ((a.shelf_id === undefined) === (a.new_shelf === undefined)) odbij('alat_los_ulaz', 'give exactly one of input.shelf_id or input.new_shelf');
@@ -752,7 +768,8 @@ export const ALATI: Alat[] = [
     ime: 'dodaj_lekciju', naslov: 'Add a lesson to a draft', samoCitanje: false,
     opis: 'Adds a new, empty lesson (name and its own colour) at the end of a draft. Returns its lesson_id; then write its Learn text, flashcards and questions as usual.',
     ulaz: objekt({ draft_id: DRAFT_ID, repeat_key: KLJUC, name: tekst(1, 200),
-      color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['draft_id', 'repeat_key', 'name', 'color']),
+      color: BOJA_LEKCIJE }, ['draft_id', 'repeat_key', 'name', 'color']),
+    pripremi: maloBoje,
     izvedi: async (k, a) => {
       // Id lekcije iz ključa: ponovljen poziv nađe istu lekciju i ne doda drugu.
       const lid = idIzKljuca('l', a.repeat_key, 0);
@@ -769,7 +786,8 @@ export const ALATI: Alat[] = [
     ime: 'uredi_lekciju', naslov: 'Rename or recolour a lesson in a draft', samoCitanje: false,
     opis: 'Changes the name and/or the colour of ONE lesson of a draft.',
     ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID, name: tekst(1, 200),
-      color: { type: 'string', pattern: '^#[0-9a-fA-F]{6}$', description: 'Lesson colour as #rrggbb' } }, ['draft_id', 'lesson_id']),
+      color: BOJA_LEKCIJE }, ['draft_id', 'lesson_id']),
+    pripremi: maloBoje,
     izvedi: async (k, a) => {
       if (a.name === undefined && a.color === undefined) odbij('alat_los_ulaz', 'give input.name, input.color or both');
       const d = await izmijeni(k, a.draft_id, (p) => {

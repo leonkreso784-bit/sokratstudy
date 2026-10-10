@@ -940,8 +940,8 @@ function lazniKlijent(redovi, greska) {
     assert.deepStrictEqual([a1.lesson_id, a2.lesson_id, Object.keys(k.nacrti.get(draft_id).payload).length], [a1.lesson_id, a1.lesson_id, 4], 'ponovljeno dodavanje dodalo drugu lekciju');
     assert.deepStrictEqual(lekcijaNacrta(k, draft_id, a1.lesson_id), { name: 'Ioni', icon: 'fa-book', color: '#ef4444', flashcards: [], quiz: [], fillBlanks: [] });
     assert.ok(!(await A.izvediAlat('napisi_learn', k, { draft_id, lesson_id: a1.lesson_id, repeat_key: 'l', blocks: LEARN.blocks })).isError, 'nova lekcija ne prima Learn');
-    await A.izvediAlat('uredi_lekciju', k, { draft_id, lesson_id: 'content', name: 'Atomi i ioni', color: '#0EA5E9' });
-    assert.deepStrictEqual([lekcijaNacrta(k, draft_id).name, lekcijaNacrta(k, draft_id).color, lekcijaNacrta(k, draft_id).flashcards.length], ['Atomi i ioni', '#0ea5e9', 2]);
+    await A.izvediAlat('uredi_lekciju', k, { draft_id, lesson_id: 'content', name: 'Atomi i ioni', color: '#06B6D4' });   // K/4: iz palete
+    assert.deepStrictEqual([lekcijaNacrta(k, draft_id).name, lekcijaNacrta(k, draft_id).color, lekcijaNacrta(k, draft_id).flashcards.length], ['Atomi i ioni', '#06b6d4', 2]);
     assert.deepStrictEqual(greskaIz(await A.izvediAlat('uredi_lekciju', k, { draft_id, lesson_id: 'content' })), [true, 'alat_los_ulaz', 'ispravi']);
     const o1 = izlaz(await A.izvediAlat('obrisi_lekciju', k, { draft_id, lesson_id: 'l2' }));
     const upisa = k.zapis.upisa;
@@ -1115,6 +1115,53 @@ function lazniKlijent(redovi, greska) {
     assert.ok(izlaz(r).message.includes(nova) && !/Proton/.test(izlaz(r).message), 'poruka: ' + izlaz(r).message);
     await A.izvediAlat('dodaj_pitanja', k, { draft_id, lesson_id: 'content', repeat_key: 'pn', quiz: [{ question: 'Naboj neutrona?', options: ['0', '+'], correct: 0, card: nova }] });
     assert.ok(!(await A.izvediAlat('predaj_nacrt', k, { draft_id })).isError, 'izmjena s pitanjem za novu karticu odbijena');
+  });
+
+  // ── ZAVRSNICA K/4 (ADR-031): svaka lekcija dobiva boju iz KURIRANE palete (`KURIRANE_BOJE` ← js/utils.js) ──
+  const BOJE = [...P.KURIRANE_BOJE];
+  const IZVAN = '#123456';
+  await test('K/4 paleta nije prazna i boja izvan nje nije u paleti (inače testovi niže ne mjere ništa)', () => {
+    assert.ok(BOJE.length >= 2 && !BOJE.includes(IZVAN), 'paleta: ' + BOJE.join(','));
+  });
+
+  await test('K/4 zapocni_nacrt: boja izvan palete → odbijeno S MJESTOM i s popisom palete, ništa ne nastaje; velika slova iz palete prolaze', async () => {
+    const k = lazniNacrt();
+    let r = await A.izvediAlat('zapocni_nacrt', k, { name: 'K4', repeat_key: 'k4-1', lessons: [{ name: 'A', color: BOJE[0] }, { name: 'B', color: IZVAN }], ...PO });
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_los_ulaz', 'ispravi'], 'boja izvan palete prošla');
+    assert.ok(/input\.lessons\[1\]\.color/.test(izlaz(r).message) && BOJE.every((b) => izlaz(r).message.includes(b)), 'poruka: ' + izlaz(r).message);
+    assert.strictEqual(k.nacrti.size, 0, 'odbijen početak je ipak stvorio nacrt');
+    r = await A.izvediAlat('zapocni_nacrt', k, { name: 'K4', repeat_key: 'k4-2', lessons: [{ name: 'A', color: BOJE[1].toUpperCase() }], ...PO });
+    assert.ok(!r.isError, 'boja iz palete velikim slovima odbijena: ' + r.content[0].text);
+    assert.strictEqual(k.nacrti.get(izlaz(r).draft_id).payload.l1.color, BOJE[1]);
+  });
+
+  await test('K/4 dodaj_lekciju i uredi_lekciju: isto pravilo; preimenovanje BEZ boje ne dira zatečenu boju iz Studija', async () => {
+    const k = lazniNacrt(); const { draft_id } = await izmjena(k, 'k4-izm');
+    lekcijaNacrta(k, draft_id).color = '#0ea5e9';   // korisnik u Studiju bira slobodno (ADR-025)
+    assert.deepStrictEqual(greskaIz(await A.izvediAlat('dodaj_lekciju', k, { draft_id, repeat_key: 'k4-l', name: 'X', color: IZVAN })), [true, 'alat_los_ulaz', 'ispravi']);
+    assert.deepStrictEqual(greskaIz(await A.izvediAlat('uredi_lekciju', k, { draft_id, lesson_id: 'content', color: IZVAN })), [true, 'alat_los_ulaz', 'ispravi']);
+    assert.ok(!(await A.izvediAlat('uredi_lekciju', k, { draft_id, lesson_id: 'content', name: 'Samo ime' })).isError);
+    assert.deepStrictEqual([lekcijaNacrta(k, draft_id).name, lekcijaNacrta(k, draft_id).color], ['Samo ime', '#0ea5e9'], 'preimenovanje promijenilo korisnikovu boju');
+    const nl = izlaz(await A.izvediAlat('dodaj_lekciju', k, { draft_id, repeat_key: 'k4-l2', name: 'Y', color: BOJE[2].toUpperCase() }));
+    assert.strictEqual(lekcijaNacrta(k, draft_id, nl.lesson_id).color, BOJE[2]);
+  });
+
+  await test('K/4 svako polje boje lekcije u ulazima alata oglašava TOČNO paletu (prebrojano iz ALATI)', () => {
+    const polja = [];
+    const tra = (s, put) => {
+      if (!s || typeof s !== 'object') return;
+      if (s.properties && s.properties.color && s.properties.name) polja.push({ put, s: s.properties.color });
+      for (const [kk, v] of Object.entries(s)) if (v && typeof v === 'object') tra(v, put + '.' + kk);
+    };
+    A.ALATI.forEach((a) => tra(a.ulaz, a.ime));
+    console.log('      (polja boje lekcije: ' + polja.length + ' — ' + polja.map((x) => x.put.split('.')[0]).join(', ') + ')');
+    assert.ok(polja.length >= 3, 'očekivani zapocni_nacrt, dodaj_lekciju i uredi_lekciju, nađeno ' + polja.length);
+    for (const { put, s } of polja) assert.deepStrictEqual(s.enum, BOJE, put + '.color nije paleta');
+  });
+
+  await test('K/4 upute: korak 1 nudi boje iz palete', () => {
+    const korak1 = (Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE)).split('\n').find((r) => /^\s*1\. zapocni_nacrt/.test(r)) || '';
+    assert.ok(BOJE.every((b) => korak1.includes(b)), 'korak 1: ' + korak1.slice(0, 200));
   });
 
   await test('K/3 upute: korak 4 kaže da SVAKA kartica treba bar jedno pitanje', () => {

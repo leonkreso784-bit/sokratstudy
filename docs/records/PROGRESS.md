@@ -5,6 +5,18 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/4: boja lekcije iz kurirane palete (kod ✅, STAGING ✅)
+
+- **Što:** jedna shema boje (`BOJA_LEKCIJE`, `enum` = `KURIRANE_BOJE`) za `zapocni_nacrt`, `dodaj_lekciju` i `uredi_lekciju` —
+  AI izbor vidi unaprijed, boja izvan palete = `alat_los_ulaz` s mjestom (`input.lessons[1].color`) i popisom palete. `maloBoje`
+  (kroz `pripremi` iz K/2) svodi velika slova prije provjere. Upute (korak 1) nabrajaju paletu iz izvora. Studio i dalje bira
+  slobodno (ADR-025): preimenovanje bez boje zatečenu boju ne dira. Poslužitelj `0.5.3`.
+- **Brana:** `mcp-alati` 66/0 — 5 novih (4 crvena na starom kodu; peti je osigurač da paleta nije prazna); stari test bojio je
+  lekciju s `#0EA5E9` (izvan palete) → `#06B6D4`. **Obrnute provjere 6/6** (bez `enum` · dio palete · `zapocni_nacrt` bez
+  svođenja · lekcije bez svođenja · boja upisana i kad je nema · upute bez palete). `preflight` zelen · `test:responsive` 822/0 (132 preskočeno).
+- **✅ STAGING (`mcp` `0.5.3`):** `mcp:alati` **65/0** uz blok ⑪ (+3: sva 3 oglašena polja boje = paleta · boja izvan palete
+  odbijena · nijedan nacrt nije nastao); uživi scenarij ⑧ s `#0EA5E9` prebačen na paletu.
+
 ## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/3: svaka kartica daje bar jedno pitanje (kod ✅, STAGING ✅)
 
 - **Što:** `predaj_nacrt` čita nacrt i odbija predaju (`alat_kartica_bez_pitanja`, vrsta `ispravi`) ako neka kartica nema ni
