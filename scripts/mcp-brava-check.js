@@ -67,7 +67,7 @@ const ULOGA = 'mcp_klijent';
  * Podiže se SVJESNO, uz novu provjeru; spuštanje bez razloga znači da je nešto tiho otpalo.
  */
 // 41 → 45 (②/1, 29.09.): mrtav redak otvorenih funkcija + tri pomoćnika nacrta u ZABRANJENI_RPC.
-const OCEKIVANO_PROVJERA = 56;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika · +1 (②/4.3′): `_nacrt_u_materijal` · +3 (②/4b): tri pomoćnika izmjene
+const OCEKIVANO_PROVJERA = 57;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj · +1 (②/1b F4): jedan potpis po otvorenom imenu · +4 (②/4.1): prihvat, odbacivanje, dva pomoćnika · +1 (②/4.3′): `_nacrt_u_materijal` · +3 (②/4b): tri pomoćnika izmjene · +1 (K/5): `_nacrt_upis`
 
 /**
  * `PUT /auth/v1/user` — ŠTO POSTAVKA „traži trenutnu lozinku" ZATVARA, A ŠTO NE (①/2b, 21.09.).
@@ -233,6 +233,8 @@ const ZABRANJENI_RPC = {
   _nacrt_zivi: { p_status: 'predan', p_updated: '2026-01-01T00:00:00Z' },
   _nacrt_pozivatelj: {},
   _nacrt_moj: { p_id: NULA },
+  // K/5: brojač učestalosti — izravan poziv bi AI-ju dao da sam troši (ili pogađa) kvotu mimo upisa.
+  _nacrt_upis: {},
   // Strogi profil sadržaja (②/0a) — zovu ga `mcp_upisi_nacrt` i `publish_node` iznutra; shemu čita
   // samo `service_role` (živi drift u `ugc:sadrzaj`). AI ih izravno ne zove.
   _ugc_shema: {},

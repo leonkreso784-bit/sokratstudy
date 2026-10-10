@@ -53,7 +53,7 @@ izmjena postojećeg ②/4b, prozor „Spoji svoj AI" ②/5.1): [archive/MCP.md](
 | **K/2** duljina ✅ (09.10., lokalno) | 501 znak odbija s mjestom; 201–500 prolazi uz upozorenje AI-ju (bivši ③/2) | 500 prolazi, 501 pada |
 | **K/3** pitanje po kartici ✅ (10.10., lokalno) | predaja pada ako kartica nema ni kviz ni dopunu (bivši ③/3) | unit + e2e |
 | **K/4** boja ✅ (10.10., lokalno) | svaka lekcija ima boju iz kurirane palete (bivši ③/4) | unit |
-| **K/5** učestalost | 60 upisa/min, 1 000/dan po korisniku i po `client_id`, u bazi (bivši ④/1) | 61. upis danas prolazi |
+| **K/5** učestalost ✅ (10.10., STAGING) | 60 upisa/min, 1 000/dan, u bazi — **zbroj po korisniku** preko svih konektora, `client_id` u svakom retku brojača (Leon, anketa 10.10.; bivši ④/1) | 61. upis danas prolazi |
 | **K/6** paginacija i kvota | ≤ 500 stavki uz `skraceno`, ≤ 2 000 čvorova po korisniku (bivši ④/2) | N12; 2 001. čvor prolazi |
 | **K/7** veličina i vrijeme | objava ≤ 1 MB · `statement_timeout` za `mcp_klijent` · odgovor alata ≤ 1 MB (bivši ④/3) | N13, N16 |
 | **K/8** gašenje i opoziv | blokirani `client_id` i opozvan pristanak zaustavljaju upis odmah (bivši ④/4) | I8 |

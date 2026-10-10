@@ -151,7 +151,7 @@ poslužitelja, N5) i svaka ima obrnutu provjeru.
 
 | cigla | posao | crveno na starom kodu |
 |---|---|---|
-| **④/1** učestalost | brojač u bazi po korisniku **i** po `client_id`: **60 upisa/min, 1 000/dan**; prekoračenje = imenovan kod koji alat prevodi u „pokušaj za N s" (N9) | 61. upis u minuti danas 200 → poslije odbijen; 60. prolazi |
+| **④/1** učestalost ✅ = ZAVRSNICA K/5 (10.10., STAGING) | brojač u bazi po korisniku **i** po `client_id`: **60 upisa/min, 1 000/dan**; prekoračenje = imenovan kod koji alat prevodi u „pokušaj za N s" (N9). Izvedeno kao **zbroj po korisniku** (Claude svakim spajanjem dobiva nov `client_id`), `client_id` u svakom retku | 61. upis u minuti danas 200 → poslije odbijen; 60. prolazi |
 | **④/2** paginacija i kvota | `procitaj_materijale`: izričit raspon, **najviše 500 stavki** + `skraceno: true` i ukupan broj · `create_node`: **najviše 2 000** živih čvorova po korisniku | 1 200 polica danas → AI vidi 1 000 bez znaka (N12) · 2 001. čvor danas prolazi |
 | **④/3** veličina i vrijeme | objava ≤ 1 MB (= ②/0b) · `mcp_klijent`: `statement_timeout = 5s` · odgovor alata ≤ 1 MB | objava 5 MB danas 200 (N13) · `pg_roles` bez postavke (N16) |
 | **④/4** gašenje jednog konektora + opoziv | tablica blokiranih `client_id`-eva: hook ne izdaje token, a `_nacrt_pozivatelj()` odbija **odmah** (i živu propusnicu) · ista provjera gleda postoji li još korisnikov pristanak → opoziv zaustavlja **upis** odmah, čitanje do isteka | blokiran klijent i opozvan pristanak danas pišu do 3600 s (I8) |

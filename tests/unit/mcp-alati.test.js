@@ -175,6 +175,47 @@ function lazniKlijent(redovi, greska) {
     assert.strictEqual(A.prevediOdbijanje(null).vrsta, 'kvar');
   });
 
+  // ── ZAVRSNICA K/5 (N11): učestalost upisa — 60 u minuti, 1 000 u 24 h, zbroj po korisniku ──
+  // Baza imenuje prekoračenje i kaže za koliko sekundi se otvara; AI mora dobiti BROJ, ne samo „kasnije".
+  await test('K/5 minutna granica → „ponovno" s brojem sekundi iz baze', () => {
+    const m = A.prevediOdbijanje({ message: 'nacrt_ucestalost_min: najviše 60 upisa u minuti — pokušaj za 37 s' });
+    assert.strictEqual(m.kod, 'nacrt_ucestalost_min'); assert.strictEqual(m.vrsta, 'ponovno');
+    assert.ok(/\b37 s\b/.test(m.poruka) && /wait/i.test(m.poruka), m.poruka);
+  });
+  await test('K/5 dnevna granica → „korisnik" s vremenom u satima ili minutama (zaokruženo NAVIŠE)', () => {
+    const d = A.prevediOdbijanje({ message: 'nacrt_ucestalost_dan: najviše 1000 upisa u 24 h — pokušaj za 7300 s' });
+    assert.strictEqual(d.kod, 'nacrt_ucestalost_dan'); assert.strictEqual(d.vrsta, 'korisnik');
+    assert.ok(/\b3 h\b/.test(d.poruka) && /tell the user/i.test(d.poruka), d.poruka);
+    const kratko = A.prevediOdbijanje({ message: 'nacrt_ucestalost_dan: najviše 1000 upisa u 24 h — pokušaj za 541 s' });
+    assert.ok(/\b10 min\b/.test(kratko.poruka), kratko.poruka);
+  });
+
+  // Granica vrijedi samo ako je broji SVAKI put upisa. Popis RPC-ova i podjela pišu/čitaju IZVODE se iz
+  // `f6-nacrt.sql` (grant za `mcp_klijent` + tijelo funkcije), ne pišu se rukom — nov RPC koji piše, a ne
+  // broji, obara ovo; nula pronađenih također.
+  await test('K/5 svaki RPC nacrta koji PIŠE broji se (`_nacrt_upis`), nijedan koji samo čita', () => {
+    const sql = fs.readFileSync(path.join(KORIJEN, 'supabase', 'f6-nacrt.sql'), 'utf8');
+    const tijela = {};
+    for (const m of sql.matchAll(/create or replace function public\.(mcp_[a-z_]+)\([^)]*\)[\s\S]*?\$\$([\s\S]*?)\$\$/g)) tijela[m[1]] = m[2];
+    const grant = [];   // isti oblik kao RPC_IZ_SQL niže: petlja čije tijelo granta `mcp_klijent`
+    for (const m of sql.matchAll(/foreach\s+\w+\s+in\s+array\s+array\[([\s\S]*?)\]\s*loop([\s\S]*?)end loop/gi)) {
+      if (/to mcp_klijent/.test(m[2])) for (const x of m[1].matchAll(/'(mcp_[a-z_]+)\(/g)) grant.push(x[1]);
+    }
+    const pise = (t) => /\b(insert\s+into|update\s+public\.|delete\s+from|publish_node|rename_node)\b/i.test(t);
+    const broji = (t) => /public\._nacrt_upis\(\)/.test(t);
+    const pisu = grant.filter((f) => tijela[f] && pise(tijela[f]));
+    const citaju = grant.filter((f) => tijela[f] && !pise(tijela[f]));
+    console.log('      (pišu: ' + pisu.join(', ') + ' · čitaju: ' + citaju.join(', ') + ')');
+    assert.ok(grant.length >= 9 && grant.every((f) => tijela[f]), 'grant/tijela nisu izvučeni: ' + grant.join(', '));
+    assert.ok(pisu.length >= 6 && citaju.length >= 3, 'podjela izvučena premalo: ' + pisu.length + '/' + citaju.length);
+    assert.deepStrictEqual({ neBroje: pisu.filter((f) => !broji(tijela[f])), citanjeBroji: citaju.filter((f) => broji(tijela[f])) },
+      { neBroje: [], citanjeBroji: [] });
+  });
+  await test('K/5 upute: vrsta „ponovno" kaže da se čeka koliko poruka kaže', () => {
+    const red = (Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE)).split('\n').find((r) => /ponovno =/.test(r)) || '';
+    assert.ok(/ponovno = [^·]*wait/i.test(red), red.slice(0, 200));
+  });
+
   // ══ ②/2 ALATI CJEVOVODA ═══════════════════════════════════════════════════════════════════════
   // Mjeri se nad LAŽNOM bazom koja drži istu semantiku kao `f6-nacrt.sql` (ključ ponavljanja =
   // isti nacrt, verzija = sukob, predan = zamrznut). Prava baza je e2e: `npm run mcp:alati`.

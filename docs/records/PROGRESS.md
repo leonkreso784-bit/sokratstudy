@@ -5,6 +5,27 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/5: učestalost upisa u bazi (kod ✅, STAGING ✅)
+
+- **Anketa (Leon):** granica je **zbroj po korisniku** preko svih konektora (izmjereno: Claude za istog korisnika
+  registrira nov `client_id` pri svakom spajanju, 16 na stagingu → granica po klijentu bila bi zaobilaziva), `client_id`
+  u svakom retku; dnevna granica = vrsta `korisnik`.
+- **Što:** `f6-nacrt.sql` § K/5 — tablica `mcp_upisi` (redak po upisu, nikome grantana) + `_nacrt_upis()`: brava po
+  korisniku, klizni prozor 60 s / 24 h, sama briše retke starije od dana. Šest RPC-ova koji pišu zove nju umjesto
+  `_nacrt_pozivatelj()`; tri koja čitaju ne. Prekoračenje = `PT429` (HTTP 429 i mimo poslužitelja) s „pokušaj za N s".
+  Alat `0.5.4`: `nacrt_ucestalost_min` / ponovno („Wait N s"), `nacrt_ucestalost_dan` / korisnik (h/min, navište);
+  upute: „ponovno" = pričekaj koliko poruka kaže. ⚠️ Broji se samo USPJEŠAN upis (odbijen poništi i svoj redak) —
+  svjesna granica, upisana u SQL i MCP_SECURITY N11.
+- **Brana:** unit `mcp-alati` 70/0 — 4 nova, **sva crvena na starom kodu**; podjela piše/čita izvodi se iz granta i
+  tijela u SQL-u (6/3). **Obrnute unit 8/8.** Uživo `mcp:alati` blok ⑫ (+11, osnovica 75): na staroj bazi **9 od 11
+  crveno** (61. upis HTTP 204); poslije 76/0. **Obrnute SQL 3/3** (Leon lijepio): bez brave → usporedno prošlo 61 ·
+  `>` umjesto `>=` → 5 crvenih · brojanje po klijentu → 30 + 31 prošlo. Staging vraćen, tijela 7 funkcija md5 == datoteka.
+- **Granica oborila vlastitu branu:** `mcp:predaja` ③ (4 × 8 usporednih predaja) prešao je 60/min na istom korisniku →
+  krugovi dobili vlastitog korisnika (bez iznimke za testove). Rezerva `mcp:alati` A: najgušćih 60 s = 27.
+  `mcp:brava` +1 (`_nacrt_upis` zabranjen tokenu, 403; osnovica 57). `preflight` zelen · `test:responsive` 822/0 (132 preskočeno).
+- **✅ STAGING:** SQL (Leon, cijela `f6-nacrt.sql`) · `mcp` v18 `0.5.4` · `check:functions` 6/6 · `mcp:alati` 76/0 ·
+  `mcp:brava` 58/0 · `mcp:nacrt` 56/0 · `mcp:prihvat` 35/0 · `mcp:predaja` 34/0 · `mcp:izmjena` 42/0 · `mcp:probe` 9/0.
+
 ## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/4: boja lekcije iz kurirane palete (kod ✅, STAGING ✅)
 
 - **Što:** jedna shema boje (`BOJA_LEKCIJE`, `enum` = `KURIRANE_BOJE`) za `zapocni_nacrt`, `dodaj_lekciju` i `uredi_lekciju` —

@@ -47,11 +47,11 @@ export const UPUTE = [
   '  3. change the draft: izmijeni_stavke and obrisi_stavke (items by id — procitaj_nacrt with draft_id and lesson_id shows the ids), napisi_learn (replaces the whole Learn text of a lesson), dodaj_kartice, dodaj_pitanja, dodaj_lekciju, uredi_lekciju, obrisi_lekciju, preimenuj_materijal. Change only what the user asked for.',
   '  4. predaj_nacrt — writes all changes into the material at once; the previous version stays in its history. If the user changed the material in Sokrat meanwhile, nothing is written: tell them, and start again from step 1 if they still want the change.',
   'vrati_izmjenu undoes your last edit of a material, only when the user asks for it.',
-  'If a tool returns an error, its "kind" says what to do: ispravi = fix exactly what the message says and call again · ponovno = read the draft again and retry · korisnik = ask the user · stop = do not repeat this call · kvar = temporary failure, try once more.',
+  'If a tool returns an error, its "kind" says what to do: ispravi = fix exactly what the message says and call again · ponovno = wait as long as the message says (if it says), read the draft again and retry · korisnik = ask the user · stop = do not repeat this call · kvar = temporary failure, try once more.',
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.3' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.4' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -158,17 +158,30 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   izmjena_polica: { vrsta: 'ispravi', poruka: 'An edit stays where the material is. Call predaj_nacrt again without shelf_id or new_shelf.' },
   materijal_ne_postoji: { vrsta: 'korisnik', poruka: 'The user has no study material with that id (it may have been deleted). Call procitaj_materijale and ask the user which material they mean.' },
   izmjena_sukob: { vrsta: 'korisnik', poruka: 'The user changed this material after you read it, so your edit was NOT saved and their work is untouched. Tell the user, read the material again, and start a new edit if they still want it.' },
-  izmjena_nema: { vrsta: 'stop', poruka: 'This material has no AI edit that could be undone.' }
+  izmjena_nema: { vrsta: 'stop', poruka: 'This material has no AI edit that could be undone.' },
+  // ZAVRSNICA K/5 (N11): učestalost upisa, zbroj po korisniku. Broj sekundi dodaje `prevediOdbijanje` iz poruke baze.
+  nacrt_ucestalost_min: { vrsta: 'ponovno', poruka: 'Too many changes in one minute (at most 60 per minute for this user, across all connected AIs).' },
+  nacrt_ucestalost_dan: { vrsta: 'korisnik', poruka: 'This user reached the limit of 1000 changes in 24 hours.' }
 };
 
+/** „pokušaj za N s" iz poruke baze (K/5) → AI-ju čitljivo vrijeme; minutna u sekundama, dnevna u min/h (navište). */
+function kadPonovno(kod: string, tekst: string): string {
+  const s = Number((tekst.match(/za (\d+) s/) || [])[1]);
+  if (kod === 'nacrt_ucestalost_min') return s > 0 ? ' Wait ' + s + ' s, then call the same tool again.' : ' Wait a minute, then call the same tool again.';
+  const kad = !(s > 0) ? 'later today' : s < 3600 ? 'in about ' + Math.ceil(s / 60) + ' min' : 'in about ' + Math.ceil(s / 3600) + ' h';
+  return ' Writing opens again ' + kad + '. Tell the user; the draft stays saved (7 days), and you can continue then.';
+}
+
 /** Greška iz supabase-js (`{ message }`) → `{ kod, vrsta, poruka }`. Razlog se zadržava samo za
- *  `sadrzaj_neispravan` (govori o korisnikovom vlastitom sadržaju i AI ga mora znati da ispravi). */
+ *  `sadrzaj_neispravan` (govori o korisnikovom vlastitom sadržaju i AI ga mora znati da ispravi);
+ *  za granicu učestalosti (K/5) zadržava se samo BROJ sekundi. */
 export function prevediOdbijanje(greska: { message?: string } | null | undefined): { kod: string; vrsta: VrstaOdbijanja; poruka: string } {
   const tekst = String((greska && greska.message) || '');
   const kod = (tekst.match(/^([a-z_]+)(?::|$)/) || [])[1] || '';
   const znano = kod ? ODBIJANJA[kod] : undefined;
   if (!znano) return { kod: '', vrsta: 'kvar', poruka: 'Sokrat could not complete this request. Try once more; if it fails again, tell the user.' };
-  const razlog = kod === 'sadrzaj_neispravan' ? ' ' + tekst.slice(kod.length + 1).trim().slice(0, 300) : '';
+  const razlog = kod === 'sadrzaj_neispravan' ? ' ' + tekst.slice(kod.length + 1).trim().slice(0, 300)
+    : kod.startsWith('nacrt_ucestalost_') ? kadPonovno(kod, tekst) : '';
   return { kod, vrsta: znano.vrsta, poruka: znano.poruka + razlog };
 }
 

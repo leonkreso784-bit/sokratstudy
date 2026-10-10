@@ -20,6 +20,10 @@
 //      nacrtu (živo netaknuto) → predaja upiše jednom (+ redak povijesti s client_id-em) → vrati (ponovljeno
 //      isto, oglašen kao razoran) → korisnik spremi poslije kopije = sukob, njegov rad bajt-isti.
 //      Semantiku baze do kraja mjeri `mcp:izmjena`; ovdje se mjeri da je ALATI doista voze.
+//   ⑨–⑪ ZAVRSNICA K/2–K/4: duljina kartice · (K/3 uz predaju) · boja lekcije iz palete
+//   ⑫ K/5 učestalost u BAZI: 60 prolazi, 61. u minuti = 429 s „pokušaj za N s" · dva konektora dijele granicu ·
+//      61 usporedno → točno 60 · 1 001. u 24 h odbijen · prijevod kroz alat (ponovno / korisnik) · čitanje se ne broji.
+//      Svaki scenarij ima SVJEŽEG korisnika; mjerač ispisuje rezervu korisnika A (najgušćih 60 s).
 //
 // Adresa: `MCP_ALATI_URL` ili `<STAGING>/functions/v1/mcp`.
 // Ishod: exit 1 = alati ne drže · exit 0 + SKIP = nema STAGING_* / SERVICE u `.env`.
@@ -35,7 +39,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 64;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪
+const OCEKIVANO_PROVJERA = 75;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪ · +11 (K/5): blok ⑫
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -418,6 +422,99 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   odbijenKao('boja izvan palete → zapocni_nacrt alat_los_ulaz / ispravi', await alat(t, 'zapocni_nacrt', { name: 'Boja (test)', repeat_key: 'razgovor-5:boja',
     new_shelf: 'Boje', scope: 'summary', lessons: [{ name: 'A', color: '#123456' }] }), 'alat_los_ulaz', 'ispravi');
   record('… i nijedan nacrt nije nastao', (await brojNacrta(A.id)) === nacrtaPrije, 'nacrta ' + nacrtaPrije + '→' + (await brojNacrta(A.id)));
+
+  // ⑫ ZAVRSNICA K/5 (N11) — učestalost upisa U BAZI: 60 u minuti, 1 000 u 24 h, ZBROJ po korisniku
+  // (svi njegovi konektori zajedno — Claude svakim spajanjem registrira nov client_id, pa granica po
+  // klijentu ne bi vrijedila ništa). Upisi idu IZRAVNO na RPC (isti token zove bazu i mimo poslužitelja,
+  // N5), a prijevod se mjeri kroz alat. Svaki scenarij ima SVJEŽEG korisnika — ne troši kvotu ostalih.
+  console.log('\n— ⑫ učestalost upisa (K/5) —');
+  const zaS = (r) => Number((String((r.json && r.json.message) || r.tekst).match(/za (\d+) s/) || [])[1]);
+  const odbijenUcestalost = (r, kod) => r.status === 429 && !!r.json && String(r.json.message || '').startsWith(kod + ':');
+  const upisaUBazi = async (uid) => {
+    const r = await http('/rest/v1/mcp_upisi?owner_id=eq.' + uid + '&select=client_id,kad', { headers: svcHeaders() });
+    const j = await r.json();
+    return Array.isArray(j) ? j : null;
+  };
+  const novi = async (prefiks, n) => {
+    const k = await noviKorisnik({ prefiks });
+    const jwt = await prijava(k.email, k.password);
+    const tok = [];
+    for (let i = 0; i < n; i++) tok.push(await oauthToken(jwt, 'Sokrat ucestalost ' + (i + 1) + ' (test)'));
+    return { k, tok };
+  };
+  const zapocni = (token, kljuc) => rpc(token, 'mcp_zapocni_nacrt', { p_name: 'Učestalost', p_kljuc: kljuc, p_polica: null, p_nova_polica: 'K5', p_opseg: 'sazeto' });
+  const preimenuj = (token, id, ime) => rpc(token, 'mcp_preimenuj_nacrt', { p_id: id, p_name: ime });
+  const uspio = (r) => r.status >= 200 && r.status < 300;
+
+  // (a) 60 uzastopnih prolazi, 61. odbijen s brojem sekundi; ništa nije upisano ni prebrojano viška
+  const B = await novi('mcp-k5-min', 1);
+  const tB = B.tok[0].token;
+  const t0 = Date.now();
+  const zB = await zapocni(tB, 'k5-min');
+  const bId = zB.json;
+  const ishodi = [zB];
+  for (let i = 2; i <= 60; i++) ishodi.push(await preimenuj(tB, bId, 'U' + i));
+  const r61 = await preimenuj(tB, bId, 'U61');
+  const trajalo = Date.now() - t0;
+  record('60 upisa u minuti prolazi (1 početak + 59 preimenovanja, za ' + Math.round(trajalo / 1000) + ' s)',
+    ishodi.length === 60 && ishodi.every(uspio) && trajalo < 55000,
+    'neuspjelih ' + ishodi.filter((r) => !uspio(r)).length + (trajalo < 55000 ? '' : ' ← preko 55 s, mjerenje ne vrijedi'));
+  record('61. upis odbijen: HTTP 429, nacrt_ucestalost_min, „pokušaj za N s" uz 1 ≤ N ≤ 60',
+    odbijenUcestalost(r61, 'nacrt_ucestalost_min') && zaS(r61) >= 1 && zaS(r61) <= 60, 'HTTP ' + r61.status + ' ' + r61.tekst);
+  const bRedaka = await upisaUBazi(B.k.id);
+  const bNacrt = await nacrtUBazi(bId);
+  record('… brojač u bazi = 60 i 61. ime NIJE upisano (odbijen upis ne piše i ne troši kvotu)',
+    !!bRedaka && bRedaka.length === 60 && !!bNacrt && bNacrt.name === 'U60',
+    'redaka ' + (bRedaka ? bRedaka.length : 'nema tablice') + ' · ime ' + (bNacrt && bNacrt.name));
+  const aB = await alat(tB, 'preimenuj_materijal', { draft_id: bId, name: 'Kroz alat' });
+  record('kroz alat: nacrt_ucestalost_min / ponovno, poruka nosi sekunde (HTTP 200 + isError)',
+    aB.status === 200 && aB.isError && !!aB.tijelo && aB.tijelo.error === 'nacrt_ucestalost_min' && aB.tijelo.kind === 'ponovno' &&
+      /\b\d+ s\b/.test(aB.tijelo.message || ''), opis(aB));
+  const cB = await alat(tB, 'procitaj_nacrt', { draft_id: bId });
+  record('čitanje se NE broji: procitaj_nacrt i dalje radi na granici', cB.status === 200 && !cB.isError, opis(cB));
+
+  // (b) dva konektora ISTOG korisnika dijele jednu granicu
+  const C = await novi('mcp-k5-dva', 2);
+  const [c1, c2] = C.tok;
+  const zC = await zapocni(c1.token, 'k5-dva');
+  let cOk = uspio(zC) ? 1 : 0;
+  for (let i = 2; i <= 60; i++) if (uspio(await preimenuj(i % 2 ? c1.token : c2.token, zC.json, 'C' + i))) cOk++;
+  const c61 = await preimenuj(c2.token, zC.json, 'C61');
+  record('dva konektora istog korisnika: 30 + 30 prolazi, 61. (s drugog konektora) odbijen',
+    cOk === 60 && odbijenUcestalost(c61, 'nacrt_ucestalost_min'), 'prošlo ' + cOk + ' · 61.: HTTP ' + c61.status + ' ' + c61.tekst);
+  const poKlijentu = ((await upisaUBazi(C.k.id)) || []).reduce((o, x) => (o[x.client_id] = (o[x.client_id] || 0) + 1, o), {});
+  record('… svaki redak brojača nosi client_id svog konektora (30 + 30)',
+    poKlijentu[c1.client_id] === 30 && poKlijentu[c2.client_id] === 30, JSON.stringify(Object.values(poKlijentu)));
+
+  // (c) usporedno: 1 početak + 60 istodobnih upisa → prolazi TOČNO 60 (brava po korisniku drži brojanje)
+  const D = await novi('mcp-k5-usporedno', 1);
+  const tD = D.tok[0].token;
+  const zD = await zapocni(tD, 'k5-usporedno');
+  const usporedno = await Promise.all(Array.from({ length: 60 }, (_, i) => preimenuj(tD, zD.json, 'D' + i)));
+  const dOk = (uspio(zD) ? 1 : 0) + usporedno.filter(uspio).length;
+  const dOdb = usporedno.filter((r) => odbijenUcestalost(r, 'nacrt_ucestalost_min')).length;
+  record('61 upis usporedno (1 + 60 istodobnih) → prošlo točno 60, odbijen točno 1 (429)', dOk === 60 && dOdb === 1,
+    'prošlo ' + dOk + ' · odbijeno ' + dOdb + ' · ostalo ' + usporedno.filter((r) => !uspio(r) && !odbijenUcestalost(r, 'nacrt_ucestalost_min')).map((r) => r.status).join(','));
+
+  // (d) 24 h: 999 starijih upisa (upisano service ključem, 2 h staro) → 1 000. prolazi, 1 001. odbijen
+  const E = await novi('mcp-k5-dan', 1);
+  const tE = E.tok[0].token;
+  const prije2h = new Date(Date.now() - 2 * 3600 * 1000).toISOString();
+  const sij = await http('/rest/v1/mcp_upisi', { method: 'POST', headers: Object.assign(svcHeaders(), { Prefer: 'return=minimal' }),
+    body: JSON.stringify(Array.from({ length: 999 }, () => ({ owner_id: E.k.id, client_id: E.tok[0].client_id, kad: prije2h }))) });
+  const zE = await zapocni(tE, 'k5-dan');
+  record('1 000. upis u 24 h prolazi (999 upisanih prije 2 h + ovaj)', sij.ok && uspio(zE), 'sijanje HTTP ' + sij.status + ' · upis HTTP ' + zE.status);
+  const e1001 = await preimenuj(tE, zE.json, 'E1001');
+  record('1 001. odbijen: HTTP 429, nacrt_ucestalost_dan, otvara se kad najstariji ispadne (~22 h)',
+    odbijenUcestalost(e1001, 'nacrt_ucestalost_dan') && zaS(e1001) > 21 * 3600 && zaS(e1001) <= 22 * 3600 + 60, 'HTTP ' + e1001.status + ' ' + e1001.tekst);
+  odbijenKao('kroz alat: nacrt_ucestalost_dan / korisnik', await alat(tE, 'preimenuj_materijal', { draft_id: zE.json, name: 'Kroz alat' }),
+    'nacrt_ucestalost_dan', 'korisnik');
+
+  // Mjerač ispisuje i rezervu ostalih blokova: najgušćih 60 s korisnika A u CIJELOJ ovoj vrtnji.
+  const aRedaka = ((await upisaUBazi(A.id)) || []).map((x) => Date.parse(x.kad)).sort((x, y) => x - y);
+  let vrh = 0;
+  for (let i = 0, j = 0; i < aRedaka.length; i++) { while (aRedaka[i] - aRedaka[j] >= 60000) j++; vrh = Math.max(vrh, i - j + 1); }
+  console.log('   ℹ️  korisnik A (blokovi ①–⑪): ' + aRedaka.length + ' upisa, najgušćih 60 s = ' + vrh + ' od 60');
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
     touched === OCEKIVANO_PROVJERA ? '' : 'izvedeno ' + touched +

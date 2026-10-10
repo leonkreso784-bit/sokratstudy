@@ -118,6 +118,70 @@ end;
 $$;
 revoke execute on function public._nacrt_pozivatelj() from public, anon, authenticated;
 
+-- ─── K/5 UČESTALOST UPISA (ZAVRSNICA K/5, N11; Leon, ankete 29.09. i 10.10.) ────────────────────
+-- 60 upisa u 60 s i 1 000 u 24 h, ZBROJ po korisniku: svi njegovi konektori zajedno. Claude svakim
+-- spajanjem registrira nov `client_id` (staging 10.10.: 16 klijenata za jednog korisnika), pa bi granica
+-- po klijentu bila zaobilaziva novim spajanjem; `client_id` se ipak bilježi u svaki redak (tko troši, K/8).
+-- Živi U BAZI jer isti token RPC zove i mimo MCP poslužitelja (N5). Svaki RPC koji PIŠE zove
+-- `_nacrt_upis()` umjesto `_nacrt_pozivatelj()`; čitanja se ne broje (unit `mcp-alati` podjelu izvodi
+-- iz ove datoteke). Prekoračenje = `PT429` → PostgREST vraća HTTP 429 i onome tko zove mimo poslužitelja.
+--
+-- KLIZNI prozor (redak po upisu), ne „ova minuta na satu": fiksni prozor pusti do 120 upisa preko
+-- granice minute, a „pokušaj za N s" ne bi bio točan. Tablica se čisti sama: svaki upis briše korisnikove
+-- retke starije od dana (najviše ~1 000 po korisniku), bez pg_cron.
+--
+-- ⚠️ SVJESNA GRANICA: broji se samo USPJEŠAN upis. Odbijen upis (bilo kojim imenom, pa i ovom granicom)
+--    poništi cijelu transakciju, a s njom i svoj redak — zato 61. upis ne troši kvotu, ali ni poplava
+--    neispravnih upisa ne. Unutar jedne transakcije Postgres drukčije ne može; cijenu takvog poziva
+--    ograničava K/7 (`statement_timeout`). Rizik N11 bio je 60 MB ZAPISANOG u minuti — to je zatvoreno.
+create table if not exists public.mcp_upisi (
+  id        bigint generated always as identity primary key,
+  owner_id  uuid not null references auth.users(id) on delete cascade,
+  client_id text not null check (client_id <> ''),
+  kad        timestamptz not null default now()
+);
+create index if not exists mcp_upisi_owner_kad_idx on public.mcp_upisi (owner_id, kad);
+alter table public.mcp_upisi enable row level security;
+-- Nikome ništa (ni SELECT): piše ga i čita samo `_nacrt_upis` kao vlasnik funkcije.
+revoke all on public.mcp_upisi from public, anon, authenticated, mcp_klijent;
+
+create or replace function public._nacrt_upis()
+returns text
+language plpgsql
+volatile
+set search_path = public, pg_temp
+as $$
+declare v_client text; v_uid uuid; v_min int; v_dan int; v_od timestamptz;
+begin
+  v_client := public._nacrt_pozivatelj();
+  v_uid := auth.uid();
+  -- Brava po korisniku do kraja transakcije: bez nje dva usporedna upisa oba izbroje 59 i oba prođu.
+  perform pg_advisory_xact_lock(hashtextextended('mcp_upisi:' || v_uid::text, 0));
+  delete from public.mcp_upisi where owner_id = v_uid and kad <= now() - interval '1 day';
+  select count(*), count(*) filter (where kad > now() - interval '60 seconds')
+    into v_dan, v_min
+    from public.mcp_upisi where owner_id = v_uid;
+  -- N = kad ispadne toliko najstarijih da ostane jedan manje od granice.
+  if v_dan >= 1000 then
+    select kad into v_od from public.mcp_upisi where owner_id = v_uid
+     order by kad offset v_dan - 1000 limit 1;
+    raise exception 'nacrt_ucestalost_dan: najviše 1000 upisa u 24 h — pokušaj za % s',
+      greatest(1, ceil(extract(epoch from v_od + interval '1 day' - now())))::int
+      using errcode = 'PT429';
+  end if;
+  if v_min >= 60 then
+    select kad into v_od from public.mcp_upisi where owner_id = v_uid and kad > now() - interval '60 seconds'
+     order by kad offset v_min - 60 limit 1;
+    raise exception 'nacrt_ucestalost_min: najviše 60 upisa u minuti — pokušaj za % s',
+      greatest(1, ceil(extract(epoch from v_od + interval '60 seconds' - now())))::int
+      using errcode = 'PT429';
+  end if;
+  insert into public.mcp_upisi (owner_id, client_id) values (v_uid, v_client);
+  return v_client;
+end;
+$$;
+revoke execute on function public._nacrt_upis() from public, anon, authenticated;
+
 -- Vlastiti ŽIVI nacrt, zaključan za ovu transakciju. Tuđi, istekao i nepostojeći → ista greška.
 create or replace function public._nacrt_moj(p_id uuid)
 returns public.node_drafts
@@ -189,7 +253,7 @@ set search_path = public, pg_temp
 as $$
 declare v_client text; v_uid uuid; v_izrada int; v_ukupno int; v_id uuid; v_nova text;
 begin
-  v_client := public._nacrt_pozivatelj();
+  v_client := public._nacrt_upis();   -- K/5: upis se broji
   v_uid := auth.uid();
   if p_kljuc is null or p_kljuc !~ '^[A-Za-z0-9_.:-]{1,100}$' then
     raise exception 'nacrt_los_kljuc: ključ ponavljanja je obavezan (1–100 znakova A-Z a-z 0-9 _ . : -)' using errcode = '22023';
@@ -257,7 +321,7 @@ set search_path = public, pg_temp
 as $$
 declare d public.node_drafts; v_nova int;
 begin
-  perform public._nacrt_pozivatelj();
+  perform public._nacrt_upis();   -- K/5: upis se broji
   d := public._nacrt_moj(p_id);
   if d.status <> 'u_izradi' then
     raise exception 'nacrt_predan: predan nacrt se više ne mijenja' using errcode = '55000';
@@ -371,7 +435,7 @@ set search_path = public, pg_temp
 as $$
 declare d public.node_drafts; v_nova text; v_polica uuid; v_node uuid;
 begin
-  perform public._nacrt_pozivatelj();
+  perform public._nacrt_upis();   -- K/5: upis se broji
   v_nova := nullif(btrim(coalesce(p_nova_polica, '')), '');
   if (p_polica is not null and v_nova is not null) or char_length(coalesce(v_nova, '')) > 200 then
     raise exception 'nacrt_polica: najviše jedna polica — postojeća ili nova po imenu (do 200 znakova)' using errcode = '22023';
@@ -563,7 +627,7 @@ as $$
 declare v_client text; v_uid uuid; n public.nodes; c public.node_content; v_id uuid; v_izvor uuid;
         v_izrada int; v_ukupno int;
 begin
-  v_client := public._nacrt_pozivatelj();
+  v_client := public._nacrt_upis();   -- K/5: upis se broji
   v_uid := auth.uid();
   if p_kljuc is null or p_kljuc !~ '^[A-Za-z0-9_.:-]{1,100}$' then
     raise exception 'nacrt_los_kljuc: ključ ponavljanja je obavezan (1–100 znakova A-Z a-z 0-9 _ . : -)' using errcode = '22023';
@@ -616,7 +680,7 @@ set search_path = public, pg_temp
 as $$
 declare d public.node_drafts; v_ime text := btrim(coalesce(p_name, ''));
 begin
-  perform public._nacrt_pozivatelj();
+  perform public._nacrt_upis();   -- K/5: upis se broji
   d := public._nacrt_moj(p_id);
   if d.status <> 'u_izradi' then
     raise exception 'nacrt_predan: predan nacrt se više ne mijenja' using errcode = '55000';
@@ -668,7 +732,7 @@ set search_path = public, pg_temp
 as $$
 declare n public.nodes; v_cur bigint; r public.node_content_versions; v_nova bigint;
 begin
-  perform public._nacrt_pozivatelj();
+  perform public._nacrt_upis();   -- K/5: upis se broji
   n := public._materijal_moj(p_id);
   select version into v_cur from public.node_content where node_id = n.id for update;
   select * into r from public.node_content_versions

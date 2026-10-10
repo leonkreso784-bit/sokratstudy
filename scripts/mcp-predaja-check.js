@@ -123,6 +123,12 @@ const predaj = (t, id, polica, nova) => rpc(t, 'mcp_predaj_nacrt', { p_id: id, p
   const jB = await prijava(B.email, B.password);
   const aA = (await oauthToken(jA, 'Sokrat predaja (test)')).token;
   const aB = (await oauthToken(jB, 'Sokrat predaja (test)')).token;
+  // K/5: usporedni krugovi ③ su 40 upisa u pola minute — vlastiti korisnik, da A ostane ispod granice
+  // učestalosti (60/min) za ostale blokove. Granica nema iznimku za testove.
+  const U = await noviKorisnik({ prefiks: 'mcp-predaja-usporedno' });
+  const jU = await prijava(U.email, U.password);
+  const aU = (await oauthToken(jU, 'Sokrat predaja usporedno (test)')).token;
+  const policaU = (await rpc(jU, 'create_node', { p_parent: null, p_kind: 'folder', p_name: 'Usporedno' })).json;
 
   // Obična sesija: A-ova polica, A-ov postojeći materijal sa sadržajem, B-ova polica.
   const policaA = (await rpc(jA, 'create_node', { p_parent: null, p_kind: 'folder', p_name: 'Biologija' })).json;
@@ -171,15 +177,15 @@ const predaj = (t, id, polica, nova) => rpc(t, 'mcp_predaj_nacrt', { p_id: id, p
   const krugovi = [];
   for (let krug = 1; krug <= KRUGOVA; krug++) {
     const ime = 'Usporedno ' + krug;
-    const nU = await nacrt(aA, ime, valjanTocno(600000), { p_polica: policaA });
+    const nU = await nacrt(aU, ime, valjanTocno(600000), { p_polica: policaU });
     const ishodi = await Promise.all(Array.from({ length: USPOREDNO }, async () => {
-      const t0 = Date.now(); const r = await predaj(aA, nU); return { r, t0, t1: Date.now() };
+      const t0 = Date.now(); const r = await predaj(aU, nU); return { r, t0, t1: Date.now() };
     }));
     const preklop = ishodi.filter((a, i) => ishodi.some((b, j) => j !== i && a.t0 < b.t1 && b.t0 < a.t1)).length;
     const ids = new Set(ishodi.map((x) => idIz(x.r)));
     krugovi.push({ prosli: ishodi.filter((x) => idIz(x.r)).length, istih: ids.size === 1 && !ids.has(null), preklop,
-      materijala: (await cvorovi(A.id)).filter((c) => c.name === ime).length });
-    await pocisti(jA, [nU]);
+      materijala: (await cvorovi(U.id)).filter((c) => c.name === ime).length });
+    await pocisti(jU, [nU]);
   }
   await pocisti(jA, [n1]);
   record(KRUGOVA + ' kruga × ' + USPOREDNO + ' usporednih predaja istog nacrta → SVE vrate isti materijal',

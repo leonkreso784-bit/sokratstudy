@@ -106,6 +106,12 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
 - **Boja lekcije iz palete (K/4, `0.5.3`):** `zapocni_nacrt`, `dodaj_lekciju` i `uredi_lekciju` oglašavaju boju kao `enum` =
   `KURIRANE_BOJE` (iz `js/utils.js` kroz `_shared/pravila.ts`); izvan nje = `alat_los_ulaz` s mjestom i popisom. Velika
   slova se svode prije provjere (`maloBoje`). Studio i dalje bira slobodno (ADR-025): izmjena bez boje zatečenu ne dira.
+- **Učestalost upisa (K/5, `0.5.4`):** u BAZI (`f6-nacrt.sql` § K/5): 60 upisa u kliznih 60 s i 1 000 u 24 h, **zbroj po
+  korisniku** preko svih njegovih konektora (Claude svakim spajanjem registrira nov `client_id`); svaki redak brojača
+  `mcp_upisi` nosi `client_id`. Broji ga `_nacrt_upis()` u šest RPC-ova koji pišu, pod bravom po korisniku; čitanja
+  se ne broje. Prekoračenje = `PT429` (HTTP 429 i mimo poslužitelja) s „pokušaj za N s"; alat prevodi minutnu u
+  `nacrt_ucestalost_min` / ponovno („Wait N s"), dnevnu u `nacrt_ucestalost_dan` / korisnik (za koliko h/min).
+  ⚠️ Broji se samo USPJEŠAN upis — odbijen upis poništi i svoj redak (svjesna granica, cijenu poziva ograničava K/7).
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

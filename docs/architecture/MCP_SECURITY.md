@@ -42,7 +42,7 @@
 | I9 | administratorov konektor nema ni jedno pravo više od običnog | hook: svaki token s `client_id` = `mcp_klijent`, neovisno o ulozi korisnika | ✅ izmjereno S-B (11 tvrdnji, s kontrolom) |
 | I10 | tok prijave: PKCE obavezan, redirect točan, kod jednokratan i vezan na klijent, potpis tokena provjeren | Supabase Auth + PostgREST | ✅ izmjereno S-B (9 tvrdnji) |
 | I11 | brisanje računa briše **sve** korisnikovo: gradivo, verzije, nacrte, OAuth veze, sesije, slike — i nikad ne ostavi poluobrisan račun | kaskade FK-ova + `delete-account` | ✅ N10 zatvoren (H1: `on delete set null` na PROD-u + T5 s objavom, 22/22); brisanje izmjereno čisto (S-C) |
-| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | ❌ izmjereno S-C — N11, N12, N13 → plan ④ |
+| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | 🟡 učestalost ✅ STAGING 10.10. (K/5: 60/min i 1 000/dan po korisniku, 61. odbijen, obrnute 3/3 u SQL-u; broji se samo uspješan upis) · veličina i broj ❌ — N12, N13 → K/6, K/7 |
 | I13 | ono što AI ne vidi (odgovor skraćen) AI **zna** da ne vidi | alat vraća oznaku skraćenosti | ❌ **N12** |
 
 ## 4 · Nalazi
@@ -207,7 +207,13 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
 - **Popravak (Leon, anketa 29.09.: zasebno, odmah, izvan F6):** `on delete set null` (isti obrazac kao
   `content_versions.edited_by`) + T5 objavi materijal prije brisanja (danas crveno, poslije zeleno).
 
-### N11 · nema granice učestalosti; DCR raste bez čišćenja — 🟠 SREDNJI
+### N11 · nema granice učestalosti; DCR raste bez čišćenja — 🟠 SREDNJI (učestalost ✅ STAGING 10.10., K/5)
+
+- **K/5 (10.10.):** granica u bazi, zbroj po korisniku (svi konektori zajedno): 61. upis u minuti i 1 001. u 24 h →
+  HTTP 429 imenovan, alat prevodi u „pričekaj N s" / „reci korisniku". Brana `mcp:alati` ⑫ (usporedni upisi, dva
+  konektora, dnevna); obrnute SQL 3/3 (bez brave · `>` umjesto `>=` · brojanje po klijentu). **Ostaje:** broji se samo
+  USPJEŠAN upis (odbijen poništi i svoj redak) → cijenu neispravnih poziva ograničava K/7 · DCR čišćenje ④/5 ·
+  gašenje jednog konektora K/8.
 
 - **Izmjereno:** 60 uzastopnih upisa nacrta (p50 52 ms, ~16/s) · 60 **usporednih** (svih 60 × 200, p50 554 ms) ·
   30 usporednih MCP poziva s odgovorom od 267 KB (svih 30 × 200, p50 3,8 s). Nijedan 429 ni na jednom sloju.
@@ -314,7 +320,7 @@ poslužitelju **i** u bazi; nijedan alat ne vraća ništa što korisnik nije sam
 | paralelne izmjene | **S-B:** 8 usporednih početaka → točno 3 (kvota drži) · usporedni upisi → **N7** | polazna verzija (②/1b); Prihvati uz izmjenu materijala (②/4) |
 | ponovljeni zahtjevi | **S-B:** ponovljena predaja odbijena · ponovljen početak → **N8** | ključ ponavljanja (②/1b); dvostruki Prihvati (②/4) |
 | zlonamjeran sadržaj | N1, N2 lokalno · **S-B: 8 oblika primljeno u nacrt (N5)** | validator (②/0a); pregled (②/4); pravi AI sa zlonamjernim PDF-om (⑤) |
-| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | granice ④/1–④/3 s obrnutom provjerom (61. upis u minuti odbijen) |
+| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | učestalost ✅ K/5 (`mcp:alati` ⑫: 61. upis u minuti i 1 001. u 24 h odbijeni, usporedno točno 60); veličina i broj K/6–K/7 |
 | brisanje računa | **S-C:** puca uz objavljen materijal (N10); kad prođe, nula redaka u 9 tablica + Storage | T5 s objavljenim materijalom i nacrtom od AI-ja (hitni popravak) |
 
 Mjerne skripte dionica A i B nisu u repozitoriju (scratchpad sesije); u ②/0 i ②/1b postaju brane u
