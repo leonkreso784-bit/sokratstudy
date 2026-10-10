@@ -35,7 +35,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 53;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧
+const OCEKIVANO_PROVJERA = 58;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -359,6 +359,33 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const zv5 = await zivo();
   record('… materijal = korisnikov sadržaj i verzija, bajt-isto', JSON.stringify(zv5) === JSON.stringify(zv4) &&
     JSON.stringify(kanon(zv5.payload)) === JSON.stringify(kanon(korisnikov)), 'verzija ' + zv4.version + '→' + zv5.version);
+
+  // ⑨ ZAVRSNICA K/2 — duljina kartice po mjeri preglednika, UŽIVO (pragovi iz izvora, ne rukom).
+  console.log('\n— ⑨ duljina kartice (K/2) —');
+  const PR = await import(pathToFileURL(path.join(__dirname, '..', 'supabase', 'functions', '_shared', 'pravila.ts')).href);
+  const HARD = PR.KARTICA_HARD; const SOFT = PR.KARTICA_SOFT;
+  const oglas = (((lst.json && lst.json.result && lst.json.result.tools) || []).find((x) => x.name === 'dodaj_kartice') || {}).inputSchema || {};
+  const oglasMax = (((((oglas.properties || {}).cards || {}).items || {}).properties || {}).answer || {}).maxLength;
+  record('oglašeni strop kartice (tools/list) == HARD iz js/card-limits.js', oglasMax === HARD, 'oglas ' + oglasMax + ' · izvor ' + HARD);
+  const zd = await alat(t, 'zapocni_izmjenu', { material_id: mat, repeat_key: 'razgovor-4:duljina' });
+  const dId = zd.tijelo && zd.tijelo.draft_id;
+  const dl = await alat(t, 'dodaj_lekciju', { draft_id: dId, repeat_key: 'razgovor-4:lekcija', name: 'Duljina', color: '#10b981' });
+  const dlId = dl.tijelo && dl.tijelo.lesson_id;
+  await alat(t, 'napisi_learn', { draft_id: dId, lesson_id: dlId, repeat_key: 'razgovor-4:learn', blocks: [{ type: 'paragraph', text: 'Learn za duljinu.' }] });
+  const dk = await alat(t, 'dodaj_kartice', { draft_id: dId, lesson_id: dlId, repeat_key: 'razgovor-4:k1',
+    cards: [{ question: '  Pojam  ', answer: '  ' + 'x'.repeat(HARD) + '  ' }, { question: 'Drugi', answer: 'y'.repeat(SOFT + 1) }] });
+  const dd = dId ? await nacrtUBazi(dId) : null;
+  const dkk = (dd && dd.payload[dlId] && dd.payload[dlId].flashcards) || [];
+  record('HARD znakova uz razmake PROLAZI i u bazi stoji PODREZANO', !dk.isError && dkk.length === 2 && dkk[0].question === 'Pojam' && dkk[0].answer.length === HARD,
+    dk.isError ? opis(dk) : 'u bazi: ' + dkk.map((c) => c.answer.length).join(', '));
+  const upoz = (dk.tijelo && dk.tijelo.warnings) || [];
+  record('iznad SOFT prolazi uz upozorenje AI-ju s mjestom i duljinom (obje kartice: HARD i SOFT+1)',
+    JSON.stringify(upoz.map((w) => [w.at, w.length])) === JSON.stringify([['input.cards[0].answer', HARD], ['input.cards[1].answer', SOFT + 1]]),
+    JSON.stringify(upoz).slice(0, 160));
+  const dk2 = await alat(t, 'dodaj_kartice', { draft_id: dId, lesson_id: dlId, repeat_key: 'razgovor-4:k2', cards: [{ question: 'Q', answer: 'z'.repeat(HARD + 1) }] });
+  odbijenKao('HARD+1 → alat_los_ulaz / ispravi', dk2, 'alat_los_ulaz', 'ispravi');
+  record('… odbijanje imenuje mjesto, a nacrt je netaknut', /input\.cards\[0\]\.answer/.test((dk2.tijelo && dk2.tijelo.message) || '') &&
+    ((await nacrtUBazi(dId)) || {}).verzija === (dd && dd.verzija), opis(dk2));
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
     touched === OCEKIVANO_PROVJERA ? '' : 'izvedeno ' + touched +

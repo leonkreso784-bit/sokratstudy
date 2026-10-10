@@ -50,7 +50,7 @@ izmjena postojećeg ②/4b, prozor „Spoji svoj AI" ②/5.1): [archive/MCP.md](
 |---|---|---|
 | **K/0** ✅ (09.10., lokalno) | **②/5.2 animirani tutorial se vraća** (Leon 03.10.: *izbaciti*) — revert commita `5b3f4c3`, prozor iz 5.1 ostaje | unit `connect-ai` se vraća na stanje 5.1 |
 | **K/1** jedan izvor ✅ (09.10., lokalno) | `card-limits.js`, paleta i `normFill` u Deno-u, s drift-branom (bivši ③/1) | drift-brana pada na razlici |
-| **K/2** duljina | 501 znak odbija s mjestom; 201–500 prolazi uz upozorenje AI-ju (bivši ③/2) | 500 prolazi, 501 pada |
+| **K/2** duljina ✅ (09.10., lokalno) | 501 znak odbija s mjestom; 201–500 prolazi uz upozorenje AI-ju (bivši ③/2) | 500 prolazi, 501 pada |
 | **K/3** pitanje po kartici | predaja pada ako kartica nema ni kviz ni dopunu (bivši ③/3) | unit + e2e |
 | **K/4** boja | svaka lekcija ima boju iz kurirane palete (bivši ③/4) | unit |
 | **K/5** učestalost | 60 upisa/min, 1 000/dan po korisniku i po `client_id`, u bazi (bivši ④/1) | 61. upis danas prolazi |

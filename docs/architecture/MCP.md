@@ -95,6 +95,10 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   (zadnja ne) · `preimenuj_materijal` · `vrati_izmjenu` (jedini oglašen kao razoran: mijenja živo bez nacrta). Nacrt
   izmjene se dalje mijenja i alatima gradnje. Stavka bez id-a pri kopiji dobije stalan id izveden iz mjesta. Alati
   po id-u nemaju `repeat_key`: ponovljeni daju isto stanje (brisanje već obrisanog nije greška).
+- **Pravila iz preglednika (ZAVRSNICA K/1–K/2, `0.5.1`):** prag kartice, paleta i `normFill` dolaze iz
+  `_shared/pravila.ts`, generiranog iz `js/` (`npm run build:pravila`). Pitanje i odgovor kartice se **podrežu prije
+  provjere** i takvi spremaju (kao editor); iznad HARD = odbijanje s mjestom (`input.cards[i].answer`), SOFT+1…HARD =
+  upisano uz `warnings` (mjesto, duljina, kamo s detaljem) u odgovoru `dodaj_kartice` i `izmijeni_stavke`.
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

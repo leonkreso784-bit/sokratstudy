@@ -5,6 +5,21 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/2: duljina kartice po mjeri preglednika (kod ✅, lokalno)
+
+- **Što:** `dodaj_kartice` i `izmijeni_stavke` podrežu pitanje i odgovor kartice PRIJE provjere ulaza i takve ih spremaju
+  (novi `pripremi` u `Alat`, zove ga `izvediAlat`) — mjera je `mjeriKarticu` iz `_shared/pravila.ts` = `SokratCardLimits.measure`.
+  Iznad HARD: odbijanje s mjestom (`input.cards[i].answer`, kao i dosad); SOFT+1…HARD: upisano + `warnings` (mjesto,
+  duljina, „skrati, detalj u explanation ili Learn"). Pitanje od samih razmaka sad je prazno i odbija se. Zatvara rub iz K/1
+  (HARD + razmak padao je na sirovoj duljini i u bazi). Poslužitelj `0.5.1`.
+- **Brana:** `mcp-alati` 58/0 (4 nova K/2 testa, rubovi iz `pravila.ts`, ne rukom); **3 od 4 crvena na starom kodu**
+  (četvrti — 501 s mjestom — vrijedio je i prije, čuva da ne nestane); **obrnute provjere 8/8** (bez podrezivanja u svakom
+  alatu · `izvediAlat` ignorira `pripremi` · upozorenje nikad / već na SOFT · alat ne vraća upozorenja · podrezuje samo pitanje) · `preflight` zelen · `test:responsive` 822/0 (132 preskočeno).
+- **✅ STAGING (`mcp` `0.5.1`, s K/1):** `npm run deploy:function -- mcp --project staging` (paket nosi `_shared/pravila.ts`) ·
+  `check:functions` 6/6 · `mcp:probe` 9/0 · `mcp:alati` **59/0** uz nov blok ⑨ (+5: oglašeni strop == HARD iz izvora · HARD uz
+  razmake prolazi i u bazi stoji podrezano · upozorenja s mjestom · HARD+1 odbijen s mjestom, nacrt netaknut). ⑨ nije pokrenut
+  protiv starog deploya — crveno na starom kodu dokazuje unit.
+
 ## 2026-10-09 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/1: pravila sadržaja imaju jedan izvor (kod ✅, lokalno)
 
 - **Što:** MCP poslužitelj više ne nosi svoje brojke. `scripts/build-pravila.js` (kalup `build:ugc-sql`) iz preglednikovih

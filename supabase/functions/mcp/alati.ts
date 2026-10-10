@@ -21,7 +21,7 @@
 //   izvora (`npm run build:pravila`) — ovdje se nijedna od tih brojki ne piše rukom
 //   (`tests/unit/pravila-izvor.test.js`).
 
-import { KARTICA_HARD, KARTICA_SOFT } from '../_shared/pravila.ts';
+import { KARTICA_HARD, KARTICA_SOFT, mjeriKarticu } from '../_shared/pravila.ts';
 
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
@@ -51,7 +51,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.0' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.1' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -405,6 +405,30 @@ const ITEM_ID: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', descr
 // Granice po pozivu: jedna lekcija, ne cijeli materijal (plan ②/2) — i znatno ispod granica baze.
 const KARTICA = objekt({ question: tekst(1, KARTICA_HARD, 'Term or question'), answer: tekst(1, KARTICA_HARD, 'Short explanation (under ' + KARTICA_SOFT + ' characters is best)'),
   explanation: tekst(1, 2000, 'Optional longer detail') }, ['question', 'answer']);
+// K/2: pitanje i odgovor kartice mjere se kao u pregledniku (`mjeriKarticu` = `SokratCardLimits.measure`):
+// PODREZANO, jer editor sprema `value.trim()`. Zato se podrežu PRIJE provjere ulaza i takvi spremaju — inače
+// bi AI-jevih HARD znakova uz razmak palo na sirovoj duljini (i u bazi, čija shema mjeri sirovo), a ekran ih
+// pustio. Iznad HARD odbija `provjeriUlaz` s mjestom; SOFT+1…HARD prolazi uz upozorenje AI-ju.
+const POLJA_KARTICE = ['question', 'answer'];
+function podreziKartice(a: unknown): unknown {
+  const o = a as Record<string, unknown> | null;
+  if (!o || typeof o !== 'object' || !Array.isArray(o.cards)) return a;
+  return Object.assign({}, o, { cards: o.cards.map((c) => (c && typeof c === 'object' && !Array.isArray(c))
+    ? Object.fromEntries(Object.entries(c).map(([k, v]) => [k, POLJA_KARTICE.includes(k) && typeof v === 'string' ? v.trim() : v]))
+    : c) });
+}
+function upozorenjaKartica(cards: Record<string, unknown>[] | undefined): { warnings?: { at: string; length: number; message: string }[] } {
+  const w: { at: string; length: number; message: string }[] = [];
+  (cards || []).forEach((c, i) => {
+    for (const polje of POLJA_KARTICE) {
+      if (c[polje] === undefined) continue;
+      const m = mjeriKarticu(c[polje]);
+      if (m.state === 'warn') w.push({ at: 'input.cards[' + i + '].' + polje, length: m.len,
+        message: 'Saved, but longer than ' + KARTICA_SOFT + ' characters (limit ' + KARTICA_HARD + '). A flashcard is short: shorten it and move the detail to explanation or to the Learn text.' });
+    }
+  });
+  return w.length ? { warnings: w } : {};
+}
 // ②/3: svako pitanje nosi `card` = id kartice iz koje je nastalo (ADR-031: pitanja iz kartica).
 const CARD: Shema = { type: 'string', pattern: '^[A-Za-z0-9_-]{1,64}$', description: 'card_id (from dodaj_kartice) of the flashcard this question is built from' };
 const KVIZ = objekt({ question: tekst(1, 1000), options: { type: 'array', minItems: 2, maxItems: 6, items: tekst(1, 500) },
@@ -444,6 +468,8 @@ export interface Alat {
   ime: string; naslov: string; opis: string; ulaz: Shema; samoCitanje: boolean;
   /** Mijenja korisnikov ŽIVI materijal izravno, bez nacrta (`vrati_izmjenu`) → klijent smije tražiti potvrdu korisnika. */
   razorno?: boolean;
+  /** Prije provjere ulaza (K/2): npr. podreži polja kartice, da strop mjeri ono što se sprema. */
+  pripremi?: (a: unknown) => unknown;
   izvedi(klijent: Klijent, a: Record<string, any>, okolina?: Okolina): Promise<unknown>;
 }
 
@@ -503,6 +529,7 @@ export const ALATI: Alat[] = [
     opis: 'Step 3. Adds flashcards (term or question → short explanation) to ONE lesson that already has its Learn text. At most 50 per call.',
     ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID, repeat_key: KLJUC,
       cards: { type: 'array', minItems: 1, maxItems: 50, items: KARTICA } }, ['draft_id', 'lesson_id', 'repeat_key', 'cards']),
+    pripremi: podreziKartice,
     izvedi: async (k, a) => {
       const nove = (a.cards as Record<string, unknown>[]).map((c, i) => Object.assign({ id: idIzKljuca('k', a.lesson_id + '/' + a.repeat_key, i) }, c));
       const d = await izmijeni(k, a.draft_id, (p) => {
@@ -512,7 +539,7 @@ export const ALATI: Alat[] = [
         return p;
       });
       return Object.assign({ draft_id: d.id, lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id),
-        cards: nove.map((c) => ({ card_id: c.id, question: c.question })) }, opsegZa(d));
+        cards: nove.map((c) => ({ card_id: c.id, question: c.question })) }, opsegZa(d), upozorenjaKartica(a.cards));
     }
   },
   {
@@ -621,6 +648,7 @@ export const ALATI: Alat[] = [
     ulaz: objekt({ draft_id: DRAFT_ID, lesson_id: LESSON_ID,
       cards: { type: 'array', maxItems: 50, items: KARTICA_IZMJENA }, quiz: { type: 'array', maxItems: 50, items: KVIZ_IZMJENA },
       fill_blanks: { type: 'array', maxItems: 50, items: DOPUNA_IZMJENA } }, ['draft_id', 'lesson_id']),
+    pripremi: podreziKartice,
     izvedi: async (k, a) => {
       const skupine: ['flashcards' | 'quiz' | 'fillBlanks', string, Record<string, unknown>[]][] =
         [['flashcards', 'cards', a.cards || []], ['quiz', 'quiz', a.quiz || []], ['fillBlanks', 'fill_blanks', a.fill_blanks || []]];
@@ -650,7 +678,7 @@ export const ALATI: Alat[] = [
         for (const x of pitanja) if (!kartice.has(x.card)) odbij('alat_kartica_ne_postoji', 'Unknown: ' + x.card);
         return p;
       });
-      return { draft_id: d.id, lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id) };
+      return Object.assign({ draft_id: d.id, lesson: sazetakLekcija(d.payload).find((x) => x.lesson_id === a.lesson_id) }, upozorenjaKartica(a.cards));
     }
   },
   {
@@ -759,9 +787,10 @@ export async function izvediAlat(ime: string, klijent: Klijent, args: unknown, o
   const alat = ALATI.find((a) => a.ime === ime);
   try {
     if (!alat) throw new Odbijanje({ kod: 'alat_los_ulaz', vrsta: 'ispravi', poruka: 'Unknown tool ' + ime });
-    const g = provjeriUlaz(alat.ulaz, args === undefined ? {} : args);
+    const ulaz = alat.pripremi ? alat.pripremi(args) : args;
+    const g = provjeriUlaz(alat.ulaz, ulaz === undefined ? {} : ulaz);
     if (g) odbij('alat_los_ulaz', g);
-    const r = await alat.izvedi(klijent, (args || {}) as Record<string, unknown>, okolina);
+    const r = await alat.izvedi(klijent, (ulaz || {}) as Record<string, unknown>, okolina);
     return { content: [{ type: 'text', text: typeof r === 'string' ? r : JSON.stringify(r, null, 2) }] };
   } catch (e) {
     const o = e instanceof Odbijanje ? e : new Odbijanje(prevediOdbijanje(null));

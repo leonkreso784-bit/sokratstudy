@@ -1023,6 +1023,61 @@ function lazniKlijent(redovi, greska) {
     assert.ok(/vrati_izmjenu[^\n]*only when the user asks/i.test(dio), 'vrati_izmjenu bez „samo na korisnikovu riječ"');
   });
 
+  // ── ZAVRSNICA K/2: duljina kartice po ISTOJ mjeri kao preglednik (`_shared/pravila.ts` ← js/card-limits.js) ──
+  // Rubovi se čitaju iz izvora, ne pišu rukom: promijeni li se HARD/SOFT, testovi idu za njim.
+  const P = await import(pathToFileURL(path.join(KORIJEN, 'supabase', 'functions', '_shared', 'pravila.ts')).href);
+  const HARD = P.KARTICA_HARD; const SOFT = P.KARTICA_SOFT;
+  let duljBr = 0;
+  const nacrtSLearnom = async (k) => {
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'Duljina', repeat_key: 'dulj-' + (++duljBr), lessons: LEKCIJE, ...PO }));
+    const lesson_id = z.lessons[0].lesson_id;
+    await A.izvediAlat('napisi_learn', k, { draft_id: z.draft_id, lesson_id, repeat_key: 'l', blocks: LEARN.blocks });
+    return { draft_id: z.draft_id, lesson_id };
+  };
+  const kartica = (k, d) => (lekcijaNacrta(k, d.draft_id, d.lesson_id).flashcards || []);
+
+  await test('K/2 dodaj_kartice: HARD znakova prolazi, HARD+1 se odbija S MJESTOM (koja kartica, koje polje)', async () => {
+    const k = lazniNacrt(); const d = await nacrtSLearnom(k);
+    let r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'a', cards: [{ question: 'Q', answer: 'x'.repeat(HARD) }] }, d));
+    assert.ok(!r.isError, 'točno ' + HARD + ' odbijeno: ' + r.content[0].text);
+    r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'b', cards: [{ question: 'Q', answer: 'kratko' }, { question: 'Q2', answer: 'x'.repeat(HARD + 1) }] }, d));
+    assert.deepStrictEqual(greskaIz(r).slice(0, 2), [true, 'alat_los_ulaz'], HARD + 1 + ' prošlo');
+    assert.ok(/input\.cards\[1\]\.answer/.test(izlaz(r).message), 'odbijanje bez mjesta: ' + izlaz(r).message);
+    assert.strictEqual(kartica(k, d).length, 1, 'odbijen poziv je ipak upisao');
+  });
+
+  await test('K/2 mjeri se PODREZANO (kao editor): HARD znakova uz razmake prolazi i sprema se podrezano; samo razmaci = prazno', async () => {
+    const k = lazniNacrt(); const d = await nacrtSLearnom(k);
+    let r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'a', cards: [{ question: '  Pojam \n', answer: '  ' + 'y'.repeat(HARD) + '  ' }] }, d));
+    assert.ok(!r.isError, 'podrezanih ' + HARD + ' odbijeno: ' + r.content[0].text);
+    assert.deepStrictEqual([kartica(k, d)[0].question, kartica(k, d)[0].answer.length], ['Pojam', HARD], 'spremljeno nepodrezano');
+    r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'b', cards: [{ question: '   ', answer: 'a' }] }, d));
+    assert.deepStrictEqual(greskaIz(r).slice(0, 2), [true, 'alat_los_ulaz'], 'pitanje od samih razmaka prošlo');
+    assert.ok(/input\.cards\[0\]\.question/.test(izlaz(r).message), izlaz(r).message);
+  });
+
+  await test('K/2 SOFT+1…HARD prolazi uz UPOZORENJE AI-ju (mjesto + duljina); do SOFT bez upozorenja', async () => {
+    const k = lazniNacrt(); const d = await nacrtSLearnom(k);
+    let r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'a', cards: [{ question: 'Q', answer: 'z'.repeat(SOFT) }] }, d));
+    assert.ok(!r.isError && izlaz(r).warnings === undefined, 'upozorenje na točno ' + SOFT);
+    r = await A.izvediAlat('dodaj_kartice', k, Object.assign({ repeat_key: 'b', cards: [{ question: 'Q', answer: 'kratko' }, { question: 'w'.repeat(SOFT + 1), answer: 'z'.repeat(HARD) }] }, d));
+    assert.ok(!r.isError, r.content[0].text);
+    const w = izlaz(r).warnings || [];
+    assert.deepStrictEqual(w.map((x) => [x.at, x.length]), [['input.cards[1].question', SOFT + 1], ['input.cards[1].answer', HARD]]);
+    assert.ok(w.every((x) => x.message.includes(String(SOFT)) && /Learn|explanation/.test(x.message)), 'upozorenje ne kaže prag i kamo s detaljem');
+  });
+
+  await test('K/2 izmijeni_stavke: ista mjera — HARD+1 odbija s mjestom, SOFT+1 upozorava, sprema se podrezano', async () => {
+    const k = lazniNacrt(); const { draft_id } = await izmjena(k, 'k2-izm');
+    let r = await A.izvediAlat('izmijeni_stavke', k, { draft_id, lesson_id: 'content', cards: [{ id: 'kc1', answer: 'x'.repeat(HARD + 1) }] });
+    assert.deepStrictEqual(greskaIz(r).slice(0, 2), [true, 'alat_los_ulaz'], HARD + 1 + ' prošlo kroz izmjenu');
+    assert.ok(/input\.cards\[0\]\.answer/.test(izlaz(r).message), izlaz(r).message);
+    r = await A.izvediAlat('izmijeni_stavke', k, { draft_id, lesson_id: 'content', cards: [{ id: 'kc1', answer: ' ' + 'v'.repeat(SOFT + 1) + ' ' }] });
+    assert.ok(!r.isError, r.content[0].text);
+    assert.deepStrictEqual((izlaz(r).warnings || []).map((x) => [x.at, x.length]), [['input.cards[0].answer', SOFT + 1]]);
+    assert.strictEqual(lekcijaNacrta(k, draft_id).flashcards[0].answer, 'v'.repeat(SOFT + 1), 'izmjena spremljena nepodrezano');
+  });
+
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');
   process.exit(pao ? 1 : 0);
 })();
