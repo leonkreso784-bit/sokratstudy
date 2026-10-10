@@ -761,6 +761,7 @@
     'materials.errName': { en: 'Please enter a name.', hr: 'Upiši naziv.' },
     'materials.errKind': { en: 'Unknown item type.', hr: 'Nepoznat tip stavke.' },
     'materials.errReorder': { en: 'The list changed — please try again.', hr: 'Popis se promijenio — pokušaj ponovno.' },
+    'materials.errQuota': { en: 'You have reached the limit of {n} folders and materials. Delete some you no longer need to make room.', hr: 'Granica je {n} polica i materijala i već je dosegnuta. Obriši nešto što ti više ne treba da oslobodiš mjesto.' },
     'materials.errConflict': { en: 'This was edited elsewhere. Reload and try again.', hr: 'Ovo je uređeno drugdje. Osvježi pa pokušaj ponovno.' },
     'materials.errNotStudy': { en: 'Only materials hold content, folders do not.', hr: 'Samo materijali nose sadržaj, police ne.' },
     'materials.errGeneric': { en: 'Something went wrong. Please try again.', hr: 'Nešto je pošlo po zlu. Pokušaj ponovno.' },

@@ -42,8 +42,8 @@
 | I9 | administratorov konektor nema ni jedno pravo više od običnog | hook: svaki token s `client_id` = `mcp_klijent`, neovisno o ulozi korisnika | ✅ izmjereno S-B (11 tvrdnji, s kontrolom) |
 | I10 | tok prijave: PKCE obavezan, redirect točan, kod jednokratan i vezan na klijent, potpis tokena provjeren | Supabase Auth + PostgREST | ✅ izmjereno S-B (9 tvrdnji) |
 | I11 | brisanje računa briše **sve** korisnikovo: gradivo, verzije, nacrte, OAuth veze, sesije, slike — i nikad ne ostavi poluobrisan račun | kaskade FK-ova + `delete-account` | ✅ N10 zatvoren (H1: `on delete set null` na PROD-u + T5 s objavom, 22/22); brisanje izmjereno čisto (S-C) |
-| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | 🟡 učestalost ✅ STAGING 10.10. (K/5: 60/min i 1 000/dan po korisniku, 61. odbijen, obrnute 3/3 u SQL-u; broji se samo uspješan upis) · veličina i broj ❌ — N12, N13 → K/6, K/7 |
-| I13 | ono što AI ne vidi (odgovor skraćen) AI **zna** da ne vidi | alat vraća oznaku skraćenosti | ❌ **N12** |
+| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | 🟡 učestalost ✅ STAGING 10.10. (K/5: 60/min i 1 000/dan po korisniku, 61. odbijen, obrnute 3/3 u SQL-u; broji se samo uspješan upis) · broj ✅ STAGING 10.10. (K/6: 2 000 živih čvorova, okidač; obrnute SQL 4/4) · veličina ❌ — N13 → K/7 |
+| I13 | ono što AI ne vidi (odgovor skraćen) AI **zna** da ne vidi | alat vraća oznaku skraćenosti | ✅ STAGING 10.10. (K/6: najviše 500 stavki, `skraceno` + `sljedeci_offset`; `mcp:alati` ⑬) |
 
 ## 4 · Nalazi
 
@@ -224,8 +224,15 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
   korisnikovim opozivom; postojeća propusnica i tada piše do 3600 s (I8).
 - **Popravak:** plan ④/1 (granica u bazi, po korisniku i po klijentu) · ④/4 (popis blokiranih klijenata) · ④/5 čišćenje.
 
-### N12 · alat tiho reže na 1 000 stavki; broj čvorova neograničen — 🟠 SREDNJI
+### N12 · alat tiho reže na 1 000 stavki; broj čvorova neograničen — 🟠 SREDNJI (✅ STAGING 10.10., K/6)
 
+- **K/6 (10.10.):** `procitaj_materijale` čita u izričitim rasponima, kraj odlučuje `count` (ne kratka stranica), red je
+  `id`; AI dobiva najviše 500 stavki uz `ukupno`, `skraceno`, `sljedeci_offset` i napomenu (I13). Isto čitaju Moji
+  materijali (`loadTree`). **Kvota 2 000 ŽIVIH čvorova po korisniku = okidač na `nodes`** (`f6-nacrt.sql` § K/6, Leon,
+  anketa 10.10.) — hvata `create_node`, `restore_node` (mapa cijela ili ništa), predaju i svaki budući put; broje se
+  samo živi; brava po vlasniku. `node_kvota` → alat „korisnik" (nacrt ostaje), Studio poruka s brojem iz baze.
+  Brana `mcp:alati` ⑬ (12 crvenih na staroj bazi; brava 3 × 100 usporednih, svaki krug točno 10); obrnute unit 22/22,
+  SQL 4/4. **Ostaje:** rast meko obrisanog na disku (N13, ④/5).
 - **Izmjereno:** 1 200 polica → PostgREST vraća **1 000** (`Content-Range 0-999/1200`, `db-max-rows`), a
   `procitaj_materijale` AI-ju kaže 1 000, **bez znaka** da postoji još. Odgovor 267 KB, 0,7 s.
 - `create_node` nema kvotu; `test-admin` na stagingu ima 7 376 čvorova (46 živih).
@@ -320,7 +327,7 @@ poslužitelju **i** u bazi; nijedan alat ne vraća ništa što korisnik nije sam
 | paralelne izmjene | **S-B:** 8 usporednih početaka → točno 3 (kvota drži) · usporedni upisi → **N7** | polazna verzija (②/1b); Prihvati uz izmjenu materijala (②/4) |
 | ponovljeni zahtjevi | **S-B:** ponovljena predaja odbijena · ponovljen početak → **N8** | ključ ponavljanja (②/1b); dvostruki Prihvati (②/4) |
 | zlonamjeran sadržaj | N1, N2 lokalno · **S-B: 8 oblika primljeno u nacrt (N5)** | validator (②/0a); pregled (②/4); pravi AI sa zlonamjernim PDF-om (⑤) |
-| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | učestalost ✅ K/5 (`mcp:alati` ⑫: 61. upis u minuti i 1 001. u 24 h odbijeni, usporedno točno 60); veličina i broj K/6–K/7 |
+| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | učestalost ✅ K/5 (`mcp:alati` ⑫: 61. upis u minuti i 1 001. u 24 h odbijeni, usporedno točno 60); broj ✅ K/6 (`mcp:alati` ⑬: 2 001. odbijen, usporedno točno 10 u 3 kruga, stranice od 500 = sve); veličina K/7 |
 | brisanje računa | **S-C:** puca uz objavljen materijal (N10); kad prođe, nula redaka u 9 tablica + Storage | T5 s objavljenim materijalom i nacrtom od AI-ja (hitni popravak) |
 
 Mjerne skripte dionica A i B nisu u repozitoriju (scratchpad sesije); u ②/0 i ②/1b postaju brane u

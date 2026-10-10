@@ -28,23 +28,34 @@ const test = async (ime, fn) => {
 
 const cvor = (id, parent_id, kind, name, position) => ({ id, parent_id, kind, name, position, updated_at: '2026-09-17T00:00:00Z' });
 
-/** Lažni supabase-js klijent koji pamti što je alat tražio. */
-function lazniKlijent(redovi, greska) {
-  const zapis = {};
+/** Lažni supabase-js klijent koji pamti što je alat tražio. Kao PostgREST: odgovor nikad nije veći od
+ *  `maxRedova` (`db-max-rows`, na Supabaseu 1 000) BEZ OBZIRA na traženi raspon, a `count` je pravi
+ *  ukupan broj samo kad je zatražen (`{ count: 'exact' }`). */
+function lazniKlijent(redovi, greska, maxRedova = 1000) {
+  const zapis = { rasponi: [] };
   return {
     zapis,
     from(t) {
       zapis.tablica = t;
       return {
-        select(s) {
+        select(s, opcije) {
           zapis.stupci = s;
+          zapis.opcije = opcije;
           return {
             is(st, v) {
               zapis.filter = [st, v];
               return {
                 order(st2, o) {
                   zapis.redoslijed = [st2, o];
-                  return Promise.resolve({ data: greska ? null : redovi, error: greska || null });
+                  const poredani = (redovi || []).slice().sort((a, b) => (st2 === 'id' ? (a.id < b.id ? -1 : a.id > b.id ? 1 : 0) : 0));
+                  return {
+                    range(od, doo) {
+                      zapis.rasponi.push([od, doo]);
+                      if (greska) return Promise.resolve({ data: null, error: greska, count: null });
+                      const data = poredani.slice(od, Math.min(doo + 1, od + maxRedova));
+                      return Promise.resolve({ data, error: null, count: opcije && opcije.count === 'exact' ? poredani.length : null });
+                    }
+                  };
                 }
               };
             }
@@ -85,16 +96,80 @@ function lazniKlijent(redovi, greska) {
     assert.strictEqual(s[0].djeca[0].id, 'b');
   });
 
-  await test('alat čita IZRIČITE stupce iz `nodes`, bez obrisanih, redom position', async () => {
+  await test('alat čita IZRIČITE stupce iz `nodes`, bez obrisanih, stabilnim redom (id)', async () => {
     const k = lazniKlijent([cvor('m1', null, 'study', 'X', 0)]);
     const r = await A.procitajMaterijale(k);
     assert.strictEqual(k.zapis.tablica, 'nodes');
     assert.strictEqual(k.zapis.stupci, 'id,parent_id,kind,name,position,updated_at');
     assert.ok(!k.zapis.stupci.includes('*'), 'stupci ne smiju biti *');
     assert.deepStrictEqual(k.zapis.filter, ['deleted_at', null]);
-    assert.deepStrictEqual(k.zapis.redoslijed, ['position', { ascending: true }]);
+    // K/6: `position` se ponavlja među policama → raspon po njemu preskače ili ponavlja retke; `id` je jedinstven.
+    assert.deepStrictEqual(k.zapis.redoslijed, ['id', { ascending: true }]);
     assert.strictEqual(r.materijala, 1);
-    assert.deepStrictEqual(JSON.parse(r.tekst), { materijala: 1, stablo: [{ id: 'm1', vrsta: 'materijal', naziv: 'X' }] });
+    assert.deepStrictEqual(JSON.parse(r.tekst), { ukupno: 1, materijala: 1, od: 0, skraceno: false,
+      stavke: [{ id: 'm1', vrsta: 'materijal', naziv: 'X', polica_id: null }] });
+  });
+
+  // ── ZAVRSNICA K/6 (N12, I13): ono što AI ne vidi, AI ZNA da ne vidi ──
+  // Izmjereno: 1 200 polica → PostgREST vrati 1 000 (`db-max-rows`) i alat kaže 1 000, bez znaka.
+  // Lažni klijent reže kao PostgREST; broj od 2 000 = kvota (živi čvorovi po korisniku, `f6-nacrt.sql` § K/6).
+  const mnogo = (n) => Array.from({ length: n }, (_, i) => cvor('c' + String(i).padStart(5, '0'), null, i % 2 ? 'study' : 'folder', 'N' + i, i));
+  await test('K/6 čita SVE žive čvorove u izričitim rasponima i kad baza reže na 1 000 (N12)', async () => {
+    const k = lazniKlijent(mnogo(2000));
+    const r = await A.procitajMaterijale(k);
+    assert.strictEqual(r.ukupno, 2000, 'alat vidi ' + r.ukupno + ' od 2000');
+    assert.deepStrictEqual(k.zapis.opcije, { count: 'exact' }, 'ukupan broj mora doći iz baze (count), ne iz duljine stranice');
+    assert.ok(k.zapis.rasponi.length >= 2 && k.zapis.rasponi[0][0] === 0, 'rasponi: ' + JSON.stringify(k.zapis.rasponi));
+    assert.strictEqual(JSON.parse(r.tekst).ukupno, 2000);
+  });
+  await test('K/6 i kad baza reže na MANJE od stranice (max-rows 700) — kraj odlučuje count, ne kratka stranica', async () => {
+    const r = await A.procitajMaterijale(lazniKlijent(mnogo(1500), null, 700));
+    assert.strictEqual(r.ukupno, 1500, 'alat vidi ' + r.ukupno + ' od 1500');
+  });
+  await test('K/6 odgovor nosi najviše 500 stavki, `skraceno` i `sljedeci_offset`; stranice zajedno = svi, bez duplikata', async () => {
+    assert.strictEqual(A.STRANICA_ALATA, 500);
+    const vidjeno = [];
+    const skraceno = [];
+    let offset = 0;
+    for (let i = 0; i < 5 && offset !== undefined; i++) {
+      const j = JSON.parse((await A.procitajMaterijale(lazniKlijent(mnogo(2000)), offset)).tekst);
+      assert.ok(j.stavke.length <= 500, 'stranica ima ' + j.stavke.length);
+      assert.strictEqual(j.ukupno, 2000); assert.strictEqual(j.od, offset);
+      vidjeno.push(...j.stavke.map((s) => s.id)); skraceno.push(j.skraceno);
+      if (j.skraceno) assert.ok(/offset/.test(j.napomena || ''), 'skraćen odgovor mora reći kako dalje: ' + j.napomena);
+      offset = j.sljedeci_offset;
+    }
+    assert.deepStrictEqual(skraceno, [true, true, true, false]);
+    assert.strictEqual(new Set(vidjeno).size, 2000, 'različitih: ' + new Set(vidjeno).size);
+    assert.strictEqual(vidjeno.length, 2000, 'ukupno vraćeno: ' + vidjeno.length);
+  });
+  await test('K/6 stavka nosi svoju policu (polica_id + put), redom stabla', async () => {
+    const j = JSON.parse((await A.procitajMaterijale(lazniKlijent([
+      cvor('p1', null, 'folder', 'Biologija', 0), cvor('p2', 'p1', 'folder', 'Stanica', 0),
+      cvor('m1', 'p2', 'study', 'Mitoza', 0), cvor('m0', null, 'study', 'Slobodni', 1)
+    ]))).tekst);
+    assert.deepStrictEqual(j.stavke, [
+      { id: 'p1', vrsta: 'polica', naziv: 'Biologija', polica_id: null },
+      { id: 'p2', vrsta: 'polica', naziv: 'Stanica', polica_id: 'p1', put: 'Biologija' },
+      { id: 'm1', vrsta: 'materijal', naziv: 'Mitoza', polica_id: 'p2', put: 'Biologija / Stanica' },
+      { id: 'm0', vrsta: 'materijal', naziv: 'Slobodni', polica_id: null }
+    ]);
+    assert.strictEqual(j.materijala, 2); assert.strictEqual(j.skraceno, false); assert.ok(!('sljedeci_offset' in j));
+  });
+  await test('K/6 alat oglašava `offset` (cijeli broj ≥ 0), i alat ga predaje dalje', () => {
+    const alat = A.ALATI.find((x) => x.ime === 'procitaj_materijale');
+    assert.deepStrictEqual({ type: alat.ulaz.properties.offset.type, min: alat.ulaz.properties.offset.minimum },
+      { type: 'integer', min: 0 });
+    assert.deepStrictEqual(alat.ulaz.required, []);
+    // Alat sam (ne samo funkcija) mora predati `offset` dalje — inače AI zauvijek dobiva prvu stranicu.
+    return alat.izvedi(lazniKlijent(mnogo(1200)), { offset: 500 }).then((t) => {
+      const j = JSON.parse(t);
+      assert.deepStrictEqual({ od: j.od, prvi: j.stavke[0].id, skraceno: j.skraceno }, { od: 500, prvi: 'c00500', skraceno: true });
+    });
+  });
+  await test('K/6 upute kažu da se skraćen popis nastavlja s `offset`, i navode stranicu iz konstante', () => {
+    const upute = Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE);
+    assert.ok(/skraceno/.test(upute) && /offset/.test(upute) && upute.includes('at most ' + A.STRANICA_ALATA + ' items'), 'upute ne objašnjavaju skraćen popis');
   });
 
   await test('prazan korisnik → jasna rečenica, ne prazan JSON', async () => {
@@ -214,6 +289,36 @@ function lazniKlijent(redovi, greska) {
   await test('K/5 upute: vrsta „ponovno" kaže da se čeka koliko poruka kaže', () => {
     const red = (Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE)).split('\n').find((r) => /ponovno =/.test(r)) || '';
     assert.ok(/ponovno = [^·]*wait/i.test(red), red.slice(0, 200));
+  });
+
+  // ── ZAVRSNICA K/6 (I12): najviše 2 000 ŽIVIH čvorova po korisniku — OKIDAČ na `nodes` (Leon, anketa 10.10.) ──
+  // Okidač, ne kod u `create_node`: čvor rađa i `restore_node` (cijelu mapu odjednom), predaja kroz
+  // `_nacrt_u_materijal`, a uskoro i D/3 kopija — svaki put mora proći istu granicu. Ovo čita SQL; da
+  // granica stvarno drži (brava, rub, vraćanje mape) mjeri uživo `mcp:alati` blok ⑬ i obrnute u SQL-u.
+  const K6 = (fs.readFileSync(path.join(KORIJEN, 'supabase', 'f6-nacrt.sql'), 'utf8').split('-- ─── K/6')[1] || '');
+  const GRANICA_CVOROVA = Number((K6.match(/v_granica\s+constant\s+int\s*:=\s*(\d+)/) || [])[1]);
+  await test('K/6 SQL: okidač na `nodes` za upis I za vraćanje iz smeća, ista funkcija, granica 2 000', () => {
+    assert.ok(K6.length > 0, 'f6-nacrt.sql nema odjeljak „-- ─── K/6"');
+    const okidaci = [...K6.matchAll(/create trigger (\w+)\s+before ([\s\S]*?) on public\.nodes\s+for each row([\s\S]*?)execute function public\.(\w+)\(\)/g)]
+      .map((m) => ({ ime: m[1], dogadaj: m[2].replace(/\s+/g, ' ').trim(), kad: m[3].replace(/\s+/g, ' ').trim(), fn: m[4] }));
+    assert.ok(okidaci.some((o) => o.dogadaj === 'insert'), 'nema okidača BEFORE INSERT: ' + JSON.stringify(okidaci));
+    assert.ok(okidaci.some((o) => /^update of .*deleted_at/.test(o.dogadaj)), 'nema okidača za vraćanje (UPDATE OF deleted_at): ' + JSON.stringify(okidaci));
+    assert.strictEqual(new Set(okidaci.map((o) => o.fn)).size, 1, 'okidači zovu različite funkcije');
+    assert.strictEqual(GRANICA_CVOROVA, 2000);
+  });
+  await test('K/6 SQL: broje se samo ŽIVI čvorovi istog vlasnika, uz bravu po vlasniku, `>=` granica', () => {
+    const tijelo = (K6.match(/create or replace function public\._cvor_kvota\(\)[\s\S]*?\$\$([\s\S]*?)\$\$/) || [])[1] || '';
+    assert.ok(tijelo, 'nema tijela public._cvor_kvota()');
+    assert.ok(/pg_advisory_xact_lock\([^;]*new\.owner_id/.test(tijelo), 'bez brave po vlasniku dva usporedna upisa oba prođu');
+    assert.ok(/where\s+owner_id\s*=\s*new\.owner_id\s+and\s+deleted_at\s+is\s+null/.test(tijelo), 'ne broji samo žive istog vlasnika');
+    assert.ok(/>=\s*v_granica/.test(tijelo), 'rub nije `>= v_granica`');
+    assert.ok(/raise exception 'node_kvota: [^']*%/.test(tijelo), 'poruka ne nosi broj');
+  });
+  await test('K/6 node_kvota → „korisnik", s brojem iz poruke baze; nacrt ostaje', () => {
+    const k = A.prevediOdbijanje({ message: 'node_kvota: najviše ' + GRANICA_CVOROVA + ' polica i materijala — obriši nešto što ti ne treba' });
+    assert.strictEqual(k.kod, 'node_kvota'); assert.strictEqual(k.vrsta, 'korisnik');
+    assert.ok(k.poruka.includes(String(GRANICA_CVOROVA)), 'broj se izgubio: ' + k.poruka);
+    assert.ok(/delete/i.test(k.poruka) && /draft stays/i.test(k.poruka), k.poruka);
   });
 
   // ══ ②/2 ALATI CJEVOVODA ═══════════════════════════════════════════════════════════════════════

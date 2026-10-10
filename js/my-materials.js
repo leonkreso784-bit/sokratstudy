@@ -45,6 +45,8 @@
     node_bad_name:        ['materials.errName', 'Please enter a name.'],
     node_bad_kind:        ['materials.errKind', 'Unknown item type.'],
     node_reorder_mismatch: ['materials.errReorder', 'The list changed — please try again.'],
+    // K/6: `{n}` = broj iz poruke baze (granica živi samo u `f6-nacrt.sql`).
+    node_kvota:           ['materials.errQuota', 'You have reached the limit of {n} folders and materials. Delete some you no longer need to make room.'],
     publish_version_conflict: ['materials.errConflict', 'This was edited elsewhere. Reload and try again.'],
     publish_not_study:    ['materials.errNotStudy', 'Only study items hold material.']
   };
@@ -67,7 +69,10 @@
     }
 
     for (const key in ERRORS) {
-      if (raw.indexOf(key) !== -1) return mt(ERRORS[key][0], ERRORS[key][1]);
+      if (raw.indexOf(key) !== -1) {
+        const n = (raw.match(/najviše (\d+)/) || [])[1];
+        return mt(ERRORS[key][0], ERRORS[key][1]).replace('{n}', n || '');
+      }
     }
     return mt('materials.errGeneric', 'Something went wrong. Please try again.');
   }
@@ -225,17 +230,35 @@
    * Učitaj cijelo korisnikovo stablo (živi čvorovi). RLS jamči da su SAMO njegovi.
    * @returns {Promise<{rows:Array<object>, tree:Array<object>}>}
    */
+  // ZAVRSNICA K/6 (N12): PostgREST nikad ne vrati više od `db-max-rows` (1 000) redaka, ma koliki se
+  // raspon tražio, a kvota je 2 000 živih čvorova (okidač u `f6-nacrt.sql`) → bez ovoga bi 1 001. materijal
+  // postojao i ne bi se vidio. Čita se u izričitim rasponima, kraj odlučuje `count` (ne kratka stranica),
+  // red je `id` (jedinstven — `position` se ponavlja među policama); prikaz slaže `buildTree`.
+  // Isto čita MCP alat (`supabase/functions/mcp/alati.ts`).
+  const STRANICA_BAZE = 1000;
   async function loadTree() {
     const c = client();
     if (!c) throw new Error('auth_required');
-    const res = await c
-      .from('nodes')
-      // `node_content(updated_at)` = vrijeme zadnje izmjene gradiva, za redoslijed zida (F2/5a).
-      .select('id,parent_id,kind,name,position,icon,color,created_at,deleted_at,node_content(updated_at)')
-      .is('deleted_at', null)
-      .order('position', { ascending: true });
-    if (res.error) throw res.error;
-    const rows = res.data || [];
+    const byId = new Map();
+    let total = Infinity;
+    let from = 0;
+    while (from < total) {
+      const res = await c
+        .from('nodes')
+        // `node_content(updated_at)` = vrijeme zadnje izmjene gradiva, za redoslijed zida (F2/5a).
+        .select('id,parent_id,kind,name,position,icon,color,created_at,deleted_at,node_content(updated_at)', { count: 'exact' })
+        .is('deleted_at', null)
+        .order('id', { ascending: true })
+        .range(from, from + STRANICA_BAZE - 1);
+      if (res.error) throw res.error;
+      if (typeof res.count !== 'number') throw new Error('read_failed: no count');
+      const page = res.data || [];
+      total = res.count;
+      if (!page.length) break;   // broj se smanjio između dva raspona (brisanje u drugoj kartici)
+      page.forEach(function (r) { byId.set(r.id, r); });
+      from += page.length;
+    }
+    const rows = Array.from(byId.values());
     return { rows: rows, tree: buildTree(rows) };
   }
 

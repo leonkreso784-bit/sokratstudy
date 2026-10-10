@@ -112,6 +112,12 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   se ne broje. Prekoračenje = `PT429` (HTTP 429 i mimo poslužitelja) s „pokušaj za N s"; alat prevodi minutnu u
   `nacrt_ucestalost_min` / ponovno („Wait N s"), dnevnu u `nacrt_ucestalost_dan` / korisnik (za koliko h/min).
   ⚠️ Broji se samo USPJEŠAN upis — odbijen upis poništi i svoj redak (svjesna granica, cijenu poziva ograničava K/7).
+- **Paginacija i kvota (K/6, `0.5.5`):** `procitaj_materijale` čita SVE žive čvorove u izričitim rasponima (`count=exact`,
+  red `id` — PostgREST nikad ne vrati više od 1 000) i AI-ju daje ravan popis u redoslijedu stabla (`polica_id`, `put`),
+  najviše 500 stavki uz `ukupno`, `skraceno`, `sljedeci_offset` i napomenu; ulaz `offset`. Isto čita `loadTree` u
+  pregledniku. Kvota 2 000 ŽIVIH čvorova po korisniku je **okidač na `nodes`** (`_cvor_kvota`, `f6-nacrt.sql` § K/6,
+  brava po vlasniku) — vrijedi za Studio, vraćanje iz smeća (mapa cijela ili ništa), predaju i svaki budući put upisa.
+  `node_kvota` (broj u poruci baze) → alat „korisnik" (nacrt ostaje), Studio `materials.errQuota`.
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

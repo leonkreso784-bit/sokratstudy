@@ -24,6 +24,8 @@
 //   ⑫ K/5 učestalost u BAZI: 60 prolazi, 61. u minuti = 429 s „pokušaj za N s" · dva konektora dijele granicu ·
 //      61 usporedno → točno 60 · 1 001. u 24 h odbijen · prijevod kroz alat (ponovno / korisnik) · čitanje se ne broji.
 //      Svaki scenarij ima SVJEŽEG korisnika; mjerač ispisuje rezervu korisnika A (najgušćih 60 s).
+//   ⑬ K/6 kvota i paginacija: 2 000 živih čvorova po korisniku (okidač) — usporedni rub, Studio, predaja AI-ja,
+//      vraćanje mape cijelo ili ništa, jedna naredba preko granice · procitaj_materijale u stranicama od 500 = sve iz baze.
 //
 // Adresa: `MCP_ALATI_URL` ili `<STAGING>/functions/v1/mcp`.
 // Ishod: exit 1 = alati ne drže · exit 0 + SKIP = nema STAGING_* / SERVICE u `.env`.
@@ -39,7 +41,7 @@ const {
 const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 75;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪ · +11 (K/5): blok ⑫
+const OCEKIVANO_PROVJERA = 88;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪ · +11 (K/5): blok ⑫ · +13 (K/6): blok ⑬
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -515,6 +517,132 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   let vrh = 0;
   for (let i = 0, j = 0; i < aRedaka.length; i++) { while (aRedaka[i] - aRedaka[j] >= 60000) j++; vrh = Math.max(vrh, i - j + 1); }
   console.log('   ℹ️  korisnik A (blokovi ①–⑪): ' + aRedaka.length + ' upisa, najgušćih 60 s = ' + vrh + ' od 60');
+
+  // ⑬ ZAVRSNICA K/6 (I12, I13, N12) — najviše 2 000 ŽIVIH čvorova po korisniku (okidač na `nodes`), i
+  // `procitaj_materijale` koji to sve vidi: stranice od 500 uz `skraceno`. Svjež korisnik F; 1 990 čvorova
+  // posije se service ključem (okidač vrijedi i za njega), sve ostalo ide pravim putem: Studio (obična
+  // sesija → create_node / delete_node / restore_node) i AI (alati). Rub i brava se mjere usporedno.
+  console.log('\n— ⑬ kvota čvorova i paginacija (K/6) —');
+  {   // vlastiti doseg: imena ne smiju dirati blokove ①–⑫
+  const GRANICA = 2000;
+  const kvotaOdbila = (r) => r.status >= 400 && !!r.json && new RegExp('^node_kvota: .*\\b' + GRANICA + '\\b').test(String(r.json.message || ''));
+  const zivih = async (uid) => {
+    const r = await http('/rest/v1/nodes?owner_id=eq.' + uid + '&deleted_at=is.null&select=id', {
+      headers: Object.assign(svcHeaders(), { Prefer: 'count=exact', Range: '0-0' }) });
+    return Number((r.headers.get('content-range') || '').split('/')[1]);
+  };
+  const ziviIdevi = async (uid) => {
+    const sve = [];
+    for (let od = 0; ; od += 1000) {
+      const s = await (await http('/rest/v1/nodes?owner_id=eq.' + uid + '&deleted_at=is.null&select=id&order=id&limit=1000&offset=' + od, { headers: svcHeaders() })).json();
+      if (!Array.isArray(s) || !s.length) break;
+      sve.push(...s.map((x) => x.id));
+    }
+    return sve;
+  };
+  const posij = (redovi) => http('/rest/v1/nodes', { method: 'POST', headers: Object.assign(svcHeaders(), { Prefer: 'return=minimal' }), body: JSON.stringify(redovi) });
+  const F = await noviKorisnik({ prefiks: 'mcp-k6' });
+  const jF = await prijava(F.email, F.password);
+  const tF = (await oauthToken(jF, 'Sokrat kvota (test)')).token;
+  const police = Array.from({ length: 10 }, (_, i) => ({ id: crypto.randomUUID(), owner_id: F.id, parent_id: null, kind: 'folder', name: 'Polica ' + i, position: i }));
+  const smece = { id: crypto.randomUUID(), owner_id: F.id, parent_id: null, kind: 'folder', name: 'Smeće', position: 10, deleted_at: new Date().toISOString() };
+  const s1 = await posij([...police.map((p) => Object.assign({ deleted_at: null }, p)), smece]);
+  const s2 = await posij(Array.from({ length: 1980 }, (_, i) => ({ owner_id: F.id, parent_id: police[i % 10].id, kind: 'study', name: 'M' + i, position: Math.floor(i / 10) })));
+  const s3 = await posij(Array.from({ length: 3 }, (_, i) => ({ owner_id: F.id, parent_id: smece.id, kind: 'study', name: 'Obrisan ' + i, position: i, deleted_at: smece.deleted_at })));
+  record('posijano 1 990 živih (+ obrisana mapa s 3 materijala, ne broji se)', s1.ok && s2.ok && s3.ok && (await zivih(F.id)) === 1990,
+    'HTTP ' + [s1.status, s2.status, s3.status].join('/') + ' · živih ' + (await zivih(F.id)));
+
+  // Nacrt AI-ja (prije punjenja do vrha, da je predaja jedino što zapne).
+  const zK = await alat(tF, 'zapocni_nacrt', { name: 'Kvota (test)', repeat_key: 'k6:start', new_shelf: 'K6 polica', scope: 'summary', lessons: [{ name: 'Jedina', color: '#6366f1' }] });
+  const dK = zK.tijelo && zK.tijelo.draft_id;
+  await alat(tF, 'napisi_learn', { draft_id: dK, lesson_id: 'l1', repeat_key: 'k6:learn', title: 'Jedina', blocks: [{ type: 'paragraph', text: 'Kvota drži broj čvorova.' }] });
+  const kK = await alat(tF, 'dodaj_kartice', { draft_id: dK, lesson_id: 'l1', repeat_key: 'k6:k', cards: [{ question: 'Što drži kvota?', answer: 'Broj živih čvorova.' }] });
+  const cK = kK.tijelo && kK.tijelo.cards && kK.tijelo.cards[0] && kK.tijelo.cards[0].card_id;
+  await alat(tF, 'dodaj_pitanja', { draft_id: dK, lesson_id: 'l1', repeat_key: 'k6:p', quiz: [{ question: 'Kvota drži?', options: ['broj čvorova', 'boju'], correct: 0, card: cK }] });
+
+  // Studio, usporedno na rubu: 100 istodobnih na 1 990 → prolazi TOČNO 10 (brava po vlasniku).
+  // Utrka bez brave je VJEROJATNOSNA (prozor „izbroji → upiši" je djelić ms): obrnuta provjera 10.10.
+  // je jedan krug od 20 bez brave prošla s točno 10, a sonda s istom mutacijom dala 12–14 u 5 od 5
+  // krugova. Zato TRI kruga po 100 (F + dva svježa korisnika) i svaki mora dati točno 10.
+  const studio = (ime) => rpc(jF, 'create_node', { p_parent: police[0].id, p_kind: 'study', p_name: ime });
+  const krug = async (jwt, roditelj) => {
+    const r = await Promise.all(Array.from({ length: 100 }, (_, i) => rpc(jwt, 'create_node', { p_parent: roditelj, p_kind: 'study', p_name: 'Rub ' + i })));
+    return { ok: r.filter((x) => x.status >= 200 && x.status < 300).length, odbijeno: r.filter(kvotaOdbila).length, tekst: (r.find((x) => x.status >= 400) || {}).tekst };
+  };
+  const krugovi = [await krug(jF, police[0].id)];
+  for (let i = 0; i < 2; i++) {
+    const H = await noviKorisnik({ prefiks: 'mcp-k6-rub' });
+    const hP = { id: crypto.randomUUID(), owner_id: H.id, parent_id: null, kind: 'folder', name: 'Rub', position: 0 };
+    await posij([hP]);
+    await posij(Array.from({ length: 1989 }, (_, j) => ({ owner_id: H.id, parent_id: hP.id, kind: 'study', name: 'H' + j, position: j })));
+    krugovi.push((await zivih(H.id)) === 1990 ? await krug(await prijava(H.email, H.password), hP.id) : { ok: -1, odbijeno: -1, tekst: 'sjetva nije dala 1 990' });
+  }
+  record('brava: 3 kruga × 100 usporednih create_node na 1 990 → u svakom prolazi točno 10, ostalih 90 = node_kvota s brojem ' + GRANICA,
+    krugovi.every((k) => k.ok === 10 && k.odbijeno === 90), krugovi.map((k) => k.ok + '/' + k.odbijeno).join(' · ') + ' · ' + krugovi[0].tekst);
+  record('… u bazi točno ' + GRANICA + ' živih', (await zivih(F.id)) === GRANICA, 'živih ' + (await zivih(F.id)));
+  const r2001 = await studio('Dvije tisuće prvi');
+  record('2 001. čvor iz Studija odbijen: node_kvota, poruka nosi broj', kvotaOdbila(r2001) && (await zivih(F.id)) === GRANICA, 'HTTP ' + r2001.status + ' ' + r2001.tekst);
+
+  // AI: predaja na punoj kvoti → korisnik, ništa upisano, nacrt ostaje.
+  const pK = await alat(tF, 'predaj_nacrt', { draft_id: dK });
+  record('predaja na punoj kvoti kroz alat → node_kvota / korisnik (200 + isError), poruka nosi ' + GRANICA,
+    pK.status === 200 && pK.isError && !!pK.tijelo && pK.tijelo.error === 'node_kvota' && pK.tijelo.kind === 'korisnik' &&
+      String(pK.tijelo.message || '').includes(String(GRANICA)), opis(pK));
+  const nK = await nacrtUBazi(dK);
+  record('… nacrt je i dalje u bazi (u izradi), živih i dalje ' + GRANICA, !!nK && nK.status === 'u_izradi' && (await zivih(F.id)) === GRANICA,
+    (nK ? 'nacrt ' + nK.status : 'NACRT NESTAO') + ' · živih ' + (await zivih(F.id)));
+
+  // Vraćanje mape (4 čvora jednim UPDATE-om): na 1 997 ne stane → CIJELO odbijeno; na 1 996 stane točno.
+  const obrisi = async (n) => {
+    const ids = (await ziviIdevi(F.id)).filter((x) => !police.some((p) => p.id === x)).slice(0, n);
+    for (const id of ids) await rpc(jF, 'delete_node', { p_id: id });
+  };
+  const smeceZivih = async () => ((await (await http('/rest/v1/nodes?or=(id.eq.' + smece.id + ',parent_id.eq.' + smece.id + ')&deleted_at=is.null&select=id', { headers: svcHeaders() })).json()) || []).length;
+  await obrisi(3);
+  const v1 = await rpc(jF, 'restore_node', { p_id: smece.id });
+  record('vraćanje mape od 4 na 1 997 → node_kvota, NIŠTA vraćeno (ni prva 3 koja bi stala)',
+    kvotaOdbila(v1) && (await smeceZivih()) === 0 && (await zivih(F.id)) === 1997, 'HTTP ' + v1.status + ' · vraćeno ' + (await smeceZivih()) + ' · živih ' + (await zivih(F.id)));
+  await obrisi(1);
+  const v2 = await rpc(jF, 'restore_node', { p_id: smece.id });
+  record('… na 1 996 ista mapa stane: vraćena cijela (4), živih točno ' + GRANICA,
+    v2.status === 200 && v2.json === 4 && (await smeceZivih()) === 4 && (await zivih(F.id)) === GRANICA, 'HTTP ' + v2.status + ' ' + v2.tekst + ' · živih ' + (await zivih(F.id)));
+
+  // Oslobodi dva mjesta → ista predaja (polica + materijal) sad prolazi.
+  await obrisi(2);
+  const pK2 = await alat(tF, 'predaj_nacrt', { draft_id: dK });
+  record('obrisana 2 → ista predaja prolazi (nova polica + materijal), živih točno ' + GRANICA,
+    pK2.status === 200 && !pK2.isError && !(await nacrtUBazi(dK)) && (await zivih(F.id)) === GRANICA, opis(pK2) + ' · živih ' + (await zivih(F.id)));
+
+  // procitaj_materijale: 2 000 živih → četiri stranice od 500, skraćenost i nastavak, unija = baza.
+  const stranice = [];
+  for (let off = 0, i = 0; i < 6 && off !== undefined; i++) {
+    const r = await alat(tF, 'procitaj_materijale', off ? { offset: off } : {});
+    stranice.push(r);
+    off = r.tijelo && r.tijelo.sljedeci_offset;
+  }
+  const tj = stranice.map((r) => r.tijelo || {});
+  record('procitaj_materijale: 4 stranice ≤ 500, skraceno t/t/t/f, ukupno ' + GRANICA,
+    stranice.every((r) => r.status === 200 && !r.isError) && JSON.stringify(tj.map((x) => x.skraceno)) === '[true,true,true,false]' &&
+      tj.every((x) => Array.isArray(x.stavke) && x.stavke.length <= 500 && x.ukupno === GRANICA),
+    tj.map((x) => (x.stavke || []).length + (x.skraceno ? '+' : '')).join(' / ') + ' · ukupno ' + JSON.stringify(tj.map((x) => x.ukupno)));
+  const vidjeno = tj.flatMap((x) => (x.stavke || []).map((s) => s.id));
+  const uBazi = await ziviIdevi(F.id);
+  record('… unija stranica = živi čvorovi u bazi (' + uBazi.length + '), bez duplikata i bez viška',
+    uBazi.length === GRANICA && vidjeno.length === uBazi.length && new Set(vidjeno).size === vidjeno.length && uBazi.every((x) => vidjeno.includes(x)),
+    'vidjeno ' + vidjeno.length + ' (različitih ' + new Set(vidjeno).size + ') · u bazi ' + uBazi.length);
+  record('… skraćena stranica kaže AI-ju kako dalje (sljedeci_offset + napomena s offsetom)',
+    tj.length === 4 && tj.slice(0, 3).every((x, i) => x.sljedeci_offset === (i + 1) * 500 && /offset \d+/.test(x.napomena || '')) && !('sljedeci_offset' in tj[3]),
+    JSON.stringify(tj.map((x) => x.sljedeci_offset)) + ' · ' + String(tj[0].napomena || '').slice(0, 90));
+
+  // Jedna naredba s 2 001 retka (svjež korisnik): okidač vidi retke iste naredbe → odbijena CIJELA.
+  const G = await noviKorisnik({ prefiks: 'mcp-k6-naredba' });
+  const gP = { id: crypto.randomUUID(), owner_id: G.id, parent_id: null, kind: 'folder', name: 'Sve', position: 0 };
+  const g1 = await posij([gP]);
+  const g2 = await posij(Array.from({ length: GRANICA }, (_, i) => ({ owner_id: G.id, parent_id: gP.id, kind: 'study', name: 'G' + i, position: i })));
+  const gTekst = (await g2.text()).slice(0, 140);
+  record('jedna naredba s 2 000 redaka uz 1 postojeći → odbijena cijela (node_kvota), ostaje 1',
+    g1.ok && g2.status >= 400 && /node_kvota/.test(gTekst) && (await zivih(G.id)) === 1, 'HTTP ' + g1.status + '/' + g2.status + ' · živih ' + (await zivih(G.id)) + ' · ' + gTekst);
+  }
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
     touched === OCEKIVANO_PROVJERA ? '' : 'izvedeno ' + touched +

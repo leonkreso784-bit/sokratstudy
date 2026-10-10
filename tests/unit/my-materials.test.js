@@ -237,6 +237,46 @@ test('buildTree: position koji nije broj → 0 (ne ruši sortiranje)', () => {
     const M2 = load((k) => k);
     assert.match(M2.humanError({ message: 'node_denied: x' }), /not yours/i);
   });
+  // ZAVRSNICA K/6: granica živi u bazi (`f6-nacrt.sql`, okidač) i broj nosi poruka baze — ovdje se ne piše.
+  test('humanError: node_kvota → poruka s BROJEM iz baze (EN fallback i prijevod)', () => {
+    const e = { message: 'node_kvota: najviše 2000 polica i materijala — obriši nešto što ti ne treba' };
+    const en = M.humanError(e);
+    assert.ok(/2000|2,000/.test(en) && /delete/i.test(en), en);
+    assert.ok(en.indexOf('{n}') === -1, 'zamjenski znak nije zamijenjen: ' + en);
+    const M2 = load((k) => (k === 'materials.errQuota' ? 'Imaš {n} polica i materijala.' : k));
+    assert.strictEqual(M2.humanError(e), 'Imaš 2000 polica i materijala.');
+  });
+}
+
+// ------------------------------------------------- loadTree (ZAVRSNICA K/6, N12)
+// PostgREST vraća najviše `db-max-rows` (1 000) redaka po odgovoru, ma koliko se tražilo; kvota je
+// 2 000 živih čvorova. Bez čitanja u rasponima korisnik bi 1 001. materijal stvorio i ne bi ga vidio.
+const asinkroni = [];
+function lazniSokratAuth(redovi, maxRedova) {
+  const zapis = { rasponi: [] };
+  const poredani = redovi.slice().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  return { zapis, getClient: () => ({
+    from: () => ({ select: (s, o) => { zapis.opcije = o; return { is: () => ({ order: (st) => { zapis.redoslijed = st; return {
+      range: (od, doo) => {
+        zapis.rasponi.push([od, doo]);
+        return Promise.resolve({ data: poredani.slice(od, Math.min(doo + 1, od + maxRedova)), error: null,
+          count: o && o.count === 'exact' ? poredani.length : null });
+      } }; } }) }; } })
+  }) };
+}
+const stablo2300 = Array.from({ length: 2300 }, (_, i) => ({ id: 'n' + String(i).padStart(5, '0'),
+  parent_id: null, kind: 'study', name: 'M' + i, position: i, deleted_at: null }));
+for (const max of [1000, 700]) {
+  asinkroni.push(['loadTree: vidi SVE žive čvorove i kad baza reže na ' + max + ' (count, izričit raspon, red po id)', async () => {
+    const a = lazniSokratAuth(stablo2300, max);
+    const M3 = new Function('window', 'SokratAuth', code + '\n;return window.SokratMaterials;')({}, a);
+    const r = await M3.loadTree();
+    assert.strictEqual(r.rows.length, 2300, 'vidi ' + r.rows.length + ' od 2300 (rasponi ' + JSON.stringify(a.zapis.rasponi) + ')');
+    assert.strictEqual(new Set(r.rows.map((x) => x.id)).size, 2300, 'duplikati');
+    assert.strictEqual(r.tree.length, 2300);
+    assert.deepStrictEqual(a.zapis.opcije, { count: 'exact' });
+    assert.strictEqual(a.zapis.redoslijed, 'id');
+  }]);
 }
 
 // ---------------------------------------------------------------- F2/5a — zid gradiva
@@ -326,5 +366,11 @@ test('buildTree: position koji nije broj → 0 (ne ruši sortiranje)', () => {
   });
 }
 
-console.log(`\n=== rezultat: ${passed} prošlo / ${failed} palo ===\n`);
-process.exit(failed ? 1 : 0);
+(async () => {
+  for (const [ime, fn] of asinkroni) {
+    try { await fn(); passed++; console.log('  ✓ ' + ime); }
+    catch (e) { failed++; console.error('  ✗ ' + ime + '\n      ' + e.message); }
+  }
+  console.log(`\n=== rezultat: ${passed} prošlo / ${failed} palo ===\n`);
+  process.exit(failed ? 1 : 0);
+})();

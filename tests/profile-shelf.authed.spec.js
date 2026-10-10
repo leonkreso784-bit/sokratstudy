@@ -35,11 +35,22 @@ async function zidGotov(page) {
   await page.waitForSelector('#profileShelf[aria-busy="false"]', { timeout: 20000 });
 }
 
+/** Podmetnut odgovor mora izgledati kao PostgREST-ov: `loadTree` (ZAVRSNICA K/6) traži `count=exact` i čita
+ *  ukupan broj iz `Content-Range` — bez njega odbija, jer bi inače tiho prikazao samo prvih 1 000. */
+function kaoPostgrest(odgovor) {
+  let n = -1;
+  try { const j = JSON.parse(odgovor.body); if (Array.isArray(j)) n = j.length; } catch (e) { /* nije niz */ }
+  if (odgovor.status !== 200 || n < 0) return odgovor;
+  // Kao pravi Supabase: bez `Expose-Headers` preglednik zaglavlje primi, ali ga kod ne smije pročitati (CORS).
+  return Object.assign({}, odgovor, { headers: { 'Content-Range': (n ? '0-' + (n - 1) : '*') + '/' + n,
+    'Access-Control-Expose-Headers': 'Content-Range', 'Access-Control-Allow-Origin': '*' } });
+}
+
 /** Podmetni odgovor na čitanje `nodes` (samo GET; RPC-ovi idu na /rpc/ i prolaze). */
 async function podmetni(page, odgovor) {
   await page.route(CITANJE_NODES, (route) => {
     if (route.request().method() !== 'GET') return route.continue();
-    return route.fulfill(odgovor);
+    return route.fulfill(kaoPostgrest(odgovor));
   });
 }
 
@@ -152,7 +163,7 @@ test('⑤ ponovno crtanje profila (npr. izbor teme) NE vraća zid na sive plohe'
     if (route.request().method() !== 'GET') return route.continue();
     citanja++;
     if (citanja > 1) await new Promise((r) => setTimeout(r, 2000));
-    return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(redci(3)) });
+    return route.fulfill(kaoPostgrest({ status: 200, contentType: 'application/json', body: JSON.stringify(redci(3)) }));
   });
   await naProfilu(page);
   await expect(page.locator('#profileShelf .profile-tile')).toHaveCount(3);

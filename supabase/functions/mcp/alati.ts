@@ -23,6 +23,9 @@
 
 import { KARTICA_HARD, KARTICA_SOFT, KURIRANE_BOJE, mjeriKarticu } from '../_shared/pravila.ts';
 
+/** K/6: najviše stavki u jednom odgovoru `procitaj_materijale` (vidi `procitajMaterijale`). */
+export const STRANICA_ALATA = 500;
+
 /** Upute koje AI dobiva pri spajanju (MCP `instructions`). Kvalitetu držimo branama, ne promptom. */
 export const UPUTE = [
   'Sokrat Study is a study platform. This connector works ONLY with the signed-in user\'s own study materials.',
@@ -41,6 +44,7 @@ export const UPUTE = [
   'If the source ends with a final test or review questions, do not make a separate lesson for them: put each question into the lesson it belongs to, built from that lesson\'s flashcards.',
   'Every call that adds something takes a repeat_key: if you are unsure whether a call went through, send the SAME call with the SAME repeat_key again — nothing is duplicated. Use a NEW repeat_key for new content. Calls that change or delete by id can simply be repeated.',
   'procitaj_nacrt shows your drafts and what each lesson already has, so you can continue where you stopped.',
+  'procitaj_materijale returns at most ' + STRANICA_ALATA + ' items per call. If it says skraceno: true, the list is not complete — call it again with offset = sljedeci_offset before you tell the user that a shelf or material does not exist.',
   'You can also CHANGE one of the user\'s existing materials, but only when the user asks for a change:',
   '  1. procitaj_materijal — read the material (and a lesson) to find what to change.',
   '  2. zapocni_izmjenu — copy it into an edit draft. Until step 4 the user\'s material stays exactly as it was.',
@@ -51,7 +55,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.4' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.5' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -75,12 +79,68 @@ export interface Stavka {
 /** Minimalni oblik supabase-js klijenta koji alat koristi — test ga podmeće. */
 export interface CitacCvorova {
   from(tablica: 'nodes'): {
-    select(stupci: string): {
+    select(stupci: string, opcije: { count: 'exact' }): {
       is(stupac: 'deleted_at', vrijednost: null): {
-        order(stupac: 'position', opcije: { ascending: boolean }): PromiseLike<{ data: Cvor[] | null; error: { message: string } | null }>;
+        order(stupac: 'id', opcije: { ascending: boolean }): {
+          range(od: number, doo: number): PromiseLike<{ data: Cvor[] | null; error: { message: string } | null; count: number | null }>;
+        };
       };
     };
   };
+}
+
+// ─── ZAVRSNICA K/6 (N12, I13): ono što AI ne vidi, AI ZNA da ne vidi ───────────────────────────
+// PostgREST nikad ne vrati više od `db-max-rows` (Supabase: 1 000) redaka, ma koliki raspon se tražio —
+// izmjereno: 1 200 polica → alat je AI-ju rekao 1 000, bez znaka. Zato se čita u IZRIČITIM rasponima, a
+// kraj odlučuje `count` iz baze, ne „kratka stranica" (rez manji od stranice inače izgleda kao kraj).
+// Red je `id` (jedinstven): `position` se ponavlja među policama pa bi raspon preskakao ili ponavljao retke.
+// AI dobiva najviše `STRANICA_ALATA` stavki po odgovoru (konstanta stoji iznad `UPUTE`, koje je navode),
+// uz `skraceno` i `sljedeci_offset`. Isto čita i preglednik (`js/my-materials.js` → `loadTree`);
+// granica od 2 000 živih čvorova je u bazi.
+const STRANICA_BAZE = 1000;
+
+export interface RavnaStavka {
+  id: string;
+  vrsta: 'polica' | 'materijal';
+  naziv: string;
+  /** Polica u kojoj stavka stoji (null = vrh). Za policu je to i `shelf_id` koji alati primaju. */
+  polica_id: string | null;
+  /** Nazivi polica od vrha, npr. „Biologija / Stanica" — samo kad stavka nije na vrhu. */
+  put?: string;
+}
+
+/** Svi živi čvorovi korisnika, u rasponima; nepotpuno čitanje je greška, nikad tihi rez. */
+async function procitajSveCvorove(klijent: CitacCvorova): Promise<Cvor[]> {
+  const poId = new Map<string, Cvor>();
+  let ukupno = Infinity;
+  let od = 0;
+  while (od < ukupno) {
+    const { data, error, count } = await klijent.from('nodes').select(STUPCI_CVORA, { count: 'exact' })
+      .is('deleted_at', null).order('id', { ascending: true }).range(od, od + STRANICA_BAZE - 1);
+    if (error) throw new Error('read_failed: ' + error.message);
+    const redovi = data ?? [];
+    if (typeof count !== 'number') throw new Error('read_failed: baza nije vratila ukupan broj');
+    ukupno = count;
+    if (redovi.length === 0) break;   // broj se smanjio između dva raspona (korisnik je brisao)
+    for (const r of redovi) poId.set(r.id, r);
+    od += redovi.length;
+  }
+  return [...poId.values()];
+}
+
+/** Stablo → ravan popis istim redom (polica pa njezin sadržaj), svaka stavka sa svojom policom. */
+export function poravnajStablo(stablo: Stavka[]): RavnaStavka[] {
+  const van: RavnaStavka[] = [];
+  const hodaj = (grana: Stavka[], polica: Stavka | null, put: string[]) => {
+    for (const s of grana) {
+      const r: RavnaStavka = { id: s.id, vrsta: s.vrsta, naziv: s.naziv, polica_id: polica ? polica.id : null };
+      if (put.length) r.put = put.join(' / ');
+      van.push(r);
+      if (s.djeca) hodaj(s.djeca, s, put.concat(s.naziv));
+    }
+  };
+  hodaj(stablo, null, []);
+  return van;
 }
 
 /** Složi ravan popis čvorova u stablo polica → materijala, redom `position`. */
@@ -114,16 +174,27 @@ function brojiMaterijale(stablo: Stavka[]): number {
   return stablo.reduce((n, s) => n + (s.vrsta === 'materijal' ? 1 : 0) + brojiMaterijale(s.djeca ?? []), 0);
 }
 
-/** Alat `procitaj_materijale`: vlastite police i materijali prijavljenog korisnika. */
-export async function procitajMaterijale(klijent: CitacCvorova): Promise<{ tekst: string; stablo: Stavka[]; materijala: number }> {
-  const { data, error } = await klijent.from('nodes').select(STUPCI_CVORA).is('deleted_at', null).order('position', { ascending: true });
-  if (error) throw new Error('read_failed: ' + error.message);
-  const stablo = slozStablo(data ?? []);
+/** Alat `procitaj_materijale`: vlastite police i materijali prijavljenog korisnika, od `offset`,
+ *  najviše `STRANICA_ALATA` stavki. `ukupno` = stavki u cijelom popisu (svim stranicama zajedno). */
+export async function procitajMaterijale(klijent: CitacCvorova, offset = 0): Promise<{ tekst: string; materijala: number; ukupno: number; stavke: RavnaStavka[]; skraceno: boolean }> {
+  const stablo = slozStablo(await procitajSveCvorove(klijent));
+  const sve = poravnajStablo(stablo);
   const materijala = brojiMaterijale(stablo);
-  const tekst = stablo.length === 0
-    ? 'The user has no shelves or materials yet.'
-    : JSON.stringify({ materijala, stablo }, null, 2);
-  return { tekst, stablo, materijala };
+  const ukupno = sve.length;
+  const od = Math.max(0, Math.floor(Number(offset) || 0));
+  const stavke = sve.slice(od, od + STRANICA_ALATA);
+  const skraceno = od + stavke.length < ukupno;
+  const odgovor: Record<string, unknown> = { ukupno, materijala, od, skraceno };
+  if (skraceno) {
+    odgovor.sljedeci_offset = od + stavke.length;
+    odgovor.napomena = 'Showing items ' + (od + 1) + '–' + (od + stavke.length) + ' of ' + ukupno +
+      '. The list is NOT complete: call procitaj_materijale again with offset ' + (od + stavke.length) + ' for the rest.';
+  } else if (od > 0 && stavke.length === 0) {
+    odgovor.napomena = 'offset ' + od + ' is past the end of the list (' + ukupno + ' items). Start again with offset 0.';
+  }
+  odgovor.stavke = stavke;
+  const tekst = ukupno === 0 ? 'The user has no shelves or materials yet.' : JSON.stringify(odgovor, null, 2);
+  return { tekst, materijala, ukupno, stavke, skraceno };
 }
 
 // ─── ②/1b (N9): imenovano odbijanje iz baze → poruka koju AI može ISKORISTITI ─────────────────────
@@ -161,7 +232,9 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   izmjena_nema: { vrsta: 'stop', poruka: 'This material has no AI edit that could be undone.' },
   // ZAVRSNICA K/5 (N11): učestalost upisa, zbroj po korisniku. Broj sekundi dodaje `prevediOdbijanje` iz poruke baze.
   nacrt_ucestalost_min: { vrsta: 'ponovno', poruka: 'Too many changes in one minute (at most 60 per minute for this user, across all connected AIs).' },
-  nacrt_ucestalost_dan: { vrsta: 'korisnik', poruka: 'This user reached the limit of 1000 changes in 24 hours.' }
+  nacrt_ucestalost_dan: { vrsta: 'korisnik', poruka: 'This user reached the limit of 1000 changes in 24 hours.' },
+  // ZAVRSNICA K/6 (I12): živi čvorovi po korisniku (okidač na `nodes`). Broj dodaje `prevediOdbijanje` iz poruke baze.
+  node_kvota: { vrsta: 'korisnik', poruka: 'The user has reached the limit of shelves and materials in Sokrat' }
 };
 
 /** „pokušaj za N s" iz poruke baze (K/5) → AI-ju čitljivo vrijeme; minutna u sekundama, dnevna u min/h (navište). */
@@ -170,6 +243,13 @@ function kadPonovno(kod: string, tekst: string): string {
   if (kod === 'nacrt_ucestalost_min') return s > 0 ? ' Wait ' + s + ' s, then call the same tool again.' : ' Wait a minute, then call the same tool again.';
   const kad = !(s > 0) ? 'later today' : s < 3600 ? 'in about ' + Math.ceil(s / 60) + ' min' : 'in about ' + Math.ceil(s / 3600) + ' h';
   return ' Writing opens again ' + kad + '. Tell the user; the draft stays saved (7 days), and you can continue then.';
+}
+
+/** „najviše N" iz poruke baze (K/6) — broj se ne piše ovdje, granica živi u `f6-nacrt.sql`. */
+function granicaCvorova(tekst: string): string {
+  const n = Number((tekst.match(/najviše (\d+)/) || [])[1]);
+  return (n > 0 ? ' (at most ' + n + ' shelves and materials together).' : '.') +
+    ' Nothing was written and the draft stays saved. Ask the user to delete shelves or materials they no longer need in Sokrat, then call predaj_nacrt again.';
 }
 
 /** Greška iz supabase-js (`{ message }`) → `{ kod, vrsta, poruka }`. Razlog se zadržava samo za
@@ -181,7 +261,8 @@ export function prevediOdbijanje(greska: { message?: string } | null | undefined
   const znano = kod ? ODBIJANJA[kod] : undefined;
   if (!znano) return { kod: '', vrsta: 'kvar', poruka: 'Sokrat could not complete this request. Try once more; if it fails again, tell the user.' };
   const razlog = kod === 'sadrzaj_neispravan' ? ' ' + tekst.slice(kod.length + 1).trim().slice(0, 300)
-    : kod.startsWith('nacrt_ucestalost_') ? kadPonovno(kod, tekst) : '';
+    : kod.startsWith('nacrt_ucestalost_') ? kadPonovno(kod, tekst)
+    : kod === 'node_kvota' ? granicaCvorova(tekst) : '';
   return { kod, vrsta: znano.vrsta, poruka: znano.poruka + razlog };
 }
 
@@ -537,9 +618,12 @@ export interface Alat {
 export const ALATI: Alat[] = [
   {
     ime: 'procitaj_materijale', naslov: 'List my study materials', samoCitanje: true,
-    opis: 'Lists the signed-in user\'s own shelves and study materials (names and ids). Read-only.',
-    ulaz: objekt({}, []),
-    izvedi: async (k) => (await procitajMaterijale(k)).tekst
+    opis: 'Lists the signed-in user\'s own shelves and study materials (names and ids), shelf by shelf, at most ' + STRANICA_ALATA +
+      ' items per call. If the answer says skraceno: true, the list is not complete: call again with the sljedeci_offset it gives. Read-only.',
+    ulaz: objekt({
+      offset: { type: 'integer', minimum: 0, maximum: 100000, description: 'Where to continue the list (sljedeci_offset from the previous answer). Default 0 = from the start.' }
+    }, []),
+    izvedi: async (k, a) => (await procitajMaterijale(k, a.offset ?? 0)).tekst
   },
   {
     ime: 'zapocni_nacrt', naslov: 'Start a draft material', samoCitanje: false,

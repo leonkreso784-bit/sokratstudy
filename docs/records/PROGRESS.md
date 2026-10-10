@@ -5,6 +5,36 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-10/11 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/6: paginacija i kvota čvorova (kod ✅, STAGING ✅)
+
+- **Anketa (Leon):** kvota živi u **okidaču na `nodes`** (ne u `create_node`: čvor rađa i `restore_node` — cijela mapa
+  jednim UPDATE-om — predaja i budući D/3); broje se **samo živi** (smeće nema pražnjenje; rast obrisanog = N13/④/5);
+  **2 000 + Moji materijali čitaju u rasponima** (izmjereno: `loadTree` je rezao na istih 1 000 kao alat → s kvotom 2 000
+  korisnik bi 1 001. materijal stvorio i ne vidio). Najveći korisnik danas: prod 10 živih, staging 53.
+- **Što:** `f6-nacrt.sql` § K/6 — `_cvor_kvota()` (brava po vlasniku, `count` živih, `>= 2000` → `node_kvota: najviše 2000 …`),
+  okidači `nodes_kvota_upis` (BEFORE INSERT) i `nodes_kvota_vracanje` (BEFORE UPDATE OF deleted_at, owner_id), djelomični
+  indeks. `alati.ts` `0.5.5`: čitanje u rasponima (`count=exact`, red `id`, kraj odlučuje count), ravan popis u redoslijedu
+  stabla (`polica_id`, `put`), ≤ 500 stavki + `ukupno`/`skraceno`/`sljedeci_offset`/napomena, ulaz `offset`, upute;
+  `node_kvota` → „korisnik" s brojem iz poruke. `js/my-materials.js` `loadTree` isto čita; `node_kvota` → `materials.errQuota`
+  (HR/EN, `{n}` iz poruke baze). `mcp:brava` razvrstava `_cvor_kvota` kao okidač.
+- **Brana:** unit `mcp-alati` 79/0 i `my-materials` 44/0 — **13 crvenih na starom kodu**; **obrnute unit 22/22**. Uživo
+  `mcp:alati` blok ⑬ (+13, osnovica 88): na staroj bazi **12 od 13 crveno** (20 usporednih na 1 990 → svih 20 prošlo, alat
+  vidio 1 000 od 2 011 bez znaka). **Obrnute SQL 4/4** (Leon lijepio): bez brave · `>` · broji i obrisane · bez okidača za
+  vraćanje. ⚠️ **Prva obrnuta (bez brave) je PROŠLA** — jedan krug od 20 usporednih slučajno dao točno 10; sonda s istom
+  mutacijom 12–14 u 5/5 krugova → brana pojačana na **3 kruga × 100**, svaki mora dati točno 10 (bez brave 12/15/12).
+- **Test koji je lagao o poslužitelju:** `profile-shelf.authed` podmetao je odgovor bez `Content-Range` i bez
+  `Access-Control-Expose-Headers` — novi `loadTree` ga s pravom odbija (bez broja ne zna je li pročitao sve). Podmetanje sad
+  izgleda kao pravi Supabase (izmjereno na stagingu), kod nije popuštan.
+- **Novo pravilo testiranja (Leon, anketa 11.10.):** puni `test:responsive` (~40 min) gušio je računalo (2 GB slobodnog RAM-a)
+  i prekinut je na 453/954 (0 palo). Po cigli lokalno **ciljano** (10 datoteka za police, materijale, i18n, telefon:
+  123 + ponovljeno 8 + 15 zeleno; `phone.spec` pad = preglednik bez memorije, ponovljen zelen), puni skup = **CI na push
+  grane**. Upis u CLAUDE.md ide s ciglom dokumentacije.
+- **✅ STAGING:** SQL (Leon, cijela `f6-nacrt.sql`; 20 tijela md5 == datoteka uz CRLF→LF) · `mcp` v19 `0.5.5` ·
+  `check:functions` 6/6 · `mcp:alati` 89/0 · `mcp:brava` 58/0 · `mcp:nacrt` 56/0 · `mcp:prihvat` 35/0 · `mcp:predaja` 34/0 ·
+  `mcp:izmjena` 42/0 · `mcp:probe` 9/0 · `preflight` zelen. Mutacije u `Documents\sokratstudy.f6-k6-mutacije\` (smije se obrisati).
+- ⚠️ `execute_sql` s DDL-om na stagingu sigurnosni filtar odbija kao i `apply_migration` → dogovorena cigla `sql:staging`
+  (skripta samo za staging, tvrdo odbija prod).
+
 ## 2026-10-10 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/5: učestalost upisa u bazi (kod ✅, STAGING ✅)
 
 - **Anketa (Leon):** granica je **zbroj po korisniku** preko svih konektora (izmjereno: Claude za istog korisnika

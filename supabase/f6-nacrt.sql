@@ -772,3 +772,50 @@ begin
   end loop;
 end
 $$;
+
+-- ─── K/6 KVOTA ČVOROVA (ZAVRSNICA K/6, I12 / N12; Leon, anketa 10.10.) ──────────────────────────
+-- Najviše 2 000 ŽIVIH čvorova (police + materijali) po korisniku. Izmjereno prije: `create_node` nije
+-- imao granicu (2 001. prolazi), a `test-admin` na stagingu ima ~9 000 čvorova, od toga ~50 živih.
+--
+-- OKIDAČ NA TABLICI, ne kod u `create_node` (Leon, anketa 10.10.): živi čvor ne rađa samo `create_node`.
+-- `restore_node` vraća cijelu mapu jednim UPDATE-om, predaja AI-ja ide kroz `_nacrt_u_materijal`, a
+-- D/3 („Spremi u moju policu") bit će još jedan put — svaki mora proći istu granicu, i onaj koji tek
+-- dolazi. Usput `f1-nodes.sql` ostaje netaknut (njegovo ponovno pokretanje pregazilo bi c3/a1).
+--
+-- Broje se SAMO ŽIVI (anketa 10.10.): korisnik oslobađa mjesto brisanjem, a smeće nema pražnjenje.
+-- Rast meko obrisanog na disku je N13 (④/5, `pg_cron`), ne ovo. Pogađa i korisnika BEZ AI-ja (Studio):
+-- `js/my-materials.js` prevodi `node_kvota` u poruku, a broj uzima iz ove poruke (jedno mjesto).
+--
+-- Brava po vlasniku do kraja transakcije: bez nje dva usporedna upisa oba izbroje 1 999 i oba prođu.
+-- Okidač je ROW-level BEFORE: u vraćanju mape svaki redak vidi retke koje je ista naredba već vratila,
+-- pa mapa koja ne stane pada CIJELA (ništa se ne vrati napola). Mjeri `mcp:alati` blok ⑬ i obrnute u SQL-u.
+create index if not exists nodes_owner_zivi_idx on public.nodes (owner_id) where deleted_at is null;
+
+create or replace function public._cvor_kvota()
+returns trigger
+language plpgsql
+set search_path = public, pg_temp
+as $$
+declare
+  v_granica constant int := 2000;
+  v_zivih int;
+begin
+  perform pg_advisory_xact_lock(hashtextextended('nodes_kvota:' || new.owner_id::text, 0));
+  select count(*) into v_zivih from public.nodes where owner_id = new.owner_id and deleted_at is null;
+  if v_zivih >= v_granica then
+    raise exception 'node_kvota: najviše % polica i materijala — obriši nešto što ti više ne treba', v_granica;
+  end if;
+  return new;
+end;
+$$;
+revoke execute on function public._cvor_kvota() from public, anon, authenticated;
+
+drop trigger if exists nodes_kvota_upis on public.nodes;
+create trigger nodes_kvota_upis before insert on public.nodes
+  for each row when (new.deleted_at is null)
+  execute function public._cvor_kvota();
+
+drop trigger if exists nodes_kvota_vracanje on public.nodes;
+create trigger nodes_kvota_vracanje before update of deleted_at, owner_id on public.nodes
+  for each row when (new.deleted_at is null and (old.deleted_at is not null or old.owner_id is distinct from new.owner_id))
+  execute function public._cvor_kvota();

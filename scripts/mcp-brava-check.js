@@ -257,7 +257,8 @@ const ZABRANJENI_RPC = {
 /** Funkcije koje NISU ruta: okidači (zovu se iz triggera) i interni pomoćnici (service_role). */
 const OKIDACI = ['handle_new_user', 'node_content_validate', 'nodes_validate', 'set_updated_at',
   'snapshot_content_version', 'snapshot_node_content', 'touch_node_content', 'touch_nodes',
-  'touch_profile_identity', 'touch_subject_content'];
+  'touch_profile_identity', 'touch_subject_content',
+  '_cvor_kvota'];   // K/6: kvota živih čvorova (`f6-nacrt.sql`)
 const INTERNE = [];
 
 const PNG = Buffer.from(
