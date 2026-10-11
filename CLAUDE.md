@@ -268,30 +268,30 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
   **append-only audit**, brisanje **samo uz izričit OK** · PWA drži staru ikonu do
   reinstalacije (nije bug).
 
-## Ključne odluke — samo one koje MIJENJAJU današnji rad
+## Ključne odluke — jedan redak po ADR-u, puni tekst u `docs/records/DECISIONS.md`
 
-> Puni tekst i sve starije: **`docs/records/DECISIONS.md` (ADR-001…040)**.
-> Ovdje su ADR-ovi koji su **živa ograničenja**, ne povijesno obrazloženje.
+> Samo ADR-ovi koji su **živa ograničenja**. Redak je kuka, ne zamjena: prije zahvata u tom području pročitaj ADR.
 
-- **ADR-040:** **novi smjer** (Leon, 2026-10-03) — v. 🧭 gore · dijeljenje linkom obara ADR-025 · brane ADR-031 sužene · ADR-035/036 **zamrznuti**.
-- **ADR-034:** **stranica se NE zumira** (Leon, 2026-09-05) — ni štipanje ni dodir ni fokus; nadjačava WCAG 1.4.4; **F1/11 ✅** (`ISKLJUCENO_ODLUKOM` u `axe-gate.js`).
-- **ADR-031:** **MCP je CJEVOVOD, ne CRUD** (Leon, 2026-08-30): `Learn` je podloga svega → AI prvo prepozna lekcije/sekcije i napiše skriptu → iz nje kartice (**pojam/pitanje → objašnjenje**, boja po lekciji da se vidi kojoj pripada) → iz kartica dopune i kviz, uz **pokrivenost, ne uzorak**. **AI je KORISNIKOV** (ne plaćamo tokene → kvalitetu držimo samo branama), **materijal dolazi kroz chat** (datoteku nikad ne vidimo), **sve ide u NACRT**, doseg = **samo vlastito gradivo** (ni čitanje kataloga). **Četiri tvrde brane u write-putu:** duljina kartice · svaka kartica daje bar jedno pitanje · svaka lekcija dobiva boju · dopuna ima jednoznačan odgovor.
-- **ADR-030:** **AI kroz MCP je GLAVNI put stvaranja; editor je DORADA** (Leon, 2026-08-13) — smije IZGUBITI funkcije, ne dobiti ih. MCP je proizvod, ne spike, i najveći neriješeni komad plana; **kontrola kvalitete seli s ekrana u write-put** (`js/card-limits.js` = **treći čitatelj, nikad treća kopija**); nikad katalog/`is_admin()`/`service_role`; **vježbe izvan MCP-a** (ADR-018).
+- **040** novi smjer (03.10.): glavni projekt je HotelixSim; Sokrat se dovršava po ZAVRSNICI pa održavanje · dijeljenje linkom obara 025 · brane 031 sužene (uži MCP) · 035/036 zamrznuti · novi znak, ime ostaje.
+- **039** materijal od AI-ja ide na policu SAM i cijel (`predaj_nacrt`, jedna transakcija), bez ekrana za pregled · izmjena postojećeg samo na korisnikovu riječ, uz provjeru verzije (sukob = odbij, ne prepiši).
+- **038** MCP: nacrt u `node_drafts`, AI nikad u žive tablice · adresa `www.sokratstudy.com/mcp` · DCR uz popis hostova · **sigurnost u bazi** (token s `client_id` = zabrana po defaultu, nov RPC zatvoren dok se ne otvori), **kvaliteta u poslužitelju**.
+- **037** pravne stranice nose oba jezika u stranici; `boot.js` bira prije crtanja.
+- **035 · 036** ❄️ zamrznuti (040): tržište gradiva i najam organizacijama se u Sokratu ne grade.
+- **034** stranica se NE zumira (štipanje, dodir, fokus); nadjačava WCAG 1.4.4 (`ISKLJUCENO_ODLUKOM` u `axe-gate.js`).
+- **033** dvojezičnost se prevodi, ne gasi; jezik sučelja nikad ne dira predmete.
+- **032** semantika je uvijek PUNA ISPUNA, obrub nije zamjena; po temi se prilagođava tinta (`--color-on-ok/danger`, `inkForTint()`).
+- **031** MCP je cjevovod: Learn → kartice (pojam → objašnjenje, boja po lekciji) → dopune/kviz, uz pokrivenost · AI je KORISNIKOV (ne plaćamo tokene), materijal kroz chat, sve u nacrt, doseg samo vlastito gradivo · brane u write-putu.
+- **030** AI kroz MCP = glavni put stvaranja, editor = dorada (smije gubiti funkcije) · MCP je proizvod, ne spike · kvaliteta u write-putu, `js/card-limits.js` treći čitatelj, nikad kopija · vježbe izvan MCP-a.
+- **029** UGC je glavni proizvod unutar Sokrata; katalog je jedan izvor gradiva · Moji materijali = ravnopravno odredište · sigurnosno ne popušta ništa.
+- **028** Tailwind v4 samo kroz CLI, generirani CSS se commita, CDN nikad · nikad u `data/` · zabranjene dinamičke klase (`'bg-' + boja`).
+- **027** znanje u kod i testove, proza samo ZAŠTO · jedna činjenica = jedno mjesto · prepoznat rub isti čas dobiva test.
+- **026** „materijal" u „polici" (EN `folder`), „gradivo" = katalog · mobilno autorstvo preko korisnikovog AI-a · MCP nikad katalog, `is_admin()`, `service_role`.
+- **025** osobni materijal: vježbe odgođene · napredak kao katalog · boje se nasljeđuju od sekcije i smiju se pregaziti · korisnik je bilo tko · slike vezane na vlasnički prefiks.
+- **024** osobni graditelj = zaseban otok (`nodes`, owner-RLS, upis samo RPC-om); dva publish-puta svjesno koegzistiraju.
+- **022** identitet predmeta preko programa (placement ≠ sadržaj) · 023 otkazan 04.09., njegova t.5 ostaje.
+- **018** korisnik uploada PODATKE, nikad KOD (i UGC) · **017** jedan auto-bumpani token (`npm run bump`) · **016** `service_role` samo u Edge Functions · **011** read-path = anon + RLS, bez `/api`, uz file-fallback.
+- Ostali (001–015, 019–021) su povijesno obrazloženje, u `DECISIONS.md`. Logo danas: `assets/logo.svg` (indigo, potrace), favikoni iz SVG-a — mijenja ga faza ZNAK.
 
-- **ADR-029:** **UGC je GLAVNI proizvod**, javni katalog (broj predmeta zna `npm run verify`) je **jedan izvor gradiva**, ne srce platforme. „Moji materijali" prestaju biti pododjeljak profila i postaju **ravnopravno odredište** (stranica + ulaz u navigaciji i na landingu). **Ne popušta ništa sigurnosno** — ADR-024/025/018 stoje netaknuti; ovo je odluka o **istaknutosti**. ⚠️ Od ADR-040 vrijedi **unutar Sokrata**.
-- **ADR-028:** frontend ide na **Tailwind v4, ali SAMO preko CLI-ja** (generirani CSS se commita, kao i dosad `styles.bundle.css`) — **CDN nikad** (kompajler u pregledniku se tuče sa SW-om i immutable cacheom). **Tailwind NIKAD ne ulazi u `data/`** — gradivo zadržava semantičke klase, inače stil živi u podatku. **Dinamički sastavljene klase (`'bg-' + boja`) su zabranjene** — Tailwind skenira izvor, ne runtime; paleta od 8 boja ostaje na CSS varijablama.
-- **ADR-027:** znanje ide u **kod i testove**; proza nosi samo **ZAŠTO**. Jedna činjenica = **jedno mjesto**. Rub koji prepoznaš isti čas dobiva test — inače je zapis samo uredno dokumentiran propust (povod: BUG-023).
-- **ADR-026:** korisnik gradi **„materijal"**, spremnik je **„polica"** (EN ostaje `folder`); „gradivo" = javni katalog. **Mobilno autorstvo ide preko korisnikovog AI-a (MCP)**, ne preko editora na dodir. MCP invarijante: nikad katalog, nikad `is_admin()`, nikad `service_role`.
-- **ADR-025:** doseg osobnog materijala — vježbe **odgođene** · dijeljenje privatno sad (**cijena: slike su vezane na vlasnički prefiks**) · napredak isti kao katalog · **boje se nasljeđuju od sekcije i smiju se pregaziti** · korisnik je **bilo tko**.
-- **ADR-024:** osobni graditelj = **zaseban otok** (`nodes` + owner-RLS + RPC-only upis), NE proširenje kataloga; dva publish-puta svjesno koegzistiraju.
-- **ADR-023:** ⚰️ **otkazan 2026-09-04** (suradnik); t.5 (ADR-022 pull-forward) ostaje.
-- **ADR-022:** identitet predmeta preko programa (placement ≠ sadržaj) — temelj HR-ekspanzije.
-- **ADR-018:** student uploada **PODATKE, nikad KOD** (vrijedi i za UGC).
-- **ADR-017:** cache-busting = **jedan** auto-bumpani token (`npm run bump`), ne per-file hash.
-- **ADR-016:** `service_role` → **samo** Supabase Edge Functions, nikad Vercel/klijent.
-- **ADR-011:** read-path = Supabase **anon + RLS, bez `/api`**, uz file-fallback.
-- Ostalo (013 · 014 · 015 · 019 · 020 · 021 · 006–012 · 001/008) = **povijesno obrazloženje**, u `DECISIONS.md`.
-- **Logo:** `assets/logo.svg` (vektoriziran potraceom, indigo gradijent); favikoni iz SVG-a.
 ## Dokumentacija — **ulaz je SAMO `docs/README.md`**
 Od 2026-08-07 je `docs/` složen **po ulozi dokumenta**, ne po temi. Ne traži fajlove napamet — otvori indeks.
 

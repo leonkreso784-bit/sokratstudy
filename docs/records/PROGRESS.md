@@ -5,6 +5,16 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ④: ADR blok u CLAUDE.md = jedan redak po ADR-u
+
+- **Inventar prije i poslije** (skripta u scratchpadu, 58 odredbi starog bloka, svaka s regexom): odredba mora biti u
+  **starom** bloku (dokaz da regex mjeri pravu stvar) i u **odjeljku svog ADR-a** u DECISIONS.md ili u novom retku.
+  Prva verzija tražila je po cijelom DECISIONS.md i nalazila „pokriveno" u tuđim ADR-ovima → pooštreno na odjeljak.
+  Ishod: **58/58**. Jedna odredba („MCP je proizvod, ne spike", 030) **nije bila u DECISIONS.md** → ostala je u retku.
+  Svjesno samo u DECISIONS.md: „AI prepozna lekcije i napiše skriptu" (031) i „paleta 8 boja na CSS varijablama" (028).
+- **Dodani živi ADR-ovi kojih u bloku nije bilo:** 038 i 039 (temelj MCP-a), 032, 033, 037; 035/036 kao zamrznuti.
+- **Brojke:** blok 4 076 → 3 208 znakova (uz pet novih ADR-ova) · CLAUDE.md 33 111 → 32 243 · `CLAUDE_BUDGET` 33 150 → **32 550**.
+
 ## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ①: checkpoint na trenutno stanje, pokazivači
 
 - **Zašto (izmjereno 10.10.):** svaku sesiju se auto-učitavaju CLAUDE.md (33 065 znakova) i MEMORY.md (11 191, bez
