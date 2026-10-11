@@ -205,7 +205,8 @@ function indeks(readme, sviMjeseci, problemi) {
 function citaj(korijen) {
   const mapa = path.join(korijen, 'docs', 'records');
   const datoteke = {};
-  for (const d of fs.readdirSync(mapa)) {
+  // bez mape nema ni glavnih datoteka → `rasporedi` javi „NEMA PROGRESS.md" (pada zatvoreno, ne ruši se)
+  for (const d of fs.existsSync(mapa) ? fs.readdirSync(mapa) : []) {
     if (/^(PROGRESS|CHANGELOG)(-\d{4}-\d{2})?\.md$/.test(d)) datoteke[d] = fs.readFileSync(path.join(mapa, d), 'utf8');
   }
   const r = path.join(korijen, 'docs', 'README.md');

@@ -12,6 +12,7 @@
 //   4) .md postoji, a nije naveden u docs/README.md  → dokument-duh koji nitko ne nađe
 //   5) CONTENT_SCHEMA nabraja druge tokene boje       → dokument zaostaje za KODOM (ne samo za sobom)
 //                       nego schema/*.json
+//   8) zatvoren mjesec u PROGRESS.md / unos stariji od zadnjeg 🚀 u CHANGELOG.md → `npm run docs:rotate`
 //
 // Pokreni: npm run check:docs   (dio `npm run preflight`)
 
@@ -344,6 +345,12 @@ if (duhovi.length) {
   problems.push('DUH-DATOTEKA (' + jedinstveni.length + ')' +
     jedinstveni.map((d) => '\n      • ' + d).join(''));
 }
+
+// ── 8) ZAPISI SU ROTIRANI (PROGRESS/CHANGELOG po mjesecima) ─────────
+// Zatvoren mjesec u PROGRESS.md, unos stariji od zadnjeg 🚀 u CHANGELOG.md ili zastario popis mjeseci
+// u indeksu = pad s naredbom za popravak. Zašto i kako: zaglavlje `scripts/rotiraj-zapise.js`
+// (ADR-027 — obrazloženje stoji uz kod koji ga provodi). Brana: tests/unit/rotiraj-zapise.test.js.
+problems.push(...require('./rotiraj-zapise.js').provjeri(ROOT));
 
 // ── izvještaj ───────────────────────────────────────────────────────
 console.log('\n=== check:docs ===');

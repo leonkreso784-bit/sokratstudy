@@ -197,6 +197,13 @@ test('CHANGELOG bez ijednog 🚀 dok arhiva ima jedan = problem', () => {
   tvrdi(p.indexOf('nema nijedan 🚀') >= 0, p);
 });
 
+test('stablo bez docs/records: problem „NEMA", ne iznimka (check:docs se mora dovršiti)', () => {
+  const k6 = fs.mkdtempSync(path.join(os.tmpdir(), 'sokrat-rotacija-'));
+  STABLA.push(k6);
+  const p = R.provjeri(k6, '2026-10-11').join('\n');
+  tvrdi(p.indexOf('NEMA PROGRESS.md') >= 0 && p.indexOf('NEMA CHANGELOG.md') >= 0, p);
+});
+
 for (const s of STABLA) fs.rmSync(s, { recursive: true, force: true });
 console.log('\n' + passed + ' prošlo, ' + failed + ' palo\n');
 process.exit(failed ? 1 : 0);

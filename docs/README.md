@@ -97,13 +97,26 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 | Dokument | Svrha |
 |---|---|
 | [HISTORY.md](./records/HISTORY.md) | Vremenska crta milestone-a (brza orijentacija) |
-| [CHANGELOG.md](./records/CHANGELOG.md) | Verzije i što se mijenjalo |
-| [PROGRESS.md](./records/PROGRESS.md) | Dnevnik rada po sesijama |
+| [CHANGELOG.md](./records/CHANGELOG.md) | Verzije i što se mijenjalo — **od zadnjeg 🚀 naviše**; starije u mjesečnim arhivama (dolje) |
+| [PROGRESS.md](./records/PROGRESS.md) | Dnevnik rada po sesijama — **tekući mjesec**; zatvoreni u mjesečnim arhivama (dolje) |
 | `RAD.xlsx` (records/) | **Analiza rada** — commiti, isporuke, faze, vizije + 8 grafova; generira `python scripts/rad-xlsx.py` na kraju svake faze (samo odrađeno ulazi) |
 | [DECISIONS.md](./records/DECISIONS.md) | Arhitektonske odluke (ADR-001…040) i zašto |
 | [BUGS.md](./records/BUGS.md) | Bugovi + lekcije naučene — **aktivni + riješeni od 2026-08-31** |
 | [BUGS_ARCHIVE.md](./records/BUGS_ARCHIVE.md) | **Arhiva bugova BUG-001…038** (riješeni do 2026-08-30) — cijeli zapisi s lekcijama, referenca |
 | [BACKLOG.md](./records/BACKLOG.md) | Parkiralište ideja |
+
+**Mjesečne arhive** PROGRESS-a i CHANGELOG-a — premješta ih `npm run docs:rotate` (zašto: zaglavlje
+`scripts/rotiraj-zapise.js`); `check:docs` pada dok zatvoren mjesec stoji u glavnoj datoteci.
+
+<!-- docs:rotate — generira `npm run docs:rotate`, ne uređivati rukom -->
+
+| mjesec | Dnevnik rada (PROGRESS) | Isporuke (CHANGELOG) |
+|---|---|---|
+| 2026-09 | [PROGRESS-2026-09.md](./records/PROGRESS-2026-09.md) | [CHANGELOG-2026-09.md](./records/CHANGELOG-2026-09.md) |
+| 2026-08 | [PROGRESS-2026-08.md](./records/PROGRESS-2026-08.md) | [CHANGELOG-2026-08.md](./records/CHANGELOG-2026-08.md) |
+| 2026-07 | [PROGRESS-2026-07.md](./records/PROGRESS-2026-07.md) | — |
+| 2026-06 | [PROGRESS-2026-06.md](./records/PROGRESS-2026-06.md) | — |
+<!-- /docs:rotate -->
 
 ## `subjects/` — predmeti
 
