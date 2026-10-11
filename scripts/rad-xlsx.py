@@ -210,7 +210,11 @@ def isporuke_iz_progressa(od):
         return []
     tekst = '\n'.join(io.open(p, encoding='utf-8').read() for p in puti)
     zapisi = []
-    for m in re.finditer(r'^## (\d{4}-\d{2}-\d{2})(?:\s*\(([^)]*)\))?\s*[—-]+\s*(.+)$', tekst, re.M):
+    # Iza datuma smije stajati raspon (`2026-10-10/11`) ili jedna riječ (`2026-09-20 kasno`); unos se broji
+    # pod PRVIM datumom. Do 2026-10-11 je regex tražio zagradu ili crticu odmah iza datuma i tiho je
+    # preskakao 10 od 409 naslova (9 od 168 isporuka od OD-a).
+    for m in re.finditer(r'^## (\d{4}-\d{2}-\d{2})(?:/[\d-]+)?(?:\s+[^\s(—-][^\s(—]*)?(?:\s*\(([^)]*)\))?\s*[—-]+\s*(.+)$',
+                         tekst, re.M):
         datum, model, naslov = m.group(1), (m.group(2) or '').strip(), m.group(3).strip()
         if datum < od:
             continue

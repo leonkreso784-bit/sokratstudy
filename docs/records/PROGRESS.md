@@ -5,6 +5,15 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-11 (OPUS, `sokratstudy.f6`) — RAD.xlsx broji i naslove s rasponom ili riječju iza datuma
+
+- **Kvar (nađen u ③):** regex u `rad-xlsx.py` tražio je zagradu ili crticu odmah iza datuma → tiho je preskakao `## 2026-10-10/11 …`,
+  `## 2026-07-27/28 …` i `## 2026-09-20 kasno …` / `navečer …` — **10 od 409** datiranih naslova u PROGRESS datotekama.
+- **Popravak:** iza datuma smije stajati raspon (`/11`, `/10-01`) ili jedna riječ; unos ide pod prvi datum. Uži od „bilo čega", da
+  crtica iz raspona ne postane razdjelnik naslova.
+- **Mjera:** novi regex 409/409; svih 399 koje je stari čitao rastavlja **identično** (datum, model, naslov); 10 novih provjereno
+  rukom. Isporuke od OD-a: 168 (od toga 9 dosad nevidljivih: rujan 7, listopad 2); deployeva i dalje 10 (jedini 🚀 među novima je iz srpnja, prije OD-a).
+
 ## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ②: brana veličine (cigla DOKUMENTACIJA gotova)
 
 - **Što:** `scripts/velicina-dokumenata.js`, zove ga `check:docs` (odjeljak 9 → preflight i CI). Pragovi iz tablice u unosu ①
