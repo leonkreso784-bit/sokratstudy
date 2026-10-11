@@ -13,6 +13,28 @@
 > Njihovi zapisi ostaju **ovdje i nedirnuti** jer nose obrazloženje i mjerenja; spec nosi **redoslijed
 > i dokaz**. Kad cigla padne, ovdje se stavlja ✅ s brojkom — ne briše se.
 
+### ⏳ ČEKA LEONA — izvan repozitorija (preneseno iz checkpointa 2026-10-11)
+
+> Do 11.10. su ove stavke živjele samo u memoriji (`current-checkpoint`), koju nijedna brana ne doseže.
+> Svaka je provjerena na dan prijenosa; status koji ne znam piše „provjeriti", ne „gotovo".
+
+- **Required check `Gate (sve brane zelene)` na `main`-u** (Settings → Branches) — **provjeriti** je li uključen
+  (Leon 11.10.: ne zna; API zaštite grane traži admin pa ga ne mogu pročitati). Izbor je bio da se uključi, uz
+  svjesnu cijenu: **`main` postaje PR-only** — required check odbija i izravan push, pa lokalni `git merge` + `git push`
+  prestaje raditi. 29.09. je `main` pushan izravno, što s uključenom provjerom ne bi prošlo.
+- **Suvišan `STAGING_MAIL_UNSUB_SECRET` na PRODUKCIJI** (staging vrijednost, nitko ga ne čita; 26.09.) — brisanje
+  čeka Leonov OK. Ime koje funkcija čita je u Supabaseu uvijek `MAIL_UNSUB_SECRET`; prefiks `STAGING_` postoji samo u `.env`.
+- **Trajna Vercel bypass-tajna** (`VERCEL_AUTOMATION_BYPASS_SECRET` u `.env`; Vercel → `studymaster` → Settings →
+  Deployment Protection → Protection Bypass for Automation) — **još nije stvorena**; Vercel API meni odbija (403).
+  Dotad zaštićeni preview mjeri jednokratni put iz `docs/workflow/MCP_TESTING.md` §1.
+- **Ispale stavke (21.09.):** PRD redak „Frontend redizajn" još nosi stari status — provjeriti · Supabase
+  `TRUNCATE`-grantovi nisu provjereni drugdje osim na `nodes` (`ARCHITECTURE.md` §122) · **48 grana na originu**
+  (11.10.) — čišćenje uz Leonov popis · F2/3a+3b nisu potvrđeni na iPhoneu · zapis BUG-046 u `BUGS.md` kaže da kvar
+  „stoji na produkciji" — istina dok se popravak s grane ne deploya.
+- **Mape izvan repozitorija koje se smiju obrisati** (`Documents\`): `sokratstudy.f6-k5-mutacije`,
+  `sokratstudy.f6-k6-mutacije`, `sokratstudy.hr1-mkt-tmp`, prazna `sokratstudy.h1` (zaključana jer je Leonov cmd
+  bio unutra; grana `fix/h1-brisanje-racuna` živi na GitHubu).
+
 ### 🔥 NAŠ AI + API KREDITI — popis i plan NAKON MCP-a (Leon, 2026-10-01)
 
 **Odluka (Leon):** put „kopiraj-zalijepi s korisnikovim AI-jem" **ne dolazi u obzir**. MCP ne doseže sve (Claude,

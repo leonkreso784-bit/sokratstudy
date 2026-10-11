@@ -11,6 +11,17 @@
 - Ključevi dolaze iz `.env` (`STAGING_*`); nijedna skripta ih ne ispisuje.
 - Playwright u radnom stablu F6 uvijek s `SOKRAT_TEST_PORT=5051` (5050 drži drugo stablo; brana
   `tests/global-setup.js` pada ako port drži tuđi poslužitelj).
+- **Staging dashboard — živo stanje** (dashboard-koraci samo uz Leonov OK): OAuth Server **ON** · Authorization Path
+  `/odobrenje.html` · DCR **ON** · Site URL `http://localhost:5051` (bio `http://localhost:3000` — vratiti kad pokusi s
+  localhosta završe) · Auth Hook `public.mcp_access_token_hook` **Enabled** (Auth Hooks → Customize Access Token).
+  ⚠️ **Izlaz u nuždi je isti taj zaslon** — greška u hooku znači da se nitko ne može prijaviti.
+- **Spajanje konektora na stagingu traži lokalni poslužitelj na 5051** (Site URL): bez njega se stranica odobrenja ne
+  otvori. Iz stabla F6: `PORT=5051 node scripts/static-server.js`; stranica odobrenja na localhostu čita
+  `localStorage['sokrat-supabase-override']`. Adresa konektora: `https://czljmvigkgiajzjxtndq.supabase.co/functions/v1/mcp`.
+- **Zaštićeni preview** (`ssoProtection` = `all_except_custom_domains`, svaki `.vercel.app` traži prijavu): dok trajna
+  bypass-tajna ne postoji (BACKLOG), Vercel MCP alat **`get_access_to_vercel_url`** izda share-poveznicu na 23 h;
+  brana je uzme s `--share <url>` i nosi kolačić `_vercel_jwt` samo prema našoj adresi. Vercel drži **jedan aktivan
+  share-token** — novi poništava stari, pa se mjeri host po host. Opći recept za svaki zaštićeni preview.
 
 ## 2 · Računi
 
@@ -50,6 +61,10 @@
 - **Upis se dokazuje čitanjem natrag**, ne statusom 200.
 - **Mjerač ispisuje doseg** (koliko je tvrdnji dotaknuo); nula stavki = pad.
 - **Auth API zna vratiti 429** unutar prozora — to je imenovan ishod, ne kvar.
+- **Pomoćnik koji uzima „slučajan uzorak" iz sučelja** (npr. prvi gumb u kaskadi) pukne onog dana kad sučelje postane
+  istinito — uzorak je bio stari onemogućeni gumb (②/5, 03.10.). Cilj se imenuje, ne uzorkuje.
+- **Animaciju mjere kadrovi** (`getAnimations()` + `currentTime`), ne završno stanje — tako su nađeni kvarovi koje
+  zeleni testovi nisu vidjeli (②/5.2, 03.10.).
 
 ## 5 · Pravi AI (faza ⑤)
 

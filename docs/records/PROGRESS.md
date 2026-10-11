@@ -5,6 +5,36 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ①: checkpoint na trenutno stanje, pokazivači
+
+- **Zašto (izmjereno 10.10.):** svaku sesiju se auto-učitavaju CLAUDE.md (33 065 znakova) i MEMORY.md (11 191, bez
+  brane); `current-checkpoint` je imao **98 777 znakova u 62 bloka**, od čega ~3 % trenutno stanje, uz pet različitih
+  „SLJEDEĆA SESIJA" i stare HEAD-ove označene „NEpushano" — najveći rizik halucinacije.
+- **Anketa (Leon 11.10.):** redoslijed ① → ④ ADR blok → ⑤ pravilo testiranja → ③ rotacija → ② brana (zadnja, da pragovi
+  stanu na brojke POSLIJE rezanja) · pragovi kao u tablici dolje · rotacija u istu mapu (`PROGRESS-2026-09.md`, relativne
+  poveznice ostaju žive), skripta generira indeks, **brana u preflightu** · required check `Gate`: Leon ne zna → BACKLOG „provjeriti".
+- **Dokaz prije rezanja:** agent je svaki blok (redci 24–1132) razvrstao s `put:redak` dokazom: **A 37 blokova / ~67 k
+  znakova pokriveno** u PROGRESS/CHANGELOG/arhivi · **C 14 / ~11 k zastarjelo** · **B 11 blokova s 13 nepokrivenih
+  činjenica** → premještene: BACKLOG §„⏳ ČEKA LEONA" (Gate, suvišna tajna na PROD-u, trajna Vercel bypass-tajna, ispale
+  stavke, mape za brisanje) · `subjects/README.md` (odluke 27.09., otvoreno HR) · CONTENT_INTAKE (Merlin, tri pouke) ·
+  MCP_TESTING §1/§4 (živo stanje staging dashboarda, poslužitelj 5051 za konektor, zaštićeni preview, dvije pouke 03.10.) ·
+  memorija (`.imena-zabrana.txt` u novom stablu; naredbe za PowerShell, SQL za SQL Editor). Hashovi commitova nisu u docs-u,
+  ali su u `git log` (15 uzoraka razrješeno). Stara datoteka cijela: `Documents\sokratstudy.sesije\current-checkpoint-2026-10-11-pred-rezanje.md`.
+- **Što:** checkpoint 98 777 → 3 232 znaka (stanje, sljedeće, što ne otvarati, radna stabla — sada 7, s `.hr1`) ·
+  MEMORY.md 11 191 → 6 911 (kuke ≤ 250, grupirano; RASPORED → ZAVRSNICA i u `follow-recorded-plan`) · CLAUDE.md: naslov
+  stanja bez datuma, prekriženo „ZNAK JE NEPROMJENJIV" maknuto (ADR-040 nosi odluku), ručni brojevi predmeta (red 8, 38,
+  253) → pokazivač, zastarjelo „S4+S5 bez vlasnika" ispravljeno (izgrađeno 27.–29.09.), redak KARTICE parkirane (kao na `main`-u).
+- **Pragovi brane veličine (② — upisuju se u `check-docs.js`, znakovi bez CR):**
+
+  | datoteka | 10.10. | prag |
+  |---|---|---|
+  | MEMORY.md | 11 191 | 8 000 + svaki redak ≤ 250 |
+  | current-checkpoint | 98 777 | 5 000 |
+  | ostale memorije | najviše 5 238 | 6 000 po datoteci; imenovana iznimka `windows-git-bash-zamke` 9 000 |
+  | aktivni plan | 9 032 | 12 000 |
+  | `docs/architecture/*` | 6–37 k | izmjereno + 10 % po datoteci |
+  | CLAUDE.md | 33 065 | `CLAUDE_BUDGET` → izmjereno + 300 poslije ④ |
+
 ## 2026-10-10/11 (OPUS, `sokratstudy.f6`) — ZAVRSNICA K/6: paginacija i kvota čvorova (kod ✅, STAGING ✅)
 
 - **Anketa (Leon):** kvota živi u **okidaču na `nodes`** (ne u `create_node`: čvor rađa i `restore_node` — cijela mapa

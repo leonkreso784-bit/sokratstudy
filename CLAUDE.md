@@ -5,7 +5,7 @@
 
 > **👤 Repo ima JEDNOG suradnika: Leona.** Content-suradnik je otkazan 2026-09-04 → **role-router je
 > ukinut**, `git config user.name` se više ne provjerava. Povijest tog modela: `docs/archive/TEAM.md`,
-> ADR-023 (otkazan). Sedam HR predmeta koje je proizveo **ostaje na produkciji**.
+> ADR-023 (otkazan). HR predmeti koje je proizveo **ostaju na produkciji**.
 
 ## Što je projekt
 Interaktivna platforma za učenje (flashcards / quiz / fill / learn + interaktivne vježbe). Live: **www.sokratstudy.com**.
@@ -35,7 +35,7 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 - Konvencija semestra: `year` = studijska godina; `semester` ∈ {1,2}.
 
 ## Sadržaj (autorstvo)
-- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** — 2. god 8/8 ✅ · 1. god 9/9 ✅ (⛔ Intro blokiran) · HR pilot ✅. Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
+- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** (broj zna `npm run verify`; ⛔ Intro to Hospitality blokiran — nema izvora). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
 - Schema (obavezno): `docs/architecture/CONTENT_SCHEMA.md`. Novi predmet = mapa `data/<subject>/{midterm-1,midterm-2,final}.js`; brzo: `npm run scaffold`. 4 stara sem-2 predmeta ostaju root `data-*.js` (svjesno, ADR-015).
 - PDF materijali: `_materials/` (gitignored); čitaj s `node scripts/pdf-text.js "<pdf>"` (Read ne radi za PDF). Vidi `docs/workflow/CONTENT_INTAKE.md`.
 - **KaTeX** (kvantitativni predmeti): delimiteri **`\( \)` / `\[ \]` / `$$ $$` — NIKAD jedan `$`** (valutni `$NN`); `renderMath()` u `js/math.js`. Konvencija: `docs/architecture/CONTENT_SCHEMA.md` §Matematika.
@@ -150,7 +150,7 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 
 > **„F4", „U8", „K6" u starim zapisima = ZATVORENE oznake faza** (temelj F1–F6 · graditelj F0–F5 · editor U/F7/K). Sve tri serije su ispunjene i žive samo kao povijest u `docs/archive/` i `docs/plan/ROADMAP.md`. **Nova faza dobiva ime, ne slovo.**
 
-## Stanje — TRENUTNO (2026-09-04)
+## Stanje — TRENUTNO
 
 > **Ovdje stoji samo ono što vrijedi SAD** (ADR-027). **Povijest cigli je IZAŠLA odavde**
 > (2026-08-25): mjere, pouke i obrnute provjere žive u specu i zapisima — ova je sekcija do
@@ -195,7 +195,6 @@ Oba speca u `docs/archive/`; isporučeno zna CHANGELOG. **Next.js odbijen (ADR-0
   smjer, naravno"*): grotesk svugdje (**serif nadglašen**), praznina, tipografija nosi, monokrom
   + jedan akcent. Spec §7.3–7.8.
 - **Traka nosi TOČNO DVA odredišta: vlastito gradivo i profil** (F2/0 — **okreće T2**, Leon: *„gore treba biti profil i UGC"*). Ulaz je u TRAJNOM KROMU, na svakoj stranici; **drugi ulaz u istu traku vraća kvar koji je K2b uklonio**, zato brana traži točno jedan.
-- ~~**🔒 ZNAK JE NEPROMJENJIV**~~ — **oboreno (ADR-040): novi znak, ime ostaje** (faza ZNAK).
 - **Broj predmeta se NIKAD ne piše rukom.** Jedini ručno pisan je statični fallback u
   `index.html` i njega čuva `npm run verify`; landing je taj razred greške već imao **na
   produkciji** (pisao 17 kad ih je bilo 22).
@@ -247,11 +246,12 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
 - **STAGING Supabase:** `sokrat-staging` (ref `czljmvigkgiajzjxtndq`) — write/draft testovi, da
   prod-audit ostane čist. `test:authed`/`rls-check` gađaju staging kad su `STAGING_*` u `.env`;
   seed = `node scripts/seed-staging.js`.
+- **⏸️ KARTICE parkirane** (Leon 08.09.): `feat/tinder-kadar` se ne otvara bez njegove riječi (CI ondje crven); BUG-045/046 → samo cherry-pick.
 - **⏳ Grane izvan `main`-a:** zna ih `git branch --no-merged main`, ne ova datoteka. ⚠️ Grana zna
   izgledati kao platformski zahvat a nositi samo `?v=` tokene → *uzmi `main`, pa `npm run bump`*.
 - **⚰️ Content-suradnik OTKAZAN 2026-09-04** (Leon) — role-router ukinut, `docs/archive/TEAM.md` je
-  povijest, ADR-023 nosi pečat. **Gradivo ostaje:** sedam HR predmeta je živo. **S4+S5** (4
-  kvantitativna HR predmeta, vježbe = samo string-polja) je time **BEZ VLASNIKA**, ne otkazan.
+  povijest, ADR-023 nosi pečat. **Gradivo ostaje** i živo je. **S4+S5** (kvantitativni HR
+  predmeti s vježbama) izgradili smo mi 27.–29.09.; stanje po predmetu: `docs/subjects/README.md`.
   `content-review` agent i dalje vrijedi za bilo koji content-zahvat. [[content-model-standard]]
 - **HR-ekspanzija:** HR 1. god × 3 smjera FMTU dijele vezne predmete (ADR-022). Kad HR program
   bude potpun → **HR u Supabase** (`migrate-content.js`). [[hrv-program]]
