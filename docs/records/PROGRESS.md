@@ -5,6 +5,15 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ⑤: pravilo testiranja
+
+- **Što (Leon, anketa 11.10.; povod u unosu K/6):** po cigli lokalno `preflight` + **ciljani** Playwright · puni skup =
+  **CI na push grane**, cigla nije gotova dok ishod CI-ja nije pročitan · puni lokalni `test:responsive` samo prije `main`-a.
+- **Gdje:** CLAUDE.md pravilo #4 (tekst zamijenjen, ne dopisan: 32 243 → 32 401 ≤ 32 550) · `TESTING.md` nov odjeljak
+  „Koji testovi kada" (tablica + zašto) i dva pokazivača (sporije brane, „lokalno prije pusha" koji je tražio puni `npx playwright test`) ·
+  memorija `preflight-before-every-push` + njezin redak u MEMORY.md. ⚠️ Memorija puni `test:responsive` zapravo nije spominjala —
+  pravilo #4 jest, a ono pokazuje na nju; dopunjena je da nosi novo pravilo.
+
 ## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ④: ADR blok u CLAUDE.md = jedan redak po ADR-u
 
 - **Inventar prije i poslije** (skripta u scratchpadu, 58 odredbi starog bloka, svaka s regexom): odredba mora biti u

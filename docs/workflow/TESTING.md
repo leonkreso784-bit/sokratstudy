@@ -40,6 +40,7 @@
 ### Sporije brane — traže preglednik, mrežu ili prijavu
 
 - [ ] `npm run test:responsive` → Playwright, default (odjavljena) suita na iPhone profilima.
+      ⚠️ **Puni skup lokalno samo prije `main`-a** — po cigli ciljano, v. [Koji testovi kada](#koji-testovi-kada-leon-2026-10-11).
 - [ ] `npm run test:authed` → pozitivan admin-put (v. odjeljak niže).
 - [ ] `npm run check:contrast:live` → kontrast kakav se STVARNO iscrta (4 teme × **13** ruta;
       `exercises` i `blind-map` dodani u C5b/0 — `te2` ih nema, pa ih brana dotad nije vidjela).
@@ -132,9 +133,26 @@
   1. Radi na grani (ne direktno na `main`). Push grane → **CI se pokrene** + **Vercel napravi preview-deploy** (zaseban URL, NIJE produkcija).
   2. Provjeri: CI zelen + vizualni pregled na preview URL-u.
   3. Tek kad je zeleno i pregledano → merge u `main` (= produkcijski deploy) **uz izričitu potvrdu korisnika**.
-- **Lokalno prije pusha** (da CI ne bude crven): pokreni isti lanac ručno (`validate:content` → `verify` → `test:unit` → `npx playwright test`).
+- **Lokalno prije pusha grane** (da CI ne bude crven): `npm run preflight` + **ciljani** Playwright; puni `npx playwright test` je CI-jev posao — v. [Koji testovi kada](#koji-testovi-kada-leon-2026-10-11).
 - **Pre-push hook na `main` (od S1):** `preflight` → `ci-tajne.js --zahtijevaj` → **`test:authed` (~15 min)**. Leonova odluka 2026-09-24: na `main` ide **punih 154 tvrdnji**. Zašto toliko čekanja: preflight ne vrti **nijedan** test koji se stvarno prijavi — RLS, Storage, publish-RPC i brava na lozinci mjere se **isključivo** authed suiteom, a on je dotad bio izvan i preflighta i CI-ja. Svjestan bypass ostaje `git push --no-verify`.
 
+
+## Koji testovi kada (Leon, 2026-10-11)
+
+**Zašto:** puni `test:responsive` traje **~40 min** i na razvojnom stroju (2 GB slobodnog RAM-a) guši
+sve ostalo; 10.10. je prekinut na **453/954** (0 palo). Isti skup CI ionako vrti na svaki push grane,
+u dva sharda, na Linuxu — koji je i jedini sudac za mjere ovisne o crtaču (odjeljak ispod).
+
+| kada | što se vrti lokalno | tko vrti puni skup |
+|---|---|---|
+| **po cigli** (commit na grani) | `npm run preflight` + **ciljani** Playwright: `npx playwright test <specovi>` — svaki spec koji dira promijenjenu datoteku (izravno, kroz helper ili tako da čeka njezin globalni) | **CI na push grane** |
+| **poslije pusha grane** | ništa — **pročitam ishod CI-ja**: `runs` → `jobs` → anotacije check-runa (javni API, bez ključa; v. odjeljak ispod) | CI |
+| **prije `main`-a / produkcije** | **puni** `npm run test:responsive` (+ pre-push hook vrti `test:authed`) | lokalno **i** CI |
+
+⚠️ **Ciljani skup se bira po ovisnosti, ne po imenu:** spec koji datoteku ne spominje, a čeka njezin
+globalni, ne padne nego **visi** (v. §„Gdje editor živi"). Kad nisi siguran, uzmi širi skup.
+⚠️ **„Push je prošao" nije „CI je zelen".** Cigla nije gotova dok ishod CI-ja nije pročitan; crveni CI na
+grani je nalaz iste težine kao crveni lokalni test.
 
 ## ⚠️ ZELENO LOKALNO NIJE ZELENO (2026-08-24)
 
