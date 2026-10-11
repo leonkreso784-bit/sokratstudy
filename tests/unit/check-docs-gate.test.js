@@ -47,9 +47,12 @@ function stablo({ gitignore, git }) {
   fs.mkdirSync(path.join(d, 'scripts'));
   fs.mkdirSync(path.join(d, 'docs', 'workflow'), { recursive: true });
   fs.copyFileSync(IZVOR, path.join(d, 'scripts', 'check-docs.js'));
-  // check-docs.js od 2026-10-11 zove i provjeru rotacije zapisa (odjeljak 8); bez nje se ne pokrene.
-  // Lažno stablo nema docs/records → ta provjera javi svoj problem, a ovaj test sudi samo ispisu o duhovima.
-  fs.copyFileSync(path.join(path.dirname(IZVOR), 'rotiraj-zapise.js'), path.join(d, 'scripts', 'rotiraj-zapise.js'));
+  // check-docs.js od 2026-10-11 zove i provjeru rotacije zapisa (odjeljak 8) i veličine (odjeljak 9); bez njih
+  // se ne pokrene. Lažno stablo nema docs/records ni memoriju → te provjere javljaju svoje, a ovaj test sudi
+  // samo ispisu o duhovima.
+  for (const m of ['rotiraj-zapise.js', 'velicina-dokumenata.js']) {
+    fs.copyFileSync(path.join(path.dirname(IZVOR), m), path.join(d, 'scripts', m));
+  }
   fs.writeFileSync(path.join(d, 'docs', 'README.md'),
     '# Indeks\n\n- [TESTING](workflow/TESTING.md)\n');
   fs.writeFileSync(path.join(d, 'docs', 'workflow', 'TESTING.md'),

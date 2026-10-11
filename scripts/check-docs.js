@@ -13,6 +13,7 @@
 //   5) CONTENT_SCHEMA nabraja druge tokene boje       → dokument zaostaje za KODOM (ne samo za sobom)
 //                       nego schema/*.json
 //   8) zatvoren mjesec u PROGRESS.md / unos stariji od zadnjeg 🚀 u CHANGELOG.md → `npm run docs:rotate`
+//   9) memorija / checkpoint / aktivni plan / docs/architecture preko praga → skrati ili SVJESNO podigni prag
 //
 // Pokreni: npm run check:docs   (dio `npm run preflight`)
 
@@ -71,9 +72,11 @@ for (const abs of allMd) {
 // ima jedan odgovor, samo ga sada daje spec sam.
 const PLAN = path.join(DOCS, 'plan');
 const PAUZIRAN = /^\s*\*\*Status:\*\*\s*⏸️\s*PAUZIRAN\b/m;
+let AKTIVNI_PLANOVI = [];   // čita ih i odjeljak 9 (veličina aktivnog plana)
 if (fs.existsSync(PLAN)) {
   const specs = fs.readdirSync(PLAN).filter((f) => f.endsWith('.md') && f !== 'ROADMAP.md');
   const aktivni = specs.filter((f) => !PAUZIRAN.test(fs.readFileSync(path.join(PLAN, f), 'utf8')));
+  AKTIVNI_PLANOVI = aktivni;
   if (aktivni.length > 1) {
     problems.push('VIŠE AKTIVNIH PLANOVA u docs/plan/: ' + aktivni.join(', ') +
       '\n      → ispunjen plan ide u docs/archive/ ISTI DAN (pravilo 1)' +
@@ -352,10 +355,19 @@ if (duhovi.length) {
 // (ADR-027 — obrazloženje stoji uz kod koji ga provodi). Brana: tests/unit/rotiraj-zapise.test.js.
 problems.push(...require('./rotiraj-zapise.js').provjeri(ROOT));
 
+// ── 9) VELIČINA: memorija, checkpoint, aktivni plan, docs/architecture ──
+// Kalup je odjeljak 6 (CLAUDE_BUDGET), pragovi s datumom i razlogom su u JEDNOJ tablici u
+// `scripts/velicina-dokumenata.js`, uz obrazloženje i opis kako se nalazi memorija (izvan repozitorija).
+// Brana: tests/unit/velicina-dokumenata.test.js.
+const velicina = require('./velicina-dokumenata.js').provjeri({ korijen: ROOT, aktivniPlanovi: AKTIVNI_PLANOVI });
+problems.push(...velicina.problemi);
+
 // ── izvještaj ───────────────────────────────────────────────────────
 console.log('\n=== check:docs ===');
 console.log('  .md dokumenata : ' + allMd.length);
 console.log('  poveznica      : ' + links);
+console.log('  veličina       : ' + velicina.dotaknuto + ' datoteka');
+velicina.napomene.forEach((n) => console.log('  ' + n));
 if (problems.length === 0) {
   console.log('\n✅ dokumentacija je konzistentna\n');
   process.exit(0);

@@ -5,6 +5,21 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ②: brana veličine (cigla DOKUMENTACIJA gotova)
+
+- **Što:** `scripts/velicina-dokumenata.js`, zove ga `check:docs` (odjeljak 9 → preflight i CI). Pragovi iz tablice u unosu ①
+  stoje u JEDNOJ tablici modula s datumom i razlogom: MEMORY.md 8 000 + redak ≤ 250 · `current-checkpoint` 5 000 · ostale
+  memorije 6 000, imenovana iznimka `windows-git-bash-zamke` 9 000 · aktivni plan 12 000 (isti „aktivni" kao odjeljak 2) ·
+  `docs/architecture/*` izmjereno + 10 % po datoteci (nova datoteka bez retka i redak bez datoteke = pad).
+- **Memorija izvan repozitorija:** mapa se izvodi iz GLAVNOG stabla (`git worktree list --porcelain`, bez `GIT_*`), ne-alfanumerički
+  znak → „-", traži se bez obzira na veličinu slova (git kaže `C:/`, mapa je `c--…`) · izričito `SOKRAT_MEMORIJA` (nepostojeći = pad) ·
+  nema mape → „PRESKOČENO — memorija nije na ovom stroju: <put>" · bez gita i bez izričitog puta = pad.
+- **Izmjereno danas (sve ispod):** MEMORY.md 6 985 (najdulji redak 234) · checkpoint 3 269 · najveća ostala 5 424 · iznimka 8 678 ·
+  ZAVRSNICA 9 032 · arhitektura 6 032–37 219. `check:docs` dotiče 52 datoteke (44 memorije · 1 plan · 7 arhitekture).
+- **Brana:** unit `velicina-dokumenata` 22/0 (lažno stablo i dom; svaki prag: točno prag prolazi, +1 pada; povezano stablo → memorija
+  glavnog) · **obrnute 17/17** · **svaki prag jednom prekoračen na PRAVOJ datoteci** (+1 znak): 6/6 + redak 251 crveno s imenom
+  datoteke, povrat bajt-identičan · dom bez memorije → PRESKOČENO, izlaz 0. `check-docs-gate` kopira i ovaj modul u lažno stablo.
+
 ## 2026-10-11 (OPUS, `sokratstudy.f6`) — cigla DOKUMENTACIJA ③: PROGRESS i CHANGELOG po mjesecima
 
 - **Što (odluke iz ankete 11.10.):** `scripts/rotiraj-zapise.js` (`npm run docs:rotate`, `--check` u `check:docs` → preflight i CI).

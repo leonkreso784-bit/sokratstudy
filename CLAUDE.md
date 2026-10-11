@@ -78,7 +78,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `check:lockfile` | bi li `npm ci` prošao — vrti **dva npm-a** (lokalni + onaj iz CI-ja), pada zatvoreno. Lock se popravlja s `npx npm@10 install` |
 | `check:node` | `.nvmrc` == `engines` == CI == proces koji vrti — **isti major**, inače pada zatvoreno |
 | `check:state` | tvrdnje o stanju se slažu s gitom (broj commita žive grane · **zapovijed koja je već izvršena**). Pokriva `CLAUDE.md`, `docs/plan/**`, `BACKLOG.md` |
-| `check:docs` | jedan aktivni plan · svaki `.md` u indeksu · nula mrtvih poveznica · **nula ćirilice** u kodu i sadržaju · zapisi rotirani po mjesecima (`docs:rotate`) |
+| `check:docs` | jedan aktivni plan · svaki `.md` u indeksu · nula mrtvih poveznica · **nula ćirilice** u kodu i sadržaju · zapisi rotirani po mjesecima (`docs:rotate`) · **veličina** memorije, plana i `architecture` |
 | `check:tailwind` | 6 brana oko Tailwind sloja (dinamička imena klasa · sudar s legacy klasom · `@source` ugovor · klase bez bundlea · šum · **sudar `@keyframes`**) |
 | `check:cdn` | vanjski podresursi imaju **SRI + `crossorigin` + verzioniran URL**; `check:cdn:live --verify` uspoređuje bajtove s izdavačevim hashem (mrežno) |
 | `check:palette` | **čegrtaljka**: broj ostataka stare palete ne smije **porasti** (`--update` spušta osnovicu). Uz nju **četiri tvrde zabrane**: zakucan tekst na ispuni marke · isto to na **POTOMKU** ispune · `--primary-light` kao tekst · **zakucana tamna ploha** |
@@ -166,7 +166,7 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 > | što je isporučeno i kada | `CHANGELOG.md` · dnevnik sesija: `PROGRESS.md` |
 >
 > **Brojka prepisana u prozu ostari istog dana** → zato **`npm run check:state`** (zašto: u
-> skripti). ⚠️ **Memorija je izvan repozitorija pa ju gate ne doseže** — poznata rupa, ne previd.
+> skripti). ⚠️ **Memorija je izvan repozitorija:** `check:state` ju ne doseže; `check:docs` joj mjeri samo veličinu (na stroju gdje postoji).
 
 ### Gdje smo
 
