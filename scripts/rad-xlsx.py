@@ -19,7 +19,7 @@ LISTOVI
   Dnevnik   — jedan red po commitu od datuma OD (git je jedini izvor: datum, vrijeme, opis,
               datoteke, +/− redaka, redaka u testovima i branama). „vrsta (auto)" je heuristika iz
               opisa commita; „vrsta (ručno)" je Leonov/naš ispravak i ČUVA SE pri osvježavanju.
-  Isporuke  — jedan red po unosu u docs/records/PROGRESS.md (jedinica priče, ne koda).
+  Isporuke  — jedan red po unosu u docs/records/PROGRESS.md i PROGRESS-YYYY-MM.md (jedinica priče, ne koda).
   Faze      — zatvorene faze (konstante dolje, s datumima iz gita) + RASPORED F1–F7 (broj cigli i
               ✅ se ČITAJU iz docs/plan/RASPORED.md, ne prepisuju).
   Vizije    — planovi i vizije sa stanjem i procjenom postotka. RUČNI list: čuva se kakav jest;
@@ -197,10 +197,18 @@ def sati_po_danu(commiti):
 
 # ───────────────────────── dokumenti ─────────────────────────
 def isporuke_iz_progressa(od):
-    """Naslovi `## YYYY-MM-DD (MODEL) — naslov` iz PROGRESS.md od datuma OD."""
-    if not os.path.exists(PROGRESS):
+    """Naslovi `## YYYY-MM-DD (MODEL) — naslov` iz PROGRESS.md I njegovih mjesečnih arhiva, od datuma OD.
+
+    ⚠️ Od 2026-10-11 `npm run docs:rotate` seli zatvorene mjesece u `PROGRESS-YYYY-MM.md` (ista mapa).
+    Čita li se samo PROGRESS.md, knjiga tiho izgubi sve isporuke prije tekućeg mjeseca.
+    """
+    mapa = os.path.dirname(PROGRESS)
+    puti = [PROGRESS] + sorted(os.path.join(mapa, d) for d in os.listdir(mapa)
+                               if re.match(r'^PROGRESS-\d{4}-\d{2}\.md$', d))
+    puti = [p for p in puti if os.path.exists(p)]
+    if not puti:
         return []
-    tekst = io.open(PROGRESS, encoding='utf-8').read()
+    tekst = '\n'.join(io.open(p, encoding='utf-8').read() for p in puti)
     zapisi = []
     for m in re.finditer(r'^## (\d{4}-\d{2}-\d{2})(?:\s*\(([^)]*)\))?\s*[—-]+\s*(.+)$', tekst, re.M):
         datum, model, naslov = m.group(1), (m.group(2) or '').strip(), m.group(3).strip()

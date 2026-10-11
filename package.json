@@ -39,6 +39,7 @@
     "validate:schema": "node scripts/validate-json-schema.js",
     "check:final": "node scripts/check-final-drift.js",
     "check:docs": "node scripts/check-docs.js",
+    "docs:rotate": "node scripts/rotiraj-zapise.js",
     "check:state": "node scripts/check-state.js",
     "check:lockfile": "node scripts/check-lockfile.js",
     "check:node": "node scripts/check-node.js",
