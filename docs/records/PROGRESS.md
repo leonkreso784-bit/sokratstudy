@@ -5,6 +5,21 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-12 (OPUS, `sokratstudy.f6`) — cigla `sql:staging`: SQL datoteka na STAGING bazu, nikad na produkciju (kod ✅, živo čeka `.env`)
+
+- **Zašto:** `execute_sql` s DDL-om i `apply_migration` sigurnosni filtar odbija i na stagingu → Leon je lijepio svaku izmjenu sheme.
+- **Što:** `scripts/sql-staging.js` (`npm run sql:staging -- <datoteka>.sql [--dry]`) = `supabase db query --db-url … -f …` (CLI je već
+  u devDependencies — **nema nove ovisnosti**). Nađeno usput: CLI ima i `--project-ref` preko CLI prijave, ali ta prijava vrijedi za
+  **cijeli račun** (i PROD) → odbačeno; ostaje **lozinka staging baze**, koja PROD ne otvara ni uz grešku u kodu.
+- **Tri sloja:** vjerodajnica JEDINO `STAGING_DB_URL` (ne `process.env`, ne druge varijable) · adresa mora biti `postgres.<staging>@…pooler`
+  ili `db.<staging>.supabase.co`, nijedan drugi ref iz `PROJEKTI` (sirov ili percent-kodiran) · nijedna zastavica CLI-ja se ne prosljeđuje.
+  CLI se zove **izravno kroz node** (`supabase/dist/supabase.js`), ne kroz `cmd.exe` gdje su `%`, `^`, `&` iz lozinke posebni.
+  Lozinka se maskira i u izlazu CLI-ja.
+- **Brana:** unit `sql-staging` 12/0; **obrnute 12/12**. Test je našao pravi propust prije commita: `URL.password` vraća lozinku
+  **ponovno kodiranu** (`^` → `%5E`), pa sirovi oblik iz `.env` ne bi bio maskiran → vadi se iz teksta adrese.
+- **Usput:** `supabase/.temp/` je u gitu (`cli-latest` se zato stalno javlja kao izmijenjen) — nije dirano.
+- **Čeka:** Leon upiše `STAGING_DB_URL` (Dashboard → sokrat-staging → Connect → Session pooler, URI s lozinkom) → prvi živi prolaz.
+
 ## 2026-10-11 (OPUS, `sokratstudy.f6`) — RAD.xlsx broji i naslove s rasponom ili riječju iza datuma
 
 - **Kvar (nađen u ③):** regex u `rad-xlsx.py` tražio je zagradu ili crticu odmah iza datuma → tiho je preskakao `## 2026-10-10/11 …`,

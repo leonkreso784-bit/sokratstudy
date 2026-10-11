@@ -18,7 +18,8 @@ i [archive/MCP.md](../archive/MCP.md) (oba ⛔ zamijenjena ovim planom; ondje os
 - **Jedna cigla = jedan commit**, gate na svakoj; brana koja ne pada na starom kodu = cigla nije gotova.
 - **Zastanak na kraju faze**; unutar faze cigle teku.
 - **Svaki push na `main` i svaki deploy = Leonov izričit OK.** Uz svako „popravljeno" reći GDJE se vidi.
-- **Sve s bazom prvo na STAGINGU**; SQL na staging i PROD ide kroz Leonovu ruku kad ga alat odbije.
+- **Sve s bazom prvo na STAGINGU**; SQL na staging: `npm run sql:staging -- <datoteka>.sql` (samo staging, `STAGING_DB_URL`
+  u `.env`; prvi živi prolaz čeka Leonov upis); PROD i sve što alat odbije ide kroz Leonovu ruku.
 
 ## 1 · Faze
 

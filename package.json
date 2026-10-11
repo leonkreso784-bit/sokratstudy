@@ -55,6 +55,7 @@
     "check:functions": "node scripts/check-edge-functions.js",
     "check:mcp-rewrite": "node scripts/check-mcp-rewrite.js",
     "deploy:function": "node scripts/deploy-function.js",
+    "sql:staging": "node scripts/sql-staging.js",
     "mcp:probe": "node scripts/mcp-probe.js",
     "css:debt": "node scripts/css-debt.js",
     "css:diff": "node scripts/css-diff.js",
