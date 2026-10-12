@@ -55,7 +55,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.5' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.6' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -295,7 +295,10 @@ export const ODBIJANJA_ALATA: Record<string, { vrsta: VrstaOdbijanja; poruka: st
   alat_zadnja_lekcija: { vrsta: 'korisnik', poruka: 'This is the only lesson of the material; a material cannot be left without lessons. Ask the user what they want instead.' },
   // ZAVRSNICA K/3 (ADR-031): svaka kartica daje bar jedno pitanje
   alat_kartica_bez_pitanja: { vrsta: 'ispravi', poruka: 'Every flashcard needs at least one question built from it: a quiz question or a fill-in sentence whose "card" is its card_id. ' +
-    'Add them with dodaj_pitanja (or delete the flashcard with obrisi_stavke), then call predaj_nacrt again. Flashcards without a question (lesson_id/card_id):' }
+    'Add them with dodaj_pitanja (or delete the flashcard with obrisi_stavke), then call predaj_nacrt again. Flashcards without a question (lesson_id/card_id):' },
+  // ZAVRSNICA K/7 (N13): odgovor alata ima istu granicu kao nacrt i objava
+  alat_odgovor_prevelik: { vrsta: 'ispravi', poruka: 'The answer is larger than 1 MB, so it was not sent. Read less at once: ONE lesson ' +
+    '(procitaj_nacrt or procitaj_materijal with lesson_id), or the next page of procitaj_materijale (offset).' }
 };
 
 /** Odbijanje koje alat vraća AI-ju kao rezultat s `isError` (nikad kao 500). */
@@ -936,6 +939,33 @@ export const ALATI: Alat[] = [
 
 export interface Rezultat { content: { type: 'text'; text: string }[]; isError?: boolean }
 
+// ─── K/7 (N13): odgovor alata najviše 1 MB ──────────────────────────────────────────────────────
+// Ista granica kao nacrt i objava (`f6-nacrt.sql`, `f6-sadrzaj.sql`: 1 048 576 bajtova). Nacrt od 1 MB
+// uvučen s dva razmaka naraste preko nje, pa se preveliko prvo šalje ZBIJENO (isti podatak, bez
+// razmaka); tek ako ni to ne stane — odbijanje koje kaže kako čitati manje. Nikad odrezan JSON.
+// Broje se BAJTOVI UTF-8, ne znakovi: „č" je jedan znak i dva bajta.
+export const NAJVECI_ODGOVOR = 1048576;
+const bajtova = (s: string) => new TextEncoder().encode(s).length;
+
+function tekstOdgovora(r: unknown): string {
+  if (typeof r === 'string') {
+    if (bajtova(r) <= NAJVECI_ODGOVOR) return r;
+    odbij('alat_odgovor_prevelik');
+  }
+  const uvuceno = JSON.stringify(r, null, 2);
+  if (bajtova(uvuceno) <= NAJVECI_ODGOVOR) return uvuceno;
+  const zbijeno = JSON.stringify(r);
+  if (bajtova(zbijeno) <= NAJVECI_ODGOVOR) return zbijeno;
+  odbij('alat_odgovor_prevelik');
+}
+
+/** Odbijanje kao tekst; poruka (npr. ime nepoznatog alata, koje šalje AI) se reže tek kad bi prešla granicu. */
+function tekstOdbijanja(o: Odbijanje): string {
+  const t = JSON.stringify({ error: o.kod, kind: o.vrsta, message: o.message });
+  if (bajtova(t) <= NAJVECI_ODGOVOR) return t;
+  return JSON.stringify({ error: o.kod, kind: o.vrsta, message: o.message.slice(0, 2000) + ' …' });
+}
+
 /** Izvedi alat po imenu: provjera ulaza → alat → tekst za AI. Svaka greška = rezultat s `isError`,
  *  nikad iznimka prema SDK-u (koji bi je pretvorio u generičku poruku) i nikad unutarnji detalj. */
 export async function izvediAlat(ime: string, klijent: Klijent, args: unknown, okolina?: Okolina): Promise<Rezultat> {
@@ -946,10 +976,10 @@ export async function izvediAlat(ime: string, klijent: Klijent, args: unknown, o
     const g = provjeriUlaz(alat.ulaz, ulaz === undefined ? {} : ulaz);
     if (g) odbij('alat_los_ulaz', g);
     const r = await alat.izvedi(klijent, (ulaz || {}) as Record<string, unknown>, okolina);
-    return { content: [{ type: 'text', text: typeof r === 'string' ? r : JSON.stringify(r, null, 2) }] };
+    return { content: [{ type: 'text', text: tekstOdgovora(r) }] };
   } catch (e) {
     const o = e instanceof Odbijanje ? e : new Odbijanje(prevediOdbijanje(null));
-    return { isError: true, content: [{ type: 'text', text: JSON.stringify({ error: o.kod, kind: o.vrsta, message: o.message }) }] };
+    return { isError: true, content: [{ type: 'text', text: tekstOdbijanja(o) }] };
   }
 }
 

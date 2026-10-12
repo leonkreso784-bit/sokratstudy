@@ -1315,6 +1315,54 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
     assert.ok(/every flashcard/i.test(korak4) && /at least one/i.test(korak4), 'korak 4: ' + korak4.slice(0, 160));
   });
 
+  // ══ K/7 (N13): odgovor alata najviše 1 MB — zbijeno prije odbijanja, bajtovi a ne znakovi ═══════
+  console.log('\n  — K/7 veličina odgovora —');
+  const MB = 1048576;
+  const bajt = (r) => Buffer.byteLength(r.content[0].text, 'utf8');
+  const sLekcijom = (blokovi) => { const k = lazniNacrt(); k.materijali.get(MAT).payload.content.learn.blocks = blokovi; return k; };
+
+  await test('K/7 granica u kodu = granica nacrta i objave u bazi (1 048 576 bajtova)', () => {
+    assert.strictEqual(A.NAJVECI_ODGOVOR, MB);
+    for (const f of ['f6-nacrt.sql', 'f6-sadrzaj.sql']) assert.ok(fs.readFileSync(path.join(KORIJEN, 'supabase', f), 'utf8').includes('> ' + MB), f + ' nema granicu ' + MB);
+  });
+
+  await test('K/7 malo = uvučeno kao i dosad; uvučeno preko 1 MB a zbijeno ispod → ZBIJENO, isti podatak', async () => {
+    const malo = await A.izvediAlat('procitaj_materijal', lazniNacrt(), { material_id: MAT, lesson_id: 'content' });
+    assert.ok(!malo.isError && malo.content[0].text.includes('\n  '), 'mali odgovor više nije uvučen');
+    const blokovi = Array.from({ length: 18000 }, (_, i) => ({ id: 'b' + i, type: 'paragraph', text: 'abcdefghij' }));
+    const r = await A.izvediAlat('procitaj_materijal', sLekcijom(blokovi), { material_id: MAT, lesson_id: 'content' });
+    assert.ok(!r.isError, 'odbijeno umjesto zbijeno: ' + r.content[0].text.slice(0, 160));
+    const j = JSON.parse(r.content[0].text);
+    // preduvjet: ovaj slučaj STVARNO je preko granice uvučen i ispod nje zbijen (inače test ne mjeri granu)
+    assert.ok(Buffer.byteLength(JSON.stringify(j, null, 2)) > MB && Buffer.byteLength(JSON.stringify(j)) <= MB, 'preduvjet ne drži');
+    assert.strictEqual(r.content[0].text, JSON.stringify(j), 'nije zbijeni oblik');
+    assert.strictEqual(j.lesson.learn.blocks.length, 18000, 'podatak skraćen');
+    console.log('      (zbijeno ' + bajt(r) + ' B, uvučeno bi bilo ' + Buffer.byteLength(JSON.stringify(j, null, 2)) + ' B)');
+  });
+
+  await test('K/7 ni zbijeno ne stane → odbijanje „ispravi" koje kaže kako čitati manje; broje se BAJTOVI („č" = 2)', async () => {
+    const r = await A.izvediAlat('procitaj_materijal', sLekcijom([{ id: 'b1', type: 'paragraph', text: 'č'.repeat(600000) }]), { material_id: MAT, lesson_id: 'content' });
+    // preduvjet: u ZNAKOVIMA bi stalo (600 000 < 1 048 576), u bajtovima ne
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_odgovor_prevelik', 'ispravi'], r.content[0].text.slice(0, 160));
+    assert.ok(/lesson_id/.test(izlaz(r).message) && /offset/.test(izlaz(r).message), 'poruka ne kaže kako čitati manje');
+    assert.ok(bajt(r) <= MB);
+  });
+
+  await test('K/7 alat koji vraća gotov TEKST (procitaj_materijale) preko 1 MB → isto odbijanje, ne odrezan tekst', async () => {
+    const k = lazniNacrt();
+    const cvorovi = Array.from({ length: 500 }, (_, i) => cvor('00000000-0000-4000-8000-' + String(i).padStart(12, '0'), null, 'material', 'm'.repeat(3000), i));
+    k.from = (t) => lazniKlijent(cvorovi).from(t);
+    const r = await A.izvediAlat('procitaj_materijale', k, {});
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_odgovor_prevelik', 'ispravi'], r.content[0].text.slice(0, 160));
+  });
+
+  await test('K/7 grana GREŠKE: ime nepoznatog alata od 2 MB (šalje ga AI) → odbijanje ≤ 1 MB, kod i vrsta ostaju', async () => {
+    const r = await A.izvediAlat('x'.repeat(2 * MB), lazniNacrt(), {});
+    assert.ok(bajt(r) <= MB, 'odgovor ' + bajt(r) + ' B');
+    assert.deepStrictEqual(greskaIz(r), [true, 'alat_los_ulaz', 'ispravi']);
+    assert.ok(izlaz(r).message.startsWith('Unknown tool x'), izlaz(r).message && izlaz(r).message.slice(0, 40));
+  });
+
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');
   process.exit(pao ? 1 : 0);
 })();
