@@ -5,6 +5,15 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-12 (OPUS, `sokratstudy.f6`) — higijena: `supabase/.temp/` izvan gita, dva CI upozorenja u BACKLOG
+
+- **Odluke (Leon, anketa 12.10.):** obje „da".
+- **`supabase/.temp/`** u `.gitignore` + `git rm --cached` (datoteke ostaju na disku). Nijedna skripta mapu ne čita
+  (`deploy-function` zadaje `--project-ref`, `sql-staging` `--db-url`). ⚠️ Kad ovo stigne u drugo stablo, git ondje
+  obriše te dvije datoteke s diska — CLI ih sam ponovno napiše.
+- **BACKLOG §„⏳ ČEKA LEONA"**: `ubuntu-latest` → Ubuntu 26 (19.10.–19.11.) i `checkout`/`setup-node@v4` na Node 20 —
+  oboje doslovno iz anotacija CI runa `d6e3362` (svaki job), ne iz sjećanja.
+
 ## 2026-10-12 (OPUS, `sokratstudy.f6`) — cigla `sql:staging`: SQL datoteka na STAGING bazu, nikad na produkciju (kod ✅, živo čeka `.env`)
 
 - **Zašto:** `execute_sql` s DDL-om i `apply_migration` sigurnosni filtar odbija i na stagingu → Leon je lijepio svaku izmjenu sheme.

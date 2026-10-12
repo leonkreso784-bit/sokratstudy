@@ -34,6 +34,13 @@
 - **Mape izvan repozitorija koje se smiju obrisati** (`Documents\`): `sokratstudy.f6-k5-mutacije`,
   `sokratstudy.f6-k6-mutacije`, `sokratstudy.hr1-mkt-tmp`, prazna `sokratstudy.h1` (zaključana jer je Leonov cmd
   bio unutra; grana `fix/h1-brisanje-racuna` živi na GitHubu).
+- **CI: `ubuntu-latest` prelazi na Ubuntu 26 između 19.10. i 19.11.2026.** (anotacija na svakom jobu runa `d6e3362`;
+  [runner-images#14748](https://github.com/actions/runner-images/issues/14748)). Druge metrike fontova → Playwright mjere
+  koje ovise o crtanju (širine, prelamanje, `phone.spec`) mogu pocrvenjeti **bez ijedne izmjene u kodu**. Ako se to dogodi,
+  prvo usporediti sliku runnera u logu joba; privremeni izlaz = `runs-on: ubuntu-24.04`.
+- **CI: `actions/checkout@v4` i `actions/setup-node@v4` ciljaju Node 20** — runner ih već sad **prisilno vrti na Node 24**
+  (upozorenje na svakom jobu runa `d6e3362`, run je zelen). Nadogradnja na verziju koja deklarira `node24` = zasebna cigla
+  uz pun gate (pravilo #9: verzija se pina točno).
 
 ### 🔥 NAŠ AI + API KREDITI — popis i plan NAKON MCP-a (Leon, 2026-10-01)
 
