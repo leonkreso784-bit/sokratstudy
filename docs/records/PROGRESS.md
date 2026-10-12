@@ -5,6 +5,16 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-12 (OPUS, `sokratstudy.f6`) — `sql:staging` ŽIVI PROLAZ ✅ (cigla zatvorena)
+
+- **Vjerodajnica:** Leon je resetirao lozinku STAGING baze (nitko drugi je ne koristi — API ključevi i lozinke testnih računa
+  su druge vjerodajnice) i upisao je u `STAGING_DB_URL` (Session pooler, `aws-0-eu-central-1`). Lozinka je samo slova i brojke
+  → pitanje „prihvaća li CLI posebne znakove" ostaje neizmjereno, ne riješeno.
+- **Prolaz:** `--dry` → cilj STAGING, ništa poslano; zatim `select current_database(), count(*) from public.nodes` → EXIT 0,
+  `postgres` / **9 675**. **Unakrsno:** isti broj preko Supabase MCP-a (`execute_sql`, ref staginga) = 9 675.
+  Harness ni filtar nisu odbili naredbu.
+- **Usput:** CLI javlja v2.120.0 (pinan 2.117.0) — nadogradnja je namjerna radnja (pravilo #9), nije dirana.
+
 ## 2026-10-12 (OPUS, `sokratstudy.f6`) — higijena: `supabase/.temp/` izvan gita, dva CI upozorenja u BACKLOG
 
 - **Odluke (Leon, anketa 12.10.):** obje „da".
