@@ -5,7 +5,25 @@ testirano, što slijedi.
 
 ---
 
-## 2026-10-12 (OPUS, `sokratstudy.f6`) — `sql:staging` ŽIVI PROLAZ ✅ (cigla zatvorena)
+## 2026-10-12 (OPUS, `sokratstudy.f6`) — `sql:staging` kroz `pg`: cijela datoteka, jedna transakcija, provjeren certifikat
+
+- **Kvar nađen na prvoj pravoj datoteci (K/7):** `supabase db query` šalje SQL kao PRIPREMLJENU naredbu → „cannot insert
+  multiple commands into a prepared statement". Prvi živi prolaz (unos ispod) imao je jedan `select` i nije to mogao vidjeti;
+  **nijedna** naša `.sql` datoteka nema jednu naredbu → alat u tom obliku nije mogao zamijeniti lijepljenje. Unos ispod je
+  zato bio prerano „zatvoren".
+- **Odluka (Leon, anketa 12.10.):** `pg` umjesto CLI-ja (odbijeno: rezanje na naredbe — krhko uz `$$` tijela i gubi „sve ili ništa").
+  `pg@8.23.0` kao točno pinana devDependency (8.23.1 je bio star 12 dana); lock popravljen s `npx npm@11 install` kako
+  `check:lockfile` kaže (isti `@emnapi` razred kao kod CLI-ja), sad su u njemu samo dodaci.
+- **Kako:** jednostavni protokol → Postgres datoteku izvodi kao JEDNU transakciju (osim datoteka s vlastitim `begin`/`commit`:
+  `a1`, `c3`). Veza iz **parametara**, ne `connectionString` (parametri iz adrese bi u `pg`-u nadjačali TLS) + adresa s `?…` odbijena.
+  **TLS se provjerava** (CLI to ne radi): Supabase potpisuje vlastitim CA-om → `scripts/lib/supabase-root-ca.pem`, izvučen iz
+  samog CLI-ja; otisak `80:70:25:AD…` = korijen koji staging pooler šalje u lancu. Bez CA → `SELF_SIGNED_CERT_IN_CHAIN` (izmjereno).
+- **Brana:** unit `sql-staging` 16/0 (+4: parametri, TLS, `?sslmode`, izvođenje s podmetnutim klijentom) · **obrnute 7/7**
+  (connectionString · TLS bez provjere · parametri propušteni · upit kao objekt · greška bez maske · veza ostaje otvorena · bez servername).
+- **Živo (staging):** tri naredbe s `$$` tijelom → `CREATE, SELECT, DROP` · `create …; select 1/0` → `22012`, i **funkcija NE postoji**
+  (MCP `pg_proc` prazan) = sve ili ništa dokazano · nakon oba prolaza u bazi nema ostataka.
+
+## 2026-10-12 (OPUS, `sokratstudy.f6`) — `sql:staging` ŽIVI PROLAZ (samo JEDNA naredba — v. unos iznad)
 
 - **Vjerodajnica:** Leon je resetirao lozinku STAGING baze (nitko drugi je ne koristi — API ključevi i lozinke testnih računa
   su druge vjerodajnice) i upisao je u `STAGING_DB_URL` (Session pooler, `aws-0-eu-central-1`). Lozinka je samo slova i brojke

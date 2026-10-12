@@ -50,7 +50,7 @@ build/
 .vercel
 
 # Supabase CLI piše ovamo sam (cli-latest, povezani projekt) — stanje stroja, ne izvor istine;
-# nijedna skripta ga ne čita (deploy-function zadaje --project-ref, sql-staging --db-url)
+# nijedna skripta ga ne čita (deploy-function zadaje --project-ref, sql-staging ide kroz `pg`)
 supabase/.temp/
 
 # DB backupi (risk-sprint #3) — sadrže KORISNIČKE podatke (profiles/progress); NIKAD u git

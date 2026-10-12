@@ -102,6 +102,7 @@
     "dotenv": "17.4.2",
     "lightningcss": "1.32.0",
     "pdf-parse": "2.4.5",
+    "pg": "8.23.0",
     "supabase": "2.117.0",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"

@@ -13,23 +13,32 @@
 //      ne vidim). Lozinka staging baze ne otvara produkciju — ni uz grešku u ovom kodu.
 //   2. ADRESA: korisnik mora biti `postgres.<staging-ref>` (pooler) ili host `db.<staging-ref>.supabase.co`
 //      (izravno), a nijedan drugi ref iz `PROJEKTI` (deploy-function.js — jedan popis refova, više čitatelja)
-//      ne smije se pojaviti nigdje u adresi. Ne prosljeđuje se nijedna zastavica CLI-ja (`--linked`,
-//      `--project-ref`, `--db-url`): to bi otvorilo put preko CLI prijave, koja vrijedi za CIJELI račun.
-//   3. NAČIN: `supabase db query --db-url` (CLI je već u devDependencies, nema nove ovisnosti), pokrenut
-//      IZRAVNO kroz node — bez `cmd.exe`, gdje su `%`, `^` i `&` iz lozinke posebni znakovi (zamka #20).
-// Lozinka se NIKAD ne ispisuje: maskira se i u izlazu CLI-ja (sirova, dekodirana i kodirana).
+//      ne smije se pojaviti nigdje u adresi. Adresa NE SMIJE nositi parametre (`?sslmode=…` bi u `pg`-u
+//      nadjačao našu TLS postavku — `disable` šalje lozinku nešifriranu).
+//   3. NAČIN: `pg` (node-postgres), parametri veze izvučeni iz adrese, TLS UZ PROVJERU certifikata prema
+//      Supabaseovom korijenu (`lib/supabase-root-ca.pem`). Nema ljuske, pa ni `cmd.exe` zamke s `%^&` (#20).
+// Lozinka se NIKAD ne ispisuje: maskira se u svakoj poruci baze (sirova, dekodirana i kodirana).
+//
+// ZAŠTO `pg`, A NE SUPABASE CLI (izmjereno 12.10., Leonova odluka u anketi istog dana): `supabase db query`
+// šalje datoteku kao PRIPREMLJENU naredbu, a Postgres u nju ne pušta više naredbi („cannot insert multiple
+// commands into a prepared statement"). Prvi živi prolaz imao je jedan `select` i to nije mogao vidjeti —
+// a nijedna naša datoteka nema jednu naredbu. `pg` šalje tekst JEDNOSTAVNIM protokolom: cijela datoteka
+// ide bazi odjednom, kao iz SQL Editora, i Postgres je izvodi kao JEDNU transakciju (pad bilo gdje = ništa
+// nije upisano) — osim ako datoteka sama ima `begin`/`commit` (`a1`, `c3`), kad vrijedi ono što ona commita.
+// CLI usput ne provjerava certifikat (Supabase potpisuje vlastitim CA-om, kojeg nema u javnim): ovdje se
+// provjerava, a CA je izvučen iz samog CLI-ja i isti je korijen koji pooler šalje (otisak u .pem datoteci).
 //
 // Brana: tests/unit/sql-staging.test.js.
 
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { spawnSync } = require('child_process');
 const { PROJEKTI } = require('./deploy-function.js');
 
 const ROOT = path.join(__dirname, '..');
 const STAGING = PROJEKTI.staging.ref;
 const TUDI = Object.entries(PROJEKTI).filter(([k]) => k !== 'staging').map(([, p]) => p.ref);
+const CA = path.join(__dirname, 'lib', 'supabase-root-ca.pem');
 const UPUTA = 'U .env upiši STAGING_DB_URL = Supabase dashboard → sokrat-staging → Connect → Session pooler\n' +
   '   (URI), s lozinkom staging baze umjesto [YOUR-PASSWORD].';
 
@@ -53,7 +62,7 @@ function maska(tekst, lozinke) {
 }
 
 /**
- * Sve provjere, bez izvođenja. Baca Error s porukom za čovjeka. Vraća { program, args, datoteka, lozinke, opis }.
+ * Sve provjere, bez izvođenja. Baca Error s porukom za čovjeka. Vraća { veza, sql, datoteka, lozinke, opis }.
  * `env` = SAMO ono što je pročitano iz .env (namjerno ne process.env — vjerodajnica ne smije doći izvana).
  */
 function pripremi(env, argv, korijen) {
@@ -86,12 +95,21 @@ function pripremi(env, argv, korijen) {
     throw new Error('ODBIJENO: STAGING_DB_URL ne vodi na staging (' + STAGING + '): korisnik „' + korisnik + '", host „' + u.hostname + '".\n' +
       '   Dopušteno: postgres.' + STAGING + '@…pooler.supabase.com ili postgres@db.' + STAGING + '.supabase.co');
   }
+  if (u.search || u.hash) throw new Error('ODBIJENO: STAGING_DB_URL ne smije imati parametre (' + (u.search || u.hash).split('=')[0] + '…) — TLS i sve ostalo postavlja skripta.');
 
-  const cli = require.resolve('supabase/dist/supabase.js', { paths: [korijen, ROOT] });
   const sql = fs.readFileSync(datoteka, 'utf8');
   return {
-    program: process.execPath,
-    args: [cli, 'db', 'query', '--db-url', sirovo, '-f', datoteka],
+    // Parametri, NE `connectionString`: `pg` bi parametre iz adrese stavio IZNAD ove postavke.
+    veza: {
+      host: u.hostname,
+      port: Number(u.port || 5432),
+      user: korisnik,
+      password: lozinka,
+      database: decodeURIComponent(u.pathname.replace(/^\//, '')) || 'postgres',
+      ssl: { ca: fs.readFileSync(CA, 'utf8'), rejectUnauthorized: true, servername: u.hostname },
+      connectionTimeoutMillis: 20000,
+    },
+    sql,
     datoteka,
     // ⚠️ `u.password` je PONOVNO KODIRAN (`^` → `%5E`), pa sirovi oblik iz .env treba izvaditi iz teksta adrese
     lozinke: [(/^[a-z]+:\/\/[^:@/]*:([^@]*)@/i.exec(sirovo) || [])[1], lozinka, u.password, encodeURIComponent(lozinka)],
@@ -103,7 +121,29 @@ function pripremi(env, argv, korijen) {
   };
 }
 
-module.exports = { pripremi, maska, citajEnv };
+/**
+ * Izvrši pripremljenu datoteku: jedna poruka, jednostavni protokol (v. zaglavlje). Vraća popis rezultata
+ * `{ naredba, redaka, redci }` po naredbi. Greška baze se baca s maskiranom porukom i `kod` = SQLSTATE.
+ * `ispis(tekst)` dobiva NOTICE poruke (maskirane). `Klijent` se podmeće samo u unit-testu.
+ */
+async function izvrsi(p, ispis, Klijent) {
+  const klijent = new (Klijent || require('pg').Client)(p.veza);
+  klijent.on('notice', (n) => ispis && ispis('NOTICE ' + maska(n.message, p.lozinke)));
+  klijent.on('error', () => { /* prekinuta veza nakon greške — greška je već bačena iz query() */ });
+  try {
+    await klijent.connect();
+    const r = await klijent.query(p.sql);
+    return (Array.isArray(r) ? r : [r]).map((x) => ({ naredba: x.command, redaka: x.rowCount, redci: x.fields && x.fields.length ? x.rows : null }));
+  } catch (e) {
+    const g = new Error(maska([e.code, e.message, e.detail, e.hint, e.where].filter(Boolean).join(' · '), p.lozinke));
+    g.kod = e.code || '';
+    throw g;
+  } finally {
+    await klijent.end().catch(() => {});
+  }
+}
+
+module.exports = { pripremi, izvrsi, maska, citajEnv };
 
 if (require.main === module) {
   const argv = process.argv.slice(2);
@@ -112,12 +152,17 @@ if (require.main === module) {
   console.log('\n=== sql:staging ===');
   p.opis.forEach((l) => console.log('  ' + l));
   if (argv.includes('--dry')) { console.log('\n— `--dry`: stalo prije izvođenja, ništa nije poslano.\n'); process.exit(0); }
-  const r = spawnSync(p.program, p.args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-  if (r.stdout) process.stdout.write(maska(r.stdout, p.lozinke));
-  if (r.stderr) process.stderr.write(maska(r.stderr, p.lozinke));
-  if (r.error || r.status !== 0) {
-    console.error('\n❌ SQL nije prošao (' + (r.error ? maska(r.error.message, p.lozinke) : 'izlaz ' + r.status) + '). Na stagingu se ništa nije promijenilo samo ako je datoteka u transakciji.\n');
-    process.exit(r.status || 1);
-  }
-  console.log('\n✅ Izvršeno na STAGINGU (' + STAGING + '). Sad PROVJERI, ne pretpostavljaj (npr. md5 tijela funkcija ili uživa brana).\n');
+  izvrsi(p, (t) => console.log('  ' + t)).then((rez) => {
+    for (const x of rez) {
+      if (x.redci) console.log('\n  ' + x.naredba + ' (' + x.redaka + '):\n' + maska(JSON.stringify(x.redci.slice(0, 50), null, 2), p.lozinke) +
+        (x.redci.length > 50 ? '\n  … još ' + (x.redci.length - 50) : ''));
+    }
+    console.log('\n  naredbi izvršeno: ' + rez.length + ' (' + Object.entries(rez.reduce((o, x) => (o[x.naredba] = (o[x.naredba] || 0) + 1, o), {}))
+      .map(([k, v]) => k + ' ×' + v).join(', ') + ')');
+    console.log('\n✅ Izvršeno na STAGINGU (' + STAGING + '). Sad PROVJERI, ne pretpostavljaj (npr. md5 tijela funkcija ili živa brana).\n');
+  }, (e) => {
+    console.error('\n❌ SQL nije prošao: ' + e.message);
+    console.error('   Datoteka je poslana kao JEDNA transakcija → ništa nije upisano, OSIM ako sama ima begin/commit.\n');
+    process.exit(1);
+  });
 }
