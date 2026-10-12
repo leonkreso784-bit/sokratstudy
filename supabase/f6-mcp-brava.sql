@@ -35,6 +35,15 @@ $$;
 -- (docs.postgrest.org: „the database administrator must allow the authenticator role to switch").
 grant mcp_klijent to authenticator;
 
+-- ─── 1b. granica VREMENA (K/7, N16) ─────────────────────────────────────────────────────────────
+-- Do 12.10. `mcp_klijent` nije imao vlastiti `statement_timeout` (`anon` 3 s, `authenticated` 8 s),
+-- pa je AI nasljeđivao ono što ostane od `authenticator`-a. AI zove alate u petlji i ne vidi bazu:
+-- jedan skup upit ne smije držati vezu dulje od korisnikovog. 5 s = ispod korisnikovih 8 s; da
+-- ne ruši ispravan rad, dokazuje ponovni prolaz brana `mcp:nacrt/predaja/alati/izmjena/prihvat/brava`.
+-- PostgREST postavke impersonirane uloge čita pri učitavanju konfiguracije → `notify` na kraju
+-- datoteke. Dokaz da vrijedi za PRAVI AI token (ne samo redak u `pg_roles`): `npm run mcp:granice`.
+alter role mcp_klijent set statement_timeout = '5s';
+
 -- ─── 2. što uloga SMIJE (jedini otvoreni put u ①/2) ─────────────────────────────────────────────
 grant usage on schema public to mcp_klijent;
 grant select on public.nodes to mcp_klijent;   -- RLS `nodes_select_own` = samo vlastiti čvorovi
@@ -87,3 +96,6 @@ revoke execute on function public.mcp_access_token_hook(jsonb) from authenticate
 -- `PUT /auth/v1/user` (lozinka, mail, metapodaci) ide na Auth API mimo Postgresa → ova brava ga ne
 -- doseže. Zatvara ga cigla ①/2b: polje „Trenutna lozinka" u profilu, pa postavka „traži trenutnu
 -- lozinku" u dashboardu. `npm run mcp:brava` to mjeri i ispisuje kao poznatu rupu.
+
+-- PostgREST ponovno čita postavke uloga (§1b) — `notify` se isporučuje tek na COMMIT transakcije.
+notify pgrst, 'reload config';
