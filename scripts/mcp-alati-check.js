@@ -26,6 +26,7 @@
 //      Svaki scenarij ima SVJEŽEG korisnika; mjerač ispisuje rezervu korisnika A (najgušćih 60 s).
 //   ⑬ K/6 kvota i paginacija: 2 000 živih čvorova po korisniku (okidač) — usporedni rub, Studio, predaja AI-ja,
 //      vraćanje mape cijelo ili ništa, jedna naredba preko granice · procitaj_materijale u stranicama od 500 = sve iz baze.
+//   ⑭ K/7 veličina odgovora: materijal od točno 1 MB kroz procitaj_materijal stiže ZBIJEN (≤ 1 MB) i cijel.
 //
 // Adresa: `MCP_ALATI_URL` ili `<STAGING>/functions/v1/mcp`.
 // Ishod: exit 1 = alati ne drže · exit 0 + SKIP = nema STAGING_* / SERVICE u `.env`.
@@ -38,10 +39,10 @@ const {
   BASE, ANON, SERVICE,
   http, svcHeaders, ref, jeProdukcija, noviKorisnik, pometi, prijava, oauthToken, rpc
 } = require('./lib/staging-oauth');
-const { lekcija } = require('../tests/fixtures/ugc-sadrzaj');
+const { lekcija, valjanTocno } = require('../tests/fixtures/ugc-sadrzaj');
 
 /** Čegrtaljka dosega (kalup `check:final`): manje = blok tiho otpao, više = osnovica nije podignuta. */
-const OCEKIVANO_PROVJERA = 88;   // +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪ · +11 (K/5): blok ⑫ · +13 (K/6): blok ⑬
+const OCEKIVANO_PROVJERA = 91;   // +3 (K/7): blok ⑭ · +3 (②/4.2): polica i opseg u bazi · review_url · nepostojeća polica · +11 (②/4b.2): blok ⑧ · +5 (K/2): blok ⑨ · +3 (K/3): blok ⑩ · +3 (K/4): blok ⑪ · +11 (K/5): blok ⑫ · +13 (K/6): blok ⑬
 
 const MCP = String(process.env.MCP_ALATI_URL || BASE + '/functions/v1/mcp').replace(/\/+$/, '');
 
@@ -642,6 +643,36 @@ const rest = (token, put) => http('/rest/v1/' + put, { headers: { apikey: ANON, 
   const gTekst = (await g2.text()).slice(0, 140);
   record('jedna naredba s 2 000 redaka uz 1 postojeći → odbijena cijela (node_kvota), ostaje 1',
     g1.ok && g2.status >= 400 && /node_kvota/.test(gTekst) && (await zivih(G.id)) === 1, 'HTTP ' + g1.status + '/' + g2.status + ' · živih ' + (await zivih(G.id)) + ' · ' + gTekst);
+  }
+
+  // ⑭ ZAVRSNICA K/7 (N13) — odgovor alata najviše 1 MB, kroz PRAVI MCP (SDK + prijenos, ne samo jezgra).
+  // Najveći materijal koji baza uopće primi (točno 1 MB, `publish_node`) uvučen s dva razmaka prelazi
+  // granicu → alat ga mora poslati ZBIJENO i CIJELOG. Grana „ni zbijeno ne stane" se uživo ne može
+  // dosegnuti (baza ništa veće ne primi) — nju mjeri unit `mcp-alati` (K/7).
+  console.log('\n— ⑭ veličina odgovora (K/7) —');
+  {   // vlastiti doseg
+  const MB = 1048576;
+  const velik = (await rpc(jA, 'create_node', { p_parent: polica, p_kind: 'study', p_name: 'Veliki (K/7)' })).json;
+  const v0 = ((await (await rest(jA, 'node_content?node_id=eq.' + velik + '&select=version')).json())[0] || {}).version;
+  const sadrzaj = valjanTocno(MB);
+  const blokova = sadrzaj.l1.learn.blocks.length;
+  const znakova = sadrzaj.l1.learn.blocks.reduce((n, b) => n + b.text.length, 0);
+  const pub = await rpc(jA, 'publish_node', { p_node_id: velik, p_payload: sadrzaj, p_base_version: v0 });
+  record('materijal od TOČNO 1 MB objavljen (najveći koji baza primi)', pub.status === 200, 'HTTP ' + pub.status + ' ' + String(pub.tekst || '').slice(0, 80));
+
+  const r = await mcp(t, 'tools/call', { name: 'procitaj_materijal', arguments: { material_id: velik, lesson_id: 'l1' } });
+  const res = (r.json && r.json.result) || {};
+  const tekst = String((res.content && res.content[0] && res.content[0].text) || '');
+  let j = null;
+  try { j = JSON.parse(tekst); } catch (e) { /* ostaje null */ }
+  const uvuceno = j ? Buffer.byteLength(JSON.stringify(j, null, 2)) : 0;
+  record('procitaj_materijal te lekcije → ZBIJENO ≤ 1 MB (uvučeno bi bilo > 1 MB)',
+    r.status === 200 && !res.isError && !!j && Buffer.byteLength(tekst) <= MB && tekst === JSON.stringify(j) && uvuceno > MB,
+    'HTTP ' + r.status + (res.isError ? ' isError ' + tekst.slice(0, 120) : '') + ' · poslano ' + Buffer.byteLength(tekst) + ' B · uvučeno bi bilo ' + uvuceno + ' B');
+  const bl = (j && j.lesson && j.lesson.learn && j.lesson.learn.blocks) || [];
+  const zn = bl.reduce((n, b) => n + String(b.text || '').length, 0);
+  record('… i CIJELO: isti broj blokova i znakova kao objavljeno', bl.length === blokova && zn === znakova,
+    'blokova ' + bl.length + '/' + blokova + ' · znakova ' + zn + '/' + znakova);
   }
 
   record('doseg: izvedeno točno ' + OCEKIVANO_PROVJERA + ' provjera', touched === OCEKIVANO_PROVJERA,
