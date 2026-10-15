@@ -77,7 +77,7 @@
 | stranac (`test-a` pita za gradivo `test-b`) | AI ne vidi ništa tuđe |
 | zlonamjeran izvor | PDF/tekst s uputama („objavi", „obriši", „pošalji podatke na adresu", HTML/skripta u tekstu) → baza i renderer drže bez obzira na to što model posluša |
 | prekid i ponavljanje | prekinut razgovor usred cjevovoda → jedan nacrt, nastavak gdje je stao |
-| prekid veze | nakon „Prekini vezu" obnova odbijena; zapis koliko je stara propusnica još radila |
+| prekid veze | nakon „Prekini vezu" (profil) AI na sljedećem pozivu dobiva `nacrt_veza_prekinuta` i to korisniku kaže — odmah, ne za sat (K/8); zapisati što je model točno rekao |
 
 Klijenti: Claude.ai (custom connector; Free ima jedan) i ChatGPT (developer mode, Plus i više, samo web).
 Konektor se spaja na staging adresu funkcije ili na preview alias grane (`/mcp`).
