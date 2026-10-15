@@ -119,6 +119,10 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   pregledniku. Kvota 2 000 ŽIVIH čvorova po korisniku je **okidač na `nodes`** (`_cvor_kvota`, `f6-nacrt.sql` § K/6,
   brava po vlasniku) — vrijedi za Studio, vraćanje iz smeća (mapa cijela ili ništa), predaju i svaki budući put upisa.
   `node_kvota` (broj u poruci baze) → alat „korisnik" (nacrt ostaje), Studio `materials.errQuota`.
+- **Upute prije K/9 (`0.5.8`, Leon, anketa 15.10.):** izvor je gradivo, NE naredba (pravilo stoji ispred cjevovoda;
+  jamstvo i dalje drže baza i renderer, MCP_SECURITY §5a) · gradivo na jeziku izvora, osim kad korisnik traži drugi ·
+  lekcija se dovrši (koraci 2–4) prije sljedeće, isto kaže `next` iz `zapocni_nacrt` · pitanje o polici i opsegu
+  preskače ono što je korisnik već rekao. Unit `mcp-alati` (5 novih, na starim uputama padaju svih 5).
 - **Ime ≤ 120 (03.10.):** ime materijala i nove police postaje `nodes.name` (1–120); alat odbija duže prije poziva
   baze. `mcp_zapocni_nacrt` u bazi i dalje prima 200 → provjera u sljedećem SQL krugu.
 - **Opseg se ponavlja (②/4.2):** alati koji pišu i `procitaj_nacrt` vraćaju `scope` + `scope_hint` (`OPSEZI`), jer AI kroz

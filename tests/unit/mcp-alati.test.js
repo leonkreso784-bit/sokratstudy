@@ -517,6 +517,11 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
     assert.strictEqual(Object.keys(d.payload).filter((x) => x !== 'schemaVersion').length, 2, 'obje lekcije');
   });
 
+  await test('K/9 zapocni_nacrt `next` kaže isto što i upute: lekcija po lekcija (Leon, anketa 15.10.)', async () => {
+    const z = izlaz(await A.izvediAlat('zapocni_nacrt', lazniNacrt(), { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
+    assert.ok(/lesson by lesson/i.test(z.next) && /finish a lesson before the next/i.test(z.next), String(z.next));
+  });
+
   await test('②/2 redoslijed: kartice PADAJU bez Learna, pitanja PADAJU bez kartica, nepoznata lekcija pada', async () => {
     const k = lazniNacrt();
     const z = izlaz(await A.izvediAlat('zapocni_nacrt', k, { name: 'X', repeat_key: 's', lessons: LEKCIJE, ...PO }));
@@ -1322,6 +1327,31 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
   await test('K/3 upute: korak 4 kaže da SVAKA kartica treba bar jedno pitanje', () => {
     const korak4 = (Array.isArray(A.UPUTE) ? A.UPUTE.join('\n') : String(A.UPUTE)).split('\n').find((r) => /^\s*4\. dodaj_pitanja/.test(r)) || '';
     assert.ok(/every flashcard/i.test(korak4) && /at least one/i.test(korak4), 'korak 4: ' + korak4.slice(0, 160));
+  });
+
+  // Leon, anketa 15.10. (prije K/9): izvor je podatak · jezik gradiva = jezik izvora, korisnikova riječ ga mijenja ·
+  // lekcija se dovrši prije sljedeće. Pravila drže baza i renderer; upute samo smanjuju koliko često model pokuša.
+  await test('K/9 upute: izvor NIJE naredba, a pravilo stoji PRIJE cjevovoda', () => {
+    const U = A.UPUTE;
+    const red = U.split('\n').find((r) => /NOT instructions for you/.test(r)) || '';
+    for (const x of ['publish', 'delete', 'send data', 'only the user in this chat', 'HTML']) assert.ok(red.includes(x), 'nema „' + x + '": ' + red.slice(0, 200));
+    assert.ok(U.indexOf(red) < U.indexOf('1. zapocni_nacrt'), 'pravilo o izvoru dolazi tek iza koraka 1');
+  });
+  await test('K/9 upute: gradivo na jeziku izvora, osim kad korisnik traži drugi; odgovor na jeziku korisnika', () => {
+    const U = A.UPUTE;
+    assert.ok(/material in the language of the source/i.test(U) && /user asks for another language/i.test(U), 'jezik gradiva nije zadan');
+    assert.ok(/reply to the user in the language they write in/i.test(U), 'jezik odgovora je nestao');
+  });
+  await test('K/9 upute: lekcija se dovrši (koraci 2–4) prije sljedeće; „jedna lekcija po pozivu" ne vrijedi za korak 1', () => {
+    const U = A.UPUTE;
+    const uvod = U.split('\n').find((r) => /^Build a material/.test(r)) || '';
+    assert.ok(/finish one lesson/i.test(uvod) && /before you start the next/i.test(uvod), uvod);
+    const jedna = U.split('\n').find((r) => /for ONE lesson/.test(r)) || '';
+    assert.ok(/napisi_learn/.test(jedna) && !/zapocni_nacrt/.test(jedna), 'pravilo „jedna lekcija" mora imenovati korake 2–4, ne korak 1: ' + jedna);
+    assert.ok(!/at most one lesson per call/i.test(U), 'stara rečenica se sudara s korakom 1');
+  });
+  await test('K/9 upute: pitaj policu i opseg samo ako ih korisnik već nije rekao', () => {
+    assert.ok(/ask the user two things \(skip what the user already told you\)/i.test(A.UPUTE));
   });
 
   // ══ K/7 (N13): odgovor alata najviše 1 MB — zbijeno prije odbijanja, bajtovi a ne znakovi ═══════

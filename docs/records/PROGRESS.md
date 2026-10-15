@@ -5,6 +5,16 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-15 (OPUS, `sokratstudy.f6`) — upute konektora prije K/9 (`mcp` 0.5.8, LOKALNO)
+
+- **Pregled `UPUTE`** (`alati.ts`) protiv alata, shema i odbijanja: imena i polja se slažu. Rupe: jezik gradiva nezadan ·
+  ništa ne kaže da je izvor podatak · „one lesson at a time" dvosmisleno (a `next` je govorio fazno) · „at most one
+  lesson per call" se sudara s korakom 1 · pita policu/opseg i kad ih je korisnik rekao.
+- **Odluke (Leon, anketa 15.10.):** jezik izvora, korisnikova riječ ga mijenja · rečenica o izvoru prije K/9 (K/9 sad
+  mjeri model S uputom) · lekcija po lekcija.
+- **Unit `mcp-alati` 94/0 (+5)**; obrnuto: na starim uputama padne točno 5 novih. `typecheck` čist.
+- **Čeka:** deploy funkcije na staging (Leonova ruka: `npm run deploy:function -- mcp --project staging`), pa K/9.
+
 ## 2026-10-15 (OPUS, `sokratstudy.f6`) — K/8 gašenje i opoziv ✅ na STAGINGU (`mcp` 0.5.7)
 
 - **CI na početku:** `3a91e6c` — jedan authed test pao na `SocketError: other side closed` (veza prema stagingu, ne
