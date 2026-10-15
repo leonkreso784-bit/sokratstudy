@@ -3,7 +3,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-www.sokratstudy.com-blue?style=flat-square)](https://www.sokratstudy.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-leonkreso784--bit-black?style=flat-square)](https://github.com/leonkreso784-bit/t2economyintourism)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-leonkreso784--bit-black?style=flat-square)](https://github.com/leonkreso784-bit/sokratstudy)
 
 ---
 
@@ -189,8 +189,8 @@ This is currently my passion project and hobby, but I'm committed to turning it 
 
 #### **Installation**
 ```bash
-git clone https://github.com/leonkreso784-bit/t2economyintourism.git
-cd t2economyintourism
+git clone https://github.com/leonkreso784-bit/sokratstudy.git
+cd sokratstudy
 npm install
 ```
 
@@ -381,7 +381,7 @@ This project is heavily documented. Start with:
 
 🔗 **Links:**
 - 🌐 [Live Platform](https://www.sokratstudy.com)
-- 📂 [GitHub Repository](https://github.com/leonkreso784-bit/t2economyintourism)
+- 📂 [GitHub Repository](https://github.com/leonkreso784-bit/sokratstudy)
 - 💼 [My GitHub Profile](https://github.com/leonkreso784-bit)
 
 ---
