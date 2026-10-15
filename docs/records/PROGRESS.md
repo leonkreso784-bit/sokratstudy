@@ -13,6 +13,12 @@ testirano, što slijedi.
 - **Odluke (Leon, anketa 15.10.):** jezik izvora, korisnikova riječ ga mijenja · rečenica o izvoru prije K/9 (K/9 sad
   mjeri model S uputom) · lekcija po lekcija.
 - **Unit `mcp-alati` 94/0 (+5)**; obrnuto: na starim uputama padne točno 5 novih. `typecheck` čist.
+- **Backup vs K/10 (Leon, anketa 15.10.):** MCP_SECURITY §7 t.6 usklađen s ADR-040 (④/6 odgođen, nije uvjet za K/10;
+  cijena zapisana u N14) · dvije stare nešifrirane snimke iz `.dev/backups/` obrisane.
+- **MCP_SECURITY §5a ispravljen:** od ②/4b zaveden model MOŽE izmijeniti korisnikov VLASTITI materijal (dopušten put;
+  sadržaj ima povijest, ime nema). Redak je tvrdio „ne može".
+- **K/9 vodič** (šest scenarija, upiti samo za čitanje) pripremljen; upiti provjereni na stagingu: računi čisti, nula
+  nacrta. Staging funkcija je i dalje `0.5.7`.
 - **Čeka:** deploy funkcije na staging (Leonova ruka: `npm run deploy:function -- mcp --project staging`), pa K/9.
 
 ## 2026-10-15 (OPUS, `sokratstudy.f6`) — K/8 gašenje i opoziv ✅ na STAGINGU (`mcp` 0.5.7)

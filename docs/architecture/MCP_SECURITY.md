@@ -269,6 +269,10 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
   Supabase Pro drži dnevne snimke baze 7 dana.
 - **Popravak (Leon, anketa 29.09.):** dodati `nodes`, `node_content`, `node_content_versions`, `profile_identity`
   (nacrti NE — privremeni su) · šifrirati (AES-GCM, ključ u `.env`) · rok 8 tjedana — plan ④/6.
+- **Stanje (Leon, 15.10.):** ④/6 je **odgođen, ne otkazan** (ADR-040, 03.10.); do tada vrijede samo Supabase Pro
+  dnevne snimke (7 dana). Cijena: gradivo starije od 7 dana i slike nemaju kopiju. Konektor taj rizik ne uvodi —
+  osobno gradivo već postoji kroz Studio. Dvije stare lokalne snimke (24.07., 01.09.) **obrisane 15.10.** (Leonova
+  odluka: nešifrirane, bez roka, s podacima obrisanih korisnika).
 
 ### N15 · nespremljene izmjene materijala ostaju u pregledniku nakon odjave — 🟡 NIZAK
 
@@ -318,7 +322,8 @@ Pretpostavka: model posluša svaku uputu iz izvora. Doseg mu je ono što token i
 
 | pokušaj | ishod | zašto |
 |---|---|---|
-| mijenjati materijal izvan nacrta · objaviti · obrisati | **ne može** | `publish_node`, 7 RPC-ova čvorova, `node_content` → 403 za `mcp_klijent` (i za admina) |
+| objaviti javno · obrisati materijal ili policu · pisati mimo nacrta | **ne može** | `publish_node`, 7 RPC-ova čvorova, `node_content` → 403 za `mcp_klijent` (i za admina) |
+| izmijeniti **vlastiti** materijal (sadržaj, lekcije, ime) · `vrati_izmjenu` | **može od ②/4b** (ADR-039) | dopušten put: `zapocni_izmjenu` → `predaj_nacrt` upiše odmah. Sadržaj ima povijest (prethodna verzija ostaje, `client_id` u retku); **ime nema povijest** i `vrati_izmjenu` ga ne vraća (`f6-nacrt.sql` ②/4b t.③). Tuđe ne vidi (`materijal_ne_postoji`). Upute od 0.5.8 kažu da je izvor podatak — to smanjuje učestalost, ne doseg |
 | čitati tuđe ili katalog | **ne može** | GRANT + RLS; `subject_content`, `profiles`, `content_versions` → 403 |
 | obrisati račun, poslati mail, promijeniti lozinku/e-mail | **ne može** | `token-guard` (403) · postavke Auth API-ja (`mcp:brava`) |
 | proizvoljan HTTP, SQL, datoteke, izvršavanje kôda **kroz naš poslužitelj** | **ne može** | poslužitelj nema takav alat: jedini alat čita `nodes` pod korisnikovim tokenom; nema `fetch` prema van, SQL-a iz argumenata ni pristupa disku |
@@ -358,6 +363,8 @@ Svaki redak mora biti **zelen i izmjeren**, ne pretpostavljen:
 5. Limiti iz S-C postavljeni i izmjereni (④/1–④/3, svaki s obrnutom provjerom); postoji način da se jedan konektor
    ugasi (④/4); `procitaj_materijale` nikad ne reže bez oznake (N12).
 6. **N10 zatvoren na produkciji** (brisanje računa s objavljenim materijalom prolazi, T5 to mjeri). Backup pokriva
-   osobno gradivo, šifriran je i ima rok 8 tjedana (④/6). Nacrti i OAuth veze nestaju s računom — izmjereno S-C.
+   osobno gradivo, šifriran je i ima rok 8 tjedana (④/6) — **odgođeno ADR-040 (Leon, 15.10.: §7 se usklađuje s
+   ADR-om, nije uvjet za K/10)**; do tada Supabase Pro dnevne snimke, cijena u N14. Nacrti i OAuth veze nestaju s
+   računom — izmjereno S-C.
 7. Pravi AI (Claude + ChatGPT) na ne-admin računu prošao cjevovod i scenarij zlonamjernog PDF-a (⑤).
 8. Postavke Auth-a na produkciji jednake stagingu (tri imenovana koraka iz ①).
