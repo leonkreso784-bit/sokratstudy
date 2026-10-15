@@ -24,6 +24,7 @@
     "mcp:izmjena": "node scripts/mcp-izmjena-check.js",
     "mcp:alati": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mcp-alati-check.js",
     "mcp:granice": "node scripts/mcp-granice-check.js",
+    "mcp:opoziv": "node scripts/mcp-opoziv-check.js",
     "ugc:sadrzaj": "node scripts/ugc-sadrzaj-check.js",
     "build:ugc-sql": "node scripts/build-ugc-sql.js",
     "build:pravila": "node scripts/build-pravila.js",
