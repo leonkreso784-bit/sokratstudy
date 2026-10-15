@@ -38,7 +38,7 @@
 | I5 | sadržaj koji napiše AI **ne izvršava kod** u pregledniku, ni kad sanitizator nije učitan | renderer + CSP | ✅ STAGING/grana 30.09. — N1, N2 zatvoreni (②/0c–e: unit + preglednik-pokusi s kontrolom); ⚠️ N17 |
 | I6 | pravila sadržaja provodi **baza** na svakom putu upisa, ne samo poslužitelj | validator u bazi | ✅ STAGING 30.09. — nacrt i `publish_node` (`ugc:sadrzaj` 813/0); Prihvati dolazi u ②/4 |
 | I7 | ponovljen zahtjev ne duplicira; paralelna izmjena se ne prepisuje | ključ ponavljanja · polazna verzija | 🟡 nacrt ✅ STAGING 30.09. (N7, N8; usporednost i 409 dokazani mutacijom) · Prihvati uz paralelnu izmjenu materijala = ②/4, otvoreno |
-| I8 | opoziv veze zaustavlja AI | Auth (`revokeGrant`) | ⚠️ izmjereno S-B: obnova odbijena odmah (400), a postojeća propusnica **i dalje piše u nacrt** (200) do isteka, najviše 3600 s — korisniku rečeno; trenutni opoziv = odluka |
+| I8 | opoziv veze zaustavlja AI | Auth (`revokeGrant`) + baza: `_nacrt_pozivatelj` traži živu sesiju tokena, neobrisan i neblokiran klijent; `procitaj_materijale` prvo zove `mcp_veza()` | ✅ STAGING 15.10. (K/8, `mcp:opoziv` 24/24; prije 13/20 palo): prekid, popis blokiranih i obrisan klijent → upis i čitanje kroz konektor odbijeni **odmah**. Ostaje: izravan REST na vlastite `nodes` mimo konektora vidi nazive do isteka (3600 s) — provjera ondje = vrući put svih korisnika (odbijeno 20.09.) |
 | I9 | administratorov konektor nema ni jedno pravo više od običnog | hook: svaki token s `client_id` = `mcp_klijent`, neovisno o ulozi korisnika | ✅ izmjereno S-B (11 tvrdnji, s kontrolom) |
 | I10 | tok prijave: PKCE obavezan, redirect točan, kod jednokratan i vezan na klijent, potpis tokena provjeren | Supabase Auth + PostgREST | ✅ izmjereno S-B (9 tvrdnji) |
 | I11 | brisanje računa briše **sve** korisnikovo: gradivo, verzije, nacrte, OAuth veze, sesije, slike — i nikad ne ostavi poluobrisan račun | kaskade FK-ova + `delete-account` | ✅ N10 zatvoren (H1: `on delete set null` na PROD-u + T5 s objavom, 22/22); brisanje izmjereno čisto (S-C) |
@@ -220,8 +220,10 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
 - Svaki upis nacrta prepisuje **cijeli** payload (do 1 MB): 60 upisa u minuti = do 60 MB zapisa u minuti po korisniku.
 - DCR je otvoren (tako i mora biti za Claude/ChatGPT) i klijenti se nikad ne brišu: **141** na stagingu, 6 od njih
   pravi „Claude", ostalo testovi. Ime klijenta je tuđi tekst (P3, već u §2).
-- Jedan konektor se danas može ugasiti samo brisanjem OAuth klijenta u dashboardu (za **sve** korisnike) ili
-  korisnikovim opozivom; postojeća propusnica i tada piše do 3600 s (I8).
+- ~~Jedan konektor se danas može ugasiti samo brisanjem OAuth klijenta u dashboardu (za **sve** korisnike) ili
+  korisnikovim opozivom; postojeća propusnica i tada piše do 3600 s (I8).~~ **K/8 (15.10.):** izmjereno je i gore —
+  brisanje klijenta ostavljalo je sesiju i AI je pisao dalje. Sad: redak u `mcp_blokirani_klijenti` (povratno, samo SQL
+  Editor) ili brisanje klijenta → odbijeno odmah, svim korisnicima tog klijenta; opoziv → odmah, samo toj vezi.
 - **Popravak:** plan ④/1 (granica u bazi, po korisniku i po klijentu) · ④/4 (popis blokiranih klijenata) · ④/5 čišćenje.
 
 ### N12 · alat tiho reže na 1 000 stavki; broj čvorova neograničen — 🟠 SREDNJI (✅ STAGING 10.10., K/6)
@@ -334,7 +336,7 @@ poslužitelju **i** u bazi; nijedan alat ne vraća ništa što korisnik nije sam
 | dva različita korisnika | `mcp:nacrt` ② (tuđi nacrt × 4, isti odgovor kao nepostojeći) · S-B: kod izdan klijentu X ne vrijedi za Y | Prihvati tuđeg nacrta (②/4) |
 | administratorov konektor | `mcp:brava` · **S-B: 11 tvrdnji** (uloga, 5 RPC-ova, 5 tablica, kontrola običnom admin sesijom) | — |
 | izravni pozivi mimo MCP-a | `mcp:brava` (PostgREST, Storage, Edge Functions, Auth API) · S-B: obična sesija ne ulazi u `mcp_*` | nacrt s zabranjenim sadržajem izravnim RPC-om → Prihvati odbija (③/6) |
-| opozvan / pogrešan token | ①/5 · **S-B:** izmijenjen teret (401) · `alg=none` (401) · anon ključ (401) · opoziv: obnova 400, propusnica i dalje piše · PKCE, redirect, jednokratni kod | istekao (⑤) |
+| opozvan / pogrešan token | ①/5 · **S-B:** izmijenjen teret (401) · `alg=none` (401) · anon ključ (401) · opoziv: obnova 400, propusnica i dalje piše → **K/8 `mcp:opoziv`: odbijeno odmah** · PKCE, redirect, jednokratni kod | istekao (⑤) |
 | paralelne izmjene | **S-B:** 8 usporednih početaka → točno 3 (kvota drži) · usporedni upisi → **N7** | polazna verzija (②/1b); Prihvati uz izmjenu materijala (②/4) |
 | ponovljeni zahtjevi | **S-B:** ponovljena predaja odbijena · ponovljen početak → **N8** | ključ ponavljanja (②/1b); dvostruki Prihvati (②/4) |
 | zlonamjeran sadržaj | N1, N2 lokalno · **S-B: 8 oblika primljeno u nacrt (N5)** | validator (②/0a); pregled (②/4); pravi AI sa zlonamjernim PDF-om (⑤) |

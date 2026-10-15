@@ -34,8 +34,9 @@ Postgres: GRANT-ovi (zabrana po defaultu) + RLS (samo vlastito) + SECURITY DEFIN
   `approveAuthorization` se uvijek zove s `skipBrowserRedirect: true`; preusmjeravanje tek poslije provjere hosta.
 - **Token AI-ja = običan korisnički JWT + claim `client_id`**, `aud: authenticated`. `resource` (RFC 8707) se prihvaća,
   ali token **nije vezan na naš poslužitelj** — zato sigurnost ne smije ovisiti o tome tko ga predaje.
-- **Trajanje:** propusnica 3600 s; prekid veze (`revokeGrant`) odmah ubija **obnovu**, ali već izdana propusnica vrijedi
-  do isteka. Kartica „Povezani AI-jevi" u profilu to kaže korisniku (`tests/ai-veze.authed.spec.js`).
+- **Trajanje:** propusnica 3600 s; prekid veze (`revokeGrant`) odmah ubija **obnovu**, a od K/8 (15.10.) baza na svakom
+  pozivu konektora traži živu sesiju, pa izdana propusnica kroz konektor odmah više ne radi (`mcp:opoziv`). Kartica
+  „Povezani AI-jevi" u profilu to kaže korisniku; gašenje jednog klijenta za sve = `mcp_blokirani_klijenti`.
 
 ## 3 · Brava u bazi (`supabase/f6-mcp-brava.sql`)
 

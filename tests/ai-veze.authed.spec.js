@@ -12,9 +12,8 @@
 // ⚠️ NE OVISI o tome što test-račun ima: odgovor na `/user/oauth/grants` se PODMEĆE (`page.route`).
 //    Ovaj spec zato ništa ne upisuje ni ne briše na stagingu.
 //
-// ⚠️ Tvrdnja o „najviše sat vremena" nije ukras: IZMJERENO 20.09. — prekid ubija obnovu (400), ali
-//    propusnica koja je već izdana vrijedi 3600 s. Tekst koji bi tvrdio da je pristup odmah gotov
-//    bio bi laž, pa ga spec čuva.
+// ⚠️ Napomena tvrdi „vrijedi odmah" tek od K/8 (15.10.): baza na svakom pozivu konektora traži živu
+//    sesiju. Da je to ISTINA, ne mjeri ovaj spec (on podmeće odgovor) nego `npm run mcp:opoziv` na stagingu.
 const { test, expect } = require('@playwright/test');
 const { ucitajPakete } = require('./helpers/paketi');
 
@@ -54,7 +53,7 @@ async function naProfilu(page) {
   await page.waitForSelector('#profileAiList[aria-busy="false"]', { timeout: 20000 });
 }
 
-test('① veze se izlistaju s imenom, datumom i prekidačem — i napomena o satu stoji', async ({ page }) => {
+test('① veze se izlistaju s imenom, datumom i prekidačem — i trajna napomena o prekidu stoji', async ({ page }) => {
   await podmetniVeze(page, [
     veza('11111111-1111-4111-8111-111111111111', 'Claude', '2026-09-18T19:47:59Z'),
     veza('22222222-2222-4222-8222-222222222222', 'ChatGPT', '2026-09-01T08:00:00Z')

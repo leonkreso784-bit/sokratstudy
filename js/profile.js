@@ -453,10 +453,11 @@ function mailCardHtml(user) {
  * Korisnik je svom Claudeu/ChatGPT-u dao pristup vlastitom gradivu (MCP konektor). Do ove cigle
  * taj pristup NIJE mogao povući: nije bilo ni popisa ni prekidača.
  *
- * ⚠️ IZMJERENO NA STAGINGU 20.09., i zato tekst glasi kako glasi: prekid veze ubija OBNOVU
- *    (`refresh` odmah vraća 400), ali propusnica koja je već izdana radi do isteka — izmjereno
- *    **3600 s**. Gumb koji bi tvrdio „pristup je prekinut" bio bi laž do sat vremena, i to baš u
- *    trenutku kad korisnik misli da gasi nešto sumnjivo. Zato istina stoji kao TRAJAN tekst u
+ * ⚠️ Tekst kaže „vrijedi odmah" tek od K/8 (15.10.). Do tada je prekid ubijao samo OBNOVU, a
+ *    propusnica je radila do isteka (3600 s, izmjereno 20.09.) — pa je kartica govorila „još najviše
+ *    sat vremena". Sad baza na svakom pozivu konektora traži živu sesiju (`_nacrt_pozivatelj`,
+ *    `mcp_veza`; brana `npm run mcp:opoziv`). „Kroz Sokratov konektor" nije ukras: izravan REST mimo
+ *    konektora i dalje do isteka vidi NAZIVE vlastitih čvorova. Istina stoji kao TRAJAN tekst u
  *    kartici, ne kao poruka koja nestane.
  *
  * ⚠️ Ime aplikacije dolazi iz DCR-a — registrirati ga može BILO TKO (ADR-038 ③), dakle to je
@@ -527,7 +528,7 @@ async function fillAiGrants() {
             '</div>';
     }).join('') +
         // Trajna istina, ne nestajuća poruka — v. mjerenje u zaglavlju odjeljka.
-        '<p class="profile-meta profile-ai-note">' + pt('profile.aiNote', 'Disconnecting stops the app from getting new access. Access it already holds keeps working for up to an hour.') + '</p>';
+        '<p class="profile-meta profile-ai-note">' + pt('profile.aiNote', 'Disconnecting works at once: through the Sokrat connector the app can no longer read or change your materials.') + '</p>';
 }
 
 async function revokeAiGrant(clientId) {
@@ -536,7 +537,7 @@ async function revokeAiGrant(clientId) {
     if (!oauth || !clientId) return;
     const ok = await window.askConfirm({
         title: pt('profile.aiRevokeTitle', 'Disconnect this app?'),
-        message: pt('profile.aiRevokeAsk', 'It will not be able to get new access. Access it already holds keeps working for up to an hour.'),
+        message: pt('profile.aiRevokeAsk', 'From that moment it can no longer read or change your materials through the Sokrat connector.'),
         confirmText: pt('profile.aiRevoke', 'Disconnect'),
         danger: true
     });

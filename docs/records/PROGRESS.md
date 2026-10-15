@@ -5,6 +5,32 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-15 (OPUS, `sokratstudy.f6`) — K/8 gašenje i opoziv ✅ na STAGINGU (`mcp` 0.5.7)
+
+- **CI na početku:** `3a91e6c` — jedan authed test pao na `SocketError: other side closed` (veza prema stagingu, ne
+  tvrdnja); ponovljen job zelen (attempt 2, svih 5 jobova). `main` `d17b67b` zelen.
+- **Izmjereno prije (sonda, pravi AI-token):** prekid veze → sesija NESTANE iz `auth.sessions`, pristanak `revoked_at`,
+  a AI i dalje piše (novi nacrt 200, upis u postojeći 200) i čita kroz alate. **Novo:** admin-brisanje OAuth klijenta
+  ostavlja sesiju i AI piše dalje — jedini „hitni prekidač" nije prekidao ništa.
+- **Odluke (Leon, ankete 15.10.):** odmah staju upis I čitanje kroz alate · gašenje = vlastiti popis
+  `mcp_blokirani_klijenti` (povratno, samo SQL Editor) + poštuje se brisanje klijenta; hook se NE dira (ne čita
+  tablice, fail-closed za cijeli projekt) · drugi krug: i `procitaj_materijale` (čita `nodes` mimo ograde) se zatvara.
+- **Popravak (`f6-nacrt.sql`):** `_nacrt_pozivatelj` traži sesiju iz tokena koja postoji, pripada korisniku i OVOM
+  klijentu, klijent `deleted_at is null`, nije na popisu → inače `nacrt_veza_prekinuta` (42501 → 403). Svaki uvjet
+  zaseban `if` (redoslijed unutar `or` nije zajamčen, `::uuid`). Nova `mcp_veza()` (samo ograda) — alat
+  `procitaj_materijale` je zove PRIJE čitanja. `alati.ts`: prijevod „stop" (ne ponavljaj, reci korisniku), razlog se
+  AI-ju ne kaže. Profil: kartica „Povezani AI-jevi" sad kaže „vrijedi odmah … kroz Sokratov konektor" (HR/EN).
+- **Brana `mcp:opoziv` (nova, 24):** tri scenarija × (upis · čitanje · `mcp_veza`), kontrole (drugi konektor radi,
+  odblokiran opet piše, AI ne vidi popis), higijena. Na starom stagingu **13/20** palo točno na rupi; drugi krug **4/24**
+  točno na `mcp_veza`. Poslije: **24/24**. Izravan REST na `nodes` mimo konektora ispisan kao poznata granica.
+- **Unit `mcp-alati` 89/0 (+5):** prijevod · svaki `mcp_*` RPC (iz grantova) prolazi ogradu kao PRVU naredbu · sadržaj
+  ograde · popis bez granta · odbijena veza → `nodes` netaknut. **Obrnute 8/8** (bez ograde · ograda nije prva · bez
+  `deleted_at` · bez popisa · grant AI-ju · bez prijevoda · bez `mcp_veza` · `mcp_veza` poslije čitanja).
+- **Regresija (staging, poslije SQL-a + deploya):** `check:functions` · `mcp:probe` · `brava` 58 · `nacrt` 56 · `predaja`
+  34 · `izmjena` 42 · `prihvat` 35 · `granice` 8 · `alati` 92 · `opoziv` 24 — **0 palo**. (Šest ih je u drugom krugu
+  puklo na `fetch failed` prije prve tvrdnje — mreža; ponovljeno, zeleno.)
+- **Za K/10 (PROD):** `f6-nacrt.sql` nosi tablicu i ogradu; popis blokiranih na PROD-u puni samo Leon.
+
 ## 2026-10-12/15 (OPUS, `sokratstudy.f6`) — K/7 veličina i vrijeme ✅ na STAGINGU; repo preimenovan u `sokratstudy`
 
 - **Vrijeme (N16):** `f6-mcp-brava.sql` §1b — `mcp_klijent` dobiva `statement_timeout = '5s'`, na kraju datoteke

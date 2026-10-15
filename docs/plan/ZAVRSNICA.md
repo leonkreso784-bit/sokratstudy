@@ -57,7 +57,7 @@ izmjena postojećeg ②/4b, prozor „Spoji svoj AI" ②/5.1): [archive/MCP.md](
 | **K/5** učestalost ✅ (10.10., STAGING) | 60 upisa/min, 1 000/dan, u bazi — **zbroj po korisniku** preko svih konektora, `client_id` u svakom retku brojača (Leon, anketa 10.10.; bivši ④/1) | 61. upis danas prolazi |
 | **K/6** paginacija i kvota ✅ (10.10., STAGING) | ≤ 500 stavki uz `skraceno`, ≤ 2 000 **živih** čvorova po korisniku, okidač na `nodes` (vrijedi i za Studio, vraćanje i predaju; Leon, anketa 10.10.; bivši ④/2) | N12; 2 001. čvor prolazi |
 | **K/7** veličina i vrijeme ✅ (13.10., STAGING) | objava ≤ 1 MB · `statement_timeout` za `mcp_klijent` · odgovor alata ≤ 1 MB (bivši ④/3) | N13, N16 |
-| **K/8** gašenje i opoziv | blokirani `client_id` i opozvan pristanak zaustavljaju upis odmah (bivši ④/4) | I8 |
+| **K/8** gašenje i opoziv ✅ (15.10., STAGING) | prekinuta veza, blokiran `client_id` (`mcp_blokirani_klijenti`) i obrisan klijent zaustavljaju **upis i čitanje kroz alate** odmah; hook netaknut (Leon, ankete 15.10.; bivši ④/4) | I8; `mcp:opoziv` 13/20 na starom |
 | **K/9** pravi AI | Claude.ai i ChatGPT na ne-admin računu: cijeli cjevovod, izmjena, zlonamjeran PDF (bivši ⑤) | ishod zapisan za svaki scenarij iz [MCP_TESTING §5](../workflow/MCP_TESTING.md) |
 | **K/10** produkcija | SQL → OAuth poslužitelj + hook → funkcija → klijent; `Require current password`, razlika staging/prod, `MCP_RESOURCE_URL`, drift-brana tijela funkcija prije SQL-a; administratorova kartica od 1 819 znakova se skrati (bivši ⑥) | uvjeti [MCP_SECURITY §7](../architecture/MCP_SECURITY.md) zeleni |
 
