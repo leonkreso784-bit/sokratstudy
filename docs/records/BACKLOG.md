@@ -120,6 +120,14 @@ produkciji **isključen**). Stanje prekidača na dan 22.09.:
 ⚠️ **Usput nađeno:** staging i produkcija razilaze se u **dvije** postavke, pa staging **nije vjerna proba**
 za F7 — to treba poravnati prije objave, inače se na produkciji prvi put mjeri ono što nitko nije vidio.
 
+### ➖ AI-jevo preimenovanje materijala nema povijest (2026-10-15, priprema K/9)
+
+Od ②/4b AI na korisnikovu riječ mijenja **vlastiti** materijal, uključivo ime (`mcp_preimenuj_nacrt`). Sadržaj ima
+povijest i `vrati_izmjenu`, **ime nema** (`supabase/f6-nacrt.sql` ②/4b t.③) — zaveden model (zlonamjeran izvor)
+može preimenovati materijal, a korisnik staro ime ne može vratiti. **Leon, anketa 15.10.: prihvaćen rizik**
+(dopušten put, ADR-039), u K/9 S4 se ne broji kao pad; zapisano da se ne izgubi. Zatvara ga: ime u retku povijesti
+pa `vrati_izmjenu` vraća i ime. MCP_SECURITY §5a.
+
 ### ➖ Odstranjivač komentara na DVA mjesta može pojesti KOD (2026-09-24, nađeno mutacijom u F6 S2)
 
 `scripts/ci-tajne.js:114` i `tests/unit/axe-gate-usage.test.js` odstranjuju komentare **blok pa redak**:
