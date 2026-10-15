@@ -55,7 +55,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.6' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.7' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -222,6 +222,8 @@ export const ODBIJANJA: Record<string, { vrsta: VrstaOdbijanja; poruka: string }
   nacrt_kvota_nepregledano: { vrsta: 'korisnik', poruka: 'The user has 10 unfinished drafts. Finish and submit some of them (procitaj_nacrt lists them), or ask the user to discard some.' },
   nacrt_samo_ai: { vrsta: 'stop', poruka: 'Drafts can only be written through a connected AI.' },
   nacrt_bez_identiteta: { vrsta: 'stop', poruka: 'The connection has no signed-in user. Ask the user to reconnect Sokrat.' },
+  // ZAVRSNICA K/8 (I8): veza prekinuta, klijent obrisan ili blokiran — razlog se AI-ju namjerno ne kaže.
+  nacrt_veza_prekinuta: { vrsta: 'stop', poruka: 'Access for this AI connection was withdrawn (the user disconnected it, or this connector was turned off). Nothing was read or written. Do not retry; tell the user they can reconnect Sokrat if they want to continue.' },
   // ②/4b izmjena postojećeg materijala
   nacrt_kljuc_zauzet: { vrsta: 'ispravi', poruka: 'This repeat_key already belongs to another draft. Use a NEW repeat_key for this call.' },
   nacrt_ime: { vrsta: 'ispravi', poruka: 'The material name must be 1–120 characters.' },

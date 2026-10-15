@@ -99,20 +99,62 @@ revoke all on public.node_drafts from public, anon, authenticated;
 grant select on public.node_drafts to authenticated;
 -- `mcp_klijent` NE dobiva ni SELECT na tablicu: AI svoj nacrt čita kroz `mcp_procitaj_nacrt`.
 
+-- ─── K/8 GAŠENJE KONEKTORA (ZAVRSNICA K/8, I8; Leon, anketa 15.10.) ─────────────────────────────
+-- Popis `client_id`-eva kojima je upis i čitanje kroz alate zabranjeno ODMAH, za sve korisnike.
+-- Povratno: odblokiranje = brisanje retka. Upisuje se samo kroz SQL Editor (ili `sql:staging`); nitko
+-- izvana ga ne vidi, pa AI ne može ni saznati da je blokiran ni maknuti se s popisa.
+-- Hook (`mcp_access_token_hook`) ga NAMJERNO ne čita: njegova greška ruši prijavu svima. Blokiran
+-- klijent i dalje dobiva propusnicu — ali njome ne prolazi `_nacrt_pozivatelj` niže.
+create table if not exists public.mcp_blokirani_klijenti (
+  client_id text primary key check (client_id <> ''),
+  razlog    text not null default '' check (length(razlog) <= 500),
+  kad       timestamptz not null default now()
+);
+alter table public.mcp_blokirani_klijenti enable row level security;
+revoke all on public.mcp_blokirani_klijenti from public, anon, authenticated, mcp_klijent;
+
 -- ─── 2. zajednički uvjet svih mcp_* RPC-ova ─────────────────────────────────────────────────────
 -- Tko zove mora biti AI (token s `client_id`) i imati identitet. EXECUTE je ionako dan samo ulozi
 -- `mcp_klijent`, a ovo je druga, neovisna ograda: ako netko sutra grantira `authenticated`,
 -- obična sesija i dalje ne piše u nacrt.
+--
+-- K/8 (I8): VEZA JOŠ POSTOJI. Propusnica je potpisan JWT i vrijedi do isteka (3600 s) — Auth je ne
+-- može povući. Izmjereno 15.10. na stagingu: poslije prekida veze sesija NESTANE iz `auth.sessions`,
+-- a AI je i dalje pisao i čitao (200); obrisan OAuth klijent ostavi sesiju i AI je i dalje pisao.
+-- Zato se ovdje, na svakom `mcp_*` pozivu, traži: sesija tokena postoji, pripada ovom korisniku i
+-- OVOM klijentu, klijent nije obrisan i nije na popisu blokiranih. Jedan `nacrt_veza_prekinuta` za sva
+-- tri slučaja — AI ne treba znati razlog, korisnik ga zna.
+-- Izravni SELECT na `nodes` (RLS) ovo NE prolazi i vrijedi do isteka propusnice: provjera ondje sjela
+-- bi na vrući put SVIH korisnika (odbijeno 20.09.). Brana: `npm run mcp:opoziv`.
+-- Svaki uvjet je ZASEBAN `if`: Postgres ne jamči redoslijed unutar `or`, pa bi `::uuid` neispravnog
+-- teksta mogao pući prije provjere oblika (greška umjesto imenovanog odbijanja).
 create or replace function public._nacrt_pozivatelj()
 returns text
 language plpgsql
 stable
 set search_path = public, pg_temp
 as $$
-declare v_client text := coalesce(auth.jwt() ->> 'client_id', '');
+declare
+  v_client text := coalesce(auth.jwt() ->> 'client_id', '');
+  v_sesija text := coalesce(auth.jwt() ->> 'session_id', '');
+  v_uuid constant text := '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$';
 begin
   if auth.uid() is null then raise exception 'nacrt_bez_identiteta' using errcode = '42501'; end if;
   if v_client = '' then raise exception 'nacrt_samo_ai: nacrt piše samo AI kroz konektor' using errcode = '42501'; end if;
+  if v_client !~* v_uuid or v_sesija !~* v_uuid then
+    raise exception 'nacrt_veza_prekinuta: veza s ovim AI-jem je prekinuta' using errcode = '42501';
+  end if;
+  if not exists (
+    select 1 from auth.sessions s
+      join auth.oauth_clients c on c.id = s.oauth_client_id
+     where s.id = v_sesija::uuid and s.user_id = auth.uid()
+       and s.oauth_client_id = v_client::uuid and c.deleted_at is null
+  ) then
+    raise exception 'nacrt_veza_prekinuta: veza s ovim AI-jem je prekinuta' using errcode = '42501';
+  end if;
+  if exists (select 1 from public.mcp_blokirani_klijenti b where b.client_id = v_client) then
+    raise exception 'nacrt_veza_prekinuta: veza s ovim AI-jem je prekinuta' using errcode = '42501';
+  end if;
   return v_client;
 end;
 $$;

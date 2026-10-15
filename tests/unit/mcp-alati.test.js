@@ -1363,6 +1363,56 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
     assert.ok(izlaz(r).message.startsWith('Unknown tool x'), izlaz(r).message && izlaz(r).message.slice(0, 40));
   });
 
+  // ── ZAVRSNICA K/8 (I8): prekinuta veza i ugašen konektor zaustavljaju AI ODMAH ──
+  // Ovo čita SQL; da provjera stvarno drži (prekid, popis blokiranih, obrisan klijent — svaki s kontrolom)
+  // mjeri uživo `npm run mcp:opoziv`. Ovdje: da je nijedan `mcp_*` RPC ne zaobilazi, i da je ograda cijela.
+  console.log('\n  — K/8 gašenje i opoziv —');
+  const NACRT_SQL = fs.readFileSync(path.join(KORIJEN, 'supabase', 'f6-nacrt.sql'), 'utf8');
+  const tijeloFunkcije = (ime) => (NACRT_SQL.match(new RegExp('create or replace function public\\.' + ime + '\\([^)]*\\)[\\s\\S]*?\\$\\$([\\s\\S]*?)\\$\\$')) || [])[1] || '';
+  await test('K/8 prekinuta veza → „stop", ne ponavlja se, korisniku se javlja; razlog se ne otkriva', () => {
+    const v = A.prevediOdbijanje({ message: 'nacrt_veza_prekinuta: veza s ovim AI-jem je prekinuta' });
+    assert.strictEqual(v.kod, 'nacrt_veza_prekinuta'); assert.strictEqual(v.vrsta, 'stop');
+    assert.ok(/do not retry/i.test(v.poruka) && /tell the user/i.test(v.poruka), v.poruka);
+  });
+  await test('K/8 SVAKI `mcp_*` RPC prolazi ogradu kao PRVU naredbu (popis iz grantova, ne rukom)', () => {
+    const grant = [];
+    for (const m of NACRT_SQL.matchAll(/foreach\s+\w+\s+in\s+array\s+array\[([\s\S]*?)\]\s*loop([\s\S]*?)end loop/gi)) {
+      if (/to mcp_klijent/.test(m[2])) for (const x of m[1].matchAll(/'(mcp_[a-z_]+)\(/g)) grant.push(x[1]);
+    }
+    const prva = (f) => {
+      const t = tijeloFunkcije(f).replace(/--[^\n]*/g, '');
+      return ((t.split(/\bbegin\b/i)[1] || '').split(';')[0] || '').trim();
+    };
+    const bezOgrade = grant.filter((f) => !/^(perform\s+|\w+\s*:=\s*)public\._nacrt_(pozivatelj|upis)\(\)$/i.test(prva(f)));
+    console.log('      (' + grant.length + ' RPC-ova: ' + grant.join(', ') + ')');
+    assert.ok(grant.length >= 9, 'iz grantova izvučeno premalo: ' + grant.length);
+    assert.deepStrictEqual(bezOgrade.map((f) => f + ' → ' + JSON.stringify(prva(f).slice(0, 60))), []);
+    assert.ok(/^\s*v_client\s*:=\s*public\._nacrt_pozivatelj\(\)/m.test(tijeloFunkcije('_nacrt_upis')), '_nacrt_upis ne zove _nacrt_pozivatelj');
+  });
+  await test('K/8 ograda traži živu sesiju OVOG korisnika i OVOG klijenta, neobrisan klijent i da nije blokiran', () => {
+    const o = tijeloFunkcije('_nacrt_pozivatelj');
+    for (const [ime, re] of [
+      ['sesija iz tokena', /auth\.jwt\(\)\s*->>\s*'session_id'/],
+      ['auth.sessions po id-u', /from auth\.sessions[\s\S]*?s\.id\s*=\s*v_sesija::uuid/],
+      ['sesija pripada korisniku', /s\.user_id\s*=\s*auth\.uid\(\)/],
+      ['sesija pripada klijentu', /s\.oauth_client_id\s*=\s*v_client::uuid/],
+      ['klijent nije obrisan', /c\.deleted_at\s+is\s+null/],
+      ['popis blokiranih', /from public\.mcp_blokirani_klijenti/],
+      ['oblik provjeren PRIJE ::uuid', /!~\*\s*v_uuid[\s\S]*v_sesija::uuid/]
+    ]) assert.ok(re.test(o), 'ograda nema: ' + ime);
+    assert.ok((o.match(/raise exception 'nacrt_veza_prekinuta/g) || []).length === 3, 'svaki uvjet mora imati SVOJ if');
+  });
+  await test('K/8 popis blokiranih: RLS uključen, nikome izvana ništa (ni AI-ju), nijedan grant', () => {
+    assert.ok(/alter table public\.mcp_blokirani_klijenti enable row level security/.test(NACRT_SQL), 'RLS nije uključen');
+    assert.ok(/revoke all on public\.mcp_blokirani_klijenti from public, anon, authenticated, mcp_klijent;/.test(NACRT_SQL), 'nema revoke');
+    const grantovi = [];
+    for (const f of fs.readdirSync(path.join(KORIJEN, 'supabase')).filter((x) => x.endsWith('.sql'))) {
+      const t = fs.readFileSync(path.join(KORIJEN, 'supabase', f), 'utf8');
+      for (const m of t.matchAll(/grant[^;]*mcp_blokirani_klijenti[^;]*;/gi)) grantovi.push(f + ': ' + m[0]);
+    }
+    assert.deepStrictEqual(grantovi, []);
+  });
+
   console.log('\n  ' + proslo + ' prošlo, ' + pao + ' palo\n');
   process.exit(pao ? 1 : 0);
 })();
