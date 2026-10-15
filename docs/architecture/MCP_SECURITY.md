@@ -42,7 +42,7 @@
 | I9 | administratorov konektor nema ni jedno pravo više od običnog | hook: svaki token s `client_id` = `mcp_klijent`, neovisno o ulozi korisnika | ✅ izmjereno S-B (11 tvrdnji, s kontrolom) |
 | I10 | tok prijave: PKCE obavezan, redirect točan, kod jednokratan i vezan na klijent, potpis tokena provjeren | Supabase Auth + PostgREST | ✅ izmjereno S-B (9 tvrdnji) |
 | I11 | brisanje računa briše **sve** korisnikovo: gradivo, verzije, nacrte, OAuth veze, sesije, slike — i nikad ne ostavi poluobrisan račun | kaskade FK-ova + `delete-account` | ✅ N10 zatvoren (H1: `on delete set null` na PROD-u + T5 s objavom, 22/22); brisanje izmjereno čisto (S-C) |
-| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | 🟡 učestalost ✅ STAGING 10.10. (K/5: 60/min i 1 000/dan po korisniku, 61. odbijen, obrnute 3/3 u SQL-u; broji se samo uspješan upis) · broj ✅ STAGING 10.10. (K/6: 2 000 živih čvorova, okidač; obrnute SQL 4/4) · veličina ❌ — N13 → K/7 |
+| I12 | jedan korisnik ili konektor ne može potrošiti bazu, funkciju ni tuđe vrijeme | granice u bazi (učestalost, veličina, broj) | 🟡 učestalost ✅ STAGING 10.10. (K/5: 60/min i 1 000/dan po korisniku, 61. odbijen, obrnute 3/3 u SQL-u; broji se samo uspješan upis) · broj ✅ STAGING 10.10. (K/6: 2 000 živih čvorova, okidač; obrnute SQL 4/4) · veličina i vrijeme ✅ STAGING 13.10. (K/7: objava i odgovor alata ≤ 1 MB, `mcp_klijent` 5 s; N13, N16) |
 | I13 | ono što AI ne vidi (odgovor skraćen) AI **zna** da ne vidi | alat vraća oznaku skraćenosti | ✅ STAGING 10.10. (K/6: najviše 500 stavki, `skraceno` + `sljedeci_offset`; `mcp:alati` ⑬) |
 
 ## 4 · Nalazi
@@ -240,7 +240,14 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
   siročad) i pri ②/2 može stvoriti duplikat.
 - **Popravak:** plan ④/2 — izričit raspon, najviše 500 stavki po odgovoru uz `skraceno: true`, kvota 2 000 čvorova.
 
-### N13 · povijest raste bez granice; obrisano se nikad ne briše — 🟠 SREDNJI
+### N13 · povijest raste bez granice; obrisano se nikad ne briše — 🟠 SREDNJI (veličina ✅ STAGING 13.10., K/7)
+
+- **K/7 (13.10.):** objava 1 MB (②/0b; `ugc:sadrzaj`: točno 1 MB prolazi, +1 bajt i 5 MB `publish_prevelik`) · **odgovor
+  alata ≤ 1 MB** (`izvediAlat`, bajtovi UTF-8, ista granica kao baza): preveliko se šalje zbijeno, ako ni to ne stane
+  `alat_odgovor_prevelik` („ispravi", čitaj lekciju ili stranicu); i grana greške ima granicu. Unit 5 + obrnute 6/6;
+  živo `mcp:alati` ⑭: najveći mogući materijal stiže zbijen (1 048 024 B; uvučeno 1 053 758) i cijel. **Rezerva je
+  552 B** i dolazi od razmaka u `jsonb::text` — izmjereno na jednom obliku, ne dokazano općenito.
+  **Ostaje:** `pg_cron` trajno brisanje meko obrisanog (④/5).
 
 - **Izmjereno:** objava od **5 MB prolazi** (200, 10,4 s) · pet objava po ~1 MB → pet trajnih kopija, ~1 MB svaka
   na disku (gradivo se slabo stišće) · verzija čuva **staro** stanje, pa `{}` + 5 × 1 MB = 4,9 MB za jedan materijal.
@@ -273,7 +280,11 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
   potpisi slika su samo u memoriji i brišu se pri promjeni čvora.
 - **Popravak:** plan ④/7 — odjava briše `sokrat-draft:node:*` (uz upozorenje ako ima nespremljenog).
 
-### N16 · `mcp_klijent` bez vlastitog `statement_timeout` — 🟢 NIZAK
+### N16 · `mcp_klijent` bez vlastitog `statement_timeout` — 🟢 NIZAK (✅ STAGING 12.10., K/7)
+
+- **K/7:** `f6-mcp-brava.sql` §1b `alter role mcp_klijent set statement_timeout = '5s'` + `notify pgrst, 'reload config'`.
+  `mcp:granice` 8/8 kroz PRAVI AI token: AI čita `5s`, 6 s čekanja prekinuto `57014` za 5,1 s; kontrola (korisnik 8s,
+  6 s prolazi) zelena. Na starom stanju 6/8, palo točno te 2. Svih šest `mcp:*` brana poslije: 0 palo.
 
 - **Pročitano (staging, `pg_roles`):** `anon` 3 s, `authenticated` 8 s, `authenticator` 8 s, **`mcp_klijent` ništa**.
   PostgREST pri promjeni uloge primjenjuje postavke uloge ako postoje; inače vrijedi 8 s iz prijave — **nije
@@ -296,7 +307,7 @@ Jednokratni korisnik, poslije obrisan i provjereno nula redaka u svim tablicama.
 |---|---|---|
 | 1 ovlasti | **istekao** token (traži čekanje 1 h; potpis i `alg` su izmjereni) | ⑤ |
 | 5 injection | ponašanje pravog modela sa zlonamjernim izvorom — **granica je izmjerena** (§5a), model nije | ⑤ |
-| 6 limiti | stvarni učinak `statement_timeout` za `mcp_klijent` (N16) · učestalost na razini auth-a (DCR, obnova tokena) — ne mjeri se poplavom | ④/3 · ④/1 |
+| 6 limiti | ~~stvarni učinak `statement_timeout` za `mcp_klijent` (N16)~~ izmjeren K/7 (`mcp:granice`) · učestalost na razini auth-a (DCR, obnova tokena) — ne mjeri se poplavom | ④/3 · ④/1 |
 | 7 privatnost | Sentry nema `beforeSend`: greška na stranici čija adresa još nosi fragment prijave (implicitni tok, `#access_token`) mogla bi ga poslati · N15 u pravom pregledniku · stanje N10 na produkciji | ④/7 · hitni popravak |
 
 ### 5a · Prompt injection — što zaveden model MOŽE (izmjereno i pročitano, S-B)
@@ -327,7 +338,7 @@ poslužitelju **i** u bazi; nijedan alat ne vraća ništa što korisnik nije sam
 | paralelne izmjene | **S-B:** 8 usporednih početaka → točno 3 (kvota drži) · usporedni upisi → **N7** | polazna verzija (②/1b); Prihvati uz izmjenu materijala (②/4) |
 | ponovljeni zahtjevi | **S-B:** ponovljena predaja odbijena · ponovljen početak → **N8** | ključ ponavljanja (②/1b); dvostruki Prihvati (②/4) |
 | zlonamjeran sadržaj | N1, N2 lokalno · **S-B: 8 oblika primljeno u nacrt (N5)** | validator (②/0a); pregled (②/4); pravi AI sa zlonamjernim PDF-om (⑤) |
-| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | učestalost ✅ K/5 (`mcp:alati` ⑫: 61. upis u minuti i 1 001. u 24 h odbijeni, usporedno točno 60); broj ✅ K/6 (`mcp:alati` ⑬: 2 001. odbijen, usporedno točno 10 u 3 kruga, stranice od 500 = sve); veličina K/7 |
+| opterećenje | **S-C:** 60 usporednih upisa, 30 usporednih MCP poziva, 1 200 čvorova, objava 5 MB — bez ijedne granice (N11–N13) | učestalost ✅ K/5 (`mcp:alati` ⑫: 61. upis u minuti i 1 001. u 24 h odbijeni, usporedno točno 60); broj ✅ K/6 (`mcp:alati` ⑬: 2 001. odbijen, usporedno točno 10 u 3 kruga, stranice od 500 = sve); veličina ✅ K/7 (`ugc:sadrzaj`: 1 MB + 1 bajt i 5 MB odbijeni; `mcp:alati` ⑭: odgovor od najvećeg materijala zbijen ≤ 1 MB) |
 | brisanje računa | **S-C:** puca uz objavljen materijal (N10); kad prođe, nula redaka u 9 tablica + Storage | T5 s objavljenim materijalom i nacrtom od AI-ja (hitni popravak) |
 
 Mjerne skripte dionica A i B nisu u repozitoriju (scratchpad sesije); u ②/0 i ②/1b postaju brane u

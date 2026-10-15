@@ -5,6 +5,26 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-12/15 (OPUS, `sokratstudy.f6`) — K/7 veličina i vrijeme ✅ na STAGINGU; repo preimenovan u `sokratstudy`
+
+- **Vrijeme (N16):** `f6-mcp-brava.sql` §1b — `mcp_klijent` dobiva `statement_timeout = '5s'`, na kraju datoteke
+  `notify pgrst, 'reload config'`. Prije ponovnog prolaza cijele datoteke provjereno da nijedna kasnija `.sql` ne
+  oduzima ono što brava daje (inače bi ga ponovni prolaz tiho vratio). `sql:staging`: 12 naredbi, jedna transakcija.
+  **`mcp:granice` 8/8** (nova brana, privremena sonda): AI čita 5s, 6 s prekinuto `57014` za 5,1 s; kontrola korisnik
+  8s/6 s prolazi; sonda obrisana (404). Na starom stanju 6/8, palo točno te 2 = obrnuta. Poslije: `mcp:nacrt` 55 ·
+  `predaja` 33 · `alati` 88 · `izmjena` 41 · `prihvat` 34 · `brava` 57 — **0 palo**, 5 s ne ruši ispravan rad.
+- **Veličina odgovora (N13):** `izvediAlat` — odgovor > 1 048 576 bajtova UTF-8 ide zbijeno; ako ni to ne stane,
+  `alat_odgovor_prevelik` („ispravi": jedna lekcija ili sljedeća stranica); granica i u grani greške (ime nepoznatog
+  alata šalje AI). Odbijeno: rezanje JSON-a. Unit `mcp-alati` 84/0 (+5); **obrnute 6/6** (bez granice · znakovi umjesto
+  bajtova · bez zbijanja · greška bez granice · gotov tekst bez provjere · druga konstanta). `mcp` **0.5.6** na stagingu
+  (`check:functions` 6/6 · `mcp:probe` 9/9 · `ugc:sadrzaj` 828/0). **`mcp:alati` ⑭ (91/91):** materijal od točno 1 MB
+  kroz pravi MCP stiže zbijen (1 048 024 B; uvučeno 1 053 758) i cijel (105/105 blokova). ⚠️ Rezerva 552 B, iz razmaka
+  u `jsonb::text` — izmjereno na jednom obliku. Grana „ni zbijeno ne stane" uživo nedostižna → mjeri je unit.
+- **Repo preimenovan (Leon, 15.10.):** `t2economyintourism` → `leonkreso784-bit/sokratstudy` (`gh repo rename`;
+  `gh` JEST instaliran i prijavljen — memorija je tvrdila suprotno). `origin` prebačen (dijele ga sva stabla). README
+  i `package.json` ispravljeni na `main`-u (lokalni commit, push čeka OK). ⚠️ Vercel (`studymaster`) još pamti staro
+  ime; veza je po ID-u repozitorija — prvi push grane pokazuje drži li.
+
 ## 2026-10-12 (OPUS, `sokratstudy.f6`) — `sql:staging` kroz `pg`: cijela datoteka, jedna transakcija, provjeren certifikat
 
 - **Kvar nađen na prvoj pravoj datoteci (K/7):** `supabase db query` šalje SQL kao PRIPREMLJENU naredbu → „cannot insert
