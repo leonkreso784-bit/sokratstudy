@@ -322,7 +322,7 @@ function odbij(kod: string, dodatak?: string): never {
  *  ②/4b: četiri za izmjenu postojećeg vlastitog materijala (čitanje s verzijom, kopija u nacrt izmjene,
  *  ime nacrta, vraćanje AI-jeve zadnje izmjene). Upis u materijal i dalje ide SAMO kroz `mcp_predaj_nacrt`. */
 export type RpcNacrta = 'mcp_zapocni_nacrt' | 'mcp_upisi_nacrt' | 'mcp_predaj_nacrt' | 'mcp_procitaj_nacrt' | 'mcp_moji_nacrti' |
-  'mcp_procitaj_materijal' | 'mcp_zapocni_izmjenu' | 'mcp_preimenuj_nacrt' | 'mcp_vrati_izmjenu';
+  'mcp_procitaj_materijal' | 'mcp_zapocni_izmjenu' | 'mcp_preimenuj_nacrt' | 'mcp_vrati_izmjenu' | 'mcp_veza';
 
 /** Minimalni oblik supabase-js klijenta za alate cjevovoda — test ga podmeće. */
 export interface Klijent extends CitacCvorova {
@@ -628,7 +628,8 @@ export const ALATI: Alat[] = [
     ulaz: objekt({
       offset: { type: 'integer', minimum: 0, maximum: 100000, description: 'Where to continue the list (sljedeci_offset from the previous answer). Default 0 = from the start.' }
     }, []),
-    izvedi: async (k, a) => (await procitajMaterijale(k, a.offset ?? 0)).tekst
+    // K/8: čvorovi se čitaju mimo ograde (RLS), pa se veza provjerava PRIJE čitanja (`f6-nacrt.sql` § mcp_veza).
+    izvedi: async (k, a) => { await pozovi(k, 'mcp_veza', {}); return (await procitajMaterijale(k, a.offset ?? 0)).tekst; }
   },
   {
     ime: 'zapocni_nacrt', naslov: 'Start a draft material', samoCitanje: false,

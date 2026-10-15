@@ -35,6 +35,12 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
   const zapis = { rasponi: [] };
   return {
     zapis,
+    // K/8: `procitaj_materijale` prvo prolazi ogradu veze; ovaj klijent zna SAMO nju — drugi RPC je kvar testa.
+    rpc(ime) {
+      if (ime !== 'mcp_veza') return Promise.reject(new Error('lazniKlijent: neočekivan rpc ' + ime));
+      zapis.veza = (zapis.veza || 0) + 1;
+      return Promise.resolve({ data: true, error: null });
+    },
     from(t) {
       zapis.tablica = t;
       return {
@@ -162,9 +168,11 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
       { type: 'integer', min: 0 });
     assert.deepStrictEqual(alat.ulaz.required, []);
     // Alat sam (ne samo funkcija) mora predati `offset` dalje — inače AI zauvijek dobiva prvu stranicu.
-    return alat.izvedi(lazniKlijent(mnogo(1200)), { offset: 500 }).then((t) => {
+    const k = lazniKlijent(mnogo(1200));
+    return alat.izvedi(k, { offset: 500 }).then((t) => {
       const j = JSON.parse(t);
       assert.deepStrictEqual({ od: j.od, prvi: j.stavke[0].id, skraceno: j.skraceno }, { od: 500, prvi: 'c00500', skraceno: true });
+      assert.strictEqual(k.zapis.veza, 1, 'K/8: alat nije prošao ogradu veze prije čitanja čvorova');
     });
   });
   await test('K/6 upute kažu da se skraćen popis nastavlja s `offset`, i navode stranicu iz konstante', () => {
@@ -403,6 +411,7 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
             polica_id: a.p_polica, nova_polica: a.p_nova_polica, opseg: a.p_opseg });
           return odg(id);
         }
+        if (ime === 'mcp_veza') return odg(true);   // K/8: samo ograda
         if (ime === 'mcp_moji_nacrti') return odg([...nacrti.values()].map((x) => ({ id: x.id, name: x.name, status: x.status, verzija: x.verzija, velicina: 2 })));
         const d = nacrti.get(a.p_id);
         if (!d && ime === 'mcp_predaj_nacrt' && predani.has(a.p_id)) return odg(predani.get(a.p_id));   // ponovljena predaja
@@ -638,7 +647,7 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
   });
 
   await test('N9 dinamički: svaki poziv RPC-a (i u grani ponovnog pokušaja) oboren iz baze → alat vraća PREVEDENO odbijanje', async () => {
-    assert.strictEqual(RPC_IZ_SQL.length, 9, 'iz supabase/*.sql izvučeno ' + RPC_IZ_SQL.length + ' RPC-ova za mcp_klijent, očekivano 9 (5 nacrta + 4 izmjene, ②/4b)');
+    assert.strictEqual(RPC_IZ_SQL.length, 10, 'iz supabase/*.sql izvučeno ' + RPC_IZ_SQL.length + ' RPC-ova za mcp_klijent, očekivano 10 (5 nacrta + 4 izmjene ②/4b + mcp_veza K/8)');
     assert.ok(Array.isArray(A.ALATI), 'nema ALATI');
     const parovi = [];
     for (const a of A.ALATI) {
@@ -1401,6 +1410,13 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
       ['oblik provjeren PRIJE ::uuid', /!~\*\s*v_uuid[\s\S]*v_sesija::uuid/]
     ]) assert.ok(re.test(o), 'ograda nema: ' + ime);
     assert.ok((o.match(/raise exception 'nacrt_veza_prekinuta/g) || []).length === 3, 'svaki uvjet mora imati SVOJ if');
+  });
+  await test('K/8 procitaj_materijale: odbijena veza → „stop" i tablica čvorova se NE dotiče (čita se mimo ograde)', async () => {
+    const k = lazniKlijent(mnogo(5));
+    k.rpc = (ime) => Promise.resolve({ data: null, error: { message: 'nacrt_veza_prekinuta: veza s ovim AI-jem je prekinuta' } });
+    const r = await A.izvediAlat('procitaj_materijale', k, {});
+    assert.deepStrictEqual([r.isError, izlaz(r).error, izlaz(r).kind], [true, 'nacrt_veza_prekinuta', 'stop'], r.content[0].text.slice(0, 160));
+    assert.strictEqual(k.zapis.tablica, undefined, 'čvorovi su pročitani unatoč prekinutoj vezi');
   });
   await test('K/8 popis blokiranih: RLS uključen, nikome izvana ništa (ni AI-ju), nijedan grant', () => {
     assert.ok(/alter table public\.mcp_blokirani_klijenti enable row level security/.test(NACRT_SQL), 'RLS nije uključen');

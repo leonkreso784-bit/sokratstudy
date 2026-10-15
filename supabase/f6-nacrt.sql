@@ -797,6 +797,24 @@ begin
 end;
 $$;
 
+-- ─── K/8: provjera veze za alat koji čita MIMO RPC-a ────────────────────────────────────────────
+-- `procitaj_materijale` čita `nodes` izravno (RLS, isti put kao Moji materijali) i zato ne prolazi
+-- `_nacrt_pozivatelj`: poslije prekida veze AI bi kroz NAŠ konektor još do 3600 s vidio nazive polica
+-- i materijala (Leon, anketa 15.10.: zatvori). Alat zato prvo pozove ovo. Ne čita i ne piše ništa —
+-- jedino što radi je ograda. Izravan REST mimo konektora i dalje vidi nazive do isteka (svjesno).
+create or replace function public.mcp_veza()
+returns boolean
+language plpgsql
+stable
+security definer
+set search_path = public, pg_temp
+as $$
+begin
+  perform public._nacrt_pozivatelj();
+  return true;
+end;
+$$;
+
 -- ─── 4. tko smije zvati ─────────────────────────────────────────────────────────────────────────
 -- SAMO `mcp_klijent`. `authenticated` NE: „Prihvati" (②/4) je zaseban RPC za običnu sesiju, a
 -- AI-ov put u nacrt obična sesija ne treba. Brana `mcp:brava` čita ovo iz inventara (OTVORENO).
@@ -807,7 +825,9 @@ begin
     'mcp_zapocni_nacrt(text, text, uuid, text, text)', 'mcp_upisi_nacrt(uuid, jsonb, int)', 'mcp_predaj_nacrt(uuid, uuid, text)',
     'mcp_procitaj_nacrt(uuid)', 'mcp_moji_nacrti()',
     -- ②/4b
-    'mcp_procitaj_materijal(uuid)', 'mcp_zapocni_izmjenu(uuid, text)', 'mcp_preimenuj_nacrt(uuid, text)', 'mcp_vrati_izmjenu(uuid)'
+    'mcp_procitaj_materijal(uuid)', 'mcp_zapocni_izmjenu(uuid, text)', 'mcp_preimenuj_nacrt(uuid, text)', 'mcp_vrati_izmjenu(uuid)',
+    -- K/8
+    'mcp_veza()'
   ] loop
     execute format('revoke execute on function public.%s from public, anon, authenticated', f);
     execute format('grant execute on function public.%s to mcp_klijent', f);

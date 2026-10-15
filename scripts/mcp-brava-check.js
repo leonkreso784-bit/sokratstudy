@@ -184,7 +184,9 @@ const OTVORENO = {
     'mcp_procitaj_materijal(uuid)': 'čitanje VLASTITOG živog materijala s verzijom — jedini put AI-ja do sadržaja; `node_content` ostaje zatvoren (②/4b)',
     'mcp_zapocni_izmjenu(uuid,text)': 'kopija vlastitog materijala u nacrt izmjene s polaznom verzijom; ključ ponavljanja, kvota kao nacrt (②/4b)',
     'mcp_preimenuj_nacrt(uuid,text)': 'ime vlastitog nacrta u izradi, 1–120 znakova (②/4b)',
-    'mcp_vrati_izmjenu(uuid)': 'poništi AI-jevu zadnju izmjenu vlastitog materijala kao novu verziju, samo ako ga od tad nitko nije mijenjao (②/4b)'
+    'mcp_vrati_izmjenu(uuid)': 'poništi AI-jevu zadnju izmjenu vlastitog materijala kao novu verziju, samo ako ga od tad nitko nije mijenjao (②/4b)',
+    // K/8 (15.10.): ništa ne čita ni piše — samo ograda veze, prije nego `procitaj_materijale` čita `nodes`. Mjeri `mcp:opoziv`.
+    'mcp_veza()': 'provjera da veza s AI-jem još postoji (sesija, klijent, popis blokiranih); vraća true ili odbija (K/8)'
   }
 };
 
