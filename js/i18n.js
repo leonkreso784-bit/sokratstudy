@@ -660,6 +660,8 @@
     'oauth.client': { en: 'App', hr: 'Aplikacija' },
     'oauth.host': { en: 'Returns to', hr: 'Vraća se na' },
     'oauth.account': { en: 'Your account', hr: 'Tvoj račun' },
+    'oauth.switch': { en: 'Not you? Sign in with another account', hr: 'Nisi ti? Prijavi se drugim računom' },
+    'oauth.switched': { en: 'Signed out. Sign in with the right account, then start connecting again in your AI app — this request belonged to the other account.', hr: 'Odjavljen si. Prijavi se pravim računom, pa ponovno pokreni spajanje u svojoj AI aplikaciji — ovaj zahtjev pripadao je drugom računu.' },
     'oauth.scope': { en: 'It will be able to see your own study materials. It never sees other people\'s materials.', hr: 'Moći će vidjeti tvoje materijale za učenje. Tuđe materijale nikad ne vidi.' },
     'oauth.allow': { en: 'Allow', hr: 'Dopusti' },
     'oauth.deny': { en: 'Deny', hr: 'Odbij' },

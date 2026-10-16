@@ -5,6 +5,21 @@ testirano, što slijedi.
 
 ---
 
+## 2026-10-16 (OPUS, `sokratstudy.f6`) — K/9 start: „Nisi ti?" na stranici odobrenja
+
+- **Nalaz (Leon uživo):** ChatGPT i Claude spojeni na `test-admin`, iako je u Sokratu bio prijavljen `test-prazan` —
+  stranica odobrenja otvorila se u pregledniku s drugom sesijom i nudila samo „Dopusti" (na krivi račun) ili „Odbij".
+  Dokaz: `auth.oauth_consents` 07:28/07:29/07:39 = test-admin; Leonova prijava test-prazan 07:37.
+- **Izmjereno (staging):** nedovršeno povezivanje se veže za prvi račun koji otvori detalje; drugi → `404
+  oauth_authorization_not_found` (oba smjera). Prva verzija gumba (reload pa nastavak) zato NIJE radila — pokus u
+  pregledniku ju je oborio prije nego je stigla Leonu.
+- **Popravak:** `odobrenje.js` gumb „Nisi ti?" → `signOut({ scope: 'local' })` (samo sesija tog preglednika; druga
+  sesija istog računa živi — izmjereno), skrije račun i gumbe, kaže da se spajanje pokrene ispočetka, otvori prijavu.
+  HR/EN `oauth.switch`/`oauth.switched`.
+- **Brane:** unit `odobrenje` (lokalna odjava, bez reloada, 2 × `open` oba na `/`) · e2e `odobrenje.spec.js` ⑩ (4/4
+  profila; na starom kodu pada) · pokus na stagingu (pravi preglednik, dva jednokratna računa: A 0 pristanaka, B 1).
+  Preflight zelen; `odobrenje.spec` 36/36 + ⑩. Jednokratni računi obrisani. Pouka u MCP_TESTING §5.
+
 ## 2026-10-15 (OPUS, `sokratstudy.f6`) — upute konektora prije K/9 (`mcp` 0.5.8, LOKALNO)
 
 - **Pregled `UPUTE`** (`alati.ts`) protiv alata, shema i odbijanja: imena i polja se slažu. Rupe: jezik gradiva nezadan ·

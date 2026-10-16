@@ -9,17 +9,17 @@
          `authorization_id` nema smisla. (robots.txt je NE zabranjuje — inače `noindex` nitko ne bi
          pročitao; v. check:seo.) -->
     <meta name="robots" content="noindex">
-    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261015181831">
-    <link rel="stylesheet" href="css/tokens.static.css?v=20261015181831">
-    <link rel="stylesheet" href="css/legal.css?v=20261015181831">
-    <script src="js/no-zoom.js?v=20261015181831" defer></script>
-    <script src="js/i18n.js?v=20261015181831" defer></script>
-    <script src="js/odobrenje.js?v=20261015181831" defer></script>
+    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261016095738">
+    <link rel="stylesheet" href="css/tokens.static.css?v=20261016095738">
+    <link rel="stylesheet" href="css/legal.css?v=20261016095738">
+    <script src="js/no-zoom.js?v=20261016095738" defer></script>
+    <script src="js/i18n.js?v=20261016095738" defer></script>
+    <script src="js/odobrenje.js?v=20261016095738" defer></script>
 </head>
 <body>
-<script src="js/boot.js?v=20261015181831"></script>
+<script src="js/boot.js?v=20261016095738"></script>
     <header class="legal-nav">
-        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261015181831" alt="Sokrat Study">Sokrat Study</a>
+        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261016095738" alt="Sokrat Study">Sokrat Study</a>
         <!-- Oznaku („EN"/„HR") upiše `i18n.js` kroz ključ `topbar.langCode` — prazna je dok JS ne stigne. -->
         <button type="button" class="legal-back legal-lang" data-action="toggleUiLang" data-i18n-aria="legal.lang" aria-label="Language / Jezik">
             <span class="lang-toggle-label" data-i18n="topbar.langCode"></span>
@@ -34,6 +34,8 @@
             <p><span data-i18n="oauth.client">App</span>: <strong id="oauthClient"></strong></p>
             <p><span data-i18n="oauth.host">Returns to</span>: <strong id="oauthHost"></strong></p>
             <p><span data-i18n="oauth.account">Your account</span>: <strong id="oauthAccount"></strong></p>
+            <!-- K/9 (15.10.): bez ovoga krivi prijavljeni račun nudi samo „Dopusti" na krivi račun ili „Odbij". -->
+            <p><button type="button" class="oauth-deny" id="oauthSwitch" data-i18n="oauth.switch">Not you? Sign in with another account</button></p>
             <p data-i18n="oauth.scope">It will be able to see your own study materials. It never sees other people's materials.</p>
         </div>
         <p class="oauth-actions" id="oauthActions" hidden>

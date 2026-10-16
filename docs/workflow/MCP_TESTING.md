@@ -82,6 +82,17 @@
 Klijenti: Claude.ai (custom connector; Free ima jedan) i ChatGPT (developer mode, Plus i više, samo web).
 Konektor se spaja na staging adresu funkcije ili na preview alias grane (`/mcp`).
 
+**Spajanje na PRAVI račun (16.10., K/9: oba klijenta dvaput spojena na `test-admin`):**
+
+- Stranica odobrenja uzima račun koji je u **tom** pregledniku prijavljen na `localhost:5051`. AI aplikacija je zna
+  otvoriti u **drugom** pregledniku ili profilu (zadanom u sustavu), pa krivi račun ondje prođe neprimijećen.
+- Prije „Dopusti" pročitaj redak **Tvoj račun**. Krivi → **„Nisi ti? Prijavi se drugim računom"** → prijava pravim
+  računom → spajanje **ispočetka iz AI aplikacije**. Isto povezivanje se ne može nastaviti: poslužitelj ga veže
+  za prvi račun koji otvori detalje, drugi dobiva `404 oauth_authorization_not_found` (izmjereno, oba smjera).
+- Provjera poslije spajanja: `auth.oauth_consents` za klijenta (`client_name`) mora imati redak pravog računa.
+- Preusmjerenje (`sokrat-supabase-override`) se čita **pri učitavanju stranice** — poslije upisa F5, inače prijava
+  ode na produkciju i javi „pogrešna lozinka".
+
 ## 6 · Što ja ne mogu pokrenuti (harness)
 
 Deploy Edge Functiona (i na staging), push na `main` i uređivanje vlastitih dozvola odbija auto-mode klasifikator.

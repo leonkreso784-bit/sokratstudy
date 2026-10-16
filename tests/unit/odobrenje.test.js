@@ -56,9 +56,20 @@ tvrdi(/skipBrowserRedirect: true/.test(OD), 'supabase-js ne preusmjerava sam (sk
 const assignovi = (OD.match(/window\.location\.assign\(/g) || []).length;
 const openovi = (OD.match(/window\.open\(/g) || []).length;
 tvrdi(assignovi === 2 && /dopustenHost\(kamo\)/.test(OD) && /dopustenHost\(d\.redirect_url\)/.test(OD)
-  && openovi === 1 && /window\.open\('\/'/.test(OD),
-  'svako odlaženje sa stranice je provjereno: 2 × assign tek poslije provjere hosta, 1 × open i to na vlastitu naslovnicu',
+  && openovi === 2 && (OD.match(/window\.open\('\/'/g) || []).length === openovi,
+  'svako odlaženje sa stranice je provjereno: 2 × assign tek poslije provjere hosta, 2 × open i oba na vlastitu naslovnicu (prijava · „Nisi ti?")',
   { assign: assignovi, open: openovi });
+
+// K/9 (16.10.): „Nisi ti?" — odjava je LOKALNA (`global` bi korisniku srušio i druge sesije i AI veze), a
+// stranica NE pokušava nastaviti isto povezivanje: poslužitelj ga veže za prvi račun koji otvori detalje
+// (drugi dobiva 404, izmjereno na stagingu) — zato korisniku kaže da povezivanje pokrene ispočetka.
+const promjena = OD.slice(OD.indexOf("el('oauthSwitch')"), OD.indexOf("el('oauthSwitch')") + 900);
+tvrdi(/signOut\(\{ scope: 'local' \}\)/.test(promjena) && !/scope: 'global'|signOut\(\)/.test(OD)
+  && /tr\('oauth\.switched'/.test(promjena) && !/location\.reload\(/.test(OD),
+  '„Nisi ti?": jedina odjava je LOKALNA, bez reloada, i kaže da se povezivanje pokreće ispočetka');
+tvrdi(/id="oauthSwitch"/.test(HTML) && HTML.indexOf('id="oauthSwitch"') > HTML.indexOf('id="oauthAccount"')
+  && HTML.indexOf('id="oauthSwitch"') < HTML.indexOf('id="oauthActions"'),
+  '„Nisi ti?" stoji uz račun, unutar detalja — vidi se tek kad je račun ispisan, prije gumba Dopusti');
 
 // Bez prebacivanja na lokalnoj adresi NEMA tihog povratka na produkciju (izmjereno 18.09. u ručnom
 // pokusu ①/1: stranica je otišla na produkciju, rekla „prijavi se prvo", pa je i prijava završila

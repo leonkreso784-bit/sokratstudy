@@ -9,7 +9,8 @@
 //   ③ poznat AI (claude.ai): ime, host i račun; otvaranje NE odobrava; „Dopusti" pošalje
 //     `approve` i tek onda vodi natrag u AI;
 //   ④ nepoznat povratak (tuđa stranica) → nema gumba, nijedno odobrenje ne ode;
-//   ⑤ „Odbij" pošalje `deny`.
+//   ⑤ „Odbij" pošalje `deny`;
+//   ⑩ „Nisi ti?" odjavi lokalno i ništa ne odobri (K/9).
 // Auth se PODMEĆE (`page.route`) na izmišljenom projektu; pravi lanac mjeri `npm run mcp:probe`
 // i spajanje pravog Claudea na STAGING.
 const { test, expect } = require('@playwright/test');
@@ -204,4 +205,34 @@ test('⑥ na localhostu bez odabranog projekta stranica stane i ne dira produkci
   await expect(page.locator('#oauthActions')).toBeHidden();
   await page.waitForTimeout(300);
   expect(vanjski).toEqual([]);
+});
+
+// ⑩ POVOD (K/9, 16.10.): u pregledniku je bio prijavljen DRUGI račun, pa je AI dvaput spojen na krivi
+// (test-admin umjesto test-prazan) — stranica je nudila samo „Dopusti" na krivi račun ili „Odbij".
+// „Nisi ti?" odjavi SAMO ovdje i NE nastavlja isto povezivanje: poslužitelj ga veže za prvi račun koji
+// otvori detalje (drugi dobiva 404 — izmjereno na stagingu, `docs/workflow/MCP_TESTING.md` §5).
+test('⑩ „Nisi ti?" → lokalna odjava, nijedno odobrenje, poruka da se spajanje pokrene ispočetka', async ({ page, context }) => {
+  const pozivi = await podmetniAuth(page);
+  await page.route(PROJEKT + '/auth/v1/logout**', (route) => {
+    pozivi.push({ metoda: route.request().method(), put: route.request().url(), tijelo: null });
+    return route.fulfill({ status: 204, body: '' });
+  });
+  await otvori(page, { upit: '?authorization_id=' + AUTH_ID, prijavljen: true });
+  await expect(page.locator('#oauthAccount')).toHaveText('student@primjer.hr');
+  await expect(page.locator('#oauthSwitch')).toHaveText('Nisi ti? Prijavi se drugim računom');
+
+  await page.click('#oauthSwitch');
+  await expect(page.locator('#oauthStatus')).toContainText('ponovno pokreni spajanje');
+  await expect(page.locator('#oauthDetails')).toBeHidden();
+  await expect(page.locator('#oauthActions')).toBeHidden();
+  expect(await page.evaluate(() => localStorage.getItem('sb-odobrenjetest-auth-token'))).toBeNull();
+  const odjave = pozivi.filter((p) => /\/auth\/v1\/logout/.test(p.put));
+  expect(odjave.length, 'odjava mora otići poslužitelju').toBe(1);
+  expect(new URL(odjave[0].put).searchParams.get('scope'), 'odjava je LOKALNA, ne global').toBe('local');
+  expect(pozivi.filter((p) => /\/consent$/.test(p.put)), 'promjena računa ne smije ništa odobriti').toEqual([]);
+  expect(page.url()).toContain('authorization_id=' + AUTH_ID);
+
+  const [prozor] = await Promise.all([context.waitForEvent('page'), page.click('#oauthSigninBtn')]);
+  await prozor.waitForLoadState('domcontentloaded');
+  expect(new URL(prozor.url()).pathname).toBe('/');
 });

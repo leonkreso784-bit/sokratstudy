@@ -202,6 +202,21 @@
     el('oauthAccount').textContent = (d.user && d.user.email) || (sesija.user && sesija.user.email) || '—';
     el('oauthDetails').hidden = false;
 
+    // „Nisi ti?" (K/9, 16.10.): u pregledniku zna biti prijavljen drugi račun (izmjereno: AI je dvaput
+    // spojen na krivi). Odjava SAMO ovdje (`local` — druge sesije i AI veze ostaju).
+    // ⚠️ OVO povezivanje se NE MOŽE nastaviti drugim računom: poslužitelj ga veže za prvi račun koji otvori
+    //    detalje — drugi dobiva `404 oauth_authorization_not_found` (izmjereno na stagingu 16.10., oba
+    //    smjera). Zato: odjava → prijava pravim računom (drugi prozor) → povezivanje ispočetka iz AI aplikacije.
+    el('oauthSwitch').addEventListener('click', async function () {
+      this.disabled = true;
+      await klijent.auth.signOut({ scope: 'local' });
+      el('oauthDetails').hidden = true;
+      el('oauthActions').hidden = true;
+      el('oauthSignin').hidden = false;
+      status(tr('oauth.switched', 'Signed out. Sign in with the right account, then start connecting again in your AI app — this request belonged to the other account.'), 'error');
+      el('oauthSigninBtn').addEventListener('click', function () { window.open('/', 'sokrat-prijava'); });
+    });
+
     if (!dopustenHost(d.redirect_uri)) {
       status(tr('oauth.blocked', 'This app is not one we recognise, so it cannot be connected.'), 'error');
       return;
