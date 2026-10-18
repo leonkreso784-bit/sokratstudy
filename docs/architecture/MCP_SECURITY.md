@@ -363,10 +363,9 @@ Svaki redak mora biti **zelen i izmjeren**, ne pretpostavljen:
 5. Limiti iz S-C postavljeni i izmjereni (④/1–④/3, svaki s obrnutom provjerom); postoji način da se jedan konektor
    ugasi (④/4); `procitaj_materijale` nikad ne reže bez oznake (N12).
 6. **N10 zatvoren na produkciji** (brisanje računa s objavljenim materijalom prolazi, T5 to mjeri). Backup pokriva
-   osobno gradivo, šifriran je i ima rok 8 tjedana (④/6) — **odgođeno ADR-040 (Leon, 15.10.: §7 se usklađuje s
-   ADR-om, nije uvjet za K/10)**; do tada Supabase Pro dnevne snimke, cijena u N14. Nacrti i OAuth veze nestaju s
+   osobno gradivo, šifriran je i ima rok 8 tjedana (④/6) — **odgođeno ADR-040, nije uvjet za K/10** (Leon,
+   15.10.); cijena u N14. Nacrti i OAuth veze nestaju s
    računom — izmjereno S-C.
 7. Pravi AI (Claude) na ne-admin računu prošao cjevovod i scenarij zlonamjernog PDF-a (⑤). **ChatGPT odgođen**
-   (Leon, anketa 19.10.: nema Plusa, developer mode nedostupan) — brane u bazi vrijede za svaki AI jednako, pa
-   je odgođeno samo ponašanje klijenta; testira se kad Plus opet bude.
+   (Leon, 19.10.: nema Plusa) — brane u bazi su iste za svaki AI; odgođeno je samo ponašanje klijenta.
 8. Postavke Auth-a na produkciji jednake stagingu (tri imenovana koraka iz ①).
