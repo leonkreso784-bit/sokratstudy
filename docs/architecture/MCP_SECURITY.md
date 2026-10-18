@@ -366,5 +366,7 @@ Svaki redak mora biti **zelen i izmjeren**, ne pretpostavljen:
    osobno gradivo, šifriran je i ima rok 8 tjedana (④/6) — **odgođeno ADR-040 (Leon, 15.10.: §7 se usklađuje s
    ADR-om, nije uvjet za K/10)**; do tada Supabase Pro dnevne snimke, cijena u N14. Nacrti i OAuth veze nestaju s
    računom — izmjereno S-C.
-7. Pravi AI (Claude + ChatGPT) na ne-admin računu prošao cjevovod i scenarij zlonamjernog PDF-a (⑤).
+7. Pravi AI (Claude) na ne-admin računu prošao cjevovod i scenarij zlonamjernog PDF-a (⑤). **ChatGPT odgođen**
+   (Leon, anketa 19.10.: nema Plusa, developer mode nedostupan) — brane u bazi vrijede za svaki AI jednako, pa
+   je odgođeno samo ponašanje klijenta; testira se kad Plus opet bude.
 8. Postavke Auth-a na produkciji jednake stagingu (tri imenovana koraka iz ①).
