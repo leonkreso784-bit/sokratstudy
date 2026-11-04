@@ -5,6 +5,11 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+## 2026-11-04 (OPUS) — ➕ **3. godina HM: Public Finance i Quality Management (Midterm 1)** — grana `feat/y3-pf-qm`
+
+Dva nova EN predmeta (`year: 3, semester: 1`), po jedna lekcija `midterm-1`: Public Finance 6 kat / 155 fc / 140 quiz / 39 fill,
+Quality Management 6 / 180 / 182 / 31. Learn kao v2 blokovi. Sadržaj iz Sokrat MCP materijala (staging). Katalog 34 → 36.
+
 ## 2026-09-29 (OPUS) — 🔧 **H1: brisanje računa uz objavljen materijal** (BUG-052) — grana `fix/h1-brisanje-racuna`, STAGING
 
 `node_content_versions.edited_by` dobiva `on delete set null` (`supabase/h1-edited-by-set-null.sql`, primijenjeno na

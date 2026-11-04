@@ -11,6 +11,18 @@
   ⚠️ **ISPRAVLJENO 2026-08-29:** ovdje je stajalo *„accounting nije u bazi"*. **Neistina** — provjereno upitom, `accounting` ima svoja tri reda kao i svi ostali. Tvrdnja je bila zapisana prije njegove migracije i nikad povučena, a slala je na krivi trag pri svakom debugiranju read-patha. Živu brojku daje `select count(*) from subject_content`, ne ova proza.
 - Kvantitativni predmeti = **KaTeX** (ADR-009; currency-safe delimiteri `\( \)` / `\[ \]` / `$$ $$`, NIKAD jedan `$`).
 
+## 3. godina HM — 2 predmeta, samo Midterm 1 (2026-11-04)
+
+| Predmet | ID | Sem | M1: kat/fc/quiz/fill | Vježbe | Napomene |
+|---|---|---|---|---|---|
+| Public Finance | `public-finance` | 1 | 6 / 155 / 140 / 39 | — | T1–T6 (Rosen & Gayer). Slajdovi tanki, dopune iz Rosena označene „not in course slides" |
+| Quality Management | `quality-management` | 1 | 6 / 180 / 182 / 31 | — | teme 1–6 (Oakland 2021, ISO 9000/9001). Sadržaj sa slika slajdova uključen (ISO brojke, SMART, PDCA-mapa točaka) |
+
+⚠️ **Iznimke od invarijanti:** (1) samo **1 lekcija** (`midterm-1`); Midterm 2 i Final dolaze kad profesori objave gradivo.
+(2) Learn je **v2 blokovi** (`learn.blocks`), ne HTML — prvi katalog-predmeti s blokovima; renderira `js/learn.js` → `renderContentBlocks`.
+(3) **Nisu u bazi `subject_content`** (Leon: ne pisati u PROD bazu) → čitaju se iz `data/json/<id>/` (dual-read fallback).
+Izvor sadržaja: Sokrat MCP materijali sa stagingu (`node_content` 2026-11-04), pretvoreni skriptom; id-jevi 6-znakovni generirani.
+
 ## 2. godina HM — 8/8 KOMPLETNO i LIVE
 
 | Predmet | ID | Sem | Final: kat/fc/quiz/fill | Vježbe | Napomene |

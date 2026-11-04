@@ -40,6 +40,50 @@ const SOKRAT_CATALOG = {
   //                    '*' = default za sve lekcije; ako lekcija nema mapiranje
   //                    i nema '*', sadržaj je prazan (npr. "coming soon").
   subjects: [
+    // ---- 3. godina, 1. semestar (zimski) — FMTU Hospitality Management ----
+    // Sadržaj: Sokrat MCP materijali (2026-11-04), samo Midterm 1; Midterm 2 i Final dolaze poslije.
+    {
+      id: 'public-finance',
+      programId: 'hospitality-management',
+      year: 3, semester: 1,
+      name: 'Public Finance',
+      shortName: 'PF',
+      icon: 'fa-landmark',
+      color: '#b45309',
+      iconGradient: ['#b45309', '#f59e0b'],
+      description: 'Public finance and ideology, public goods, externalities, social security, tax incidence and income distribution, taxation and efficiency (Rosen & Gayer)',
+      storageKey: 'public-finance-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'midterm-1', name: 'Midterm 1', description: 'T1–T6: public finance and ideology, public goods, externalities, social security, taxation and income distribution, taxation and efficiency' }
+      ],
+      content: {
+        scripts: ['data/public-finance/midterm-1.js'],
+        resolve: { 'midterm-1': 'publicFinanceM1' },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'quality-management',
+      programId: 'hospitality-management',
+      year: 3, semester: 1,
+      name: 'Quality Management',
+      shortName: 'QM',
+      icon: 'fa-award',
+      color: '#0d9488',
+      iconGradient: ['#0d9488', '#2dd4bf'],
+      description: 'Quality theory, quality gurus, the seven TQM principles, PDCA, Kaizen and quality circles, standardization of QMS and ISO 9001:2015',
+      storageKey: 'quality-management-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'midterm-1', name: 'Midterm 1', description: 'Topics 1–6: quality theory, quality gurus, TQM principles I–II (PDCA), standardization of QMS, ISO 9001:2015' }
+      ],
+      content: {
+        scripts: ['data/quality-management/midterm-1.js'],
+        resolve: { 'midterm-1': 'qualityManagementM1' },
+        dataFormat: 'json'
+      }
+    },
     {
       id: 'te2',
       programId: 'hospitality-management',

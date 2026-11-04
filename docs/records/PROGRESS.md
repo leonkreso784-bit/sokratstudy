@@ -5,6 +5,15 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-04 (OPUS, stablo `sokratstudy.y3`, grana `feat/y3-pf-qm`) — 3. godina HM: Public Finance + Quality Management (Midterm 1)
+
+Leon je za kolokvije (PF 9.11., QM 10.11.) dao izgraditi Sokrat materijale kroz MCP konektor — koji je **samo na stagingu**.
+Traženo: nova grana s tim sadržajem kao katalog-predmetima pod „3. godina · 1. semestar". Payload oba materijala pročitan iz
+staging `node_content` (REST, samo čitanje) → `data/public-finance/midterm-1.js` i `data/quality-management/midterm-1.js`
+(MCP polja `card`/id maknuta, novi 6-znakovni id-jevi, learn ostaje v2 blokovi). Katalog **36** (fallback u `index.html` 34→36).
+**Provjere:** `validate:content` 0 grešaka (sve kartice ≤200 znak.), `validate:schema` 0, `export:json` round-trip, `verify` 0, bump, preflight.
+`schemaVersion: 2` NIJE dodan — `validate-content` ga još čita kao kategoriju. PROD baza netaknuta (Leon: ne).
+
 ## 2026-09-29 (OPUS, `sokratstudy.h1`) — H1: brisanje računa uz objavljen materijal (BUG-052)
 
 Iz F6 sigurnosne analize (N10), Leon: *zasebno, odmah*. Novo stablo od `main`-a. T5 proširen objavom → na stagingu
