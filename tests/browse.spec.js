@@ -27,13 +27,20 @@ test('browse drill-down renders from catalog and navigates to a subject', async 
   );
   expect(progCount).toBe(expectedProg);
 
-  // Drill: program → years (should include Year 1 and Year 2)
+  // Drill: program → years. Expected years come from the catalog (the first program's
+  // distinct subject years), not a hardcoded list — a new year (e.g. Year 3, 2026-11-04)
+  // must not break the test.
   await page.click('.browse-card[data-browse="program"]');
   await page.waitForSelector('.browse-card[data-browse="year"]');
   const years = await page.$$eval('.browse-card[data-browse="year"]', (e) =>
     e.map((x) => Number(x.getAttribute('data-id'))).sort((a, b) => a - b)
   );
-  expect(years).toEqual([1, 2]);
+  const expectedYears = await page.evaluate(() => {
+    const pid = window.SOKRAT_CATALOG.faculties[0].programs[0].id;
+    return [...new Set(window.SOKRAT_CATALOG.subjects.filter((s) => s.programId === pid).map((s) => Number(s.year)))].sort((a, b) => a - b);
+  });
+  expect(years).toEqual(expectedYears);
+  expect(years).toContain(2);
 
   // Drill: Year 2 → subjects grouped by semester
   await page.click('.browse-card[data-browse="year"][data-id="2"]');
