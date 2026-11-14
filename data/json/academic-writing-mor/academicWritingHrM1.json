@@ -1,0 +1,1372 @@
+{
+  "logicMethodology": {
+    "name": "Logika i metodologija",
+    "icon": "fa-brain",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Čime se bavi LOGIKA kao filozofska disciplina?",
+        "answer": "Proučavanjem oblika valjane misli i proučavanjem primjene valjane misli u procesu spoznaje.",
+        "explanation": "Definicija se na kolokviju traži gotovo doslovno — zapamti oba dijela: OBLICI valjane misli + njihova PRIMJENA u spoznaji."
+      },
+      {
+        "question": "Koji su osnovni oblici i vrste misli?",
+        "answer": "Pojam, sud, zaključak i dokaz.",
+        "explanation": "Redoslijed ide od najjednostavnijeg (pojam) prema najsloženijem (dokaz)."
+      },
+      {
+        "question": "Što je METODOLOGIJA?",
+        "answer": "Učenje o načinima primjene logičkih oblika misli u procesu spoznaje.",
+        "explanation": "Logika kaže KAKO valjano misliti, metodologija KAKO to mišljenje primijeniti u istraživanju."
+      },
+      {
+        "question": "Koja je razlika između logike i metodologije?",
+        "answer": "Logika proučava oblike valjane misli; metodologija proučava načine na koje se ti logički oblici primjenjuju u procesu spoznaje.",
+        "explanation": "Metodologija se oslanja na logiku — bez valjanih oblika misli nema valjane metode."
+      },
+      {
+        "question": "Koja su tri glavna obilježja ZNANSTVENE METODE?",
+        "answer": "Egzaktnost, objektivnost i provjerljivost.",
+        "explanation": "Mnemonik: E-O-P. Metoda bez ijednog od ta tri obilježja nije znanstvena."
+      },
+      {
+        "question": "Što znači EGZAKTNOST znanstvene metode?",
+        "answer": "Točnost i preciznost: pojmovi, podaci i zaključci iskazuju se jednoznačno, bez nejasnoća i proizvoljnosti.",
+        "explanation": "Npr. „prosječno 3,4 noćenja po gostu” umjesto „gosti ostaju nekoliko dana”."
+      },
+      {
+        "question": "Što znači OBJEKTIVNOST znanstvene metode?",
+        "answer": "Rezultat ovisi o predmetu istraživanja, a ne o osobnim željama, stavovima ili interesima istraživača.",
+        "explanation": "Isti predmet, istražen istom metodom, mora dati isti rezultat bez obzira tko istražuje."
+      },
+      {
+        "question": "Što znači PROVJERLJIVOST znanstvene metode?",
+        "answer": "Postupak i rezultat istraživanja može ponoviti i provjeriti drugi istraživač.",
+        "explanation": "Zato se u radu navode korištene metode i izvori podataka."
+      },
+      {
+        "question": "Na koje se dvije skupine dijele znanstvene metode u kolegiju?",
+        "answer": "Na opće znanstvene metode spoznaje (17 metoda) i posebne znanstvene metode (4 metode).",
+        "explanation": "Opće: promatranje, eksperiment, anketa… Posebne: analiza–sinteza, generalizacija–specijalizacija, indukcija–dedukcija, definiranje–dokazivanje–opovrgavanje."
+      },
+      {
+        "question": "Koje su četiri POSEBNE znanstvene metode?",
+        "answer": "Analitičko-sintetička, metoda generalizacije i specijalizacije, induktivno-deduktivna te metoda definiranja, dokazivanja i opovrgavanja.",
+        "explanation": "Sve četiri su PAROVI (ili trojka) suprotnih ili povezanih postupaka."
+      },
+      {
+        "question": "Koliko OPĆIH znanstvenih metoda spoznaje navodi skripta?",
+        "answer": "Sedamnaest — od metode promatranja i eksperimentalne metode do metode brojenja i metode mjerenja.",
+        "explanation": "Cijeli popis je u sekciji Uči; definicije pojedinih metoda su u sljedećim kategorijama."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Čime se bavi logika kao filozofska disciplina?",
+        "options": [
+          "Proučavanjem oblika valjane misli i primjene valjane misli u procesu spoznaje",
+          "Proučavanjem primjene valjanih argumenata u procesu spoznaje",
+          "Proučavanjem primjene valjanih sudova u procesu spoznaje",
+          "Proučavanjem primjene valjanih hipoteza u procesu spoznaje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Osnovni oblici i vrste misli su:",
+        "options": [
+          "Pojam, sud, zaključak i dokaz",
+          "Pojam, definicija, hipoteza i teorija",
+          "Analiza, sinteza, indukcija i dedukcija",
+          "Sud, argument, teza i antiteza"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Učenje o načinima primjene logičkih oblika misli u procesu spoznaje naziva se:",
+        "options": [
+          "Logika",
+          "Metodologija",
+          "Epistemologija",
+          "Kibernetika"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja su glavna obilježja znanstvene metode?",
+        "options": [
+          "Egzaktnost, objektivnost i provjerljivost",
+          "Opširnost, subjektivnost i originalnost",
+          "Brzina, jednostavnost i jeftinoća",
+          "Egzaktnost, subjektivnost i aktualnost"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koje obilježje znanstvene metode znači da drugi istraživač može ponoviti postupak i doći do istog rezultata?",
+        "options": [
+          "Egzaktnost",
+          "Objektivnost",
+          "Provjerljivost",
+          "Aktualnost"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koja od navedenih metoda pripada POSEBNIM znanstvenim metodama?",
+        "options": [
+          "Metoda promatranja",
+          "Induktivno-deduktivna metoda",
+          "Statistička metoda",
+          "Metoda anketiranja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja od navedenih metoda pripada OPĆIM znanstvenim metodama spoznaje?",
+        "options": [
+          "Analitičko-sintetička metoda",
+          "Metoda generalizacije i specijalizacije",
+          "Komparativna metoda",
+          "Metoda definiranja, dokazivanja i opovrgavanja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji je od navedenih oblika misli NAJJEDNOSTAVNIJI?",
+        "options": [
+          "Dokaz",
+          "Zaključak",
+          "Sud",
+          "Pojam"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Koliko općih znanstvenih metoda spoznaje navodi skripta kolegija?",
+        "options": [
+          "4",
+          "7",
+          "12",
+          "17"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Logika se bavi proučavanjem oblika _______ misli i primjene takve misli u procesu spoznaje.",
+        "answer": "valjane",
+        "hint": "Ispravne, logički korektne…"
+      },
+      {
+        "sentence": "Metodologija je učenje o načinima primjene logičkih oblika misli u procesu _______.",
+        "answer": "spoznaje",
+        "hint": "Stjecanja znanja…"
+      },
+      {
+        "sentence": "Osnovni oblici misli su pojam, sud, zaključak i _______.",
+        "answer": "dokaz",
+        "hint": "Najsloženiji oblik, lat. probatio…"
+      },
+      {
+        "sentence": "Glavna obilježja znanstvene metode su egzaktnost, objektivnost i _______.",
+        "answer": "provjerljivost",
+        "hint": "Drugi može ponoviti i potvrditi…"
+      },
+      {
+        "sentence": "Znanstvene metode dijele se na opće znanstvene metode spoznaje i _______ znanstvene metode.",
+        "answer": "posebne",
+        "hint": "Analiza–sinteza, indukcija–dedukcija…"
+      },
+      {
+        "sentence": "Točnost i jednoznačnost iskaza kao obilježje znanstvene metode naziva se _______.",
+        "answer": "egzaktnost",
+        "hint": "Prvo slovo mnemonika E-O-P…"
+      },
+      {
+        "sentence": "Među posebnim znanstvenim metodama je i metoda generalizacije i _______.",
+        "answer": "specijalizacije",
+        "hint": "Posebno u općem…"
+      }
+    ],
+    "learn": {
+      "title": "Logika i metodologija",
+      "content": "\n<h3>Zašto kolegij o pisanju počinje logikom?</h3>\n<p>Pisano djelo (seminarski, završni, diplomski rad) nije skup rečenica nego <strong>niz argumenata</strong>: pojmovi se definiraju, iz njih se grade tvrdnje (sudovi), iz tvrdnji zaključci, a zaključci se dokazuju. Zato prvi kolokvij obrađuje <strong>logiku</strong> (kako valjano misliti) i <strong>znanstvene metode</strong> (kako to mišljenje primijeniti u istraživanju). Drugi kolokvij zatim pokazuje kako se to pretoči u pisani rad.</p>\n\n<h3>Logika</h3>\n<div class=\"formula-box\"><strong>Logika</strong> kao filozofska disciplina bavi se proučavanjem <strong>oblika valjane misli</strong> i proučavanjem <strong>primjene valjane misli u procesu spoznaje</strong>.</div>\n<p><strong>Osnovni oblici i vrste misli</strong> su: <strong>pojam, sud, zaključak i dokaz</strong>. Svaki sljedeći gradi se od prethodnog: sud povezuje pojmove, zaključak povezuje sudove, a dokaz je postupak kojim se utvrđuje istinitost suda (detalji u kategoriji <em>Pojam, sud, zaključak i dokaz</em>).</p>\n\n<h3>Metodologija</h3>\n<div class=\"formula-box\"><strong>Metodologija</strong> je učenje o načinima primjene logičkih oblika misli u procesu spoznaje.</div>\n<p>Jednostavno: logika opisuje <em>alat</em>, metodologija opisuje <em>kako se alat koristi</em>. U uvodu seminarskog rada zato se navode <strong>znanstvene metode</strong> koje su primijenjene u obradi teme — to je izravna primjena metodologije.</p>\n\n<h3>Obilježja znanstvene metode</h3>\n<ul>\n<li><strong>Egzaktnost</strong> — točnost i preciznost; iskazi su jednoznačni (npr. „stopa popunjenosti hotela u kolovozu bila je 92 %”, a ne „hotel je bio skoro pun”).</li>\n<li><strong>Objektivnost</strong> — rezultat ovisi o predmetu istraživanja, a ne o željama i stavovima istraživača.</li>\n<li><strong>Provjerljivost</strong> — drugi istraživač može ponoviti postupak i provjeriti rezultat.</li>\n</ul>\n<div class=\"tip-box\"><strong>Mnemonik:</strong> E-O-P (Egzaktnost, Objektivnost, Provjerljivost).</div>\n\n<h3>Podjela znanstvenih metoda</h3>\n<table>\n<tr><th>Opće znanstvene metode spoznaje (17)</th><th>Posebne znanstvene metode (4)</th></tr>\n<tr><td>\nmetoda promatranja · eksperimentalna metoda · kibernetička metoda · metoda teorije sustava · aksiomatska metoda · metoda modeliranja · statistička metoda · matematička metoda · komparativna metoda · metoda idealnih tipova · povijesna metoda · genetička metoda · metoda studija slučaja · metoda anketiranja · metoda intervjua · metoda brojenja · metoda mjerenja\n</td><td>\nanalitičko-sintetička metoda · metoda generalizacije i specijalizacije · induktivno-deduktivna metoda · metoda definiranja, dokazivanja i opovrgavanja\n</td></tr>\n</table>\n<div class=\"tip-box\"><strong>Kako razlikovati:</strong> posebne metode dolaze u <strong>parovima</strong> (analiza–sinteza, generalizacija–specijalizacija, indukcija–dedukcija) ili kao trojka (definiranje–dokazivanje–opovrgavanje). Ako metoda ima „par”, gotovo sigurno je posebna.</div>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Zamijeniti definicije logike i metodologije — logika = OBLICI valjane misli; metodologija = PRIMJENA tih oblika u spoznaji.</li>\n<li>Navesti „hipotezu” ili „definiciju” kao osnovni oblik misli — osnovni su samo <strong>pojam, sud, zaključak i dokaz</strong>.</li>\n<li>Svrstati komparativnu ili statističku metodu među posebne — one su <strong>opće</strong>.</li>\n</ul></div>\n"
+    }
+  },
+  "conceptJudgement": {
+    "name": "Pojam, sud, zaključak i dokaz",
+    "icon": "fa-lightbulb",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "Što je POJAM?",
+        "answer": "Jedan od osnovnih oblika misli, odnosno misao o biti onoga što mislimo.",
+        "explanation": "Pojam hvata ono BITNO o predmetu, stvari ili pojavi."
+      },
+      {
+        "question": "Koja je razlika između NUŽNIH i SLUČAJNIH obilježja?",
+        "answer": "Nužna su neodvojiva od predmeta i čine njegovu bit ili suštinu; o slučajnim obilježjima bit predmeta ne ovisi.",
+        "explanation": "Hotel: pružanje smještaja = nužno. Boja fasade ili broj katova = slučajno."
+      },
+      {
+        "question": "Kako se pojam izražava (označava)?",
+        "answer": "Nazivom (terminom) ili opisom.",
+        "explanation": "Naziv: „brošura”. Opis: „neperiodična publikacija od 5 do 48 stranica”."
+      },
+      {
+        "question": "Što čini SADRŽAJ pojma?",
+        "answer": "Skup njegovih bitnih oznaka, odnosno ukupnost njegovih bitnih i nužnih obilježja.",
+        "explanation": "Zamka na ispitu: distraktori spominju SLUČAJNE oznake — sadržaj čine samo BITNE i NUŽNE."
+      },
+      {
+        "question": "Kako se definira OPSEG (sfera) pojma?",
+        "answer": "Kao skup nižih, odnosno užih pojmova koje obuhvaća jedan viši, odnosno širi pojam.",
+        "explanation": "Opseg pojma „znanstveno djelo”: monografija, znanstveni članak, patent… (niži POJMOVI)."
+      },
+      {
+        "question": "Što čini DOSEG (područje primjene) pojma prema Gaji Petroviću?",
+        "answer": "Svi pojedinačni predmeti na koje se taj pojam odnosi.",
+        "explanation": "Opseg = niži POJMOVI; doseg = pojedinačni PREDMETI (npr. svaki konkretni seminarski rad)."
+      },
+      {
+        "question": "Kakav je odnos sadržaja i opsega pojma?",
+        "answer": "Obrnut: što pojam ima više bitnih oznaka (bogatiji sadržaj), to obuhvaća manje nižih pojmova (uži opseg), i obratno.",
+        "explanation": "„Djelo” ima širok opseg; „znanstveni izvorni članak” ima bogat sadržaj i uzak opseg."
+      },
+      {
+        "question": "Što je SUD?",
+        "answer": "Misao kojom se nešto tvrdi ili poriče, odnosno misao koja sadrži neku istinosnu vrijednost.",
+        "explanation": "Sud je istinit ili neistinit. „Knjiga ima najmanje 49 stranica” je sud; pitanje ili zapovijed nisu."
+      },
+      {
+        "question": "Što je ZAKLJUČAK prema tradicionalnoj logici?",
+        "answer": "Posebno strukturirana složena misao o dva ili više sudova, od kojih jedan slijedi, odnosno proizlazi iz jednog ili više drugih.",
+        "explanation": "Sudovi iz kojih se zaključuje su premise; sud koji iz njih slijedi je zaključak."
+      },
+      {
+        "question": "Što je DOKAZ?",
+        "answer": "Logički postupak kojim se utvrđuje i obrazlaže istinitost nekog suda, odnosno tvrdnje ili teze.",
+        "explanation": "Lat. probatio. Dokaz je ujedno logički oblik dokazivanja."
+      },
+      {
+        "question": "Kojim redom se oblici misli nadograđuju jedan na drugi?",
+        "answer": "Pojmovi se povezuju u sudove, sudovi u zaključke, a dokazom se utvrđuje istinitost suda (teze).",
+        "explanation": "Pojam → sud → zaključak → dokaz."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Pojam je:",
+        "options": [
+          "Jedan od osnovnih oblika misli, odnosno misao o biti onoga što mislimo",
+          "Misao kojom se nešto tvrdi ili poriče",
+          "Složena misao o dva ili više sudova",
+          "Logički postupak kojim se obrazlaže istinitost teze"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kako se pojam izražava (označava)?",
+        "options": [
+          "Definicijom",
+          "Jednom riječju",
+          "Nazivom (terminom) ili opisom",
+          "Sudom"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Što čini sadržaj pojma?",
+        "options": [
+          "Skup njegovih bitnih oznaka ili ukupnost njegovih bitnih i nužnih obilježja",
+          "Skup njegovih slučajnih oznaka",
+          "Skup njegovih bitnih oznaka kojima se izražava mišljenje o pojmu",
+          "Skup riječi koje opisuju ukupnost njegovih slučajnih obilježja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Skup nižih, odnosno užih pojmova koje obuhvaća jedan viši pojam naziva se:",
+        "options": [
+          "Sadržaj pojma",
+          "Opseg (sfera) pojma",
+          "Doseg pojma",
+          "Definiens"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prema Gaji Petroviću, doseg ili područje primjene pojma čine:",
+        "options": [
+          "Sve bitne oznake pojma",
+          "Svi niži pojmovi koje pojam obuhvaća",
+          "Svi pojedinačni predmeti na koje se pojam odnosi",
+          "Sva slučajna obilježja pojma"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Što je sud?",
+        "options": [
+          "Misao kojom se nešto tvrdi ili poriče, odnosno misao koja sadrži neku istinosnu vrijednost",
+          "Mišljenje o provedenom zaključivanju",
+          "Istaknuta rečenica kao rezultat argumentiranja",
+          "Rezultat induktivno-deduktivne metode"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Posebno strukturirana složena misao o dva ili više sudova, od kojih jedan proizlazi iz drugih, prema tradicionalnoj logici je:",
+        "options": [
+          "Pojam",
+          "Sud",
+          "Zaključak",
+          "Definicija"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Logički postupak kojim se utvrđuje i obrazlaže istinitost nekog suda, tvrdnje ili teze je:",
+        "options": [
+          "Dokaz",
+          "Opovrgavanje",
+          "Generalizacija",
+          "Promatranje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Obilježja koja su neodvojiva od predmeta i čine njegovu bit nazivaju se:",
+        "options": [
+          "Slučajna",
+          "Nužna",
+          "Promjenjiva",
+          "Opisna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što se događa s opsegom pojma kad mu dodamo nove bitne oznake?",
+        "options": [
+          "Opseg se povećava",
+          "Opseg se smanjuje",
+          "Opseg ostaje isti",
+          "Pojam gubi sadržaj"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Pojam je misao o _______ onoga što mislimo.",
+        "answer": "biti",
+        "hint": "Suština, ono bitno…"
+      },
+      {
+        "sentence": "Pojam se izražava nazivom (terminom) ili _______.",
+        "answer": "opisom",
+        "hint": "Kad nema jedne riječi…"
+      },
+      {
+        "sentence": "Sud je misao kojom se nešto tvrdi ili _______.",
+        "answer": "poriče",
+        "hint": "Suprotno od tvrdi…"
+      },
+      {
+        "sentence": "Sud je misao koja sadrži neku _______ vrijednost.",
+        "answer": "istinosnu",
+        "hint": "Istinit ili neistinit…"
+      },
+      {
+        "sentence": "Doseg pojma prema Gaji Petroviću čine svi _______ predmeti na koje se pojam odnosi.",
+        "answer": "pojedinačni",
+        "hint": "Konkretni, jedan po jedan…"
+      },
+      {
+        "sentence": "O _______ obilježjima ne ovisi bit predmeta, stvari ili pojave.",
+        "answer": "slučajnim",
+        "hint": "Suprotno od nužnih…"
+      },
+      {
+        "sentence": "Opseg ili _______ pojma je skup nižih pojmova koje obuhvaća viši pojam.",
+        "answer": "sfera",
+        "hint": "Drugi naziv za opseg…"
+      },
+      {
+        "sentence": "Sadržaj pojma čini ukupnost njegovih bitnih i _______ obilježja.",
+        "answer": "nužnih",
+        "hint": "Neodvojivih od predmeta…"
+      }
+    ],
+    "learn": {
+      "title": "Pojam, sud, zaključak i dokaz",
+      "content": "\n<h3>1. Pojam</h3>\n<div class=\"formula-box\"><strong>Pojam</strong> je jedan od osnovnih oblika misli, odnosno misao o <strong>biti</strong> onoga što mislimo.</div>\n<p>Svaki predmet, stvar ili pojava ima dvije vrste obilježja:</p>\n<ul>\n<li><strong>Nužna obilježja</strong> — neodvojiva su od predmeta, stvari ili pojave kojima pripadaju i čine njihovu <strong>bit ili suštinu</strong>.</li>\n<li><strong>Slučajna obilježja</strong> — o njima bit predmeta, stvari ili pojave <strong>ne ovisi</strong>.</li>\n</ul>\n<div class=\"example-box\"><strong>Primjer:</strong> pojam <em>knjiga</em>. Nužno: neperiodična tiskana publikacija s najmanje 49 stranica. Slučajno: boja korica, tvrdi ili meki uvez, jezik. Knjiga ostaje knjiga i kad promijeni boju korica, ali ne i kad ima 20 stranica (tada je brošura).</div>\n\n<h4>Kako se pojam izražava?</h4>\n<p><strong>Nazivom (terminom)</strong> ili <strong>opisom</strong>. Npr. naziv „hrestomatija” ili opis „zbirka odabranih tekstova za nastavu”.</p>\n\n<h4>Sadržaj, opseg i doseg pojma</h4>\n<table>\n<tr><th>Pojam</th><th>Definicija iz skripte</th><th>Primjer (pojam „znanstveno djelo”)</th></tr>\n<tr><td><strong>Sadržaj</strong></td><td>skup njegovih bitnih oznaka, odnosno ukupnost njegovih bitnih i nužnih obilježja</td><td>primjenom znanstvenih metoda otkriva nove činjenice i ideje</td></tr>\n<tr><td><strong>Opseg (sfera)</strong></td><td>skup nižih, odnosno užih pojmova koje obuhvaća jedan viši, odnosno širi pojam</td><td>monografije, znanstveni članci, izlaganja na skupovima, projekti, rasprave, patenti</td></tr>\n<tr><td><strong>Doseg (područje primjene)</strong> — prema Gaji Petroviću</td><td>svi pojedinačni predmeti na koje se taj pojam odnosi</td><td>svaka konkretna monografija, svaki konkretni članak koji postoji</td></tr>\n</table>\n<div class=\"tip-box\"><strong>Opseg ≠ doseg.</strong> Opseg čine niži <em>pojmovi</em> (vrste), doseg čine pojedinačni <em>predmeti</em> (primjerci). Uz doseg na ispitu uvijek ide ime <strong>Gajo Petrović</strong>.</div>\n<p><strong>Odnos sadržaja i opsega je obrnut:</strong> što je sadržaj bogatiji (više bitnih oznaka), opseg je uži. „Djelo” → „znanstveno djelo” → „znanstveni članak” → „izvorni znanstveni članak”: svakim korakom dodajemo oznaku i sužavamo opseg.</p>\n\n<h3>2. Sud</h3>\n<div class=\"formula-box\"><strong>Sud</strong> je misao kojom se nešto <strong>tvrdi ili poriče</strong>, odnosno misao koja sadrži neku <strong>istinosnu vrijednost</strong>.</div>\n<div class=\"example-box\"><strong>Sudovi:</strong> „Brošura ima najviše 48 stranica.” (tvrdi, istinit) · „Recenzija nije znanstveno djelo.” (poriče, istinit) · „Patent je stručno djelo.” (tvrdi, neistinit).<br><strong>Nisu sudovi:</strong> „Koliko stranica ima knjiga?” · „Napiši zaključak!” — nemaju istinosnu vrijednost.</div>\n\n<h3>3. Zaključak</h3>\n<div class=\"formula-box\">Prema tradicionalnoj logici <strong>zaključak</strong> je posebno strukturirana složena misao o <strong>dva ili više sudova</strong>, od kojih jedan slijedi, odnosno proizlazi iz jednog ili više drugih.</div>\n<div class=\"example-box\">Sva djela na visokim učilištima izrađuju studenti. (sud 1)<br>Seminarski rad je djelo na visokom učilištu. (sud 2)<br><strong>Dakle</strong>, seminarski rad izrađuju studenti. (sud koji slijedi = zaključak)</div>\n\n<h3>4. Dokaz</h3>\n<div class=\"formula-box\"><strong>Dokaz</strong> je logički postupak kojim se utvrđuje i obrazlaže <strong>istinitost</strong> nekog suda, odnosno tvrdnje ili teze.</div>\n<p>O dokazivanju i opovrgavanju kao metodi više u kategoriji <em>Indukcija i dedukcija, definiranje, dokazivanje i opovrgavanje</em>.</p>\n\n<div class=\"warning-box\"><strong>Česte greške na kolokviju:</strong>\n<ul>\n<li>Sadržaj pojma s „<em>slučajnim</em> oznakama” — netočno; sadržaj čine <strong>bitne i nužne</strong> oznake.</li>\n<li>Odgovor „pojam se izražava definicijom” — netočno; izražava se <strong>nazivom ili opisom</strong> (definicijom se sadržaj pojma <em>određuje</em>).</li>\n<li>Sud kao „mišljenje o provedenom zaključivanju” — netočno; sud <strong>tvrdi ili poriče</strong>.</li>\n<li>Zamijeniti opseg (niži pojmovi) i doseg (pojedinačni predmeti).</li>\n</ul></div>\n"
+    }
+  },
+  "empiricalMethods": {
+    "name": "Opće metode: promatranje, eksperiment i prikupljanje podataka",
+    "icon": "fa-eye",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "Što je METODA PROMATRANJA?",
+        "answer": "Organizirano i sustavno izvedeno objektivno, svestrano i precizno motrenje pojava, stvari i procesa radi otkrivanja novih činjenica ili provjere hipoteza.",
+        "explanation": "Provjera hipoteza, teorija i zakona provodi se na novim ili drugačijim činjenicama i uvjetima."
+      },
+      {
+        "question": "Što je EKSPERIMENTALNA METODA?",
+        "answer": "Unaprijed pripremljen postupak kontroliranog IZAZIVANJA i promatranja pojave pod točno utvrđenim uvjetima.",
+        "explanation": "Ključna razlika od promatranja: pojava se IZAZIVA, a uvjeti se kontroliraju."
+      },
+      {
+        "question": "S kojim ciljevima se provodi eksperiment?",
+        "answer": "Otkrivanje uzročno-posljedičnih i funkcionalnih veza, pokazivanje (demonstriranje) i dokazivanje veze te provjeravanje hipoteza, zakona i teorija.",
+        "explanation": "Tri cilja: otkriti, pokazati/dokazati, provjeriti."
+      },
+      {
+        "question": "Po čemu se eksperiment razlikuje od promatranja?",
+        "answer": "Promatranjem se pojava motri kakva jest; eksperimentom se pojava namjerno izaziva i ispituje pod kontroliranim, točno utvrđenim uvjetima.",
+        "explanation": "Promatranje: istraživač ne mijenja pojavu. Eksperiment: istraživač upravlja uvjetima."
+      },
+      {
+        "question": "Što je METODA ANKETIRANJA?",
+        "answer": "Organizirano i unaprijed pripremljeno prikupljanje podataka o stavovima i mišljenjima putem anketnog upitnika upućenog skupini ili većem broju ljudi.",
+        "explanation": "Upitnik = niz pitanja. Anketa se najčešće koristi za društvene teme i pojave."
+      },
+      {
+        "question": "Što je METODA INTERVJUA?",
+        "answer": "Prikupljanje podataka izravnim razgovorom istraživača s ispitanikom prema unaprijed pripremljenim pitanjima.",
+        "explanation": "Skripta metodu samo navodi u popisu općih metoda; ovo je opća definicija. Anketa = pisani upitnik većem broju ljudi, intervju = razgovor."
+      },
+      {
+        "question": "Što je METODA BROJENJA?",
+        "answer": "Postupak kojim se utvrđuje broj članova neke klase ili grupe, odnosno broj elemenata skupa sličnih predmeta, pojava ili stvari.",
+        "explanation": "Npr. broj hotela u Opatiji. Odgovara na pitanje KOLIKO IH IMA."
+      },
+      {
+        "question": "Što je METODA MJERENJA?",
+        "answer": "Postupak objektivnog i preciznog brojčanog iskazivanja ekstenzivnih svojstava (kvantiteta) predmeta mjerenja u odnosu na utvrđenu mjernu jedinicu.",
+        "explanation": "Npr. površina sobe u m². Odgovara na pitanje KOLIKO JE VELIKO u odnosu na jedinicu."
+      },
+      {
+        "question": "Koja je razlika između metode brojenja i metode mjerenja?",
+        "answer": "Brojenje utvrđuje broj članova skupa; mjerenje brojčano iskazuje veličinu (kvantitet) svojstva u odnosu na mjernu jedinicu.",
+        "explanation": "Brojenje: 120 soba. Mjerenje: soba ima 24 m². Mjerenje uvijek traži jedinicu mjere."
+      },
+      {
+        "question": "Što je METODA STUDIJA SLUČAJA?",
+        "answer": "Proučavanje pojave kao pojedinačnog slučaja, odnosno kao stjecaja okolnosti u kojem barem naizgled ne postoji uzročno-posljedični slijed.",
+        "explanation": "Npr. detaljna analiza poslovanja jednog hotela."
+      },
+      {
+        "question": "Kakvo mora biti motrenje u metodi promatranja?",
+        "answer": "Objektivno, svestrano i precizno, a izvedeno organizirano i sustavno.",
+        "explanation": "Obično gledanje nije znanstveno promatranje — nedostaje mu sustavnost i plan."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "_______ predstavlja organizirano i sustavno izvedeno objektivno, svestrano i precizno motrenje pojava, stvari i procesa radi otkrivanja novih činjenica ili provjere hipoteza.",
+        "options": [
+          "Metoda promatranja",
+          "Genetička metoda",
+          "Eksperimentalna metoda",
+          "Metoda teorije sustava"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Unaprijed pripremljen znanstveni postupak kontroliranog izazivanja i promatranja pojave pod točno utvrđenim uvjetima je:",
+        "options": [
+          "Metoda promatranja",
+          "Eksperimentalna metoda",
+          "Metoda modeliranja",
+          "Metoda studija slučaja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "_______ predstavlja postupak objektivnog i preciznog brojčanog iskazivanja ekstenzivnih svojstava predmeta u odnosu na utvrđenu jedinicu mjere.",
+        "options": [
+          "Metoda brojenja",
+          "Metoda idealnih tipova",
+          "Metoda mjerenja",
+          "Matematička metoda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Postupak kojim se utvrđuje broj članova neke klase ili grupe je:",
+        "options": [
+          "Metoda mjerenja",
+          "Metoda brojenja",
+          "Statistička metoda",
+          "Metoda anketiranja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Organizirano prikupljanje podataka o stavovima i mišljenjima putem upitnika koji se upućuje većem broju ljudi je:",
+        "options": [
+          "Metoda anketiranja",
+          "Metoda promatranja",
+          "Komparativna metoda",
+          "Metoda studija slučaja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Proučavanje pojave kao pojedinačnog slučaja, odnosno stjecaja okolnosti u kojem naizgled nema uzročno-posljedičnog slijeda, je:",
+        "options": [
+          "Povijesna metoda",
+          "Genetička metoda",
+          "Metoda studija slučaja",
+          "Metoda idealnih tipova"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji od navedenih NIJE cilj eksperimentalne metode?",
+        "options": [
+          "Otkrivanje uzročno-posljedičnih i funkcionalnih veza",
+          "Dokazivanje određene veze unutar pojave",
+          "Provjeravanje hipoteza, zakona i teorija",
+          "Prikupljanje mišljenja ispitanika putem upitnika"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Istraživač broji koliko je gostiju tijekom tjedna posjetilo hotelski restoran. Koju metodu koristi?",
+        "options": [
+          "Metodu mjerenja",
+          "Metodu brojenja",
+          "Aksiomatsku metodu",
+          "Metodu modeliranja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Istraživač mijenja cijenu menija u dva restorana i prati kako to utječe na potražnju, a ostale uvjete drži istima. Koju metodu koristi?",
+        "options": [
+          "Metodu promatranja",
+          "Eksperimentalnu metodu",
+          "Povijesnu metodu",
+          "Metodu anketiranja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja se metoda provodi izravnim razgovorom istraživača s ispitanikom?",
+        "options": [
+          "Metoda intervjua",
+          "Metoda brojenja",
+          "Kibernetička metoda",
+          "Aksiomatska metoda"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Eksperimentalna metoda podrazumijeva kontrolirano _______ i promatranje neke pojave.",
+        "answer": "izazivanje",
+        "hint": "Istraživač pojavu sam pokreće…"
+      },
+      {
+        "sentence": "Metoda mjerenja iskazuje svojstva u odnosu na utvrđenu jedinicu _______.",
+        "answer": "mjere",
+        "hint": "Metar, kilogram, sekunda…"
+      },
+      {
+        "sentence": "Metodom anketiranja prikupljaju se podaci putem ankete ili anketnog _______.",
+        "answer": "upitnika",
+        "hint": "Niz pitanja na papiru ili online…"
+      },
+      {
+        "sentence": "Metoda promatranja je objektivno, svestrano i precizno _______ pojava, stvari i procesa.",
+        "answer": "motrenje",
+        "hint": "Pažljivo gledanje…"
+      },
+      {
+        "sentence": "Eksperimentom se otkrivaju uzročno-posljedični i _______ odnosi i veze.",
+        "answer": "funkcionalni",
+        "hint": "Kako jedna veličina ovisi o drugoj…"
+      },
+      {
+        "sentence": "Metoda mjerenja brojčano iskazuje _______ svojstva ili kvantitete predmeta mjerenja.",
+        "answer": "ekstenzivna",
+        "hint": "Svojstva koja se mogu izmjeriti i zbrajati…"
+      },
+      {
+        "sentence": "Metoda studija _______ proučava pojavu kao pojedinačan slučaj.",
+        "answer": "slučaja",
+        "hint": "Engl. case study…"
+      }
+    ],
+    "learn": {
+      "title": "Opće metode: promatranje, eksperiment i prikupljanje podataka",
+      "content": "\n<p>Ove metode služe za <strong>prikupljanje činjenica</strong> — to su metode kojima istraživač dolazi do podataka iz stvarnosti. U seminarskom radu iz turizma i ugostiteljstva najčešće ćeš koristiti upravo njih (anketa gostiju, brojenje dolazaka, studija slučaja jednog hotela).</p>\n\n<h3>Metoda promatranja</h3>\n<div class=\"formula-box\">Organizirano i sustavno izvedeno <strong>objektivno, svestrano i precizno motrenje</strong> pojava, materijalnih stvari i procesa, u cilju otkrivanja novih činjenica ili u cilju provjeravanja znanstvenih hipoteza odnosno važećih teorija i zakona, ako se to provjeravanje provodi na novim ili na drugačijim činjenicama i uvjetima.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> istraživač tijekom dva tjedna bilježi koliko vremena gosti čekaju na prijavu na recepciji. Ne mijenja ništa — samo sustavno bilježi.</div>\n\n<h3>Eksperimentalna metoda</h3>\n<div class=\"formula-box\">Unaprijed pripremljeni znanstveni postupak <strong>kontroliranog izazivanja i promatranja</strong> neke pojave, koja se izaziva i ispituje pod <strong>točno utvrđenim uvjetima</strong>.</div>\n<p>Ciljevi eksperimenta:</p>\n<ul>\n<li>otkrivanje <strong>uzročno-posljedičnih i funkcionalnih</strong> odnosa i veza,</li>\n<li>pokazivanje (demonstriranje) i dokazivanje određene veze unutar pojave ili između pojava i stvari,</li>\n<li>provjeravanje hipoteza, zakona i teorija.</li>\n</ul>\n<div class=\"example-box\"><strong>Primjer:</strong> hotel polovici gostiju nudi doručak u sobu uz popust, a drugoj polovici ne, i uspoređuje koliko gostiju naruči uslugu. Uvjete određuje istraživač.</div>\n<div class=\"tip-box\"><strong>Promatranje vs eksperiment:</strong> kod promatranja pojava se događa sama; kod eksperimenta istraživač je <strong>izaziva</strong> i kontrolira uvjete.</div>\n\n<h3>Metoda anketiranja</h3>\n<div class=\"formula-box\">Organizirano i unaprijed pripremljeno ispitivanje, istraživanje odnosno prikupljanje podataka o <strong>stavovima i mišljenjima</strong> o nekoj temi, problemu ili pojavi, osobito društvenih, putem ankete ili <strong>anketnog upitnika</strong> kao niza pitanja, koja se upućuju određenoj skupini ili većem broju ljudi.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> upitnik o zadovoljstvu gostiju kampa s 15 pitanja, podijeljen 300 gostiju.</div>\n\n<h3>Metoda intervjua</h3>\n<p>Skripta je navodi u popisu općih metoda, ali bez posebne definicije. Općenito: podaci se prikupljaju <strong>izravnim razgovorom</strong> istraživača s ispitanikom (npr. razgovor s direktorom hotela). Za razliku od ankete, obično obuhvaća manji broj osoba, ali dublje.</p>\n\n<h3>Metoda studija slučaja</h3>\n<div class=\"formula-box\">Bavi se proučavanjem pojava kao nekog <strong>pojedinačnog slučaja</strong>, odnosno proučavanjem neke pojave kao stjecaja okolnosti u kojem barem naizgled ne postoji uzročno-posljedični slijed.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> „Uvođenje sustava upravljanja prihodima u hotelu X” — rad detaljno analizira jedan konkretan hotel.</div>\n\n<h3>Metoda brojenja i metoda mjerenja</h3>\n<table>\n<tr><th></th><th>Metoda brojenja</th><th>Metoda mjerenja</th></tr>\n<tr><td>Definicija</td><td>postupak kojim se utvrđuje <strong>broj članova</strong> neke klase, grupe, odnosno broj elemenata skupa sličnih predmeta, pojava ili stvari</td><td>postupak objektivnog i preciznog <strong>brojčanog iskazivanja</strong> i prikazivanja <strong>ekstenzivnih svojstava</strong> ili kvantiteta predmeta mjerenja, odnosno neke fizikalne veličine u odnosu na utvrđenu <strong>jedinicu mjere</strong> (mjernu jedinicu)</td></tr>\n<tr><td>Pitanje</td><td>Koliko ih ima?</td><td>Koliko je veliko (u jedinicama)?</td></tr>\n<tr><td>Primjer</td><td>hotel ima 180 soba</td><td>bazen je dug 25 m; temperatura mora 24 °C</td></tr>\n</table>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Na ispitu se definicija daje s prazninom („_______ predstavlja postupak…”) — ključne riječi: <em>motrenje</em> → promatranje; <em>izazivanje</em> → eksperiment; <em>upitnik, stavovi</em> → anketiranje; <em>broj članova</em> → brojenje; <em>jedinica mjere</em> → mjerenje; <em>pojedinačni slučaj</em> → studija slučaja.</li>\n<li>Zamijeniti brojenje i mjerenje — mjerenje uvijek ima mjernu jedinicu.</li>\n</ul></div>\n"
+    }
+  },
+  "systemMethods": {
+    "name": "Opće metode: sustavi, modeli, statistika i matematika",
+    "icon": "fa-diagram-project",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "Što je KIBERNETIČKA METODA?",
+        "answer": "Metoda koja svoje polazište zasniva na učenju o sustavima, odnosno na kibernetici kao teoriji i praksi samoregulativnih dinamičkih sustava.",
+        "explanation": "Ključne riječi: kibernetika, samoregulacija (sustav se sam prilagođava povratnom vezom)."
+      },
+      {
+        "question": "Što je METODA TEORIJE SUSTAVA?",
+        "answer": "Metoda koja izučava međuzavisnosti i zakonitosti u odnosima i vezama između elemenata sustava, među sustavima i podsustavima.",
+        "explanation": "Uključuje i odnose podsustavi – sustavi nižega reda i sustavi – sustavi višega reda."
+      },
+      {
+        "question": "Po čemu se razlikuju kibernetička metoda i metoda teorije sustava?",
+        "answer": "Kibernetička polazi od samoregulativnih dinamičkih sustava; teorija sustava izučava međuzavisnosti i veze između elemenata, sustava i podsustava.",
+        "explanation": "Kibernetika = samoregulacija. Teorija sustava = međuzavisnost i hijerarhija sustava."
+      },
+      {
+        "question": "Što je AKSIOMATSKA METODA?",
+        "answer": "Metoda izgradnje aksiomatskih (deduktivnih) sustava koja polazi od aksioma i postulata čija se valjanost i istinitost prihvaćaju bez sumnje i bez dokazivanja.",
+        "explanation": "Aksiom = temeljno načelo koje se ne dokazuje (npr. u geometriji)."
+      },
+      {
+        "question": "Što je METODA MODELIRANJA?",
+        "answer": "Postupak izgradnje stvarnog ili idealnog modela koji zamjenjuje predmet istraživanja, daje informacije o njemu i omogućuje eksperimentalna istraživanja na modelu.",
+        "explanation": "Na modelu se provode eksperimenti, proračuni ili logička raščlamba kako bi se steklo znanje o originalu."
+      },
+      {
+        "question": "Što je STATISTIČKA METODA?",
+        "answer": "Znanstvena metoda kvantitativnog karaktera za istraživanje općih tendencija, pravilnosti i zakonitosti MASOVNIH pojava.",
+        "explanation": "Obuhvaća prikupljanje, obradu, klasificiranje, tabeliranje i grafičko prikazivanje podataka te izračun srednjih vrijednosti, disperzije i sl."
+      },
+      {
+        "question": "Što sve obuhvaća statistička metoda?",
+        "answer": "Prikupljanje podataka, njihovu stručnu obradu i klasificiranje, tabeliranje i grafičko prikazivanje te izračun tendencija (srednje vrijednosti, disperzija, korelacija).",
+        "explanation": "Cilj je upoznati svojstva pojave koja se istražuje."
+      },
+      {
+        "question": "Što je MATEMATIČKA METODA?",
+        "answer": "Sustav postupaka koji u proučavanju odnosa među apstraktnim pojmovima i strukturama primjenjuje matematičku logiku, operacije, simbole, funkcije, jednadžbe i matrice.",
+        "explanation": "Apstraktni pojmovi: broj, skup, lik. Strukture: grupa, vektorski prostor."
+      },
+      {
+        "question": "Po čemu se statistička metoda razlikuje od matematičke?",
+        "answer": "Statistička istražuje stvarne MASOVNE pojave kroz prikupljene podatke; matematička proučava odnose među APSTRAKTNIM pojmovima i strukturama.",
+        "explanation": "Statistika: 50 000 dolazaka turista. Matematika: funkcija, skup, jednadžba."
+      },
+      {
+        "question": "Na kojim se aksiomima i postulatima temelji aksiomatska metoda?",
+        "answer": "Na temeljnim načelima čija se valjanost i istinitost prihvaćaju bez sumnje i bez dokazivanja.",
+        "explanation": "Iz njih se zatim deduktivno izvode sve ostale tvrdnje sustava."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Metoda koja se zasniva na kibernetici kao teoriji i praksi samoregulativnih dinamičkih sustava je:",
+        "options": [
+          "Metoda teorije sustava",
+          "Kibernetička metoda",
+          "Metoda modeliranja",
+          "Matematička metoda"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Metoda koja izučava međuzavisnosti i zakonitosti u odnosima između elemenata sustava, među sustavima i podsustavima je:",
+        "options": [
+          "Metoda teorije sustava",
+          "Aksiomatska metoda",
+          "Komparativna metoda",
+          "Genetička metoda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Metoda koja polazi od temeljnih načela čija se istinitost prihvaća bez dokazivanja je:",
+        "options": [
+          "Eksperimentalna metoda",
+          "Statistička metoda",
+          "Aksiomatska metoda",
+          "Metoda promatranja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Postupak izgradnje stvarnog ili idealnog modela koji zamjenjuje predmet istraživanja je:",
+        "options": [
+          "Metoda idealnih tipova",
+          "Metoda modeliranja",
+          "Kibernetička metoda",
+          "Metoda mjerenja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Znanstvena metoda kvantitativnog karaktera za istraživanje tendencija i zakonitosti masovnih pojava je:",
+        "options": [
+          "Matematička metoda",
+          "Metoda brojenja",
+          "Statistička metoda",
+          "Metoda anketiranja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Metoda koja proučava odnose među apstraktnim pojmovima (broj, skup, lik) i strukturama koje su njima zadane je:",
+        "options": [
+          "Statistička metoda",
+          "Matematička metoda",
+          "Aksiomatska metoda",
+          "Metoda teorije sustava"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što od navedenog NE spada u statističku metodu?",
+        "options": [
+          "Tabeliranje i grafičko prikazivanje podataka",
+          "Izračunavanje srednjih vrijednosti i mjera disperzije",
+          "Prihvaćanje načela bez dokazivanja",
+          "Organizacija i tehnika prikupljanja podataka"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Aksiomatska metoda gradi sustave koji su po svojoj naravi:",
+        "options": [
+          "Induktivni",
+          "Deduktivni",
+          "Povijesni",
+          "Empirijski"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Turistička zajednica izrađuje računalnu simulaciju prometa u gradu tijekom sezone kako bi testirala nova parkirališta. Koja je to metoda?",
+        "options": [
+          "Metoda modeliranja",
+          "Metoda anketiranja",
+          "Povijesna metoda",
+          "Metoda studija slučaja"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Kibernetička metoda zasniva se na kibernetici kao teoriji i praksi _______ dinamičkih sustava.",
+        "answer": "samoregulativnih",
+        "hint": "Sustavi koji se sami reguliraju…"
+      },
+      {
+        "sentence": "Aksiomatska metoda polazi od aksioma i _______ kao temeljnih načela.",
+        "answer": "postulata",
+        "hint": "Uz aksiome, drugi pojam za temeljna načela…"
+      },
+      {
+        "sentence": "Statistička metoda istražuje opće tendencije i zakonitosti _______ pojava.",
+        "answer": "masovnih",
+        "hint": "Pojave s mnogo jedinica…"
+      },
+      {
+        "sentence": "Statistička metoda je znanstvena metoda _______ karaktera.",
+        "answer": "kvantitativnog",
+        "hint": "Brojčanog, a ne opisnog…"
+      },
+      {
+        "sentence": "Metoda modeliranja gradi stvarni ili _______ model koji zamjenjuje predmet istraživanja.",
+        "answer": "idealni",
+        "hint": "Zamišljeni, a ne fizički…"
+      },
+      {
+        "sentence": "Metoda teorije sustava izučava međuzavisnosti između elemenata sustava, među sustavima i među _______.",
+        "answer": "podsustavima",
+        "hint": "Manji dijelovi sustava…"
+      },
+      {
+        "sentence": "Aksiomatska metoda gradi aksiomatske, odnosno _______ sustave.",
+        "answer": "deduktivne",
+        "hint": "Od općeg prema posebnom…"
+      }
+    ],
+    "learn": {
+      "title": "Opće metode: sustavi, modeli, statistika i matematika",
+      "content": "\n<p>Ova skupina metoda radi s <strong>apstrakcijama</strong>: sustavima, modelima, brojevima i temeljnim načelima. Na kolokviju se pojavljuju kao definicija s prazninom — treba prepoznati ključnu riječ.</p>\n\n<h3>Kibernetička metoda</h3>\n<div class=\"formula-box\">Svoje polazište zasniva na učenju o sustavima, odnosno na <strong>kibernetici</strong> kao teoriji i praksi <strong>samoregulativnih dinamičkih sustava</strong>.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> hotelski sustav upravljanja cijenama koji automatski podiže cijenu kad popunjenost raste — sustav se sam regulira povratnom informacijom.</div>\n\n<h3>Metoda teorije sustava</h3>\n<div class=\"formula-box\">Zasniva se na izučavanju <strong>međuzavisnosti i zakonitosti</strong> koje se javljaju i izražavaju u odnosima i vezama između elemenata sustava, među sustavima, među podsustavima, te u odnosima podsustavi – sustavi nižega reda i sustavi – sustavi višega reda.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> turistička destinacija kao sustav čiji su podsustavi smještaj, promet, ugostiteljstvo i kulturna ponuda — promjena u jednom utječe na sve ostale.</div>\n\n<h3>Aksiomatska metoda</h3>\n<div class=\"formula-box\">Znanstvena metoda izgradnje <strong>aksiomatskih (deduktivnih) sustava</strong> koja polazi od <strong>aksioma i postulata</strong> kao temeljnih načela čija se valjanost i istinitost prihvaćaju <strong>bez sumnje i bez dokazivanja</strong>.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> Euklidova geometrija — iz nekoliko aksioma (npr. kroz dvije točke prolazi točno jedan pravac) izvode se svi teoremi.</div>\n\n<h3>Metoda modeliranja</h3>\n<div class=\"formula-box\">Postupak izgradnje <strong>stvarnog ili idealnog modela</strong> koji bi trebao zamijeniti predmet istraživanja, da mu na određeni način odgovara, da daje određene informacije o njemu, te da je putem tako postavljenog modela moguće provesti eksperimentalna istraživanja, proračune ili logičku raščlambu (analizu), kako bi se steklo što točnije i dublje znanje o istraživanim predmetima, njihovoj strukturi, funkciji ili ponašanju.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> maketa novog hotela ili računalni model kretanja turista kroz stari grad.</div>\n\n<h3>Statistička metoda</h3>\n<div class=\"formula-box\">Znanstvena metoda <strong>kvantitativnog karaktera</strong> koja se primjenjuje u istraživanju općih tendencija, pravilnosti i zakonitosti <strong>masovnih pojava</strong>, osobito u prirodnim i društvenim znanostima.</div>\n<p>Obuhvaća:</p>\n<ul>\n<li>organizaciju i tehniku <strong>prikupljanja</strong> podataka,</li>\n<li>stručnu (statističku) <strong>obradu i klasificiranje</strong> podataka,</li>\n<li><strong>tabeliranje i grafičko prikazivanje</strong> obrađenih podataka,</li>\n<li>izračunavanje tendencija (srednje vrijednosti, mjere disperzije, momenti distribucije, koeficijenti korelacije…) i upoznavanje svojstava pojave.</li>\n</ul>\n<div class=\"example-box\"><strong>Primjer:</strong> analiza dolazaka i noćenja turista u Primorsko-goranskoj županiji kroz deset godina — prosjek, trend, sezonska odstupanja.</div>\n\n<h3>Matematička metoda</h3>\n<div class=\"formula-box\">Sustav postupaka koji u proučavanju odnosa među <strong>apstraktnim pojmovima</strong> (broj, skup, lik i sl.) i u proučavanju <strong>struktura</strong> koje su njima zadane (grupa, vektorski prostor i sl.), te u otkrivanju pravilnosti i vjerojatnosti među tim strukturama, primjenjuje matematičku logiku i brojne matematičke operacije, simbole, funkcije, jednadžbe, matrice, pravce, krivulje i slično.</div>\n\n<div class=\"tip-box\"><strong>Ključne riječi za prepoznavanje:</strong>\n<ul>\n<li><em>samoregulativni dinamički sustavi</em> → kibernetička</li>\n<li><em>međuzavisnosti, podsustavi, sustavi višega reda</em> → teorija sustava</li>\n<li><em>aksiomi, postulati, bez dokazivanja</em> → aksiomatska</li>\n<li><em>model zamjenjuje predmet istraživanja</em> → modeliranje</li>\n<li><em>masovne pojave, kvantitativni karakter</em> → statistička</li>\n<li><em>apstraktni pojmovi, jednadžbe, matrice</em> → matematička</li>\n</ul></div>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Miješati <strong>modeliranje</strong> (model zamjenjuje predmet) i <strong>idealne tipove</strong> (idealni tip je zamisao, utopijski pojam).</li>\n<li>Miješati <strong>statističku</strong> metodu (stvarni masovni podaci) i <strong>metodu brojenja</strong> (samo utvrđuje broj članova skupa).</li>\n</ul></div>\n"
+    }
+  },
+  "comparativeHistorical": {
+    "name": "Opće metode: usporedba, povijest i idealni tipovi",
+    "icon": "fa-scale-balanced",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Što je KOMPARATIVNA METODA?",
+        "answer": "Postupci međusobnog uspoređivanja svojstava, obilježja, odnosa, veza, struktura, funkcija i ponašanja bar dviju pojava ili dviju vrsta pojava.",
+        "explanation": "Uspoređivati se mogu i klase i skupine ljudi ili tipovi društvenih zajednica."
+      },
+      {
+        "question": "Koja je svrha komparativne metode?",
+        "answer": "Utvrditi razlike, sličnosti ili istovjetnost pojava te provjeriti hipotezu ima li nova pojava ista svojstva kao poznata.",
+        "explanation": "Služi i za komparativnu analizu i klasifikaciju obilježja nove pojave."
+      },
+      {
+        "question": "Koliko pojava minimalno treba za komparativnu metodu?",
+        "answer": "Najmanje dvije pojave ili dvije vrste pojava.",
+        "explanation": "Uspoređivati se može samo nešto s nečim — npr. kontrolna i istraživana skupina."
+      },
+      {
+        "question": "Što je METODA IDEALNIH TIPOVA?",
+        "answer": "Metoda koja se zasniva na pojmu idealnog tipa — ideji, zamisli, utopijskom pojmu ili apstraktnom teorijskom modelu neke strukture, bića ili društvene pojave.",
+        "explanation": "Idealni tip ne postoji u čistom obliku; služi kao mjerilo s kojim se uspoređuje stvarnost."
+      },
+      {
+        "question": "Što je POVIJESNA METODA?",
+        "answer": "Kombinacija postupaka za proučavanje prirodnih i društvenih zbivanja sa stajališta povijesnog razvitka, kad se želi spoznati što se dogodilo, kako i zašto.",
+        "explanation": "Tri pitanja povijesne metode: ŠTO se dogodilo, KAKO i ZAŠTO."
+      },
+      {
+        "question": "Što je GENETIČKA METODA?",
+        "answer": "Znanstveno izlaganje kojim se objašnjavaju svojstva pojave uvažavajući uzroke i uvjete pod kojima je nastala, razvijala se ili nestajala.",
+        "explanation": "Genetička = o postanku (genezi) pojave."
+      },
+      {
+        "question": "Po čemu se povijesna metoda razlikuje od genetičke?",
+        "answer": "Povijesna prati zbivanja kroz povijesni razvitak (što, kako i zašto se dogodilo); genetička objašnjava svojstva pojave kroz uzroke i uvjete njezina nastanka i razvoja.",
+        "explanation": "Povijesna: tijek događaja. Genetička: zašto pojava ima baš takva svojstva."
+      },
+      {
+        "question": "Što se može uspoređivati komparativnom metodom?",
+        "answer": "Svojstva, obilježja, odnosi, veze, strukture, funkcije i ponašanja pojava, klasa i skupina ljudi ili tipova društvenih zajednica.",
+        "explanation": "Npr. kontrolna zajednica i zajednica koja je predmet proučavanja."
+      },
+      {
+        "question": "Primjer: uspoređuje se razvoj zdravstvenog turizma u Opatiji i u Karlovym Varyma. Koja je metoda?",
+        "answer": "Komparativna metoda.",
+        "explanation": "Dvije pojave, traže se sličnosti i razlike."
+      },
+      {
+        "question": "Primjer: opisuje se razvoj Opatije od 1844. (Villa Angiolina) do danas. Koja je metoda?",
+        "answer": "Povijesna metoda.",
+        "explanation": "Zbivanja se prate sa stajališta povijesnog razvitka."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "_______ je kombinacija raznih postupaka kojom se zbivanja i pojave proučavaju sa stajališta povijesnog razvitka, kad se želi spoznati što se dogodilo, kako i zašto.",
+        "options": [
+          "Induktivno-deduktivna metoda",
+          "Kibernetička metoda",
+          "Metoda studija slučaja",
+          "Povijesna metoda"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Metoda koja se sastoji u međusobnom uspoređivanju svojstava i obilježja bar dviju pojava je:",
+        "options": [
+          "Komparativna metoda",
+          "Genetička metoda",
+          "Statistička metoda",
+          "Metoda generalizacije"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Metoda koja se zasniva na ideji, zamisli ili utopijskom pojmu neke strukture ili društvene pojave je:",
+        "options": [
+          "Metoda modeliranja",
+          "Metoda idealnih tipova",
+          "Aksiomatska metoda",
+          "Metoda teorije sustava"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Znanstveno izlaganje kojim se objašnjavaju svojstva pojave uvažavajući uzroke i uvjete pod kojima je nastala i razvijala se je:",
+        "options": [
+          "Povijesna metoda",
+          "Genetička metoda",
+          "Komparativna metoda",
+          "Metoda studija slučaja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko najmanje pojava uspoređuje komparativna metoda?",
+        "options": [
+          "Jednu",
+          "Dvije",
+          "Tri",
+          "Najmanje deset"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja NIJE svrha komparativne metode?",
+        "options": [
+          "Utvrđivanje razlika i sličnosti",
+          "Postavljanje hipoteze da nova pojava ima slična svojstva kao poznata",
+          "Izgradnja deduktivnog sustava iz aksioma",
+          "Klasifikacija obilježja nove pojave"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Povijesna metoda osobito se koristi kad se želi pouzdanije spoznati:",
+        "options": [
+          "Što se dogodilo te kako i zašto se to dogodilo",
+          "Koliko članova ima neka skupina",
+          "Kakvi su stavovi ispitanika",
+          "Kako se sustav sam regulira"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Idealni tip u metodi idealnih tipova je:",
+        "options": [
+          "Stvarni primjer najbolje prakse",
+          "Apstraktni teorijski model ili utopijski pojam",
+          "Prosječna vrijednost statističkog niza",
+          "Aksiom koji se prihvaća bez dokaza"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Komparativna metoda uspoređuje svojstva bar _______ pojava ili dviju vrsta pojava.",
+        "answer": "dviju",
+        "hint": "Najmanji mogući broj za usporedbu…"
+      },
+      {
+        "sentence": "Metoda idealnih tipova zasniva se na pojmu idealnoga _______.",
+        "answer": "tipa",
+        "hint": "Naziv metode…"
+      },
+      {
+        "sentence": "Povijesna metoda proučava pojave sa stajališta povijesnoga _______ i povijesnih kretanja.",
+        "answer": "razvitka",
+        "hint": "Razvoja kroz vrijeme…"
+      },
+      {
+        "sentence": "Genetička metoda uvažava uzroke i _______ pod kojima su pojave nastale, razvijale se ili nestajale.",
+        "answer": "uvjete",
+        "hint": "Okolnosti…"
+      },
+      {
+        "sentence": "Idealni tip predstavlja ideju, zamisao ili _______ pojam.",
+        "answer": "utopijski",
+        "hint": "Savršen, nepostojeći…"
+      },
+      {
+        "sentence": "Komparativnom metodom utvrđuju se osnovne razlike, sličnosti ili _______ pojava.",
+        "answer": "istovjetnost",
+        "hint": "Potpuna jednakost…"
+      }
+    ],
+    "learn": {
+      "title": "Opće metode: usporedba, povijest i idealni tipovi",
+      "content": "\n<p>Ove metode su osobito česte u društvenim znanostima, pa tako i u radovima iz turizma i menadžmenta: uspoređuju se destinacije, prati se razvoj pojave kroz vrijeme ili se stvarnost mjeri prema zamišljenom idealu.</p>\n\n<h3>Komparativna metoda</h3>\n<div class=\"formula-box\">Sastoji se u postupcima i operacijama <strong>međusobnog uspoređivanja</strong> svojstava, obilježja, odnosa, veza, struktura, funkcija i ponašanja <strong>bar dviju pojava</strong> ili dviju vrsta pojava, ili klasa i skupina ljudi, ili tipova društvenih zajednica (npr. kontrolne i one koja je predmet proučavanja).</div>\n<p>Svrha komparativne metode:</p>\n<ul>\n<li>utvrđivanje osnovnih <strong>razlika, sličnosti ili istovjetnosti</strong>,</li>\n<li>postavljanje osnovne hipoteze da i nova pojava ima (ili nema) slična svojstva kao poznata pojava,</li>\n<li>provjeravanje te hipoteze,</li>\n<li>komparativna analiza i klasifikacija obilježja nove pojave u sustavu proširenoga znanja.</li>\n</ul>\n<div class=\"example-box\"><strong>Primjer teme:</strong> „Usporedba ponude wellness usluga u hotelima Opatije i Portoroža”.</div>\n\n<h3>Metoda idealnih tipova</h3>\n<div class=\"formula-box\">Zasniva se na pojmu <strong>idealnoga tipa</strong> koji predstavlja ideju, zamisao ili <strong>utopijski pojam</strong> ili <strong>apstraktni teorijski model</strong> neke strukture, organizma, bića ili društvene pojave.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> „savršeni održivi hotel” kao zamišljeni model — stvarni hoteli se opisuju prema tome koliko mu se približavaju.</div>\n\n<h3>Povijesna metoda</h3>\n<div class=\"formula-box\">Kao kombinacija raznih postupaka i pristupa koristi se za razmatranje i proučavanje zbivanja i pojava, prirodnih i društvenih, sa stajališta <strong>povijesnoga razvitka i povijesnih kretanja</strong>, osobito kad se želi točno ili pouzdanije spoznati <strong>što se dogodilo te kako i zašto</strong> se to dogodilo.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> razvoj turizma u Opatiji od izgradnje Ville Angioline (1844.) i dolaska željeznice do danas.</div>\n\n<h3>Genetička metoda</h3>\n<div class=\"formula-box\">Izražava se kao znanstveno izlaganje kojim se objašnjavaju obilježja ili svojstva neke pojave, stanja, odnosa, predmeta, bića, vrste i sl., uvažavajući <strong>uzroke i uvjete</strong> pod kojima su nastali, razvijali se ili nestajali.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> objašnjenje zašto je Kvarner razvio baš zdravstveni turizam — klima, more, blizina Beča, željeznica (uzroci i uvjeti nastanka).</div>\n\n<div class=\"tip-box\"><strong>Povijesna vs genetička:</strong> povijesna pripovijeda <em>tijek zbivanja</em> (što, kako, zašto se dogodilo); genetička objašnjava <em>svojstva pojave</em> kroz uzroke i uvjete njezina <strong>postanka</strong> (grč. genesis = postanak).</div>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Za definiciju povijesne metode odabrati „metodu studija slučaja” — ključna riječ je <em>povijesni razvitak</em>.</li>\n<li>Misliti da komparativna metoda uspoređuje samo dvije pojave — <strong>bar</strong> dvije, može i više.</li>\n</ul></div>\n"
+    }
+  },
+  "analysisSynthesis": {
+    "name": "Analiza i sinteza, generalizacija i specijalizacija",
+    "icon": "fa-puzzle-piece",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Što je ANALIZA?",
+        "answer": "Postupak kojim raščlanjujemo složene predmete, pojave, pojmove, sudove i zaključke da bismo detaljnije promotrili dijelove i veze među njima.",
+        "explanation": "Analiza = rastavljanje cjeline na dijelove."
+      },
+      {
+        "question": "Što je SINTEZA?",
+        "answer": "Postupak kojim, nasuprot analizi, dijelove ili elemente predmeta, pojave ili sustava misaono spajamo u složene cjeline.",
+        "explanation": "Cilj: spoznati pojavu integralno, u međusobnoj uvjetovanosti svih njezinih dijelova."
+      },
+      {
+        "question": "Koji je odnos analize i sinteze?",
+        "answer": "Suprotni su i nadopunjuju se: analiza rastavlja cjelinu na dijelove, sinteza dijelove spaja u cjelinu.",
+        "explanation": "Zajedno čine posebnu analitičko-sintetičku metodu."
+      },
+      {
+        "question": "Što promatramo analizom osim samih dijelova?",
+        "answer": "Interakcije, veze i relacije među dijelovima.",
+        "explanation": "Analiza ne gleda samo elemente, nego i kako su povezani."
+      },
+      {
+        "question": "Što je GENERALIZACIJA?",
+        "answer": "Induktivni ili analogijski postupak u kojem iz pojedinačnih svojstava ili pojava izvodimo opće zaključke koji vrijede za cijelu klasu predmeta ili pojava.",
+        "explanation": "Vrijedi samo ako su zaključci logički valjano izvedeni."
+      },
+      {
+        "question": "Što je SPECIJALIZACIJA?",
+        "answer": "Složen logički, misaoni i metodski postupak kojim shvaćamo posebno u općem preko posebnog, odnosno posebno i pojedinačno u općem.",
+        "explanation": "Suprotno od generalizacije: od općeg prema posebnom."
+      },
+      {
+        "question": "Koji je odnos generalizacije i specijalizacije?",
+        "answer": "Generalizacija ide od pojedinačnog prema općem; specijalizacija u općem prepoznaje posebno i pojedinačno.",
+        "explanation": "Zajedno čine posebnu metodu generalizacije i specijalizacije."
+      },
+      {
+        "question": "Kakav postupak može biti generalizacija?",
+        "answer": "Induktivni ili analogijski.",
+        "explanation": "Uz to je logički, metodski i misaoni postupak."
+      },
+      {
+        "question": "Primjer: seminarski rad raščlanjuje se na uvod, osnovni tekst i zaključak. Koji je to postupak?",
+        "answer": "Analiza.",
+        "explanation": "Cjelina (rad) rastavlja se na dijelove."
+      },
+      {
+        "question": "Primjer: iz podataka pet hotela zaključuje se da svi hoteli u Opatiji imaju vrhunac popunjenosti u kolovozu. Koji je to postupak?",
+        "answer": "Generalizacija.",
+        "explanation": "Iz pojedinačnih slučajeva izvodi se opći zaključak za cijelu skupinu."
+      },
+      {
+        "question": "Na koji način sinteza spoznaje pojavu?",
+        "answer": "Integralno, sintetički, u cjelovitom interakcijskom odnosu i međusobnoj uvjetovanosti svih dijelova.",
+        "explanation": "Pojava se vidi kao cjelina, ne kao zbroj dijelova."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Metodski, misaoni i spoznajni postupak kojim raščlanjujemo složene predmete, pojave, pojmove, sudove i zaključke, kako bismo detaljnije promotrili dijelove i veze među njima, nazivamo:",
+        "options": [
+          "Sinteza",
+          "Dedukcija",
+          "Indukcija",
+          "Analiza"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Postupak u kojem dijelove ili elemente predmeta ili pojave misaono spajamo u složene cjeline je:",
+        "options": [
+          "Analiza",
+          "Sinteza",
+          "Specijalizacija",
+          "Opovrgavanje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Logički, metodski i misaoni, induktivni ili analogijski postupak u kojem iz pojedinačnih svojstava izvodimo opće zaključke koji vrijede za cijelu klasu pojava je:",
+        "options": [
+          "Sinteza",
+          "Indukcija",
+          "Generalizacija",
+          "Analogija"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Postupak putem kojeg shvaćamo posebno i pojedinačno u općem je:",
+        "options": [
+          "Generalizacija",
+          "Specijalizacija",
+          "Analiza",
+          "Indukcija"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Analizom se promatraju:",
+        "options": [
+          "Samo pojedinačni dijelovi, bez veza među njima",
+          "Dijelovi te interakcije, veze i relacije među njima",
+          "Samo cjelina bez dijelova",
+          "Samo slučajna obilježja pojave"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji je par suprotnih postupaka ispravan?",
+        "options": [
+          "Analiza – generalizacija",
+          "Sinteza – indukcija",
+          "Generalizacija – specijalizacija",
+          "Specijalizacija – dokazivanje"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Generalizacija po svojoj naravi može biti:",
+        "options": [
+          "Samo deduktivna",
+          "Induktivna ili analogijska",
+          "Samo aksiomatska",
+          "Samo eksperimentalna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Student u zaključku seminarskog rada povezuje rezultate svih poglavlja u jednu cjelovitu sliku. Koji postupak primjenjuje?",
+        "options": [
+          "Analizu",
+          "Sintezu",
+          "Specijalizaciju",
+          "Opovrgavanje"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Analizom složene predmete i pojave _______ i rastavljamo na dijelove.",
+        "answer": "raščlanjujemo",
+        "hint": "Razlažemo na članove…"
+      },
+      {
+        "sentence": "Sintezom dijelove i elemente pojave misaono _______ u složene cjeline.",
+        "answer": "spajamo",
+        "hint": "Suprotno od rastavljamo…"
+      },
+      {
+        "sentence": "Generalizacija je induktivni ili _______ postupak.",
+        "answer": "analogijski",
+        "hint": "Zaključivanje po sličnosti…"
+      },
+      {
+        "sentence": "Specijalizacijom shvaćamo posebno i pojedinačno u _______.",
+        "answer": "općem",
+        "hint": "Suprotno od posebnog…"
+      },
+      {
+        "sentence": "Analitičko-_______ metoda jedna je od posebnih znanstvenih metoda.",
+        "answer": "sintetička",
+        "hint": "Par analize…"
+      },
+      {
+        "sentence": "Zaključci generalizacije vrijede za cijelu klasu pojava samo ako su logički _______ izvedeni.",
+        "answer": "valjano",
+        "hint": "Ispravno, korektno…"
+      }
+    ],
+    "learn": {
+      "title": "Analiza i sinteza, generalizacija i specijalizacija",
+      "content": "\n<p>Posebne znanstvene metode su <strong>misaoni postupci</strong> koje koristimo u svakom istraživanju, bez obzira na temu. Dolaze u parovima suprotnih postupaka.</p>\n\n<h3>Analiza</h3>\n<div class=\"formula-box\">Metodski, misaoni i spoznajni postupak putem kojeg <strong>raščlanjujemo i rastavljamo</strong> objektivno složene predmete, stvari i pojave, te također pojmove, sudove i zaključke, kako bismo ih mogli bolje, podrobnije, detaljnije i dublje promotriti i sagledati — ne samo njih same kao elemente i dijelove, nego i <strong>interakcije, veze i relacije</strong> među njima.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> cijenu hotelskog paketa rastavljamo na smještaj, prehranu, transfer i proviziju agencije te gledamo kako svaki dio utječe na ukupnu cijenu.</div>\n\n<h3>Sinteza</h3>\n<div class=\"formula-box\">Logički, misaoni, metodski i spoznajni postupak u kojem, <strong>nasuprot analizi</strong>, dijelove ili elemente nekog predmeta, stvari, pojave ili sustava misaono <strong>„spajamo” u složene cjeline</strong>, kako bismo ih sagledali, pojmili i spoznali <strong>integralno</strong>, sintetički, u cjelovitom interakcijskom odnosu i u međusobnoj uvjetovanosti svih njihovih dijelova i elemenata — kao cjeline.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> iz podataka o smještaju, gastronomiji, prometu i kulturnoj ponudi gradimo cjelovitu sliku turističkog proizvoda destinacije.</div>\n\n<h3>Generalizacija</h3>\n<div class=\"formula-box\">Logički, metodski i misaoni, <strong>induktivni ili analogijski</strong> postupak u kojem iz pojedinačnih svojstava ili obilježja nekog predmeta ili pojave, odnosno iz više pojedinačnih pojava neke klase, izvodimo <strong>općenite ili opće zaključke</strong> (pravila) koji — ako su logički valjano izvedeni — vrijede za cijeli predmet, pojavu ili cijelu klasu predmeta ili pojava.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> anketa u deset obiteljskih hotela pokazuje da je gostima najvažnija ljubaznost osoblja → općenito pravilo za obiteljske hotele.</div>\n\n<h3>Specijalizacija</h3>\n<div class=\"formula-box\">Složen logički, misaoni i metodski postupak putem kojeg shvaćamo <strong>posebno u općem</strong> preko posebnog, odnosno posebno i pojedinačno u općem.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> od općeg pojma „turizam” prema posebnom „zdravstveni turizam” pa pojedinačnom „talasoterapija u Opatiji”.</div>\n\n<table>\n<tr><th>Par</th><th>Smjer</th><th>Jednom riječju</th></tr>\n<tr><td>Analiza</td><td>cjelina → dijelovi</td><td>rastavljanje</td></tr>\n<tr><td>Sinteza</td><td>dijelovi → cjelina</td><td>spajanje</td></tr>\n<tr><td>Generalizacija</td><td>pojedinačno → opće</td><td>uopćavanje</td></tr>\n<tr><td>Specijalizacija</td><td>opće → posebno/pojedinačno</td><td>posebno u općem</td></tr>\n</table>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Na kolokviju se za dugu definiciju analize nude sinteza, dedukcija i indukcija — ključne riječi su <em>raščlanjujemo i rastavljamo</em>.</li>\n<li>Generalizacija i indukcija su slične (obje idu od pojedinačnog prema općem). Ako definicija kaže „<em>induktivni ili analogijski postupak</em>”, odgovor je <strong>generalizacija</strong>; indukcija ne može biti „induktivni postupak” same sebe.</li>\n</ul></div>\n"
+    }
+  },
+  "inductionDeduction": {
+    "name": "Indukcija i dedukcija, definiranje, dokazivanje i opovrgavanje",
+    "icon": "fa-right-left",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Što je INDUKCIJA?",
+        "answer": "Logički, metodološki i znanstveno-empirijski postupak kojim se od pojedinačnih iskustava i činjenica zaključuje na općenite sudove, istine i spoznaje.",
+        "explanation": "Pravi cilj indukcije su opći i nesumnjivo sigurni zaključci, odnosno zakonitosti."
+      },
+      {
+        "question": "Kako tradicionalna logika definira DEDUKCIJU?",
+        "answer": "Kao logički postupak izvođenja posebnog (ili manje općenitog) suda iz općeg (ili općenitijeg).",
+        "explanation": "Smjer: opće → posebno."
+      },
+      {
+        "question": "Kako suvremena logika određuje DEDUKCIJU?",
+        "answer": "Kao izvođenje sudova jednog iz drugog, od općeg prema posebnom i pojedinačnom, pri čemu izvedeni sud NUŽNO slijedi iz polaznih sudova.",
+        "explanation": "Ključna riječ suvremene definicije: NUŽNO slijedi."
+      },
+      {
+        "question": "Koja je razlika između indukcije i dedukcije?",
+        "answer": "Indukcija ide od pojedinačnog prema općem; dedukcija od općeg prema posebnom i pojedinačnom.",
+        "explanation": "Zajedno čine posebnu induktivno-deduktivnu metodu."
+      },
+      {
+        "question": "Što se određuje DEFINICIJOM kao logičkim postupkom?",
+        "answer": "Određuje se i utvrđuje sadržaj (predmet) pojma.",
+        "explanation": "Podsjetnik: sadržaj pojma = ukupnost bitnih i nužnih obilježja."
+      },
+      {
+        "question": "Što je DEFINIENDUM?",
+        "answer": "Pojam čiji se sadržaj određuje (definira).",
+        "explanation": "Lat. „ono što treba definirati”. U „Brošura je publikacija od 5 do 48 stranica” definiendum je „brošura”."
+      },
+      {
+        "question": "Što je DEFINIENS?",
+        "answer": "Pojam pomoću kojeg se određuje sadržaj definienduma.",
+        "explanation": "Lat. „ono što definira”. U primjeru s brošurom: „publikacija od 5 do 48 stranica”."
+      },
+      {
+        "question": "Što je DOKAZIVANJE?",
+        "answer": "Logički i metodski postupak kojim se utvrđuje i/ili zasniva istinitost nekog suda, tvrdnje ili teze.",
+        "explanation": "Dokazivanje je postupak; dokaz je njegov logički oblik."
+      },
+      {
+        "question": "Koji je logički oblik dokazivanja?",
+        "answer": "Dokaz (lat. probatio).",
+        "explanation": "Ispitna zamka: ponuđeni su i „definiens” i izmišljeni pojmovi."
+      },
+      {
+        "question": "Što se jamči dokazom?",
+        "answer": "Istinitost postavljene tvrdnje (hipoteze), odnosno istinitost spoznaje do koje se došlo u postupku dokazivanja teze.",
+        "explanation": "Dokaz jamči ISTINITOST."
+      },
+      {
+        "question": "Kako se zove postupak kojim se utvrđuje NEISTINITOST postavljene teze?",
+        "answer": "Opovrgavanje ili pobijanje (lat. refutatio).",
+        "explanation": "Dokazivanje nije uvijek usmjereno na istinitost — ponekad se utvrđuje neistinitost teze."
+      },
+      {
+        "question": "Koja je razlika između probatio i refutatio?",
+        "answer": "Probatio (dokaz) utvrđuje istinitost teze; refutatio (opovrgavanje, pobijanje) utvrđuje njezinu neistinitost.",
+        "explanation": "Oba su dio posebne metode definiranja, dokazivanja i opovrgavanja."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Logički oblik dokazivanja jest:",
+        "options": [
+          "Definiens",
+          "Definiendum",
+          "Refutatio",
+          "Dokaz (probatio)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Postupak kojim se od pojedinačnih iskustava i činjenica zaključuje na općenite sudove i spoznaje je:",
+        "options": [
+          "Dedukcija",
+          "Indukcija",
+          "Specijalizacija",
+          "Sinteza"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prema tradicionalnoj logici, logički postupak izvođenja posebnog suda iz općeg je:",
+        "options": [
+          "Indukcija",
+          "Generalizacija",
+          "Dedukcija",
+          "Analiza"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "U suvremenoj logici dedukcija se određuje kao izvođenje sudova pri čemu izvedeni sud:",
+        "options": [
+          "Vjerojatno slijedi iz polaznih sudova",
+          "Nužno slijedi iz polaznih sudova",
+          "Ne ovisi o polaznim sudovima",
+          "Slijedi iz iskustva i opažanja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pojam čiji se sadržaj određuje (definira) naziva se:",
+        "options": [
+          "Definiens",
+          "Definiendum",
+          "Probatio",
+          "Aksiom"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pojam pomoću kojeg se određuje sadržaj drugog pojma naziva se:",
+        "options": [
+          "Definiens",
+          "Definiendum",
+          "Refutatio",
+          "Postulat"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Dokazivanje usmjereno na utvrđivanje NEISTINITOSTI postavljene teze zove se:",
+        "options": [
+          "Probatio",
+          "Opovrgavanje ili pobijanje (refutatio)",
+          "Generalizacija",
+          "Definicija"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dokazom se jamči:",
+        "options": [
+          "Originalnost teme",
+          "Istinitost postavljene tvrdnje (hipoteze)",
+          "Opseg pojma",
+          "Objektivnost ispitanika"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Definicijom kao logičkim postupkom određuje se i utvrđuje:",
+        "options": [
+          "Opseg pojma",
+          "Doseg pojma",
+          "Sadržaj (predmet) pojma",
+          "Istinitost suda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Pravi cilj i svrha indukcije su:",
+        "options": [
+          "Opći i nesumnjivo sigurni zaključci, odnosno spoznaje",
+          "Pojedinačne činjenice bez općeg zaključka",
+          "Opovrgavanje svih hipoteza",
+          "Izrada modela predmeta istraživanja"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Logički oblik dokazivanja jest dokaz, latinski _______.",
+        "answer": "probatio",
+        "hint": "Lat. naziv, počinje s p…"
+      },
+      {
+        "sentence": "Opovrgavanje ili pobijanje latinski se naziva _______.",
+        "answer": "refutatio",
+        "hint": "Počinje s r…"
+      },
+      {
+        "sentence": "Pojam čiji se sadržaj definira naziva se _______.",
+        "answer": "definiendum",
+        "hint": "Ono što se definira…"
+      },
+      {
+        "sentence": "Pojam pomoću kojeg se definira naziva se _______.",
+        "answer": "definiens",
+        "hint": "Ono što definira…"
+      },
+      {
+        "sentence": "Postupak kojim se od pojedinačnih iskustava i činjenica zaključuje na općenite sudove zove se _______.",
+        "answer": "indukcija",
+        "hint": "Suprotno od dedukcije…"
+      },
+      {
+        "sentence": "Prema tradicionalnoj logici dedukcija je izvođenje posebnog suda iz _______.",
+        "answer": "općeg",
+        "hint": "Smjer dedukcije…"
+      },
+      {
+        "sentence": "Dokazivanje nije uvijek usmjereno na istinitost teze, nego ponekad na njezinu _______.",
+        "answer": "neistinitost",
+        "hint": "Tada govorimo o opovrgavanju…"
+      },
+      {
+        "sentence": "U suvremenoj logici kod dedukcije izvedeni sud _______ slijedi iz sudova iz kojih se izvodi.",
+        "answer": "nužno",
+        "hint": "Ne vjerojatno, nego…"
+      }
+    ],
+    "learn": {
+      "title": "Indukcija i dedukcija, definiranje, dokazivanje i opovrgavanje",
+      "content": "\n<h3>Indukcija</h3>\n<div class=\"formula-box\">Logički, metodološki i znanstveno-empirijski postupak putem kojeg se od <strong>pojedinačnih iskustava i činjenica</strong> zaključuje na <strong>općenite sudove</strong>, istine i spoznaje, odnosno na zakonitosti. Pravi cilj i svrha indukcije jesu opći i nesumnjivo sigurni zaključci, odnosno spoznaje.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> Hotel A ima vrhunac popunjenosti u kolovozu. Hotel B također. Hotel C također… → <strong>Hoteli na Kvarneru imaju vrhunac popunjenosti u kolovozu.</strong></div>\n\n<h3>Dedukcija</h3>\n<p>Skripta daje <strong>dvije</strong> definicije — obje treba znati:</p>\n<ul>\n<li><strong>Tradicionalna logika:</strong> logički postupak izvođenja <strong>posebnog</strong> (ili manje općenitog) suda iz <strong>općeg</strong> (ili općenitijeg).</li>\n<li><strong>Suvremena logika:</strong> logičko i metodološko izvođenje sudova jednog iz drugog, iz općeg prema posebnom i pojedinačnom, s time da sud koji se izvodi <strong>nužno slijedi</strong> iz sudova iz kojih se izvodi.</li>\n</ul>\n<div class=\"example-box\"><strong>Primjer:</strong> Svaka knjiga ima najmanje 49 stranica. Ovo izdanje je knjiga. → <strong>Ovo izdanje ima najmanje 49 stranica.</strong> (zaključak nužno slijedi)</div>\n<div class=\"tip-box\"><strong>Smjer:</strong> INdukcija = od pojedinačnog prema općem (skupljamo slučajeve „unutra” u pravilo). DEdukcija = od općeg prema posebnom (izvodimo „van” iz pravila).</div>\n\n<h3>Definiranje</h3>\n<div class=\"formula-box\">Definicijom kao logičkim postupkom određuje se i utvrđuje <strong>sadržaj (predmet) pojma</strong>. Pojam čiji se sadržaj određuje (definira) nazivamo <strong>definiendum</strong>, a pojam pomoću kojeg se to čini <strong>definiens</strong>.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> „<em>Seminarski rad</em> je samostalno pisano djelo u kojem student pokazuje teorijsko i praktično znanje.”<br>Definiendum = <em>seminarski rad</em> · Definiens = <em>samostalno pisano djelo u kojem student pokazuje teorijsko i praktično znanje</em></div>\n<div class=\"tip-box\"><strong>Kako zapamtiti:</strong> defini<strong>endum</strong> — „ono što treba definirati” (kao <em>memorandum</em> = ono što treba zapamtiti). Defini<strong>ens</strong> — „ono što definira” (aktivni oblik).</div>\n\n<h3>Dokazivanje</h3>\n<div class=\"formula-box\">Logički i metodski postupak kojim se utvrđuje i/ili zasniva <strong>istinitost</strong> nekog suda ili tvrdnje, odnosno teze.</div>\n<ul>\n<li>Logički oblik dokazivanja jest <strong>dokaz (probatio)</strong>.</li>\n<li>Dokazom se jamči <strong>istinitost postavljene tvrdnje (hipoteze)</strong>, odnosno istinitost spoznaje do koje se došlo u postupku dokazivanja teze.</li>\n</ul>\n\n<h3>Opovrgavanje</h3>\n<div class=\"formula-box\">Dokazivanje nije uvijek usmjereno na utvrđivanje istinitosti neke teze, nego ponekad na utvrđivanje <strong>neistinitosti</strong> postavljene teze. Takav se logički i metodski postupak zove <strong>opovrgavanje ili pobijanje (refutatio)</strong>.</div>\n<div class=\"example-box\"><strong>Primjer:</strong> teza „Svi gosti biraju hotel prema cijeni” opovrgava se anketom koja pokazuje da velik dio gostiju bira prema lokaciji.</div>\n\n<table>\n<tr><th>Latinski</th><th>Hrvatski</th><th>Što radi</th></tr>\n<tr><td>definiendum</td><td>ono što se definira</td><td>pojam čiji se sadržaj određuje</td></tr>\n<tr><td>definiens</td><td>ono što definira</td><td>pojam kojim se sadržaj određuje</td></tr>\n<tr><td>probatio</td><td>dokaz</td><td>utvrđuje istinitost teze</td></tr>\n<tr><td>refutatio</td><td>opovrgavanje, pobijanje</td><td>utvrđuje neistinitost teze</td></tr>\n</table>\n\n<div class=\"warning-box\"><strong>Česte greške:</strong>\n<ul>\n<li>Pitanje „Logički oblik dokazivanja jest:” — odgovor je <strong>dokaz (probatio)</strong>, ne „definiens”.</li>\n<li>Zamijeniti definiendum i definiens.</li>\n<li>Dedukciju opisati kao „od pojedinačnog prema općem” — to je indukcija.</li>\n</ul></div>\n"
+    }
+  }
+}

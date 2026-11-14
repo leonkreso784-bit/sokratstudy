@@ -1,0 +1,1012 @@
+{
+  "indefiniteIntegral": {
+    "name": "Neodređeni integral",
+    "icon": "fa-chart-area",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "Što je primitivna funkcija?",
+        "answer": "Funkcija F je primitivna funkcija od f ako je \\(F'(x)=f(x)\\). Integriranje je obrnuta operacija od deriviranja.",
+        "explanation": "Npr. x³ je primitivna funkcija od 3x²."
+      },
+      {
+        "question": "Što je neodređeni integral?",
+        "answer": "Skup svih primitivnih funkcija: \\(\\int f(x)\\,dx=F(x)+C\\), \\(C\\in\\mathbb{R}\\). f je podintegralna funkcija, C konstanta integracije.",
+        "explanation": "Sve primitivne funkcije razlikuju se samo za konstantu."
+      },
+      {
+        "question": "Zašto se dodaje konstanta C?",
+        "answer": "Jer je derivacija konstante nula: \\(x^3\\), \\(x^3+5\\) i \\(x^3-200\\) imaju istu derivaciju \\(3x^2\\).",
+        "explanation": "Deriviranjem se konstanta izgubi, pa je integriranjem ne možemo jednoznačno vratiti."
+      },
+      {
+        "question": "Pravilo za integral potencije?",
+        "answer": "\\(\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C\\), \\(n\\neq-1\\): eksponent se poveća za 1 i podijeli novim eksponentom.",
+        "explanation": "Obrnuto od (xⁿ)' = n·xⁿ⁻¹."
+      },
+      {
+        "question": "Osnovni tablični integrali?",
+        "answer": "\\(\\int dx=x+C\\), \\(\\int\\frac1x\\,dx=\\ln|x|+C\\), \\(\\int e^x\\,dx=e^x+C\\).",
+        "explanation": "∫(1/x)dx je slučaj n = −1 koji pravilo potencije ne pokriva."
+      },
+      {
+        "question": "Svojstva linearnosti integrala?",
+        "answer": "\\(\\int(f\\pm g)\\,dx=\\int f\\,dx\\pm\\int g\\,dx\\) i \\(\\int a\\,f\\,dx=a\\int f\\,dx\\) — polinom se integrira član po član.",
+        "explanation": "Konstanta ispred člana ostaje."
+      },
+      {
+        "question": "Kako provjeriti rezultat integriranja?",
+        "answer": "Deriviraj dobiveni rezultat — mora se dobiti podintegralna funkcija.",
+        "explanation": "(x⁴ − 2x³ + C)' = 4x³ − 6x² ✓"
+      },
+      {
+        "question": "Kako se iz marginalnih troškova dobivaju ukupni troškovi?",
+        "answer": "\\(T(Q)=\\int M(Q)\\,dQ\\) jer je \\(M(Q)=T'(Q)\\). Konstanta integracije C predstavlja fiksne troškove.",
+        "explanation": "T(0) = C: trošak i kad se ništa ne proizvodi."
+      },
+      {
+        "question": "Ukupni troškovi za \\(M(Q)=6Q^2+4Q+10\\) i fiksne troškove 500?",
+        "answer": "\\(T(Q)=2Q^3+2Q^2+10Q+500\\).",
+        "explanation": "∫6Q² = 2Q³, ∫4Q = 2Q², ∫10 = 10Q, C = 500."
+      },
+      {
+        "question": "Kako se iz marginalnog prihoda dobiva ukupni prihod?",
+        "answer": "\\(P(Q)=\\int P'(Q)\\,dQ\\); ovdje je \\(C=0\\) jer bez prodaje nema prihoda (\\(P(0)=0\\)).",
+        "explanation": "Npr. P'(Q) = 200 − 2Q → P(Q) = 200Q − Q²."
+      },
+      {
+        "question": "Koliko je \\(\\int(4x^3-6x^2+2x-5)\\,dx\\)?",
+        "answer": "\\(x^4-2x^3+x^2-5x+C\\).",
+        "explanation": "Član −5 postaje −5x (∫dx = x)."
+      },
+      {
+        "question": "Koja je najčešća greška s konstantnim članom?",
+        "answer": "Integral konstante nije nula: \\(\\int5\\,dx=5x+C\\). Nula je DERIVACIJA konstante.",
+        "explanation": "U studentskim bilješkama: „1Q + C → dodaš Q”."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "\\(\\int x^4\\,dx=\\)",
+        "options": [
+          "\\(4x^3+C\\)",
+          "\\(\\frac{x^5}{5}+C\\)",
+          "\\(\\frac{x^5}{4}+C\\)",
+          "\\(x^5+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(\\int(3x^2+2x)\\,dx=\\)",
+        "options": [
+          "\\(6x+2+C\\)",
+          "\\(x^3+x^2+C\\)",
+          "\\(3x^3+2x^2+C\\)",
+          "\\(x^3+2x^2+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(M(Q)=7Q^5+5Q^4+3Q^2+2Q+1\\), ukupni troškovi su:",
+        "options": [
+          "\\(\\frac76Q^6+Q^5+Q^3+Q^2+Q+C\\)",
+          "\\(35Q^4+20Q^3+6Q+2\\)",
+          "\\(7Q^6+5Q^5+3Q^3+2Q^2+Q+C\\)",
+          "\\(\\frac76Q^6+Q^5+Q^3+Q^2+C\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(\\int e^x\\,dx=\\)",
+        "options": [
+          "\\(e^x+C\\)",
+          "\\(\\frac{e^{x+1}}{x+1}+C\\)",
+          "\\(x\\,e^{x-1}+C\\)",
+          "\\(\\ln x+C\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(\\int\\frac1x\\,dx=\\)",
+        "options": [
+          "\\(-\\frac{1}{x^2}+C\\)",
+          "\\(\\ln|x|+C\\)",
+          "\\(\\frac{x^0}{0}+C\\)",
+          "\\(e^x+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U funkciji \\(T(Q)=\\int M(Q)\\,dQ\\) konstanta integracije C predstavlja:",
+        "options": [
+          "marginalne troškove",
+          "varijabilne troškove",
+          "fiksne troškove",
+          "prosječne troškove"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Marginalni prihod je \\(P'(Q)=200-2Q\\). Ukupni prihod je:",
+        "options": [
+          "\\(-2\\)",
+          "\\(200Q-Q^2\\)",
+          "\\(200Q-2Q^2\\)",
+          "\\(200-Q^2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(\\int\\sqrt x\\,dx=\\)",
+        "options": [
+          "\\(\\frac{1}{2\\sqrt x}+C\\)",
+          "\\(\\frac23x^{3/2}+C\\)",
+          "\\(\\frac32x^{3/2}+C\\)",
+          "\\(x^{1/2}+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Marginalni troškovi su \\(M(Q)=3Q^2-4Q+5\\), a fiksni troškovi 100. Ukupni troškovi su:",
+        "options": [
+          "\\(Q^3-2Q^2+5Q+100\\)",
+          "\\(6Q-4+100\\)",
+          "\\(Q^3-4Q^2+5Q+100\\)",
+          "\\(3Q^3-4Q^2+5Q+100\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Integriranje je obrnuta operacija od:",
+        "options": [
+          "množenja",
+          "deriviranja",
+          "logaritmiranja",
+          "kvadriranja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Funkcija F za koju vrijedi F'(x) = f(x) zove se _______ funkcija od f.",
+        "answer": "primitivna",
+        "hint": "Također: antiderivacija"
+      },
+      {
+        "sentence": "Konstanta C u neodređenom integralu zove se konstanta _______.",
+        "answer": "integracije",
+        "hint": "Gubi se deriviranjem"
+      },
+      {
+        "sentence": "U funkciji ukupnih troškova T(Q) = ∫M(Q) dQ konstanta C predstavlja _______ troškove.",
+        "answer": "fiksne",
+        "hint": "T(0)"
+      },
+      {
+        "sentence": "Integriranje je obrnuta operacija od _______.",
+        "answer": "deriviranja",
+        "hint": "F' = f"
+      },
+      {
+        "sentence": "∫x³ dx = x⁴/_______ + C.",
+        "answer": "4",
+        "hint": "Novi eksponent"
+      },
+      {
+        "sentence": "Rezultat integriranja provjeravamo _______.",
+        "answer": "deriviranjem",
+        "hint": "Obrnuta operacija"
+      },
+      {
+        "sentence": "Ukupni trošak dobivamo integriranjem _______ troška.",
+        "answer": "marginalnog",
+        "hint": "M(Q)"
+      }
+    ],
+    "learn": {
+      "title": "Neodređeni integral",
+      "content": "<h3>Integriranje — derivacija unatrag</h3><p>Deriviranjem smo iz ukupnih troškova dobivali marginalne. Menadžer često ima obrnutu situaciju: zna koliko košta <em>svaka dodatna jedinica</em> (marginalni trošak), a treba mu <em>ukupni</em> trošak. Taj obrnuti korak je <strong>integriranje</strong>.</p><p>Funkcija F je <strong>primitivna funkcija</strong> od f ako je \\(F'(x)=f(x)\\). Primitivna funkcija nije jedinstvena: kako je derivacija svake konstante nula, \\(F(x)\\), \\(F(x)+5\\) i \\(F(x)-200\\) imaju istu derivaciju. Skup svih primitivnih funkcija je <strong>neodređeni integral</strong>:</p><div class=\"formula-box\">\\[\\int f(x)\\,dx=F(x)+C,\\qquad C\\in\\mathbb{R}.\\]</div><p>f je <strong>podintegralna funkcija</strong>, x varijabla integracije, a C <strong>konstanta integracije</strong>.</p><h3>Tablica i pravila</h3><table><thead><tr><th>Integral</th><th>Rezultat</th><th>Provjera deriviranjem</th></tr></thead><tbody><tr><td>\\(\\int x^n\\,dx\\ (n\\neq-1)\\)</td><td>\\(\\frac{x^{n+1}}{n+1}+C\\)</td><td>\\(\\frac{(n+1)x^n}{n+1}=x^n\\)</td></tr><tr><td>\\(\\int dx\\)</td><td>\\(x+C\\)</td><td>\\((x)'=1\\)</td></tr><tr><td>\\(\\int\\frac1x\\,dx\\)</td><td>\\(\\ln|x|+C\\)</td><td>\\((\\ln x)'=\\frac1x\\)</td></tr><tr><td>\\(\\int e^x\\,dx\\)</td><td>\\(e^x+C\\)</td><td>\\((e^x)'=e^x\\)</td></tr></tbody></table><div class=\"formula-box\">\\[\\int\\big(f(x)\\pm g(x)\\big)\\,dx=\\int f(x)\\,dx\\pm\\int g(x)\\,dx,\\qquad \\int a\\,f(x)\\,dx=a\\int f(x)\\,dx.\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> \\(\\int(4x^3-6x^2+2x-5)\\,dx=4\\cdot\\frac{x^4}{4}-6\\cdot\\frac{x^3}{3}+2\\cdot\\frac{x^2}{2}-5x+C=x^4-2x^3+x^2-5x+C\\).<br>Provjera: \\((x^4-2x^3+x^2-5x)'=4x^3-6x^2+2x-5\\) ✓</div><div class=\"example-box\"><strong>Primjer 2 (korijen kao potencija).</strong> \\(\\int\\sqrt x\\,dx=\\int x^{1/2}\\,dx=\\frac{x^{3/2}}{3/2}+C=\\frac23x^{3/2}+C\\).</div><h3>Primjena: od marginalnih do ukupnih troškova</h3><p>Budući da je \\(M(Q)=T'(Q)\\), ukupne troškove dobivamo integriranjem:</p><div class=\"formula-box\">\\[T(Q)=\\int M(Q)\\,dQ,\\qquad C=T(0)=\\text{fiksni troškovi}.\\]</div><div class=\"example-box\"><strong>Primjer 3 (studentske bilješke).</strong> \\(M(Q)=7Q^5+5Q^4+3Q^2+2Q+1\\)<br>\\(T(Q)=\\frac{7Q^6}{6}+\\frac{5Q^5}{5}+\\frac{3Q^3}{3}+\\frac{2Q^2}{2}+Q+C=\\frac76Q^6+Q^5+Q^3+Q^2+Q+C\\)<br>Zadnji član: \\(\\int1\\,dQ=Q\\) — ne smije se izgubiti.</div><div class=\"example-box\"><strong>Primjer 4 (zadani fiksni troškovi).</strong> \\(M(Q)=6Q^2+4Q+10\\), fiksni troškovi 500.<br>\\(T(Q)=2Q^3+2Q^2+10Q+C\\); uvjet \\(T(0)=500\\Rightarrow C=500\\)<br>\\(T(Q)=2Q^3+2Q^2+10Q+500\\)</div><div class=\"example-box\"><strong>Primjer 5 (prihod).</strong> Marginalni prihod \\(P'(Q)=200-2Q\\Rightarrow P(Q)=200Q-Q^2+C\\). Bez prodaje nema prihoda, \\(P(0)=0\\Rightarrow C=0\\), pa je \\(P(Q)=200Q-Q^2\\).</div><div class=\"tip-box\"><strong>Ako fiksni troškovi nisu zadani</strong>, odgovor ostavi s C: „\\(T(Q)=\\ldots+C\\), gdje je C iznos fiksnih troškova”. Marginalni trošak ne nosi nikakvu informaciju o fiksnom trošku.</div><div class=\"warning-box\"><strong>Zamke:</strong> zaboravljen \\(+C\\) · \\(\\int5\\,dx=5x\\), ne 0 · eksponent se povećava (ne smanjuje) i dijeli se <em>novim</em> eksponentom · \\(\\int\\frac1x\\,dx\\) nije \\(\\frac{x^0}{0}\\) nego \\(\\ln|x|\\) · marginalni trošak se integrira, ne derivira.</div>"
+    }
+  },
+  "interest": {
+    "name": "Jednostavni i složeni kamatni račun",
+    "icon": "fa-percent",
+    "color": "#f97316",
+    "flashcards": [
+      {
+        "question": "Koje su osnovne oznake kamatnog računa?",
+        "answer": "\\(C_0\\) glavnica (početna vrijednost), \\(C_n\\) konačna vrijednost, p kamatna stopa u %, \\(i=\\frac{p}{100}\\), n broj razdoblja, K kamate.",
+        "explanation": "Kamatni faktor: r = 1 + i."
+      },
+      {
+        "question": "Formula jednostavnog kamatnog računa?",
+        "answer": "Kamate samo na početnu glavnicu: \\(K=C_0\\cdot n\\cdot i\\), \\(C_n=C_0(1+n\\cdot i)\\).",
+        "explanation": "Kamate su svake godine jednake."
+      },
+      {
+        "question": "Formula složenog kamatnog računa?",
+        "answer": "Kamate se pribrajaju glavnici i dalje se ukamaćuju: \\(C_n=C_0(1+i)^n=C_0\\cdot r^n\\).",
+        "explanation": "„Kamate na kamate”."
+      },
+      {
+        "question": "Dekurzivni ili anticipativni obračun?",
+        "answer": "Dekurzivni: kamate na kraju razdoblja, od vrijednosti s početka razdoblja. Anticipativni: na početku, od vrijednosti s kraja. Na kolegiju: dekurzivni.",
+        "explanation": "Sve formule za rente i zajam pretpostavljaju složen dekurzivan obračun."
+      },
+      {
+        "question": "Ukamaćivanje ili diskontiranje?",
+        "answer": "Ukamaćivanje: buduća vrijednost današnjeg iznosa (\\(\\cdot r^n\\)). Diskontiranje: sadašnja vrijednost budućeg iznosa (\\(:r^n\\)).",
+        "explanation": "S formula za 2. kolokvij: ukamaćivanje — uplata; diskontiranje — posudba."
+      },
+      {
+        "question": "Kako izračunati kamatnu stopu iz \\(C_0\\), \\(C_n\\) i n?",
+        "answer": "\\(i=\\sqrt[n]{\\frac{C_n}{C_0}}-1\\), a zatim \\(p=100\\cdot i\\).",
+        "explanation": "Npr. 10 000 € naraste na 12 000 € za 3 godine: i ≈ 0,0627, tj. p ≈ 6,27 %."
+      },
+      {
+        "question": "Kako izračunati broj razdoblja n?",
+        "answer": "\\(n=\\frac{\\log\\frac{C_n}{C_0}}{\\log(1+i)}\\) (može i s ln).",
+        "explanation": "Dobiveni n često nije cijeli broj — tumači ga u kontekstu."
+      },
+      {
+        "question": "Što je relativni (proporcionalni) kamatnjak?",
+        "answer": "Godišnja stopa podijeljena brojem obračuna u godini: \\(p_r=\\frac{p}{m}\\). Uz češći obračun daje VEĆU konačnu vrijednost od godišnjeg.",
+        "explanation": "12 % godišnje, mjesečni obračun → 1 % mjesečno."
+      },
+      {
+        "question": "Što je konformni kamatnjak?",
+        "answer": "Periodični kamatnjak s istim godišnjim učinkom kao godišnja stopa: \\(p'=100\\left[\\left(1+\\frac{p}{100}\\right)^{1/m}-1\\right]\\).",
+        "explanation": "12 % godišnje, mjesečno → p' ≈ 0,9489 % mjesečno."
+      },
+      {
+        "question": "5000 € uz 6 % godišnje na 4 godine — jednostavni i složeni račun?",
+        "answer": "Jednostavni: \\(5000(1+4\\cdot0{,}06)=6200\\) €. Složeni: \\(5000\\cdot1{,}06^4\\approx6312{,}38\\) €.",
+        "explanation": "Razlika 112,38 € su „kamate na kamate”."
+      },
+      {
+        "question": "2000 € uz 12 % godišnje, mjesečni obračun, relativni kamatnjak — stanje nakon godine?",
+        "answer": "\\(p_r=1\\,\\%\\) mjesečno, \\(n=12\\): \\(C_{12}=2000\\cdot1{,}01^{12}\\approx2253{,}65\\) €.",
+        "explanation": "Godišnjim obračunom bilo bi 2240 € — relativni daje više."
+      },
+      {
+        "question": "Kako se broji n kad se obračun ne vrši godišnje?",
+        "answer": "n = broj OBRAČUNSKIH razdoblja: godine × broj obračuna u godini. 3 godine uz kvartalni obračun → \\(n=12\\).",
+        "explanation": "Stopa i broj razdoblja moraju se odnositi na isto razdoblje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koliko iznosi 10 000 € nakon 3 godine uz 5 % godišnje, složeni dekurzivni obračun?",
+        "options": [
+          "11 500,00 €",
+          "11 576,25 €",
+          "11 025,00 €",
+          "15 000,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko iznosi 8000 € nakon 5 godina uz 4 % godišnje, jednostavni kamatni račun?",
+        "options": [
+          "9600 €",
+          "9733,22 €",
+          "8320 €",
+          "9200 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz koju godišnju stopu (složeni obračun) 10 000 € za 3 godine naraste na 12 000 €?",
+        "options": [
+          "≈ 6,67 %",
+          "≈ 6,27 %",
+          "≈ 20 %",
+          "≈ 5,00 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za koliko godina 8000 € naraste na 10 000 € uz 5 % godišnje (složeni obračun)?",
+        "options": [
+          "≈ 5 godina",
+          "≈ 4,57 godina",
+          "≈ 4,00 godine",
+          "≈ 6,25 godina"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Godišnja kamatna stopa je 8 %, obračun je kvartalni. Relativni kvartalni kamatnjak je:",
+        "options": [
+          "\\(8\\,\\%\\)",
+          "\\(2\\,\\%\\)",
+          "\\(\\approx1{,}94\\,\\%\\)",
+          "\\(32\\,\\%\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "10 000 € uloženo je na 3 godine uz 8 % godišnje, kvartalni obračun, relativni kamatnjak. Konačna vrijednost je:",
+        "options": [
+          "12 597,12 €",
+          "12 682,42 €",
+          "12 400,00 €",
+          "10 824,32 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kolika je sadašnja vrijednost iznosa od 11 000 € koji dospijeva za 2 godine uz 10 % godišnje (složeno)?",
+        "options": [
+          "9900,00 €",
+          "9090,91 €",
+          "13 310,00 €",
+          "9166,67 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz isti godišnji kamatnjak i mjesečni obračun, koji kamatnjak daje veću konačnu vrijednost?",
+        "options": [
+          "konformni",
+          "relativni",
+          "daju jednako",
+          "ovisi o glavnici"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kamatni faktor uz kamatnu stopu od 6 % je:",
+        "options": [
+          "\\(r=0{,}06\\)",
+          "\\(r=1{,}06\\)",
+          "\\(r=6\\)",
+          "\\(r=1{,}6\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kamate u složenom kamatnom računu iznose:",
+        "options": [
+          "\\(K=C_n-C_0\\)",
+          "\\(K=C_0\\cdot n\\)",
+          "\\(K=C_n+C_0\\)",
+          "\\(K=\\frac{C_n}{C_0}\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Kod složenog kamatnog računa kamate se pribrajaju _______ i dalje se ukamaćuju.",
+        "answer": "glavnici",
+        "hint": "C₀"
+      },
+      {
+        "sentence": "Obračun kamata na kraju razdoblja zove se _______ obračun.",
+        "answer": "dekurzivni",
+        "hint": "Suprotno: anticipativni"
+      },
+      {
+        "sentence": "Svođenje budućeg iznosa na današnju vrijednost zove se _______.",
+        "answer": "diskontiranje",
+        "hint": "Dijeljenje s rⁿ"
+      },
+      {
+        "sentence": "Godišnja stopa 12 % uz mjesečni obračun daje relativni mjesečni kamatnjak od _______ %.",
+        "answer": "1",
+        "hint": "p/m"
+      },
+      {
+        "sentence": "Kamatnjak koji uz češći obračun daje isti godišnji učinak kao godišnja stopa zove se _______ kamatnjak.",
+        "answer": "konformni",
+        "hint": "Nije relativni"
+      },
+      {
+        "sentence": "Uz godišnju stopu 8 % i kvartalni obračun relativni kvartalni kamatnjak iznosi _______ %.",
+        "answer": "2",
+        "hint": "8/4"
+      },
+      {
+        "sentence": "Tri godine uz kvartalni obračun daju n = _______ obračunskih razdoblja.",
+        "answer": "12",
+        "hint": "3 · 4"
+      }
+    ],
+    "learn": {
+      "title": "Jednostavni i složeni kamatni račun",
+      "content": "<h3>Vremenska vrijednost novca</h3><p>Temeljna ideja financijske matematike: <strong>isti iznos novca vrijedi različito u različitim trenucima</strong>. 1000 € danas vrijedi više od 1000 € za pet godina, jer se današnji novac može uložiti i donositi kamate. Sav drugi kolokvij — rente i zajmovi — gradi se na dvije operacije: <strong>ukamaćivanju</strong> (pomak iznosa u budućnost) i <strong>diskontiranju</strong> (pomak iznosa u sadašnjost).</p><table><thead><tr><th>Oznaka</th><th>Značenje</th></tr></thead><tbody><tr><td>\\(C_0\\)</td><td>glavnica, početna (sadašnja) vrijednost</td></tr><tr><td>\\(C_n\\)</td><td>konačna (buduća) vrijednost nakon n razdoblja</td></tr><tr><td>\\(p\\), \\(i=\\frac{p}{100}\\)</td><td>kamatna stopa u postocima i kao decimalni broj</td></tr><tr><td>\\(r=1+i\\)</td><td>kamatni faktor</td></tr><tr><td>\\(K\\)</td><td>kamate, \\(K=C_n-C_0\\)</td></tr></tbody></table><h3>Jednostavni kamatni račun</h3><p>Kamate se svako razdoblje računaju <strong>samo na početnu glavnicu</strong>, pa su svaki put jednake:</p><div class=\"formula-box\">\\[K=C_0\\cdot n\\cdot i,\\qquad C_n=C_0(1+n\\cdot i).\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> 5000 € na 4 godine uz 6 %: \\(K=5000\\cdot4\\cdot0{,}06=1200\\) €, \\(C_4=6200\\) €.</div><h3>Složeni kamatni račun</h3><p>Kamate se na kraju svakog razdoblja <strong>pribrajaju glavnici</strong> i u sljedećem razdoblju i same donose kamate. Nakon jednog razdoblja \\(C_1=C_0r\\), nakon dva \\(C_2=C_0r^2\\), …</p><div class=\"formula-box\">\\[C_n=C_0(1+i)^n=C_0\\,r^n,\\qquad C_0=\\frac{C_n}{r^n}.\\]</div><div class=\"example-box\"><strong>Primjer 2.</strong> 5000 € na 4 godine uz 6 %, složeno: \\(C_4=5000\\cdot1{,}06^4\\approx6312{,}38\\) €. U odnosu na jednostavni račun to je 112,38 € više — to su kamate na kamate.</div><div class=\"example-box\"><strong>Primjer 3 (diskontiranje).</strong> Koliko danas vrijedi 11 000 € koje dospijeva za 2 godine uz 10 %? \\(C_0=\\frac{11\\,000}{1{,}1^2}\\approx9090{,}91\\) €.</div><p>Obračun je <strong>dekurzivan</strong> kad se kamate obračunavaju na kraju razdoblja od vrijednosti s početka razdoblja (tako se računa na kolegiju), a <strong>anticipativan</strong> kad se obračunavaju unaprijed.</p><h3>Kamatna stopa i vrijeme</h3><p>Iz \\(C_n=C_0(1+i)^n\\) izražavamo i ili n (formule s popisa za 2. kolokvij):</p><div class=\"formula-box\">\\[i=\\sqrt[n]{\\frac{C_n}{C_0}}-1,\\qquad n=\\frac{\\log\\frac{C_n}{C_0}}{\\log(1+i)}.\\]</div><div class=\"example-box\"><strong>Primjer 4.</strong> 10 000 € naraste na 12 000 € za 3 godine: \\(i=\\sqrt[3]{1{,}2}-1\\approx0{,}0627\\), dakle \\(p\\approx6{,}27\\,\\%\\).<br><strong>Primjer 5.</strong> Za koliko godina 8000 € naraste na 10 000 € uz 5 %? \\(n=\\frac{\\log1{,}25}{\\log1{,}05}\\approx4{,}57\\) godina.</div><h3>Obračun češći od godišnjeg: relativni i konformni kamatnjak</h3><p>Ako je zadana godišnja stopa p, a kamate se obračunavaju m puta godišnje (polugodišnje m = 2, kvartalno m = 4, mjesečno m = 12), treba stopa za jedno obračunsko razdoblje:</p><div class=\"formula-box\">\\[\\text{relativni: } p_r=\\frac{p}{m},\\qquad \\text{konformni: } p'=100\\left[\\left(1+\\frac{p}{100}\\right)^{1/m}-1\\right].\\]</div><ul><li><strong>Relativni</strong> (proporcionalni) kamatnjak jednostavno dijeli stopu — zbog kamata na kamate daje <em>više</em> od godišnjeg obračuna.</li><li><strong>Konformni</strong> kamatnjak je odabran tako da m obračuna daje <em>točno isti</em> godišnji učinak: \\((1+\\frac{p'}{100})^m=1+\\frac{p}{100}\\).</li></ul><div class=\"example-box\"><strong>Primjer 6.</strong> 2000 € na godinu dana uz 12 % godišnje, mjesečni obračun.<br>Relativni: \\(p_r=1\\,\\%\\), \\(C_{12}=2000\\cdot1{,}01^{12}\\approx2253{,}65\\) €.<br>Konformni: \\(p'=100(1{,}12^{1/12}-1)\\approx0{,}9489\\,\\%\\), \\(C_{12}=2000\\cdot1{,}12=2240\\) € — isto kao godišnji obračun.</div><div class=\"example-box\"><strong>Primjer 7.</strong> 10 000 € na 3 godine uz 8 % godišnje, kvartalni obračun, relativni kamatnjak: \\(p_r=2\\,\\%\\), \\(n=3\\cdot4=12\\), \\(C_{12}=10\\,000\\cdot1{,}02^{12}\\approx12\\,682{,}42\\) €.</div><div class=\"tip-box\"><strong>Pravilo usklađivanja:</strong> stopa i broj razdoblja uvijek se odnose na <em>isto</em> razdoblje. Ako je zadana stopa za jedno razdoblje (npr. kvartalna), a obračun je drugačiji (npr. polugodišnji), relativni kamatnjak za novo razdoblje dobiva se razmjerno: polugodište = 2 kvartala, pa je polugodišnji relativni kamatnjak dvostruk kvartalnom.</div><div class=\"warning-box\"><strong>Zamke:</strong> stopa u formuli je \\(i=\\frac{p}{100}\\), ne p · n broji obračunska razdoblja, ne godine · relativni ≠ konformni (relativni dijeli, konformni korjenuje) · kod jednostavnog računa nema potenciranja · zaokružuj tek na kraju, inače se razlike nakupe.</div>"
+    }
+  },
+  "annuities": {
+    "name": "Rente",
+    "icon": "fa-piggy-bank",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što je renta?",
+        "answer": "Niz nominalno jednakih periodičnih uplata ili isplata R u jednakim vremenskim razmacima, uz isti kamatnjak, kroz n razdoblja.",
+        "explanation": "Pretpostavka: složen, dekurzivan obračun; r = 1 + i."
+      },
+      {
+        "question": "Prenumerando ili postnumerando?",
+        "answer": "Prenumerando: uplate na POČETKU razdoblja. Postnumerando: uplate na KRAJU razdoblja.",
+        "explanation": "Prenumerando uplata ukamaćuje se jedno razdoblje dulje."
+      },
+      {
+        "question": "Buduća (konačna) vrijednost postnumerando rente?",
+        "answer": "\\(S_n'=R\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Zbroj geometrijskog niza uplata ukamaćenih do kraja."
+      },
+      {
+        "question": "Buduća vrijednost prenumerando rente?",
+        "answer": "\\(S_n=R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\) — postnumerando vrijednost pomnožena s r.",
+        "explanation": "Svaka uplata ima jedno razdoblje kamata više."
+      },
+      {
+        "question": "Sadašnja vrijednost postnumerando rente?",
+        "answer": "\\(A_n=\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Koliko danas treba uložiti da bismo krajem svakog razdoblja podizali R."
+      },
+      {
+        "question": "Sadašnja vrijednost prenumerando rente?",
+        "answer": "\\(A_n'=\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Koliko danas vrijedi niz uplata na početku razdoblja."
+      },
+      {
+        "question": "Kako iz teksta zadatka prepoznati koju formulu koristiti?",
+        "answer": "„Koliko ćemo imati na kraju” → buduća vrijednost S. „Koliko danas uložiti / koliko danas vrijedi” → sadašnja vrijednost A. Početak → pre, kraj → post.",
+        "explanation": "Dva pitanja, četiri formule."
+      },
+      {
+        "question": "Kako iz buduće vrijednosti izračunati ratu R?",
+        "answer": "Postnumerando: \\(R=\\frac{S_n'(r-1)}{r^n-1}\\). Prenumerando: \\(R=\\frac{S_n(r-1)}{r(r^n-1)}\\).",
+        "explanation": "Samo se izrazi R iz odgovarajuće formule."
+      },
+      {
+        "question": "Kako iz sadašnje vrijednosti izračunati ratu R?",
+        "answer": "Postnumerando: \\(R=\\frac{A_n\\,r^n(r-1)}{r^n-1}\\). Prenumerando: \\(R=\\frac{A_n'\\,r^{n-1}(r-1)}{r^n-1}\\).",
+        "explanation": "Tipično pitanje: koliki se jednaki iznosi mogu podizati."
+      },
+      {
+        "question": "2000 € uplaćuje se krajem svake godine 5 godina uz 4 %. Koliko je na računu na kraju?",
+        "answer": "\\(S_5'=2000\\cdot\\frac{1{,}04^5-1}{0{,}04}\\approx10\\,832{,}65\\) €.",
+        "explanation": "Uplaćeno je 10 000 €, kamate su 832,65 €."
+      },
+      {
+        "question": "Ista renta (2000 €, 5 godina, 4 %), ali uplate početkom godine?",
+        "answer": "\\(S_5=2000\\cdot1{,}04\\cdot\\frac{1{,}04^5-1}{0{,}04}\\approx11\\,265{,}95\\) €.",
+        "explanation": "= 10 832,65 · 1,04."
+      },
+      {
+        "question": "Kako se računa broj uplata n iz buduće vrijednosti postnumerando rente?",
+        "answer": "\\(n=\\frac{\\log\\left[\\frac{S_n'(r-1)}{R}+1\\right]}{\\log r}\\).",
+        "explanation": "Za prenumerando se u nazivniku razlomka pod logaritmom piše R·r."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kamatni faktor uz kamatnu stopu od 4 % je:",
+        "options": [
+          "\\(0{,}04\\)",
+          "\\(1{,}04\\)",
+          "\\(1{,}4\\)",
+          "\\(4\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kod prenumerando rente uplate se vrše:",
+        "options": [
+          "na kraju razdoblja",
+          "na početku razdoblja",
+          "jednom",
+          "u sredini razdoblja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Buduća vrijednost postnumerando rente je:",
+        "options": [
+          "\\(R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(R\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(R\\cdot r^n\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Sadašnja vrijednost postnumerando rente je:",
+        "options": [
+          "\\(R\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r-1}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko danas treba uložiti da bi se krajem svake od idućih 8 godina podizalo 5000 € uz 6 % godišnje?",
+        "options": [
+          "≈ 31 048,97 €",
+          "≈ 32 911,91 €",
+          "≈ 49 487,34 €",
+          "≈ 40 000,00 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koliko treba uplaćivati krajem svake godine da bi se za 10 godina uz 5 % skupilo 50 000 €?",
+        "options": [
+          "≈ 5000,00 €",
+          "≈ 3975,23 €",
+          "≈ 6475,23 €",
+          "≈ 3785,93 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Buduća vrijednost prenumerando rente jednaka je postnumerando vrijednosti pomnoženoj s:",
+        "options": [
+          "\\(r^n\\)",
+          "\\(r\\)",
+          "\\(\\frac1r\\)",
+          "\\(n\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zadatak pita: „Koliko danas treba uložiti da bi se…”. Koja se vrijednost rente traži?",
+        "options": [
+          "buduća",
+          "sadašnja",
+          "nominalna",
+          "prosječna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko danas vrijedi 8 uplata po 5000 € početkom svake godine uz 6 % godišnje?",
+        "options": [
+          "≈ 31 048,97 €",
+          "≈ 32 911,91 €",
+          "≈ 29 291,48 €",
+          "≈ 42 000,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Danas se uloži 100 000 € uz 6 % godišnje. Koliki se jednaki iznos može podizati krajem svake od 10 godina?",
+        "options": [
+          "≈ 10 000,00 €",
+          "≈ 13 586,80 €",
+          "≈ 12 817,74 €",
+          "≈ 7586,80 €"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Niz nominalno jednakih periodičnih uplata ili isplata zove se _______.",
+        "answer": "renta",
+        "hint": "Oznaka rate: R"
+      },
+      {
+        "sentence": "Renta s uplatama na početku razdoblja zove se _______ renta.",
+        "answer": "prenumerando",
+        "hint": "Suprotno: postnumerando"
+      },
+      {
+        "sentence": "Renta s uplatama na kraju razdoblja zove se _______ renta.",
+        "answer": "postnumerando",
+        "hint": "Suprotno: prenumerando"
+      },
+      {
+        "sentence": "Sadašnja vrijednost rente dobiva se _______ budućih uplata.",
+        "answer": "diskontiranjem",
+        "hint": "Dijeljenje potencijama od r"
+      },
+      {
+        "sentence": "Prenumerando vrijednosti jednake su postnumerando vrijednostima pomnoženima s kamatnim faktorom _______.",
+        "answer": "r",
+        "hint": "r = 1 + i"
+      },
+      {
+        "sentence": "Uplatom 2000 € krajem godine kroz 5 godina uplaćeno je ukupno _______ €.",
+        "answer": "10000",
+        "hint": "5 · 2000 (bez kamata)"
+      }
+    ],
+    "learn": {
+      "title": "Rente",
+      "content": "<h3>Što je renta</h3><p><strong>Renta</strong> je niz nominalno jednakih iznosa R koji se uplaćuju ili isplaćuju u jednakim vremenskim razmacima, uz isti kamatnjak, kroz n razdoblja. Primjeri: mjesečna štednja, mirovinski ulog, podizanje jednakih iznosa s oročenog depozita. Iznose ne smijemo samo zbrojiti, jer svaki „živi” u drugom trenutku — zato ih kamatnim faktorom \\(r=1+i\\) premještamo u isti trenutak (kraj ili početak) i onda zbrajamo. Zbroj je geometrijski niz, otud izraz \\(\\frac{r^n-1}{r-1}\\) u svim formulama.</p><h3>Prenumerando i postnumerando</h3><ul><li><strong>Prenumerando</strong> — uplata na <em>početku</em> razdoblja („početkom godine”).</li><li><strong>Postnumerando</strong> — uplata na <em>kraju</em> razdoblja („krajem godine”).</li></ul><p>Uplata s početka razdoblja ukamaćuje se jedno razdoblje dulje, pa je <strong>svaka prenumerando vrijednost jednaka postnumerando vrijednosti pomnoženoj s r</strong>.</p><h3>Četiri formule (s popisa formula za 2. kolokvij)</h3><table><thead><tr><th></th><th>Buduća vrijednost („koliko ćemo imati”)</th><th>Sadašnja vrijednost („koliko danas”)</th></tr></thead><tbody><tr><td>prenumerando</td><td>\\(S_n=R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\)</td><td>\\(A_n'=\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\)</td></tr><tr><td>postnumerando</td><td>\\(S_n'=R\\cdot\\frac{r^n-1}{r-1}\\)</td><td>\\(A_n=\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)</td></tr></tbody></table><p>Izražavanjem R dobivaju se formule za ratu, npr. \\(R=\\frac{S_n'(r-1)}{r^n-1}\\) i \\(R=\\frac{A_n\\,r^n(r-1)}{r^n-1}\\), a logaritmiranjem broj razdoblja \\(n=\\frac{\\log\\left[\\frac{S_n'(r-1)}{R}+1\\right]}{\\log r}\\).</p><h3>Riješeni primjeri</h3><div class=\"example-box\"><strong>Primjer 1 (buduća, postnumerando).</strong> Krajem svake godine uplaćuje se 2000 € kroz 5 godina uz 4 %.<br>\\(r=1{,}04\\), \\(r^5\\approx1{,}216653\\)<br>\\(S_5'=2000\\cdot\\frac{1{,}216653-1}{0{,}04}\\approx10\\,832{,}65\\) €</div><div class=\"example-box\"><strong>Primjer 2 (buduća, prenumerando).</strong> Isto, ali početkom godine: \\(S_5=1{,}04\\cdot10\\,832{,}65\\approx11\\,265{,}95\\) €.</div><div class=\"example-box\"><strong>Primjer 3 (sadašnja, postnumerando).</strong> Koliko danas treba uložiti da bi se krajem svake od 8 godina podizalo 5000 € uz 6 %?<br>\\(A_8=\\frac{5000}{1{,}06^8}\\cdot\\frac{1{,}06^8-1}{0{,}06}\\approx31\\,048{,}97\\) € — manje od 8 · 5000 = 40 000 €, jer su kasnije isplate diskontirane.</div><div class=\"example-box\"><strong>Primjer 4 (sadašnja, prenumerando).</strong> Isto, ali isplate početkom godine: \\(A_8'=\\frac{5000}{1{,}06^7}\\cdot\\frac{1{,}06^8-1}{0{,}06}\\approx32\\,911{,}91\\) € (= 31 048,97 · 1,06).</div><div class=\"example-box\"><strong>Primjer 5 (rata iz buduće vrijednosti).</strong> Koliko uplaćivati krajem godine da se za 10 godina uz 5 % skupi 50 000 €?<br>\\(R=\\frac{50\\,000\\cdot0{,}05}{1{,}05^{10}-1}\\approx3975{,}23\\) €</div><div class=\"example-box\"><strong>Primjer 6 (rata iz sadašnje vrijednosti).</strong> Danas se uloži 100 000 € uz 6 %. Koliki se jednaki iznos može podizati krajem svake od 10 godina?<br>\\(R=\\frac{100\\,000\\cdot1{,}06^{10}\\cdot0{,}06}{1{,}06^{10}-1}\\approx13\\,586{,}80\\) €</div><div class=\"tip-box\"><strong>Stablo odluke za ispit:</strong> (1) Traži li se iznos na kraju (S) ili danas (A)? (2) Uplate početkom (pre) ili krajem (post) razdoblja? (3) Traži li se vrijednost ili rata R — ako rata, izrazi R iz iste formule. (4) Uskladi stopu s razdobljem uplata.</div><div class=\"warning-box\"><strong>Zamke:</strong> zamjena S i A („koliko danas” je uvijek sadašnja vrijednost) · kod prenumerando sadašnje vrijednosti potencija je \\(r^{n-1}\\), ne \\(r^n\\) · \\(r-1=i\\), ne p · „podizati krajem godine iz uloga” je postnumerando sadašnja vrijednost · zaokruživanje \\(r^n\\) na dvije decimale unosi grešku od više eura — nosi barem šest decimala.</div>"
+    }
+  },
+  "loans": {
+    "name": "Zajam",
+    "icon": "fa-money-bill-wave",
+    "color": "#22c55e",
+    "flashcards": [
+      {
+        "question": "Od čega se sastoji anuitet zajma?",
+        "answer": "\\(a_k=R_k+I_k\\): otplatna kvota \\(R_k\\) (smanjuje dug) i kamate \\(I_k=\\frac{C_{k-1}\\cdot p}{100}\\) na ostatak duga s kraja prethodnog razdoblja.",
+        "explanation": "Anuitet = ukupna rata koju dužnik plaća."
+      },
+      {
+        "question": "Koja su dva modela otplate zajma?",
+        "answer": "1. Nominalno jednaki anuiteti (konstantan a, kvote rastu). 2. Nominalno jednake otplatne kvote (konstantan R, anuiteti padaju).",
+        "explanation": "Na formulama za 2. kolokvij oba su modela."
+      },
+      {
+        "question": "Formula jednakog anuiteta?",
+        "answer": "\\(a=C\\cdot\\frac{r^n(r-1)}{r^n-1}\\), \\(r=1+\\frac{p}{100}\\) — zajam je sadašnja vrijednost budućih jednakih anuiteta.",
+        "explanation": "Ista formula kao rata iz sadašnje vrijednosti postnumerando rente."
+      },
+      {
+        "question": "Kako se popunjava otplatna tablica (jednaki anuiteti)?",
+        "answer": "Za svaki redak: \\(I_k=\\frac{C_{k-1}p}{100}\\) → \\(R_k=a-I_k\\) → \\(C_k=C_{k-1}-R_k\\). Stupci: razdoblje, anuitet, kamate, otplatna kvota, ostatak duga.",
+        "explanation": "Redak 0 sadrži samo iznos zajma C₀."
+      },
+      {
+        "question": "Kako se kroz vrijeme mijenjaju kamate i kvote uz jednake anuitete?",
+        "answer": "Kamate PADAJU (dug se smanjuje), otplatne kvote RASTU geometrijski: \\(R_k=R_1\\cdot r^{k-1}\\). Ostatak duga pada na 0.",
+        "explanation": "Prvi anuiteti su pretežno kamate, zadnji pretežno otplata."
+      },
+      {
+        "question": "Koje su kontrole otplatne tablice?",
+        "answer": "a) zadnja kvota = prethodni ostatak duga \\(R_n=C_{n-1}\\); b) \\(\\sum R_k=C_0\\); c) \\(\\sum R_k+\\sum I_k=\\sum a_k\\).",
+        "explanation": "Zbog zaokruživanja zbroj kvota može odstupati za cent."
+      },
+      {
+        "question": "Model jednakih otplatnih kvota — formule?",
+        "answer": "\\(R=\\frac{C}{n}\\), \\(I_i=\\frac{C_{i-1}p}{100}\\), \\(a_i=R+I_i\\), \\(C_i=C\\left(1-\\frac{i}{n}\\right)\\).",
+        "explanation": "Anuitet pada jer kamate na sve manji dug padaju."
+      },
+      {
+        "question": "Koliko ukupno kamata dužnik plati?",
+        "answer": "\\(\\sum I_k=\\sum a_k-C_0\\) — zbroj svih anuiteta umanjen za iznos zajma.",
+        "explanation": "To je cijena zajma."
+      },
+      {
+        "question": "Anuitet zajma od 60 000 € na 4 godine uz 8 %?",
+        "answer": "\\(a=60\\,000\\cdot\\frac{1{,}08^4\\cdot0{,}08}{1{,}08^4-1}\\approx18\\,115{,}25\\) €.",
+        "explanation": "Prva godina: kamate 4800 €, kvota 13 315,25 €, ostatak 46 684,75 €."
+      },
+      {
+        "question": "Zajam 30 000 € na 3 godine uz 10 %, jednake otplatne kvote — anuiteti?",
+        "answer": "\\(R=10\\,000\\) €. Anuiteti: 13 000 €, 12 000 €, 11 000 € (kamate 3000, 2000, 1000 €).",
+        "explanation": "Ukupne kamate: 6000 €."
+      },
+      {
+        "question": "Kolike su kamate u prvom razdoblju uz jednake anuitete?",
+        "answer": "\\(I_1=\\frac{C_0\\cdot p}{100}\\) — kamate na cijeli iznos zajma. Npr. 60 000 € uz 8 %: 4800 €.",
+        "explanation": "Vrijedi u oba modela."
+      },
+      {
+        "question": "Koji model uz iste uvjete ima manje ukupne kamate?",
+        "answer": "Model jednakih otplatnih kvota — dug se brže smanjuje na početku, pa su kamate manje; ali su prvi anuiteti veći.",
+        "explanation": "30 000 €, 3 god., 10 %: kvote 6000 € kamata, jednaki anuiteti ≈ 6190 €."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Anuitet zajma sastoji se od:",
+        "options": [
+          "samo kamata",
+          "samo otplatne kvote",
+          "otplatne kvote i kamata",
+          "glavnice pomnožene kamatnjakom"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kamate u k-tom razdoblju računaju se kao:",
+        "options": [
+          "\\(I_k=\\frac{C_{k-1}\\cdot p}{100}\\)",
+          "\\(I_k=\\frac{C_0\\cdot p}{100}\\)",
+          "\\(I_k=a\\cdot r\\)",
+          "\\(I_k=\\frac{C}{n}\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Zbroj svih otplatnih kvota jednak je:",
+        "options": [
+          "ukupnim kamatama",
+          "iznosu zajma \\(C_0\\)",
+          "zadnjem anuitetu",
+          "zbroju anuiteta"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Formula nominalno jednakog anuiteta je:",
+        "options": [
+          "\\(a=\\frac{C}{n}\\)",
+          "\\(a=C\\cdot\\frac{r^n(r-1)}{r^n-1}\\)",
+          "\\(a=C\\cdot r^n\\)",
+          "\\(a=C\\cdot(r-1)\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz jednake anuitete kamate kroz vrijeme:",
+        "options": [
+          "rastu",
+          "padaju",
+          "ostaju jednake",
+          "jednake su otplatnoj kvoti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Anuitet zajma od 100 000 € na 10 godina uz 5 % (jednaki anuiteti, krajem godine) iznosi približno:",
+        "options": [
+          "10 000,00 €",
+          "12 950,46 €",
+          "15 000,00 €",
+          "12 333,33 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam od 30 000 € otplaćuje se 3 godine jednakim otplatnim kvotama uz 10 %. Prvi anuitet je:",
+        "options": [
+          "10 000 €",
+          "13 000 €",
+          "12 063,44 €",
+          "11 000 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ukupne kamate zajma jednake su:",
+        "options": [
+          "\\(\\sum a_k+C_0\\)",
+          "\\(\\sum a_k-C_0\\)",
+          "\\(C_0\\cdot p\\)",
+          "\\(\\frac{C_0}{n}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam 60 000 €, 4 godine, 8 %, jednaki anuiteti. Ostatak duga nakon prve godine je približno:",
+        "options": [
+          "45 000,00 €",
+          "46 684,75 €",
+          "41 884,75 €",
+          "55 200,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz jednake otplatne kvote anuiteti kroz vrijeme:",
+        "options": [
+          "rastu",
+          "padaju",
+          "ostaju jednaki",
+          "prvo rastu pa padaju"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Svaki anuitet sastoji se od otplatne kvote i _______.",
+        "answer": "kamata",
+        "hint": "Iₖ"
+      },
+      {
+        "sentence": "Kamate u k-tom razdoblju računaju se na ostatak _______ s kraja prethodnog razdoblja.",
+        "answer": "duga",
+        "hint": "Cₖ₋₁"
+      },
+      {
+        "sentence": "Zbroj svih otplatnih kvota jednak je iznosu _______.",
+        "answer": "zajma",
+        "hint": "C₀"
+      },
+      {
+        "sentence": "U modelu jednakih anuiteta otplatne kvote iz razdoblja u razdoblje _______.",
+        "answer": "rastu",
+        "hint": "Kamate padaju"
+      },
+      {
+        "sentence": "U modelu jednakih otplatnih kvota kvota iznosi R = C/_______.",
+        "answer": "n",
+        "hint": "Broj razdoblja"
+      },
+      {
+        "sentence": "Zajam od 30 000 € na 3 godine uz 10 % s jednakim otplatnim kvotama ima ukupne kamate od _______ €.",
+        "answer": "6000",
+        "hint": "3000 + 2000 + 1000"
+      },
+      {
+        "sentence": "Tablica s anuitetima, kamatama, kvotama i ostatkom duga zove se _______ tablica.",
+        "answer": "otplatna",
+        "hint": "Plan otplate"
+      }
+    ],
+    "learn": {
+      "title": "Zajam",
+      "content": "<h3>Zajam kao renta s druge strane šaltera</h3><p>Banka danas isplati iznos \\(C=C_0\\), a dužnik ga vraća nizom budućih uplata. Zajam je dakle <strong>sadašnja vrijednost budućih otplata</strong> — ista matematika kao kod renti, s kamatnim faktorom \\(r=1+\\frac{p}{100}\\) i složenim dekurzivnim obračunom.</p><p>Svaka uplata zove se <strong>anuitet</strong> i ima dva dijela:</p><div class=\"formula-box\">\\[a_k=R_k+I_k,\\qquad I_k=\\frac{C_{k-1}\\cdot p}{100},\\qquad C_k=C_{k-1}-R_k.\\]</div><ul><li>\\(I_k\\) — <strong>kamate</strong>, računaju se na ostatak duga s kraja <em>prethodnog</em> razdoblja;</li><li>\\(R_k\\) — <strong>otplatna kvota</strong>, dio koji stvarno smanjuje dug;</li><li>\\(C_k\\) — <strong>ostatak duga</strong> nakon k-tog anuiteta.</li></ul><h3>Model 1 — nominalno jednaki anuiteti</h3><div class=\"formula-box\">\\[a=C\\cdot\\frac{r^n(r-1)}{r^n-1},\\qquad R_k=R_1\\cdot r^{k-1},\\qquad C=a\\cdot\\frac{r^n-1}{r^n(r-1)}.\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> Zajam od 60 000 € na 4 godine uz 8 % godišnjih dekurzivnih kamata, jednaki anuiteti krajem godine.<br>\\(r=1{,}08\\), \\(r^4\\approx1{,}360489\\)<br>\\(a=60\\,000\\cdot\\frac{1{,}360489\\cdot0{,}08}{0{,}360489}\\approx18\\,115{,}25\\) €<table><thead><tr><th>k</th><th>anuitet \\(a\\)</th><th>kamate \\(I_k\\)</th><th>kvota \\(R_k\\)</th><th>ostatak \\(C_k\\)</th></tr></thead><tbody><tr><td>0</td><td></td><td></td><td></td><td>60 000,00</td></tr><tr><td>1</td><td>18 115,25</td><td>4800,00</td><td>13 315,25</td><td>46 684,75</td></tr><tr><td>2</td><td>18 115,25</td><td>3734,78</td><td>14 380,47</td><td>32 304,28</td></tr><tr><td>3</td><td>18 115,25</td><td>2584,34</td><td>15 530,91</td><td>16 773,37</td></tr><tr><td>4</td><td>18 115,24</td><td>1341,87</td><td>16 773,37</td><td>0,00</td></tr><tr><td>Σ</td><td>72 460,99</td><td>12 460,99</td><td>60 000,00</td><td></td></tr></tbody></table>Kontrole: a) zadnja kvota 16 773,37 = ostatak duga nakon 3. godine ✓; b) zbroj kvota = 60 000,00 ✓; c) 60 000,00 + 12 460,99 = 72 460,99 ✓. Zadnji anuitet (18 115,24) korigiran je za cent jer se kvota izjednačava s preostalim dugom.</div><p>Anuitet je stalan, ali mu se sastav mijenja: kamate padaju, kvote rastu (\\(R_2=R_1\\cdot1{,}08=14\\,380{,}47\\) ✓).</p><h3>Model 2 — nominalno jednake otplatne kvote</h3><div class=\"formula-box\">\\[R=\\frac{C}{n},\\quad I_i=\\frac{C_{i-1}\\,p}{100},\\quad a_i=R+I_i,\\quad C_i=C\\left(1-\\frac{i}{n}\\right).\\]</div><div class=\"example-box\"><strong>Primjer 2.</strong> Zajam od 30 000 € na 3 godine uz 10 %, jednake otplatne kvote.<br>\\(R=\\frac{30\\,000}{3}=10\\,000\\) €<table><thead><tr><th>k</th><th>anuitet</th><th>kamate</th><th>kvota</th><th>ostatak</th></tr></thead><tbody><tr><td>0</td><td></td><td></td><td></td><td>30 000</td></tr><tr><td>1</td><td>13 000</td><td>3000</td><td>10 000</td><td>20 000</td></tr><tr><td>2</td><td>12 000</td><td>2000</td><td>10 000</td><td>10 000</td></tr><tr><td>3</td><td>11 000</td><td>1000</td><td>10 000</td><td>0</td></tr><tr><td>Σ</td><td>36 000</td><td>6000</td><td>30 000</td><td></td></tr></tbody></table>Isti zajam s jednakim anuitetima: \\(a\\approx12\\,063{,}44\\) €, ukupne kamate ≈ 6190 € — više, jer se dug na početku sporije smanjuje.</div><div class=\"tip-box\"><strong>Koliko košta zajam?</strong> Ukupne kamate \\(\\sum I_k=\\sum a_k-C_0\\). To je broj koji uspoređuje ponude, neovisno o modelu otplate.</div><div class=\"warning-box\"><strong>Zamke:</strong> kamate se računaju na ostatak duga \\(C_{k-1}\\), ne na početni zajam (osim u prvom retku) · zadnji redak: kvota se uzima jednaka preostalom dugu, pa se zaokruživanje „upije” · u tablici uvijek napiši i redak Σ i sve tri kontrole — na završnom ispitu kontrola tablice nosi posebne bodove · \\(p\\) u \\(\\frac{C_{k-1}p}{100}\\) je u postocima, a \\(r=1+\\frac{p}{100}\\).</div>"
+    }
+  },
+  "gaussJordan": {
+    "name": "Sustavi linearnih jednadžbi — Gauss-Jordanova metoda",
+    "icon": "fa-table-cells",
+    "color": "#64748b",
+    "flashcards": [
+      {
+        "question": "Što je cilj Gauss-Jordanove metode?",
+        "answer": "Sustav zapisati kao proširenu matricu \\([A\\mid b]\\) i elementarnim transformacijama redaka lijevi blok svesti na jediničnu matricu; zadnji stupac je rješenje.",
+        "explanation": "Tada svaki redak glasi xᵢ = broj."
+      },
+      {
+        "question": "Koje su tri elementarne transformacije redaka?",
+        "answer": "1. zamjena dvaju redaka · 2. množenje retka brojem različitim od nule · 3. dodavanje višekratnika jednog retka drugom.",
+        "explanation": "Ne mijenjaju skup rješenja sustava."
+      },
+      {
+        "question": "Smiju li se transformacije primjenjivati na stupce?",
+        "answer": "NE — samo na retke. Redak je jedna jednadžba; stupac sadrži koeficijente jedne nepoznanice u svim jednadžbama.",
+        "explanation": "Operacija na stupcu mijenja sustav."
+      },
+      {
+        "question": "Razlika Gaussove i Gauss-Jordanove metode?",
+        "answer": "Gauss: svođenje na gornju trokutastu matricu pa supstitucija unatrag. Gauss-Jordan: nastavlja do pune jedinične matrice — rješenje se čita izravno.",
+        "explanation": "Iste transformacije, Gauss-Jordan samo ide dalje."
+      },
+      {
+        "question": "Što je stožerni (pivot) element?",
+        "answer": "Vodeća jedinica u retku kojom se poništavaju ostali elementi njezina stupca. Dobiva se zamjenom ili množenjem retka.",
+        "explanation": "Radi se stupac po stupac po dijagonali."
+      },
+      {
+        "question": "Kako prepoznati jedinstveno rješenje?",
+        "answer": "Lijevi blok postane jedinična matrica: \\(x_1=a,\\ x_2=b,\\ x_3=c\\).",
+        "explanation": "Svaka nepoznanica ima svoj stožerni element."
+      },
+      {
+        "question": "Kako prepoznati beskonačno mnogo rješenja?",
+        "answer": "Pojavi se nul-redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\): jedna je nepoznanica slobodna (\\(x_3=t\\in\\mathbb{R}\\)), ostale se izraze pomoću t.",
+        "explanation": "0 = 0 je uvijek istinito."
+      },
+      {
+        "question": "Kako prepoznati da sustav nema rješenja?",
+        "answer": "Pojavi se redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\), \\(k\\neq0\\), tj. \\(0=k\\) — proturječje. Sustav je nerješiv (nekonzistentan).",
+        "explanation": "Nula lijevo i desno = sloboda; nula samo lijevo = nemogućnost."
+      },
+      {
+        "question": "Riješi \\(x+2y=5,\\ 3x-y=1\\) Gauss-Jordanovom metodom.",
+        "answer": "\\(\\left[\\begin{array}{cc|c}1&2&5\\\\3&-1&1\\end{array}\\right]\\sim\\left[\\begin{array}{cc|c}1&0&1\\\\0&1&2\\end{array}\\right]\\Rightarrow x=1,\\ y=2\\).",
+        "explanation": "R₂ − 3R₁, pa R₂ : (−7), pa R₁ − 2R₂."
+      },
+      {
+        "question": "Kako se zapisuje proširena matrica sustava?",
+        "answer": "Koeficijenti uz nepoznanice lijevo (redak = jednadžba, stupac = nepoznanica), desne strane iza okomite crte: \\([A\\mid b]\\).",
+        "explanation": "Nepoznanica koja nedostaje u jednadžbi ima koeficijent 0."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Gauss-Jordanovom metodom lijevi blok proširene matrice svodi se na:",
+        "options": [
+          "nul-matricu",
+          "jediničnu matricu",
+          "gornju trokutastu matricu s dvojkama",
+          "jedan redak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što NIJE elementarna transformacija redaka?",
+        "options": [
+          "zamjena dvaju redaka",
+          "množenje retka brojem različitim od nule",
+          "dodavanje višekratnika jednog retka drugom",
+          "množenje retka nulom"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Gaussova metoda nakon svođenja na gornju trokutastu matricu završava:",
+        "options": [
+          "supstitucijom unatrag",
+          "svođenjem na jediničnu matricu",
+          "transformacijama stupaca",
+          "formulom za kvadratnu jednadžbu"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Elementarne transformacije pri rješavanju sustava primjenjuju se na:",
+        "options": [
+          "samo stupce",
+          "samo retke",
+          "retke i stupce po volji",
+          "samo dijagonalu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\) u reduciranoj matrici znači:",
+        "options": [
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja (slobodna nepoznanica)",
+          "nema rješenja",
+          "grešku u računu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\) uz \\(k\\neq0\\) znači:",
+        "options": [
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja",
+          "sustav nema rješenja",
+          "stožerni element"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Rješenje sustava \\(x+y+z=6,\\ 2x-y+z=3,\\ x+2y-z=2\\) je:",
+        "options": [
+          "\\((1,2,3)\\)",
+          "\\((3,2,1)\\)",
+          "\\((2,1,3)\\)",
+          "\\((1,3,2)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako lijevi blok postane jedinična matrica, sustav ima:",
+        "options": [
+          "nijedno rješenje",
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja",
+          "točno dva rješenja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Za Gauss-Jordanovu metodu sustav se zapisuje kao _______ matrica [A | b].",
+        "answer": "proširena",
+        "hint": "Koeficijenti i desne strane"
+      },
+      {
+        "sentence": "Cilj je lijevi blok svesti na _______ matricu.",
+        "answer": "jediničnu",
+        "hint": "Jedinice na dijagonali, nule drugdje"
+      },
+      {
+        "sentence": "Elementarne transformacije primjenjuju se samo na _______.",
+        "answer": "retke",
+        "hint": "Nikad na stupce"
+      },
+      {
+        "sentence": "Gaussova metoda završava supstitucijom _______.",
+        "answer": "unatrag",
+        "hint": "Od zadnje nepoznanice prema prvoj"
+      },
+      {
+        "sentence": "Redak [0 0 0 | k] uz k ≠ 0 znači da sustav _______ rješenja.",
+        "answer": "nema",
+        "hint": "0 = k"
+      },
+      {
+        "sentence": "Vodeća jedinica kojom se poništava stupac zove se _______ element.",
+        "answer": "stožerni",
+        "hint": "Pivot"
+      }
+    ],
+    "learn": {
+      "title": "Sustavi linearnih jednadžbi — Gauss-Jordanova metoda",
+      "content": "<div class=\"tip-box\"><strong>Napomena o opsegu:</strong> tema je u silabusu istog FMTU kolegija na engleskom (predavanje 11), ali se ne pojavljuje ni na popisu formula za 2. kolokvij 2023/24 ni na pregledanom završnom ispitu. Provjeri kod nastavnika ulazi li u tvoj kolokvij.</div><h3>Ideja: sustav kao tablica brojeva</h3><p>Kad više nepoznanica mora istodobno zadovoljiti više linearnih uvjeta, imamo <strong>sustav linearnih jednadžbi</strong>. Supstitucija je s tri nepoznanice nepregledna. Gauss-Jordanova metoda pretvara rješavanje u mehaničko „knjigovodstvo”: nepoznanice se izostave, ostaju samo brojevi u tablici (<strong>proširenoj matrici</strong>) koju sređujemo stalnim pravilima.</p><div class=\"formula-box\">\\[\\left[\\begin{array}{ccc|c}a_{11}&a_{12}&a_{13}&b_1\\\\a_{21}&a_{22}&a_{23}&b_2\\\\a_{31}&a_{32}&a_{33}&b_3\\end{array}\\right]\\ \\sim\\ \\left[\\begin{array}{ccc|c}1&0&0&a\\\\0&1&0&b\\\\0&0&1&c\\end{array}\\right]\\ \\Rightarrow\\ x_1=a,\\ x_2=b,\\ x_3=c.\\]</div><h3>Tri dopuštene transformacije</h3><ul><li><strong>zamjena</strong> dvaju redaka;</li><li><strong>množenje</strong> retka brojem različitim od nule;</li><li><strong>dodavanje višekratnika</strong> jednog retka drugom retku.</li></ul><p>To su upravo dopuštene operacije s jednadžbama (promijeni redoslijed, pomnoži, zbroji), pa ne mijenjaju rješenje. Radi se <strong>stupac po stupac</strong>: na dijagonali se napravi 1 (stožerni element), a zatim se njime ponište svi ostali elementi u tom stupcu. Transformacije se primjenjuju <strong>samo na retke</strong> — stupac drži koeficijente jedne nepoznanice u svim jednadžbama, pa bi njegovo mijenjanje promijenilo sustav.</p><div class=\"example-box\"><strong>Primjer 1.</strong> \\(x+y+z=6,\\ 2x-y+z=3,\\ x+2y-z=2\\).<br>\\(\\left[\\begin{array}{ccc|c}1&1&1&6\\\\2&-1&1&3\\\\1&2&-1&2\\end{array}\\right]\\xrightarrow[R_3-R_1]{R_2-2R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&-3&-1&-9\\\\0&1&-2&-4\\end{array}\\right]\\)<br>Zamijeni R₂ i R₃ (da stožer bude 1):<br>\\(\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&-2&-4\\\\0&-3&-1&-9\\end{array}\\right]\\xrightarrow[R_3+3R_2]{R_1-R_2}\\left[\\begin{array}{ccc|c}1&0&3&10\\\\0&1&-2&-4\\\\0&0&-7&-21\\end{array}\\right]\\)<br>\\(R_3:(-7)\\Rightarrow[\\,0\\ 0\\ 1\\mid3\\,]\\), zatim \\(R_1-3R_3\\), \\(R_2+2R_3\\):<br>\\(\\left[\\begin{array}{ccc|c}1&0&0&1\\\\0&1&0&2\\\\0&0&1&3\\end{array}\\right]\\Rightarrow x=1,\\ y=2,\\ z=3\\)<br>Provjera u 2. jednadžbi: \\(2-2+3=3\\) ✓</div><h3>Gauss ili Gauss-Jordan</h3><p><strong>Gaussova metoda</strong> staje kod gornje trokutaste matrice (nule ispod dijagonale), pa se rješenje dobiva <strong>supstitucijom unatrag</strong>: zadnji redak daje zadnju nepoznanicu, koja se uvrštava prema gore. <strong>Gauss-Jordanova</strong> ide do kraja — ponište se i elementi iznad dijagonale, pa se rješenje samo pročita.</p><h3>Tri moguća ishoda</h3><table><thead><tr><th>Reducirana matrica</th><th>Ishod</th></tr></thead><tbody><tr><td>jedinična matrica lijevo</td><td>jedinstveno rješenje</td></tr><tr><td>redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\)</td><td>beskonačno mnogo rješenja (slobodna nepoznanica \\(t\\in\\mathbb{R}\\))</td></tr><tr><td>redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\), \\(k\\neq0\\)</td><td>nema rješenja (proturječje \\(0=k\\))</td></tr></tbody></table><div class=\"warning-box\"><strong>Zamke:</strong> transformacija stupaca · množenje retka nulom · zaboravljen desni stupac pri transformaciji retka · krivo čitanje nul-retka (nula na obje strane = beskonačno rješenja, nula samo lijevo = nema rješenja) · nepoznanica koja nedostaje u jednadžbi upisuje se kao 0, ne preskače se.</div>"
+    }
+  }
+}

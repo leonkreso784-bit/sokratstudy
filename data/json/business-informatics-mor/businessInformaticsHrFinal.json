@@ -1,0 +1,1574 @@
+{
+  "systemApproach": {
+    "id": "xbpmhh",
+    "name": "Sustavni pristup i informatika",
+    "icon": "fa-sitemap",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "agrq0w",
+        "question": "Što je sustavni pristup?",
+        "answer": "Pogled utemeljen na ideji da je sve međusobno povezano i međuovisno.\nSustav se sastoji od međusobno povezanih i ovisnih elemenata koji, u međudjelovanju, tvore jedinstvenu cjelinu — sklop ili kombinaciju dijelova koji čine složenu cjelinu.",
+        "explanation": "Cjelina se razumijeva kroz odnose između njezinih dijelova."
+      },
+      {
+        "id": "lg4695",
+        "question": "Koji su glavni koncepti sustavnog pristupa (Dinesh Thakur)?",
+        "answer": "• Holizam\n• Specijalizacija\n• Nesumativnost\n• Grupiranje\n• Koordinacija\n• Emergentna svojstva",
+        "explanation": "Ovih šest koncepata određuje kako se sustav ponaša kao cjelina."
+      },
+      {
+        "id": "icg01j",
+        "question": "Što znači „holizam\" u sustavnom pristupu?",
+        "answer": "Promjena bilo kojeg dijela/komponente sustava utječe na cijeli sustav, izravno ili neizravno.",
+        "explanation": "Nije moguće promijeniti jedan dio izolirano od ostalih."
+      },
+      {
+        "id": "6plgp7",
+        "question": "Što znači „nesumativnost\"?",
+        "answer": "Svaka komponenta (podsustav) važna je za cjelinu, stoga je potrebno razumjeti djelovanje svake komponente kako bi se stekla holistička perspektiva. Cjelina nije jednostavno zbroj svojih dijelova.",
+        "explanation": "Razumijevanje pojedinih dijelova nije dovoljno."
+      },
+      {
+        "id": "yimjsf",
+        "question": "Što su „emergentna svojstva\"?",
+        "answer": "Skupina međusobno povezanih komponenti posjeduje, kao cjelina, svojstva koja nisu prisutna ni u jednoj pojedinačnoj komponenti.\nPrimjer: višestanični organizmi pokazuju karakteristike koje nisu prisutne u pojedinim stanicama.",
+        "explanation": "To je bit holističkog pogleda."
+      },
+      {
+        "id": "k8kms1",
+        "question": "Koja su četiri ključna elementa sustava u ugostiteljskoj industriji?",
+        "answer": "• Ulazni elementi — resursi: radna snaga, oprema, sirovine (npr. sastojci hrane)\n• Procesi — aktivnosti kojima se ulazni elementi pretvaraju u izlazne (kuhanje, čišćenje, usluga gostima)\n• Izlazni elementi — isporučene usluge/proizvodi (iskustvo objedovanja, smještaj)\n• Povratna veza — informacije od gostiju/osoblja koje se koriste za unapređenje budućeg poslovanja",
+        "explanation": "Ulazni elementi → Procesi → Izlazni elementi, pri čemu povratna veza zatvara krug."
+      },
+      {
+        "id": "luwmaq",
+        "question": "Što karakterizira sustav u ugostiteljstvu?",
+        "answer": "• Međuovisnost — svi dijelovi ovise jedni o drugima (problem u kuhinji utječe na uslugu hrane)\n• Holistički pogled — odluke u jednom području utječu na cijelu organizaciju\n• Sinergija — kada dijelovi djeluju zajedno, ukupna učinkovitost premašuje zbroj učinkovitosti pojedinih dijelova",
+        "explanation": "Sinergija je praktična korist sustavskog pristupa."
+      },
+      {
+        "id": "q1e4ox",
+        "question": "Što je sustavsko mišljenje i tko ga je utemeljio?",
+        "answer": "Holistički način istraživanja čimbenika i interakcija koji mogu doprinijeti određenom ishodu — više način razmišljanja nego propisana praksa.\nUtemeljio ga je 1956. godine profesor MIT-a Jay Forrester.",
+        "explanation": "Pomaže sagledati širu sliku i razumjeti kako struktura utječe na učinkovitost."
+      },
+      {
+        "id": "kn1njl",
+        "question": "Po čemu se sustavno mišljenje razlikuje od tradicionalne analize?",
+        "answer": "Tradicionalna analiza rastavlja predmet proučavanja na odvojene, pojedinačne dijelove.\nSustavno mišljenje umjesto toga usredotočuje se na međusobne odnose dijelova i na cjelinu.",
+        "explanation": "„Analiza\" doslovno znači rastavljanje na sastavne dijelove; sustavno mišljenje čini suprotno."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "nycmq4",
+        "question": "Sustavni pristup temelji se na ideji da su elementi:",
+        "options": [
+          "Neovisni i odvojeni",
+          "Međusobno povezani i međuovisni",
+          "Uvijek identični",
+          "Nepovezani"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jck8nz",
+        "question": "Što NIJE temeljni pojam sustavnog pristupa?",
+        "options": [
+          "Holizam",
+          "Specijalizacija",
+          "Emergentna svojstva",
+          "Randomizacija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "mgmayv",
+        "question": "U ugostiteljskom sustavu, kuhanje, čišćenje i usluga gostima primjeri su:",
+        "options": [
+          "Ulaza",
+          "Procesa",
+          "Izlaza",
+          "Povratne veze"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "b6j359",
+        "question": "Sustavno razmišljanje utemeljio je 1956. godine:",
+        "options": [
+          "Albert Einstein",
+          "Jay Forrester",
+          "Dinesh Thakur",
+          "Marie Morganelli"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "tfaog5",
+        "question": "„Učinak cjeline veći je od zbroja njezinih dijelova\" opisuje:",
+        "options": [
+          "Međuovisnost",
+          "Sinergija",
+          "Specijalizacija",
+          "Povratna veza"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "qi5mqu",
+        "sentence": "Sustav se sastoji od međusobno povezanih i ovisnih elemenata koji u međudjelovanju tvore _______ cjelinu.",
+        "answer": "jedinstvenu",
+        "hint": "Jedinstven / objedinjen."
+      },
+      {
+        "id": "1dsepg",
+        "sentence": "U sustavskom pristupu, _______ znači da promjena u jednom dijelu utječe na cijeli sustav.",
+        "answer": "holizam",
+        "hint": "Koncept „cjeline\"."
+      },
+      {
+        "id": "q1vj7t",
+        "sentence": "U ugostiteljstvu, resursi kao što su radna snaga, oprema i prehrambeni sastojci predstavljaju _______ sustava.",
+        "answer": "ulazi",
+        "hint": "Ono što ulazi u proces."
+      },
+      {
+        "id": "e7xxn6",
+        "sentence": "_______ razmišljanje je holistički način istraživanja čimbenika i interakcija koje doprinose određenom ishodu.",
+        "answer": "sustavno",
+        "hint": "Utemeljio Jay Forrester."
+      }
+    ],
+    "learn": {
+      "id": "lp5da7",
+      "content": "\n        <h3>Sustavni pristup &amp; Informatika</h3>\n        <p><strong>Sustavni pristup</strong> temelji se na generalizaciji da je sve međusobno povezano i međuovisno. <em>Sustav</em> je kombinacija međusobno povezanih i ovisnih elemenata koji u međudjelovanju tvore jedinstvenu cjelinu.</p>\n\n        <h4>Ključni pojmovi (Dinesh Thakur)</h4>\n        <ul>\n          <li><strong>Holizam</strong> — promjena bilo kojeg dijela utječe na cjelinu.</li>\n          <li><strong>Specijalizacija</strong> — cjelina se dijeli na manje komponente, od kojih svaka ima specijaliziranu ulogu.</li>\n          <li><strong>Nesumativnost</strong> — svaka je komponenta važna; cjelina nije tek zbroj svojih dijelova.</li>\n          <li><strong>Grupiranje</strong> — srodne se komponente grupiraju radi upravljanja složenošću.</li>\n          <li><strong>Koordinacija</strong> — grupirane komponente moraju biti koordinirane kako bi se izbjegao kaos.</li>\n          <li><strong>Emergentna svojstva</strong> — skupina posjeduje svojstva koja niti jedna pojedinačna komponenta nema.</li>\n        </ul>\n\n        <h4>Sustav u ugostiteljskoj industriji</h4>\n        <p>Ugostiteljska organizacija jedinstvena je cjelina u kojoj je svaki odjel međuovisan:</p>\n        <ul>\n          <li><strong>Ulazi</strong> — radna snaga, oprema, sirovine (npr. prehrambeni sastojci).</li>\n          <li><strong>Procesi</strong> — kuhanje, čišćenje, usluga gostima.</li>\n          <li><strong>Izlazi</strong> — doživljaj restoranskog objedovanja, smještaj.</li>\n          <li><strong>Povratna informacija</strong> — informacije od gostiju/osoblja u svrhu unapređenja poslovanja.</li>\n        </ul>\n        <p>Ključne karakteristike: <strong>međuovisnost</strong>, <strong>holistički pogled</strong> i\n        <strong>sinergija</strong> (cjelina funkcionira bolje od zbroja svojih dijelova).</p>\n\n        <h4>Sustavno mišljenje</h4>\n        <p><strong>Sustavno mišljenje</strong> holistički je način istraživanja čimbenika i interakcija koje doprinose određenom ishodu — više način razmišljanja nego praksa. Utemeljio ga je 1956. godine profesor MIT-a <strong>Jay Forrester</strong>. Koristi se za ispitivanje načina na koji sami stvaramo vlastite probleme, za sagledavanje šire slike te za razumijevanje načina na koji struktura utječe na učinkovitost.</p>\n        <p>Za razliku od <em>tradicionalne analize</em> (koja stvari rastavlja na odvojene dijelove), sustavno mišljenje usredotočuje se na to kako su dijelovi <strong>međusobno povezani</strong>.</p>\n      ",
+      "image": null
+    }
+  },
+  "dataInfoKnowledge": {
+    "id": "j0x5s4",
+    "name": "Podatci, informacije i znanje",
+    "icon": "fa-database",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "y5y2wg",
+        "question": "Što su podatci?",
+        "answer": "Sirove činjenice i brojke koje same po sebi nemaju značenje. Podaci mogu biti bilo koji alfanumerički znakovi — tekst, brojevi ili simboli.\nPrimjer: „15012002\", „23\", „English\" ne znače ništa bez konteksta.",
+        "explanation": "Podaci nemaju značenje sve dok im se ne dodijeli kontekst i dok se ne obrade."
+      },
+      {
+        "id": "911f5u",
+        "question": "Što je informacija?",
+        "answer": "Podaci koji su obrađeni unutar određenog konteksta kako bi dobili značenje, prikazani u korisnom obliku.\nPrimjer: „Datum rođenja Maje je 15/01/02\" ili „Računalo košta $1066\".",
+        "explanation": "Kontekst + obrada pretvaraju podatke u informaciju."
+      },
+      {
+        "id": "7xsmz0",
+        "question": "Što je znanje?",
+        "answer": "Sposobnost tumačenja informacija i njihove primjene u rješavanju problema ili donošenju odluka — razumijevanje pravila potrebnih za interpretaciju informacija.",
+        "explanation": "Debbie Jones: razumijevanje odnosa između pojedinih informacija i znanje što s njima učiniti."
+      },
+      {
+        "id": "ejf08s",
+        "question": "Kako podaci postaju informacija?",
+        "answer": "Podaci moraju biti obrađeni unutar određenog konteksta kako bi dobili značenje, a zatim prikazani u najprikladnijem obliku.",
+        "explanation": "Bez konteksta, podaci ostaju besmisleni."
+      },
+      {
+        "id": "we2b97",
+        "question": "Navedite primjere PODATAKA iz hotelske industrije.",
+        "answer": "• Jučer se prijavilo 100 gostiju\n• Prosječna cijena sobe iznosi $150\n• Restoran je prošlog tjedna prodao 250 odrezaka",
+        "explanation": "Sirovi brojevi/činjenice, još uvijek neinterpretirani."
+      },
+      {
+        "id": "vd5mh6",
+        "question": "Navedite primjere INFORMACIJA iz hotelske industrije.",
+        "answer": "• Najpopularniji tip sobe je deluxe suite\n• Najzauzetiji dan u tjednu je petak\n• Stopa popunjenosti u srpnju iznosila je 85%",
+        "explanation": "Obrađeni i organizirani podaci."
+      },
+      {
+        "id": "chnqts",
+        "question": "Navedite primjere ZNANJA iz hotelske industrije.",
+        "answer": "• Predviđanje visoke potražnje za sobama ljeti na temelju stopa popunjenosti\n• Raspoređivanje dodatnog osoblja na najzauzetiji dan\n• Korištenje preferencija gostiju radi poboljšanja iskustva gostiju",
+        "explanation": "Interpretacija informacija u svrhu donošenja odluka."
+      },
+      {
+        "id": "59dwi4",
+        "question": "Kakav je odnos Podaci → Informacije → Znanje?",
+        "answer": "Podaci (sirove činjenice) → obrađeni unutar konteksta → Informacije (smislene) → interpretirane i primijenjene → Znanje (odluke, rješavanje problema).",
+        "explanation": "Svaka faza dodaje značenje i korisnost."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "grvj50",
+        "question": "Sirove činjenice i brojke koje same po sebi nemaju značenje nazivaju se:",
+        "options": [
+          "Informacija",
+          "Podatak",
+          "Znanje",
+          "Mudrost"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "uxh8bf",
+        "question": "„Stopa popunjenosti hotela u srpnju iznosila je 85%\" primjer je:",
+        "options": [
+          "Podatka",
+          "Informacije",
+          "Znanja",
+          "Šuma (buke)"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "txr7tk",
+        "question": "Sposobnost tumačenja informacija i njihove primjene u donošenju odluka jest:",
+        "options": [
+          "Podatak",
+          "Informacija",
+          "Znanje",
+          "Unos"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "sdch7y",
+        "question": "Podaci postaju informacija kada su:",
+        "options": [
+          "Izbrisani",
+          "Obrađeni unutar konteksta",
+          "Pohranjeni na disku",
+          "Šifrirani"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "drbxam",
+        "question": "„Predviđanje visoke potražnje za sobama ljeti na temelju stopa popunjenosti\" primjer je:",
+        "options": [
+          "Podataka",
+          "Informacije",
+          "Znanja",
+          "Povratne informacije"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "hqizn6",
+        "sentence": "_______ su sirove činjenice i brojevi koji sami po sebi nemaju značenje.",
+        "answer": "podaci",
+        "hint": "Sirove činjenice i brojevi."
+      },
+      {
+        "id": "im71d0",
+        "sentence": "Informacija je podatak koji je obrađen unutar određenog _______ kako bi dobio značenje.",
+        "answer": "kontekst",
+        "hint": "Situacija koja daje značenje."
+      },
+      {
+        "id": "5y8kqx",
+        "sentence": "_______ je sposobnost tumačenja informacija i njihove primjene u rješavanju problema.",
+        "answer": "znanje",
+        "hint": "Dolazi nakon informacije."
+      },
+      {
+        "id": "sxagsj",
+        "sentence": "„Jučer se prijavilo 100 gostiju\" primjer je _______ u hotelskoj industriji.",
+        "answer": "podaci",
+        "hint": "Sirova činjenica."
+      }
+    ],
+    "learn": {
+      "id": "81ovnt",
+      "content": "\n        <h3>Podatci, Informacije &amp; Znanje</h3>\n        <h4>Podatci</h4>\n        <p><strong>Podatci</strong> su sirove činjenice i brojke (tekst, brojevi, simboli) koji sami po sebi\n        <em>nemaju značenje</em> — npr. <code>15012002</code>, <code>23</code>, „English\".</p>\n        <h4>Informacije</h4>\n        <p><strong>Informacija</strong> je podatak obrađen unutar određenog <strong>konteksta</strong> kako bi dobio\n        značenje i bio korisno prikazan — npr. „Datum rođenja Maje je 15/01/02\".</p>\n        <h4>Znanje</h4>\n        <p><strong>Znanje</strong> je sposobnost tumačenja informacija i njihove primjene u rješavanju\n        problema ili donošenju odluka (razumijevanje pravila potrebnih za interpretaciju informacija).</p>\n        <h4>Primjer iz hotelske industrije</h4>\n        <ul>\n          <li><strong>Podatci:</strong> jučer se prijavilo 100 gostiju; prosječna cijena sobe $150.</li>\n          <li><strong>Informacije:</strong> najzauzetiji dan je petak; popunjenost u srpnju iznosila je 85%.</li>\n          <li><strong>Znanje:</strong> očekuje se velika potražnja ljeti → rasporediti više osoblja.</li>\n        </ul>\n        <div class=\"tip-box\"><strong>Lanac:</strong> Podatci → (kontekst + obrada) → Informacije → (interpretacija) → Znanje.</div>\n      ",
+      "image": null
+    }
+  },
+  "hardware": {
+    "id": "v1fh8c",
+    "name": "Sklopovlje",
+    "icon": "fa-microchip",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "y6v6kv",
+        "question": "Što je računalno sklopovlje?",
+        "answer": "Fizički uređaji koji čine računalo. Računalo je sustav sastavljen od nekoliko komponenti koje zajedno funkcioniraju kao cjelina.",
+        "explanation": "Opipljivi dijelovi, za razliku od programske podrške (uputa za rad)."
+      },
+      {
+        "id": "x5l92y",
+        "question": "Koje su tipične glavne komponente računala?",
+        "answer": "• Središnja procesorska jedinica (CPU)\n• Glavna memorija (RAM)\n• Uređaji za sekundarnu pohranu podataka\n• Ulazni i izlazni uređaji",
+        "explanation": "Sve navedene komponente zajedno funkcioniraju kao jedan sustav."
+      },
+      {
+        "id": "w4byvn",
+        "question": "Što je CPU i zašto je važan?",
+        "answer": "Dio računala koji stvarno izvršava programe — najvažnija komponenta; bez nje nije moguće pokrenuti programsku podršku. CPU-ovi smješteni na malim čipovima nazivaju se mikroprocesori.",
+        "explanation": "Izvršava upute i upravlja tokom podataka."
+      },
+      {
+        "id": "939r92",
+        "question": "Što je RAM (glavna memorija)?",
+        "answer": "Mjesto gdje računalo pohranjuje program dok se izvodi i podatke koje koristi; procesor mu pristupa brzo. RAM je nestalan — njegov sadržaj se briše kada se računalo isključi (privremena pohrana).",
+        "explanation": "Nestalan = gubi se bez napajanja."
+      },
+      {
+        "id": "eb012v",
+        "question": "Što je sekundarna pohrana i čemu služi?",
+        "answer": "Pohrana koja čuva podatke dulje vremensko razdoblje. Programi se obično pohranjuju ovdje, a zatim se po potrebi učitavaju u glavnu memoriju.",
+        "explanation": "Trajna pohrana, za razliku od RAM-a."
+      },
+      {
+        "id": "oqjg1y",
+        "question": "Navedite vrste sekundarne pohrane.",
+        "answer": "• Disk (HDD) — magnetski rotirajući disk\n• Solid State Drive (SSD) — brži, bez pokretnih dijelova\n• Flash memorija — prenosiva, npr. USB pogon\n• Optički uređaji — CD, DVD, Blu-ray",
+        "explanation": "SSD je brži od mehaničkog disk pogona."
+      },
+      {
+        "id": "phm744",
+        "question": "Što su ulazni uređaji?",
+        "answer": "Komponente koje prikupljaju podatke od korisnika ili drugih uređaja — npr. tipkovnica, miš, zaslon osjetljiv na dodir, skener, kamera. Disk pogoni mogu djelovati kao ulaz (učitavaju programe u glavnu memoriju).",
+        "explanation": "Ulaz = podaci koje računalo prikuplja."
+      },
+      {
+        "id": "cci2hl",
+        "question": "Što su izlazni uređaji?",
+        "answer": "Komponente koje oblikuju i prikazuju izlazne podatke (tekst, sliku, zvuk) — npr. zaslon, pisač. Diskovni pogoni i USB pogoni mogu djelovati kao izlazni uređaji jer se podaci šalju na njih radi pohrane.",
+        "explanation": "Izlaz = podaci koje računalo proizvodi."
+      },
+      {
+        "id": "ek1m8s",
+        "question": "Kako su sklopovlje i programska oprema međusobno povezani?",
+        "answer": "Oni su komplementarni: računalni uređaj radi učinkovito i proizvodi korisne izlazne podatke samo kada sklopovlje i programska oprema rade zajedno.",
+        "explanation": "Ni jedno ni drugo nije korisno samo za sebe."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "d4hmc7",
+        "question": "Najvažnija komponenta, koja zapravo izvršava programe, jest:",
+        "options": [
+          "RAM",
+          "CPU",
+          "SSD",
+          "Monitor"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "w8nh6u",
+        "question": "RAM se opisuje kao _______ memorija (njezin sadržaj briše se kada je napajanje isključeno):",
+        "options": [
+          "Trajna",
+          "Hlapljiva",
+          "Optička",
+          "Sekundarna"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "s5sqac",
+        "question": "Koji od navedenih primjera predstavlja sekundarnu pohranu?",
+        "options": [
+          "CPU",
+          "RAM",
+          "SSD",
+          "Tipkovnica"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "6wxz9v",
+        "question": "Tipkovnica je primjer:",
+        "options": [
+          "Izlazni uređaj",
+          "Ulazni uređaj",
+          "Uređaj za pohranu",
+          "Procesor"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "9j4f1m",
+        "question": "Koja sekundarna pohrana nema pokretnih dijelova i brža je od diskovnog pogona?",
+        "options": [
+          "HDD",
+          "SSD",
+          "CD",
+          "Disketni pogon"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "06aalw",
+        "sentence": "_______ je komponenta koja stvarno izvršava programe i najvažniji je dio računala.",
+        "answer": "CPU",
+        "hint": "Središnja procesna jedinica."
+      },
+      {
+        "id": "wo1ljs",
+        "sentence": "RAM je _______ memorija, što znači da se njezin sadržaj briše kada se računalo isključi.",
+        "answer": "hlapljiva",
+        "hint": "Gubi sadržaj bez napajanja."
+      },
+      {
+        "id": "iker3i",
+        "sentence": "Uređaj _______ prikuplja podatke od korisnika, npr. tipkovnica ili miš.",
+        "answer": "ulazni",
+        "hint": "Suprotno od izlaza."
+      },
+      {
+        "id": "v9mw2y",
+        "sentence": "_______ (bez pokretnih dijelova) brži je od magnetskog diskovnog pogona.",
+        "answer": "SSD",
+        "hint": "Solid State Drive."
+      }
+    ],
+    "learn": {
+      "id": "eee2o3",
+      "content": "\n        <h3>Sklopovlje</h3>\n        <p><strong>Sklopovlje</strong> su fizički uređaji koji čine računalo. Računalo je\n        sustav komponenti koje zajedno funkcioniraju.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>CPU</strong> — izvršava programe; najvažnija komponenta (mikroprocesor na čipu).</li>\n          <li><strong>Glavna memorija (RAM)</strong> — brza, privremena pohrana za pokrenute programe i podatke; <em>hlapljiva</em> (briše se pri isključivanju).</li>\n          <li><strong>Sekundarna pohrana</strong> — dugotrajna: HDD (magnetski), SSD (brz, bez pokretnih dijelova), flash/USB, optička (CD/DVD/Blu-ray).</li>\n          <li><strong>Ulazni / izlazni uređaji</strong> — ulazni: tipkovnica, miš, skener; izlazni: zaslon, pisač.</li>\n        </ul>\n        <p>Sklopovlje i programska oprema <strong>komplementarni</strong> su — uređaj je koristan samo kada oboje rade zajedno.</p>\n      ",
+      "image": null
+    }
+  },
+  "software": {
+    "id": "fxljlm",
+    "name": "Programska oprema",
+    "icon": "fa-code",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "ckkwlu",
+        "question": "Što je programska oprema?",
+        "answer": "Skup uputa, podataka ili programa koji se koriste za upravljanje računalom i izvršavanje određenih zadataka — programska oprema govori računalu kako da funkcionira. To je opći pojam za aplikacije, skripte i programe.",
+        "explanation": "Bez programske opreme većina računala bila bi beskorisna."
+      },
+      {
+        "id": "g9hdxr",
+        "question": "Koje su dvije glavne vrste programske opreme?",
+        "answer": "1. Sistemski softver\n2. Aplikacijski softver",
+        "explanation": "Sistemski softver pokreće računalo; aplikacijski softver služi korisniku."
+      },
+      {
+        "id": "zv0o6k",
+        "question": "Što je aplikacijski softver?",
+        "answer": "Softver koji krajnjem korisniku pomaže u obavljanju zadataka (istraživanje, bilješke, grafika, računovodstvo). Nalazi se iznad sistemskog softvera, namijenjen je krajnjem korisniku i specifičan je po funkcionalnosti (ponekad se naziva „neesencijalni\" softver).",
+        "explanation": "Instalira se i koristi prema potrebama korisnika."
+      },
+      {
+        "id": "n0cbeo",
+        "question": "Navedite vrste/primjere aplikacijskog softvera.",
+        "answer": "• Tekstualni procesori — MS Word, Google Docs\n• Proračunske tablice — Excel, Google Sheets\n• Baze podataka (DBMS) — MySQL, FileMaker\n• Multimedija — Adobe Photoshop\n• Uredski paketi — Microsoft Office\n• Preglednici — Chrome\n• E-pošta — Outlook, Gmail",
+        "explanation": "Svaki je namijenjen određenom zadatku krajnjeg korisnika."
+      },
+      {
+        "id": "d1qd3u",
+        "question": "Što je sistemski softver?",
+        "answer": "Softver koji omogućuje interakciju između korisnika, sklopovlja i aplikacijskog softvera — posrednički/srednji sloj između korisnika i sklopovlja. Upravlja cjelokupnim sustavom, prvi se učitava pri pokretanju računala i radi u pozadini (krajnji ga korisnici ne koriste izravno).",
+        "explanation": "Esencijalan je, za razliku od „neesencijalnog\" aplikacijskog softvera."
+      },
+      {
+        "id": "t0fwi9",
+        "question": "Što je operacijski sustav (OS)?",
+        "answer": "Sistemski softver koji služi kao sučelje između ostalih aplikacija i sklopovlja, upravljajući svim ostalim programima u računalu.",
+        "explanation": "Najpoznatiji primjer sistemskog softvera."
+      },
+      {
+        "id": "6adojq",
+        "question": "Navedite primjere sistemskog softvera (osim operacijskog sustava).",
+        "answer": "• BIOS — ugrađeni firmware: što računalo može učiniti bez programa na disku\n• Boot — učitava operacijski sustav u RAM\n• Asembler — pretvara osnovne instrukcije u bitove koje procesor koristi\n• Upravljački program uređaja — upravlja uređajem (npr. tipkovnicom, mišem)",
+        "explanation": "Svi rade u pozadini kako bi upravljali sustavom."
+      },
+      {
+        "id": "up749g",
+        "question": "Po čemu se softver i sklopovlje razlikuju?",
+        "answer": "Softver je logičke prirode (skup instrukcija koji omogućuje interakciju), dok je sklopovlje fizičke prirode (uređaji koji pohranjuju i izvršavaju softver). Kvar softvera je sustavan i softver se ne troši (iako mogu nastati programske pogreške); kvar sklopovlja je slučajan i sklopovlje se s vremenom fizički troši.",
+        "explanation": "Međusobno se nadopunjuju, ali po svojoj su naravi različiti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "j09lvg",
+        "question": "Softver se najbolje opisuje kao:",
+        "options": [
+          "Fizički uređaji",
+          "Skup instrukcija koje računalu govore što treba učiniti",
+          "Vrsta procesora (CPU)",
+          "Mreža"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "vl7vih",
+        "question": "Dvije glavne vrste softvera su:",
+        "options": [
+          "Ulaz i izlaz",
+          "Sistemski i aplikacijski",
+          "RAM i ROM",
+          "LAN i WAN"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "84lkge",
+        "question": "Microsoft Excel i Google Docs primjeri su:",
+        "options": [
+          "Sistemski softver",
+          "Aplikacijski softver",
+          "Firmware",
+          "Upravljački programi uređaja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jvsr4z",
+        "question": "Što djeluje kao sučelje između aplikacija i sklopovlja?",
+        "options": [
+          "Proračunska tablica",
+          "Operacijski sustav",
+          "Preglednik",
+          "NIC"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "m8ctv9",
+        "question": "Što je primjer sistemskog softvera?",
+        "options": [
+          "Adobe Photoshop",
+          "Operacijski sustav",
+          "Microsoft Word",
+          "Google Chrome"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "x4tak7",
+        "sentence": "_______ je skup uputa koji računalu govori kako funkcionirati.",
+        "answer": "softver",
+        "hint": "Suprotnost od hardvera."
+      },
+      {
+        "id": "jw3g8j",
+        "sentence": "_______ softver pomaže krajnjem korisniku u izvršavanju zadataka poput pisanja dokumenata ili uređivanja fotografija.",
+        "answer": "aplikacijski",
+        "hint": "Nalazi se iznad sistemskog softvera."
+      },
+      {
+        "id": "pxftab",
+        "sentence": "_______ sustav je sistemski softver koji upravlja svim programima i komunicira s hardverom.",
+        "answer": "operacijski",
+        "hint": "OS."
+      },
+      {
+        "id": "57k2y5",
+        "sentence": "_______ je ugrađeni firmware koji određuje što računalo može učiniti bez pristupa programima s diska.",
+        "answer": "BIOS",
+        "hint": "Basic Input/Output System."
+      }
+    ],
+    "learn": {
+      "id": "4woqud",
+      "content": "\n        <h3>Softver</h3>\n        <p><strong>Softver</strong> je skup uputa, podataka ili programa koji se koriste za upravljanje\n        računalom i izvršavanje zadataka — govori računalu kako da funkcionira. Postoje dvije glavne vrste:</p>\n        <h4>Aplikacijski softver</h4>\n        <p>Pomaže <strong>krajnjem korisniku</strong> u izvršavanju zadataka; nalazi se iznad sistemskog softvera. Primjeri:\n        tekstualni procesori (Word), proračunske tablice (Excel), baze podataka (MySQL), multimedija (Photoshop),\n        paketi (MS Office), preglednici (Chrome), e-pošta (Outlook).</p>\n        <h4>Sistemski softver</h4>\n        <p><strong>Srednji sloj</strong> između korisnika i hardvera; upravlja cjelokupnim sustavom\n        i izvodi se u pozadini. Primjeri: <strong>OS</strong> (sučelje prema hardveru), BIOS, Boot,\n        Assembler, upravljački programi uređaja.</p>\n        <h4>Softver nasuprot hardveru</h4>\n        <ul>\n          <li>Softver je <strong>logičan</strong> (upute); hardver je <strong>fizički</strong> (uređaji).</li>\n          <li>Kvar softvera je sustavan i softver se ne troši; kvar hardvera je slučajan i hardver se troši.</li>\n        </ul>\n      ",
+      "image": null
+    }
+  },
+  "networks": {
+    "id": "mw807i",
+    "name": "Računalne mreže",
+    "icon": "fa-network-wired",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "30sxs2",
+        "question": "Što je računalna mreža?",
+        "answer": "Dva ili više računala međusobno povezanih radi dijeljenja podataka, resursa i aplikacija.",
+        "explanation": "Mreže se klasificiraju prema veličini i funkciji."
+      },
+      {
+        "id": "ghi7ck",
+        "question": "Koje su glavne vrste mreža prema veličini?",
+        "answer": "• LAN — Local Area Network\n• PAN — Personal Area Network\n• MAN — Metropolitan Area Network\n• WAN — Wide Area Network\n• GAN — Global Area Network",
+        "explanation": "Razlikuju se prema geografskom dosegu."
+      },
+      {
+        "id": "g42uy2",
+        "question": "Što je LAN?",
+        "answer": "Local Area Network — računala međusobno povezana na ograničenom području (stan, ured) putem komunikacijskih uređaja kao što su kabeli, usmjerivači i preklopnici.",
+        "explanation": "Najmanji uobičajeni poslovni tip mreže."
+      },
+      {
+        "id": "qoxzyk",
+        "question": "Što je PAN?",
+        "answer": "Personal Area Network — mreža vrlo kratkog dosega (~10–30 m) namijenjena osobnim uređajima: prijenosnom računalu, pametnom telefonu, igraćim konzolama i gadgetima. Može biti žična ili bežična.",
+        "explanation": "Usredotočena je na jednu osobu."
+      },
+      {
+        "id": "wzzkj8",
+        "question": "Što je MAN?",
+        "answer": "Mreža metropolitanskog područja (MAN) — pokriva veliko geografsko područje (npr. grad) međusobnim povezivanjem nekoliko LAN-ova, često putem tehnologije telefonske komunikacije.",
+        "explanation": "Veća od LAN-a, manja od WAN-a."
+      },
+      {
+        "id": "9gin74",
+        "question": "Što je WAN, a što je GAN?",
+        "answer": "WAN (Wide Area Network) pokriva veliko geografsko područje (npr. cijeli grad/regiju), često koristeći infrastrukturu mobilnih operatera.\nGAN (Global Area Network) pokriva cijelu državu ili cijeli svijet — „mreža mreža\" (satelitska/bežična).",
+        "explanation": "WAN = široko područje; GAN = globalno područje."
+      },
+      {
+        "id": "qkak7o",
+        "question": "Navedite glavne mrežne uređaje (čvorove).",
+        "answer": "NIC, ponavljač (Repeater), koncentrator (Hub), preklopnik (Switch), premosnik (Bridge), usmjerivač (Router), pristupnik (Gateway), vatrozid (Firewall).",
+        "explanation": "Svaki od njih ima ulogu u prijenosu i upravljanju podacima."
+      },
+      {
+        "id": "ec6byh",
+        "question": "Što je NIC i što je MAC adresa?",
+        "answer": "Mrežna kartica (NIC, Network Interface Card) fizički povezuje domaćina s mrežnim medijem (tiskana pločica / mrežni adapter). Svaka mrežna kartica ima jedinstvenu MAC adresu (Media Access Control) koja se koristi za upravljanje podatkovnom komunikacijom tog domaćina.",
+        "explanation": "MAC = jedinstveni hardverski identifikator."
+      },
+      {
+        "id": "2scpyq",
+        "question": "Po čemu se preklopnik (switch) razlikuje od koncentratora (hub), i što usmjerivač (router) dodaje?",
+        "answer": "Hub pasivno koncentrira veze (svi domaćini promatraju se kao jedna jedinica). Preklopnik (switch) je inteligentniji — šalje podatke samo onoj vezi kojoj su potrebni. Usmjernik (router) posjeduje sve navedene mogućnosti te se može spojiti na WAN, povezujući LAN-ove razdvojene velikim udaljenostima.",
+        "explanation": "Hub → Switch → Router: rastuća razina inteligencije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "hm3ha1",
+        "question": "Računalna mreža omogućuje spojenim računalima dijeljenje:",
+        "options": [
+          "Samo električne energije",
+          "Podataka, resursa i aplikacija",
+          "Ničega",
+          "Samo pisača"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "8r9ifr",
+        "question": "Mreža ograničena na ured ili stan naziva se:",
+        "options": [
+          "WAN",
+          "LAN",
+          "GAN",
+          "MAN"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fyy2up",
+        "question": "Mreža koja pokriva cijeli grad povezivanjem nekoliko LAN-ova je:",
+        "options": [
+          "PAN",
+          "LAN",
+          "MAN",
+          "NIC"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "vn37uv",
+        "question": "Jedinstvena hardverska adresa mrežne kartice (NIC) naziva se ___ adresa:",
+        "options": [
+          "IP",
+          "MAC",
+          "URL",
+          "DNS"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "eyh2wh",
+        "question": "Koji uređaj posjeduje sve mogućnosti i može povezivati LAN-ove na velikim udaljenostima putem WAN-a?",
+        "options": [
+          "Hub",
+          "Repetitor",
+          "Usmjernik",
+          "Most"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "sezkyn",
+        "sentence": "Računalna _______ su dva ili više računala međusobno povezanih radi dijeljenja podataka i resursa.",
+        "answer": "mreža",
+        "hint": "Tema ovog poglavlja."
+      },
+      {
+        "id": "pc6g67",
+        "sentence": "_______ (lokalna računalna mreža) povezuje računala unutar ograničenog područja, poput ureda.",
+        "answer": "LAN",
+        "hint": "Najmanji tip."
+      },
+      {
+        "id": "vm6yxd",
+        "sentence": "Svaki NIC identificira se jedinstvenom _______ adresom.",
+        "answer": "MAC",
+        "hint": "Kontrola pristupa mediju (engl. Media Access Control)."
+      },
+      {
+        "id": "77mzk7",
+        "sentence": "_______ se može spojiti na WAN i povezati LAN-ove koji su međusobno udaljeni na velikim udaljenostima.",
+        "answer": "usmjernik (router)",
+        "hint": "Najsposobniji čvor."
+      }
+    ],
+    "learn": {
+      "id": "qi4tae",
+      "content": "\n        <h3>Računalne mreže</h3>\n        <p>A <strong>računalna mreža</strong> je skup dvaju ili više međusobno povezanih računala koja mogu dijeliti\n        podatke, resurse i aplikacije.</p>\n        <h4>Vrste prema veličini</h4>\n        <ul>\n          <li><strong>LAN</strong> — lokalna mreža (ured/stan).</li>\n          <li><strong>PAN</strong> — osobna mreža (~10–30 m, osobni uređaji).</li>\n          <li><strong>MAN</strong> — gradska mreža (grad; povezuje LAN-ove).</li>\n          <li><strong>WAN</strong> — mreža širokog područja (regija/grad, mobilna infrastruktura).</li>\n          <li><strong>GAN</strong> — globalna mreža (država/svijet; mreža mreža).</li>\n        </ul>\n        <h4>Mrežni uređaji (čvorovi)</h4>\n        <p><strong>NIC</strong> (s jedinstvenom <strong>MAC</strong> adresom), ponavljač (Repeater), koncentrator (Hub), premosnik (Bridge),\n        preklopnik (Switch), usmjernik (Router), pristupnik (Gateway), vatrozid (Firewall). Inteligencija raste od pasivnog <em>koncentratora</em> →\n        <em>preklopnika</em> (šalje podatke samo tamo gdje je potrebno) → <em>usmjernika</em> (povezuje LAN-ove putem WAN-a).</p>\n      ",
+      "image": null
+    }
+  },
+  "www": {
+    "id": "8v5qiv",
+    "name": "World Wide Web",
+    "icon": "fa-globe",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "llbxj6",
+        "question": "Što je Internet?",
+        "answer": "Golema mreža mreža — masivna računalna mreža koja povezuje uređaje putem bakrenih žica, bežičnih mreža ili optičkih kabela.",
+        "explanation": "Internet je infrastruktura; Web je usluga koja se temelji na njoj."
+      },
+      {
+        "id": "rqqy3f",
+        "question": "Što je World Wide Web (WWW)?",
+        "answer": "Način pristupa informacijama putem Interneta — jedna od njegovih glavnih usluga. Radi se o velikoj zbirci web-stranica (tekst, grafika, zvuk, video) međusobno povezanih hipervezama, koje se isporučuju putem protokola HTTP i pregledavaju u web-preglednicima.",
+        "explanation": "Web je sadržaj; Internet je mreža."
+      },
+      {
+        "id": "5qkie9",
+        "question": "Koja je razlika između Interneta i WWW-a?",
+        "answer": "Internet je golema mreža mreža (infrastruktura koja povezuje uređaje putem kabela, bežičnih veza i optičkih vlakana).\nWWW je velika zbirka web-stranica međusobno povezanih hipervezama — usluga koju pruža Internet.",
+        "explanation": "Često se upotrebljavaju kao istoznačnice, no Web je samo jedna od usluga Interneta."
+      },
+      {
+        "id": "61lt4n",
+        "question": "Kako funkcionira WWW (klijenti i poslužitelji)?",
+        "answer": "Klijenti su uređaji korisnika spojeni na Internet zajedno s web-preglednikom. Poslužitelji su računala koja pohranjuju web-stranice, web-mjesta i aplikacije. Kada klijent zatraži određenu stranicu, kopija se preuzima s poslužitelja i prikazuje u pregledniku.",
+        "explanation": "Zahtjev → preuzimanje kopije → prikaz."
+      },
+      {
+        "id": "xkit5p",
+        "question": "Što je web-preglednik, a što tražilica?",
+        "answer": "Web-preglednik je programska aplikacija koja korisniku omogućuje pronalaženje, pristup i prikaz web-stranica (npr. Chrome, Firefox, Safari).\nTražilica je usluga koja korisnicima omogućuje pretraživanje sadržaja putem WWW-a.",
+        "explanation": "Preglednik = pregledavanje stranica; tražilica = pronalaženje stranica."
+      },
+      {
+        "id": "ty09fy",
+        "question": "Što je DNS (Domain Name System)?",
+        "answer": "Sustav koji preslikava lako pamtljiva domenska imena (npr. example.com) u numeričke IP adrese (npr. 93.184.216.34), čime se postiže da ljudi koriste imena, a računala IP adrese.",
+        "explanation": "„Telefonski imenik\" Interneta."
+      },
+      {
+        "id": "xc89mj",
+        "question": "Što je model klijent/poslužitelj na webu?",
+        "answer": "Klijent (web-preglednik) zahtijeva uslugu; poslužitelj (web-poslužitelj) ispunjava zahtjev i prenosi rezultate natrag putem mreže, slijedeći dogovorene protokole.",
+        "explanation": "Klijent šalje zahtjev, poslužitelj odgovara."
+      },
+      {
+        "id": "tzq5z1",
+        "question": "Navedite ključne internetske protokole i njihove uloge.",
+        "answer": "• HTTP — prijenos web-stranica\n• FTP — prijenos datoteka između računala\n• SMTP — slanje elektroničke pošte\n• POP / IMAP — primanje elektroničke pošte\n• TCP/IP — službeni internetski protokol: TCP dijeli podatke u pakete i osigurava njihov integritet, IP usmjerava pakete prema odredištu",
+        "explanation": "Protokoli su pravila komunikacije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "23qzxe",
+        "question": "Internet se najbolje opisuje kao:",
+        "options": [
+          "Skup web-stranica",
+          "Golema mreža mreža",
+          "Web-preglednik",
+          "Tražilica"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "25hwlv",
+        "question": "World Wide Web je:",
+        "options": [
+          "Potpuno isto što i Internet",
+          "Usluga koju pruža Internet (međusobno povezane web-stranice)",
+          "Vrsta kabela",
+          "Vrsta procesora (CPU)"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "wzpj0m",
+        "question": "DNS preslikava nazive domena u:",
+        "options": [
+          "MAC adrese",
+          "IP adrese",
+          "Web-preglednike",
+          "Pakete"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cy79z1",
+        "question": "Koji se protokol koristi za prijenos web-stranica?",
+        "options": [
+          "FTP",
+          "HTTP",
+          "SMTP",
+          "POP"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "42nrlz",
+        "question": "U web modelu klijent/poslužitelj, klijent je obično:",
+        "options": [
+          "Web poslužitelj",
+          "Web preglednik",
+          "DNS poslužitelj",
+          "Usmjerivač"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "biqjcd",
+        "sentence": "_______ je golema mreža mreža koja povezuje uređaje putem kabela, bežičnih veza i optičkih vlakana.",
+        "answer": "Internet",
+        "hint": "Infrastruktura."
+      },
+      {
+        "id": "97y5re",
+        "sentence": "World Wide Web jest zbirka web-stranica međusobno povezanih _______.",
+        "answer": "hipervezama",
+        "hint": "Poveznice na koje se može kliknuti."
+      },
+      {
+        "id": "3ov56k",
+        "sentence": "_______ preslikava pamtljiva domenska imena u numeričke IP adrese.",
+        "answer": "DNS",
+        "hint": "Sustav domenskih imena (Domain Name System)."
+      },
+      {
+        "id": "a68hg9",
+        "sentence": "Web koristi protokol _______ za prijenos web-stranica.",
+        "answer": "HTTP",
+        "hint": "Protokol za prijenos hiperteksta (HyperText Transfer Protocol)."
+      }
+    ],
+    "learn": {
+      "id": "usq3bn",
+      "content": "\n        <h3>World Wide Web</h3>\n        <h4>Internet i WWW</h4>\n        <p><strong>Internet</strong> je golema mreža mreža (uređaji međusobno povezani kabelima, bežičnim vezama i optičkim vlaknima). <strong>WWW</strong> je opsežna zbirka web-stranica povezanih <strong>hipervezama</strong> — <em>usluga koju pruža</em> Internet, isporučuje se putem HTTP-a i pregledava u web-preglednicima.</p>\n        <h4>Način rada</h4>\n        <p><strong>Klijenti</strong> (vaš uređaj i preglednik) zahtijevaju stranice; <strong>poslužitelji</strong> ih pohranjuju i šalju kopiju radi prikaza. Alati: <strong>web-preglednik</strong> (pregled stranica), <strong>tražilica</strong> (pronalaženje sadržaja), <strong>DNS</strong> (preslikava domenskih imena ↔ IP adresa).</p>\n        <h4>Ključni protokoli</h4>\n        <ul>\n          <li><strong>HTTP</strong> — web-stranice; <strong>FTP</strong> — datoteke.</li>\n          <li><strong>SMTP</strong> — slanje e-pošte; <strong>POP/IMAP</strong> — primanje e-pošte.</li>\n          <li><strong>TCP/IP</strong> — službeni protokol Interneta (TCP paketi + integritet, IP usmjeravanje).</li>\n        </ul>\n      ",
+      "image": null
+    }
+  },
+  "eBusiness": {
+    "id": "2raf38",
+    "name": "E-poslovanje",
+    "icon": "fa-cart-shopping",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "8musj7",
+        "question": "Što je e-poslovanje?",
+        "answer": "Korištenje weba, interneta, intraneta ili ekstraneta u svrhu obavljanja poslovnih aktivnosti. Nadilazi jednostavnu online kupnju/prodaju te obuhvaća šire poslovne procese kao što su upravljanje lancem opskrbe, elektronička obrada narudžbi i upravljanje odnosima s kupcima (CRM).",
+        "explanation": "E-poslovanje podrazumijeva elektroničko vođenje cjelokupnog poslovanja, a ne samo prodaje."
+      },
+      {
+        "id": "s8mf08",
+        "question": "Po čemu se e-poslovanje razlikuje od e-trgovine?",
+        "answer": "E-trgovina je trgovinska aktivnost (kupnja i prodaja) koja se odvija putem elektroničkih uređaja. E-poslovanje je širi pojam — odnosi se na vođenje cjelokupnog poslovanja putem interneta (uključujući SCM, CRM, ERP i obradu narudžbi).",
+        "explanation": "E-trgovina ⊂ e-poslovanje."
+      },
+      {
+        "id": "ujitc9",
+        "question": "Koji su glavni sastavni dijelovi/područja e-poslovanja?",
+        "answer": "Ključna područja: e-nabava, online trgovine, online tržišta, online zajednice, online tvrtke.\n(Uz to: BI, CRM, ERP, SCM, suradnja i elektroničke transakcije.)",
+        "explanation": "Ona obuhvaćaju nabavu, prodaju, povezivanje i suradnju putem interneta."
+      },
+      {
+        "id": "8j8hle",
+        "question": "Što je e-nabava?",
+        "answer": "Poznata i kao „razmjena s dobavljačima\" — elektroničko nabavljanje proizvoda ili usluga (B2B, B2G, B2C) s ciljem smanjenja troškova i napora tvrtke.",
+        "explanation": "Kupovna strana e-poslovanja."
+      },
+      {
+        "id": "c47m2p",
+        "question": "Koja je razlika između internetske trgovine i internetskog tržišta?",
+        "answer": "Internetska trgovina (e-shop, web-trgovina, m-commerce) prodaje VLASTITE proizvode/usluge putem web-stranice ili aplikacije. Internetsko tržište povezuje kupce i dobavljače — operater samo prikazuje tuđu ponudu i osigurava mogućnost transakcije.",
+        "explanation": "Trgovina = vlastita roba; tržište = tuđa roba."
+      },
+      {
+        "id": "usedrk",
+        "question": "Što su internetske zajednice u e-poslovanju?",
+        "answer": "Skupine ljudi s istim interesima ili ciljevima koje koriste internet za komunikaciju, pomažući pojedincima i organizacijama u donošenju odluka o transakcijama.",
+        "explanation": "Zajednice utječu na odluke o kupnji."
+      },
+      {
+        "id": "5skop3",
+        "question": "Koji su tri sudionika tržišta u e-poslovanju?",
+        "answer": "Poduzeće (B), potrošač/građanin (C) i uprava (A). Svaki može biti kupac ili pružatelj usluge, što daje 9 mogućih kombinacija odnosa.",
+        "explanation": "B, C i A kombiniraju se u modele poput B2C, B2B itd."
+      },
+      {
+        "id": "5bdaix",
+        "question": "Koji odnosi pripadaju e-trgovini, a koji e-upravi?",
+        "answer": "B2C i B2B pripadaju e-trgovini. A2B (uprava prema poduzeću) i A2A (uprava prema upravi) pripadaju e-upravi — oboje su dio e-poslovanja.",
+        "explanation": "E-uprava je strana javne administracije u e-poslovanju."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "nzewcx",
+        "question": "E-poslovanje se najbolje opisuje kao:",
+        "options": [
+          "Isključivo kupnja i prodaja putem interneta",
+          "Korištenje weba/interneta za obavljanje cjelokupnog poslovanja",
+          "Vrsta mreže",
+          "Web-preglednik"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "85e5dy",
+        "question": "Što nadilazi e-trgovinu i uključuje SCM, CRM i obradu narudžbi?",
+        "options": [
+          "E-trgovina",
+          "E-poslovanje",
+          "E-pošta",
+          "E-nabava"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "3713sj",
+        "question": "Elektroničko nabavljanje proizvoda/usluga radi smanjenja troškova naziva se:",
+        "options": [
+          "Online trgovina",
+          "Elektronička nabava",
+          "Online zajednica",
+          "B2C"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "mvc10t",
+        "question": "Tri sudionika tržišta u e-poslovanju su:",
+        "options": [
+          "Kupac, Prodavač, Banka",
+          "Poduzeće, Potrošač, Uprava",
+          "Klijent, Poslužitelj, Usmjerivač",
+          "B2B, B2C, C2C"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "z72t8z",
+        "question": "B2C i B2B pripadaju ___, dok A2B i A2A pripadaju e-upravi:",
+        "options": [
+          "Elektronička nabava",
+          "Elektronička trgovina",
+          "E-mail",
+          "E-učenje"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "8f9kgn",
+        "sentence": "_______ je korištenje weba i interneta za vođenje cjelokupnog poslovanja, izvan okvira jednostavne kupnje i prodaje.",
+        "answer": "e-poslovanje",
+        "hint": "Širi pojam od e-trgovine."
+      },
+      {
+        "id": "rbmejh",
+        "sentence": "_______ označava elektroničku nabavu proizvoda ili usluga u svrhu smanjenja troškova.",
+        "answer": "e-nabava",
+        "hint": "Razmjena dobavljača."
+      },
+      {
+        "id": "y0l8gz",
+        "sentence": "Mrežno _______ povezuje kupce i dobavljače, prikazujući zalihe drugih sudionika.",
+        "answer": "tržište",
+        "hint": "Nije pojedinačna trgovina."
+      },
+      {
+        "id": "g3x20p",
+        "sentence": "Tri sudionika e-poslovanja su Poduzeće, Potrošač i _______.",
+        "answer": "administracija",
+        "hint": "„A\" u modelima."
+      }
+    ],
+    "learn": {
+      "id": "uqqbcr",
+      "content": "\n        <h3>E-poslovanje</h3>\n        <p><strong>E-poslovanje</strong> jest korištenje weba, interneta, intraneta i ekstraneta u\n        svrhu obavljanja poslovnih aktivnosti. Za razliku od <strong>e-trgovine</strong> (koja obuhvaća samo kupnju/prodaju putem interneta), e-poslovanje pokriva cjelokupno poslovanje: upravljanje opskrbnim lancem, obradu narudžbi, CRM i mnogo više.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>E-nabava</strong> — elektroničko nabavljanje roba/usluga radi smanjenja troškova.</li>\n          <li><strong>Online trgovina</strong> — prodaje vlastite proizvode (e-trgovina, m-trgovina).</li>\n          <li><strong>Online tržnica</strong> — povezuje kupce &amp; dobavljače (tuđe zalihe).</li>\n          <li><strong>Online zajednice</strong> — interesne skupine koje utječu na odluke o transakcijama.</li>\n          <li><strong>Online tvrtke</strong> — tvrtke koje surađuju kao virtualno poduzeće.</li>\n        </ul>\n        <h4>Sudionici tržišta</h4>\n        <p><strong>Poduzeće (B)</strong>, <strong>Potrošač (C)</strong>, <strong>Administracija (A)</strong>\n        — 9 kombinacija. B2C &amp; B2B = e-trgovina; A2B &amp; A2A = e-uprava.</p>\n      ",
+      "image": null
+    }
+  },
+  "itTrends": {
+    "id": "1dqv28",
+    "name": "IT trendovi i inovacije",
+    "icon": "fa-robot",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "r31xex",
+        "question": "Što je digitalna transformacija?",
+        "answer": "Promjena u načinu funkcioniranja organizacije — njezinih sustava, procesa, tijeka rada i kulture. Ona objedinjuje podatke iz različitih područja te koristi automatizaciju i AI/ML kako bi povezala cjelokupno korisničko iskustvo.",
+        "explanation": "„Digitalizacija ili propast\" — ona zahvaća svaku razinu organizacije."
+      },
+      {
+        "id": "ybo13u",
+        "question": "Navedite ključne digitalne tehnologije koje pokreću suvremeno poslovanje.",
+        "answer": "• Mobilna tehnologija (AR/VR)\n• Računarstvo u oblaku\n• Društvene mreže\n• Veliki podaci i analitika u stvarnom vremenu\n• Senzori i IoT (Internet of Things)\n• Umjetna inteligencija (AI)",
+        "explanation": "Te tehnologije omogućuju digitalnu transformaciju."
+      },
+      {
+        "id": "aobv2r",
+        "question": "Koja je razlika između ANI-ja i AGI-ja?",
+        "answer": "ANI (uska umjetna inteligencija) programirana je za izvršavanje jednog zadatka i dostupna je danas (npr. Siri, Google Translate). AGI (opća umjetna inteligencija) može obavljati kognitivne zadatke jednako dobro ili bolje od ljudi u širokom rasponu područja.",
+        "explanation": "Današnja umjetna inteligencija je uska (ANI); AGI je još uvijek aspirativan cilj."
+      },
+      {
+        "id": "i272wt",
+        "question": "Kako se tehnologija prepoznavanja koristi u hotelima?",
+        "answer": "Skeniranje mrežnice i otiska prsta za otključavanje hotelskih soba (bez kartice ključa koju je moguće izgubiti). U budućnosti bi biometrija lica mogla automatski odobriti plaćanja ili odjaviti goste, čime bi se smanjili redovi čekanja.",
+        "explanation": "Poboljšava iskustvo gostiju i sigurnost."
+      },
+      {
+        "id": "ezer4i",
+        "question": "Kako se roboti koriste u turizmu i putovanjima?",
+        "answer": "Za obavljanje inteligentnih zadataka — od korisničke službe do obrade podataka. Primjer: robot Amadeus 1A-TA (pokretan dubokim učenjem) djeluje kao digitalni asistent, analizirajući preferencije i preporučujući destinacije.",
+        "explanation": "Roboti nadopunjuju osoblje i personaliziraju uslugu."
+      },
+      {
+        "id": "62wpcr",
+        "question": "Što je mobilna integracija u ugostiteljstvu?",
+        "answer": "Korištenje hotelske aplikacije za rezervacije soba, rezervacije u restoranu/spa centru i sobnu uslugu; beacon tehnologija za slanje promotivnih ponuda temeljenih na lokaciji; te kombinacija s IoT-om kako bi gosti mogli upravljati uređajima u sobi putem svojeg telefona.",
+        "explanation": "Telefon postaje upravljačko središte gosta."
+      },
+      {
+        "id": "v7566l",
+        "question": "Što je Internet stvari (IoT)?",
+        "answer": "Mreža senzora i povezanih uređaja. U hotelima omogućuje gostima upravljanje uređajima u sobi te prikupljanje podataka, često u kombinaciji s mobilnim aplikacijama.",
+        "explanation": "Fizički uređaji povezani s internetom."
+      },
+      {
+        "id": "65fw45",
+        "question": "Zašto je digitalna transformacija važna („digitalizirati se ili propasti\")?",
+        "answer": "Omogućuje tvrtkama učinkovitije poslovanje, povezivanje korisničkog puta kroz podatke i održavanje konkurentnosti — utječući na svaku razinu organizacije.",
+        "explanation": "Zaostajanje u digitalnom razvoju ugrožava poslovanje."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "skdktd",
+        "question": "Digitalna transformacija mijenja:",
+        "options": [
+          "Samo njezin logotip",
+          "Sustave, procese, tijek rada i kulturu",
+          "Samo njezin hardver",
+          "Ništa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "aaw6hs",
+        "question": "Uska umjetna inteligencija namijenjena jednom zadatku (npr. Siri) naziva se:",
+        "options": [
+          "AGI",
+          "ANI",
+          "IoT",
+          "AR"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "inqw07",
+        "question": "Koja vrsta umjetne inteligencije može obavljati širok raspon kognitivnih zadataka poput čovjeka?",
+        "options": [
+          "ANI",
+          "AGI",
+          "DNS",
+          "CRM"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "llbn9y",
+        "question": "Skeniranje mrežnice i otiska prsta za otključavanje hotelskih soba primjer je:",
+        "options": [
+          "Roboti",
+          "Tehnologija prepoznavanja",
+          "Računalstvo u oblaku",
+          "FTP"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "kjjkzy",
+        "question": "Omogućavanje gostima da upravljaju uređajima u sobi putem svojeg telefona koristi:",
+        "options": [
+          "IoT",
+          "FTP",
+          "BIOS",
+          "LAN"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "uky0y2",
+        "sentence": "_______ transformacija mijenja sustave, procese, tijek rada i kulturu organizacije.",
+        "answer": "digitalna",
+        "hint": "„___ ili propast\"."
+      },
+      {
+        "id": "og7ngm",
+        "sentence": "_______ (uska UI) dizajnirana je za jedan zadatak, poput Siri ili Google Translate.",
+        "answer": "ANI",
+        "hint": "Artificial Narrow Intelligence."
+      },
+      {
+        "id": "8rbxpy",
+        "sentence": "_______ tehnologija koristi skeniranje mrežnice ili otiska prsta za otključavanje hotelskih soba.",
+        "answer": "prepoznavanje",
+        "hint": "Biometrija."
+      },
+      {
+        "id": "oiz0tb",
+        "sentence": "Internet _______ (IoT) omogućuje gostima upravljanje uređajima u sobi putem pametnog telefona.",
+        "answer": "stvari",
+        "hint": "Povezani uređaji."
+      }
+    ],
+    "learn": {
+      "id": "6dofy4",
+      "content": "\n        <h3>IT trendovi &amp; inovacije u suvremenom poslovanju</h3>\n        <p><strong>Digitalna transformacija</strong> mijenja način na koji organizacija posluje — sustave,\n        procese, tijek rada i kulturu — objedinjujući podatke te koristeći automatizaciju i AI/ML za povezivanje\n        korisničkog iskustva („digitalizirati se ili propasti\").</p>\n        <h4>Ključne digitalne tehnologije</h4>\n        <p>Mobilne tehnologije (AR/VR), računarstvo u oblaku, društvene mreže, veliki podaci &amp; analitika, senzori &amp; IoT\n        te umjetna inteligencija.</p>\n        <h4>AI: ANI vs AGI</h4>\n        <p><strong>ANI</strong> (uska umjetna inteligencija) obavlja jedan zadatak (Siri, Google Translate). <strong>AGI</strong>\n        (opća umjetna inteligencija) mogla bi se mjeriti s ljudima ili ih nadmašiti u brojnim kognitivnim zadacima.</p>\n        <h4>Trendovi u turizmu &amp; putovanjima</h4>\n        <ul>\n          <li><strong>Tehnologija prepoznavanja</strong> — mrežnica/otisak prsta za otključavanje soba; biometrija lica za plaćanje/odjavu.</li>\n          <li><strong>Roboti</strong> — korisnička podrška &amp; obrada podataka (npr. Amadeus 1A-TA digitalni asistent).</li>\n          <li><strong>Mobilna integracija + IoT</strong> — rezervacije putem aplikacije, odašiljači (beaconi) i upravljanje uređajima u sobi putem pametnog telefona.</li>\n        </ul>\n      ",
+      "image": null
+    }
+  },
+  "managementSupport": {
+    "id": "3uj41o",
+    "name": "Sustavi za potporu upravljanju",
+    "icon": "fa-chart-line",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "etvs30",
+        "question": "Koje su tri vrste odluka u organizaciji?",
+        "answer": "• Strukturirane — jasno definirani standardni postupak, mogu se automatizirati („programabilni zadaci\")\n• Polustrukturirane — imaju strukturiranu komponentu koja se može unaprijediti analitičkim modelima i IS tehnologijom\n• Nestrukturirane — jednokratne, bez standardnog postupka; oslanjaju se na intuiciju donositelja odluke (IT pruža manju potporu)",
+        "explanation": "Polustrukturirane i nestrukturirane odluke uključuju višestruke, često suprotstavljene kriterije."
+      },
+      {
+        "id": "lgrw54",
+        "question": "Što je sustav za potporu upravljanju (MSS)?",
+        "answer": "Različite vrste informacijskih sustava razvijenih radi potpore određenim aspektima i vrstama odlučivanja — svaki osmišljen s jedinstvenim ciljevima i zadacima.",
+        "explanation": "MSS = krovni pojam za sustave koji podržavaju odlučivanje."
+      },
+      {
+        "id": "1zqkug",
+        "question": "Koje su četiri faze donošenja odluka?",
+        "answer": "1. Inteligencija — skeniranje okoline, prikupljanje i obrada podataka\n2. Dizajn — definiranje kriterija i generiranje alternativa\n3. Izbor — odabir najbolje izvedive alternative\n4. Implementacija — provođenje odabira i procjena učinkovitosti",
+        "explanation": "Inteligencija → Dizajn → Izbor → Implementacija."
+      },
+      {
+        "id": "br7br1",
+        "question": "Što se događa u fazi Inteligencije?",
+        "answer": "Donositelj odluke ispituje okruženje organizacije u potrazi za uvjetima koji zahtijevaju donošenje odluka; podaci se prikupljaju iz različitih izvora i obrađuju kako bi se otkrili načini pristupa problemu.",
+        "explanation": "Pronalaženje problema."
+      },
+      {
+        "id": "ujow64",
+        "question": "Što se događa u fazi Dizajna (i podržava li je IT)?",
+        "answer": "Definiraju se kriteriji, generiraju alternative te veze između kriterija i alternativa. Informacijska tehnologija NE podržava ovu fazu.",
+        "explanation": "Kreativna faza — najmanja podrška IT-a."
+      },
+      {
+        "id": "1pyj4l",
+        "question": "Što je Sustav za podršku odlučivanju (DSS)?",
+        "answer": "Sustav koji pomaže u pregledu mogućih rješenja radi odabira najboljeg za organizaciju; uključuje alate za izračun omjera troškova i koristi te provodi naknadnu procjenu učinkovitosti odabranog rješenja.",
+        "explanation": "Podržava faze Odabira i Implementacije."
+      },
+      {
+        "id": "6k38yw",
+        "question": "Navedite primjer iz ugostiteljstva za faze donošenja odluka (Marriott).",
+        "answer": "Inteligencija: analiza povratnih informacija gostiju/tržišnih trendova (recenzije, ankete, društvene mreže). Dizajn: razvoj inicijativa (npr. „Serve 360\" održivost, digitalni ključevi). Odabir: procjena troškova/koristi/ROI (globalna strategija nasuprot strategiji po hotelu). Implementacija: uvođenje i vrednovanje.",
+        "explanation": "Svaka faza odgovara stvarnoj upravljačkoj radnji."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "q41wyf",
+        "question": "Odluka s jasno definiranim postupkom koji se može automatizirati jest:",
+        "options": [
+          "Strukturirana",
+          "Polustrukturirana",
+          "Nestrukturirana",
+          "Intuitivna"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "x8jy3x",
+        "question": "Jednokratna odluka bez standardnog postupka, koja se oslanja na intuiciju, jest:",
+        "options": [
+          "Strukturirana",
+          "Polustrukturirana",
+          "Nestrukturirano",
+          "Programabilno"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "3c7khq",
+        "question": "Četiri faze donošenja odluka su Inteligencija, Dizajn, Izbor i:",
+        "options": [
+          "Implementacija",
+          "Evaluacija",
+          "Kodiranje",
+          "Pohrana"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "70j5h2",
+        "question": "Koji sustav pomaže menadžerima u odabiru najboljeg rješenja i izračunu omjera troškova i koristi?",
+        "options": [
+          "DSS",
+          "NIC",
+          "BIOS",
+          "LAN"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "88510i",
+        "question": "U kojoj fazi donositelj odluke skenira okolinu i prikuplja podatke?",
+        "options": [
+          "Inteligencija",
+          "Dizajn",
+          "Izbor",
+          "Implementacija"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "08isk7",
+        "sentence": "_______ odluka ima jasno definiran postupak i može se automatizirati.",
+        "answer": "strukturirana",
+        "hint": "Programabilna."
+      },
+      {
+        "id": "ut8v8q",
+        "sentence": "_______ odluka je jednokratna, bez standardnog postupka, i oslanja se na intuiciju.",
+        "answer": "nestrukturirana",
+        "hint": "Suprotnost strukturiranoj."
+      },
+      {
+        "id": "d0iery",
+        "sentence": "Sustav za _______ odlučivanje (DSS) pomaže u odabiru najboljeg rješenja primjenom alata za analizu troškova i koristi.",
+        "answer": "podrška",
+        "hint": "Srednja riječ kratice DSS."
+      },
+      {
+        "id": "31az6n",
+        "sentence": "Četiri faze odlučivanja su Inteligencija, Dizajn, _______ i Implementacija.",
+        "answer": "izbor",
+        "hint": "Odabir najboljeg rješenja."
+      }
+    ],
+    "learn": {
+      "id": "ai13j6",
+      "content": "\n        <h3>Sustavi za potporu upravljanju</h3>\n        <h4>Vrste odluka</h4>\n        <ul>\n          <li><strong>Strukturirane</strong> — jasan postupak, mogu se automatizirati.</li>\n          <li><strong>Polustrukturirane</strong> — djelomično strukturirane; koriste se analitičkim modelima.</li>\n          <li><strong>Nestrukturirane</strong> — jednokratne, bez utvrđenog postupka; oslanjaju se na intuiciju.</li>\n        </ul>\n        <h4>Četiri faze donošenja odluka</h4>\n        <p><strong>Inteligencija</strong> (prepoznavanje problema, prikupljanje podataka) → <strong>Dizajn</strong>\n        (kriteriji + alternative; IT ne podržava ovu fazu) → <strong>Izbor</strong> (odabir najboljeg;\n        <strong>DSS</strong> pomaže pri analizi troškova i koristi) → <strong>Implementacija</strong> (provedba + vrednovanje).</p>\n        <div class=\"tip-box\"><strong>DSS</strong> = Decision Support System: razvrstava rješenja i izračunava omjere troškova i koristi.</div>\n      ",
+      "image": null
+    }
+  },
+  "expertSystems": {
+    "id": "ig60wu",
+    "name": "Sustavi temeljeni na znanju i ekspertni sustavi",
+    "icon": "fa-brain",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "yls5up",
+        "question": "Što je ekspertni sustav?",
+        "answer": "Računalni sustav koji oponaša (u svim aspektima djeluje poput) sposobnosti donošenja odluka ljudskog stručnjaka (prof. Edward Feigenbaum, Stanford).",
+        "explanation": "Grana umjetne inteligencije."
+      },
+      {
+        "id": "j8bc6r",
+        "question": "Koje su dvije glavne komponente ekspertnog sustava?",
+        "answer": "• Baza znanja — činjenice prikupljene iz knjiga, časopisa, stručnih osoba i sl.\n• Mehanizam zaključivanja — izvodi zaključke iz baze znanja",
+        "explanation": "Baza znanja = što sustav zna; mehanizam zaključivanja = kako zaključuje."
+      },
+      {
+        "id": "aakxfg",
+        "question": "Što radi mehanizam zaključivanja?",
+        "answer": "Izvodi zaključke iz baze znanja — primjenjuje pohranjeno znanje kako bi donijelo odluke.",
+        "explanation": "Dio sustava zadužen za zaključivanje."
+      },
+      {
+        "id": "w4m7i0",
+        "question": "Koja je razlika između problemske domene i domene znanja?",
+        "answer": "Znanje stručnjaka specifično je za jednu problemsku domenu (medicina, financije, inženjerstvo…). Znanje o rješavanju konkretnih problema čini domenu znanja. Problemska domena uvijek je nadskup domene znanja.",
+        "explanation": "Domena znanja ⊂ problemska domena."
+      },
+      {
+        "id": "rqpmuf",
+        "question": "Koje su prednosti ekspertnih sustava?",
+        "answer": "• Povećana dostupnost\n• Smanjeni troškovi\n• Smanjena opasnost\n• Učinkovitost\n• Višestruka stručnost\n• Povećana pouzdanost",
+        "explanation": "Stručno znanje čine široko i jeftino dostupnim."
+      },
+      {
+        "id": "5ma4a3",
+        "question": "Koju tehnologiju može uključivati ekspertni sustav?",
+        "answer": "Posebne jezike za ekspertne sustave (npr. CLIPS), programe i sklopovlje namijenjeno olakšavanju njihove implementacije.",
+        "explanation": "CLIPS je klasičan jezik za ekspertne sustave."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "sdd3ye",
+        "question": "Ekspertni sustav je računalni sustav koji:",
+        "options": [
+          "Pohranjuje datoteke",
+          "Oponaša odlučivanje ljudskog stručnjaka",
+          "Povezuje mreže",
+          "Šalje elektroničku poštu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "53l2ca",
+        "question": "Dvije glavne komponente ekspertnog sustava su baza znanja i:",
+        "options": [
+          "CPU",
+          "Inferencijski mehanizam",
+          "Vatrozid",
+          "Preglednik"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jazf5u",
+        "question": "Dio koji izvodi zaključke iz baze znanja jest:",
+        "options": [
+          "Baza znanja",
+          "Mehanizam zaključivanja",
+          "Tvrdi disk",
+          "NIC"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "y0gx93",
+        "question": "Stručno znanje o rješavanju specifičnih problema naziva se:",
+        "options": [
+          "Problemska domena",
+          "Domena znanja",
+          "Podatkovna domena",
+          "Javna domena"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "4jp0iu",
+        "question": "Koja je prednost ekspertnih sustava?",
+        "options": [
+          "Povećana opasnost",
+          "Smanjeni troškovi",
+          "Pojedinačna stručnost",
+          "Niža pouzdanost"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "ddvj1h",
+        "sentence": "Ekspertni sustav oponaša sposobnosti donošenja odluka ljudskog _______.",
+        "answer": "stručnjaka",
+        "hint": "Sustav se „ponaša kao\" ta osoba."
+      },
+      {
+        "id": "9phd68",
+        "sentence": "_______ mehanizam izvodi zaključke iz baze znanja.",
+        "answer": "inferencijski",
+        "hint": "Dio sustava zadužen za zaključivanje."
+      },
+      {
+        "id": "v8fli1",
+        "sentence": "Ekspertni sustav pohranjuje činjenice u svoju _______ znanja.",
+        "answer": "bazu",
+        "hint": "Baza ____ znanja."
+      },
+      {
+        "id": "5gui4s",
+        "sentence": "Problemska domena uvijek je _______ domene znanja.",
+        "answer": "nadskup",
+        "hint": "Veći skup."
+      }
+    ],
+    "learn": {
+      "id": "tuomx0",
+      "content": "\n        <h3>Sustavi temeljeni na znanju &amp; ekspertni sustavi</h3>\n        <p><strong>Ekspertni sustav</strong> je računalni sustav koji oponaša sposobnosti donošenja odluka ljudskog stručnjaka (Edward Feigenbaum). Grana je umjetne inteligencije.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>Baza znanja</strong> — činjenice iz knjiga, stručnjaka i sl.</li>\n          <li><strong>Mehanizam zaključivanja</strong> — izvodi zaključke iz baze znanja.</li>\n        </ul>\n        <h4>Domene &amp; prednosti</h4>\n        <p>Znanje stručnjaka specifično je za jednu <strong>problemsku domenu</strong> (medicina, financije…);\n        <strong>domena znanja</strong> njezin je podskup. Prednosti: povećana dostupnost,\n        smanjeni troškovi, smanjena opasnost, visoka učinkovitost, višestruka stručnost, povećana pouzdanost.</p>\n      ",
+      "image": null
+    }
+  },
+  "security": {
+    "id": "9gd4p3",
+    "name": "Sigurnost informacijskih sustava",
+    "icon": "fa-shield-halved",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "m8xec1",
+        "question": "Što je sigurnost informacijskih sustava?",
+        "answer": "Zaštita informacijskih sustava od neovlaštenog pristupa ili izmjene informacija (u pohrani, obradi ili prijenosu), te od uskraćivanja usluge ovlaštenim korisnicima — uključujući mjere za otkrivanje, dokumentiranje i suzbijanje takvih prijetnji. (NIST)",
+        "explanation": "Štiti povjerljivost, integritet i dostupnost."
+      },
+      {
+        "id": "qh1qlp",
+        "question": "Što je zlonamjerni softver?",
+        "answer": "Zlonamjerni softver (malware) — svaki program ili kod stvoren s ciljem nanošenja štete računalu, mreži ili poslužitelju. Najčešći je oblik kibernetičkog napada i obuhvaća ransomware, trojance, špijunski softver, viruse, crve, keyloggere, botove i cryptojacking.",
+        "explanation": "Krovni pojam za zlonamjerni kod."
+      },
+      {
+        "id": "nzfyyv",
+        "question": "Što je ransomware?",
+        "answer": "Zlonamjerni softver koji legitimnim korisnicima onemogućuje pristup njihovu sustavu i zahtijeva plaćanje otkupnine — često u teško sljedivoj kriptovaluti. Blokira tvrdi disk ili šifrira datoteke; žrtve mogu ostati bez pristupa čak i nakon što plate otkupninu.",
+        "explanation": "Iskorištava ranjivosti kako bi zaključao/šifrirao podatke."
+      },
+      {
+        "id": "z4xoc8",
+        "question": "Što je DoS / DDoS napad?",
+        "answer": "Napad uskraćivanjem usluge (Denial-of-Service) preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovne operacije, zbog čega korisnici ne mogu obavljati rutinske zadatke (e-pošta, web-stranice, računi). Obnova operacija zahtijeva ulaganje vremena, novca i resursa.",
+        "explanation": "Cilj je ometanje, a ne krađa podataka."
+      },
+      {
+        "id": "tx4i24",
+        "question": "Što je phishing?",
+        "answer": "Kibernetički napad koji koristi e-poštu, SMS, telefon, društvene mreže i tehnike društvenog inženjeringa kako bi namamio žrtvu na otkrivanje osjetljivih informacija poput lozinki ili brojeva računa.",
+        "explanation": "Temelji se na obmanjivanju čovjeka, a ne stroja."
+      },
+      {
+        "id": "6sestv",
+        "question": "Kako se organizacija može zaštititi od kibernetičkih napada?",
+        "answer": "• Educirati osoblje\n• Održavati softver i sustave ažurnima\n• Osigurati zaštitu krajnjih točaka\n• Instalirati vatrozid\n• Izraditi sigurnosne kopije podataka\n• Kontrolirati pristup sustavima\n• Osigurati Wi-Fi",
+        "explanation": "Višeslojna obrana: ljudi + tehnologija + proces."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "9hiv8p",
+        "question": "Sigurnost informacijskih sustava štiti od neovlaštenog pristupa, izmjene i:",
+        "options": [
+          "Marketing",
+          "Uskraćivanje usluge ovlaštenim korisnicima",
+          "Unos podataka",
+          "Ažuriranja softvera"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "8xo8j8",
+        "question": "Zlonamjerni softver koji zaključava/šifrira datoteke i zahtijeva plaćanje jest:",
+        "options": [
+          "Phishing",
+          "Ransomware",
+          "DoS",
+          "Vatrozid"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zs1jzm",
+        "question": "Napad koji preplavljuje mrežu lažnim zahtjevima kako bi poremetio rad jest:",
+        "options": [
+          "Phishing",
+          "DoS / DDoS",
+          "Ransomware",
+          "Trojan"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ri8fqe",
+        "question": "Obmanjivanje žrtve lažnom e-poštom/SMS-om radi krađe lozinki naziva se:",
+        "options": [
+          "Phishing",
+          "Malware",
+          "DoS",
+          "Enkripcija"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "hbj64n",
+        "question": "Koja je najčešća vrsta kibernetičkog napada (krovni pojam)?",
+        "options": [
+          "Malware",
+          "Vatrozid (Firewall)",
+          "Sigurnosna kopija (Backup)",
+          "VPN"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "sh0i0b",
+        "sentence": "_______ je zlonamjerni softver koji blokira pristup ili šifrira datoteke te zahtijeva otkupninu.",
+        "answer": "ransomware",
+        "hint": "Platite kako biste povratili pristup."
+      },
+      {
+        "id": "c6tcem",
+        "sentence": "Napad _______ preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovanje.",
+        "answer": "DoS",
+        "hint": "Uskraćivanje usluge (Denial of Service)."
+      },
+      {
+        "id": "b55i4n",
+        "sentence": "_______ koristi lažne e-poruke ili SMS poruke i društveni inženjering za krađu lozinki.",
+        "answer": "phishing",
+        "hint": "Obmanjuje čovjeka."
+      },
+      {
+        "id": "b6wz3g",
+        "sentence": "_______ je krovni pojam za svaki zlonamjerni softver (virusi, crvi, trojanci…).",
+        "answer": "malware",
+        "hint": "Zlonamjerni softver."
+      }
+    ],
+    "learn": {
+      "id": "yc4d3j",
+      "content": "\n        <h3>Sigurnost informacijskih sustava</h3>\n        <p><strong>Sigurnost informacijskih sustava</strong> podrazumijeva zaštitu informacijskih sustava od neovlaštenog pristupa ili izmjene (u pohrani, obradi ili prijenosu) te od uskraćivanja usluge ovlaštenim korisnicima — uključujući otkrivanje, dokumentiranje i suzbijanje prijetnji (NIST).</p>\n        <h4>Najčešći kibernetički napadi</h4>\n        <ul>\n          <li><strong>Malware</strong> — svaki zlonamjerni kôd (najčešći oblik); obuhvaća i ostale vrste navedene u nastavku.</li>\n          <li><strong>Ransomware</strong> — zaključava/šifrira podatke i zahtijeva otkupninu (u kriptovaluti).</li>\n          <li><strong>DoS / DDoS</strong> — preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovanje.</li>\n          <li><strong>Phishing</strong> — lažna e-pošta/SMS + društveni inženjering u svrhu krađe vjerodajnica.</li>\n        </ul>\n        <div class=\"warning-box\"><strong>Zaštita:</strong> educiranje osoblja, ažuriranje softvera, zaštita krajnjih točaka, vatrozid, sigurnosne kopije, kontrola pristupa, sigurna Wi-Fi mreža.</div>\n      ",
+      "image": null
+    }
+  }
+}

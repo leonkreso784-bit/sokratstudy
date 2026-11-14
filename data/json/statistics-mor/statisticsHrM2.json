@@ -1,0 +1,847 @@
+{
+  "sampling": {
+    "name": "Metoda uzorka",
+    "icon": "fa-people-group",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Što je METODA UZORKA?",
+        "answer": "Metoda kojom se pomoću uzorka procjenjuju karakteristike osnovnog skupa te se određuje pouzdanost i preciznost te procjene.",
+        "explanation": "Zove se i reprezentativna metoda."
+      },
+      {
+        "question": "Koje su dvije osnovne zadaće metode uzorka?",
+        "answer": "1) Procjenjivanje nepoznatih parametara osnovnog skupa. 2) Testiranje pretpostavki (hipoteza) o parametrima i obliku rasporeda.",
+        "explanation": "Parametar se procjenjuje brojem i intervalom."
+      },
+      {
+        "question": "OSNOVNI SKUP i UZORAK — definicije?",
+        "answer": "Osnovni skup (N) je skup svih jedinica čije se karakteristike istražuju. Uzorak (n) je dio jedinica osnovnog skupa.",
+        "explanation": "Konačan skup: broj jedinica poznat; beskonačan: ne može se odrediti."
+      },
+      {
+        "question": "Što je REPREZENTATIVAN uzorak?",
+        "answer": "Uzorak koji je po svojim karakteristikama nalik osnovnom skupu — „osnovni skup u malom” (umanjena slika populacije).",
+        "explanation": "Postiže se ispravnim, slučajnim izborom jedinica."
+      },
+      {
+        "question": "NAMJERNI i SLUČAJNI uzorak — razlika?",
+        "answer": "Namjerni čine elementi koje istraživač bira po vlastitoj odluci. Kod slučajnog svaki element ima jednaku vjerojatnost izbora.",
+        "explanation": "Samo slučajni uzorak omogućuje brojčano izražavanje pogreške procjene."
+      },
+      {
+        "question": "Koje su vrste NAMJERNIH uzoraka?",
+        "answer": "Prigodni (trenutno dostupni članovi), kvotni (zadani broj po kvotama), prosudbeni i uzorak „gruda snijega”.",
+        "explanation": "Klaster (uzorak skupina) NIJE namjerni nego slučajni uzorak."
+      },
+      {
+        "question": "Koje su vrste SLUČAJNIH uzoraka?",
+        "answer": "Jednostavni, sistematski (svaki k-ti s popisa), stratificirani (iz podgrupa – stratuma) i uzorak skupina (klaster).",
+        "explanation": "Jednostavni: svaki element ima jednaku vjerojatnost izbora."
+      },
+      {
+        "question": "Koliki je KOEFICIJENT POUZDANOSTI t?",
+        "answer": "n > 30: t = 1,96 (95 %) i t = 2,58 (99 %). Mali uzorak: k = n − 1 pa se t čita iz tablice Studentove razdiobe.",
+        "explanation": "n = 22, 95 % → k = 21 → t = 2,080."
+      },
+      {
+        "question": "Što utječe na koeficijent pouzdanosti t?",
+        "answer": "Veličina uzorka i postotak pouzdanosti (određuje ga istraživač).",
+        "explanation": "Veća pouzdanost → veći t → širi interval."
+      },
+      {
+        "question": "Što je FRAKCIJA IZBORA?",
+        "answer": "Odnos veličine uzorka i veličine osnovnog skupa: \\( f = n / N \\).",
+        "explanation": "N = 1 100, n = 66 → f = 0,06 (odabrano je 6 % jedinica)."
+      },
+      {
+        "question": "Kada se koristi FAKTOR KOREKCIJE?",
+        "answer": "Kada je frakcija izbora veća od 0,05; standardna greška množi se s \\( \\sqrt{\\frac{N-n}{N-1}} \\).",
+        "explanation": "Relativno velik uzorak iz male populacije."
+      },
+      {
+        "question": "Kako se računa PROPORCIJA uzorka?",
+        "answer": "\\( p = m / n \\) (m = broj jedinica s traženim obilježjem); suprotna proporcija \\( q = 1 - p \\).",
+        "explanation": "200 anketiranih, 40 s obilježjem → p = 0,20, q = 0,80."
+      },
+      {
+        "question": "Koji INTERVAL PROCJENE za koju svrhu?",
+        "answer": "Prosječna vrijednost (prosječni prihod, potrošnja) → aritmetička sredina. Ukupna vrijednost → total. Udio/postotak (zadovoljni gosti) → proporcija.",
+        "explanation": "Na ispitu se ovo pita kroz primjere iz turizma."
+      },
+      {
+        "question": "Pouzdanost i preciznost procjene — odnos?",
+        "answer": "Veći postotak pouzdanosti (99 %) daje pouzdaniju, ali manje preciznu (širu) procjenu. Veći uzorak sužava interval.",
+        "explanation": "95 % interval: 5 % rizika da parametar nije u intervalu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kako se zove uzorak koji čine elementi koje je izabrao istraživač po vlastitoj odluci?",
+        "options": [
+          "Slučajni uzorak",
+          "Stratificirani uzorak",
+          "Namjerni uzorak",
+          "Sistematski uzorak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Oznaka za osnovni skup je:",
+        "options": [
+          "n",
+          "N",
+          "f",
+          "k"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Popravnom ispitu pristupilo je 70 studenata, a analizirani su rezultati njih 50. Koliko jedinica ima uzorak, a koliko osnovni skup?",
+        "options": [
+          "Uzorak 70, osnovni skup 50",
+          "Uzorak 50, osnovni skup 70",
+          "Uzorak 20, osnovni skup 70",
+          "Uzorak 50, osnovni skup 120"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko iznosi koeficijent pouzdanosti t ako je n = 35 i pouzdanost 95 %?",
+        "options": [
+          "1,96",
+          "2,58",
+          "2,032",
+          "1,645"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koeficijent pouzdanosti t iznosi 2,58 ako je:",
+        "options": [
+          "n > 30 i pouzdanost 95 %",
+          "n > 30 i pouzdanost 99 %",
+          "n < 30 i pouzdanost 95 %",
+          "n < 30 i pouzdanost 99 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uzorak n = 20, pouzdanost 95 %. Koliki je t (tablica Studentove razdiobe)?",
+        "options": [
+          "1,96",
+          "2,086",
+          "2,093",
+          "2,861"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Formula k = n − 1 služi za izračunavanje:",
+        "options": [
+          "Frakcije izbora",
+          "Stupnjeva slobode",
+          "Proporcije uzorka",
+          "Koeficijenta varijacije"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Standardna greška s faktorom korekcije koristi se ako je:",
+        "options": [
+          "Frakcija izbora manja od 0,05",
+          "Frakcija izbora veća od 0,05",
+          "Uzorak veći od 30",
+          "Pouzdanost 99 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kako glasi formula za proporciju uzorka?",
+        "options": [
+          "p = n / m",
+          "p = m / N",
+          "p = m / n",
+          "p = 1 − m"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako želimo procijeniti UKUPNU potrošnju turista, koristit ćemo interval procjene:",
+        "options": [
+          "Aritmetičke sredine",
+          "Totala",
+          "Proporcije",
+          "Medijana"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako želimo ispitati koliko gostiju hotela nije zadovoljno uslugom prehrane, izračunat ćemo interval procjene:",
+        "options": [
+          "Proporcije",
+          "Totala",
+          "Aritmetičke sredine",
+          "Varijance"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako se želi smanjiti širina intervala procjene, istraživač može:",
+        "options": [
+          "Povećati razinu pouzdanosti",
+          "Smanjiti veličinu uzorka",
+          "Povećati veličinu uzorka",
+          "Smanjiti frakciju izbora"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "U namjerne uzorke NE ubraja se:",
+        "options": [
+          "Kvotni",
+          "Prosudbeni",
+          "Prigodni",
+          "Klaster (uzorak skupina)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za procjenu prosječnih mjesečnih prihoda hotela koristi se interval procjene:",
+        "options": [
+          "Aritmetičke sredine",
+          "Proporcije",
+          "Totala",
+          "Moda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uzorak: n = 200, m = 40, t = 1,96, sₚ = 0,03. Interval proporcije osnovnog skupa je:",
+        "options": [
+          "0,17 – 0,23",
+          "0,14 – 0,26",
+          "0,20 – 0,26",
+          "0,10 – 0,30"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Frakcija izbora je odnos veličine uzorka i veličine _______ skupa.",
+        "answer": "osnovnog",
+        "hint": "f = n / N."
+      },
+      {
+        "sentence": "Suprotna proporcija računa se kao q = 1 − _______.",
+        "answer": "p",
+        "hint": "Jedno slovo."
+      },
+      {
+        "sentence": "Za male uzorke koeficijent pouzdanosti određuje se iz tablice _______ razdiobe.",
+        "answer": "Studentove",
+        "hint": "t-razdioba."
+      },
+      {
+        "sentence": "Stupnjevi slobode računaju se formulom k = n − _______.",
+        "answer": "1",
+        "hint": "Broj."
+      },
+      {
+        "sentence": "U slučajnom uzorku svaki element osnovnog skupa ima jednaku _______ izbora.",
+        "answer": "vjerojatnost",
+        "hint": "Šansu da bude izabran."
+      },
+      {
+        "sentence": "Procijenjeni total osnovnog skupa jednak je umnošku N i _______ sredine uzorka.",
+        "answer": "aritmetičke",
+        "hint": "Σx′ = N · x̄."
+      },
+      {
+        "sentence": "Uzorak koji po svojim karakteristikama nalikuje osnovnom skupu naziva se _______ uzorak.",
+        "answer": "reprezentativan",
+        "hint": "„Osnovni skup u malom”."
+      },
+      {
+        "sentence": "Uzorak u kojem se bira svaki k-ti element s popisa zove se _______ uzorak.",
+        "answer": "sistematski",
+        "hint": "Vrsta slučajnog uzorka."
+      }
+    ],
+    "learn": {
+      "title": "Metoda uzorka",
+      "content": "<h3>Zašto uzorak?</h3><p>Prikupljanje podataka o svim jedinicama skupa često je preskupo, predugo traje ili nije moguće. Tada se provodi <strong>reprezentativno promatranje</strong>: obuhvati se samo dio jedinica (uzorak), a metodama inferencijalne statistike zaključuje se o cijelom skupu (ispitivanje javnog mnijenja, gledanosti TV programa, istraživanje tržišta, ankete gostiju).</p><p><strong>Metoda uzorka (reprezentativna metoda)</strong> pomoću uzorka procjenjuje karakteristike osnovnog skupa i određuje <strong>pouzdanost i preciznost</strong> te procjene. Dvije su zadaće: (1) <strong>procjena</strong> nepoznatih parametara osnovnog skupa (brojem i intervalom) i (2) <strong>testiranje hipoteza</strong> o parametrima i obliku rasporeda (nul-hipoteza se prihvaća ili odbacuje u korist alternativne).</p><h4>Osnovni skup i uzorak</h4><ul><li><strong>Osnovni skup (populacija), N</strong> — skup svih jedinica čije se karakteristike istražuju (npr. svi turisti na Opatijskoj rivijeri). <em>Konačan</em> ako se broj jedinica može odrediti, <em>beskonačan</em> ako ne može ili stalno pristižu nove jedinice.</li><li><strong>Uzorak, n</strong> — dio jedinica osnovnog skupa. Mora biti <strong>reprezentativan</strong> — „osnovni skup u malom” — što se postiže time da svaki element ima jednaku mogućnost izbora.</li></ul><h4>Vrste uzoraka</h4><table><tr><th>Namjerni (bez primjene vjerojatnosti)</th><th>Slučajni (uz primjenu vjerojatnosti)</th></tr><tr><td><strong>Prigodni</strong> — trenutno dostupni članovi (mišljenja kupaca u trgovačkom centru)</td><td><strong>Jednostavni</strong> — svaki element ima jednaku vjerojatnost izbora (ždrijeb, tablica slučajnih brojeva)</td></tr><tr><td><strong>Kvotni</strong> — zadani broj elemenata; izbor unutar kvote ovisi o anketaru</td><td><strong>Sistematski</strong> — svaki k-ti element s uređenog popisa</td></tr><tr><td><strong>Prosudbeni</strong> — istraživač procjenjuje koje jedinice su „tipične”</td><td><strong>Stratificirani</strong> — izbor iz pojedinih podgrupa (stratuma)</td></tr><tr><td><strong>Gruda snijega</strong> — ispitanici preporučuju nove ispitanike</td><td><strong>Uzorak skupina (klaster)</strong> — biraju se cijele skupine jedinica</td></tr></table><p>Namjerni uzorak je jednostavniji i jeftiniji (pilot-ispitivanja), ali teško je postići reprezentativnost i nije moguće brojčano izraziti pogrešku. Jedinice se mogu birati <strong>s ponavljanjem</strong> (populacija ostaje ista) ili <strong>bez ponavljanja</strong>.</p><h4>Sastojci svake procjene</h4><p><strong>1. Koeficijent pouzdanosti t</strong> ovisi o veličini uzorka i postotku pouzdanosti:</p><ul><li><strong>n > 30</strong> (veliki uzorak): 95 % → \\( t = 1{,}96 \\); 99 % → \\( t = 2{,}58 \\).</li><li><strong>mali uzorak</strong>: stupnjevi slobode \\( k = n - 1 \\), a t se čita iz tablice „Vrijednosti t za Studentovu razdiobu” — stupac 0,05 za 95 %, stupac 0,01 za 99 %. Npr. k = 19: 2,093 / 2,861; k = 21: 2,080 / 2,831; k = 24: 2,064 / 2,797.</li></ul><p>Veća pouzdanost povećava pouzdanost procjene, ali smanjuje preciznost (interval je širi). 95 % interval znači 5 % rizika da se parametar ne nalazi u intervalu; 99 % smanjuje taj rizik na 1 %.</p><p><strong>2. Frakcija izbora</strong> \\( f = n/N \\). Ako je populacija beskonačna ili nije zadana, uzima se f &lt; 0,05. <strong>3. Faktor korekcije</strong> \\( \\sqrt{\\frac{N-n}{N-1}} \\) množi standardnu grešku kada je <strong>f > 0,05</strong>.</p><h4>Interval procjene aritmetičke sredine osnovnog skupa</h4><p>Koristi se za procjenu <strong>prosječne veličine</strong> (prosječni mjesečni prihodi, prosječna izvanpansionska potrošnja turista, prosječan broj zaposlenih u malim poduzećima).</p><div class=\"formula-box\">\\[ \\bar{x} - t \\cdot s_{\\bar{x}} &lt; \\bar{X} &lt; \\bar{x} + t \\cdot s_{\\bar{x}} \\]\\[ s = \\sigma \\;\\; (n > 50) \\qquad s = \\sigma \\sqrt{\\frac{n}{n-1}} \\;\\; (n \\le 50) \\]\\[ s_{\\bar{x}} = \\frac{s}{\\sqrt{n}} \\;\\; (n > 30) \\qquad s_{\\bar{x}} = \\frac{s}{\\sqrt{n-1}} \\;\\; (n \\le 30) \\qquad \\text{ako je } f > 0{,}05: \\; s_{\\bar{x}} \\cdot \\sqrt{\\frac{N-n}{N-1}} \\]</div><div class=\"tip-box\"><strong>Napomena:</strong> za mali uzorak (n ≤ 50, odnosno n ≤ 30) ovo je zapis s predavanja i seminara FMTU — procijenjena s dobiva korekciju \\( \\sqrt{n/(n-1)} \\), a standardna greška se zatim dijeli s \\( \\sqrt{n-1} \\). Udžbenici drugdje to pišu drukčije, ali na kolokviju koristi upravo ovaj zapis (njime su riješeni svi primjeri s predavanja i seminara).</div><p><strong>Postupak:</strong> 1) AS uzorka, 2) t, 3) f, 4) procijenjena standardna devijacija s, 5) standardna greška \\( s_{\\bar{x}} \\), 6) interval, 7) zaključak rečenicom.</p><div class=\"example-box\"><strong>Primjer 1 — veliki uzorak (predavanje 7):</strong> N = 3 200, n = 52, \\( \\bar{x} = 298{,}22 \\), σ = 53,70; pouzdanost 99 %.<br>• n > 30, 99 % → t = 2,58 · \\( f = 52/3\\,200 = 0{,}02 &lt; 0{,}05 \\) · n > 50 → s = σ = 53,70<br>• \\( s_{\\bar{x}} = \\frac{53{,}70}{\\sqrt{52}} = 7{,}45 \\) → \\( 298{,}22 \\pm 2{,}58 \\cdot 7{,}45 = 298{,}22 \\pm 19{,}22 \\)<br>• \\( 279{,}00 &lt; \\bar{X} &lt; 317{,}44 \\)<br><strong>Zaključak:</strong> aritmetička sredina svih 3 200 elemenata nalazi se između 279,00 i 317,44 uz 99 % pouzdanosti (predavanje zbog zaokruživanja piše 278,99).</div><div class=\"example-box\"><strong>Primjer 2 — mali uzorak (seminar 7):</strong> N = 1 000 proizvoda, n = 25, prosječno vrijeme izrade \\( \\bar{x} = 40 \\) min, σ = 8 min; 95 %.<br>• k = 25 − 1 = 24 → t = 2,064 · f = 0,025 &lt; 0,05<br>• \\( s = 8\\sqrt{\\frac{25}{24}} = 8{,}16 \\) · \\( s_{\\bar{x}} = \\frac{8{,}16}{\\sqrt{24}} = 1{,}67 \\)<br>• \\( 40 \\pm 2{,}064 \\cdot 1{,}67 = 40 \\pm 3{,}45 \\) → \\( 36{,}55 &lt; \\bar{X} &lt; 43{,}45 \\) min.</div><div class=\"example-box\"><strong>Primjer 3 — kada treba faktor korekcije (brojevi iz seminara 7, turistički kontekst):</strong> anketirano je n = 100 gostiju, prosječna dnevna izvanpansionska potrošnja \\( \\bar{x} = 60 \\) €, σ = 15 €; 95 % (t = 1,96; n > 50 → s = 15).<br><strong>a) N = 5 000:</strong> f = 0,02 → \\( s_{\\bar{x}} = 15/\\sqrt{100} = 1{,}5 \\) → \\( 60 \\pm 2{,}94 \\) → 57,06 € do 62,94 €.<br><strong>b) N = 1 500:</strong> f = 0,067 > 0,05 → \\( s_{\\bar{x}} = 1{,}5 \\cdot \\sqrt{\\frac{1\\,400}{1\\,499}} = 1{,}5 \\cdot 0{,}966 = 1{,}45 \\) → \\( 60 \\pm 2{,}84 \\) → 57,16 € do 62,84 €.<br>Kad uzorak čini veći dio populacije, procjena je preciznija — faktor korekcije sužava interval.</div><h4>Interval procjene totala osnovnog skupa</h4><p>Za procjenu <strong>ukupne vrijednosti</strong> (ukupna potrošnja turista, ukupno vrijeme izrade serije). Total je zbroj svih vrijednosti obilježja.</p><div class=\"formula-box\">\\[ \\textstyle\\sum x^{\\prime} = N \\cdot \\bar{x} \\qquad s_{\\sum x^{\\prime}} = N \\cdot s_{\\bar{x}} \\qquad \\sum x^{\\prime} - t \\cdot s_{\\sum x^{\\prime}} &lt; \\sum X &lt; \\sum x^{\\prime} + t \\cdot s_{\\sum x^{\\prime}} \\]</div><div class=\"example-box\"><strong>Primjer 4 (seminar 7):</strong> serija od N = 3 000 komada; u uzorku n = 28 prosječno vrijeme izrade 26,5 min, σ = 5,3 min; 95 %.<br>• \\( \\sum x^{\\prime} = 3\\,000 \\cdot 26{,}5 = 79\\,500 \\) min · k = 27 → t = 2,052 · f = 0,0093<br>• \\( s = 5{,}3\\sqrt{28/27} = 5{,}40 \\) · \\( s_{\\bar{x}} = 5{,}40/\\sqrt{27} = 1{,}04 \\) · \\( s_{\\sum x^{\\prime}} = 3\\,000 \\cdot 1{,}04 = 3\\,120 \\)<br>• \\( 79\\,500 \\pm 2{,}052 \\cdot 3\\,120 = 79\\,500 \\pm 6\\,402{,}24 \\) → 73 097,76 do 85 902,24 min.</div><h4>Interval procjene proporcije osnovnog skupa</h4><p>Za procjenu <strong>postotka elemenata s traženim obilježjem</strong> (birači kandidata A, neispravni proizvodi u pošiljci, nezadovoljni gosti). Proporcija je omjer broja elemenata s traženim obilježjem i ukupnog broja elemenata.</p><div class=\"formula-box\">\\[ p = \\frac{m}{n} \\qquad q = 1 - p \\qquad p - t \\cdot s_p &lt; P &lt; p + t \\cdot s_p \\]\\[ s_p = \\sqrt{\\frac{pq}{n}} \\;\\; (n > 30) \\qquad s_p = \\sqrt{\\frac{pq}{n-1}} \\;\\; (n \\le 30) \\qquad \\text{ako je } f > 0{,}05: \\; s_p \\cdot \\sqrt{\\frac{N-n}{N-1}} \\]</div><div class=\"example-box\"><strong>Primjer 5 — zadovoljstvo gostiju:</strong> hotel je u sezoni ugostio N = 6 000 gostiju; od n = 160 anketiranih njih m = 144 zadovoljno je uslugom; 95 %.<br>• \\( p = 144/160 = 0{,}90 \\), \\( q = 0{,}10 \\) · n > 30 → t = 1,96 · f = 160/6 000 = 0,027 &lt; 0,05<br>• \\( s_p = \\sqrt{\\frac{0{,}90 \\cdot 0{,}10}{160}} = 0{,}0237 \\) → \\( 0{,}90 \\pm 1{,}96 \\cdot 0{,}0237 = 0{,}90 \\pm 0{,}0465 \\)<br>• \\( 0{,}8535 &lt; P &lt; 0{,}9465 \\)<br><strong>Zaključak:</strong> uz 95 % pouzdanosti između 85,35 % i 94,65 % svih gostiju zadovoljno je uslugom.<br>(Predavanje: N = 5 000, n = 200, m = 40 → p = 0,20, \\( s_p \\approx 0{,}03 \\) → 0,14 &lt; P &lt; 0,26, tj. 14 % do 26 %.)</div><div class=\"warning-box\"><strong>Česte zamke:</strong> (1) t = 1,96 i 2,58 vrijede samo za velike uzorke; za mali uzorak prvo k = n − 1 pa tablica; (2) faktor korekcije samo kad je f > 0,05; (3) pravi izbor intervala: „prosječno” → AS, „ukupno” → total, „koliko posto / koliko ih je zadovoljno” → proporcija; (4) predavanje granice piše kao n &lt; 30 / n > 30 i n &lt; 50 / n > 50, a seminar kao n ≤ 30 i n ≤ 50 — za n = 30 ili n = 50 slijedi seminarski zapis; (5) klaster je slučajni, ne namjerni uzorak.</div>"
+    }
+  },
+  "correlationRegression": {
+    "name": "Korelacijska i regresijska analiza",
+    "icon": "fa-chart-line",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "FUNKCIONALNE i STATISTIČKE veze — razlika?",
+        "answer": "Funkcionalne: svakoj vrijednosti jedne pojave odgovara točno određena vrijednost druge (P = a²). Statističke (stohastičke): odgovara joj više različitih vrijednosti.",
+        "explanation": "Dolasci i noćenja turista su u statističkoj vezi."
+      },
+      {
+        "question": "Što je REGRESIJSKA ANALIZA?",
+        "answer": "Primjena metoda kojima se analitički (jednadžbom) objašnjava statistička veza između pojava; omogućuje predviđanje Y za zadani X.",
+        "explanation": "Temelji se na regresijskom modelu (jednadžba s parametrima i varijablama)."
+      },
+      {
+        "question": "Što je KORELACIJSKA ANALIZA?",
+        "answer": "Primjena metoda kojima se utvrđuje stupanj (jakost i smjer) povezanosti između pojava.",
+        "explanation": "Uključuje dijagram rasipanja i koeficijent korelacije."
+      },
+      {
+        "question": "NEZAVISNA i ZAVISNA varijabla?",
+        "answer": "Nezavisna (X) je uzrok; zavisna (Y) je posljedica — varijabla čije se varijacije objašnjavaju pomoću drugih varijabli.",
+        "explanation": "Zavisnu varijablu istraživač ne može izravno kontrolirati."
+      },
+      {
+        "question": "Kako glasi jednadžba pravca regresije?",
+        "answer": "\\( Y_c = a + bx \\), uz \\( b = \\frac{\\sum xy - \\bar{x}\\sum y}{\\sum x^2 - \\bar{x}\\sum x} \\) i \\( a = \\bar{y} - b\\bar{x} \\).",
+        "explanation": "Parametri se određuju metodom najmanjih kvadrata."
+      },
+      {
+        "question": "Što predstavlja parametar a?",
+        "answer": "Konstantni član: regresijska (očekivana) vrijednost Y kada je X = 0. Često nema smisleno značenje.",
+        "explanation": "Promet pri nula zaposlenih nema logično tumačenje."
+      },
+      {
+        "question": "Što predstavlja parametar b?",
+        "answer": "Regresijski koeficijent — najvažniji pokazatelj: prosječna linearna promjena Y kada se X poveća za jednu jedinicu. Može biti pozitivan ili negativan.",
+        "explanation": "b = 4,28: tisuću dolazaka više → u prosjeku 4,28 tisuća noćenja više."
+      },
+      {
+        "question": "Što je DIJAGRAM RASIPANJA?",
+        "answer": "Grafički prikaz točaka određenih parovima (x, y) iz kojeg se zaključuje o obliku, smjeru i jakosti veze.",
+        "explanation": "Zove se i oblak raspršenosti."
+      },
+      {
+        "question": "U kojem intervalu je KOEFICIJENT KORELACIJE?",
+        "answer": "Od −1 do +1. Predznak pokazuje smjer (pozitivna ili negativna veza), a apsolutna vrijednost jakost.",
+        "explanation": "r = −1,22 ili 2,34 nije moguć."
+      },
+      {
+        "question": "Kako se tumači jakost koeficijenta korelacije?",
+        "answer": "0 = odsustvo veze · do 0,3 slaba · 0,3–0,6 srednje jaka · 0,6–1 jaka · ±1 potpuna (funkcionalna).",
+        "explanation": "Seminar „srednje jaku” vezu naziva „umjerenom”."
+      },
+      {
+        "question": "Što je PEARSONOV koeficijent linearne korelacije?",
+        "answer": "Brojčana mjera jakosti i smjera povezanosti dviju kvantitativnih pojava u linearnom statističkom odnosu (r). Može se izračunati i kao \\( r = \\sqrt{b \\cdot b^{\\prime}} \\).",
+        "explanation": "Predznak r jednak je predznaku regresijskih koeficijenata."
+      },
+      {
+        "question": "Što je SPEARMANOV koeficijent korelacije ranga?",
+        "answer": "Mjera povezanosti dviju redoslijednih (rang) varijabli: \\( r_s = 1 - \\frac{6\\sum d_i^2}{n^3 - n} \\), gdje je \\( d_i = r_x - r_y \\).",
+        "explanation": "Jednakim vrijednostima dodjeljuje se prosječni rang."
+      },
+      {
+        "question": "Što je KOEFICIJENT DETERMINACIJE?",
+        "answer": "\\( r^2 \\) — udio varijacije zavisne varijable protumačen regresijskim modelom (omjer protumačenih i ukupnih odstupanja).",
+        "explanation": "r² = 0,88 → 88 % varijacije Y objašnjeno je varijacijom X."
+      },
+      {
+        "question": "Može li se iz koeficijenta korelacije zaključiti o UZROČNOSTI?",
+        "answer": "Ne. Na temelju veličine koeficijenta korelacije nije moguće zaključivati o uzročno-posljedičnom odnosu.",
+        "explanation": "Korelacija mjeri samo zajedničko kretanje (kovarijaciju)."
+      },
+      {
+        "question": "JEDNOSTAVNA i VIŠESTRUKA regresija?",
+        "answer": "Jednostavna: jedna zavisna i jedna nezavisna varijabla. Višestruka (multipla): utjecaj više nezavisnih varijabli na zavisnu.",
+        "explanation": "Jednostavna linearna regresija opisuje odnos dviju pojava."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Ukoliko je korelacija potpuna, govorimo o:",
+        "options": [
+          "Stohastičkoj povezanosti",
+          "Funkcionalnoj povezanosti",
+          "Krivolinijskoj povezanosti",
+          "Odsustvu veze"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Analiza koja analitički (jednadžbom) objašnjava statističku vezu između varijabli jest:",
+        "options": [
+          "Korelacijska analiza",
+          "Regresijska analiza",
+          "Faktorska analiza",
+          "Analiza vremenskih nizova"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Brojčana mjera jakosti i smjera povezanosti dviju pojava u linearnom statističkom odnosu jest:",
+        "options": [
+          "Koeficijent varijacije",
+          "Koeficijent korelacije ranga",
+          "Pearsonov koeficijent linearne korelacije",
+          "Koeficijent zaobljenosti"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Parametar a u regresijskoj jednadžbi predstavlja:",
+        "options": [
+          "Regresijski koeficijent",
+          "Konstantni član",
+          "Koeficijent korelacije",
+          "Koeficijent determinacije"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je r = +1, korelacija je:",
+        "options": [
+          "Potpuna i pozitivna",
+          "Jaka i pozitivna",
+          "Potpuna i negativna",
+          "Ne postoji"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako je r = −0,99, povezanost je:",
+        "options": [
+          "Potpuna i negativna",
+          "Jaka i negativna",
+          "Slaba i negativna",
+          "Srednje jaka i negativna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je r = −1,22, povezanost je:",
+        "options": [
+          "Potpuna i negativna",
+          "Jaka i negativna",
+          "Nemoguća — izvan intervala od −1 do +1",
+          "Srednje jaka i negativna"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako je r = +0,22, korelacija je:",
+        "options": [
+          "Slaba i pozitivna",
+          "Srednje jaka i pozitivna",
+          "Jaka i pozitivna",
+          "Potpuna i pozitivna"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koeficijent korelacije r = 0,55 upućuje na:",
+        "options": [
+          "Slabu pozitivnu korelaciju",
+          "Srednje jaku (umjerenu) pozitivnu korelaciju",
+          "Jaku pozitivnu korelaciju",
+          "Umjerenu negativnu korelaciju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Stupanj povezanosti redoslijednih (rang) varijabli mjeri se:",
+        "options": [
+          "Pearsonovim koeficijentom",
+          "Koeficijentom korelacije ranga",
+          "Koeficijentom varijacije",
+          "Regresijskim koeficijentom"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Grafikon iz kojeg se zaključuje o obliku, smjeru i jakosti veze između pojava zove se:",
+        "options": [
+          "Histogram",
+          "Poligon frekvencija",
+          "Dijagram rasipanja",
+          "Varzarov znak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Konstantni član regresijske jednadžbe je vrijednost regresijske funkcije kada je x jednak:",
+        "options": [
+          "0",
+          "1",
+          "x̄",
+          "b"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Regresijski koeficijent pokazuje za koliko se linearno mijenja Y za jedinični porast:",
+        "options": [
+          "Zavisne varijable",
+          "Nezavisne varijable",
+          "Koeficijenta korelacije",
+          "Konstantnog člana"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Omjer protumačenih odstupanja i ukupnih odstupanja zove se:",
+        "options": [
+          "Koeficijent varijacije",
+          "Koeficijent determinacije",
+          "Regresijski koeficijent",
+          "Koeficijent korelacije ranga"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za bodove na dva kolokvija izračunato je b = 0,34 i b′ = 0,51. Koliki je r?",
+        "options": [
+          "0,17",
+          "0,42",
+          "0,85",
+          "0,43"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Izračunati regresijski koeficijent može poprimiti:",
+        "options": [
+          "Samo pozitivne vrijednosti",
+          "Samo negativne vrijednosti",
+          "I pozitivne i negativne vrijednosti",
+          "Samo vrijednosti od −1 do +1"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Odnosi među pojavama mogu biti funkcionalni i _______.",
+        "answer": "stohastički",
+        "hint": "Drugi naziv za statističke veze."
+      },
+      {
+        "sentence": "Regresijski koeficijent u jednadžbi pravca regresije označava se slovom _______.",
+        "answer": "b",
+        "hint": "Yc = a + b·x"
+      },
+      {
+        "sentence": "Pri potpunom slaganju rangova razlika rangova d za svaki par jednaka je _______.",
+        "answer": "nuli",
+        "hint": "Riječju, dativ od „nula”."
+      },
+      {
+        "sentence": "Spearmanov koeficijent koristi se za varijable izražene modalitetima _______ obilježja.",
+        "answer": "redoslijednog",
+        "hint": "Rang-varijable."
+      },
+      {
+        "sentence": "Nezavisna varijabla u regresijskom modelu označava se slovom _______.",
+        "answer": "X",
+        "hint": "Zavisna je Y."
+      },
+      {
+        "sentence": "Jednakim vrijednostima pri rangiranju dodjeljuje se _______ rang.",
+        "answer": "prosječni",
+        "hint": "Npr. rangovi 4 i 5 → 4,5."
+      },
+      {
+        "sentence": "Ako oblak točaka ide od lijevog donjeg prema desnom gornjem kutu, veza je _______.",
+        "answer": "pozitivna",
+        "hint": "Rast X prati rast Y."
+      },
+      {
+        "sentence": "Linija regresije određuje se metodom najmanjih _______.",
+        "answer": "kvadrata",
+        "hint": "Minimiziraju se kvadrati odstupanja."
+      }
+    ],
+    "learn": {
+      "title": "Korelacijska i regresijska analiza",
+      "content": "<h3>Povezanost pojava</h3><p>Mnoge pojave su povezane: veća proizvodnja povećava troškove, osobna potrošnja ovisi o dohotku, broj noćenja o broju dolazaka turista. Veze mogu biti:</p><ul><li><strong>Funkcionalne (determinističke)</strong> — postojane, iskazuju se formulom; svakoj vrijednosti jedne pojave odgovara <em>točno određena</em> vrijednost druge (površina kvadrata \\( P = a^2 \\)).</li><li><strong>Statističke (stohastičke)</strong> — slabije; svakoj vrijednosti jedne pojave odgovara <em>više različitih</em> vrijednosti druge (zaposlenici iste stručne spreme imaju različite plaće; kućanstva istog dohotka različitu potrošnju).</li></ul><p><strong>Regresijska analiza</strong> jednadžbom objašnjava statističku vezu i predviđa vrijednosti zavisne varijable; <strong>korelacijska analiza</strong> mjeri stupanj — jakost i smjer — povezanosti. Varijabla koja je uzrok je <strong>nezavisna (X)</strong>, a posljedica <strong>zavisna (Y)</strong>. Jednostavna regresija ima jednu nezavisnu varijablu, a višestruka (multipla) više njih.</p><h4>Model jednostavne linearne regresije</h4><p>Promjenu jedne pojave prati približno jednaka linearna promjena druge. Parametri se procjenjuju <strong>metodom najmanjih kvadrata</strong> (minimizira se udaljenost točaka od linije regresije).</p><div class=\"formula-box\">\\[ Y_c = a + bx \\qquad b = \\frac{\\sum xy - \\bar{x}\\sum y}{\\sum x^2 - \\bar{x}\\sum x} = \\frac{\\sum xy - n\\bar{x}\\bar{y}}{\\sum x^2 - n\\bar{x}^2} \\qquad a = \\bar{y} - b\\bar{x} \\]\\[ \\text{drugi pravac: } X_c = a^{\\prime} + b^{\\prime}y \\qquad b^{\\prime} = \\frac{\\sum xy - \\bar{y}\\sum x}{\\sum y^2 - \\bar{y}\\sum y} \\qquad a^{\\prime} = \\bar{x} - b^{\\prime}\\bar{y} \\]</div><ul><li><strong>a — konstantni član</strong>: očekivana vrijednost Y kada je X = 0 (odsječak na osi y). Često se ne može smisleno protumačiti: promet od 11 300 kn uz nula zaposlenih; ili dobit −1,55 mil. kn = očekivani gubitak ako poduzeće ne ostvari promet.</li><li><strong>b — regresijski koeficijent</strong>: najvažniji pokazatelj; prosječna linearna promjena Y kad se X poveća za jednu jedinicu; određuje smjer i nagib pravca. Npr. dolasci i noćenja 2001.–2010. (u tis.): \\( \\hat{y} = 8\\,983{,}28 + 4{,}28x \\) → tisuću dolazaka više donosi u prosjeku 4,28 tisuća noćenja više.</li></ul><div class=\"example-box\"><strong>Riješeni primjer (predavanje 8) — bodovi šest studenata na I. (X) i II. (Y) kolokviju:</strong><table><tr><th>X</th><th>Y</th><th>XY</th><th>X²</th><th>Y²</th></tr><tr><td>88</td><td>47</td><td>4 136</td><td>7 744</td><td>2 209</td></tr><tr><td>62</td><td>63</td><td>3 906</td><td>3 844</td><td>3 969</td></tr><tr><td>55</td><td>70</td><td>3 850</td><td>3 025</td><td>4 900</td></tr><tr><td>96</td><td>80</td><td>7 680</td><td>9 216</td><td>6 400</td></tr><tr><td>78</td><td>70</td><td>5 460</td><td>6 084</td><td>4 900</td></tr><tr><td>49</td><td>40</td><td>1 960</td><td>2 401</td><td>1 600</td></tr><tr><td>428</td><td>370</td><td>26 992</td><td>32 314</td><td>23 978</td></tr></table>\\( \\bar{x} = 428/6 = 71{,}33 \\), \\( \\bar{y} = 370/6 = 61{,}67 \\)<br>\\( b = \\frac{26\\,992 - 71{,}33 \\cdot 370}{32\\,314 - 71{,}33 \\cdot 428} = \\frac{599{,}90}{1\\,784{,}76} = 0{,}34 \\) · \\( a = 61{,}67 - 0{,}34 \\cdot 71{,}33 = 37{,}42 \\)<br>→ \\( Y_c = 37{,}42 + 0{,}34x \\): svaki dodatni bod na I. kolokviju donosi u prosjeku 0,34 boda više na II.<br>Drugi pravac: \\( b^{\\prime} = \\frac{597{,}24}{1\\,160{,}10} = 0{,}51 \\), \\( a^{\\prime} = 71{,}33 - 0{,}51 \\cdot 61{,}67 = 39{,}88 \\) → \\( X_c = 39{,}88 + 0{,}51y \\).<br>(Predavanje zaokružuje b na 0,34 prije računanja a; s nezaokruženim b = 0,3357 dobije se a = 37,72.)</div><h4>Korelacijska analiza</h4><p>Prema smjeru korelacija je <strong>pozitivna</strong> (porast jedne pojave prati porast druge: opseg proizvodnje i troškovi) ili <strong>negativna</strong> (porast jedne prati pad druge: standard stanovništva i mortalitet).</p><p><strong>Dijagram rasipanja (oblak raspršenosti)</strong> čine točke (x, y). Što su točke bliže zamišljenom pravcu, veza je jača; ako čine pravac, veza je funkcionalna (potpuna). Oblak od lijevog donjeg prema desnom gornjem kutu → pozitivna veza; od lijevog gornjeg prema desnom donjem → negativna; bez uzorka → veze nema.</p><table><tr><th>r</th><th>Tumačenje</th></tr><tr><td>−1</td><td>potpuna negativna</td></tr><tr><td>−1 do −0,6</td><td>jaka negativna</td></tr><tr><td>−0,6 do −0,3</td><td>srednje jaka (umjerena) negativna</td></tr><tr><td>−0,3 do +0,3</td><td>slaba (r = 0: odsustvo veze)</td></tr><tr><td>+0,3 do +0,6</td><td>srednje jaka (umjerena) pozitivna</td></tr><tr><td>+0,6 do +1</td><td>jaka pozitivna</td></tr><tr><td>+1</td><td>potpuna pozitivna</td></tr></table><p>Vrste koeficijenata: linearne korelacije, višestruke linearne korelacije, krivolinijske korelacije i korelacije ranga.</p><p><strong>Pearsonov koeficijent linearne korelacije (r)</strong> — samo za kvantitativne podatke u linearnom odnosu. Polazište je <strong>kovarijanca</strong> (aritmetička sredina umnožaka odstupanja X i Y od njihovih sredina):</p><div class=\"formula-box\">\\[ r = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2 \\sum (y_i - \\bar{y})^2}} \\qquad \\text{ili} \\qquad r = \\sqrt{b \\cdot b^{\\prime}} \\]</div><div class=\"example-box\"><strong>Primjer — bodovi na dva kolokvija (predavanje 8):</strong> iz pravaca regresije b = 0,34 i b′ = 0,51 slijedi \\( r = \\sqrt{0{,}34 \\cdot 0{,}51} = 0{,}42 \\) → veza između bodova na dva kolokvija je <strong>srednje jaka i pozitivna</strong>.</div><p><strong>Spearmanov koeficijent korelacije ranga</strong> — za dvije redoslijedne (rang) varijable. Najmanjoj vrijednosti pridružuje se rang 1, sljedećoj 2 … (može i obrnuto); jednakim vrijednostima <strong>prosječni rang</strong>.</p><div class=\"formula-box\">\\[ r_s = 1 - \\frac{6\\sum d_i^2}{n^3 - n} \\qquad d_i = r_{x_i} - r_{y_i} \\]</div><div class=\"example-box\"><strong>Primjer — Spearman (predavanje 8):</strong> bodovi šest studenata, I. kolokvij X: 88, 62, 55, 96, 78, 49; II. kolokvij Y: 47, 63, 70, 80, 70, 40.<br>Rangovi: r<sub>x</sub>: 5, 3, 2, 6, 4, 1; r<sub>y</sub>: 2, 3, 4,5, 6, 4,5, 1 (dva studenta imaju 70 bodova → rangovi 4 i 5 → oba 4,5).<br>d: 3, 0, −2,5, 0, −0,5, 0 → \\( \\sum d^2 = 9 + 6{,}25 + 0{,}25 = 15{,}5 \\)<br>\\( r_s = 1 - \\frac{6 \\cdot 15{,}5}{216 - 6} = 1 - \\frac{93}{210} = 0{,}56 \\) → srednje jaka pozitivna veza.</div><h4>Koeficijent determinacije (seminar 8)</h4><p>Mjeri reprezentativnost regresijskog modela — koliki je udio varijacije Y protumačen modelom:</p><div class=\"formula-box\">\\[ r^2 = \\frac{\\sum (\\hat{y}_i - \\bar{y})^2}{\\sum (y_i - \\bar{y})^2} \\qquad r = \\sqrt{r^2} \\]</div><div class=\"example-box\"><strong>Riješeni primjer (seminar 8) — radno iskustvo (X, godine) i godišnja plaća (Y, u tis.):</strong> X: 1, 5, 4, 2, 10; Y: 90, 100, 105, 100, 120.<br>\\( \\bar{x} = 4{,}4 \\), \\( \\bar{y} = 103 \\), \\( \\sum xy = 2\\,410 \\), \\( \\sum x^2 = 146 \\)<br>\\( b = \\frac{2\\,410 - 5 \\cdot 4{,}4 \\cdot 103}{146 - 5 \\cdot 4{,}4^2} = \\frac{144}{49{,}2} = 2{,}927 \\) · \\( a = 103 - 2{,}927 \\cdot 4{,}4 = 90{,}12 \\) → \\( \\hat{y} = 90{,}12 + 2{,}927x \\)<br>\\( r^2 = \\frac{421{,}50}{480} = 0{,}878 \\) → 87,8 % varijacije plaće objašnjeno je radnim iskustvom; \\( r = \\sqrt{0{,}878} = 0{,}937 \\) → jaka pozitivna veza. Konstantni član (plaća uz 0 godina iskustva) ovdje nema smisleno tumačenje.</div><div class=\"warning-box\"><strong>Česte zamke:</strong> (1) r uvijek leži između −1 i +1 — vrijednosti poput 2,34 ili −1,22 nisu moguće (neke studentske bilješke ih pogrešno tumače kao „potpune”); (2) r = +0,22 je <em>slaba</em> pozitivna veza — ako takva opcija nije ponuđena, točno je „ništa od navedenog”; (3) iz korelacije se ne zaključuje o uzročnosti; (4) a = konstantni član, b = regresijski koeficijent (ne obrnuto); (5) Pearson za kvantitativne, Spearman za redoslijedne varijable.</div>"
+    }
+  },
+  "timeSeries": {
+    "name": "Osnovna analiza vremenskih nizova",
+    "icon": "fa-calendar-days",
+    "color": "#eab308",
+    "flashcards": [
+      {
+        "question": "Što je VREMENSKI NIZ?",
+        "answer": "Skup kronološki uređenih vrijednosti neke pojave. Vrijednosti (y₁ … y_N) su frekvencije niza, a njihov broj je duljina niza.",
+        "explanation": "Nastaje uređivanjem podataka za dva ili više razdoblja."
+      },
+      {
+        "question": "INTERVALNI i TRENUTAČNI vremenski niz — razlika?",
+        "answer": "Intervalni: vrijednosti nastaju zbrajanjem pojave po intervalima i imaju svojstvo kumulativnosti. Trenutačni: stanje pojave u određenom trenutku, bez kumulativnosti.",
+        "explanation": "Noćenja po mjesecima → intervalni; smještajni kapaciteti 31.8. → trenutačni."
+      },
+      {
+        "question": "Kako se grafički prikazuju vremenski nizovi?",
+        "answer": "Intervalni: površinskim i linijskim grafikonom. Trenutačni: samo linijskim grafikonom.",
+        "explanation": "Ne preporučuje se istodobno uspoređivati više od tri niza."
+      },
+      {
+        "question": "INDIVIDUALNI i SKUPNI indeksi?",
+        "answer": "Individualni prate dinamiku jedne pojave. Skupni istodobno prate razvoj dviju ili više pojava (indeksi cijena, količina, vrijednosti).",
+        "explanation": "Posebni oblici: indeks fizičkog obujma, indeks troškova života."
+      },
+      {
+        "question": "Kako se računaju VERIŽNI INDEKSI?",
+        "answer": "Svaki član niza podijeli se s PRETHODNIM članom i pomnoži sa 100: \\( V_t = \\frac{Y_t}{Y_{t-1}} \\cdot 100 \\).",
+        "explanation": "Relativni brojevi s promjenljivim osnovama."
+      },
+      {
+        "question": "Kako se računaju BAZNI INDEKSI (indeksi na stalnoj bazi)?",
+        "answer": "Svaki član niza podijeli se s frekvencijom BAZNOG razdoblja i pomnoži sa 100: \\( I_t = \\frac{Y_t}{Y_b} \\cdot 100 \\).",
+        "explanation": "Relativni brojevi s jednakim osnovama; oznaka npr. 1997. = 100."
+      },
+      {
+        "question": "Kako se računa STOPA PROMJENE?",
+        "answer": "\\( s_t = V_t - 100 \\) (prema prethodnom razdoblju) ili \\( s_t = I_t - 100 \\) (prema baznom razdoblju).",
+        "explanation": "V = 90 → pad od 10 %; V = 123,26 → rast od 23,26 %."
+      },
+      {
+        "question": "Kojim grafikonom se prikazuju verižni, a kojim bazni indeksi?",
+        "answer": "Verižni: linijski grafikon isprekidanom linijom ili površinski (pravokutnici jednakih osnovica). Bazni: linijski kontinuiranom linijom ili jednostavni stupci.",
+        "explanation": "Kod verižnih je svaka točka vezana za drugu bazu — zato isprekidana linija."
+      },
+      {
+        "question": "Mogu li indeksi biti manji od 100?",
+        "answer": "Da. Indeksi su pozitivni brojevi koji mogu biti veći, jednaki ili manji od 100.",
+        "explanation": "Indeks manji od 100 znači smanjenje pojave."
+      },
+      {
+        "question": "Što je TREND?",
+        "answer": "Dinamična srednja vrijednost koja pokazuje opću tendenciju kretanja pojave u vremenu.",
+        "explanation": "Vrste: linearni, parabolični i eksponencijalni trend."
+      },
+      {
+        "question": "Kako glasi jednadžba LINEARNOG TRENDA?",
+        "answer": "\\( Y_c = a + bx \\), gdje je x vrijeme. Pojava se u jedinici vremena mijenja za približno isti apsolutni iznos.",
+        "explanation": "Isti model kao jednostavna linearna regresija, uz X = vrijeme."
+      },
+      {
+        "question": "Što pokazuje koeficijent b u jednadžbi trenda?",
+        "answer": "Prosječno povećanje (b > 0) ili smanjenje (b < 0) pojave u jedinici vremena.",
+        "explanation": "b = 6,6 → noćenja prosječno rastu 6,6 godišnje."
+      },
+      {
+        "question": "Trend s ISHODIŠTEM U SREDINI niza — formule?",
+        "answer": "Srednjem članu dodijeli se x = 0, pa je Σx = 0: \\( a = \\frac{\\sum Y}{N} \\), \\( b = \\frac{\\sum xY}{\\sum x^2} \\).",
+        "explanation": "Paran broj godina: x = …, −3, −1, 1, 3, …"
+      },
+      {
+        "question": "Koji je odnos ΣY i ΣYc?",
+        "answer": "Zbroj stvarnih vrijednosti vremenskog niza jednak je zbroju trend vrijednosti: \\( \\sum Y = \\sum Y_c \\).",
+        "explanation": "Dobra provjera računa."
+      },
+      {
+        "question": "Kako se računa PROSJEČNA STOPA PROMJENE?",
+        "answer": "Geometrijskom sredinom verižnih indeksa: \\( \\bar{s} = G - 100 \\), gdje je \\( G = \\sqrt[n]{V_2 V_3 \\cdots V_N} \\).",
+        "explanation": "Noćenja RH 2015.–2019.: G = 106,31 → prosječno 6,31 % rasta godišnje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "S obzirom na vremensku definiciju razlikujemo dvije vrste vremenskih nizova:",
+        "options": [
+          "Bazni i verižni",
+          "Intervalni i trenutačni",
+          "Linearni i eksponencijalni",
+          "Individualni i skupni"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Broj noćenja turista po mjesecima u godini primjer je:",
+        "options": [
+          "Trenutačnog vremenskog niza",
+          "Intervalnog vremenskog niza",
+          "Geografskog niza",
+          "Numeričkog niza"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Smještajni kapaciteti po kategoriji hotela u RH (stanje 31. kolovoza) primjer su:",
+        "options": [
+          "Intervalnog vremenskog niza",
+          "Trenutačnog vremenskog niza",
+          "Kumulativnog niza",
+          "Verižnih indeksa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kako se računaju verižni indeksi?",
+        "options": [
+          "Svaka frekvencija podijeli se s baznom frekvencijom i pomnoži sa 100",
+          "Svaka frekvencija podijeli se s prethodnom frekvencijom i pomnoži sa 100",
+          "Svaka frekvencija podijeli se s ukupnim zbrojem i pomnoži sa 100",
+          "Od svake frekvencije oduzme se prethodna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kako se zovu indeksi koji pokazuju relativnu promjenu pojave u tekućem razdoblju u odnosu na BAZNO razdoblje?",
+        "options": [
+          "Verižni indeksi",
+          "Bazni indeksi",
+          "Skupni indeksi",
+          "Stope promjene"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Verižni indeks koji pokazuje smanjenje pojave za 10 % u odnosu na prethodnu godinu iznosi:",
+        "options": [
+          "110",
+          "10",
+          "90",
+          "−10"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Formula sₜ = Iₜ − 100 služi za izračunavanje:",
+        "options": [
+          "Raspona varijacije",
+          "Stope promjene",
+          "Stupnjeva slobode",
+          "Geometrijske sredine"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Trend je:",
+        "options": [
+          "Najveća vrijednost u nizu",
+          "Najčešća srednja vrijednost",
+          "Dinamička srednja vrijednost koja pokazuje opću tendenciju kretanja pojave u vremenu",
+          "Prosječno kvadratno odstupanje od prosjeka"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Trenutačni vremenski niz grafički se prikazuje:",
+        "options": [
+          "Samo površinskim grafikonom",
+          "Samo linijskim grafikonom",
+          "Histogramom",
+          "Strukturnim krugom"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Noćenja domaćih turista u planinskim mjestima: 1997. = 54, 1998. = 43. Koliki je verižni indeks za 1998.?",
+        "options": [
+          "125,58",
+          "79,63",
+          "−20,37",
+          "11,00"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U jednadžbi trenda Yc = 46,8 + 6,6x (noćenja, 1997. – 2001.) koeficijent b znači:",
+        "options": [
+          "Broj noćenja prosječno raste za 6,6 godišnje",
+          "Broj noćenja prosječno raste za 6,6 %",
+          "Broj noćenja u 1997. iznosi 6,6",
+          "Broj noćenja prosječno pada za 6,6 godišnje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Skupnim indeksima prati se i mjeri intenzitet dinamike:",
+        "options": [
+          "Samo jedne pojave",
+          "Dviju ili skupine pojava",
+          "Samo cijena",
+          "Samo baznog razdoblja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Intervalni vremenski niz ima svojstvo:",
+        "options": [
+          "Kumulativnosti",
+          "Simetričnosti",
+          "Stalne baze",
+          "Trenutačnosti"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Verižni indeksi su, prema načinu izračunavanja, relativni brojevi s:",
+        "options": [
+          "Jednakim osnovama",
+          "Promjenljivim osnovama",
+          "Nultim osnovama",
+          "Negativnim osnovama"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Verižni indeksi noćenja: 109,07 · 110,63 · 104,00 · 101,77. Prosječna godišnja stopa promjene (preko GS) je:",
+        "options": [
+          "6,37 %",
+          "6,31 %",
+          "27,73 %",
+          "106,31 %"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Verižni indeksi pokazuju promjenu pojave u odnosu na _______ razdoblje.",
+        "answer": "prethodno",
+        "hint": "Ne bazno."
+      },
+      {
+        "sentence": "Bazni indeksi su relativni brojevi s _______ osnovama.",
+        "answer": "jednakim",
+        "hint": "Za razliku od verižnih (promjenljive)."
+      },
+      {
+        "sentence": "Stopa promjene računa se kao indeks umanjen za _______.",
+        "answer": "100",
+        "hint": "Broj."
+      },
+      {
+        "sentence": "Intervalni vremenski niz ima svojstvo _______.",
+        "answer": "kumulativnosti",
+        "hint": "Vrijednosti se smiju zbrajati."
+      },
+      {
+        "sentence": "Koeficijent _______ u jednadžbi trenda pokazuje prosječnu promjenu pojave u jedinici vremena.",
+        "answer": "b",
+        "hint": "Jedno slovo."
+      },
+      {
+        "sentence": "Zbroj stvarnih vrijednosti vremenskog niza jednak je zbroju _______ vrijednosti.",
+        "answer": "trend",
+        "hint": "ΣY = ΣYc."
+      },
+      {
+        "sentence": "Trenutačni vremenski niz grafički se prikazuje samo _______ grafikonom.",
+        "answer": "linijskim",
+        "hint": "Ne površinskim."
+      },
+      {
+        "sentence": "Verižni indeksi prikazuju se linijskim grafikonom _______ linijom.",
+        "answer": "isprekidanom",
+        "hint": "Bazni se prikazuju kontinuiranom linijom."
+      }
+    ],
+    "learn": {
+      "title": "Osnovna analiza vremenskih nizova",
+      "content": "<h3>Vremenski niz</h3><p>Za poslovno odlučivanje (npr. u hotelu: noćenja, prihodi, broj zaposlenih po mjesecima) potrebni su podaci praćeni kroz vrijeme. <strong>Vremenski niz</strong> je skup kronološki uređenih vrijednosti neke pojave; vrijednosti \\( y_1, y_2, \\dots, y_N \\) su <strong>frekvencije</strong> niza, a njihov broj je <strong>duljina</strong> niza. Analiza se sastoji od grafičkog prikaza i brojčanih postupaka, a rezultati služe prosudbi prošlog i predviđanju budućeg razvoja.</p><table><tr><th></th><th>Intervalni niz</th><th>Trenutačni niz</th></tr><tr><td>Nastanak</td><td>zbrajanje pojave po intervalima (dan, mjesec, godina)</td><td>stanje pojave u određenom trenutku</td></tr><tr><td>Kumulativnost</td><td><strong>da</strong> — zbroj ima smisla (mjesečna noćenja → godišnja)</td><td><strong>ne</strong> — ne zbraja se</td></tr><tr><td>Grafikon</td><td>površinski i linijski</td><td><strong>samo linijski</strong></td></tr><tr><td>Primjeri</td><td>dolasci turista 2000.–2006., posjeti web-stranici po mjesecima</td><td>smještajni kapaciteti hotela (stanje 31.8.), broj zaposlenih 31.12., stanje računa</td></tr></table><p>Grafikon vremenskog niza crta se u pravokutnom koordinatnom sustavu (vrijeme na osi x, vrijednosti na osi y) uz naslov, oznake osi i izvor. Nizovi se uspoređuju linijskim grafikonom ili višestrukim stupcima ako su u istim jedinicama i bez prevelikih razlika; ne više od tri niza odjednom. Postoje i polarni dijagram te grafikoni s 3D efektom.</p><h4>Indeksi vremenskog niza</h4><p>Indeksi su relativni brojevi dinamike koji izražavaju odnos stanja jedne pojave ili skupine pojava u različitim razdobljima. <strong>Individualni</strong> prate jednu pojavu (verižni i bazni), <strong>skupni</strong> više njih istodobno.</p><div class=\"formula-box\">\\[ V_t = \\frac{Y_t}{Y_{t-1}} \\cdot 100 \\qquad I_t = \\frac{Y_t}{Y_b} \\cdot 100 \\qquad s_t = V_t - 100 \\;\\;\\text{ili}\\;\\; s_t = I_t - 100 \\]</div><ul><li><strong>Verižni indeksi (V<sub>t</sub>)</strong> — promjena prema <strong>prethodnom</strong> razdoblju; relativni brojevi s <em>promjenljivim</em> osnovama. Prikaz: linijski grafikon <em>isprekidanim</em> linijama ili površinski grafikon (pravokutnici jednakih osnovica).</li><li><strong>Bazni indeksi (I<sub>t</sub>)</strong> — promjena prema odabranom <strong>baznom</strong> razdoblju (često prvo razdoblje, ali i vrijednost izvan niza ili AS niza); relativni brojevi s <em>jednakim</em> osnovama; oznaka npr. 1997. = 100. Prikaz: linijski grafikon (kontinuirana linija) ili jednostavni stupci.</li><li>Indeksi su <strong>pozitivni</strong> brojevi i mogu biti veći, jednaki ili manji od 100.</li></ul><div class=\"example-box\"><strong>Riješeni primjer (predavanje 9) — noćenja domaćih turista u planinskim mjestima RH (u 000):</strong><table><tr><th>Godina</th><th>Noćenja</th><th>V<sub>t</sub></th><th>s<sub>t</sub> (verižno)</th><th>I<sub>t</sub> (1997. = 100)</th><th>s<sub>t</sub> (bazno)</th></tr><tr><td>1997.</td><td>54</td><td>–</td><td>–</td><td>100,00</td><td>–</td></tr><tr><td>1998.</td><td>43</td><td>79,63</td><td>−20,37</td><td>79,63</td><td>−20,37</td></tr><tr><td>1999.</td><td>53</td><td>123,26</td><td>23,26</td><td>98,15</td><td>−1,85</td></tr><tr><td>2000.</td><td>83</td><td>156,60</td><td>56,60</td><td>153,70</td><td>53,70</td></tr><tr><td>2001.</td><td>67</td><td>80,72</td><td>−19,28</td><td>124,07</td><td>24,07</td></tr></table>Izračun: \\( V_{1999} = \\frac{53}{43} \\cdot 100 = 123{,}26 \\); \\( I_{1999} = \\frac{53}{54} \\cdot 100 = 98{,}15 \\).<br><strong>Tumačenje:</strong> 1999. noćenja su za 23,26 % veća nego 1998., ali još 1,85 % manja nego u baznoj 1997.; najveći godišnji rast bio je 2000. (+56,60 %). (Predavanje za 2001. ispisuje stopu 24,70 — ispravno je 124,07 − 100 = 24,07.)</div><p><strong>Prosječna stopa promjene</strong> računa se <strong>geometrijskom sredinom</strong> verižnih indeksa: \\( G = \\sqrt[n]{V_2 V_3 \\cdots V_N} = 100\\sqrt[n]{Y_N / Y_1} \\), \\( \\bar{s} = G - 100 \\). Za noćenja u RH 2015.–2019. (71 437 → 91 243; seminar 9) verižni indeksi su 109,07 · 110,63 · 104,00 · 101,77 → G = 106,31 → noćenja su prosječno rasla <strong>6,31 % godišnje</strong>.</p><p><strong>Skupni indeksi</strong> služe istodobnom praćenju dviju ili više različitih pojava: skupni indeks <strong>cijena</strong>, <strong>količina</strong> i <strong>vrijednosti</strong>; posebni oblici su indeks fizičkog obujma i indeks troškova života. Razdoblje u kojem se iskazuje dinamika je <strong>tekuće (izvještajno)</strong>, a ono prema kojem se uspoređuje <strong>bazno</strong>. (Iz ispitnih pitanja: uobičajene oznake su p₀ i q₀ za cijenu i količinu baznog, a p₁ i q₁ za cijenu i količinu tekućeg razdoblja.)</p><h4>Trend</h4><p>Ima li niz pravilnosti u kretanju (rast ili pad), kretanje se opisuje <strong>trend-modelom</strong>. <strong>Trend</strong> je dinamična srednja vrijednost koja pokazuje opću tendenciju kretanja pojave u vremenu. Vrste: <strong>linearni, parabolični, eksponencijalni</strong>. <strong>Linearni trend</strong> — pojava se u jedinici vremena mijenja za približno isti apsolutni iznos; to je model jednostavne linearne regresije u kojem je nezavisna varijabla vrijeme, a prikazuje se linijskim grafikonom.</p><p>Godine se kodiraju varijablom x: <strong>ishodište na početku</strong> (prvom članu x = 0, zatim 1, 2, 3 …) ili <strong>ishodište u sredini</strong> (srednjem članu x = 0: … −2, −1, 0, 1, 2 … za neparan N; −5, −3, −1, 1, 3, 5 za paran N — tada je jedinica x pola godine, pa je godišnja promjena 2b).</p><div class=\"formula-box\">\\[ \\text{početak: } b = \\frac{\\sum xY - \\bar{x}\\sum Y}{\\sum x^2 - \\bar{x}\\sum x}, \\; a = \\bar{Y} - b\\bar{x} \\qquad \\text{sredina: } a = \\frac{\\sum Y}{N}, \\; b = \\frac{\\sum xY}{\\sum x^2} \\]</div><ul><li><strong>b</strong> — prosječno povećanje (b > 0) ili smanjenje (b &lt; 0) pojave u jedinici vremena.</li><li><strong>a</strong> — konstantni član: trend vrijednost za razdoblje u kojem je x = 0.</li><li><strong>Trend vrijednosti</strong> Y<sub>c</sub> dobiju se uvrštavanjem x u jednadžbu; vrijedi \\( \\sum Y = \\sum Y_c \\).</li></ul><div class=\"example-box\"><strong>Riješeni primjer (predavanje 9) — trend noćenja 1997.–2001.:</strong><table><tr><th>Godina</th><th>Y</th><th>x (početak)</th><th>xY</th><th>x²</th><th>x (sredina)</th><th>Y<sub>c</sub></th></tr><tr><td>1997.</td><td>54</td><td>0</td><td>0</td><td>0</td><td>−2</td><td>46,80</td></tr><tr><td>1998.</td><td>43</td><td>1</td><td>43</td><td>1</td><td>−1</td><td>53,40</td></tr><tr><td>1999.</td><td>53</td><td>2</td><td>106</td><td>4</td><td>0</td><td>60,00</td></tr><tr><td>2000.</td><td>83</td><td>3</td><td>249</td><td>9</td><td>1</td><td>66,60</td></tr><tr><td>2001.</td><td>67</td><td>4</td><td>268</td><td>16</td><td>2</td><td>73,20</td></tr><tr><td>Σ</td><td>300</td><td>10</td><td>666</td><td>30</td><td>0</td><td>300,00</td></tr></table><strong>Ishodište na početku:</strong> \\( \\bar{x} = 2 \\), \\( \\bar{Y} = 60 \\); \\( b = \\frac{666 - 2 \\cdot 300}{30 - 2 \\cdot 10} = \\frac{66}{10} = 6{,}6 \\); \\( a = 60 - 6{,}6 \\cdot 2 = 46{,}8 \\) → \\( Y_c = 46{,}8 + 6{,}6x \\) (x = 0 u 1997.).<br><strong>Ishodište u sredini:</strong> \\( \\sum xY = -108 - 43 + 0 + 83 + 134 = 66 \\), \\( \\sum x^2 = 10 \\) → \\( b = 6{,}6 \\), \\( a = 300/5 = 60 \\) → \\( Y_c = 60 + 6{,}6x \\) (x = 0 u 1999.).<br><strong>Tumačenje:</strong> noćenja su 1997.–2001. rasla linearno, prosječno za 6,6 (tisuća) godišnje. Trend za 1997. je 46,80, a stvarno je ostvareno 54 — odstupanje 7,2. <strong>Prognoza</strong> za 2002.: \\( 46{,}8 + 6{,}6 \\cdot 5 = 79{,}8 \\) (isto daje \\( 60 + 6{,}6 \\cdot 3 \\)); realnost prognoze ovisi o tome hoće li se trend zadržati.</div><div class=\"tip-box\"><strong>Seminar 9 kodira x od 1</strong> (2018. → x = 1): prosječna plaća 2018.–2022. (828, 857, 898, 946, 1 016 €) daje \\( b = \\frac{14\\,100 - 5 \\cdot 3 \\cdot 909}{55 - 5 \\cdot 3^2} = 46{,}5 \\), \\( a = 909 - 46{,}5 \\cdot 3 = 769{,}5 \\) → plaća je rasla prosječno 46,5 € godišnje, a a = 769,5 je trend vrijednost za 2017. (x = 0). Prognoza za 2025. (x = 8): \\( 769{,}5 + 46{,}5 \\cdot 8 = 1\\,141{,}5 \\) €.</div><div class=\"warning-box\"><strong>Česte zamke:</strong> (1) verižni = prema <em>prethodnom</em>, bazni = prema <em>baznom</em> razdoblju — studentske bilješke ih znaju zamijeniti; (2) stopa promjene je indeks − 100, a ne sam indeks; (3) trenutačni niz ne zbraja se i ne crta površinski; (4) značenje a ovisi o kodiranju: x = 0 u prvoj godini (predavanje) → a je trend prve godine; x = 1 u prvoj godini (seminar) → a je trend godine prije niza (predavanje u zaključku a naziva procjenom za 1996., iako je uz njegovo kodiranje to trend za 1997.); (5) prosječnu stopu promjene daje geometrijska, ne aritmetička ni harmonijska sredina.</div>"
+    }
+  }
+}

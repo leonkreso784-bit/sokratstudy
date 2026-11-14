@@ -1,0 +1,1038 @@
+{
+  "theoreticalBasis": {
+    "id": "0msqjf",
+    "name": "Teorijske osnove prometa",
+    "icon": "fa-diagram-project",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Što je PROMET i što je PROMETNI SUSTAV?",
+        "answer": "Promet = svrhovito kretanje ljudi, robe i informacija savladavanjem prostorne udaljenosti. Prometni sustav = organizirana cjelina infrastrukture, prijevoznih sredstava i organizacije.",
+        "explanation": "Detaljni elementi sustava → sekcija Uči."
+      },
+      {
+        "question": "Što je PROMETNA GRANA i koje su osnovne?",
+        "answer": "Poseban tehničko-tehnološki sustav prijevoza definiran medijem i sredstvima. Osnovne: cestovni, željeznički, vodni (pomorski + unutarnji), zračni i cjevovodni.",
+        "explanation": "Podjela prema mediju kojim se kreće."
+      },
+      {
+        "question": "Što je PROMETNA USLUGA i zašto je neopipljiva?",
+        "answer": "Čin prijevoza putnika ili robe — proizvod prometnog sektora. Neopipljiva je, proizvodi se i troši istodobno i ne može se uskladištiti.",
+        "explanation": "Zato je kapacitet „kvarljiv\" — neprodano mjesto trajno je izgubljeno."
+      },
+      {
+        "question": "Prometna POTRAŽNJA nasuprot prometnoj PONUDI?",
+        "answer": "Potražnja = potreba za kretanjem, uglavnom IZVEDENA (putuje se radi druge potrebe: posao, odmor). Ponuda = kapaciteti, linije i vozni red koje prijevoznik nudi.",
+        "explanation": "Izvedena potražnja znači da prijevoz nije sam sebi svrha."
+      },
+      {
+        "question": "Što su PROMETNI UČINCI (efekti)?",
+        "answer": "Šire posljedice prometa izvan samog premještanja: ekonomski (tržišta, radna mjesta, BDP), prostorni (razvoj regija), društveni i ekološki.",
+        "explanation": "Opis svakog učinka → sekcija Uči."
+      },
+      {
+        "question": "Što je PROMETNA POLITIKA?",
+        "answer": "Skup ciljeva, mjera i instrumenata kojima država ili EU usmjerava razvoj prometnog sustava (infrastruktura, sigurnost, porezi, ekološki standardi).",
+        "explanation": "Cilj je i poticanje promjene prometnog modela prema održivom."
+      },
+      {
+        "question": "Zašto je prometna INFRASTRUKTURA ekonomski posebna?",
+        "answer": "Traži vrlo velika ulaganja, dugu gradnju i dug vijek trajanja, dimenzioniranje s rezervom za vršna opterećenja; u pravilu je gradi i financira država.",
+        "explanation": "Zajedničko obilježje svih prometnih grana."
+      },
+      {
+        "question": "Što znači NEELASTIČNOST prometne grane?",
+        "answer": "Prometni proces vezan je uz fiksnu infrastrukturu i linijsku organizaciju pa se ne prilagođava pojedinom korisniku. Neelastični: željeznički, zračni, vodni; elastičan: cestovni.",
+        "explanation": "Zato automobil nudi prijevoz „od vrata do vrata\"."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "ztz9o9",
+        "question": "Potražnja za prijevozom u turizmu najbolje se opisuje kao:",
+        "options": [
+          "Autonomna potražnja, poželjna sama po sebi",
+          "IZVEDENA potražnja — ljudi putuju kako bi zadovoljili drugu (turističku) potrebu",
+          "Potražnja koja je savršeno stabilna tijekom cijele godine",
+          "Neovisna o cijeni i sezoni"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "6pai2e",
+        "question": "Koje svojstvo čini prazno sjedalo u otputovalome vozilu trajnim gubitkom?",
+        "options": [
+          "Opipljivost",
+          "Mogućnost skladištenja",
+          "Kvarljivost prijevozne usluge (ne može se skladištiti)",
+          "Elastičnost"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zd8s56",
+        "question": "Koji je mod prijevoza NAJELASTIČNIJI (fleksibilan, od vrata do vrata, individualan)?",
+        "options": [
+          "Željeznica",
+          "Zrak",
+          "Cesta",
+          "Pomorstvo"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "9759xk",
+        "question": "Zajednička ekonomska značajka SVE prometne infrastrukture jest da:",
+        "options": [
+          "Je jeftina i brza za izgradnju",
+          "Zahtijeva velika ulaganja, dugotrajnu izgradnju i obično je financirana od strane države",
+          "Uvijek je u potpunosti pokrivena jednokratnim naknadama korisnika",
+          "Ima vrlo kratak vijek trajanja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "98x052",
+        "question": "'Prometna politika' jest:",
+        "options": [
+          "Vozni red polazaka",
+          "Skup ciljeva, mjera i instrumenata kojima država usmjerava prometni sustav",
+          "Vrsta osiguranja za vozila",
+          "Cijena pojedinačne karte"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "9hnavk",
+        "question": "Koji popis ispravno navodi osnovne VRSTE prijevoza?",
+        "options": [
+          "Cestovni, željeznički, vodeni, zračni",
+          "Automobili, autobusi, vlakovi, brodovi",
+          "Potražnja, ponuda, cijena, učinak",
+          "Lokalni, nacionalni, međunarodni, globalni"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "2fgdtm",
+        "question": "Neelastičnost prometne grane uglavnom proizlazi iz:",
+        "options": [
+          "Vezanosti uz fiksnu infrastrukturu i linijsku/javnu organizaciju",
+          "Prevelikog broja vozila",
+          "Niskih cijena goriva",
+          "Odsutnosti bilo kakvog voznog reda"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "bvt668",
+        "sentence": "Prijevoz u turizmu obično je _______, što znači da se oslanja na više od jedne prometne grane kako bi se dovršio lanac od vrata do vrata.",
+        "answer": "multimodalan",
+        "hint": "multi-…"
+      },
+      {
+        "id": "ksgg91",
+        "sentence": "Turistička potražnja za prijevozom _______ je potražnja, jer ljudi putuju kako bi zadovoljili neku drugu potrebu.",
+        "answer": "izvedena",
+        "hint": "nije autonomna"
+      },
+      {
+        "id": "sj5uxo",
+        "sentence": "Prijevozna usluga ne može se skladištiti; to svojstvo naziva se _______.",
+        "answer": "prolaznost (kvarljivost)",
+        "hint": "prazno sjedalo je izgubljeno"
+      },
+      {
+        "id": "5vjqrp",
+        "sentence": "Organizirana cjelina infrastrukture, vozila i pravila koja omogućuju odvijanje prometa jest prometni _______.",
+        "answer": "sustav",
+        "hint": "cjelina"
+      },
+      {
+        "id": "igqprp",
+        "sentence": "Od svih grana, _______ promet je najelastičniji i jedini pravi način prijevoza od vrata do vrata.",
+        "answer": "cestovni",
+        "hint": "automobili/autobusi"
+      },
+      {
+        "id": "an71ms",
+        "sentence": "Prometna _______ jest dugoročni plan kojim država usmjerava razvoj prometnog sustava.",
+        "answer": "strategija",
+        "hint": "dio prometne politike"
+      },
+      {
+        "id": "cjhy66",
+        "sentence": "Emisije, buka, zagušenje i prometne nesreće negativni su (vanjski) _______ prometa.",
+        "answer": "učinci",
+        "hint": "posljedice"
+      }
+    ],
+    "learn": {
+      "id": "z9whnu",
+      "title": "Theoretical Basis of Traffic",
+      "content": "\n                <h3>Što je promet — i zašto je važan za turizam</h3>\n                <p><strong>Promet (saobraćaj)</strong> je svrhovito kretanje ljudi, robe i informacija kroz\n                prostor. U turizmu obavlja ključnu ulogu povezivanja <strong>emitivnog (potražnog) tržišta</strong>\n                s <strong>receptivnom destinacijom</strong>: bez dostupnog i cjenovno prihvatljivog prometa nema\n                turizma u destinaciji.</p>\n\n                <div class=\"formula-box\">\n                    Prometni SUSTAV = infrastruktura + prometna sredstva (vozila) + ljudi &amp; pravila<br>\n                    Osnovne GRANE: CESTOVNI · ŽELJEZNIČKII · VODENI (pomorski + unutarnji) · ZRAČNI\n                </div>\n\n                <h4>Ključni teorijski pojmovi</h4>\n                <ul>\n                    <li><strong>Prometna usluga</strong> — nematerijalna, proizvodi se &amp; troši istovremeno,\n                    <strong>prolazna</strong> (prazno sjedalo u otputovalome vozilu zauvijek je izgubljeno).</li>\n                    <li><strong>Prometna potražnja</strong> — <strong>izvedena</strong>, visoko <strong>sezonska</strong>\n                    i smjerna potreba za kretanjem.</li>\n                    <li><strong>Prometna ponuda</strong> — pravci, učestalost, kapacitet, kvaliteta i cijena koje\n                    prijevoznici nude na tržištu.</li>\n                    <li><strong>Prometni učinci</strong> — ekonomske, prostorne i društvene koristi, ali i negativni\n                    vanjski učinci (emisije, buka, zagušenja, nesreće).</li>\n                    <li><strong>Prometna politika</strong> — način na koji država/EU usmjerava sustav (infrastruktura, sigurnost,\n                    porezi/subvencije, ekološki standardi, modalni pomak).</li>\n                </ul>\n\n                <h4>Elastične nasuprot neelastičnim granama prometa</h4>\n                <div class=\"tip-box\">\n                    <p><strong>Cestovni</strong> promet je najfleksibilniji (<strong>elastičan</strong>) — individualan, prilagodljiv,\n                    od vrata do vrata. <strong>Željezničkii, zračni i vodeni</strong> promet relativno su <strong>neelastični</strong> — vezani su uz\n                    pruge, luke i zračne luke te uz javnu/linijsku organizaciju — pa obično trebaju cestovni promet kako bi\n                    se putovanje „od vrata do vrata\" privelo kraju. Upravo zato turistički promet tipično je <strong>multimodalan</strong>.</p>\n                </div>\n\n                <h4>Zašto je infrastruktura posebna</h4>\n                <p>Sva prometna infrastruktura dijeli iste ekonomske karakteristike: <strong>velika ulaganja, dugo trajanje izgradnje,\n                dug vijek trajanja, pažljivo dimenzioniranje kapaciteta</strong>, a u pravilu je gradi i financira\n                <strong>država</strong>, jer naknada od jednog korisnika rijetko pokriva njezine stvarne troškove. Zbog toga je infrastruktura\n                strateška, sporo promjenjiva i politički uvjetovana kategorija.</p>\n                <h4>Dopuna — pojmovi</h4>\n                <ul>\n                    <li><strong>Prometni sustav</strong> = prometna infrastruktura + prijevozna sredstva + organizacija/upravljanje.</li>\n                    <li><strong>Prometni učinci:</strong> EKONOMSKI (povezuje tržišta, omogućuje trgovinu i turizam, radna mjesta, BDP) · PROSTORNI (otvara i razvija regije, oblikuje destinacije) · DRUŠTVENI (mobilnost, pristup uslugama) · EKOLOŠKI (emisije, buka, zauzimanje prostora).</li>\n                    <li><strong>Infrastruktura:</strong> velika ulaganja · dugo razdoblje izgradnje · dug vijek · dimenzioniranje s rezervom za vršna opterećenja · gradi/financira država · dostupna svima pod jednakim uvjetima.</li>\n                    <li><strong>Neelastičnost:</strong> željeznički, zračni i vodni promet vezani su uz fiksnu infrastrukturu i vozni red (neelastični); cestovni je najelastičniji.</li>\n                </ul>\n            "
+    }
+  },
+  "trafficTourismInterdependence": {
+    "id": "p5s898",
+    "name": "Međuovisnost prometa i turizma",
+    "icon": "fa-arrows-left-right",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "U kojim se DVJEMA ulogama promet pojavljuje u turizmu?",
+        "answer": "1. Kao POVEZNICA emitivnog tržišta i destinacije (čini destinaciju dostupnom). 2. Kao DIO TURISTIČKOG PROIZVODA (kada je samo putovanje atrakcija).",
+        "explanation": "To je „master-obrazac\" cijelog kolegija: konektor + turistički proizvod."
+      },
+      {
+        "question": "Zašto je odnos prometa i turizma MEĐUOVISAN?",
+        "answer": "Promet OMOGUĆUJE turizam (novi/jeftiniji prijevoz otvara destinacije), a turizam STIMULIRA promet (turistička potražnja opravdava nove linije i kapacitete).",
+        "explanation": "Dvosmjeran odnos — svaki pokretač potiče onaj drugi."
+      },
+      {
+        "question": "Kako prometna DOSTUPNOST oblikuje turizam destinacije?",
+        "answer": "Dostupnost (lakoća, brzina i cijena dolaska) temeljni je element konkurentnosti: dobra → veće gravitacijsko područje; slaba → destinacija ostaje izvan glavnih tokova.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Kakva je uloga prometnih TROŠKOVA u cijeni turističkog proizvoda?",
+        "answer": "Trošak prijevoza ugrađen je u konačnu cijenu i često čini velik udio troškova putovanja, pa promjene cijena (gorivo, vozarine) izravno utječu na potražnju.",
+        "explanation": "Zato niskotarifni prijevoz mijenja turističke tokove."
+      },
+      {
+        "question": "Zašto je turistička potražnja PROBLEM za prijevoznike?",
+        "answer": "Jer je izrazito SEZONSKA (vrhunci ljeti) i SMJERNA (puno prema odredištu, prazno natrag), a kapaciteti se dimenzioniraju prema vršnom opterećenju.",
+        "explanation": "Rezultat: neiskorišteni kapaciteti izvan sezone."
+      },
+      {
+        "question": "Zašto je teško izmjeriti koliko turista koristi neku liniju?",
+        "answer": "Jer se turistički tokovi miješaju s neturističkima (dnevni migranti, poslovni putnici, stanovnici) — isto vozilo prevozi jedne i druge.",
+        "explanation": "Zato je „turistički prijevoz\" teško statistički izdvojiti."
+      },
+      {
+        "question": "Koje su prometne inovacije potaknule rast turizma?",
+        "answer": "19. st. željeznica (prva masovna putovanja) → 20. st. automobil (individualni masovni turizam) → nakon 1950-ih zrakoplov i charter letovi (interkontinentalni turizam).",
+        "explanation": "Povijesni slijed → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "depptc",
+        "question": "Dvije temeljne uloge prijevoza u turizmu su:",
+        "options": [
+          "Poveznica između tržišta i odredišta te sastavni dio turističkog proizvoda",
+          "Samo prenošenje prtljage i samo prenošenje hrane",
+          "Izgradnja hotela i prodaja karata",
+          "Marketing i računovodstvo"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "lg8jix",
+        "question": "'Međuovisnost' prometa i turizma znači da:",
+        "options": [
+          "Samo promet utječe na turizam",
+          "Samo turizam utječe na promet",
+          "Svaki od njih pokreće onaj drugi (dvosmjerni odnos)",
+          "Oni su potpuno nepovezani"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "12hzpx",
+        "question": "Destinacija s izvrsnim atrakcijama, ali vrlo LOŠOM dostupnošću, najvjerojatnije će:",
+        "options": [
+          "Automatski privući masovni turizam",
+          "Ostati izvan glavnih turističkih tokova",
+          "Imati najjeftiniji prijevoz",
+          "Ne trebaju politiku prijevoza"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "63s66q",
+        "question": "Turistička potražnja za prijevozom predstavlja teškoću za prijevoznike uglavnom zato što je:",
+        "options": [
+          "Konstantna i ravnomjerno raspoređena tijekom cijele godine",
+          "Izrazito sezonska i usmjerena",
+          "Potpuno neovisna o cijeni",
+          "Uvijek u padu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "1ozwgw",
+        "question": "Trošak prijevozne usluge, unutar turističkog proizvoda, jest:",
+        "options": [
+          "Nikada ga ne plaća turist",
+          "Ugrađen u konačnu cijenu koju plaća turist",
+          "Uvijek jednak nuli za paket-aranžmane",
+          "Nije u vezi s potražnjom"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "pwxrji",
+        "question": "Teško je prebrojati turiste na javnoj liniji jer:",
+        "options": [
+          "Turisti nikada ne koriste javni prijevoz",
+          "Turistički tokovi miješaju se s neturističkim tokovima u istim prijevoznim sredstvima",
+          "Karte se nikada ne prodaju",
+          "Ne postoje nikakve statistike"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "e1gk8r",
+        "question": "Koja je inovacija ispravno povezana s vrstom turizma koji je omogućila?",
+        "options": [
+          "Željeznice → interkontinentalni paket-turizam",
+          "Niskotarifni prijevoznici → lječilišna odmarališta 19. stoljeća",
+          "Masovni zračni/charter letovi → interkontinentalni i masovni paket-turizam",
+          "Kruzerski brodovi → prve prigradske željeznice"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "mqwimb",
+        "sentence": "Prijevoz povezuje _______ tržište s receptivnom destinacijom.",
+        "answer": "emitivno",
+        "hint": "tržište koje generira potražnju / tržište porijekla"
+      },
+      {
+        "id": "dha0zm",
+        "sentence": "Kada je samo putovanje atrakcija (krstarenje, panoramska željeznica), prijevoz je dio turističkog _______.",
+        "answer": "proizvoda",
+        "hint": "ono što se prodaje"
+      },
+      {
+        "id": "q30sn7",
+        "sentence": "Dvosmjerni odnos u kojemu prijevoz i turizam međusobno potiču jedan drugoga naziva se _______.",
+        "answer": "međuovisnost",
+        "hint": "inter-…"
+      },
+      {
+        "id": "o6a65v",
+        "sentence": "Lakoća kojom se može dosegnuti neka destinacija jest njezina prometna _______, ključan čimbenik konkurentnosti.",
+        "answer": "dostupnost",
+        "hint": "dostižnost"
+      },
+      {
+        "id": "law9hk",
+        "sentence": "Potražnju za turističkim prijevozom teško je zadovoljiti jer je izrazito _______, s vrhuncima ljeti i za blagdane.",
+        "answer": "sezonska",
+        "hint": "varira prema sezoni"
+      },
+      {
+        "id": "p6x4az",
+        "sentence": "Trošak prijevozne usluge ugrađen je u konačnu _______ turističkog proizvoda.",
+        "answer": "cijenu",
+        "hint": "što turist plaća"
+      },
+      {
+        "id": "vj8cgn",
+        "sentence": "Prijevoznici s niskim _______ proširili su turizam omogućivši zračni prijevoz osobama koje si ga ranije nisu mogle priuštiti.",
+        "answer": "troškovima",
+        "hint": "niskotarifne zrakoplovne kompanije"
+      }
+    ],
+    "learn": {
+      "id": "b1cloy",
+      "title": "Interdependence of Traffic & Tourism",
+      "content": "\n                <h3>Dvosmjerni odnos</h3>\n                <p>Promet i turizam su <strong>međuovisni</strong>: promet <em>omogućuje</em> turizam (čini destinacije dostupnima i ponekad je sam po sebi atrakcija), dok turizam <em>potiče</em> promet\n                (snažna turistička potražnja opravdava uvođenje novih pravaca, kapaciteta i infrastrukture).</p>\n\n                <div class=\"formula-box\">\n                    Promet u turizmu ima DVIJE uloge:<br>\n                    (1) KONEKTOR — emitivno tržište → destinacija (dostupnost)<br>\n                    (2) DIO TURISTIČKOG PROIZVODA — putovanje je sama atrakcija\n                </div>\n\n                <h4>Dostupnost &amp; cijena</h4>\n                <ul>\n                    <li><strong>Dostupnost</strong> — koliko se lako, brzo i jeftino može doći do destinacije — temeljni je element njezine <strong>konkurentnosti</strong>. Slaba dostupnost isključuje čak i atraktivna mjesta iz glavnih turističkih tokova.</li>\n                    <li><strong>Trošak prijevozne usluge</strong> ugrađen je u <strong>cijenu</strong> turističkog proizvoda; jeftiniji prijevoz (niskotarifni zračni prijevoz) proširuje tržište potencijalnih putnika.</li>\n                </ul>\n\n                <h4>Zašto je turističku potražnju teško zadovoljiti</h4>\n                <div class=\"tip-box\">\n                    <p>Turistička prijevozna potražnja izrazito je <strong>sezonska</strong> i <strong>smjerna</strong>, te se <strong>miješa</strong> s neturističkim tokovima na istim prijevoznim sredstvima — stoga kapaciteti moraju biti dimenzionirati prema vršnom opterećenju, a teško je precizno izmjeriti udio turizma. Prijevoznici odgovaraju charter ugovorima, dinamičkim određivanjem cijena te kombiniranjem turističkih i svakodnevnih tokova.</p>\n                </div>\n\n                <h4>Povijesni lanac razvoja</h4>\n                <p>Svaki prometni proboj otvorio je novi oblik turizma: <strong>željeznica</strong> (19. st.) → prvi masovni odmorišni turizam; <strong>automobil</strong> → individualni masovni turizam; <strong>masovni zračni prijevoz &amp; charter</strong>\n                → paket-aranžmani i interkontinentalni turizam; <strong>niskotarifni prijevoznici &amp; krstarenja</strong> → današnji kratki gradski odmori, nove regionalne destinacije i kruzing „industrija\".</p>\n                <h4>Dopuna — dostupnost, troškovi, sezonalnost</h4>\n                <ul>\n                    <li><strong>Dostupnost:</strong> dobra → veće gravitacijsko područje potencijalnih turista, dulji boravci i ponovljene posjete; slaba → destinacija ostaje izvan glavnih turističkih tokova.</li>\n                    <li><strong>Troškovi:</strong> prijevoz čini velik udio ukupnih troškova putovanja; promjene cijene goriva, vozarina i cestarina izravno pomiču turističku potražnju.</li>\n                    <li><strong>Sezonalnost i smjernost:</strong> vrhunci ljeti/za blagdane, praznina izvan sezone; puna vozila prema odredištu, prazna natrag → kapaciteti dimenzionirani prema vrhuncu stoje neiskorišteni.</li>\n                    <li><strong>Povijest:</strong> željeznica (19. st.) → automobil i cestovna mreža (20. st.) → masovni zračni i charter prijevoz (nakon 1950-ih).</li>\n                </ul>\n            "
+    }
+  },
+  "mobilityTravelPatterns": {
+    "id": "vyjn3j",
+    "name": "Mobilnost i obrasci putovanja",
+    "icon": "fa-route",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Koji je dominantni oblik svakodnevne mobilnosti u EU-u?",
+        "answer": "OSOBNI AUTOMOBIL — dominira u 22 od 28 anketiranih zemalja; slijede hodanje, gradski javni prijevoz te (znatno manje) bicikl/romobil.",
+        "explanation": "Podaci iz EU istraživanja mobilnosti."
+      },
+      {
+        "question": "Kojim gorivima voze automobili u svakodnevnoj mobilnosti?",
+        "answer": "Pretežno konvencionalnim (fosilnim) gorivima; ~89% automobila je u privatnom vlasništvu, car-sharing ≤4%, carpooling ≤2%; alternativna goriva su zanemariva.",
+        "explanation": "Udjeli održivih alternativa još su vrlo mali."
+      },
+      {
+        "question": "Zašto ljudi biraju svoj primarni oblik mobilnosti?",
+        "answer": "Vodeći razlozi: UDOBNOST i BRZINA, zatim nedostatak alternative, pouzdanost i zadovoljstvo. Najveći izazovi: troškovi i prometne gužve.",
+        "explanation": "Gužve su izraženije u velikim gradovima nego u ruralnim područjima."
+      },
+      {
+        "question": "Što se koristi za putovanja na DUGE PRUGE (>300 km)?",
+        "answer": "Redoslijed: osobni automobil → zrakoplov → vlak. Više od 60% Europljana obavilo je takvo putovanje u prethodnoj godini.",
+        "explanation": "Češće putuju muškarci, mlađi i obrazovaniji. → sekcija Uči."
+      },
+      {
+        "question": "Jesu li građani EU-a spremni na ODRŽIVIJI prijevoz?",
+        "answer": "Da — ako alternativa NIJE skuplja (cijena je uvjet br. 1 u 23 zemlje), ako je dostupna i ako nije sporija. U 24 od 28 država najmanje polovica je spremna.",
+        "explanation": "Cijena je presudan preduvjet promjene."
+      },
+      {
+        "question": "Zašto se u kolegiju proučava MOBILNOST?",
+        "answer": "Jer potražnja za prijevozom u turizmu počiva na svakodnevnim obrascima mobilnosti — tko putuje, kako, zašto i što bi ga navelo na promjenu.",
+        "explanation": "To omogućuje planiranje kapaciteta i oblikovanje ponude."
+      },
+      {
+        "question": "Koja se inovacija smatra najkorisnijom za budućnost mobilnosti?",
+        "answer": "JEDINSTVENA KARTA valjana za sve oblike prijevoza u gradovima (integrirani ticketing).",
+        "explanation": "Ispred digitalne vozačke dozvole i plaćanja cestarine/parkiranja u stvarnom vremenu."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "89rga1",
+        "question": "Dominantan primarni oblik svakodnevne mobilnosti u EU-u jest:",
+        "options": [
+          "Bicikl",
+          "Hodanje pješice",
+          "Osobni automobil",
+          "Javni gradski prijevoz"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "uzl8ua",
+        "question": "Otprilike koji udio automobila u svakodnevnoj mobilnosti koristi konvencionalna (fosilna) goriva?",
+        "options": [
+          "Otprilike polovica",
+          "Velika većina (alternativna goriva samo nekoliko %)",
+          "Nijedan",
+          "Točno jedna trećina"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "qm1xh6",
+        "question": "GLAVNI razlozi odabira primarnog načina svakodnevnog prijevoza su:",
+        "options": [
+          "Udobnost i brzina (ušteda vremena)",
+          "Boja i marka vozila",
+          "Isključivo vremenske prilike",
+          "Isključivo broj putnika"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "tygk6d",
+        "question": "Najveći IZAZOVI svakodnevne mobilnosti koje navode građani EU-a su:",
+        "options": [
+          "Troškovi prijevoza i prometne gužve",
+          "Previše bicikala",
+          "Nedostatak zračnih luka",
+          "Prekomjerni javni prijevoz"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "7n8iex",
+        "question": "Za putovanja na dugim relacijama (>300 km) najkorišteniji oblik prijevoza je:",
+        "options": [
+          "Vlak",
+          "Osobni automobil",
+          "Brod",
+          "Bicikl"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ibtmpg",
+        "question": "Preduvjet broj 1 za prelazak građana na održiviji oblik prijevoza jest da on bude:",
+        "options": [
+          "Sporiji, ali ljepši",
+          "Ne skuplje od trenutačnog načina prijevoza",
+          "Dostupno samo noću",
+          "Kojim upravlja isključivo država"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ldllq1",
+        "question": "Koju buduću inovaciju građani EU-a ocjenjuju najkorisnijom za osobnu mobilnost?",
+        "options": [
+          "Jedinstvena karta za sve gradske načine prijevoza",
+          "Trenutačna zabrana svih automobila",
+          "Ukidanje svih oblika javnog prijevoza",
+          "Samo besplatno parkiranje"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "l0bszo",
+        "sentence": "_______ automobil dominantan je primarni oblik svakodnevne mobilnosti u EU-u.",
+        "answer": "putnički",
+        "hint": "privatno četverokotačno vozilo"
+      },
+      {
+        "id": "cdzxhg",
+        "sentence": "Udio korištenja automobila u svakodnevnoj mobilnosti općenito je veći u _______ područjima nego u velikim gradovima.",
+        "answer": "ruralno",
+        "hint": "selo"
+      },
+      {
+        "id": "bzh29t",
+        "sentence": "Dva glavna razloga za odabir svakodnevnog načina prijevoza su udobnost i _______ (ušteda vremena).",
+        "answer": "brzina",
+        "hint": "koliko brzo"
+      },
+      {
+        "id": "vqshz4",
+        "sentence": "Najveći izazovi svakodnevne mobilnosti su troškovi prijevoza i prometna _______.",
+        "answer": "zagušenost",
+        "hint": "prometne gužve"
+      },
+      {
+        "id": "unt1xf",
+        "sentence": "Za putovanja dulja od 300 km, nakon automobila sljedeći najkorišteniji način prijevoza je _______.",
+        "answer": "zrakoplov",
+        "hint": "zrakom"
+      },
+      {
+        "id": "nmwgre",
+        "sentence": "Uvjet broj 1 za prelazak na održivi način prijevoza jest da ne smije biti _______ od trenutačnog.",
+        "answer": "skupo",
+        "hint": "o cijeni"
+      },
+      {
+        "id": "vzmp2n",
+        "sentence": "Građani ocjenjuju jedinstvenu _______ koja vrijedi za sve gradske načine prijevoza kao najkorisniju buduću inovaciju.",
+        "answer": "kartu",
+        "hint": "integrirana tarifa"
+      }
+    ],
+    "learn": {
+      "id": "jpk9yt",
+      "title": "Mobility & Travel Patterns",
+      "content": "\n                <h3>Kako se Europljani zaista kreću</h3>\n                <p>Potražnja za prijevozom u turizmu proizlazi iz svakodnevnih <strong>obrazaca mobilnosti</strong>. Veliko istraživanje EU-a\n                (korišteno na ovom predavanju) pokazuje što ljudi biraju, zašto i što bi ih potaknulo na promjenu.</p>\n\n                <div class=\"formula-box\">\n                    Dnevna mobilnost (1. izbor): AUTOMOBIL ≫ hodanje &gt; javni prijevoz &gt; bicikl/romobil<br>\n                    Automobil dominira u 22/28 zemalja · najviše Cipar ~89% · više u RURALNIM područjima\n                </div>\n\n                <h4>Što određuje izbor</h4>\n                <ul>\n                    <li><strong>Razlozi za odabir načina prijevoza:</strong> udobnost &amp; brzina (vrijeme), zatim nedostatak alternative,\n                    pouzdanost, zadovoljstvo.</li>\n                    <li><strong>Najveći izazovi:</strong> troškovi prijevoza &amp; zagušenje (zagušenje je izraženije u velikim\n                    gradovima).</li>\n                    <li><strong>Stvarnost goriva:</strong> ~89% automobila u privatnom vlasništvu, pretežno na fosilna goriva;\n                    alternative su zanemarive (električni ~1%, hibridni ~3%, plin ~5%; car-sharing ≤4%).</li>\n                </ul>\n\n                <h4>Putovanja na duge udaljenosti &amp; turistička putovanja (&gt;300 km)</h4>\n                <p>Više od 60% Europljana poduzelo je putovanje &gt;300 km u prethodnoj godini; redoslijed je <strong>automobil → avion →\n                vlak</strong>. Takva su putovanja češća među muškarcima, osobama mlađima od 55 godina, obrazovanijima, zaposlenima, stanovnicima\n                velikih gradova i svakodnevnim korisnicima automobila. U <strong>Hrvatskoj</strong> se vlakovi gotovo ne koriste (~1%); redoslijed je automobil,\n                autobus, avion.</p>\n\n                <h4>Spremnost na održivu mobilnost</h4>\n                <div class=\"tip-box\">\n                    <p>U 24 od 28 država najmanje polovica građana spremna je prijeći na ekološki prihvatljiviji prijevoz — <strong>ako</strong>\n                    alternativa nije skuplja (uvjet br. 1 u 23 zemlje), ako je dostupna i ako nije sporija.\n                    Najtraženija buduća inovacija jest <strong>jedinstvena karta</strong> za sve gradske načine prijevoza (integrirano\n                    upravljanje kartama → „Mobilnost kao usluga\").</p>\n                </div>\n                <h4>Dopuna — podaci iz EU istraživanja</h4>\n                <ul>\n                    <li><strong>Svakodnevna mobilnost:</strong> automobil dominantan u 22/28 zemalja; ~89% automobila u privatnom vlasništvu (car-sharing ≤4%, carpooling ≤2%).</li>\n                    <li><strong>Razlozi izbora:</strong> udobnost i brzina → nedostatak alternative → pouzdanost. <strong>Izazovi:</strong> troškovi i gužve (izraženije u gradovima).</li>\n                    <li><strong>Duge pruge (&gt;300 km):</strong> automobil → zrakoplov → vlak; &gt;60% Europljana putovalo je tako u godini dana; češće muškarci, mlađi i obrazovaniji.</li>\n                    <li><strong>Spremnost na održivo:</strong> uvjeti su cijena (nije skuplje — br. 1 u 23 zemlje), dostupnost i brzina; u 24/28 država barem polovica spremna.</li>\n                </ul>\n            "
+    }
+  },
+  "roadTransportConnecting": {
+    "id": "q8znhp",
+    "name": "Cestovni promet ↔ Destinacija",
+    "icon": "fa-car",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Koje su PREDNOSTI i OGRANIČENJA cestovnog prometa za turizam?",
+        "answer": "Prednosti: udobnost, niska cijena, prijevoz „od vrata do vrata\" bez transfera, najveća fleksibilnost. Ograničenja: niža sigurnost, gužve, onečišćenje, ograničena udaljenost.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Koje TRI uloge imaju cestovna vozila u turizmu?",
+        "answer": "(1) povezuju emitivna i receptivna područja, (2) sastavni su dio turističkog proizvoda, (3) opskrba i usluge u destinaciji.",
+        "explanation": "Organizacijski oblici: vlastiti · linijski (javni) · povremeni prijevoz."
+      },
+      {
+        "question": "Zašto je AUTOMOBIL središnje cestovno vozilo u turizmu?",
+        "answer": "Najbrojnije je vozilo — omogućuje individualno, fleksibilno putovanje od vrata do vrata između emitivnih i receptivnih tržišta.",
+        "explanation": "Važne karakteristike: učinkovitost, potrošnja, sigurnost (aktivna i pasivna), udobnost."
+      },
+      {
+        "question": "Što karakterizira TURISTIČKE AUTOBUSE?",
+        "answer": "Udobnost, bogata opremljenost i masovni prijevoz; vrste: visokopodni i katni. Organizacija: linijski, povremeni (agencijska putovanja) i posebni prijevoz.",
+        "explanation": "Opis oblika → sekcija Uči."
+      },
+      {
+        "question": "Koja je razlika između KARAVANA i KAMPERA?",
+        "answer": "Karavan (prikolica) NEMA vlastiti pogon — vuče ga automobil. Kamper (autodom) ima vlastiti pogon, kabinu i stambeni prostor — samokretno je vozilo.",
+        "explanation": "Oba su opremljena za višednevni boravak."
+      },
+      {
+        "question": "Usporedite MOTOCIKL i BICIKL u turizmu.",
+        "answer": "Motocikl: motorni pogon na fosilna goriva, koristi postojeću infrastrukturu, manji parkirni prostor. Bicikl: ljudska snaga, ekološki, traži prilagođenu infrastrukturu.",
+        "explanation": "Bicikl povoljno djeluje na zdravlje — temelj cikloturizma."
+      },
+      {
+        "question": "Koji su glavni elementi CESTOVNE infrastrukture?",
+        "answer": "Ceste i ulice, mostovi/tuneli/podvožnjaci, terminali, garaže i parkirališta, prateći uslužni objekti te uređaji za signalizaciju i nadzor.",
+        "explanation": "Popis → sekcija Uči."
+      },
+      {
+        "question": "Koje su značajke cestovne infrastrukture i kako se financira?",
+        "answer": "Velika ulaganja, dug vijek, višegodišnja gradnja, dimenzioniranje s rezervom, dostupnost svima pod jednakim uvjetima.",
+        "explanation": "Financiranje: država i koncesije (cestarine). → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "0ctpd8",
+        "question": "Odlučujuća prednost cestovnog prometa u turizmu jest:",
+        "options": [
+          "Vrlo visoka brzina putovanja preko oceana",
+          "Fleksibilnost od vrata do vrata, često bez potrebe za prelaskom",
+          "Nulta emisija",
+          "Najsigurniji od svih oblika prijevoza"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "xhus7l",
+        "question": "Organizacijski oblici cestovnog prometa „prema karakteru\" su:",
+        "options": [
+          "Vlastiti, linijski (javni) i namjenski prijevoz",
+          "Zračni, željeznički i pomorski",
+          "Jeftini, srednji i luksuzni",
+          "Lokalni, nacionalni i globalni"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "p113dp",
+        "question": "KARAVAN se razlikuje od motornog doma po tome što:",
+        "options": [
+          "Ima vlastiti motor",
+          "NEMA vlastiti pogon i vuče ga automobil",
+          "Može letjeti",
+          "Koristi se isključivo u gradovima"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "aeum15",
+        "question": "Koje je pokretano vlastitom (ljudskom) snagom korisnika i zahtijeva prilagođenu infrastrukturu?",
+        "options": [
+          "Motocikl",
+          "Turistički autobus",
+          "Bicikl",
+          "Karavan"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "dnhdwp",
+        "question": "Povremeni autobusni prijevoz u turizmu odnosi se na:",
+        "options": [
+          "Isključivo redovne međugradske linije",
+          "Turistička putovanja organizirana putem agencije",
+          "Gradske autobuse kojima se koriste stanovnici",
+          "Prazne autobuse u depoima"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "p85h3b",
+        "question": "Što NIJE element infrastrukture cestovnog prometa?",
+        "options": [
+          "Mostovi i tuneli",
+          "Parkirališta i garaže",
+          "Uzletno-sletne staze aerodroma",
+          "Prometna signalizacija i sustavi upravljanja prometom"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "e6x79a",
+        "question": "Cestovna infrastruktura uglavnom se financira iz državnih sredstava jer:",
+        "options": [
+          "Cestarine uvijek više nego pokrivaju troškove",
+          "Jednokratna naknada za korištenje obično NE pokriva stvarne troškove",
+          "Jeftina je za izgradnju",
+          "Ima vrlo kratak vijek trajanja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "p9oo22",
+        "sentence": "Cestovni promet jedini je pravi način prijevoza od _______-do-vrata, koji često ne zahtijeva pretovar.",
+        "answer": "vrata",
+        "hint": "od vrata do vrata"
+      },
+      {
+        "id": "7vy0d5",
+        "sentence": "Cestovni promet pojavljuje se u tri organizacijska oblika: vlastiti, linijski (javni) i _______-namjenski prijevoz.",
+        "answer": "posebni",
+        "hint": "za zatvorene grupe itd."
+      },
+      {
+        "id": "nhf8xa",
+        "sentence": "_______ nema vlastiti pogon i funkcionalno je vezan uz automobil.",
+        "answer": "karavan",
+        "hint": "vučeni prikolični dom"
+      },
+      {
+        "id": "ozpvn9",
+        "sentence": "Motorni dom (kamper) ima vlastiti pogonski dio, kabinu i _______ prostor.",
+        "answer": "stambeni",
+        "hint": "gdje se spava/kuha"
+      },
+      {
+        "id": "xcfyqy",
+        "sentence": "Agencijski organizirana turistička putovanja autobusom najčešći su _______ oblik autobusnog prijevoza.",
+        "answer": "povremeni",
+        "hint": "nezakazana linija"
+      },
+      {
+        "id": "41a71b",
+        "sentence": "_______ je najbrojnije cestovno vozilo u turizmu.",
+        "answer": "automobil",
+        "hint": "individualno vozilo"
+      },
+      {
+        "id": "7vp6wq",
+        "sentence": "Jednokratna cestarina obično ne pokriva stvarne troškove, pa se cestovna infrastruktura u velikoj mjeri financira iz _______ sredstava.",
+        "answer": "državnih",
+        "hint": "javnih"
+      }
+    ],
+    "learn": {
+      "id": "gttw9q",
+      "title": "Road Transport between the Demand Market & the Destination",
+      "content": "\n                <h3>Najfleksibilniji oblik prijevoza</h3>\n                <p>Cestovni promet povezuje emitivno tržište s destinacijom uz neusporedivu fleksibilnost — relativno je jeftin, udoban i brz, te jedini pravi oblik prijevoza <strong>od vrata do vrata</strong> (često bez presjedanja). Njegovi nedostaci su niža razina sigurnosti, prometna zagušenja i negativan utjecaj na okoliš.</p>\n\n                <div class=\"formula-box\">\n                    Cestovna vozila u turizmu: (1) povezuju emitivna ↔ receptivna područja · (2) dio su samog putovanja ·\n                    (3) opskrbljuju destinaciju<br>\n                    Organizacija prema karakteru: VLASTITI · LINIJSKI (javni) · POSEBNE NAMJENE\n                </div>\n\n                <h4>Vozila</h4>\n                <ul>\n                    <li><strong>Osobni automobil</strong> — najbrojniji; individualno putovanje od vrata do vrata. Ključne značajke: učinkovitost, potrošnja goriva, <strong>sigurnost</strong> (aktivna + pasivna), udobnost, brzina, emisije.</li>\n                    <li><strong>Turistički autobusi</strong> — udobnost, bogata opremljenost, masovni prijevoz; visokopodni &amp; katni; organizirani kao linijski, <strong>povremeni</strong> (agencijska putovanja) i posebni (zatvorene grupe).</li>\n                    <li><strong>Prikolice za kampiranje</strong> (bez vlastitog pogona, vučene) nasuprot <strong>autodomovima</strong> (samopokretni, stambeni prostor) — kamping/turizam obilaska.</li>\n                    <li><strong>Motocikl</strong> (fosilna goriva, postojeća infrastruktura) nasuprot <strong>biciklu</strong> (ljudska snaga, ekološki, zahtijeva posebnu infrastrukturu, zdravstvene prednosti).</li>\n                </ul>\n\n                <h4>Infrastruktura</h4>\n                <div class=\"tip-box\">\n                    <p>Ceste &amp; ulice · mostovi/tuneli/nadvožnjaci &amp; podvožnjaci · putnički &amp; teretni terminali ·\n                    parkirališta &amp; garaže · uslužni objekti uz autoceste · signalizacija, nadzor &amp; upravljanje. Kao i sva prometna infrastruktura, zahtijeva <strong>velika ulaganja i dugo razdoblje izgradnje</strong> te je uglavnom <strong>financirana od strane države</strong> (sama cestarina rijetko pokriva stvarne troškove). Terminali i uslužni objekti istovremeno služe kao točke turističkih usluga.</p>\n                </div>\n                <h4>Dopuna — cestovni promet kao poveznica</h4>\n                <ul>\n                    <li><strong>Prednosti:</strong> relativno udoban, jeftin i brz; često bez transfera (od vrata do vrata); doživljaji tijekom putovanja; najveća fleksibilnost. <strong>Ograničenja:</strong> niža sigurnost od željeznice/zrakoplova, zagušenja, onečišćenje, ograničen doseg.</li>\n                    <li><strong>Organizacijski oblici:</strong> VLASTITI prijevoz · LINIJSKI (javni) · POVREMENI (agencijska putovanja) · POSEBNI prijevoz.</li>\n                    <li><strong>Vozila:</strong> automobil (najbrojniji) · turistički autobusi (visokopodni, katni) · karavan (bez pogona, vuče ga auto) i kamper (vlastiti pogon) · motocikl · bicikl.</li>\n                    <li><strong>Infrastruktura:</strong> ceste i ulice · mostovi, tuneli, podvožnjaci i nadvožnjaci · terminali · garaže i parkirališta · prateći objekti uz autoceste · signalizacija i nadzor. Financiranje: država + koncesije/cestarine.</li>\n                </ul>\n            "
+    }
+  },
+  "roadTransportProduct": {
+    "id": "9paoqa",
+    "name": "Cestovni promet kao turistički proizvod",
+    "icon": "fa-bus",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "Koji se turistički PROIZVODI temelje na cestovnom prometu?",
+        "answer": "Autobusni izleti, višednevna autobusna putovanja, panoramski prijevoz, lokalne turističke linije, iznajmljivanje vozila (rent-a-car) i cikloturizam.",
+        "explanation": "Opis svakog → sekcija Uči."
+      },
+      {
+        "question": "Što karakterizira AUTOBUSNE IZLETE i VIŠEDNEVNA putovanja?",
+        "answer": "Izleti: rasprostranjeni, niska cijena, kratko trajanje, fleksibilan odabir motiva. Višednevna putovanja: organizirana s programom, noćenjima i vodičem.",
+        "explanation": "Mogu biti za otvoreno tržište ili zatvorene skupine."
+      },
+      {
+        "question": "Što je PANORAMSKI autobusni prijevoz?",
+        "answer": "Kružno razgledavanje prirodnih i kulturnih znamenitosti u destinaciji; autobusi s velikim staklenim površinama i višejezičnim informacijama tijekom vožnje.",
+        "explanation": "Autobusi u destinaciji služe i za transfere i izlete."
+      },
+      {
+        "question": "Što su LOKALNE TURISTIČKE LINIJE i tko ih organizira?",
+        "answer": "Redoviti prijevoz unutar destinacije autobusima skromne udobnosti, niske brzine i velikog kapaciteta. Organiziraju ih lokalna samouprava, agencije, prijevoznici i hoteli.",
+        "explanation": "Svrha: smanjiti gužve i uporabu osobnih automobila."
+      },
+      {
+        "question": "Kako funkcionira IZNAJMLJIVANJE vozila (rent-a-car)?",
+        "answer": "Iznajmljivanje automobila, skutera, quadova i bicikala preko rent-a-car ili turističkih agencija, na temelju ugovora o najmu.",
+        "explanation": "Naplata: prema prijeđenoj kilometraži ili prema trajanju najma."
+      },
+      {
+        "question": "Što je CIKLOTURIZAM i kakav je profil cikloturista?",
+        "answer": "Putovanje u slobodno vrijeme u kojem je vožnja biciklom primarni dio. Oblici: jednodnevni, odmorišni i aktivni cikloturizam.",
+        "explanation": "Profil (ADFC): prosječna dob ~53 g., viši dohodak i obrazovanje. → sekcija Uči."
+      },
+      {
+        "question": "Što pokazuje EU istraživanje o putovanjima AUTOKAROM?",
+        "answer": "Većina putovanja je unutar zemlje (~35%), rijetka; glavne svrhe: posjeti obitelji/prijateljima (~34%), odmor (~27%), slobodno vrijeme (~24%).",
+        "explanation": "Glavni razlozi: niska cijena i nedostatak alternative."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "s3cvra",
+        "question": "Koji je turistički PROIZVOD temeljen na cestovnom prometu?",
+        "options": [
+          "Brza željeznička pruga",
+          "Višednevno putovanje autobusom",
+          "Međunarodna krstarenja",
+          "Charter let"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lhk2cy",
+        "question": "Panoramski prijevoz u destinaciji u osnovi je:",
+        "options": [
+          "Kružna razgledavanja prirodnih i kulturnih znamenitosti",
+          "Dalekometni interkontinentalni prijevoz",
+          "Dostava tereta",
+          "Svakodnevni prijevoz na posao"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "7f5b62",
+        "question": "'Ski bus' ili 'beach bus' primjer je:",
+        "options": [
+          "Charter leta",
+          "Lokalne turističke linije",
+          "Karavane",
+          "Kruzerske izlete"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2npn71",
+        "question": "Usluge rent-a-car naplaćuju se prema:",
+        "options": [
+          "Težina putnika",
+          "Prijeđena udaljenost ILI trajanje najma",
+          "Broj benzinskih postaja koje se prođu",
+          "Boja automobila"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "m9e8sx",
+        "question": "Lokalne turističke linije uglavnom pomažu destinaciji na sljedeći način:",
+        "options": [
+          "Povećanjem korištenja privatnih automobila",
+          "Izbjegavanjem korištenja automobila i rasterećenjem cestovne infrastrukture",
+          "Zamjenom cjelokupnog zračnog prijevoza",
+          "Ukidanjem svih autobusa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2b6bb7",
+        "question": "U EU anketi o putovanjima autobusom, DVA glavna razloga za putovanje autobusom su:",
+        "options": [
+          "Luksuz i brzina",
+          "Niske cijene i neposjedovanje automobila",
+          "Besplatna hrana i besplatni WiFi",
+          "Status i udobnost"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jfecj2",
+        "question": "Tipičnog turista biciklista (profil ADFC) najbolje opisuje sljedeće:",
+        "options": [
+          "Mlad, s niskim prihodima, s malom djecom",
+          "Stariji (~53), s natprosječnim prihodima, često sveučilišno obrazovan, usmjeren na kvalitetu",
+          "Svakodnevni putnik na posao koji nikada ne ide na odmor",
+          "Isključivo profesionalni sportaš"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "xngskm",
+        "sentence": "Jednodnevna organizirana cestovna tura jest autobusna _______.",
+        "answer": "ekskurzija",
+        "hint": "kratki izlet"
+      },
+      {
+        "id": "umvceo",
+        "sentence": "Razgledavajuće kružne vožnje znamenitosti nekoga odredišta autobusom jesu _______ prijevoz.",
+        "answer": "panoramski",
+        "hint": "razgledavanje krajolika"
+      },
+      {
+        "id": "ezo6kn",
+        "sentence": "Prijevoz od zračne luke do hotela ili od luke do grada, često u kombinaciji s drugim oblicima prijevoza, naziva se _______.",
+        "answer": "transfer",
+        "hint": "vezna dionica"
+      },
+      {
+        "id": "dd4mnu",
+        "sentence": "Skijaški autobus ili plažni autobus vrsta je lokalne turističke _______.",
+        "answer": "linije",
+        "hint": "redovita linija"
+      },
+      {
+        "id": "k94o04",
+        "sentence": "Plaćanje rent-a-cara može se temeljiti na prijeđenoj udaljenosti ili na _______ najma.",
+        "answer": "trajanju",
+        "hint": "koliko dugo traje"
+      },
+      {
+        "id": "n09s16",
+        "sentence": "Rekreacijsko putovanje u kojemu je biciklizam primarni sadržaj naziva se biciklistički _______.",
+        "answer": "turizam",
+        "hint": "oblik temeljen na aktivnostima"
+      },
+      {
+        "id": "m7crwj",
+        "sentence": "U istraživanju EU-a, niske cijene i neposjedovanje _______ glavni su razlozi putovanja autobusom.",
+        "answer": "automobila",
+        "hint": "vlastitog vozila"
+      }
+    ],
+    "learn": {
+      "id": "7nzw64",
+      "title": "Road Transport in the Form of a Tourism Product",
+      "content": "\n                <h3>Kada je cestovna usluga SAM proizvod</h3>\n                <p>Osim pukog dolaska na odredište, cestovni promet postaje <strong>okosnica turističkih\n proizvoda</strong> u kojima samo putovanje pruža doživljaj.</p>\n\n                <div class=\"formula-box\">\n                    Turistički proizvodi temeljeni na cestovnom prometu: autobusni izleti · višednevna autobusna putovanja · panoramski/destinacijski prijevoz ·\n                    lokalne turističke linije · najam vozila (rent-a-car) · cikloturizam\n                </div>\n\n                <h4>Proizvodi temeljeni na autobusu</h4>\n                <ul>\n                    <li><strong>Izleti</strong> (jednodnevni) &amp; <strong>višednevna putovanja</strong> — niske cijene, fleksibilnost,\n                    bogat turistički sadržaj na brodu; organiziraju ih agencije.</li>\n                    <li><strong>Panoramsko</strong> razgledavanje + <strong>transferi</strong> (zračna luka↔hotel, luka↔grad) i\n                    <strong>shuttle prijevoz</strong> — često dio <strong>kombiniranih (multimodalnih)</strong> putovanja (autobus+brod,\n                    autobus+avion, autobus+vlak).</li>\n                    <li><strong>Lokalne turističke linije</strong> (ski bus, beach bus) — ekonomičan destinacijski prijevoz koji\n                    <strong>smanjuje korištenje automobila</strong> i rasterećuje infrastrukturu (alat održivosti).</li>\n                </ul>\n\n                <h4>Najam vozila &amp; cikloturizam</h4>\n                <div class=\"tip-box\">\n                    <p><strong>Rent-a-car</strong> (automobili, skuteri, quadovi, bicikli) turistima koji su stigli avionom/vlakom/brodom vraća fleksibilnost prijevoza od vrata do vrata; naplaćuje se prema prijeđenoj udaljenosti ili trajanju najma.\n                    <strong>Cikloturizam</strong> — ekološki i zdravstveno povoljan; tipični cikloturist ima ~53 godine, nadprosječnih je prihoda, visokoškolskog obrazovanja te prelazi 40–60 km/dan na putovanjima usmjerenima na kvalitetu (~29% na e-biciklima).</p>\n                    <p>EU istraživanje o autobusnom prijevozu: većina autobusnih putovanja je domaća i odabire se zbog <strong>niske cijene</strong> i\n                    <strong>neposjedovanja automobila</strong>; ~64% korisnika ocjenjuje usluge kao 'dobre'.</p>\n                </div>\n                <h4>Dopuna — cestovni turistički proizvodi</h4>\n                <ul>\n                    <li><strong>Autobusni izleti</strong> (jednodnevni; niska cijena, fleksibilan motiv) i <strong>višednevna putovanja</strong> (program, noćenja, vodič); za otvoreno tržište ili zatvorene skupine.</li>\n                    <li><strong>Panoramski prijevoz</strong> — kružno razgledavanje; autobusi visoke upravljivosti i velikih staklenih površina, višejezične informacije.</li>\n                    <li><strong>Lokalne turističke linije</strong> — redoviti prijevoz u destinaciji; organizatori: lokalna samouprava, agencije, prijevoznici, hoteli; smanjuju gužve.</li>\n                    <li><strong>Rent-a-car</strong> — automobili, skuteri, quadovi, bicikli; naplata po kilometraži ili trajanju najma.</li>\n                    <li><strong>Cikloturizam</strong> — jednodnevni, odmorišni i aktivni; profil cikloturista (ADFC): prosj. ~53 g., viši dohodak i obrazovanje.</li>\n                </ul>\n            "
+    }
+  },
+  "railTransportConnecting": {
+    "id": "slqc81",
+    "name": "Željeznički promet ↔ Destinacija",
+    "icon": "fa-train",
+    "color": "#0891b2",
+    "flashcards": [
+      {
+        "question": "Koje su PREDNOSTI i NEDOSTACI željezničkog prometa?",
+        "answer": "Prednosti: vrlo velik kapacitet, niski eksploatacijski troškovi, visoka sigurnost i ekološka prihvatljivost. Nedostaci: neelastičnost (vezan uz prugu i vozni red), potreban transfer.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Zašto EU promiče željeznicu umjesto ceste (ekološki)?",
+        "answer": "Zbog električnog pogona na glavnim prugama i znatno manjeg zauzimanja zemljišta željeznica ima daleko manji negativan utjecaj na prirodu.",
+        "explanation": "Zato prometna politika EU-a potiče željeznicu da konkurira cesti."
+      },
+      {
+        "question": "Kako se putnički VAGONI klasificiraju?",
+        "answer": "Prema UDOBNOSTI — po razredima. Prema NAMJENI — lokalni (do ~50 km, velik kapacitet, niža brzina) i daljinski (veća udobnost, veće brzine).",
+        "explanation": "Razina udobnosti razmjerna je duljini puta."
+      },
+      {
+        "question": "Kako se dijeli željeznički promet prema usluzi?",
+        "answer": "Gradski (prigradski i gradski), međugradski (međunarodni, domaći, regionalni, vlakovi velikih brzina) i intermodalni (kombinirani).",
+        "explanation": "Intermodalni = željeznica + tramvaj/cestovna vozila."
+      },
+      {
+        "question": "Po čemu je ŽELJEZNIČKA infrastruktura posebna?",
+        "answer": "Za razliku od cesta, pruga se NE MOŽE graditi u dionicama — kretanje vlakova ovisi o signalno-sigurnosnim uređajima pa se gradi kao CJELINA. Investitor je u pravilu država.",
+        "explanation": "To je ključna razlika u odnosu na cestovnu infrastrukturu."
+      },
+      {
+        "question": "Što su VLAKOVI VELIKIH BRZINA (VVB)?",
+        "answer": "Vlakovi brzine >300 km/h koji nude ekološki prihvatljiviju alternativu zrakoplovu na kraćim relacijama, skraćuju putno vrijeme i potiču gospodarski rast.",
+        "explanation": "Prema UIC-u, željeznica velikih brzina energetski je vrlo učinkovita."
+      },
+      {
+        "question": "Koja je funkcija željezničkog KOLODVORA?",
+        "answer": "Prima i otprema putnike (s prtljagom, poštom, sitnim teretom) i upravlja kolodvorskim prometom.",
+        "explanation": "Zone: prijem putnika i prtljage · kolodvorska zgrada · prihvat vlakova."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "b9fbdm",
+        "question": "KLJUČNA prednost željezničkog prometa jest:",
+        "options": [
+          "Istinska dostava od vrata do vrata",
+          "Vrlo povoljni sigurnosni I ekološki pokazatelji",
+          "Najveća komercijalna brzina od svih oblika prijevoza",
+          "Potpuna neovisnost o infrastrukturi"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "vz58ha",
+        "question": "Željeznica se opisuje kao NEELASTIČNA uglavnom zato što:",
+        "options": [
+          "Prebrza je",
+          "Vezana je uz fiksne pruge i javnu/linijsku organizaciju te ne može obavljati prijevoz od vrata do vrata",
+          "Ne koristi nikakvu infrastrukturu",
+          "Prevozi vrlo mali broj putnika"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "pnbzkz",
+        "question": "Prema NAMJENI, koja vrsta vagona služi za putovanja do ~50 km s osnovnom opremom?",
+        "options": [
+          "Međunarodni",
+          "Daljinski",
+          "Lokalni",
+          "Visokobrzinski"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "ag1yv0",
+        "question": "Za razliku od ceste, željeznička pruga mora biti izgrađena:",
+        "options": [
+          "U malim neovisnim dionicama",
+          "U cjelini, jer kretanje vlakova ovisi o signalizaciji i sigurnosnim uređajima",
+          "Isključivo od strane privatnih tvrtki",
+          "Bez ikakva plana"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ygmw73",
+        "question": "Prema podacima UIC-a, željeznica velikih brzina u usporedbi s avionskim prijevozom je otprilike:",
+        "options": [
+          "Jednako energetski učinkovita",
+          "Dvostruko manje učinkovita",
+          "Gotovo 9× energetski učinkovitija",
+          "Dvostruko zagađujuća"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "4rmjsr",
+        "question": "EU potiče prelazan na željezničke modalitete prijevoza ponajprije zato što željeznica:",
+        "options": [
+          "Predstavlja najjeftiniju luksuznu opciju",
+          "Ima znatno manji ekološki otisak (električni pogon, malo zauzimanje zemljišta)",
+          "Ne zahtijeva ulaganja",
+          "Pruža potpunu uslugu od vrata do vrata"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "utf6it",
+        "question": "Koja je europska zemlja bila pionir željeznice velikih brzina (Pariz–Lyon, 1981.)?",
+        "options": [
+          "Njemačka",
+          "Italija",
+          "Francuska",
+          "Španjolska"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "bzrz4j",
+        "sentence": "Najveće prednosti željezničkog prometa su veliki kapacitet, niski troškovi te povoljni pokazatelji sigurnosti i _______.",
+        "answer": "okolišni",
+        "hint": "ekološki / prirodni"
+      },
+      {
+        "id": "5xs3v0",
+        "sentence": "Budući da je vezana uz fiksne pruge i ne može pružiti uslugu od vrata do vrata, željeznica je relativno _______.",
+        "answer": "neelastična",
+        "hint": "nije fleksibilno"
+      },
+      {
+        "id": "fw1dq1",
+        "sentence": "Na vlaku je lokomotiva (pogon) odvojena od _______, koji se mogu slobodno kombinirati.",
+        "answer": "vagoni",
+        "hint": "vagoni/kola"
+      },
+      {
+        "id": "zqecr8",
+        "sentence": "Vagoni za putovanja do ~50 km, s skromnom opremom, su _______ vagoni.",
+        "answer": "lokalni",
+        "hint": "kratke udaljenosti"
+      },
+      {
+        "id": "vw5979",
+        "sentence": "Kombinirani prijevoz kao što je željeznica + cestovna vozila naziva se _______ prijevoz.",
+        "answer": "intermodalni",
+        "hint": "između načina prijevoza"
+      },
+      {
+        "id": "7j08qc",
+        "sentence": "Za razliku od ceste, željeznica mora biti izgrađena kao _______, zbog ovisnosti signalizacije i sigurnosti.",
+        "answer": "cjelina",
+        "hint": "nije u odjeljcima"
+      },
+      {
+        "id": "t0znwt",
+        "sentence": "Brza željeznica gotovo je devet puta energetski učinkovitija od _______.",
+        "answer": "letenja",
+        "hint": "zračnog putovanja"
+      }
+    ],
+    "learn": {
+      "id": "viwiyx",
+      "title": "Rail Transport between the Demand Market & the Destination",
+      "content": "\n                <h3>Zeleni, visokokapacitetni način prijevoza</h3>\n                <p>Željeznica nudi vrlo veliki kapacitet, niske operativne troškove te izvrsne pokazatelje <strong>sigurnosti</strong> i\n                <strong>zaštite okoliša</strong> (električni pogon, malo zauzimanje zemljišta). Njezina je cijena\n                <strong>neelastičnost</strong> — vezana je uz fiksne pruge i javnu/linijsku organizaciju, ne može pružiti\n                prijevoz od vrata do vrata te ima nisku komercijalnu brzinu.</p>\n\n                <div class=\"formula-box\">\n                    Željeznica = veliki kapacitet + niski troškovi + sigurna + ZELENA &nbsp;ALI&nbsp; neelastična + bez prijevoza od vrata do vrata + spora<br>\n                    HSR je &gt;4× energetski učinkovitija od vožnje automobilom i ~9× od letenja (UIC)\n                </div>\n\n                <h4>Vagoni &amp; vrste usluga</h4>\n                <ul>\n                    <li><strong>Prema udobnosti:</strong> klase (udobnost raste s udaljenošću). <strong>Prema namjeni:</strong>\n                    lokalna (≤50 km) · međugradska · međunarodna (najveća udobnost + vagoni za spavanje/restoran).</li>\n                    <li><strong>Prema vrsti usluge:</strong> gradska (gradska/prigradska) · međugradska (uključujući visokobrzinsku) ·\n                    <strong>intermodalna</strong> (željeznica + tramvaj/cesta — rješavanje problema prijevoza od vrata do vrata na posljednjoj milji).</li>\n                    <li>Lokomotiva je <strong>odvojena</strong> od vagona → slobodna kombinacija &amp; intenzivno korištenje lokomotive.</li>\n                </ul>\n\n                <h4>Infrastruktura, HST &amp; terminali</h4>\n                <div class=\"tip-box\">\n                    <p>Željeznica se mora graditi <strong>kao cjelina</strong> (međuovisnost signalizacije i sigurnosti), iznimno je\n                    skupa i <strong>vođena od strane države</strong>, te mora odgovarati međunarodnim koridorima (tehnička + tehnološka\n                    + organizacijska usklađenost). <strong>Visokobrzinski vlakovi</strong> (&gt;300 km/h; Maglev još brži)\n                    konkuriraju zrakoplovstvu na kratkim rutama; Francuska je bila pionir europske visokobrzinske željeznice (TGV, 1981). <strong>Putnički\n                    terminali</strong> (recepcija · zgrada kolodvora · peroni) ujedno su i točke turističkih usluga.</p>\n                </div>\n                <h4>Dopuna — željeznica kao poveznica</h4>\n                <ul>\n                    <li><strong>Prednosti:</strong> vrlo velika jednokratna putnička kapacitivnost (veća od ceste i zraka) · niski eksploatacijski troškovi · vrlo povoljni pokazatelji sigurnosti i zaštite okoliša (električni pogon, malo zauzimanje zemljišta). <strong>Nedostaci:</strong> neelastičnost (fiksna pruga i vozni red), obično nužan transfer do smještaja.</li>\n                    <li><strong>Vagoni:</strong> po udobnosti (razredi); po namjeni — lokalni (do ~50 km, velik kapacitet, skromna oprema, niža brzina) i daljinski (veća udobnost i brzina).</li>\n                    <li><strong>Podjela usluge:</strong> gradski · međugradski (međunarodni, domaći, regionalni, VVB) · intermodalni (željeznica + tramvaj / cestovna vozila).</li>\n                    <li><strong>Infrastruktura:</strong> pruga se gradi kao CJELINA (signalno-sigurnosni uređaji), investitor = država. <strong>VVB</strong>: &gt;300 km/h, alternativa zrakoplovu na kraćim relacijama.</li>\n                    <li><strong>Kolodvor:</strong> zone prijema putnika i prtljage, kolodvorska zgrada, zona prihvata vlakova.</li>\n                </ul>\n            "
+    }
+  }
+}

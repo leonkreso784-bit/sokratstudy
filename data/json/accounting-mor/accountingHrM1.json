@@ -1,0 +1,2742 @@
+{
+  "pojamRacunovodstva": {
+    "name": "Pojam i struktura računovodstva",
+    "icon": "fa-book-open",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Što je RAČUNOVODSTVO?",
+        "answer": "Podsustav informacijskog sustava koji prikuplja, bilježi i prezentira vrijednosno izražene informacije internim i eksternim korisnicima.",
+        "explanation": "U poslovnom sustavu ustrojava se kao računovodstvena funkcija ili služba."
+      },
+      {
+        "question": "Kako AICPA definira računovodstvo?",
+        "answer": "Vještina bilježenja, razvrstavanja, skraćenog prikazivanja i interpretiranja u novčanom obliku izraženih poslovnih događaja i rezultata koji iz njih proizlaze.",
+        "explanation": "AICPA = Američki institut ovlaštenih javnih računovođa."
+      },
+      {
+        "question": "Koji su zadaci računovodstva prema definiciji „sustav, proces, vještina, metoda i tehnika”?",
+        "answer": "Identifikacija, mjerenje, bilježenje, povezivanje i interpretacija rezultata ekonomskih aktivnosti koje se mogu vrijednosno izraziti.",
+        "explanation": "Računovodstvena informacija u klasičnom smislu uvijek ima novčani iskaz."
+      },
+      {
+        "question": "Računovodstvo ili knjigovodstvo – što je širi pojam?",
+        "answer": "Računovodstvo. Knjigovodstvo bilježi samo prošle poslovne događaje, a računovodstvo uključuje i planiranje, nadzor i analizu.",
+        "explanation": "U praksi se pojmovi često pogrešno poistovjećuju."
+      },
+      {
+        "question": "Koji su dijelovi TRADICIONALNOG koncepta računovodstva?",
+        "answer": "Računovodstveno planiranje, knjigovodstvo, računovodstveni nadzor (kontrola) i računovodstvena analiza.",
+        "explanation": "Neki izvori dodaju i računovodstveno informiranje."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVENO PLANIRANJE?",
+        "answer": "Evidencija budućih događaja izraženih vrijednosno: predračuni, planske kalkulacije, budžeti i planski financijski izvještaji, za razdoblja do godine dana.",
+        "explanation": "Mora imati istu metodološku osnovu kao knjigovodstvo – inače nema usporedbe."
+      },
+      {
+        "question": "Što je KNJIGOVODSTVO?",
+        "answer": "Najstariji i najrazvijeniji dio računovodstva: bilježi već nastale poslovne događaje u poslovne knjige metodom dvojnog knjigovodstva.",
+        "explanation": "Kronološka, sustavna, dokumentirana i formalna evidencija."
+      },
+      {
+        "question": "Koji uvjeti moraju biti ispunjeni da bi se događaj proknjižio?",
+        "answer": "Događaj je nastao i dokumentiran, može se vrijednosno izraziti i mijenja neku računovodstvenu kategoriju (imovinu, obveze, kapital, prihode, rashode…).",
+        "explanation": "Bez vjerodostojne isprave nema knjiženja."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVENI NADZOR (kontrola)?",
+        "answer": "Uspoređuje planirane podatke s ostvarenima iz knjigovodstva i brine o ispravnosti i pouzdanosti podataka, isprava i knjiženja.",
+        "explanation": "Utvrđuje odstupanja i njihov karakter (pozitivna ili negativna)."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVENA ANALIZA?",
+        "answer": "Tumači utvrđena odstupanja, analizira njihove uzroke (interne ili eksterne) i predlaže mjere za realnije planove.",
+        "explanation": "Nadovezuje se na nadzor; zatvara krug prema novom planiranju."
+      },
+      {
+        "question": "Koji su dijelovi SUVREMENOG koncepta računovodstva?",
+        "answer": "Financijsko računovodstvo (eksterni korisnici), računovodstvo troškova i menadžersko (upravljačko) računovodstvo (interni korisnici).",
+        "explanation": "Suvremeni koncept polazi od korisnika informacija."
+      },
+      {
+        "question": "Što je FINANCIJSKO RAČUNOVODSTVO?",
+        "answer": "Dio računovodstva za eksterne korisnike, obvezan za sve poslovne sustave; slijedi Zakon o računovodstvu i standarde, a proizvod su temeljni financijski izvještaji.",
+        "explanation": "Iskazuje podatke za poduzeće kao cjelinu."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVO TROŠKOVA?",
+        "answer": "Preuzima troškove iz financijskog računovodstva, raščlanjuje ih po mjestima i nositeljima i daje informacije za racionalizaciju troškova.",
+        "explanation": "Kraća razdoblja i uže organizacijske cjeline."
+      },
+      {
+        "question": "Što je MENADŽERSKO (upravljačko) računovodstvo?",
+        "answer": "Priprema cilju usmjerene informacije za poslovne odluke menadžmenta u kratkom i dugom roku; nije propisano zakonom.",
+        "explanation": "Podsustavi: računovodstvo odgovornosti i strategijsko računovodstvo."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVO ODGOVORNOSTI?",
+        "answer": "Podsustav menadžerskog računovodstva: izvještaji po segmentima (odjeli, procesi) i za kratka razdoblja, prema MSFI 8.",
+        "explanation": "U hotelima se primjenjuje USALI."
+      },
+      {
+        "question": "Što je STRATEGIJSKO RAČUNOVODSTVO?",
+        "answer": "Priprema informacija za strategije poslovnog sustava; uz financijske obuhvaća i nefinancijske informacije (kvaliteta, kupci, okoliš, konkurencija).",
+        "explanation": "Važan alat: metoda BSC (Balanced Scorecard)."
+      },
+      {
+        "question": "Koje četiri perspektive ima BSC metoda?",
+        "answer": "Perspektiva kupaca, internih poslovnih procesa, učenja i razvoja te financijska perspektiva kao zajednički nazivnik.",
+        "explanation": "BSC = Balanced Scorecard."
+      },
+      {
+        "question": "Tko su EKSTERNI korisnici računovodstvenih informacija?",
+        "answer": "Vlasnici i ulagači, vjerovnici i banke, državna tijela i porezni organi, kupci i dobavljači, zaposlenici i šira javnost.",
+        "explanation": "Interni korisnik je menadžment na svim razinama."
+      },
+      {
+        "question": "Zašto ULAGAČIMA trebaju računovodstvene informacije?",
+        "answer": "Da procijene financijski položaj, likvidnost i rezultat te hoće li sustav stvarati pozitivan novčani tok, podmirivati obveze i isplaćivati dividende.",
+        "explanation": "Odluka: kupiti, zadržati ili prodati dionice."
+      },
+      {
+        "question": "Zašto ZAPOSLENICIMA i sindikatima trebaju računovodstvene informacije?",
+        "answer": "Da prate stabilnost i uspješnost poslodavca, sposobnost isplate plaća i sigurnost radnih mjesta.",
+        "explanation": "U ključu: za poslovne odluke u kratkom i dugom roku."
+      },
+      {
+        "question": "Zašto POSLOVNIM PARTNERIMA (kupcima, dobavljačima) trebaju računovodstvene informacije?",
+        "answer": "Da procijene isplati li se poslovati sa sustavom i hoće li on uredno plaćati i isporučivati.",
+        "explanation": "Transakcije s partnerima temelje se na ispravama."
+      },
+      {
+        "question": "Tko je Luca Pacioli?",
+        "answer": "Talijanski matematičar koji je 1494. objavio djelo „Summa de arithmetica, geometria, proportioni et proportionalità” s prvim tiskanim opisom dvojnog knjigovodstva.",
+        "explanation": "Zato se smatra ocem dvojnog knjigovodstva."
+      },
+      {
+        "question": "Zašto se računovodstvo uspoređuje s NOVINAROM?",
+        "answer": "Kao novinar bilježi sve poslovne događaje i prenosi ih korisnicima – ono je uslužna funkcija, a odluke donosi menadžment.",
+        "explanation": "Računovodstvo = „jezik poslovanja” (language of business)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Računovodstvo je u poslovnom sustavu podsustav:",
+        "options": [
+          "Informacijskog sustava",
+          "Izvođačkog sustava",
+          "Upravljačkog sustava koji donosi odluke",
+          "Sustava nabave i prodaje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koji je dio računovodstva najstariji i najbolje razvijen u praksi?",
+        "options": [
+          "Računovodstvena analiza",
+          "Knjigovodstvo",
+          "Strategijsko računovodstvo",
+          "Računovodstvo odgovornosti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dio računovodstva koji uspoređuje planirano i ostvareno te brine o ispravnosti podataka je:",
+        "options": [
+          "Računovodstveno planiranje",
+          "Knjigovodstvo",
+          "Računovodstveni nadzor (kontrola)",
+          "Računovodstvo troškova"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Dio računovodstva koji provjerava ispravnost podataka s ciljem zaštite imovine od gubitka i krađe je:",
+        "options": [
+          "Računovodstvena analiza",
+          "Računovodstveno planiranje",
+          "Računovodstvo troškova",
+          "Računovodstvena kontrola"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Računovodstvo temeljeno na Zakonu o računovodstvu i računovodstvenim standardima je:",
+        "options": [
+          "Financijsko računovodstvo",
+          "Menadžersko računovodstvo",
+          "Računovodstvo troškova",
+          "Strategijsko računovodstvo"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Što je karakteristika financijskog računovodstva?",
+        "options": [
+          "Sadržaj njegovih izvještaja nije propisan nikakvim zakonom",
+          "Priprema informacije prvenstveno za eksterne korisnike",
+          "Namijenjeno je samo nižem menadžmentu",
+          "Iskazuje podatke samo za pojedine odjele"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Financijsko računovodstvo ima zadatak zadovoljiti informacijske zahtjeve državnih tijela, što znači:",
+        "options": [
+          "Izraditi interne izvještaje o troškovima za pojedine odjele hotela",
+          "Voditi evidenciju o kadrovima i radnom vremenu",
+          "Osigurati podatke za javno objavljene financijske izvještaje",
+          "Planirati buduće prodajne cijene usluga"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji podsustav menadžerskog računovodstva izvještava po segmentima i za kratka razdoblja?",
+        "options": [
+          "Strategijsko računovodstvo",
+          "Financijsko računovodstvo",
+          "Knjigovodstvo",
+          "Računovodstvo odgovornosti"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Koji dio računovodstva uz financijske obuhvaća i nefinancijske informacije (kvaliteta, okoliš, kupci)?",
+        "options": [
+          "Strategijsko računovodstvo",
+          "Financijsko računovodstvo",
+          "Knjigovodstvo",
+          "Računovodstvo odgovornosti"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Što od navedenog NIJE perspektiva BSC metode?",
+        "options": [
+          "Perspektiva kupaca",
+          "Perspektiva poreznih organa",
+          "Perspektiva učenja i razvoja",
+          "Perspektiva internih procesa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što je od navedenog uvjet da bi se poslovni događaj proknjižio?",
+        "options": [
+          "Da je planiran u budžetu",
+          "Da ga je odobrio nadzorni odbor",
+          "Da se može vrijednosno izraziti",
+          "Da se dogodio u zadnjem mjesecu godine"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Tko je interni korisnik računovodstvenih informacija?",
+        "options": [
+          "Porezna uprava",
+          "Banka koja je dala kredit",
+          "Dobavljač namirnica",
+          "Menadžment hotela"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Luca Pacioli je 1494. godine:",
+        "options": [
+          "Objavio prvi tiskani opis dvojnog knjigovodstva",
+          "Sastavio prvu sačuvanu bilancu u Firenci",
+          "Osnovao prvi računovodstveni servis",
+          "Donio prvi zakon o računovodstvu"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kojim se riječima opisuje uloga računovodstva prema menadžmentu?",
+        "options": [
+          "Upravljačka funkcija – samo donosi poslovne odluke",
+          "Uslužna funkcija – informira, a odluke donosi menadžment",
+          "Izvođačka funkcija – pruža usluge gostima hotela",
+          "Nadzorna funkcija – odobrava ugovore s partnerima"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Računovodstvo troškova pruža informacije prvenstveno o:",
+        "options": [
+          "Tržišnoj vrijednosti dionica poduzeća na burzi",
+          "Poreznim obvezama prema državi",
+          "Troškovima po mjestima nastanka i nositeljima",
+          "Stanju novca u blagajni"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Za razliku od knjigovodstva, računovodstvo obuhvaća i:",
+        "options": [
+          "Samo bilježenje prošlih poslovnih događaja u dnevnik",
+          "Isključivo sastavljanje poreznih prijava",
+          "Samo vođenje blagajne i žiro računa",
+          "Informacije okrenute budućnosti te nadzor i analizu"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Knjigovodstvo poslovne događaje bilježi metodom _______ knjigovodstva.",
+        "answer": "dvojnog",
+        "hint": "Svaka promjena na najmanje dva konta."
+      },
+      {
+        "sentence": "Dio računovodstva koji tumači odstupanja i predlaže mjere zove se računovodstvena _______.",
+        "answer": "analiza",
+        "hint": "Nadovezuje se na nadzor."
+      },
+      {
+        "sentence": "Računovodstvo koje je obvezno za sve poslovne sustave i namijenjeno eksternim korisnicima zove se _______ računovodstvo.",
+        "answer": "financijsko",
+        "hint": "Slijedi Zakon o računovodstvu."
+      },
+      {
+        "sentence": "Strategijsko računovodstvo za kontrolu strategije koristi metodu _______.",
+        "answer": "BSC",
+        "hint": "Balanced Scorecard."
+      },
+      {
+        "sentence": "Luca Pacioli objavio je opis dvojnog knjigovodstva _______. godine.",
+        "answer": "1494",
+        "hint": "Upiši brojkom; kraj 15. stoljeća."
+      },
+      {
+        "sentence": "Računovodstvo se naziva i jezikom _______ (language of business).",
+        "answer": "poslovanja",
+        "hint": "Specifičan vokabular struke."
+      }
+    ],
+    "learn": {
+      "title": "Pojam, zadaci i struktura računovodstva",
+      "content": "<h3>Što je računovodstvo</h3><p><strong>Računovodstvo</strong> je podsustav ukupnog <strong>informacijskog sustava</strong> poslovnog subjekta: prikuplja, bilježi i prezentira <strong>vrijednosno izražene</strong> informacije <strong>internim</strong> (menadžment) i <strong>eksternim</strong> korisnicima (država, porezni organi, banke, kupci, dobavljači, vlasnici, javnost). U poslovnom sustavu ustrojava se kao računovodstvena funkcija ili služba; manji sustavi mogu ga povjeriti računovodstvenom servisu.</p><p>Uz računovodstvo se vežu pojmovi <em>sustav, proces, vještina, metoda i tehnika</em>, čiji je zadatak <strong>identifikacija, mjerenje, bilježenje, povezivanje i interpretacija</strong> rezultata ekonomskih aktivnosti koje se mogu vrijednosno izraziti. Računovodstvena informacija (u klasičnom smislu) uvijek ima <strong>novčani iskaz</strong>.</p><div class=\"formula-box\"><strong>Definicija (AICPA):</strong> računovodstvo je „vještina bilježenja, razvrstavanja, skraćenog prikazivanja i interpretiranja u novčanom obliku izraženih poslovnih događaja i iz toga proizašlih rezultata”.</div><p>Svaki poslovni događaj mora biti temeljen na <strong>računovodstvenoj ispravi</strong> (dokumentu). Računovodstvo radi „poput <strong>novinara</strong>”: bilježi što se dogodilo i prenosi korisnicima – ono je <strong>uslužna funkcija</strong>, a poslovne odluke donosi menadžment (upravljački sustav). Zato se računovodstvo naziva i <strong>jezikom poslovanja</strong> (<em>language of business</em>).</p><h3>Računovodstvo nije isto što i knjigovodstvo</h3><p><strong>Knjigovodstvo</strong> bilježi samo poslovne događaje iz <strong>prošlosti</strong> (vođenje poslovnih knjiga). <strong>Računovodstvo</strong> je širi pojam: zaokruženi sustav u kojem se stanje imovine, kapitala i obveza te rezultati (prihodi, rashodi) <strong>planiraju, evidentiraju, kontroliraju i analiziraju</strong>.</p><h3>Tradicionalni koncept – računovodstvo prema SADRŽAJU djelatnosti</h3><table><tr><th>Dio</th><th>Što radi</th></tr><tr><td><strong>Računovodstveno planiranje</strong></td><td>Evidencija o <strong>budućim</strong> događajima: predračuni, planske kalkulacije, nabavne i prodajne cijene, budžeti, planski financijski izvještaji (do godine dana). Mora imati istu metodološku osnovu kao knjigovodstvo.</td></tr><tr><td><strong>Knjigovodstvo</strong></td><td>Najstariji, najrazvijeniji i u praksi najbolje primijenjen dio. Koristi isprave, poslovne knjige i izvještaje; evidenciju vodi <strong>metodom dvojnog knjigovodstva</strong>, slijedom bilančne ravnoteže. Za bilježenje koristi <strong>kontni plan</strong>.</td></tr><tr><td><strong>Računovodstveni nadzor (kontrola)</strong></td><td>Uspoređuje planirane i ostvarene podatke, utvrđuje odstupanja (pozitivna ili negativna) i brine o ispravnosti isprava, obračuna i knjiženja.</td></tr><tr><td><strong>Računovodstvena analiza</strong></td><td>Tumači odstupanja, analizira uzroke (interne ili eksterne) i predlaže mjere – temelj realnijih planova u sljedećem razdoblju.</td></tr></table><p>Neki izvori kao peti dio navode <strong>računovodstveno informiranje</strong> – prikaz informacija korisnicima na razumljiv način. Računovodstvena kontrola dijeli se na <strong>sustav internih kontrola</strong> (automatske kontrole) i <strong>naknadne kontrole</strong> (posebni kontrolni postupci).</p><div class=\"tip-box\"><strong>Računovodstvo kao informacijski sustav:</strong> <strong>input</strong> (poslovni događaji) → <strong>proces</strong> (evidentiranje, klasificiranje, sumiranje u poslovnim knjigama) → <strong>output</strong> (financijski izvještaji). Informacijski sustav obavlja četiri funkcije: prikupljanje, obradu, memoriranje i dostavljanje podataka i informacija.</div><div class=\"example-box\"><strong>Uvjeti za knjigovodstveni podatak:</strong><br>1) poslovni događaj je <strong>već nastao</strong> i ostavio trag u <strong>vjerodostojnoj ispravi</strong>;<br>2) može se <strong>vrijednosno izraziti</strong>;<br>3) mijenja neku računovodstvenu kategoriju (imovinu, kapital, obveze, rashode, prihode, troškove, rezultat).</div><h3>Suvremeni koncept – računovodstvo prema KORISNIKU informacija</h3><ul><li><strong>Financijsko računovodstvo</strong> – za <strong>eksterne</strong> korisnike; <strong>obvezno</strong> za sve poslovne sustave; MORA slijediti Zakon o računovodstvu i standarde; iskazuje podatke za poduzeće kao <strong>cjelinu</strong>; proizvod su <strong>temeljni financijski izvještaji</strong>; strogo poštuje načelo bilančne ravnoteže.</li><li><strong>Računovodstvo troškova</strong> – preuzima troškove iz financijskog računovodstva, raščlanjuje ih po <strong>mjestima nastanka</strong> i <strong>nositeljima</strong>, prati ih kroz kraća razdoblja i uže cjeline, računa cijenu koštanja.</li><li><strong>Menadžersko (upravljačko) računovodstvo</strong> – cilju usmjerene informacije za odluke menadžmenta; <strong>nije propisano zakonom</strong>, nego pravilima struke. Podsustavi: <ul><li><strong>Računovodstvo odgovornosti</strong> – izvještaji po <strong>segmentima</strong> (odjeli, procesi, linije) za kratka razdoblja (dan, tjedan, mjesec); temelj je <strong>MSFI 8</strong>; u hotelijerstvu <strong>USALI</strong>, u restoranima USAR, u wellnessu i spa USFRS.</li><li><strong>Strategijsko računovodstvo</strong> – informacije za strategije (posebno održivog razvoja); uz financijske obuhvaća i <strong>nefinancijske</strong> informacije (kvaliteta, okoliš, kupci, dobavljači, konkurencija). Ključna metoda: <strong>BSC</strong> s perspektivom kupaca, internih procesa, učenja i razvoja te financijskom perspektivom.</li></ul></li></ul><div class=\"tip-box\"><strong>Kako razlikovati:</strong> „zakon, standardi, eksterni korisnici, poduzeće kao cjelina” → financijsko; „troškovi po mjestima i nositeljima” → računovodstvo troškova; „segmenti, kratka razdoblja, USALI” → računovodstvo odgovornosti; „strategija, nefinancijske informacije, BSC” → strategijsko.</div><h3>Korisnici i njihove potrebe</h3><table><tr><th>Korisnik</th><th>Zašto mu trebaju informacije</th></tr><tr><td>Vlasnici kapitala (dioničari)</td><td>Kako odluke menadžmenta utječu na financijski položaj i vrijednost njihova ulaganja; odluka o zadržavanju ili prodaji dionica.</td></tr><tr><td>Ulagači (investitori)</td><td>Procjena financijskog položaja, likvidnosti i rezultata; hoće li sustav stvarati pozitivan novčani tok i isplaćivati dividende.</td></tr><tr><td>Vjerovnici (banke)</td><td>Hoće li krediti i kamate biti vraćeni na vrijeme.</td></tr><tr><td>Zaposlenici i sindikati</td><td>Stabilnost i uspješnost poslodavca, mogućnost isplate plaća, odluke u kratkom i dugom roku.</td></tr><tr><td>Poslovni partneri (kupci, dobavljači)</td><td>Isplati li se poslovati sa sustavom, hoće li plaćati i isporučivati uredno.</td></tr><tr><td>Država i porezni organi</td><td>Porezne obveze, statistika, javno objavljeni izvještaji.</td></tr><tr><td>Menadžment (interni)</td><td>Planiranje, kontrola troškova, profitabilnost po proizvodima i segmentima, strateške odluke.</td></tr></table><p>Računovodstvo se vodi za svaki <strong>računovodstveni subjekt</strong>: profitne organizacije (trgovačka društva) i neprofitne organizacije (država, ustanove, udruge).</p><h3>Povijest u tri crte</h3><ul><li>Izrazi <strong>„duguje”</strong> i <strong>„potražuje”</strong> potječu od trgovaca: „ako primim robu, dugujem novac; ako isporučim robu, potražujem novac” – otud pravilo „tko prima, duguje; tko daje, potražuje” (ne može se dosljedno primijeniti na sva knjiženja).</li><li>Dvojno knjigovodstvo razvilo se u talijanskim gradovima u 15. stoljeću; <strong>Luca Pacioli</strong> ga je <strong>1494.</strong> opisao u djelu <em>Summa de arithmetica, geometria, proportioni et proportionalità</em>.</li><li>Riječ <strong>bilanca</strong> dolazi od tal. <em>bilancia</em> (vaga); prva sačuvana bilanca datira iz <strong>1389.</strong> (tvrtka Datini, Firenca).</li></ul>"
+    }
+  },
+  "regulativaNacela": {
+    "name": "Zakon, standardi i računovodstvena načela",
+    "icon": "fa-landmark",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "Koji propis u RH uređuje financijsko računovodstvo?",
+        "answer": "Zakon o računovodstvu – uređuje isprave, poslovne knjige, popis imovine i obveza te temeljne financijske izvještaje.",
+        "explanation": "Kontni plan Zakon ne propisuje – izvodi se iz njegovih odredbi."
+      },
+      {
+        "question": "Što su HSFI?",
+        "answer": "Hrvatski standardi financijskog izvještavanja – primjenjuju ih mali i srednji poduzetnici čije dionice ne kotiraju na burzi.",
+        "explanation": "Donosi ih Hrvatski odbor za standarde financijskog izvještavanja."
+      },
+      {
+        "question": "Tko primjenjuje MSFI (IFRS)?",
+        "answer": "Veliki poduzetnici i svi čije dionice kotiraju na burzi (subjekti od javnog interesa), uz preostale MRS (IAS).",
+        "explanation": "MSFI su „globalni standardi”."
+      },
+      {
+        "question": "Kako su nastali MSFI (IFRS)?",
+        "answer": "Povezivanjem europskih MRS (IAS) i američkih općeprihvaćenih načela US GAAP (SFAS); globalni standardi donose se od 2000.",
+        "explanation": "Stari MRS i US GAAP postupno se ukidaju."
+      },
+      {
+        "question": "Koji standard uređuje izvještavanje po segmentima?",
+        "answer": "MSFI 8 – sadržajem pretežito preuzet iz američkog SFAS 131, a manje iz europskog MRS 14.",
+        "explanation": "Temelj računovodstva odgovornosti."
+      },
+      {
+        "question": "Što je USALI?",
+        "answer": "Uniform System of Accounts for the Lodging Industry – standard izvještavanja po segmentima u hotelijerstvu, prvi put primijenjen 1926. u New Yorku.",
+        "explanation": "Omogućuje budžetiranje i usporedbu hotela (benchmarking)."
+      },
+      {
+        "question": "Koji standardi po segmentima vrijede za restorane i spa?",
+        "answer": "Restorani: USAR (Uniform System of Accounts for Restaurants); wellness i spa: USFRS.",
+        "explanation": "Svi su usklađeni s MSFI 8."
+      },
+      {
+        "question": "Koje standarde koristi javni sektor?",
+        "answer": "MRSJS – Međunarodni računovodstveni standardi javnog sektora (izvorno IPSAS).",
+        "explanation": "Nisu usklađeni s MSFI jer se temelje na starijim MRS."
+      },
+      {
+        "question": "Što traži Direktiva 2014/95/EU?",
+        "answer": "Da veliki subjekti uz financijske objave i nefinancijske informacije – posebno o održivom razvoju.",
+        "explanation": "S njom je krajem 2016. usklađen Zakon o računovodstvu."
+      },
+      {
+        "question": "Što su računovodstvene PRETPOSTAVKE (koncepti)?",
+        "answer": "Teorijske osnove čija se primjena podrazumijeva i iz kojih se izvode računovodstvena načela.",
+        "explanation": "Redoslijed: pretpostavke → načela → standardi."
+      },
+      {
+        "question": "Pretpostavka KONTINUITETA (vremenske neograničenosti)?",
+        "answer": "Poslovni subjekt osniva se na neograničeno vrijeme i neće biti likvidiran ni kad posluje s gubitkom dok se očekuje dobit.",
+        "explanation": "Engl. going concern."
+      },
+      {
+        "question": "Pretpostavka POSLOVNOG SUBJEKTA?",
+        "answer": "Svako se poduzeće tretira kao poseban subjekt, odvojen od svojih vlasnika.",
+        "explanation": "Imovina vlasnika nije imovina poduzeća."
+      },
+      {
+        "question": "Pretpostavka STABILNE NOVČANE JEDINICE?",
+        "answer": "Vrijednosti se iskazuju u novčanoj jedinici čija se kupovna moć smatra stabilnom; u uvjetima inflacije rade se dodatni izvještaji.",
+        "explanation": "Konvencionalno ili tradicionalno računovodstvo."
+      },
+      {
+        "question": "Pretpostavka OBRAČUNSKOG RAZDOBLJA?",
+        "answer": "Korisnici ne mogu čekati „totalni” rezultat pri prestanku rada, pa se izvještava za kraća razdoblja – najčešće godinu.",
+        "explanation": "Mogu biti i kraća obračunska razdoblja."
+      },
+      {
+        "question": "Načelo TROŠKA (nabavne cijene)?",
+        "answer": "Najstarije načelo: evidencija poslovnih događaja temelji se na nabavnoj cijeni (trošku nabave).",
+        "explanation": "Koristi se pri vrednovanju pozicija bilance."
+      },
+      {
+        "question": "Načelo OPREZNOSTI?",
+        "answer": "U neizvjesnosti dobici se ne precjenjuju, a gubici ne podcjenjuju; imovina se procjenjuje po nižoj od nabavne i neto prodajne vrijednosti.",
+        "explanation": "Ne opravdava namjerno podcjenjivanje – tihe pričuve."
+      },
+      {
+        "question": "Načelo DOSLJEDNOSTI (konzistentnosti)?",
+        "answer": "Jednom izabrana računovodstvena politika mora se dosljedno primjenjivati i u sljedećim razdobljima.",
+        "explanation": "Omogućuje usporedivost kroz vrijeme."
+      },
+      {
+        "question": "Načelo SUČELJAVANJA prihoda i rashoda?",
+        "answer": "Rezultat razdoblja utvrđuje se kao razlika prihoda i rashoda koji se odnose na isto obračunsko razdoblje.",
+        "explanation": "Rashodi „prate” prihode koje su omogućili."
+      },
+      {
+        "question": "Načelo MATERIJALNOSTI (značajnosti)?",
+        "answer": "Ističu se događaji i informacije bitne za korisnike – luči se bitno od nebitnog.",
+        "explanation": "Nebitne stavke mogu se iskazati skupno."
+      },
+      {
+        "question": "Na koja dva načina se mogu priznati prihodi?",
+        "answer": "Po novčanoj osnovi (kad su naplaćeni) ili po nastanku događaja (kad su realizirani – prodani).",
+        "explanation": "U pravilu se primjenjuje nastanak događaja."
+      },
+      {
+        "question": "Načelo BILANČNE ISTINE?",
+        "answer": "Bilančne pozicije moraju realno odražavati stanje iz isprava i poslovnih knjiga (uz primjenu bruto načela).",
+        "explanation": "Srodno: bilančna jasnoća i kontinuitet."
+      },
+      {
+        "question": "Načelo BILANČNOG KONTINUITETA?",
+        "answer": "Iz razdoblja u razdoblje primjenjuje se isti raspored i isti način vrednovanja bilančnih pozicija.",
+        "explanation": "Zaključna bilanca = početna bilanca sljedeće godine."
+      },
+      {
+        "question": "Načelo TVRTKE (bilančno načelo)?",
+        "answer": "Svaka bilanca mora jasno identificirati poslovni sustav na koji se odnosi.",
+        "explanation": "Uz načelo vremenskog razdoblja i novčanog izražavanja."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Mali i srednji poduzetnici čije dionice ne kotiraju na burzi primjenjuju:",
+        "options": [
+          "HSFI",
+          "MSFI i preostale MRS",
+          "US GAAP",
+          "MRSJS"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Veliki poduzetnici i oni čije dionice kotiraju na burzi primjenjuju:",
+        "options": [
+          "Isključivo HSFI, kao i mali poduzetnici",
+          "MSFI (IFRS) i preostale MRS (IAS)",
+          "MRSJS (IPSAS)",
+          "Samo USALI"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Hotelska industrija za izvještavanje po segmentima koristi standard:",
+        "options": [
+          "USFRS",
+          "MRSJS",
+          "USALI",
+          "HSFI"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Standard koji uređuje izvještavanje po segmentu je:",
+        "options": [
+          "MRS 1",
+          "MSFI 16",
+          "HSFI 3",
+          "MSFI 8"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Javni sektor primjenjuje:",
+        "options": [
+          "MRSJS (IPSAS)",
+          "MSFI 8",
+          "HSFI",
+          "USALI"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pretpostavka da se poduzeće osniva na neograničeno vrijeme je pretpostavka:",
+        "options": [
+          "Poslovnog subjekta",
+          "Kontinuiteta",
+          "Obračunskog razdoblja",
+          "Stabilne novčane jedinice"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pretpostavka da je poduzeće odvojeno od svojih vlasnika je pretpostavka:",
+        "options": [
+          "Kontinuiteta",
+          "Materijalnosti",
+          "Poslovnog subjekta",
+          "Opreznosti"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Najstarije računovodstveno načelo koje traži evidenciju po nabavnoj cijeni je načelo:",
+        "options": [
+          "Opreznosti",
+          "Usporedivosti",
+          "Materijalnosti",
+          "Troška"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Načelo prema kojem se gubici ne podcjenjuju, a dobici ne precjenjuju je načelo:",
+        "options": [
+          "Opreznosti",
+          "Dosljednosti",
+          "Objektivnosti",
+          "Sučeljavanja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Prema načelu opreznosti imovina se procjenjuje po:",
+        "options": [
+          "Višoj od nabavne i neto prodajne vrijednosti",
+          "Nižoj od nabavne i neto prodajne vrijednosti",
+          "Uvijek po tržišnoj cijeni na dan bilance",
+          "Prosjeku nabavne i prodajne vrijednosti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Načelo koje traži da se jednom izabrana računovodstvena politika primjenjuje i ubuduće je:",
+        "options": [
+          "Načelo materijalnosti",
+          "Načelo tvrtke",
+          "Načelo dosljednosti",
+          "Načelo opreznosti"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Što je redoslijed od najopćenitijeg prema najkonkretnijem?",
+        "options": [
+          "Standardi → načela → pretpostavke",
+          "Načela → pretpostavke → standardi",
+          "Standardi → pretpostavke → načela",
+          "Pretpostavke → načela → standardi"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Prihod priznat „po nastanku događaja” priznaje se kad je:",
+        "options": [
+          "Usluga pružena ili roba prodana",
+          "Novac uplaćen na žiro račun",
+          "Ugovor tek potpisan",
+          "Faktura arhivirana"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Zakon o računovodstvu u RH:",
+        "options": [
+          "Propisuje jedinstveni kontni plan koji moraju koristiti sva poduzeća",
+          "Ne propisuje kontni plan, nego se on izvodi iz njegovih odredbi",
+          "Ne uređuje temeljne financijske izvještaje",
+          "Vrijedi samo za javni sektor"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Nefinancijske informacije o održivom razvoju za velike subjekte traži:",
+        "options": [
+          "MSFI 8 (izvještavanje po segmentu)",
+          "USALI",
+          "Direktiva 2014/95/EU",
+          "HSFI"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Načelo prema kojem se u bilanci primjenjuje isti raspored i vrednovanje pozicija iz godine u godinu je:",
+        "options": [
+          "Načelo bilančne jasnoće",
+          "Načelo zaštite vjerovnika",
+          "Načelo tvrtke",
+          "Načelo bilančnog kontinuiteta"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Hrvatski standardi financijskog izvještavanja skraćeno se zovu _______.",
+        "answer": "HSFI",
+        "hint": "Za male i srednje poduzetnike."
+      },
+      {
+        "sentence": "Izvještavanje po segmentima uređuje standard MSFI _______.",
+        "answer": "8",
+        "hint": "Upiši brojkom."
+      },
+      {
+        "sentence": "Hotelski standard izvještavanja po segmentima zove se _______.",
+        "answer": "USALI",
+        "hint": "Uniform System of Accounts for the Lodging Industry."
+      },
+      {
+        "sentence": "Pretpostavka da se poduzeće osniva na neograničeno vrijeme zove se pretpostavka _______.",
+        "answer": "kontinuiteta",
+        "hint": "Jedna riječ (going concern)."
+      },
+      {
+        "sentence": "Načelo prema kojem se gubici anticipiraju, a dobici ne zove se načelo _______.",
+        "answer": "opreznosti",
+        "hint": "Iskazuje se radije manji rezultat."
+      },
+      {
+        "sentence": "Standardi javnog sektora skraćeno se zovu _______.",
+        "answer": "MRSJS",
+        "hint": "Izvorno IPSAS."
+      }
+    ],
+    "learn": {
+      "title": "Regulativa, standardi, pretpostavke i načela",
+      "content": "<h3>Zakon o računovodstvu</h3><p>Financijsko računovodstvo u RH uređuje <strong>Zakon o računovodstvu</strong>. Suštinski sadržaj Zakona obuhvaća:</p><ul><li>prikupljanje podataka i <strong>knjigovodstvene isprave</strong>;</li><li><strong>poslovne knjige</strong> – osnovne (glavna knjiga i dnevnik) i pomoćne;</li><li><strong>popis (inventuru) imovine i obveza</strong> – na početku poslovanja, na kraju svake poslovne godine, pri likvidaciji i stečaju;</li><li><strong>temeljne financijske izvještaje</strong>;</li><li>primjenu <strong>računovodstvenih standarda</strong>.</li></ul><p>Zakon <strong>ne propisuje kontni plan</strong>: prije 1993. postojao je jedinstveni propisani kontni plan, a danas ga razvijaju računovodstvene udruge i poduzetnici, uz uvjet da osigurava pozicije temeljnih financijskih izvještaja.</p><h3>Koji standard primjenjuje tko</h3><table><tr><th>Standardi</th><th>Tko ih primjenjuje</th></tr><tr><td><strong>HSFI</strong> – Hrvatski standardi financijskog izvještavanja</td><td>Mali i srednji poduzetnici čije dionice <strong>ne kotiraju</strong> na burzi. Donosi ih Hrvatski odbor za standarde financijskog izvještavanja (koji tumači i primjenu MSFI u RH).</td></tr><tr><td><strong>MSFI / IFRS</strong> + preostali <strong>MRS / IAS</strong></td><td>Veliki poduzetnici i svi čije dionice <strong>kotiraju</strong> na burzi (subjekti od javnog interesa).</td></tr><tr><td><strong>MRSJS / IPSAS</strong></td><td>Javni sektor – nisu harmonizirani s MSFI jer se temelje na starijim MRS.</td></tr><tr><td><strong>MSFI 8</strong> i standardi djelatnosti (USALI, USAR, USFRS)</td><td>Interno izvještavanje po segmentima (računovodstvo odgovornosti).</td></tr></table><p><strong>MSFI</strong> su „globalni standardi”: nastali su povezivanjem <strong>MRS (IAS)</strong>, koji su se primjenjivali uglavnom u Europi, i <strong>US GAAP (SFAS)</strong> iz SAD-a i Japana. Od 2000. sustavno se donose novi globalni standardi, a stari se postupno ukidaju. <strong>MSFI 8 (izvještavanje po segmentu)</strong> sadržajem je pretežno preuzet iz SFAS 131, a manje iz MRS 14.</p><p><strong>USALI</strong> (<em>Uniform System of Accounts for the Lodging Industry</em>) prvi je put primijenjen <strong>1926. u New Yorku</strong>, a danas se primjenjuje u hotelima cijelog svijeta. Omogućuje budžet i praćenje rezultata po istoj metodologiji, mjesečno izvještavanje i usporedbu s konkurencijom (<strong>benchmarking</strong>). Srodni standardi: <strong>USAR</strong> (restorani) i <strong>USFRS</strong> (wellness i spa).</p><p>Za velike subjekte vrijedi i <strong>Direktiva 2014/95/EU</strong> (s njom je krajem 2016. usklađen Zakon): uz financijske se objavljuju i <strong>nefinancijske informacije</strong> o održivom razvoju – unutar izvještaja ili u posebnom izvještaju o održivosti.</p><div class=\"warning-box\"><strong>Povijesna napomena:</strong> studentske bilješke navode da Zakon iz 1993. „obvezuje sve poduzetnike na primjenu MRS-a”. To je vrijedilo tada; danas mali i srednji primjenjuju HSFI, a veliki i kotirajući MSFI/MRS.</div><p>Uz Zakon o računovodstvu važni su i <strong>porezni propisi</strong>: Opći porezni zakon propisuje obvezu vođenja dvojnog knjigovodstva, a Zakon o porezu na dobit uređuje prihode, rashode i osnovicu poreza na dobit. Međunarodni računovodstveni standardi sastoje se od <strong>Okvira za pripremu financijskih izvještaja</strong> i <strong>pojedinačnih standarda</strong>; cilj im je da financijski izvještaji ne budu prepreka međunarodnom prometu roba, usluga i kapitala.</p><h3>Pretpostavke → načela → standardi</h3><p><strong>Računovodstvene pretpostavke (koncepti)</strong> su teorijske osnove čija se primjena podrazumijeva; iz njih se izvode <strong>načela</strong>, a iz načela <strong>standardi</strong>.</p><table><tr><th>Pretpostavka</th><th>Značenje</th></tr><tr><td>Kontinuitet (vremenska neograničenost)</td><td>Subjekt se osniva na neograničeno vrijeme; ne likvidira se ni pri gubitku dok menadžment očekuje dobit.</td></tr><tr><td>Poslovni subjekt</td><td>Poduzeće je odvojeno od vlasnika; bitno za dionička društva i odnose matice i podružnica.</td></tr><tr><td>Stabilna novčana jedinica</td><td>Iskazuje se u novčanoj jedinici stabilne kupovne moći (tradicionalno računovodstvo). Pri inflaciji dodatni izvještaji: računovodstvo opće kupovne moći (opći indeksi cijena) ili tekuće vrijednosti (specifični indeksi).</td></tr><tr><td>Obračunsko razdoblje</td><td>Korisnici ne mogu čekati „totalni rezultat”, pa se izvještava za razdoblje – najčešće godinu (može i kraće).</td></tr></table><h3>Općeprihvaćena računovodstvena načela</h3><ul><li><strong>Načelo troška</strong> – najstarije i najvažnije: evidencija po <strong>nabavnoj cijeni</strong>.</li><li><strong>Načelo objektivnosti</strong> – izvještaji se temelje na objektivnim, dokumentiranim podacima.</li><li><strong>Načelo priznavanja prihoda</strong> – po novčanoj osnovi (naplaćeno) ili po nastanku događaja (realizirano, prodano).</li><li><strong>Načelo sučeljavanja prihoda i rashoda</strong> – rezultat = prihodi − rashodi istog razdoblja.</li><li><strong>Načelo materijalnosti</strong> – lučenje bitnog od nebitnog.</li><li><strong>Načelo potpunog iskazivanja</strong> – cjelovita slika, jasno i razumljivo.</li><li><strong>Načelo konzistentnosti (dosljednosti)</strong> – jednom usvojena pravila primjenjuju se dosljedno.</li><li><strong>Načelo opreznosti</strong> – „anticipiraj gubitke, ne dobitke”; imovina po <strong>nižoj</strong> od nabavne i neto prodajne vrijednosti. Ne smije se zloupotrijebiti za namjerno podcjenjivanje imovine ili precjenjivanje obveza (<strong>tihe pričuve</strong>, skriveni gubici).</li><li><strong>Načelo usporedivosti</strong> – usporedba s drugim subjektima u grani i s vlastitim prethodnim razdobljima.</li><li><strong>Načelo jednolikosti</strong> – istovrstan tretman u različitim okolnostima.</li></ul><h3>Bilančna načela</h3><table><tr><th>Načelo</th><th>Što traži</th></tr><tr><td>Načelo tvrtke</td><td>Bilanca jasno identificira poslovni sustav na koji se odnosi.</td></tr><tr><td>Vremensko razdoblje</td><td>Jasno naznačeno razdoblje (obično godina).</td></tr><tr><td>Izražavanje u novčanim vrijednostima</td><td>Novac kao zajednički izraz naturalnih elemenata.</td></tr><tr><td>Rezultat poslovanja</td><td>Jasna alokacija rezultata između prošlog, sadašnjeg i budućeg razdoblja.</td></tr><tr><td>Bilančna jasnoća</td><td>Pregledan, razumljiv prikaz pozicija.</td></tr><tr><td>Bilančna istina</td><td>Realno stanje prema ispravama i knjigama (bruto načelo).</td></tr><tr><td>Bilančni kontinuitet</td><td>Isti raspored i vrednovanje iz godine u godinu.</td></tr><tr><td>Zaštita vjerovnika</td><td>Zaštita interesa vjerovnika kao izraz etičnosti.</td></tr><tr><td>Opća politika procjene</td><td>Konzistentan sustav vrednovanja (nabavna, tržišna, reprodukcijska, likvidacijska cijena…).</td></tr></table>"
+    }
+  },
+  "instrumentiRacunovodstva": {
+    "name": "Isprave, poslovne knjige i izvještaji",
+    "icon": "fa-file-invoice",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "Koji su INSTRUMENTI računovodstva?",
+        "answer": "Računovodstvene isprave, poslovne knjige i računovodstveni (financijski) izvještaji.",
+        "explanation": "Isprava → knjiga → izvještaj."
+      },
+      {
+        "question": "Što je RAČUNOVODSTVENA (knjigovodstvena) ISPRAVA?",
+        "answer": "Pisani dokaz o nastalom poslovnom događaju i podloga za unos podataka u poslovne knjige.",
+        "explanation": "U praksi se zove i temeljnica."
+      },
+      {
+        "question": "Koji su minimalni elementi knjigovodstvene isprave?",
+        "answer": "Naziv i adresa izdavatelja, naziv i broj isprave, datum i mjesto izdavanja, opis transakcije, vrijednost, potpis ovlaštene osobe i pečat.",
+        "explanation": "Sedam elemenata."
+      },
+      {
+        "question": "Interne i eksterne isprave – primjeri?",
+        "answer": "Interne nastaju u sustavu (uplatnica, isplatnica, izdatnica, isplatna lista, faktura kupcu); eksterne dolaze izvana (faktura dobavljača, izvod žiro računa).",
+        "explanation": "Podjela prema mjestu nastanka."
+      },
+      {
+        "question": "Opravdavajuće, nalogodavne i kombinirane isprave?",
+        "answer": "Opravdavajuće dokazuju događaj; nalogodavne nalažu radnju (nalog blagajniku za isplatu); kombinirane spajaju nalog i potvrdu izvršenja (putni nalog, radni nalog).",
+        "explanation": "Podjela prema namjeni."
+      },
+      {
+        "question": "Originalne i zbrojne isprave?",
+        "answer": "Originalne se odnose na jednu transakciju; zbrojne nastaju sumiranjem originalnih (rekapitulacija isplatne liste za sve zaposlenike).",
+        "explanation": "Podjela prema obuhvatnosti podataka."
+      },
+      {
+        "question": "Koje tri kontrole mora proći isprava?",
+        "answer": "Formalna (ima li sve elemente), računska (jesu li računske operacije točne) i suštinska (je li se događaj stvarno dogodio tako).",
+        "explanation": "Kontrolu provodi likvidatura."
+      },
+      {
+        "question": "Što je LIKVIDATURA?",
+        "answer": "Dio računovodstva koji kontrolira ispravnost isprava; nakon provjere na ispravu stavlja oznaku „likvidirano”.",
+        "explanation": "Tek tada slijedi knjiženje ili plaćanje."
+      },
+      {
+        "question": "Koja je kontrola isprave najteža?",
+        "answer": "Suštinska – npr. usporedba fakture dobavljača sa stanjem u skladištu (primka) i s ugovorom.",
+        "explanation": "Likvidator povezuje više isprava."
+      },
+      {
+        "question": "Što je HODOGRAM isprave?",
+        "answer": "Put kretanja isprave od ispostavljanja, preko kontrole i knjiženja, do arhiviranja.",
+        "explanation": "O njemu ovisi ažurnost informacija."
+      },
+      {
+        "question": "Koje su OSNOVNE (temeljne) poslovne knjige?",
+        "answer": "Dnevnik i glavna knjiga – vode se po načelima dvojnog knjigovodstva.",
+        "explanation": "Pomoćne knjige nisu zakonska obveza (menadžment bira)."
+      },
+      {
+        "question": "Što je DNEVNIK?",
+        "answer": "Osnovna poslovna knjiga u koju se kronološkim redom zapisuju svi poslovni događaji.",
+        "explanation": "Danas je kopija glavne knjige; ima kontrolnu funkciju."
+      },
+      {
+        "question": "Zašto je dnevnik važan i danas?",
+        "answer": "Dokazuje kronologiju događaja, olakšava otkrivanje pogrešaka i omogućuje rekonstrukciju glavne knjige.",
+        "explanation": "Nakon svake promjene: duguje = potražuje."
+      },
+      {
+        "question": "Što je GLAVNA KNJIGA?",
+        "answer": "Najvažnija poslovna knjiga: sustavna i sveobuhvatna evidencija svih poslovnih promjena na sintetičkim kontima.",
+        "explanation": "Glavni izvor podataka za temeljne financijske izvještaje."
+      },
+      {
+        "question": "Što su ANALITIČKE EVIDENCIJE?",
+        "answer": "Pomoćne knjige vođene po načelima glavne knjige, ali za raščlanjene dijelove jedne njezine stavke (npr. svaka zgrada, stroj, kupac).",
+        "explanation": "Zbroj analitike = saldo sintetičkog konta."
+      },
+      {
+        "question": "Druge pomoćne knjige i pomoćne evidencije?",
+        "answer": "Druge pomoćne knjige bilježe specifične transakcije i ne moraju biti dvojne; pomoćne evidencije ne moraju imati ni vrijednosni izraz.",
+        "explanation": "Primjeri: knjiga blagajne, knjiga dugotrajne imovine."
+      },
+      {
+        "question": "Što je KNJIGA BLAGAJNE?",
+        "answer": "Pomoćna knjiga za svakodnevnu kontrolu gotovine: saldo se svaki dan uspoređuje sa stvarnim novcem u blagajni.",
+        "explanation": "Iskaz primitaka i izdataka = blagajnički izvještaj."
+      },
+      {
+        "question": "Koji su temeljni financijski izvještaji?",
+        "answer": "Bilanca, račun dobiti i gubitka, izvještaj o novčanom toku, izvještaj o promjenama vlasničke glavnice i bilješke uz financijske izvještaje.",
+        "explanation": "Proizvod financijskog računovodstva."
+      },
+      {
+        "question": "Koje izvještaje prema gradivu kolegija moraju sastaviti mali i srednji?",
+        "answer": "Bilancu i račun dobiti i gubitka (uz bilješke), prema HSFI.",
+        "explanation": "Prema važećem Zakonu srednji sastavljaju i novčani tok i promjene kapitala."
+      },
+      {
+        "question": "Bilanca – statički ili dinamički izvještaj?",
+        "answer": "Statički: prikazuje stanje imovine, kapitala i obveza u određenom trenutku.",
+        "explanation": "Račun dobiti i gubitka je dinamički – odnosi se na razdoblje."
+      },
+      {
+        "question": "Što prikazuje IZVJEŠTAJ O NOVČANOM TOKU?",
+        "answer": "Sve novčane primitke i izdatke razdoblja radi utvrđivanja čistog novčanog toka – važan za ocjenu likvidnosti i solventnosti.",
+        "explanation": "Detaljno u 2. kolokviju."
+      },
+      {
+        "question": "Čemu služe BILJEŠKE uz financijske izvještaje?",
+        "answer": "Detaljnije objašnjavaju pozicije izvještaja: metode kalkulacija, amortizaciju i stope, najvažnije kupce i dobavljače, rezultate po segmentima.",
+        "explanation": "Sadrže i računovodstvene politike."
+      },
+      {
+        "question": "Koje isprave i izvještaji se čuvaju TRAJNO?",
+        "answer": "Isplatne liste (podaci bitni za zaposlene) i godišnji financijski izvještaji.",
+        "explanation": "Ostali rokovi propisani su Zakonom o računovodstvu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Što je od navedenog računovodstvena (knjigovodstvena) isprava?",
+        "options": [
+          "Obračun plaće zaposlenika za tekući mjesec",
+          "Usmeni dogovor s dobavljačem o cijeni namirnica",
+          "Plan prodaje za sljedeću sezonu",
+          "Oglas za posao u novinama"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koji su instrumenti računovodstva?",
+        "options": [
+          "Budžeti, ugovori s partnerima i marketinški planovi hotela",
+          "Isprave, poslovne knjige i računovodstveni izvještaji",
+          "Zakoni, pravilnici i standardi",
+          "Blagajna, žiro račun i čekovi"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Faktura dobavljača je prema mjestu nastanka:",
+        "options": [
+          "Interna isprava",
+          "Nalogodavna isprava",
+          "Eksterna isprava",
+          "Zbrojna isprava"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Putni nalog (upućivanje na put i pravdanje troškova) je:",
+        "options": [
+          "Opravdavajuća isprava",
+          "Eksterna isprava",
+          "Zbrojna isprava",
+          "Kombinirana isprava"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Rekapitulacija obračuna plaća za sve zaposlenike je:",
+        "options": [
+          "Zbrojna isprava",
+          "Originalna isprava",
+          "Eksterna isprava",
+          "Nalogodavna isprava"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kontrola koja provjerava je li se poslovni događaj stvarno dogodio kako je zapisano je:",
+        "options": [
+          "Formalna",
+          "Suštinska",
+          "Računska",
+          "Naknadna porezna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kontrola koja provjerava ima li isprava sve propisane elemente je:",
+        "options": [
+          "Suštinska",
+          "Računska",
+          "Formalna",
+          "Analitička"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Dio računovodstva koji kontrolira isprave i stavlja oznaku „likvidirano” je:",
+        "options": [
+          "Blagajna",
+          "Računovodstveno planiranje",
+          "Saldakonti",
+          "Likvidatura"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za dnevnik kao osnovnu poslovnu knjigu može se reći da je:",
+        "options": [
+          "Kronološka evidencija poslovnih događaja",
+          "Raščlanjeni dio glavne knjige",
+          "Vrsta analitičke evidencije",
+          "Knjiga koju nije obvezno voditi"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz računovodstvenu kategoriju POSLOVNE KNJIGE može se povezati tvrdnja:",
+        "options": [
+          "Dnevnik je pomoćna poslovna knjiga",
+          "Glavna knjiga predstavlja osnovnu poslovnu knjigu",
+          "Pomoćne knjige propisuje zakon",
+          "Glavna knjiga sadrži samo naturalne podatke"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Glavni izvor podataka za sastavljanje temeljnih financijskih izvještaja je:",
+        "options": [
+          "Knjiga blagajne",
+          "Knjiga ulaznih računa",
+          "Glavna knjiga",
+          "Pomoćna evidencija radnog vremena"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Uz POMOĆNE POSLOVNE KNJIGE može se povezati tvrdnja:",
+        "options": [
+          "Raščlanjeni su dijelovi dnevnika",
+          "U pravilu sadrže samo naturalne podatke",
+          "Njihovo vođenje propisuje Zakon o računovodstvu",
+          "Mogu biti analitičke ili druge pomoćne knjige"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Što je od navedenog temeljni financijski izvještaj koji prikazuje stanje u trenutku?",
+        "options": [
+          "Bilanca",
+          "Račun dobiti i gubitka",
+          "Izvještaj o novčanom toku",
+          "Plan prodaje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "U bilješkama uz financijske izvještaje objašnjavaju se npr.:",
+        "options": [
+          "Osobni podaci svih zaposlenika",
+          "Metode amortizacije i visina stopa",
+          "Cijene konkurentskih hotela",
+          "Planovi marketinških kampanja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koje su tvrdnje točne za računovodstvene isprave?",
+        "options": [
+          "Sastavljaju se tek na kraju poslovne godine",
+          "Nisu potrebne za knjiženje u glavnoj knjizi",
+          "Moraju biti formalno, računski i suštinski ispravne",
+          "Sastavlja ih isključivo porezna uprava za svako poduzeće"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koju poslovnu knjigu menadžment smije voditi po vlastitom izboru?",
+        "options": [
+          "Glavnu knjigu",
+          "Dnevnik",
+          "Nijednu – sve propisuje zakon",
+          "Pomoćne knjige"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Isprava se u praksi naziva još i _______.",
+        "answer": "temeljnica",
+        "hint": "Temelj za knjiženje."
+      },
+      {
+        "sentence": "Osnovne poslovne knjige su glavna knjiga i _______.",
+        "answer": "dnevnik",
+        "hint": "Kronološka evidencija."
+      },
+      {
+        "sentence": "Dio računovodstva koji kontrolira isprave zove se _______.",
+        "answer": "likvidatura",
+        "hint": "Oznaka „likvidirano”."
+      },
+      {
+        "sentence": "Put kretanja isprave od ispostavljanja do arhiviranja zove se _______.",
+        "answer": "hodogram",
+        "hint": "Organizacija kolanja isprava."
+      },
+      {
+        "sentence": "Kontrola ispravnosti računskih operacija na ispravi zove se _______ kontrola.",
+        "answer": "računska",
+        "hint": "Uz formalnu i suštinsku."
+      },
+      {
+        "sentence": "Najvažnija poslovna knjiga koju mora voditi svaki poslovni sustav je glavna _______.",
+        "answer": "knjiga",
+        "hint": "Sustavna evidencija na kontima."
+      }
+    ],
+    "learn": {
+      "title": "Isprave, poslovne knjige i financijski izvještaji",
+      "content": "<h3>Tri instrumenta računovodstva</h3><p>Da bi se poslovna promjena zabilježila, mora je potvrditi <strong>isprava</strong>, zatim se upisuje u <strong>poslovne knjige</strong>, a iz knjiga se sastavljaju <strong>izvještaji</strong>. Način primjene definiraju Zakon o računovodstvu i standardi.</p><div class=\"formula-box\"><strong>Isprava → poslovne knjige → izvještaji</strong><br>poslovni događaj → dokaz (isprava) → dnevnik i glavna knjiga (+ pomoćne knjige) → temeljni financijski izvještaji i interni izvještaji</div><h3>Računovodstvene (knjigovodstvene) isprave</h3><p>Isprava je <strong>pisani dokaz</strong> o nastanku poslovnog događaja i <strong>podloga za knjiženje</strong> – zato se zove i <strong>temeljnica</strong>. Ispostavlja se <strong>na mjestu nastanka</strong> promjene i <strong>neposredno</strong> nakon nje, jer se evidencija vodi odvojeno od mjesta događaja. Svjedoči <em>što</em> se dogodilo, <em>kada</em>, koja je <em>vrijednost</em> i <em>tko</em> je promjenu izazvao.</p><p><strong>Minimalni elementi isprave:</strong> (1) naziv i adresa izdavatelja, (2) naziv i redni broj isprave, (3) datum i mjesto izdavanja, (4) kratki opis transakcije, (5) vrijednost transakcije, (6) potpis ovlaštene osobe, (7) pečat izdavatelja. U integriranom informacijskom sustavu podatak iz sustava može imati ulogu isprave ako su zadovoljene kontrole i lozinke.</p><table><tr><th>Kriterij</th><th>Vrste</th><th>Primjeri</th></tr><tr><td>Mjesto nastanka</td><td>Interne / eksterne</td><td>Interne: uplatnica, isplatnica, izdatnica, isplatna lista, faktura kupcu. Eksterne: faktura dobavljača, izvod žiro računa, nalog za plaćanje poreza.</td></tr><tr><td>Namjena</td><td>Opravdavajuće / nalogodavne / kombinirane</td><td>Nalog blagajniku da isplati iznos (nalogodavna); putni nalog, radni nalog (kombinirane).</td></tr><tr><td>Obuhvatnost</td><td>Originalne / zbrojne</td><td>Rekapitulacija isplatne liste (zbrojna).</td></tr><tr><td>Način sastavljanja</td><td>Papirnate / digitalne</td><td>Internet bankarstvo, e-račun.</td></tr></table><p>Tipične isprave u ispitnim pitanjima: <strong>ulazni račun</strong> (faktura dobavljača), <strong>izlazni račun</strong> (faktura kupcu), <strong>obračun plaća</strong> zaposlenika za mjesec, primka, izdatnica, putni nalog, izvod žiro računa.</p><p>Studentske bilješke dodaju i podjelu <strong>prema sadržaju</strong> (materijalne – primka, izdatnica; novčane – nalog za prijenos, uplatnica; ostale – rješenja, ugovori) i <strong>prema izvoru</strong> (izvorne – uplatnica; izvedene – blagajnički izvještaj, izvod, platna lista).</p><h3>Kontrola isprava – likvidatura</h3><ul><li><strong>Formalna kontrola</strong> – ima li isprava sve propisane elemente.</li><li><strong>Računska kontrola</strong> – jesu li računske operacije točne.</li><li><strong>Suštinska kontrola</strong> – je li se događaj stvarno dogodio kako piše; <strong>najteža</strong>. Npr. faktura za namirnice uspoređuje se s <strong>primkom</strong> iz skladišta i s ugovorom (dogovorena cijena).</li></ul><p>Nakon provjere likvidator stavlja oznaku <strong>„likvidirano”</strong> – preduvjet za knjiženje ili plaćanje. <strong>Hodogram</strong> određuje put isprave od ispostavljanja do arhiviranja. Isprave se najprije čuvaju u privremenoj, a nakon godišnjeg obračuna i revizije u središnjoj arhivi.</p><div class=\"warning-box\"><strong>Rokovi čuvanja:</strong> trajno se čuvaju <strong>isplatne liste</strong> (podaci bitni za zaposlene) i <strong>godišnji financijski izvještaji</strong>. Ostale rokove propisuje važeći Zakon o računovodstvu (npr. isprave na temelju kojih se knjiži u dnevnik i glavnu knjigu – najmanje 11 godina). Rokovi „5, 3 i 2 godine” iz studentskih bilješki potječu iz starijih propisa.</div><h3>Poslovne knjige</h3><table><tr><th>Knjiga</th><th>Obilježja</th></tr><tr><td><strong>Dnevnik</strong> (osnovna)</td><td><strong>Kronološka</strong> evidencija svih događaja redom kako nastaju. Danas je kopija glavne knjige, ali ima važnu <strong>kontrolnu funkciju</strong>: dokaz kronologije, otkrivanje pogrešaka, rekonstrukcija glavne knjige. Nakon svake promjene duguje = potražuje.</td></tr><tr><td><strong>Glavna knjiga</strong> (osnovna)</td><td><strong>Najvažnija</strong> knjiga: sustavna i sveobuhvatna evidencija na <strong>sintetičkim kontima</strong>, raspoređenima prema kontnom planu. Nastaje raščlanjivanjem bilance. Glavni izvor za temeljne financijske izvještaje.</td></tr><tr><td><strong>Analitičke evidencije</strong> (pomoćne)</td><td>Vode se po načelu bilančne ravnoteže, ali za raščlanjene dijelove jedne stavke glavne knjige (svaka zgrada, stroj, kupac, dobavljač).</td></tr><tr><td><strong>Druge pomoćne knjige</strong></td><td>Evidencija specifičnih transakcija; mogu, ali ne moraju biti dvojne (knjiga blagajne, knjiga dugotrajne imovine, knjiga dioničara).</td></tr><tr><td><strong>Pomoćne evidencije</strong></td><td>Ne moraju imati vrijednosni izraz; izvor su podataka za knjiženje i mogu imati ulogu isprave (evidencija radnog vremena).</td></tr></table><p>Vođenje <strong>pomoćnih</strong> knjiga <strong>nije zakonska obveza</strong> – menadžment bira koje će voditi. Osnovne se knjige vode po načelima dvojnog knjigovodstva; danas uglavnom na računalu. Na kraju godine glavna se knjiga izlista i uveže da dobije formalni oblik knjige.</p><h3>Temeljni financijski izvještaji</h3><table><tr><th>Izvještaj</th><th>Što prikazuje</th></tr><tr><td><strong>Bilanca</strong></td><td><strong>Statički</strong>: stanje imovine, kapitala i obveza u određenom trenutku; načelo bilančne ravnoteže.</td></tr><tr><td><strong>Račun dobiti i gubitka</strong></td><td><strong>Dinamički</strong>: prihodi i rashodi razdoblja (do godine) i rezultat – dobit ili gubitak.</td></tr><tr><td><strong>Izvještaj o novčanom toku</strong></td><td>Novčani primici i izdaci razdoblja; čisti novčani tok – ocjena likvidnosti i solventnosti.</td></tr><tr><td><strong>Izvještaj o promjenama vlasničke glavnice</strong></td><td>Struktura kapitala i njegove promjene; važan za velike sustave s mješovitom strukturom kapitala.</td></tr><tr><td><strong>Bilješke</strong></td><td>Objašnjenja pozicija: računovodstvene politike, metode kalkulacija, amortizacija i stope, najvažniji kupci i dobavljači, segmenti.</td></tr></table><div class=\"tip-box\"><strong>Tko što sastavlja:</strong> prema gradivu kolegija mali i srednji poduzetnici (HSFI) obvezni su sastaviti <strong>bilancu</strong> i <strong>račun dobiti i gubitka</strong> (uz bilješke), a veliki i kotirajući (MSFI) sve izvještaje. Prema važećem Zakonu o računovodstvu srednji poduzetnici sastavljaju i izvještaj o novčanom toku i o promjenama kapitala.</div><p>Samo financijsko računovodstvo mora sastavljati izvještaje po <strong>strogo propisanoj formi</strong>; izvještaji za menadžment su slobodne forme, prilagođeni razini odlučivanja.</p>"
+    }
+  },
+  "bilanca": {
+    "name": "Bilanca",
+    "icon": "fa-scale-balanced",
+    "color": "#22c55e",
+    "flashcards": [
+      {
+        "question": "Što je BILANCA?",
+        "answer": "Temeljni financijski izvještaj koji prikazuje stanje imovine, obveza i kapitala na određeni dan (dan bilanciranja).",
+        "explanation": "Statički izvještaj – „snimka” trenutka."
+      },
+      {
+        "question": "Odakle potječe riječ bilanca?",
+        "answer": "Od talijanske riječi bilancia (vaga); prva sačuvana bilanca je iz 1389. (tvrtka Datini, Firenca).",
+        "explanation": "Dvije zdjelice vage = aktiva i pasiva."
+      },
+      {
+        "question": "Što je AKTIVA, a što PASIVA?",
+        "answer": "Aktiva je imovina po pojavnom obliku i funkciji (lijeva strana); pasiva su izvori imovine – kapital i obveze (desna strana).",
+        "explanation": "Aktiva: ŠTO imamo; pasiva: ČIJE je."
+      },
+      {
+        "question": "Što je načelo BILANČNE RAVNOTEŽE?",
+        "answer": "Ukupna aktiva mora biti jednaka ukupnoj pasivi: A = P, odnosno imovina = obveze + kapital.",
+        "explanation": "Osnovno obilježje dvojnog knjigovodstva."
+      },
+      {
+        "question": "Kako se izračunava KAPITAL?",
+        "answer": "Kapital = imovina − obveze (ukupna aktiva minus kratkoročne i dugoročne obveze).",
+        "explanation": "Imovina = obveze + kapital."
+      },
+      {
+        "question": "Dvostrani oblik bilance?",
+        "answer": "Aktiva se iskazuje na lijevoj, a pasiva na desnoj strani – izvorni oblik, „dvije zdjelice vage”.",
+        "explanation": "Koncept dvostranog računa."
+      },
+      {
+        "question": "Jednostrani (stupnjeviti) oblik bilance?",
+        "answer": "Najprije se unesu i zbroje sve stavke aktive, a ispod njih sve stavke pasive.",
+        "explanation": "I ovdje mora vrijediti A = P."
+      },
+      {
+        "question": "Što je načelo LIKVIDNOSTI u bilanci?",
+        "answer": "Stavke aktive redaju se prema brzini pretvaranja u novac (stupnju unovčivosti).",
+        "explanation": "Likvidnost = sposobnost pretvaranja nenovčane imovine u novac."
+      },
+      {
+        "question": "Rastuća vs padajuća likvidnost?",
+        "answer": "Rastuća: prvo najmanje likvidna imovina (zgrade, zemljište), na kraju novac. Padajuća: prvo novac, na kraju dugotrajna imovina.",
+        "explanation": "Rastuća = kriterij sigurnosti."
+      },
+      {
+        "question": "Koje se načelo likvidnosti primjenjuje u RH?",
+        "answer": "Načelo RASTUĆE likvidnosti – prvo dugotrajna, zatim kratkotrajna imovina, a novac na kraju.",
+        "explanation": "Padajuća je uobičajena u SAD-u."
+      },
+      {
+        "question": "Što je načelo ROČNOSTI (dospijeća)?",
+        "answer": "Stavke pasive redaju se prema roku dospijeća obveza.",
+        "explanation": "Kapital nema rok povrata – trajni izvor."
+      },
+      {
+        "question": "Padajuća vs rastuća ročnost?",
+        "answer": "Padajuća: prvo kapital, pa dugoročne, pa kratkoročne obveze. Rastuća: prvo obveze s najkraćim rokom (dobavljači), na kraju kapital.",
+        "explanation": "Parovi: rastuća likvidnost + padajuća ročnost."
+      },
+      {
+        "question": "Koje se načelo ročnosti primjenjuje u RH?",
+        "answer": "Načelo PADAJUĆE ročnosti – pasiva počinje kapitalom i rezervama.",
+        "explanation": "Rastuća ročnost je uobičajena u SAD-u."
+      },
+      {
+        "question": "Što je KRITERIJ NAMJENE u bilanci?",
+        "answer": "Uz svaku skupinu imovine vežu se odgovarajući izvori: dugotrajna imovina iz dugoročnih izvora i kapitala, kratkotrajna iz kratkoročnih.",
+        "explanation": "Temeljno pravilo financiranja."
+      },
+      {
+        "question": "Koje su skupine AKTIVE prema bilančnoj shemi u RH?",
+        "answer": "A) potraživanja za upisani a neuplaćeni kapital, B) dugotrajna imovina, C) kratkotrajna imovina, D) aktivna vremenska razgraničenja, E) gubitak iznad visine kapitala.",
+        "explanation": "Rastuća likvidnost."
+      },
+      {
+        "question": "Što je GUBITAK IZNAD VISINE KAPITALA?",
+        "answer": "Stavka koja se iskazuje u aktivi kad je gubitak veći od kapitala, pa su obveze veće od imovine.",
+        "explanation": "Tada je imovina manja od ukupne aktive."
+      },
+      {
+        "question": "Što su IZVANBILANČNE pozicije?",
+        "answer": "Stavke koje u trenutku bilanciranja nisu ni imovina ni obveze, ali mogu utjecati na bilancu (npr. dana jamstva kupcima).",
+        "explanation": "Iskazuju se ispod bilančnih stavki."
+      },
+      {
+        "question": "Početna vs zaključna bilanca?",
+        "answer": "Početna se sastavlja pri osnivanju na temelju inventara (ili je to zaključna bilanca prethodne godine); zaključna na kraju godine iz salda konta.",
+        "explanation": "Zaključna 31.12. = početna 1.1."
+      },
+      {
+        "question": "Što je POKUSNA (probna) bilanca?",
+        "answer": "Bilanca koja se sastavlja obično mjesečno radi provjere ispravnosti knjiženja.",
+        "explanation": "Ne objavljuje se."
+      },
+      {
+        "question": "Što je BRUTO BILANCA?",
+        "answer": "Pregled prometa i salda svih konta glavne knjige – kontrola računske točnosti knjiženja; sastoji se od prometne i saldo bilance.",
+        "explanation": "Iz njezina zadnjeg stupca sastavlja se bilanca."
+      },
+      {
+        "question": "Konsolidirana vs zbrojna bilanca?",
+        "answer": "Obje su za složene sustave (korporacije): konsolidirana isključuje međusobne odnose članica, zbrojna ih samo zbraja.",
+        "explanation": "Konsolidiranu sastavlja matica."
+      },
+      {
+        "question": "Diobena, fuzijska, sanacijska i stečajna bilanca?",
+        "answer": "Diobena – razdvajanje subjekta; fuzijska – spajanje više subjekata; sanacijska – ozdravljenje nakon gubitaka; stečajna – kad sanacija ne uspije.",
+        "explanation": "Bilance posebnih namjena."
+      },
+      {
+        "question": "Kako ocijeniti financijski položaj iz dvije bilance?",
+        "answer": "Usporedbom zbroja aktive i pasive: povećanje znači bolji, a smanjenje lošiji položaj (prema gradivu kolegija).",
+        "explanation": "Potpuna ocjena traži i ostale izvještaje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Bilanca se može povezati uz računovodstvenu kategoriju:",
+        "options": [
+          "Temeljni financijski izvještaj",
+          "Pomoćna poslovna knjiga",
+          "Računovodstvena isprava",
+          "Interni izvještaj za menadžment"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kapital se u bilanci utvrđuje kao:",
+        "options": [
+          "Zbroj imovine i obveza",
+          "Razlika ukupne imovine i obveza",
+          "Razlika prihoda i rashoda",
+          "Zbroj dugoročnih obveza i rezervi"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ukupna vrijednost aktive jednaka je ukupnoj vrijednosti pasive. To je:",
+        "options": [
+          "Načelo opreznosti",
+          "Načelo likvidnosti",
+          "Načelo bilančne ravnoteže",
+          "Načelo ročnosti"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako se u bilancu najprije unesu i zbroje stavke aktive, a iza njih stavke pasive, radi se o:",
+        "options": [
+          "Dvostranom obliku bilance",
+          "Konsolidiranoj bilanci",
+          "Bruto bilanci",
+          "Jednostranom obliku bilance"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Ako se aktiva sastavlja po načelu PADAJUĆE likvidnosti, prva stavka bit će:",
+        "options": [
+          "Žiro račun",
+          "Oprema",
+          "Zaliha materijala",
+          "Zemljište"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako je prva stavka aktive ZGRADA, a zadnja NOVAC, aktiva je sastavljena po načelu:",
+        "options": [
+          "Padajuće likvidnosti",
+          "Rastuće likvidnosti",
+          "Rastuće ročnosti",
+          "Padajuće ročnosti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pasiva po načelu PADAJUĆE ROČNOSTI – točan redoslijed je:",
+        "options": [
+          "Dobavljači, obveze za PDV, izdane obveznice, kapital",
+          "Obveze za PDV, kapital, dobavljači, izdane obveznice",
+          "Kapital, izdane obveznice, dobavljači, obveze za PDV",
+          "Izdane obveznice, dobavljači, kapital, obveze za PDV"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Bilance u Hrvatskoj sastavljaju se primjenom:",
+        "options": [
+          "Padajuće likvidnosti i rastuće ročnosti",
+          "Rastuće likvidnosti i rastuće ročnosti",
+          "Padajuće likvidnosti i padajuće ročnosti",
+          "Rastuće likvidnosti i padajuće ročnosti"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Izračunajte KAPITAL: tekuća imovina 80.000, kratkoročne obveze 40.000, stalna imovina 400.000, dugoročne obveze 150.000.",
+        "options": [
+          "290.000",
+          "480.000",
+          "190.000",
+          "330.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Izračunajte KAPITAL: izdana mjenica 7.000, oprema 60.000, obveze za PDV 12.000, licenca 10.000, zgrade 100.000, zaliha materijala 5.000, kredit 40.000.",
+        "options": [
+          "175.000",
+          "116.000",
+          "59.000",
+          "130.000"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Izračunajte IMOVINU: dani kredit 40.000, dobavljači 10.000, dionice 20.000, zgrade 200.000, izdane obveznice 30.000, primljeni predujmovi 5.000, zaliha sitnog inventara 4.000.",
+        "options": [
+          "309.000",
+          "244.000",
+          "264.000",
+          "219.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Izračunajte UKUPNU PASIVU: devizni račun 20.000, oprema 300.000, zemljište 400.000, kupci 20.000, kredit kod banke 200.000, kapital?",
+        "options": [
+          "540.000",
+          "700.000",
+          "200.000",
+          "740.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Izračunajte UKUPNU PASIVU: potraživanja od kupaca 30.000, postrojenje 100.000, koncesija 10.000, izdani ček 10.000, kratkoročni kredit 30.000, kapital?",
+        "options": [
+          "140.000",
+          "100.000",
+          "130.000",
+          "40.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Izračunajte KAPITAL: žiro račun 10.000, dani kredit 30.000, zgrade 200.000, dobavljači 10.000, izdane obveznice 100.000.",
+        "options": [
+          "240.000",
+          "130.000",
+          "110.000",
+          "230.000"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Izračunajte UKUPNU AKTIVU: žiro račun 10.000, dani kredit 30.000, zgrade 200.000, dobavljači 10.000, izdane obveznice 100.000, kapital?",
+        "options": [
+          "130.000",
+          "210.000",
+          "240.000",
+          "350.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Izračunajte STALNU IMOVINU: potraživanja od kupaca 30.000, postrojenje 200.000, koncesija 10.000, izdani ček 10.000, kratkoročni kredit 30.000.",
+        "options": [
+          "240.000",
+          "200.000",
+          "230.000",
+          "210.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Izračunajte UKUPNU PASIVU: blagajna 20.000, dionice 50.000, zgrade 400.000, dobavljači 20.000, kredit kod banke 200.000, kapital?",
+        "options": [
+          "470.000",
+          "250.000",
+          "220.000",
+          "450.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Bilanca koja se sastavlja obično mjesečno radi provjere ispravnosti knjiženja je:",
+        "options": [
+          "Fuzijska bilanca",
+          "Pokusna (probna) bilanca",
+          "Sanacijska bilanca",
+          "Zaključna bilanca"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Bilanca koja se sastavlja pri razdvajanju poslovnog sustava na više novih subjekata je:",
+        "options": [
+          "Fuzijska bilanca",
+          "Zbrojna bilanca",
+          "Diobena bilanca",
+          "Stečajna bilanca"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "U konsolidiranoj bilanci za razliku od zbrojne:",
+        "options": [
+          "Zbrajaju se sve istovrsne stavke bez prebijanja",
+          "Prikazuje se samo imovina matice",
+          "Ne primjenjuje se načelo bilančne ravnoteže",
+          "Isključuju se međusobna potraživanja i obveze članica"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Početna bilanca tekuće godine u pravilu je:",
+        "options": [
+          "Zaključna bilanca prethodne godine",
+          "Pokusna bilanca zadnjeg mjeseca",
+          "Planska bilanca za sljedeću godinu",
+          "Konsolidirana bilanca matice"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Gubitak iznad visine kapitala iskazuje se:",
+        "options": [
+          "U pasivi, među kapitalom",
+          "U aktivi bilance",
+          "Samo u bilješkama",
+          "Među kratkoročnim obvezama"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Imovina je u bilanci iskazana u _______, a kapital i obveze u pasivi.",
+        "answer": "aktivi",
+        "hint": "Lijeva strana bilance."
+      },
+      {
+        "sentence": "Kapital je razlika između imovine i _______.",
+        "answer": "obveza",
+        "hint": "Tuđi izvori."
+      },
+      {
+        "sentence": "U RH se aktiva bilance sastavlja po načelu _______ likvidnosti.",
+        "answer": "rastuće",
+        "hint": "Novac je na kraju."
+      },
+      {
+        "sentence": "U RH se pasiva bilance sastavlja po načelu _______ ročnosti.",
+        "answer": "padajuće",
+        "hint": "Kapital je na početku."
+      },
+      {
+        "sentence": "Bilanca koja uz stavke pasive najprije navodi sve stavke aktive jedne ispod drugih zove se jednostrana ili _______ bilanca.",
+        "answer": "stupnjevita",
+        "hint": "Drugi naziv za jednostrani oblik."
+      },
+      {
+        "sentence": "Bilanca koja pri korporaciji isključuje međusobne odnose članica zove se _______ bilanca.",
+        "answer": "konsolidirana",
+        "hint": "Za razliku od zbrojne."
+      },
+      {
+        "sentence": "Pregled prometa i salda svih konta glavne knjige radi kontrole zove se _______ bilanca.",
+        "answer": "bruto",
+        "hint": "Sastoji se od prometne i saldo bilance."
+      }
+    ],
+    "learn": {
+      "title": "Bilanca – ravnoteža, oblici, načela i vrste",
+      "content": "<h3>Pojam i ravnoteža</h3><p><strong>Bilanca</strong> je temeljni financijski izvještaj koji eksternim korisnicima prikazuje <strong>financijski položaj</strong>: stanje i odnos <strong>imovine, obveza i kapitala na određeni dan</strong>. Riječ dolazi od tal. <em>bilancia</em> (vaga); prva sačuvana bilanca datira iz <strong>1389.</strong> (tvrtka Datini, Firenca).</p><ul><li><strong>AKTIVA</strong> (lijeva strana) – imovina po <strong>pojavnom obliku i funkciji</strong> (stalna i tekuća).</li><li><strong>PASIVA</strong> (desna strana) – <strong>izvori</strong> imovine: vlastiti (<strong>kapital</strong>) i tuđi (<strong>dugoročne i kratkoročne obveze</strong>).</li></ul><div class=\"formula-box\"><strong>Temeljna računovodstvena jednadžba</strong> $$\\text{Aktiva} = \\text{Pasiva}$$ $$\\text{Imovina} = \\text{Obveze} + \\text{Kapital} \\qquad \\text{Kapital} = \\text{Imovina} - \\text{Obveze}$$</div><p>Podaci o stanju prepisuju se s konta glavne knjige, a njihovu stvarnost potvrđuje <strong>popis (inventura)</strong>, čiji je rezultat knjiga <strong>inventar</strong>. Kod novoosnovanog subjekta početni inventar je podloga za <strong>početnu bilancu</strong>; kasnije je zaključna bilanca prethodnog razdoblja početna bilanca tekućeg.</p><h3>Riješeni primjeri – izračun kapitala, aktive i pasive</h3><p>Postupak: (1) svaku stavku razvrstaj u <strong>imovinu</strong> ili <strong>obvezu</strong>; (2) zbroji; (3) kapital = imovina − obveze; (4) ukupna pasiva = ukupna aktiva.</p><div class=\"example-box\"><strong>Primjer 1.</strong> Tekuća imovina 80.000, kratkoročne obveze 40.000, stalna imovina 400.000, dugoročne obveze 150.000.<br> Imovina = 80.000 + 400.000 = <strong>480.000</strong> · Obveze = 40.000 + 150.000 = <strong>190.000</strong><br> Kapital = 480.000 − 190.000 = <strong>290.000</strong></div><div class=\"example-box\"><strong>Primjer 2.</strong> Izdana mjenica 7.000, oprema 60.000, obveze za PDV 12.000, licenca 10.000, zgrade 100.000, zaliha materijala 5.000, kredit 40.000. <table><tr><th>Imovina (aktiva)</th><th>Iznos</th><th>Obveze</th><th>Iznos</th></tr><tr><td>Oprema</td><td>60.000</td><td>Izdana mjenica</td><td>7.000</td></tr><tr><td>Licenca</td><td>10.000</td><td>Obveze za PDV</td><td>12.000</td></tr><tr><td>Zgrade</td><td>100.000</td><td>Kredit</td><td>40.000</td></tr><tr><td>Zaliha materijala</td><td>5.000</td><td></td><td></td></tr><tr><td><strong>Ukupno</strong></td><td><strong>175.000</strong></td><td><strong>Ukupno</strong></td><td><strong>59.000</strong></td></tr></table> Kapital = 175.000 − 59.000 = <strong>116.000</strong>; stalna imovina = 60.000 + 10.000 + 100.000 = 170.000; ukupna aktiva = ukupna pasiva = 175.000.</div><div class=\"example-box\"><strong>Primjer 3.</strong> Dani kredit 40.000, dobavljači 10.000, dionice 20.000, zgrade 200.000, izdane obveznice 30.000, primljeni predujmovi 5.000, zaliha sitnog inventara 4.000.<br> Imovina: dani kredit + dionice (ulaganje) + zgrade + sitni inventar = 40.000 + 20.000 + 200.000 + 4.000 = <strong>264.000</strong><br> Obveze: dobavljači + izdane obveznice + primljeni predujmovi = 10.000 + 30.000 + 5.000 = <strong>45.000</strong> → kapital = <strong>219.000</strong></div><div class=\"example-box\"><strong>Primjer 4 (ukupna pasiva).</strong> Devizni račun 20.000, oprema 300.000, zemljište 400.000, kupci 20.000, kredit kod banke 200.000, kapital?<br> Ukupna aktiva = 20.000 + 300.000 + 400.000 + 20.000 = <strong>740.000</strong> = ukupna pasiva. Kapital = 740.000 − 200.000 = 540.000.</div><div class=\"example-box\"><strong>Primjer 5.</strong> Blagajna 20.000, dionice 50.000, zgrade 400.000, dobavljači 20.000, kredit kod banke 200.000, kapital?<br> Ukupna aktiva = ukupna pasiva = 20.000 + 50.000 + 400.000 = <strong>470.000</strong>; obveze 220.000; kapital = <strong>250.000</strong>.</div><div class=\"warning-box\"><strong>Ispravak izvora:</strong> u jednom skupu riješenih pitanja na pitanje o <em>ukupnoj pasivi</em> iz primjera 5 kao rješenje stoji 250.000 – to je iznos <strong>kapitala</strong>. Ukupna pasiva uvijek je jednaka ukupnoj aktivi: <strong>470.000</strong>. Pažljivo pročitaj što se traži: kapital, obveze, stalna imovina ili ukupna aktiva/pasiva.</div><div class=\"tip-box\"><strong>Zamka:</strong> „izdani” vrijednosni papiri (izdana mjenica, izdani ček, izdane obveznice) su <strong>obveze</strong>; „primljeni” (primljeni ček, primljena mjenica) i kupljene dionice/obveznice su <strong>imovina</strong>. Izdane dionice su <strong>kapital</strong>.</div><h3>Oblici bilance</h3><ul><li><strong>Dvostrani oblik</strong> – aktiva lijevo, pasiva desno; izvorni oblik („dvije zdjelice vage”).</li><li><strong>Jednostrani (stupnjeviti) oblik</strong> – najprije se unesu i zbroje sve stavke aktive, a zatim ispod njih stavke pasive.</li></ul><p>U računalnoj obradi razlika nije bitna – softver prilagođava formu. Uz bilančne mogu se iskazati i <strong>izvanbilančne pozicije</strong>: npr. jamstvo dano kupcima (postaje obveza tek ako se realizira).</p><h3>Redoslijed stavki – likvidnost, ročnost, namjena</h3><table><tr><th>Kriterij</th><th>Rastući</th><th>Padajući</th></tr><tr><td><strong>Likvidnost</strong> (aktiva)</td><td>Prvo najmanje likvidno (zgrade, zemljište, licence) → zalihe → potraživanja → financijska imovina → <strong>novac na kraju</strong>. Zove se i <strong>kriterij sigurnosti</strong>. <strong>RH i EU.</strong></td><td>Prvo <strong>novac</strong> → surogati novca → potraživanja → zalihe → dugotrajna imovina. <strong>SAD.</strong></td></tr><tr><td><strong>Ročnost</strong> (pasiva)</td><td>Prvo obveze s najkraćim rokom (dobavljači, plaće, PDV) → dugoročne → <strong>kapital na kraju</strong>. <strong>SAD.</strong></td><td>Prvo <strong>kapital</strong> (trajni izvor) → dugoročne → kratkoročne obveze. <strong>RH i EU.</strong></td></tr></table><p><strong>Kriterij namjene</strong> povezuje strane: dugotrajna imovina treba biti financirana iz dugoročnih izvora i kapitala, kratkotrajna iz kratkoročnih (djelomično i dugoročnih). Zato idu u paru <strong>rastuća likvidnost + padajuća ročnost</strong> (RH) odnosno <strong>padajuća likvidnost + rastuća ročnost</strong> (SAD).</p><h3>Bilančna shema u RH</h3><table><tr><th>AKTIVA</th><th>PASIVA</th></tr><tr><td>A) Potraživanja za upisani a neuplaćeni kapital</td><td>A) Kapital i rezerve: upisani kapital, premije na emitirane dionice, rezerve revalorizacije, rezerve, zadržana dobit ili preneseni gubitak, dobit ili gubitak poslovne godine</td></tr><tr><td>B) Dugotrajna imovina: nematerijalna, materijalna, financijska, potraživanja</td><td>B) Dugoročna rezerviranja za rizike i troškove</td></tr><tr><td>C) Kratkotrajna imovina: zalihe, potraživanja, financijska imovina, novac</td><td>C) Dugoročne obveze</td></tr><tr><td>D) Plaćeni troškovi budućeg razdoblja i nedospjela naplata prihoda (aktivna vremenska razgraničenja)</td><td>D) Kratkoročne obveze</td></tr><tr><td>E) Gubitak iznad visine kapitala</td><td>E) Odgođeno plaćanje troškova i prihod budućeg razdoblja (pasivna vremenska razgraničenja)</td></tr></table><p><strong>Gubitak iznad visine kapitala</strong> iskazuje se u aktivi kad je gubitak veći od kapitala – tada su obveze veće od imovine, a imovina je manja od ukupne aktive.</p><div class=\"tip-box\"><strong>Današnja praksa:</strong> u shemama godišnjih financijskih izvještaja (GFI) od 2016. nema stavke „gubitak iznad visine kapitala” u aktivi – gubitak se iskazuje u kapitalu, koji tada može biti negativan. Shema iz gradiva kolegija ostaje ispitno gradivo.</div><h3>Vrste bilanci</h3><table><tr><th>Bilanca</th><th>Kada i zašto</th></tr><tr><td>Početna</td><td>Na početku poslovanja iz inventara; ili zaključna bilanca prethodne godine.</td></tr><tr><td>Zaključna</td><td>Na kraju godine – salda konta aktive i pasive iz glavne knjige.</td></tr><tr><td>Pokusna (probna)</td><td>Obično mjesečno – kontrola ispravnosti knjiženja.</td></tr><tr><td>Bruto bilanca</td><td>Pregled prometa i salda <strong>svih</strong> konta glavne knjige; kontrola računske točnosti, usklađenje analitike s glavnom knjigom.</td></tr><tr><td>Proračunska (planska) / obračunska (stvarna)</td><td>Rezultat planiranja / rezultat knjigovodstva.</td></tr><tr><td>Konsolidirana</td><td>Korporacija kao jedna cjelina; <strong>isključuju</strong> se interni odnosi između članica.</td></tr><tr><td>Zbrojna</td><td>Korporacija; istovrsne stavke se samo <strong>zbrajaju</strong>, bez prebijanja.</td></tr><tr><td>Diobena / fuzijska</td><td>Razdvajanje subjekta na više novih / spajanje više subjekata u jedan.</td></tr><tr><td>Sanacijska / stečajna (likvidacijska)</td><td>Ozdravljenje subjekta u poteškoćama / postupak stečaja kad sanacija ne uspije; likvidacijska pokazuje koje će se obveze podmiriti iz koje imovine.</td></tr><tr><td>Inventurna / primopredajna</td><td>Nakon provedene inventure / pri promjeni menadžmenta.</td></tr></table><p>Bilanca je izvor informacija o <strong>financijskoj snazi, likvidnosti i zaduženosti</strong> te o omjeru financiranja iz vlastitih i tuđih izvora. Kad se bilanca krajem razdoblja usporedi s početnom, prema gradivu kolegija povećanje ukupne aktive i pasive upućuje na bolji, a smanjenje na lošiji financijski položaj – potpunu ocjenu daju tek i ostali financijski izvještaji.</p>"
+    }
+  },
+  "imovinaObvezeKapital": {
+    "name": "Imovina, obveze i kapital",
+    "icon": "fa-building",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Koje su STATIČKI definirane računovodstvene kategorije?",
+        "answer": "Imovina, kapital i obveze – njihova se vrijednost može utvrditi u svakom trenutku.",
+        "explanation": "Prikazuju se u bilanci."
+      },
+      {
+        "question": "Što je IMOVINA?",
+        "answer": "Resurs koji poslovni sustav kontrolira kao rezultat prošlih događaja i od kojeg se očekuju buduće ekonomske koristi.",
+        "explanation": "Nabavljena u prošlosti, koristi u budućnosti."
+      },
+      {
+        "question": "Koje uvjete resurs mora ispuniti da bi bio imovina u bilanci?",
+        "answer": "Mora biti u vlasništvu ili pod kontrolom sustava, mora se vrijednosno izraziti i mora stvarati buduće ekonomske koristi.",
+        "explanation": "Posuđena tuđa imovina ne ulazi u bilancu."
+      },
+      {
+        "question": "Stalna vs tekuća imovina?",
+        "answer": "Stalna (dugotrajna) traje dulje od godine i ne troši se u jednom procesu; tekuća (kratkotrajna) pretvara se u novac ili troši u roku do godine.",
+        "explanation": "Funkcionalni i vremenski kriterij."
+      },
+      {
+        "question": "Koje su vrste DUGOTRAJNE imovine?",
+        "answer": "Nematerijalna, materijalna, dugotrajna financijska imovina i dugotrajna potraživanja (rok dulji od godine).",
+        "explanation": "Zadržava pojavni oblik; troši se postupno (amortizacija)."
+      },
+      {
+        "question": "Što je dugotrajna MATERIJALNA imovina? Primjeri iz hotela?",
+        "answer": "Imovina fizičkog oblika koji se ne mijenja tijekom uporabe: hotelska zgrada, namještaj u sobama, kuhinjska oprema, informatička oprema, kotlovnica.",
+        "explanation": "Također zemljište, prijevozna sredstva."
+      },
+      {
+        "question": "Što je dugotrajna NEMATERIJALNA imovina? Primjeri?",
+        "answer": "Imovina bez fizičkog oblika koja stvara ekonomsku korist: patenti, licence, koncesije (npr. na plažu), zaštitni znak i žig, goodwill, softver, izdaci za istraživanje i razvoj.",
+        "explanation": "Teže ju je vrednovati od materijalne."
+      },
+      {
+        "question": "Što je dugotrajna FINANCIJSKA imovina?",
+        "answer": "Ulaganja slobodnog novca na rok dulji od godine: kupljene dionice i obveznice, dani dugoročni krediti i depoziti, udjeli u drugim društvima.",
+        "explanation": "Korist: kamate, dividende, kontrola."
+      },
+      {
+        "question": "Koje su vrste KRATKOTRAJNE imovine?",
+        "answer": "Zalihe, kratkoročna potraživanja, kratkotrajna financijska imovina i novac.",
+        "explanation": "Uz njih: aktivna vremenska razgraničenja."
+      },
+      {
+        "question": "Što je NOVAC u bilanci?",
+        "answer": "Najlikvidniji oblik imovine: gotovina u blagajni, novac na žiro i deviznom računu, izdvojena sredstva za čekove i akreditive.",
+        "explanation": "Surogati novca (ček, mjenica) nešto su manje likvidni."
+      },
+      {
+        "question": "Što su POTRAŽIVANJA?",
+        "answer": "Prijelazni oblik od robe do novca: potraživanja od kupaca, zaposlenika, države (npr. potraživanja za PDV) koja se očekuju naplatiti u roku do godine.",
+        "explanation": "Brža naplata povećava likvidnost."
+      },
+      {
+        "question": "Što su ZALIHE? Primjeri iz hotela?",
+        "answer": "Materijalni oblik tekuće imovine: namirnice i pića u skladištu, materijal, sitni inventar, gotovi proizvodi (kolači u vitrini), trgovačka roba (suveniri, novine).",
+        "explanation": "Male pojedinačne vrijednosti, kraćeg vijeka."
+      },
+      {
+        "question": "Što je SITNI INVENTAR i gdje ga iskazujemo?",
+        "answer": "Predmeti vijeka duljeg od godine, ali male pojedinačne vrijednosti (pribor za jelo, posteljina, jastuci, staklo, radna odjeća) – iskazuju se među zalihama.",
+        "explanation": "Po karakteru sliči stalnoj imovini."
+      },
+      {
+        "question": "Što su AKTIVNA VREMENSKA RAZGRANIČENJA?",
+        "answer": "Unaprijed plaćeni troškovi budućeg razdoblja (osiguranje, najamnina) i nedospjela naplata prihoda (npr. pravo na državnu potporu).",
+        "explanation": "Stavka aktive."
+      },
+      {
+        "question": "Primljeni ili izdani vrijednosni papiri – što je aktiva?",
+        "answer": "Primljeni (ček, mjenica) i kupljeni vrijednosni papiri su aktiva; izdani (ček, mjenica, obveznice) su obveze u pasivi.",
+        "explanation": "Izdane dionice su kapital."
+      },
+      {
+        "question": "Što su KRATKOROČNE obveze? Primjeri?",
+        "answer": "Obveze koje dospijevaju u roku do godine: dobavljači, kratkoročni krediti, obveze za plaće, obveze za PDV, izdani čekovi i mjenice, primljeni predujmovi.",
+        "explanation": "Tuđi izvor imovine."
+      },
+      {
+        "question": "Što su DUGOROČNE obveze? Primjeri?",
+        "answer": "Obveze koje dospijevaju u roku duljem od godine: dugoročni (hipotekarni) krediti, izdane obveznice, obveze za mirovine, odgođeni porezi.",
+        "explanation": "Također dugoročna jamstva kupcima."
+      },
+      {
+        "question": "Što je KAPITAL (vlasnička glavnica)?",
+        "answer": "Vlastiti izvor imovine – dio imovine koji pripada vlasnicima i za koji ne postoji obveza vraćanja; razlika imovine i obveza.",
+        "explanation": "Nije fizički oblik, nego vrijednosni odnos."
+      },
+      {
+        "question": "Uloženi vs zarađeni kapital?",
+        "answer": "Uloženi – ulog vlasnika pri osnivanju i dokapitalizaciji; zarađeni – zadržani dio rezultata poslovanja (zadržana dobit, rezerve).",
+        "explanation": "Kapital se promatra kroz ravnotežu obiju komponenti."
+      },
+      {
+        "question": "Kako se kapital POVEĆAVA, a kako SMANJUJE?",
+        "answer": "Povećava se dodatnim ulaganjem vlasnika i zadržanom dobiti; smanjuje se povlačenjem kapitala i gubicima.",
+        "explanation": "Prihodi ga povećavaju, rashodi smanjuju."
+      },
+      {
+        "question": "Što su REZERVE?",
+        "answer": "Dio kapitala s kojim se ne može slobodno raspolagati jer ga propisi ili akti obvezuju izdvojiti (zakonske, statutarne, revalorizacijske).",
+        "explanation": "Čimbenik sigurnosti; stavka pasive."
+      },
+      {
+        "question": "Što se događa s kapitalom u stečaju?",
+        "answer": "Iz preostale imovine prvo se podmiruju kratkoročne, zatim dugoročne obveze, a vlasnicima pripada tek ostatak.",
+        "explanation": "Kapital se gasi samo stečajem ili likvidacijom."
+      },
+      {
+        "question": "Primljeni predujam – imovina ili obveza?",
+        "answer": "Obveza (pasiva): primili smo novac za uslugu koju tek moramo pružiti.",
+        "explanation": "Dani predujam (za stroj, koncesiju) je aktiva."
+      },
+      {
+        "question": "Kako se vrednuje imovina u bilanci?",
+        "answer": "Nabavljena imovina po trošku nabave, gotovi proizvodi po cijeni koštanja; općenito se teži fer vrijednosti.",
+        "explanation": "Fer vrijednost: iznos razmjene između obaviještenih i spremnih strana."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Novac na žiro računu je:",
+        "options": [
+          "Stalna imovina",
+          "Kratkoročna obveza",
+          "Tekuća imovina",
+          "Kapital"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koncesija na hotelsku plažu je:",
+        "options": [
+          "Tekuća imovina",
+          "Kratkoročna obveza",
+          "Stalna financijska imovina",
+          "Stalna nematerijalna imovina"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Postrojenje kotlovnice u hotelu u računovodstvu se tretira kao:",
+        "options": [
+          "Stalna materijalna imovina",
+          "Stalna nematerijalna imovina",
+          "Tekuća imovina – zalihe",
+          "Izvanbilančna pozicija"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Televizor u hotelskoj sobi može se povezati s tvrdnjom:",
+        "options": [
+          "Tekuća imovina – zaliha trgovačke robe",
+          "Materijalna stalna imovina u aktivi bilance",
+          "Nematerijalna imovina u aktivi",
+          "Kratkoročna obveza u pasivi"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što od navedenog ulazi u zalihe tekuće imovine?",
+        "options": [
+          "Štednjaci i hladnjaci u hotelskoj kuhinji",
+          "Umjetničke slike u predvorju",
+          "Namirnice u skladištu hotelske kuhinje",
+          "Koncesija na plažu"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Trgovačka roba (suveniri u hotelskoj prodavaonici) može se povezati s pojmom:",
+        "options": [
+          "Dugotrajna materijalna imovina",
+          "Kratkoročna obveza prema dobavljaču robe",
+          "Nematerijalna imovina (zaštitni znak hotela)",
+          "Zalihe namijenjene prodaji u tekućoj imovini"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Dobavljači se prepoznaju kao:",
+        "options": [
+          "Kratkoročna obveza – tuđi izvor imovine",
+          "Tekuća imovina – potraživanje od dobavljača",
+          "Dugoročna obveza",
+          "Vlastiti izvor imovine"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Dionice (kupljene, u vlasništvu hotela) su:",
+        "options": [
+          "Pasiva – kapital",
+          "Aktiva",
+          "Pasiva – obveza",
+          "Izvanbilančna stavka"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Izdane dionice su:",
+        "options": [
+          "Aktiva – financijska imovina",
+          "Kratkoročna obveza",
+          "Pasiva – kapital",
+          "Dugoročno potraživanje"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Izdani čekovi su:",
+        "options": [
+          "Aktiva – novac",
+          "Aktiva – potraživanje",
+          "Kapital",
+          "Pasiva – kratkoročna obveza"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Primljeni predujam je:",
+        "options": [
+          "Pasiva – obveza",
+          "Tekuća imovina",
+          "Stalna imovina",
+          "Kapital"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Predujam za stroj je:",
+        "options": [
+          "Pasiva – kratkoročna obveza",
+          "Aktiva – stalna materijalna imovina",
+          "Tekuća imovina – zaliha",
+          "Kapital"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pronađite uljeza: predujam za opremu, stroj, materijal, mašina za robu, zemljište.",
+        "options": [
+          "Stroj",
+          "Zemljište",
+          "Materijal",
+          "Predujam za opremu"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Pronađite uljeza: primljeni ček, dani kredit, dionica, obveznica, izdana mjenica, žiro račun.",
+        "options": [
+          "Primljeni ček",
+          "Dani kredit",
+          "Obveznica",
+          "Izdana mjenica"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Pronađite uljeza: predujam za postrojenje, goodwill, kompjuterska oprema, dani dugoročni zajam, kupci.",
+        "options": [
+          "Kupci",
+          "Goodwill",
+          "Dani dugoročni zajam",
+          "Predujam za postrojenje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pronađite uljeza: kredit, rezerve revalorizacije, izdane dionice, zadržana dobit.",
+        "options": [
+          "Rezerve revalorizacije",
+          "Kredit",
+          "Izdane dionice",
+          "Zadržana dobit"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pronađite uljeza: dobavljači, obveze za PDV, primljeni predujam, dani kratkoročni kredit, izdani ček.",
+        "options": [
+          "Primljeni predujam",
+          "Obveze za PDV",
+          "Dani kratkoročni kredit",
+          "Izdani ček"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Pronađite uljeza: stroj, materijal na zalihi, potraživanja za PDV, žiro račun, primljena mjenica.",
+        "options": [
+          "Materijal na zalihi",
+          "Potraživanja za PDV",
+          "Primljena mjenica",
+          "Stroj"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Pronađite uljeza: izdaci za istraživanje, dani dugoročni kredit, goodwill, predujam za koncesije.",
+        "options": [
+          "Dani dugoročni kredit",
+          "Goodwill",
+          "Izdaci za istraživanje",
+          "Predujam za koncesije"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pronađite uljeza: žiro račun, blagajna, akreditiv u stranoj valuti, dani kratkoročni kredit.",
+        "options": [
+          "Blagajna",
+          "Dani kratkoročni kredit",
+          "Žiro račun",
+          "Akreditiv u stranoj valuti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pronađite uljeza: izdane dionice, potraživanja od državnih institucija, izdane obveznice, dobavljači, obveze prema zaposlenicima.",
+        "options": [
+          "Izdane obveznice",
+          "Dobavljači",
+          "Potraživanja od državnih institucija",
+          "Obveze prema zaposlenicima za neto plaće"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Pronađite uljeza: zaliha materijala, obveznice, trgovačka roba, dani kratkoročni kredit, primljeni ček, potraživanja od djelatnika.",
+        "options": [
+          "Trgovačka roba",
+          "Primljeni ček",
+          "Potraživanja od djelatnika",
+          "Obveznice"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Pronađite uljeza: potraživanja od kupaca, primljeni ček, koncesije, žiro račun, dani kratkoročni kredit.",
+        "options": [
+          "Koncesije",
+          "Primljeni ček",
+          "Žiro račun",
+          "Potraživanja od kupaca"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Što od navedenog se može povezati uz AKTIVU?",
+        "options": [
+          "Rezerve",
+          "Uniforme djelatnika",
+          "Vlasnički kapital",
+          "Izdane obveznice"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "KAPITAL (vlasnička glavnica) može se povezati s tvrdnjom:",
+        "options": [
+          "Stavka aktive s najvećom likvidnošću",
+          "Kratkoročni tuđi izvor imovine",
+          "Stavka pasive s najduljom ročnošću",
+          "Obveza s fiksnim rokom povrata"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Dugotrajna imovina ima vijek trajanja dulji od jedne _______.",
+        "answer": "godine",
+        "hint": "Vremenski kriterij."
+      },
+      {
+        "sentence": "Najlikvidniji oblik imovine je _______.",
+        "answer": "novac",
+        "hint": "Na kraju aktive u RH."
+      },
+      {
+        "sentence": "Pribor za jelo, posteljina i jastuci u hotelu su sitni _______.",
+        "answer": "inventar",
+        "hint": "Iskazuje se među zalihama."
+      },
+      {
+        "sentence": "Vlastiti izvor imovine zove se _______.",
+        "answer": "kapital",
+        "hint": "Vlasnička glavnica."
+      },
+      {
+        "sentence": "Patenti, licence i goodwill su dugotrajna _______ imovina.",
+        "answer": "nematerijalna",
+        "hint": "Nema fizički oblik."
+      },
+      {
+        "sentence": "Kupljene dionice i dani dugoročni krediti su dugotrajna _______ imovina.",
+        "answer": "financijska",
+        "hint": "Plasmani dulji od godine."
+      },
+      {
+        "sentence": "Dio kapitala koji se po propisima ili statutu mora izdvojiti zove se _______.",
+        "answer": "rezerve",
+        "hint": "Zakonske, statutarne, revalorizacijske."
+      }
+    ],
+    "learn": {
+      "title": "Imovina, obveze i kapital – razvrstavanje stavki",
+      "content": "<h3>Statičke računovodstvene kategorije</h3><p><strong>Imovina, kapital i obveze</strong> su <strong>statički</strong> definirane kategorije – njihova se vrijednost može prepoznati u svakom trenutku (zna se koliko vrijedi namještaj ili koliko dugujemo banci). Prikazuju se u <strong>bilanci</strong>.</p><h3>Imovina (aktiva)</h3><p><strong>Nazivi:</strong> dugotrajna = stalna = fiksna imovina = osnovna sredstva; kratkotrajna = tekuća = obrtna (cirkulirajuća) imovina. Razvrstavanje se temelji na <strong>funkcionalnom</strong> kriteriju (troši li se u jednom procesu) i <strong>vremenskom</strong> kriteriju (kraće ili dulje od godine).</p><p><strong>Imovina</strong> je resurs koji menadžment kontrolira, nabavljen u prošlosti, od kojeg se očekuju <strong>buduće ekonomske koristi</strong>. Da bi ušao u bilancu, resurs mora:</p><ol><li>biti u <strong>vlasništvu</strong> ili pod <strong>kontrolom</strong> sustava (posuđena tuđa imovina ne ulazi);</li><li>imati <strong>mjerljivu vrijednost</strong>;</li><li>biti uključen u proces reprodukcije i stvarati <strong>buduće ekonomske koristi</strong>.</li></ol><p>Vrednovanje: nabava po <strong>trošku nabave</strong>, gotovi proizvodi po <strong>cijeni koštanja</strong>, općenito se teži <strong>fer vrijednosti</strong> („iznos za koji bi se imovina razmijenila između obaviještenih i spremnih strana”). Nematerijalnu imovinu (zaštitni znak, ljudski kapital) teže je vrednovati od materijalne.</p><table><tr><th>Skupina</th><th>Obilježja</th><th>Primjeri (hotelijerstvo)</th></tr><tr><td><strong>Dugotrajna materijalna</strong></td><td>Fizički oblik koji se ne mijenja tijekom uporabe; nije namijenjena prodaji nego korištenju; ne troši se u jednom poslovnom ciklusu; vrijednost prenosi na učinke postupno (amortizacija)</td><td>Zemljište, hotelska zgrada, namještaj u sobama, kuhinjski i uredski namještaj, rashladni uređaji i vitrine, oprema praonice, TV, klima-uređaji, računala, kotlovnica, prijevozna sredstva</td></tr><tr><td><strong>Dugotrajna nematerijalna</strong></td><td>Nije opipljiva, ali stvara ekonomsku korist</td><td>Koncesija na plažu, licence, patenti, zaštitni znak i žig, goodwill, softver, osnivački izdaci, izdaci za istraživanje i razvoj, predujmovi za nematerijalnu imovinu</td></tr><tr><td><strong>Dugotrajna financijska</strong></td><td>Ulaganje novca na rok dulji od godine (kamate, dividende, kontrola)</td><td>Kupljene dionice i obveznice, dani dugoročni krediti i depoziti, udjeli u povezanim društvima</td></tr><tr><td><strong>Dugotrajna potraživanja</strong></td><td>Naplata za više od godine</td><td>Prodaja na dugoročni kredit, potraživanja od povezanih društava</td></tr><tr><td><strong>Zalihe</strong></td><td>Materijalni oblik tekuće imovine, male pojedinačne vrijednosti</td><td>Namirnice i pića, materijal za čišćenje, sitni inventar, gotovi proizvodi (kolači u vitrini), trgovačka roba (suveniri, novine)</td></tr><tr><td><strong>Kratkoročna potraživanja</strong></td><td>Prijelazni oblik od robe do novca, naplata do godine</td><td>Kupci, potraživanja od zaposlenika (putni nalog, manjak), od države (potraživanja za PDV), od osiguranja</td></tr><tr><td><strong>Kratkotrajna financijska</strong></td><td>Plasmani kraći od godine</td><td>Dani kratkoročni krediti/zajmovi, kratkoročni vrijednosni papiri, primljeni čekovi</td></tr><tr><td><strong>Novac</strong></td><td>Najlikvidniji oblik</td><td>Blagajna, žiro račun, devizni račun, akreditiv, izdvojena sredstva za čekove</td></tr><tr><td><strong>Aktivna vremenska razgraničenja</strong></td><td>Plaćeni troškovi budućeg razdoblja i nedospjela naplata prihoda</td><td>Unaprijed plaćeno osiguranje, stručna literatura, pravo na državnu potporu</td></tr></table><div class=\"warning-box\"><strong>Sitni inventar:</strong> po karakteru sliči stalnoj imovini (pribor za jelo i kuhanje, deke, jastuci, plahte), i traje dulje od godine, ali se zbog <strong>male pojedinačne vrijednosti</strong> razvrstava u <strong>tekuću imovinu – zalihe</strong>. (U tekstu gradiva na jednom mjestu omaškom piše „u kategoriju stalne imovine” – ispitni ključ i sve ostale bilješke potvrđuju: zalihe tekuće imovine.)</div><div class=\"tip-box\"><strong>Pravilo za vrijednosne papire:</strong> u aktivu ulaze samo <strong>primljeni</strong> i <strong>kupljeni</strong> vrijednosni papiri (primljeni ček, primljena mjenica, kupljene dionice i obveznice). <strong>Izdani</strong> čekovi, mjenice i obveznice su <strong>obveze</strong>, a <strong>izdane dionice</strong> su <strong>kapital</strong>.</div><h3>Obveze (tuđi izvori)</h3><p><strong>Obveza</strong> je sadašnja obveza iz prošlih događaja čije će podmirenje izazvati odljev resursa (prvenstveno novca). Obilježja: fiksni rok povrata, fiksna naknada, neovisnost o rezultatu, ne daju pravo upravljanja.</p><ul><li><strong>Kratkoročne</strong> (do godine): dobavljači, kratkoročni krediti, obveze za plaće (bruto i neto), obveze za PDV i druge poreze, izdani čekovi i mjenice, primljeni predujmovi, obveze za turističke članarine. Njihov iznos i struktura važni su za ocjenu <strong>likvidnosti</strong>.</li><li><strong>Dugoročne</strong> (dulje od godine): dugoročni (hipotekarni) krediti banaka, izdane obveznice, obveze za mirovine zaposlenika, odgođeni porezi, dugoročna jamstva kupcima.</li></ul><h3>Kapital (vlasnička glavnica)</h3><p><strong>Kapital</strong> je vlastiti izvor – dio imovine koji pripada vlasnicima i za koji <strong>nema obveze vraćanja</strong>. Nije fizički oblik, nego <strong>vrijednosni odnos</strong>: kapital = aktiva − obveze. S aspekta dospijeća to je <strong>trajni izvor</strong> (najdulja ročnost).</p><ul><li><strong>Uloženi kapital</strong> – ulog vlasnika (inokosni vlasnik, partneri, dioničari) pri osnivanju i kasnije (<strong>dokapitalizacija</strong>).</li><li><strong>Zarađeni kapital</strong> – zadržani dio pozitivnog rezultata (zadržana dobit, rezerve).</li><li>Smanjuje se <strong>povlačenjem</strong> kapitala i <strong>gubicima</strong>.</li><li><strong>Rezerve</strong> (zakonske, statutarne, revalorizacijske) – dio kapitala s kojim se ne može slobodno raspolagati; čimbenik sigurnosti.</li><li>Kapital se gasi samo <strong>stečajem ili likvidacijom</strong>: najprije se podmiruju kratkoročne, zatim dugoročne obveze, a vlasnicima pripada ostatak.</li></ul><h3>Riješeno: pronađi uljeza</h3><table><tr><th>Skupina</th><th>Uljez</th><th>Zašto</th></tr><tr><td>predujam za opremu, stroj, materijal, mašina za robu, zemljište</td><td><strong>materijal</strong></td><td>Jedini je tekuća imovina (zaliha); ostalo je stalna materijalna imovina.</td></tr><tr><td>primljeni ček, dani kredit, dionica, obveznica, izdana mjenica, žiro račun</td><td><strong>izdana mjenica</strong></td><td>Obveza (pasiva); ostalo je aktiva.</td></tr><tr><td>predujam za postrojenje, goodwill, kompjuterska oprema, dani dugoročni zajam, kupci</td><td><strong>kupci</strong></td><td>Tekuća imovina; ostalo je dugotrajna.</td></tr><tr><td>kredit, rezerve revalorizacije, izdane dionice, zadržana dobit</td><td><strong>kredit</strong></td><td>Obveza; ostalo je kapital.</td></tr><tr><td>dobavljači, obveze za PDV, primljeni predujam, dani kratkoročni kredit, izdani ček</td><td><strong>dani kratkoročni kredit</strong></td><td>Aktiva; ostalo su kratkoročne obveze.</td></tr><tr><td>stroj, materijal na zalihi, potraživanja za PDV, žiro račun, primljena mjenica</td><td><strong>stroj</strong></td><td>Stalna imovina; ostalo je tekuća.</td></tr><tr><td>izdaci za istraživanje, dani dugoročni kredit, goodwill, predujam za koncesije</td><td><strong>dani dugoročni kredit</strong></td><td>Financijska imovina; ostalo je nematerijalna.</td></tr><tr><td>žiro račun, blagajna, akreditiv u stranoj valuti, dani kratkoročni kredit</td><td><strong>dani kratkoročni kredit</strong></td><td>Financijska imovina; ostalo je novac.</td></tr><tr><td>izdane dionice, potraživanja od državnih institucija, izdane obveznice, dobavljači, obveze prema zaposlenicima</td><td><strong>potraživanja od državnih institucija</strong></td><td>Aktiva; ostalo je pasiva.</td></tr><tr><td>zaliha materijala, obveznice, trgovačka roba, dani kratkoročni kredit, primljeni ček, potraživanja od djelatnika</td><td><strong>obveznice</strong></td><td>(Kupljene) obveznice su dugotrajna financijska imovina; ostalo je tekuća imovina.</td></tr><tr><td>potraživanja od kupaca, primljeni ček, koncesije, žiro račun, dani kratkoročni kredit</td><td><strong>koncesije</strong></td><td>Stalna nematerijalna imovina; ostalo je tekuća.</td></tr></table><div class=\"warning-box\"><strong>Ispravak izvora:</strong> u jednom studentskom rješenju „primljeni predujam” razvrstan je kao tekuća imovina – to je netočno. Primljeni predujam je <strong>kratkoročna obveza</strong> (primili smo novac za uslugu koju tek moramo pružiti).</div><h3>Razvrstaj: stalna ili tekuća imovina</h3><table><tr><th>Stalna (dugotrajna)</th><th>Tekuća (kratkotrajna)</th></tr><tr><td>Zemljište, zgrada hotela, kuhinjska oprema, koncesija, goodwill, predujmovi za patent, (kupljene) dionice</td><td>Novac na žiro računu, zaliha materijala, dani kratkoročni zajam, potraživanja od zaposlenih, primljeni ček, potraživanja za PDV</td></tr></table>"
+    }
+  },
+  "konta": {
+    "name": "Konta i pravila knjiženja",
+    "icon": "fa-table-columns",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Što je KONTO?",
+        "answer": "Temeljni instrument računovodstva za skraćeno bilježenje i sustavno praćenje stanja i promjena jedne računovodstvene kategorije.",
+        "explanation": "Konta su raščlanjeni dijelovi temeljnih financijskih izvještaja."
+      },
+      {
+        "question": "Koje minimalne podatke sadrži konto?",
+        "answer": "Naziv, broj (šifru iz kontnog plana), datum promjene, oznaku isprave, kratki opis, iznos promjene i saldo (novonastalo stanje).",
+        "explanation": "Npr. 100 Žiro račun, ulazni račun URA."
+      },
+      {
+        "question": "Kako se zovu strane konta?",
+        "answer": "Lijeva strana je DUGUJE (dugovna strana), a desna POTRAŽUJE (potražna strana).",
+        "explanation": "T-konto ima oblik slova T."
+      },
+      {
+        "question": "Koje je temeljno pravilo dvojnog knjigovodstva?",
+        "answer": "Svaka se promjena bilježi na najmanje dva konta – isti iznos jednom na dugovnu, jednom na potražnu stranu.",
+        "explanation": "Tako zbroj duguje = zbroj potražuje."
+      },
+      {
+        "question": "Pravila knjiženja na kontu AKTIVE?",
+        "answer": "Početni saldo i povećanje na dugovnoj strani; smanjenje i zaključni saldo na potražnoj strani.",
+        "explanation": "Npr. žiro račun, kupci, zalihe, oprema, goodwill."
+      },
+      {
+        "question": "Pravila knjiženja na kontu PASIVE?",
+        "answer": "Početni saldo i povećanje na potražnoj strani; smanjenje i zaključni saldo na dugovnoj strani.",
+        "explanation": "Npr. kapital, dobavljači, krediti, izdane obveznice."
+      },
+      {
+        "question": "Pravila na kontu RASHODA?",
+        "answer": "Nema početnog salda; povećanje se knjiži na dugovnu stranu, smanjenje na potražnu (kao aktiva: R = A); saldo se prenosi na obračun rezultata.",
+        "explanation": "Rashodi smanjuju kapital."
+      },
+      {
+        "question": "Pravila na kontu PRIHODA?",
+        "answer": "Nema početnog salda; povećanje se knjiži na potražnu stranu, smanjenje na dugovnu (kao pasiva: P = P); saldo se prenosi na obračun rezultata.",
+        "explanation": "Prihodi povećavaju kapital."
+      },
+      {
+        "question": "Konta stanja vs konta uspjeha?",
+        "answer": "Konta stanja (aktiva i pasiva) raščlanjuju bilancu; konta uspjeha (rashodi i prihodi) raščlanjuju račun dobiti i gubitka.",
+        "explanation": "Podjela prema karakteru i funkciji salda."
+      },
+      {
+        "question": "Što je ZAKLJUČNI SALDO konta aktive?",
+        "answer": "Razlika veće dugovne i manje potražne strane; upisuje se na potražnu stranu radi izravnanja, a u bilancu ulazi u aktivu.",
+        "explanation": "Pripada većoj (dugovnoj) strani."
+      },
+      {
+        "question": "Kada konto NE ulazi u zaključnu bilancu?",
+        "answer": "Kad mu je promet dugovne i potražne strane jednak – nema zaključnog salda.",
+        "explanation": "Npr. kupci koji su sve platili."
+      },
+      {
+        "question": "Što su AKTIVNO-PASIVNA konta?",
+        "answer": "Konta aktive koja zbog primljenog predujma dobiju potražni saldo (npr. kupci su platili unaprijed); ostaju konta aktive.",
+        "explanation": "U bilanci aktiva kao minus-stavka."
+      },
+      {
+        "question": "Što su PASIVNO-AKTIVNA konta?",
+        "answer": "Konta pasive koja zbog danog predujma dobiju dugovni saldo (npr. platili smo dobavljaču unaprijed); ostaju konta pasive.",
+        "explanation": "U bilanci pasiva kao minus-stavka."
+      },
+      {
+        "question": "Samostalna vs nesamostalna konta?",
+        "answer": "Samostalna daju cjelovitu informaciju (blagajna); nesamostalna (korektivna) se čitaju uz glavni konto (ispravak vrijednosti opreme uz konto opreme).",
+        "explanation": "Podjela prema samostalnosti."
+      },
+      {
+        "question": "Zašto se koristi konto ISPRAVKA VRIJEDNOSTI?",
+        "answer": "Imovina se trošenjem smanjuje, ali fizički ostaje u uporabi pa se ne smije knjižiti na potražnu stranu konta imovine.",
+        "explanation": "Sadašnja vrijednost = nabavna − ispravak."
+      },
+      {
+        "question": "Sintetička vs analitička konta?",
+        "answer": "Sintetička su konta glavne knjige (zaliha namirnica); analitička ih detaljno raščlanjuju u pomoćnim knjigama (zaliha mesa, salate, mrkve).",
+        "explanation": "Podjela prema složenosti."
+      },
+      {
+        "question": "Bilančna vs izvanbilančna konta?",
+        "answer": "Bilančna prikazuju stavke bilance; izvanbilančna prate događaje koji nisu stavke bilance, ali mogu utjecati na nju.",
+        "explanation": "Npr. tiskani, a neizdani vrijednosni papiri; akreditivi."
+      },
+      {
+        "question": "Koji su oblici konta prema gradivu kolegija?",
+        "answer": "Po foliu (najstariji poznati, ručna obrada), po pagini i kombinirani (softver), stupnjeviti (financijske institucije), tablarni (manje firme) te T-konto.",
+        "explanation": "T-konto služi za učenje i skicu knjiženja."
+      },
+      {
+        "question": "Što je TABLARNI (tabelarni) konto?",
+        "answer": "Oblik konta koji povezuje glavnu knjigu i dnevnik; razvijen za manje poduzetnike.",
+        "explanation": "Kombinacija dnevnika i konta."
+      },
+      {
+        "question": "Koje su analitike poznate pod posebnim nazivima?",
+        "answer": "Materijalno (sirovine i materijal), pogonsko (proizvodnja), robno (gotovi proizvodi i roba) knjigovodstvo te saldakonti (kupci i dobavljači).",
+        "explanation": "Pomoćne knjige i analitičke evidencije."
+      },
+      {
+        "question": "Pravilo „tko prima duguje, tko daje potražuje”?",
+        "answer": "Staro trgovačko pravilo iz personifikacije konta; objašnjava porijeklo izraza, ali se ne može dosljedno primijeniti na sva knjiženja.",
+        "explanation": "Danas se uči po pravilima konta aktive i pasive."
+      },
+      {
+        "question": "Kako se prenosi početna bilanca na konta?",
+        "answer": "Svaka stavka aktive postaje početni saldo na dugovnoj strani, a svaka stavka pasive na potražnoj strani konta.",
+        "explanation": "Za svaku poziciju otvara se sintetički konto."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Za konto KRATKOROČNI KREDIT vrijede pravila:",
+        "options": [
+          "Početni saldo i povećanje duguje, smanjenje i zaključni saldo potražuje",
+          "Nema početnog salda, povećanje duguje",
+          "Nema početnog salda, povećanje potražuje",
+          "Početni saldo i povećanje potražuje, smanjenje i zaključni saldo duguje"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za konto POTRAŽIVANJA OD KUPACA vrijede pravila:",
+        "options": [
+          "Početni saldo i povećanje duguje, smanjenje i zaključni saldo potražuje",
+          "Početni saldo i povećanje potražuje, smanjenje i zaključni saldo duguje",
+          "Nema početnog salda, povećanje potražuje",
+          "Početni saldo potražuje, povećanje duguje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Konto GOODWILL je:",
+        "options": [
+          "Konto stanja – pasive; početni saldo i povećanje potražuje",
+          "Konto stanja – aktive; početni saldo i povećanje duguje",
+          "Konto uspjeha – prihoda; povećanje potražuje",
+          "Izvanbilančni konto bez salda"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Konto IZDANE OBVEZNICE je:",
+        "options": [
+          "Konto stanja – aktive (financijska imovina)",
+          "Konto uspjeha – rashoda",
+          "Konto stanja – pasive (dugoročna obveza)",
+          "Konto stanja – aktive (novac)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Konto KAPITAL je konto:",
+        "options": [
+          "Stanja – aktive; povećanje se knjiži na dugovnu stranu",
+          "Uspjeha – prihoda; nema početnog salda",
+          "Uspjeha – rashoda; povećanje se knjiži na dugovnu stranu",
+          "Stanja – pasive; povećanje se knjiži na potražnu stranu"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za konto IZDANE DIONICE vrijedi:",
+        "options": [
+          "Početni saldo se bilježi na potražnoj strani",
+          "Početni saldo se bilježi na dugovnoj strani",
+          "Povećanje se bilježi na dugovnoj strani",
+          "Zaključni saldo se bilježi na potražnoj strani"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Konto DOBIT TEKUĆE GODINE je:",
+        "options": [
+          "Konto stanja – aktive",
+          "Konto stanja – pasive (kapital)",
+          "Konto uspjeha – rashoda",
+          "Izvanbilančni konto"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Konto ZALIHA SITNOG INVENTARA je:",
+        "options": [
+          "Konto stanja – pasive",
+          "Konto stanja – aktive (stalna imovina)",
+          "Konto stanja – aktive (zalihe tekuće imovine)",
+          "Konto uspjeha – rashoda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Konto PREDUJMOVI ZA STROJEVE je:",
+        "options": [
+          "Konto stanja – pasive (kratkoročna obveza)",
+          "Konto uspjeha – rashoda",
+          "Konto stanja – aktive (zalihe)",
+          "Konto stanja – aktive (stalna materijalna imovina)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Konto OBVEZE ZA PDV može se razvrstati u:",
+        "options": [
+          "Sintetički konto, konto stanja, konto pasive",
+          "Analitički konto, konto uspjeha, konto rashoda",
+          "Sintetički konto, konto stanja, konto aktive",
+          "Izvanbilančni konto pasive"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Konto POTRAŽIVANJA OD KUPACA može se razvrstati kao:",
+        "options": [
+          "Konto uspjeha i konto prihoda",
+          "Sintetički konto i konto stanja",
+          "Izvanbilančni i nesamostalni konto",
+          "Konto pasive i konto kapitala"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Konto PRIMLJENI ČEKOVI:",
+        "options": [
+          "Stavka je pasive – kratkoročna obveza za izdane čekove",
+          "Konto je uspjeha bez početnog salda",
+          "Stavka je aktive – kratkoročna financijska imovina",
+          "Nesamostalni je korektivni konto"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako se konto zaliha materijala raščlani na konta mesa, voća, povrća i brašna, radi se o:",
+        "options": [
+          "Raščlambi analitičkog konta na sintetička",
+          "Otvaranju izvanbilančnih konta",
+          "Pretvaranju konta stanja u konta uspjeha",
+          "Raščlambi sintetičkog konta na analitička konta"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Konto ispravka vrijednosti opreme je:",
+        "options": [
+          "Nesamostalni (korektivni) konto",
+          "Samostalni konto dugotrajne imovine",
+          "Izvanbilančni konto",
+          "Konto prihoda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Zaključni saldo konta pasive upisuje se na:",
+        "options": [
+          "Potražnu stranu, a u bilanci ulazi u aktivu",
+          "Dugovnu stranu, a u bilanci ulazi u pasivu",
+          "Dugovnu stranu, a u bilanci ulazi u aktivu",
+          "Ne upisuje se – konta pasive nemaju saldo"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Konto koji ima jednak promet na dugovnoj i potražnoj strani:",
+        "options": [
+          "Ulazi u bilancu u punom iznosu prometa",
+          "Postaje izvanbilančni konto",
+          "Nema zaključnog salda i ne ulazi u bilancu",
+          "Prenosi se u račun dobiti i gubitka"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kupci su nam unaprijed platili uslugu pa konto KUPCI ima potražni saldo. To je:",
+        "options": [
+          "Pasivno-aktivni konto – u bilanci ulazi u pasivu kao obveza",
+          "Konto uspjeha – prihod",
+          "Izvanbilančni konto",
+          "Aktivno-pasivni konto – u bilanci aktiva kao minus-stavka"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Konta uspjeha raščlanjuju temeljni financijski izvještaj:",
+        "options": [
+          "Račun dobiti i gubitka",
+          "Bilancu",
+          "Izvještaj o novčanom toku",
+          "Bilješke uz izvještaje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Što od navedenog NIJE obvezni podatak na kontu?",
+        "options": [
+          "Broj konta iz kontnog plana",
+          "Potpis vlasnika poduzeća",
+          "Oznaka isprave",
+          "Saldo konta"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Oblik konta koji služi u edukaciji i za skicu knjiženja je:",
+        "options": [
+          "Konto po foliu",
+          "Stupnjeviti konto",
+          "T-konto",
+          "Tablarni konto"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Lijeva strana konta zove se _______.",
+        "answer": "duguje",
+        "hint": "Dugovna strana."
+      },
+      {
+        "sentence": "Desna strana konta zove se _______.",
+        "answer": "potražuje",
+        "hint": "Potražna strana."
+      },
+      {
+        "sentence": "Konta aktive povećavaju se na _______ strani.",
+        "answer": "dugovnoj",
+        "hint": "Isto kao početni saldo."
+      },
+      {
+        "sentence": "Konta pasive povećavaju se na _______ strani.",
+        "answer": "potražnoj",
+        "hint": "Isto kao početni saldo."
+      },
+      {
+        "sentence": "Konta prihoda i rashoda zajedno se zovu konta _______.",
+        "answer": "uspjeha",
+        "hint": "Raščlanjuju račun dobiti i gubitka."
+      },
+      {
+        "sentence": "Konta glavne knjige zovu se _______ konta.",
+        "answer": "sintetička",
+        "hint": "Suprotno: analitička."
+      },
+      {
+        "sentence": "Konto koji ispravlja vrijednost glavnog konta je _______ (korektivni) konto.",
+        "answer": "nesamostalni",
+        "hint": "Npr. ispravak vrijednosti."
+      },
+      {
+        "sentence": "Početni saldo konta pasive knjiži se na _______ stranu.",
+        "answer": "potražnu",
+        "hint": "Desna strana."
+      }
+    ],
+    "learn": {
+      "title": "Konta, pravila knjiženja i veza s bilancom (riješeni ciklus)",
+      "content": "<h3>Konto</h3><p><strong>Konto</strong> je temeljni nositelj podataka u računovodstvu: na njemu se, na temelju isprava, bilježi stanje i promjene jedne kategorije (imovine, obveza, kapitala, rashoda, prihoda). Na kontu <em>Blagajna</em> vidimo uplate, isplate i stanje gotovine; na kontu <em>Kratkoročni kredit</em> koliko smo posudili, koliko vratili i koliko još dugujemo.</p><p><strong>Obvezni podaci konta:</strong> naziv (npr. žiro račun) · broj iz kontnog plana (npr. 100) · datum događaja · oznaka isprave (npr. ulazni račun URA/UFA) · kratki opis · iznos · saldo (novonastalo stanje).</p><table><tr><th colspan=\"2\">T-konto: naziv i broj konta</th></tr><tr><th>DUGUJE (lijevo)</th><th>POTRAŽUJE (desno)</th></tr></table><h3>Pravila knjiženja – četiri vrste konta</h3><table><tr><th>Konto</th><th>Početni saldo</th><th>Povećanje</th><th>Smanjenje</th><th>Zaključni saldo</th></tr><tr><td><strong>Aktive</strong> (imovina)</td><td>duguje</td><td>duguje</td><td>potražuje</td><td>potražuje</td></tr><tr><td><strong>Pasive</strong> (kapital, obveze)</td><td>potražuje</td><td>potražuje</td><td>duguje</td><td>duguje</td></tr><tr><td><strong>Rashoda</strong> (R = A)</td><td>nema</td><td>duguje</td><td>potražuje</td><td>prenosi se na obračun rezultata</td></tr><tr><td><strong>Prihoda</strong> (P = P)</td><td>nema</td><td>potražuje</td><td>duguje</td><td>prenosi se na obračun rezultata</td></tr></table><div class=\"tip-box\"><strong>Kako pamtiti:</strong> konto se <strong>povećava na strani na kojoj ima početni saldo</strong>, a to je strana na kojoj stoji u bilanci (aktiva lijevo → duguje; pasiva desno → potražuje). <strong>R = A</strong> (rashodi kao aktiva), <strong>P = P</strong> (prihodi kao pasiva). Zaključni saldo se upisuje na <strong>manju</strong> stranu radi izravnanja, ali pripada većoj.</div><div class=\"warning-box\"><strong>Ispravci studentske skripte:</strong> (1) na kontima pasive povećanje kapitala i obveza knjiži se na <strong>potražnu</strong> (ne dugovnu) stranu; (2) zaključni saldo konta <em>Dobavljači</em> upisuje se na <strong>dugovnu</strong> stranu; (3) kod konta <em>Kredit od banke</em> smanjenje obveze knjiži se na <strong>dugovnu</strong> stranu – u jednoj verziji oglednih rješenja omaškom piše „potražuje”. Kod konta <em>Dobit tekuće godine</em> ključ kaže „povećanje obveze” – točnije je „povećanje kapitala”; strane su iste (potražuje).</div><h3>Riješeno: odredi vrstu konta i pravila</h3><p>Kratice: <strong>PS</strong> = početni saldo, <strong>ZS</strong> = zaključni saldo, <strong>D</strong> = duguje, <strong>P</strong> = potražuje.</p><table><tr><th>Konto</th><th>Vrsta</th><th>Pravila</th></tr><tr><td>Potraživanja od kupaca</td><td>stanja – aktive (kratkoročna potraživanja)</td><td>PS i povećanje D; smanjenje i ZS P</td></tr><tr><td>Zaliha sitnog inventara</td><td>stanja – aktive (zalihe)</td><td>PS i povećanje D; smanjenje i ZS P</td></tr><tr><td>Goodwill; pravo na zaštitni znak i žig</td><td>stanja – aktive (nematerijalna imovina)</td><td>PS i povećanje D; smanjenje i ZS P</td></tr><tr><td>Predujmovi za strojeve</td><td>stanja – aktive (stalna materijalna imovina)</td><td>PS i povećanje D; smanjenje i ZS P</td></tr><tr><td>Potraživanja od djelatnika; primljeni čekovi</td><td>stanja – aktive (tekuća imovina)</td><td>PS i povećanje D; smanjenje i ZS P</td></tr><tr><td>Kapital; dobit tekuće godine; izdane dionice</td><td>stanja – pasive (kapital)</td><td>PS i povećanje P; smanjenje i ZS D</td></tr><tr><td>Kredit od banke; izdane obveznice</td><td>stanja – pasive (dugoročne obveze)</td><td>PS i povećanje P; smanjenje i ZS D</td></tr><tr><td>Kratkoročni kredit; izdani ček; obveze za PDV; obveze za porez na dobit</td><td>stanja – pasive (kratkoročne obveze)</td><td>PS i povećanje P; smanjenje i ZS D</td></tr></table><h3>Riješeni primjer: od početne do zaključne bilance (Hotel Alfa d.o.o.)</h3><p><strong>1. Početna bilanca na dan 1. 1.</strong> – kapital se izračuna kao razlika: 200.000 − 80.000 = <strong>120.000</strong>.</p><table><tr><th>AKTIVA</th><th>Iznos</th><th>PASIVA</th><th>Iznos</th></tr><tr><td>Zgrade</td><td>140.000</td><td>Kapital</td><td>120.000</td></tr><tr><td>021 Oprema</td><td>30.000</td><td>952 Kredit kod banke (dugoročni)</td><td>60.000</td></tr><tr><td>310 Zaliha namirnica</td><td>6.000</td><td>220 Dobavljači</td><td>12.000</td></tr><tr><td>120 Kupci</td><td>4.000</td><td>252 Kratkoročni kredit</td><td>8.000</td></tr><tr><td>100 Žiro račun</td><td>20.000</td><td></td><td></td></tr><tr><td><strong>Ukupno</strong></td><td><strong>200.000</strong></td><td><strong>Ukupno</strong></td><td><strong>200.000</strong></td></tr></table><p><strong>2. Poslovne promjene tijekom godine</strong></p><table><tr><th>Br.</th><th>Promjena</th><th>Duguje</th><th>Potražuje</th><th>Vrsta</th></tr><tr><td>(1)</td><td>Nabavljene namirnice od dobavljača 3.000</td><td>310 Zaliha namirnica 3.000</td><td>220 Dobavljači 3.000</td><td>A+P+</td></tr><tr><td>(2)</td><td>Kupci su platili dug na žiro račun 4.000</td><td>100 Žiro račun 4.000</td><td>120 Kupci 4.000</td><td>A+A−</td></tr><tr><td>(3)</td><td>Dobavljaču plaćeno sa žiro računa 10.000</td><td>220 Dobavljači 10.000</td><td>100 Žiro račun 10.000</td><td>A−P−</td></tr><tr><td>(4)</td><td>Dobavljaču plaćeno iz kratkoročnog kredita 5.000</td><td>220 Dobavljači 5.000</td><td>252 Kratkoročni kredit 5.000</td><td>P+P−</td></tr><tr><td>(5)</td><td>Vraćen dio dugoročnog kredita sa žiro računa 6.000</td><td>952 Kredit kod banke 6.000</td><td>100 Žiro račun 6.000</td><td>A−P−</td></tr><tr><td>(6)</td><td>Nabavljena oprema od dobavljača 8.000</td><td>021 Oprema 8.000</td><td>220 Dobavljači 8.000</td><td>A+P+</td></tr></table><p><strong>3. Glavna knjiga (T-konta) i zaključni salda</strong></p><table><tr><th colspan=\"2\">100 Žiro račun (aktiva)</th></tr><tr><th>Duguje</th><th>Potražuje</th></tr><tr><td>PS 20.000</td><td>(3) 10.000</td></tr><tr><td>(2) 4.000</td><td>(5) 6.000</td></tr><tr><td></td><td><strong>ZS 8.000</strong></td></tr><tr><td>Σ 24.000</td><td>Σ 24.000</td></tr></table><table><tr><th colspan=\"2\">220 Dobavljači (pasiva)</th></tr><tr><th>Duguje</th><th>Potražuje</th></tr><tr><td>(3) 10.000</td><td>PS 12.000</td></tr><tr><td>(4) 5.000</td><td>(1) 3.000</td></tr><tr><td><strong>ZS 8.000</strong></td><td>(6) 8.000</td></tr><tr><td>Σ 23.000</td><td>Σ 23.000</td></tr></table><table><tr><th colspan=\"2\">120 Kupci (aktiva)</th></tr><tr><th>Duguje</th><th>Potražuje</th></tr><tr><td>PS 4.000</td><td>(2) 4.000</td></tr><tr><td>Σ 4.000</td><td>Σ 4.000 → nema salda</td></tr></table><table><tr><th>Ostala konta</th><th>Duguje</th><th>Potražuje</th><th>Zaključni saldo</th></tr><tr><td>Zgrade (A)</td><td>PS 140.000</td><td>—</td><td>140.000 (upisan na P)</td></tr><tr><td>021 Oprema (A)</td><td>PS 30.000 + (6) 8.000</td><td>—</td><td>38.000 (upisan na P)</td></tr><tr><td>310 Zaliha namirnica (A)</td><td>PS 6.000 + (1) 3.000</td><td>—</td><td>9.000 (upisan na P)</td></tr><tr><td>952 Kredit kod banke (P)</td><td>(5) 6.000</td><td>PS 60.000</td><td>54.000 (upisan na D)</td></tr><tr><td>252 Kratkoročni kredit (P)</td><td>—</td><td>PS 8.000 + (4) 5.000</td><td>13.000 (upisan na D)</td></tr><tr><td>Kapital (P)</td><td>—</td><td>PS 120.000</td><td>120.000 (upisan na D)</td></tr></table><p><strong>4. Zaključna bilanca na dan 31. 12.</strong> (aktiva po rastućoj likvidnosti, pasiva po padajućoj ročnosti; <em>Kupci</em> nemaju saldo pa ne ulaze)</p><table><tr><th>AKTIVA</th><th>Iznos</th><th>PASIVA</th><th>Iznos</th></tr><tr><td>Zgrade</td><td>140.000</td><td>Kapital</td><td>120.000</td></tr><tr><td>021 Oprema</td><td>38.000</td><td>952 Kredit kod banke</td><td>54.000</td></tr><tr><td>310 Zaliha namirnica</td><td>9.000</td><td>220 Dobavljači</td><td>8.000</td></tr><tr><td>100 Žiro račun</td><td>8.000</td><td>252 Kratkoročni kredit</td><td>13.000</td></tr><tr><td><strong>Ukupno</strong></td><td><strong>195.000</strong></td><td><strong>Ukupno</strong></td><td><strong>195.000</strong></td></tr></table><div class=\"example-box\"><strong>Kontrola:</strong> centripetalne promjene povećale su bilancu za 3.000 + 8.000 = 11.000, centrifugalne smanjile za 10.000 + 6.000 = 16.000; koncentrična i periferijska ne mijenjaju zbroj. 200.000 + 11.000 − 16.000 = <strong>195.000</strong> ✓. Zbroj aktive se smanjio, pa je prema gradivu kolegija financijski položaj krajem razdoblja lošiji.</div><h3>Aktivno-pasivna i pasivno-aktivna konta</h3><p>Nastaju samo na kontima <strong>dužničko-vjerovničkih odnosa</strong>, zbog <strong>predujmova</strong>:</p><ul><li><strong>Aktivno-pasivni</strong> – konto aktive (npr. <em>Kupci</em>) dobije potražni saldo jer su nam kupci platili unaprijed. Ostaje konto aktive: u bilanci ulazi u <strong>aktivu kao minus-stavka</strong>.</li><li><strong>Pasivno-aktivni</strong> – konto pasive (npr. <em>Dobavljači</em>) dobije dugovni saldo jer smo dobavljaču platili unaprijed. Ostaje konto pasive: u bilanci ulazi u <strong>pasivu kao minus-stavka</strong>.</li></ul><div class=\"tip-box\"><strong>Današnja praksa:</strong> MRS 1 zabranjuje prebijanje imovine i obveza, pa se primljeni predujmovi u izvještajima iskazuju kao obveza, a dani predujmovi kao imovina – ne kao minus-stavka. Prikaz minus-stavkom je gradivo kolegija.</div><h3>Ostale podjele konta</h3><table><tr><th>Kriterij</th><th>Vrste</th></tr><tr><td>Karakter i funkcija salda</td><td>Konta <strong>stanja</strong> (aktive, pasive) – bilanca, dijelom novčani tok i promjene kapitala · konta <strong>uspjeha</strong> (rashoda, prihoda) – račun dobiti i gubitka</td></tr><tr><td>Samostalnost</td><td><strong>Samostalna</strong> (cjelovita informacija, npr. blagajna – saldo mora odgovarati novcu u blagajni) · <strong>nesamostalna / korektivna</strong> (ispravak vrijednosti stalne imovine ili sitnog inventara, odstupanja od planskih cijena)</td></tr><tr><td>Složenost</td><td><strong>Sintetička</strong> (glavna knjiga, obvezna, ulaze u izvještaje) · <strong>analitička</strong> (pomoćne knjige, prema potrebama menadžmenta; zbroj analitike = saldo sintetike)</td></tr><tr><td>Položaj u bilanci</td><td><strong>Bilančna</strong> · <strong>izvanbilančna</strong> (tuđa roba, akreditivi, tiskani a neizdani vrijednosni papiri)</td></tr><tr><td>Oblik</td><td>Po foliu · po pagini · kombinirani · stupnjeviti · tablarni · T-konto</td></tr></table><div class=\"example-box\"><strong>Nesamostalni konto u bilanci:</strong> nabavna vrijednost računala i zgrade hotela 120.000, ispravak vrijednosti 1.200 → sadašnja (neotpisana) vrijednost = 120.000 − 1.200 = <strong>118.800</strong>. Po <strong>neto</strong> načelu u bilancu ide 118.800; po <strong>bruto</strong> načelu 120.000 i ispravak kao minus-stavka.</div><div class=\"warning-box\"><strong>Oblici konta – izvori se razilaze:</strong> gradivo nositelja kolegija navodi da je <strong>konto po foliu</strong> (dva lista – lijeva i desna strana) najstariji poznati oblik, stupnjeviti oblik korišten u financijskim institucijama, a tablarni za manje firme. Studentske bilješke („miks kolokvija”) tvrde da je najstariji <em>stepenasti</em> konto (evidencija štednih uloga). Uči prema gradivu kolegija.</div><p>Analitičke evidencije imaju tradicionalne nazive: <strong>materijalno knjigovodstvo</strong> (sirovine i materijal), <strong>pogonsko</strong> (proizvodnja), <strong>robno</strong> (gotovi proizvodi, roba) i <strong>saldakonti</strong> (kupci i dobavljači).</p>"
+    }
+  },
+  "bilancnePromjene": {
+    "name": "Bilančne promjene",
+    "icon": "fa-arrows-rotate",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Tko je sistematizirao bilančne promjene?",
+        "answer": "Njemački teoretičar Pape – sve poslovne promjene svrstao je u četiri skupine nazvane prema prirodnim silama.",
+        "explanation": "Centripetalna, centrifugalna, koncentrična, periferijska."
+      },
+      {
+        "question": "Što je CENTRIPETALNA promjena?",
+        "answer": "A+P+: povećava se jedna stavka aktive i jedna stavka pasive za isti iznos – zbroj bilance raste.",
+        "explanation": "Sila „prema središtu” – imovina ulazi izvana."
+      },
+      {
+        "question": "Primjer centripetalne promjene?",
+        "answer": "Dobavljač je isporučio materijal (310 zaliha D / 220 dobavljači P) ili je banka odobrila kredit na žiro račun.",
+        "explanation": "Nabava stroja ili namještaja na odgodu plaćanja."
+      },
+      {
+        "question": "Što je CENTRIFUGALNA promjena?",
+        "answer": "A−P−: smanjuje se jedna stavka aktive i jedna stavka pasive za isti iznos – zbroj bilance pada.",
+        "explanation": "Sila „od središta” – imovina izlazi van."
+      },
+      {
+        "question": "Primjer centrifugalne promjene?",
+        "answer": "Plaćena obveza dobavljaču sa žiro računa (220 D / 100 P) ili vraćen dio kredita banci.",
+        "explanation": "Smanjuju se i novac i obveza."
+      },
+      {
+        "question": "Što je KONCENTRIČNA promjena?",
+        "answer": "A+A−: jedan konto aktive raste, drugi pada za isti iznos – mijenja se samo struktura aktive, zbroj ostaje isti.",
+        "explanation": "Događa se samo unutar imovine."
+      },
+      {
+        "question": "Primjer koncentrične promjene?",
+        "answer": "Kupci su platili na žiro račun, iz blagajne je novac položen na žiro račun, naplaćen je primljeni ček.",
+        "explanation": "Jedan oblik imovine prelazi u drugi."
+      },
+      {
+        "question": "Što je PERIFERIJSKA promjena?",
+        "answer": "P+P−: jedan konto pasive raste, drugi pada za isti iznos – mijenja se samo struktura pasive, zbroj ostaje isti.",
+        "explanation": "Događa se samo unutar izvora."
+      },
+      {
+        "question": "Primjer periferijske promjene?",
+        "answer": "Dobavljaču plaćeno iz kratkoročnog kredita ili izdanim čekom; kratkoročni kredit pretvoren u dugoročni.",
+        "explanation": "Jedna obveza zamijenjena drugom."
+      },
+      {
+        "question": "Koje promjene mijenjaju zbroj bilance?",
+        "answer": "Samo centripetalna (povećava) i centrifugalna (smanjuje).",
+        "explanation": "Koncentrična i periferijska mijenjaju samo strukturu."
+      },
+      {
+        "question": "Kako prihodi i rashodi utječu na bilancu?",
+        "answer": "Preko kapitala: prihodi povećavaju kapital, rashodi ga smanjuju.",
+        "explanation": "Zato se promjene uspjeha tumače kao promjene pasive."
+      },
+      {
+        "question": "Centripetalna promjena uslijed PRIHODA?",
+        "answer": "Raste imovina (npr. kupci) i raste kapital kroz prihod – A+P+.",
+        "explanation": "Npr. obračunati prihodi za prodane usluge kupcima."
+      },
+      {
+        "question": "Centrifugalna promjena uslijed RASHODA?",
+        "answer": "Pada imovina (npr. zaliha materijala) i pada kapital kroz rashod – A−P−.",
+        "explanation": "Npr. utrošen materijal u proizvodnji."
+      },
+      {
+        "question": "Zašto nema koncentrične promjene uslijed prihoda i rashoda?",
+        "answer": "Jer prihodi i rashodi djeluju na kapital, a kapital nije u aktivi.",
+        "explanation": "Koncentrična se događa samo unutar aktive."
+      },
+      {
+        "question": "Periferijska promjena uslijed RASHODA – primjer?",
+        "answer": "Banka obračuna (poveća) kamatu: raste obveza prema banci, pada kapital kroz rashod – P+P−.",
+        "explanation": "Zbroj bilance ostaje isti."
+      },
+      {
+        "question": "Periferijska promjena uslijed PRIHODA – primjer?",
+        "answer": "Banka smanji kamatu ili otpiše dio duga: pada obveza, raste kapital kroz prihod – P+P−.",
+        "explanation": "Mijenja se samo struktura pasive."
+      },
+      {
+        "question": "Kako se bilježi manjak materijala za koji se tereti skladištar?",
+        "answer": "Zaliha materijala P 400 / potraživanja od zaposlenih D 400 – koncentrična promjena (A+A−).",
+        "explanation": "Ispitni primjer, PS materijala 8.000."
+      },
+      {
+        "question": "Kako se knjiži pretvaranje kratkoročnog kredita u dugoročni?",
+        "answer": "252 Kratkoročni kredit D / 952 Kredit kod banke P – periferijska promjena (P+P−).",
+        "explanation": "Mijenja se samo ročnost obveze."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "IZ BLAGAJNE JE NA ŽIRO RAČUN POLOŽENO 2.000. Utjecaj na bilancu:",
+        "options": [
+          "Povećava aktivu i pasivu za isti iznos",
+          "Smanjuje aktivu i pasivu za isti iznos",
+          "Povećava jedan, a smanjuje drugi konto pasive",
+          "Povećava jedan, a smanjuje drugi konto aktive"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "NABAVLJENO JE NAMJEŠTAJA U VRIJEDNOSTI 40.000 (od dobavljača). Utjecaj na bilancu:",
+        "options": [
+          "Povećava aktivu i pasivu za isti iznos",
+          "Smanjuje aktivu i pasivu za isti iznos",
+          "Povećava jedan, a smanjuje drugi konto aktive",
+          "Povećava jedan, a smanjuje drugi konto pasive"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "DOBAVLJAČU JE 10.000 PLAĆENO IZ KRATKOROČNOG KREDITA. Utjecaj na bilancu:",
+        "options": [
+          "Povećava aktivu i pasivu za isti iznos",
+          "Povećava jedan, a smanjuje drugi konto pasive",
+          "Smanjuje aktivu i pasivu za isti iznos",
+          "Povećava iznos aktive i smanjuje iznos pasive"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "DOBAVLJAČU JE 10.000 PLAĆENO (IZDANIM) ČEKOM. Utjecaj na bilancu:",
+        "options": [
+          "Povećava jedan, a smanjuje drugi konto aktive",
+          "Smanjuje aktivu i pasivu za isti iznos",
+          "Povećava jedan, a smanjuje drugi konto pasive",
+          "Povećava aktivu i pasivu za isti iznos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "BANKA NAM JE ODOBRILA KRATKOROČNI KREDIT 10.000 (na žiro račun). Radi se o:",
+        "options": [
+          "Koncentričnoj promjeni – žiro račun D, blagajna P",
+          "Periferijskoj promjeni – kredit D, kapital P",
+          "Centrifugalnoj promjeni – žiro račun P, kratkoročni kredit D",
+          "Centripetalnoj promjeni – žiro račun D, kratkoročni kredit P"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "KUPCI SU NAM PODMIRILI POTRAŽIVANJE 6.000. Radi se o:",
+        "options": [
+          "Koncentričnoj promjeni (A+A−)",
+          "Centripetalnoj promjeni (A+P+)",
+          "Centrifugalnoj promjeni (A−P−)",
+          "Periferijskoj promjeni (P+P−)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "PLAĆENA JE DOBAVLJAČIMA FAKTURA ZA OPREMU 20.000. Radi se o:",
+        "options": [
+          "Centripetalnoj promjeni – oprema D, dobavljači P",
+          "Centrifugalnoj promjeni – dobavljači D, žiro račun P",
+          "Koncentričnoj promjeni – oprema D, žiro račun P",
+          "Periferijskoj promjeni – dobavljači D, kredit P"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "VRAĆEN JE DIO KREDITA BANCI 4.000. Knjiženje i vrsta promjene:",
+        "options": [
+          "Kredit kod banke P 4.000, žiro račun D 4.000 – centripetalna",
+          "Kredit kod banke P 4.000, žiro račun P 4.000 – centrifugalna",
+          "Kredit kod banke D 4.000, žiro račun P 4.000 – centrifugalna",
+          "Kredit kod banke D 4.000, kapital P 4.000 – periferijska"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako je vraćen dio kratkoročnog kredita banci 4.000, na POTRAŽNU stranu knjiži se konto:",
+        "options": [
+          "Kratkoročni kredit",
+          "Kapital",
+          "Dobavljači",
+          "Žiro račun"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "ČEK (PS 5.000) JE NAPLAĆEN. Radi se o:",
+        "options": [
+          "Koncentričnoj promjeni – ček P, žiro račun D",
+          "Centrifugalnoj promjeni – ček P, žiro račun P",
+          "Periferijskoj promjeni – ček D, kredit P",
+          "Centripetalnoj promjeni – ček D, žiro račun D"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Na zalihi materijala utvrđen je manjak 400 za koji se tereti skladištar. Radi se o:",
+        "options": [
+          "Centrifugalnoj promjeni – materijal P, kapital D",
+          "Koncentričnoj promjeni – materijal P, potraživanja od zaposlenih D",
+          "Periferijskoj promjeni – materijal D, obveze P",
+          "Centripetalnoj promjeni – materijal D, potraživanja od zaposlenih P"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "KRATKOROČNI KREDIT JE SPORAZUMOM S BANKOM PRETVOREN U DUGOROČNI. Radi se o:",
+        "options": [
+          "Centripetalnoj promjeni",
+          "Centrifugalnoj promjeni",
+          "Periferijskoj promjeni",
+          "Koncentričnoj promjeni"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Iz blagajne je djelatniku isplaćena akontacija za službeni put 2.000. Radi se o:",
+        "options": [
+          "Centrifugalnoj promjeni – blagajna P, kapital D",
+          "Centripetalnoj promjeni – blagajna D, obveze P",
+          "Periferijskoj promjeni – obveze prema djelatnicima D, blagajna P",
+          "Koncentričnoj promjeni – potraživanja od djelatnika D, blagajna P"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Koje dvije bilančne promjene mijenjaju ukupan zbroj bilance?",
+        "options": [
+          "Centripetalna i centrifugalna",
+          "Koncentrična i periferijska",
+          "Centripetalna i koncentrična",
+          "Centrifugalna i periferijska"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koja se bilančna promjena NE može dogoditi uslijed prihoda i rashoda?",
+        "options": [
+          "Centripetalna",
+          "Koncentrična",
+          "Centrifugalna",
+          "Periferijska"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Banka je povećala kamatu na naš kredit. Radi se o:",
+        "options": [
+          "Centripetalnoj promjeni uslijed prihoda",
+          "Koncentričnoj promjeni uslijed rashoda",
+          "Periferijskoj promjeni uslijed rashoda",
+          "Centrifugalnoj promjeni uslijed prihoda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Utrošen je materijal u procesu proizvodnje. Radi se o:",
+        "options": [
+          "Centripetalnoj promjeni uslijed prihoda",
+          "Koncentričnoj promjeni",
+          "Periferijskoj promjeni uslijed prihoda",
+          "Centrifugalnoj promjeni uslijed rashoda"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Kupcima su obračunati prihodi za pružene usluge. Radi se o:",
+        "options": [
+          "Centripetalnoj promjeni uslijed prihoda",
+          "Centrifugalnoj promjeni uslijed rashoda",
+          "Periferijskoj promjeni uslijed rashoda",
+          "Koncentričnoj promjeni uslijed prihoda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "KUPCIMA JE PRODANA TRGOVAČKA ROBA 1.200 (pitanje iz kolokvija, bez razdvajanja na prihod i rashod). Prema ispitnom ključu radi se o:",
+        "options": [
+          "Periferijskoj promjeni",
+          "Koncentričnoj promjeni",
+          "Centrifugalnoj promjeni",
+          "Permutacijskoj promjeni"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Promjena A+P+ zove se _______ promjena.",
+        "answer": "centripetalna",
+        "hint": "Zbroj bilance raste."
+      },
+      {
+        "sentence": "Promjena A−P− zove se _______ promjena.",
+        "answer": "centrifugalna",
+        "hint": "Zbroj bilance pada."
+      },
+      {
+        "sentence": "Promjena A+A− zove se _______ promjena.",
+        "answer": "koncentrična",
+        "hint": "Samo unutar aktive."
+      },
+      {
+        "sentence": "Promjena P+P− zove se _______ promjena.",
+        "answer": "periferijska",
+        "hint": "Samo unutar pasive."
+      },
+      {
+        "sentence": "Prihodi i rashodi utječu na bilancu preko konta _______.",
+        "answer": "kapitala",
+        "hint": "Prihod ga povećava, rashod smanjuje."
+      },
+      {
+        "sentence": "Bilančne promjene sistematizirao je njemački teoretičar _______.",
+        "answer": "Pape",
+        "hint": "Nazivi po prirodnim silama."
+      }
+    ],
+    "learn": {
+      "title": "Četiri bilančne promjene (i promjene uslijed prihoda i rashoda)",
+      "content": "<h3>Četiri temeljne bilančne promjene</h3><p>Njemački teoretičar <strong>Pape</strong> svrstao je sve poslovne promjene u četiri skupine prema njihovom utjecaju na bilancu, s nazivima prema prirodnim silama. Razlikuju se promjene koje povezuju poslovni sustav s vanjskim svijetom (mijenjaju zbroj bilance) i promjene samo unutar sustava ili samo u izvorima (mijenjaju strukturu).</p><table><tr><th>Promjena</th><th>Oznaka</th><th>Što se događa</th><th>Zbroj bilance</th><th>Primjer</th></tr><tr><td><strong>Centripetalna</strong> („prema središtu”)</td><td>A+ P+</td><td>Imovina ulazi izvana, a istovremeno raste obveza ili kapital</td><td>raste</td><td>Dobavljač isporučio materijal</td></tr><tr><td><strong>Centrifugalna</strong> („od središta”)</td><td>A− P−</td><td>Imovina izlazi, a smanjuje se obveza ili kapital</td><td>pada</td><td>Plaćena obveza dobavljaču</td></tr><tr><td><strong>Koncentrična</strong></td><td>A+ A−</td><td>Jedan oblik imovine prelazi u drugi</td><td>isti</td><td>Naplaćeno potraživanje od kupaca</td></tr><tr><td><strong>Periferijska</strong></td><td>P+ P−</td><td>Jedan izvor zamjenjuje drugi</td><td>isti</td><td>Obveza dobavljaču plaćena iz kredita</td></tr></table><div class=\"tip-box\"><strong>Postupak rješavanja:</strong> (1) koja se dva konta mijenjaju? (2) je li svaki konto aktive ili pasive? (3) raste li ili pada? (4) aktiva raste → duguje, pada → potražuje; pasiva raste → potražuje, pada → duguje; (5) po kombinaciji A/P i +/− odredi vrstu promjene.</div><h3>Riješeni ispitni zadaci</h3><table><tr><th>Promjena</th><th>Duguje</th><th>Potražuje</th><th>Vrsta</th></tr><tr><td>Nabavljeno je materijala 12.000</td><td>310 Zaliha materijala 12.000</td><td>220 Dobavljači 12.000</td><td>A+P+ centripetalna</td></tr><tr><td>Nabavljen je stroj 20.000</td><td>021 Stroj (oprema) 20.000</td><td>220 Dobavljači 20.000</td><td>A+P+ centripetalna</td></tr><tr><td>Banka je odobrila kratkoročni kredit 10.000</td><td>100 Žiro račun 10.000</td><td>252 Kratkoročni kredit 10.000</td><td>A+P+ centripetalna</td></tr><tr><td>Kupci (PS 4.500) su podmirili 3.000</td><td>100 Žiro račun 3.000</td><td>120 Kupci 3.000</td><td>A+A− koncentrična</td></tr><tr><td>Iz blagajne na žiro račun položeno 2.000</td><td>100 Žiro račun 2.000</td><td>102 Blagajna 2.000</td><td>A+A− koncentrična</td></tr><tr><td>Ček (PS 5.000) je naplaćen</td><td>100 Žiro račun 5.000</td><td>Primljeni ček 5.000</td><td>A+A− koncentrična</td></tr><tr><td>Djelatniku iz blagajne isplaćena akontacija za put 2.000</td><td>Potraživanja od djelatnika 2.000</td><td>102 Blagajna 2.000</td><td>A+A− koncentrična</td></tr><tr><td>Manjak materijala (PS 8.000) 400, tereti se skladištar</td><td>Potraživanja od zaposlenih 400</td><td>310 Zaliha materijala 400</td><td>A+A− koncentrična</td></tr><tr><td>Plaćena faktura dobavljaču za opremu 20.000</td><td>220 Dobavljači 20.000</td><td>100 Žiro račun 20.000</td><td>A−P− centrifugalna</td></tr><tr><td>Vraćen dio kredita banci (PS 50.000) 4.000</td><td>952 Kredit kod banke 4.000</td><td>100 Žiro račun 4.000</td><td>A−P− centrifugalna</td></tr><tr><td>Vraćen dio kratkoročnog kredita 2.000</td><td>252 Kratkoročni kredit 2.000</td><td>100 Žiro račun 2.000</td><td>A−P− centrifugalna</td></tr><tr><td>Dobavljaču (PS 10.000) plaćeno iz kratkoročnog kredita 10.000</td><td>220 Dobavljači 10.000</td><td>252 Kratkoročni kredit 10.000</td><td>P+P− periferijska</td></tr><tr><td>Dobavljaču plaćeno izdanim čekom 10.000</td><td>220 Dobavljači 10.000</td><td>Izdani ček 10.000</td><td>P+P− periferijska</td></tr><tr><td>Kratkoročni kredit (PS 20.000) pretvoren u dugoročni</td><td>252 Kratkoročni kredit 20.000</td><td>952 Kredit kod banke 20.000</td><td>P+P− periferijska</td></tr></table><div class=\"warning-box\"><strong>Ispravak izvora:</strong> u jednom studentskom rješenju za „banci je vraćen dio kredita 4.000” oba konta stoje na potražnoj strani. Točno je: <strong>952 Kredit kod banke D 4.000</strong> (smanjenje obveze) i <strong>100 Žiro račun P 4.000</strong> (smanjenje imovine). Svaka promjena ima jednu dugovnu i jednu potražnu stranu.</div><h3>Promjene uslijed prihoda i rashoda</h3><p>Na bilancu utječu i promjene koje stvaraju <strong>prihode</strong> i <strong>rashode</strong> – preko <strong>kapitala</strong>: prihodi ga povećavaju, rashodi smanjuju. Zato se prihod tumači kao „P+”, a rashod kao „P−”.</p><table><tr><th>Promjena</th><th>Oznaka</th><th>Primjer</th></tr><tr><td>Centripetalna uslijed <strong>prihoda</strong></td><td>A+ P+ (kapital kroz prihod)</td><td>Obračunati prihodi za prodane proizvode ili usluge kupcima (raste potraživanje od kupaca)</td></tr><tr><td>Centrifugalna uslijed <strong>rashoda</strong></td><td>A− P− (kapital kroz rashod)</td><td>Utrošen materijal u proizvodnji (pada zaliha materijala)</td></tr><tr><td>Koncentrična</td><td>—</td><td><strong>Ne postoji</strong> uslijed prihoda i rashoda: oni djeluju na kapital, a kapitala nema u aktivi</td></tr><tr><td>Periferijska uslijed <strong>rashoda</strong></td><td>P+ P−</td><td>Banka povećala (obračunala) kamatu: raste obveza prema banci, pada kapital</td></tr><tr><td>Periferijska uslijed <strong>prihoda</strong></td><td>P− P+</td><td>Banka smanjila kamatu ili otpisala dio duga: pada obveza, raste kapital</td></tr></table><p>Knjiženja s brojevima konta za ove promjene (razredi 4 i 7) obrađuju se u 2. kolokviju.</p><div class=\"warning-box\"><strong>Sporno pitanje iz ispita:</strong> „Kupcima je prodano gotovih proizvoda 800” i „Kupcima je prodana trgovačka roba 1.200” – u ispitnom ključu točan je odgovor <strong>koncentrična</strong> promjena: roba (aktiva) prelazi u potraživanje od kupaca (aktiva). To vrijedi ako se prodaja promatra samo kao zamjena jednog oblika imovine drugim po istoj vrijednosti. Kad se prodaja knjiži preko prihoda (prodajna vrijednost) i rashoda (vrijednost prodane robe), riječ je o <strong>centripetalnoj promjeni uslijed prihoda</strong> i <strong>centrifugalnoj promjeni uslijed rashoda</strong> (gradivo 1. kolokvija, točka 5). Na kolokviju slijedi ključ.</div>"
+    }
+  },
+  "kontniPlan": {
+    "name": "Kontni plan",
+    "icon": "fa-sitemap",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "Što je KONTNI PLAN?",
+        "answer": "Sustavni popis naziva i brojeva (šifri) konta – tehnički instrument za jednoobrazno evidentiranje po načelima dvojnog knjigovodstva.",
+        "explanation": "Osnovni tehnički instrument računovodstvenog evidentiranja."
+      },
+      {
+        "question": "Propisuje li Zakon o računovodstvu kontni plan?",
+        "answer": "Ne. Kontni plan u RH samostalno razvijaju računovodstvene udruge i poduzetnici, tako da osigura pozicije temeljnih financijskih izvještaja.",
+        "explanation": "Prije 1993. bio je propisan jedinstveni kontni plan."
+      },
+      {
+        "question": "Na kojem se sustavu temelji kontni plan?",
+        "answer": "Na dekadnom sustavu (Schmalenbachov kontni plan): 10 razreda, svaki s najviše 10 skupina, svaka s najviše 10 sintetičkih konta.",
+        "explanation": "Kontinentalna Europa."
+      },
+      {
+        "question": "Što znači broj konta od jedne, dvije i tri znamenke?",
+        "answer": "Jedna znamenka = razred, dvije = skupina (grupa) konta, tri = sintetički konto glavne knjige.",
+        "explanation": "Npr. 2 → 22 → 220 Dobavljači."
+      },
+      {
+        "question": "Što su analitička (subsintetička) konta u kontnom planu?",
+        "answer": "Konta koja preuzimaju broj sintetičkog konta i dodaju znamenke po potrebi – broj im nije ograničen.",
+        "explanation": "Npr. 3100, 3101… za pojedine namirnice."
+      },
+      {
+        "question": "Koji razredi su konta AKTIVE?",
+        "answer": "Razredi 0, 1, 3 i 6.",
+        "explanation": "0 dugotrajna imovina, 1 novac i potraživanja, 3 zalihe, 6 proizvodi i roba."
+      },
+      {
+        "question": "Koji razredi su konta PASIVE?",
+        "answer": "Razredi 2 i 9.",
+        "explanation": "2 kratkoročne obveze; 9 kapital, rezerve i dugoročne obveze."
+      },
+      {
+        "question": "Što sadrži RAZRED 0?",
+        "answer": "Dugotrajnu imovinu (nematerijalnu, materijalnu, financijsku, potraživanja) i ispravak njezine vrijednosti.",
+        "explanation": "Npr. 021 oprema, 029 ispravak vrijednosti, 041 dani dugoročni kredit."
+      },
+      {
+        "question": "Što sadrži RAZRED 1?",
+        "answer": "Novac, kratkoročna potraživanja, kratkotrajnu financijsku imovinu i aktivna vremenska razgraničenja.",
+        "explanation": "Npr. 100 žiro račun, 102 blagajna, 120 kupci, 180 potraživanja za PDV."
+      },
+      {
+        "question": "Što sadrži RAZRED 2?",
+        "answer": "Kratkoročne obveze i pasivna vremenska razgraničenja.",
+        "explanation": "Npr. 220 dobavljači, 252 kratkoročni kredit, 280 obveze za PDV."
+      },
+      {
+        "question": "Što sadrži RAZRED 3?",
+        "answer": "Zalihe sirovina i materijala, rezervnih dijelova i sitnog inventara (i predujmove za zalihe).",
+        "explanation": "Npr. 310 zaliha materijala / namirnica."
+      },
+      {
+        "question": "Što sadrži RAZRED 4?",
+        "answer": "Troškove po prirodnim vrstama (pojavnom obliku): materijal, usluge, amortizaciju, plaće, naknade zaposlenima.",
+        "explanation": "Npr. 400 materijal, 431 amortizacija, 440 dnevnice."
+      },
+      {
+        "question": "Što sadrži RAZRED 5?",
+        "answer": "Raspored troškova na mjesta i nositelje te razdvajanje na fiksne i varijabilne – interni obračun.",
+        "explanation": "Podaci za interne izvještaje menadžmentu."
+      },
+      {
+        "question": "Što sadrži RAZRED 6?",
+        "answer": "Proizvodnju, gotove proizvode, trgovačku robu i predujmove za robu.",
+        "explanation": "Konta aktive."
+      },
+      {
+        "question": "Što sadrži RAZRED 7?",
+        "answer": "Rashode (skupine 70–74) i prihode (skupine 75–78) procesa realizacije; skupina 79 služi za utvrđivanje rezultata.",
+        "explanation": "Npr. 724 rashod od kamata, 751 prihod od prodaje."
+      },
+      {
+        "question": "Što sadrže RAZREDI 8 i 9?",
+        "answer": "Razred 8 – poslovni rezultat i njegova raspodjela; razred 9 – kapital, rezerve, dugoročne obveze i izvanbilančna konta.",
+        "explanation": "Npr. 952 kredit kod banke."
+      },
+      {
+        "question": "Kako se kontni plan povezuje s procesom reprodukcije?",
+        "answer": "Nabava – razredi 0, 1, 2, 3, 6; proizvodnja (troškovi) – razredi 4 i 5; realizacija – razred 7; raspodjela – razredi 8 i 9.",
+        "explanation": "Funkcionalno načelo."
+      },
+      {
+        "question": "Funkcionalno vs bilančno načelo kontnog plana?",
+        "answer": "Funkcionalno: razredi prate faze reprodukcije i povezuju financijsko računovodstvo i računovodstvo troškova. Bilančno: tijesna veza s bilancom, troškovi u zasebnom razredu.",
+        "explanation": "Postoji i kombinirano načelo."
+      },
+      {
+        "question": "Koje su dvije faze izrade kontnog plana?",
+        "answer": "Definiranje formalnog okvira (dekadni sustav) i utvrđivanje materijalnog sadržaja (što ulazi u razrede, skupine i konta).",
+        "explanation": "Sadržaj po funkcionalnom ili bilančnom načelu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Konta u razredu 3 mogu se povezati s pojmovima:",
+        "options": [
+          "Kratkoročne obveze prema dobavljačima",
+          "Troškovi po prirodnim vrstama i raspored troškova",
+          "Zalihe materijala, namirnica i sitnog inventara",
+          "Kapital i dugoročne obveze"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Konta AKTIVE nalaze se u razredima:",
+        "options": [
+          "2 i 9",
+          "4 i 5",
+          "7 i 8",
+          "0, 1, 3 i 6"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Konta PASIVE nalaze se u razredima:",
+        "options": [
+          "2 i 9",
+          "0 i 1",
+          "3 i 6",
+          "7 i 8"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Troškovi po prirodnim vrstama (materijal, usluge, amortizacija, plaće) knjiže se u razredu:",
+        "options": [
+          "7",
+          "4",
+          "2",
+          "9"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rashodi i prihodi procesa realizacije knjiže se u razredu:",
+        "options": [
+          "4",
+          "5",
+          "7",
+          "8"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Dugoročni kredit kod banke (konto 952) pripada razredu:",
+        "options": [
+          "2",
+          "0",
+          "1",
+          "9"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Konto 220 Dobavljači pripada razredu:",
+        "options": [
+          "2 – kratkoročne obveze",
+          "0 – dugotrajna imovina",
+          "1 – novac i potraživanja",
+          "9 – dugoročne obveze"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Konto 120 Kupci pripada razredu:",
+        "options": [
+          "2 – kratkoročne obveze prema dobavljačima",
+          "1 – novac i kratkoročna potraživanja",
+          "7 – prihodi",
+          "6 – roba"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Troškovi se raspoređuju na mjesta i nositelje u razredu:",
+        "options": [
+          "4",
+          "7",
+          "5",
+          "8"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "U razredu 7 rashodi su u skupinama:",
+        "options": [
+          "75–78",
+          "79",
+          "40–49",
+          "70–74"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Kontni plan u kontinentalnoj Europi tradicionalno se temelji na:",
+        "options": [
+          "Dekadnom (Schmalenbachovom) sustavu",
+          "Abecednom popisu konta",
+          "Američkom US GAAP popisu",
+          "Kronološkom redu knjiženja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Troznamenkasti broj konta (npr. 310) označava:",
+        "options": [
+          "Razred",
+          "Sintetički konto glavne knjige",
+          "Skupinu konta",
+          "Analitički konto pomoćne knjige"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Proces NABAVE u kontnom planu veže se prvenstveno uz razrede:",
+        "options": [
+          "4 i 5",
+          "7 i 8",
+          "0, 1, 2, 3 i 6",
+          "samo 9"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kontni plan u RH:",
+        "options": [
+          "Propisuje ga Zakon o računovodstvu",
+          "Propisuje ga porezna uprava za svako poduzeće",
+          "Ne postoji u hotelijerstvu",
+          "Razvijaju računovodstvene udruge i poduzetnici"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Dekadni kontni plan ima _______ razreda (upiši brojkom).",
+        "answer": "10",
+        "hint": "Od razreda 0 do razreda 9."
+      },
+      {
+        "sentence": "Zalihe materijala i sitnog inventara knjiže se u razredu _______.",
+        "answer": "3",
+        "hint": "Upiši brojkom; konta aktive."
+      },
+      {
+        "sentence": "Troškovi po prirodnim vrstama knjiže se u razredu _______.",
+        "answer": "4",
+        "hint": "Upiši brojkom; materijal, usluge, amortizacija, plaće."
+      },
+      {
+        "sentence": "Prihodi i rashodi knjiže se u razredu _______.",
+        "answer": "7",
+        "hint": "Upiši brojkom; skupine 70–78."
+      },
+      {
+        "sentence": "Konto dobavljača ima broj _______.",
+        "answer": "220",
+        "hint": "Troznamenkasti broj; razred 2."
+      },
+      {
+        "sentence": "Konto žiro računa ima broj _______.",
+        "answer": "100",
+        "hint": "Troznamenkasti broj; razred 1."
+      },
+      {
+        "sentence": "Dekadni kontni plan poznat je i kao _______ kontni plan.",
+        "answer": "Schmalenbachov",
+        "hint": "Počinje sa Sch…; prema njemačkom autoru."
+      }
+    ],
+    "learn": {
+      "title": "Kontni plan – razredi i konta koja se koriste u zadacima",
+      "content": "<h3>Pojam i dekadni sustav</h3><p><strong>Kontni plan</strong> je sustavni popis naziva i brojeva konta – osnovni <strong>tehnički instrument</strong> računovodstvenog evidentiranja na temelju dvojnog knjigovodstva. Omogućuje jednoobrazno vođenje knjiga i usporedive financijske izvještaje. <strong>Zakon o računovodstvu ga ne propisuje</strong>; u RH ga samostalno razvijaju računovodstvene udruge i poduzetnici (mali i srednji u skladu s HSFI, veliki s MSFI).</p><p>Postoje dva koncepta: <strong>zakonsko propisivanje</strong> kontnog plana (u RH prije 1993.) i njegov <strong>slobodan razvoj</strong> (danas).</p><p>U kontinentalnoj Europi tradicionalno se primjenjuje <strong>dekadni</strong> kontni plan (<strong>Schmalenbachov</strong>) s prevladavajućim funkcionalnim načelom:</p><table><tr><th>Razina</th><th>Znamenke</th><th>Primjer</th></tr><tr><td>Razred (klasa)</td><td>1 (0–9)</td><td>2 – kratkoročne obveze</td></tr><tr><td>Skupina (grupa) konta</td><td>2</td><td>22 – obveze prema dobavljačima</td></tr><tr><td>Sintetički (osnovni) konto – obvezan u glavnoj knjizi</td><td>3</td><td>220 – Dobavljači</td></tr><tr><td>Analitički (subsintetički) konto</td><td>4 i više, neograničeno</td><td>2200, 2201… – pojedini dobavljači</td></tr></table><p>Izrada kontnog plana ima dvije faze: <strong>formalni okvir</strong> (dekadni sustav) i <strong>materijalni sadržaj</strong> (što ulazi u razrede), prema <strong>funkcionalnom</strong> načelu (razredi prate faze reprodukcije i povezuju financijsko računovodstvo i računovodstvo troškova), <strong>bilančnom</strong> načelu (tijesna veza s bilancom, troškovi u zasebnom razredu) ili kombiniranom.</p><h3>Razredi kontnog plana</h3><table><tr><th>Razred</th><th>Sadržaj</th><th>Vrsta konta</th></tr><tr><td><strong>0</strong></td><td>Dugotrajna imovina (i ispravak vrijednosti)</td><td>stanja – aktive</td></tr><tr><td><strong>1</strong></td><td>Novac, kratkoročna potraživanja, kratkotrajna financijska imovina, aktivna vremenska razgraničenja</td><td>stanja – aktive</td></tr><tr><td><strong>2</strong></td><td>Kratkoročne obveze, pasivna vremenska razgraničenja</td><td>stanja – pasive</td></tr><tr><td><strong>3</strong></td><td>Zalihe sirovina, materijala, rezervnih dijelova, sitnog inventara</td><td>stanja – aktive</td></tr><tr><td><strong>4</strong></td><td>Troškovi po prirodnim vrstama (pojavnom obliku)</td><td>troškovi</td></tr><tr><td><strong>5</strong></td><td>Raspored troškova na mjesta i nositelje, fiksni/varijabilni – interni obračun</td><td>troškovi</td></tr><tr><td><strong>6</strong></td><td>Proizvodnja, gotovi proizvodi, trgovačka roba</td><td>stanja – aktive</td></tr><tr><td><strong>7</strong></td><td>Rashodi (70–74) i prihodi (75–78); skupina 79 – utvrđivanje rezultata</td><td>uspjeha</td></tr><tr><td><strong>8</strong></td><td>Poslovni rezultat i njegova raspodjela</td><td>rezultat</td></tr><tr><td><strong>9</strong></td><td>Kapital, rezerve, dugoročne obveze, izvanbilančna konta</td><td>stanja – pasive</td></tr></table><div class=\"tip-box\"><strong>Pamćenje:</strong> aktiva = <strong>0, 1, 3, 6</strong>; pasiva = <strong>2, 9</strong>; troškovi = <strong>4, 5</strong>; rashodi i prihodi = <strong>7</strong>; rezultat = <strong>8</strong>.</div><h3>Kontni plan i proces reprodukcije</h3><ol><li><strong>Nabava</strong> – stalna imovina (0), financijska imovina (1), obveze prema dobavljačima, zaposlenima, državi (2), materijal i sitni inventar (3), trgovačka roba (6).</li><li><strong>Proizvodnja</strong> – trošenje resursa iz razreda 0–3 bilježi se kao troškovi u razredu 4 (po prirodnim vrstama), a zatim se u razredu 5 raspoređuju na mjesta i nositelje troškova.</li><li><strong>Realizacija (prodaja)</strong> – razred 7: kad se troškovi tržišno priznaju (sadržani u prodanim proizvodima i uslugama), postaju rashodi; prihodi nastaju prodajom. Skupina 79 utvrđuje rezultat: prihodi (75–78) − rashodi (70–74) = dobit ili gubitak.</li><li><strong>Raspodjela</strong> – razred 8: bruto dobit se raspoređuje (porez, dioničari, menadžment, zaposlenici), a ostatak čiste dobiti povećava kapital u razredu 9.</li></ol><h3>Konta koja se koriste u ispitnim zadacima (pojednostavljeni kontni plan kolegija)</h3><table><tr><th>Broj</th><th>Naziv</th><th>Vrsta</th></tr><tr><td>021</td><td>Postrojenja i oprema (stroj)</td><td>aktiva – dugotrajna materijalna</td></tr><tr><td>029</td><td>Ispravak vrijednosti (zgrade, opreme)</td><td>korektivni konto aktive</td></tr><tr><td>041</td><td>Dani dugoročni kredit</td><td>aktiva – dugotrajna financijska</td></tr><tr><td>100</td><td>Žiro račun</td><td>aktiva – novac</td></tr><tr><td>102</td><td>Blagajna</td><td>aktiva – novac</td></tr><tr><td>120</td><td>Kupci (potraživanja od kupaca)</td><td>aktiva – potraživanja</td></tr><tr><td>180</td><td>Potraživanja za PDV (pretporez)</td><td>aktiva – potraživanja</td></tr><tr><td>220</td><td>Dobavljači</td><td>pasiva – kratkoročna obveza</td></tr><tr><td>252</td><td>Kratkoročni kredit</td><td>pasiva – kratkoročna obveza</td></tr><tr><td>280</td><td>Obveze za PDV</td><td>pasiva – kratkoročna obveza</td></tr><tr><td>310</td><td>Zaliha materijala / namirnica</td><td>aktiva – zalihe</td></tr><tr><td>400</td><td>Trošak materijala</td><td>trošak</td></tr><tr><td>411 · 418 · 422</td><td>Trošak poštarine · komunalne usluge · odvjetničke usluge</td><td>troškovi usluga</td></tr><tr><td>431</td><td>Trošak amortizacije</td><td>trošak</td></tr><tr><td>440</td><td>Dnevnice (naknade troškova zaposlenima)</td><td>trošak</td></tr><tr><td>724</td><td>Rashod od kamata</td><td>financijski rashod</td></tr><tr><td>730</td><td>Izvanredni rashodi</td><td>izvanredni rashod</td></tr><tr><td>751</td><td>Prihod od prodaje proizvoda i usluga</td><td>poslovni prihod</td></tr><tr><td>757</td><td>Prihod od najma (najamnine)</td><td>poslovni prihod</td></tr><tr><td>773</td><td>Prihod od kamata</td><td>financijski prihod</td></tr><tr><td>782 · 783</td><td>Prihod od otpisa obveza · prihod od viškova</td><td>izvanredni prihodi</td></tr><tr><td>952</td><td>Kredit kod banke (dugoročne obveze za kredit)</td><td>pasiva – dugoročna obveza</td></tr></table><p>Ostala konta u zadacima dovoljno je navesti nazivom (npr. <em>Zgrade</em>, <em>Kapital</em>, <em>Potraživanja od zaposlenih</em>). Pri knjiženju u kolokviju obvezno se navodi <strong>broj i naziv konta, strana (D/P) i iznos</strong>.</p>"
+    }
+  }
+}

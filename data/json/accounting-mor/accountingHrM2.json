@@ -1,0 +1,2852 @@
+{
+  "dinamickeKategorije": {
+    "name": "Troškovi, rashodi, prihodi i učinci",
+    "icon": "fa-coins",
+    "color": "#f97316",
+    "flashcards": [
+      {
+        "question": "Koje su DINAMIČKI definirane računovodstvene kategorije?",
+        "answer": "Utrošci, troškovi, rashodi, učinci, prihodi te primici i izdaci – prate tijek poslovanja kroz razdoblje.",
+        "explanation": "Za razliku od statičkih (imovina, kapital, obveze)."
+      },
+      {
+        "question": "Što su UTROŠCI?",
+        "answer": "Ulaganje resursa u proces reprodukcije izraženo naturalno (npr. utrošeno 2 kg mesa za obroke).",
+        "explanation": "Obuhvaćaju se u analitičkim evidencijama (skladišna evidencija)."
+      },
+      {
+        "question": "Što su TROŠKOVI?",
+        "answer": "Vrijednosno izraženi utrošci koji nastaju u procesu proizvodnje radi stvaranja učinka (npr. 2 kg mesa po 40 = trošak 80).",
+        "explanation": "Trošak = input u proces proizvodnje."
+      },
+      {
+        "question": "Što su UČINCI?",
+        "answer": "Output procesa proizvodnje – proizvodi ili usluge (obroci, kolači, noćenja, wellness usluge), izraženi količinski i vrijednosno.",
+        "explanation": "Naziv vrijedi od proizvodnje do prodaje."
+      },
+      {
+        "question": "Što je CIJENA KOŠTANJA?",
+        "answer": "Trošak po jednom učinku: ukupni trošak podijeljen s brojem učinaka.",
+        "explanation": "CK = ukupni trošak / broj učinaka."
+      },
+      {
+        "question": "Što su RASHODI?",
+        "answer": "Smanjenje ekonomskih koristi razdoblja; poslovni rashodi su tržišno priznati troškovi – trošak sadržan u prodanim učincima.",
+        "explanation": "Rashod = cijena koštanja × prodana količina."
+      },
+      {
+        "question": "Što su PRIHODI?",
+        "answer": "Povećanje ekonomskih koristi razdoblja (priljev ili povećanje imovine, smanjenje obveza) koje povećava kapital; poslovni prihodi nastaju prodajom učinaka.",
+        "explanation": "Prihod = prodana količina × prodajna cijena."
+      },
+      {
+        "question": "Kada su rashodi JEDNAKI troškovima?",
+        "answer": "Kad su svi proizvedeni proizvodi ili pružene usluge prodani (tržišno valorizirani).",
+        "explanation": "Npr. prodano je svih 20 obroka."
+      },
+      {
+        "question": "Kada su rashodi VEĆI od troškova?",
+        "answer": "Kad postoje izvanredni rashodi koji nisu nastali radi proizvodnje (donacija, neosigurana krađa ili šteta) ili se prodaju i zalihe iz prethodnog razdoblja.",
+        "explanation": "Rashod bez pripadajućeg troška razdoblja."
+      },
+      {
+        "question": "Kada su rashodi MANJI od troškova?",
+        "answer": "Kad dio proizvedenih učinaka nije prodan – njihov trošak odlaže se na zalihe.",
+        "explanation": "Npr. od 20 obroka prodano 15."
+      },
+      {
+        "question": "Kada su prihodi MANJI od učinaka?",
+        "answer": "Kad se dio proizvedenih proizvoda ili usluga ne proda.",
+        "explanation": "Neprodano ide na zalihe."
+      },
+      {
+        "question": "Kada su prihodi VEĆI od učinaka?",
+        "answer": "Kad postoje izvanredni prihodi (inventurni višak, donacija, EU potpora) ili se prodaju i zalihe iz prethodnog razdoblja.",
+        "explanation": "Prihod bez učinka tog razdoblja."
+      },
+      {
+        "question": "Što su PRIMICI, a što IZDACI?",
+        "answer": "Primici su ulasci novca u poslovni sustav; izdaci su izlasci (odljevi) novca.",
+        "explanation": "Prikazuju se u izvještaju o novčanom toku."
+      },
+      {
+        "question": "Prihod ili primitak – u čemu je razlika?",
+        "answer": "Prihod nastaje prodajom (i kad nije naplaćeno); primitak nastaje tek kad novac stvarno uđe.",
+        "explanation": "Prodaja na odgodu: prihod da, primitak ne."
+      },
+      {
+        "question": "Koje su kategorije internog obračuna?",
+        "answer": "Troškovi i učinci – nastaju u procesu proizvodnje unutar poslovnog sustava.",
+        "explanation": "Rashodi i prihodi su kategorije eksternog obračuna."
+      },
+      {
+        "question": "Što ima karakter rashoda?",
+        "answer": "Samo tržišno priznati trošak (trošak sadržan u prodanom učinku).",
+        "explanation": "Neprodano je zaliha, ne rashod."
+      },
+      {
+        "question": "Kako hotel knjiži nepovratna EU sredstva za uređenje okoliša?",
+        "answer": "Kao (izvanredni) prihod i primitak bez pripadajućeg učinka – prihod i primitak veći su od učinka.",
+        "explanation": "Ispitni primjer."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Samo tržišno priznati trošak ima karakter:",
+        "options": [
+          "Rashoda",
+          "Utroška",
+          "Primitka",
+          "Učinka"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Trošak je računovodstvena kategorija koja se neposredno povezuje s tvrdnjom:",
+        "options": [
+          "Nastaje isključivo prodajom na tržištu",
+          "Nastaje kao ulaganje (input) u proces proizvodnje",
+          "Predstavlja ulazak novca na žiro račun",
+          "Izražava se samo naturalno, u kilogramima"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz pojam TROŠKOVI može se povezati tvrdnja:",
+        "options": [
+          "Troškovi uvijek odmah smanjuju novac na računu",
+          "Troškovi se prikazuju u izvještaju o novčanom toku",
+          "Tržišno valoriziran trošak naziva se rashod",
+          "Troškovi su output procesa proizvodnje"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Računovodstvene kategorije koje se vežu uz interni obračun su:",
+        "options": [
+          "Prihodi i rashodi",
+          "Primici i izdaci",
+          "Imovina i obveze",
+          "Troškovi i učinci"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Ukupni trošak 20 mesnih obroka je 200. Cijena koštanja jednog obroka iznosi:",
+        "options": [
+          "10",
+          "20",
+          "4.000",
+          "180"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Od 20 obroka (CK 10) prodano je 15 po prodajnoj cijeni 30. Rashod iznosi:",
+        "options": [
+          "200",
+          "150",
+          "450",
+          "300"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Od 20 obroka (CK 10) prodano je 15 po prodajnoj cijeni 30. Prihod iznosi:",
+        "options": [
+          "600",
+          "300",
+          "450",
+          "150"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Sa zalihe je prodano 40 kolača (CK 10, prodajna cijena 15); nisu naplaćeni. Točno je:",
+        "options": [
+          "Prihodi 400, rashodi 600, primici 600",
+          "Prihodi 600, rashodi 400, primici 600",
+          "Prihodi 200, rashodi 0, primici 0",
+          "Prihodi 600, rashodi 400, primici 0"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Rashodi su MANJI od troškova kada:",
+        "options": [
+          "Dio proizvedenih učinaka nije prodan",
+          "Isplaćena je donacija nogometnom klubu",
+          "Ukraden je neosigurani materijal",
+          "Prodane su i zalihe iz prošle godine"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Rashodi su VEĆI od troškova kada:",
+        "options": [
+          "Dio proizvedenih obroka nije prodan i odložen je na zalihe",
+          "Uplaćena je donacija ili je ukraden neosigurani materijal",
+          "Svi proizvedeni obroci su prodani",
+          "Kupci su platili stari dug"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Hotel je primio nepovratna sredstva EU fondova za uređenje okoliša. Vrijedi:",
+        "options": [
+          "Prihod je manji od učinka",
+          "Nastao je trošak, ali ne i prihod",
+          "Prihod i primitak veći su od učinka",
+          "Nastao je učinak, ali ne i primitak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Utrošak se od troška razlikuje po tome što je utrošak izražen:",
+        "options": [
+          "Isključivo u novcu",
+          "Samo u izvještaju o novčanom toku",
+          "Kao prodajna vrijednost",
+          "Naturalno (količinom)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Primitak nastaje kada:",
+        "options": [
+          "Novac stvarno uđe u poslovni sustav",
+          "Faktura se ispostavi kupcu",
+          "Usluga se pruži gostu",
+          "Trošak se rasporedi na nositelje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Prihodi se u računu dobiti i gubitka priznaju kada su:",
+        "options": [
+          "Naplaćeni u gotovini u cijelosti, prije isporuke usluge",
+          "Realizirani (prodani) i postoji izvjesnost naplate",
+          "Planirani u budžetu",
+          "Proizvedeni, bez obzira na prodaju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Učinci su:",
+        "options": [
+          "Vrijednosno izraženi utrošci resursa u proizvodnji",
+          "Ulasci novca na žiro račun",
+          "Proizvodi i usluge kao output procesa proizvodnje",
+          "Tržišno priznati troškovi"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Naturalno izraženo ulaganje resursa u proizvodnju zove se _______.",
+        "answer": "utrošak",
+        "hint": "Npr. 2 kg mesa."
+      },
+      {
+        "sentence": "Trošak po jednom učinku zove se cijena _______.",
+        "answer": "koštanja",
+        "hint": "CK = ukupni trošak / broj učinaka."
+      },
+      {
+        "sentence": "Tržišno priznati trošak zove se _______.",
+        "answer": "rashod",
+        "hint": "Trošak sadržan u prodanom učinku."
+      },
+      {
+        "sentence": "Proizvodi i usluge kao output proizvodnje zovu se _______.",
+        "answer": "učinci",
+        "hint": "Obroci, noćenja, kolači."
+      },
+      {
+        "sentence": "Ulazak novca u poslovni sustav zove se _______.",
+        "answer": "primitak",
+        "hint": "Suprotno: izdatak."
+      },
+      {
+        "sentence": "Izlazak novca iz poslovnog sustava zove se _______.",
+        "answer": "izdatak",
+        "hint": "Suprotno: primitak."
+      }
+    ],
+    "learn": {
+      "title": "Dinamičke kategorije: utrošak, trošak, rashod, učinak, prihod",
+      "content": "<h3>Dinamičke kategorije</h3><p>Dok bilanca prikazuje <strong>stanje</strong> (statičke kategorije), dinamičke kategorije prikazuju <strong>tijek</strong> poslovanja kroz razdoblje: ulaganja u proizvodnju, njezin output i tržišnu valorizaciju.</p><table><tr><th>Kategorija</th><th>Značenje</th><th>Izražava se</th></tr><tr><td><strong>Utrošak</strong></td><td>Ulaganje resursa u proces reprodukcije (2 kg mesa u obroke)</td><td>naturalno (kg, sati, kWh) – u analitičkim evidencijama</td></tr><tr><td><strong>Trošak</strong></td><td>Vrijednosno izražen utrošak nastao radi proizvodnje učinka</td><td>vrijednosno; nastaje <strong>isključivo u procesu proizvodnje</strong> (input)</td></tr><tr><td><strong>Učinak</strong></td><td>Output proizvodnje: proizvod ili usluga (obroci, kolači, noćenja, wellness)</td><td>količinski i vrijednosno; do trenutka prodaje</td></tr><tr><td><strong>Rashod</strong></td><td>Smanjenje ekonomskih koristi razdoblja; poslovni rashod = <strong>tržišno valoriziran trošak</strong></td><td>vrijednosno, u računu dobiti i gubitka</td></tr><tr><td><strong>Prihod</strong></td><td>Povećanje ekonomskih koristi koje povećava kapital; poslovni prihod = prodaja učinaka po prodajnoj cijeni</td><td>vrijednosno, u računu dobiti i gubitka</td></tr><tr><td><strong>Primitak / izdatak</strong></td><td>Ulazak / izlazak novca</td><td>novčano, u izvještaju o novčanom toku</td></tr></table><p><strong>Troškovi i učinci</strong> kategorije su <strong>internog</strong> obračuna (unutar sustava), a <strong>rashodi i prihodi</strong> nastaju kad se učinci <strong>tržišno priznaju</strong> – prodaju.</p><div class=\"formula-box\"> $$\\text{Cijena koštanja (CK)} = \\frac{\\text{ukupni trošak}}{\\text{broj učinaka}}$$ $$\\text{Rashod} = \\text{CK} \\times \\text{prodana količina} \\qquad \\text{Prihod} = \\text{prodana količina} \\times \\text{prodajna cijena}$$ </div><h3>Riješeni primjer: restoran priprema mesne obroke</h3><div class=\"example-box\"><p>Za 20 mesnih obroka utrošeno je 2 kg mesa po 40 € (trošak mesa <strong>80 €</strong>) i ostalo (povrće, rad kuhara, energija, voda) <strong>120 €</strong>. Prodajna cijena obroka je <strong>30 €</strong>, a prodano je <strong>15</strong> obroka.</p><table><tr><th>Korak</th><th>Izračun</th><th>Rezultat</th></tr><tr><td>Ukupni trošak</td><td>80 + 120</td><td>200 €</td></tr><tr><td>Cijena koštanja</td><td>\\(200 / 20\\)</td><td>10 € po obroku</td></tr><tr><td>Rashod (prodano)</td><td>\\(15 \\times 10\\)</td><td>150 €</td></tr><tr><td>Zaliha (neprodano)</td><td>\\(5 \\times 10\\)</td><td>50 € – nije rashod</td></tr><tr><td>Prihod</td><td>\\(15 \\times 30\\)</td><td>450 €</td></tr><tr><td>Rezultat (dobit)</td><td>450 − 150</td><td>300 €</td></tr></table><p>Troškovi (200) &gt; rashodi (150) jer 5 obroka nije prodano; učinci (20 obroka) &gt; prihodi (15 prodanih).</p></div><div class=\"warning-box\"><strong>Ispravak studentske skripte:</strong> ako bi se prodalo svih 20 obroka, rashodi bi bili jednaki troškovima i iznosili bi <strong>200</strong> (20 × 10), a ne 400 kako piše u skripti.</div><div class=\"example-box\"><strong>Ispitni primjer – kolači:</strong> sa zalihe je prodano 40 kolača, CK 10, prodajna cijena 15, kolači još nisu naplaćeni.<br>Prihod = 40 × 15 = <strong>600</strong> · rashod = 40 × 10 = <strong>400</strong> · primitak = <strong>0</strong> (novac još nije ušao).</div><h3>Odnosi između kategorija</h3><table><tr><th>Odnos</th><th>Kada</th><th>Primjer</th></tr><tr><td>Rashodi = troškovi</td><td>Svi učinci prodani</td><td>Prodano svih 20 obroka</td></tr><tr><td>Rashodi &gt; troškovi</td><td>Izvanredni rashodi bez veze s proizvodnjom; prodaja zaliha iz prošlog razdoblja</td><td>Donacija djeci s poteškoćama u razvoju, ukraden neosigurani materijal</td></tr><tr><td>Rashodi &lt; troškovi</td><td>Dio učinaka nije prodan (ide na zalihe)</td><td>Prodano 15 od 20 obroka</td></tr><tr><td>Prihodi = učinci</td><td>Sve prodano</td><td>20 obroka po 30</td></tr><tr><td>Prihodi &gt; učinci</td><td>Izvanredni prihodi; prodaja i ranijih zaliha</td><td>Inventurni višak, primljena donacija, EU potpora</td></tr><tr><td>Prihodi &lt; učinci</td><td>Dio proizvedenog nije prodan</td><td>Proizvedeno 20, prodano 15</td></tr></table><div class=\"tip-box\"><strong>Ispitna zamka:</strong> prodaja na odgodu stvara <strong>prihod</strong>, ali ne i <strong>primitak</strong>; naplata starog potraživanja stvara <strong>primitak</strong>, ali ne i prihod. Isplata plaća sa žiro računa je <strong>izdatak</strong> (poslovni), a obračun plaće je <strong>trošak</strong>.</div>"
+    }
+  },
+  "kontaUspjeha": {
+    "name": "Konta uspjeha – prihodi i rashodi",
+    "icon": "fa-right-left",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Koje su vrste PRIHODA prema izvoru?",
+        "answer": "Poslovni (osnovna djelatnost), financijski (kamate, pozitivne tečajne razlike, dividende) i izvanredni (neplanirani).",
+        "explanation": "U RDG se iskazuju odvojeno."
+      },
+      {
+        "question": "Koje su vrste RASHODA prema izvoru?",
+        "answer": "Poslovni (tržišno priznati troškovi), financijski (kamate, negativne tečajne razlike) i izvanredni (donacije, kazne, manjkovi, štete).",
+        "explanation": "U RDG se iskazuju odvojeno."
+      },
+      {
+        "question": "Primjeri POSLOVNIH prihoda u hotelu?",
+        "answer": "Prihodi od smještaja (polupansion, noćenja), hrane i pića, cateringa, najamnine poslovnog prostora, prodaje robe i suvenira.",
+        "explanation": "Konta 751 i 757."
+      },
+      {
+        "question": "Primjeri FINANCIJSKIH prihoda?",
+        "answer": "Prihodi od kamata (npr. na dani kredit), pozitivne tečajne razlike, dividende i udjeli u dobiti.",
+        "explanation": "Konto 773 prihod od kamata."
+      },
+      {
+        "question": "Primjeri IZVANREDNIH prihoda?",
+        "answer": "Inventurni višak, otpis obveza (banka otpisala dug), primljene donacije i potpore, prodaja dugotrajne imovine iznad knjigovodstvene vrijednosti.",
+        "explanation": "Konta 782 i 783."
+      },
+      {
+        "question": "Primjeri POSLOVNIH rashoda?",
+        "answer": "Tržišno priznati troškovi materijala, usluga i osoblja (plaće), rashodi prodane robe i prodanih usluga.",
+        "explanation": "Troškovi razreda 4 postaju poslovni rashodi."
+      },
+      {
+        "question": "Primjeri FINANCIJSKIH rashoda?",
+        "answer": "Rashodi od kamata na kredite (konto 724) i negativne tečajne razlike.",
+        "explanation": "Posljedica korištenja tuđeg novca."
+      },
+      {
+        "question": "Primjeri IZVANREDNIH rashoda?",
+        "answer": "Isplaćene donacije, kazne i penali, inventurni manjkovi, neosigurana šteta od poplave (konto 730).",
+        "explanation": "Ne nastaju redovito, teško se planiraju."
+      },
+      {
+        "question": "Pravila na kontu RASHOD OD KAMATA?",
+        "answer": "Nema početni saldo; nastanak rashoda duguje; saldo se prenosi na obračun rezultata; u RDG je financijski rashod i smanjuje rezultat.",
+        "explanation": "Konto 724."
+      },
+      {
+        "question": "Pravila na kontu PRIHOD OD NAJAMNINE (iznajmljeni poslovni prostor)?",
+        "answer": "Nema početni saldo; nastanak prihoda potražuje; saldo se prenosi na obračun rezultata; u RDG je poslovni prihod i povećava rezultat.",
+        "explanation": "Konto 757."
+      },
+      {
+        "question": "Pravila na kontu PRIHOD OD DONACIJA?",
+        "answer": "Nema početni saldo; nastanak prihoda potražuje; u RDG je izvanredni prihod i povećava rezultat.",
+        "explanation": "Kao svako konto prihoda."
+      },
+      {
+        "question": "Pravila na kontu RASHOD OD PRODANE ROBE?",
+        "answer": "Nema početni saldo; nastanak rashoda duguje; u RDG je poslovni rashod i smanjuje rezultat.",
+        "explanation": "Nabavna vrijednost prodane robe."
+      },
+      {
+        "question": "Kako se knjiži utrošak materijala u proizvodnji?",
+        "answer": "400 Trošak materijala D / 310 Zaliha materijala P – centrifugalna promjena uslijed rashoda (A−P−).",
+        "explanation": "Trošak kasnije postaje poslovni rashod."
+      },
+      {
+        "question": "Kako se knjiži obračunata kamata na primljeni kredit?",
+        "answer": "724 Rashod od kamata D / 952 Kredit kod banke P – periferijska promjena uslijed rashoda (P+P−).",
+        "explanation": "Raste obveza, pada kapital."
+      },
+      {
+        "question": "Kako se knjiži obračunata kamata na DANI dugoročni kredit?",
+        "answer": "041 Dani dugoročni kredit D / 773 Prihod od kamata P – centripetalna promjena uslijed prihoda (A+P+).",
+        "explanation": "Raste potraživanje, raste kapital."
+      },
+      {
+        "question": "Kako se knjiži inventurni višak materijala?",
+        "answer": "310 Zaliha materijala D / 783 Prihod od viškova P – centripetalna promjena uslijed prihoda.",
+        "explanation": "Izvanredni prihod."
+      },
+      {
+        "question": "Kako se knjiži neosigurani stroj uništen u poplavi?",
+        "answer": "730 Izvanredni rashodi D / 021 Postrojenja i oprema P – centrifugalna promjena uslijed rashoda.",
+        "explanation": "Izvanredni rashod."
+      },
+      {
+        "question": "Kako se knjiži otpis dijela kredita od strane banke?",
+        "answer": "952 Kredit kod banke D / 782 Prihod od otpisa obveza P – periferijska promjena uslijed prihoda.",
+        "explanation": "Pada obveza, raste kapital."
+      },
+      {
+        "question": "Kako se zaključuju konta uspjeha?",
+        "answer": "Salda rashoda (70–74) i prihoda (75–78) prenose se na obračun rezultata; razlika je dobit ili gubitak razdoblja.",
+        "explanation": "Zato nemaju ni početni ni zaključni saldo u bilanci."
+      },
+      {
+        "question": "Što se navodi kad se traži utjecaj promjene na RDG?",
+        "answer": "Kategorija (prihod, rashod, trošak), iznos BEZ PDV-a, broj i naziv konta, dio izvještaja (poslovni, financijski, izvanredni) i utjecaj na rezultat.",
+        "explanation": "Npr. 751, 10.000, poslovni prihod, povećava."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Rashod od isplaćenih donacija je:",
+        "options": [
+          "Poslovni rashod",
+          "Financijski rashod",
+          "Trošak razdoblja u razredu 5",
+          "Izvanredni rashod"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Negativne tečajne razlike su:",
+        "options": [
+          "Financijski rashod",
+          "Poslovni rashod",
+          "Izvanredni prihod",
+          "Trošak materijala"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Tržišno priznati troškovi osoblja (plaće) su:",
+        "options": [
+          "Financijski rashod",
+          "Poslovni rashod",
+          "Izvanredni rashod",
+          "Kratkoročna obveza u bilanci"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rashod od kamata obračunatih na kredit od banke je:",
+        "options": [
+          "Poslovni rashod",
+          "Izvanredni rashod",
+          "Financijski rashod",
+          "Kratkoročna obveza"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Banka nam je obračunala kamatu na dugoročni kredit 2.000. To se evidentira kao:",
+        "options": [
+          "Poslovni rashod",
+          "Izvanredni rashod",
+          "Financijski prihod",
+          "Financijski rashod"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za konto NEGATIVNE TEČAJNE RAZLIKE točno je:",
+        "options": [
+          "Knjiži se na dugovnoj strani i smanjuje kapital",
+          "Knjiži se na potražnoj strani i povećava kapital",
+          "Ima početni saldo na dugovnoj strani",
+          "Prikazuje se u bilanci među obvezama"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Konto PRIHOD OD IZNAJMLJENOG POSLOVNOG PROSTORA prikazuje se u:",
+        "options": [
+          "Bilanci kao kratkoročna obveza",
+          "Računu dobiti i gubitka kao poslovni prihod",
+          "Računu dobiti i gubitka kao izvanredni prihod",
+          "Izvještaju o novčanom toku kao izdatak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U proizvodnju je utrošeno materijala 6.000 (PS 25.000). Knjiženje:",
+        "options": [
+          "310 Zaliha materijala D 6.000 / 400 Trošak materijala P 6.000",
+          "400 Trošak materijala D 6.000 / 220 Dobavljači P 6.000",
+          "400 Trošak materijala D 6.000 / 310 Zaliha materijala P 6.000",
+          "310 Zaliha materijala D 6.000 / 220 Dobavljači P 6.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Obračunata je kamata na kredit od banke 2% (PS kredita 50.000). Knjiženje:",
+        "options": [
+          "724 Rashod od kamata P 1.000 / 952 Kredit kod banke D 1.000",
+          "773 Prihod od kamata P 1.000 / 100 Žiro račun D 1.000",
+          "724 Rashod od kamata D 10.000 / 952 Kredit kod banke P 10.000",
+          "724 Rashod od kamata D 1.000 / 952 Kredit kod banke P 1.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Obračunate su kamate na dani dugoročni kredit 5.000. Vrsta promjene:",
+        "options": [
+          "Centripetalna uslijed prihoda (A+P+)",
+          "Centrifugalna uslijed rashoda (A−P−)",
+          "Periferijska uslijed rashoda (P+P−)",
+          "Koncentrična (A+A−)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Banka je hotelu obračunala kamatu 1% na dugoročni kredit (PS 200.000). Utjecaj na RDG:",
+        "options": [
+          "Rashod 20.000 (724), poslovni rashod, smanjuje rezultat",
+          "Rashod 2.000 (724), financijski rashod, smanjuje rezultat",
+          "Prihod 2.000 (773), financijski prihod, povećava rezultat",
+          "Nema utjecaja jer se kamata još nije platila"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Isplaćena je donacija nogometnom klubu 4.000. Utjecaj na RDG:",
+        "options": [
+          "Poslovni rashod 4.000 (400), smanjuje rezultat",
+          "Financijski rashod 4.000 (724), smanjuje rezultat",
+          "Izvanredni rashod 4.000 (730), smanjuje rezultat",
+          "Nema utjecaja – to je samo izdatak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Inventurom je utvrđen višak materijala 1.000. Knjiženje:",
+        "options": [
+          "783 Prihod od viškova D / 310 Zaliha materijala P",
+          "310 Zaliha materijala D / 220 Dobavljači P",
+          "730 Izvanredni rashodi D / 310 Zaliha materijala P",
+          "310 Zaliha materijala D / 783 Prihod od viškova P"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Poplava je uništila neosigurani stroj 10.000. Knjiženje:",
+        "options": [
+          "730 Izvanredni rashodi D / 021 Postrojenja i oprema P",
+          "021 Postrojenja i oprema D / 730 Izvanredni rashodi P",
+          "730 Izvanredni rashodi D / 100 Žiro račun P",
+          "400 Trošak materijala D / 021 Postrojenja i oprema P"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Banka je hotelu otpisala 2.000 duga po kreditu. Vrsta promjene:",
+        "options": [
+          "Centripetalna uslijed prihoda",
+          "Periferijska uslijed prihoda",
+          "Centrifugalna uslijed rashoda",
+          "Koncentrična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Konto rashoda knjiži se po pravilima konta:",
+        "options": [
+          "Pasive (R = P), s početnim saldom",
+          "Aktive, s početnim saldom na dugovnoj strani",
+          "Aktive (R = A), ali bez početnog salda",
+          "Pasive, bez početnog salda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Djelatniku je obračunat putni nalog – dnevnice 1.400. Utjecaj na RDG:",
+        "options": [
+          "Financijski rashod 1.400 (724), smanjuje rezultat",
+          "Prihod 1.400 (751), povećava rezultat",
+          "Izvanredni rashod 1.400 (730), smanjuje rezultat",
+          "Trošak 1.400 (440 Dnevnice) – poslovni rashod"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Primljena je faktura za odvjetničke usluge 6.000 + PDV. Utjecaj na RDG:",
+        "options": [
+          "Trošak 6.000 (422) postaje poslovni rashod",
+          "Trošak 7.500 (422) postaje poslovni rashod",
+          "Financijski rashod 6.000 (724)",
+          "Izvanredni rashod 7.500 (730)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Kamate na primljene kredite knjiže se kao _______ rashod.",
+        "answer": "financijski",
+        "hint": "Konto 724."
+      },
+      {
+        "sentence": "Inventurni višak i otpis obveza su _______ prihodi.",
+        "answer": "izvanredni",
+        "hint": "Konta 782 i 783."
+      },
+      {
+        "sentence": "Konto rashoda povećava se na _______ strani.",
+        "answer": "dugovnoj",
+        "hint": "R = A."
+      },
+      {
+        "sentence": "Konto prihoda povećava se na _______ strani.",
+        "answer": "potražnoj",
+        "hint": "P = P."
+      },
+      {
+        "sentence": "Prihod od kamata ima broj konta _______.",
+        "answer": "773",
+        "hint": "Troznamenkasti broj; financijski prihod."
+      },
+      {
+        "sentence": "Rashod od kamata ima broj konta _______.",
+        "answer": "724",
+        "hint": "Troznamenkasti broj; financijski rashod."
+      },
+      {
+        "sentence": "Izvanredni rashodi (donacija, neosigurana šteta) knjiže se na konto _______.",
+        "answer": "730",
+        "hint": "Troznamenkasti broj; razred 7."
+      }
+    ],
+    "learn": {
+      "title": "Prihodi i rashodi – vrste, pravila i knjiženja s kontnim planom",
+      "content": "<h3>Vrste prihoda i rashoda</h3><table><tr><th>Vrsta</th><th>Prihodi</th><th>Rashodi</th></tr><tr><td><strong>Poslovni</strong> (redovni, osnovna djelatnost)</td><td>Prodaja proizvoda, usluga i robe: smještaj, polupansion, hrana i piće, catering, najamnina poslovnog prostora, suveniri</td><td>Troškovi sadržani u prodanim učincima i troškovi razdoblja: materijal, usluge, osoblje, rashodi prodane robe i usluga</td></tr><tr><td><strong>Financijski</strong> (redovni, financiranje)</td><td>Kamate na dane kredite, pozitivne tečajne razlike, dividende, udjeli u dobiti</td><td>Kamate na primljene kredite, negativne tečajne razlike</td></tr><tr><td><strong>Izvanredni</strong> (neplanirani)</td><td>Inventurni višak, otpis obveza, primljene donacije i potpore, prodaja dugotrajne imovine, naplata otpisanih potraživanja</td><td>Isplaćene donacije, kazne i penali, inventurni manjak, neosigurana šteta, neotpisana vrijednost prodane ili rashodovane imovine</td></tr></table><h3>Pravila knjiženja na kontima uspjeha</h3><ul><li><strong>Konta rashoda</strong> (razred 7, skupine 70–74) knjiže se kao konta <strong>aktive</strong> (R = A): <strong>nema početnog salda</strong>, nastanak rashoda <strong>duguje</strong>, smanjenje potražuje. Rashod <strong>smanjuje kapital</strong>.</li><li><strong>Konta prihoda</strong> (skupine 75–78) knjiže se kao konta <strong>pasive</strong> (P = P): <strong>nema početnog salda</strong>, nastanak prihoda <strong>potražuje</strong>, smanjenje duguje. Prihod <strong>povećava kapital</strong>.</li><li>Na kraju razdoblja salda se prenose na <strong>obračun rezultata</strong> (skupina 79 / razred 8): prihodi − rashodi = dobit ili gubitak.</li></ul><div class=\"example-box\"><strong>Model odgovora (ispitno pitanje):</strong> „Objasnite pravila knjiženja na kontu RASHOD OD KAMATA, u kojem se izvještaju prikazuje i kakav je utjecaj na rezultat.”<br> → Nema početni saldo; nastanak rashoda knjiži se na <strong>dugovnu</strong> stranu; zaključni saldo prenosi se na <strong>obračun rezultata</strong>; prikazuje se u <strong>računu dobiti i gubitka</strong> kao <strong>financijski rashod</strong>; <strong>smanjuje</strong> rezultat.<br> Isti obrazac za: <em>prihod od najamnine / pružanja usluga</em> (potražuje, poslovni prihod, povećava), <em>rashod od prodane robe</em> (duguje, poslovni rashod, smanjuje), <em>rashod od tečajnih razlika</em> (duguje, financijski rashod, smanjuje), <em>prihod od donacija</em> (potražuje, izvanredni prihod, povećava).</div><h3>Riješena knjiženja (s bilančnom promjenom)</h3><table><tr><th>Poslovna promjena</th><th>Duguje</th><th>Potražuje</th><th>Promjena</th></tr><tr><td>U proizvodnju utrošeno materijala 6.000 (PS 25.000)</td><td>400 Trošak materijala 6.000</td><td>310 Zaliha materijala 6.000</td><td>A−P− uslijed rashoda</td></tr><tr><td>U proizvodnju utrošeno materijala 4.000 (PS 20.000)</td><td>400 Trošak materijala 4.000</td><td>310 Zaliha materijala 4.000</td><td>A−P− uslijed rashoda</td></tr><tr><td>Obračunata kamata 2% na kredit od banke (PS 50.000): \\(50.000 \\times 0{,}02 = 1.000\\)</td><td>724 Rashod od kamata 1.000</td><td>952 Kredit kod banke 1.000</td><td>P+P− uslijed rashoda</td></tr><tr><td>Banka zaračunala kamate 4.000</td><td>724 Rashod od kamata 4.000</td><td>952 Kredit kod banke 4.000</td><td>P+P− uslijed rashoda</td></tr><tr><td>Obračunate kamate na dani dugoročni kredit 5.000 (PS 200.000)</td><td>041 Dani dugoročni kredit 5.000</td><td>773 Prihod od kamata 5.000</td><td>A+P+ uslijed prihoda</td></tr><tr><td>Inventurom utvrđen višak materijala 1.000</td><td>310 Zaliha materijala 1.000</td><td>783 Prihod od viškova 1.000</td><td>A+P+ uslijed prihoda</td></tr><tr><td>Poplava uništila neosigurani stroj 10.000</td><td>730 Izvanredni rashodi 10.000</td><td>021 Postrojenja i oprema 10.000</td><td>A−P− uslijed rashoda</td></tr><tr><td>Banka otpisala dio duga po kreditu 2.000</td><td>952 Kredit kod banke 2.000</td><td>782 Prihod od otpisa obveza 2.000</td><td>P−P+ uslijed prihoda</td></tr></table><div class=\"warning-box\"><strong>Ispravak studentske skripte:</strong> kod obračuna kamate od 4.000 skripta navodi da i 952 i 724 „potražuju”. Točno: <strong>724 Rashod od kamata duguje</strong>, <strong>952 Kredit kod banke potražuje</strong>.</div><h3>Utjecaj promjene na račun dobiti i gubitka – kako odgovoriti</h3><p>Navodi se: <strong>kategorija</strong> (trošak, rashod, prihod) · <strong>iznos bez PDV-a</strong> · <strong>broj i naziv konta</strong> · <strong>dio izvještaja</strong> (poslovni, financijski, izvanredni) · <strong>utjecaj na rezultat</strong>.</p><table><tr><th>Promjena</th><th>Utjecaj na RDG</th></tr><tr><td>Kupcima fakturirane usluge smještaja 10.000 + PDV</td><td>Prihod 10.000 (751 Prihod od prodaje proizvoda i usluga), poslovni prihod, povećava rezultat</td></tr><tr><td>Kupcima fakturirana usluga cateringa 10.000 + PDV 2.500 (stopa zadana u zadatku; usluge pripremanja hrane u ugostiteljstvu inače su po 13 %)</td><td>Prihod 10.000 (751), poslovni prihod, povećava rezultat</td></tr><tr><td>Obračunate kamate na kratkoročni kredit 1.000</td><td>Rashod 1.000 (724 Rashod od kamata), financijski rashod, smanjuje rezultat</td></tr><tr><td>Iz blagajne plaćena faktura za poštarinu 1.000 + PDV</td><td>Trošak 1.000 (411 Trošak poštarine) → poslovni rashod, smanjuje rezultat</td></tr><tr><td>Primljena faktura za odvjetničke usluge 6.000 + PDV</td><td>Trošak 6.000 (422 Odvjetničke usluge) → poslovni rashod, smanjuje rezultat</td></tr><tr><td>Djelatniku po povratku s puta obračunat nalog – dnevnice 1.400 (PS potraživanja od djelatnika 1.500)</td><td>Trošak 1.400 (440 Dnevnice) → poslovni rashod, smanjuje rezultat</td></tr><tr><td>Isplaćena donacija nogometnom klubu 4.000</td><td>Rashod 4.000 (730 Izvanredni rashodi), izvanredni rashod, smanjuje rezultat</td></tr></table><div class=\"tip-box\"><strong>PDV nikad ne ulazi u prihode ni rashode</strong> – on je potraživanje (pretporez) ili obveza prema državi. U RDG ide samo <strong>osnovica</strong>.</div><div class=\"warning-box\"><strong>Sporno u ispitnom ključu:</strong> za „Kupci su platili fakturu za usluge smještaja 40.000 + PDV” ključ navodi utjecaj na prihode (751). To vrijedi samo ako faktura prethodno nije bila proknjižena (prodaja i naplata istodobno). Ako je prihod već priznat pri ispostavljanju fakture, naplata je samo <strong>primitak</strong> (utjecaj na novčani tok), a ne novi prihod.</div>"
+    }
+  },
+  "vrsteTroskova": {
+    "name": "Vrste troškova, mjesta i nositelji",
+    "icon": "fa-layer-group",
+    "color": "#84cc16",
+    "flashcards": [
+      {
+        "question": "Kako se troškovi dijele po PRIRODNIM VRSTAMA?",
+        "answer": "Materijalni troškovi, troškovi usluga, amortizacija, troškovi osoblja (plaće), naknade troškova zaposlenima i rezerviranja.",
+        "explanation": "Knjiže se u razredu 4."
+      },
+      {
+        "question": "Što su MATERIJALNI troškovi?",
+        "answer": "Troškovi sirovina i materijala, namirnica, ambalaže, energije i otpisa sitnog inventara.",
+        "explanation": "Npr. 400 Trošak materijala."
+      },
+      {
+        "question": "Što su troškovi USLUGA? Primjeri?",
+        "answer": "Tuđe usluge: prijevoz, održavanje, promidžba, komunalne usluge, osiguranje, računovodstvene i odvjetničke usluge, poštarina.",
+        "explanation": "Npr. 411, 418, 422."
+      },
+      {
+        "question": "Što su troškovi RADA (osoblja)?",
+        "answer": "Troškovi radne snage: bruto plaće, naknade plaća, stimulacije – prirodna vrsta troška u razredu 4.",
+        "explanation": "U hotelu: plaće recepcionara, kuhara, sobarica."
+      },
+      {
+        "question": "Što su NAKNADE troškova zaposlenima?",
+        "answer": "Dnevnice, prijevoz i smještaj na službenom putu, terenski dodatak, odvojeni život.",
+        "explanation": "Npr. 440 Dnevnice."
+      },
+      {
+        "question": "Što su REZERVIRANJA za rizike i troškove?",
+        "answer": "Iznos vjerojatnih budućih troškova kojima su neizvjesni i iznos i rok nastanka.",
+        "explanation": "Npr. rezerviranja za sudske sporove, jamstva."
+      },
+      {
+        "question": "Direktni vs indirektni troškovi?",
+        "answer": "Direktni se izravno pripisuju nositelju (direktni materijal i rad); indirektni (opći) raspoređuju se pomoću ključa.",
+        "explanation": "Podjela prema mogućnosti obuhvaćanja."
+      },
+      {
+        "question": "Fiksni vs varijabilni troškovi?",
+        "answer": "Varijabilni se mijenjaju s opsegom aktivnosti (namirnice, direktni rad); fiksni ostaju isti (amortizacija, najamnina).",
+        "explanation": "Podjela prema ponašanju."
+      },
+      {
+        "question": "Troškovi PROIZVODA vs troškovi RAZDOBLJA?",
+        "answer": "Troškovi proizvoda ulaze u vrijednost zaliha i postaju rashod pri prodaji; troškovi razdoblja (uprava, prodaja) odmah su rashod razdoblja.",
+        "explanation": "Najvažnija podjela s računovodstvenog gledišta."
+      },
+      {
+        "question": "Što čine troškovi proizvoda (proizvodnje)?",
+        "answer": "Direktni materijal, direktni rad i opći troškovi proizvodnje (OTP – grijanje, struja, voda).",
+        "explanation": "Postaju rashod kad se proizvod proda."
+      },
+      {
+        "question": "Što je MJESTO TROŠKA?",
+        "answer": "Mjesto (organizacijska jedinica) na kojem trošak nastaje – npr. kuhinja, recepcija, uprava.",
+        "explanation": "Proizvodna i neproizvodna mjesta."
+      },
+      {
+        "question": "Koja su proizvodna mjesta troškova?",
+        "answer": "Osnovne djelatnosti (pogoni), pomoćne djelatnosti (radionica, transport), sporedne djelatnosti i neproizvodnih aktivnosti (nabava, prodaja, računovodstvo).",
+        "explanation": "Troškovi pomoćnih prevaljuju se na glavna."
+      },
+      {
+        "question": "Što je NOSITELJ TROŠKA?",
+        "answer": "Učinak (proizvod ili usluga) koji troškove „nosi” – proces proizvodnje određenog proizvoda u razdoblju.",
+        "explanation": "Npr. mesna jela, riblja jela, noćenja."
+      },
+      {
+        "question": "Što je POL?",
+        "answer": "Pogonski obračunski list – pomoćno sredstvo za raspored općih (indirektnih) troškova na mjesta nastanka pomoću ključeva.",
+        "explanation": "Direktni troškovi ne unose se u POL."
+      },
+      {
+        "question": "Primjeri ključeva za raspored općih troškova u POL-u?",
+        "answer": "Električna energija prema brojilu, voda prema broju slavina ili zaposlenih, režija prema plaćama ili materijalu izrade.",
+        "explanation": "Ključ = mjerilo uzročnosti."
+      },
+      {
+        "question": "Aktivna vs pasivna vremenska razgraničenja troškova?",
+        "answer": "Aktivna: izdatak prije troška (unaprijed plaćeno osiguranje, najamnina). Pasivna: trošak prije izdatka (obračunano održavanje, promocija).",
+        "explanation": "Trošak pripada razdoblju na koje se odnosi."
+      },
+      {
+        "question": "Što su troškovi po prirodnoj vrsti u ispitnom pitanju?",
+        "answer": "Ako se u razredu 4 knjiže troškovi osiguranja, marketinga, računovodstvenih, odvjetničkih i komunalnih usluga – to su troškovi po prirodnoj vrsti.",
+        "explanation": "Za razliku od rasporeda po mjestima (razred 5)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Ako se u razredu 4 proknjiže troškovi osiguranja, marketinga, odvjetničkih i komunalnih usluga, radi se o:",
+        "options": [
+          "Troškovima po mjestima nastanka",
+          "Troškovima po prirodnoj vrsti",
+          "Troškovima po nositeljima",
+          "Izvanrednim rashodima"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Troškovi rada (plaće, naknade, stimulacije) spadaju u:",
+        "options": [
+          "Financijske rashode – razred 7",
+          "Kratkoročne obveze – razred 2",
+          "Prirodne vrste troškova – razred 4",
+          "Zalihe – razred 3"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Direktni troškovi su:",
+        "options": [
+          "Opći troškovi raspoređeni pomoću ključa",
+          "Troškovi uprave i prodaje",
+          "Troškovi koji ne ovise o opsegu proizvodnje",
+          "Troškovi koji se izravno pripisuju nositelju troška"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Fiksni troškovi su npr.:",
+        "options": [
+          "Amortizacija i najamnina",
+          "Namirnice za obroke",
+          "Plaće direktnih radnika po učinku",
+          "Ambalaža prodanih proizvoda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Varijabilni troškovi su npr.:",
+        "options": [
+          "Amortizacija hotelske zgrade",
+          "Utrošene namirnice u restoranu",
+          "Najamnina poslovnog prostora",
+          "Premija osiguranja zgrade"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Troškovi razdoblja su:",
+        "options": [
+          "Direktni materijal i direktni rad",
+          "Opći troškovi proizvodnje",
+          "Troškovi uprave i prodaje – odmah rashod razdoblja",
+          "Troškovi sadržani u zalihama gotovih proizvoda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Troškovi proizvoda postaju rashod kada:",
+        "options": [
+          "Nastanu u procesu proizvodnje na mjestu troška",
+          "Se plati faktura dobavljaču",
+          "Se proknjiže u razredu 4",
+          "Se proizvodi u kojima su sadržani prodaju"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Dnevnice na službenom putu su:",
+        "options": [
+          "Naknade troškova zaposlenima",
+          "Materijalni troškovi",
+          "Troškovi amortizacije",
+          "Financijski rashodi"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pogonski obračunski list (POL) služi za:",
+        "options": [
+          "Evidenciju direktnih troškova po jedinici",
+          "Raspored općih troškova na mjesta nastanka",
+          "Obračun PDV-a",
+          "Sastavljanje bilance"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Unaprijed plaćena godišnja premija osiguranja primjer je:",
+        "options": [
+          "Pasivnog vremenskog razgraničenja",
+          "Izvanrednog rashoda",
+          "Aktivnog vremenskog razgraničenja",
+          "Troška proizvoda"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Mjesto troška je:",
+        "options": [
+          "Učinak (proizvod ili usluga) koji nosi nastale troškove",
+          "Konto troška u razredu 4",
+          "Isprava o nastanku troška",
+          "Organizacijska jedinica u kojoj trošak nastaje"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Nositelj troška je:",
+        "options": [
+          "Proizvod ili usluga koja nosi troškove",
+          "Odjel u kojem trošak nastaje",
+          "Dobavljač koji je ispostavio fakturu",
+          "Zaposlenik odgovoran za trošak"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Opći troškovi proizvodnje (OTP) su:",
+        "options": [
+          "Direktni troškovi materijala po jedinici proizvoda",
+          "Indirektni troškovi koji se raspoređuju ključem",
+          "Troškovi uprave i prodaje",
+          "Financijski rashodi"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rezerviranja za rizike i troškove su:",
+        "options": [
+          "Unaprijed plaćeni troškovi budućeg obračunskog razdoblja",
+          "Troškovi već plaćeni dobavljaču",
+          "Vjerojatni budući troškovi neizvjesnog iznosa i roka",
+          "Zakonske rezerve iz dobiti"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Troškovi po prirodnim vrstama knjiže se u razredu _______.",
+        "answer": "4",
+        "hint": "Upiši brojkom."
+      },
+      {
+        "sentence": "Troškovi koji se mijenjaju s opsegom aktivnosti zovu se _______ troškovi.",
+        "answer": "varijabilni",
+        "hint": "Suprotno: fiksni."
+      },
+      {
+        "sentence": "Troškovi koji se izravno pripisuju nositelju zovu se _______ troškovi.",
+        "answer": "direktni",
+        "hint": "Direktni materijal i rad."
+      },
+      {
+        "sentence": "Pogonski obračunski list skraćeno se zove _______.",
+        "answer": "POL",
+        "hint": "Raspored općih troškova."
+      },
+      {
+        "sentence": "Troškovi uprave i prodaje su troškovi _______.",
+        "answer": "razdoblja",
+        "hint": "Odmah postaju rashod."
+      },
+      {
+        "sentence": "Mjesto na kojem trošak nastaje zove se mjesto _______.",
+        "answer": "troška",
+        "hint": "Kuhinja, recepcija, uprava."
+      }
+    ],
+    "learn": {
+      "title": "Razvrstavanje troškova",
+      "content": "<h3>Troškovi, utrošci i izdaci</h3><p><strong>Troškovi</strong> su u novcu izraženi utrošci resursa radi proizvodnje proizvoda ili pružanja usluga; nastaju smanjenjem imovine ili povećanjem obveza. <strong>Utrošak</strong> je fizičko ulaganje, a <strong>izdatak</strong> odljev novca. Troškovi su najznačajniji dio rashoda.</p><h3>Kriteriji razvrstavanja troškova</h3><table><tr><th>Kriterij</th><th>Vrste</th><th>Primjeri</th></tr><tr><td><strong>1. Prirodne vrste</strong> (razred 4)</td><td>materijalni · usluge · amortizacija · plaće (osoblje) · naknade zaposlenima · rezerviranja</td><td>namirnice, energija, sitni inventar · komunalne, poštarina, odvjetničke, marketing, osiguranje · amortizacija zgrade · bruto plaće · dnevnice · rezerviranja za sporove</td></tr><tr><td><strong>2. Mogućnost obuhvaćanja</strong></td><td>direktni · indirektni (opći)</td><td>direktni materijal i rad · grijanje, struja, voda (raspoređuju se ključem)</td></tr><tr><td><strong>3. Ponašanje prema opsegu</strong></td><td>varijabilni · fiksni</td><td>namirnice, direktni rad · amortizacija, najamnina</td></tr><tr><td><strong>4. Funkcije</strong></td><td>nabava, proizvodnja, prodaja, kadrovska, investicijska, financijska</td><td>svaki trošak dobiva šifru funkcije</td></tr><tr><td><strong>5. Mjesto u financijskom izvještaju</strong> (najvažnija)</td><td>troškovi proizvoda · troškovi razdoblja</td><td>direktni materijal, direktni rad, OTP · uprava, prodaja, istraživanje, kamate</td></tr></table><div class=\"formula-box\"><strong>Troškovi proizvoda</strong> = direktni materijal + direktni rad + opći troškovi proizvodnje (OTP) → ulaze u vrijednost zaliha i postaju <strong>rashod tek kad se proizvod proda</strong>.<br><strong>Troškovi razdoblja</strong> (uprava, prodaja) → odmah su <strong>rashod</strong> razdoblja u kojem su nastali.</div><h3>Troškovi osoblja i naknade</h3><ul><li><strong>Troškovi rada</strong>: bruto plaće (osnovna, povećana za staž i teže uvjete, stimulativna), naknade plaća (bolovanje, godišnji odmor, blagdani). U hotelu: plaće recepcionara, kuhara, konobara, sobarica.</li><li><strong>Naknade troškova zaposlenima</strong>: dnevnice, prijevoz i smještaj na službenom putu, terenski dodaci, odvojeni život (konto 440 Dnevnice).</li><li><strong>Autorski honorari</strong>: konzultantske usluge, pisanje za nakladnike.</li></ul><h3>Vremenska razgraničenja troškova</h3><table><tr><th>Vrsta</th><th>Redoslijed</th><th>Primjer</th></tr><tr><td>Aktivna (unaprijed plaćeni troškovi)</td><td>izdatak <strong>prije</strong> troška</td><td>Premija osiguranja plaćena za cijelu godinu, najamnina unaprijed</td></tr><tr><td>Pasivna (obračunani troškovi)</td><td>trošak <strong>prije</strong> izdatka</td><td>Obračunano održavanje ili promocija koja će se platiti kasnije</td></tr></table><h3>Mjesta i nositelji troškova</h3><p><strong>Mjesto troška</strong> je mjesto na kojem trošak nastaje. <strong>Nositelj troška</strong> je učinak (proizvod ili usluga) koji troškove „nosi” – proces proizvodnje određenog proizvoda u razdoblju.</p><ul><li><strong>Neproizvodna</strong> mjesta (uprava, prodaja, administracija) – njihovi troškovi su troškovi razdoblja.</li><li><strong>Proizvodna</strong> mjesta: osnovne djelatnosti (pogon A, B; u hotelu kuhinja, restoran), pomoćne djelatnosti (radionica, transport, praonica), sporedne djelatnosti (proizvodnja ambalaže u tvornici keksa), neproizvodnih aktivnosti (nabava, prodaja, računovodstvo).</li><li>Troškovi <strong>pomoćnih i sporednih</strong> mjesta <strong>prevaljuju</strong> se na glavna mjesta pomoću ključeva – u <strong>POL-u</strong>.</li></ul><p>Svrha praćenja po mjestima i nositeljima: <strong>odgovornost</strong> za troškove i podloga za <strong>poslovne odluke</strong> (kalkulacije, cijene).</p><h3>Pogonski obračunski list (POL)</h3><p>Pomoćno računsko sredstvo za raspoređivanje <strong>općih (indirektnih)</strong> troškova po vrstama i mjestima nastanka. Mjesta u POL-u: pomoćna mjesta izrade (radionice), glavna mjesta izrade (pogoni), uprava i prodaja (režija). <strong>Direktni troškovi se ne unose</strong> jer se mogu mjeriti po jedinici. POL sadrži raspodjelu općih troškova na mjesta, međusobni obračun mjesta i ključeve (električna energija prema brojilu, voda prema broju slavina ili zaposlenih…).</p>"
+    }
+  },
+  "pdv": {
+    "name": "Porez na dodanu vrijednost (PDV)",
+    "icon": "fa-percent",
+    "color": "#e11d48",
+    "flashcards": [
+      {
+        "question": "Što je PDV u računovodstvu?",
+        "answer": "Porez iskazan na računima koji se mora evidentirati: iz ulaznih računa kao potraživanje (pretporez), iz izlaznih kao obveza prema državi.",
+        "explanation": "PDV nije ni prihod ni rashod."
+      },
+      {
+        "question": "Kamo se knjiži PDV iz ULAZNOG računa (od dobavljača)?",
+        "answer": "Na konto 180 Potraživanja za PDV (pretporez) – duguje; osnovica na konto troška ili imovine, a ukupni iznos na 220 Dobavljači – potražuje.",
+        "explanation": "Pretporez se odbija od obveze za PDV."
+      },
+      {
+        "question": "Kamo se knjiži PDV iz IZLAZNOG računa (kupcu)?",
+        "answer": "Na konto 280 Obveze za PDV – potražuje; osnovica na konto prihoda (razred 7), a ukupni iznos na 120 Kupci – duguje.",
+        "explanation": "Obveza prema državi."
+      },
+      {
+        "question": "Koje su stope PDV-a u RH?",
+        "answer": "Opća stopa 25 % te snižene stope 13 % (npr. usluge smještaja) i 5 %.",
+        "explanation": "U zadacima se stopa zadaje ili je vidljiva iz iznosa."
+      },
+      {
+        "question": "Što je PRETPOREZ?",
+        "answer": "PDV sadržan u ulaznim računima dobavljača koji obveznik smije odbiti od svoje obveze za PDV.",
+        "explanation": "Konto 180."
+      },
+      {
+        "question": "Kako se obračunava PDV za razdoblje?",
+        "answer": "Zbroje se obveze za PDV (izlazni računi) i potraživanja za PDV (ulazni računi); razlika u korist obveza uplaćuje se državi, a u korist potraživanja traži se povrat.",
+        "explanation": "Mjesečno ili tromjesečno."
+      },
+      {
+        "question": "Koliko je ukupno na fakturi za smještaj 10.000 + PDV 13 %?",
+        "answer": "11.300 – od toga prihod 10.000, a obveza za PDV 1.300.",
+        "explanation": "120 Kupci D 11.300."
+      },
+      {
+        "question": "Koliko je ukupno za najamninu 10.000 + PDV 25 %?",
+        "answer": "12.500 – prihod 10.000 (757), obveza za PDV 2.500 (280).",
+        "explanation": "Naplaćeno odmah: 100 Žiro račun D 12.500."
+      },
+      {
+        "question": "Utječe li PDV na rezultat poslovanja?",
+        "answer": "Ne – u račun dobiti i gubitka ulazi samo osnovica bez PDV-a.",
+        "explanation": "U novčanom toku PDV JEST dio primitka i izdatka."
+      },
+      {
+        "question": "Ulazni računi – kako se zove knjiga u kojoj se vode?",
+        "answer": "Knjiga ulaznih računa (KUF); izlazni računi vode se u knjizi izlaznih računa (KIF).",
+        "explanation": "Porezni propisi traže podatke o PDV-u."
+      },
+      {
+        "question": "Kakva je bilančna promjena kod fakture kupcu 10.000 + PDV?",
+        "answer": "A+P+ uslijed prihoda: raste potraživanje od kupaca (A+), a rastu prihod (kapital) i obveza za PDV (P+).",
+        "explanation": "Zbroj bilance raste za 11.300."
+      },
+      {
+        "question": "Kako se knjiži faktura za namirnice 72 + PDV 18?",
+        "answer": "310 Zaliha namirnica D 72 · 180 Potraživanja za PDV D 18 · 220 Dobavljači P 90.",
+        "explanation": "Primjer iz obrasca domaće zadaće (stopa 25 %)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Stigla je faktura za nabavljeni materijal 5.000 + PDV. PDV se knjiži na konto:",
+        "options": [
+          "Obveze za PDV",
+          "Prihodi od prodaje",
+          "Trošak materijala",
+          "Potraživanja za PDV"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Fakturirane su kupcima usluge polupansiona 50.000 + PDV. PDV se knjiži na konto:",
+        "options": [
+          "Obveze za PDV",
+          "Potraživanja za PDV",
+          "Dobavljači",
+          "Trošak usluga"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Primljena je faktura za električnu energiju 3.000 + PDV. PDV se knjiži na konto:",
+        "options": [
+          "Obveze za PDV",
+          "Potraživanja za PDV",
+          "Kupci",
+          "Izvanredni rashodi"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Naplaćena je najamnina poslovnog prostora 30.000 + PDV. PDV se knjiži na konto:",
+        "options": [
+          "Potraživanja za PDV",
+          "Trošak najamnine",
+          "Obveze za PDV",
+          "Dobavljači"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Primljena je faktura za troškove komunalnih usluga 1.000 + PDV. PDV se knjiži na konto:",
+        "options": [
+          "Obveze za PDV",
+          "Prihod od najma",
+          "Kupci",
+          "Potraživanja za PDV"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Kupcima je ispostavljena faktura za smještaj 10.000 + PDV 13 % (1.300). Točno je:",
+        "options": [
+          "Na dugovnu stranu konta Kupci knjiži se 11.300",
+          "Poslovni prihod iznosi 11.300",
+          "PDV 1.300 knjiži se na potraživanja za PDV",
+          "Na potražnu stranu konta Kupci knjiži se 10.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kupcima su fakturirane usluge smještaja 10.000 + PDV 1.300. Knjiženje:",
+        "options": [
+          "120 Kupci P 11.300 · 751 Prihod D 10.000 · 280 Obveze za PDV D 1.300",
+          "120 Kupci D 11.300 · 751 Prihod P 10.000 · 280 Obveze za PDV P 1.300",
+          "120 Kupci D 10.000 · 751 Prihod P 10.000 · 180 Potraživanja za PDV D 1.300",
+          "100 Žiro račun D 11.300 · 751 Prihod P 11.300"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Naplaćena je najamnina poslovnog prostora 10.000 + PDV 25 %. Na dugovnu stranu žiro računa knjiži se:",
+        "options": [
+          "10.000",
+          "2.500",
+          "12.500",
+          "11.300"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Primljena je faktura komunalnog društva 2.000 + PDV 500. Na potražnu stranu konta 220 Dobavljači knjiži se:",
+        "options": [
+          "2.000",
+          "500",
+          "1.500",
+          "2.500"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "U obračunskom razdoblju obveze za PDV iznose 3.800, a potraživanja za PDV 1.750. Državi se uplaćuje:",
+        "options": [
+          "2.050",
+          "5.550",
+          "3.800",
+          "1.750"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako su u razdoblju potraživanja za PDV veća od obveza za PDV:",
+        "options": [
+          "Razlika se uplaćuje državi",
+          "Traži se povrat razlike od države",
+          "Razlika postaje prihod poduzeća",
+          "Razlika postaje rashod poduzeća"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "PDV iz izlaznog računa u računu dobiti i gubitka:",
+        "options": [
+          "Iskazuje se kao poslovni prihod",
+          "Iskazuje se kao financijski prihod",
+          "Ne iskazuje se – prihod je samo osnovica",
+          "Iskazuje se kao izvanredni prihod"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Primljena je faktura za namirnice 72 + PDV 18. Na konto 310 knjiži se:",
+        "options": [
+          "90 na dugovnu stranu",
+          "18 na dugovnu stranu",
+          "90 na potražnu stranu",
+          "72 na dugovnu stranu"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "PDV iz ulaznih računa knjiži se na konto potraživanja za PDV, broj _______.",
+        "answer": "180",
+        "hint": "Troznamenkasti broj; pretporez."
+      },
+      {
+        "sentence": "PDV iz izlaznih računa knjiži se na konto obveze za PDV, broj _______.",
+        "answer": "280",
+        "hint": "Troznamenkasti broj; razred 2."
+      },
+      {
+        "sentence": "PDV iz ulaznih računa koji se smije odbiti od obveze zove se _______.",
+        "answer": "pretporez",
+        "hint": "Konto 180."
+      },
+      {
+        "sentence": "Opća stopa PDV-a u RH iznosi _______ %.",
+        "answer": "25",
+        "hint": "Upiši brojkom."
+      },
+      {
+        "sentence": "Knjiga ulaznih računa skraćeno se zove _______.",
+        "answer": "KUF",
+        "hint": "Za izlazne: KIF."
+      },
+      {
+        "sentence": "Knjiga izlaznih računa skraćeno se zove _______.",
+        "answer": "KIF",
+        "hint": "Za ulazne: KUF."
+      }
+    ],
+    "learn": {
+      "title": "PDV – knjiženje ulaznih i izlaznih računa i obračun",
+      "content": "<h3>PDV na računima</h3><p><strong>Porez na dodanu vrijednost</strong> iskazan je na svakom računu (osnovica + PDV = ukupno) i mora se evidentirati. PDV <strong>nije prihod ni rashod</strong> poduzeća – on je <strong>potraživanje</strong> od države (pretporez iz ulaznih računa) ili <strong>obveza</strong> prema državi (iz izlaznih računa). Stope u RH: <strong>25 %</strong> (opća), <strong>13 %</strong> (npr. usluge smještaja) i <strong>5 %</strong>.</p><div class=\"formula-box\"> $$\\text{PDV} = \\text{osnovica} \\times \\text{stopa} \\qquad \\text{Ukupno} = \\text{osnovica} + \\text{PDV}$$ <strong>Ulazni račun</strong> (dobavljač): osnovica → konto troška ili imovine (D) · PDV → <strong>180 Potraživanja za PDV</strong> (D) · ukupno → <strong>220 Dobavljači</strong> (P)<br><strong>Izlazni račun</strong> (kupac): ukupno → <strong>120 Kupci</strong> (D) · osnovica → prihod, razred 7 (P) · PDV → <strong>280 Obveze za PDV</strong> (P) </div><h3>Riješeni primjeri</h3><div class=\"example-box\"><strong>1. Faktura za smještaj</strong> 10.000 + PDV 13 %: \\(10.000 \\times 0{,}13 = 1.300\\); ukupno 11.300. <table><tr><th>Konto</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>120 Kupci</td><td>11.300</td><td></td></tr><tr><td>751 Prihod od prodaje proizvoda i usluga</td><td></td><td>10.000</td></tr><tr><td>280 Obveze za PDV</td><td></td><td>1.300</td></tr></table> Promjena: <strong>A+P+ uslijed prihoda</strong>. Poslovni prihod = <strong>10.000</strong> (bez PDV-a).</div><div class=\"example-box\"><strong>2. Naplaćena najamnina</strong> poslovnog prostora 10.000 + PDV 25 % (2.500): <table><tr><th>Konto</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>100 Žiro račun</td><td>12.500</td><td></td></tr><tr><td>757 Prihod od najma</td><td></td><td>10.000</td></tr><tr><td>280 Obveze za PDV</td><td></td><td>2.500</td></tr></table> Promjena: <strong>A+P+ uslijed prihoda</strong>.</div><div class=\"example-box\"><strong>3. Faktura komunalnog društva</strong> za komunalne usluge 2.000 + PDV 500: <table><tr><th>Konto</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>418 Komunalne usluge</td><td>2.000</td><td></td></tr><tr><td>180 Potraživanja za PDV</td><td>500</td><td></td></tr><tr><td>220 Dobavljači</td><td></td><td>2.500</td></tr></table> Ispitni ključ ovu promjenu naziva <strong>periferijskom uslijed rashoda (P+P−)</strong>: obveza prema dobavljaču raste, a kapital se kroz trošak smanjuje. Preciznije: za 2.000 riječ je o P+P−, a za PDV od 500 raste i potraživanje (A+) i obveza (P+) – centripetalni dio.</div><div class=\"example-box\"><strong>4. Obrazac domaće zadaće</strong> – račun trgovine za namirnice: osnovica 72,00 + PDV 18,00 = 90,00. <table><tr><th colspan=\"2\">310 Zaliha namirnica</th><th colspan=\"2\">180 Potraživanja za PDV</th><th colspan=\"2\">220 Dobavljači</th></tr><tr><th>D</th><th>P</th><th>D</th><th>P</th><th>D</th><th>P</th></tr><tr><td>(1) 72,00</td><td></td><td>(1) 18,00</td><td></td><td></td><td>90,00 (1)</td></tr></table> U domaćoj zadaći svaki račun dobiva redni broj (kronološki) koji je ujedno broj promjene; iz tablice se izvode ukupni troškovi, ukupni pretporez i zalihe namirnica.</div><h3>Obračun PDV-a za razdoblje</h3><p>Na kraju razdoblja (mjesečno ili tromjesečno, ovisno o obvezniku) zbroje se <strong>obveze za PDV</strong> i <strong>potraživanja za PDV</strong>:</p><ul><li>obveze &gt; potraživanja → razlika se <strong>uplaćuje državi</strong>;</li><li>potraživanja &gt; obveze → traži se <strong>povrat</strong> pretporeza.</li></ul><div class=\"example-box\"><strong>5. Obračun za mjesec</strong> (primjeri 1–3 + faktura za materijal 5.000 + PDV 25 % = 1.250):<br> Obveze za PDV = 1.300 + 2.500 = <strong>3.800</strong> · Potraživanja za PDV = 500 + 1.250 = <strong>1.750</strong><br> Za uplatu = 3.800 − 1.750 = <strong>2.050</strong><table><tr><th>Knjiženje</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>Prijeboj pretporeza s obvezom</td><td>280 Obveze za PDV 1.750</td><td>180 Potraživanja za PDV 1.750</td></tr><tr><td>Uplata razlike državi</td><td>280 Obveze za PDV 2.050</td><td>100 Žiro račun 2.050</td></tr></table> Uplata PDV-a je <strong>izdatak iz poslovnih aktivnosti</strong> u izvještaju o novčanom toku.</div><div class=\"tip-box\"><strong>Brzo prepoznavanje:</strong> „primljena faktura / stigla faktura / nabavljeno” → <strong>180 Potraživanja za PDV</strong>; „fakturirano kupcima / naplaćena najamnina / prodano” → <strong>280 Obveze za PDV</strong>. U RDG uvijek samo osnovica; u novčanom toku puni iznos s PDV-om.</div>"
+    }
+  },
+  "financijskiIzvjestaji": {
+    "name": "Račun dobiti i gubitka i novčani tok",
+    "icon": "fa-chart-line",
+    "color": "#3b82f6",
+    "flashcards": [
+      {
+        "question": "Što je RAČUN DOBITI I GUBITKA?",
+        "answer": "Temeljni izvještaj koji za obračunsko razdoblje sučeljava prihode i rashode i utvrđuje rezultat – dobit ili gubitak.",
+        "explanation": "Dinamički izvještaj; veza s bilancom je kapital."
+      },
+      {
+        "question": "Koji je cilj računa dobiti i gubitka?",
+        "answer": "Pokazati promjenu kapitala – prije svega zarađenog kapitala – između dva datuma bilance.",
+        "explanation": "Dobit povećava, gubitak smanjuje kapital."
+      },
+      {
+        "question": "Kako je strukturiran račun dobiti i gubitka?",
+        "answer": "Poslovni prihodi i rashodi, financijski prihodi i rashodi, izvanredni prihodi i rashodi → bruto dobit → porez na dobit → neto dobit.",
+        "explanation": "Dobit iz redovnih + izvanrednih aktivnosti."
+      },
+      {
+        "question": "Bruto dobit, porez i neto dobit?",
+        "answer": "Bruto dobit = ukupni prihodi − ukupni rashodi; porez na dobit = bruto dobit × stopa; neto dobit = bruto dobit − porez.",
+        "explanation": "Neto dobit u cijelosti pripada vlasnicima."
+      },
+      {
+        "question": "Kako se raspoređuje neto dobit?",
+        "answer": "Na dividende dioničarima, rezerve, pokriće prenesenog gubitka, a ostatak postaje zadržana dobit.",
+        "explanation": "Zadržana dobit povećava kapital."
+      },
+      {
+        "question": "Na koje se aktivnosti dijeli IZVJEŠTAJ O NOVČANOM TOKU?",
+        "answer": "Novčane primitke i izdatke razdoblja razvrstane na poslovne, investicijske i financijske aktivnosti te čisti novčani tok.",
+        "explanation": "Temelji se na novcu i novčanim ekvivalentima."
+      },
+      {
+        "question": "Što su novčani ekvivalenti?",
+        "answer": "Kratkoročna ulaganja i plasmani brzo pretvorivi u novac, s rokom dospijeća do 3 mjeseca.",
+        "explanation": "Surogati novca."
+      },
+      {
+        "question": "Što su POSLOVNE aktivnosti u novčanom toku?",
+        "answer": "Primici i izdaci iz osnovne djelatnosti: naplata od kupaca, plaćanje dobavljačima, isplata plaća, plaćanje PDV-a i poreza.",
+        "explanation": "Npr. isplata plaća = poslovni izdatak."
+      },
+      {
+        "question": "Što su INVESTICIJSKE aktivnosti?",
+        "answer": "Primici i izdaci od kupnje i prodaje dugotrajne imovine i ulaganja: nabava opreme, prodaja zgrade, kupnja vrijednosnih papira.",
+        "explanation": "Kupovina opreme = investicijski izdatak."
+      },
+      {
+        "question": "Što su FINANCIJSKE aktivnosti?",
+        "answer": "Primici i izdaci od financiranja: emisija dionica i obveznica, primljeni krediti, otplata glavnice kredita, otkup dionica, isplata dividendi.",
+        "explanation": "Izdavanje dionica = financijski primitak."
+      },
+      {
+        "question": "Kako se računa čisti novčani tok?",
+        "answer": "Zbroj novčanih tokova (primici − izdaci) iz poslovnih, investicijskih i financijskih aktivnosti.",
+        "explanation": "Za svaku aktivnost: NT = primici − izdaci."
+      },
+      {
+        "question": "Direktna vs indirektna metoda novčanog toka?",
+        "answer": "Razlikuju se samo u poslovnim aktivnostima: direktna navodi primitke i izdatke; indirektna kreće od neto dobiti + amortizacija ± promjene kratkotrajne imovine i obveza.",
+        "explanation": "Amortizacija je trošak bez izdatka."
+      },
+      {
+        "question": "Što su POSLOVNI IZDACI i gdje se prikazuju?",
+        "answer": "Isplate vezane za temeljnu djelatnost (plaće, dobavljači, porezi) – u izvještaju o novčanom toku, dio poslovne aktivnosti.",
+        "explanation": "Isplata plaća sa žiro računa = poslovni izdatak."
+      },
+      {
+        "question": "Što prikazuje izvještaj o promjenama vlasničke glavnice?",
+        "answer": "Strukturu kapitala i njegove promjene tijekom razdoblja (ulaganja, dobit, dividende, rezerve).",
+        "explanation": "Kapital je stavka i bilance i ovog izvještaja."
+      },
+      {
+        "question": "Što sadrže BILJEŠKE uz financijske izvještaje?",
+        "answer": "Značajne računovodstvene politike i pojašnjenja pojedinih pozicija izvještaja.",
+        "explanation": "Idu iza temeljnih izvještaja."
+      },
+      {
+        "question": "Što se navodi kad se traži utjecaj promjene na novčani tok?",
+        "answer": "Kategorija (primitak ili izdatak), iznos S PDV-om, konto novca (100 ili 102), aktivnost (poslovna, investicijska, financijska) i utjecaj na čisti novčani tok.",
+        "explanation": "Npr. primitak 12.500 na 100 Žiro račun."
+      },
+      {
+        "question": "Koliki je porez na dobit u RH danas?",
+        "answer": "Stopa 10 % za poduzetnike s prihodom do 1 milijun eura, a 18 % iznad toga; u zadacima se stopa zadaje.",
+        "explanation": "Stopa 35 % iz starih bilješki više ne vrijedi."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Prihodi od smještaja 100.000, najma 50.000, troškovi amortizacije 20.000, el. energije 5.000, zaliha materijala 5.000, negativna tečajna razlika 2.000, prihod od kamata 3.000, zgrade 24.000. Bruto dobit iznosi:",
+        "options": [
+          "126.000",
+          "121.000",
+          "153.000",
+          "100.800"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Isti podaci (bruto dobit 126.000), porez na dobit 20 %. Porez na dobit iznosi:",
+        "options": [
+          "30.600",
+          "25.200",
+          "12.600",
+          "20.000"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Isti podaci (bruto dobit 126.000), porez 20 %. Neto dobit iznosi:",
+        "options": [
+          "126.000",
+          "122.400",
+          "100.800",
+          "95.200"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Isti podaci. Poslovni prihodi iznose:",
+        "options": [
+          "153.000",
+          "100.000",
+          "103.000",
+          "150.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Isti podaci. Ukupni rashodi iznose:",
+        "options": [
+          "27.000",
+          "32.000",
+          "25.000",
+          "56.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Prihodi od hrane i pića 200.000, isplata plaća 30.000, plaćanje fakture za materijal 12.500, kupovina opreme 50.000, izdavanje dionica 100.000, plaćanje PDV-a 4.000, kupci uplatili fakturu za smještaj 70.000. Primici iz poslovnih aktivnosti iznose:",
+        "options": [
+          "270.000",
+          "70.000",
+          "170.000",
+          "200.000"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Isti podaci. Izdaci iz poslovnih aktivnosti iznose:",
+        "options": [
+          "96.500",
+          "42.500",
+          "46.500",
+          "34.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Isti podaci. Novčani tok iz poslovnih aktivnosti iznosi:",
+        "options": [
+          "27.500",
+          "116.500",
+          "−26.500",
+          "23.500"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Isti podaci. Primici iz financijskih aktivnosti iznose:",
+        "options": [
+          "100.000",
+          "70.000",
+          "50.000",
+          "0"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Isti podaci. Izdaci iz investicijskih aktivnosti iznose:",
+        "options": [
+          "100.000",
+          "50.000",
+          "46.500",
+          "62.500"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prihod od suvenira 20.000, rashod od kamata 10.000, primici posl. aktivnosti 60.000, izdaci posl. aktivnosti 40.000, prihodi od smještaja 80.000, rashodi prodanih usluga 40.000, emitirane dionice 20.000, rashodi prodane robe 5.000. Ukupni rashodi iznose:",
+        "options": [
+          "50.000",
+          "95.000",
+          "55.000",
+          "45.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Isti podaci. Čisti novčani tok iz poslovnih aktivnosti iznosi:",
+        "options": [
+          "+60.000",
+          "−40.000",
+          "+40.000",
+          "+20.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Prihod od smještaja 80.000, najamnine 50.000, rashod od prodaje usluga 20.000, oprema 30.000, izdaci fin. aktivnosti 20.000, negativne tečajne razlike 10.000, primici fin. aktivnosti 40.000. Poslovni prihodi iznose:",
+        "options": [
+          "130.000",
+          "80.000",
+          "170.000",
+          "110.000"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Isti podaci. Čisti novčani tok iz financijskih aktivnosti iznosi:",
+        "options": [
+          "+40.000",
+          "+20.000",
+          "−20.000",
+          "+60.000"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prihod od gotovih proizvoda 20.000, smještaja u polupansionu 80.000, rashodi pruženih usluga 20.000, izdatak posl. aktivnosti 30.000, primitak posl. aktivnosti 40.000, rashod od kamata 10.000. Rezultat prije oporezivanja iznosi:",
+        "options": [
+          "80.000",
+          "60.000",
+          "70.000",
+          "90.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Izdatak iz investicijskih aktivnosti 30.000, primitak iz investicijskih aktivnosti 50.000. Čisti investicijski novčani tok:",
+        "options": [
+          "−20.000",
+          "+80.000",
+          "−80.000",
+          "+20.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Sa žiro računa radnicima su isplaćene obračunate plaće 24.000. To je:",
+        "options": [
+          "Poslovni izdatak",
+          "Investicijski izdatak",
+          "Financijski izdatak",
+          "Izvanredni rashod"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Plaćena je obveza za PDV 15.000. Utjecaj na izvještaj o novčanom toku:",
+        "options": [
+          "Izdatak 15.000 (100 Žiro račun), financijske aktivnosti",
+          "Izdatak 15.000 (100 Žiro račun), poslovne aktivnosti",
+          "Primitak 15.000, poslovne aktivnosti",
+          "Nema utjecaja – PDV nije novčana stavka"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Iz blagajne je plaćena faktura za poštarinu 1.000 + PDV 250. Utjecaj na novčani tok:",
+        "options": [
+          "Izdatak 1.000 (102 Blagajna), poslovne aktivnosti",
+          "Trošak 1.000 (411), poslovni rashod",
+          "Izdatak 1.250 (102 Blagajna), poslovne aktivnosti",
+          "Izdatak 1.250, investicijske aktivnosti"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Otplata glavnice kredita i isplata dividendi pripadaju:",
+        "options": [
+          "Poslovnim aktivnostima",
+          "Investicijskim aktivnostima",
+          "Izvanrednim aktivnostima",
+          "Financijskim aktivnostima"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Uz izvještaj o novčanom toku mogu se povezati pojmovi:",
+        "options": [
+          "Primitak, izdatak, novčani tok iz poslovnih aktivnosti",
+          "Prihod, rashod, bruto dobit i porez na dobit razdoblja",
+          "Aktiva, pasiva, bilančna ravnoteža",
+          "Trošak, učinak, cijena koštanja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pri indirektnoj metodi novčani tok iz poslovnih aktivnosti počinje od:",
+        "options": [
+          "Primitaka od kupaca umanjenih za izdatke dobavljačima",
+          "Neto dobiti uvećane za amortizaciju",
+          "Emisije dionica",
+          "Ukupne aktive"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poveže li se KAPITAL s temeljnim financijskim izvještajima, točno je:",
+        "options": [
+          "Stavka je samo računa dobiti i gubitka, kao prihod razdoblja",
+          "Stavka je samo izvještaja o novčanom toku",
+          "Stavka je bilance i izvještaja o promjenama kapitala",
+          "Ne pojavljuje se ni u jednom izvještaju"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Rezultat razdoblja prije oporezivanja zove se _______ dobit.",
+        "answer": "bruto",
+        "hint": "Prihodi − rashodi."
+      },
+      {
+        "sentence": "Dobit nakon oporezivanja zove se _______ dobit.",
+        "answer": "neto",
+        "hint": "Pripada vlasnicima."
+      },
+      {
+        "sentence": "Emisija dionica i primljeni krediti su primici iz _______ aktivnosti.",
+        "answer": "financijskih",
+        "hint": "Aktivnosti financiranja."
+      },
+      {
+        "sentence": "Kupnja opreme je izdatak iz _______ aktivnosti.",
+        "answer": "investicijskih",
+        "hint": "Dugotrajna imovina."
+      },
+      {
+        "sentence": "Isplata plaća i plaćanje dobavljačima su izdaci iz _______ aktivnosti.",
+        "answer": "poslovnih",
+        "hint": "Osnovna djelatnost."
+      },
+      {
+        "sentence": "Metoda novčanog toka koja počinje od neto dobiti i amortizacije zove se _______ metoda.",
+        "answer": "indirektna",
+        "hint": "Suprotno: direktna."
+      }
+    ],
+    "learn": {
+      "title": "Račun dobiti i gubitka, novčani tok i ostali izvještaji – riješeni izračuni",
+      "content": "<h3>Račun dobiti i gubitka (izvještaj o dobiti)</h3><p>Kumulativni prikaz <strong>prihoda, rashoda i rezultata</strong> za obračunsko razdoblje (najčešće godinu). Za razliku od bilance (trenutak), odnosi se na <strong>razdoblje</strong>. Osnovna veza s bilancom su <strong>promjene kapitala</strong>: dobit povećava, gubitak smanjuje kapital.</p><table><tr><th>Oznaka</th><th>Stavka</th></tr><tr><td>A</td><td>Poslovni prihodi</td></tr><tr><td>B</td><td>Poslovni rashodi</td></tr><tr><td>C</td><td>Financijski prihodi</td></tr><tr><td>D</td><td>Financijski rashodi</td></tr><tr><td>E</td><td>Dobit iz redovnih aktivnosti = (A + C) − (B + D)</td></tr><tr><td>F / G</td><td>Izvanredni prihodi / izvanredni rashodi</td></tr><tr><td>H</td><td>Dobit iz izvanrednih aktivnosti = F − G</td></tr><tr><td>I</td><td><strong>Bruto dobit</strong> (dobit prije oporezivanja) = E + H</td></tr><tr><td>J</td><td><strong>Porez na dobit</strong> = I × stopa</td></tr><tr><td>K</td><td><strong>Neto dobit</strong> = I − J</td></tr></table><p>Neto dobit u cijelosti pripada vlasnicima; raspoređuje se na dividende, rezerve, pokriće prenesenog gubitka, a ostatak postaje <strong>zadržana dobit</strong>.</p><div class=\"warning-box\"><strong>Stopa poreza na dobit:</strong> studentske bilješke navode „35 %” – to je davno ukinuta stopa. U RH danas vrijedi <strong>10 %</strong> (prihod do 1 milijun eura) odnosno <strong>18 %</strong>; u kolokviju se stopa zadaje u zadatku.</div><div class=\"example-box\"><strong>Riješeni zadatak – RDG.</strong> Prihodi od smještaja 100.000, prihodi od najma 50.000, troškovi amortizacije 20.000, trošak el. energije 5.000, zaliha materijala 5.000, negativna tečajna razlika 2.000, prihod od kamata 3.000, zgrade 24.000; porez na dobit 20 %. <table><tr><th>Stavka</th><th>Izračun</th><th>Iznos</th></tr><tr><td>Poslovni prihodi</td><td>100.000 + 50.000</td><td>150.000</td></tr><tr><td>Financijski prihodi</td><td>kamate</td><td>3.000</td></tr><tr><td>Ukupni prihodi</td><td>150.000 + 3.000</td><td>153.000</td></tr><tr><td>Ukupni rashodi</td><td>20.000 + 5.000 + 2.000</td><td>27.000</td></tr><tr><td><strong>Bruto dobit</strong></td><td>153.000 − 27.000</td><td><strong>126.000</strong></td></tr><tr><td>Porez na dobit</td><td>\\(126.000 \\times 0{,}20\\)</td><td>25.200</td></tr><tr><td><strong>Neto dobit</strong></td><td>126.000 − 25.200</td><td><strong>100.800</strong></td></tr></table><strong>Zamka:</strong> zaliha materijala i zgrade su <strong>bilančne</strong> stavke (imovina) – ne ulaze u RDG.</div><div class=\"example-box\"><strong>Kraći ispitni izračuni:</strong><br> • Prihod od gotovih proizvoda 20.000 + smještaj u polupansionu 80.000 → poslovni prihodi <strong>100.000</strong>; rashodi pruženih usluga 20.000, rashod od kamata 10.000 → rezultat prije oporezivanja = 100.000 − 20.000 − 10.000 = <strong>70.000</strong>.<br> • Rashod od kamata 10.000 + rashodi prodanih usluga 40.000 + rashodi prodane robe 5.000 → ukupni rashodi <strong>55.000</strong> (emitirane dionice su kapital, ne prihod).<br> • Smještaj 80.000 + najamnina poslovnog prostora 50.000 → poslovni prihodi <strong>130.000</strong>; negativne tečajne razlike 10.000 → rashodi financiranja <strong>10.000</strong>.</div><div class=\"tip-box\"><strong>Današnja praksa:</strong> sheme GFI od 2016. više ne iskazuju izvanredne prihode i rashode – ti se iznosi prikazuju kao <strong>ostali</strong> poslovni prihodi i rashodi. Podjela na izvanredne ostaje ispitno gradivo kolegija.</div><h3>Izvještaj o novčanom toku</h3><p>Temelji se na <strong>novcu</strong> (na računima i u blagajni) i <strong>novčanim ekvivalentima</strong> (ulaganja s rokom do 3 mjeseca). Pokazuje promjenu financijske situacije i ocjenu <strong>likvidnosti</strong>; njime se najteže manipulira. Za svaku aktivnost: <strong>novčani tok = primici − izdaci</strong>.</p><table><tr><th>Aktivnost</th><th>Primici</th><th>Izdaci</th></tr><tr><td><strong>Poslovne</strong></td><td>naplata od kupaca, prodaja za gotovinu, primljene kamate i dividende</td><td>plaćanje dobavljačima, plaće, osiguranje, PDV i porezi</td></tr><tr><td><strong>Investicijske</strong></td><td>prodaja dugotrajne imovine i vrijednosnih papira, povrat danih kredita</td><td>nabava opreme i druge dugotrajne imovine, ulaganja u vrijednosne papire</td></tr><tr><td><strong>Financijske</strong></td><td>emisija dionica i obveznica, primljeni krediti</td><td>otplata glavnice kredita, otkup vlastitih dionica, isplata dividendi</td></tr></table> $$\\text{Čisti novčani tok} = NT_{\\text{poslovni}} + NT_{\\text{investicijski}} + NT_{\\text{financijski}}$$ <div class=\"example-box\"><strong>Riješeni zadatak – novčani tok.</strong> Prihodi od prodaje hrane i pića 200.000, isplata plaća 30.000, plaćanje fakture za materijal 12.500, kupovina opreme 50.000, izdavanje dionica 100.000, plaćanje PDV-a 4.000, kupci uplatili fakturu za smještaj 70.000, zaliha trgovačke robe 30.000. <table><tr><th>Stavka</th><th>Izračun</th><th>Iznos</th></tr><tr><td>Primici iz poslovnih aktivnosti</td><td>uplata kupaca</td><td>70.000</td></tr><tr><td>Izdaci iz poslovnih aktivnosti</td><td>30.000 + 12.500 + 4.000</td><td>46.500</td></tr><tr><td><strong>NT poslovnih aktivnosti</strong></td><td>70.000 − 46.500</td><td><strong>23.500</strong></td></tr><tr><td>Izdaci iz investicijskih aktivnosti</td><td>kupovina opreme</td><td>50.000</td></tr><tr><td>Primici iz financijskih aktivnosti</td><td>izdavanje dionica</td><td>100.000</td></tr><tr><td><strong>Čisti novčani tok</strong></td><td>23.500 − 50.000 + 100.000</td><td><strong>73.500</strong></td></tr></table><strong>Zamka:</strong> „prihodi od prodaje hrane i pića” su <strong>prihod</strong>, ne primitak (nije rečeno da je naplaćeno); zaliha robe je bilančna stavka.</div><div class=\"warning-box\"><strong>Ispravak izvora:</strong> u skupu pitanja za NT poslovnih aktivnosti stoji rješenje 27.500. Točno je <strong>70.000 − 46.500 = 23.500</strong>.</div><div class=\"example-box\"><strong>Kraći izračuni:</strong> investicijski primitak 50.000 − izdatak 30.000 = <strong>+20.000</strong> · poslovni primici 60.000 − izdaci 40.000 = <strong>+20.000</strong> · financijski primici 40.000 − izdaci 20.000 = <strong>+20.000</strong> · poslovni primitak 40.000 − izdatak 30.000 = <strong>10.000</strong>.</div><h3>Utjecaj promjene na novčani tok – kako odgovoriti</h3><table><tr><th>Promjena</th><th>Utjecaj na izvještaj o novčanom toku</th></tr><tr><td>Kupci platili fakturu za smještaj 10.000 + PDV 13 %</td><td>Primitak <strong>11.300</strong> (100 Žiro račun), primici iz poslovnih aktivnosti; povećava NT poslovnih aktivnosti i čisti novčani tok</td></tr><tr><td>Iz blagajne plaćena faktura za poštarinu 1.000 + PDV 25 %</td><td>Izdatak <strong>1.250</strong> (102 Blagajna), izdaci iz poslovnih aktivnosti; smanjuje NT</td></tr><tr><td>Isplaćene bruto plaće 20.000</td><td>Izdatak 20.000 (100 Žiro račun), poslovne aktivnosti</td></tr><tr><td>Plaćena obveza za PDV 15.000</td><td>Izdatak 15.000 (100 Žiro račun), poslovne aktivnosti</td></tr></table><div class=\"warning-box\"><strong>Nedosljednost u oglednim rješenjima:</strong> za „kupci su platili fakturu za usluge smještaja 10.000 + PDV” navodi se primitak 12.500 (kao da je stopa 25 %). Uz stopu za smještaj od 13 % primitak je <strong>11.300</strong> – u zadatku uvijek provjeri zadanu stopu.</div><p><strong>Indirektna metoda</strong> razlikuje se samo u poslovnim aktivnostima: neto dobit + amortizacija ± promjene kratkotrajne imovine i kratkoročnih obveza. U praksi se NT poslovnih aktivnosti često procjenjuje kao <strong>neto dobit + amortizacija</strong> (amortizacija je trošak bez izdatka).</p><h3>Izvještaj o promjenama vlasničke glavnice i bilješke</h3><p><strong>Izvještaj o promjenama vlasničke glavnice</strong> prikazuje strukturu kapitala i promjene tijekom razdoblja (uloženi i zarađeni kapital, dividende, rezerve) – kapital je stavka i bilance i ovog izvještaja. <strong>Bilješke</strong> imaju dva dijela: <strong>značajne računovodstvene politike</strong> (metode, načela, postupci) i <strong>pojašnjenja pozicija</strong>; nalaze se iza temeljnih izvještaja.</p>"
+    }
+  },
+  "dugotrajnaImovina": {
+    "name": "Dugotrajna imovina i amortizacija",
+    "icon": "fa-hotel",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Koji su kriteriji priznavanja imovine?",
+        "answer": "Pravo raspolaganja (vlasništvo ili kontrola), pouzdano mjerenje troška i vjerojatnost budućih ekonomskih koristi.",
+        "explanation": "Vrijedi za materijalnu i nematerijalnu imovinu."
+      },
+      {
+        "question": "Koja su tri procesa dugotrajne imovine?",
+        "answer": "Nabava (imovina u pripremi), uporaba (imovina u uporabi, amortizacija) i otuđivanje – prodaja, rashodovanje, likvidacija.",
+        "explanation": "Nabava ide preko konta „imovina u pripremi”."
+      },
+      {
+        "question": "Što ulazi u trošak nabave dugotrajne imovine?",
+        "answer": "Kupovna cijena, carina i uvozne pristojbe, nepovratni porezi, prijevoz i dopremu, montažu i sve troškove dovođenja u radno stanje.",
+        "explanation": "Za zgrade i projektna dokumentacija i nadzor."
+      },
+      {
+        "question": "Na koje načine se stječe dugotrajna imovina?",
+        "answer": "Kupnjom (iz vlastitih sredstava ili kredita), izgradnjom ili izradom u vlastitoj ili tuđoj režiji, zamjenom i dobivanjem bez naknade (poklon).",
+        "explanation": "Razmjena „staro za novo”."
+      },
+      {
+        "question": "Što je AMORTIZACIJA?",
+        "answer": "Postupno trošenje dugotrajne imovine ograničenog vijeka i prenošenje njezine vrijednosti na proizvode i usluge, uz postupno nadoknađivanje kroz njihovu prodaju.",
+        "explanation": "Računovodstveno: trošak; financijski: izvor novca."
+      },
+      {
+        "question": "Koja imovina se NE amortizira?",
+        "answer": "Zemljište, prirodna bogatstva, umjetničke vrijednosti i spomenička baština.",
+        "explanation": "Nemaju ograničen vijek uporabe."
+      },
+      {
+        "question": "Koji su uvjeti za obračun amortizacije?",
+        "answer": "Imovina se koristi dulje od godine, ima ograničen koristan vijek i drži se za proizvodnju, pružanje usluga, najam ili administraciju.",
+        "explanation": "Elementi: trošak nabave i koristan vijek."
+      },
+      {
+        "question": "Kako se računa LINEARNA amortizacija?",
+        "answer": "Jednak iznos svake godine: nabavna vrijednost × godišnja stopa (stopa = 100 % / vijek u godinama).",
+        "explanation": "Najčešća metoda; osnovica je nabavna vrijednost."
+      },
+      {
+        "question": "Što je DEGRESIVNA amortizacija?",
+        "answer": "Iznos se iz godine u godinu smanjuje jer se stopa primjenjuje na neotpisanu vrijednost; najveći dio vraća se u prvim godinama.",
+        "explanation": "Primjerena inflaciji i brzom tehnološkom napretku."
+      },
+      {
+        "question": "Što je PROGRESIVNA amortizacija?",
+        "answer": "Iznos amortizacije raste iz razdoblja u razdoblje; rijetko se koristi.",
+        "explanation": "Neprimjerena inflaciji i brzom zastarijevanju."
+      },
+      {
+        "question": "Što je FUNKCIONALNA amortizacija?",
+        "answer": "Amortizacija po proizvedenoj jedinici ili odrađenom radnom satu.",
+        "explanation": "Vezana za stvarno korištenje."
+      },
+      {
+        "question": "Kako se knjiži amortizacija zgrade po stopi 2 % (PS 600.000)?",
+        "answer": "431 Trošak amortizacije D 12.000 / 029 Ispravak vrijednosti zgrade P 12.000 – centrifugalna promjena uslijed rashoda.",
+        "explanation": "Imovina se ne knjiži izravno na P, nego kroz ispravak."
+      },
+      {
+        "question": "Što je SADAŠNJA (neotpisana) vrijednost?",
+        "answer": "Nabavna vrijednost umanjena za ispravak vrijednosti (akumuliranu amortizaciju).",
+        "explanation": "Knjigovodstvena = sadašnja = neotpisana vrijednost."
+      },
+      {
+        "question": "Kako se utvrđuje rezultat prodaje dugotrajne imovine?",
+        "answer": "Prodajna cijena − neotpisana vrijednost: pozitivna razlika je prihod, negativna je rashod.",
+        "explanation": "Treba znati nabavnu vrijednost i ispravak."
+      },
+      {
+        "question": "Što je RASHODOVANJE?",
+        "answer": "Redovito isknjiženje imovine iz knjiga na kraju vijeka; ako ima neotpisanu vrijednost, ona postaje rashod, a ako je potpuno otpisana, zatvaraju se konta nabave i ispravka.",
+        "explanation": "Oblik otuđivanja."
+      },
+      {
+        "question": "Što je VRIJEDNOSNO USKLAĐENJE dugotrajne imovine?",
+        "answer": "Smanjenje neto knjigovodstvene vrijednosti kad je nadoknadivi iznos manji od neotpisane vrijednosti (npr. teška oštećenja, elementarne nepogode).",
+        "explanation": "Umanjenje se knjiži na teret rashoda."
+      },
+      {
+        "question": "Što je GOODWILL?",
+        "answer": "Nematerijalna imovina koja se stječe u poslovnim kombinacijama – razlika plaćenog troška stjecanja i fer vrijednosti stečene neto imovine.",
+        "explanation": "Ugled, tržišni položaj; može biti i negativan."
+      },
+      {
+        "question": "Kada se nematerijalna imovina priznaje u bilanci?",
+        "answer": "Kad se očekuje buduća ekonomska korist i kad se trošak nabave može pouzdano utvrditi – tada razred 0; inače trošak razreda 4.",
+        "explanation": "Npr. osnivački izdaci, istraživanje i razvoj."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Obračunata je amortizacija na zgrade po stopi 2 % (PS zgrade 600.000). Knjiženje:",
+        "options": [
+          "029 Ispravak vrijednosti zgrade D 12.000 / 431 Trošak amortizacije P 12.000",
+          "431 Trošak amortizacije D 12.000 / 100 Žiro račun P 12.000",
+          "431 Trošak amortizacije D 1.200 / 029 Ispravak vrijednosti zgrade P 1.200",
+          "431 Trošak amortizacije D 12.000 / 029 Ispravak vrijednosti zgrade P 12.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Obračun amortizacije je bilančna promjena:",
+        "options": [
+          "Centrifugalna uslijed rashoda",
+          "Centripetalna uslijed prihoda",
+          "Koncentrična",
+          "Periferijska uslijed prihoda"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Oprema nabavne vrijednosti 50.000, vijek 5 godina, linearna metoda. Godišnja amortizacija iznosi:",
+        "options": [
+          "5.000",
+          "10.000",
+          "20.000",
+          "12.500"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ista oprema (50.000, linearno, 5 godina). Sadašnja vrijednost nakon 3 godine:",
+        "options": [
+          "30.000",
+          "10.000",
+          "20.000",
+          "40.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Degresivna metoda, stopa 40 % na neotpisanu vrijednost, nabavna 50.000. Amortizacija 2. godine:",
+        "options": [
+          "20.000",
+          "8.000",
+          "16.000",
+          "12.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Stroj 100.000 ima kapacitet 50.000 radnih sati; u godini je radio 8.000 sati. Funkcionalna amortizacija:",
+        "options": [
+          "16.000",
+          "20.000",
+          "8.000",
+          "12.500"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koja se imovina NE amortizira?",
+        "options": [
+          "Hotelska zgrada",
+          "Zemljište",
+          "Kuhinjska oprema",
+          "Softver"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Metoda amortizacije kod koje se najveći dio nabavne vrijednosti vraća u prvim godinama je:",
+        "options": [
+          "Linearna",
+          "Progresivna",
+          "Degresivna",
+          "Funkcionalna"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Oprema: nabavna vrijednost 40.000, ispravak 30.000, prodana za 12.000. Rezultat prodaje:",
+        "options": [
+          "Rashod (gubitak) 2.000",
+          "Prihod 12.000",
+          "Rashod 28.000",
+          "Prihod (dobitak) 2.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Potpuno otpisana oprema se rashoduje. Što se događa u knjigama?",
+        "options": [
+          "Zatvaraju se konta nabavne vrijednosti i ispravka",
+          "Cijela nabavna vrijednost postaje izvanredni rashod",
+          "Nastaje prihod u visini nabavne vrijednosti",
+          "Oprema ostaje u bilanci do prodaje"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "U trošak nabave dugotrajne imovine NE ulazi:",
+        "options": [
+          "Carina i uvozne pristojbe",
+          "Povratni PDV (pretporez)",
+          "Troškovi prijevoza i montaže",
+          "Kupovna cijena dobavljača"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Vrijednosno usklađenje (umanjenje) dugotrajne imovine provodi se kada je:",
+        "options": [
+          "Tržišna vrijednost veća od knjigovodstvene",
+          "Imovina potpuno amortizirana",
+          "Nadoknadivi iznos manji od neotpisane vrijednosti",
+          "Imovina tek nabavljena"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Mjesečna amortizacija ako godišnja iznosi 12.000:",
+        "options": [
+          "12.000",
+          "120",
+          "100",
+          "1.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Goodwill se stječe:",
+        "options": [
+          "U poslovnim kombinacijama (preuzimanjem)",
+          "Zasebnom kupnjom na tržištu kao licenca",
+          "Izgradnjom u vlastitoj režiji",
+          "Državnom potporom za opremu"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Postupno trošenje dugotrajne imovine zove se _______.",
+        "answer": "amortizacija",
+        "hint": "Trošak u razredu 4."
+      },
+      {
+        "sentence": "Amortizacija s jednakim godišnjim iznosom zove se _______ amortizacija.",
+        "answer": "linearna",
+        "hint": "Nabavna vrijednost × stopa."
+      },
+      {
+        "sentence": "Trošak amortizacije knjiži se na konto broj _______.",
+        "answer": "431",
+        "hint": "Troznamenkasti broj; razred 4."
+      },
+      {
+        "sentence": "Ispravak vrijednosti zgrade knjiži se na konto broj _______.",
+        "answer": "029",
+        "hint": "Troznamenkasti broj – upiši s vodećom nulom."
+      },
+      {
+        "sentence": "Amortizacija po proizvedenoj jedinici ili radnom satu zove se _______ amortizacija.",
+        "answer": "funkcionalna",
+        "hint": "Suprotno: vremenske metode."
+      },
+      {
+        "sentence": "Redovito isknjiženje otpisane imovine iz knjiga zove se _______.",
+        "answer": "rashodovanje",
+        "hint": "Oblik otuđivanja."
+      }
+    ],
+    "learn": {
+      "title": "Dugotrajna imovina: nabava, amortizacija, otuđivanje (riješeni izračuni)",
+      "content": "<h3>Tri procesa dugotrajne imovine</h3><ol><li><strong>Nabava (stjecanje)</strong> – rezultat je <strong>imovina u pripremi</strong>: kupnja na tržištu (iz vlastitih sredstava ili kredita), razmjena („staro za novo”), dobivanje bez naknade (poklon), izrada u vlastitoj ili tuđoj režiji.</li><li><strong>Uporaba (trošenje)</strong> – imovina u uporabi; vrijednost se prenosi na učinke kroz <strong>amortizaciju</strong>.</li><li><strong>Otuđivanje</strong> – prodaja, rashodovanje, davanje bez naknade, inventurni manjak, likvidacija.</li></ol><p><strong>Kriteriji priznavanja:</strong> pravo raspolaganja, pouzdano mjerenje troška, vjerojatnost buduće ekonomske koristi. Dugotrajna materijalna imovina knjiži se po <strong>bruto knjigovodstvenoj (nabavnoj) vrijednosti</strong>, a ispravak vrijednosti vodi se odvojeno.</p><div class=\"formula-box\"><strong>Trošak nabave</strong> = kupovna cijena + carina i uvozne pristojbe + nepovratni porezi + prijevoz i doprema + montaža + ostali izravni troškovi dovođenja u radno stanje (za zgrade i projektna dokumentacija i nadzor). Povratni PDV (pretporez) <strong>ne</strong> ulazi u trošak nabave.</div><h3>Nematerijalna imovina</h3><p>Obilježja: nema fizički oblik, donosi buduću korist, ograničenog je vijeka, stječe se radi korištenja u poslovanju. Obuhvaća osnivačke izdatke, izdatke za istraživanje i razvoj, patente, licence, koncesije, franšize, zaštitne znakove, <strong>goodwill</strong> i predujmove.</p><ul><li><strong>Priznaje se u razredu 0</strong> ako ima buduću ekonomsku korist i ako se trošak može pouzdano utvrditi; inače je <strong>trošak (razred 4)</strong>. Osnivački izdaci i izdaci za istraživanje mogu se kapitalizirati ili odmah biti troškovi.</li><li><strong>Patent</strong> – zakonom zaštićeno isključivo pravo izumitelja; <strong>licenca</strong> – pravo ili dozvola za određeno vrijeme i svrhu; <strong>franšiza</strong> – dozvola za proizvodnju ili usluge uz strogu kontrolu davatelja.</li><li><strong>Goodwill</strong> se ne stječe zasebno, nego u <strong>poslovnim kombinacijama</strong>: razlika plaćenog troška stjecanja i fer vrijednosti stečene neto imovine (ugled, tržišni položaj). Može biti i negativan.</li></ul><h3>Amortizacija</h3><p><strong>Amortizacija</strong> je postupno trošenje dugotrajne imovine ograničenog vijeka i prenošenje njezine vrijednosti na proizvode i usluge; kroz njihovu prodaju utrošena vrijednost se <strong>postupno nadoknađuje</strong>. Računovodstveno je <strong>trošak</strong>, a financijski izvor novčanog primitka (trošak bez izdatka).</p><p>Amortizira se imovina koja se koristi dulje od godine, ima ograničen vijek i drži se za proizvodnju, usluge, najam ili administraciju. <strong>Ne amortiziraju se</strong> zemljište, prirodna bogatstva, umjetničke vrijednosti i spomenička baština. Potrebni elementi: <strong>trošak nabave</strong> i <strong>koristan vijek</strong> (iz njega godišnja stopa).</p><div class=\"formula-box\"> $$\\text{Stopa} = \\frac{100\\,\\%}{\\text{vijek (godine)}} \\qquad \\text{Linearna amortizacija} = \\text{nabavna vrijednost} \\times \\text{stopa}$$ $$\\text{Sadašnja vrijednost} = \\text{nabavna vrijednost} - \\text{ispravak vrijednosti}$$ </div><table><tr><th>Metoda</th><th>Obilježja</th></tr><tr><td><strong>Linearna</strong> (vremenska)</td><td>Jednak iznos svake godine; osnovica nabavna vrijednost; jednostavna, ali manje realna. Najčešća u praksi.</td></tr><tr><td><strong>Degresivna</strong> (vremenska)</td><td>Iznos pada iz godine u godinu; stopa na <strong>neotpisanu</strong> vrijednost; brzo vraćanje ulaganja – primjerena inflaciji i brzom tehnološkom napretku.</td></tr><tr><td><strong>Progresivna</strong> (vremenska)</td><td>Iznos raste iz godine u godinu; rijetka, neprimjerena inflaciji i brzom zastarijevanju.</td></tr><tr><td><strong>Funkcionalna</strong></td><td>Po proizvedenoj jedinici ili radnom satu.</td></tr></table><div class=\"warning-box\"><strong>Ispravak bilješki:</strong> „miks kolokvija” za progresivnu metodu kaže da se „imovina otpiše prije isteka vijeka” – to je zapravo učinak <strong>degresivne</strong> metode (brži otpis na početku). Progresivna počinje malim iznosima pa je otpis u prvim godinama sporiji.</div><div class=\"example-box\"><strong>1. Linearna amortizacija.</strong> Kuhinjska oprema nabavne vrijednosti 50.000, vijek 5 godina → stopa \\(100\\,\\% / 5 = 20\\,\\%\\) → godišnje \\(50.000 \\times 0{,}20 = 10.000\\). <table><tr><th>Godina</th><th>Amortizacija</th><th>Ispravak vrijednosti (kumulativno)</th><th>Sadašnja vrijednost</th></tr><tr><td>1.</td><td>10.000</td><td>10.000</td><td>40.000</td></tr><tr><td>2.</td><td>10.000</td><td>20.000</td><td>30.000</td></tr><tr><td>3.</td><td>10.000</td><td>30.000</td><td>20.000</td></tr><tr><td>4.</td><td>10.000</td><td>40.000</td><td>10.000</td></tr><tr><td>5.</td><td>10.000</td><td>50.000</td><td>0</td></tr></table></div><div class=\"example-box\"><strong>2. Degresivna amortizacija</strong> iste opreme, stopa 40 % na neotpisanu vrijednost: <table><tr><th>Godina</th><th>Osnovica (neotpisano)</th><th>Amortizacija (40 %)</th><th>Neotpisano na kraju</th></tr><tr><td>1.</td><td>50.000</td><td>20.000</td><td>30.000</td></tr><tr><td>2.</td><td>30.000</td><td>12.000</td><td>18.000</td></tr><tr><td>3.</td><td>18.000</td><td>7.200</td><td>10.800</td></tr></table></div><div class=\"example-box\"><strong>3. Funkcionalna amortizacija.</strong> Stroj 100.000, predviđeni kapacitet 50.000 radnih sati, u godini 8.000 sati: \\(100.000 / 50.000 = 2\\) po satu → \\(8.000 \\times 2 = 16.000\\).</div><div class=\"example-box\"><strong>4. Knjiženje amortizacije (ispitni zadatak).</strong> Obračunata amortizacija na zgrade po stopi 2 % (PS zgrade 600.000): \\(600.000 \\times 0{,}02 = 12.000\\). <table><tr><th>Konto</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>431 Trošak amortizacije</td><td>12.000</td><td></td></tr><tr><td>029 Ispravak vrijednosti zgrade</td><td></td><td>12.000</td></tr></table> Promjena: <strong>centrifugalna uslijed rashoda</strong> (neto vrijednost zgrade pada, kapital pada kroz trošak). Konto zgrade se <strong>ne dira</strong> – imovina fizički ostaje u uporabi. Amortizacija se obično knjiži mjesečno ili tromjesečno (godišnje 12.000 → mjesečno 1.000); na početku godine sastavlja se predračun, a na kraju konačni obračun.</div><h3>Otuđivanje i vrijednosno usklađenje</h3><div class=\"example-box\"><strong>5. Prodaja opreme.</strong> Nabavna vrijednost 40.000, ispravak vrijednosti 30.000 → neotpisana vrijednost <strong>10.000</strong>. Prodajna cijena 12.000 → dobitak <strong>2.000</strong> (izvanredni prihod). Da je prodana za 7.000, gubitak od 3.000 bio bi izvanredni rashod.</div><ul><li><strong>Rashodovanje</strong> – redovita likvidacija otpisane imovine: ako ima neotpisanu vrijednost, ona postaje <strong>rashod</strong>; ako je potpuno otpisana, samo se <strong>zatvaraju</strong> konto nabavne vrijednosti i konto ispravka.</li><li><strong>Davanje bez naknade</strong> (poklon) – smanjenje imovine bez ekonomske koristi.</li><li><strong>Inventurni manjak</strong> – objektivne okolnosti (nestanak) ili subjektivne (poznat krivac – tereti se odgovorna osoba).</li><li><strong>Vrijednosno usklađenje</strong> – ako je <strong>nadoknadivi iznos</strong> (veći od dvaju iznosa: tržišne vrijednosti sredstva i sadašnje vrijednosti budućih novčanih primitaka od njegova korištenja) manji od neotpisane vrijednosti, imovina se umanjuje (uzrok: teška oštećenja, elementarne nepogode, rat). Umanjenje se knjiži <strong>na teret rashoda</strong>.</li></ul><div class=\"warning-box\"><strong>Ispravak bilješki:</strong> „smanjenjem neto knjigovodstvenog iznosa tereti se prihod” – točno je da umanjenje vrijednosti <strong>tereti rashode</strong> razdoblja (a eventualno ukidanje umanjenja je prihod).</div>"
+    }
+  },
+  "zalihe": {
+    "name": "Zalihe i sitni inventar",
+    "icon": "fa-boxes-stacked",
+    "color": "#eab308",
+    "flashcards": [
+      {
+        "question": "Što su ZALIHE?",
+        "answer": "Kratkotrajna materijalna imovina koja se drži za prodaju, u procesu proizvodnje ili kao materijal koji se troši u proizvodnji i pružanju usluga.",
+        "explanation": "Vijek uporabe kraći od godine."
+      },
+      {
+        "question": "Zalihe inputa vs zalihe outputa?",
+        "answer": "Inputa se ulažu u proizvodnju (sirovine, materijal, rezervni dijelovi, sitni inventar); outputa nastaju proizvodnjom ili su za prodaju (nedovršena proizvodnja, gotovi proizvodi, roba).",
+        "explanation": "Dvije skupine zaliha."
+      },
+      {
+        "question": "Po kojoj se vrijednosti iskazuju zalihe?",
+        "answer": "Po trošku nabave ili neto utrživoj vrijednosti – nižoj od njih.",
+        "explanation": "Načelo opreznosti."
+      },
+      {
+        "question": "Što je vrijednosno usklađenje zaliha?",
+        "answer": "Svođenje zaliha na nadoknadivi (niži) iznos kad su oštećene, zastarjele ili im je pala prodajna cijena; gubitak se priznaje kao rashod.",
+        "explanation": "Knjigovodstvena vrijednost > stvarna."
+      },
+      {
+        "question": "Što čini trošak nabave sirovina i materijala?",
+        "answer": "Kupovna cijena dobavljača + zavisni troškovi nabave (prijevoz, osiguranje u transportu, utovar i istovar) + carina i pristojbe + nepovratni porezi.",
+        "explanation": "Povratni PDV nije dio troška nabave."
+      },
+      {
+        "question": "Koji dokumenti prate kretanje materijala?",
+        "answer": "Primka (nabava), izdatnica (izdavanje u proizvodnju), otpremnica (prodaja), inventurne liste (viškovi i manjkovi), zapisnik komisije (uništenje).",
+        "explanation": "Analitika materijala."
+      },
+      {
+        "question": "Metoda FIFO?",
+        "answer": "Prva ulazna cijena – prva izlazna: materijal se izdaje po cijeni najstarije nabave dok se ta zaliha ne iscrpi.",
+        "explanation": "Kronološka metoda."
+      },
+      {
+        "question": "Metoda prosječnih cijena?",
+        "answer": "Ukupna vrijednost zaliha podijeli se ukupnom količinom; nova prosječna cijena računa se prije svakog izdavanja.",
+        "explanation": "Ponderirani prosjek."
+      },
+      {
+        "question": "Metoda LIFO?",
+        "answer": "Zadnja ulazna cijena – prva izlazna: izlaz se obračunava po cijeni posljednje nabave dok se ta zaliha ne potroši.",
+        "explanation": "U bilješkama pogrešno opisana kao „prva ulazna cijena”."
+      },
+      {
+        "question": "Metode HIFO i NIFO?",
+        "answer": "HIFO – izlaz po najvišoj ulaznoj cijeni; NIFO – po budućoj (sljedećoj) cijeni, pa se ne može koristiti jer ta cijena još nije nastala.",
+        "explanation": "NIFO se ne primjenjuje."
+      },
+      {
+        "question": "Što je metoda PLANSKIH cijena?",
+        "answer": "Svi ulazi i izlazi materijala vrednuju se po unaprijed određenoj stalnoj cijeni; razlika do stvarne cijene vodi se kao odstupanje u glavnoj knjizi.",
+        "explanation": "Pozitivno i negativno odstupanje."
+      },
+      {
+        "question": "Pozitivno vs negativno odstupanje od planske cijene?",
+        "answer": "Pozitivno: planski trošak nabave veći je od stvarnog. Negativno: planski trošak manji je od stvarnog.",
+        "explanation": "Odstupanje svodi plansko na stvarno."
+      },
+      {
+        "question": "Što je SITNI INVENTAR?",
+        "answer": "Imovina vijeka duljeg od godine, ali male pojedinačne nabavne vrijednosti (ispod propisanog praga za dugotrajnu imovinu): pribor, posteljina, staklo, radna odjeća.",
+        "explanation": "Iskazuje se među zalihama."
+      },
+      {
+        "question": "Koje su metode otpisa sitnog inventara?",
+        "answer": "Jednokratni otpis 100 % pri stavljanju u uporabu, otpis 50 % pri stavljanju u uporabu i 50 % pri rashodovanju, te kalkulativni otpis kao amortizacija.",
+        "explanation": "U bilješkama su prve dvije zamijenjene."
+      },
+      {
+        "question": "Po kojoj se vrijednosti vode gotovi proizvodi?",
+        "answer": "Po trošku proizvodnje: direktni materijal, direktni rad, varijabilni opći troškovi i fiksni troškovi za normalni kapacitet.",
+        "explanation": "Ulaz: predatnica; izlaz: otpremnica."
+      },
+      {
+        "question": "Nabavna vs prodajna cijena trgovačke robe?",
+        "answer": "Nabavna = cijena dobavljača + zavisni troškovi nabave; prodajna = nabavna cijena + marža, a PDV se dodaje na prodajnu cijenu.",
+        "explanation": "Roba se može voditi po nabavnoj ili prodajnoj cijeni."
+      },
+      {
+        "question": "Kako se knjiži nabava namirnica od dobavljača 3.000?",
+        "answer": "310 Zaliha namirnica D 3.000 / 220 Dobavljači P 3.000 – centripetalna promjena.",
+        "explanation": "Uz PDV: dodatno 180 Potraživanja za PDV D."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Početna zaliha 100 kom po 20, nabavljeno 200 kom po 23, izdano 250 kom. Vrijednost utroška po FIFO metodi:",
+        "options": [
+          "5.500",
+          "5.450",
+          "5.600",
+          "5.750"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Isti podaci. Vrijednost utroška po metodi prosječnih cijena:",
+        "options": [
+          "5.450",
+          "5.600",
+          "5.500",
+          "5.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Isti podaci. Vrijednost utroška po LIFO metodi:",
+        "options": [
+          "5.450",
+          "5.500",
+          "5.750",
+          "5.600"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Isti podaci. Završna zaliha (50 kom) po FIFO metodi vrijedi:",
+        "options": [
+          "1.150",
+          "1.000",
+          "1.100",
+          "1.250"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Metoda kod koje se prvo troše najstarije nabave je:",
+        "options": [
+          "LIFO",
+          "FIFO",
+          "HIFO",
+          "NIFO"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Metoda koja se NE može primijeniti jer se temelji na budućim cijenama je:",
+        "options": [
+          "FIFO",
+          "HIFO",
+          "NIFO",
+          "LIFO"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Zalihe se u bilanci iskazuju po:",
+        "options": [
+          "Višoj od troška nabave i neto utržive vrijednosti",
+          "Uvijek po prodajnoj cijeni s PDV-om",
+          "Prosjeku nabavne i prodajne cijene",
+          "Nižoj od troška nabave i neto utržive vrijednosti"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Dokument kojim skladište izdaje materijal u proizvodnju (kuhinju) je:",
+        "options": [
+          "Izdatnica",
+          "Primka",
+          "Otpremnica",
+          "Predatnica"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Dokument kojim se materijal zaprima u skladište je:",
+        "options": [
+          "Izdatnica",
+          "Primka",
+          "Otpremnica",
+          "Povratnica"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U trošak nabave materijala NE ulazi:",
+        "options": [
+          "Prijevoz i osiguranje u transportu",
+          "Carina i uvozne pristojbe",
+          "Povratni PDV (pretporez)",
+          "Kupovna cijena dobavljača"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Jednokratni otpis sitnog inventara znači da se pri stavljanju u uporabu otpiše:",
+        "options": [
+          "50 % vrijednosti",
+          "Samo godišnja stopa",
+          "Ništa do rashodovanja",
+          "100 % vrijednosti"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Metoda 50 % otpisa sitnog inventara znači:",
+        "options": [
+          "50 % pri stavljanju u uporabu, 50 % pri rashodovanju",
+          "100 % pri stavljanju u uporabu, ništa pri rashodovanju",
+          "50 % godišnje kao amortizacija",
+          "50 % pri nabavi, 50 % pri popisu"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Planski trošak nabave veći je od stvarnog. To je:",
+        "options": [
+          "Negativno odstupanje",
+          "Pozitivno odstupanje",
+          "Inventurni višak",
+          "Vrijednosno usklađenje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prodajna cijena trgovačke robe (bez PDV-a) sastoji se od:",
+        "options": [
+          "Kupovne cijene i PDV-a",
+          "Troška proizvodnje i amortizacije",
+          "Nabavne cijene i marže",
+          "Marže i PDV-a"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Gotovi proizvodi na zalihi vrednuju se po:",
+        "options": [
+          "Prodajnoj cijeni s PDV-om",
+          "Kupovnoj cijeni dobavljača",
+          "Planskoj prodajnoj cijeni",
+          "Trošku proizvodnje"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Kolači u rashladnim vitrinama i suveniri u hotelskoj prodavaonici su:",
+        "options": [
+          "Zalihe (gotovi proizvodi i trgovačka roba)",
+          "Dugotrajna materijalna imovina",
+          "Sitni inventar",
+          "Izvanbilančne stavke tuđe imovine u hotelu"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Metoda „prva ulazna cijena – prva izlazna” zove se _______.",
+        "answer": "FIFO",
+        "hint": "Kronološka metoda."
+      },
+      {
+        "sentence": "Metoda „zadnja ulazna cijena – prva izlazna” zove se _______.",
+        "answer": "LIFO",
+        "hint": "Last in, first out."
+      },
+      {
+        "sentence": "Dokument za prijem materijala u skladište zove se _______.",
+        "answer": "primka",
+        "hint": "Izlaz: izdatnica."
+      },
+      {
+        "sentence": "Dokument za izdavanje materijala iz skladišta zove se _______.",
+        "answer": "izdatnica",
+        "hint": "Ulaz: primka."
+      },
+      {
+        "sentence": "Prodajna cijena robe = nabavna cijena + _______.",
+        "answer": "marža",
+        "hint": "PDV se dodaje na kraju."
+      },
+      {
+        "sentence": "Otpis sitnog inventara stopom kroz godine, kao kod amortizacije, zove se _______ otpis.",
+        "answer": "kalkulativni",
+        "hint": "Uz jednokratni (100 %) i otpis 50 %."
+      }
+    ],
+    "learn": {
+      "title": "Zalihe – vrednovanje, metode obračuna utroška i sitni inventar",
+      "content": "<h3>Zalihe</h3><p><strong>Zalihe</strong> su kratkotrajna materijalna imovina: drže se radi <strong>prodaje</strong>, nalaze se u <strong>proizvodnji</strong> ili su <strong>materijal</strong> koji se troši u proizvodnji i pružanju usluga. Vijek uporabe im je kraći od godine.</p><table><tr><th>Zalihe inputa (ulažu se u proces)</th><th>Zalihe outputa (rezultat procesa ili za prodaju)</th></tr><tr><td>Sirovine i materijal (namirnice, pića, materijal za čišćenje), rezervni dijelovi, sitni inventar, ambalaža, autogume</td><td>Nedovršena proizvodnja, gotovi proizvodi (kolači u vitrini), trgovačka roba (suveniri, novine)</td></tr></table><p><strong>Vrednovanje:</strong> po <strong>trošku nabave</strong> ili <strong>neto utrživoj vrijednosti</strong> – <strong>nižoj</strong> od njih. <strong>Vrijednosno usklađenje</strong> svodi zalihe na <strong>neto utrživu vrijednost</strong> kad su oštećene, zastarjele ili im je pala prodajna cijena; gubitak se priznaje kao <strong>rashod</strong> razdoblja.</p><div class=\"formula-box\"><strong>Trošak nabave sirovina i materijala</strong> = kupovna cijena dobavljača + zavisni troškovi nabave (prijevoz, osiguranje u transportu, utovar i istovar) + carina i uvozne pristojbe + nepovratni porezi.</div><h3>Analitika materijala i dokumenti</h3><p>Za svaku vrstu materijala otvara se analitički konto (sintetički konto 310 raščlanjuje se na meso, povrće, brašno…). Promjene se prate u financijskom knjigovodstvu, materijalnom knjigovodstvu i skladišnoj evidenciji.</p><table><tr><th>Događaj</th><th>Dokument</th></tr><tr><td>Nabava, ulaz u skladište</td><td><strong>Primka</strong></td></tr><tr><td>Izdavanje u proizvodnju (kuhinju) ili drugo mjesto potrošnje</td><td><strong>Izdatnica</strong></td></tr><tr><td>Prodaja materijala</td><td><strong>Otpremnica</strong></td></tr><tr><td>Viškovi i manjkovi po inventuri</td><td><strong>Inventurne (popisne) liste</strong></td></tr><tr><td>Uništenje</td><td><strong>Zapisnik komisije</strong></td></tr><tr><td>Gotovi proizvodi iz proizvodnje u skladište / kupcu</td><td><strong>Predatnica</strong> (primka) / <strong>otpremnica</strong> (izdatnica)</td></tr></table><h3>Metode obračuna utroška (po stvarnom trošku nabave)</h3><table><tr><th>Metoda</th><th>Pravilo</th></tr><tr><td><strong>FIFO</strong> (kronološka)</td><td>Prva ulazna cijena – prva izlazna: izdaje se po cijeni najstarije nabave dok se ne iscrpi.</td></tr><tr><td><strong>Prosječne cijene</strong></td><td>Ukupna vrijednost zaliha / ukupna količina; nova prosječna cijena prije svakog izdavanja.</td></tr><tr><td><strong>LIFO</strong></td><td>Zadnja ulazna cijena – prva izlazna: izdaje se po cijeni <strong>posljednje</strong> nabave dok se ne potroši, pa po prethodnoj.</td></tr><tr><td><strong>HIFO</strong></td><td>Izlaz po <strong>najvišoj</strong> ulaznoj cijeni dok se ne potroši, pa po sljedećoj najvišoj.</td></tr><tr><td><strong>NIFO</strong></td><td>Po budućoj (sljedećoj) cijeni – <strong>ne može se koristiti</strong> jer se temelji na cijenama koje još nisu nastale.</td></tr></table><div class=\"warning-box\"><strong>Ispravak bilješki:</strong> u „miksu kolokvija” LIFO je opisan riječima „izlaz se obračunava po prvoj ulaznoj cijeni” – to je opis FIFO. LIFO izlaz obračunava po <strong>posljednjoj</strong> ulaznoj cijeni.</div><div class=\"example-box\"><strong>Riješeni primjer.</strong> Početna zaliha brašna 100 kg po 20 €; nabavljeno 200 kg po 23 €; u kuhinju izdano <strong>250 kg</strong>. <table><tr><th>Metoda</th><th>Izračun utroška (250 kg)</th><th>Utrošak</th><th>Završna zaliha (50 kg)</th></tr><tr><td>FIFO</td><td>100 × 20 + 150 × 23 = 2.000 + 3.450</td><td><strong>5.450</strong></td><td>50 × 23 = 1.150</td></tr><tr><td>Prosječna cijena</td><td>(2.000 + 4.600) / 300 = 22 → 250 × 22</td><td><strong>5.500</strong></td><td>50 × 22 = 1.100</td></tr><tr><td>LIFO (= HIFO ovdje)</td><td>200 × 23 + 50 × 20 = 4.600 + 1.000</td><td><strong>5.600</strong></td><td>50 × 20 = 1.000</td></tr></table> Kontrola: utrošak + završna zaliha = 6.600 (ukupna vrijednost raspoloživih zaliha) za svaku metodu. Kad cijene rastu, FIFO daje najmanji trošak (veći rezultat), a LIFO najveći.</div><div class=\"tip-box\"><strong>Današnja praksa:</strong> MRS 2 i HSFI 10 ne dopuštaju metodu LIFO u financijskom izvještavanju – dopušteni su FIFO i metoda prosječnih cijena; LIFO se uči kao metoda iz gradiva kolegija.</div><h3>Planske cijene</h3><p>Za svaku vrstu materijala na početku razdoblja odredi se <strong>planska (stalna) cijena</strong> po kojoj se vrednuju svi ulazi i izlazi. Razlika do stvarnog troška nabave vodi se zbirno u glavnoj knjizi kao <strong>odstupanje</strong> (nesamostalni konto):</p><ul><li><strong>pozitivno odstupanje</strong> – planski trošak nabave veći od stvarnog (stvarni trošak utroška manji je od planskog);</li><li><strong>negativno odstupanje</strong> – planski trošak manji od stvarnog (stvarni trošak utroška veći je od planskog).</li></ul><p><strong>Materijal u doradi</strong> šalje se drugom poduzeću na obradu i vraća se u skladište po većoj vrijednosti. <strong>Rezervni dijelovi</strong>: veliki su dugotrajna imovina, mali se vode kao materijal.</p><h3>Sitni inventar</h3><p>Imovina čiji je vijek dulji od godine, ali je <strong>pojedinačna nabavna vrijednost mala</strong> – ispod praga za dugotrajnu imovinu. U hotelu: pribor za jelo i kuhanje, tanjuri, staklo, posteljina, ručnici, jastuci, radna odjeća i uniforme. Iskazuje se među <strong>zalihama</strong> (razred 3).</p><div class=\"warning-box\"><strong>Prag vrijednosti:</strong> studentske bilješke navode „manje od 1.000 kn” – zastarjeli iznos. Prema poreznim propisima dugotrajnom se imovinom smatra imovina pojedinačne nabavne vrijednosti veće od 464,53 € (ranije 3.500 kn); jeftiniji predmeti dulje uporabe vode se kao sitni inventar.</div><table><tr><th>Metoda otpisa</th><th>Kako</th></tr><tr><td><strong>Jednokratni (100 %) otpis</strong></td><td>Cijela vrijednost otpisuje se na teret troškova pri stavljanju u uporabu.</td></tr><tr><td><strong>Otpis 50 %</strong></td><td>50 % pri stavljanju u uporabu, 50 % pri rashodovanju.</td></tr><tr><td><strong>Kalkulativni otpis</strong></td><td>Kao amortizacija: utvrdi se stopa, pa godišnji iznos otpisa.</td></tr></table><div class=\"warning-box\"><strong>Ispravak bilješki:</strong> u „miksu kolokvija” opisi su zamijenjeni („metoda 50 % – otpisuje se 100 %” i obrnuto). Točno je kako piše u tablici. Primjer: posteljina 2.000 € po metodi 50 % → 1.000 € trošak pri stavljanju u uporabu, 1.000 € pri rashodovanju.</div><h3>Gotovi proizvodi i trgovačka roba</h3><ul><li><strong>Gotovi proizvodi</strong> vode se po <strong>trošku proizvodnje</strong>: direktni materijal + direktni rad + varijabilni opći troškovi + fiksni troškovi proizvodnje za iskorišteni normalni kapacitet.</li><li><strong>Trgovačka roba</strong> vodi se po <strong>nabavnoj</strong> cijeni (cijena dobavljača + zavisni troškovi nabave) ili po <strong>prodajnoj</strong> cijeni (nabavna cijena + <strong>marža</strong>); <strong>PDV</strong> se dodaje na prodajnu cijenu.</li></ul>"
+    }
+  },
+  "kalkulacije": {
+    "name": "Kalkulacije",
+    "icon": "fa-calculator",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je KALKULACIJA?",
+        "answer": "Računski postupak koji sustavno prikazuje vrste troškova i metodu njihova obračuna radi utvrđivanja cijene proizvoda, usluga i robe.",
+        "explanation": "Rezultat: cijena koštanja po učinku."
+      },
+      {
+        "question": "Planska vs stvarna kalkulacija?",
+        "answer": "Planska utvrđuje buduću cijenu ili trošak iz planiranih veličina; stvarna utvrđuje stvarni jedinični trošak iz ostvarenih veličina.",
+        "explanation": "Kalkulacije postoje u proizvodnji, trgovini, ugostiteljstvu i turizmu."
+      },
+      {
+        "question": "Koje su dvije skupine tradicionalnih metoda kalkulacije?",
+        "answer": "Djelidbene (divizijske) i dodatne (adicijske) metode.",
+        "explanation": "Razlika: raščlanjuju li se troškovi na direktne i opće."
+      },
+      {
+        "question": "Kada se koristi DJELIDBENA kalkulacija?",
+        "answer": "Kad se proizvodi jedan proizvod ili srodni proizvodi s jedinstvenom strukturom troškova – ukupni troškovi dijele se količinom.",
+        "explanation": "Ne raščlanjuje troškove po vrstama."
+      },
+      {
+        "question": "Formula čiste djelidbene kalkulacije?",
+        "answer": "Trošak po jedinici = ukupni trošak razdoblja / ukupna količina učinaka.",
+        "explanation": "Npr. šećer, sol; u restoranu jedno jelo."
+      },
+      {
+        "question": "Što je VIŠEFAZNA djelidbena kalkulacija?",
+        "answer": "Kalkulacija za jedan proizvod koji nastaje u više faza: za svaku fazu utvrđuje se cijena poluproizvoda, a na kraju cijena gotovog proizvoda.",
+        "explanation": "Troškovi se nadograđuju fazu po fazu."
+      },
+      {
+        "question": "Što je kalkulacija EKVIVALENTNIM BROJEVIMA?",
+        "answer": "Kalkulacija za više srodnih proizvoda na istom mjestu troška: zajednički troškovi raspoređuju se pomoću omjernih (ekvivalentnih) brojeva.",
+        "explanation": "Npr. sobe, pranje rublja različitih vrsta."
+      },
+      {
+        "question": "Što su EKVIVALENTNI BROJEVI?",
+        "answer": "Omjerni brojevi koji pokazuju odnos u kojem raznorodni (srodni) učinci troše zajedničke troškove.",
+        "explanation": "Osnovni proizvod ima ekvivalent 1."
+      },
+      {
+        "question": "Što je kalkulacija VEZANIH proizvoda?",
+        "answer": "Kalkulacija kad uz osnovni proizvod nastaje i nusproizvod: vrijednost nusproizvoda odbija se od ukupnih troškova.",
+        "explanation": "Ostatak se dijeli s količinom glavnog proizvoda."
+      },
+      {
+        "question": "Kada se koristi DODATNA kalkulacija?",
+        "answer": "Kod različitih proizvoda s različitom strukturom troškova: direktni troškovi pripisuju se izravno, a opći (OTP) raspoređuju ključem.",
+        "explanation": "Adicijska metoda."
+      },
+      {
+        "question": "Koji su ključevi za raspored općih troškova u dodatnoj kalkulaciji?",
+        "answer": "Materijal izrade (MI), plaće izrade (PI) ili ukupni direktni troškovi.",
+        "explanation": "Postotak = opći trošak / osnovica × 100."
+      },
+      {
+        "question": "Što je SUMARNA dodatna kalkulacija?",
+        "answer": "Opći troškovi raspoređuju se na proizvode zbirno, jednim (ili po vrsti općeg troška) ključem za cijelo poduzeće.",
+        "explanation": "Koristi se kad se ne zna koliko općih troškova pripada kojem proizvodu."
+      },
+      {
+        "question": "Što je ELEKTIVNA (izborna) dodatna kalkulacija?",
+        "answer": "Opći troškovi najprije se raspoređuju po mjestima troškova (POL), a zatim za svako mjesto posebnim ključem na proizvode.",
+        "explanation": "Preciznija od sumarne."
+      },
+      {
+        "question": "Kratice MI, PI, OTI, OTUP?",
+        "answer": "MI – materijal izrade, PI – plaće izrade, OTI – opći troškovi izrade, OTUP – opći troškovi uprave i prodaje.",
+        "explanation": "MI i PI su direktni, OTI i OTUP opći troškovi."
+      },
+      {
+        "question": "Kako glasi rješenje ispitne kalkulacije restorana (mesna A, riblja B)?",
+        "answer": "Cijena koštanja jela A = 208,53, jela B = 309,33.",
+        "explanation": "OTI po MI (166,67 %), OTUP po PI (120 %)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Metode kalkulacije koje ne raščlanjuju troškove po vrstama nego uzimaju ukupne troškove razdoblja su:",
+        "options": [
+          "Dodatne sumarne",
+          "Djelidbene (divizijske)",
+          "Dodatne elektivne",
+          "Metode planskih cijena"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ekvivalentni brojevi kao računovodstvena kategorija su:",
+        "options": [
+          "Brojevi konta iz kontnog plana za troškove",
+          "Stope amortizacije po vrstama dugotrajne imovine",
+          "Omjerni brojevi odnosa među raznorodnim učincima",
+          "Postoci poreza na dodanu vrijednost"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Restoran: MI 18.000, PI 30.000, OTUP 36.000, OTI 30.000. OTI se raspoređuje na bazi MI. Postotak OTI iznosi:",
+        "options": [
+          "120 %",
+          "100 %",
+          "60 %",
+          "166,67 %"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Isti podaci: OTUP se raspoređuje na bazi PI. Postotak OTUP iznosi:",
+        "options": [
+          "120 %",
+          "166,67 %",
+          "200 %",
+          "83,33 %"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Jela A (250 kom): MI 8.000, PI 14.000. Uz OTI 166,67 % na MI i OTUP 120 % na PI, cijena koštanja jela A:",
+        "options": [
+          "309,33",
+          "208,53",
+          "88,00",
+          "456,00"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Jela B (200 kom): MI 10.000, PI 16.000. Uz OTI 166,67 % na MI i OTUP 120 % na PI, cijena koštanja jela B:",
+        "options": [
+          "208,53",
+          "130,00",
+          "309,33",
+          "570,00"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ukupni troškovi 200 za 20 istovrsnih obroka. Čista djelidbena kalkulacija daje cijenu koštanja:",
+        "options": [
+          "20",
+          "220",
+          "4.000",
+          "10"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Kada se uz osnovni proizvod proizvodi i nusproizvod, koristi se kalkulacija:",
+        "options": [
+          "Vezanih proizvoda",
+          "Čista djelidbena",
+          "Sumarna dodatna",
+          "Višefazna"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Dodatna kalkulacija primjerena je kada se proizvode:",
+        "options": [
+          "Jedan proizvod u masovnoj proizvodnji i jednoj fazi",
+          "Različiti proizvodi s različitom strukturom troškova",
+          "Srodni proizvodi istog mjesta troška",
+          "Jedan proizvod u više faza"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U dodatnoj kalkulaciji direktni troškovi:",
+        "options": [
+          "Raspoređuju se pomoću ključa",
+          "Uopće se ne uključuju u cijenu koštanja",
+          "Pripisuju se izravno nositeljima (proizvodima)",
+          "Knjiže se kao troškovi razdoblja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kod elektivne dodatne kalkulacije opći troškovi:",
+        "options": [
+          "Raspoređuju se jednim zbirnim ključem za cijelo poduzeće",
+          "Dijele se količinom proizvoda bez ključa",
+          "Ne uključuju se u cijenu koštanja",
+          "Najprije se raspoređuju po mjestima troškova, pa na proizvode"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Praonica: ukupni trošak 9.000, oprano 1.000 kg posteljine (ekv. 1) i 500 kg stolnjaka (ekv. 2). Trošak po kg stolnjaka:",
+        "options": [
+          "9",
+          "4,5",
+          "6",
+          "18"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kalkulacija kojom se utvrđuje buduća prodajna cijena iz planiranih troškova je:",
+        "options": [
+          "Stvarna kalkulacija",
+          "Planska kalkulacija",
+          "Obračunska kalkulacija",
+          "Kalkulacija vezanih proizvoda"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Djelidbene metode kalkulacije zovu se još i _______ metode.",
+        "answer": "divizijske",
+        "hint": "Dijeljenje ukupnih troškova količinom."
+      },
+      {
+        "sentence": "Dodatne metode kalkulacije zovu se još i _______ metode.",
+        "answer": "adicijske",
+        "hint": "Dodavanje općih troškova direktnima."
+      },
+      {
+        "sentence": "Omjerni brojevi koji pokazuju odnos troškova srodnih proizvoda zovu se _______ brojevi.",
+        "answer": "ekvivalentni",
+        "hint": "Osnovni proizvod = 1."
+      },
+      {
+        "sentence": "Kratica MI u kalkulaciji znači materijal _______.",
+        "answer": "izrade",
+        "hint": "Uz PI – plaće izrade."
+      },
+      {
+        "sentence": "Dodatna kalkulacija sa zbirnim rasporedom općih troškova zove se _______ kalkulacija.",
+        "answer": "sumarna",
+        "hint": "Druga je elektivna."
+      },
+      {
+        "sentence": "Nusproizvod se pojavljuje u kalkulaciji _______ proizvoda.",
+        "answer": "vezanih",
+        "hint": "Vrijednost nusproizvoda odbija se od troškova."
+      }
+    ],
+    "learn": {
+      "title": "Kalkulacije – djelidbene i dodatne (riješeni zadaci)",
+      "content": "<h3>Pojam i vrste kalkulacija</h3><p><strong>Kalkulacija</strong> je računski postupak kojim se sustavno prikazuju vrste troškova i metoda njihova obračuna radi utvrđivanja <strong>cijene</strong> proizvoda, usluga i robe. <strong>Planska</strong> kalkulacija iz planiranih troškova utvrđuje buduću cijenu ili jedinični trošak; <strong>stvarna</strong> iz ostvarenih troškova utvrđuje stvarnu cijenu koštanja. Kalkulacije se rade u proizvodnji, trgovini, ugostiteljstvu i turizmu.</p><table><tr><th>Djelidbene (divizijske)</th><th>Dodatne (adicijske)</th></tr><tr><td>Jedan proizvod ili srodni proizvodi s jedinstvenom strukturom troškova; <strong>ne raščlanjuju</strong> troškove – ukupni troškovi razdoblja dijele se količinom.<br>• čista (jednostavna) · • višefazna · • ekvivalentnim brojevima · • vezanih proizvoda</td><td>Različiti proizvodi s različitom strukturom troškova; troškovi se dijele na <strong>direktne</strong> (izravno po nositeljima) i <strong>opće</strong> (raspoređuju se ključem).<br>• sumarna · • elektivna</td></tr></table><h3>Djelidbene kalkulacije</h3><div class=\"formula-box\">$$\\text{Trošak po jedinici} = \\frac{\\text{ukupni trošak razdoblja}}{\\text{ukupna količina učinaka}}$$</div><div class=\"example-box\"><strong>1. Čista djelidbena.</strong> Ukupni trošak 20 istovrsnih obroka je 200 → \\(200 / 20 = 10\\) po obroku. Primjenjuje se kod jednog proizvoda i masovne proizvodnje (šećer, sol, kruh jedne vrste).</div><div class=\"example-box\"><strong>2. Višefazna.</strong> Proizvod nastaje u dvije faze. Faza 1: trošak 6.000 za 1.000 kom poluproizvoda → 6 po kom. Faza 2: dodatni trošak 4.000 za 1.000 gotovih kom → cijena koštanja \\((6.000 + 4.000) / 1.000 = 10\\) po kom.</div><div class=\"example-box\"><strong>3. Ekvivalentni brojevi.</strong> Hotelska praonica: ukupni trošak 9.000; oprano 1.000 kg posteljine (ekvivalent 1) i 500 kg stolnjaka (ekvivalent 2 – zahtjevnije pranje i glačanje). <table><tr><th>Učinak</th><th>Količina</th><th>Ekv. broj</th><th>Uvjetne jedinice</th><th>Trošak</th><th>Po kg</th></tr><tr><td>Posteljina</td><td>1.000 kg</td><td>1</td><td>1.000</td><td>4.500</td><td>4,5</td></tr><tr><td>Stolnjaci</td><td>500 kg</td><td>2</td><td>1.000</td><td>4.500</td><td>9</td></tr><tr><td><strong>Ukupno</strong></td><td></td><td></td><td><strong>2.000</strong></td><td><strong>9.000</strong></td><td></td></tr></table> Trošak po uvjetnoj jedinici = 9.000 / 2.000 = 4,5 → posteljina 4,5 €/kg, stolnjaci \\(4{,}5 \\times 2 = 9\\) €/kg.</div><div class=\"example-box\"><strong>4. Vezani proizvodi.</strong> Ukupni trošak 10.000; uz 900 kg glavnog proizvoda nastaje nusproizvod procijenjene vrijednosti 1.000 → cijena koštanja glavnog proizvoda \\((10.000 - 1.000) / 900 = 10\\) po kg.</div><h3>Dodatne kalkulacije</h3><p>Troškovi se dijele na <strong>direktne</strong> – materijal izrade (<strong>MI</strong>) i plaće izrade (<strong>PI</strong>), koji se neposredno obuhvaćaju po nositeljima – i <strong>opće</strong> – opći troškovi izrade (<strong>OTI</strong>) i opći troškovi uprave i prodaje (<strong>OTUP</strong>), koji se raspoređuju <strong>ključem</strong> (MI, PI ili ukupni direktni troškovi).</p><ul><li><strong>Sumarna</strong> – opći troškovi raspoređuju se zbirno na razini poduzeća; koristi se kad se ne zna koliko općih troškova pripada kojem proizvodu.</li><li><strong>Elektivna (izborna)</strong> – opći troškovi najprije se u POL-u raspoređuju po mjestima troškova, pa za svako mjesto vlastitim ključem na proizvode (izvor u bilješkama tu završava; ovo je standardni opis metode).</li></ul><div class=\"formula-box\">$$\\text{Postotak dodatka} = \\frac{\\text{opći trošak}}{\\text{osnovica ključa}} \\times 100 \\qquad \\text{CK} = \\frac{MI + PI + \\text{raspoređeni OTI} + \\text{raspoređeni OTUP}}{\\text{količina}}$$</div><div class=\"example-box\"><strong>Riješeni ispitni zadatak – sumarna dodatna kalkulacija.</strong> Centar odgovornosti Restoran: MI 18.000, PI 30.000, OTUP 36.000, OTI 30.000. Pripremljeno je 250 mesnih jela (A), za koja je utrošeno MI 8.000 i PI 14.000; ostatak troškova odnosi se na 200 ribljih jela (B). OTUP se raspoređuje na bazi PI, a OTI na bazi MI. <p><strong>Korak 1 – direktni troškovi jela B:</strong> MI = 18.000 − 8.000 = 10.000; PI = 30.000 − 14.000 = 16.000.</p><p><strong>Korak 2 – postoci dodatka:</strong> OTI na MI = \\(30.000 / 18.000 \\times 100 = 166{,}67\\,\\%\\); OTUP na PI = \\(36.000 / 30.000 \\times 100 = 120\\,\\%\\).</p><table><tr><th>Stavka</th><th>Jela A (250)</th><th>Jela B (200)</th><th>Ukupno</th></tr><tr><td>MI</td><td>8.000,00</td><td>10.000,00</td><td>18.000,00</td></tr><tr><td>PI</td><td>14.000,00</td><td>16.000,00</td><td>30.000,00</td></tr><tr><td>OTI (166,67 % na MI)</td><td>13.333,33</td><td>16.666,67</td><td>30.000,00</td></tr><tr><td>OTUP (120 % na PI)</td><td>16.800,00</td><td>19.200,00</td><td>36.000,00</td></tr><tr><td><strong>Puni trošak</strong></td><td><strong>52.133,33</strong></td><td><strong>61.866,67</strong></td><td><strong>114.000,00</strong></td></tr><tr><td><strong>Cijena koštanja</strong></td><td>52.133,33 / 250 = <strong>208,53</strong></td><td>61.866,67 / 200 = <strong>309,33</strong></td><td></td></tr></table><p><strong>Kontrola:</strong> zbroj punih troškova 114.000 = 18.000 + 30.000 + 30.000 + 36.000 ✓.</p></div><div class=\"tip-box\"><strong>Postupak u kolokviju:</strong> (1) izračunaj direktne troškove drugog proizvoda kao razliku do ukupnih; (2) izračunaj postotke dodatka za svaki opći trošak na zadanoj osnovici; (3) raspodijeli opće troškove; (4) zbroji puni trošak po proizvodu; (5) podijeli s količinom; (6) provjeri da zbroj odgovara ukupnim troškovima.</div>"
+    }
+  },
+  "kapitalObveze": {
+    "name": "Kapital, ulaganja, obveze i plaće",
+    "icon": "fa-hand-holding-dollar",
+    "color": "#64748b",
+    "flashcards": [
+      {
+        "question": "Koja je struktura KAPITALA?",
+        "answer": "Upisani (temeljni) kapital, premije na emitirane dionice, rezerve (zakonske, statutarne, revalorizacijske), zadržana dobit ili preneseni gubitak te dobit tekuće godine.",
+        "explanation": "Uloženi + zarađeni kapital."
+      },
+      {
+        "question": "Što je upisani (temeljni) kapital?",
+        "answer": "Sredstva koja su vlasnici uložili u poduzeće; trajni izvor koji se ne vraća dok poduzeće posluje.",
+        "explanation": "Kod d.d. = nominalna vrijednost izdanih dionica."
+      },
+      {
+        "question": "Što je PREMIJA na emitirane dionice?",
+        "answer": "Razlika kad se dionica proda iznad nominalne vrijednosti: dionica NV 100 prodana za 110 → premija 10.",
+        "explanation": "Uplaćeni kapital je 110 (100 upisani + 10 premija)."
+      },
+      {
+        "question": "Što su ZAKONSKE rezerve?",
+        "answer": "Obvezno izdvajanje dijela dobiti u rezerve prema zakonu (bilješke: 5 % dobiti).",
+        "explanation": "Statutarne rezerve propisuje statut društva."
+      },
+      {
+        "question": "Što su TREZORSKE dionice?",
+        "answer": "Vlastite dionice koje je društvo emitiralo pa otkupilo; smanjuju broj dionica u opticaju.",
+        "explanation": "Razlozi: obrana od preuzimanja, zaustavljanje pada cijene, politika dividendi."
+      },
+      {
+        "question": "Što su DIVIDENDE?",
+        "answer": "Prinos na ulaganje u dionice; isplaćuju se iz neto dobiti ili iz zadržane dobiti (i kad je tekuća godina s gubitkom).",
+        "explanation": "U novcu, dividendnim dionicama ili nenovčanom imovinom."
+      },
+      {
+        "question": "Što treba za isplatu dividendi u novcu?",
+        "answer": "Dovoljno tekuće i zadržane dobiti, dovoljno novca i odluka uprave (upravnog odbora).",
+        "explanation": "Najčešći oblik isplate."
+      },
+      {
+        "question": "Mali vs veliki broj dividendnih dionica?",
+        "answer": "Mali – do 25 % dotad emitiranih dionica, iskazuje se po tržišnoj vrijednosti; veliki – više od 25 %, iskazuje se po nominalnoj vrijednosti.",
+        "explanation": "Prijenos dobiti u kapital dioničara."
+      },
+      {
+        "question": "Kako se računa KAPITALNI DOBITAK od prodaje dionica?",
+        "answer": "Neto prodajna vrijednost (broj × tržišna cijena − troškovi prodaje) − knjigovodstvena vrijednost prodanih dionica.",
+        "explanation": "Pozitivna razlika = dobitak."
+      },
+      {
+        "question": "Metoda troška vs metoda udjela kod ulaganja u dionice?",
+        "answer": "Do 20 % (nema značajnog utjecaja) – metoda troška, prihod = izglasane dividende. 20–50 % (značajan utjecaj) i više od 50 % (kontrola) – metoda udjela, prihod = udjel u neto dobiti.",
+        "explanation": "Iznad 50 % matica sastavlja konsolidirane izvještaje."
+      },
+      {
+        "question": "Obveznice – prodaja po NV, uz diskont, uz premiju?",
+        "answer": "Po nominalnoj vrijednosti; uz diskont kad je tržišna niža od nominalne; uz premiju kad je tržišna viša.",
+        "explanation": "Emitent ima obvezu otkupa na dan dospijeća."
+      },
+      {
+        "question": "Što su TEČAJNE RAZLIKE?",
+        "answer": "Razlike nastale promjenom tečaja strane valute između nastanka i podmirenja potraživanja ili obveze; pozitivne su financijski prihod, negativne financijski rashod.",
+        "explanation": "Stavke u stranoj valuti preračunavaju se po tečaju na dan transakcije."
+      },
+      {
+        "question": "Koji su načini podmirenja OBVEZA?",
+        "answer": "Novcem, drugom imovinom, pružanjem usluga, zamjenom obveze drugom, pretvaranjem obveze u kapital, odricanjem ili gubitkom prava vjerovnika.",
+        "explanation": "Obveze imaju fiksan rok i naknadu."
+      },
+      {
+        "question": "Bruto plaća vs neto plaća?",
+        "answer": "Bruto plaća je zbroj svih plaća i naknada plaća; neto plaća = bruto − doprinosi iz plaće − porez na dohodak.",
+        "explanation": "Neto prima zaposlenik."
+      },
+      {
+        "question": "Doprinosi IZ plaće vs NA plaću?",
+        "answer": "Doprinose iz plaće (mirovinsko osiguranje) plaća zaposlenik iz bruta; doprinos na plaću (zdravstveno osiguranje) plaća poslodavac povrh bruta.",
+        "explanation": "Osnovica je bruto plaća."
+      },
+      {
+        "question": "Koji je dokument temelj za knjiženje plaća?",
+        "answer": "Rekapitulacija isplatne liste plaća i naknada plaća.",
+        "explanation": "Isplatne liste čuvaju se trajno."
+      },
+      {
+        "question": "Kako se knjiži obračun bruto plaća?",
+        "answer": "Trošak bruto plaća (razred 4) duguje; obveze za neto plaće, poreze i doprinose (razred 2) potražuju.",
+        "explanation": "Isplata: obveze D / 100 Žiro račun P."
+      },
+      {
+        "question": "Što je novčani (profitni) pretvorbeni krug?",
+        "answer": "Vrijeme od izdavanja novca za sirovine do primitka novca od prodaje gotovih proizvoda.",
+        "explanation": "Brži krug = veći profit."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Dionica nominalne vrijednosti 100 prodana je za 110. Premija na emitirane dionice iznosi:",
+        "options": [
+          "110",
+          "100",
+          "10",
+          "210"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako su obračunate bruto plaće djelatnicima 40.000, za taj iznos dugovat će konto:",
+        "options": [
+          "Obveze za neto plaće",
+          "Žiro račun",
+          "Kapital",
+          "Trošak bruto plaća"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Isplata obračunatih plaća sa žiro računa knjiži se:",
+        "options": [
+          "Obveze za plaće D / 100 Žiro račun P",
+          "100 Žiro račun D / Obveze za plaće P",
+          "Trošak plaća D / 100 Žiro račun P",
+          "Obveze za plaće D / Trošak plaća P"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz KAPITAL se u računovodstvenom izvještavanju razlikuje:",
+        "options": [
+          "Kratkoročni i dugoročni kapital",
+          "Uloženi i zarađeni kapital",
+          "Materijalni i nematerijalni kapital",
+          "Aktivni i pasivni kapital"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ulagač je kupio 15 % običnih dionica drugog društva (nema značajnog utjecaja). Primjenjuje se:",
+        "options": [
+          "Metoda udjela – prihod kao udjel u neto dobiti",
+          "Konsolidacija financijskih izvještaja",
+          "Metoda troška – prihod u visini izglasanih dividendi",
+          "Metoda planskih cijena"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Društvo s više od 50 % običnih dionica drugog društva naziva se:",
+        "options": [
+          "Podružnica",
+          "Pridruženo društvo (značajan utjecaj)",
+          "Trezor",
+          "Matica (kontrolira podružnicu)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Otkupljene vlastite dionice nazivaju se:",
+        "options": [
+          "Trezorske dionice",
+          "Dividendne dionice",
+          "Povlaštene dionice",
+          "Premijske dionice"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Dodatna emisija dividendnih dionica do 25 % dotad emitiranih iskazuje se po:",
+        "options": [
+          "Nominalnoj vrijednosti",
+          "Tržišnoj vrijednosti",
+          "Knjigovodstvenoj vrijednosti",
+          "Likvidacijskoj vrijednosti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kupljeno 100 dionica za 5.000; prodano 40 po 70, troškovi prodaje 100. Kapitalni dobitak iznosi:",
+        "options": [
+          "800",
+          "2.700",
+          "700",
+          "2.000"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Obveznice se prodaju uz DISKONT kada je:",
+        "options": [
+          "Tržišna vrijednost viša od nominalne",
+          "Tržišna vrijednost jednaka nominalnoj",
+          "Kamata veća od dividende",
+          "Tržišna vrijednost niža od nominalne"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Negativne tečajne razlike u računu dobiti i gubitka su:",
+        "options": [
+          "Financijski rashod",
+          "Poslovni rashod",
+          "Izvanredni prihod",
+          "Stavka kapitala"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Porez i doprinose IZ plaće snosi:",
+        "options": [
+          "Poslodavac – dodaju se na bruto plaću",
+          "Zaposlenik – odbijaju se od bruto plaće",
+          "Država – iz proračuna",
+          "Banka – kao naknada"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Temeljni dokument za knjiženje obračuna i isplate plaća je:",
+        "options": [
+          "Knjiga ulaznih računa",
+          "Izdatnica",
+          "Rekapitulacija isplatne liste",
+          "Otpremnica"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Što od navedenog NIJE način podmirenja obveze?",
+        "options": [
+          "Plaćanje novcem",
+          "Pretvaranje obveze u kapital",
+          "Pružanje usluge vjerovniku",
+          "Povećanje zaliha materijala"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Dividende se mogu isplatiti i u godini s gubitkom ako postoji:",
+        "options": [
+          "Dovoljno zadržane (akumulirane) dobiti",
+          "Dovoljno dugoročnih kredita za isplatu",
+          "Dovoljno zaliha robe",
+          "Odluka porezne uprave"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Razlika između prodajne i nominalne vrijednosti dionice zove se _______.",
+        "answer": "premija",
+        "hint": "Na emitirane dionice."
+      },
+      {
+        "sentence": "Otkupljene vlastite dionice zovu se _______ dionice.",
+        "answer": "trezorske",
+        "hint": "Smanjuju broj dionica u opticaju."
+      },
+      {
+        "sentence": "Prinos na ulaganje u dionice zove se _______.",
+        "answer": "dividenda",
+        "hint": "Iz neto ili zadržane dobiti."
+      },
+      {
+        "sentence": "Plaća prije odbitka poreza i doprinosa zove se _______ plaća.",
+        "answer": "bruto",
+        "hint": "Suprotno: neto."
+      },
+      {
+        "sentence": "Ulaganje do 20 % dionica drugog društva vodi se metodom _______.",
+        "answer": "troška",
+        "hint": "Prihod = izglasane dividende."
+      },
+      {
+        "sentence": "Kad je tržišna vrijednost obveznice viša od nominalne, prodaje se uz _______.",
+        "answer": "premiju",
+        "hint": "Suprotno: uz diskont."
+      }
+    ],
+    "learn": {
+      "title": "Kapital i dionice, financijska ulaganja, obveze i plaće",
+      "content": "<h3>Kapital i rezerve</h3><p><strong>Kapital</strong> je ostatak imovine nakon odbitka svih obveza (neto imovina) – vlastiti, trajni izvor financiranja.</p><table><tr><th>Sastavnica</th><th>Značenje</th></tr><tr><td><strong>Upisani (temeljni) kapital</strong></td><td>Ulog vlasnika; kod d.d. nominalna vrijednost dionica. Ne vraća se dok društvo posluje.</td></tr><tr><td><strong>Premija na emitirane dionice</strong></td><td>Iznos iznad nominalne vrijednosti pri prodaji dionica.</td></tr><tr><td><strong>Rezerve</strong></td><td>Zakonske (obvezno dio dobiti – bilješke: 5 %), statutarne (prema statutu, npr. za otkup vlastitih dionica), revalorizacijske (usklađenje kapitala u uvjetima inflacije radi zaštite imovine vlasnika).</td></tr><tr><td><strong>Zadržana dobit / preneseni gubitak</strong></td><td>Neraspoređeni rezultat prethodnih godina.</td></tr><tr><td><strong>Dobit (gubitak) tekuće godine</strong></td><td>Rezultat iz računa dobiti i gubitka.</td></tr></table><div class=\"example-box\"><strong>Premija.</strong> Dionica nominalne vrijednosti 100 prodana je za 110 → upisani kapital 100, <strong>premija 10</strong>, ukupno uplaćeni kapital 110.</div><div class=\"warning-box\"><strong>Ispravak bilješki:</strong> u „miksu kolokvija” piše da je u tom primjeru „zarađeni kapital 110”. Premija je dio <strong>uloženog (uplaćenog)</strong> kapitala; zarađeni kapital nastaje samo iz rezultata poslovanja (zadržana dobit, rezerve iz dobiti).</div><h3>Emisija, trezorske dionice i dividende</h3><ul><li><strong>Emisija običnih dionica za novac</strong>: po nominalnoj vrijednosti, iznad nje (uz premiju) ili ispod nje; <strong>za nenovčanu imovinu ili usluge</strong>: osnovica razmjene je tržišna cijena dionica ili tržišna cijena primljene imovine/usluge.</li><li><strong>Trezorske dionice</strong> – vlastite otkupljene dionice (po nominalnoj ili višoj vrijednosti); smanjuju broj dionica u opticaju. Razlozi: obrana od neprijateljskog preuzimanja, zaustavljanje pada cijene, politika dividendi.</li><li><strong>Dividende</strong> – prinos na dionice; isplaćuju se iz neto dobiti ili iz zadržane dobiti (pa i u godini s gubitkom). Oblici: <strong>novac</strong> (najčešće; treba dovoljno dobiti, novca i odluku uprave), <strong>dividendne dionice</strong>, nenovčana imovina.</li><li><strong>Dividendne dionice</strong>: <strong>mali broj</strong> (do 25 % dotad emitiranih) – po <strong>tržišnoj</strong> vrijednosti; <strong>veliki broj</strong> (više od 25 %) – po <strong>nominalnoj</strong> vrijednosti.</li></ul><div class=\"formula-box\"><strong>Kapitalni dobitak od prodaje dionica</strong> = neto prodajna vrijednost − knjigovodstvena vrijednost prodanih dionica<br>neto prodajna vrijednost = broj prodanih × tržišna cijena − troškovi prodaje<br>knjigovodstvena vrijednost = (stanje konta ulaganja / broj kupljenih) × broj prodanih</div><div class=\"example-box\"><strong>Primjer.</strong> Hotel je kupio 100 dionica za 5.000 (50 po dionici). Prodao je 40 dionica po 70, troškovi prodaje 100.<br>Neto prodajna vrijednost = \\(40 \\times 70 - 100 = 2.700\\) · knjigovodstvena vrijednost = \\(5.000 / 100 \\times 40 = 2.000\\) · <strong>kapitalni dobitak = 700</strong>.</div><h3>Dugotrajna financijska imovina</h3><p>Ulaganja dulja od godine: udjeli u povezanim društvima, vrijednosni papiri (<strong>dionice</strong> – vlasnički, obične i povlaštene; <strong>obveznice</strong> – dužnički), dugoročni krediti, zajmovi i depoziti. Korist: dividende, udjel u dobiti, kamate (+ povrat glavnice).</p><table><tr><th>Udjel u dionicama drugog društva</th><th>Utjecaj</th><th>Metoda</th></tr><tr><td>do 20 %</td><td>nema značajnog utjecaja ni kontrole</td><td><strong>metoda troška</strong> – prihod = izglasane dividende</td></tr><tr><td>20–50 %</td><td>značajan utjecaj (uprava, odluke, razmjena osoblja), bez kontrole</td><td><strong>metoda udjela</strong> – prihod = udjel u neto dobiti; trošak ulaganja uključuje tržišnu vrijednost, naknadu burzi, brokerske provizije</td></tr><tr><td>više od 50 %</td><td><strong>kontrola</strong>: matica i podružnica</td><td>metoda udjela (prema bilješkama) i <strong>konsolidirani</strong> izvještaji matice</td></tr></table><p><strong>Obveznice</strong> (kreditni vrijednosni papiri) prodaju se po nominalnoj vrijednosti (NV), <strong>uz diskont</strong> (tržišna &lt; NV) ili <strong>uz premiju</strong> (tržišna &gt; NV). Emitent obveznica povećava žiro račun i dugoročne obveze te ih mora otkupiti na dan dospijeća. Ulagač koji je kupio uz premiju ostvaruje manji efektivni prihod od kamata od nominalnog, a uz diskont veći.</p><p><strong>Tečajne razlike</strong> nastaju promjenom tečaja između nastanka i podmirenja stavke u stranoj valuti (preračunava se po tečaju na dan transakcije). <strong>Pozitivne</strong> su financijski prihod i povećavaju kapital, <strong>negativne</strong> su financijski rashod i smanjuju ga. Ima li poduzeće potraživanja u stranoj valuti, rast tečaja strane valute donosi pozitivnu razliku; ima li obveze u stranoj valuti, rast tečaja donosi negativnu razliku.</p><h3>Obveze</h3><p><strong>Obveza</strong> je sadašnja obveza iz prošlih događaja čije podmirenje izaziva odljev resursa. Obilježja: fiksni rok povrata, fiksna naknada, neovisnost o rezultatu, ne daju pravo upravljanja. Podmirenje: <strong>novcem</strong>, drugom nenovčanom imovinom, pružanjem usluga, zamjenom jedne obveze drugom, <strong>pretvaranjem u kapital</strong>, odricanjem ili gubitkom prava vjerovnika.</p><h3>Plaće</h3><p>Zaposlenik ostvaruje osnovnu plaću, plaću povećanu za staž i teže uvjete te stimulativnu plaću, uz <strong>naknade plaće</strong> (bolovanje, godišnji odmor, blagdani). Zbroj svega = <strong>bruto plaća</strong>.</p><div class=\"formula-box\">$$\\text{Neto plaća} = \\text{bruto plaća} - \\text{doprinosi iz plaće} - \\text{porez na dohodak}$$ <strong>Doprinosi iz plaće</strong> (mirovinsko osiguranje) terete zaposlenika; <strong>doprinos na plaću</strong> (zdravstveno osiguranje) plaća poslodavac povrh bruta. Osnovica je bruto plaća.</div><div class=\"example-box\"><strong>Knjiženje (ilustracija).</strong> Obračunate bruto plaće 40.000 = neto 28.000 + doprinosi iz plaće 8.000 + porez na dohodak 4.000 (iznosi ovise o propisima i osobnim odbicima). <table><tr><th>Promjena</th><th>Duguje</th><th>Potražuje</th></tr><tr><td>Obračun bruto plaća</td><td>Trošak bruto plaća (razred 4) 40.000</td><td>Obveze za neto plaće 28.000 · obveze za doprinose 8.000 · obveze za porez 4.000 (razred 2)</td></tr><tr><td>Isplata neto plaća</td><td>Obveze za neto plaće 28.000</td><td>100 Žiro račun 28.000</td></tr></table> Obračun je <strong>trošak</strong> (periferijska promjena uslijed rashoda: rastu obveze, pada kapital); isplata je <strong>poslovni izdatak</strong> (centrifugalna promjena).</div><p>Temeljni dokument za knjiženje je <strong>rekapitulacija isplatne liste</strong>. Plaće se evidentiraju u glavnoj knjizi, analitici plaća (svaki zaposlenik ima svoj konto, podaci se čuvaju trajno) i poreznoj kartici.</p><div class=\"warning-box\"><strong>Zastarjelo u bilješkama:</strong> „doprinos za zapošljavanje” (ukinut 2019.) i „prirez” (ukinut 2024.) navode se kao sastavnice plaće prema starijim propisima.</div><h3>Novčani pretvorbeni krug</h3><p><strong>Novčani (profitni) pretvorbeni krug</strong> je vrijeme (u danima) od izdavanja novca za sirovine do primitka novca nakon prodaje gotovih proizvoda. Prati tijek ulaganja novca i zastoje; <strong>brže kretanje znači veći profit</strong>.</p>"
+    }
+  },
+  "zakljucivanjeKnjiga": {
+    "name": "Popis, pogreške i zaključivanje knjiga",
+    "icon": "fa-clipboard-check",
+    "color": "#0f766e",
+    "flashcards": [
+      {
+        "question": "Koje su faze računovodstvenog procesa?",
+        "answer": "Prikupljanje podataka o događajima, analiza je li događaj knjigovodstveni, unos u dnevnik i glavnu knjigu te sastavljanje izvještaja.",
+        "explanation": "Input → proces → output."
+      },
+      {
+        "question": "Koja su obilježja dvojnog knjigovodstva?",
+        "answer": "Sustavnost i cjelovitost evidencije, raščlanjivanje i grupiranje promjena, kronološka evidencija, vrijednosni izraz i visoka pouzdanost.",
+        "explanation": "Knjigovodstvena ravnoteža: ΣD = ΣP."
+      },
+      {
+        "question": "Što je POPIS (inventura)?",
+        "answer": "Utvrđivanje stvarnog stanja imovine, obveza i tuđe imovine na dan popisa i usporedba s knjigovodstvenim stanjem.",
+        "explanation": "Rezultat: viškovi i manjkovi."
+      },
+      {
+        "question": "Što je predmet popisa?",
+        "answer": "Sva imovina poduzetnika, obveze i tuđa imovina zatečena kod poduzetnika na dan popisa.",
+        "explanation": "Tuđa imovina bilježi se izvanbilančno."
+      },
+      {
+        "question": "Redovni vs izvanredni popis?",
+        "answer": "Redovni se provodi prema utvrđenim rokovima – obvezno na dan 31. 12.; izvanredni kad to zahtijevaju prilike (promjena cijena, statusna promjena, stečaj, likvidacija).",
+        "explanation": "Popis može biti potpuni ili djelomični."
+      },
+      {
+        "question": "Inventurni višak vs manjak?",
+        "answer": "Višak: stvarno stanje veće od knjigovodstvenog; manjak: stvarno stanje manje od knjigovodstvenog.",
+        "explanation": "Višak je izvanredni prihod, manjak izvanredni rashod ili teret odgovorne osobe."
+      },
+      {
+        "question": "Koji su uzroci inventurnih razlika?",
+        "answer": "Normirani gubici (kalo, rasip, lom, kvar), pogreške u knjiženju, nesavjesno rukovanje ili otuđenje te elementarne nepogode.",
+        "explanation": "Komisija predlaže knjiženje razlika."
+      },
+      {
+        "question": "Koje su faze popisa?",
+        "answer": "Fizičko mjerenje, brojanje i vaganje; utvrđivanje cijena i vrijednosti; utvrđivanje knjigovodstvenog stanja; utvrđivanje viškova i manjkova.",
+        "explanation": "Na kraju komisija sastavlja elaborat."
+      },
+      {
+        "question": "Što sadrži elaborat o popisu?",
+        "answer": "Popisne liste i izvještaj o popisu – mišljenje o uzrocima razlika, prijedlog mjera i prijedlog knjiženja viškova i manjkova.",
+        "explanation": "Sastavlja ga inventurna komisija."
+      },
+      {
+        "question": "Formalne vs materijalne knjigovodstvene pogreške?",
+        "answer": "Formalne narušavaju ravnotežu (duguje ≠ potražuje) i otkriva ih sam sustav; materijalne ne narušavaju ravnotežu (ispuštena promjena, dvostruko knjiženje, krivi konto).",
+        "explanation": "Pogreška je nenamjerna; namjerna je prijevara."
+      },
+      {
+        "question": "Kako se otkrivaju materijalne pogreške?",
+        "answer": "Inventurom, usporedbom isprava s knjiženjima te usklađivanjem stanja s kupcima i dobavljačima.",
+        "explanation": "Sustav ih sam ne otkriva."
+      },
+      {
+        "question": "Kako se ispravljaju knjigovodstvene pogreške?",
+        "answer": "Stornom (crveni ili crni storno), precrtavanjem i dopunskim knjiženjem – pogreška ostaje vidljiva, a njezin učinak se neutralizira.",
+        "explanation": "Crni storno stvara „lažni” promet."
+      },
+      {
+        "question": "Što nalaže načelo AŽURNOSTI?",
+        "answer": "Knjiženje odmah po nastanku: blagajna isti dan, računi u banci sljedeći dan, ostale promjene u roku od 8 dana.",
+        "explanation": "Uz načela urednosti i preglednosti."
+      },
+      {
+        "question": "Što je KONAČNI OBRAČUN?",
+        "answer": "Godišnji postupak: zaključuju se sva konta glavne knjige, sastavlja se bruto (pokusna) bilanca, a zatim temeljni financijski izvještaji.",
+        "explanation": "Obvezno jednom godišnje."
+      },
+      {
+        "question": "Koji su stupci BRUTO BILANCE?",
+        "answer": "Šifra i naziv konta te četiri para stupaca: početno stanje, promet razdoblja, ukupni promet i saldo (stanje na kraju).",
+        "explanation": "Iz stupca salda sastavlja se bilanca."
+      },
+      {
+        "question": "Što pokazuje analitički konto kupca?",
+        "answer": "Duguje – iznos za naplatu (uključujući početno stanje); potražuje – stvarne naplate; saldo – još nenaplaćeni iznos tog kupca.",
+        "explanation": "Zbroj analitike = sintetički konto kupaca."
+      },
+      {
+        "question": "Što su KUF i KIF?",
+        "answer": "Knjiga ulaznih računa (redoslijedom primitka, s podacima o dobavljaču) i knjiga izlaznih računa (s podacima o kupcu i roku); porezni propisi ih traže radi PDV-a.",
+        "explanation": "Nemaju obilježje knjigovodstvene evidencije."
+      },
+      {
+        "question": "Što je KNJIGA DUGOTRAJNE IMOVINE (inventara)?",
+        "answer": "Matična knjiga sa svim podacima o dugotrajnoj imovini od nabave do otuđenja; pomaže pri popisu i ne zaključuje se krajem godine.",
+        "explanation": "Pomoćna knjiga."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Popis (inventura) na kraju godine obvezno se provodi na dan:",
+        "options": [
+          "1. 1.",
+          "31. 12.",
+          "30. 6.",
+          "30. 9."
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Stvarno stanje zaliha utvrđeno popisom veće je od knjigovodstvenog. To je:",
+        "options": [
+          "Inventurni manjak",
+          "Kalo",
+          "Inventurni višak",
+          "Normirani gubitak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Inventurni višak materijala knjiži se kao:",
+        "options": [
+          "Izvanredni rashod",
+          "Kratkoročna obveza",
+          "Smanjenje kapitala",
+          "Izvanredni prihod"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Što od navedenog NIJE predmet popisa?",
+        "options": [
+          "Planirana prodaja za sljedeću godinu",
+          "Imovina poduzetnika",
+          "Obveze poduzetnika",
+          "Tuđa imovina zatečena kod poduzetnika"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Pogreška zbog koje zbroj duguje nije jednak zbroju potražuje je:",
+        "options": [
+          "Materijalna pogreška",
+          "Formalna pogreška",
+          "Prijevara",
+          "Inventurni manjak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Promjena je u dnevniku ispravno upisana, ali na pogrešan konto glavne knjige. To je:",
+        "options": [
+          "Formalna pogreška",
+          "Storno",
+          "Materijalna pogreška",
+          "Inventurni višak"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji način ispravka pogreške stvara „lažni” (dvostruki) promet na kontu?",
+        "options": [
+          "Crveni storno",
+          "Dopunsko knjiženje",
+          "Precrtavanje",
+          "Crni storno"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Prema načelu ažurnosti promjene u blagajni moraju se proknjižiti:",
+        "options": [
+          "Isti dan",
+          "Sljedeći dan",
+          "U roku od 8 dana",
+          "Do kraja mjeseca"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Osnovni cilj sastavljanja bruto bilance je:",
+        "options": [
+          "Utvrđivanje porezne obveze za tekuću godinu",
+          "Provjera ispravnosti provedenih knjiženja",
+          "Planiranje budućih prihoda",
+          "Obračun plaća"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Bilanca se sastavlja na temelju bruto bilance i to iz stupca:",
+        "options": [
+          "Početnog stanja",
+          "Prometa razdoblja",
+          "Salda na kraju razdoblja",
+          "Ukupnog prometa"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Hotel Alfa: promet dugovne strane svih konta 36.000, početna stanja 200.000. Ukupni promet dugovne strane bruto bilance iznosi:",
+        "options": [
+          "200.000",
+          "36.000",
+          "195.000",
+          "236.000"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Zbroj prometa svih analitičkih konta kupaca mora biti jednak:",
+        "options": [
+          "Prometu sintetičkog konta kupaca",
+          "Prometu konta dobavljača",
+          "Stanju žiro računa",
+          "Ukupnim prihodima"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Knjiga u koju se upisuju ulazni računi redoslijedom primitka je:",
+        "options": [
+          "KIF",
+          "KUF",
+          "Dnevnik",
+          "Knjiga blagajne"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pomoćna knjiga koja se NE zaključuje na kraju godine jer prati imovinu od nabave do otuđenja je:",
+        "options": [
+          "Knjiga blagajne",
+          "Dnevnik",
+          "Knjiga dugotrajne imovine (inventara)",
+          "Knjiga izlaznih računa za potrebe PDV-a"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Utvrđivanje stvarnog stanja imovine i obveza zove se popis ili _______.",
+        "answer": "inventura",
+        "hint": "Obvezno na 31. 12."
+      },
+      {
+        "sentence": "Stvarno stanje manje od knjigovodstvenog je inventurni _______.",
+        "answer": "manjak",
+        "hint": "Suprotno: višak."
+      },
+      {
+        "sentence": "Pogreške koje ne narušavaju ravnotežu zovu se _______ pogreške.",
+        "answer": "materijalne",
+        "hint": "Suprotno: formalne."
+      },
+      {
+        "sentence": "Ispravak pogreške suprotnim knjiženjem zove se _______.",
+        "answer": "storno",
+        "hint": "Crveni ili crni."
+      },
+      {
+        "sentence": "Pregled stanja i prometa svih konta glavne knjige zove se _______ bilanca.",
+        "answer": "bruto",
+        "hint": "Ili pokusna."
+      },
+      {
+        "sentence": "Normirani gubitak zbog isušivanja ili isparavanja zove se _______.",
+        "answer": "kalo",
+        "hint": "Uz rasip, lom i kvar."
+      }
+    ],
+    "learn": {
+      "title": "Popis, ispravljanje pogrešaka i zaključivanje knjiga (bruto bilanca)",
+      "content": "<h3>Računovodstveni proces i dvojno knjigovodstvo</h3><p><strong>Input</strong> (poslovni događaji) → <strong>proces</strong> (poslovne knjige) → <strong>output</strong> (izvještaji). Faze obrade: (1) prikupljanje podataka (načelo dokumentiranosti); (2) analiza – je li događaj knjigovodstveni (nastao, dokumentiran, izražen u novcu, mijenja imovinu, obveze, kapital, prihode, rashode ili rezultat); (3) unos u dnevnik i glavnu knjigu; (4) sastavljanje bruto bilance i izvještaja (temeljnih – standardiziranih, i internih – prema potrebama korisnika).</p><p><strong>Dvojno knjigovodstvo</strong> svaki događaj iskazuje u jednakom iznosu na strani duguje jednog i potražuje drugog konta. <strong>Knjigovodstvena ravnoteža</strong>: zbroj svih dugovnih iznosa = zbroj svih potražnih. Obilježja: sustavnost, cjelovitost, raščlanjivanje i grupiranje promjena, kronološka evidencija, vrijednosni izraz, visoka pouzdanost.</p><h3>Popis (inventura)</h3><p><strong>Popis</strong> je utvrđivanje stvarnog stanja <strong>imovine, obveza i tuđe imovine</strong> na dan popisa i usporedba s knjigovodstvenim stanjem. Provodi ga inventurna komisija.</p><table><tr><th>Podjela</th><th>Vrste</th></tr><tr><td>Prema vremenu</td><td><strong>Redovni</strong> (utvrđeni rokovi, obvezno <strong>31. 12.</strong>) · <strong>izvanredni</strong> (promjena cijena, statusna promjena, stečaj, likvidacija) · <strong>kontinuirani</strong> (tijekom godine, uz obvezan potpuni popis 31. 12.)</td></tr><tr><td>Prema obuhvatu</td><td><strong>Potpuni</strong> (sva imovina, obveze i tuđa imovina) · <strong>djelomični</strong> (samo određene vrste)</td></tr></table><p><strong>Faze:</strong> fizičko mjerenje, brojanje i vaganje → utvrđivanje cijena i vrijednosti → utvrđivanje knjigovodstvenog stanja → utvrđivanje razlika. <strong>Višak</strong> = stvarno &gt; knjigovodstveno; <strong>manjak</strong> = stvarno &lt; knjigovodstveno. Uzroci: normirani gubici (<strong>kalo</strong>, rasip, lom, kvar), pogrešno knjiženje, nesavjesno rukovanje ili otuđenje, elementarne nepogode.</p><p><strong>Elaborat o popisu</strong>: popisne liste + izvještaj o popisu (mišljenje o uzrocima razlika, prijedlog mjera, prijedlog knjiženja viškova i manjkova).</p><table><tr><th>Inventurna razlika</th><th>Knjiženje</th><th>Promjena</th></tr><tr><td>Višak materijala 1.000</td><td>310 Zaliha materijala D / 783 Prihod od viškova P</td><td>A+P+ uslijed prihoda</td></tr><tr><td>Manjak materijala 400 – tereti se skladištar</td><td>Potraživanja od zaposlenih D / 310 Zaliha materijala P</td><td>A+A− koncentrična</td></tr><tr><td>Manjak bez odgovorne osobe</td><td>Izvanredni rashodi (730) D / zaliha P</td><td>A−P− uslijed rashoda</td></tr></table><h3>Knjigovodstvene pogreške</h3><p>Pogreška je <strong>nenamjerna</strong>; namjerna „pogreška” je falsifikat (kaznena odgovornost).</p><ul><li><strong>Formalne</strong> – narušena je ravnoteža; otkriva ih sam sustav dvojnog knjigovodstva (neslaganje prometa dnevnika, glavne knjige ili dnevnika s glavnom knjigom).</li><li><strong>Materijalne</strong> – ravnoteža nije narušena: ispuštena promjena, dvostruko upisana promjena, ispravno u dnevniku, ali na pogrešnom kontu glavne knjige. Otkrivaju se <strong>inventurom</strong>, usporedbom isprava s knjiženjima i usklađivanjem s kupcima i dobavljačima.</li></ul><p><strong>Ispravljanje:</strong> <strong>storno</strong> (crveni – negativni iznos; crni – suprotno knjiženje, stvara „lažni” promet), <strong>precrtavanje</strong> (jednom tankom crtom) i <strong>dopunsko knjiženje</strong>. Pogreška ostaje vidljiva, a učinak se neutralizira.</p><p><strong>Načela knjigovodstva:</strong> <strong>urednost</strong> i <strong>preglednost</strong> (bez praznih mjesta, knjige se ne uništavaju) te <strong>ažurnost</strong> – blagajna isti dan, računi u banci sljedeći dan, ostalo u roku od 8 dana.</p><h3>Analitičke evidencije kupaca i dobavljača, KUF i KIF</h3><ul><li><strong>Kupci</strong>: za svakog kupca analitički konto (kupci u zemlji i inozemstvu posebno). Duguje = iznos za naplatu (s početnim stanjem), potražuje = stvarna naplata, saldo = nenaplaćeno. Kod kašnjenja obračunava se <strong>zatezna kamata</strong>. Zbroj prometa analitike = promet sintetičkog konta.</li><li><strong>Dobavljači</strong>: analitički konto za svakog dobavljača; potražuje = obveze po ulaznim računima (s početnim stanjem), duguje = plaćeno, saldo = nepodmireno.</li><li><strong>KUF</strong> (knjiga ulaznih računa) i <strong>KIF</strong> (knjiga izlaznih računa) – upisnici računa s podacima potrebnima za PDV; nemaju obilježje knjigovodstvene evidencije.</li><li><strong>Knjiga dugotrajne imovine</strong> – matična knjiga od nabave do otuđenja; pomaže pri popisu; ne zaključuje se krajem godine.</li></ul><h3>Konačni obračun i bruto bilanca</h3><p>Jednom godišnje obvezno se <strong>zaključuju sva konta glavne knjige</strong> i sastavlja <strong>bruto (pokusna) bilanca</strong> za razdoblje 1. 1. – 31. 12. Bruto bilanca prikazuje stanje i promet <strong>svih</strong> konta; osnovna uloga joj je <strong>kontrola</strong> ispravnosti knjiženja. Ima šifru i naziv konta te četiri para stupaca: <strong>početno stanje · promet razdoblja · ukupni promet · saldo</strong>. Bilanca se sastavlja iz stupca <strong>salda</strong>.</p><div class=\"example-box\"><strong>Bruto bilanca Hotela Alfa</strong> (nastavak riješenog primjera iz 1. kolokvija: šest promjena, početna bilanca 200.000): <table><tr><th>Konto</th><th>PS D</th><th>PS P</th><th>Promet D</th><th>Promet P</th><th>Ukupno D</th><th>Ukupno P</th><th>Saldo D</th><th>Saldo P</th></tr><tr><td>Zgrade</td><td>140.000</td><td></td><td></td><td></td><td>140.000</td><td></td><td>140.000</td><td></td></tr><tr><td>021 Oprema</td><td>30.000</td><td></td><td>8.000</td><td></td><td>38.000</td><td></td><td>38.000</td><td></td></tr><tr><td>310 Zaliha namirnica</td><td>6.000</td><td></td><td>3.000</td><td></td><td>9.000</td><td></td><td>9.000</td><td></td></tr><tr><td>120 Kupci</td><td>4.000</td><td></td><td></td><td>4.000</td><td>4.000</td><td>4.000</td><td>—</td><td>—</td></tr><tr><td>100 Žiro račun</td><td>20.000</td><td></td><td>4.000</td><td>16.000</td><td>24.000</td><td>16.000</td><td>8.000</td><td></td></tr><tr><td>Kapital</td><td></td><td>120.000</td><td></td><td></td><td></td><td>120.000</td><td></td><td>120.000</td></tr><tr><td>952 Kredit kod banke</td><td></td><td>60.000</td><td>6.000</td><td></td><td>6.000</td><td>60.000</td><td></td><td>54.000</td></tr><tr><td>220 Dobavljači</td><td></td><td>12.000</td><td>15.000</td><td>11.000</td><td>15.000</td><td>23.000</td><td></td><td>8.000</td></tr><tr><td>252 Kratkoročni kredit</td><td></td><td>8.000</td><td></td><td>5.000</td><td></td><td>13.000</td><td></td><td>13.000</td></tr><tr><td><strong>Ukupno</strong></td><td><strong>200.000</strong></td><td><strong>200.000</strong></td><td><strong>36.000</strong></td><td><strong>36.000</strong></td><td><strong>236.000</strong></td><td><strong>236.000</strong></td><td><strong>195.000</strong></td><td><strong>195.000</strong></td></tr></table> Svaki par stupaca mora biti u ravnoteži – ako nije, postoji <strong>formalna</strong> pogreška. Stupac salda (195.000 = 195.000) daje zaključnu bilancu.</div>"
+    }
+  }
+}

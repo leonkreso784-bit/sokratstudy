@@ -1,0 +1,1512 @@
+{
+  "foundations": {
+    "name": "Opći pristup i razvoj znanosti o menadžmentu",
+    "icon": "fa-sitemap",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Što je MENADŽMENT i kojih je PET FUNKCIJA menadžmenta (Weihrich i Koontz)?",
+        "answer": "Proces usmjeravanja ljudi i resursa radi efikasnog ostvarenja ciljeva poduzeća. Pet funkcija (Weihrich i Koontz): planiranje, organiziranje, kadroviranje, vođenje, kontroliranje.",
+        "explanation": "Funkcije su međusobno povezane i obavljaju se istovremeno, ne kao linearni slijed. Detaljan opis svake → sekcija Uči."
+      },
+      {
+        "question": "Koja je razlika između EFIKASNOSTI i EFEKTIVNOSTI?",
+        "answer": "Efikasan = raditi stvari NA PRAVI NAČIN (minimalno rasipanje resursa). Efektivan = raditi PRAVU STVAR (ostvariti cilj).",
+        "explanation": "Uspješnost = odabir pravih resursa (efektivnost) + njihova dobra upotreba (efikasnost)."
+      },
+      {
+        "question": "Koja su ČETIRI organizacijska RESURSA kojima menadžeri upravljaju?",
+        "answer": "Ljudski, financijski, fizički i informacijski.",
+        "explanation": "Ljudski resursi ('ljudski kapital') = najvrjednija imovina. Opis svakog → sekcija Uči."
+      },
+      {
+        "question": "Koje su TRI VJEŠTINE menadžmenta?",
+        "answer": "Tehničke (tvrde), interpersonalne (meke) i odlučivačke (konceptualne).",
+        "explanation": "Tehničke važnije na nižim razinama, odlučivačke na vrhu. Opis → sekcija Uči."
+      },
+      {
+        "question": "Kojih je 10 MENADŽERSKIH ULOGA prema Mintzbergu, razvrstanih u 3 kategorije?",
+        "answer": "10 uloga u 3 skupine: interpersonalne, informacijske i odlučivačke.",
+        "explanation": "Uloga = skup očekivanja o ponašanju (Henry Mintzberg). Pojedine uloge → sekcija Uči."
+      },
+      {
+        "question": "Koje su TRI RAZINE menadžmenta (uz voditelja tima i operativne zaposlenike)?",
+        "answer": "Vrhovni, srednji i menadžeri prve linije.",
+        "explanation": "+ voditelj tima i nerukovodeći operativni djelatnici. Opis razina → sekcija Uči."
+      },
+      {
+        "question": "Na koja se DVA OSNOVNA PRISTUPA dijeli razvoj znanosti o menadžmentu?",
+        "answer": "Višedisciplinski (multidisciplinarni) i povijesno-kronološki.",
+        "explanation": "Povijesno-kronološki pristup obrađuje zasebna kategorija „Povijest menadžmenta“ (Prapočeci → Suvremeni)."
+      },
+      {
+        "question": "Koje su KLJUČNE KOMPONENTE efektivnog menadžera?",
+        "answer": "Aktivan vođa · osigurava poticaj I mogućnost za visoke rezultate · kreira pozitivnu radnu okolinu.",
+        "explanation": "Sinonimi za „menadžer\": supervisor, leader, organiser, director, administrator, boss."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koji popis ispravno navodi pet funkcija menadžmenta (Weihrich i Koontz)?",
+        "options": [
+          "Planiranje, kadroviranje, marketing, prodaja",
+          "Planiranje, organiziranje, kadroviranje, vođenje, kontroliranje",
+          "Zapošljavanje, budžetiranje, proizvodnja, izvještavanje",
+          "Strategija, struktura, sustavi, osoblje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "„Činiti PRAVU stvar radi postizanja cilja\" definira:",
+        "options": [
+          "Efikasnost (efikasnost)",
+          "Efektivnost (efektivnost)",
+          "Ekonomična",
+          "Etična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja je vještina općenito VAŽNIJA za top menadžere nego za operativne djelatnike?",
+        "options": [
+          "Tehničke vještine",
+          "Vještine odlučivanja (konceptualne vještine)",
+          "Manualne vještine",
+          "Vještine tipkanja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Mintzbergove uloge predstavnika, vođe i osobe za vezu pripadaju kojoj kategoriji?",
+        "options": [
+          "Odlučivanje",
+          "Informacijska",
+          "Interpersonalna",
+          "Tehnička"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Menadžer prve razine (supervizor) primarno nadzire:",
+        "options": [
+          "Druge menadžere",
+          "Operativne zaposlenike",
+          "Upravni odbor",
+          "Menadžere srednje razine"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Pet funkcija menadžmenta (Weihrich i Koontz) su planiranje, organiziranje, kadroviranje, vođenje i _______.",
+        "answer": "kontroliranje",
+        "hint": "Praćenje i korektivne mjere..."
+      },
+      {
+        "sentence": "Ispravno obavljanje zadataka radi maksimalnog iskorištavanja resursa znači biti _______.",
+        "answer": "efikasan",
+        "hint": "Najmanji otpad..."
+      },
+      {
+        "sentence": "Mintzberg je grupirao 10 menadžerskih uloga u interpersonalne, informacijske i _______ uloge.",
+        "answer": "odlučivačke",
+        "hint": "Poduzetnik, pregovarač..."
+      }
+    ],
+    "learn": {
+      "title": "Uvod u menadžment — osnove",
+      "content": "\n                <h3>Što je menadžment?</h3>\n                <p><strong>Menadžment</strong> = proces oblikovanja, usmjeravanja i usklađivanja svih čimbenika proizvodno-uslužnog procesa u kojem pojedinci, radeći zajedno u poduzeću, <strong>efikasno ostvaruju odabrane ciljeve</strong>. Riječ potječe od latinskog <em>manus</em> (ruka) + <em>agere</em> (djelovati). Ključni aspekti procesa: rad s drugima i putem drugih · ravnoteža efektivnosti i efikasnosti · racionalno korištenje ograničenih resursa · prilagodba promjenjivoj okolini — sve radi ostvarivanja ciljeva poduzeća.</p>\n                <div class=\"formula-box\">\n                    EFIKASNOST = raditi stvari ISPRAVNO (najmanji otpad resursa) &nbsp;·&nbsp; EFEKTIVNOST = raditi ISPRAVNE stvari (postići cilj)<br>\n                    Visoka uspješnost = odabir pravih resursa (efektivnost) I njihova dobra upotreba (efikasnost)\n                </div>\n\n                <h4>Pet funkcija menadžmenta (Weihrich i Koontz)</h4>\n                <p>Funkcije su međusobno različite, ali isprepletene — obavljaju se <strong>istovremeno</strong>, a ne kao linearni slijed koraka.</p>\n                <ul>\n                    <li><strong>1. Planiranje</strong> — postavljanje ciljeva i unaprijedno odlučivanje o načinu njihova ostvarivanja.</li>\n                    <li><strong>2. Organiziranje</strong> — delegiranje i koordinacija zadataka te raspodjela resursa.</li>\n                    <li><strong>3. Kadroviranje</strong> — popunjavanje radnih mjesta i briga o ljudima (pravi ljudi na pravim mjestima).</li>\n                    <li><strong>4. Vođenje</strong> — utjecanje na zaposlenike kako bi radili prema postavljenim ciljevima.</li>\n                    <li><strong>5. Kontroliranje</strong> — praćenje napretka i poduzimanje korektivnih mjera.</li>\n                </ul>\n\n                <h4>Resursi kojima menadžer upravlja</h4>\n                <ul>\n                    <li><strong>Ljudski</strong> — zaposlenici („ljudski kapital“), najvrjednija imovina.</li>\n                    <li><strong>Financijski</strong> — novac/proračun potreban za poslovanje.</li>\n                    <li><strong>Fizički</strong> — proizvodi, oprema, materijali, zalihe.</li>\n                    <li><strong>Informacijski</strong> — informacije i znanje za postavljanje ciljeva i donošenje odluka.</li>\n                </ul>\n\n                <h4>Vještine menadžmenta</h4>\n                <ul>\n                    <li><strong>Tehničke</strong> („tvrde“) — primjena metoda i tehnika pri obavljanju zadatka; važnije na nižim razinama.</li>\n                    <li><strong>Interpersonalne</strong> („meke/socijalne“) — razumijevanje, komunikacija i suradnja s drugima; sve značajnije.</li>\n                    <li><strong>Odlučivačke</strong> („konceptualne“) — konceptualizacija situacija i odabir alternativa; najvažnije na vrhu.</li>\n                </ul>\n\n                <h4>Menadžerske uloge — 10 uloga (Henry Mintzberg)</h4>\n                <p><strong>Uloga</strong> = skup očekivanja o tome kako će se netko ponašati. Mintzberg ih razvrstava u tri skupine:</p>\n                <ul>\n                    <li><strong>Interpersonalne</strong> — figurativni poglavar, vođa, posrednik.</li>\n                    <li><strong>Informacijske</strong> — promatrač, distributer informacija, glasnogovornik.</li>\n                    <li><strong>Odlučivačke</strong> — poduzetnik, rješavatelj poremećaja, raspoređivač resursa, pregovarač.</li>\n                </ul>\n\n                <h4>Razine menadžmenta</h4>\n                <ul>\n                    <li><strong>Vrhovni</strong> (CEO, predsjednik) — upravljaju cjelokupnom organizacijom; određuju svrhu, ciljeve i strategiju.</li>\n                    <li><strong>Srednji</strong> (voditelj odjela/poslovnice) — provode strategiju kroz kratkoročne operativne planove.</li>\n                    <li><strong>Prva linija</strong> (nadzornik, voditelj smjene) — provode operativne planove; nadziru operativne djelatnike.</li>\n                    <li>+ <strong>voditelj tima</strong> (nepermanentan) i <strong>nerukovodeći operativni</strong> djelatnici (obavljaju stvarni posao).</li>\n                </ul>\n\n                <h4>Razvoj znanosti o menadžmentu</h4>\n                <p>Dva osnovna pristupa: <strong>višedisciplinski</strong> (matematika, sociologija, psihologija, teorija odlučivanja, teorija sustava) i <strong>povijesno-kronološki</strong> (razvoj misli kroz vrijeme — obrađen u kategoriji „Povijest menadžmenta“: Prapočeci → Konvencionalni → Nekonvencionalni → Suvremeni).</p>\n\n                <h4>Ključne komponente efektivnog menadžera</h4>\n                <ul>\n                    <li>Aktivan <strong>vođa</strong>.</li>\n                    <li>Osigurava <strong>poticaj</strong> za ostvarenje visokih rezultata.</li>\n                    <li>Osigurava <strong>mogućnost</strong> ostvarenja visokih rezultata.</li>\n                    <li>Kreira <strong>pozitivnu radnu okolinu</strong>.</li>\n                </ul>\n            "
+    }
+  },
+  "managementHistory": {
+    "name": "Povijesno-kronološki pristup menadžmentu",
+    "icon": "fa-clock-rotate-left",
+    "color": "#64748b",
+    "flashcards": [
+      {
+        "question": "Kako se dijeli POVIJESNO-KRONOLOŠKI pristup menadžmentu?",
+        "answer": "Prapočeci → konvencionalni → nekonvencionalni → suvremeni.",
+        "explanation": "Slijedi razvoj menadžerske misli kroz povijest odnosno vrijeme."
+      },
+      {
+        "question": "Što obuhvaćaju PRAPOČECI pristupa menadžmentu?",
+        "answer": "Antički (Platon, Aristotel, Sokrat), srednjovjekovni (sv. Toma Akvinski) i predindustrijski (Petty, Smith, Mill).",
+        "explanation": "Pokazuju da je razmišljanje o upravljanju starije od same znanosti o menadžmentu."
+      },
+      {
+        "question": "Na što se dijeli KONVENCIONALNI pristup (5 pristupa)?",
+        "answer": "Znanstveni, administrativno-birokratski (univerzalni), bihevioralni, sistemski i kontigencijski.",
+        "explanation": "Javlja se početkom 20. st. (parobrodi, željeznice, masovno putovanje → potreba za boljom organizacijom)."
+      },
+      {
+        "question": "ZNANSTVENI pristup: teoretičari i Taylor?",
+        "answer": "Teoretičari: Taylor, Gantt, Gilbreth. Frederick TAYLOR = otac ZNANSTVENOG menadžmenta ('Shop Management', prvi spominje riječ menadžment).",
+        "explanation": "Taylorova načela → sekcija Uči. ⚠️ Otac MODERNOG menadžmenta je Drucker, ne Taylor!"
+      },
+      {
+        "question": "ADMINISTRATIVNO-BIROKRATSKI pristup: teoretičari?",
+        "answer": "Najstariji i najpopularniji pristup. Fayol = otac OPERACIJSKOG menadžmenta (14 načela); Weber = birokracija.",
+        "explanation": "14 Fayolovih načela → sekcija Uči."
+      },
+      {
+        "question": "BIHEVIORALNI pristup: teoretičari i dva pokreta?",
+        "answer": "Teoretičari: Mayo, Parker-Follett, McGregor (socijalna dimenzija). Dva pokreta: ljudskih odnosa (teorija X/Y) i organizacijskog ponašanja.",
+        "explanation": "Bihevioralne teorije: međuljudski odnosi, ljudski potencijali, organizacijsko ponašanje."
+      },
+      {
+        "question": "Što tvrdi McGREGOROVA teorija Y (nasuprot X)?",
+        "answer": "Teorija Y (nasuprot klasičnoj X) smatra da su zaposleni motivirani, sposobni za razvoj i odgovornost te usmjeravanje prema ciljevima organizacije.",
+        "explanation": "McGregor pripada pokretu ljudskih odnosa (bihevioralni pristup)."
+      },
+      {
+        "question": "SISTEMSKI pristup: pogled na poduzeće i teoretičari?",
+        "answer": "Poduzeće = kompleksan, dinamički i OTVOREN sustav. Teoretičari: Drucker (otac MODERNOG menadžmenta), Bertalanffy, Luhmann.",
+        "explanation": "⚠️ Ispitno: Drucker → SISTEMSKI pristup, otac MODERNOG (Taylor = znanstvenog)."
+      },
+      {
+        "question": "KONTIGENCIJSKI pristup: bit i teoretičari?",
+        "answer": "Uvažava SVE utjecajne čimbenike organizacijske strukture — ne postoji jedan najbolji način. Teoretičari: Chandler, Woodward, Lawrence, Lorsch.",
+        "explanation": "Kontekst: informatika, sateliti, prve naznake postindustrijske revolucije."
+      },
+      {
+        "question": "NEKONVENCIONALNI pristup i model '7S'?",
+        "answer": "Kako voditi poduzeće da bude efektivnije i efikasnije. Atributi savršenosti — McKinseyev model '7S' (McKinsey, Peters, Waterman).",
+        "explanation": "7S: strategy, skills, systems, style, staff, shared values, structure. → sekcija Uči."
+      },
+      {
+        "question": "Tko je razvio MODEL VJEČNO USPJEŠNE ORGANIZACIJE?",
+        "answer": "Philip CROSBY — prvi ističe važnost cjelokupne kvalitete; razvio model vječno uspješne organizacije (nekonvencionalni pristup).",
+        "explanation": "Odrednice (ljudi rade dobro, unosan rast, predviđanje potreba…) → sekcija Uči."
+      },
+      {
+        "question": "SUVREMENI pristup: koja tri koncepta?",
+        "answer": "TQM (upravljanje cjelokupnom kvalitetom), BPR (reinženjering procesa) i učeća organizacija.",
+        "explanation": "Sva tri odgovaraju na pitanje kako se prilagoditi stalnim promjenama."
+      },
+      {
+        "question": "Što je TQM i što znače T, Q i M?",
+        "answer": "TQM = sustav stalnog unapređenja kvalitete i efikasnosti. T = potpuno (svi/sve), Q = kvaliteta, M = menadžment (opredijeljenost uprave).",
+        "explanation": "TQM je japanski; BPR je američki odgovor. Teoretičari: Schmidt, Finnigan."
+      },
+      {
+        "question": "Što je BPR (reinženjering poslovnih procesa)?",
+        "answer": "Američki odgovor na japanski TQM — temeljito i korjenito redizajniranje procesa (troškovi, kvaliteta, brzina).",
+        "explanation": "Ključno: TEMELJITO → KORJENITO → DRASTIČNO → PROCESI. TQM = postupno, BPR = rez."
+      },
+      {
+        "question": "Što je UČEĆA ORGANIZACIJA?",
+        "answer": "Svi zaposleni zajednički rješavaju probleme; fokus na kvaliteti i zadovoljstvu kupaca; ističe timove i sustave. Teoretičari: Senge, Daft.",
+        "explanation": "Karakteristike (vodstvo, horizontalna struktura, opunomoćenje…) → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kako se dijeli povijesno-kronološki pristup menadžmentu?",
+        "options": [
+          "Klasični, bihevioralni, integrativni",
+          "Prapočeci, konvencionalni, nekonvencionalni, suvremeni",
+          "Znanstveni, administrativni, sistemski",
+          "Antički, industrijski, digitalni"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Frederick Winslow Taylor poznat je kao otac:",
+        "options": [
+          "Modernog menadžmenta",
+          "Znanstvenog menadžmenta",
+          "Operacijskog menadžmenta",
+          "Birokracije"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tko je „otac modernog menadžmenta\"?",
+        "options": [
+          "Henri Fayol",
+          "Frederick Taylor",
+          "Peter Drucker",
+          "Max Weber"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kojem pristupu pripada Peter Drucker?",
+        "options": [
+          "Znanstvenom",
+          "Sistemskom",
+          "Bihevioralnom",
+          "Kontigencijskom"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Henri Fayol najistaknutiji je predstavnik:",
+        "options": [
+          "Znanstvenog menadžmenta",
+          "Operacijskog menadžmenta",
+          "Bihevioralnog pristupa",
+          "Učeće organizacije"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji pristup NIJE dio konvencionalnog pristupa menadžmentu?",
+        "options": [
+          "Znanstveni",
+          "Administrativno-birokratski",
+          "Kontigencijski",
+          "Atributi savršenosti (7S)"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Teoriju X i teoriju Y formulirao je:",
+        "options": [
+          "Elton Mayo",
+          "Douglas McGregor",
+          "Mary Parker-Follett",
+          "Ludwig von Bertalanffy"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Model „7S\" (strategy, skills, systems, style, staff, shared values, structure) veže se uz:",
+        "options": [
+          "McKinsey — atributi savršenosti",
+          "Taylorov znanstveni menadžment",
+          "Fayolovih 14 načela",
+          "Sengeovu učeću organizaciju"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Philip Crosby poznat je po:",
+        "options": [
+          "Modelu vječno uspješne organizacije i isticanju cjelokupne kvalitete",
+          "Teoriji birokracije",
+          "14 načela menadžmenta",
+          "Hawthorne eksperimentima"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "BPR (preoblikovanje poslovnih procesa) opisuje se kao:",
+        "options": [
+          "Japanski odgovor na američki TQM",
+          "Američki odgovor na japanski TQM",
+          "Dio prapočetaka menadžmenta",
+          "Sinonim za učeću organizaciju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Slovo „T\" u TQM-u znači:",
+        "options": [
+          "Timski rad",
+          "Potpuno — za sve zaposlene, strukture i funkcije",
+          "Tehnologija",
+          "Trajnost proizvoda"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja NIJE karakteristika učeće organizacije?",
+        "options": [
+          "Horizontalna organizacijska struktura",
+          "Opunomoćenje zaposlenih",
+          "Stroga centralizacija odlučivanja",
+          "Snažna organizacijska kultura"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Povijesno-kronološki pristup dijeli se na prapočetke, konvencionalni, nekonvencionalni i _______ pristup.",
+        "answer": "suvremeni",
+        "hint": "Najnoviji u nizu…"
+      },
+      {
+        "sentence": "Frederick Winslow Taylor naziva se ocem _______ menadžmenta.",
+        "answer": "znanstvenog",
+        "hint": "Knjiga „Shop Management\"…"
+      },
+      {
+        "sentence": "Peter Ferdinand Drucker naziva se ocem _______ menadžmenta i pripada sistemskom pristupu.",
+        "answer": "modernog",
+        "hint": "Pazi — nije Fayol!"
+      },
+      {
+        "sentence": "Henri Fayol najistaknutiji je predstavnik _______ menadžmenta i autor 14 načela.",
+        "answer": "operacijskog",
+        "hint": "Ne „modernog\" — to je Drucker…"
+      },
+      {
+        "sentence": "Bihevioralni pristup dijeli se na pokret ljudskih odnosa i pokret _______ ponašanja.",
+        "answer": "organizacijskog",
+        "hint": "Proučava zašto se ljudi tako ponašaju u organizaciji…"
+      },
+      {
+        "sentence": "Prema sistemskom pristupu, poduzeće je kompleksan, dinamički i _______ sustav.",
+        "answer": "otvoren",
+        "hint": "Razmjenjuje s okolinom…"
+      },
+      {
+        "sentence": "McKinseyev model „7S\" pomagalo je za bolje razumijevanje _______ poduzeća.",
+        "answer": "efikasnosti",
+        "hint": "Kako dobro poduzeće koristi resurse…"
+      },
+      {
+        "sentence": "BPR je američki odgovor na japanski _______.",
+        "answer": "TQM",
+        "hint": "Upravljanje cjelokupnom kvalitetom…"
+      },
+      {
+        "sentence": "Model vječno uspješne organizacije razvio je Philip _______.",
+        "answer": "Crosby",
+        "hint": "Prvi istaknuo važnost cjelokupne kvalitete…"
+      }
+    ],
+    "learn": {
+      "title": "Povijesno-kronološki pristup menadžmentu",
+      "content": "\n                <h3>Četiri razdoblja razvoja menadžerske misli</h3>\n                <p>Razvoj znanosti o menadžmentu ima dva osnovna pristupa: <strong>višedisciplinski</strong> (matematika, sociologija, psihologija, teorija odlučivanja i sustava) i <strong>povijesno-kronološki</strong> (razvoj kroz vrijeme). Ovaj drugi dijeli se na:</p>\n                <div class=\"formula-box\">PRAPOČECI → KONVENCIONALNI → NEKONVENCIONALNI → SUVREMENI</div>\n                <h4>1. Prapočeci</h4>\n                <ul>\n                    <li><strong>Antički</strong> — Mojsije, Platon, Aristotel, Sokrat, kršćanstvo</li>\n                    <li><strong>Srednjovjekovni</strong> — Milanski edikt, sv. Toma Akvinski</li>\n                    <li><strong>Predindustrijski</strong> — Petty, Cantillon, Smith, Mill, Bacon, Cournot</li>\n                </ul>\n                <h4>2. Konvencionalni (početak 20. st. — 5 pristupa)</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Znanstveni</strong> — Taylor (<em>otac znanstvenog menadžmenta</em>, „Shop Management\"), Gantt, Gilbreth. <strong>Taylorova načela:</strong> znanost (organizirano znanje) umjesto postupanja odoka · sklad u skupnom djelovanju · suradnja umjesto individualizma · maksimalan (ne ograničen) output · maksimalan razvitak radnika.</li>\n                        <li><strong>Administrativno-birokratski (univerzalni)</strong> — najstariji i najpopularniji; Fayol (<em>operacijski menadžment</em>), Weber (birokracija). <strong>Fayolovih 14 načela:</strong> podjela rada · nagrađivanje · kooperativni duh (esprit de corps) · jedinstveno usmjerenje · jedinstvo zapovijedi · disciplina · autoritet i odgovornost · podređivanje pojedinačnih interesa općima · inicijativa · stabilnost zaposlenja · pravednost · red · linija autoriteta · centralizacija.</li>\n                        <li><strong>Bihevioralni</strong> — Hawthorne, Mayo, Parker-Follett, McGregor; socijalna dimenzija. Dva pokreta: <em>ljudskih odnosa</em> (McGregor: teorija X = ljudi ne vole rad; teorija Y = motivirani, odgovorni) i <em>organizacijskog ponašanja</em> (psihologija/sociologija). Teorije: međuljudski odnosi · ljudski potencijali · organizacijsko ponašanje.</li>\n                        <li><strong>Sistemski</strong> — poduzeće = kompleksan, dinamički, otvoren sustav (i podsustav višeg sustava); Drucker (<em>otac modernog menadžmenta</em>), Bertalanffy, Luhmann.</li>\n                        <li><strong>Kontigencijski</strong> — uvažava sve utjecajne čimbenike; ne postoji jedan najbolji način; Chandler, Woodward, Lawrence, Lorsch, Child, Khandwalla.</li>\n                    </ul>\n                </div>\n                <div class=\"warning-box\"><strong>Zamka:</strong> TAYLOR = otac <em>znanstvenog</em> · DRUCKER = otac <em>modernog</em> (sistemski) · FAYOL = <em>operacijski</em> menadžment.</div>\n                <h4>3. Nekonvencionalni</h4>\n                <ul>\n                    <li><strong>Atributi savršenosti</strong> — McKinsey, Peters, Waterman, Austin; model <strong>7S</strong>: strategy · skills · systems · style · staff · shared values · structure.</li>\n                    <li><strong>Model vječno uspješne organizacije</strong> — Philip Crosby (cjelokupna kvaliteta): ljudi rutinski rade dobro · unosan i postojan rast · predviđanje potreba kupaca · planirane promjene · ponos zaposlenih.</li>\n                </ul>\n                <h4>4. Suvremeni</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>TQM</strong> (Total Quality Management) — stalno unapređenje kvalitete i efikasnosti: <strong>T</strong> potpuno (svi zaposleni/strukture/funkcije) · <strong>Q</strong> kvaliteta (proizvodi, usluge, procesi, sustav) · <strong>M</strong> menadžment (opredijeljenost uprave). Japanski; teoretičari Schmidt, Finnigan.</li>\n                        <li><strong>BPR</strong> — američki odgovor na japanski TQM; TEMELJITO → KORJENITO → DRASTIČNO → PROCESI (informatika + procesi + ljudski resursi); Hammer, Champy.</li>\n                        <li><strong>Učeća organizacija</strong> — zajedničko rješavanje problema, fokus na kupcima; vodstvo · horizontalna struktura · opunomoćenje · komuniciranje · izviruća strategija · snažna kultura; Senge, Daft.</li>\n                    </ul>\n                </div>\n            "
+    }
+  },
+  "hotelEnterprise": {
+    "name": "Hotelsko poduzeće i poduzetništvo",
+    "icon": "fa-hotel",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "S koja se ČETIRI ASPEKTA može sagledavati poduzeće kao samostalni gospodarski sustav?",
+        "answer": "1. ORGANIZACIJSKI\n2. EKONOMSKI\n3. SOCIOLOŠKI\n4. PRAVNI",
+        "explanation": "Poduzeće nije samo pravni oblik — svaki aspekt otkriva drugu stranu istoga sustava."
+      },
+      {
+        "question": "Što je HOTELSKO PODUZEĆE?",
+        "answer": "Pravna osoba koja obavlja ugostiteljsko-hotelijersku djelatnost na tržištu radi stjecanja profita i realizacije vlastitih postavljenih ciljeva.",
+        "explanation": "Odrednice: pravna osoba · ugostiteljsko-hotelijerska djelatnost · tržište · profit + vlastiti ciljevi."
+      },
+      {
+        "question": "Koja je podjela PRAVNIH OBLIKA poduzeća u svijetu?",
+        "answer": "1. INDIVIDUALNA\n2. PARTNERSKA društva (ortaška)\n3. KORPORACIJE",
+        "explanation": "Redoslijed ide od najjednostavnijeg (jedan vlasnik) prema najsloženijem (korporacija)."
+      },
+      {
+        "question": "Kako se prema Zakonu o trgovačkim društvima (RH) dijele TRGOVAČKA DRUŠTVA?",
+        "answer": "Društva OSOBA (j.t.d., komanditno, tajno, GIU) i društva KAPITALA (d.d., d.o.o.).",
+        "explanation": "Društva osoba počivaju na članovima; društva kapitala na uloženom kapitalu."
+      },
+      {
+        "question": "Što je PODUZETNIŠTVO i koji su njegovi OBLICI?",
+        "answer": "Sposobnost kreiranja novog gospodarskog poduhvata koji se verificira na tržištu — bez obzira na vlasništvo kapitala. Oblici: individualno, kolektivno, interno, eksterno.",
+        "explanation": "Ključno: poduzetništvo NE ovisi o vlasništvu nad kapitalom."
+      },
+      {
+        "question": "Kako Peter DRUCKER definira poduzetništvo i koji su STAVOVI za određivanje prioriteta?",
+        "answer": "Drucker: poduzetništvo = 'sposobnost odabira pravilnih prioriteta radi postizanja postavljenih ciljeva'.",
+        "explanation": "Stavovi: budućnost pred prošlost · mogućnost pred problem · vlastiti smjer · ciljati visoko. → sekcija Uči."
+      },
+      {
+        "question": "Tko je PODUZETNIK?",
+        "answer": "Osoba poduzetnog duha koja raspoloživim resursima, POD PRIJETNJOM RIZIKA, poduzima poduzetničku aktivnost kako bi stvorila nešto novo — robu, uslugu ili ideju — i tako stvorila novu dobit ili profit.",
+        "explanation": "Rizik je sastavni dio definicije poduzetnika."
+      },
+      {
+        "question": "Koja su ČETIRI TIPA PODUZETNIKA s obzirom na brzinu odlučivanja i sklonost riziku?",
+        "answer": "Pionir (brzo/visok rizik), maher (brzo/nizak rizik), strateg (sporo/visok rizik) i trener (sporo/nizak rizik).",
+        "explanation": "Svaki tip odgovara jednoj fazi životnog ciklusa poduzeća."
+      },
+      {
+        "question": "Koje su FAZE ŽIVOTNOG CIKLUSA poduzeća i koji im tip poduzetnika odgovara?",
+        "answer": "1. IZGRADNJA — pionir\n2. RAST — maher\n3. DIFERENCIJACIJA — strateg\n4. KONSOLIDACIJA — trener\n5. LIKVIDACIJA",
+        "explanation": "Prve četiri faze imaju „svoga\" poduzetnika; peta je gašenje."
+      },
+      {
+        "question": "Što je OKOLINA poduzeća i koji su SEGMENTI okoline hotelskog poduzeća?",
+        "answer": "Ukupnost činitelja koji djeluju na poslovanje poduzeća, a menadžment ih mora uvažiti pri odlučivanju. Segmenti hotelskog: političko-pravni, tehnološki, socijalno-kulturni, ekonomski.",
+        "explanation": "Okolina može biti interna i eksterna (opća → poslovna → interna)."
+      },
+      {
+        "question": "Kako turistička SEZONA utječe na NEIZVJESNOST hotelskog poduzeća?",
+        "answer": "• NAJVEĆA neizvjesnost — turistička sezona (ljeto)\n• NAJMANJA neizvjesnost — zimsko razdoblje\n• UMJERENA neizvjesnost — prijelazna razdoblja",
+        "explanation": "Sezonalnost je ključna specifičnost hotelijerstva."
+      },
+      {
+        "question": "Što su STANDARDIZACIJA i STANDARD te koji su ISO ciljevi standardizacije?",
+        "answer": "Standardizacija = donošenje i mijenjanje standarda i normi kvalitete; standard = propisana kvaliteta.",
+        "explanation": "ISO ciljeve standardizacije precizira u 6 točaka → sekcija Uči."
+      },
+      {
+        "question": "Što je KATEGORIZACIJA?",
+        "answer": "Utvrđivanje razine kvalitete najznačajnijih elemenata ponude, koji su zajednička značajka određene vrste ugostiteljskog objekta, NA TEMELJU PROPISANIH STANDARDA.",
+        "explanation": "Kategorizacija (npr. zvjezdice) počiva na standardima — bez standarda nema kategorizacije."
+      },
+      {
+        "question": "Koje su VRSTE HOTELA i na koje se načine povezuju HOTELSKI LANCI?",
+        "answer": "Nezavisni (bez vezanog standarda) i hotelski lanci (prepoznatljivo ime + zagarantirani standard/brand). Povezivanje: vlasništvo, franšiza, menadžment, najam, konzorcij.",
+        "explanation": "Hotelski lanci se stvaraju temeljem ugovora zainteresiranih strana."
+      },
+      {
+        "question": "Koja je razlika između ETIKE i MORALA?",
+        "answer": "Etika = filozofija morala (šira, teorijska); moral = primjena etike, normiran pisanim/nepisanim kodeksom ponašanja.",
+        "explanation": "Etika je teorija, moral je primjena."
+      },
+      {
+        "question": "Koje su ETIČKE TEORIJE (pristupi)?",
+        "answer": "Deskriptivna (opisuje moral), normativna (temelji moralnih vrijednosti) i metaetika (obuhvaća obje).",
+        "explanation": "Metaetika je 'krovna' (analitička etika)."
+      },
+      {
+        "question": "Koji ČIMBENICI utječu na etički izbor menadžera?",
+        "answer": "Individualne karakteristike + strukturne varijable + organizacijska kultura = etično/neetično ponašanje.",
+        "explanation": "Etičnost nije samo osobina pojedinca — struktura i kultura jednako presuđuju."
+      },
+      {
+        "question": "Što je POSLOVNI BONTON i koje su njegove RAZINE?",
+        "answer": "Skup neformalnih pravila iz tradicije kojima menadžer ostvaruje bolju komunikaciju. Razine: predstavljanje, upoznavanje, komuniciranje, uredsko poslovanje.",
+        "explanation": "Bonton je NEFORMALAN (tradicija), za razliku od propisa."
+      },
+      {
+        "question": "Što je POSLOVNA ETIKA?",
+        "answer": "Skup moralnih načela i normi kojima se usmjerava ponašanje sudionika gospodarskog sustava, prema općim ljudskim vrijednostima i dobrobiti čovjeka.",
+        "explanation": "Poslovna etika = 'prirodno vođenje poslova' (poslovanje u skladu s prirodom)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Hotelsko poduzeće je:",
+        "options": [
+          "Udruga građana koja promiče turizam",
+          "Pravna osoba koja obavlja ugostiteljsko-hotelijersku djelatnost na tržištu radi profita i vlastitih ciljeva",
+          "Državna ustanova za kategorizaciju objekata",
+          "Neformalna skupina ugostitelja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji NIJE jedan od četiriju aspekata sagledavanja poduzeća?",
+        "options": [
+          "Organizacijski",
+          "Ekonomski",
+          "Geografski",
+          "Pravni"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Društvo s ograničenom odgovornošću (d.o.o.) prema ZTD-u spada u:",
+        "options": [
+          "Društva osoba",
+          "Društva kapitala",
+          "Ortaška društva",
+          "Gospodarska interesna udruženja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tko je poduzetništvo definirao kao „sposobnost odabira pravilnih prioriteta radi postizanja postavljenih ciljeva\"?",
+        "options": [
+          "Frederick Taylor",
+          "Henri Fayol",
+          "Peter Drucker",
+          "Max Weber"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Poduzetnik koji odlučuje BRZO i preuzima VISOK rizik (1. faza) je:",
+        "options": [
+          "Pionir",
+          "Maher",
+          "Strateg",
+          "Trener"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Poduzetnik tipa TRENER odlikuje se:",
+        "options": [
+          "Brzim odlučivanjem i visokim rizikom",
+          "Brzim odlučivanjem i niskim rizikom",
+          "Sporim odlučivanjem i visokim rizikom",
+          "Sporim odlučivanjem i niskim rizikom"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Treća faza životnog ciklusa poduzeća je:",
+        "options": [
+          "Rast",
+          "Diferencijacija",
+          "Konsolidacija",
+          "Likvidacija"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji NIJE segment okoline hotelskog poduzeća?",
+        "options": [
+          "Političko-pravna",
+          "Tehnološka",
+          "Socijalno-kulturna",
+          "Meteorološko-astronomska"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Za hotelsko poduzeće NAJVEĆA neizvjesnost je:",
+        "options": [
+          "U zimskom razdoblju",
+          "U turističkoj sezoni (ljeto)",
+          "U prijelaznim razdobljima",
+          "Neizvjesnost je jednaka tijekom cijele godine"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Standard se najkraće može odrediti kao:",
+        "options": [
+          "Propisana kvaliteta",
+          "Prosječna cijena usluge",
+          "Broj zaposlenih po sobi",
+          "Dobrovoljna preporuka bez obveze"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Kategorizacija je:",
+        "options": [
+          "Postupak donošenja i promjenjivanja standarda",
+          "Utvrđivanje razine kvalitete najznačajnijih elemenata ponude na temelju propisanih standarda",
+          "Podjela poduzeća na društva osoba i kapitala",
+          "Popis hotelskih lanaca u nekoj zemlji"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji od navedenih NIJE način ugovornog povezivanja hotelskih lanaca?",
+        "options": [
+          "Franšizni ugovor",
+          "Ugovor o menadžmentu",
+          "Ugovor o najmu",
+          "Ugovor o djelu sa sezonskim radnikom"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Etika je:",
+        "options": [
+          "Primjena morala u praksi",
+          "Filozofija morala, šira od pojma moral",
+          "Skup pisanih propisa poduzeća",
+          "Isto što i poslovni bonton"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Metaetika:",
+        "options": [
+          "Opisuje moral ljudi i kultura",
+          "Izučava temelje moralnih vrijednosti sustava",
+          "Uključuje deskriptivnu i normativnu etiku (analitička etika)",
+          "Bavi se isključivo poslovnim bontonom"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Na etički izbor menadžera utječu:",
+        "options": [
+          "Isključivo osobne vrijednosti pojedinca",
+          "Individualne karakteristike + strukturne varijable + organizacijska kultura",
+          "Isključivo formalna pravila i propisi",
+          "Isključivo pritisak posla"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Hotelsko poduzeće je pravna osoba koja obavlja ugostiteljsko-hotelijersku _______ na tržištu radi stjecanja profita.",
+        "answer": "djelatnost",
+        "hint": "Ono čime se poduzeće bavi…"
+      },
+      {
+        "sentence": "Prema Zakonu o trgovačkim društvima, dioničko društvo i d.o.o. spadaju u društva _______.",
+        "answer": "kapitala",
+        "hint": "Suprotno od društava osoba…"
+      },
+      {
+        "sentence": "Peter _______ definira poduzetništvo kao sposobnost odabira pravilnih prioriteta.",
+        "answer": "Drucker",
+        "hint": "Poznati teoretičar menadžmenta…"
+      },
+      {
+        "sentence": "Poduzetnik tipa _______ odlučuje brzo i preuzima visok rizik te odgovara prvoj fazi životnog ciklusa.",
+        "answer": "pionir",
+        "hint": "Onaj koji prvi krči put…"
+      },
+      {
+        "sentence": "Treća faza životnog ciklusa poduzeća naziva se _______.",
+        "answer": "diferencijacija",
+        "hint": "Faza u kojoj se poduzeće razlikuje od konkurencije…"
+      },
+      {
+        "sentence": "Standard je, najkraće rečeno, propisana _______.",
+        "answer": "kvaliteta",
+        "hint": "Ono što standard jamči…"
+      },
+      {
+        "sentence": "_______ je utvrđivanje razine kvalitete najznačajnijih elemenata ponude na temelju propisanih standarda.",
+        "answer": "kategorizacija",
+        "hint": "Zbog nje hotel dobiva zvjezdice…"
+      },
+      {
+        "sentence": "Hotel koji posluje bez ikakvog vezanog standarda s bilo kime naziva se _______ hotel.",
+        "answer": "nezavisni",
+        "hint": "Suprotno od hotela u lancu…"
+      },
+      {
+        "sentence": "_______ je filozofija morala i šira je od pojma moral.",
+        "answer": "etika",
+        "hint": "Teorija, a ne primjena…"
+      },
+      {
+        "sentence": "Za hotelsko poduzeće najveća neizvjesnost javlja se u _______ sezoni.",
+        "answer": "turističkoj",
+        "hint": "Ljetni vrhunac poslovanja…"
+      },
+      {
+        "sentence": "Poslovni _______ je skup neformalnih pravila koja proizlaze iz tradicije, a razine su mu predstavljanje, upoznavanje, komuniciranje i uredsko poslovanje.",
+        "answer": "bonton",
+        "hint": "Lijepo ponašanje u poslu…"
+      }
+    ],
+    "learn": {
+      "title": "Hotelsko poduzeće i poduzetništvo",
+      "content": "\n                <h3>Poduzeće i hotelsko poduzeće</h3>\n                <p>Poduzeće se kao samostalni gospodarski sustav promatra s <strong>četiri aspekta</strong>: organizacijskog, ekonomskog, sociološkog i pravnog.\n                <strong>Hotelsko poduzeće</strong> = pravna osoba koja obavlja ugostiteljsko-hotelijersku djelatnost na tržištu radi stjecanja profita i realizacije vlastitih ciljeva.</p>\n                <div class=\"formula-box\">\n                    PRAVNI OBLICI (svijet): individualna &nbsp;·&nbsp; partnerska (ortaška) &nbsp;·&nbsp; korporacije<br>\n                    ZTD (RH): DRUŠTVA OSOBA (j.t.d. · komanditno · tajno · GIU) &nbsp;|&nbsp; DRUŠTVA KAPITALA (d.d. · d.o.o.)\n                </div>\n\n                <h4>Poduzetništvo i poduzetnik</h4>\n                <ul>\n                    <li><strong>Poduzetništvo</strong> — sposobnost kreiranja novog gospodarskog poduhvata koji se verificira na tržištu; poduhvatni duh koji stvara nove resurse <em>bez obzira na vlasništvo nad kapitalom</em>. Oblici: individualno · kolektivno · interno · eksterno.</li>\n                    <li><strong>Drucker</strong> — poduzetništvo je „sposobnost odabira pravilnih prioriteta radi postizanja postavljenih ciljeva\".</li>\n                    <li><strong>Poduzetnik</strong> — osoba poduzetnog duha koja <em>pod prijetnjom rizika</em> stvara nešto novo (robu, uslugu, ideju) i time novu dobit.</li>\n                </ul>\n                <div class=\"formula-box\">\n                    TIPOVI ⇄ FAZE: PIONIR (brzo/visok rizik) → izgradnja &nbsp;·&nbsp; MAHER (brzo/nizak) → rast<br>\n                    STRATEG (sporo/visok) → diferencijacija &nbsp;·&nbsp; TRENER (sporo/nizak) → konsolidacija &nbsp;→&nbsp; (5) likvidacija\n                </div>\n\n                <h4>Okolina hotelskog poduzeća</h4>\n                <p><strong>Okolina</strong> = ukupnost činitelja koji djeluju na poslovanje poduzeća, a menadžment ih mora uvažavati pri odlučivanju (interna i eksterna; opća/socijalna → poslovna/zadatka → interna).</p>\n                <ul>\n                    <li>Segmenti: <strong>političko-pravna · tehnološka · socijalno-kulturna · ekonomska</strong></li>\n                    <li>Neizvjesnost: <strong>najveća u turističkoj sezoni (ljeto)</strong>, najmanja zimi, umjerena u prijelaznim razdobljima</li>\n                </ul>\n\n                <h4>Standardizacija, kategorizacija i hotelski lanci</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Standardizacija</strong> — postupak donošenja i promjenjivanja standarda i normi kvalitete; <strong>standard = propisana kvaliteta</strong> (ISO precizirao 6 ciljeva).</li>\n                        <li><strong>Kategorizacija</strong> — utvrđivanje razine kvalitete elemenata ponude <em>na temelju propisanih standarda</em>.</li>\n                        <li><strong>Vrste hotela:</strong> nezavisni (bez vezanog standarda) · hotelski lanci (prepoznatljivo ime + zagarantirani standard/brand).</li>\n                        <li><strong>Povezivanje lanaca:</strong> potpuno vlasništvo · franšizni ugovor · ugovor o menadžmentu · ugovor o najmu · rezervacijski sustavi (konzorcij).</li>\n                    </ul>\n                </div>\n\n                <h4>Etika i moral u menadžmentu</h4>\n                <ul>\n                    <li><strong>Etika</strong> = filozofija morala (šira, teorijska); <strong>moral</strong> = primjena etike, normiran pisanim/nepisanim kodeksom.</li>\n                    <li>Teorije: <strong>deskriptivna</strong> (opisuje) · <strong>normativna</strong> (temelji vrijednosti) · <strong>metaetika</strong> (obuhvaća obje).</li>\n                    <li>Etički izbor menadžera = <strong>individualne karakteristike + strukturne varijable + organizacijska kultura</strong>.</li>\n                    <li><strong>Poslovni bonton</strong> (neformalna pravila iz tradicije): predstavljanje · upoznavanje · komuniciranje · uredsko poslovanje.</li>\n                </ul>\n            "
+    }
+  },
+  "decisionMaking": {
+    "name": "Rješavanje problema i donošenje odluka",
+    "icon": "fa-code-branch",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "Koja je razlika između RJEŠAVANJA PROBLEMA i DONOŠENJA ODLUKA?",
+        "answer": "Problem = jaz između onoga što se događa i onoga što želite. Rješavanje problema = korektivne mjere za ostvarenje cilja; donošenje odluka = odabir smjera djelovanja.",
+        "explanation": "Donošenje odluka jedna je od triju ključnih menadžerskih vještina."
+      },
+      {
+        "question": "Koja su TRI STILA donošenja odluka?",
+        "answer": "Refleksivni (brz, malo informacija), reflektivni (spor, mnogo informacija) i dosljedni (uravnotežen).",
+        "explanation": "Dosljedni ima najbolji rezultat — zna kad je dovoljno informacija. Opis svakog → sekcija Uči."
+      },
+      {
+        "question": "Kojih je 6 KORAKA modela donošenja odluka?",
+        "answer": "Definirati problem → postaviti ciljeve i kriterije → generirati alternative → analizirati i odabrati → provesti → kontrolirati.",
+        "explanation": "Primjena modela povećava izglede za uspjeh (pola odluka inače ne uspije). Detalj → sekcija Uči."
+      },
+      {
+        "question": "PROGRAMIRANE nasuprot NEPROGRAMIRANIM odlukama?",
+        "answer": "Programirane = rutinske, po pravilima/procedurama (npr. zalihe). Neprogramirane = nerutinske, dalekosežne — traže cjeloviti model (npr. novi proizvod).",
+        "explanation": "Menadžeri višeg nivoa donose više neprogramiranih odluka. → sekcija Uči."
+      },
+      {
+        "question": "Koja su tri UVJETA DONOŠENJA ODLUKA?",
+        "answer": "Sigurnost (znate ishod), rizik (znate vjerojatnosti ishoda) i neizvjesnost (ishodi nepredvidivi, bez vjerojatnosti).",
+        "explanation": "Visok rizik/neizvjesnost + značajne odluke → grupno odlučivanje."
+      },
+      {
+        "question": "MAKSIMIZATOR nasuprot SATISFICERU?",
+        "answer": "Maksimizator = racionalne odluke, traži NAJBOLJU opciju. Satisficer = ograničeno racionalne, bira prvu koja zadovoljava minimalne kriterije.",
+        "explanation": "Maksimiziranje za složene/rizične, satisficing za rutinske odluke. Kriteriji → sekcija Uči."
+      },
+      {
+        "question": "Koja je razlika između KREATIVNOSTI i INOVACIJE?",
+        "answer": "Kreativnost = generiranje novih ideja ('izvan okvira'), pokretač inovacije. Inovacija = implementacija nove ideje (proizvoda ili procesa).",
+        "explanation": "3 faze kreativnog procesa: priprema · inkubacija i iluminacija · evaluacija."
+      },
+      {
+        "question": "Navedite 5 tehnika GRUPNE kreativnosti.",
+        "answer": "Brainstorming, sinektika, nominalna grupna tehnika, mapiranje konsenzusa (ringi) i Delfi tehnika.",
+        "explanation": "Opis svake i kad se koristi → sekcija Uči."
+      },
+      {
+        "question": "Koje su glavne KVANTITATIVNE tehnike odlučivanja?",
+        "answer": "Prag rentabilnosti, kapitalno budžetiranje, linearno programiranje, teorija redova čekanja, teorija vjerojatnosti i big data.",
+        "explanation": "Kvantitativni pristup = upravljačka znanost (matematika u analizi). Opis → sekcija Uči."
+      },
+      {
+        "question": "Što je OPORTUNITETNI TROŠAK i analiza TROŠKOVA I KORISTI?",
+        "answer": "Oportunitetni trošak = vrijednost sljedeće najbolje alternative koje se odričemo. Analiza troškova i koristi = usporedba troškova i koristi (prosudba + kvantitativno).",
+        "explanation": "Analiza prednosti i nedostataka = koristi nasuprot troškova."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Problem postoji uvijek kada:",
+        "options": [
+          "Prodaja je visoka",
+          "Ciljevi se ne ostvaruju (postoji jaz između stvarnog i željenog stanja)",
+          "Zaposlenici su zadovoljni",
+          "Zaposlen je novi menadžer"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Stil donošenja odluka koji 'puca iz kuka' s malo informacija jest:",
+        "options": [
+          "Refleksivan",
+          "Dosljedan",
+          "Refleksivan (impulzivan)",
+          "Racionalan"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Naručivanje zaliha kada razina zaliha padne na određenu razinu primjer je:",
+        "options": [
+          "Neprogramirane odluke",
+          "Programirane odluke",
+          "Strateške odluke",
+          "Krizne odluke"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pod kojim uvjetom možete dodijeliti VJEROJATNOSTI ishodima?",
+        "options": [
+          "Sigurnost",
+          "Rizik",
+          "Neizvjesnost",
+          "Kaos"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "'Satisficer' sklono je:",
+        "options": [
+          "Vagati sve mogućnosti kako bi pronašlo najbolju",
+          "Odabrati prvu mogućnost koja zadovoljava minimalne kriterije",
+          "Odbiti donijeti odluku",
+          "Uvijek koristiti matematičke modele"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Inovacija se najbolje definira kao:",
+        "options": [
+          "Generiranje novih ideja",
+          "Primjena nove ideje u praksi",
+          "Oluja ideja (brainstorming)",
+          "Razmišljanje izvan okvira"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja tehnika koristi povjerljive upitnike u nekoliko krugova?",
+        "options": [
+          "Brainstorming",
+          "Sinektika",
+          "Delphi tehnika",
+          "Nominalna grupna tehnika"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Sljedeća najbolja propuštena alternativa naziva se:",
+        "options": [
+          "Nepovratni trošak",
+          "Fiksni trošak",
+          "Oportunitetni trošak",
+          "Granični trošak"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Donošenje odluka jest odabir smjera djelovanja kojim će se riješiti _______.",
+        "answer": "problem",
+        "hint": "Jaz između stvarnog i željenog..."
+      },
+      {
+        "sentence": "Model donošenja odluka ima _______ koraka.",
+        "answer": "6",
+        "hint": "Klasificirati → postaviti kriterije → generirati → analizirati → implementirati → kontrolirati"
+      },
+      {
+        "sentence": "Značajne, neponavljajuće odluke nazivaju se _______ odlukama.",
+        "answer": "neprogramirane",
+        "hint": "Suprotnost rutinskim..."
+      },
+      {
+        "sentence": "Kreativnost generira nove ideje; _______ je primjena nove ideje u praksi.",
+        "answer": "inovacija",
+        "hint": "Primjena ideje u praksi..."
+      },
+      {
+        "sentence": "Analiza _______ pronalazi obujam prodaje pri kojemu nema ni dobiti ni gubitka.",
+        "answer": "Točka pokrića",
+        "hint": "Točka nultog profita..."
+      }
+    ],
+    "learn": {
+      "title": "Rješavanje problema i donošenje odluka",
+      "content": "\n                <h3>Temeljni odnosi</h3>\n                <p><strong>Problem</strong> = jaz između postojećeg i željenog stanja (ciljevi se ne ostvaruju). <strong>Rješavanje problema</strong> = poduzimanje korektivnih mjera; <strong>donošenje odluka</strong> = odabir tog smjera djelovanja. Odlučivanje je jedna od triju ključnih menadžerskih vještina.</p>\n\n                <h4>Tri stila donošenja odluka</h4>\n                <ul>\n                    <li><strong>Refleksivni</strong> — brze odluke („pucanje iz kuka\"), malo informacija; odlučan, ali može biti rasipan.</li>\n                    <li><strong>Reflektivni</strong> — dovoljno vremena, mnogo informacija; temeljit, ali može odugovlačiti i propuštati prilike.</li>\n                    <li><strong>Dosljedni</strong> — ne žuri, ali ni ne gubi vrijeme; zna kada je prikupljeno dovoljno informacija → <em>najbolji rezultat</em>.</li>\n                </ul>\n\n                <h4>Model donošenja odluka (6 koraka)</h4>\n                <div class=\"formula-box\">\n                    1. klasificirati/definirati problem (ili priliku) → 2. postaviti ciljeve i kriterije → 3. generirati kreativne alternative → 4. analizirati i odabrati najizvedivije → 5. planirati i provesti → 6. kontrolirati (pratiti ishode, korektivne mjere)\n                </div>\n                <p>Polovica menadžerskih odluka ne uspijeva riješiti problem — primjena modela povećava izglede za uspjeh.</p>\n\n                <h4>Vrste odluka i uvjeti</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Programirane</strong> — ponavljajuće/rutinske; pravila, politike i procedure (npr. naručivanje zaliha); ne treba cijeli model.</li>\n                        <li><strong>Neprogramirane</strong> — značajne, nerutinske, dalekosežne (npr. novi proizvod, novi objekt); primjenjuje se cjeloviti model.</li>\n                        <li><strong>Uvjeti:</strong> SIGURNOST (ishod poznat) · RIZIK (poznate vjerojatnosti) · NEIZVJESNOST (ishodi nepredvidivi). Visok rizik + značajne odluke → grupno odlučivanje.</li>\n                    </ul>\n                </div>\n\n                <h4>Racionalnost odluke</h4>\n                <ul>\n                    <li><strong>Maksimizator</strong> — racionalne odluke; razmatra širok raspon mogućnosti da odabere NAJBOLJU (za složene/neprogramirane/rizične odluke).</li>\n                    <li><strong>Satisficer</strong> (zadovoljiti + dovoljno) — ograničeno racionalne odluke; brzina > temeljitost; bira prvu opciju koja zadovoljava minimalne kriterije (za rutinske/sigurne odluke).</li>\n                    <li>Kriteriji <em>„mora\"</em> = nužni; kriteriji <em>„želi\"</em> = poželjni i ponderiraju se prema važnosti.</li>\n                </ul>\n\n                <h4>Kreativnost i inovacija</h4>\n                <p><strong>Kreativnost</strong> = razmišljanje koje generira nove ideje („izvan okvira\"), <em>pokretač</em> inovacije; <strong>inovacija</strong> = implementacija nove ideje — <strong>proizvoda</strong> (nova roba/usluga) ili <strong>procesa</strong> (novi način rada). Kreativnost je beskorisna bez implementacije. Tri faze: (1) priprema, (2) inkubacija i iluminacija, (3) evaluacija.</p>\n                <div class=\"tip-box\">\n                    <strong>5 tehnika grupne kreativnosti:</strong>\n                    <ul>\n                        <li><strong>Brainstorming</strong> — što više alternativa bez vrednovanja/kritike (radne skupine).</li>\n                        <li><strong>Sinektika</strong> — nove alternative kroz igranje uloga i maštanje (viši menadžment).</li>\n                        <li><strong>Nominalna grupna tehnika</strong> — generiranje i vrednovanje strukturiranom metodom glasovanja (6 koraka).</li>\n                        <li><strong>Mapiranje konsenzusa</strong> — suglasnost unutar grupe (japanski „ringi\"); glasovanje se ne nameće.</li>\n                        <li><strong>Delfi tehnika</strong> — niz povjerljivih upitnika radi usavršavanja rješenja/predviđanja (viši menadžment).</li>\n                    </ul>\n                </div>\n\n                <h4>Kvantitativne tehnike i troškovi</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Prag rentabilnosti</strong> — obujam prodaje bez dobiti i gubitka.</li>\n                        <li><strong>Kapitalno budžetiranje</strong> — analiza ulaganja (povrat, prosječna stopa povrata, diskontirani novčani tok).</li>\n                        <li><strong>Linearno programiranje</strong> — optimalna raspodjela oskudnih resursa.</li>\n                        <li><strong>Teorija redova čekanja</strong> — ravnoteža troškova čekanja i kapaciteta usluge.</li>\n                        <li><strong>Teorija vjerojatnosti</strong> — vjerojatnosti + očekivana vrijednost (matrica isplativosti).</li>\n                        <li><strong>Big data</strong> — analiza velikih količina podataka radi optimizacije odluka.</li>\n                    </ul>\n                </div>\n                <p><strong>Oportunitetni trošak</strong> = vrijednost sljedeće najbolje alternative koje se odričemo (€20 na udžbenik = odricanje od obroka). <strong>Analiza troškova i koristi</strong> = mješovita tehnika (subjektivna prosudba + kvantitativna matematika), spoj upravljanja temeljenog na dokazima i prosudbe.</p>\n            "
+    }
+  },
+  "strategicPlanning": {
+    "name": "Strateško i operativno planiranje",
+    "icon": "fa-chess",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "STRATEŠKO nasuprot OPERATIVNOM planiranju?",
+        "answer": "Strateško = misija i dugoročni ciljevi (~5 g.), viša/srednja razina. Operativno = kratkoročni ciljevi (≤1 g.), niža/funkcionalna razina.",
+        "explanation": "Razlika je u vremenskom okviru i razini menadžmenta."
+      },
+      {
+        "question": "Koje su 3 RAZINE PLANIRANJA?",
+        "answer": "Korporativna (više poslovnih linija), poslovna (jedna linija) i funkcionalna (jedno područje: marketing, financije…).",
+        "explanation": "Korporativna + poslovna = strateško; funkcionalna = operativno planiranje."
+      },
+      {
+        "question": "Kojih je 5 KORAKA u procesu strateškog planiranja?",
+        "answer": "Razviti misiju → analizirati okruženje (SWOT) → postaviti ciljeve → razviti strategije → implementirati i kontrolirati.",
+        "explanation": "Misija je temelj ostalih koraka; proces nije strogo linearan."
+      },
+      {
+        "question": "Što su SWOT analiza i Porterovih PET SILA?",
+        "answer": "SWOT = interne snage/slabosti + vanjske prilike/prijetnje. Porterovih 5 sila = analiza industrije i konkurencije.",
+        "explanation": "Oboje je dio koraka 2 (analiza okruženja / situacijska analiza). → sekcija Uči."
+      },
+      {
+        "question": "KONKURENTSKA PREDNOST, ključna kompetencija i benchmarking?",
+        "answer": "Konkurentska prednost = jedinstvena vrijednost kupcu. Ključna kompetencija = ono što poduzeće radi dobro. Benchmarking = usporedba s drugima radi boljih praksi.",
+        "explanation": "Benchmarking se najčešće provodi unutar iste industrije."
+      },
+      {
+        "question": "Što su GRAND strategije?",
+        "answer": "Sveobuhvatne korporativne strategije: rast, stabilnost, preokret i dezinvestiranje, te kombinacija.",
+        "explanation": "SMART ciljevi: specifični, mjerljivi, dostižni, realistični, vremenski. Opis → sekcija Uči."
+      },
+      {
+        "question": "Koje su tri strategije RASTA?",
+        "answer": "Koncentracija (postojeća djelatnost), integracija (naprijed/natrag) i diverzifikacija (srodne/nesrodne). + spajanja i preuzimanja (M&A).",
+        "explanation": "Portfelj se analizira BCG matricom (SBU). → sekcija Uči."
+      },
+      {
+        "question": "Što je BCG MATRICA rasta i tržišnog udjela?",
+        "answer": "Matrica po poslovnoj liniji (rast × tržišni udio): krave muzare, zvijezde, upitnici i psi.",
+        "explanation": "Služi za raspodjelu resursa među strateškim poslovnim jedinicama (SBU). Opis → sekcija Uči."
+      },
+      {
+        "question": "Koje su ADAPTIVNE i Porterove KONKURENTSKE strategije?",
+        "answer": "Adaptivne: istraživanje, obrana, analiza. Porterove: diferencijacija, troškovno vodstvo, fokusiranje.",
+        "explanation": "Porter upozorava na 'zaglavljenost u sredini'. Opis → sekcija Uči."
+      },
+      {
+        "question": "STALNI nasuprot JEDNOKRATNIH nasuprot KONTINGENCIJSKIH planova?",
+        "answer": "Stalni (politike, procedure, pravila) za rutinu; jednokratni (programi, proračuni) za neponavljajuće; kontingencijski = pričuvni planovi.",
+        "explanation": "Strateški planovi = uglavnom jednokratni; operativni = češće trajni."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Strateški planovi obično se izrađuju za otprilike:",
+        "options": [
+          "Jedan tjedan",
+          "Jedan mjesec",
+          "Pet godina",
+          "Dvadeset godina"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Plan za upravljanje JEDNIM područjem, kao što je marketing ili financije, naziva se:",
+        "options": [
+          "Korporativna strategija",
+          "Poslovna strategija",
+          "Funkcionalna strategija",
+          "Opća strategija"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji je PRVI korak u procesu strateškog planiranja?",
+        "options": [
+          "Postavljanje ciljeva",
+          "Razvijanje misije",
+          "Analiza okruženja",
+          "Kontrola strategija"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U SWOT analizi, prilike i prijetnje dio su _______ okruženja.",
+        "options": [
+          "Internog",
+          "Eksternog",
+          "Osobnog",
+          "Financijskog"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Otvaranje Apple Stores prodavaonica od strane tvrtke Apple (približavanje krajnjem kupcu) primjer je:",
+        "options": [
+          "Unatražne integracije",
+          "Unaprijedne integracije",
+          "Nepovezana diverzifikacija",
+          "Koncentracija"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U BCG matrici, poslovna jedinica koja posluje loše i koja se obično prodaje jest:",
+        "options": [
+          "Zvijezda",
+          "Krava muzara",
+          "Upitnik",
+          "Pas"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Walmartova strategija naglašavanja nižih cijena putem stroge kontrole troškova jest:",
+        "options": [
+          "Diferencijacija",
+          "Troškovno vodstvo",
+          "Fokusiranje",
+          "Traženje novih kupaca"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Izjava 'zabranjeno pušenje na radnom mjestu' primjer je:",
+        "options": [
+          "Politike",
+          "Procedure",
+          "Pravila",
+          "Programa"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Operativni planovi imaju kratkoročne ciljeve koji se ostvaruju u _______ godini ili kraće.",
+        "answer": "jednoj",
+        "hint": "Određeni broj..."
+      },
+      {
+        "sentence": "Prvi korak procesa strateškog planiranja jest razvijanje _______.",
+        "answer": "misije",
+        "hint": "Temelj procesa..."
+      },
+      {
+        "sentence": "SWOT označava snage, slabosti, prilike i _______.",
+        "answer": "prijetnje",
+        "hint": "Vanjski negativni čimbenici..."
+      },
+      {
+        "sentence": "U BCG matrici, poslovna jedinica s visokim rastom i visokim tržišnim udjelom naziva se _______.",
+        "answer": "zvijezda",
+        "hint": "Upitnik koji je uspio..."
+      },
+      {
+        "sentence": "Politike, postupci i pravila vrste su _______ planova.",
+        "answer": "stalnih",
+        "hint": "Koriste se iznova i iznova..."
+      }
+    ],
+    "learn": {
+      "title": "Strateško i operativno planiranje",
+      "content": "\n                <h3>Strateško vs operativno planiranje</h3>\n                <p><strong>Strateško planiranje</strong> = razvijanje misije i dugoročnih ciljeva (obično 5 g., revidiraju se godišnje); provode ga viša i srednja razina. <strong>Operativno planiranje</strong> = kratkoročni ciljevi (godinu ili manje); provodi niža/funkcionalna razina. <strong>Strategija</strong> = plan za ostvarenje misije i ciljeva.</p>\n                <div class=\"formula-box\">3 RAZINE: KORPORATIVNA (više poslovnih linija) · POSLOVNA (jedna linija) · FUNKCIONALNA (jedno područje). Korporativna+poslovna = strateško; funkcionalna = operativno.</div>\n                <p>Za poduzeće s jednom linijom, korporativna i poslovna strategija su identične.</p>\n                <h4>Proces strateškog planiranja (5 koraka)</h4>\n                <div class=\"formula-box\">1. razviti MISIJU (temelj, iz vizije) → 2. analizirati OKRUŽENJE (SWOT) → 3. postaviti CILJEVE → 4. razviti STRATEGIJE → 5. implementirati i KONTROLIRATI</div>\n                <p>Nije strogo linearan (moguće vraćanje). Misija je temelj ostalih koraka.</p>\n                <h4>Alati analize</h4>\n                <ul>\n                    <li><strong>SWOT</strong> — interne snage i slabosti (menadžment, kultura, resursi) + vanjske prilike i prijetnje (kupci, konkurenti, dobavljači).</li>\n                    <li><strong>Porterovih 5 sila</strong> — rivalstvo konkurenata, prijetnja novih sudionika, prijetnja supstituta, moć kupaca, moć dobavljača.</li>\n                    <li><strong>Konkurentska prednost</strong> (jedinstvena vrijednost kupcu) · <strong>ključna kompetencija</strong> (što radimo dobro) · <strong>benchmarking</strong> (usporedba s drugima, zakonito i etično).</li>\n                    <li><strong>SMART ciljevi</strong> = specifični, mjerljivi, dostižni, realistični, vremenski određeni.</li>\n                </ul>\n                <h4>Grand (korporativne) strategije i rast</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Rast</strong> — agresivno povećanje prihoda; <strong>stabilnost</strong> — zadržavanje veličine; <strong>preokret i dezinvestiranje</strong> — turnaround / prodaja imovine (spinoff = zasebno poduzeće); <strong>kombinacija</strong>.</li>\n                        <li><strong>Strategije rasta:</strong> koncentracija (postojeća djelatnost) · integracija (naprijed = bliže kupcu, npr. Apple Stores / natrag = dalje, npr. rafinerija) · diverzifikacija (srodne = koncentrične / nesrodne = konglomeratske). + spajanja i preuzimanja (M&A).</li>\n                        <li><strong>BCG matrica</strong> (rast × udio): krave muzare (financiraju ostale) · zvijezde (uspjeli upitnici) · upitnici (nova područja) · psi (slabi, prodaju se). Za raspodjelu resursa među SBU.</li>\n                    </ul>\n                </div>\n                <h4>Strategije poslovne jedinice i vrste planova</h4>\n                <ul>\n                    <li><strong>Adaptivne:</strong> istraživanje (prospecting ≈ rast) · obrana (defending ≈ stabilnost) · analiza (srednji put).</li>\n                    <li><strong>Porterove konkurentske:</strong> diferencijacija (posebnost, viša cijena) · troškovno vodstvo (niže cijene) · fokusiranje (niša). Miješanje → „zaglavljenost u sredini\".</li>\n                    <li><strong>Vrste planova:</strong> STALNI (politike, procedure/SOP, pravila) za rutinu · JEDNOKRATNI (programi, proračuni) za neponavljajuće · KONTINGENCIJSKI („pričuvni\") za nekontrolirane događaje.</li>\n                </ul>\n            "
+    }
+  },
+  "organizing": {
+    "name": "Organiziranje i delegiranje rada",
+    "icon": "fa-diagram-project",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je ORGANIZIRANJE te MEHANIČKE i ORGANSKE organizacije?",
+        "answer": "Organiziranje = delegiranje i koordinacija zadataka i resursa. Mehaničke = birokratske (stabilna okolina); organske = fleksibilne (dinamična) — na kontinuumu.",
+        "explanation": "Velike tvrtke / masovna proizvodnja → mehaničke; prilagođena → organske."
+      },
+      {
+        "question": "Navedite ključna NAČELA organizacije.",
+        "answer": "Jedinstvo zapovijedanja, jedinstvo smjera, lanac zapovijedanja, raspon upravljanja, podjela rada i koordinacija (diferencijacija + integracija).",
+        "explanation": "Opis svakog načela → sekcija Uči."
+      },
+      {
+        "question": "ODGOVORNOST, AUTORITET, URAČUNLJIVOST i DELEGIRANJE?",
+        "answer": "Odgovornost = obveza cilja; autoritet = pravo odlučivanja i resursa; uračunljivost = procjena ispunjenja; delegiranje = dodjela odgovornosti I autoriteta.",
+        "explanation": "Odgovornost/autoritet teku prema dolje, uračunljivost prema gore."
+      },
+      {
+        "question": "AUTORITET vs MOĆ; LINIJSKI vs ŠTABNI; 4 razine autoriteta?",
+        "answer": "Autoritet = formalno pravo; moć = utjecaj (širi). Linijski = odluke u lancu; štabni = savjet/podrška. 4 razine: informiranje, preporuka, izvještavanje, puni autoritet.",
+        "explanation": "Formalni autoritet je sankcioniran; neformalni se temelji na odnosima."
+      },
+      {
+        "question": "CENTRALIZIRANI nasuprot DECENTRALIZIRANOM autoritetu?",
+        "answer": "Centralizirani = odluke top-menadžeri (kontrola). Decentralizirani = srednja/prva razina (fleksibilnost). Mikroupravljanje = pretjeran nadzor bez delegiranja.",
+        "explanation": "Nema jedinog najboljeg odgovora — sve ovisi o situaciji."
+      },
+      {
+        "question": "Što je DEPARTMENTALIZACIJA i koje su vrste?",
+        "answer": "Grupiranje srodnih aktivnosti u jedinice: funkcionalna, prema proizvodu, prema kupcu, teritorijalna, divizijska i matrična (dva nadređena).",
+        "explanation": "Matrična = fleksibilna, ali krši jedinstvo zapovijedanja. Opis → sekcija Uči."
+      },
+      {
+        "question": "Navedite 5 SUVREMENIH organizacijskih oblika.",
+        "answer": "Timska, mrežna, modularna (outsourcana proizvodnja), virtualna i platformska (Uber, Airbnb).",
+        "explanation": "Reinženjering = radikalni redizajn poslovnih procesa. Opis → sekcija Uči."
+      },
+      {
+        "question": "Što je DIZAJN RADNOG MJESTA — pojednostavljivanje vs proširivanje?",
+        "answer": "Pojednostavljivanje = veća specijalizacija (Taylor, „raditi pametnije\"). Proširivanje = manja specijalizacija: rotacija, enlargement, enrichment (motivatori).",
+        "explanation": "Enrichment koristi rad na daljinu, flextime, komprimirani tjedan, job sharing."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Organska organizacija najbolje funkcionira u okruženjima koja su:",
+        "options": [
+          "Stabilna",
+          "Dinamična",
+          "Birokratska",
+          "Centralizirana"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Načelo prema kojemu svaki zaposlenik odgovara samo jednom nadređenom jest:",
+        "options": [
+          "Jedinstvo smjera",
+          "Raspon upravljanja",
+          "Jedinstvo zapovijedanja",
+          "Podjela rada"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Odgovornost i ovlasti teku _______ lancem zapovijedanja.",
+        "options": [
+          "Gore",
+          "Dolje",
+          "Bočno",
+          "Nigdje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Odjeli za ljudske resurse, odnose s javnošću i informatiku obično imaju _______ ovlast.",
+        "options": [
+          "Linijsku",
+          "Stožernu",
+          "Potpunu",
+          "Neformalnu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Odluke koje donose isključivo vrhunski menadžeri opisuju _______ ovlast.",
+        "options": [
+          "Decentraliziranu",
+          "Centraliziranu",
+          "Delegiranu",
+          "Neformalnu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Struktura u kojoj zaposlenik ima DVA nadređena (funkcionalni + projektni) jest:",
+        "options": [
+          "Funkcionalna",
+          "Divizijska",
+          "Matrična",
+          "Teritorijalna"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Uber, koji povezuje putnike i vozače, primjer je _______ organizacije.",
+        "options": [
+          "Modularna",
+          "Virtualna",
+          "Platformska",
+          "Timska"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ugrađivanje motivatora u sam posao naziva se obogaćivanje radnog mjesta:",
+        "options": [
+          "Rotacija",
+          "Proširenje",
+          "Obogaćivanje",
+          "Pojednostavljivanje"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Birokratske organizacije s čvrstim kontrolama i pravilima nazivaju se _______.",
+        "answer": "mehaničke",
+        "hint": "Suprotnost od organskog..."
+      },
+      {
+        "sentence": "Broj zaposlenika koji izvještavaju jednog menadžera naziva se raspon _______.",
+        "answer": "upravljanja",
+        "hint": "Naziva se i raspon kontrole..."
+      },
+      {
+        "sentence": "Delegiranje dodjeljuje i odgovornost i _______ za postizanje ciljeva.",
+        "answer": "ovlast",
+        "hint": "Pravo odlučivanja i korištenja resursa..."
+      },
+      {
+        "sentence": "Grupiranje odjela prema području ili regiji naziva se _______ departmentalizacija.",
+        "answer": "teritorij",
+        "hint": "Naziva se i geografskom..."
+      },
+      {
+        "sentence": "Dodavanje zadataka poslu radi raznolikosti naziva se _______ posla.",
+        "answer": "proširenje",
+        "hint": "Proširiti, ne produbiti..."
+      }
+    ],
+    "learn": {
+      "title": "Organiziranje i delegiranje rada",
+      "content": "\n                <h3>Organiziranje i vrste struktura</h3>\n                <p><strong>Organiziranje</strong> (2. funkcija menadžmenta) = proces delegiranja i koordiniranja zadataka i resursa radi ostvarivanja ciljeva.</p>\n                <div class=\"formula-box\">MEHANIČKE (birokratske: stroga kontrola, pravila, specijalizacija, odluke odozgo; STABILNA okolina) ⇄ ORGANSKE (fleksibilne: malo pravila, široki poslovi, odluke niže; DINAMIČNA okolina) — na KONTINUUMU.</div>\n                <h4>Načela organizacije</h4>\n                <ul>\n                    <li><strong>Jedinstvo zapovijedanja</strong> — svaki zaposlenik odgovara samo jednom nadređenom.</li>\n                    <li><strong>Jedinstvo smjera</strong> — sve aktivnosti prema istim ciljevima.</li>\n                    <li><strong>Lanac zapovijedanja</strong> (skalarno načelo) — jasna linija autoriteta od vrha do dna.</li>\n                    <li><strong>Raspon upravljanja</strong> — broj zaposlenika po menadžeru (visoka hijerarhija = uski rasponi; plitka = široki).</li>\n                    <li><strong>Podjela rada</strong> (specijalizacija) i <strong>koordinacija</strong> = diferencijacija (odjeli) + integracija (njihova koordinacija).</li>\n                </ul>\n                <h4>Autoritet, odgovornost, delegiranje</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>Odgovornost</strong> (obveza cilja) i <strong>autoritet</strong> (pravo odluke/resursa) teku PREMA DOLJE; <strong>uračunljivost</strong> (procjena ispunjenja) teče PREMA GORE. <strong>Delegiranje</strong> = dodjela odgovornosti + autoriteta kod NOVOG zadatka.</li>\n                        <li><strong>Autoritet</strong> = formalno pravo; <strong>moć</strong> = sposobnost utjecaja (širi pojam; može se biti menadžer bez moći i obrnuto).</li>\n                        <li><strong>Linijski</strong> autoritet = odluke/nalozi u lancu (operacije, marketing); <strong>štabni</strong> = savjet i podrška (HR, PR, IT). 4 razine: informiranje → preporuka → izvještavanje → puni autoritet.</li>\n                        <li><strong>Centralizirani</strong> (top odlučuje; kontrola, manje dupliciranja; mehanički) vs <strong>decentralizirani</strong> (srednja/prva razina; efikasnost, fleksibilnost; organski). <strong>Mikroupravljanje</strong> = pretjeran nadzor, suprotnost osnaživanju.</li>\n                    </ul>\n                </div>\n                <h4>Departmentalizacija i suvremeni oblici</h4>\n                <ul>\n                    <li><strong>Tradicionalne:</strong> funkcionalna (mala poduzeća) · prema proizvodu · prema kupcu · teritorijalna (multinacionalke) · divizijska (SBU / M-oblik; konglomerat) · matrična (funkcija + proizvod, DVA nadređena — fleksibilna, ali krši jedinstvo zapovijedanja).</li>\n                    <li><strong>Suvremeni:</strong> timska · mrežna (bez granica) · modularna (proizvodnja outsourcana — Nike, Dell) · virtualna (privremene mreže) · platformska (dijeljena ekonomija — Uber, Airbnb). Reinženjering = radikalni redizajn procesa.</li>\n                </ul>\n                <h4>Dizajn radnog mjesta</h4>\n                <p><strong>Dizajn radnog mjesta</strong> = utvrđivanje zadataka svakog zaposlenika. <strong>Pojednostavljivanje</strong> = eliminirati/kombinirati/presložiti zadatke (veća specijalizacija; Taylor). <strong>Proširivanje</strong> = rotacija (naizmjenični poslovi) · enlargement (više zadataka) · enrichment (motivatori u posao). Fleksibilni aranžmani: rad na daljinu, flextime, komprimirani tjedan, job sharing.</p>\n            "
+    }
+  },
+  "teamwork": {
+    "name": "Upravljanje timskim radom",
+    "icon": "fa-people-group",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Koja je razlika između GRUPE i TIMA?",
+        "answer": "Grupa = jasan vođa, neovisni poslovi, individualna odgovornost. Tim = podijeljeno vodstvo, međuovisni poslovi, individualna I skupna odgovornost.",
+        "explanation": "Svi timovi su grupe, ali nisu sve grupe timovi."
+      },
+      {
+        "question": "Koja četiri čimbenika čine MODEL UČINKA GRUPE?",
+        "answer": "Učinak = f(organizacijski kontekst, struktura grupe, proces grupe, razvoj grupe).",
+        "explanation": "Sustavski učinak — svaka grupa utječe na ostale i na cijelu organizaciju."
+      },
+      {
+        "question": "Koje su dimenzije STRUKTURE GRUPE?",
+        "answer": "Vrsta grupe, veličina, sastav, vodstvo i ciljevi.",
+        "explanation": "Vrste: formalne/neformalne, funkcionalne/međufunkcionalne, zapovjedne/zadatne, globalni virtualni timovi. → sekcija Uči."
+      },
+      {
+        "question": "Koja je idealna VELIČINA GRUPE ('pravilo dvije pizze')?",
+        "answer": "Nema jedinstvene; općenito 5–9 članova (7±2). Premalo → manje ideja; previše → sporost i socijalno lijenčarenje.",
+        "explanation": "Amazonovo 'pravilo dvije pizze': ako ih dvije pizze ne mogu nahraniti, tim je prevelik (≤ ~8)."
+      },
+      {
+        "question": "Što je GRUPNI PROCES i koje su mu dimenzije?",
+        "answer": "Grupna dinamika = obrasci interakcija dok se obavlja zadatak (kako se slažu). Dimenzije: uloge, norme, kohezivnost, status, odlučivanje, sukobi.",
+        "explanation": "3 grupne uloge: zadatne, uloge održavanja i uloge osobnog interesa."
+      },
+      {
+        "question": "NORME, KOHEZIVNOST i STATUS u grupi?",
+        "answer": "Norme = nepisana zajednička očekivanja ponašanja. Kohezivnost = koliko članovi drže zajedno. Status = percipirani rang člana.",
+        "explanation": "Grupe više slušaju članove višeg statusa. Opis → sekcija Uči."
+      },
+      {
+        "question": "Kojih je 5 faza razvoja grupe prema TUCKMANU?",
+        "answer": "Forming, storming, norming, performing i termination (raspuštanje).",
+        "explanation": "Kompetentnost raste; predanost počne visoko, padne, pa raste. Opis → sekcija Uči."
+      },
+      {
+        "question": "Koji STIL UPRAVLJANJA odgovara pojedinoj fazi razvoja?",
+        "answer": "Forming → autokratski; storming → konzultativan; norming → participativan; performing → osnaživanje; termination → nijedan.",
+        "explanation": "Prilagodi rukovodeće ponašanje kako grupa napreduje kroz faze."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Podijeljeno vodstvo i međuovisni poslovi obilježja su:",
+        "options": [
+          "Grupe",
+          "Tima",
+          "Gomile",
+          "Odjela"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što NIJE čimbenik u modelu skupinske uspješnosti?",
+        "options": [
+          "Struktura skupine",
+          "Skupinski proces",
+          "Razvoj skupine",
+          "Plaća skupine"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Privremena skupina osnovana u određenu svrhu naziva se:",
+        "options": [
+          "Stalni odbor",
+          "Radna skupina (ad hoc odbor)",
+          "Zapovjedno-upravljačka skupina",
+          "Funkcionalna skupina"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Amazonovo pravilo „dvije pizze\" odnosi se na održavanje tima:",
+        "options": [
+          "Dobro nahranjenima",
+          "Dovoljno mala da bude produktivna",
+          "Rad prekovremeno",
+          "Geografski raspršena"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Nepisana, zajednička očekivanja ponašanja u skupini nazivaju se:",
+        "options": [
+          "Pravila",
+          "Norme",
+          "Politike",
+          "Postupci"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Oslanjanje članova na druge da obavljaju njihov dio posla naziva se:",
+        "options": [
+          "Kohezivnost",
+          "Besplatna vožnja (socijalno lijenčarenje)",
+          "Grupno mišljenje",
+          "Status"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U Tuckmannovim fazama, faza 'nezadovoljstva' jest:",
+        "options": [
+          "Formiranje",
+          "Olujanje",
+          "Normiranje",
+          "Izvođenje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Odgovarajući stil upravljanja u fazi IZVOĐENJA jest:",
+        "options": [
+          "Autokratski",
+          "Konzultativan",
+          "Participativan",
+          "Osnaživanje"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Svi timovi su grupe, ali nisu sve grupe _______.",
+        "answer": "timovi",
+        "hint": "Ona vrsta s međuovisnim, podijeljenim vodstvom..."
+      },
+      {
+        "sentence": "Optimalna veličina grupe općenito iznosi od pet do _______ članova.",
+        "answer": "devet",
+        "hint": "7 plus ili minus dva..."
+      },
+      {
+        "sentence": "Nepisana, zajednička očekivanja ponašanja nazivaju se grupnim _______.",
+        "answer": "normama",
+        "hint": "Nisu formalna pravila..."
+      },
+      {
+        "sentence": "Tuckmanovih pet faza su formiranje, olujanje, normiranje, izvođenje i _______.",
+        "answer": "završetak",
+        "hint": "Naziva se i raspuštanjem..."
+      },
+      {
+        "sentence": "Tijekom faze formiranja odgovarajući stil upravljanja je _______.",
+        "answer": "autokratski",
+        "hint": "Reci im što da rade..."
+      }
+    ],
+    "learn": {
+      "title": "Upravljanje timskim radom",
+      "content": "\n                <h3>Grupa vs tim</h3>\n                <p><strong>Grupa</strong> = 2+ članova, jasan vođa, NEOVISNI poslovi, INDIVIDUALNA odgovornost/nagrade. <strong>Tim</strong> = manji broj, PODIJELJENO vodstvo, MEĐUOVISNI poslovi, INDIVIDUALNA I SKUPNA odgovornost. Kontinuum: upravljano (grupa) → poluautonomno → samoupravljanje (tim). „Svi timovi su grupe, ali nisu sve grupe timovi.\"</p>\n                <div class=\"formula-box\">MODEL UČINKA GRUPE = f(organizacijski kontekst · struktura grupe · proces grupe · razvoj grupe). Sustavski učinak — svaka grupa utječe na ostale.</div>\n                <h4>Struktura grupe</h4>\n                <ul>\n                    <li>Dimenzije: <strong>vrsta, veličina, sastav, vodstvo, ciljevi</strong>.</li>\n                    <li><strong>Vrste:</strong> formalne/neformalne · funkcionalne (vertikalne)/međufunkcionalne (horizontalne) · zapovjedne/zadatne (projektni tim, ad hoc odbor vs stalni odbor) · globalni virtualni timovi.</li>\n                    <li><strong>Veličina:</strong> nema jedinstvene, 5–9 (7±2). Premalo → manje ideja; previše → sporost, manja inovativnost, socijalno lijenčarenje (slobodno jahanje). Amazon: „pravilo dvije pizze\" (≤ ~8). &lt;5 → grupno mišljenje; &gt;9 → komunikacija se raspada.</li>\n                </ul>\n                <h4>Grupni proces (dinamika)</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li>Dimenzije: uloge, norme, kohezivnost, status, odlučivanje, rješavanje sukoba. 3 grupne uloge: zadatne · održavanja · osobnog interesa.</li>\n                        <li><strong>Norme</strong> — nepisana zajednička očekivanja (ne propisuje ih uprava).</li>\n                        <li><strong>Kohezivnost</strong> — koliko članovi drže zajedno; veća uz zajedničke ciljeve, malu/homogenu grupu, ravnopravno sudjelovanje i vanjsko natjecanje.</li>\n                        <li><strong>Status</strong> — percipirani rang (učinak, zvanje, staž, stručnost); grupe više slušaju članove višeg statusa.</li>\n                    </ul>\n                </div>\n                <h4>Razvoj grupe (Tuckman) i stil vođenja</h4>\n                <div class=\"formula-box\">\n                    FORMING (orijentacija) → AUTOKRATSKI · STORMING (nezadovoljstvo) → KONZULTATIVAN · NORMING (razrješenje) → PARTICIPATIVAN · PERFORMING (produkcija) → OSNAŽIVANJE · TERMINATION (raspuštanje) → —\n                </div>\n                <p>Dvije varijable: kompetentnost (raste) i predanost (počne visoko, padne, pa raste). Prilagodi vodstvo kako grupa napreduje.</p>\n            "
+    }
+  },
+  "humanResources": {
+    "name": "Upravljanje ljudskim resursima",
+    "icon": "fa-users-gear",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Koja su ČETIRI dijela procesa upravljanja ljudskim resursima?",
+        "answer": "Za konkurentsku prednost: (1) planiranje LJR, (2) privlačenje (regrutiranje+selekcija), (3) razvoj (onboarding, osposobljavanje, ocjenjivanje), (4) zadržavanje (naknada, prestanak).",
+        "explanation": "Naziva se i kadroviranje; LJR je stožerni (savjetodavni) odjel."
+      },
+      {
+        "question": "Što je ANALIZA POSLA (opis vs specifikacije posla)?",
+        "answer": "Utvrđivanje što posao podrazumijeva i koje kvalifikacije treba. Opis posla = zadaci i odgovornosti; specifikacije posla = potrebne kvalifikacije.",
+        "explanation": "Obavlja se PRIJE traženja novog zaposlenika."
+      },
+      {
+        "question": "Što je REGRUTIRANJE i koji su izvori?",
+        "answer": "Privlačenje KVALIFICIRANIH kandidata. Interno = napredovanja/premještaji; eksterno = preporuke, prijave, škole, agencije, oglašavanje/mreže.",
+        "explanation": "Više ljudi nađe posao umrežavanjem nego svim drugim metodama zajedno."
+      },
+      {
+        "question": "Kojih je 6 faza PROCESA SELEKCIJE?",
+        "answer": "Prijava/životopis → probni razgovor → testiranje → provjera pozadine → intervju (najvažniji) → zapošljavanje.",
+        "explanation": "Nema fiksnog redoslijeda ni svih faza u svakom postupku."
+      },
+      {
+        "question": "Što su VALJANOST i POUZDANOST u testiranju?",
+        "answer": "Valjanost = visok rezultat predviđa dobar učinak (test predviđa uspjeh na poslu). Pouzdanost = ponovljeni test daje isti rezultat.",
+        "explanation": "Velike tvrtke koriste assessment centre (testovi + intervjui + simulacije)."
+      },
+      {
+        "question": "ONBOARDING i OSPOSOBLJAVANJE nasuprot RAZVOJU?",
+        "answer": "Onboarding = uvođenje + socijalizacija novih. Osposobljavanje = vještine za TRENUTAČNI posao; razvoj = za sadašnja I buduća radna mjesta.",
+        "explanation": "Socijalizacija se smatra važnijom od formalnog programa uvođenja."
+      },
+      {
+        "question": "Što je OCJENJIVANJE USPJEŠNOSTI i povratna informacija 360°?",
+        "answer": "Kontinuirano vrednovanje učinka zaposlenika. 360° = povratna informacija od svih s kojima zaposlenik surađuje: kolege, odjeli, kupci, dobavljači.",
+        "explanation": "Služi za procjenu trenutačnog učinka i za potencijalna unapređenja."
+      },
+      {
+        "question": "Što je KOMPENZACIJA — metode plaćanja i beneficije?",
+        "answer": "Plaća + beneficije. Metode: nadnica (po satu), plaća (po vremenu) i poticaji (po učinku). Beneficije = neplaćna kompenzacija.",
+        "explanation": "Trend je plaćanje prema učinku. Opis → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Proces upravljanja ljudskim resursima poznat je i kao proces _______.",
+        "options": [
+          "Marketinga",
+          "Popunjavanja radnih mjesta",
+          "Budžetiranja",
+          "Kontrole"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dokument koji identificira ZADATKE određenog radnog mjesta jest opis radnog mjesta:",
+        "options": [
+          "Specifikacija",
+          "Opis",
+          "Analiza",
+          "Vrednovanje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koja metoda regrutiranja temelji se na umrežavanju i često je najomiljenija?",
+        "options": [
+          "Spontane prijave",
+          "Preporuke zaposlenika",
+          "Lovci na talente",
+          "Oglasi u novinama"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koji korak u procesu selekcije obično ima NAJVEĆU težinu?",
+        "options": [
+          "Obrazac prijave",
+          "Provjera referenci",
+          "Intervjuiranje",
+          "Testiranje"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Test u kojemu osobe s visokim rezultatima dobro obavljaju posao ima visoku:",
+        "options": [
+          "Pouzdanost",
+          "Valjanost",
+          "Težinu",
+          "Pristranost"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poučavanje vještina potrebnih za TRENUTAČNI posao jest:",
+        "options": [
+          "Razvoj",
+          "Osposobljavanje",
+          "Uvođenje u posao",
+          "Ocjenjivanje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Vrednovanje koje uključuje kolege, klijente i dobavljače naziva se:",
+        "options": [
+          "Samoprocjena",
+          "Povratne informacije od 360 stupnjeva",
+          "Upravljanje prema ciljevima",
+          "Vrednovanje radnog mjesta"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Provizije i povećanja plaće prema zaslugama primjeri su:",
+        "options": [
+          "Nadnice",
+          "Plaća",
+          "Poticaji",
+          "Beneficije"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Četiri dijela upravljanja ljudskim resursima su planiranje, privlačenje, razvoj i _______.",
+        "answer": "zadržavanje",
+        "hint": "Zadržavanje dobrih zaposlenika..."
+      },
+      {
+        "sentence": "Specifikacije radnog mjesta _______ identificiraju kvalifikacije potrebne za popunjavanje određene pozicije.",
+        "answer": "specifikacije",
+        "hint": "Ne opis zadataka..."
+      },
+      {
+        "sentence": "Test ima visoku _______ kada daje iste rezultate u različitim danima.",
+        "answer": "pouzdanost",
+        "hint": "Dosljednost kroz vrijeme..."
+      },
+      {
+        "sentence": "Kontinuirano obrazovanje za sadašnje i buduće poslove naziva se _______.",
+        "answer": "razvoj",
+        "hint": "Šire od obuke..."
+      },
+      {
+        "sentence": "Plaća koja se temelji na vremenu, neovisno o broju odrađenih sati, naziva se _______.",
+        "answer": "fiksna plaća",
+        "hint": "Ne satnica..."
+      }
+    ],
+    "learn": {
+      "title": "Upravljanje ljudskim resursima",
+      "content": "\n                <h3>Proces upravljanja ljudskim resursima (kadroviranje)</h3>\n                <p><strong>Upravljanje ljudskim resursima</strong> = upravljanje ljudima radi konkurentske prednosti; LJR je STOŽERNI odjel (savjetuje/pomaže). Četiri dijela:</p>\n                <div class=\"formula-box\">1. PLANIRANJE (strateško planiranje LJR-a) → 2. PRIVLAČENJE (regrutiranje + selekcija) → 3. RAZVOJ (onboarding, osposobljavanje, ocjenjivanje) → 4. ZADRŽAVANJE (naknada, zadržavanje, prestanak)</div>\n                <h4>Analiza posla i regrutiranje</h4>\n                <ul>\n                    <li><strong>Analiza posla</strong> (prije traženja): <strong>opis posla</strong> = zadaci i odgovornosti (realističan pregled); <strong>specifikacije posla</strong> = potrebne kvalifikacije.</li>\n                    <li><strong>Regrutiranje</strong> = privlačenje KVALIFICIRANIH (ne samo mnogo prijava). Interno = napredovanja/lateralni premještaji. Eksterno = preporuke zaposlenika (često najpoželjnije, umrežavanje), spontane prijave, škole/sajmovi, agencije (privremene/javne/privatne, headhunteri), oglašavanje/internet/društvene mreže.</li>\n                </ul>\n                <h4>Selekcija i testiranje</h4>\n                <div class=\"tip-box\">\n                    <ul>\n                        <li><strong>6 faza:</strong> obrazac/životopis (probir) → probni razgovor → testiranje → provjera pozadine i referenci → intervju (obično NAJVAŽNIJI) → zapošljavanje. Nema fiksnog redoslijeda.</li>\n                        <li><strong>Valjanost</strong> = visok rezultat na testu ⇒ dobar učinak (test predviđa uspjeh). <strong>Pouzdanost</strong> = ponovljeni test daje isti rezultat. Velike tvrtke → assessment centri (testovi + intervjui + simulacije). Testovi: znanje, sposobnosti, ličnost, interesi, liječnički.</li>\n                    </ul>\n                </div>\n                <h4>Razvoj, ocjenjivanje i kompenzacija</h4>\n                <ul>\n                    <li><strong>Onboarding</strong> (uvođenje) = upoznavanje + socijalizacija novih (znanje, vještine, ponašanje — važnija od formalnog programa).</li>\n                    <li><strong>Osposobljavanje</strong> = vještine za TRENUTAČNI posao; <strong>razvoj</strong> = za sadašnja i buduća mjesta.</li>\n                    <li><strong>Ocjenjivanje uspješnosti</strong> = kontinuirano vrednovanje; <strong>360°</strong> = kolege, odjeli, kupci, dobavljači (npr. Zappos). Za trenutačni učinak i unapređenja.</li>\n                    <li><strong>Kompenzacija</strong> = plaća + beneficije. Metode plaćanja: <strong>nadnica</strong> (po satu) · <strong>plaća</strong> (po vremenu) · <strong>poticaji</strong> (po učinku: komadna naknada, provizije, povišice, bonusi, udio u dobiti, dioničke opcije). Beneficije = neplaćna kompenzacija (zakonske: ozljede na radu, nezaposlenost, Medicare, Social Security). Trend = plaćanje prema učinku.</li>\n                </ul>\n            "
+    }
+  }
+}
