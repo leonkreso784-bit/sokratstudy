@@ -1,0 +1,2197 @@
+{
+  "auditKvalitete": {
+    "name": "Audit sustava kvalitete",
+    "icon": "fa-magnifying-glass",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Što je AUDIT?",
+        "answer": "Sustavan, neovisan i dokumentiran proces dobivanja objektivnih dokaza i njihova objektivnog vrednovanja kako bi se utvrdilo u kojoj su mjeri ispunjeni kriteriji audita.",
+        "explanation": "Definicija prema ISO 9000."
+      },
+      {
+        "question": "Koja norma daje smjernice za audit?",
+        "answer": "ISO 19011 — Smjernice za auditiranje sustava upravljanja. ISO 9001 zahtjevom 9.2 traži provedbu internog audita.",
+        "explanation": "Ispitno pitanje: „ISO koji propisuje audit\"."
+      },
+      {
+        "question": "Kako se dijele auditi prema odnosu auditora i auditirane organizacije?",
+        "answer": "Na interne i eksterne audite.",
+        "explanation": "Ispitno pitanje (grupa C)."
+      },
+      {
+        "question": "Što je audit PRVE strane?",
+        "answer": "Interni audit: organizacija sama (ili netko u njezino ime) auditira vlastiti sustav, npr. vlastiti osposobljeni interni auditori.",
+        "explanation": "Služi upravinoj ocjeni i poboljšanju."
+      },
+      {
+        "question": "Što je audit DRUGE strane?",
+        "answer": "Eksterni audit koji provodi strana zainteresirana za organizaciju — najčešće kupac koji provjerava svog dobavljača.",
+        "explanation": "Npr. turoperator provjerava hotel."
+      },
+      {
+        "question": "Tko provodi audite TREĆE strane?",
+        "answer": "Potpuno neovisne i nepristrane osobe koje nisu ni na koji način zainteresirane za poslovanje tvrtke (npr. certifikacijske kuće); ishod je certifikat o sukladnosti.",
+        "explanation": "Ispitno pitanje (grupe B i C)."
+      },
+      {
+        "question": "Kako se dijele auditi prema OPSEGU?",
+        "answer": "Na audite proizvoda, audite procesa i audite sustava.",
+        "explanation": "Ispitno pitanje (grupa A)."
+      },
+      {
+        "question": "Kako se dijele auditi prema SVRSI?",
+        "answer": "Na audite usklađivanja (je li sustav sukladan zahtjevima) i audite izvršavanja (provodi li se sustav i djeluje li u praksi).",
+        "explanation": "Ispitno pitanje (grupa B)."
+      },
+      {
+        "question": "Koje su faze internog audita?",
+        "answer": "Planiranje ciklusa (programa) audita, planiranje i priprema audita, provedba, izvješće, korektivne radnje te praćenje i zatvaranje.",
+        "explanation": "Šest faza (ispitno pitanje)."
+      },
+      {
+        "question": "Što je PROGRAM audita?",
+        "answer": "Plan audita za određeno razdoblje (obično godinu): koji se procesi i područja auditiraju, kada i tko, tako da se obuhvati cijeli SUK.",
+        "explanation": "Planiranje ciklusa audita."
+      },
+      {
+        "question": "Što su KRITERIJI audita i OBJEKTIVNI DOKAZ?",
+        "answer": "Kriteriji: zahtjevi s kojima se uspoređuju dokazi (norma, politika, procedure). Objektivni dokaz: podaci koji potvrđuju postojanje ili istinitost nečega.",
+        "explanation": "Auditor sudi po dokazima, ne po dojmu."
+      },
+      {
+        "question": "Koji mogu biti NALAZI audita?",
+        "answer": "Sukladnost, nesukladnost (manja ili veća) i prilika za poboljšanje (zapažanje).",
+        "explanation": "Nesukladnost traži korektivnu radnju."
+      },
+      {
+        "question": "Kakav mora biti auditor?",
+        "answer": "Neovisan (ne auditira vlastiti posao), objektivan i nepristran, stručan (poznaje normu i proces) i komunikativan; zaključke temelji na dokazima.",
+        "explanation": "Osobine auditora."
+      },
+      {
+        "question": "Što je UPRAVINA OCJENA (preispitivanje SUK-a)?",
+        "answer": "Preispitivanje SUK-a od strane uprave u planiranim razmacima radi prikladnosti i djelotvornosti; ulazi su i rezultati audita, zadovoljstvo kupaca i rizici.",
+        "explanation": "Management review, ISO 9001 točka 9.3."
+      },
+      {
+        "question": "Što je CERTIFIKACIJA?",
+        "answer": "Postupak kojim neovisno, akreditirano tijelo (treća strana) auditom potvrđuje sukladnost sustava s normom i izdaje certifikat; slijede nadzorni auditi i recertifikacija.",
+        "explanation": "Certifikat ISO 9001 obično vrijedi tri godine."
+      },
+      {
+        "question": "Što slijedi nakon utvrđene nesukladnosti?",
+        "answer": "Korektivna (popravna) radnja: uklanja se uzrok nesukladnosti i sprječava njezino ponavljanje; određuju se odgovorna osoba i rok, a djelotvornost se provjerava.",
+        "explanation": "Faza korektivnih radnji i praćenja."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "vucz1p",
+        "question": "Koja ISO norma daje smjernice za auditiranje sustava upravljanja?",
+        "options": [
+          "ISO 19011",
+          "ISO 14001",
+          "ISO 9004",
+          "ISO 31000"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "1f65sp",
+        "question": "Podjela audita prema odnosu auditora i auditirane organizacije je:",
+        "options": [
+          "auditi proizvoda, procesa i sustava",
+          "interni i eksterni",
+          "auditi usklađivanja i izvršavanja",
+          "redovni i izvanredni"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "qh6ckh",
+        "question": "Audit prve strane je:",
+        "options": [
+          "audit dobavljača od strane kupca",
+          "certifikacijski audit",
+          "interni audit vlastitog sustava",
+          "državna inspekcija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "kiaqst",
+        "question": "Kad hotelski lanac provjerava svog dobavljača, riječ je o auditu:",
+        "options": [
+          "prve strane",
+          "treće strane",
+          "proizvoda",
+          "druge strane"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "4lbisp",
+        "question": "Audite treće strane provode:",
+        "options": [
+          "neovisne i nepristrane certifikacijske kuće",
+          "vlastiti zaposlenici",
+          "kupci",
+          "dobavljači"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "1ma6gr",
+        "question": "Auditi prema opsegu dijele se na audite:",
+        "options": [
+          "interne i eksterne",
+          "proizvoda, procesa i sustava",
+          "usklađivanja i izvršavanja",
+          "prve, druge i treće strane"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "xqec59",
+        "question": "Podjela audita kvalitete po svrsi je:",
+        "options": [
+          "auditi proizvoda i procesa",
+          "interni i eksterni",
+          "auditi usklađivanja i izvršavanja",
+          "planirani i neplanirani"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zke648",
+        "question": "Prva faza internog audita je:",
+        "options": [
+          "pisanje izvješća",
+          "korektivne radnje",
+          "certifikacija",
+          "planiranje ciklusa (programa) audita"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "c7uc31",
+        "question": "Program audita određuje:",
+        "options": [
+          "koji se procesi auditiraju, kada i tko",
+          "cijene usluga",
+          "plaće auditora",
+          "politiku kvalitete"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ru8vlg",
+        "question": "Kriteriji audita su:",
+        "options": [
+          "osobni dojmovi auditora",
+          "zahtjevi s kojima se uspoređuju prikupljeni dokazi",
+          "broj zaposlenih",
+          "cijena certifikata"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "n6in0z",
+        "question": "Nalaz audita koji traži korektivnu radnju je:",
+        "options": [
+          "sukladnost",
+          "pohvala",
+          "nesukladnost",
+          "program audita"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "m2iu7d",
+        "question": "Interni auditor NE smije auditirati:",
+        "options": [
+          "druge odjele",
+          "procese podrške",
+          "osnovne procese",
+          "vlastiti posao"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "50rz7o",
+        "question": "Certifikat o sukladnosti sustava s normom izdaje:",
+        "options": [
+          "akreditirano certifikacijsko tijelo",
+          "interni auditor",
+          "kupac",
+          "uprava organizacije"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "fnv0cq",
+        "question": "Korektivna radnja nakon audita:",
+        "options": [
+          "samo prikriva simptom",
+          "uklanja uzrok nesukladnosti i sprječava ponavljanje",
+          "zamjenjuje certifikat",
+          "nije potrebna"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "of8n38",
+        "sentence": "Audit je sustavan, neovisan i _______ proces dobivanja objektivnih dokaza.",
+        "answer": "dokumentiran",
+        "hint": "zapisan"
+      },
+      {
+        "id": "aqys2x",
+        "sentence": "Ishod uspješnog audita treće strane je _______ o sukladnosti.",
+        "answer": "certifikat",
+        "hint": "potvrda"
+      },
+      {
+        "id": "fcos01",
+        "sentence": "Nakon planiranja ciklusa audita slijedi _______ i priprema audita.",
+        "answer": "planiranje",
+        "hint": "druga faza"
+      },
+      {
+        "id": "w3h2sy",
+        "sentence": "Preispitivanje sustava upravljanja kvalitetom od strane uprave naziva se upravina _______.",
+        "answer": "ocjena",
+        "hint": "management review"
+      }
+    ],
+    "learn": {
+      "title": "Audit sustava kvalitete",
+      "content": "\n<h3>Audit sustava kvalitete</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> tema „Audit sustava kvalitete (interni i eksterni audit)\" je u izvedbenom planu za 2. kolokvij; sadržaj je složen iz ispitnih pitanja i općeg, standardnog gradiva norme ISO 19011 i ISO 9000.</p>\n<p><strong>Audit</strong> je <em>sustavan, neovisan i dokumentiran proces dobivanja objektivnih dokaza i njihova objektivnog vrednovanja kako bi se utvrdilo u kojoj su mjeri ispunjeni kriteriji audita</em> (ISO 9000). Norma sa smjernicama za audit je <strong>ISO 19011 — Smjernice za auditiranje sustava upravljanja</strong>; ISO 9001 u zahtjevu <strong>9.2</strong> traži provedbu internog audita.</p>\n<ul>\n<li><strong>Kriteriji audita</strong> — skup zahtjeva s kojima se uspoređuju dokazi (norma, politika, procedure, ugovori).</li>\n<li><strong>Objektivni dokaz</strong> — podaci koji potvrđuju postojanje ili istinitost nečega (zapisi, izjave, opažanja).</li>\n<li><strong>Nalazi audita</strong> — rezultat vrednovanja dokaza prema kriterijima: <strong>sukladnost</strong>, <strong>nesukladnost</strong> (manja/veća) ili <strong>prilika za poboljšanje</strong> (zapažanje).</li>\n</ul>\n\n<h4>Podjele audita (ispitna pitanja)</h4>\n<table>\n<tr><th>Kriterij podjele</th><th>Vrste audita</th></tr>\n<tr><td>odnos auditora i auditirane organizacije</td><td><strong>interni</strong> i <strong>eksterni</strong> (prve, druge i treće strane)</td></tr>\n<tr><td>opseg</td><td>auditi <strong>proizvoda</strong>, <strong>procesa</strong> i <strong>sustava</strong></td></tr>\n<tr><td>svrha</td><td>auditi <strong>usklađivanja</strong> (je li sustav sukladan zahtjevima) i auditi <strong>izvršavanja</strong> (provodi li se i djeluje li u praksi)</td></tr>\n</table>\n<table>\n<tr><th>Audit prve strane</th><th>Audit druge strane</th><th>Audit treće strane</th></tr>\n<tr><td><strong>interni</strong> — organizacija auditira vlastiti sustav (vlastiti osposobljeni auditori)</td><td><strong>eksterni</strong> — provodi ga zainteresirana strana, najčešće kupac koji provjerava dobavljača</td><td><strong>eksterni</strong> — provode ga potpuno <strong>neovisne i nepristrane</strong> osobe bez ikakvog interesa za poslovanje tvrtke (certifikacijske kuće); ishod: <strong>certifikat</strong> o sukladnosti</td></tr>\n</table>\n\n<h4>Faze internog audita</h4>\n<ol>\n<li><strong>Planiranje ciklusa (programa) audita</strong> — godišnji plan: koji se procesi auditiraju, kada i tko, da se obuhvati cijeli SUK.</li>\n<li><strong>Planiranje i priprema audita</strong> — plan pojedinog audita, proučavanje dokumentacije, kontrolna lista pitanja.</li>\n<li><strong>Provedba audita</strong> — uvodni sastanak, prikupljanje dokaza (razgovor, uvid u zapise, promatranje), završni sastanak.</li>\n<li><strong>Izvješće o auditu</strong> — nalazi (sukladnosti, nesukladnosti, prilike za poboljšanje).</li>\n<li><strong>Korektivne radnje</strong> — uklanjanje uzroka nesukladnosti, uz odgovornu osobu i rok.</li>\n<li><strong>Praćenje i zatvaranje</strong> — provjera djelotvornosti korektivnih radnji.</li>\n</ol>\n<p><strong>Auditor</strong> mora biti neovisan (ne auditira vlastiti posao), objektivan i nepristran, stručan (poznaje normu i proces) i komunikativan te zaključke temeljiti na dokazima.</p>\n\n<h4>Audit, upravina ocjena i certifikacija</h4>\n<ul>\n<li>Rezultati internih audita ulaz su u <strong>upravinu ocjenu</strong> (preispitivanje SUK-a od strane uprave, ISO 9001 točka 9.3).</li>\n<li><strong>Certifikacija</strong> — akreditirano certifikacijsko tijelo (treća strana) auditom potvrđuje sukladnost sustava s normom i izdaje certifikat; slijede <strong>nadzorni auditi</strong> i, nakon isteka (obično tri godine), <strong>recertifikacija</strong>.</li>\n<li>U fazama uspostave sustava kvalitete (1. kolokvij) audit dolazi pri kraju: osposobljavanje internih auditora i auditiranje (13.), upravina ocjena (14.), korektivne akcije (15.), prijava za certifikaciju (16.), objava certifikata (17.).</li>\n</ul>\n",
+      "id": "dpuuwo"
+    },
+    "id": "ccm5fy"
+  },
+  "upravljanjeRizicima": {
+    "name": "Upravljanje rizicima",
+    "icon": "fa-triangle-exclamation",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je RIZIK?",
+        "answer": "Učinak neizvjesnosti na očekivani rezultat — vjerojatnost da se nešto neće dogoditi kako smo očekivali; odstupanje može biti pozitivno ili negativno.",
+        "explanation": "Rizik ne znači samo štetu."
+      },
+      {
+        "question": "Koja je razlika između užeg i šireg shvaćanja rizika?",
+        "answer": "Uže (tradicionalno): opasnost od gubitka ili štete. Šire: mogućnost drukčijeg ishoda, boljeg ili lošijeg, od očekivanog.",
+        "explanation": "ISO 9001:2015 rizik shvaća šire."
+      },
+      {
+        "question": "Kako se razlikuju rizik i prilika?",
+        "answer": "Rizik je nesigurnost u postizanju ciljeva, a prilika moguća situacija pogodna za ostvarenje ciljeva.",
+        "explanation": "Standard traži identifikaciju i rizika i prilika."
+      },
+      {
+        "question": "Što je RAZMIŠLJANJE TEMELJENO NA RIZIKU?",
+        "answer": "Pristup kojim organizacija određuje čimbenike zbog kojih bi procesi i SUK mogli odstupiti od planiranih rezultata; eksplicitno je ugrađen u ISO 9001:2015 i pomaže prepoznati i prilike.",
+        "explanation": "Jedan od ključnih elemenata ISO 9001:2015."
+      },
+      {
+        "question": "Zašto organizacija uspostavlja preventivne postupke nadzora?",
+        "answer": "Da smanji negativne učinke rizika i da najbolje iskoristi prilike čim se one ukažu.",
+        "explanation": "ISO 9001:2015, pristup temeljen na rizicima."
+      },
+      {
+        "question": "Koji je cilj SUK-a u kontekstu rizika?",
+        "answer": "Osigurati povjerenje kupaca da ćemo ispuniti njihove zahtjeve prvi i svaki sljedeći put — prevenirati negativne događaje i prepoznati korisne prilike.",
+        "explanation": "Veza s pouzdanošću (1. kolokvij)."
+      },
+      {
+        "question": "U kojim se zahtjevima ISO 9001 pojavljuju rizici?",
+        "answer": "4 Kontekst (okruženje), 5 Vodstvo (promicanje pristupa temeljenog na riziku), 6 Planiranje (mjere za rizike i prilike), 8 Radni proces, 9 Vrednovanje (učinkovitost mjera).",
+        "explanation": "Rizici prožimaju cijelu normu."
+      },
+      {
+        "question": "Što obuhvaća VANJSKI kontekst pri upravljanju rizicima?",
+        "answer": "Vanjske čimbenike na međunarodnoj, regionalnoj, nacionalnoj i lokalnoj razini: ekonomske, političke, društvene, zakonske i kulturološke.",
+        "explanation": "Prvi korak procesa upravljanja rizicima."
+      },
+      {
+        "question": "Što obuhvaća UNUTARNJI kontekst pri upravljanju rizicima?",
+        "answer": "Kulturu i vrijednosti, organizacijsku strukturu, ovlasti i odgovornosti, organizacijsko znanje, strategiju, politiku, ciljeve i rezultate poslovanja.",
+        "explanation": "Ono što organizacija može izravno mijenjati."
+      },
+      {
+        "question": "Što je SWOT analiza?",
+        "answer": "Analiza internih (snage, slabosti) i eksternih (prilike, prijetnje) čimbenika; vrednuje usklađenost sposobnosti poduzeća s uvjetima u okolini.",
+        "explanation": "Kvalitativna metoda analize konteksta."
+      },
+      {
+        "question": "Što je PEST analiza?",
+        "answer": "Analiza poslovnog okruženja koja utvrđuje prilike i prijetnje iz političko-pravnog, ekonomskog, socijalno-kulturnog i tehnološkog okruženja.",
+        "explanation": "Prilike pomažu ciljevima, prijetnje ih usporavaju ili onemogućuju."
+      },
+      {
+        "question": "Primjeri u SWOT analizi putničke agencije?",
+        "answer": "Slabost: nepouzdani dobavljači, manjak zaposlenika. Snaga: educirano osoblje, stalni klijenti. Prilika: nova tržišta, EU sufinanciranje. Prijetnja: sezonalnost, terorizam.",
+        "explanation": "Primjer iz e-materijala."
+      },
+      {
+        "question": "Koje su zainteresirane strane putničke agencije?",
+        "answer": "Zaposlenici, kupci, vlasnici, lokalna zajednica, regulatorna tijela, banke, hotelijeri, turističke zajednice, vodiči, prijevoznici, sindikati, turoperatori i dr.",
+        "explanation": "Uz kontekst treba definirati i njih i njihove zahtjeve."
+      },
+      {
+        "question": "Kako počinje proces upravljanja rizicima?",
+        "answer": "Uz kontinuiranu komunikaciju i konzultacije sa zainteresiranim stranama, prvi je korak utvrđivanje vanjskog i unutarnjeg konteksta; zatim se definiraju kriteriji rizika.",
+        "explanation": "Prema ISO 31000."
+      },
+      {
+        "question": "O čemu treba voditi računa kod definiranja KRITERIJA rizika?",
+        "answer": "Prirodi uzroka i posljedica i njihovu mjerenju, definiciji vjerojatnosti, vremenskom okviru, načinu određivanja razine rizika, zainteresiranim stranama i razini prihvatljivosti.",
+        "explanation": "Kriteriji se definiraju na početku i stalno revidiraju."
+      },
+      {
+        "question": "Koji su koraci OCJENE rizika?",
+        "answer": "Identifikacija rizika, analiza rizika i vrednovanje rizika.",
+        "explanation": "Ocjena = I → A → V."
+      },
+      {
+        "question": "Što je IDENTIFIKACIJA rizika?",
+        "answer": "Pronaći, prepoznati i opisati rizike koji mogu negativno utjecati na ciljeve: izvore, područja utjecaja, događaje, uzroke i posljedice; uočiti i rizike neiskorištenih prilika.",
+        "explanation": "Koji rizici mogu spriječiti uslugu na očekivanoj razini?"
+      },
+      {
+        "question": "Što je ANALIZA rizika?",
+        "answer": "Razumijevanje rizika: utvrđuju se posljedice i vjerojatnost nastanka. Rizik = vjerojatnost × posljedica; rezultat je rangiranje rizika (prioriteti).",
+        "explanation": "Analiza je input za vrednovanje."
+      },
+      {
+        "question": "Kako izgleda skala ocjene rizika 1–3?",
+        "answer": "Posljedica i vjerojatnost ocjenjuju se 1 (mala/niska), 2 (umjerena/srednja) i 3 (velika/visoka); npr. posljedica 3 = proces ne funkcionira, mnogo reklamacija.",
+        "explanation": "Vjerojatnost 3 = događaj se javlja u većini slučajeva."
+      },
+      {
+        "question": "Što je VREDNOVANJE rizika?",
+        "answer": "Usporedba rezultata analize (vjerojatnost × posljedica) s kriterijima rizika — osnova ocjene značajnosti i rangiranja rizika radi odluke o tretmanu.",
+        "explanation": "Što je prihvatljivo, a što nije."
+      },
+      {
+        "question": "Kako se postupa prema ocjeni rizika?",
+        "answer": "Niska ocjena (umnožak 1–2): ne mora se djelovati, ali se prati. Visok rizik (3–4): djelovati i definirati tretman. Ekstreman rizik (6–9): brzo, hitno djelovanje.",
+        "explanation": "Broj, opseg i prioritet aktivnosti proizlaze iz ocjene."
+      },
+      {
+        "question": "Koje su opcije za TRETMAN rizika?",
+        "answer": "Izbjegavanje rizika, preuzimanje rizika radi prilike, uklanjanje izvora, mijenjanje vjerojatnosti ili posljedica, dijeljenje s drugim dionicima i prihvaćanje rizika.",
+        "explanation": "Šest opcija (ISO 31000)."
+      },
+      {
+        "question": "Kada se rizik prihvaća, izbjegava ili dijeli?",
+        "answer": "Prihvaća: mala vjerojatnost i posljedica ili preskupa prevencija. Izbjegava: velika vjerojatnost i velika šteta. Dijeli: mala vjerojatnost, velika posljedica (osiguranje).",
+        "explanation": "Visoka vjerojatnost + srednja/velika posljedica → smanjenje/kontrola."
+      },
+      {
+        "question": "Što treba odrediti za svaku aktivnost vezanu uz rizik?",
+        "answer": "Odgovornu osobu i rok; zatim periodično provjeravati status i učinkovitost i po potrebi otvarati nove aktivnosti. Odabir balansira troškove, napor i koristi.",
+        "explanation": "Uz zakonske i regulatorne zahtjeve."
+      },
+      {
+        "question": "Koje prilike mogu proizaći iz analize rizika?",
+        "answer": "Novi postupci i metode rada, novi proizvodi, nova tržišta i kupci, nove tehnologije i širenje partnerskih odnosa.",
+        "explanation": "Rizik i prilika dvije su strane istog novčića."
+      },
+      {
+        "question": "Što je PREVENTIVNA radnja (ISO 9000:2015)?",
+        "answer": "Radnja za uklanjanje uzroka MOGUĆE nesukladnosti ili druge moguće neželjene situacije; poduzima se PRIJE njezina nastanka.",
+        "explanation": "Navesti i rok za realizaciju."
+      },
+      {
+        "question": "Što je POPRAVNA (korektivna) radnja (ISO 9000:2015)?",
+        "answer": "Radnja za uklanjanje uzroka i sprječavanje ponavljanja nesukladnosti; poduzima se NAKON što se nesukladnost dogodi.",
+        "explanation": "Preventivna = prije · popravna = poslije."
+      },
+      {
+        "question": "Koje su skupine potencijalnih rizika putničkih agencija?",
+        "answer": "Ekonomski, organizacijski (interni poslovni), okolišni, konkurentnost, političko-pravni i infrastrukturni rizici.",
+        "explanation": "Npr. ekonomski: cijena rada, inflacija, kamate, tečaj."
+      },
+      {
+        "question": "Kako se osigurava sigurnost gosta?",
+        "answer": "Upravljanjem rizicima; sigurnost obuhvaća zaštitu života, zdravlja i imovine gosta.",
+        "explanation": "Ispitno pitanje (2. kolokvij)."
+      },
+      {
+        "question": "Na koju se normu oslanja proces upravljanja rizicima?",
+        "answer": "ISO 31000 — Upravljanje rizicima — Načela i smjernice.",
+        "explanation": "Iz nje su koraci, kriteriji i opcije tretmana."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "hxsqe3",
+        "question": "Rizik je:",
+        "options": [
+          "isključivo financijski gubitak",
+          "sigurni događaj",
+          "učinak neizvjesnosti na očekivani rezultat",
+          "zahtjev kupca"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "9i5q6y",
+        "question": "U širem smislu rizik znači:",
+        "options": [
+          "samo opasnost od štete",
+          "siguran gubitak",
+          "nemogućnost poslovanja",
+          "mogućnost drukčijeg ishoda, boljeg ili lošijeg, od očekivanog"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "vdiq61",
+        "question": "U kojem je izdanju ISO 9001 koncept rizika eksplicitno ugrađen u SUK?",
+        "options": [
+          "2015.",
+          "1987.",
+          "2000.",
+          "2008."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "s2ubxg",
+        "question": "Preventivni postupci nadzora služe:",
+        "options": [
+          "otkrivanju pogrešaka tek nakon isporuke usluge",
+          "smanjenju negativnih učinaka i korištenju prilika",
+          "ukidanju planiranja",
+          "izbjegavanju audita"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "dtv1pl",
+        "question": "Planiranje mjera vezanih uz rizike i prilike te ocjenu njihove djelotvornosti traži zahtjev:",
+        "options": [
+          "7 Podrška",
+          "4 Kontekst",
+          "6 Planiranje",
+          "10 Poboljšanje"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "j0uv8n",
+        "question": "Vanjski kontekst NE uključuje:",
+        "options": [
+          "ekonomske čimbenike",
+          "zakonske čimbenike",
+          "kulturološke čimbenike",
+          "organizacijsku strukturu"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "wsjppx",
+        "question": "Što pripada unutarnjem kontekstu?",
+        "options": [
+          "ovlasti i odgovornosti",
+          "politička stabilnost",
+          "valutni tečaj",
+          "klimatski uvjeti"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "6urfiw",
+        "question": "Koji su elementi SWOT analize INTERNI?",
+        "options": [
+          "prilike i prijetnje",
+          "snage i slabosti",
+          "snage i prilike",
+          "slabosti i prijetnje"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "m7wt2h",
+        "question": "U SWOT analizi putničke agencije „sezonalnost\" i „terorizam\" su:",
+        "options": [
+          "snage",
+          "slabosti",
+          "prijetnje",
+          "prilike"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "sqmgp9",
+        "question": "Što NIJE zainteresirana strana putničke agencije?",
+        "options": [
+          "turoperatori",
+          "turističke zajednice",
+          "prijevoznici",
+          "interni priručnik kvalitete agencije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "lg1zel",
+        "question": "Prvi korak procesa upravljanja rizicima je:",
+        "options": [
+          "utvrđivanje vanjskog i unutarnjeg konteksta",
+          "tretman rizika",
+          "prihvaćanje rizika",
+          "certifikacija"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "p7eo38",
+        "question": "Koraci ocjene rizika redom su:",
+        "options": [
+          "analiza, tretman, identifikacija",
+          "identifikacija, analiza, vrednovanje",
+          "vrednovanje, identifikacija, analiza",
+          "planiranje, provedba, provjera"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "326epd",
+        "question": "U identifikaciji rizika važno je uočiti i rizike koji su rezultat:",
+        "options": [
+          "certifikacije",
+          "politike kvalitete",
+          "neiskorištenih prilika",
+          "Annex SL strukture"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "g12szu",
+        "question": "Rizik s vjerojatnošću 3 i posljedicom 2 ima ocjenu (umnožak):",
+        "options": [
+          "5",
+          "1",
+          "9",
+          "6"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "0xgo8d",
+        "question": "U vrednovanju rizika rezultati analize uspoređuju se s:",
+        "options": [
+          "kriterijima rizika",
+          "cijenama konkurencije",
+          "politikom kvalitete",
+          "brojem zaposlenih"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "10i8c7",
+        "question": "Za ekstremne rizike (umnožak 6–9) potrebno je:",
+        "options": [
+          "samo praćenje",
+          "brzo djelovanje i hitno poduzimanje aktivnosti",
+          "ništa ne poduzimati",
+          "čekati sljedeći audit"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "dt2g0c",
+        "question": "Što NIJE opcija tretmana rizika?",
+        "options": [
+          "uklanjanje izvora rizika",
+          "dijeljenje rizika s drugim dionicima",
+          "prikrivanje rizika od uprave",
+          "prihvaćanje rizika"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "fjt06u",
+        "question": "Osiguranje (polica) primjer je:",
+        "options": [
+          "izbjegavanja rizika",
+          "uklanjanja izvora rizika",
+          "prihvaćanja rizika",
+          "dijeljenja rizika"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "wjpuru",
+        "question": "Za svaku aktivnost vezanu uz rizik potrebno je odrediti:",
+        "options": [
+          "odgovornu osobu i rok",
+          "samo trošak",
+          "samo naziv",
+          "ništa, dovoljna je analiza"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "qvb5vd",
+        "question": "Što od navedenog je primjer PRILIKE iz analize rizika?",
+        "options": [
+          "veći broj reklamacija",
+          "ulazak na nova tržišta",
+          "zastoji u procesu",
+          "gubitak dobavljača"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "uac1dj",
+        "question": "Preventivna radnja poduzima se:",
+        "options": [
+          "nakon nastanka nesukladnosti",
+          "samo pri certifikaciji",
+          "prije nastanka nesukladnosti",
+          "nikad"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "apk3cq",
+        "question": "Inflacija, kamatne stope i tečaj spadaju u rizike:",
+        "options": [
+          "okolišne",
+          "infrastrukturne",
+          "organizacijske",
+          "ekonomske"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "bhf80y",
+        "question": "Sigurnost i zaštitu gosta moguće je osigurati:",
+        "options": [
+          "upravljanjem rizicima",
+          "Paretovim dijagramom",
+          "politikom cijena",
+          "marketingom"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "0mp1sb",
+        "question": "Norma „Upravljanje rizicima — Načela i smjernice\" je:",
+        "options": [
+          "ISO 9001",
+          "ISO 31000",
+          "ISO 19011",
+          "ISO 22483"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "duepci",
+        "sentence": "Prilika je moguća situacija _______ za ostvarenje ciljeva.",
+        "answer": "pogodna",
+        "hint": "povoljna"
+      },
+      {
+        "id": "vfi2wd",
+        "sentence": "Cilj SUK-a je osigurati _______ kupaca da ćemo ispuniti njihove zahtjeve prvi i svaki sljedeći put.",
+        "answer": "povjerenje",
+        "hint": "vjera u nas"
+      },
+      {
+        "id": "lsmxit",
+        "sentence": "Slovo T u PEST analizi označava _______ okruženje.",
+        "answer": "tehnološko",
+        "hint": "tehnologija"
+      },
+      {
+        "id": "eyyuct",
+        "sentence": "Kriteriji rizika definiraju se na početku procesa i trebaju se _______ revidirati.",
+        "answer": "kontinuirano",
+        "hint": "stalno"
+      },
+      {
+        "id": "n01zov",
+        "sentence": "Ocjena rizika uključuje identifikaciju, analizu i _______ rizika.",
+        "answer": "vrednovanje",
+        "hint": "treći korak"
+      },
+      {
+        "id": "0gdoii",
+        "sentence": "Rizik = vjerojatnost × _______.",
+        "answer": "posljedica",
+        "hint": "učinak događaja"
+      },
+      {
+        "id": "rm2l6k",
+        "sentence": "Kod visoke vjerojatnosti i srednje ili velike posljedice rizik se tretira njegovim _______ (kontrolom).",
+        "answer": "smanjenjem",
+        "hint": "umanjivanjem"
+      },
+      {
+        "id": "3al7ws",
+        "sentence": "Popravna radnja poduzima se _______ što se nesukladnost dogodi.",
+        "answer": "nakon",
+        "hint": "poslije"
+      }
+    ],
+    "learn": {
+      "title": "Upravljanje rizicima",
+      "content": "\n<h3>Upravljanje rizicima i ISO 9001</h3>\n<p><em>Izvor: e-materijali kolegija (stručni članak „Upravljanje rizicima i ISO 9001\" i materijal za praktični zadatak „Rizici\"); sigurnost gosta iz ispitnih pitanja.</em></p>\n<p>Jačanje konkurencije i sve zahtjevniji kupci potiču primjenu sustava upravljanja kvalitetom u proizvodnom i uslužnom sektoru. Najčešće korišten međunarodni okvir je <strong>ISO 9001</strong>; revizija iz <strong>2015.</strong> naglasila je načela, procesni pristup, PDCA i <strong>razmišljanje temeljeno na riziku</strong> — koncept rizika tada je <strong>eksplicitno naveden i ugrađen</strong> u SUK.</p>\n\n<h4>Što je rizik?</h4>\n<ul>\n<li><strong>U užem smislu</strong> (tradicionalno): opasnost od gubitka ili štete.</li>\n<li><strong>U širem smislu</strong>: mogućnost drukčijeg ishoda, boljeg ili lošijeg, od očekivanog.</li>\n<li><strong>Učinak neizvjesnosti na očekivani rezultat</strong> — vjerojatnost da se nešto neće dogoditi onako kako smo očekivali; odstupanje može biti <strong>pozitivno ili negativno</strong>.</li>\n</ul>\n<p><strong>Rizik</strong> = nesigurnost u postizanju ciljeva; <strong>prilika</strong> = moguća situacija pogodna za ostvarenje ciljeva. Pristup utemeljen na rizicima omogućuje organizaciji da odredi čimbenike zbog kojih bi procesi i SUK mogli odstupiti od planiranih rezultata; organizacija uspostavlja <strong>preventivne postupke nadzora</strong> da smanji negativne učinke i najbolje iskoristi prilike čim se ukažu.</p>\n<p>Cilj SUK-a je <strong>osigurati povjerenje kupaca da ćemo ispuniti njihove zahtjeve prvi i svaki sljedeći put</strong>.</p>\n\n<h4>Rizici kroz zahtjeve ISO 9001</h4>\n<ul>\n<li><strong>4 Kontekst</strong> — utvrditi vanjsko i unutarnje okruženje koje može utjecati na ciljeve.</li>\n<li><strong>5 Vodstvo</strong> — vodstvo promiče procesni pristup i pristup temeljen na rizicima.</li>\n<li><strong>6 Planiranje</strong> — planirati aktivnosti za rizike i prilike, integrirati mjere u procese SUK-a i ocjenjivati njihovu djelotvornost.</li>\n<li><strong>8 Radni proces</strong> — procesi koji se bave rizicima.</li>\n<li><strong>9 Vrednovanje</strong> — praćenje učinkovitosti mjera vezanih uz rizike i prilike.</li>\n</ul>\n\n<h4>Kontekst: vanjski, unutarnji, zainteresirane strane</h4>\n<p><strong>Vanjski kontekst</strong> — vanjski čimbenici na međunarodnoj, regionalnoj, nacionalnoj i lokalnoj razini: ekonomski, politički, društveni, zakonski, kulturološki. <strong>Unutarnji kontekst</strong> — kultura i vrijednosti, organizacijska struktura, ovlasti i odgovornosti, organizacijsko znanje, strategija, politika, ciljevi i rezultati poslovanja.</p>\n<p>Metode analize: <strong>SWOT</strong> (interni čimbenici — snage i slabosti; eksterni — prilike i prijetnje; vrednuje usklađenost sposobnosti poduzeća s uvjetima okoline) i <strong>PEST</strong> (prilike i prijetnje iz <strong>P</strong>olitičko-pravnog, <strong>E</strong>konomskog, <strong>S</strong>ocijalno-kulturnog i <strong>T</strong>ehnološkog okruženja).</p>\n<table>\n<tr><th colspan=\"2\">Primjer SWOT analize za putničku agenciju</th></tr>\n<tr><td><strong>Snage:</strong> destinacija, educirano osoblje, udio na tržištu, poznavanje tržišta, partnerski odnosi, kvaliteta usluga, ponuda u pred- i posezoni, ulaganje u zaposlenike, zadovoljni zaposlenici i klijenti, stalni klijenti, brand, inovativnost, specijalizacija</td><td><strong>Slabosti:</strong> manjak zaposlenika, nedostatak kvalificiranih zaposlenika, nekonkurentne cijene, slaba zastupljenost na tržištu, malo ulaganja u promociju, neoptimizirani procesi, nepraćenje trendova, nefleksibilnost, rizični financijski aranžmani, neadekvatno nagrađivanje, nepouzdani dobavljači</td></tr>\n<tr><td><strong>Prilike:</strong> ekološki prihvatljiva destinacija, nove atrakcije, slabljenje konkurencije, EU sufinanciranje, novi kanali prodaje, nova tržišta i proizvodi, pojednostavljenje viznog režima, prometna povezanost, politička stabilnost, sigurnost, klima, nove tehnologije, platežna moć emitivnih tržišta</td><td><strong>Prijetnje:</strong> sezonalnost, elementarne nepogode, politička nestabilnost, terorizam, tečajne razlike, zakonska regulativa, porast cijena, gubitak kupaca i dobavljača, konkurencija, uvođenje viznog režima, migrantska kriza, dumping, birokracija, siva ekonomija</td></tr>\n</table>\n<p><strong>Zainteresirane strane</strong> (dionici): zaposlenici, kupci, vlasnici, lokalna zajednica, regulatorna tijela, banke, hotelijeri, turističke zajednice, vodiči, prijevoznici, sindikati, turoperatori i dr.</p>\n\n<h4>Proces upravljanja rizicima (prema ISO 31000)</h4>\n<p>Proces podrazumijeva <strong>kontinuiranu komunikaciju i konzultacije</strong> sa zainteresiranim stranama. Prvi korak je <strong>utvrđivanje konteksta</strong>, a zatim se definiraju <strong>kriteriji rizika</strong> (na početku, uz kontinuiranu reviziju). Kod kriterija treba voditi računa o: prirodi i vrsti uzroka i posljedica i njihovu mjerenju; definiciji vjerojatnosti; vremenskom okviru; načinu određivanja razine rizika; zainteresiranim stranama; razini kod koje rizik postaje prihvatljiv.</p>\n<div class=\"formula-box\">OCJENA RIZIKA = 1. IDENTIFIKACIJA → 2. ANALIZA → 3. VREDNOVANJE → tretman rizika → praćenje učinkovitosti</div>\n<ol>\n<li><strong>Identifikacija rizika</strong> — pronaći, prepoznati i opisati rizike koji mogu negativno utjecati na ciljeve: izvori (unutarnji i vanjski), područja utjecaja, događaji (novi ili promijenjeni uvjeti), uzroci i posljedice. Važno je uočiti i rizike koji su rezultat <strong>neiskorištenih prilika</strong>.</li>\n<li><strong>Analiza rizika</strong> — razumijevanje rizika, input za vrednovanje: utvrđuju se posljedice i vjerojatnost nastanka. <strong>RIZIK = VJEROJATNOST × POSLJEDICA</strong>; rezultat je rangiranje (prioriteti).</li>\n<li><strong>Vrednovanje rizika</strong> — rezultati analize uspoređuju se s kriterijima rizika; osnova za ocjenu značajnosti i rangiranje radi odluke o tretmanu.</li>\n</ol>\n<table>\n<tr><th>Ocjena</th><th>Posljedica</th><th>Vjerojatnost</th></tr>\n<tr><td>1</td><td>mala — manja kašnjenja, povremeni kratki zastoji, povremene manje pogreške</td><td>niska — nastanak događaja nije vjerojatan</td></tr>\n<tr><td>2</td><td>umjerena — veća kašnjenja, veći broj reklamacija, češći zastoji</td><td>srednja — događaj ponekad može nastati</td></tr>\n<tr><td>3</td><td>velika — proces ne funkcionira, velik broj reklamacija, nezadovoljstvo korisnika</td><td>visoka — događaj se pojavljuje u većini slučajeva</td></tr>\n</table>\n<p><strong>Postupanje prema ocjeni:</strong> umnožak <strong>1–2</strong> (niži rizik) — ne mora se djelovati, ali se prati; <strong>3–4</strong> (visok) — djelovati i definirati tretman; <strong>6–9</strong> (ekstreman) — brzo djelovanje i hitno poduzimanje aktivnosti. Za svaku aktivnost odrediti <strong>odgovornu osobu i rok</strong>, periodično provjeravati status i učinkovitost te po potrebi otvarati nove aktivnosti.</p>\n<p>Iz analize mogu proizaći i <strong>prilike</strong>: novi postupci i metode rada, novi proizvodi, nova tržišta i kupci, nove tehnologije, širenje partnerstava.</p>\n\n<h4>Tretman rizika</h4>\n<ul>\n<li>izbjegavanje rizika · preuzimanje rizika kako se ne bi propustila prilika · uklanjanje izvora rizika · mijenjanje vjerojatnosti ili posljedica · dijeljenje rizika s drugim dionicima · prihvaćanje rizika.</li>\n</ul>\n<table>\n<tr><th>Strategija</th><th>Kada</th></tr>\n<tr><td>prihvatiti</td><td>vjerojatnost i posljedica vrlo male ili su troškovi prevencije neopravdani/preskupi</td></tr>\n<tr><td>izbjeći</td><td>velika vjerojatnost i velike štetne posljedice</td></tr>\n<tr><td>dijeliti</td><td>mala vjerojatnost, velika posljedica (npr. <strong>osiguranje</strong>)</td></tr>\n<tr><td>smanjiti / kontrolirati</td><td>visoka vjerojatnost i srednja ili velika posljedica</td></tr>\n</table>\n<p>Pri odabiru rješenja balansira se između troškova i napora implementacije i koristi, uz zakonske i regulatorne zahtjeve.</p>\n\n<h4>Preventivna i popravna radnja (ISO 9000:2015)</h4>\n<table>\n<tr><th>Preventivna radnja</th><th>Popravna (korektivna) radnja</th></tr>\n<tr><td>uklanja uzrok <strong>moguće</strong> nesukladnosti ili druge moguće neželjene situacije; poduzima se <strong>prije</strong> nastanka</td><td>uklanja uzrok nesukladnosti i <strong>sprječava ponavljanje</strong>; poduzima se <strong>nakon</strong> što se dogodi</td></tr>\n</table>\n<p>Uz svaku je radnju važno navesti i <strong>rok za realizaciju</strong>.</p>\n\n<h4>Primjeri potencijalnih rizika putničkih agencija</h4>\n<table>\n<tr><th>Skupina</th><th>Primjeri</th></tr>\n<tr><td>ekonomski</td><td>cijena rada, inflacija, troškovi transporta, kamatne stope, tečaj</td></tr>\n<tr><td>organizacijski (interni poslovni)</td><td>malo ulaganja u nove proizvode, nedostatak edukacija, promjene u zahtjevima turista, nemogućnost ispunjenja zahtjeva, nepovjerenje zaposlenika, stres, prekovremeni sati, pritužbe kupaca</td></tr>\n<tr><td>okolišni</td><td>zagađenje vode i zraka, klimatske promjene, prirodne katastrofe, požari</td></tr>\n<tr><td>konkurentnost</td><td>ponuda i cijene konkurenata, blizina konkurenata, tehnološke promjene (rezervacijski sustavi), lokacija, imidž zemlje/destinacije</td></tr>\n<tr><td>političko-pravni</td><td>politička nestabilnost u susjedstvu, legislativa, terorizam, ratovi/konflikti, politička situacija u zemlji</td></tr>\n<tr><td>infrastrukturni</td><td>sigurnost zračnog prijevoza, nedostatak kvalificiranog osoblja, sigurnost prometnica</td></tr>\n</table>\n\n<h4>Sigurnost gosta (ispitno pitanje)</h4>\n<p>Sigurnost i zaštitu gosta moguće je osigurati <strong>upravljanjem rizicima</strong>; sigurnost znači zaštitu <strong>života, zdravlja i imovine</strong> gosta.</p>\n",
+      "id": "mzu6h5"
+    },
+    "id": "yu63j1"
+  },
+  "troskoviRezultatiTqm": {
+    "name": "Rezultati primjene TQM-a i troškovi kvalitete",
+    "icon": "fa-chart-line",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Koje su skupine troškova kvalitete (PAF model)?",
+        "answer": "Troškovi prevencije, troškovi procjene (ocjenjivanja), troškovi unutarnjih (internih) pogrešaka i troškovi vanjskih (eksternih) pogrešaka.",
+        "explanation": "Feigenbaumove četiri grupe (PAF: Prevention–Appraisal–Failure)."
+      },
+      {
+        "question": "Što su troškovi PREVENCIJE?",
+        "answer": "Troškovi sprječavanja pogrešaka i održavanja propusta na minimumu: planiranje kvalitete, obuka zaposlenika, preventivno održavanje, ocjena dobavljača.",
+        "explanation": "Ispitno pitanje: „troškovi koji se nameću zbog održavanja propusta na minimumu\" — troškovi preventive."
+      },
+      {
+        "question": "Što su troškovi PROCJENE (ocjenjivanja)?",
+        "answer": "Troškovi mjerenja i ocjenjivanja kvalitete: inspekcija i testiranje, auditi, kontrola ulaznih materijala, ankete zadovoljstva.",
+        "explanation": "Plaćaju otkrivanje, ne sprječavanje."
+      },
+      {
+        "question": "Što su troškovi UNUTARNJIH pogrešaka?",
+        "answer": "Troškovi pogrešaka otkrivenih prije nego proizvod/usluga stigne do kupca: otpad, dorada, ponovni rad, zastoji (npr. ponovno pospremanje sobe).",
+        "explanation": "Kupac ih ne vidi."
+      },
+      {
+        "question": "Što su troškovi VANJSKIH pogrešaka?",
+        "answer": "Troškovi pogrešaka otkrivenih nakon isporuke kupcu: reklamacije, povrati, popusti i kompenzacije, jamstva, gubitak kupaca i ugleda.",
+        "explanation": "Najskuplja skupina."
+      },
+      {
+        "question": "Što su TROŠKOVI NEKVALITETE?",
+        "answer": "Troškovi unutarnjih i vanjskih pogrešaka — sve što košta zato što posao nije obavljen dobro prvi put.",
+        "explanation": "Ispitno pitanje: „nabrojati troškove nekvalitete\"."
+      },
+      {
+        "question": "Što su troškovi usklađenosti (dobre kvalitete)?",
+        "answer": "Troškovi prevencije i procjene — ulaganje kojim se osigurava da posao bude obavljen dobro.",
+        "explanation": "Kvaliteta = troškovi usklađenosti + troškovi neusklađenosti."
+      },
+      {
+        "question": "Kako se ponašaju troškovi pogreške s vremenom otkrivanja?",
+        "answer": "Pogreška je to skuplja što je kasnije otkrivena — najskuplja kad je otkrije kupac. Zato ulaganje u prevenciju smanjuje ukupne troškove kvalitete.",
+        "explanation": "Veza s Crosbyjevim „kvaliteta je besplatna\"."
+      },
+      {
+        "question": "Kako je Juran opisao troškove loše kvalitete?",
+        "answer": "Kao „zlato u rudniku\" — skriveni izvor ušteda koji se iskorištava poboljšanjem kvalitete.",
+        "explanation": "Juran, Quality Control Handbook."
+      },
+      {
+        "question": "Kako kvaliteta smanjuje troškove?",
+        "answer": "Manje pogrešaka, dorade, otpada i reklamacija → niži troškovi nekvalitete, bolje iskorištenje resursa i veća produktivnost.",
+        "explanation": "Ispitno pitanje (otvoreno)."
+      },
+      {
+        "question": "Kako kvaliteta utječe na prihode?",
+        "answer": "Zadovoljni kupci se vraćaju, preporučuju i spremni su platiti više → veći udio na tržištu, veći prihodi i profit.",
+        "explanation": "Ispitno pitanje: „Objasni utjecaj kvalitete na prihode.\""
+      },
+      {
+        "question": "Što je Demingova lančana reakcija?",
+        "answer": "Poboljšanje kvalitete → niži troškovi (manje dorade i pogrešaka) → veća produktivnost → osvajanje tržišta boljom kvalitetom i nižom cijenom → opstanak → više radnih mjesta.",
+        "explanation": "Kvaliteta i troškovi nisu suprotnosti."
+      },
+      {
+        "question": "Koje ciljeve osigurava TQM?",
+        "answer": "Dugoročni uspjeh kroz zadovoljstvo kupaca te dobrobit svih članova organizacije i društva, uz sudjelovanje svih članova organizacije.",
+        "explanation": "Klasična definicija TQM-a (ISO 8402)."
+      },
+      {
+        "question": "Koje su koristi (rezultati) primjene TQM-a?",
+        "answer": "Interne: bolja kvaliteta i učinkovitost, motivacija, manji troškovi. Eksterne: zadovoljniji kupci, bolji ugled, veći udio na tržištu, konkurentska prednost.",
+        "explanation": "Rezultati se mjere pokazateljima."
+      },
+      {
+        "question": "Koji su pokazatelji uspješnosti poslovanja za kadrove?",
+        "answer": "Broj ostvarenih noćenja po zaposleniku i prihod po zaposleniku.",
+        "explanation": "Ispitna pitanja (grupe A i B)."
+      },
+      {
+        "question": "Koje su glavne nagrade za kvalitetu?",
+        "answer": "Demingova nagrada (Japan, 1951.), Malcolm Baldrige National Quality Award (SAD, 1987.) i EFQM model izvrsnosti (1991.) s Europskom nagradom za kvalitetu (od 1992.).",
+        "explanation": "Nagrade potvrđuju rezultate TQM-a."
+      },
+      {
+        "question": "Što je nagrada Malcolm Baldrige (MBNQA)?",
+        "answer": "Američka nacionalna nagrada za kvalitetu ustanovljena 1987.; kriterije je pomogao definirati Juran (1986.).",
+        "explanation": "Ispitno pitanje: godina uvođenja MBNQA."
+      },
+      {
+        "question": "Koji je hotelski lanac prvi dobio nagradu Malcolm Baldrige?",
+        "answer": "The Ritz-Carlton Hotel Company — 1992. (ponovno 1999.).",
+        "explanation": "Ispitno pitanje (grupa C)."
+      },
+      {
+        "question": "Što je EFQM?",
+        "answer": "Europska zaklada za upravljanje kvalitetom (osnovana 1988.); model izvrsnosti uveden 1991., Europska nagrada za kvalitetu dodjeljuje se od 1992.",
+        "explanation": "Ispitno pitanje: „Koje godine je uveden EFQM? — 1991.\""
+      }
+    ],
+    "quiz": [
+      {
+        "id": "5g2rz1",
+        "question": "PAF model troškova kvalitete NE sadrži troškove:",
+        "options": [
+          "prevencije",
+          "procjene",
+          "promocije",
+          "pogrešaka"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "1mi738",
+        "question": "Troškovi koji nastaju radi održavanja propusta na minimumu su troškovi:",
+        "options": [
+          "vanjskih pogrešaka",
+          "unutarnjih pogrešaka",
+          "amortizacije",
+          "prevencije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "vpct0e",
+        "question": "Trošak provedbe internog audita i ankete zadovoljstva gostiju je trošak:",
+        "options": [
+          "procjene",
+          "vanjske pogreške",
+          "unutarnje pogreške",
+          "investicije"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "t0qe7l",
+        "question": "Ponovno pospremanje sobe prije dolaska gosta jer nije zadovoljila standard je trošak:",
+        "options": [
+          "vanjske pogreške",
+          "unutarnje pogreške",
+          "prevencije",
+          "procjene"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "uup4va",
+        "question": "Troškovi nekvalitete obuhvaćaju troškove:",
+        "options": [
+          "prevencije i procjene",
+          "marketinga",
+          "unutarnjih i vanjskih pogrešaka",
+          "plaća uprave"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "ah6mux",
+        "question": "Pogreška je najskuplja kad je otkrije:",
+        "options": [
+          "zaposlenik u procesu",
+          "interni auditor",
+          "planer",
+          "kupac"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "uq4ccv",
+        "question": "Juran je troškove loše kvalitete usporedio sa:",
+        "options": [
+          "zlatom u rudniku",
+          "ribljom kosti",
+          "ledenim brijegom bez dna",
+          "krugom kvalitete"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ykk60q",
+        "question": "Kvaliteta smanjuje troškove ponajprije jer:",
+        "options": [
+          "povećava broj kontrola",
+          "smanjuje pogreške, doradu, otpad i reklamacije",
+          "podiže cijene",
+          "smanjuje broj kupaca"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zv55m9",
+        "question": "Prvi korak Demingove lančane reakcije je:",
+        "options": [
+          "povećanje cijena",
+          "otpuštanje zaposlenika",
+          "poboljšanje kvalitete",
+          "širenje na nova tržišta"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "1k8nqu",
+        "question": "Prema klasičnoj definiciji TQM je usmjeren na dugoročni uspjeh kroz:",
+        "options": [
+          "najnižu cijenu na tržištu",
+          "smanjenje broja zaposlenih",
+          "samo certifikaciju",
+          "zadovoljstvo kupaca i dobrobit članova organizacije i društva"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "aba25g",
+        "question": "Što je EKSTERNA korist primjene TQM-a?",
+        "options": [
+          "veći udio na tržištu i bolji ugled",
+          "bolja interna komunikacija",
+          "veća motivacija zaposlenika",
+          "efikasniji interni procesi"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "emaizx",
+        "question": "Pokazatelj uspješnosti poslovanja za kadrove u hotelu je:",
+        "options": [
+          "broj zvjezdica",
+          "broj ostvarenih noćenja po zaposleniku",
+          "broj soba",
+          "cijena noćenja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "coz432",
+        "question": "Koja nagrada za kvalitetu je najstarija?",
+        "options": [
+          "Malcolm Baldrige",
+          "EFQM",
+          "Demingova nagrada",
+          "sve su iste godine"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zr08ss",
+        "question": "Nagrada Malcolm Baldrige ustanovljena je:",
+        "options": [
+          "1951.",
+          "1991.",
+          "2000.",
+          "1987."
+        ],
+        "correct": 3
+      },
+      {
+        "id": "aaa3nn",
+        "question": "Prvi hotelski lanac koji je dobio nagradu Malcolm Baldrige je:",
+        "options": [
+          "Ritz-Carlton",
+          "Hilton",
+          "Sheraton",
+          "Statler"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "hopl38",
+        "question": "EFQM model izvrsnosti uveden je:",
+        "options": [
+          "1951.",
+          "1991.",
+          "1987.",
+          "2015."
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "glwfll",
+        "sentence": "Reklamacije, kompenzacije i gubitak gostiju su troškovi _______ pogrešaka.",
+        "answer": "vanjskih",
+        "hint": "eksternih"
+      },
+      {
+        "id": "pzkm71",
+        "sentence": "Troškovi prevencije i procjene zajedno čine troškove _______.",
+        "answer": "usklađenosti",
+        "hint": "suprotno od nekvalitete"
+      },
+      {
+        "id": "s67w8g",
+        "sentence": "Zadovoljni kupci se vraćaju i preporučuju, što povećava _______ na tržištu i prihode.",
+        "answer": "udio",
+        "hint": "tržišni ..."
+      }
+    ],
+    "learn": {
+      "title": "Rezultati primjene TQM-a i troškovi kvalitete",
+      "content": "\n<h3>Rezultati primjene TQM-a i troškovi kvalitete</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> tema „Rezultati primjene TQM-a\" je u izvedbenom planu za 2. kolokvij; sadržaj je složen iz ispitnih pitanja, Feigenbaumove podjele troškova (1. kolokvij) i općeg gradiva (PAF model, Juran, Demingova lančana reakcija, nagrade za kvalitetu).</p>\n\n<h4>Troškovi kvalitete — PAF model</h4>\n<p>Feigenbaum je prvi uočio da troškove kvalitete treba <strong>pratiti</strong> ako se njima želi upravljati i podijelio ih je u četiri grupe (model <em>Prevention – Appraisal – Failure</em>):</p>\n<table>\n<tr><th>Skupina</th><th>Što obuhvaća</th><th>Primjer (hotel)</th></tr>\n<tr><td><strong>troškovi prevencije</strong></td><td>sprječavanje pogrešaka, održavanje propusta na minimumu</td><td>obuka osoblja, planiranje kvalitete, preventivno održavanje, ocjena dobavljača</td></tr>\n<tr><td><strong>troškovi procjene</strong> (ocjenjivanja)</td><td>mjerenje i provjera kvalitete</td><td>kontrola soba, inspekcija namirnica, interni audit, ankete gostiju</td></tr>\n<tr><td><strong>troškovi unutarnjih pogrešaka</strong></td><td>pogreške otkrivene <em>prije</em> isporuke kupcu</td><td>ponovno pospremanje sobe, bačena hrana, zastoji</td></tr>\n<tr><td><strong>troškovi vanjskih pogrešaka</strong></td><td>pogreške otkrivene <em>nakon</em> isporuke kupcu</td><td>reklamacije, popusti i kompenzacije, gubitak gosta i ugleda</td></tr>\n</table>\n<div class=\"formula-box\">TROŠKOVI USKLAĐENOSTI = prevencija + procjena · TROŠKOVI NEKVALITETE = unutarnje + vanjske pogreške</div>\n<p>Pogreška je <strong>to skuplja što je kasnije otkrivena</strong> (najskuplja kad je otkrije kupac), pa ulaganje u prevenciju smanjuje ukupne troškove. To je smisao Crosbyjeve tvrdnje da je <em>kvaliteta besplatna</em> — novca stoji nekvaliteta. <strong>Juran</strong> je troškove loše kvalitete usporedio sa <strong>„zlatom u rudniku\"</strong> — skrivenim izvorom ušteda koji se iskorištava poboljšanjem kvalitete. U Paretovoj analizi (ispitno pitanje) često se analiziraju upravo troškovi unutarnjih manjkavosti.</p>\n\n<h4>Kako kvaliteta smanjuje troškove i povećava prihode</h4>\n<ul>\n<li><strong>Troškovi:</strong> manje pogrešaka, dorade, otpada i reklamacija → niži troškovi nekvalitete, bolje iskorištenje resursa, veća produktivnost (interna poboljšanja, 1. kolokvij).</li>\n<li><strong>Prihodi:</strong> zadovoljni kupci se vraćaju, preporučuju organizaciju i spremni su platiti više → veći udio na tržištu, veći prihodi i profit (eksterna poboljšanja).</li>\n</ul>\n<p><strong>Demingova lančana reakcija:</strong> poboljšanje kvalitete → niži troškovi (manje dorade, pogrešaka, kašnjenja) → veća produktivnost → osvajanje tržišta boljom kvalitetom i nižom cijenom → opstanak u poslu → više radnih mjesta.</p>\n\n<h4>Ciljevi i rezultati TQM-a</h4>\n<p>Prema klasičnoj definiciji (ISO 8402) TQM je način upravljanja organizacijom usredotočen na kvalitetu, temeljen na <strong>sudjelovanju svih njezinih članova</strong>, usmjeren na <strong>dugoročni uspjeh kroz zadovoljstvo kupaca</strong> te na <strong>dobrobit svih članova organizacije i društva</strong>. Značajke TQM-a su predanost menadžmenta i sudjelovanje svih, kontinuirana poboljšanja, usmjerenost na kupca i važnost internih kupaca.</p>\n<table>\n<tr><th>Interni rezultati</th><th>Eksterni rezultati</th></tr>\n<tr><td>bolja kvaliteta, učinkovitost i organizacija rada, svijest o kvaliteti, motivacija, bolja interna komunikacija, manji troškovi</td><td>zadovoljniji i lojalniji kupci, bolji ugled i povjerenje, veći udio na tržištu, konkurentska prednost</td></tr>\n</table>\n<p><strong>Pokazatelji uspješnosti poslovanja za kadrove</strong> (ispitna pitanja): <strong>broj ostvarenih noćenja po zaposleniku</strong> i <strong>prihod po zaposleniku</strong>.</p>\n\n<h4>Nagrade za kvalitetu</h4>\n<table>\n<tr><th>Nagrada</th><th>Gdje / kada</th><th>Napomena</th></tr>\n<tr><td>Demingova nagrada</td><td>Japan, 1951. (JUSE)</td><td>priznanje Demingu, promocija kvalitete u Japanu</td></tr>\n<tr><td>Malcolm Baldrige National Quality Award (MBNQA)</td><td>SAD, 1987.</td><td>kriterije pomogao definirati Juran (1986.); prvi hotelski lanac dobitnik: <strong>The Ritz-Carlton Hotel Company, 1992.</strong> (ponovno 1999.)</td></tr>\n<tr><td>EFQM model izvrsnosti</td><td>Europa, model 1991.; Europska nagrada za kvalitetu od 1992.</td><td>Europska zaklada za upravljanje kvalitetom (osnovana 1988.); model je okvir za samoocjenu i nagradu</td></tr>\n</table>\n",
+      "id": "b5r4tb"
+    },
+    "id": "n3hztz"
+  },
+  "alatiKvalitete": {
+    "name": "Alati za upravljanje kvalitetom",
+    "icon": "fa-screwdriver-wrench",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Koji su osnovni (tradicionalni) alati kvalitete?",
+        "answer": "Dijagram tijeka (hodogram), dijagram kretanja, kontrolne karte, Ishikawin dijagram, Paretov dijagram, histogram i dijagram rasipanja.",
+        "explanation": "U drugim podjelama među sedam alata je i kontrolna lista."
+      },
+      {
+        "question": "Što je DIJAGRAM TIJEKA (hodogram)?",
+        "answer": "Grafički prikaz slijeda koraka procesa standardnim simbolima (početak/kraj, aktivnost, odluka); otkriva suvišne korake i uska grla.",
+        "explanation": "Flow chart."
+      },
+      {
+        "question": "Što je DIJAGRAM KRETANJA?",
+        "answer": "Prikaz vrijednosti mjerene veličine kroz vrijeme; otkriva trendove, cikluse i pomake u procesu.",
+        "explanation": "Run chart — kontrolna karta bez kontrolnih granica."
+      },
+      {
+        "question": "Što su KONTROLNE KARTE?",
+        "answer": "Prikaz procesa kroz vrijeme uz središnju liniju te gornju i donju kontrolnu granicu; razlikuju slučajna od posebnih (uzročnih) odstupanja.",
+        "explanation": "Shewhart; temelj statističke kontrole procesa."
+      },
+      {
+        "question": "Čemu služi Ishikawin dijagram?",
+        "answer": "Za otkrivanje uzroka problema: glava ribe je problem, a kosti skupine uzroka (npr. ljudi, metode, materijali, oprema, okolina, mjerenje).",
+        "explanation": "Često ga prethodi brainstorming."
+      },
+      {
+        "question": "Što je PARETOV dijagram?",
+        "answer": "Stupčasti prikaz uzroka poredanih od najvećeg prema najmanjem; načelo 80/20 — oko 20 % uzroka izaziva oko 80 % problema.",
+        "explanation": "Ispitno pitanje: „Pareto dijagram — 20/80\"."
+      },
+      {
+        "question": "Koji su koraci izrade Paretova (ABC) dijagrama?",
+        "answer": "Odluka o problemu, odabir mjerila, određivanje vremenskog razdoblja, prikupljanje podataka, formiranje tablice, crtanje ABC dijagrama, analiza rezultata.",
+        "explanation": "Ispitno pitanje (otvoreno, grupa B)."
+      },
+      {
+        "question": "Što je ABC analiza?",
+        "answer": "Razvrstavanje uzroka u skupine: A (malo uzroka, najveći udio problema), B i C (mnogo uzroka, mali udio); prioritet ima skupina A.",
+        "explanation": "Primjena Paretova načela."
+      },
+      {
+        "question": "Što je HISTOGRAM?",
+        "answer": "Stupčasti prikaz distribucije (raspodjele) podataka — koliko vrijednosti pada u pojedini razred.",
+        "explanation": "Ispitno pitanje: „Koji dijagram prikazuje distribuciju podataka? — histogram.\""
+      },
+      {
+        "question": "Što je DIJAGRAM RASIPANJA (raspršenja)?",
+        "answer": "Prikaz odnosa dviju varijabli točkama; usko je povezan s korelacijom (pozitivna, negativna ili nikakva veza).",
+        "explanation": "Ispitno pitanje: dijagram raspršenja povezan je s korelacijom."
+      },
+      {
+        "question": "Što je KONTROLNA LISTA (ček-lista)?",
+        "answer": "Jednostavan obrazac za sustavno bilježenje i prebrojavanje podataka (npr. vrste pritužbi gostiju po danima).",
+        "explanation": "Check sheet — često prvi korak prikupljanja podataka za Pareto."
+      },
+      {
+        "question": "Koji su „novi\" (menadžerski) alati kvalitete?",
+        "answer": "Dijagram afiniteta, dijagram međuodnosa, dijagram stabla, matrični dijagram, matrica prioriteta, PDPC (dijagram tijeka procesa odlučivanja) i mrežni dijagram.",
+        "explanation": "Služe za neizmjerljive, kvalitativne probleme planiranja."
+      },
+      {
+        "question": "Što je BRAINSTORMING?",
+        "answer": "Tehnika grupnog generiranja što više ideja bez kritike; često se koristi pri izradi Ishikawina dijagrama.",
+        "explanation": "Kritika dolazi tek poslije."
+      },
+      {
+        "question": "Što je BENCHMARKING?",
+        "answer": "Usporedba vlastitih procesa i rezultata s najboljima (konkurentima ili liderima) radi učenja i poboljšanja.",
+        "explanation": "Učenje od najboljih."
+      },
+      {
+        "question": "Kako se alati kvalitete vežu uz PDCA?",
+        "answer": "Podupiru odlučivanje na temelju činjenica: Pareto, Ishikawa i brainstorming u fazi Planiraj; kontrolne karte, histogram i dijagram kretanja u fazi Provjeri.",
+        "explanation": "Alati = činjenice za svaki korak."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "0l662z",
+        "question": "Koji NIJE osnovni (tradicionalni) alat kvalitete?",
+        "options": [
+          "histogram",
+          "Paretov dijagram",
+          "EFQM model",
+          "kontrolna karta"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "57o9i3",
+        "question": "Grafički prikaz slijeda koraka nekog procesa je:",
+        "options": [
+          "histogram",
+          "dijagram rasipanja",
+          "Paretov dijagram",
+          "dijagram tijeka (hodogram)"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "6cjn27",
+        "question": "Dijagram kretanja (run chart) prikazuje:",
+        "options": [
+          "vrijednosti mjerene veličine kroz vrijeme",
+          "uzroke problema",
+          "odnos dviju varijabli",
+          "slijed koraka procesa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "me6lof",
+        "question": "Uzročno-posljedični dijagram služi:",
+        "options": [
+          "prikazu distribucije podataka",
+          "otkrivanju uzroka problema",
+          "praćenju procesa kroz vrijeme",
+          "izračunu troškova"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "nzgxow",
+        "question": "Načelo na kojem se temelji Paretov dijagram je:",
+        "options": [
+          "50/50",
+          "1-10-100",
+          "80/20",
+          "PDCA"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "1ihn5r",
+        "question": "Prvi korak izrade Paretova dijagrama je:",
+        "options": [
+          "crtanje ABC dijagrama",
+          "analiza rezultata",
+          "formiranje tablice",
+          "donošenje odluke o problemu koji će se analizirati"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "dzdxvp",
+        "question": "U ABC analizi prioritet rješavanja ima skupina:",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "sve jednako"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "sbrix3",
+        "question": "Koji dijagram prikazuje distribuciju podataka?",
+        "options": [
+          "Ishikawin dijagram",
+          "histogram",
+          "dijagram tijeka",
+          "kontrolna lista"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "aijyni",
+        "question": "Dijagram raspršenja usko je povezan s:",
+        "options": [
+          "certifikacijom",
+          "PDCA krugom",
+          "korelacijom",
+          "politikom kvalitete"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "qyrwre",
+        "question": "Obrazac za sustavno bilježenje i prebrojavanje podataka je:",
+        "options": [
+          "histogram",
+          "kontrolna karta",
+          "dijagram tijeka",
+          "kontrolna lista"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "u0mxhl",
+        "question": "Dijagram afiniteta pripada:",
+        "options": [
+          "novim (menadžerskim) alatima kvalitete",
+          "tradicionalnim alatima",
+          "normama ISO",
+          "nagradama za kvalitetu"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "c8xp8f",
+        "question": "Osnovno pravilo brainstorminga je:",
+        "options": [
+          "kritizirati svaku ideju",
+          "iznositi ideje bez kritike",
+          "raditi isključivo samostalno",
+          "koristiti samo brojke"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jiy84s",
+        "question": "Usporedba vlastitih procesa s najboljima radi poboljšanja naziva se:",
+        "options": [
+          "kaizen",
+          "audit",
+          "benchmarking",
+          "inspekcija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "ogkx5w",
+        "question": "Kontrolne karte i histogram najčešće se koriste u PDCA fazi:",
+        "options": [
+          "Planiraj",
+          "Djeluj",
+          "nijednoj",
+          "Provjeri"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "o67jgg",
+        "sentence": "Kontrolna karta ima središnju liniju te gornju i donju kontrolnu _______.",
+        "answer": "granicu",
+        "hint": "limit"
+      },
+      {
+        "id": "n9p2ii",
+        "sentence": "Prema Paretovu načelu oko _______ % uzroka izaziva oko 80 % problema.",
+        "answer": "20",
+        "hint": "manjina uzroka"
+      },
+      {
+        "id": "u5t61q",
+        "sentence": "Dijagram rasipanja prikazuje odnos dviju _______.",
+        "answer": "varijabli",
+        "hint": "veličine koje se mijenjaju"
+      }
+    ],
+    "learn": {
+      "title": "Alati za upravljanje kvalitetom",
+      "content": "\n<h3>Alati za upravljanje kvalitetom</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> popis sedam alata je iz predavanja „Pojam i razvoj kvalitete\" (statistička kontrola kvalitete) i Ishikawina dijagrama („Utemeljitelji kvalitete\"); Paretovi koraci, histogram i dijagram raspršenja iz ispitnih pitanja; opisi alata, novi alati, brainstorming i benchmarking su opće, standardno gradivo.</p>\n<p>Alati za upravljanje kvalitetom ostvaruju načelo <strong>donošenja odluka na temelju činjenica</strong> — pretvaraju podatke u sliku iz koje se vidi uzrok, raspodjela ili trend.</p>\n\n<h4>Osnovni (tradicionalni, statistički) alati</h4>\n<table>\n<tr><th>Alat</th><th>Što pokazuje</th></tr>\n<tr><td><strong>Dijagram tijeka / hodogram</strong> (Flow Chart)</td><td>slijed koraka procesa standardnim simbolima (početak/kraj, aktivnost, odluka); otkriva suvišne korake i uska grla</td></tr>\n<tr><td><strong>Dijagram kretanja</strong> (Run Chart)</td><td>vrijednosti mjerene veličine kroz vrijeme — trendovi, ciklusi, pomaci</td></tr>\n<tr><td><strong>Kontrolne karte</strong> (Control Charts)</td><td>proces kroz vrijeme uz središnju liniju i gornju/donju kontrolnu granicu; razlikuju slučajna od posebnih (uzročnih) odstupanja (Shewhart)</td></tr>\n<tr><td><strong>Ishikawin dijagram</strong> (riblja kost)</td><td>uzroci (kosti) koji dovode do problema (glava ribe); skupine uzroka npr. ljudi, metode, materijali, oprema, okolina, mjerenje</td></tr>\n<tr><td><strong>Paretov dijagram</strong></td><td>uzroci poredani od najvećeg prema najmanjem; načelo <strong>80/20</strong></td></tr>\n<tr><td><strong>Histogram</strong></td><td><strong>distribucija (raspodjela) podataka</strong> po razredima</td></tr>\n<tr><td><strong>Dijagram rasipanja / raspršenja</strong> (Scatter)</td><td>odnos dviju varijabli; usko povezan s <strong>korelacijom</strong> (pozitivna, negativna, nikakva)</td></tr>\n</table>\n<p>U nekim podjelama „sedam osnovnih alata\" umjesto dijagrama tijeka ili kretanja uključuje <strong>kontrolnu listu</strong> (check sheet) — jednostavan obrazac za bilježenje i prebrojavanje podataka (npr. vrste pritužbi po danima).</p>\n\n<h4>Paretov dijagram i ABC analiza</h4>\n<p>Paretovo načelo: <strong>oko 20 % uzroka izaziva oko 80 % problema</strong> (troškova, pritužbi). Dijagram je jedan od osnovnih alata za upravljanje kvalitetom. <strong>Koraci izrade</strong> (ispitno pitanje):</p>\n<ol>\n<li>donošenje odluke o problemu koji će se analizirati,</li>\n<li>odabir mjerila,</li>\n<li>određivanje vremenskog razdoblja,</li>\n<li>prikupljanje informacija i podataka,</li>\n<li>formiranje tablice,</li>\n<li>crtanje ABC dijagrama,</li>\n<li>analiza rezultata.</li>\n</ol>\n<p><strong>ABC analiza:</strong> skupina <strong>A</strong> — malo uzroka s najvećim udjelom problema (prioritet); <strong>B</strong> — srednji; <strong>C</strong> — mnogo uzroka s malim udjelom.</p>\n\n<h4>Novi (menadžerski) alati</h4>\n<p>Za kvalitativne probleme planiranja: dijagram afiniteta, dijagram međuodnosa, dijagram stabla, matrični dijagram, matrica prioriteta, PDPC (dijagram tijeka procesa odlučivanja) i mrežni dijagram.</p>\n\n<h4>Ostale tehnike</h4>\n<ul>\n<li><strong>Brainstorming</strong> — grupno generiranje što više ideja bez kritike; često prethodi Ishikawinu dijagramu.</li>\n<li><strong>Benchmarking</strong> — usporedba vlastitih procesa i rezultata s najboljima radi učenja i poboljšanja.</li>\n</ul>\n\n<h4>Alati u PDCA krugu</h4>\n<p><strong>Planiraj</strong> — kontrolna lista, Pareto, Ishikawa, brainstorming (koji je problem najveći i zašto); <strong>Učini</strong> — dijagram tijeka novog postupka; <strong>Provjeri</strong> — kontrolne karte, histogram, dijagram kretanja (je li se proces poboljšao); <strong>Djeluj</strong> — standardizacija postupka.</p>\n",
+      "id": "u4dzsu"
+    },
+    "id": "iaca7p"
+  },
+  "kvalitetaUsluga": {
+    "name": "Upravljanje kvalitetom u uslužnom sektoru",
+    "icon": "fa-bell-concierge",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Koje su karakteristike usluga?",
+        "answer": "Neopipljivost, neodvojivost proizvodnje i potrošnje, heterogenost (varijabilnost) i prolaznost (neuskladištivost).",
+        "explanation": "Ispitna pitanja traže karakteristike hotelske usluge."
+      },
+      {
+        "question": "Što znači NEOPIPLJIVOST usluge?",
+        "answer": "Usluga se ne može vidjeti, opipati ni isprobati prije kupnje, pa gost kvalitetu procjenjuje po opipljivim tragovima (prostor, oprema, osoblje).",
+        "explanation": "Veza s neopipljivim karakteristikama (1. kolokvij)."
+      },
+      {
+        "question": "Što znači NEODVOJIVOST usluge?",
+        "answer": "Usluga se proizvodi i troši istodobno, uz sudjelovanje gosta — zaposlenik u kontaktu s gostom dio je usluge.",
+        "explanation": "Pogreška se ne može „povući\" prije isporuke."
+      },
+      {
+        "question": "Što znači HETEROGENOST usluge?",
+        "answer": "Kvaliteta usluge ovisi o tome tko je, kada i gdje pruža, pa ju je teško ujednačiti — zato se uvode standardi.",
+        "explanation": "Varijabilnost."
+      },
+      {
+        "question": "Što znači PROLAZNOST usluge?",
+        "answer": "Usluga se ne može uskladištiti: neprodana noćenja jučerašnjeg dana trajno su izgubljena.",
+        "explanation": "Neuskladištivost."
+      },
+      {
+        "question": "Zašto su standardi posebno važni u uslugama?",
+        "answer": "Zbog heterogenosti i neodvojivosti: standardi osiguravaju da gost dobije istu kvalitetu prvi i svaki sljedeći put.",
+        "explanation": "Pouzdanost kao dimenzija kvalitete."
+      },
+      {
+        "question": "Što je STANDARD?",
+        "answer": "Dokument donesen konsenzusom i odobren od priznatog tijela koji za opću i višekratnu uporabu daje pravila, upute ili značajke za djelatnosti ili njihove rezultate.",
+        "explanation": "Ispitno pitanje: „Što je standard?\""
+      },
+      {
+        "question": "Što je STANDARDIZACIJA?",
+        "answer": "Djelatnost uspostavljanja odredbi za opću i višekratnu uporabu radi postizanja najboljeg stupnja uređenosti u danom području.",
+        "explanation": "Ispitno pitanje: „Što je standardizacija?\""
+      },
+      {
+        "question": "Kojom fazom počinje proces standardizacije?",
+        "answer": "Propisivanjem standarda; zatim slijede primjena standarda, kontrola njegove primjene i korekcija (revizija) standarda.",
+        "explanation": "Ispitno pitanje: prva faza = propisivanje standarda."
+      },
+      {
+        "question": "Što propisuju STANDARDI RADA?",
+        "answer": "Količinu i kvalitetu učinka, vrijeme, troškove te način oblačenja (izgled) i etiku (ponašanje) zaposlenika.",
+        "explanation": "Ispitna pitanja traže nabrajanje standarda rada."
+      },
+      {
+        "question": "Što su KADROVSKI standardi?",
+        "answer": "Standardi koji se odnose na zaposlenike — potrebna znanja, vještine i osobine za radno mjesto (vidi profigram i psihogram).",
+        "explanation": "Ispitno pitanje: „standard poslovnog rezultata\" NE spada u kadrovske standarde."
+      },
+      {
+        "question": "Što je PROFIGRAM?",
+        "answer": "Prikaz zahtjeva koje radno mjesto ili zanimanje postavlja pred izvršitelja (zadaci, znanja, vještine, uvjeti rada); koristi se pri izboru kadrova.",
+        "explanation": "Ispitno pitanje (grupa A, 2. kolokvij)."
+      },
+      {
+        "question": "Što je PSIHOGRAM (psihograf)?",
+        "answer": "Prikaz koji pokazuje potrebne osobne kvalitete i psihološke karakteristike za obavljanje pojedinog zanimanja.",
+        "explanation": "Ispitno pitanje (grupa B)."
+      },
+      {
+        "question": "Čija je misao „napreduje onaj koji daje malo više i malo bolje usluge\"?",
+        "answer": "Ellsworth M. Statler: „Život je usluga. Napreduje onaj koji svojim bližnjima daje malo više i malo bolje usluge.\"",
+        "explanation": "Ispitno pitanje (grupa A)."
+      },
+      {
+        "question": "Čija je filozofija „dobiti najviše za najmanje\"?",
+        "answer": "Conrada Hiltona — maksimalno iskoristiti svaki prostor i resurs hotela.",
+        "explanation": "Ispitno pitanje (grupa B)."
+      },
+      {
+        "question": "Po čemu je u hotelijerstvu poznat Ernest Henderson?",
+        "answer": "Po poštivanju visokih etičkih standarda (Sheraton); u ispitnim pitanjima vezuje se uz uvođenje etičkog kodeksa i etičkih standarda.",
+        "explanation": "Ispitno pitanje (2. kolokvij, grupa A)."
+      },
+      {
+        "question": "Što je SERVQUAL?",
+        "answer": "Model mjerenja kvalitete usluge kao jaza između očekivane i percipirane usluge, kroz pet dimenzija.",
+        "explanation": "Kvaliteta usluge = percepcija − očekivanje."
+      },
+      {
+        "question": "Koje su dimenzije SERVQUAL modela?",
+        "answer": "Opipljivost, pouzdanost, odgovornost (spremnost na pomoć), sigurnost (povjerenje i stručnost) i empatija.",
+        "explanation": "Pet dimenzija."
+      },
+      {
+        "question": "Kada je gost zadovoljan uslugom?",
+        "answer": "Kad percipirana usluga dosegne ili nadmaši očekivanu; ako je percepcija ispod očekivanja, nastaje jaz kvalitete.",
+        "explanation": "Veza s ISO definicijom zadovoljstva kupca."
+      },
+      {
+        "question": "Što u hotelu znači SIGURNOST?",
+        "answer": "Zaštitu života, zdravlja i imovine gosta.",
+        "explanation": "Ispitno pitanje; osigurava se upravljanjem rizicima."
+      },
+      {
+        "question": "Zašto su zaposlenici ključni za kvalitetu usluge?",
+        "answer": "Zbog neodvojivosti zaposlenik u kontaktu s gostom JE usluga — zato su izbor kadrova, obrazovanje i motivacija presudni.",
+        "explanation": "Unutarnji kupci proizvode kvalitetu."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "o5kf2v",
+        "question": "Što NE spada u karakteristike usluge?",
+        "options": [
+          "mogućnost skladištenja",
+          "neopipljivost",
+          "neodvojivost",
+          "heterogenost"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "h0leg9",
+        "question": "Zbog neopipljivosti gost kvalitetu usluge prije kupnje procjenjuje:",
+        "options": [
+          "isprobavanjem usluge kod kuće",
+          "po opipljivim tragovima (prostor, osoblje, oprema)",
+          "po težini usluge",
+          "po skladištu hotela"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "7p8h2r",
+        "question": "Teškoća ujednačavanja kvalitete jer ovisi o tome tko, kada i gdje uslugu pruža naziva se:",
+        "options": [
+          "neopipljivost",
+          "prolaznost",
+          "heterogenost",
+          "neodvojivost"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "t5n7ch",
+        "question": "Neprodana soba za protekli dan primjer je karakteristike usluge:",
+        "options": [
+          "neopipljivosti",
+          "heterogenosti",
+          "neodvojivosti",
+          "prolaznosti (neuskladištivosti)"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "7ex6z3",
+        "question": "Standardi u uslugama ponajprije osiguravaju:",
+        "options": [
+          "ujednačenu kvalitetu prvi i svaki sljedeći put",
+          "više cijene",
+          "manje gostiju",
+          "ukidanje kontakta s gostom"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "d5oh17",
+        "question": "Standardizacija je djelatnost uspostavljanja odredbi za:",
+        "options": [
+          "jednokratnu uporabu",
+          "opću i višekratnu uporabu radi najboljeg stupnja uređenosti",
+          "samo jednog zaposlenika",
+          "isključivo izvoz"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "sfd5sh",
+        "question": "Prva faza procesa standardizacije je:",
+        "options": [
+          "kontrola primjene",
+          "korekcija standarda",
+          "propisivanje standarda",
+          "certifikacija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "vsaxfi",
+        "question": "Što NIJE element standarda rada?",
+        "options": [
+          "količina učinka",
+          "vrijeme",
+          "troškovi",
+          "tržišni udio hotela"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "0mdn3q",
+        "question": "Što NE spada u kadrovske standarde (ispitno pitanje)?",
+        "options": [
+          "standard poslovnog rezultata",
+          "potrebna znanja za radno mjesto",
+          "potrebne vještine",
+          "osobne karakteristike za zanimanje"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "wp7fpn",
+        "question": "Profigram prikazuje:",
+        "options": [
+          "troškove kvalitete",
+          "zahtjeve koje radno mjesto postavlja pred izvršitelja",
+          "distribuciju podataka",
+          "slijed koraka procesa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fxfnu2",
+        "question": "„Napreduje onaj koji daje malo više i malo bolje usluge\" — čija je to filozofija?",
+        "options": [
+          "Hiltonova",
+          "Hendersonova",
+          "Statlerova",
+          "Crosbyjeva"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zak5qf",
+        "question": "Filozofija „dobiti najviše za najmanje\" pripisuje se:",
+        "options": [
+          "Statleru",
+          "Demingu",
+          "Ishikawi",
+          "Hiltonu"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "f1ztxh",
+        "question": "Hotelijer poznat po poštivanju visokih etičkih standarda je:",
+        "options": [
+          "Ernest Henderson",
+          "Conrad Hilton",
+          "Ellsworth Statler",
+          "Joseph Juran"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "dmhik8",
+        "question": "SERVQUAL mjeri kvalitetu usluge kao:",
+        "options": [
+          "broj zaposlenih",
+          "jaz između očekivane i percipirane usluge",
+          "trošak usluge",
+          "broj certifikata"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "njuya5",
+        "question": "Što NIJE dimenzija SERVQUAL modela?",
+        "options": [
+          "pouzdanost",
+          "empatija",
+          "skladištivost",
+          "opipljivost"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "tr7ubu",
+        "question": "Sigurnost u hotelu obuhvaća zaštitu:",
+        "options": [
+          "samo imovine hotela",
+          "samo podataka",
+          "samo zaposlenika",
+          "života, zdravlja i imovine gosta"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "hzg6hr",
+        "question": "Zbog neodvojivosti usluge za njezinu kvalitetu presudni su:",
+        "options": [
+          "zaposlenici u kontaktu s gostom",
+          "skladišni kapaciteti",
+          "strojevi",
+          "transportni troškovi"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "utsfuz",
+        "sentence": "Neodvojivost znači da se usluga proizvodi i _______ istodobno.",
+        "answer": "troši",
+        "hint": "konzumira"
+      },
+      {
+        "id": "zsafz5",
+        "sentence": "Standard je dokument donesen _______ i odobren od priznatog tijela.",
+        "answer": "konsenzusom",
+        "hint": "općom suglasnošću"
+      },
+      {
+        "id": "09ml1m",
+        "sentence": "Psihogram pokazuje potrebne osobne kvalitete i _______ karakteristike za obavljanje zanimanja.",
+        "answer": "psihološke",
+        "hint": "psiha"
+      },
+      {
+        "id": "gbr30q",
+        "sentence": "Gost je zadovoljan kad percipirana usluga dosegne ili _______ očekivanu.",
+        "answer": "nadmaši",
+        "hint": "premaši"
+      }
+    ],
+    "learn": {
+      "title": "Upravljanje kvalitetom u uslužnom sektoru",
+      "content": "\n<h3>Upravljanje kvalitetom u uslužnom sektoru</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> tema je u izvedbenom planu za 2. kolokvij („Upravljanje kvalitetom u uslužnom sektoru\" i „Standardi i oznake kvalitete u turizmu i ugostiteljstvu\"); hotelski standardi, profigram/psihogram i hotelijeri iz ispitnih pitanja; karakteristike usluga, definicije standarda i SERVQUAL su opće, standardno gradivo.</p>\n\n<h4>Karakteristike usluga</h4>\n<table>\n<tr><th>Karakteristika</th><th>Značenje</th><th>Posljedica za kvalitetu</th></tr>\n<tr><td><strong>neopipljivost</strong></td><td>usluga se ne može vidjeti, opipati ni isprobati prije kupnje</td><td>gost kvalitetu procjenjuje po opipljivim tragovima (prostor, oprema, osoblje)</td></tr>\n<tr><td><strong>neodvojivost</strong></td><td>proizvodnja i potrošnja odvijaju se istodobno, uz sudjelovanje gosta</td><td>zaposlenik u kontaktu s gostom dio je usluge; pogreška se ne može „povući\"</td></tr>\n<tr><td><strong>heterogenost</strong> (varijabilnost)</td><td>kvaliteta ovisi o tome tko, kada i gdje pruža uslugu</td><td>potrebni standardi za ujednačenu kvalitetu</td></tr>\n<tr><td><strong>prolaznost</strong> (neuskladištivost)</td><td>usluga se ne može uskladištiti</td><td>neprodana noćenja trajno su izgubljena</td></tr>\n</table>\n<p>Neopipljive karakteristike usluge (1. kolokvij): brzina i točnost, ljubaznost i stručnost osoblja, dostupnost, pouzdanost.</p>\n\n<h4>Standard, standardizacija i hotelski standardi</h4>\n<ul>\n<li><strong>Standard</strong> — dokument donesen <strong>konsenzusom</strong> i odobren od priznatog tijela koji za opću i višekratnu uporabu daje pravila, upute ili značajke za djelatnosti ili njihove rezultate, radi najboljeg stupnja uređenosti u danom području.</li>\n<li><strong>Standardizacija</strong> — djelatnost uspostavljanja odredbi za <strong>opću i višekratnu uporabu</strong> radi postizanja najboljeg stupnja uređenosti u danom području.</li>\n<li><strong>Proces standardizacije</strong> počinje <strong>propisivanjem standarda</strong> (1. faza, ispitno pitanje), a nastavlja se primjenom standarda, kontrolom primjene i korekcijom (revizijom) standarda.</li>\n<li><strong>Standardi rada</strong> propisuju: količinu i kvalitetu učinka, vrijeme, troškove, način oblačenja (izgled) i etiku (ponašanje) zaposlenika.</li>\n<li><strong>Kadrovski standardi</strong> odnose se na zaposlenike — potrebna znanja, vještine i osobine za radno mjesto. Standard poslovnog rezultata <strong>ne spada</strong> u kadrovske standarde (ispitno pitanje).</li>\n<li><strong>Profigram</strong> — prikaz zahtjeva koje radno mjesto/zanimanje postavlja pred izvršitelja (zadaci, znanja, vještine, uvjeti rada); koristi se pri izboru kadrova.</li>\n<li><strong>Psihogram (psihograf)</strong> — pokazuje potrebne osobne kvalitete i psihološke karakteristike za obavljanje pojedinog zanimanja.</li>\n<li><strong>Sigurnost</strong> u hotelu — zaštita <strong>života, zdravlja i imovine gosta</strong>; osigurava se upravljanjem rizicima.</li>\n</ul>\n<p>Standardi su u uslugama posebno važni zbog heterogenosti i neodvojivosti — osiguravaju <strong>pouzdanost</strong>: istu kvalitetu prvi i svaki sljedeći put. Zaposlenik u kontaktu s gostom <em>jest</em> usluga, pa su izbor kadrova, obrazovanje i motivacija presudni za kvalitetu.</p>\n\n<h4>Hotelijeri i njihove filozofije (ispitna pitanja)</h4>\n<table>\n<tr><th>Hotelijer</th><th>Filozofija</th></tr>\n<tr><td><strong>Ellsworth M. Statler</strong></td><td>„Život je usluga. Napreduje onaj koji svojim bližnjima daje <strong>malo više i malo bolje usluge</strong>.\"</td></tr>\n<tr><td><strong>Conrad Hilton</strong></td><td>„<strong>Dobiti najviše za najmanje</strong>\" — maksimalno iskoristiti svaki prostor i resurs hotela.</td></tr>\n<tr><td><strong>Ernest Henderson</strong> (Sheraton)</td><td>poštivanje <strong>visokih etičkih standarda</strong>; u ispitnim pitanjima vezuje se uz etički kodeks.</td></tr>\n</table>\n\n<h4>Mjerenje kvalitete usluge — SERVQUAL</h4>\n<p>Kvaliteta usluge mjeri se kao <strong>jaz između očekivane i percipirane usluge</strong>: ako percepcija dosegne ili nadmaši očekivanja, gost je zadovoljan. Pet dimenzija:</p>\n<ol>\n<li><strong>opipljivost</strong> — izgled prostora, opreme i osoblja,</li>\n<li><strong>pouzdanost</strong> — obećanu uslugu pružiti točno i dosljedno,</li>\n<li><strong>odgovornost</strong> — spremnost na pomoć i brzu uslugu,</li>\n<li><strong>sigurnost</strong> — stručnost i ljubaznost koje ulijevaju povjerenje,</li>\n<li><strong>empatija</strong> — individualna pažnja prema gostu.</li>\n</ol>\n",
+      "id": "f1mnhq"
+    },
+    "id": "qbv7n4"
+  },
+  "standardiOdrzivosti": {
+    "name": "Standardi i oznake kvalitete u turizmu i ugostiteljstvu",
+    "icon": "fa-leaf",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Kako se kategoriziraju hoteli u Republici Hrvatskoj?",
+        "answer": "Zvjezdicama — hoteli se razvrstavaju u kategorije od dvije do pet zvjezdica prema propisanim minimalnim uvjetima; kategoriju rješenjem utvrđuje ministarstvo nadležno za turizam.",
+        "explanation": "Kategorizacija je obvezna."
+      },
+      {
+        "question": "Jamči li broj zvjezdica kvalitetu usluge?",
+        "answer": "Ne u potpunosti: kategorija propisuje razinu opremljenosti i ponude (minimalne uvjete), a kvaliteta znači ispuniti očekivanja gostiju za tu razinu — svaki put.",
+        "explanation": "Veza s „razinama kvalitete\" iz 1. kolokvija."
+      },
+      {
+        "question": "Što su posebni standardi u kategorizaciji hotela?",
+        "answer": "Dodatne oznake koje hotel može steći uz kategoriju ako ispuni kriterije za određenu vrstu ponude (npr. obiteljski, wellness, kongresni ili hotel baština).",
+        "explanation": "Pokazuju specijalizaciju ponude."
+      },
+      {
+        "question": "Što su oznake (brendovi) kvalitete u turizmu?",
+        "answer": "Dobrovoljne oznake koje dodjeljuju udruge, komore ili turističke organizacije subjektima koji ispune kriterije iznad zakonskog minimuma; gostu signaliziraju kvalitetu.",
+        "explanation": "Razlika od kategorizacije: dobrovoljnost i viši kriteriji."
+      },
+      {
+        "question": "Koje znakove kvalitete dodjeljuje Hrvatska gospodarska komora?",
+        "answer": "Znak „Hrvatska kvaliteta\" (proizvodi i usluge natprosječne kvalitete) i znak „Izvorno hrvatsko\" (hrvatski proizvodi i usluge s dodanom vrijednošću).",
+        "explanation": "Primjer nacionalnih oznaka kvalitete."
+      },
+      {
+        "question": "Što je ODRŽIVI RAZVOJ?",
+        "answer": "Razvoj koji zadovoljava potrebe sadašnjih generacija bez ugrožavanja mogućnosti budućih generacija da zadovolje svoje potrebe.",
+        "explanation": "Izvješće „Naša zajednička budućnost\" (Brundtland, 1987.)."
+      },
+      {
+        "question": "Koje su tri dimenzije (stupa) održivosti?",
+        "answer": "Ekonomska, društvena (sociokulturna) i okolišna (ekološka) — trebaju biti u ravnoteži.",
+        "explanation": "Engl. triple bottom line."
+      },
+      {
+        "question": "Što je EKOLOGIJA?",
+        "answer": "Znanost o odnosima živih bića međusobno i s njihovim okolišem.",
+        "explanation": "Ispitno pitanje (grupa D)."
+      },
+      {
+        "question": "Što je MORAL?",
+        "answer": "Skup nepisanih pravila i vrijednosti o dobrom i lošem ponašanju koje prihvaća neka zajednica; etika je znanost (filozofija) o moralu.",
+        "explanation": "Ispitno pitanje (grupa D)."
+      },
+      {
+        "question": "Što je EKOLOŠKA ŠTETA?",
+        "answer": "Šteta nanesena okolišu (zraku, vodi, tlu, bioraznolikosti) ljudskom djelatnošću — npr. zagađenje, otpad, prekomjerna potrošnja resursa.",
+        "explanation": "Ispitno pitanje (grupa D)."
+      },
+      {
+        "question": "Što je ODRŽIVI TURIZAM (UNWTO)?",
+        "answer": "Turizam koji u potpunosti uzima u obzir sadašnje i buduće ekonomske, društvene i okolišne utjecaje, uz potrebe posjetitelja, industrije, okoliša i domaćina.",
+        "explanation": "Primjena održivog razvoja na turizam."
+      },
+      {
+        "question": "Što je ISO 14001?",
+        "answer": "Sustavi upravljanja okolišem — Zahtjevi; certifikacijska norma za upravljanje utjecajima na okoliš. Slijedi Annex SL pa se lako integrira s ISO 9001.",
+        "explanation": "Okolišni „brat\" norme ISO 9001."
+      },
+      {
+        "question": "Što je ISO 21401:2018?",
+        "answer": "Turističke i srodne usluge — Sustav upravljanja održivošću za smještajne kapacitete — Zahtjevi: okolišni, društveni i ekonomski zahtjevi za smještaj.",
+        "explanation": "Dopunska literatura kolegija (hrvatsko izdanje 2019.)."
+      },
+      {
+        "question": "Što je ISO 22483:2020?",
+        "answer": "Turističke i srodne usluge — Hoteli — Zahtjevi za usluge (osoblje, pružanje usluga, događanja, sigurnost, održavanje, zadovoljstvo gostiju).",
+        "explanation": "Dopunska literatura kolegija."
+      },
+      {
+        "question": "Što je EU Ecolabel?",
+        "answer": "Službena dobrovoljna eko-oznaka Europske unije (cvijet) za proizvode i usluge sa smanjenim utjecajem na okoliš, uključujući turistički smještaj.",
+        "explanation": "Oznaka, ne sustav upravljanja."
+      },
+      {
+        "question": "Što je EMAS?",
+        "answer": "Sustav upravljanja okolišem i neovisnog ocjenjivanja EU (Eco-Management and Audit Scheme); nadograđuje ISO 14001 i traži javnu ekološku izjavu.",
+        "explanation": "Kratica EMAS."
+      },
+      {
+        "question": "Što su GSTC kriteriji?",
+        "answer": "Globalni kriteriji održivog turizma u četiri stupa: održivo upravljanje, socioekonomski, kulturni i okolišni utjecaji.",
+        "explanation": "Global Sustainable Tourism Council."
+      },
+      {
+        "question": "Što je Plava zastava?",
+        "answer": "Međunarodna eko-oznaka za plaže, marine i turističke brodice koje ispunjavaju kriterije kakvoće mora, upravljanja okolišem, sigurnosti i edukacije.",
+        "explanation": "Blue Flag."
+      },
+      {
+        "question": "Zašto uvoditi standarde održivosti u turizmu?",
+        "answer": "Smanjuju troškove (energija, voda, otpad), grade ugled i povjerenje gostiju, osiguravaju usklađenost s propisima i razlikuju ponudu od konkurencije.",
+        "explanation": "Održivost kao konkurentska prednost."
+      },
+      {
+        "question": "Kako se razlikuju norme i oznake održivosti?",
+        "answer": "Norme (ISO 14001, ISO 21401) traže sustav upravljanja i certifikaciju; oznake (EU Ecolabel, Plava zastava) potvrđuju da proizvod/usluga ispunjava kriterije.",
+        "explanation": "Sustav vs. kriterij."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "vdtx5m",
+        "question": "Kategoriju hotela u Hrvatskoj utvrđuje:",
+        "options": [
+          "certifikacijska kuća prema ISO 9001",
+          "ministarstvo nadležno za turizam",
+          "turistička zajednica općine",
+          "udruga hotelijera"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ot4dad",
+        "question": "Kategorija (broj zvjezdica) hotela ponajprije propisuje:",
+        "options": [
+          "zadovoljstvo svakog gosta",
+          "ISO 9001 certifikat",
+          "minimalne uvjete opremljenosti i ponude",
+          "cijenu noćenja"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "p5s4eq",
+        "question": "Po čemu se oznake kvalitete razlikuju od kategorizacije hotela?",
+        "options": [
+          "obvezne su za sve hotele",
+          "dodjeljuje ih isključivo ministarstvo",
+          "zamjenjuju zvjezdice",
+          "dobrovoljne su i traže kriterije iznad zakonskog minimuma"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "8svg7g",
+        "question": "Znak „Hrvatska kvaliteta\" dodjeljuje:",
+        "options": [
+          "Hrvatska gospodarska komora",
+          "Međunarodna organizacija za standardizaciju",
+          "UNWTO",
+          "Europska komisija"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "sgao7x",
+        "question": "Održivi razvoj zadovoljava potrebe sadašnjih generacija:",
+        "options": [
+          "na račun budućih generacija",
+          "bez ugrožavanja mogućnosti budućih generacija",
+          "samo u razvijenim zemljama",
+          "samo u turizmu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ba8cnr",
+        "question": "Što NIJE dimenzija održivosti?",
+        "options": [
+          "ekonomska",
+          "društvena",
+          "tehnološka",
+          "okolišna"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "abrden",
+        "question": "Znanost (filozofija) o moralu naziva se:",
+        "options": [
+          "ekologija",
+          "ekonomija",
+          "statistika",
+          "etika"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "eqc0bd",
+        "question": "Primjer ekološke štete u turizmu je:",
+        "options": [
+          "zagađenje mora otpadnim vodama",
+          "povećanje broja gostiju",
+          "nova recepcija",
+          "viša cijena noćenja"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "n03o1t",
+        "question": "Održivi turizam vodi računa o potrebama:",
+        "options": [
+          "samo posjetitelja",
+          "posjetitelja, industrije, okoliša i lokalnih domaćina",
+          "samo investitora",
+          "samo države"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "a6lle8",
+        "question": "Norma koja propisuje zahtjeve sustava upravljanja okolišem je:",
+        "options": [
+          "ISO 9001",
+          "ISO 19011",
+          "ISO 14001",
+          "ISO 9004"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "aw0t8n",
+        "question": "Norma sa zahtjevima sustava upravljanja održivošću za smještajne kapacitete je:",
+        "options": [
+          "ISO 22483",
+          "ISO 9000",
+          "ISO 31000",
+          "ISO 21401"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "ayuxju",
+        "question": "Norma ISO 22483 propisuje zahtjeve za usluge:",
+        "options": [
+          "hotela",
+          "zračnih luka",
+          "banaka",
+          "bolnica"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "wstk0a",
+        "question": "EU Ecolabel je:",
+        "options": [
+          "obvezni porez",
+          "dobrovoljna eko-oznaka EU",
+          "norma za audit",
+          "nagrada za kvalitetu u Japanu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "60c8id",
+        "question": "Sustav upravljanja okolišem i neovisnog ocjenjivanja EU (Eco-Management and Audit Scheme) skraćeno se naziva:",
+        "options": [
+          "EFQM",
+          "SERVQUAL",
+          "EMAS",
+          "MBNQA"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "iygaez",
+        "question": "Koliko stupova imaju GSTC kriteriji održivog turizma?",
+        "options": [
+          "dva",
+          "sedam",
+          "deset",
+          "četiri"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "bzeqgo",
+        "question": "Plava zastava je eko-oznaka za:",
+        "options": [
+          "plaže, marine i turističke brodice",
+          "hotelske kuhinje",
+          "putničke agencije",
+          "zračne prijevoznike"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "tvcatj",
+        "question": "Što NIJE korist standarda održivosti?",
+        "options": [
+          "manji troškovi energije i vode",
+          "automatska dodjela više kategorije (zvjezdica)",
+          "bolji ugled",
+          "usklađenost s propisima"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "z5cs13",
+        "question": "Koja od navedenih je NORMA sustava upravljanja (a ne oznaka)?",
+        "options": [
+          "EU Ecolabel",
+          "Plava zastava",
+          "ISO 14001",
+          "nijedna"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "m1r1tb",
+        "sentence": "Uz kategoriju hotel može steći oznaku _______ standarda za određenu vrstu ponude.",
+        "answer": "posebnog",
+        "hint": "npr. wellness ili obiteljski"
+      },
+      {
+        "id": "w5nxyy",
+        "sentence": "Ekologija je znanost o odnosima živih bića međusobno i s njihovim _______.",
+        "answer": "okolišem",
+        "hint": "okolina"
+      },
+      {
+        "id": "bawk30",
+        "sentence": "ISO 21401 propisuje sustav upravljanja _______ za smještajne kapacitete.",
+        "answer": "održivošću",
+        "hint": "održivost"
+      }
+    ],
+    "learn": {
+      "title": "Standardi i oznake kvalitete u turizmu i ugostiteljstvu",
+      "content": "\n<h3>Standardi i oznake kvalitete u turizmu i ugostiteljstvu</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> tema „Standardi i oznake kvalitete u turizmu i ugostiteljstvu\" je u izvedbenom planu za 2. kolokvij (12. tjedan; opis kolegija navodi i standarde održivosti u turizmu i ugostiteljstvu); kategorizacija i oznake kvalitete su opće gradivo; norme ISO 21401 i ISO 22483 su u dopunskoj literaturi kolegija; pojmovi ekologija, moral i ekološka šteta iz ispitnih pitanja; ostalo je opće, standardno gradivo.</p>\n\n<h4>Oznake kvalitete u turizmu i ugostiteljstvu</h4>\n<ul>\n<li><strong>Kategorizacija hotela u RH</strong> — obvezno razvrstavanje hotela u kategorije od <strong>dvije do pet zvjezdica</strong> prema propisanim minimalnim uvjetima (uređenje, oprema, ponuda usluga); kategoriju rješenjem utvrđuje <strong>ministarstvo nadležno za turizam</strong>.</li>\n<li>Kategorija ponajprije propisuje <strong>razinu opremljenosti i ponude</strong>; kvaliteta znači ispuniti očekivanja gostiju za tu razinu prvi i svaki sljedeći put (vidi „razine kvalitete\", 1. kolokvij).</li>\n<li><strong>Posebni standardi</strong> — dodatne oznake koje hotel može steći uz kategoriju ako ispuni kriterije za određenu vrstu ponude (npr. obiteljski, wellness, kongresni hotel, hotel baština).</li>\n<li><strong>Oznake (brendovi) kvalitete</strong> — <strong>dobrovoljne</strong> oznake koje dodjeljuju udruge, komore ili turističke organizacije za ispunjenje kriterija iznad zakonskog minimuma. Primjer: znakovi Hrvatske gospodarske komore <strong>„Hrvatska kvaliteta\"</strong> i <strong>„Izvorno hrvatsko\"</strong>.</li>\n<li><strong>ISO 22483:2020</strong> — međunarodna norma sa zahtjevima za usluge hotela (vidi tablicu normi niže).</li>\n</ul>\n\n<h4>Temeljni pojmovi održivosti</h4>\n<ul>\n<li><strong>Održivi razvoj</strong> — razvoj koji zadovoljava potrebe sadašnjih generacija bez ugrožavanja mogućnosti budućih generacija da zadovolje svoje potrebe (izvješće „Naša zajednička budućnost\", Brundtland, 1987.).</li>\n<li><strong>Tri dimenzije održivosti</strong> — ekonomska, društvena (sociokulturna) i okolišna (ekološka); moraju biti u ravnoteži.</li>\n<li><strong>Održivi turizam</strong> (UNWTO) — turizam koji u potpunosti uzima u obzir sadašnje i buduće ekonomske, društvene i okolišne utjecaje, uz potrebe posjetitelja, industrije, okoliša i lokalnih domaćina.</li>\n<li><strong>Ekologija</strong> — znanost o odnosima živih bića međusobno i s njihovim okolišem.</li>\n<li><strong>Moral</strong> — skup nepisanih pravila i vrijednosti o dobrom i lošem ponašanju koje prihvaća neka zajednica; <strong>etika</strong> je znanost o moralu.</li>\n<li><strong>Ekološka šteta</strong> — šteta nanesena okolišu (zraku, vodi, tlu, bioraznolikosti) ljudskom djelatnošću: zagađenje, otpad, prekomjerna potrošnja resursa.</li>\n</ul>\n\n<h4>Norme sustava upravljanja</h4>\n<table>\n<tr><th>Norma</th><th>Naziv / sadržaj</th></tr>\n<tr><td><strong>ISO 14001</strong></td><td>Sustavi upravljanja okolišem — Zahtjevi; certifikacijska norma; struktura Annex SL pa se lako integrira s ISO 9001</td></tr>\n<tr><td><strong>ISO 21401:2018</strong></td><td>Turističke i srodne usluge — Sustav upravljanja održivošću za smještajne kapacitete — Zahtjevi (okolišni, društveni i ekonomski zahtjevi)</td></tr>\n<tr><td><strong>ISO 22483:2020</strong></td><td>Turističke i srodne usluge — Hoteli — Zahtjevi za usluge (osoblje, usluge, događanja, sigurnost, održavanje, zadovoljstvo gostiju)</td></tr>\n<tr><td><strong>EMAS</strong></td><td>Sustav upravljanja okolišem i neovisnog ocjenjivanja (Eco-Management and Audit Scheme) EU; nadograđuje ISO 14001 javnom ekološkom izjavom</td></tr>\n</table>\n\n<h4>Oznake i kriteriji</h4>\n<ul>\n<li><strong>EU Ecolabel</strong> — službena dobrovoljna eko-oznaka EU (cvijet) za proizvode i usluge sa smanjenim utjecajem na okoliš, uključujući turistički smještaj.</li>\n<li><strong>Plava zastava</strong> (Blue Flag) — međunarodna eko-oznaka za plaže, marine i turističke brodice (kakvoća mora, upravljanje okolišem, sigurnost, edukacija).</li>\n<li><strong>GSTC kriteriji</strong> — globalni kriteriji održivog turizma u <strong>četiri stupa</strong>: održivo upravljanje, socioekonomski utjecaji, kulturni utjecaji, okolišni utjecaji.</li>\n</ul>\n<p><strong>Norme</strong> (ISO 14001, ISO 21401) traže uspostavu <em>sustava upravljanja</em> i certifikaciju; <strong>oznake</strong> (EU Ecolabel, Plava zastava) potvrđuju da proizvod/usluga ispunjava zadane <em>kriterije</em>.</p>\n\n<h4>Zašto standardi održivosti?</h4>\n<ul>\n<li>niži troškovi (energija, voda, otpad),</li>\n<li>bolji ugled i povjerenje gostiju,</li>\n<li>usklađenost s propisima,</li>\n<li>razlikovanje ponude od konkurencije (konkurentska prednost).</li>\n</ul>\n",
+      "id": "10991r"
+    },
+    "id": "j1427e"
+  },
+  "iqmDestinacija": {
+    "name": "Integralno upravljanje kvalitetom destinacije (IQM)",
+    "icon": "fa-map-location-dot",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Što je INTEGRALNO UPRAVLJANJE KVALITETOM (IQM) destinacije?",
+        "answer": "Sustavan pristup upravljanju kvalitetom turističke destinacije koji istodobno nastoji poboljšati zadovoljstvo posjetitelja, lokalnog stanovništva i turističkih poduzeća te kvalitetu okoliša.",
+        "explanation": "Primjena načela TQM-a na razini cijele destinacije."
+      },
+      {
+        "question": "Koja četiri cilja obuhvaća IQM?",
+        "answer": "Zadovoljstvo posjetitelja, zadovoljstvo turističkih poduzeća, kvalitetu života lokalnog stanovništva i kvalitetu (zaštitu) okoliša.",
+        "explanation": "Destinacija je kvalitetna tek kad su sva četiri u ravnoteži."
+      },
+      {
+        "question": "Zašto destinaciji treba INTEGRALNI pristup kvaliteti?",
+        "answer": "Posjetitelj destinaciju doživljava kao cjelinu usluga mnogih pružatelja (smještaj, prijevoz, ugostiteljstvo, atrakcije, javne usluge); jedna slaba karika kvari cijeli doživljaj.",
+        "explanation": "Lanac kvalitete na razini destinacije."
+      },
+      {
+        "question": "Tko su dionici IQM-a destinacije?",
+        "answer": "Javni sektor (lokalna i regionalna vlast, turističke zajednice), privatni sektor (turistička poduzeća), lokalno stanovništvo i posjetitelji.",
+        "explanation": "Suradnja dionika je preduvjet IQM-a."
+      },
+      {
+        "question": "Tko koordinira upravljanje kvalitetom destinacije?",
+        "answer": "Organizacija za upravljanje destinacijom (DMO; u Hrvatskoj sustav turističkih zajednica) u suradnji s javnim i privatnim dionicima.",
+        "explanation": "Destination Management Organisation."
+      },
+      {
+        "question": "Što je lanac doživljaja posjetitelja?",
+        "answer": "Svi dodiri posjetitelja s destinacijom — od informiranja i rezervacije, preko dolaska, boravka i aktivnosti, do odlaska i iskustva nakon povratka; kvalitetom se upravlja u svakoj karici.",
+        "explanation": "Visitor journey / lanac usluga."
+      },
+      {
+        "question": "Koja je dopunska literatura kolegija za IQM?",
+        "answer": "UNWTO (2017.): Practical Guidelines for Integrated Quality Management in Tourism Destinations — praktične smjernice za IQM u turističkim destinacijama.",
+        "explanation": "Navedeno u izvedbenom planu kao dopunska literatura."
+      },
+      {
+        "question": "Kako se mjeri i ocjenjuje kvaliteta destinacije?",
+        "answer": "Sustavnim praćenjem pokazatelja: istraživanja zadovoljstva posjetitelja i stanovnika, poslovni pokazatelji poduzeća i okolišni pokazatelji; rezultati vode poboljšanjima (PDCA).",
+        "explanation": "Mjerenje → vrednovanje → poboljšanje."
+      },
+      {
+        "question": "Koji su primjeri pokazatelja kvalitete i održivosti destinacije?",
+        "answer": "Zadovoljstvo i ponovni dolazak posjetitelja, stav stanovnika prema turizmu, popunjenost, prihodi i zaposlenost, potrošnja vode i energije, količina otpada.",
+        "explanation": "Pokazatelji pokrivaju sva četiri cilja IQM-a."
+      },
+      {
+        "question": "Što je ETIS?",
+        "answer": "Europski sustav turističkih pokazatelja (European Tourism Indicator System) Europske komisije — skup pokazatelja kojima destinacije prate i ocjenjuju održivost turizma.",
+        "explanation": "Primjer sustava pokazatelja za mjerenje održivosti destinacije."
+      },
+      {
+        "question": "Koja područja pokrivaju ETIS pokazatelji?",
+        "answer": "Četiri: upravljanje destinacijom, ekonomsku vrijednost, društveni i kulturni utjecaj te okolišni utjecaj.",
+        "explanation": "Tri dimenzije održivosti + upravljanje."
+      },
+      {
+        "question": "Kako su povezani IQM i održivost destinacije?",
+        "answer": "Dugoročna kvaliteta destinacije moguća je samo ako je razvoj održiv: zadovoljni posjetitelji bez narušavanja kvalitete života stanovnika i okoliša.",
+        "explanation": "Kvaliteta i održivost mjere se zajedno."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "lr62bg",
+        "question": "IQM je pristup upravljanju kvalitetom na razini:",
+        "options": [
+          "jednog hotelskog odjela",
+          "jednog proizvoda",
+          "jednog zaposlenika",
+          "turističke destinacije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "dhaxsj",
+        "question": "Što NIJE jedan od četiri cilja IQM-a?",
+        "options": [
+          "što veći broj noćenja bez obzira na nosivi kapacitet",
+          "zadovoljstvo posjetitelja",
+          "kvaliteta života lokalnog stanovništva",
+          "kvaliteta okoliša"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "5743p6",
+        "question": "Integralni pristup potreban je jer posjetitelj destinaciju doživljava:",
+        "options": [
+          "samo kroz smještaj",
+          "kao cjelinu usluga mnogih pružatelja",
+          "samo kroz cijenu",
+          "samo kroz prijevoz"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "1vag7k",
+        "question": "Koja skupina NIJE među dionicima IQM-a destinacije?",
+        "options": [
+          "lokalno stanovništvo",
+          "javni sektor",
+          "nijedna — sve navedene jesu dionici, kao i posjetitelji",
+          "turistička poduzeća"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "f8jac7",
+        "question": "Lanac doživljaja posjetitelja počinje:",
+        "options": [
+          "dolaskom u smještaj",
+          "odlaskom iz destinacije",
+          "plaćanjem računa",
+          "informiranjem i rezervacijom prije putovanja"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "xhc61u",
+        "question": "Praktične smjernice za IQM u turističkim destinacijama (2017.) objavila je:",
+        "options": [
+          "Svjetska turistička organizacija (UNWTO)",
+          "Međunarodna organizacija za standardizaciju (ISO)",
+          "EFQM",
+          "JUSE"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "uzeze8",
+        "question": "Rezultati mjerenja kvalitete destinacije služe ponajprije za:",
+        "options": [
+          "dodjelu zvjezdica hotelima",
+          "planiranje poboljšanja",
+          "izdavanje ISO 9001 certifikata destinaciji",
+          "izračun poreza"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "0p6y7j",
+        "question": "Potrošnja vode i količina otpada po noćenju su pokazatelji:",
+        "options": [
+          "zadovoljstva posjetitelja",
+          "zadovoljstva stanovnika",
+          "okolišni",
+          "financijski"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "nyej9s",
+        "question": "ETIS je:",
+        "options": [
+          "norma za audit sustava upravljanja",
+          "europska nagrada za kvalitetu",
+          "japanska metoda poboljšanja",
+          "europski sustav pokazatelja za praćenje održivosti turističkih destinacija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "hsg45b",
+        "question": "Koje područje NIJE skupina ETIS pokazatelja?",
+        "options": [
+          "kategorizacija hotela",
+          "upravljanje destinacijom",
+          "ekonomska vrijednost",
+          "okolišni utjecaj"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "wc9xl7",
+        "sentence": "IQM uz zadovoljstvo posjetitelja i poduzeća vodi računa o kvaliteti života lokalnog _______ i okoliša.",
+        "answer": "stanovništva",
+        "hint": "domaćini"
+      },
+      {
+        "id": "h3unuz",
+        "sentence": "Upravljanje destinacijom koordinira organizacija za upravljanje destinacijom, skraćeno _______.",
+        "answer": "DMO",
+        "hint": "engl. kratica"
+      },
+      {
+        "id": "s6nmah",
+        "sentence": "Dugoročna kvaliteta destinacije moguća je samo uz _______ razvoj turizma.",
+        "answer": "održivi",
+        "hint": "ne ugrožava budućnost"
+      }
+    ],
+    "learn": {
+      "title": "Integralno upravljanje kvalitetom destinacije (IQM)",
+      "content": "\n<h3>Integralno upravljanje kvalitetom destinacije (IQM)</h3>\n<p class=\"no-math\"><em><strong>Dopuna izvan predavanja</strong> (predavanja za 2. kolokvij još nisu objavljena):</em> teme „Integralno upravljanje kvalitetom (IQM)\" i „Mjerenje i ocjenjivanje kvalitete i održivosti turističke destinacije\" su u izvedbenom planu za 2. kolokvij (13. i 14. tjedan; ishod učenja 3); dopunska literatura kolegija je UNWTO (2017.) <em>Practical Guidelines for Integrated Quality Management in Tourism Destinations</em>. Sadržaj je opće, standardno gradivo.</p>\n\n<h4>Što je IQM</h4>\n<p><strong>Integralno upravljanje kvalitetom (IQM)</strong> sustavan je pristup upravljanju kvalitetom <strong>turističke destinacije</strong> — primjena načela TQM-a na razini cijele destinacije. Posjetitelj destinaciju doživljava kao <strong>cjelinu usluga</strong> mnogih pružatelja (smještaj, prijevoz, ugostiteljstvo, atrakcije, javne usluge, gostoljubivost stanovnika), pa jedna slaba karika kvari cijeli doživljaj.</p>\n<div class=\"formula-box\">IQM istodobno teži: ZADOVOLJSTVU POSJETITELJA · ZADOVOLJSTVU TURISTIČKIH PODUZEĆA · KVALITETI ŽIVOTA LOKALNOG STANOVNIŠTVA · KVALITETI OKOLIŠA</div>\n\n<h4>Dionici</h4>\n<ul>\n<li><strong>javni sektor</strong> — lokalna i regionalna vlast, turističke zajednice,</li>\n<li><strong>privatni sektor</strong> — hoteli, agencije, ugostitelji, prijevoznici, atrakcije,</li>\n<li><strong>lokalno stanovništvo</strong>,</li>\n<li><strong>posjetitelji</strong>.</li>\n</ul>\n<p>Upravljanje koordinira <strong>organizacija za upravljanje destinacijom (DMO)</strong> — u Hrvatskoj sustav turističkih zajednica — u suradnji sa svim dionicima (načelo upravljanja odnosima).</p>\n\n<h4>Lanac doživljaja posjetitelja</h4>\n<p>Kvalitetom se upravlja u svakoj karici: informiranje i rezervacija → dolazak → smještaj → hrana i piće → aktivnosti i atrakcije → javne usluge i infrastruktura → odlazak → iskustvo i preporuka nakon povratka.</p>\n\n<h3>Mjerenje i ocjenjivanje kvalitete i održivosti destinacije</h3>\n<p>Kvaliteta destinacije prati se <strong>sustavom pokazatelja</strong>, a rezultati vode poboljšanjima (PDCA: mjeri → vrednuj → poboljšaj):</p>\n<table>\n<tr><th>Cilj IQM-a</th><th>Primjeri pokazatelja</th></tr>\n<tr><td>zadovoljstvo posjetitelja</td><td>ankete zadovoljstva, ponovni dolazak, spremnost na preporuku, pritužbe</td></tr>\n<tr><td>turistička poduzeća</td><td>popunjenost kapaciteta, prihodi, zaposlenost, sezonalnost</td></tr>\n<tr><td>lokalno stanovništvo</td><td>stav stanovnika prema turizmu, kvaliteta života</td></tr>\n<tr><td>okoliš</td><td>potrošnja vode i energije, količina otpada, kakvoća mora i zraka</td></tr>\n</table>\n\n<h4>ETIS — primjer sustava pokazatelja</h4>\n<p><strong>ETIS</strong> (European Tourism Indicator System) je europski sustav turističkih pokazatelja Europske komisije kojim destinacije prate i ocjenjuju <strong>održivost</strong> turizma. Pokazatelji su složeni u četiri područja: <strong>upravljanje destinacijom</strong>, <strong>ekonomska vrijednost</strong>, <strong>društveni i kulturni utjecaj</strong> i <strong>okolišni utjecaj</strong>.</p>\n<p>IQM i održivost su povezani: dugoročna kvaliteta destinacije moguća je samo uz <strong>održivi razvoj</strong> — zadovoljne posjetitelje bez narušavanja kvalitete života stanovnika i okoliša.</p>\n",
+      "id": "xeljyj"
+    },
+    "id": "loy9tr"
+  }
+}

@@ -1449,6 +1449,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'quality-management-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Menadžment kvalitete',
+      shortName: 'MK',
+      icon: 'fa-award',
+      color: '#be123c',
+      iconGradient: ['#be123c', '#fb7185'],
+      description: 'Menadžment kvalitete (FMTU, MOR): pojam i razvoj kvalitete, utemeljitelji kvalitete, načela TQM-a, standardizacija i ISO 9001:2015; potom audit, upravljanje rizicima, troškovi i alati kvalitete, kvaliteta u uslužnom sektoru, standardi i oznake kvalitete te integralno upravljanje kvalitetom destinacije',
+      storageKey: 'quality-management-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Pojam i razvoj kvalitete, utemeljitelji kvalitete, načela TQM-a (I. i II. dio), standardizacija sustava upravljanja kvalitetom, ISO 9001:2015' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Audit sustava kvalitete, upravljanje rizicima, rezultati primjene TQM-a i troškovi kvalitete, alati za upravljanje kvalitetom, kvaliteta u uslužnom sektoru, standardi i oznake kvalitete, integralno upravljanje kvalitetom destinacije (IQM)' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign qualityMorM1 + qualityMorM2 + examPractice)
+        scripts: [
+          'data/quality-management-mor/midterm-1.js',
+          'data/quality-management-mor/midterm-2.js',
+          'data/quality-management-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'qualityMorM1',
+          'second-midterm': 'qualityMorM2',
+          'final': 'qualityMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
