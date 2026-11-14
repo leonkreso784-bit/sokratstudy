@@ -1426,6 +1426,29 @@ const SOKRAT_CATALOG = {
         exercises: 'accountingHrExercises'   // window var s interaktivnim vježbama (features.exercises)
       }
     },
+    // ---- MOR vlastiti predmeti (autorski iz HR izvora s Merlina + studentskih skripti; ADR-020) ----
+    {
+      id: 'environmental-economics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Ekonomika okoliša',
+      shortName: 'EKO',
+      icon: 'fa-leaf',
+      color: '#15803d',
+      iconGradient: ['#15803d', '#4ade80'],
+      description: 'Ekonomika okoliša (FMTU, MOR): okoliš i ekonomija, uzroci i posljedice onečišćenja globalnog okoliša, ekološki sustavi i održivost te gospodarenje otpadom',
+      storageKey: 'environmental-economics-mor-progress',
+      features: { blindMap: false },
+      // ⏳ 2. kolokvij i završni ispit dolaze kad profesor objavi gradivo (stanje 2026-11-15: samo 1. kolokvij).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Okoliš i ekonomija, onečišćenje globalnog okoliša, ekološki sustavi i održivost, gospodarenje otpadom' }
+      ],
+      content: {
+        scripts: ['data/environmental-economics-mor/midterm-1.js'],
+        resolve: { 'first-midterm': 'envEconMorM1' },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
