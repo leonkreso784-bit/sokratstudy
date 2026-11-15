@@ -1514,6 +1514,38 @@ const SOKRAT_CATALOG = {
       }
     },
     {
+      id: 'tourism-system-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 2,
+      name: 'Turizam i turistički sustav',
+      shortName: 'TTS',
+      icon: 'fa-earth-europe',
+      color: '#0369a1',
+      iconGradient: ['#0369a1', '#38bdf8'],
+      description: 'Turizam i turistički sustav (FMTU, MOR): obilježja turizma i turističkog sustava, turizam i globalni procesi, održivi razvoj turizma; potom oblici turizma — zdravstveni, kulturni, sportski, eko, nautički i poslovni',
+      storageKey: 'tourism-system-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Tematske cjeline 1–6: turizam i turistički sustav' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Zdravstveni, kulturni, sportski, eko, nautički i poslovni turizam' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign tourismSystemMorM1 + tourismSystemMorM2 + examPractice)
+        scripts: [
+          'data/tourism-system-mor/midterm-1.js',
+          'data/tourism-system-mor/midterm-2.js',
+          'data/tourism-system-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'tourismSystemMorM1',
+          'second-midterm': 'tourismSystemMorM2',
+          'final': 'tourismSystemMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
       id: 'natural-geospace-mor',
       programId: 'sustainable-development-management-hr',
       year: 1, semester: 1,
