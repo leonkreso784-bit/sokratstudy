@@ -24,7 +24,7 @@ on:
 jobs:
   ping:
     name: Supabase anon ping (read-only)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pin: ubuntu-latest = 26.04 od 19.10.2026, a Playwright na njemu ne instalira Chromium
     timeout-minutes: 5
     steps:
       - name: Ping baze (1 redak subject_content kroz PostgREST)

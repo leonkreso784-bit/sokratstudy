@@ -18,7 +18,7 @@ concurrency:
 jobs:
   build:
     name: Lint + verify + tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pin: ubuntu-latest = 26.04 od 19.10.2026, a Playwright na njemu ne instalira Chromium
     # ⚠️ MREŽA B6 (2026-09-01): Playwright je IZAŠAO iz ovog joba u zaseban `playwright`
     # matrix-job (shardovi) — ovdje ostaju samo brze brane bez preglednika (fail fast).
     # Povijest granice: 20 → 30 (2026-08-31) jer je job istekao na 20 min 16 s bez ijednog
@@ -93,7 +93,7 @@ jobs:
   playwright:
     name: Playwright shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pin: ubuntu-latest = 26.04 od 19.10.2026, a Playwright na njemu ne instalira Chromium
     # Pola suite (~10 min s pripremom) uz dvostruku maržu — zaštita od visećeg procesa,
     # ne budžet izvedbe (vidi komentar na `build`).
     timeout-minutes: 20
@@ -142,7 +142,7 @@ jobs:
   # Bonus: redoviti run drži bazu budnom. Vidi docs/workflow/TESTING.md §Authenticated.
   authed:
     name: Authed admin suite (positive path)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pin: ubuntu-latest = 26.04 od 19.10.2026, a Playwright na njemu ne instalira Chromium
     timeout-minutes: 15
     steps:
       - name: Checkout
