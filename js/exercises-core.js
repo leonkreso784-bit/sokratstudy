@@ -39,6 +39,7 @@
         let s = String(input).trim();
         if (s === '') return NaN;
 
+        s = s.replace(/[\u2212\u2012-\u2015]/g, '-'); // unicode minus i crtice → '-'
         s = s.replace(/\s/g, ''); // razmaci (i tanki/non-break) = grupiranje → makni
 
         // Predznak: vodeći +/- ili računovodstvene zagrade (50) = -50
@@ -228,6 +229,15 @@
         return { score: score, max: items.length, perField: perField, correct: items.length > 0 && score === items.length };
     }
 
+    // Jedan separator + točno 3 znamenke iza (npr. "1.667", "2,500") → alternativno decimalno čitanje; inače null.
+    function decimalReading(raw) {
+        if (typeof raw !== 'string') return null;
+        const m = /^\s*([-+\u2212\u2012-\u2015]?)\s*(\d{1,3})[.,](\d{3})\s*$/.exec(raw);
+        if (!m) return null;
+        const n = Number(m[2] + '.' + m[3]);
+        return m[1] && m[1] !== '+' ? -n : n;
+    }
+
     // --- gradeNumeric(ex, answers) ------------------------------------------
     // ex.fields: [{ key, label, answer, tol?, unit?, hint? }]
     // answers:   { <key>: <raw string ili Number> }  → parsira se preko parseAmount
@@ -237,7 +247,12 @@
         const perField = fields.map((f) => {
             const got = parseAmount(answers[f.key]);
             const tol = f.tol != null ? f.tol : 0.005;
-            const ok = numEq(got, f.answer, tol);
+            let ok = numEq(got, f.answer, tol);
+            // "1.667" parseAmount čita kao tisuće (1667); ako je dvosmisleno, probaj i decimalno čitanje.
+            if (!ok) {
+                const alt = decimalReading(answers[f.key]);
+                if (alt != null) ok = numEq(alt, f.answer, tol);
+            }
             return { key: f.key, ok: ok, expected: f.answer, got: Number.isFinite(got) ? got : null };
         });
         const score = perField.filter((p) => p.ok).length;

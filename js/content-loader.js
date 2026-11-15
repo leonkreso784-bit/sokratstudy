@@ -10,7 +10,7 @@
 // ⚠ CACHE: data/* su pod immutable cacheom (vercel.json). Pri izmjeni BILO KOJEG
 // data/* sadržaja bumpaj CONTENT_VERSION — inače preglednik servira stari cache.
 
-const CONTENT_VERSION = '20261115015712';
+const CONTENT_VERSION = '20261115153545';
 
 // subjectId -> true (sadržaj učitan) ; subjectId -> Promise (učitavanje u tijeku)
 const _contentLoaded = {};
@@ -21,6 +21,7 @@ const _contentLoading = {};
 // `supabase/schema.sql` pokrenut u dashboardu I `node scripts/migrate-content.js` napunio
 // tablicu `subject_content`. Datoteke ostaju izvor istine + fallback (ako baza padne/prazna).
 const CONTENT_FROM_SUPABASE = true;
+const CONTENT_DB_TIMEOUT_MS = 3000; // rok za DB čitanje prije pada na datoteke
 
 // Pričekaj da supabase-js klijent bude spreman (CDN se učita async nakon DOMContentLoaded).
 function _supabaseClientWhenReady(timeoutMs) {
@@ -41,12 +42,24 @@ function _loadSubjectFromSupabase(subjectId) {
     if (!CONTENT_FROM_SUPABASE) return Promise.resolve(false);
     return _supabaseClientWhenReady(2500).then((client) => {
         if (!client) return false;
-        return client.from('subject_content').select('var_name,payload').eq('subject_id', subjectId)
-            .then(({ data, error }) => {
-                if (error || !Array.isArray(data) || !data.length) return false;
-                data.forEach((row) => { if (row && row.var_name) window[row.var_name] = row.payload; });
-                return true;
-            });
+        // DB čitanje ima rok (~3 s): spor/viseći Supabase ne smije blokirati lekciju → odmah JSON/.js.
+        const ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+        let q = client.from('subject_content').select('var_name,payload').eq('subject_id', subjectId);
+        if (ctrl && q && typeof q.abortSignal === 'function') q = q.abortSignal(ctrl.signal);
+        let timer = null;
+        let istekao = false; // zakašnjeli odgovor se ignorira (sadržaj već ide iz datoteka)
+        const rok = new Promise((resolve) => {
+            timer = setTimeout(() => { istekao = true; if (ctrl) ctrl.abort(); resolve(false); }, CONTENT_DB_TIMEOUT_MS);
+        });
+        const citanje = Promise.resolve(q).then(({ data, error }) => {
+            if (istekao || error || !Array.isArray(data) || !data.length) return false;
+            data.forEach((row) => { if (row && row.var_name) window[row.var_name] = row.payload; });
+            return true;
+        });
+        return Promise.race([citanje, rok]).then(
+            (r) => { clearTimeout(timer); return r; },
+            (e) => { clearTimeout(timer); throw e; }
+        );
     }).catch(() => false); // bilo kakva greška → fallback na datoteke
 }
 

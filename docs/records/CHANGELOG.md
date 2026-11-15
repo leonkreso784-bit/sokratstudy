@@ -5,6 +5,25 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+## 2026-11-15 (OPUS) — 🔧 **Revizija: kviz, sinkronizacija napretka, unos odgovora, učitavanje lekcije** — grana `fix/audit-study-sync-content` (PR iz forka)
+
+- **Kviz:** 5/10/20 pitanja se sad bira iz CIJELOG skupa (prije `slice` pa tek onda miješanje → uvijek prvih N po redu
+  kategorija) · kviz bez pitanja se ne pokreće (bio `0/0 = NaN%` u napretku) · Prev tijekom auto-prijelaza više ne
+  ostavlja kviz bez kraja.
+- **Cloud-sync:** nema pusha dok pull nije uspio (prijava offline je prvim pushem gazila oblak bez merge-a) · `true`
+  pobjeđuje `false` (riješena vježba se ne poništava) · noviji datum pobjeđuje (`lastStudy`) · `sokrat-last-position`
+  po `timestamp` · pull upisuje u localStorage SAMO ključeve koje aplikacija sama piše (allowlist).
+- **`auth.js`:** `sokrat-supabase-override` iz localStorage vrijedi samo na localhostu i samo za `https://<ref>.supabase.co`.
+- **Lekcija:** DB čitanje `subject_content` ima rok 3 s → spor/viseći Supabase pada odmah na JSON (prije do 23 s / nikad).
+- **Unos:** dopune prihvaćaju odgovor bez dijakritika i decimalni zarez/točku · vježbe: `−` (U+2212) i crtice = minus;
+  `1.667` se prihvaća i kao decimalni broj kad je to točan odgovor · `safeUrl` čisti kontrolne znakove prije provjere sheme.
+- **Slijepa karta:** dvostruki klik na Provjeri/Preskoči više ne broji dvaput i ne preskače pitanje · pogodak samo ako je
+  klik najbliži traženom mjestu (Poreč–Funtana ~7 px, radijus 45 px).
+- **Sadržaj:** Food & Nutrition — „Egg white contains all vitamins EXCEPT C" je netočno (A i D su u žumanjku) → pitanje,
+  dopuna, kartica i learn preformulirani na „cijelo jaje nema vitamina C". JSON re-exportan.
+- Testovi: `quiz-pool.test.js` (novi) + proširenja `cloud-sync`, `exercises-core`, `fill-blank-format`, `auth-error`,
+  `blocks-renderer`, `get-categories`. `npm run bump`.
+
 ## 2026-11-15 (OPUS) — ➕ **Novi program „Menadžment održivog razvoja" (MOR)** — grana `feat/mor`
 
 Treći program FMTU-a (`sustainable-development-management-hr`, HR). 9 kolegija zajedničkih s MUH-om kao kopije `-mor`;

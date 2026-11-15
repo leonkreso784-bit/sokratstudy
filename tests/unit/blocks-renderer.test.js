@@ -153,6 +153,11 @@ test('legacy-html: fallback (bez DOMPurify) = raw za NAŠ povjerljiv v1 sadržaj
   const out = R([{ type: 'legacy-html', html: '<p>trusted</p>' }]);
   assert.strictEqual(out, '<div class="lb-legacy"><p>trusted</p></div>');
 });
+test('safeUrl: kontrolni znakovi unutar sheme (java\\tscript:) → odbijeno', function () {
+  ['java\tscript:alert(1)', 'java\nscript:alert(1)', 'jav\r\nascript:x', '\u0001javascript:x', ' java script:x', 'java\u0000script:x']
+    .forEach(function (u) { assert.strictEqual(B._safeUrl(u), '', JSON.stringify(u)); });
+  assert.strictEqual(B._safeUrl('a b.png'), 'a b.png');
+});
 
 // ── safeUrl (izravno) ──
 test('safeUrl: dopušta http(s)/mailto/relativni/#/protocol-relative', function () {

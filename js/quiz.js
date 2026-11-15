@@ -24,6 +24,12 @@ function startQuiz() {
     quiz.questions = getQuizQuestions(category, count);
     shuffleArray(quiz.questions);
 
+    // Nema pitanja (kategorija/lekcija bez kviza) → ne pokreći kviz (inače 0/0 = NaN%).
+    if (!quiz.questions.length) {
+        if (typeof showToast === 'function') showToast(typeof t === 'function' ? t('quiz.noQuestions') : 'No quiz questions available.');
+        return;
+    }
+
     quiz.index = 0;
     quiz.correct = 0;
     quiz.wrong = 0;
@@ -81,6 +87,8 @@ function getQuizQuestions(category, count) {
     }
     
     if (count !== 'all') {
+        // Prvo promiješaj cijeli skup, tek onda režemo — inače uvijek dobiješ prvih N po redu kategorija.
+        shuffleArray(questions);
         questions = questions.slice(0, parseInt(count));
     }
     
@@ -181,8 +189,12 @@ function updateQuizNavButtons() {
     }
 }
 
+// Id timera automatskog prelaska na sljedeće pitanje (briše se pri Prev/reset).
+let quizAdvanceTimer = null;
+
 function quizPrev() {
     const quiz = AppState.quiz;
+    clearTimeout(quizAdvanceTimer);
     if (quiz.index > 0) {
         quiz.index--;
         showQuestion();
@@ -234,7 +246,8 @@ function selectAnswer(selected) {
     document.getElementById('wrongCount').textContent = quiz.wrong;
 
     // Auto-advance after delay
-    setTimeout(() => {
+    clearTimeout(quizAdvanceTimer);
+    quizAdvanceTimer = setTimeout(() => {
         quiz.index++;
         showQuestion();
     }, 1500);
@@ -242,6 +255,7 @@ function selectAnswer(selected) {
 
 function endQuiz() {
     const quiz = AppState.quiz;
+    if (!quiz.questions.length) return;
     const totalTime = Math.floor((Date.now() - quiz.startTime) / 1000);
     const minutes = Math.floor(totalTime / 60);
     const seconds = totalTime % 60;
@@ -342,6 +356,7 @@ function showQuizSetup() {
 // jedini izostavljen (samo se punio dropdown) → ovo zatvara tu rupu.
 function resetQuiz() {
     const quiz = AppState.quiz;
+    clearTimeout(quizAdvanceTimer);
     quiz.questions = [];
     quiz.index = 0;
     quiz.correct = 0;

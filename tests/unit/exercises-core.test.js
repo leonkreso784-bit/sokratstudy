@@ -513,6 +513,33 @@ test('gradeCite: accept[] alternate is correct', () => {
 
 // ---------------------------------------------------------------- rezultat
 console.log('\n========================================');
+// ---------------------------------------------------------------- unicode minus + dvosmisleni separator
+test('parseAmount: unicode minus U+2212 i crtice U+2012–U+2015', () => {
+    assert.strictEqual(parseAmount('\u221240'), -40);
+    assert.strictEqual(parseAmount('\u201240'), -40);
+    assert.strictEqual(parseAmount('\u201340'), -40);
+    assert.strictEqual(parseAmount('\u201440'), -40);
+    assert.strictEqual(parseAmount('\u201540'), -40);
+});
+test('parseAmount: ugovor ostaje — "1.667" = 1667 (tisuće)', () => assert.strictEqual(parseAmount('1.667'), 1667));
+test('gradeNumeric: "1.667" prihvaćen i za očekivanih 1.667 (decimalno čitanje)', () => {
+    const ex = { fields: [{ key: 'a', answer: 1.667, tol: 0.001 }] };
+    assert.strictEqual(gradeNumeric(ex, { a: '1.667' }).correct, true);
+    assert.strictEqual(gradeNumeric(ex, { a: '1,667' }).correct, true);
+});
+test('gradeNumeric: "1.667" i dalje prihvaćen za očekivanih 1667 (tisuće)', () => {
+    const ex = { fields: [{ key: 'a', answer: 1667, tol: 0.5 }] };
+    assert.strictEqual(gradeNumeric(ex, { a: '1.667' }).correct, true);
+});
+test('gradeNumeric: dvosmislen unos ne prolazi ako nijedno čitanje ne odgovara', () => {
+    const ex = { fields: [{ key: 'a', answer: 5, tol: 0.01 }] };
+    assert.strictEqual(gradeNumeric(ex, { a: '1.667' }).correct, false);
+});
+test('gradeNumeric: unicode minus u unosu', () => {
+    const ex = { fields: [{ key: 'a', answer: -40 }] };
+    assert.strictEqual(gradeNumeric(ex, { a: '\u221240' }).correct, true);
+});
+
 console.log(`Prošlo: ${passed} · Palo: ${failed}`);
 if (failed === 0) {
     console.log('✅ exercises-core: svi testovi prolaze.\n');

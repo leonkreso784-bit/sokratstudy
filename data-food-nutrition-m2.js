@@ -1276,7 +1276,7 @@ const foodNutritionM2Data = {
             {
                 id: "2nca5w",
                 question: "What is in the egg white (albumen)?",
-                answer: "• Protein of high biological value (BV = 94), essential amino acids, good digestibility\n• Avidin: an antinutritive factor\n• Minerals: potassium, phosphorus, iron, iodine, copper, cobalt, magnesium, zinc, manganese, calcium\n• Vitamins: all except vitamin C",
+                answer: "• Protein of high biological value (BV = 94), essential amino acids, good digestibility\n• Avidin: an antinutritive factor\n• Minerals: potassium, phosphorus, iron, iodine, copper, cobalt, magnesium, zinc, manganese, calcium\n• Vitamins: mainly B vitamins (e.g. riboflavin); vitamins A and D sit in the yolk, and the egg has no vitamin C",
                 explanation: "Egg white protein has a biological value of 94 — one of the highest of any food protein."
             },
             {
@@ -1344,7 +1344,7 @@ const foodNutritionM2Data = {
             },
             {
                 id: "7z7bdo",
-                question: "Egg white contains all vitamins EXCEPT:",
+                question: "Which vitamin is missing from the whole egg (both white and yolk)?",
                 options: ["Vitamin A", "Vitamin C", "B vitamins", "Vitamin D"],
                 correct: 1
             },
@@ -1413,7 +1413,7 @@ const foodNutritionM2Data = {
             },
             {
                 id: "3rgv84",
-                sentence: "Egg white contains all vitamins except vitamin _______.",
+                sentence: "The whole egg (white and yolk) contains no vitamin _______.",
                 answer: "C",
                 hint: "Ascorbic acid..."
             },
@@ -1460,7 +1460,7 @@ const foodNutritionM2Data = {
                 <tr><td>Protein</td><td>12.5-13.3%</td><td>15-17%</td><td>10.5-12.3%</td></tr>
                 <tr><td>Fat</td><td>10.7-11.6%</td><td>28-36%</td><td>trace</td></tr></table>
                 <p><strong>Yolk:</strong> fats 65%, phospholipids 31% (lecithin = emulsifier), cholesterol 4%, iron, carotenoids.<br>
-                <strong>White:</strong> protein BV = 94, avidin (antinutritive), all vitamins except C.</p>
+                <strong>White:</strong> protein BV = 94, avidin (antinutritive), B vitamins (A and D are in the yolk; the egg has no vitamin C).</p>
 
                 <h3>🔍 Freshness & Market Classes</h3>
                 <ul>

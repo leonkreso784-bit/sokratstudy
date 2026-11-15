@@ -3270,7 +3270,7 @@
       {
         "id": "2nca5w",
         "question": "What is in the egg white (albumen)?",
-        "answer": "• Protein of high biological value (BV = 94), essential amino acids, good digestibility\n• Avidin: an antinutritive factor\n• Minerals: potassium, phosphorus, iron, iodine, copper, cobalt, magnesium, zinc, manganese, calcium\n• Vitamins: all except vitamin C",
+        "answer": "• Protein of high biological value (BV = 94), essential amino acids, good digestibility\n• Avidin: an antinutritive factor\n• Minerals: potassium, phosphorus, iron, iodine, copper, cobalt, magnesium, zinc, manganese, calcium\n• Vitamins: mainly B vitamins (e.g. riboflavin); vitamins A and D sit in the yolk, and the egg has no vitamin C",
         "explanation": "Egg white protein has a biological value of 94 — one of the highest of any food protein."
       },
       {
@@ -3362,7 +3362,7 @@
       },
       {
         "id": "7z7bdo",
-        "question": "Egg white contains all vitamins EXCEPT:",
+        "question": "Which vitamin is missing from the whole egg (both white and yolk)?",
         "options": [
           "Vitamin A",
           "Vitamin C",
@@ -3465,7 +3465,7 @@
       },
       {
         "id": "3rgv84",
-        "sentence": "Egg white contains all vitamins except vitamin _______.",
+        "sentence": "The whole egg (white and yolk) contains no vitamin _______.",
         "answer": "C",
         "hint": "Ascorbic acid..."
       },
@@ -3491,7 +3491,7 @@
     "learn": {
       "id": "7rnbi2",
       "title": "Lecture 13 – Eggs",
-      "content": "\n                <h3>🥚 The Egg</h3>\n                <p>A complex reproductive cell — an 'organism in miniature'. Most common = chicken; also goose, turkey, duck, quail, ostrich. World production ~83.4 Mt (Asia leads).</p>\n\n                <h3>🔬 Anatomy</h3>\n                <ul>\n                <li><strong>Shell:</strong> porous, calcium carbonate</li>\n                <li><strong>Membrane (skin):</strong> protects against bacteria</li>\n                <li><strong>Airspace:</strong> between two membranes (grows as egg ages)</li>\n                <li><strong>Albumen (white):</strong> thick + thin layers</li>\n                <li><strong>Chalaza:</strong> keeps yolk centered</li>\n                <li><strong>Yolk + yolk membrane</strong></li>\n                </ul>\n\n                <h3>📊 Composition</h3>\n                <table><tr><th>Component</th><th>Whole</th><th>Yolk</th><th>White</th></tr>\n                <tr><td>Water</td><td>72-75%</td><td>47-50%</td><td>86-88%</td></tr>\n                <tr><td>Protein</td><td>12.5-13.3%</td><td>15-17%</td><td>10.5-12.3%</td></tr>\n                <tr><td>Fat</td><td>10.7-11.6%</td><td>28-36%</td><td>trace</td></tr></table>\n                <p><strong>Yolk:</strong> fats 65%, phospholipids 31% (lecithin = emulsifier), cholesterol 4%, iron, carotenoids.<br>\n                <strong>White:</strong> protein BV = 94, avidin (antinutritive), all vitamins except C.</p>\n\n                <h3>🔍 Freshness & Market Classes</h3>\n                <ul>\n                <li><strong>Densitometry:</strong> immersion in 12% salt solution (fresh sinks)</li>\n                <li><strong>Candling:</strong> ovoscope examination</li>\n                </ul>\n                <table><tr><th>Quality</th><th>Size</th><th>Farming code</th></tr>\n                <tr><td>Class A (fresh) · Class B (industrial)</td><td>S &lt;53 · M 53-63 · L 63-73 · XL ≥73 g</td><td>0 organic · 1 free-range · 2 barn · 3 cage</td></tr></table>\n                <p>Class A: air chamber ≤6 mm (≤4 mm for 'extra'). Sale period ≤21 days.</p>\n\n                <h3>🩺 Health</h3>\n                <p><strong>Benefits:</strong> high nutritional density, high-BV protein, lowers blood pressure, anti-inflammatory, antioxidant.</p>\n                <p><strong>Risks:</strong> Salmonella & Campylobacter contamination, allergic reactions. Eggs are a key hotel breakfast ingredient — handling and storage are essential.</p>\n            "
+      "content": "\n                <h3>🥚 The Egg</h3>\n                <p>A complex reproductive cell — an 'organism in miniature'. Most common = chicken; also goose, turkey, duck, quail, ostrich. World production ~83.4 Mt (Asia leads).</p>\n\n                <h3>🔬 Anatomy</h3>\n                <ul>\n                <li><strong>Shell:</strong> porous, calcium carbonate</li>\n                <li><strong>Membrane (skin):</strong> protects against bacteria</li>\n                <li><strong>Airspace:</strong> between two membranes (grows as egg ages)</li>\n                <li><strong>Albumen (white):</strong> thick + thin layers</li>\n                <li><strong>Chalaza:</strong> keeps yolk centered</li>\n                <li><strong>Yolk + yolk membrane</strong></li>\n                </ul>\n\n                <h3>📊 Composition</h3>\n                <table><tr><th>Component</th><th>Whole</th><th>Yolk</th><th>White</th></tr>\n                <tr><td>Water</td><td>72-75%</td><td>47-50%</td><td>86-88%</td></tr>\n                <tr><td>Protein</td><td>12.5-13.3%</td><td>15-17%</td><td>10.5-12.3%</td></tr>\n                <tr><td>Fat</td><td>10.7-11.6%</td><td>28-36%</td><td>trace</td></tr></table>\n                <p><strong>Yolk:</strong> fats 65%, phospholipids 31% (lecithin = emulsifier), cholesterol 4%, iron, carotenoids.<br>\n                <strong>White:</strong> protein BV = 94, avidin (antinutritive), B vitamins (A and D are in the yolk; the egg has no vitamin C).</p>\n\n                <h3>🔍 Freshness & Market Classes</h3>\n                <ul>\n                <li><strong>Densitometry:</strong> immersion in 12% salt solution (fresh sinks)</li>\n                <li><strong>Candling:</strong> ovoscope examination</li>\n                </ul>\n                <table><tr><th>Quality</th><th>Size</th><th>Farming code</th></tr>\n                <tr><td>Class A (fresh) · Class B (industrial)</td><td>S &lt;53 · M 53-63 · L 63-73 · XL ≥73 g</td><td>0 organic · 1 free-range · 2 barn · 3 cage</td></tr></table>\n                <p>Class A: air chamber ≤6 mm (≤4 mm for 'extra'). Sale period ≤21 days.</p>\n\n                <h3>🩺 Health</h3>\n                <p><strong>Benefits:</strong> high nutritional density, high-BV protein, lowers blood pressure, anti-inflammatory, antioxidant.</p>\n                <p><strong>Risks:</strong> Salmonella & Campylobacter contamination, allergic reactions. Eggs are a key hotel breakfast ingredient — handling and storage are essential.</p>\n            "
     }
   },
   "healthyDiet": {

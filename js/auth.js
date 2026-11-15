@@ -50,11 +50,16 @@ function _readSupabaseOverride() {
             && window.__SOKRAT_SUPABASE__.url && window.__SOKRAT_SUPABASE__.publishableKey) {
             return window.__SOKRAT_SUPABASE__;
         }
-        if (typeof localStorage !== 'undefined') {
+        // localStorage put samo na lokalnom razvoju/testovima, i samo za *.supabase.co adresu
+        // (isti obrazac kao js/odjava.js) — u produkciji se ne poštuje.
+        const lokalno = typeof location !== 'undefined'
+            && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+        if (lokalno && typeof localStorage !== 'undefined') {
             const raw = localStorage.getItem('sokrat-supabase-override');
             if (raw) {
                 const o = JSON.parse(raw);
-                if (o && o.url && o.publishableKey) return o;
+                if (o && o.publishableKey && typeof o.url === 'string'
+                    && /^https:\/\/[a-z0-9]+\.supabase\.co$/.test(o.url)) return o;
             }
         }
     } catch (e) { /* bilo kakva greška → nema overridea (prod default) */ }

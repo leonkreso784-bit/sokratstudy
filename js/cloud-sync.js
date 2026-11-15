@@ -21,6 +21,8 @@ const CloudSync = (function () {
     let userId = null;
     let timer = null;
     let snapshot = {}; // key -> JSON string zadnjeg sinkroniziranog stanja
+    let pulled = false;  // true tek nakon uspješnog pulla; do tada push NE smije raditi (bez merge-a pregazio bi oblak)
+    let pulling = false; // pull u tijeku (da interval ne pokrene drugi paralelno)
 
     // ---------- Ključevi ----------
 
@@ -37,6 +39,21 @@ const CloudSync = (function () {
             });
         }
         return keys;
+    }
+
+    // Što smije iz oblaka u localStorage: samo ključevi koje sama aplikacija piše.
+    // Sve ostalo (npr. sokrat-supabase-override, sokrat-progress-owner) se odbija.
+    const DOZVOLJENI_OBRASCI = [
+        /^sokrat-last-position$/,
+        /^[a-z0-9][a-z0-9-]*-progress(-analytics)?$/,
+        /^[a-z0-9][a-z0-9-]*-exercises-progress$/,
+        /^node:[0-9a-f-]{36}(-analytics)?$/i
+    ];
+
+    function isAllowedKey(key, watched) {
+        if (typeof key !== 'string') return false;
+        if ((watched || watchedKeys()).indexOf(key) !== -1) return true;
+        return DOZVOLJENI_OBRASCI.some(function (re) { return re.test(key); });
     }
 
     function readLocal(key) {
@@ -77,10 +94,21 @@ const CloudSync = (function () {
         return out;
     }
 
-    function mergeValues(a, b) {
+    // ISO datum ili YYYY-MM-DD → ms; inače NaN
+    const ISO_DATUM = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?)?$/;
+    function datumMs(v) {
+        return (typeof v === 'string' && ISO_DATUM.test(v)) ? Date.parse(v) : NaN;
+    }
+
+    function mergeValues(a, b, key) {
         if (a === null || a === undefined) return b;
         if (b === null || b === undefined) return a;
+        // zadnja pozicija je jedna cjelina — pobjeđuje novija, bez miješanja polja
+        if (key === 'sokrat-last-position' && isPlainObject(a) && isPlainObject(b)) {
+            return (Number(a.timestamp) || 0) > (Number(b.timestamp) || 0) ? a : b;
+        }
         if (typeof a === 'number' && typeof b === 'number') return Math.max(a, b);
+        if (typeof a === 'boolean' && typeof b === 'boolean') return a || b; // done/learned se ne poništava
         if (Array.isArray(a) && Array.isArray(b)) {
             const allStrings = a.concat(b).every(function (x) { return typeof x === 'string'; });
             if (allStrings) return Array.from(new Set(a.concat(b)));
@@ -93,8 +121,10 @@ const CloudSync = (function () {
             });
             return out;
         }
-        // skalari/raznorodno: zadnja studija pobjeđuje preko lastStudy/lastSessionDate
-        // gdje postoji; inače uzmi b (remote) kao izvor istine.
+        // dva datuma (ISO / YYYY-MM-DD) → noviji (lastStudy, lastSessionDate)
+        const da = datumMs(a), db = datumMs(b);
+        if (!isNaN(da) && !isNaN(db)) return da > db ? a : b;
+        // ostali skalari/raznorodno: remote je izvor istine.
         return b;
     }
 
@@ -102,17 +132,31 @@ const CloudSync = (function () {
 
     async function pullAndMerge() {
         const client = SokratAuth.getClient();
-        if (!client || !userId) return;
+        if (!client || !userId || pulling) return;
+        const uid = userId;
+        pulling = true;
+        try {
+            await pullAndMergeInner(client, uid);
+        } catch (e) {
+            console.warn('[sync] pull failed:', e && e.message);
+        } finally {
+            pulling = false;
+        }
+    }
 
+    async function pullAndMergeInner(client, uid) {
         const { data: rows, error } = await client.from('progress').select('key, data');
         if (error) { console.warn('[sync] pull failed:', error.message); return; }
+        if (userId !== uid) return; // sesija se promijenila tijekom pulla
 
         const remote = {};
         (rows || []).forEach(function (r) { remote[r.key] = r.data; });
 
-        const keys = watchedKeys();
+        const watched = watchedKeys();
+        const keys = watched.slice();
         Object.keys(remote).forEach(function (k) {
-            if (keys.indexOf(k) === -1) keys.push(k); // ključevi s drugih uređaja/verzija
+            // ključevi s drugih uređaja/verzija — samo ako ih aplikacija sama piše (allowlist)
+            if (keys.indexOf(k) === -1 && isAllowedKey(k, watched)) keys.push(k);
         });
 
         const meta = readMeta();
@@ -123,7 +167,7 @@ const CloudSync = (function () {
             const rem = (key in remote) ? remote[key] : null;
             if (local === null && rem === null) return;
 
-            const merged = mergeValues(local, rem);
+            const merged = mergeValues(local, rem, key);
             const mergedStr = JSON.stringify(merged);
 
             localStorage.setItem(key, mergedStr);
@@ -140,6 +184,7 @@ const CloudSync = (function () {
         });
 
         writeMeta(meta);
+        pulled = true; // merge je gotov; od sada je push siguran
         let poslano = true;
         if (toPush.length) {
             poslano = await upsertRows(toPush.map(function (r) { return { user_id: r.user_id, key: r.key, data: r.data }; }));
@@ -175,7 +220,7 @@ const CloudSync = (function () {
     }
 
     async function pushChanges() {
-        if (!userId) return;
+        if (!userId || !pulled) return; // bez uspjelog pulla push bi pregazio oblak
         const changed = collectChanged();
         if (!changed.length) return;
 
@@ -214,12 +259,16 @@ const CloudSync = (function () {
 
     function start() {
         if (timer) return;
-        timer = setInterval(function () { pushChanges(); }, SYNC_INTERVAL_MS);
+        timer = setInterval(function () {
+            if (!pulled) pullAndMerge(); // pull nije uspio (offline) → ponovi prije ikakvog pusha
+            else pushChanges();
+        }, SYNC_INTERVAL_MS);
     }
 
     function stop() {
         if (timer) { clearInterval(timer); timer = null; }
         snapshot = {};
+        pulled = false;
     }
 
     /**
@@ -252,6 +301,7 @@ const CloudSync = (function () {
         watchedKeys().forEach(function (k) { localStorage.removeItem(k); });
         localStorage.removeItem(META_KEY);
         snapshot = {};
+        pulled = wasRunning; // oblak i lokalno su prazni — nema što pregaziti (ako pull nije ni bio gotov, ostaje false)
 
         // Isti best-effort UI refresh kao nakon pulla — otvoren predmet ne smije
         // nastaviti pokazivati (i pri idućem spremanju USKRSNUTI) obrisani napredak.
@@ -287,6 +337,7 @@ const CloudSync = (function () {
             localStorage.removeItem(META_KEY);
             snapshot = {};
         }
+        pulled = false;
         localStorage.setItem(OWNER_KEY, noviUserId);
     }
 
@@ -295,7 +346,8 @@ const CloudSync = (function () {
             if (userId === user.id && timer) return; // SIGNED_IN se zna ponoviti (token refresh, fokus taba)
             preuzmiUredjaj(user.id);
             userId = user.id;
-            pullAndMerge().then(start);
+            pulled = false;
+            pullAndMerge().then(start); // pullAndMerge ne baca; ako padne, interval ponavlja pull
         } else {
             userId = null;
             stop();

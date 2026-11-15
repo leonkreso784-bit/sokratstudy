@@ -27,14 +27,16 @@
   //    za slike još data:image/(png|jpg|gif|webp). Sve s eksplicitnom drugom shemom
   //    (javascript:, data:text, vbscript:, file:, …) → ODBIJ (prazan string). ──
   function safeUrl(url, opts) {
-    const u = String(url == null ? '' : url).trim();
+    const orig = String(url == null ? '' : url).trim();
+    // preglednici ignoriraju kontrolne znakove/razmake u shemi (`java\tscript:`) → test na očišćenom
+    const u = orig.replace(/[\u0000-\u0020\u007f]/g, '');
     if (!u) return '';
     const m = u.match(/^([a-zA-Z][a-zA-Z0-9+.-]*):/); // ima li eksplicitnu shemu?
-    if (!m) return u;                                  // relativni / #anchor / //host → OK
+    if (!m) return orig;                               // relativni / #anchor / //host → OK
     const scheme = m[1].toLowerCase();
-    if (scheme === 'http' || scheme === 'https' || scheme === 'mailto') return u;
+    if (scheme === 'http' || scheme === 'https' || scheme === 'mailto') return orig;
     // data:image (bez svg — SVG može nositi skripte) samo za <img>
-    if (opts && opts.image && /^data:image\/(png|jpe?g|gif|webp)[;,]/i.test(u)) return u;
+    if (opts && opts.image && /^data:image\/(png|jpe?g|gif|webp)[;,]/i.test(u)) return orig;
     return '';                                         // nepoznata/opasna shema
   }
 

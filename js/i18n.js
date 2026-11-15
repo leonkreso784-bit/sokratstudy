@@ -212,6 +212,7 @@
     'quiz.incorrect': { en: 'Incorrect', hr: 'Netočno' },
     'quiz.question': { en: 'Question', hr: 'Pitanje' },
     'quiz.time': { en: 'Time', hr: 'Vrijeme' },
+    'quiz.noQuestions': { en: 'No quiz questions available here.', hr: 'Ovdje nema pitanja za kviz.' },
     // Quiz rezultat — naslovi/poruke po postotku (EN = ORIGINALNI tekst → EN nepromijenjen)
     'quiz.res.perfect.t': { en: 'Excellent!', hr: 'Izvrsno!' },
     'quiz.res.perfect.m': { en: 'Perfect knowledge!', hr: 'Savršeno znanje!' },

@@ -56,6 +56,7 @@ function load(o) {
   const opts = o || {};
   const ls = opts.ls || lazniLocalStorage();
   const slusaci = [];
+  const ticks = [];
   const win = { addEventListener: () => {}, t: null };
   const doc = { addEventListener: () => {}, visibilityState: 'visible' };
   const predmeti = opts.predmeti || { statistics: { storageKey: 'statistics-progress' } };
@@ -67,8 +68,8 @@ function load(o) {
   const CS = new Function(
     'window', 'document', 'localStorage', 'subjectDataMap', 'SokratAuth', 'setInterval',
     KOD + '\n;return CloudSync;'
-  )(win, doc, ls, predmeti, auth, () => 1);
-  return { CS: CS, ls: ls };
+  )(win, doc, ls, predmeti, auth, (fn) => { ticks.push(fn); return 1; });
+  return { CS: CS, ls: ls, ticks: ticks };
 }
 
 const M = load().CS.mergeValues;
@@ -363,6 +364,98 @@ Promise.resolve()
       assert.strictEqual(JSON.parse(ls.getItem('statistics-progress')).cardsStudied, 40);
       const red = klijent.poslano[0].filter((r) => r.key === 'statistics-progress')[0];
       assert.ok(red && red.data.cardsStudied === 40, 'gostov napredak mora otići u prvi račun');
+    });
+  }))
+
+  // ── merge skalara ──
+  .then(() => {
+    test('boolean: a || b (done/learned se nikad ne poništava)', () => {
+      assert.strictEqual(M(true, false), true);
+      assert.strictEqual(M(false, true), true);
+      assert.strictEqual(M(false, false), false);
+      assert.deepStrictEqual(M({ done: true }, { done: false }), { done: true });
+    });
+    test('dva ISO/YYYY-MM-DD datuma → noviji, bez obzira na stranu', () => {
+      assert.strictEqual(M('2026-08-28T10:00:00.000Z', '2026-08-20T10:00:00.000Z'), '2026-08-28T10:00:00.000Z');
+      assert.strictEqual(M('2026-08-20T10:00:00.000Z', '2026-08-28T10:00:00.000Z'), '2026-08-28T10:00:00.000Z');
+      assert.strictEqual(M('2026-09-01', '2026-08-01'), '2026-09-01');
+      assert.deepStrictEqual(M({ lastStudy: '2026-09-01T00:00:00.000Z' }, { lastStudy: '2026-08-01T00:00:00.000Z' }), { lastStudy: '2026-09-01T00:00:00.000Z' });
+    });
+    test('ostali stringovi: remote ostaje (nisu datumi)', () => {
+      assert.strictEqual(M('lokalno', 'udaljeno'), 'udaljeno');
+      assert.strictEqual(M('2026-09-01', 'nije datum'), 'nije datum');
+    });
+    test('sokrat-last-position: cijeli objekt s novijim timestampom pobjeđuje (bez miješanja polja)', () => {
+      const lok = { page: 'study', subject: 'a', lesson: 'l1', timestamp: 2000 };
+      const rem = { page: 'quiz', subject: 'b', section: 's', timestamp: 1000 };
+      assert.deepStrictEqual(M(lok, rem, 'sokrat-last-position'), lok);
+      assert.deepStrictEqual(M(rem, lok, 'sokrat-last-position'), lok);
+    });
+  })
+
+  // ── allowlist ──
+  .then(() => testAsync('pull odbija ključeve izvan allowliste (override, owner), prihvaća node:<uuid>', function () {
+    const ls = lazniLocalStorage();
+    const uuid = '123e4567-e89b-12d3-a456-426614174000';
+    const klijent = lazniKlijent();
+    klijent.from = () => ({
+      select: () => Promise.resolve({ error: null, data: [
+        { key: 'sokrat-supabase-override', data: { url: 'https://evil.supabase.co', publishableKey: 'x' } },
+        { key: 'sokrat-progress-owner', data: 'napadac' },
+        { key: 'sokrat-theme', data: 'x' },
+        { key: 'node:' + uuid, data: { cardsStudied: 3 } },
+        { key: 'physics-exercises-progress', data: { e1: { done: true } } },
+        { key: 'sokrat-last-position', data: { page: 'study', timestamp: 5 } }
+      ] }),
+      upsert: () => Promise.resolve({ error: null })
+    });
+    const { CS } = load({ ls: ls, klijent: klijent });
+    CS.handleAuthChange({ id: 'u1' });
+    return slegni().then(() => {
+      assert.strictEqual(ls.getItem('sokrat-supabase-override'), null);
+      assert.strictEqual(ls.getItem('sokrat-theme'), null);
+      assert.strictEqual(ls.getItem('sokrat-progress-owner'), 'u1', 'owner ostaje onaj koji je app sam postavio');
+      assert.ok(ls.getItem('node:' + uuid), 'node:<uuid> mora proći');
+      assert.ok(ls.getItem('physics-exercises-progress'));
+      assert.ok(ls.getItem('sokrat-last-position'));
+    });
+  }))
+
+  // ── bez pusha prije uspjelog pulla ──
+  .then(() => testAsync('⛔ pull pada → interval NE pusha (ponavlja pull); nakon uspjeha merge pa push', function () {
+    const ls = lazniLocalStorage({ 'statistics-progress': JSON.stringify({ cardsStudied: 40 }) });
+    const klijent = lazniKlijent();
+    let pullPada = true;
+    let pullova = 0;
+    klijent.from = () => ({
+      select: () => { pullova++; return Promise.resolve(pullPada
+        ? { data: null, error: { message: 'offline' } }
+        : { error: null, data: [{ key: 'statistics-progress', data: { cardsStudied: 50 } }] }); },
+      upsert: (rows) => { klijent.poslano.push(rows); return Promise.resolve({ error: null }); }
+    });
+    const { CS, ticks } = load({ ls: ls, klijent: klijent });
+    CS.handleAuthChange({ id: 'u1' });
+    return slegni().then(() => {
+      assert.strictEqual(pullova, 1);
+      assert.strictEqual(ticks.length, 1, 'start() mora postaviti interval');
+      ticks[0]();                                   // interval: pull još nije uspio
+      return slegni();
+    }).then(() => {
+      assert.strictEqual(pullova, 2, 'interval ponavlja pull');
+      assert.strictEqual(klijent.poslano.length, 0, 'ništa se ne smije poslati prije pulla');
+      return CS.pushNow();
+    }).then(() => {
+      assert.strictEqual(klijent.poslano.length, 0, 'ni pushNow prije pulla');
+      pullPada = false;
+      ticks[0]();
+      return slegni();
+    }).then(() => {
+      assert.strictEqual(JSON.parse(ls.getItem('statistics-progress')).cardsStudied, 50);
+      ls.setItem('statistics-progress', JSON.stringify({ cardsStudied: 60 }));
+      return CS.pushNow();
+    }).then(() => {
+      const zadnji = klijent.poslano[klijent.poslano.length - 1];
+      assert.strictEqual(zadnji[0].data.cardsStudied, 60, 'nakon pulla push radi');
     });
   }))
 

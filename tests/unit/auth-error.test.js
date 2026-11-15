@@ -196,5 +196,34 @@ test('nigdje u auth.js nema setStatus(error.message)', () => {
   assert.strictEqual(pogodci.length, 0, 'sirova poruka ide u sučelje na ' + pogodci.length + ' mjesta');
 });
 
+// ── _readSupabaseOverride: localStorage put samo na localhostu i samo za *.supabase.co ──
+const overrideSrc = (authCode.match(/function _readSupabaseOverride\(\) \{[\s\S]*?\n\}\n/) || [])[0];
+function citajOverride(hostname, ls, win) {
+  return new Function('location', 'localStorage', 'window', overrideSrc + '\nreturn _readSupabaseOverride();')(
+    { hostname: hostname },
+    { getItem: (k) => (k in ls ? ls[k] : null) },
+    win || {}
+  );
+}
+const dobar = JSON.stringify({ url: 'https://abcdef123.supabase.co', publishableKey: 'k' });
+
+test('override: funkcija je pronađena u auth.js', () => assert.ok(overrideSrc));
+test('override: na produkcijskoj domeni localStorage override se IGNORIRA', () => {
+  assert.strictEqual(citajOverride('www.sokratstudy.com', { 'sokrat-supabase-override': dobar }), null);
+});
+test('override: na localhostu / 127.0.0.1 / [::1] radi', () => {
+  ['localhost', '127.0.0.1', '[::1]'].forEach((h) => {
+    const o = citajOverride(h, { 'sokrat-supabase-override': dobar });
+    assert.ok(o && o.url === 'https://abcdef123.supabase.co', h);
+  });
+});
+test('override: na localhostu se odbija url izvan *.supabase.co', () => {
+  ['https://evil.com', 'http://abc.supabase.co', 'https://abc.supabase.co.evil.com', 'https://a-b.supabase.co/x']
+    .forEach((u) => {
+      const raw = JSON.stringify({ url: u, publishableKey: 'k' });
+      assert.strictEqual(citajOverride('localhost', { 'sokrat-supabase-override': raw }), null, u);
+    });
+});
+
 console.log('\n' + passed + ' prošlo, ' + failed + ' palo\n');
 process.exit(failed ? 1 : 0);

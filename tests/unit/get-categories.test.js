@@ -64,5 +64,60 @@ test('niz-vrijednosti i funkcije se NE broje kao kategorije', function () {
   assert.deepStrictEqual(getCategories(content), ['a']);
 });
 
-console.log('\ngetCategories: ' + passed + ' prošlo, ' + failed + ' palo');
-process.exit(failed ? 1 : 0);
+
+// ── DB čitanje ima rok (~3 s): viseći Supabase → odmah na datoteke, brz odgovor ostaje isti ──
+function lazniKlijent(ponasanje) {
+  const q = {
+    aborted: false,
+    select: () => q,
+    eq: () => q,
+    abortSignal: (sig) => { sig.addEventListener('abort', () => { q.aborted = true; }); return q; },
+    then: (res, rej) => ponasanje().then(res, rej)
+  };
+  return { from: () => q, _q: q };
+}
+function ucitavac(klijent) {
+  const w = {};
+  const kat = { getSubject: (id) => ({ id: id, content: { scripts: [], codeScripts: [], dataFormat: 'js' } }) };
+  new Function('window', 'SokratAuth', 'SokratCatalog', code)(w, { getClient: () => klijent }, kat);
+  return w;
+}
+
+(async function () {
+  async function atest(name, fn) {
+    try { await fn(); passed++; console.log('  ✓ ' + name); }
+    catch (e) { failed++; console.error('  ✗ ' + name + '\n      ' + e.message); }
+  }
+
+  await atest('content-loader: viseći Supabase → lekcija se učita nakon ~3 s (abort + fallback)', async function () {
+    const k = lazniKlijent(() => new Promise(() => {}));
+    const w = ucitavac(k);
+    const t0 = Date.now();
+    await w.loadSubjectContent('x1');
+    const ms = Date.now() - t0;
+    assert.ok(ms >= 2900 && ms < 4500, 'trajanje ' + ms + ' ms');
+    assert.ok(k._q.aborted, 'upit mora biti prekinut AbortSignalom');
+    assert.strictEqual(w.isSubjectContentLoaded('x1'), true);
+  });
+
+  await atest('content-loader: zakašnjeli DB odgovor nakon roka se ignorira', async function () {
+    const k = lazniKlijent(() => new Promise((r) => setTimeout(() => r({ data: [{ var_name: 'kasniPodatak', payload: { a: 1 } }], error: null }), 3300)));
+    const w = ucitavac(k);
+    await w.loadSubjectContent('x2');
+    await new Promise((r) => setTimeout(r, 500));
+    assert.strictEqual(w.kasniPodatak, undefined);
+  });
+
+  await atest('content-loader: brz odgovor → ponašanje nepromijenjeno (window var iz baze, bez čekanja)', async function () {
+    const k = lazniKlijent(() => Promise.resolve({ data: [{ var_name: 'dbPodatak', payload: { ok: true } }], error: null }));
+    const w = ucitavac(k);
+    const t0 = Date.now();
+    await w.loadSubjectContent('x3');
+    assert.ok(Date.now() - t0 < 1000);
+    assert.deepStrictEqual(w.dbPodatak, { ok: true });
+    assert.strictEqual(k._q.aborted, false);
+  });
+
+  console.log('\ngetCategories: ' + passed + ' prošlo, ' + failed + ' palo');
+  process.exit(failed ? 1 : 0);
+})();

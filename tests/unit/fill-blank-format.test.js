@@ -168,5 +168,18 @@ test('jedna praznina ide istim putem kao prije (bez `answers`)', function () {
   assert.strictEqual(R.grade(['ravnotežna'], R.answersOf(q)).all, true);
 });
 
+test('grade: izostavljene dijakritike su tolerirane (č/ć/š/ž/đ)', function () {
+  assert.strictEqual(R.grade(['ravnotezna'], ['ravnotežna']).all, true);
+  assert.strictEqual(R.grade(['Đurđevac'], ['durdevac']).all, true);
+  assert.strictEqual(R.grade(['cetvrtak'], ['četvrtak']).all, true);
+  assert.strictEqual(R.grade(['ponuda'], ['potražnja']).all, false);
+});
+
+test('grade: čisto brojčani odgovor — decimalni zarez i točka su jednaki', function () {
+  assert.strictEqual(R.grade(['1,5'], ['1.5']).all, true);
+  assert.strictEqual(R.grade(['1.5'], ['1,5']).all, true);
+  assert.strictEqual(R.grade(['1,5'], ['2.5']).all, false);
+});
+
 console.log('\n' + passed + ' prošlo, ' + failed + ' palo\n');
 process.exit(failed ? 1 : 0);

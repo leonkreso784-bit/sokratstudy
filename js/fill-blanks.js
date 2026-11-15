@@ -166,7 +166,15 @@ function showFillQuestion() {
 }
 
 // Crtica ↔ razmak su ekvivalentni; višestruki razmaci kolabiraju (npr. "long-term" == "long term").
-function normFill(s) { return String(s).trim().toLowerCase().replace(/[-\s]+/g, ' ').trim(); }
+// Tolerantno i na izostavljene dijakritike (č→c, đ→d) te na decimalni zarez/točku u čisto brojčanim odgovorima.
+function normFill(s) {
+    let r = String(s).trim().toLowerCase()
+        .replace(/đ/g, 'd')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[-\s]+/g, ' ').trim();
+    if (/^[+-]?\d+[.,]\d+$/.test(r)) r = r.replace(',', '.');
+    return r;
+}
 
 function checkFillAnswer() {
     const fill = AppState.fill;

@@ -91,6 +91,9 @@ const blindMapLocations = {
 
 let blindMapDifficulty = 'cities';
 let blindMapQuestions = [];
+// Brava protiv dvostrukog Provjeri/Preskoči za vrijeme feedbacka + id timera koji prelazi na iduće pitanje.
+let blindMapBusy = false;
+let blindMapTimer = null;
 
 // ===== TEKST (F3/2) =====
 // Sav tekst sučelja ide kroz rječnik (`map.*` u js/i18n.js); imena mjesta su gradivo i ne prevode
@@ -160,6 +163,8 @@ function initBlindMap() {
     };
     window.addEventListener('resize', window._blindMapResizeHandler);
     
+    clearTimeout(blindMapTimer);
+    blindMapBusy = false;
     blindMapState = { selectedLocation: null, currentQuestion: 0, score: 0, answers: [] };
     blindMapQuestions = shuffleArray([...(blindMapLocations[blindMapDifficulty] || blindMapLocations.cities)]);
     drawMapCoordsText();
@@ -274,6 +279,7 @@ function handleBlindMapClick(event) {
 }
 
 function submitMapAnswer() {
+    if (blindMapBusy) return;
     if (!blindMapState.selectedLocation) {
         showToast(mapT('map.selectFirst'));
         return;
@@ -286,7 +292,13 @@ function submitMapAnswer() {
     const dy = blindMapState.selectedLocation.y - currentQ.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
     const threshold = 45;
-    const isCorrect = distance <= threshold;
+    // Pogodak samo ako je klik u radijusu I ovo je najbliža meta u trenutnom skupu (gusti gradovi, npr. Poreč–Funtana ~7px).
+    const nearest = blindMapQuestions.reduce((best, loc) => {
+        const d = Math.hypot(blindMapState.selectedLocation.x - loc.x, blindMapState.selectedLocation.y - loc.y);
+        return d < best.d ? { loc, d } : best;
+    }, { loc: null, d: Infinity }).loc;
+    const isCorrect = distance <= threshold && nearest === currentQ;
+    blindMapBusy = true;
     
     const feedback = document.getElementById('mapFeedback');
 
@@ -315,7 +327,8 @@ function submitMapAnswer() {
     blindMapState.answers.push({ q: blindMapState.currentQuestion, correct: isCorrect });
     document.getElementById('mapScore').textContent = blindMapState.score;
     
-    setTimeout(() => {
+    blindMapTimer = setTimeout(() => {
+        blindMapBusy = false;
         blindMapState.selectedLocation = null;
         blindMapState.currentQuestion++;
         if (blindMapState.currentQuestion >= blindMapQuestions.length) {
@@ -353,6 +366,8 @@ function clearMapSelection() {
 }
 
 function skipMapQuestion() {
+    if (blindMapBusy) return;
+    blindMapBusy = true;
     clearMapSelection();
     document.getElementById('mapFeedback').classList.remove('show');
     
@@ -372,7 +387,8 @@ function skipMapQuestion() {
     
     blindMapState.answers.push({ q: blindMapState.currentQuestion, correct: false });
     
-    setTimeout(() => {
+    blindMapTimer = setTimeout(() => {
+        blindMapBusy = false;
         blindMapState.currentQuestion++;
         if (blindMapState.currentQuestion >= blindMapQuestions.length) {
             showMapResults();

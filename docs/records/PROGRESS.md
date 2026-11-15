@@ -5,6 +5,18 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-15 (OPUS, fork, grana `fix/audit-study-sync-content`) — revizija koda i sadržaja + ispravci
+
+**Kako:** četiri paralelne read-only revizije (logika načina učenja · sigurnost/podaci · performanse/offline/telefon ·
+točnost sadržaja), nalazi provjereni u kodu, pa ispravci samo na klijentu (bez SQL-a). Popis u CHANGELOG-u 15.11.
+**Odbačeno nakon provjere:** makro-HR „C 800, S 500, I 300, G 200, deficit 100 → BDP 1 400" NIJE greška (otvorena
+ekonomija, NX = 100) · `legacy-html` fail-closed bez DOMPurifyja bi katalog prikazao kao sirov tekst kad CDN padne → ostaje
+raw za NAŠ sadržaj; za UGC dijeljenje (F7) treba fail-closed.
+**Otvoreno (prijedlozi u PR-u, nije dirano):** kvote/veličina payloada u `publish_node`/`create_node` + `progress` (SQL) ·
+`revoke` write-grantova na `profiles`/`subject_content`/`content_versions` (SQL) · CSP `script-src` na cijeli
+jsDelivr/cdnjs · lekcija skida M1+M2+Final (~2× podataka) · `categoryProgress` se nikad ne piše (traka po kategoriji uvijek 0 %) ·
+`initStudyPage` bez zaštite od zastarjelog poziva · davanje odgovora najduljom opcijom (traffic 40 %).
+
 ## 2026-11-14/15 (OPUS, stablo `sokratstudy.mor`, grana `feat/mor`) — novi HR program MOR (Menadžment održivog razvoja)
 
 **Izvori:** kolegica s MOR smjera dala je pristup Merlinu (Leon se prijavio u pregledniku; ja sam samo čitao i preuzimao
