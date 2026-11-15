@@ -15,6 +15,8 @@ declare global {
         isInProgram(s: unknown, programId: string): boolean;
         placementsOf(s: unknown): Array<{ faculty: string | null; program: string; year?: number; semester?: number }>;
         subjectsOf(programId: string, year?: number): Array<{ [k: string]: unknown }>;
+        // Jezik sučelja koji predmet predlaže: `lang` njegova programa ('hr') ili null (MOR, 2026-11-15).
+        uiLangOf(s: unknown): string | null;
         [k: string]: unknown;
       }
     | undefined;

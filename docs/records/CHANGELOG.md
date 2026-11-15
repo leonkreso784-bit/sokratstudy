@@ -5,6 +5,13 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+## 2026-11-15 (OPUS) — ➕ **Novi program „Menadžment održivog razvoja" (MOR)** — grana `feat/mor`
+
+Treći program FMTU-a (`sustainable-development-management-hr`, HR). 9 kolegija zajedničkih s MUH-om kao kopije `-mor`;
+5 novih predmeta: Prirodne osnove geoprostora, Turizam i turistički sustav (1. god), Ekonomika okoliša (samo 1. kolokvij),
+Menadžment kvalitete, Urbana ekonomija (2. god). Hrvatsko sučelje se sad predlaže po `lang` programa, ne po zakucanom
+MUH id-u. Katalog 36 → 50. Detalji po predmetu: `docs/subjects/README.md` §MOR.
+
 ## 2026-11-04 (OPUS) — ➕ **3. godina HM: Public Finance i Quality Management (Midterm 1)** — grana `feat/y3-pf-qm`
 
 Dva nova EN predmeta (`year: 3, semester: 1`), po jedna lekcija `midterm-1`: Public Finance 6 kat / 155 fc / 140 quiz / 39 fill,

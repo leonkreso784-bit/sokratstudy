@@ -5,6 +5,23 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-14/15 (OPUS, stablo `sokratstudy.mor`, grana `feat/mor`) — novi HR program MOR (Menadžment održivog razvoja)
+
+**Izvori:** kolegica s MOR smjera dala je pristup Merlinu (Leon se prijavio u pregledniku; ja sam samo čitao i preuzimao
+nastavne materijale — bez bodova, rokova i popisa studenata) + dvije datoteke s WhatsAppa (skripta EKO K1, ispitna pitanja MK).
+Kurikulum iz službenog popisa predmeta 2026/27 (fthm.uniri.hr), uspoređen s PETU/MUH po nositelju. Sve u `_materials/mor/`
+(gitignored), tekst izvađen uz original. **Ime kolegice nigdje u repou** (`check:names`).
+**Odluke (anketa):** zajednički kolegiji = kopije `-mor` (placement odbačen); Merlin 2025/26 za dva nova 1. god predmeta.
+**Platforma:** `js/i18n.js` je HR sučelje predlagao samo za MUH id → jezik sad nosi `lang` programa (brana
+`program-lang.test.js`, pada na starom kodu). Boja MK je prvo pala `check:contrast` (23° od indiga znaka) → rose.
+**Gradnja:** 5 Opus graditelja (zajednički brief) → `content-review` po predmetu → ispravke istom graditelju. Kad je Opus
+5-satni limit prekinuo POG graditelja i TTS recenzenta, ispravke POG/URB napravio sam (alat koji mijenja po id-u, round-trip
+bajt-identičan), TTS recenzija ponovljena na Sonnetu. **Id-evi stavki su trajni** — dodano u brief nakon što je EKO graditelj
+pri ispravku regenerirao sve id-eve (bezopasno jer još nije bio commitan).
+**Commitovi:** `f6c4b97` program + 9 kopija · `65d07ab` EKO · `59c4b69` MK · `fc43af1` URB · `512a99a` POG · `dd595dc` TTS.
+**Nalaz za sve predmete:** točan odgovor je često najdulja opcija (43–56 %) — zapisano u `docs/subjects/README.md` kao dug.
+**Sljedeće:** K2 za EKO/MK/URB kad profesori objave; sem IV od veljače; PROD tek uz Leonov OK (+ `migrate-content.js` za nove JSON predmete).
+
 ## 2026-11-04 (OPUS, stablo `sokratstudy.y3`, grana `feat/y3-pf-qm`) — 3. godina HM: Public Finance + Quality Management (Midterm 1)
 
 Leon je za kolokvije (PF 9.11., QM 10.11.) dao izgraditi Sokrat materijale kroz MCP konektor — koji je **samo na stagingu**.

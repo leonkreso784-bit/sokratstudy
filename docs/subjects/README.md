@@ -101,7 +101,34 @@ Izvor sadržaja: Sokrat MCP materijali sa stagingu (`node_content` 2026-11-04), 
 | Mathematics | `math-hr` | S4 (KaTeX) + S5 | 🟢 **teorija NA PRODUKCIJI 2026-09-28** (`3898fe6`) + 🟢 **vježbe NA PRODUKCIJI 2026-09-28** (`ca6a51f`) | **Vježbe:** `data/math-hr/exercises.js` — 54 (36 randomiziranih; 35 za 1. i 19 za 2. kolokvij), na hrvatskom, po stvarnim ispitima 2023/24 i demonstraturama (zajam 40 000 € s otplatnom tablicom, renta, relativni kamatnjak, elastičnost, ekstremi…); dijeli `data/math/math-lib.js` s EN-om (jedan izvor). `exercise-review`: 54/54 točno kroz CIJELI prostor parametara, pogrešni postupci (prenumerando/postnumerando, n±1, relativni umjesto konformnog) ne upadaju u toleranciju. ⚠️ Statični `prompt` randomizirane vježbe engine PREGAZI generiranim → uputa „zaokružite na 2 decimale" mora biti u generiranom (mjereno: 0/36 izgubljenih). ⚠️ 23 vježbe imaju negativan odgovor, a `parseAmount` ne prepoznaje Unicode minus „−" (čeka odluku o engineu). **Metoda: temelj EN `math` (ISTI FMTU kolegij) + usklađeno s HR izvorima** — HR izvor je TANAK: Merlin ima 3 prezentacije demonstratura, Drive 18 fotografija (3 prava ispitna lista 2023/24 + bilježnice). Razlike od EN-a: elastičnost je u K1 (HR Projektni zadatak 1), K2 ima zaseban **kamatni račun** (relativni/konformni kamatnjak). examPractice = riješeni stvarni ispitni zadaci (zajam s otplatnom tablicom, renta, elastičnost…). Brojke: `npm run validate:content -- math-hr`. Provjera: 185 računskih tvrdnji preračunato (0 odstupanja), 1417 formula kroz KaTeX `strict`. **Gauss-Jordan OSTAJE u 2. kolokviju** (Leonova odluka 28.09.: studenti su ga radili kroz vlastite prezentacije, zato ga nema na Merlinu ni u HR izvorima; pokaže li se da ga na kolegiju nema — mijenja se). ⚠️ Kružeći studentski materijali imaju greške (kompleksni korijeni, zamijenjen min/max) → ispravljeno i navedeno kao zamke. ⚠️ RUČNO autorirano → NE `translate-subject.js`. |
 | Accounting | `accounting-hr` | S3 (study) + S5 (vježbe) | 🟢 **teorija + vježbe NA PRODUKCIJI 2026-09-29** (`e54bdf3`) (HR naziv „Računovodstvo"; 54 vježbe — knjiženja, bilanca, T-konta, PDV, RDG/novčani tok, amortizacija, zalihe, kalkulacije; `exercise-review` + mutacijski test) | **Metoda: AUTORSKI iz HR studentskih materijala** (Drive, „Menadžment u ugostiteljstvu / 2. godina": skripta gradiva 1. kolokvija ~139k, „miks svih kolokvija" ~113k, skripta TC1–TC7, pitanja i odgovori s riješenim zadacima K1/K2/završni) — NE prijevod EN-a. HR kolegij je **knjigovodstveni** (bilanca, konta, bilančne promjene, kontni plan, PDV 180/280, RDG i novčani tok, amortizacija, zalihe, kalkulacije, zaključivanje knjiga); EN-ove hotelske teme (RevPAR, hotelski RDG) nisu u HR opsegu. Brojke: `npm run validate:content -- accounting-hr`. Bilance i kalkulacije preračunate skriptom. ⚠️ ~15 grešaka izvora ispravljeno (pravila na kontima, kamate 724/952, razvrstavanje stavki, LIFO/FIFO, degresivna/progresivna…) — u learnu označeno. ⚠️ Zastarjeli propisi iz skripti (porez na dobit 35 %, sitni inventar 1.000 kn, prirez) zamijenjeni današnjima — **provjeriti**. ⚠️ Izvornik „miks svih kolokvija" završava usred elektivne dodatne kalkulacije → opisana standardnom definicijom. ⚠️ RUČNO autorirano → NE `translate-subject.js`. |
 
-**S6 (examPractice iz ispitnih pitanja)**: usput, po dostupnosti Word materijala. **S7 (MUT/MOR)**: čeka U2.5 (ADR-022).
+**S6 (examPractice iz ispitnih pitanja)**: usput, po dostupnosti Word materijala. **S7 (MUT/MOR)**: MOR otvoren 2026-11-15 (odjeljak niže) — kopijama, ne kroz U2.5.
+
+## HR program „Menadžment održivog razvoja" (MOR) — od 2026-11-15, grana `feat/mor`
+
+> **Povod:** kolegica s tog smjera (2. god) dala je pristup svom Merlinu; prioritet su joj bili Ekonomika okoliša i
+> Menadžment kvalitete. **Izvor istine o kurikulumu:** službeni „Popis predmeta i nositelja 2026./2027." za MOR
+> (fthm.uniri.hr), uspoređen s PETU/MUH popisom po kolegiju **i nositelju**. MOR je 4-godišnji; jezici su izvan opsega.
+> **Odluka (Leon, anketa 14.11.):** zajednički kolegiji = **KOPIJE `<id>-mor`** (vlastiti id + storageKey, ISTE
+> `data/<muh-id>/*.js`; `data/json/<id>-mor/` iz `export:json`). Placement (ADR-022) svjesno odbačen jer bi preimenovao
+> 9 živih id-eva. ⚠️ **Izmjena MUH gradiva → ponovi `npm run export:json`** (inače drift-gate). Jezik sučelja nosi
+> `lang` programa (`SokratCatalog.uiLangOf`, brana `tests/unit/program-lang.test.js`).
+> **Kalup gradnje:** Opus graditelj po predmetu (brief u `_materials/mor/BRIEF-GRADITELJ.md`, gitignored) →
+> `content-review` → ispravke. Brojke = **final** (ili jedina lekcija) kat / fc / quiz / fill.
+
+| Predmet | ID | God/sem | Brojke | Izvor i napomene |
+|---|---|---|---|---|
+| 8 kolegija 1. god (Mikro, Matematika, Statistika, Poslovna informatika, Osnove izrade pisanog djela, Makro, Menadžment, Promet) + Računovodstvo | `<muh-id>` → `*-mor` | 1/1–2, 2/1 | = MUH | **kopije** (isti kolegij i nositelj) |
+| Prirodne osnove geoprostora | `natural-geospace-mor` | 1/1 | 22 / 496 / 449 / 169 | 11 predavanja (slikovna) + udžbenik (obavezna literatura, nosi dubinu). Kategorija **„Zaštićena područja RH (priprema za slijepu kartu)"** — interaktivna slijepa karta NIJE napravljena (platforma). Ispravljene greške slajdova (gips, galenit, serir) |
+| Turizam i turistički sustav | `tourism-system-mor` | 1/2 | 18 / 584 / 477 / 159 | Merlin 2025/26: 6 cjelina = K1, 6 oblika turizma = K2 (gusti tekst, potpun) |
+| Računovodstvo | `accounting-mor` | 2/1 | = MUH | kopija `accounting-hr` (kolegij „za sve smjerove") |
+| Ekonomika okoliša | `environmental-economics-mor` | 2/1 | 12 / 225 / 226 / 55 | **samo 1. kolokvij** — izvor: studentska skripta (sažetak ispitne knjige, koju NEMAMO) + predavanja 0–4a. ⏳ **K2 + završni: kad profesor objavi gradivo** |
+| Menadžment kvalitete | `quality-management-mor` | 2/1 | 16 / 313 / 265 / 83 | K1 iz tjednih predavanja 1–6 + studentska zbirka ispitnih pitanja K1/K2. ⏳ **K2 predavanja nisu objavljena** → rizici iz e-materijala, ostalo (audit, troškovi, alati, usluge, standardi i oznake kvalitete, IQM) stručna dopuna, označena u learnu → **dograditi kad izađu** |
+| Urbana ekonomija | `urban-economics-mor` | 2/1 | 22 / 416 / 329 / 143 | K1 predavanja + udžbenik; K2 iz udžbenika + kraće označene dopune. ⏳ K2 predavanja (17.11.–22.12.) i literatura Šimunović / Lamza-Maronić **nemamo** → provjeriti K2 kad stignu |
+| Održivi marketing · Održivi razvoj · Održivi razvoj turizma · Menadžment znanja | — | 2/2 | — | ⏳ ljetni semestar — gradivo od veljače 2027. |
+
+⚠️ **Poznat dug (svi predmeti, i stari):** u kvizu je točan odgovor često **najdulja opcija** (mjereno 2026-11-15:
+MOR 43–53 %, `te2-hr` 56 %, `quality-management` 49 %; slučajno ≈ 25 %). Pozicija je ujednačena, duljina nije.
+Mjerač: pitanje gdje je točan ≥ 1,5× dulji od svih ostalih. Nije brana — kandidat za `validate:content` upozorenje.
 
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
