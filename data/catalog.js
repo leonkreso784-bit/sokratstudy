@@ -1513,6 +1513,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'natural-geospace-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Prirodne osnove geoprostora',
+      shortName: 'POG',
+      icon: 'fa-mountain-sun',
+      color: '#4d7c0f',
+      iconGradient: ['#4d7c0f', '#a3e635'],
+      description: 'Prirodne osnove geoprostora (FMTU, MOR): geologija, geomorfologija i klima; potom vode, tla, biljni i životinjski svijet, pejzaž, zaštićena područja prirode, ugroze i zaštita te vrednovanje prirodnih resursa u turizmu',
+      storageKey: 'natural-geospace-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Uvod, geološka, geomorfološka i klimatološka obilježja geoprostora' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Hidrogeografija, pedologija, biogeografija, pejzaž, zaštićena područja prirode, ugroze i zaštita, vrednovanje zaštićenih područja' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign geospaceMorM1 + geospaceMorM2 + examPractice)
+        scripts: [
+          'data/natural-geospace-mor/midterm-1.js',
+          'data/natural-geospace-mor/midterm-2.js',
+          'data/natural-geospace-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'geospaceMorM1',
+          'second-midterm': 'geospaceMorM2',
+          'final': 'geospaceMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
