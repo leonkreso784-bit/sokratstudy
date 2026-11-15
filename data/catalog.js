@@ -1481,6 +1481,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'urban-economics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Urbana ekonomija',
+      shortName: 'URB',
+      icon: 'fa-city',
+      color: '#b45309',
+      iconGradient: ['#b45309', '#f59e0b'],
+      description: 'Urbana ekonomija (FMTU, MOR): temelji urbane ekonomije i održivi razvoj, prostorno planiranje, grad u regiji, urbana struktura i korištenje zemljišta, zemljišna i gradska renta; potom gradski promet i stanovanje, lokalna samouprava i lokalni ekonomski razvoj, gradski problemi, energija, pametni gradovi, urbani marketing, urbana ekologija i urbana revitalizacija',
+      storageKey: 'urban-economics-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Temelji urbane ekonomije, prostorno planiranje, grad u urbanoj ekonomiji, urbana struktura i korištenje zemljišta, zemljišna i gradska renta' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Gradski promet i stanovanje, lokalna samouprava i lokalni ekonomski razvoj, gradski problemi (siromaštvo, kriminal), energija u gradovima, pametni gradovi, urbani marketing, urbana ekologija i urbana revitalizacija' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign urbanEconMorM1 + urbanEconMorM2 + examPractice)
+        scripts: [
+          'data/urban-economics-mor/midterm-1.js',
+          'data/urban-economics-mor/midterm-2.js',
+          'data/urban-economics-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'urbanEconMorM1',
+          'second-midterm': 'urbanEconMorM2',
+          'final': 'urbanEconMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 

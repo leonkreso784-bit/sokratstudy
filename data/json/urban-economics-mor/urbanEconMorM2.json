@@ -1,0 +1,2662 @@
+{
+  "urbanTransport": {
+    "name": "Gradski promet (urbani prijevoz)",
+    "icon": "fa-bus",
+    "color": "#0369a1",
+    "flashcards": [
+      {
+        "question": "Na što je usmjerena analiza urbanog prijevoza u urbanoj ekonomici?",
+        "answer": "Na vršna opterećenja gradskog prometnog sustava kada stanovnici putuju na posao i s posla, a ne na agregatne putnik/kilometre.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "nr8dyt"
+      },
+      {
+        "question": "Koja su četiri koraka analize potražnje za urbanim prijevozom?",
+        "answer": "Generiranje putovanja (trip generation), distribucija putovanja (trip distribution), struktura prijevoza (mode splitting) i raspodjela po prometnicama.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "v3olxl"
+      },
+      {
+        "question": "Što je trip generation analiza?",
+        "answer": "Procjena koliko putovanja svaki dio grada (zona omeđena glavnim prometnicama) odašilje i koliko ih u njemu završava tijekom vršnog opterećenja.",
+        "explanation": "Prvi korak. Izvor: udžbenik.",
+        "id": "vlfs8d"
+      },
+      {
+        "question": "Što je trip distribution analiza?",
+        "answer": "Analiza kako su putovanja iz svakog dijela grada raspoređena po ostalim dijelovima — ishod je matrica putovanja između parova zona.",
+        "explanation": "Drugi korak. Izvor: udžbenik.",
+        "id": "wqzja6"
+      },
+      {
+        "question": "Što je mode splitting analiza?",
+        "answer": "Analiza strukture prijevoza u putovanjima između zona: automobil, autobus, bicikl, pješice, tramvaj, vlak.",
+        "explanation": "Treći korak. Izvor: udžbenik.",
+        "id": "poa6ly"
+      },
+      {
+        "question": "Koji je cilj analize potražnje za prijevozom?",
+        "answer": "Baza podataka o gustoći prometa za svaki segment važnijih prometnica i javnog prijevoza; danas pomažu big data i smart-city rješenja.",
+        "explanation": "Npr. prikaz sporosti prometa u Google Maps.",
+        "id": "3b3sow"
+      },
+      {
+        "question": "Zašto je kratkoročna ponuda prijevoza specifična?",
+        "answer": "Jer je djelomično nudi osoba koja je i potražuje (svojim vremenom); infrastruktura je u kratkom roku fiksna.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "bm3z9p"
+      },
+      {
+        "question": "Kako se računa output (volumen) ceste?",
+        "answer": "V = D · S — gustoća prometa po kilometru pomnožena s prosječnom brzinom.",
+        "explanation": "Npr. 10 automobila × 35 km/h = 350 prevezenih km na sat.",
+        "id": "ey6pmy"
+      },
+      {
+        "question": "Što prikazuje fundamentalni dijagram prometa?",
+        "answer": "Volumen prometa raste s gustoćom po opadajućim stopama do potpune iskorištenosti ceste, a nakon toga s daljnjim porastom gustoće pada.",
+        "explanation": "Greenshields (1935.). Izvor: udžbenik.",
+        "id": "tw43fk"
+      },
+      {
+        "question": "Zašto prometna gužva stvara negativnu eksternaliju?",
+        "answer": "Vozač odlučuje prema prosječnom trošku (AVC), a dodatni trošak koji svojim ulaskom nameće drugima (MC − AVC) ne percipira.",
+        "explanation": "Ravnoteža V1 nije optimalna; optimum je V2 (MC = potražnja).",
+        "id": "b4q9mu"
+      },
+      {
+        "question": "Kako se internalizira trošak gužve?",
+        "answer": "Naplatom gužve (cestarine, naplata ulaska u centar ili obilaznica) koja povisuje trošak putovanja na razinu marginalnog troška.",
+        "explanation": "Primjeri: Singapur (od 1975.), London, Oslo, Bergen, Trondheim.",
+        "id": "p6vn5t"
+      },
+      {
+        "question": "Koje su alternativne mjere za smanjenje gužvi?",
+        "answer": "Porez na naftne derivate, poskupljenje parkiranja u centru te subvencioniranje i unapređenje javnog gradskog prijevoza.",
+        "explanation": "Naplata parkiranja vjerojatno je najrealnije rješenje.",
+        "id": "c64iif"
+      },
+      {
+        "question": "Zašto porez na gorivo nije idealna mjera protiv gužvi?",
+        "answer": "Jer destimulira sve sudionike bez obzira kad putuju — jednako kažnjava noćnog vozača i onoga u najvećoj gužvi.",
+        "id": "8jm8ez"
+      },
+      {
+        "question": "Koji su nedostaci naplate parkiranja kao mjere?",
+        "answer": "Ne destimulira tranzitni promet kroz centar i tereti sve jednako bez obzira na prijeđene kilometre.",
+        "explanation": "Ipak je vjerojatno najizvodljivija mjera.",
+        "id": "5qubjd"
+      },
+      {
+        "question": "Kako se prometni problemi rješavaju u dugom roku?",
+        "answer": "Investicijama u proširenje prometnih traka i inteligentne transportne sustave; optimum je gdje je prosječni fiksni trošak jednak eksternaliji gužve.",
+        "id": "i97g34"
+      },
+      {
+        "question": "Kada je ekonomski opravdano proširiti prometnicu?",
+        "answer": "Kad je optimalna cestarina (MC − AVC) veća od prosječnog fiksnog troška ceste; ravnoteža je kad su jednaki.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "p0vjqd"
+      },
+      {
+        "question": "Što je Braessov paradoks (fundamentalni zakon prometnih gužvi)?",
+        "answer": "Nove ili šire ceste dugoročno ne smanjuju gužve jer potiču induciranu potražnju — gužva se vraća na prijašnju ili veću razinu.",
+        "explanation": "Rješenje: javni prijevoz i alternativna mobilnost.",
+        "id": "oqhad0"
+      },
+      {
+        "question": "Kako se računa neto sadašnja vrijednost prometnice?",
+        "answer": "Sadašnja vrijednost neto cestarina (1 − ω)R / i umanjena za trošak izgradnje.",
+        "explanation": "Za ceste bez cestarine vremenska ušteda izražava se u novcu.",
+        "id": "xr1ell"
+      },
+      {
+        "question": "Kolika je vrijednost ušteđenog sata u dnevnim migracijama?",
+        "answer": "Približno 50 % neto satnice dnevnog migranta (studije: 20–100 %).",
+        "explanation": "Npr. satnica 10 € → 5 € po satu uštede.",
+        "id": "pz5wvb"
+      },
+      {
+        "question": "Koje eksternalije stvara brži prometni sustav?",
+        "answer": "Pozitivne: parcele duž pravca postaju atraktivnije (raste vrijednost zemljišta). Negativne: zagađenje zraka (CO2) i buka, koja smanjuje vrijednost stanova.",
+        "id": "bdyxx3"
+      },
+      {
+        "question": "Kako se ekonometrijski procjenjuje vrijednost vremena?",
+        "answer": "Iz omjera parametara β1 i β2 koji pokazuju kako relativno vrijeme i relativna cijena putovanja (auto naspram autobusa) utječu na omjer putnika.",
+        "explanation": "Bolje je uspoređivati isto prijevozno sredstvo na različitim cestama.",
+        "id": "y3iqtd"
+      },
+      {
+        "question": "O čemu ovisi privlačnost javnog gradskog prijevoza?",
+        "answer": "O cijeni i brzini: niža cijena i brže prometovanje povećavaju njegovu atraktivnost u odnosu na automobil.",
+        "explanation": "Veći udio javnog prijevoza smanjuje gužve i zagađenje.",
+        "id": "5fs266"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Urbana ekonomika u analizi prometa fokusira se na:",
+        "options": [
+          "ukupne tona/kilometre države",
+          "međunarodni zračni promet",
+          "pomorski teretni promet",
+          "vršna opterećenja u dnevnim migracijama"
+        ],
+        "correct": 3,
+        "id": "kmfla2"
+      },
+      {
+        "question": "Prvi korak analize potražnje za urbanim prijevozom je:",
+        "options": [
+          "raspodjela po prometnicama",
+          "mode splitting",
+          "trip generation",
+          "trip distribution"
+        ],
+        "correct": 2,
+        "id": "mwrqi0"
+      },
+      {
+        "question": "Analiza čiji je ishod matrica putovanja između parova zona je:",
+        "options": [
+          "analiza neto sadašnje vrijednosti",
+          "trip distribution",
+          "trip generation",
+          "mode splitting"
+        ],
+        "correct": 1,
+        "id": "nwztd7"
+      },
+      {
+        "question": "Analiza udjela automobila, autobusa, bicikla i tramvaja u putovanjima je:",
+        "options": [
+          "trip generation",
+          "trip distribution",
+          "mode splitting",
+          "kapitalizacija rente"
+        ],
+        "correct": 2,
+        "id": "e2vmg6"
+      },
+      {
+        "question": "Ako dionicom prolazi 10 automobila prosječnom brzinom 35 km/h, volumen je:",
+        "options": [
+          "350 prevezenih km na sat",
+          "3.500 km na sat",
+          "3,5 km na sat",
+          "45 km na sat"
+        ],
+        "correct": 0,
+        "id": "gckraj"
+      },
+      {
+        "question": "Fundamentalni dijagram prometa pokazuje da nakon potpune iskorištenosti ceste s porastom gustoće volumen:",
+        "options": [
+          "raste konstantno",
+          "raste eksponencijalno",
+          "ostaje isti",
+          "opada"
+        ],
+        "correct": 3,
+        "id": "szl0ha"
+      },
+      {
+        "question": "Vozač odlučuje o putovanju na temelju:",
+        "options": [
+          "marginalnog troška (MC)",
+          "prosječnog fiksnog troška",
+          "troška izgradnje ceste",
+          "prosječnog varijabilnog troška (AVC)"
+        ],
+        "correct": 3,
+        "id": "j155va"
+      },
+      {
+        "question": "Efikasna razina volumena prometa je ona na kojoj je:",
+        "options": [
+          "brzina minimalna",
+          "marginalni trošak jednak marginalnoj koristi (potražnji)",
+          "prosječni trošak jednak nuli",
+          "gustoća maksimalna"
+        ],
+        "correct": 1,
+        "id": "2t0007"
+      },
+      {
+        "question": "Koji grad ima sustav naplate ulaska u centar od 1975. godine?",
+        "options": [
+          "Singapur",
+          "London",
+          "Ljubljana",
+          "Zagreb"
+        ],
+        "correct": 0,
+        "id": "tomsaz"
+      },
+      {
+        "question": "Koja mjera protiv gužve jednako kažnjava onoga tko vozi noću i onoga tko vozi u vršnom satu?",
+        "options": [
+          "naplata gužve po dobu dana",
+          "naplata ulaska u centar u vršnim satima",
+          "cestarina ovisna o dobu dana",
+          "porez na naftne derivate"
+        ],
+        "correct": 3,
+        "id": "zrp6gp"
+      },
+      {
+        "question": "Prema udžbeniku, najrealnije alternativno rješenje problema gužvi vjerojatno je:",
+        "options": [
+          "naplata (poskupljenje) parkiranja u centru",
+          "ukidanje javnog prijevoza",
+          "zabrana automobila",
+          "gradnja novih cesta"
+        ],
+        "correct": 0,
+        "id": "dy9isn"
+      },
+      {
+        "question": "Proširenje ceste je ekonomski opravdano kada je:",
+        "options": [
+          "gustoća prometa nula",
+          "cesta prazna",
+          "prosječni fiksni trošak veći od cestarine",
+          "optimalna cestarina veća od prosječnog fiksnog troška"
+        ],
+        "correct": 3,
+        "id": "qtmlgp"
+      },
+      {
+        "question": "Pojava da nove ceste dugoročno ne smanjuju gužve zbog inducirane potražnje je:",
+        "options": [
+          "Ricardov princip ostatka",
+          "Braessov paradoks",
+          "pravilo reda veličine",
+          "Hotellingov zakon"
+        ],
+        "correct": 1,
+        "id": "wwby1z"
+      },
+      {
+        "question": "Srednje procjene vrijednosti ušteđenog vremena iznose oko:",
+        "options": [
+          "50 % neto satnice",
+          "100 % bruto mjesečne plaće",
+          "5 % neto satnice",
+          "200 % neto satnice"
+        ],
+        "correct": 0,
+        "id": "w3jzrr"
+      },
+      {
+        "question": "Brži prometni pravac na vrijednost zemljišta duž pravca djeluje tako da:",
+        "options": [
+          "je smanjuje",
+          "ne utječe",
+          "je izjednačuje s agrarnom rentom",
+          "je povećava"
+        ],
+        "correct": 3,
+        "id": "dz44sq"
+      },
+      {
+        "question": "Veći udio korisnika javnog gradskog prijevoza općenito:",
+        "options": [
+          "nema učinka",
+          "povećava gužve",
+          "smanjuje gužve i zagađenje",
+          "povećava zagađenje"
+        ],
+        "correct": 2,
+        "id": "f44e4y"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Output ceste dan je funkcijom V = D · _______.",
+        "answer": "S",
+        "hint": "prosječna brzina",
+        "id": "4avbu3"
+      },
+      {
+        "sentence": "Fundamentalni dijagram prometa postavio je _______ (1935.).",
+        "answer": "Greenshields",
+        "hint": "autor dijagrama",
+        "id": "ucwcim"
+      },
+      {
+        "sentence": "Braessov paradoks naziva se i fundamentalni zakon prometnih _______.",
+        "answer": "gužvi",
+        "hint": "zagušenja",
+        "id": "mcmh9h"
+      },
+      {
+        "sentence": "Kada se poveća kapacitet prometnica, broj vozila raste zbog fenomena _______ potražnje.",
+        "answer": "inducirane",
+        "hint": "potaknute",
+        "id": "5wctxs"
+      },
+      {
+        "sentence": "U dugom roku, za razliku od kratkog, u analizi postoje prosječni _______ troškovi.",
+        "answer": "fiksni",
+        "hint": "trošak izgradnje",
+        "id": "kigip6"
+      },
+      {
+        "sentence": "Ubrzanje dnevnih migracija za jednu minutu, uz 48.000 radnika i satnicu 10 €, vrijedi oko 2 _______ € godišnje.",
+        "answer": "milijuna",
+        "hint": "mil.",
+        "id": "kgjbcr"
+      },
+      {
+        "sentence": "Sustav u Londonu nadgleda se pomoću 230 _______.",
+        "answer": "kamera",
+        "hint": "nadzor naplate",
+        "id": "3ft5el"
+      }
+    ],
+    "learn": {
+      "title": "Gradski promet — potražnja, ponuda, gužva i vrednovanje (Izvor: udžbenik)",
+      "content": "\n<p><em>Izvor: udžbenik (poglavlje „Urbani prijevoz\") — za temu „Gradski promet i stanovanje\" obvezna literatura je udžbenik.</em></p>\n<h3>Analiza potražnje za urbanim gradskim prijevozom</h3>\n<p>Urbana ekonomika ne gleda agregatne pokazatelje (putnik/km, tona/km) nego <strong>vršna opterećenja</strong> gradskog prometnog sustava u kojima stanovnici putuju na posao i s posla — analizira se efikasnost <strong>dnevnih migracija</strong>. Potražnja se analizira u <strong>četiri koraka</strong>:</p>\n<ol>\n<li><strong>Analiza putovanja po dijelovima grada (trip generation)</strong> — grad se dijeli na zone omeđene glavnim prometnicama; za svaku se procjenjuje broj putovanja koja odašilje i koja u njoj završavaju.</li>\n<li><strong>Analiza distribucije putovanja (trip distribution)</strong> — kako su putovanja iz svake zone raspoređena po ostalima; ishod je <strong>matrica</strong> putovanja između parova zona.</li>\n<li><strong>Analiza strukture prijevoza (mode splitting)</strong> — udjeli automobila, autobusa, bicikla, pješačenja, tramvaja, vlaka (npr. iz zone 4 u zonu 1 putuje 166.000 ljudi, od toga 101.000 javnim prijevozom).</li>\n<li><strong>Raspodjela po prometnicama i linijama</strong> — po kojim će se cestama i linijama javnog prijevoza putovanja odvijati i koje su pod najvećim udarom.</li>\n</ol>\n<p>Cilj je baza podataka s <strong>gustoćom prometa</strong> za svaki segment prometnica, javnog prijevoza i biciklističkih staza. Danas <strong>smart-city</strong> rješenja koriste <strong>big data</strong> o kretanju mobilnih uređaja i automobila u stvarnom vremenu (npr. Google Maps).</p>\n\n<h3>Kratkoročna ponuda prijevoza</h3>\n<p>Specifična je jer je <strong>djelomično nudi osoba koja je i potražuje</strong> — ključna je alokacija vremena za „potrošnju\" putovanja. U kratkom roku ponuda je uglavnom <strong>fiksna</strong> (ceste i javni prijevoz ne mogu se brzo proširiti).</p>\n<div class=\"formula-box\">Output ceste: Q = V = D · S<br>D – gustoća prometa po km · S – prosječna brzina · V – volumen prometa<br>10 automobila × 35 km/h = 350 prevezenih km na sat</div>\n<p><strong>Fundamentalni dijagram prometa</strong> (Greenshields, 1935.) — funkcija proizvodnje: s rastom gustoće D volumen V raste po opadajućim stopama do <strong>potpune iskorištenosti</strong> (100 %), a zatim s daljnjim porastom gustoće <strong>opada</strong>. Granični proizvod pada na nulu pri punom kapacitetu. Istraživanja u SAD-u: maksimum oko 2.577 vozila po traku na sat, razmak oko 9,2 m (1,5 dužine automobila) i brzina oko 39,5 km/h; ispod toga granični proizvod dodatnog automobila je <strong>negativan</strong> — negativna eksternalija.</p>\n<h4>Troškovi i eksternalija gužve</h4>\n<ul>\n<li>Varijabilni trošak = gustoća (VC = D); <strong>prosječni varijabilni trošak</strong> AVC = D/V = 1/S (inverz brzine; npr. 1/35 = 0,0286 po km).</li>\n<li><strong>Marginalni trošak</strong> MC = AVC + V(ΔAVC/ΔV).</li>\n<li>Putnik odlučuje prema <strong>AVC</strong>, a ostatak troška V(ΔAVC/ΔV) je <strong>eksternalija (gužva)</strong> koje nije svjestan.</li>\n<li>Korisnici biraju volumen <strong>V1</strong> (potražnja = AVC), ali je na njemu MC veći od marginalne koristi; <strong>efikasan je V2</strong> (potražnja = MC). Razlika je eksternalija gužve (razmak C–C′).</li>\n</ul>\n<p>Za internalizaciju treba <strong>naplata gužve</strong>: naplata ulaska u centar, obilaznica, posebno opterećenih mjesta. Primjeri: <strong>Singapur</strong> (sustav od 1975., „vinjete\" za centar, broj vozila pao 44 %, najskuplje 8–9 h), <strong>London</strong> (ulazak 7–18:30, nadzor s 230 kamera, stanovnici centra 90 % popusta), prstenovi u <strong>Bergenu, Oslu i Trondheimu</strong>, privatni naplatni trakovi u <strong>Kaliforniji</strong> (cijena ovisi o dobu dana; trakovi za „car pooling\"), rasprave u Hong Kongu i Ljubljani.</p>\n<h4>Alternativne mjere</h4>\n<table>\n<tr><th>Mjera</th><th>Ocjena</th></tr>\n<tr><td><strong>Porez na naftne derivate</strong></td><td>nije idealan — destimulira sve jednako, bez obzira na vrijeme putovanja</td></tr>\n<tr><td><strong>Poskupljenje parkiranja u centru</strong></td><td>vjerojatno najbolje i najrealnije rješenje; nedostaci: ne destimulira tranzit kroz centar i tereti sve bez obzira na prijeđene km</td></tr>\n<tr><td><strong>Subvencioniranje i unapređenje javnog prijevoza</strong></td><td>javni prijevoz je konkurent automobilu; niža cijena i veća brzina povećavaju njegovu atraktivnost</td></tr>\n</table>\n\n<h3>Dugoročna ponuda prijevoza</h3>\n<p>U dugom roku problemi se rješavaju <strong>investicijama u proširenje traka</strong> i <strong>inteligentne transportne sustave</strong>. Specifičnost dugog roka su <strong>prosječni fiksni troškovi</strong> (AFC); ATC = AVC + AFC. Primjer: autocesta od 100 mil. € uz 6 % kamata = 6 mil. € godišnje, odnosno oko 685 € po satu (8.760 sati).</p>\n<ul>\n<li>Kad je <strong>optimalna cestarina (MC − AVC) veća od AFC</strong>, ekonomski je opravdano <strong>proširiti</strong> prometnicu; ravnoteža je kad je optimalna cestarina <strong>jednaka</strong> prosječnom fiksnom trošku.</li>\n<li><strong>Braessov paradoks</strong> („fundamentalni zakon prometnih gužvi\") — nove ili šire ceste dugoročno ne smanjuju gužve, često ih pogoršavaju, zbog <strong>inducirane potražnje</strong> (vožnja postaje privlačnija). Učinkovitija su održiva rješenja: <strong>javni prijevoz</strong> i alternativni oblici mobilnosti.</li>\n</ul>\n\n<h3>Neto sadašnja vrijednost prometnice i vrijednost vremena</h3>\n<div class=\"formula-box\">NPV ≈ (1 − ω)R / i − trošak izgradnje<br>(1 − ω)R – neto cestarina (umanjena za troškove poslovanja i održavanja)</div>\n<p>Za ceste bez cestarine vremenska ušteda izražava se u novcu: vrijednost sata uštede u dnevnim migracijama ≈ <strong>50 % neto satnice</strong>. Primjer udžbenika: neto plaća 1.600 € / 160 sati = 10 €/h → 5 € po satu uštede; 48.000 radnika Novi Zagreb → centar = 96.000 putovanja dnevno × 250 radnih dana = 24 milijuna putovanja; ušteda 1 minute = 24 milijuna minuta ≈ 400.000 sati ≈ <strong>2 mil. € godišnje</strong>; uz 2 % održavanja i 2,5 % stopu povrata PV ≈ <strong>78,4 mil. €</strong>. Ako je izgradnja skuplja, projekt je mikroekonomski neisplativ — ali kao javno dobro ima šire koristi.</p>\n<p><strong>Eksternalije bržeg prometa:</strong> parcele duž pravca postaju atraktivnije (bid-rent krivulja rotira suprotno od kazaljke na satu, raste vrijednost zemljišta); negativno — zagađenje zraka (CO2) i <strong>buka</strong> (smanjuje vrijednost stanova). Veći udio javnog prijevoza smanjuje i gužve i zagađenje.</p>\n<p><strong>Vrijednost izgubljenog (ušteđenog) vremena</strong> može se ekonometrijski procijeniti iz omjera putnika automobilom i autobusom: β1 pokazuje utjecaj relativnog vremena, β2 relativne cijene; njihov omjer daje implicitnu novčanu vrijednost vremena. Procjene: <strong>20–100 % neto plaće</strong>, srednje oko <strong>50 %</strong>; ne mijenja se s dohotkom, ali oni koji putuju duže skloniji su platiti više. Zbog nesavršene zamjenjivosti auta i autobusa bolje je uspoređivati isto sredstvo na različitim cestama (npr. stara cesta i autocesta Zagreb–Split uz promjene cestarine).</p>\n",
+      "id": "kaafsn"
+    },
+    "id": "cb76nm"
+  },
+  "housing": {
+    "name": "Stanovanje i tržište nekretnina",
+    "icon": "fa-house",
+    "color": "#be123c",
+    "flashcards": [
+      {
+        "question": "Što su nekretnine?",
+        "answer": "Zemljišta, građevine i zakonska prava nad nepokretnom imovinom, osobito kad im je moguće definirati cijenu na postojećem ili potencijalnom tržištu.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "9czg2c"
+      },
+      {
+        "question": "Koje su tri temeljne karakteristike nekretnina?",
+        "answer": "Heterogenost, nepokretnost i dugotrajnost.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "zrv3lp"
+      },
+      {
+        "question": "Što znači heterogenost nekretnina?",
+        "answer": "Ne postoje dvije identične nekretnine — razlikuju se namjenom te internim i eksternim (lokacijskim) karakteristikama.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "ii4swi"
+      },
+      {
+        "question": "Što znači nepokretnost nekretnina?",
+        "answer": "Neodvojivost nekretnine od lokacije — ta karakteristika razlikuje nekretnine od svih drugih dobara i faktora proizvodnje.",
+        "explanation": "Djelomično uvjetuje i heterogenost.",
+        "id": "ak98gg"
+      },
+      {
+        "question": "Što znači dugotrajnost nekretnina?",
+        "answer": "Dug životni vijek nekretnine, koji ovisi o kvaliteti gradnje, materijalima i održavanju.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "6t1fhi"
+      },
+      {
+        "question": "Koje su dodatne specifičnosti nekretnina?",
+        "answer": "Izvedena potražnja, visoki troškovi izgradnje, visoki ostali (transakcijski) troškovi i istaknut aspekt bogatstva.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "z7s1nl"
+      },
+      {
+        "question": "Što znači da je potražnja za nekretninama izvedena?",
+        "answer": "Nekretnina se ne potražuje zbog sebe same, već zbog usluga koje pruža (stanovanje, proizvodni kapacitet, profit).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "8tl89p"
+      },
+      {
+        "question": "Koja je razlika između tržišne cijene i tržišne vrijednosti nekretnine?",
+        "answer": "Tržišna cijena je ravnotežna cijena uz jednakost ponude i potražnje; tržišna vrijednost je ekonomski koncept procjene te cijene.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "rzdj71"
+      },
+      {
+        "question": "Što je segmentacija tržišta nekretnina?",
+        "answer": "Identificiranje i analiziranje (pod)tržišta za različite vrste nekretnina zbog njihove heterogenosti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "q18qyh"
+      },
+      {
+        "question": "Na kojih se pet segmenata najčešće dijeli tržište nekretnina?",
+        "answer": "Tržište uredskog, stambenog, maloprodajnog, hotelskog te industrijskog i skladišnog prostora.",
+        "explanation": "Schmitz i Brett (2004). Izvor: udžbenik.",
+        "id": "x6gmwu"
+      },
+      {
+        "question": "Koji su čimbenici potražnje za stanovima za stalno stanovanje?",
+        "answer": "Zaposlenost, broj kućanstava, dohodak, ostale demografske statistike (dob, migracije) i dostupnost stambenih kredita.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "fs24qp"
+      },
+      {
+        "question": "Što određuje potražnju za stanovima i kućama za odmor (second home)?",
+        "answer": "Dostupnost nekretnine (vrijeme putovanja) i ekonomski uvjeti u zemljama iz kojih dolaze turisti ili kupci.",
+        "explanation": "Lokalno stanovništvo natječe se s investitorima i turistima.",
+        "id": "xhgew4"
+      },
+      {
+        "question": "Je li ponuda nekretnina elastična?",
+        "answer": "Smatra se neelastičnom; u kratkom roku je gotovo okomita, a u dugom elastičnija, ali pod snažnim utjecajem regulacije i javnih politika.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "l7m5s3"
+      },
+      {
+        "question": "Zašto je kratkoročna ponuda nekretnina okomita?",
+        "answer": "Jer gradnja traži planiranje, kupnju zemljišta, financiranje i dozvole, pa se promjena potražnje ne može brzo pretvoriti u nove kvadrate.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "u7bxu5"
+      },
+      {
+        "question": "Što je vlasnički trošak kapitala (user cost)?",
+        "answer": "Trošak koji uzrokuje vlasništvo stana: U = i − ΔP/P, kamatna stopa (oportunitetni trošak) umanjena za očekivani rast cijene stana.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "c0kvyh"
+      },
+      {
+        "question": "Zašto vlasnički trošak stana može biti negativan?",
+        "answer": "Kad je kapitalna dobit od rasta cijene veća od kamate — npr. kamata 5 %, rast cijene 10 % → trošak −5 %.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "z7k41k"
+      },
+      {
+        "question": "Što je samoostvariva prognoza na stambenom tržištu?",
+        "answer": "Očekivani rast cijena smanjuje očekivani trošak vlasništva, povećava potražnju i doista podiže cijene (i obrnuto pri padu).",
+        "explanation": "Psihološka komponenta pojačava trendove.",
+        "id": "t0ei8y"
+      },
+      {
+        "question": "Što određuje dostupnost (priuštivost) stanova u rastućem gradu?",
+        "answer": "Elastičnost ponude nekretnina — kad je neelastična, rast potražnje (izvoz, imigracija) više diže cijene nego što širi grad.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "b1n6px"
+      },
+      {
+        "question": "Što je gentrifikacija?",
+        "answer": "Proces u kojem više dohodovne skupine istiskuju niže dohodovne skupine iz naselja i kvartova u kojima su generacijama živjele.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "fb5yvm"
+      },
+      {
+        "question": "Što je efekt doma?",
+        "answer": "Veća vrijednost nekretnine za korisnika zbog znanja o životu u njoj i naselju ili emocionalne privrženosti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "zbrsaj"
+      },
+      {
+        "question": "Što su uporabna i razmjenska vrijednost nekretnine?",
+        "answer": "Uporabna: vrijednost za korisnika prema funkcionalnosti i upotrebi. Razmjenska: tržišna vrijednost prema cijenama sličnih nekretnina u transakcijama.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "38wekc"
+      },
+      {
+        "question": "Što je izvlaštenje?",
+        "answer": "Proces kojim država ili javna tijela oduzimaju privatnu imovinu za javne svrhe, uz naknadu vlasniku.",
+        "explanation": "Efekt doma ondje je osobito važan.",
+        "id": "v5bq6n"
+      },
+      {
+        "question": "Zašto je stanovanje urbani fenomen?",
+        "answer": "Stanovanje zauzima najveći dio gradskog zemljišta, a njegova cijena i dostupnost ovise o lokaciji, prometu, planiranju i tržištu nekretnina.",
+        "explanation": "Poveznica tema renta – promet – planiranje.",
+        "id": "cthsdp"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koja od navedenih NIJE jedna od tri temeljne karakteristike nekretnina?",
+        "options": [
+          "dugotrajnost",
+          "nepokretnost",
+          "heterogenost",
+          "homogenost"
+        ],
+        "correct": 3,
+        "id": "4fm8nr"
+      },
+      {
+        "question": "Karakteristika koja nekretnine razlikuje od svih drugih dobara i faktora proizvodnje je:",
+        "options": [
+          "visoki troškovi izgradnje",
+          "dugotrajnost",
+          "izvedena potražnja",
+          "nepokretnost"
+        ],
+        "correct": 3,
+        "id": "wdb0gt"
+      },
+      {
+        "question": "Potražnja za nekretninama je izvedena jer se nekretnina traži zbog:",
+        "options": [
+          "njezine knjigovodstvene vrijednosti",
+          "poreza",
+          "nje same",
+          "usluga koje pruža"
+        ],
+        "correct": 3,
+        "id": "aetpce"
+      },
+      {
+        "question": "Ravnotežna cijena pri kojoj su ponuda i potražnja jednake je:",
+        "options": [
+          "tržišna cijena",
+          "tržišna vrijednost",
+          "kvazirenta",
+          "uporabna vrijednost"
+        ],
+        "correct": 0,
+        "id": "l71in3"
+      },
+      {
+        "question": "Što NIJE jedan od pet uobičajenih segmenata tržišta nekretnina?",
+        "options": [
+          "tržište maloprodajnog prostora",
+          "tržište uredskog prostora",
+          "tržište hotelskog prostora",
+          "tržište financijskih derivata"
+        ],
+        "correct": 3,
+        "id": "3jt66t"
+      },
+      {
+        "question": "Ključan čimbenik potražnje za nekretninama za odmor je:",
+        "options": [
+          "dostupnost (lokacija) nekretnine",
+          "lokalna zaposlenost",
+          "komunalni doprinos",
+          "broj brakova u gradu"
+        ],
+        "correct": 0,
+        "id": "0gubz9"
+      },
+      {
+        "question": "U kratkom roku ponuda nekretnina je:",
+        "options": [
+          "gotovo okomita (neelastična)",
+          "vodoravna",
+          "savršeno elastična",
+          "negativno nagnuta"
+        ],
+        "correct": 0,
+        "id": "81wnev"
+      },
+      {
+        "question": "Vlasnički trošak kapitala računa se kao:",
+        "options": [
+          "U = D · S",
+          "U = i − ΔP/P",
+          "U = W − C − kd",
+          "U = R/i"
+        ],
+        "correct": 1,
+        "id": "k2whb5"
+      },
+      {
+        "question": "Ako je kamata 5 %, a cijena stana poraste 10 %, vlasnički trošak iznosi:",
+        "options": [
+          "5 %",
+          "−5 %",
+          "0 %",
+          "15 %"
+        ],
+        "correct": 1,
+        "id": "d7yi9j"
+      },
+      {
+        "question": "Situacija u kojoj očekivanja rasta cijena povećaju potražnju i doista podignu cijene je:",
+        "options": [
+          "samoostvariva prognoza",
+          "efekt doma",
+          "Braessov paradoks",
+          "princip ostatka"
+        ],
+        "correct": 0,
+        "id": "mcvxdm"
+      },
+      {
+        "question": "Istiskivanje nižih dohodovnih skupina iz kvartova od strane viših skupina naziva se:",
+        "options": [
+          "decentralizacija",
+          "suburbanizacija",
+          "gentrifikacija",
+          "izvlaštenje"
+        ],
+        "correct": 2,
+        "id": "hf38y4"
+      },
+      {
+        "question": "Vrijednost nekretnine na tržištu prema cijenama sličnih nekretnina je:",
+        "options": [
+          "efekt doma",
+          "razmjenska vrijednost",
+          "strukturna renta",
+          "uporabna vrijednost"
+        ],
+        "correct": 1,
+        "id": "opxl7y"
+      },
+      {
+        "question": "Oduzimanje privatne imovine za javne svrhe uz naknadu je:",
+        "options": [
+          "izvlaštenje",
+          "koncesija",
+          "kapitalizacija",
+          "gentrifikacija"
+        ],
+        "correct": 0,
+        "id": "lo5i5z"
+      },
+      {
+        "question": "Kada je ponuda nekretnina neelastična, rast potražnje u gradu ponajprije:",
+        "options": [
+          "podiže cijene stanova",
+          "snižava cijene",
+          "širi grad u prostoru",
+          "nema učinka"
+        ],
+        "correct": 0,
+        "id": "4zz2hw"
+      },
+      {
+        "question": "Visoki transakcijski troškovi i istaknut aspekt bogatstva su:",
+        "options": [
+          "dodatne specifičnosti nekretnina",
+          "načela lokalne samouprave",
+          "dimenzije pametnog grada",
+          "obilježja javnog prijevoza"
+        ],
+        "correct": 0,
+        "id": "rdy369"
+      },
+      {
+        "question": "Ni na jednom tržištu ne postoje dvije identične nekretnine — to je:",
+        "options": [
+          "heterogenost",
+          "elastičnost",
+          "dugotrajnost",
+          "nepokretnost"
+        ],
+        "correct": 0,
+        "id": "wylkin"
+      },
+      {
+        "question": "Dug životni vijek nekretnine koji ovisi o kvaliteti gradnje i održavanju je:",
+        "options": [
+          "dugotrajnost",
+          "heterogenost",
+          "nepokretnost",
+          "segmentacija"
+        ],
+        "correct": 0,
+        "id": "10gji3"
+      },
+      {
+        "question": "Identificiranje i analiziranje podtržišta za različite vrste nekretnina je:",
+        "options": [
+          "gentrifikacija",
+          "decentralizacija",
+          "segmentacija tržišta nekretnina",
+          "fiskalno izravnanje"
+        ],
+        "correct": 2,
+        "id": "w3i2ng"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Posebnosti nekretnina sažimaju se u tri karakteristike: heterogenost, nepokretnost i _______.",
+        "answer": "dugotrajnost",
+        "hint": "dug životni vijek",
+        "id": "tfs6it"
+      },
+      {
+        "sentence": "Tržište stanova za odmor na engleskom se naziva _______ home market.",
+        "answer": "second",
+        "hint": "drugi dom",
+        "id": "bw6cle"
+      },
+      {
+        "sentence": "Vlasnički trošak kapitala na engleskom je user _______ of capital.",
+        "answer": "cost",
+        "hint": "trošak",
+        "id": "c3rjdk"
+      },
+      {
+        "sentence": "Povećanje vrijednosti nekretnine za korisnika zbog privrženosti naziva se efekt _______.",
+        "answer": "doma",
+        "hint": "emocija",
+        "id": "6ngr2f"
+      },
+      {
+        "sentence": "Dobit od toga što je vrijednost imovine veća od kupovne cijene naziva se _______ dobit.",
+        "answer": "kapitalna",
+        "hint": "rast cijene",
+        "id": "fetnoc"
+      },
+      {
+        "sentence": "Vrijednost koju nekretnina ima za korisnika prema funkcionalnosti je _______ vrijednost.",
+        "answer": "uporabna",
+        "hint": "suprotno od razmjenske",
+        "id": "0e6u0s"
+      },
+      {
+        "sentence": "Analiza tržišta nekretnina sastoji se od analize tržišnog potencijala i analize _______.",
+        "answer": "utrživosti",
+        "hint": "konkurentnost projekta",
+        "id": "cgtflx"
+      },
+      {
+        "sentence": "U Hrvatskoj lokalno stanovništvo pri kupnji stanova konkurira investitorima i _______.",
+        "answer": "turistima",
+        "hint": "second home",
+        "id": "ek7aas"
+      }
+    ],
+    "learn": {
+      "title": "Stanovanje i tržište nekretnina (Izvor: udžbenik)",
+      "content": "\n<p><em>Izvor: udžbenik (poglavlja o nekretninama, makroekonomiji tržišta nekretnina, rastu gradova i alternativnoj teoriji rente). Stanovanje je u izvedbenom planu dio teme „Gradski promet i stanovanje\".</em></p>\n<h3>Stanovanje kao urbani fenomen</h3>\n<p>Stambene zone zauzimaju najveći dio gradskog zemljišta (41–50 %), a cijena stanovanja ovisi o udaljenosti od središta (bid-rent), o prometu (trošak dnevnih migracija), o prostornom planiranju (zoniranje, izgradivost) i o tržištu nekretnina. Visoka cijena zemljišta je <strong>posljedica</strong> velike potražnje za stanovima, a ne njezin uzrok.</p>\n\n<h3>Nekretnine i tržište nekretnina</h3>\n<p><strong>Nekretnine</strong> su zemljišta, građevine i zakonska prava nad nepokretnom imovinom, osobito kad je moguće definirati njihovu cijenu na tržištu. Interakcijom ponude i potražnje formira se <strong>tržišna (ravnotežna) cijena</strong>, koja <strong>nije sinonim za tržišnu vrijednost</strong> — tržišna vrijednost je ekonomski koncept procjene cijene (prema standardima IVS, EVS, RICS ili zakonu).</p>\n<h4>Tri temeljne karakteristike</h4>\n<table>\n<tr><th>Karakteristika</th><th>Značenje</th></tr>\n<tr><td><strong>Heterogenost</strong></td><td>ne postoje dvije identične nekretnine; razlike u namjeni, internim (površina, izgled, kvaliteta) i eksternim, lokacijskim karakteristikama (susjedstvo, poslovi, javna dobra, okoliš, porezi)</td></tr>\n<tr><td><strong>Nepokretnost</strong></td><td>neodvojivost od lokacije — razlikuje nekretnine od svih drugih dobara i faktora (rada i kapitala); svaka je parcela unikatna</td></tr>\n<tr><td><strong>Dugotrajnost</strong></td><td>dug životni vijek, ovisan o kvaliteti gradnje, materijalima i održavanju</td></tr>\n</table>\n<p>Dodatne specifičnosti: <strong>izvedena potražnja</strong> (traži se zbog usluga koje pruža), <strong>visoki troškovi izgradnje</strong>, <strong>visoki ostali troškovi</strong> (transakcijski, upravljanje) i istaknut <strong>aspekt bogatstva</strong> (osobna uporaba ili investicija).</p>\n<p>Ponuda nekretnina smatra se <strong>neelastičnom</strong>; savršeno neelastična je ukupna količina zemljišta u zemlji ili na točno određenoj lokaciji. Za određenu uporabu ponuda ipak nije fiksna jer se zemljište može <strong>prenamijeniti</strong>.</p>\n<h4>Segmentacija i čimbenici potražnje</h4>\n<p><strong>Segmentacija</strong> je identificiranje i analiziranje podtržišta. Pet segmenata (Schmitz i Brett): <strong>uredski, stambeni, maloprodajni, hotelski te industrijski i skladišni prostor</strong>. Stambeno tržište dijeli se dalje (kuće/stanovi, za vlasnika/za najam, stalno stanovanje/second home). <strong>Analiza tržišta</strong> = analiza tržišnog potencijala (agregatna ponuda i potražnja) + analiza utrživosti (konkurentnost konkretnog projekta).</p>\n<table>\n<tr><th>Segment</th><th>Čimbenici potražnje</th></tr>\n<tr><td>Stanovi za stalno stanovanje</td><td>zaposlenost; broj kućanstava; dohodak; demografske statistike (dob, migracije, brakovi i razvodi); dostupnost stambenih kredita</td></tr>\n<tr><td>Stanovi i kuće za odmor (second home)</td><td>dostupnost nekretnine (vrijeme putovanja, blizina aerodroma); ekonomski uvjeti u zemljama iz kojih dolaze turisti/kupci</td></tr>\n<tr><td>Hotelski prostor</td><td>zaposlenost i raspoloživi dohodak na emitivnim tržištima</td></tr>\n</table>\n<p>U Hrvatskoj su stanovanje i turizam pomiješani u gotovo svim većim gradovima i obalnim mjestima, a lokalno stanovništvo <strong>natječe se s investitorima i turistima</strong>, što smanjuje dostupnost stanovanja.</p>\n\n<h3>Ponuda u kratkom i dugom roku</h3>\n<ul>\n<li><strong>Kratkoročna ponuda</strong> je u biti <strong>okomita</strong> — gradnja traži planiranje, kupnju, financiranje i dozvole; uvijek postoji jaz između postojeće ponude i one koja bi zadovoljila trenutačnu potražnju.</li>\n<li><strong>Dugoročna ponuda</strong> je elastičnija, ali pod snažnim utjecajem <strong>regulacije, javnih politika i ulaganja</strong>.</li>\n<li>Na tržištu dominiraju „rabljene\" nekretnine, ali novogradnja svake godine povratno djeluje na cijene (DiPasquale–Wheaton–Colwellov model povezuje tržište nekretnina, tržište kapitala i građevinsku industriju).</li>\n</ul>\n<h3>Vlasnički trošak kapitala (user cost)</h3>\n<p>Kad većina ljudi stambeno pitanje rješava kupnjom, umjesto najamnine koristi se <strong>vlasnički trošak kapitala</strong>: režije, održavanje (pričuva), <strong>oportunitetni trošak</strong> (npr. propušteni prinos obveznica ili kamata na stambeni kredit) i <strong>kapitalna dobit/gubitak</strong>. Režije se izostavljaju jer ih plaćaju i najmoprimci.</p>\n<div class=\"formula-box\">U = i − ΔP / P<br>kamata 5 %, cijena nepromijenjena → U = 5 %; cijena +10 % → U = −5 %</div>\n<p>Primjer iz udžbenika: 2010.–2015. cijene stanova pale su oko 5 % godišnje uz kamate 4–5 %, pa je vlasništvo koštalo gotovo 10 % vrijednosti godišnje — više od najma; 2002.–2008. (udvostručenje cijena) trošak je bio negativan. Budući da ovisi o <strong>očekivanoj</strong> promjeni cijena, očekivanja (optimizam/pesimizam) stvaraju <strong>samoostvarivu prognozu</strong> i pojačavaju postojeće trendove.</p>\n<h3>Rast grada i priuštivost stanovanja</h3>\n<p><strong>Elastičnost ponude nekretnina</strong> određuje vezu ekonomskog rasta, širenja grada i cijena: kada je ponuda neelastična, rast potražnje za izvozom iz grada ili imigracija više <strong>podiže cijene</strong> nego što širi grad. Čimbenici elastičnosti su javne politike — izgradivost i iskoristivost zemljišta u planovima, prenamjena zemljišta, postupak dozvola, prometna politika. Rast bez javnih politika stvara <strong>distribucijske efekte</strong> (dobitnike i gubitnike).</p>\n<h3>Alternativna teorija rente — pojmovi</h3>\n<ul>\n<li><strong>Uporabna vrijednost</strong> — vrijednost za korisnika prema funkcionalnosti i upotrebi.</li>\n<li><strong>Razmjenska vrijednost</strong> — tržišna vrijednost prema cijenama sličnih nekretnina u transakcijama.</li>\n<li><strong>Efekt doma</strong> — veća vrijednost nekretnine za korisnika zbog znanja o životu u njoj i naselju ili zbog emocionalne privrženosti.</li>\n<li><strong>Gentrifikacija</strong> — više dohodovne skupine istiskuju niže dohodovne skupine iz kvartova u kojima su generacijama živjele.</li>\n<li><strong>Izvlaštenje</strong> — država ili javna tijela oduzimaju privatnu imovinu za javne svrhe, uz naknadu; efekt doma tu je osobito važan.</li>\n<li><strong>Kapitalna dobit</strong> — dobit zbog toga što je vrijednost imovine veća od kupovne cijene.</li>\n</ul>\n",
+      "id": "n2llom"
+    },
+    "id": "8wi7tx"
+  },
+  "localGovernment": {
+    "name": "Lokalna samouprava",
+    "icon": "fa-landmark-flag",
+    "color": "#15803d",
+    "flashcards": [
+      {
+        "question": "Kakvu ulogu ima lokalna samouprava u razvoju?",
+        "answer": "Nositelj je i koordinator društvenog i gospodarskog razvoja na svom području i odgovorna je za lokalni ekonomski razvoj.",
+        "explanation": "Najbliža je potrebama lokalne zajednice. Izvor: udžbenik.",
+        "id": "cpdq8p"
+      },
+      {
+        "question": "Koje dvije uloge obavlja lokalna samouprava u suvremenim državama?",
+        "answer": "Predstavnika i zaštitnika interesa lokalnog stanovništva (politička dimenzija) i nositelja javnih poslova (upravna dimenzija).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "1s4qzf"
+      },
+      {
+        "question": "Kako Europska povelja o lokalnoj samoupravi definira lokalnu samoupravu?",
+        "answer": "Pravo i mogućnost lokalnih jedinica da, u okvirima zakona, uređuju i upravljaju bitnim dijelom javnih poslova, uz vlastitu odgovornost i u interesu stanovništva.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "pk2x6x"
+      },
+      {
+        "question": "Što je Europska povelja o lokalnoj samoupravi?",
+        "answer": "Pravni dokument Vijeća Europe potpisan 1985. u Strasbourgu koji definira lokalnu samoupravu, njezina načela i minimalne standarde.",
+        "explanation": "RH je ratificirala 1997. i 2008.",
+        "id": "w9khej"
+      },
+      {
+        "question": "Koja su dva načela lokalne samouprave?",
+        "answer": "Načelo supsidijarnosti i načelo solidarnosti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "6eet4d"
+      },
+      {
+        "question": "Što je načelo solidarnosti?",
+        "answer": "Obveza države da financijski pomaže slabijim jedinicama lokalne samouprave.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "cc0pog"
+      },
+      {
+        "question": "Što je načelo supsidijarnosti?",
+        "answer": "Javne funkcije obavljaju se na što nižoj razini vlasti, a više razine preuzimaju samo ono što niže ne mogu učinkovito obaviti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "xqar8j"
+      },
+      {
+        "question": "Što je lokalna samouprava u širem, a što u užem smislu?",
+        "answer": "U širem: sve razine samouprave (općinska, županijska, regionalna); u užem: samo prva, najniža razina — općine i gradovi.",
+        "explanation": "Županije su jedinice područne (regionalne) samouprave.",
+        "id": "9d4i8o"
+      },
+      {
+        "question": "Koliko jedinica lokalne i područne samouprave ima RH?",
+        "answer": "556 jedinica lokalne samouprave (428 općina, 127 gradova i Grad Zagreb) i 20 županija — ukupno 576.",
+        "explanation": "Grad Zagreb ima status grada i županije.",
+        "id": "1199ec"
+      },
+      {
+        "question": "Kako Zakon definira grad?",
+        "answer": "Jedinica lokalne samouprave u kojoj je sjedište županije te svako mjesto s više od 10.000 stanovnika koje je urbana, povijesna, prirodna, gospodarska i društvena cjelina.",
+        "explanation": "Mogu biti uključena i prigradska naselja.",
+        "id": "mgebbe"
+      },
+      {
+        "question": "Kako Zakon definira općinu?",
+        "answer": "Jedinica lokalne samouprave za područje više naseljenih mjesta koja su prirodna, gospodarska i društvena cjelina povezana zajedničkim interesima.",
+        "id": "y16sgl"
+      },
+      {
+        "question": "Koji je problem teritorijalne podjele RH?",
+        "answer": "Mnogo malih jedinica bez dovoljnih financijskih i kadrovskih kapaciteta te mnogo jedinica s posebnim položajem; broj stanovnika nije bio ključan kriterij.",
+        "explanation": "64 grada ima manje od 10.000 stanovnika.",
+        "id": "ykppt5"
+      },
+      {
+        "question": "Kako su JLS u RH smještene u NUTS/LAU klasifikaciju?",
+        "answer": "RH je NUTS 1, četiri regije čine NUTS 2, 21 županija NUTS 3, a 556 gradova i općina razinu LAU 2.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "8db5es"
+      },
+      {
+        "question": "Kako se dijeli djelokrug poslova lokalne samouprave?",
+        "answer": "Na izvorne (samoupravne) poslove, za koje odgovaraju same jedinice, i povjerene poslove državne uprave, za koje odgovornost ostaje središnjoj državi.",
+        "id": "tr7rwt"
+      },
+      {
+        "question": "Koje poslove obavljaju općine i gradovi?",
+        "answer": "Uređenje naselja i stanovanje, prostorno planiranje, komunalno gospodarstvo, brigu o djeci, socijalnu skrb, primarnu zdravstvenu zaštitu, osnovno obrazovanje, kulturu i sport…",
+        "explanation": "Puni popis → Uči.",
+        "id": "fs2chr"
+      },
+      {
+        "question": "Koje dodatne poslove obavljaju veliki gradovi (> 35.000 stanovnika)?",
+        "answer": "Održavanje javnih cesta te izdavanje građevinskih i lokacijskih dozvola i drugih akata vezanih za gradnju.",
+        "id": "ipz5sj"
+      },
+      {
+        "question": "Koja su tijela jedinice lokalne samouprave?",
+        "answer": "Predstavničko tijelo (općinsko ili gradsko vijeće) i izvršno tijelo (općinski načelnik ili gradonačelnik sa zamjenikom).",
+        "explanation": "Načelnik i gradonačelnik biraju se neposredno.",
+        "id": "zilhhd"
+      },
+      {
+        "question": "Kakav je broj članova predstavničkog tijela?",
+        "answer": "Neparan i ovisi o broju stanovnika — od 7 (do 1.000 stanovnika) do 47 (više od 300.000).",
+        "explanation": "Mandat 4 godine; dužnost je počasna.",
+        "id": "p12ebo"
+      },
+      {
+        "question": "Koji su oblici odlučivanja građana?",
+        "answer": "Neposredni (lokalni referendum, mjesni zbor građana) i posredni (putem predstavničkog tijela).",
+        "id": "i4sax9"
+      },
+      {
+        "question": "Što je referendum?",
+        "answer": "Oblik neposredne demokracije u kojem se građani neposredno i tajno izjašnjavaju za ili protiv akta ili odluke.",
+        "id": "qrnhtf"
+      },
+      {
+        "question": "Što je mjesni zbor građana?",
+        "answer": "Oblik konzultiranja stanovnika užeg dijela lokalne jedinice; mišljenje je obvezatno za mjesni odbor, a savjetodavno za vijeće i načelnika.",
+        "explanation": "Saziva ga vijeće mjesnog odbora.",
+        "id": "hb5qyx"
+      },
+      {
+        "question": "Kada predstavničko tijelo mora raspravljati o prijedlogu ili peticiji građana?",
+        "answer": "Kada ga potpisom podrži najmanje 10 % birača; odgovor mora dati najkasnije u roku od tri mjeseca.",
+        "id": "wdr82k"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Europska povelja o lokalnoj samoupravi potpisana je:",
+        "options": [
+          "1999. u Bruxellesu",
+          "2013. u Zagrebu",
+          "1957. u Rimu",
+          "1985. u Strasbourgu"
+        ],
+        "correct": 3,
+        "id": "vs1bfc"
+      },
+      {
+        "question": "Načelo koje obvezuje državu da financijski pomaže slabijim jedinicama je:",
+        "options": [
+          "načelo integralnog pristupa",
+          "načelo supsidijarnosti",
+          "načelo solidarnosti",
+          "načelo javnosti"
+        ],
+        "correct": 2,
+        "id": "fx0r86"
+      },
+      {
+        "question": "Obavljanje javnih funkcija na što nižoj razini vlasti je:",
+        "options": [
+          "načelo centralizacije",
+          "načelo solidarnosti",
+          "načelo supsidijarnosti",
+          "načelo vertikalne integracije"
+        ],
+        "correct": 2,
+        "id": "mkmpkq"
+      },
+      {
+        "question": "Lokalna samouprava u užem smislu obuhvaća:",
+        "options": [
+          "samo prvu, najnižu razinu — općine i gradove",
+          "samo županije",
+          "samo državnu upravu",
+          "sve razine samouprave"
+        ],
+        "correct": 0,
+        "id": "qq9ygm"
+      },
+      {
+        "question": "Koliko je općina u Republici Hrvatskoj?",
+        "options": [
+          "127",
+          "556",
+          "428",
+          "576"
+        ],
+        "correct": 2,
+        "id": "5xbjue"
+      },
+      {
+        "question": "Ukupan broj jedinica lokalne i područne (regionalne) samouprave u RH je:",
+        "options": [
+          "21",
+          "576",
+          "556",
+          "428"
+        ],
+        "correct": 1,
+        "id": "d4hc4t"
+      },
+      {
+        "question": "Gradovi i općine u RH u klasifikaciji EU definiraju se kao:",
+        "options": [
+          "NUTS 3",
+          "NUTS 2",
+          "LAU 2",
+          "NUTS 1"
+        ],
+        "correct": 2,
+        "id": "dvaqnp"
+      },
+      {
+        "question": "Poslovi za koje odgovornost ostaje na tijelima središnje države su:",
+        "options": [
+          "izvorni poslovi",
+          "komunalni poslovi",
+          "povjereni poslovi",
+          "samoupravni poslovi"
+        ],
+        "correct": 2,
+        "id": "oyyu92"
+      },
+      {
+        "question": "Izdavanje građevinskih i lokacijskih dozvola dodatno obavljaju gradovi s više od:",
+        "options": [
+          "100.000 stanovnika",
+          "35.000 stanovnika",
+          "10.000 stanovnika",
+          "5.000 stanovnika"
+        ],
+        "correct": 1,
+        "id": "7om7vy"
+      },
+      {
+        "question": "Predstavničko tijelo grada je:",
+        "options": [
+          "mjesni odbor",
+          "gradsko vijeće",
+          "županijska skupština",
+          "gradonačelnik"
+        ],
+        "correct": 1,
+        "id": "dtffsn"
+      },
+      {
+        "question": "Predstavničko tijelo općine do 1.000 stanovnika ima:",
+        "options": [
+          "9 članova",
+          "15 članova",
+          "7 članova",
+          "13 članova"
+        ],
+        "correct": 2,
+        "id": "7m08ny"
+      },
+      {
+        "question": "Mandat člana predstavničkog tijela traje:",
+        "options": [
+          "pet godina",
+          "četiri godine",
+          "dvije godine",
+          "šest godina"
+        ],
+        "correct": 1,
+        "id": "8ui5vd"
+      },
+      {
+        "question": "Neposredni oblici odlučivanja građana su:",
+        "options": [
+          "gradsko vijeće i načelnik",
+          "izbori za Sabor i Vladu",
+          "lokalni referendum i mjesni zbor građana",
+          "peticija ministru"
+        ],
+        "correct": 2,
+        "id": "pkys48"
+      },
+      {
+        "question": "Mišljenje zbora građana za općinsko/gradsko vijeće je:",
+        "options": [
+          "pravno nevažeće",
+          "konačno i neopozivo",
+          "obvezatno",
+          "savjetodavno"
+        ],
+        "correct": 3,
+        "id": "0mas7e"
+      },
+      {
+        "question": "Predstavničko tijelo mora raspravljati o peticiji ako je podrži najmanje:",
+        "options": [
+          "10 % birača",
+          "1 % birača",
+          "25 % birača",
+          "50 % birača"
+        ],
+        "correct": 0,
+        "id": "aqqcgp"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Lokalna samouprava je nositelj i _______ društvenog i gospodarskog razvoja na svojem području.",
+        "answer": "koordinator",
+        "hint": "usklađuje razvoj",
+        "id": "jx4xhu"
+      },
+      {
+        "sentence": "Grad Zagreb ima poseban status grada i _______.",
+        "answer": "županije",
+        "hint": "dvojni status",
+        "id": "f2zhco"
+      },
+      {
+        "sentence": "Grad je mjesto s više od 10.000 stanovnika ili _______ županije.",
+        "answer": "sjedište",
+        "hint": "administrativna uloga",
+        "id": "915njb"
+      },
+      {
+        "sentence": "Članovi predstavničkog tijela dužnost obavljaju _______ i ne primaju plaću.",
+        "answer": "počasno",
+        "hint": "bez plaće",
+        "id": "a7br8x"
+      },
+      {
+        "sentence": "Broj članova predstavničkog tijela mora biti _______.",
+        "answer": "neparan",
+        "hint": "radi većine",
+        "id": "48hzxr"
+      },
+      {
+        "sentence": "Općinski načelnik i gradonačelnik biraju se na _______ izborima.",
+        "answer": "neposrednim",
+        "hint": "izravno",
+        "id": "53fhk8"
+      },
+      {
+        "sentence": "Odgovor na prijedlog građana predstavničko tijelo mora dati najkasnije u roku od _______ mjeseca.",
+        "answer": "tri",
+        "hint": "broj mjeseci",
+        "id": "nga6ip"
+      }
+    ],
+    "learn": {
+      "title": "Lokalna samouprava — načela, ustroj, djelokrug i tijela (Izvor: udžbenik)",
+      "content": "\n<p><em>Izvor: udžbenik (poglavlje „Lokalna samouprava i upravljanje gradovima\"); tema se na nastavi obrađuje s gostom predavačem.</em></p>\n<h3>Lokalna samouprava — nositelj i koordinator razvoja</h3>\n<p>Upravljanje razvojem na lokalnoj razini postaje sve značajnije. Obilježje je <strong>partnerski pristup</strong> — suradnja lokalnih vlasti, poduzetništva, civilnog sektora i stanovništva. Lokalna samouprava je <strong>nositelj i koordinator društvenog i gospodarskog razvoja</strong> na svom području, odgovorna za lokalni ekonomski razvoj; bavi se poslovima lokalnog značaja, najbolje poznaje svoje područje i najbliža je potrebama zajednice. Postaje partner višim razinama u rješavanju javnih problema, od komunalnih službi do makroekonomskih i socijalnih.</p>\n<p>Dvije isprepletene uloge: <strong>predstavnik i zaštitnik interesa lokalnog stanovništva</strong> (politička dimenzija) i <strong>nositelj/pružatelj javnih poslova</strong> (upravna dimenzija).</p>\n<h4>Europska povelja o lokalnoj samoupravi</h4>\n<p>Dokument <strong>Vijeća Europe</strong> potpisan <strong>15. listopada 1985. u Strasbourgu</strong> (RH ratificirala dio članaka 1997., ostatak 2008.). Lokalna samouprava je „<strong>pravo i mogućnost lokalnih jedinica da, u okvirima određenim zakonom, uređuju i upravljaju, uz vlastitu odgovornost i u interesu lokalnog stanovništva, bitnim dijelom javnih poslova</strong>\". Jamči političku, upravnu i financijsku autonomiju u skladu s načelom supsidijarnosti; do 2010. ratificirana u 42 zemlje. Članak 10. štiti pravo jedinica na suradnju i udruživanje.</p>\n<h4>Načela lokalne samouprave</h4>\n<table>\n<tr><th>Načelo</th><th>Sadržaj</th></tr>\n<tr><td><strong>Solidarnost</strong></td><td>država financijski pomaže slabijim jedinicama lokalne samouprave</td></tr>\n<tr><td><strong>Supsidijarnost</strong></td><td>dio javnih funkcija obavlja se na što nižoj razini vlasti, a više razine (supsidijarno) preuzimaju ono što lokalne vlasti ne mogu učinkovito obaviti; u EU isključuje djelovanje Unije ako članice mogu same učinkovito riješiti problem</td></tr>\n</table>\n<p>Decentralizacija se sve više temelji na supsidijarnosti: uže jedinice, najbliže građanima, trebaju obavljati pretežni dio javnih poslova sukladno svojem financijskom i stručnom kapacitetu. Konačni stupanj decentralizacije ipak ovisi o političkim tijelima središnje države.</p>\n\n<h3>Ustroj lokalne samouprave u RH</h3>\n<p>U <strong>širem smislu</strong> lokalna samouprava obuhvaća sve razine; u <strong>užem smislu</strong> samo prvu, najnižu razinu. <strong>Općine i gradovi</strong> su jedinice lokalne samouprave, <strong>županije</strong> jedinice područne (regionalne) samouprave.</p>\n<ul>\n<li><strong>428 općina</strong>, <strong>127 gradova</strong>, <strong>Grad Zagreb</strong> (status grada i županije) → <strong>556</strong> jedinica lokalne samouprave;</li>\n<li><strong>20 županija</strong>;</li>\n<li>ukupno <strong>576 jedinica</strong> lokalne i područne (regionalne) samouprave.</li>\n</ul>\n<p><strong>Grad</strong> (Zakon o lokalnoj i područnoj (regionalnoj) samoupravi): jedinica u kojoj je <strong>sjedište županije</strong> te svako mjesto s <strong>više od 10.000 stanovnika</strong> koje je urbana, povijesna, prirodna, gospodarska i društvena cjelina; mogu biti uključena prigradska naselja povezana dnevnim migracijama; iznimno i mjesto koje ne zadovoljava uvjete (povijesni, gospodarski, geoprometni razlozi). <strong>Općina</strong>: jedinica za područje više naseljenih mjesta koja su prirodna, gospodarska i društvena cjelina povezana zajedničkim interesima.</p>\n<p>Broj stanovnika nije bio ključan kriterij: 42 općine imaju više od 5.000 stanovnika (šest više od 10.000), a 64 grada manje od 10.000 (22 manje od 5.000). <strong>Problem</strong>: mnogo malih jedinica bez dovoljnih financijskih i kadrovskih kapaciteta te mnogo jedinica s posebnim položajem (brdsko-planinska područja, područja posebne državne skrbi, potpomognuta područja, otoci). Moguće rješenje — <strong>jačanje suradnje</strong> gradova i općina.</p>\n<p><strong>NUTS/LAU:</strong> NUTS ima pet razina — NUTS 1, 2, 3 i LAU 1, LAU 2. RH je NUTS 1; NUTS 2 čine četiri regije (Jadranska Hrvatska, Grad Zagreb, Sjeverna Hrvatska, Panonska Hrvatska); NUTS 3 je 21 županija; 556 gradova i općina su <strong>LAU 2</strong>.</p>\n\n<h3>Djelokrug rada</h3>\n<p>Gradovi i općine obavljaju poslove <strong>lokalnog značaja</strong> kojima se neposredno ostvaruju potrebe građana, a koji nisu Ustavom ili zakonom dodijeljeni državnim tijelima; županije obavljaju poslove područnog (regionalnog) značaja.</p>\n<table>\n<tr><th>Izvorni (samoupravni) poslovi</th><th>Povjereni poslovi</th></tr>\n<tr><td>proizlaze iz samoupravnog djelokruga; odgovornost snose sami gradovi i općine; pravo na slobodnu opću regulaciju; financiraju se u načelu iz vlastitih sredstava</td><td>poslovi državne uprave koje državni organi ne mogu sami obaviti pa se prenose na JLS; odgovornost ostaje na tijelima središnje države</td></tr>\n</table>\n<p><strong>Poslovi općina i gradova</strong> (Zakon o lokalnoj i područnoj (regionalnoj) samoupravi):</p>\n<ul>\n<li>uređenje naselja i stanovanja; prostorno i urbanističko planiranje; komunalno gospodarstvo;</li>\n<li>briga o djeci; socijalna skrb; primarna zdravstvena zaštita; odgoj i osnovno obrazovanje;</li>\n<li>kultura, tjelesna kultura i sport; zaštita potrošača; zaštita i unapređenje prirodnog okoliša;</li>\n<li>protupožarna i civilna zaštita; promet na svome području; ostali poslovi prema posebnim zakonima.</li>\n</ul>\n<p><strong>Veliki gradovi (iznad 35.000 stanovnika)</strong> dodatno: <strong>održavanje javnih cesta</strong> i <strong>izdavanje građevinskih i lokacijskih dozvola</strong>, drugih akata za gradnju i provedba dokumenata prostornog uređenja.</p>\n\n<h3>Tijela lokalne samouprave</h3>\n<ul>\n<li><strong>Predstavničko tijelo</strong> — općinsko ili gradsko vijeće; broj članova <strong>neparan</strong>, prema broju stanovnika; <strong>mandat 4 godine</strong>; dužnost se obavlja <strong>počasno</strong>; ima predsjednika i do dva potpredsjednika; odluke većinom glasova uz nazočnost većine članova.</li>\n<li><strong>Izvršno tijelo</strong> — u općini <strong>općinski načelnik</strong> i zamjenik, u gradu <strong>gradonačelnik</strong> i zamjenik; biraju se na <strong>neposrednim izborima</strong>.</li>\n</ul>\n<table>\n<tr><th>Broj stanovnika</th><th>Članova vijeća</th></tr>\n<tr><td>do 1.000</td><td>7</td></tr>\n<tr><td>1.001–2.500</td><td>9</td></tr>\n<tr><td>2.500–10.000</td><td>13</td></tr>\n<tr><td>10.000–35.000</td><td>15–19</td></tr>\n<tr><td>35.000–100.000</td><td>21–27</td></tr>\n<tr><td>100.000–200.000</td><td>31</td></tr>\n<tr><td>200.000–300.000</td><td>41</td></tr>\n<tr><td>više od 300.000</td><td>47</td></tr>\n</table>\n<h4>Oblici odlučivanja građana</h4>\n<ul>\n<li><strong>Neposredni</strong>: <strong>lokalni referendum</strong> (oblik neposredne demokracije; građani se neposredno i tajno izjašnjavaju za ili protiv akta ili odluke) i <strong>mjesni zbor građana</strong> (konzultiranje stanovnika užeg dijela jedinice; saziva ga vijeće mjesnog odbora, a mogu i vijeće ili načelnik/gradonačelnik; odlučuje se javnim glasovanjem; mišljenje je <strong>obvezatno za mjesni odbor</strong>, a <strong>savjetodavno</strong> za vijeće i načelnika).</li>\n<li><strong>Posredni</strong>: putem predstavničkog tijela.</li>\n<li>Građani mogu predlagati akte i podnositi <strong>peticije</strong>; predstavničko tijelo mora raspravljati ako prijedlog podrži <strong>najmanje 10 % birača</strong> i odgovoriti <strong>najkasnije za tri mjeseca</strong>.</li>\n</ul>\n",
+      "id": "9ira9x"
+    },
+    "id": "c1pjtd"
+  },
+  "localDevelopment": {
+    "name": "Upravljanje gradovima — lokalni ekonomski razvoj i financiranje",
+    "icon": "fa-hand-holding-dollar",
+    "color": "#7c3aed",
+    "flashcards": [
+      {
+        "question": "Što je lokalni ekonomski razvoj (LER)?",
+        "answer": "Proces partnerstva lokalne samouprave, privatnog sektora i stanovništva radi upravljanja lokalnim resursima, boljih uvjeta za rast i otvaranja radnih mjesta.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "98aamb"
+      },
+      {
+        "question": "Kako LER definira Blakely (1994.)?",
+        "answer": "Proces u kojem lokalne samouprave i lokalne tvrtke udružuju snage i resurse u nova partnerstva radi radnih mjesta i gospodarske aktivnosti, uz naglasak na endogenim politikama.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "vc6due"
+      },
+      {
+        "question": "Što znače pojmovi „lokalni\", „ekonomski\" i „razvoj\" u LER-u?",
+        "answer": "Lokalni: snaga područja iz lokalnih resursa; ekonomski: poslovne prilike i investicijska klima; razvoj: holistički pristup (ekonomska, socijalna, ekološka, kulturna dimenzija).",
+        "id": "s2vwdd"
+      },
+      {
+        "question": "Zašto LER mora biti usmjeren na održivi razvoj?",
+        "answer": "Jer lokalni resursi moraju zadovoljiti potrebe sadašnjeg stanovništva, a da se ne ugrozi mogućnost budućih generacija da zadovolje svoje.",
+        "id": "riin2u"
+      },
+      {
+        "question": "Na koje se dvije skupine dijele teorije regionalnog i lokalnog razvoja?",
+        "answer": "Teorija lokacije (mikroekonomska, statička, najstarija) i teorije regionalnog i lokalnog rasta i razvoja (makroekonomske, prostorni aspekti rasta).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "qq34xs"
+      },
+      {
+        "question": "Što tvrdi neoklasična teorija rasta (Solow–Swan)?",
+        "answer": "Rast pokreću kapital, rad i tehnološki napredak, koji je egzogen; uz opadajuće prinose predviđa konvergenciju dohotka siromašnijih i bogatijih zemalja.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "8fcnnm"
+      },
+      {
+        "question": "Što tvrdi teorija endogenog rasta?",
+        "answer": "Tehnološki napredak je endogen: znanje, ideje, ljudski kapital, istraživanje i razvoj, inovacije i institucije pokreću rast; država ima aktivnu ulogu.",
+        "explanation": "P. Romer. Izvor: udžbenik.",
+        "id": "7z3eot"
+      },
+      {
+        "question": "Što tvrdi nova ekonomska geografija (Krugman)?",
+        "answer": "Na regionalno središte djeluju centripetalne sile (koncentracija, aglomeracija) i centrifugalne sile (seljenje aktivnosti kad aglomeracija nadraste optimalnu veličinu).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "eqarii"
+      },
+      {
+        "question": "Kako se razlikuju pristupi top-down i bottom-up?",
+        "answer": "Top-down: centralizirano, hijerarhijsko upravljanje države, manje sudjelovanja građana. Bottom-up: decentralizirano, odluke na lokalnoj razini uz aktivno sudjelovanje dionika.",
+        "explanation": "LER se temelji na bottom-up modelu.",
+        "id": "cyhdg6"
+      },
+      {
+        "question": "Tko su sudionici lokalnog ekonomskog razvoja?",
+        "answer": "Lokalna samouprava (javni sektor), privatni sektor (gospodarski subjekti) te stanovništvo i neprofitne organizacije.",
+        "explanation": "Ključ je koordinacija svih sudionika.",
+        "id": "r8tuqe"
+      },
+      {
+        "question": "Koja je uloga lokalne samouprave u LER-u?",
+        "answer": "Planira, vodi i provodi LER: strateško planiranje, fizička infrastruktura, stabilno poslovno okruženje i partnerstva s komorom, poduzećima, školama i udrugama.",
+        "explanation": "Vodstvo i koordinacija ključni su za uspjeh.",
+        "id": "22t43t"
+      },
+      {
+        "question": "Što je najučinkovitija početna aktivnost grada za privlačenje ulagača?",
+        "answer": "Pojednostavljenje propisa — smanjenje procesa i procedura kroz koje tvrtke moraju proći u gradskoj upravi.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "b7yqdt"
+      },
+      {
+        "question": "Što je javno-privatno partnerstvo na lokalnoj razini?",
+        "answer": "Suradnja u kojoj javni sektor zadržava odgovornost za javne usluge, a privatni doprinosi financijskim i upravljačkim potencijalom i inovativnošću.",
+        "explanation": "Koristi: infrastruktura, poduzetništvo, škole, okoliš.",
+        "id": "cfhxmq"
+      },
+      {
+        "question": "Zašto je sudjelovanje javnosti važno za LER?",
+        "answer": "Donosi naprednije odluke, veće partnerstvo i odgovornost u provedbi te veće povjerenje u javne institucije.",
+        "explanation": "Rezolucija 326 Vijeća Europe (2011.).",
+        "id": "rjyruf"
+      },
+      {
+        "question": "Koji se pokazatelji koriste za indeks razvijenosti JLS u RH?",
+        "answer": "Prosječni dohodak i izvorni prihodi po stanovniku, stopa nezaposlenosti, opće kretanje stanovništva, tercijarna obrazovanost i indeks starenja.",
+        "explanation": "Zakon o regionalnom razvoju RH.",
+        "id": "duire2"
+      },
+      {
+        "question": "Što je indeks razvijenosti?",
+        "answer": "Kompozitni pokazatelj — prilagođeni prosjek standardiziranih vrijednosti šest društveno-gospodarskih pokazatelja; svrstava JLS u iznad- i ispodprosječno razvijene.",
+        "explanation": "Prag prosjeka = 100; osam skupina.",
+        "id": "wr6mv3"
+      },
+      {
+        "question": "Kakav je raspored JLS prema indeksu razvijenosti iz 2024.?",
+        "answer": "269 (48,4 %) iznadprosječno razvijenih (V.–VIII. skupina) i 287 (51,6 %) ispodprosječno razvijenih (I.–IV. skupina).",
+        "explanation": "2017.: 251 iznad i 305 ispod prosjeka.",
+        "id": "uaf7ie"
+      },
+      {
+        "question": "Što je proračun JLS?",
+        "answer": "Temeljni financijski akt jedinice koji donosi predstavničko tijelo na prijedlog načelnika/gradonačelnika; procjenjuje prihode i primitke i utvrđuje rashode za godinu.",
+        "explanation": "Pokazatelj smjera razvoja grada.",
+        "id": "q919ag"
+      },
+      {
+        "question": "Koji su ostali izvori financiranja LER-a osim proračuna?",
+        "answer": "Državni proračun, izvanproračunski fondovi, javno-privatno partnerstvo, krediti, dugoročni vrijednosni papiri i fondovi EU.",
+        "id": "180zc9"
+      },
+      {
+        "question": "Što je decentralizacija?",
+        "answer": "Prijenos javnih ovlasti sa šire jedinice (države) u samoupravni djelokrug užih jedinica, uz pravo samostalne regulacije i odgovornost; nadzor samo zakonitosti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "u6l5qk"
+      },
+      {
+        "question": "Što tvrdi teorija fiskalnog federalizma (Oates)?",
+        "answer": "Veličina i broj jedinica trebaju se temeljiti na supsidijarnosti: veće jedinice za široke usluge (ekonomija razmjera), manje za lokalizirane usluge.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "3i0wvh"
+      },
+      {
+        "question": "Što tvrdi Tieboutova teorija?",
+        "answer": "Građani biraju jedinicu čije su javne usluge najbliže njihovim preferencijama („glasanje nogama\"), pa izbor lokacije otkriva preferencije i potiče učinkovitost.",
+        "explanation": "Nedostatak: nejednakosti bogatih i siromašnih. Izvor: udžbenik.",
+        "id": "uzp05k"
+      },
+      {
+        "question": "Koji su oblici decentralizacije?",
+        "answer": "Politička, upravna, funkcionalna (stvarna) i fiskalna decentralizacija.",
+        "explanation": "Funkcionalna i fiskalna trebaju ići ruku pod ruku.",
+        "id": "if0kkp"
+      },
+      {
+        "question": "Kada je u RH započela sustavna decentralizacija?",
+        "answer": "Izmjenama Ustava i zakona 2000./2001., u obrazovanju, zdravstvu, socijalnoj skrbi i vatrogastvu; do danas nije u potpunosti provedena.",
+        "id": "9mhyj4"
+      },
+      {
+        "question": "Koji su vlastiti prihodi gradova i općina?",
+        "answer": "Prihodi od imovine, gradski/općinski porezi, kazne, upravne pristojbe, boravišna pristojba, komunalne naknade i doprinosi te naknade za javne površine.",
+        "explanation": "Porezi čine 55–60 % prihoda.",
+        "id": "z94t9o"
+      },
+      {
+        "question": "Kako se dijeli porez na dohodak od 2024.?",
+        "answer": "Općinama i gradovima 74 %, županijama 20 % i 6 % za decentralizirane funkcije; prirez je ukinut, a JLS same propisuju stope u granicama zakona.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "f6k7wm"
+      },
+      {
+        "question": "Što su decentralizirane funkcije?",
+        "answer": "Rashodi za osnovno i srednje školstvo, socijalnu skrb, zdravstvo i vatrogastvo preneseni na JLS i županije, financirani dodatnim udjelom poreza na dohodak i pomoćima izravnanja.",
+        "id": "zs1fre"
+      },
+      {
+        "question": "Što je fiskalno izravnanje?",
+        "answer": "Raspodjela fiskalnih sredstava među razinama vlasti radi ublažavanja nejednakosti u sposobnosti prikupljanja prihoda ili troškovima javnih usluga.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "45cpek"
+      },
+      {
+        "question": "Koje funkcije čine najveći udio rashoda gradova i općina?",
+        "answer": "Usluge unapređenja stanovanja i zajednice (27 %) i ekonomski poslovi (20 %).",
+        "explanation": "Podaci za 2023. Izvor: udžbenik.",
+        "id": "8bosnk"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Lokalni ekonomski razvoj temelji se na modelu upravljanja:",
+        "options": [
+          "isključivo centraliziranom",
+          "bottom-up",
+          "top-down",
+          "monocentričnom"
+        ],
+        "correct": 1,
+        "id": "tzvrh0"
+      },
+      {
+        "question": "Teorija lokacije u podjeli teorija regionalnog razvoja ima:",
+        "options": [
+          "isključivo sociološke temelje",
+          "mikroekonomske temelje i statički pristup",
+          "makroekonomske temelje i dinamički pristup",
+          "temelje u teoriji igara"
+        ],
+        "correct": 1,
+        "id": "g5mrug"
+      },
+      {
+        "question": "Koja teorija smatra tehnološki napredak egzogenim?",
+        "options": [
+          "neoklasična teorija (Solow–Swan)",
+          "teorija polova rasta",
+          "nova ekonomska geografija",
+          "teorija endogenog rasta"
+        ],
+        "correct": 0,
+        "id": "s5ovsv"
+      },
+      {
+        "question": "Najznačajnijim predstavnikom teorije endogenog rasta smatra se:",
+        "options": [
+          "F. Perroux",
+          "P. Romer",
+          "W. Oates",
+          "R. Solow"
+        ],
+        "correct": 1,
+        "id": "cenv8f"
+      },
+      {
+        "question": "Centripetalne i centrifugalne sile dio su:",
+        "options": [
+          "Tieboutove teorije",
+          "nove ekonomske geografije (Krugman)",
+          "neoklasične teorije",
+          "teorije fiskalnog federalizma"
+        ],
+        "correct": 1,
+        "id": "yz5x7y"
+      },
+      {
+        "question": "Što NIJE glavni sudionik LER-a prema udžbeniku?",
+        "options": [
+          "privatni sektor",
+          "središnja banka",
+          "stanovništvo i neprofitne organizacije",
+          "lokalna samouprava"
+        ],
+        "correct": 1,
+        "id": "uc1mww"
+      },
+      {
+        "question": "Najučinkovitija početna aktivnost grada za privlačenje ulagača je:",
+        "options": [
+          "izgradnja nove gradske vijećnice",
+          "raspisivanje lokalnog referenduma",
+          "pojednostavljenje propisa i procedura",
+          "povećanje komunalne naknade"
+        ],
+        "correct": 2,
+        "id": "lh4qax"
+      },
+      {
+        "question": "Koji pokazatelj NE ulazi u indeks razvijenosti JLS u RH?",
+        "options": [
+          "broj turističkih noćenja",
+          "indeks starenja",
+          "prosječna stopa nezaposlenosti",
+          "prosječni dohodak po stanovniku"
+        ],
+        "correct": 0,
+        "id": "5jnymd"
+      },
+      {
+        "question": "Prema indeksu iz 2024. ispodprosječno razvijeno je:",
+        "options": [
+          "287 JLS (51,6 %)",
+          "305 JLS (54,9 %)",
+          "127 JLS (22,8 %)",
+          "269 JLS (48,4 %)"
+        ],
+        "correct": 0,
+        "id": "8pcs47"
+      },
+      {
+        "question": "Prijedlog proračuna grada predstavničkom tijelu podnosi:",
+        "options": [
+          "gradonačelnik kao jedini ovlašteni predlagatelj",
+          "ministar financija",
+          "županijska skupština",
+          "mjesni zbor građana"
+        ],
+        "correct": 0,
+        "id": "b2gqh5"
+      },
+      {
+        "question": "Teoriju fiskalnog federalizma razvio je:",
+        "options": [
+          "P. Krugman",
+          "W. Oates",
+          "E. Blakely",
+          "Ch. Tiebout"
+        ],
+        "correct": 1,
+        "id": "qdgcw8"
+      },
+      {
+        "question": "Prema Tieboutovoj teoriji, potrošač otkriva svoje preferencije:",
+        "options": [
+          "izborom lokacije (jedinice) za život",
+          "plaćanjem komunalnog doprinosa",
+          "kupnjom dionica",
+          "glasovanjem na referendumu"
+        ],
+        "correct": 0,
+        "id": "5sht1e"
+      },
+      {
+        "question": "Prijenos fiskalne snage sa središnje na niže razine vlasti je:",
+        "options": [
+          "politička decentralizacija",
+          "fiskalna decentralizacija",
+          "fiskalna centralizacija",
+          "upravna decentralizacija"
+        ],
+        "correct": 1,
+        "id": "38voih"
+      },
+      {
+        "question": "U općoj raspodjeli poreza na dohodak općinama i gradovima pripada:",
+        "options": [
+          "6 %",
+          "50 %",
+          "74 %",
+          "20 %"
+        ],
+        "correct": 2,
+        "id": "32wlgd"
+      },
+      {
+        "question": "Najveći prihod gradova i općina su:",
+        "options": [
+          "boravišna pristojba",
+          "porezi (55–60 % prihoda)",
+          "kazne",
+          "prodaja nefinancijske imovine"
+        ],
+        "correct": 1,
+        "id": "e64oyr"
+      },
+      {
+        "question": "Najveći udio rashoda gradova i općina odnosi se na:",
+        "options": [
+          "zdravstvo",
+          "obranu",
+          "javni red i sigurnost",
+          "usluge unapređenja stanovanja i zajednice"
+        ],
+        "correct": 3,
+        "id": "gohlcr"
+      },
+      {
+        "question": "Lokalni ekonomski razvoj je proces partnerstva:",
+        "options": [
+          "isključivo stranih investitora",
+          "samo države i banaka",
+          "lokalne samouprave, privatnog sektora i stanovništva",
+          "samo županija"
+        ],
+        "correct": 2,
+        "id": "ykt13i"
+      },
+      {
+        "question": "Naglasak na „endogenim politikama razvoja\" u definiciji LER-a dao je:",
+        "options": [
+          "Krugman",
+          "Solow",
+          "Varol (2010.)",
+          "Blakely (1994.)"
+        ],
+        "correct": 3,
+        "id": "nsoah0"
+      },
+      {
+        "question": "Pojam „razvoj\" u LER-u naglašava:",
+        "options": [
+          "samo zapošljavanje u javnom sektoru",
+          "holistički pristup (ekonomska, socijalna, ekološka i kulturna dimenzija)",
+          "samo rast BDP-a",
+          "samo izgradnju cesta"
+        ],
+        "correct": 1,
+        "id": "ne9j8a"
+      },
+      {
+        "question": "Koju ulogu NEMA lokalna samouprava u LER-u?",
+        "options": [
+          "građenje partnerstava",
+          "osiguranje fizičke infrastrukture",
+          "strateško planiranje",
+          "donošenje zakona za cijelu državu"
+        ],
+        "correct": 3,
+        "id": "2vddhu"
+      },
+      {
+        "question": "U javno-privatnom partnerstvu odgovornost za pružanje javnih usluga zadržava:",
+        "options": [
+          "nitko",
+          "privatni sektor",
+          "banka",
+          "javni sektor"
+        ],
+        "correct": 3,
+        "id": "pfgl1i"
+      },
+      {
+        "question": "Rezolucija 326 Vijeća Europe (2011.) naglašava:",
+        "options": [
+          "ukidanje općina",
+          "sudjelovanje građana u odlučivanju na lokalnoj razini",
+          "centralizaciju vlasti",
+          "zabranu peticija"
+        ],
+        "correct": 1,
+        "id": "ihh4fn"
+      },
+      {
+        "question": "Decentralizacija je prijenos javnih ovlasti:",
+        "options": [
+          "iz EU na županije bez nadzora",
+          "s građana na banke",
+          "sa središnje države na uže jedinice samouprave",
+          "s općina na državu"
+        ],
+        "correct": 2,
+        "id": "4aulmi"
+      },
+      {
+        "question": "Što NIJE vlastiti prihod gradova i općina?",
+        "options": [
+          "porez na dodanu vrijednost (PDV)",
+          "komunalna naknada",
+          "porez na kuće za odmor",
+          "boravišna pristojba"
+        ],
+        "correct": 0,
+        "id": "06dcwo"
+      },
+      {
+        "question": "Sustavna decentralizacija u RH započela je u područjima:",
+        "options": [
+          "monetarne politike",
+          "obrazovanja, zdravstva, socijalne skrbi i vatrogastva",
+          "vanjske politike i obrane",
+          "carina i trošarina"
+        ],
+        "correct": 1,
+        "id": "ny3q69"
+      },
+      {
+        "question": "Što od navedenog NIJE izvor financiranja LER-a osim proračuna?",
+        "options": [
+          "krediti financijskih institucija",
+          "javno-privatno partnerstvo",
+          "fondovi EU",
+          "carinski prihodi države"
+        ],
+        "correct": 3,
+        "id": "5vr74l"
+      },
+      {
+        "question": "LER mora biti usmjeren na održivi razvoj jer lokalni resursi moraju:",
+        "options": [
+          "biti potrošeni što prije",
+          "biti prodani stranim tvrtkama",
+          "služiti samo turistima",
+          "zadovoljiti sadašnje potrebe bez ugrožavanja budućih generacija"
+        ],
+        "correct": 3,
+        "id": "fqc1kn"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "U modelu bottom-up _______ faktori imaju ključnu ulogu.",
+        "answer": "endogeni",
+        "hint": "unutarnji",
+        "id": "uq4m1g"
+      },
+      {
+        "sentence": "Indeks razvijenosti računa se kao prilagođeni prosjek standardiziranih vrijednosti _______ pokazatelja.",
+        "answer": "šest",
+        "hint": "broj",
+        "id": "bzo3ci"
+      },
+      {
+        "sentence": "Gradovi i općine razvrstani su prema indeksu razvijenosti u _______ razvojnih skupina.",
+        "answer": "osam",
+        "hint": "I.–VIII.",
+        "id": "ygkwvo"
+      },
+      {
+        "sentence": "JLS moraju objavljivati godišnje financijske izvještaje najkasnije u roku _______ dana od predaje.",
+        "answer": "osam",
+        "hint": "Zakon o proračunu",
+        "id": "dxvwed"
+      },
+      {
+        "sentence": "S poreznom reformom od 1. siječnja 2024. ukida se _______ porezu na dohodak.",
+        "answer": "prirez",
+        "hint": "dodatak porezu",
+        "id": "8ocqsl"
+      },
+      {
+        "sentence": "Udio za decentralizirane funkcije u porezu na dohodak iznosi _______ %.",
+        "answer": "6",
+        "hint": "mali udio",
+        "id": "g1dc2v"
+      },
+      {
+        "sentence": "Kada dodatni udio poreza nije dovoljan za minimalne standarde, prenose se pomoći _______.",
+        "answer": "izravnanja",
+        "hint": "fiskalno izravnanje",
+        "id": "7y2jsg"
+      },
+      {
+        "sentence": "Suvremena decentralizacija treba biti zasnovana na kombinaciji pristupa top-down i _______.",
+        "answer": "bottom-up",
+        "hint": "odozdo",
+        "id": "u07qh3"
+      }
+    ],
+    "learn": {
+      "title": "Lokalni ekonomski razvoj, decentralizacija i lokalni proračuni (Izvor: udžbenik)",
+      "content": "\n<p><em>Izvor: udžbenik (poglavlje „Lokalna samouprava i upravljanje gradovima\").</em></p>\n<h3>Upravljanje gradovima — lokalni ekonomski razvoj (LER)</h3>\n<p>Globalizacija je pojačala važnost lokalnih pristupa razvoju. Koncept LER-a odgovor je na negativne trendove globalizacije i temelji se na <strong>modelu bottom-up</strong> nasuprot tradicionalnom <strong>top-down</strong>: decentralizacija vlasti, lokalne inicijative, efikasno korištenje lokalnih resursa, razvoj znanja, tehnologije i umrežavanja. <strong>Endogeni faktori</strong> imaju ključnu ulogu — gradovi i općine postaju <strong>nositelji razvoja</strong>. Svrha LER-a je omogućiti lokalnom gospodarstvu da odgovori na procese restrukturiranja, poveća kapacitet za rast i stvori zaposlenost.</p>\n<h4>Definicije LER-a</h4>\n<table>\n<tr><th>Autor</th><th>Definicija</th></tr>\n<tr><td>Blakely (1994.)</td><td>lokalne samouprave i lokalne tvrtke udružuju snage i resurse u nova partnerstva radi novih radnih mjesta i aktivnosti; naglasak na <strong>endogenim politikama razvoja</strong></td></tr>\n<tr><td>Helmsing (2001.)</td><td>partnerstva lokalnih samouprava, udruga i privatnog sektora radi upravljanja resursima, radnih mjesta i poticanja gospodarstva teritorija</td></tr>\n<tr><td>Svjetska banka (2001.)</td><td>lokalna vlast radi s poslovnim i nevladinim sektorom na boljim uvjetima za rast; izgradnja konkurentnosti optimalnim korištenjem lokalnih resursa</td></tr>\n<tr><td>ILO (2006.)</td><td>participativni razvojni proces koji stvara radna mjesta i stimulira ekonomsku aktivnost</td></tr>\n<tr><td>Varol (2010.)</td><td>razviti lokalne mogućnosti zapošljavanja postojećim ljudskim, prirodnim i institucionalnim resursima za samoodrživ ekonomski sustav</td></tr>\n</table>\n<p>LER je <strong>kontinuirani proces</strong> uz koordinaciju svih sudionika. <strong>Lokalni</strong> — snaga područja optimiziranjem lokalnih resursa (teritorijalni pristup, uz veze s višim razinama); <strong>ekonomski</strong> — poslovne prilike, poduzetničke inicijative, pristup tržištu, investicijska klima; <strong>razvoj</strong> — <strong>holistički pristup</strong> (ekonomska, socijalna, ekološka i kulturna dimenzija). LER mora biti usmjeren i na <strong>održivi razvoj</strong>.</p>\n<h4>Teorije regionalnog i lokalnog razvoja</h4>\n<ul>\n<li><strong>Teorija lokacije</strong> — najstarija grana regionalne ekonomije (rani 1900-ti), mikroekonomski temelji, statički pristup; razvio A. Weber (1929.), proširili Hoover, Greenhut, Isard; optimalna lokacija prema troškovima transporta (tvrtke biraju lokacije koje minimiziraju troškove proizvodnje i transporta).</li>\n<li><strong>Teorije regionalnog i lokalnog rasta i razvoja</strong> — makroekonomske; objašnjavaju zašto se neke regije razvijaju brže:\n<ul>\n<li><strong>neoklasična teorija</strong> (Solow–Swan) — kapital, rad i <strong>egzogeni</strong> tehnološki napredak; savršena konkurencija, fleksibilne cijene, opadajući prinosi; predviđa <strong>konvergenciju</strong> dohotka;</li>\n<li><strong>teorija polova rasta</strong> (F. Perroux, 1950-ih) — rast se koncentrira u polovima i širi na okolicu;</li>\n<li>od sredine 1970-ih prostor se shvaća kao ekonomski resurs i neovisni proizvodni faktor → razvoj kao <strong>endogeni proces</strong>, dugoročna perspektiva (kvaliteta života, inovacije, održivost), grad kao mjesto aglomeracijskih ekonomija koje se prelijevaju na regiju;</li>\n<li><strong>teorija endogenog rasta</strong> (P. Romer) — tehnološki napredak je <strong>endogen</strong>; ključni su znanje, ideje, ljudski kapital, istraživanje i razvoj, inovacije i institucije; država treba ulagati u obrazovanje i istraživanje;</li>\n<li><strong>nova ekonomska geografija</strong> (P. Krugman) — <strong>centripetalne sile</strong> (koncentracija pod utjecajem ekonomije obujma i eksternih ekonomija) i <strong>centrifugalne sile</strong> (kad aglomeracija nadraste optimalnu veličinu, aktivnosti se sele).</li>\n</ul></li>\n</ul>\n<table>\n<tr><th>Top-down</th><th>Bottom-up</th></tr>\n<tr><td>centralizirano upravljanje države; odluke ministarstava i agencija prenose se na niže razine; hijerarhija; manje sudjelovanja stanovništva</td><td>decentralizirano; odluke na lokalnoj razini uz aktivno sudjelovanje građana i dionika; participativno; veće prihvaćanje planova; osnažuje zajednicu</td></tr>\n</table>\n<h4>Sudionici LER-a</h4>\n<ul>\n<li><strong>Lokalna samouprava (javni sektor)</strong> — planira, vodi i provodi LER; lokalni razvojni resursi (ljudski, znanje), strateško planiranje (ciljevi, prioriteti, mjere, praćenje), fizička infrastruktura (ceste, voda, struja, otpad, IKT), partnerstva s komorom, MSP, obrazovnim institucijama, udrugama; povezivanje sa susjednim jedinicama. Vodstvo i koordinacija su ključni.</li>\n<li><strong>Privatni sektor</strong> — generira ulaganja, radna mjesta i proizvodnju; tvrtke biraju urbana područja zbog prometne povezanosti, infrastrukture, radne snage i tržišta. Najučinkovitija početna aktivnost grada: <strong>pojednostavniti propise i procedure</strong>. <strong>Javno-privatno partnerstvo</strong>: javni sektor zadržava odgovornost za javne usluge, privatni donosi financijski i upravljački potencijal i inovativnost; koristi — infrastruktura, diversifikacija poslovanja, održivo poduzetništvo, obrazovanje, standard škola, bolnica i stanova, okoliš.</li>\n<li><strong>Stanovništvo i neprofitne organizacije</strong> — sudjelovanje javnosti je promišljeni proces uključivanja u kreiranje politike prije konačne odluke (Europski institut za sudjelovanje javnosti, 2009.); <strong>Rezolucija 326 Vijeća Europe</strong> (2011.); od pasivnog (informiranje, javne rasprave) do aktivnog (radionice, partnerski dogovori). Preduvjet je da građani doživljavaju grad kao svoj i da je rad tijela javan i transparentan.</li>\n</ul>\n<h4>Razvijenost gradova — mjerenje</h4>\n<p>Ne postoji standardni set pokazatelja; ovisi o dostupnosti podataka, teritorijalnom ustroju i usklađenosti ciljeva razina. Na razini gradova prate se stanovništvo, potrošnja kućanstava, nezaposlenost, siromaštvo, stambeni fond, beskućnici, kriminalitet, okoliš, infrastruktura i promet, kultura i obrazovanje, proračuni; novi pokazatelji: digitalizacija uprave, <strong>pametno gospodarstvo</strong>, <strong>pametna infrastruktura</strong> (5G, pametno parkiranje i semafori, pametna rasvjeta).</p>\n<p>U RH razvijenost je definirana <strong>Zakonom o regionalnom razvoju</strong>. Pokazatelji <strong>indeksa razvijenosti</strong>: prosječni dohodak po stanovniku; prosječni izvorni prihodi po stanovniku; prosječna stopa nezaposlenosti; opće kretanje stanovništva; stupanj obrazovanosti (tercijarno); indeks starenja. Indeks je <strong>kompozitni pokazatelj</strong> (prilagođeni prosjek standardiziranih vrijednosti); polazi se od praga <strong>100</strong>; <strong>osam razvojnih skupina</strong> — I.–IV. ispodprosječno razvijene (potpomognuta područja), V.–VIII. iznadprosječno. Indeks 2024. (podaci 2020.–2022.): <strong>269 (48,4 %) iznad</strong> i <strong>287 (51,6 %) ispod prosjeka</strong>; 2017.: 251 (45,1 %) iznad i 305 (54,9 %) ispod — blago poboljšanje.</p>\n\n<h3>Financiranje LER-a</h3>\n<p>LER je dugoročan, ali se često financira kratkoročnim planovima i godišnjim odobrenjima. <strong>Proračun</strong> je temeljni financijski akt JLS koji donosi predstavničko tijelo na prijedlog načelnika/gradonačelnika (jedini ovlašteni predlagatelj); pokazatelj je smjera razvoja grada. Od izmjena Zakona o proračunu JLS moraju objaviti godišnje financijske izvještaje na internetu najkasnije <strong>osam dana</strong> od predaje. Financiranje: <strong>osnovno</strong> (sredstva prema strategiji) i <strong>financiranje programa</strong> (potpore poduzećima — porezni poticaji, subvencionirane komunalne naknade). Proračun treba planirati <strong>po programima</strong> usklađenim sa strategijom. Ostali izvori: državni proračun, izvanproračunski fondovi, JPP, krediti, dugoročni vrijednosni papiri, <strong>fondovi EU</strong>.</p>\n<h4>Decentralizacija</h4>\n<p><strong>Decentralizacija</strong> je proces kojim se javne ovlasti prenose sa širih teritorijalnih jedinica (države) u samoupravni djelokrug užih jedinica; one preuzimaju iniciranje, samostalnu regulaciju, prilagodbu lokalnim potrebama i odgovornost, a nadzor je ograničen na <strong>zakonitost i ustavnost</strong>.</p>\n<ul>\n<li><strong>Teorija fiskalnog federalizma (W. Oates)</strong> — veličina i broj jedinica prema <strong>supsidijarnosti</strong>: veće jedinice za široke usluge (obrana, infrastruktura — ekonomija razmjera), manje za lokalizirane (obrazovanje, otpad). Prednosti: učinkovita raspodjela i fleksibilnost; nedostaci: rizik neučinkovitosti i koordinacija razina.</li>\n<li><strong>Tieboutova teorija (Ch. Tiebout)</strong> — ako postoji niz jedinica s različitim javnim uslugama, potrošač bira onu najbližu svom idealu; izbor lokacije jasno signalizira preferencije i svaka jedinica postaje optimalne veličine. Prednosti: učinkovitost i inovativnost usluga; nedostaci: velike nejednakosti bogatih i siromašnih regija.</li>\n<li>Nema jedinstvenog rješenja: optimum ovisi o gustoći naseljenosti, zemljopisu (urbano/ruralno), gospodarskoj međuovisnosti i kulturnim i političkim preferencijama; <strong>hibridni pristupi</strong> često daju najbolje rezultate.</li>\n</ul>\n<table>\n<tr><th>Oblik decentralizacije</th><th>Sadržaj</th></tr>\n<tr><td>Politička</td><td>prijenos poslova za koje jedinice imaju političku odgovornost</td></tr>\n<tr><td>Upravna</td><td>jedinice obavljaju poslove za središnju državu u prenesenom djelokrugu (de facto dekoncentrirani organi)</td></tr>\n<tr><td>Funkcionalna (stvarna)</td><td>transfer javnih poslova na lokalnu samoupravu</td></tr>\n<tr><td>Fiskalna</td><td>prijenos fiskalne snage za financiranje preuzetih odgovornosti — treba ići ruku pod ruku s funkcionalnom</td></tr>\n</table>\n<p>U RH sustavna decentralizacija počela je izmjenama Ustava i zakona <strong>2000./2001.</strong> (obrazovanje, zdravstvo, socijalna skrb, vatrogastvo) na koncepciji političke decentralizacije, ali <strong>nije provedena u potpunosti</strong>. Suvremena decentralizacija mora biti profesionalna, sustavna i integralna, dinamična i postupna, zasnovana na kombinaciji top-down i bottom-up te ekonomična.</p>\n<h4>Analiza lokalnih proračuna</h4>\n<p>Izvori i financiranje uređuje <strong>Zakon o financiranju jedinica lokalne i područne (regionalne) samouprave</strong>, a poreze <strong>Zakon o lokalnim porezima</strong>.</p>\n<p><strong>Vlastiti prihodi gradova i općina:</strong> prihodi od vlastite imovine (najam, nekretnine, trgovačka društva u vlasništvu, koncesije); gradski i općinski porezi (porez na dohodak, porez na potrošnju, porez na kuće za odmor, porez na korištenje javnih površina); kazne; upravne pristojbe; <strong>boravišna pristojba</strong>; komunalne naknade, doprinosi i druge naknade; naknade za javne površine; drugi prihodi po zakonu.</p>\n<ul>\n<li><strong>Porezni prihodi</strong> čine više od pola (55–60 %) lokalnih prihoda; slijede pristojbe i naknade (komunalne naknade i doprinosi).</li>\n<li>Od <strong>1. siječnja 2024.</strong> ukida se <strong>prirez</strong>, a gradovi i općine sami propisuju stope poreza na dohodak u zakonskim granicama.</li>\n<li>Porez na dohodak je zajednički: <strong>74 % općinama i gradovima</strong>, <strong>20 % županijama</strong>, <strong>6 % za decentralizirane funkcije</strong> (osnovno školstvo 1,9 %, srednje 1,3 %, socijalna skrb 0,8 %, zdravstvo 1 %, vatrogastvo 1 %).</li>\n<li><strong>Decentralizirane funkcije</strong> — rashodi za osnovno i srednje školstvo, socijalnu skrb, zdravstvo i vatrogastvo preneseni na JLS i županije; ako ih grad nije preuzeo, obavlja ih županija. Kada dodatni udio nije dovoljan za minimalne standarde, država daje <strong>pomoći izravnanja</strong>. <strong>Fiskalno izravnanje</strong> = raspodjela sredstava među razinama radi ublažavanja nejednakosti.</li>\n<li>Prihodi gradova i općina porasli su s 3,5 mlrd. € (2019.) na 5,1 mlrd. € (2023.), rashodi s 3,5 na 4,7 mlrd. €. Najveći udio rashoda: <strong>usluge unapređenja stanovanja i zajednice (27 %)</strong> i <strong>ekonomski poslovi (20 %)</strong>.</li>\n</ul>\n<p><strong>Zaključak:</strong> lokalna samouprava je oblik vlasti najbliži ljudima; bottom-up se temelji na integriranom teritorijalnom razvoju i mobilizaciji lokalnih resursa; decentralizacija je preduvjet; izazovi RH su velik broj gradova i općina i ograničena fiskalna autonomija.</p>\n",
+      "id": "j94snw"
+    },
+    "id": "hbgpsv"
+  },
+  "urbanProblems": {
+    "name": "Gradski problemi — siromaštvo, segregacija, kriminal",
+    "icon": "fa-people-roof",
+    "color": "#b91c1c",
+    "flashcards": [
+      {
+        "question": "Koji su gradski problemi prema predmetu urbane ekonomike?",
+        "answer": "Problemi razmještaja stanovništva (segregacija), urbana bijeda, problemi edukacije i urbanog kriminaliteta.",
+        "explanation": "Četvrto područje predmeta urbane ekonomike.",
+        "id": "l7abx4"
+      },
+      {
+        "question": "Koliki dio svjetske urbane populacije živi u slamovima?",
+        "answer": "Oko 24 % — u sirotinjskim četvrtima i neformalnim naseljima bez adekvatne infrastrukture i usluga (UN-Habitat, 2022.).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "mneaab"
+      },
+      {
+        "question": "Kako se razlikuju apsolutno i relativno siromaštvo?",
+        "answer": "Apsolutno: dohodak nedovoljan za osnovne potrebe (hrana, stan, odjeća). Relativno: dohodak znatno ispod prosjeka društva u kojem osoba živi.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "6xwce8"
+      },
+      {
+        "question": "Zašto se siromaštvo koncentrira u gradovima?",
+        "answer": "Gradovi privlače siromašne većim mogućnostima (poslovi, usluge, javni prijevoz), a skupo stanovanje gura ih u određene četvrti.",
+        "explanation": "Grad = koncentracija moći i siromaštva.",
+        "id": "tgq5p0"
+      },
+      {
+        "question": "Što je segregacija u gradu?",
+        "answer": "Prostorno odvajanje skupina stanovnika prema dohotku, etničkoj ili drugoj pripadnosti u različite četvrti.",
+        "explanation": "Dohodovna segregacija je disekonomija aglomeracije.",
+        "id": "5ch4vy"
+      },
+      {
+        "question": "Što je hipoteza prostorne neusklađenosti (spatial mismatch)?",
+        "answer": "Kada se radna mjesta sele u predgrađa, a siromašni ostaju u središtu bez dobrog prijevoza, raste njihova nezaposlenost.",
+        "explanation": "J. Kain (1968.). Dopuna izvan predavanja.",
+        "id": "y3wbe0"
+      },
+      {
+        "question": "Koje su posljedice koncentracije siromaštva?",
+        "answer": "Slabije škole, manje radnih mjesta i uzora, više kriminala i lošije zdravlje — „zamka\" koja se prenosi s generacije na generaciju.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "964j5j"
+      },
+      {
+        "question": "Kojim se politikama ublažava urbano siromaštvo?",
+        "answer": "Priuštivim i socijalnim stanovanjem, subvencijama najma, ulaganjem u obrazovanje i zapošljavanje te boljim javnim prijevozom do radnih mjesta.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "chs7fd"
+      },
+      {
+        "question": "Što tvrdi ekonomski model kriminala (G. Becker, 1968.)?",
+        "answer": "Počinitelj je racionalan: djeluje ako je očekivana korist veća od očekivanog troška (vjerojatnost kazne × kazna + oportunitetni trošak).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "jbmo64"
+      },
+      {
+        "question": "Zašto je stopa kriminala u gradovima viša nego na selu?",
+        "answer": "Veća je očekivana korist (koncentracija bogatstva), manja vjerojatnost otkrivanja (anonimnost, gustoća) i više potencijalnih počinitelja.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "4nsuz1"
+      },
+      {
+        "question": "Koji su troškovi urbanog kriminala?",
+        "answer": "Štete žrtvama, troškovi zaštite i policije, izgubljena produktivnost i pad vrijednosti nekretnina u nesigurnim četvrtima.",
+        "explanation": "Područja s nižim kriminalom privlače radnike viših dohodaka (udžbenik).",
+        "id": "g49rmp"
+      },
+      {
+        "question": "Što je teorija razbijenih prozora?",
+        "answer": "Vidljivi znakovi nereda i zapuštenosti (razbijeni prozori, grafiti) potiču teži kriminal, pa održavanje reda djeluje preventivno.",
+        "explanation": "Wilson i Kelling (1982.). Dopuna izvan predavanja.",
+        "id": "mokn9r"
+      },
+      {
+        "question": "Kako urbani dizajn smanjuje kriminal?",
+        "answer": "Prirodnim nadzorom („oči na ulici\", J. Jacobs), osvjetljenjem, mješovitom namjenom i živim javnim prostorima.",
+        "explanation": "Prevencija kroz oblikovanje prostora (CPTED). Dopuna izvan predavanja.",
+        "id": "os1ig6"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Problemi segregacije, urbane bijede, edukacije i kriminaliteta pripadaju:",
+        "options": [
+          "zakonitostima prostorne ekonomike",
+          "gradskim problemima (4. područje predmeta)",
+          "komunalnom gospodarstvu",
+          "prostornom planiranju države"
+        ],
+        "correct": 1,
+        "id": "c73ccp"
+      },
+      {
+        "question": "Prema UN-Habitatu (2022.), u slamovima i neformalnim naseljima živi oko:",
+        "options": [
+          "24 % svjetske urbane populacije",
+          "90 % svjetske urbane populacije",
+          "2 % svjetske urbane populacije",
+          "60 % svjetske urbane populacije"
+        ],
+        "correct": 0,
+        "id": "kgrggv"
+      },
+      {
+        "question": "Dohodak znatno ispod prosjeka društva u kojem osoba živi označava:",
+        "options": [
+          "kvazirentu",
+          "relativno siromaštvo",
+          "gentrifikaciju",
+          "apsolutno siromaštvo"
+        ],
+        "correct": 1,
+        "id": "053x33"
+      },
+      {
+        "question": "Prostorno odvajanje skupina stanovnika prema dohotku ili pripadnosti je:",
+        "options": [
+          "suburbanizacija",
+          "decentralizacija",
+          "segregacija",
+          "urbanizacija"
+        ],
+        "correct": 2,
+        "id": "ek79si"
+      },
+      {
+        "question": "Hipoteza o udaljenosti siromašnih u središtu od radnih mjesta u predgrađima je:",
+        "options": [
+          "Braessov paradoks",
+          "pravilo reda veličine",
+          "teorija praga",
+          "hipoteza prostorne neusklađenosti (spatial mismatch)"
+        ],
+        "correct": 3,
+        "id": "u3yiyt"
+      },
+      {
+        "question": "Prema Beckeru, kriminalac djeluje kada je:",
+        "options": [
+          "kazna veća od koristi",
+          "vjerojatnost uhićenja 100 %",
+          "oportunitetni trošak beskonačan",
+          "očekivana korist veća od očekivanog troška"
+        ],
+        "correct": 3,
+        "id": "ydpv11"
+      },
+      {
+        "question": "Što NE objašnjava višu stopu kriminala u gradovima?",
+        "options": [
+          "koncentracija bogatstva",
+          "veći oportunitetni trošak zbog duljih kazni",
+          "anonimnost i manja vjerojatnost otkrivanja",
+          "više potencijalnih počinitelja"
+        ],
+        "correct": 1,
+        "id": "us2g20"
+      },
+      {
+        "question": "Teorija prema kojoj vidljivi znakovi nereda potiču teži kriminal je:",
+        "options": [
+          "teorija eksportne baze",
+          "teorija razbijenih prozora",
+          "teorija polova rasta",
+          "teorija zapreka"
+        ],
+        "correct": 1,
+        "id": "g5hcyr"
+      },
+      {
+        "question": "„Oči na ulici\" kao prirodni nadzor javnog prostora povezuju se s:",
+        "options": [
+          "W. Oatesom",
+          "Jane Jacobs",
+          "A. Weberom",
+          "D. Ricardom"
+        ],
+        "correct": 1,
+        "id": "dza9mu"
+      },
+      {
+        "question": "Pad vrijednosti nekretnina u nesigurnim četvrtima primjer je:",
+        "options": [
+          "koristi aglomeracije",
+          "ekonomije razmjera",
+          "troška urbanog kriminala",
+          "komunalnog doprinosa"
+        ],
+        "correct": 2,
+        "id": "jzv2k5"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Siromaštvo u kojem dohodak nije dovoljan za osnovne potrebe naziva se _______ siromaštvo.",
+        "answer": "apsolutno",
+        "hint": "suprotno od relativnog",
+        "id": "jojf65"
+      },
+      {
+        "sentence": "Ekonomski model kriminala postavio je G. _______ (1968.).",
+        "answer": "Becker",
+        "hint": "nobelovac",
+        "id": "rz0uvj"
+      },
+      {
+        "sentence": "Teoriju razbijenih prozora postavili su Wilson i _______.",
+        "answer": "Kelling",
+        "hint": "1982.",
+        "id": "dojx8a"
+      },
+      {
+        "sentence": "Dohodovna _______ ubraja se u negativne aglomeracijske ekonomije.",
+        "answer": "segregacija",
+        "hint": "odvajanje",
+        "id": "5d1mgy"
+      }
+    ],
+    "learn": {
+      "title": "Gradski problemi: siromaštvo, segregacija i kriminal",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<h3>Gradski problemi u predmetu urbane ekonomike</h3>\n<p>Četvrto područje predmeta urbane ekonomike čine <strong>gradski problemi</strong>: problemi razmještaja stanovništva (<strong>segregacija</strong>), <strong>urbana bijeda</strong>, problemi <strong>edukacije</strong> i <strong>urbanog kriminaliteta</strong> (predavanje „Temelji urbane ekonomike\"). Grad je istodobno mjesto <strong>koncentracije moći</strong> i <strong>koncentracije siromaštva</strong>.</p>\n<p><em>Izvor: udžbenik.</em> Rast gradova povećava potražnju za stanovima i čini pristupačno stanovanje nedostupnim, što produbljuje socijalne nejednakosti, <strong>dohodovnu segregaciju</strong> i <strong>siromaštvo</strong>. Prema <strong>UN-Habitatu (2022.)</strong> oko <strong>24 % svjetske urbane populacije</strong> živi u sirotinjskim četvrtima (slamovima) i neformalnim naseljima bez adekvatnog pristupa infrastrukturi te zdravstvenim, obrazovnim i socijalnim uslugama. Negativne aglomeracijske ekonomije uključuju i <strong>visoke stope kriminala</strong>; područja s nižim stopama kriminala privlače radnike viših dohodaka.</p>\n\n<h3>Urbano siromaštvo</h3>\n<ul>\n<li><strong>Apsolutno siromaštvo</strong> — dohodak nedovoljan za osnovne potrebe (hrana, stanovanje, odjeća).</li>\n<li><strong>Relativno siromaštvo</strong> — dohodak znatno ispod prosjeka društva u kojem osoba živi.</li>\n</ul>\n<p>Gradovi su privlačni siromašnima jer nude više mogućnosti (poslovi, usluge, javni prijevoz), ali visoke cijene stanovanja guraju ih u određene četvrti. <strong>Koncentracija siromaštva</strong> stvara začarani krug: slabije škole, manje radnih mjesta i pozitivnih uzora, više kriminala i lošije zdravlje — siromaštvo se prenosi s generacije na generaciju.</p>\n<h4>Segregacija i prostorna neusklađenost</h4>\n<p><strong>Segregacija</strong> je prostorno odvajanje skupina stanovnika prema dohotku, etničkoj ili drugoj pripadnosti. Prema <strong>hipotezi prostorne neusklađenosti</strong> (spatial mismatch, J. Kain, 1968.) radna mjesta sele se u predgrađa (suburbanizacija proizvodnje), a siromašni ostaju u središtu bez dobrog prijevoza do njih — raste nezaposlenost. Veza s temom suburbanizacije: siromašna kućanstva u nekim gradovima odlaze u suburbane prostore, u drugima ostaju u propadajućem središtu.</p>\n<h4>Politike</h4>\n<ul>\n<li>priuštivo i socijalno stanovanje, subvencije najma (veza s prostornim planiranjem i zoniranjem);</li>\n<li>ulaganje u obrazovanje i programe zapošljavanja;</li>\n<li>bolji javni prijevoz do radnih mjesta;</li>\n<li>integrirana obnova zapuštenih četvrti (vidi „Urbana revitalizacija\").</li>\n</ul>\n\n<h3>Urbani kriminal</h3>\n<p><strong>Ekonomski model kriminala</strong> (G. Becker, 1968.): počinitelj je racionalan i djeluje ako je <strong>očekivana korist</strong> veća od <strong>očekivanog troška</strong>.</p>\n<div class=\"formula-box\">Očekivani trošak = vjerojatnost kazne × visina kazne + oportunitetni trošak (izgubljeni legalni dohodak)</div>\n<p><strong>Zašto je kriminal viši u gradovima?</strong></p>\n<ul>\n<li>veća <strong>očekivana korist</strong> — koncentracija bogatstva i potencijalnih žrtava;</li>\n<li>manja <strong>vjerojatnost otkrivanja</strong> — anonimnost i gustoća;</li>\n<li>više potencijalnih počinitelja (koncentracija siromaštva i nezaposlenosti).</li>\n</ul>\n<p><strong>Troškovi kriminala</strong>: štete žrtvama, troškovi privatne zaštite i policije, izgubljena produktivnost, pad vrijednosti nekretnina i odlazak stanovnika i tvrtki iz nesigurnih četvrti.</p>\n<h4>Prevencija</h4>\n<ul>\n<li>povećanje vjerojatnosti otkrivanja (policija, rasvjeta) i oportunitetnog troška (obrazovanje, poslovi);</li>\n<li><strong>teorija razbijenih prozora</strong> (Wilson i Kelling, 1982.) — vidljivi znakovi nereda potiču teži kriminal, pa održavanje reda djeluje preventivno;</li>\n<li><strong>prevencija kroz urbani dizajn</strong> — prirodni nadzor („oči na ulici\", Jane Jacobs), mješovita namjena, živi javni prostori.</li>\n</ul>\n",
+      "id": "8k9fin"
+    },
+    "id": "w4dp6t"
+  },
+  "urbanMarketing": {
+    "name": "Urbani marketing",
+    "icon": "fa-bullhorn",
+    "color": "#c026d3",
+    "flashcards": [
+      {
+        "question": "Što je urbani marketing?",
+        "answer": "Primjena marketinških načela na grad kao „proizvod\" radi privlačenja i zadržavanja stanovnika, poduzeća, investitora i posjetitelja.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "g5n904"
+      },
+      {
+        "question": "Koje su ciljne skupine urbanog marketinga?",
+        "answer": "Stanovnici, poduzeća i investitori, posjetitelji i turisti te studenti i talenti (kvalificirana radna snaga).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "holrv9"
+      },
+      {
+        "question": "Zašto gradovi primjenjuju marketing?",
+        "answer": "Jer se natječu za investicije, radna mjesta, stanovnike i posjetitelje; globalizacija pojačava konkurenciju među gradovima.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "d5b4np"
+      },
+      {
+        "question": "Što je marketing mjesta (place marketing) prema Kotleru?",
+        "answer": "Pristup prema kojem se mjesto oblikuje i promovira tako da zadovolji potrebe ciljnih skupina, kako bi bilo uspješno.",
+        "explanation": "Kotler, Haider i Rein, „Marketing Places\" (1993.).",
+        "id": "gu2xoi"
+      },
+      {
+        "question": "Koja je razlika između identiteta i imidža grada?",
+        "answer": "Identitet je ono što grad jest i kako se sam predstavlja; imidž je predodžba koju o gradu imaju drugi.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "3dutb0"
+      },
+      {
+        "question": "Što je brendiranje grada (city branding)?",
+        "answer": "Stvaranje prepoznatljivog identiteta grada (ime, simboli, poruka, iskustvo) koji ga razlikuje od konkurenata.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "0of72e"
+      },
+      {
+        "question": "Što čini marketinški miks grada?",
+        "answer": "Proizvod (grad i njegova ponuda), cijena (troškovi života, poslovanja, porezi), distribucija (dostupnost) i promocija (komunikacija).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "zhgcgw"
+      },
+      {
+        "question": "Koji su koraci strateškog urbanog marketinga?",
+        "answer": "Analiza stanja (SWOT), definiranje vizije i ciljeva, izbor ciljnih skupina, strategija i provedba te praćenje rezultata.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "jp1pis"
+      },
+      {
+        "question": "Kako veliki događaji služe urbanom marketingu?",
+        "answer": "Povećavaju vidljivost i imidž grada te privlače posjetitelje i ulaganja (npr. Rijeka kao Europska prijestolnica kulture 2020.).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "oknx7w"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Urbani marketing tretira grad kao:",
+        "options": [
+          "isključivo upravnu jedinicu",
+          "poljoprivredno zemljište",
+          "„proizvod\" koji treba zadovoljiti ciljne skupine",
+          "statističku regiju NUTS 3"
+        ],
+        "correct": 2,
+        "id": "ldak03"
+      },
+      {
+        "question": "Što NIJE tipična ciljna skupina urbanog marketinga?",
+        "options": [
+          "investitori",
+          "turisti",
+          "državni zavod za statistiku",
+          "stanovnici"
+        ],
+        "correct": 2,
+        "id": "rgzbv0"
+      },
+      {
+        "question": "Knjigu „Marketing Places\" (1993.) napisali su:",
+        "options": [
+          "Kotler, Haider i Rein",
+          "Alonso i Mills",
+          "DiPasquale i Wheaton",
+          "Weber i Lösch"
+        ],
+        "correct": 0,
+        "id": "1riyni"
+      },
+      {
+        "question": "Predodžba koju o gradu imaju drugi naziva se:",
+        "options": [
+          "bonitet grada",
+          "identitet grada",
+          "renta grada",
+          "imidž grada"
+        ],
+        "correct": 3,
+        "id": "5f2eyz"
+      },
+      {
+        "question": "U marketinškom miksu grada „cijena\" obuhvaća:",
+        "options": [
+          "broj stanovnika",
+          "površinu grada",
+          "nadmorsku visinu",
+          "troškove života, poslovanja i poreze"
+        ],
+        "correct": 3,
+        "id": "vryih0"
+      },
+      {
+        "question": "Prvi korak strateškog urbanog marketinga je:",
+        "options": [
+          "promocija",
+          "raspisivanje referenduma",
+          "otvaranje nove ceste",
+          "analiza stanja (npr. SWOT)"
+        ],
+        "correct": 3,
+        "id": "2hrl75"
+      },
+      {
+        "question": "Europska prijestolnica kulture 2020. bila je:",
+        "options": [
+          "Zagreb",
+          "Split",
+          "Rijeka",
+          "Osijek"
+        ],
+        "correct": 2,
+        "id": "gv26e4"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Stvaranje prepoznatljivog identiteta grada naziva se city _______.",
+        "answer": "branding",
+        "hint": "brendiranje",
+        "id": "eyvco3"
+      },
+      {
+        "sentence": "Ono što grad jest i kako se sam predstavlja je njegov _______.",
+        "answer": "identitet",
+        "hint": "nasuprot imidžu",
+        "id": "8ank41"
+      },
+      {
+        "sentence": "Dostupnost grada u marketinškom miksu odgovara elementu _______.",
+        "answer": "distribucija",
+        "hint": "jedan od 4P",
+        "id": "jr3qkd"
+      }
+    ],
+    "learn": {
+      "title": "Urbani marketing — grad kao proizvod",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<h3>Pojam urbanog marketinga</h3>\n<p>Urbani marketing je dio petog područja predmeta urbane ekonomike (upravljanje gradom, urbani marketing i urbana ekologija). To je <strong>primjena marketinških načela na grad</strong> kao „proizvod\" kako bi se privukli i zadržali <strong>stanovnici, poduzeća, investitori i posjetitelji</strong>. Gradovi se natječu za investicije, radna mjesta i talente; globalizacija i mobilnost kapitala pojačavaju tu konkurenciju (veza s temom: MNK traže gradove s najviše poslovnih mogućnosti).</p>\n<p><strong>Marketing mjesta</strong> (Kotler, Haider i Rein, <em>Marketing Places</em>, 1993.): mjesto se planira i promovira tako da zadovolji potrebe svojih ciljnih skupina; uspješno je kad su građani i poduzeća zadovoljni, a očekivanja posjetitelja i ulagača ispunjena.</p>\n<h4>Ciljne skupine</h4>\n<ul>\n<li><strong>stanovnici</strong> — postojeći (zadržati) i novi (privući);</li>\n<li><strong>poduzeća i investitori</strong> — lokacija, radna snaga, poslovna klima, poticaji;</li>\n<li><strong>posjetitelji i turisti</strong> — atrakcije, događaji, smještaj;</li>\n<li><strong>studenti i talenti</strong> — obrazovanje, kvaliteta života.</li>\n</ul>\n<h4>Identitet, imidž i brend</h4>\n<table>\n<tr><th>Pojam</th><th>Značenje</th></tr>\n<tr><td><strong>Identitet</strong></td><td>ono što grad jest i kako se sam predstavlja (povijest, kultura, gospodarstvo, vrijednosti)</td></tr>\n<tr><td><strong>Imidž</strong></td><td>predodžba koju o gradu imaju drugi; može biti bolja ili lošija od stvarnosti</td></tr>\n<tr><td><strong>Brend (city branding)</strong></td><td>prepoznatljiv identitet (ime, simboli, poruka, iskustvo) koji grad razlikuje od konkurenata</td></tr>\n</table>\n<h4>Marketinški miks grada</h4>\n<ul>\n<li><strong>Proizvod</strong> — grad i njegova ponuda: infrastruktura, usluge, stanovanje, kultura, okoliš, atrakcije;</li>\n<li><strong>Cijena</strong> — troškovi života i poslovanja, porezi i naknade, cijene zemljišta i najma;</li>\n<li><strong>Distribucija</strong> — dostupnost grada i njegovih usluga (promet, digitalne usluge);</li>\n<li><strong>Promocija</strong> — oglašavanje, odnosi s javnošću, događaji, digitalni kanali.</li>\n</ul>\n<h4>Strateški proces</h4>\n<ol>\n<li>analiza stanja (SWOT — snage, slabosti, prilike, prijetnje);</li>\n<li>vizija i ciljevi razvoja grada;</li>\n<li>izbor ciljnih skupina i pozicioniranje;</li>\n<li>strategija i provedba (uz partnerstvo javnog i privatnog sektora i uključivanje građana);</li>\n<li>praćenje i vrednovanje rezultata.</li>\n</ol>\n<p><strong>Veliki događaji</strong> (festivali, sportska natjecanja, kulturne titule) povećavaju vidljivost i imidž; primjer je <strong>Rijeka — Europska prijestolnica kulture 2020.</strong> Urbani marketing je učinkovit samo ako „proizvod\" stvarno valja — promocija ne može dugoročno zamijeniti kvalitetu života i poslovanja.</p>\n",
+      "id": "p3wiz0"
+    },
+    "id": "8jrfcv"
+  },
+  "urbanEcology": {
+    "name": "Urbana ekologija",
+    "icon": "fa-leaf",
+    "color": "#16a34a",
+    "flashcards": [
+      {
+        "question": "Kakav je ekološki otisak gradova u odnosu na njihovu površinu?",
+        "answer": "Gradovi zauzimaju manje od 2 % Zemljine površine, ali im je ekološki otisak velik — proizvode 60–76 % stakleničkih plinova.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "i4jld2"
+      },
+      {
+        "question": "Zašto je utjecaj grada na okoliš po stanovniku manji nego na selu?",
+        "answer": "Koncentracija omogućuje ekonomiju razmjera i blizinu infrastrukture i usluga, pa se resursi troše učinkovitije.",
+        "explanation": "UNEP, Global Environment Outlook 3 (2002.). Izvor: udžbenik.",
+        "id": "az4y4v"
+      },
+      {
+        "question": "Kakvu ulogu gradovi imaju u Pariškom sporazumu (2015.)?",
+        "answer": "Identificirani su kao ključni entiteti za provođenje mjera ublažavanja klimatskih promjena i postizanje održivosti.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "gc5yni"
+      },
+      {
+        "question": "Što je urbana ekologija?",
+        "answer": "Proučavanje odnosa između grada (ljudi i njihovih aktivnosti) i okoliša — kako grad koristi resurse, onečišćuje i kako se to može održivo uređivati.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "2h2141"
+      },
+      {
+        "question": "Što je Čikaška škola urbane ekologije?",
+        "answer": "Sociološki pristup iz 1920-ih (R. Park, E. Burgess) koji grad tumači ekološkim pojmovima: natjecanje za prostor, invazija i sukcesija skupina.",
+        "explanation": "Iz nje potječe Burgessov model koncentričnih zona.",
+        "id": "6vx53n"
+      },
+      {
+        "question": "Koji su glavni ekološki problemi gradova?",
+        "answer": "Onečišćenje zraka, buka, otpad, onečišćenje voda i tla, gubitak zelenih površina i urbani toplinski otoci.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "0x7onw"
+      },
+      {
+        "question": "Što je urbani toplinski otok?",
+        "answer": "Pojava da je grad topliji od okolice zbog asfalta, zgrada, manjka zelenila i otpadne topline.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "q9gxqe"
+      },
+      {
+        "question": "Što je zelena infrastruktura?",
+        "answer": "Mreža zelenih i plavih površina (parkovi, drvoredi, zeleni krovovi, vodotoci) koja pruža ekološke i društvene usluge gradu.",
+        "explanation": "Utječe i na atraktivnost područja za stanovanje (udžbenik).",
+        "id": "pgxno1"
+      },
+      {
+        "question": "Što je ekološka renta?",
+        "answer": "Vrsta rente vezana uz okoliš; u gradu je dio gradske rente kao izvor sredstava za uređenje i zaštitu gradskog ambijenta.",
+        "explanation": "Iz predavanja o renti.",
+        "id": "gm8d0r"
+      },
+      {
+        "question": "Zašto je kompaktni grad ekološki povoljniji od raspršene gradnje (urban sprawl)?",
+        "answer": "Veća gustoća skraćuje putovanja, omogućuje javni prijevoz i čuva zemljište; raspršena gradnja povećava promet i potrošnju prostora.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "2je9vy"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Gradovi zauzimaju manje od 2 % Zemljine površine, a proizvode približno:",
+        "options": [
+          "5–10 % stakleničkih plinova",
+          "95–100 % stakleničkih plinova",
+          "60–76 % stakleničkih plinova",
+          "20–30 % stakleničkih plinova"
+        ],
+        "correct": 2,
+        "id": "40a2bt"
+      },
+      {
+        "question": "Prema UNEP-ovu GEO 3, utjecaj gradova na okoliš po stanovniku je:",
+        "options": [
+          "manji nego kod sličnog broja ljudi u ruralnom okruženju",
+          "jednak kao na selu",
+          "veći nego na selu",
+          "nemjerljiv"
+        ],
+        "correct": 0,
+        "id": "relkqa"
+      },
+      {
+        "question": "Gradovi su kao ključni entiteti za klimatske mjere identificirani u:",
+        "options": [
+          "Zakonu o gradnji",
+          "Pariškom sporazumu (2015.)",
+          "Europskoj povelji o lokalnoj samoupravi",
+          "ESDP-u (1999.)"
+        ],
+        "correct": 1,
+        "id": "73uufd"
+      },
+      {
+        "question": "Čikaška škola urbane ekologije povezuje se s:",
+        "options": [
+          "R. Parkom i E. Burgessom",
+          "D. Ricardom i A. Smithom",
+          "A. Weberom i A. Löschom",
+          "W. Oatesom i Ch. Tieboutom"
+        ],
+        "correct": 0,
+        "id": "6lnw8s"
+      },
+      {
+        "question": "Pojava da je grad topliji od okolice naziva se:",
+        "options": [
+          "Braessov paradoks",
+          "efekt doma",
+          "urbani toplinski otok",
+          "zelena infrastruktura"
+        ],
+        "correct": 2,
+        "id": "cxopj3"
+      },
+      {
+        "question": "Mreža parkova, drvoreda, zelenih krovova i vodotoka u gradu je:",
+        "options": [
+          "refrakcijska točka",
+          "komunalni doprinos",
+          "zelena infrastruktura",
+          "urbani toplinski otok"
+        ],
+        "correct": 2,
+        "id": "r37bji"
+      },
+      {
+        "question": "Raspršena niska gradnja na rubovima grada na engleskom se naziva:",
+        "options": [
+          "labour pooling",
+          "urban sprawl",
+          "clustering",
+          "mode splitting"
+        ],
+        "correct": 1,
+        "id": "e8womk"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Gradovi zauzimaju manje od _______ % Zemljine površine.",
+        "answer": "2",
+        "hint": "mali fizički otisak",
+        "id": "7hqk1t"
+      },
+      {
+        "sentence": "Pojava da je grad topliji od okolice naziva se urbani toplinski _______.",
+        "answer": "otok",
+        "hint": "urbana klima",
+        "id": "derfw6"
+      },
+      {
+        "sentence": "Čikaška škola tumači grad pojmovima natjecanja, invazije i _______.",
+        "answer": "sukcesije",
+        "hint": "smjena skupina",
+        "id": "jw6edl"
+      }
+    ],
+    "learn": {
+      "title": "Urbana ekologija — grad i okoliš",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<h3>Gradovi i okoliš (Izvor: udžbenik)</h3>\n<ul>\n<li>Gradovi imaju relativno ograničen „fizički\" otisak — <strong>manje od 2 % Zemljine površine</strong> — ali velik <strong>ekološki otisak</strong>: (pre)veliki gradovi pritišću prirodne resurse i bioraznolikost i onečišćuju zrak, vodu i tlo; procjene govore da proizvode <strong>60–76 % ukupnih stakleničkih plinova</strong>.</li>\n<li>Istodobno, zahvaljujući koncentraciji (ekonomija razmjera, blizina infrastrukture i usluga) gradovi nude izvanredne mogućnosti za <strong>učinkovitije trošenje resursa</strong>; prema UNEP-ovu <em>Global Environment Outlook 3</em> (2002.) utjecaj gradova na okoliš <strong>po stanovniku manji</strong> je nego kod sličnog broja ljudi u ruralnom okruženju.</li>\n<li>U <strong>Pariškom sporazumu (2015.)</strong> gradovi su identificirani kao ključni entiteti za ublažavanje klimatskih promjena. Moderan pristup naglašava <strong>kvalitetu života</strong> ispred puke veličine; gradovi srednje veličine često imaju obilježja održivih, pametnih, inovativnih, otpornih i zelenih sustava.</li>\n</ul>\n\n<h3>Pojam urbane ekologije</h3>\n<p><strong>Urbana ekologija</strong> proučava odnos grada — ljudi i njihovih aktivnosti — i okoliša: kako grad troši resurse (energiju, vodu, zemljište), što ispušta (emisije, otpad, buka) i kako se to može održivo uređivati. U sociologiji grada <strong>Čikaška škola</strong> (1920-ih; R. Park, E. Burgess) tumačila je grad ekološkim pojmovima — <strong>natjecanje za prostor</strong>, <strong>invazija</strong> i <strong>sukcesija</strong> skupina stanovnika — iz čega potječe Burgessov <strong>model koncentričnih zona</strong> (vidi „Urbana struktura\").</p>\n<h4>Glavni ekološki problemi grada</h4>\n<ul>\n<li>onečišćenje zraka (promet, grijanje, industrija);</li>\n<li><strong>buka</strong> — smanjuje i vrijednost stambenih nekretnina (udžbenik, tema prometa);</li>\n<li>otpad i gospodarenje otpadom;</li>\n<li>onečišćenje voda i tla;</li>\n<li>gubitak zelenih površina i bioraznolikosti;</li>\n<li><strong>urbani toplinski otoci</strong> — grad je topliji od okolice zbog asfalta, zgrada, manjka zelenila i otpadne topline.</li>\n</ul>\n<h4>Odgovori</h4>\n<ul>\n<li><strong>Zelena infrastruktura</strong> — mreža zelenih i plavih površina (parkovi, drvoredi, zeleni krovovi, vodotoci) koja hladi grad, upija oborine i povećava kvalitetu života; prema udžbeniku utječe i na atraktivnost područja za stanovanje.</li>\n<li><strong>Kompaktni grad</strong> umjesto raspršene gradnje (<strong>urban sprawl</strong>) — kraća putovanja, isplativiji javni prijevoz, očuvanje zemljišta.</li>\n<li><strong>Održiva mobilnost</strong> — javni prijevoz, biciklizam, pješačenje (veza s Braessovim paradoksom).</li>\n<li><strong>Ekološka renta</strong> — prema predavanju o renti vrsta rente koju gradska renta može uključiti kao izvor sredstava za uređenje gradskog ambijenta.</li>\n<li>Planiranje i zaštita okoliša su zakonski poslovi općina i gradova (zaštita i unapređenje prirodnog okoliša) i načelo prostornog planiranja (prostorna održivost).</li>\n</ul>\n",
+      "id": "3l90dq"
+    },
+    "id": "wc0nfk"
+  },
+  "cityEnergy": {
+    "name": "Sustavno gospodarenje energijom u gradovima",
+    "icon": "fa-bolt",
+    "color": "#ca8a04",
+    "flashcards": [
+      {
+        "question": "Što je sustavno gospodarenje energijom (SGE) u gradu?",
+        "answer": "Kontinuiran proces planiranja, praćenja i smanjenja potrošnje energije u gradskim zgradama, rasvjeti i prometu uz očuvanje kvalitete usluga.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "5jqa9n"
+      },
+      {
+        "question": "Zašto gradovi trebaju sustavno gospodariti energijom?",
+        "answer": "Radi ušteda u proračunu, manjih emisija CO2, sigurnije opskrbe i ispunjenja zakonskih i klimatskih obveza.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "2f4r3b"
+      },
+      {
+        "question": "Koji su osnovni koraci SGE-a?",
+        "answer": "Popis objekata, redovito praćenje potrošnje, energetski pregledi, plan mjera, provedba (obnova, rasvjeta, OIE) i praćenje učinaka.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "q0u7m8"
+      },
+      {
+        "question": "Što je ISGE?",
+        "answer": "Informacijski sustav za gospodarenje energijom — državni sustav u RH u koji javni sektor unosi i prati potrošnju energije i vode svojih zgrada.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "3f758t"
+      },
+      {
+        "question": "Što je energetski certifikat zgrade?",
+        "answer": "Dokument koji prikazuje energetska svojstva zgrade i svrstava je u energetski razred (od A+ do G).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "ntipv6"
+      },
+      {
+        "question": "Koje su tipične mjere energetske učinkovitosti u gradu?",
+        "answer": "Energetska obnova zgrada (izolacija, stolarija), modernizacija javne rasvjete (LED), učinkoviti sustavi grijanja i hlađenja te obnovljivi izvori energije.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "n9tjgd"
+      },
+      {
+        "question": "Što je Sporazum gradonačelnika?",
+        "answer": "Inicijativa EU (od 2008.) u kojoj se gradovi obvezuju smanjiti emisije CO2 i prilagoditi se klimatskim promjenama kroz akcijski plan (SECAP).",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "inxtav"
+      },
+      {
+        "question": "Što je ESCO model?",
+        "answer": "Model u kojem energetska tvrtka financira i provodi mjere uštede, a otplaćuje se iz ostvarenih ušteda energije.",
+        "explanation": "Ugovor o energetskom učinku. Dopuna izvan predavanja.",
+        "id": "lv4wr9"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kontinuiran proces planiranja, praćenja i smanjenja potrošnje energije u gradskim objektima je:",
+        "options": [
+          "komunalni doprinos",
+          "sustavno gospodarenje energijom",
+          "suburbanizacija",
+          "urbani marketing"
+        ],
+        "correct": 1,
+        "id": "xdug7n"
+      },
+      {
+        "question": "Državni informacijski sustav za praćenje potrošnje energije javnog sektora u RH je:",
+        "options": [
+          "GAIA",
+          "ISPU",
+          "GIS",
+          "ISGE"
+        ],
+        "correct": 3,
+        "id": "9siq8g"
+      },
+      {
+        "question": "Energetski razredi zgrada u RH kreću se od:",
+        "options": [
+          "1 do 5",
+          "I. do VIII.",
+          "A+ do G",
+          "A do C"
+        ],
+        "correct": 2,
+        "id": "he6b8z"
+      },
+      {
+        "question": "Sporazum gradonačelnika je inicijativa:",
+        "options": [
+          "UN-a o slamovima",
+          "Vijeća Europe o lokalnoj samoupravi",
+          "Hrvatskog sabora o prirezu",
+          "EU za smanjenje emisija i prilagodbu klimatskim promjenama"
+        ],
+        "correct": 3,
+        "id": "m2wwiq"
+      },
+      {
+        "question": "Model u kojem se ulaganje u uštedu energije otplaćuje iz ostvarenih ušteda je:",
+        "options": [
+          "model saća",
+          "ESCO model",
+          "model eksportne baze",
+          "model top-down"
+        ],
+        "correct": 1,
+        "id": "qqlqwd"
+      },
+      {
+        "question": "Što NIJE tipična mjera energetske učinkovitosti u gradu?",
+        "options": [
+          "energetska obnova zgrada",
+          "proširenje cestovne mreže za osobne automobile",
+          "obnovljivi izvori energije",
+          "LED javna rasvjeta"
+        ],
+        "correct": 1,
+        "id": "fpjkdn"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Akcijski plan potpisnika Sporazuma gradonačelnika označava se kraticom _______.",
+        "answer": "SECAP",
+        "hint": "plan za energiju i klimu",
+        "id": "dpgmk1"
+      },
+      {
+        "sentence": "Modernizacija javne rasvjete najčešće znači prelazak na _______ rasvjetu.",
+        "answer": "LED",
+        "hint": "štedne svjetiljke",
+        "id": "ps01np"
+      },
+      {
+        "sentence": "Dokument koji svrstava zgradu u energetski razred je energetski _______.",
+        "answer": "certifikat",
+        "hint": "potvrda",
+        "id": "z3288s"
+      }
+    ],
+    "learn": {
+      "title": "Sustavno gospodarenje energijom u gradovima",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<h3>Zašto energija u gradu</h3>\n<p>Gradovi troše velik dio energije i proizvode većinu stakleničkih plinova (udžbenik: 60–76 %). Energija u gradskim zgradama (škole, vrtići, uprava), <strong>javnoj rasvjeti</strong>, komunalnim sustavima i prometu velik je trošak proračuna. <strong>Sustavno gospodarenje energijom (SGE)</strong> je kontinuiran, organiziran proces <strong>planiranja, praćenja i smanjenja potrošnje energije</strong> uz očuvanje ili poboljšanje kvalitete usluga.</p>\n<h4>Ciljevi</h4>\n<ul>\n<li>uštede u proračunu (novac za druge razvojne programe);</li>\n<li>manje emisije CO2 i bolja kvaliteta zraka;</li>\n<li>sigurnija opskrba i manja ovisnost o uvozu energije;</li>\n<li>ispunjenje zakonskih obveza energetske učinkovitosti i klimatskih ciljeva EU.</li>\n</ul>\n<h4>Koraci SGE-a</h4>\n<ol>\n<li>popis (inventar) objekata i potrošača energije;</li>\n<li>redovito praćenje potrošnje energije i vode (u RH javni sektor koristi <strong>ISGE — Informacijski sustav za gospodarenje energijom</strong>);</li>\n<li><strong>energetski pregledi</strong> i <strong>energetski certifikati</strong> zgrada (razredi <strong>A+ do G</strong>);</li>\n<li>plan mjera i prioriteta (najveće uštede uz najmanje ulaganje);</li>\n<li>provedba mjera i praćenje učinaka; određivanje odgovornih osoba (energetski savjetnik / tim).</li>\n</ol>\n<h4>Tipične mjere</h4>\n<ul>\n<li><strong>energetska obnova zgrada</strong> — toplinska izolacija, nova stolarija, učinkoviti sustavi grijanja, hlađenja i ventilacije;</li>\n<li><strong>javna rasvjeta</strong> — prelazak na LED i pametno upravljanje rasvjetom (veza s pametnim gradovima);</li>\n<li><strong>obnovljivi izvori energije</strong> — sunčane elektrane na krovovima, dizalice topline, biomasa;</li>\n<li><strong>učinkovitost toplinarstva</strong> — u ITU mehanizmu jedan od tipova projekata za EU fondove (predavanje);</li>\n<li>čisti urbani promet — javni prijevoz, električna vozila.</li>\n</ul>\n<h4>Financiranje i okvir</h4>\n<ul>\n<li><strong>ESCO model</strong> (ugovor o energetskom učinku) — energetska tvrtka financira i provodi mjere, a otplaćuje se iz ostvarenih ušteda; oblik javno-privatnog partnerstva.</li>\n<li>Fondovi EU i nacionalni programi energetske obnove.</li>\n<li><strong>Sporazum gradonačelnika</strong> (inicijativa EU od 2008.) — potpisnici se obvezuju smanjiti emisije i prilagoditi se klimatskim promjenama te izraditi <strong>akcijski plan energetski održivog razvoja i prilagodbe klimatskim promjenama (SECAP)</strong>.</li>\n</ul>\n",
+      "id": "ct2jm7"
+    },
+    "id": "8bwfzz"
+  },
+  "smartCities": {
+    "name": "Pametni gradovi",
+    "icon": "fa-microchip",
+    "color": "#0891b2",
+    "flashcards": [
+      {
+        "question": "Što je pametni grad (smart city)?",
+        "answer": "Grad koji koristi informacijsko-komunikacijske tehnologije i podatke za učinkovitije upravljanje, bolju kvalitetu života i održivost.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "ky91r5"
+      },
+      {
+        "question": "Kojih je šest dimenzija pametnog grada (Giffinger)?",
+        "answer": "Pametno gospodarstvo, pametni ljudi, pametno upravljanje, pametna mobilnost, pametni okoliš i pametno življenje.",
+        "explanation": "Giffinger i sur. (2007.). Dopuna izvan predavanja.",
+        "id": "kup08v"
+      },
+      {
+        "question": "Koje se pokazatelje pametnog grada počinju pratiti u gradovima?",
+        "answer": "Digitalizaciju lokalne samouprave, pametno gospodarstvo (IKT stručnjaci, ulaganja u IKT) i pametnu infrastrukturu (5G, pametno parkiranje, semafori, rasvjeta).",
+        "explanation": "Izvor: udžbenik.",
+        "id": "1zqfhy"
+      },
+      {
+        "question": "Kako smart-city rješenja pomažu analizi prometa?",
+        "answer": "Big data o kretanju mobilnih uređaja i automobila u stvarnom vremenu omogućuju praćenje gustoće i brzine prometa.",
+        "explanation": "Npr. Google Maps. Izvor: udžbenik.",
+        "id": "ucvbmk"
+      },
+      {
+        "question": "Koje su tipične pametne tehnologije u gradu?",
+        "answer": "Senzori i internet stvari (IoT), pametna rasvjeta, pametno parkiranje, adaptivni semafori, e-uprava i otvoreni podaci.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "qtyiek"
+      },
+      {
+        "question": "Što je digitalizacija lokalne samouprave?",
+        "answer": "Dostupnost informacija i administrativnih postupaka online, uključivanje građana preko digitalnih platformi i otvorenost proračuna.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "k2iw6r"
+      },
+      {
+        "question": "Koji su rizici pametnih gradova?",
+        "answer": "Zaštita privatnosti i podataka, kibernetička sigurnost, digitalni jaz među građanima i ovisnost o dobavljačima tehnologije.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "y9sjqk"
+      },
+      {
+        "question": "Zašto tehnologija sama ne čini grad pametnim?",
+        "answer": "Jer je cilj kvaliteta života građana: tehnologija mora rješavati stvarne urbane izazove i uključivati građane.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "1q4x81"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Šest dimenzija pametnog grada (pametno gospodarstvo, ljudi, upravljanje, mobilnost, okoliš, življenje) predložio je:",
+        "options": [
+          "Christaller (1966.)",
+          "Kotler (1993.)",
+          "Giffinger sa suradnicima (2007.)",
+          "Becker (1968.)"
+        ],
+        "correct": 2,
+        "id": "gddt6h"
+      },
+      {
+        "question": "Što NIJE jedna od šest dimenzija pametnog grada?",
+        "options": [
+          "pametno upravljanje",
+          "pametna mobilnost",
+          "pametna renta",
+          "pametni okoliš"
+        ],
+        "correct": 2,
+        "id": "tk8cw0"
+      },
+      {
+        "question": "Pametna infrastruktura prema udžbeniku uključuje:",
+        "options": [
+          "mrežu 5G, pametno parkiranje, semafore i rasvjetu",
+          "komunalnu naknadu",
+          "koncentrične zone i trabante",
+          "porez na kuće za odmor"
+        ],
+        "correct": 0,
+        "id": "zqxrba"
+      },
+      {
+        "question": "Big data o kretanju mobilnih uređaja u prometu koriste:",
+        "options": [
+          "katastarske izmjere iz 19. st.",
+          "popis stanovništva",
+          "smart-city rješenja",
+          "mjesni zborovi građana"
+        ],
+        "correct": 2,
+        "id": "ng4iwc"
+      },
+      {
+        "question": "Mreža povezanih senzora i uređaja u gradu naziva se:",
+        "options": [
+          "ESDP",
+          "LAU",
+          "GAIA",
+          "internet stvari (IoT)"
+        ],
+        "correct": 3,
+        "id": "361jca"
+      },
+      {
+        "question": "Koji je rizik pametnih gradova?",
+        "options": [
+          "pad gustoće prometa",
+          "porast agrarne rente",
+          "narušavanje privatnosti podataka građana",
+          "nestanak općina"
+        ],
+        "correct": 2,
+        "id": "429bey"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Pametni grad koristi informacijsko-komunikacijske _______ i podatke.",
+        "answer": "tehnologije",
+        "hint": "IKT",
+        "id": "t3xfii"
+      },
+      {
+        "sentence": "Nejednak pristup građana digitalnim tehnologijama naziva se digitalni _______.",
+        "answer": "jaz",
+        "hint": "razlika",
+        "id": "oei32o"
+      },
+      {
+        "sentence": "Otvorenost _______ jedan je od pokazatelja digitalizacije lokalne samouprave.",
+        "answer": "proračuna",
+        "hint": "financije grada",
+        "id": "4xl9uw"
+      }
+    ],
+    "learn": {
+      "title": "Pametni gradovi",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<h3>Pojam pametnog grada</h3>\n<p><strong>Pametni grad (smart city)</strong> koristi <strong>informacijsko-komunikacijske tehnologije (IKT)</strong> i podatke kako bi učinkovitije upravljao infrastrukturom i uslugama, poboljšao kvalitetu života i bio održiviji. U izvedbenom planu tema se veže uz Merlin-zadatak <em>analize pametnih tehnologija koje gradovi koriste za rješavanje urbanih izazova</em>.</p>\n<h4>Šest dimenzija (Giffinger i sur., 2007.)</h4>\n<table>\n<tr><th>Dimenzija</th><th>Primjeri</th></tr>\n<tr><td>Pametno gospodarstvo</td><td>inovativnost, poduzetništvo, IKT tvrtke</td></tr>\n<tr><td>Pametni ljudi</td><td>obrazovanje, vještine, kreativnost</td></tr>\n<tr><td>Pametno upravljanje</td><td>e-uprava, otvoreni podaci, participacija građana</td></tr>\n<tr><td>Pametna mobilnost</td><td>javni prijevoz, pametni semafori, parkiranje, dijeljena mobilnost</td></tr>\n<tr><td>Pametni okoliš</td><td>energetska učinkovitost, praćenje kvalitete zraka, otpad</td></tr>\n<tr><td>Pametno življenje</td><td>zdravstvo, sigurnost, kultura, stanovanje</td></tr>\n</table>\n\n<h3>Pametni grad u udžbeniku (Izvor: udžbenik)</h3>\n<ul>\n<li><strong>Promet:</strong> smart-city rješenja koriste <strong>big data</strong> o kretanju mobilnih uređaja i automobila u stvarnom vremenu (npr. prikaz sporosti prometa po segmentu prometnice u Google Maps); inteligentni transportni sustavi i pametni prometni sustavi povećavaju učinkovitost infrastrukture i smanjuju gužve.</li>\n<li><strong>Pokazatelji razvijenosti gradova</strong> koji se počinju pratiti: napredak u <strong>digitalizaciji lokalne samouprave</strong> (dostupnost informacija, digitalizirani postupci, uključivanje građana preko digitalnih platformi, otvorenost proračuna), <strong>pametno gospodarstvo</strong> (broj IKT stručnjaka, poduzeća za razvoj i inovacije, ulaganja grada u IKT) i <strong>pametna infrastruktura</strong> (brzina interneta — mreža 5G, pametni sustav parkiranja i semafora, pametna rasvjeta).</li>\n<li><strong>Prostorno planiranje:</strong> ISPU i GIS planovi nove generacije digitaliziraju planiranje i izdavanje dozvola.</li>\n<li>Gradovi srednje veličine često imaju obilježja <strong>održivih, pametnih, inovativnih, otpornih i zelenih</strong> sustava.</li>\n</ul>\n<h4>Tipične tehnologije</h4>\n<ul>\n<li>senzori i <strong>internet stvari (IoT)</strong>; analiza velikih podataka;</li>\n<li>pametna (LED) rasvjeta s upravljanjem prema potrebi — veza s gospodarenjem energijom;</li>\n<li>pametno parkiranje i adaptivni semafori;</li>\n<li>e-uprava, aplikacije za prijavu komunalnih problema, otvoreni podaci.</li>\n</ul>\n<h4>Rizici i ograničenja</h4>\n<ul>\n<li>zaštita privatnosti i podataka, kibernetička sigurnost;</li>\n<li><strong>digitalni jaz</strong> — nejednak pristup građana tehnologiji;</li>\n<li>ovisnost o dobavljačima i visoki troškovi održavanja;</li>\n<li>tehnologija nije cilj sama po sebi — grad je „pametan\" tek kad rješava stvarne urbane izazove i uključuje građane.</li>\n</ul>\n",
+      "id": "guosyg"
+    },
+    "id": "c6mexp"
+  },
+  "urbanRevitalization": {
+    "name": "Urbana revitalizacija (tema nakon 2. kolokvija)",
+    "icon": "fa-recycle",
+    "color": "#9333ea",
+    "flashcards": [
+      {
+        "question": "Što je urbana revitalizacija?",
+        "answer": "Oživljavanje zapuštenih ili propalih gradskih područja — fizička obnova uz gospodarski i društveni oporavak.",
+        "explanation": "Dopuna izvan predavanja; tema je u planu nakon 2. kolokvija.",
+        "id": "29iagy"
+      },
+      {
+        "question": "Kako se razlikuju urbana obnova, sanacija i regeneracija?",
+        "answer": "Obnova: fizičko obnavljanje zgrada i infrastrukture. Sanacija: uklanjanje oštećenja ili nedostataka. Regeneracija: integrirani dugoročni preporod područja.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "mopzu7"
+      },
+      {
+        "question": "Što su brownfield područja?",
+        "answer": "Zapuštena ili nedovoljno korištena prethodno izgrađena područja — bivša industrijska, vojna ili lučka zemljišta.",
+        "explanation": "ISPU vodi Registar brownfield područja (udžbenik).",
+        "id": "8xiyat"
+      },
+      {
+        "question": "Što je greenfield gradnja?",
+        "answer": "Gradnja na dosad neizgrađenom (najčešće poljoprivrednom ili prirodnom) zemljištu, obično na rubu grada.",
+        "explanation": "Suprotno od brownfielda. Dopuna izvan predavanja.",
+        "id": "n0w7xk"
+      },
+      {
+        "question": "Zašto je revitalizacija brownfielda korisna?",
+        "answer": "Koristi postojeću infrastrukturu i lokaciju, čuva zelene površine na rubu, uklanja zapuštenost i podiže vrijednost okolnog zemljišta.",
+        "explanation": "U ITU projektima: korištenje zapuštenih prostora.",
+        "id": "i0syuf"
+      },
+      {
+        "question": "Koji su izazovi revitalizacije?",
+        "answer": "Onečišćenje tla, neriješeni imovinski odnosi i katastar, visoki troškovi pripreme i rizik gentrifikacije.",
+        "explanation": "Dopuna izvan predavanja.",
+        "id": "0ybjiz"
+      },
+      {
+        "question": "Kako je revitalizacija povezana s metropolitanizacijom?",
+        "answer": "Metropolitanizacija i suburbanizacija dovode do propadanja središnjih dijelova grada, pa revitalizacija vraća život u središte.",
+        "explanation": "Iz predavanja o urbanoj strukturi.",
+        "id": "jivn3e"
+      },
+      {
+        "question": "Koji plan prema Zakonu o prostornom uređenju prati urbanu preobrazbu?",
+        "answer": "Urbanistički plan uređenja (UPU) — obvezan za dijelove građevinskog područja planirane za urbanu preobrazbu ili sanaciju.",
+        "explanation": "Izvor: udžbenik.",
+        "id": "kzeyqu"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Bivša industrijska ili vojna zemljišta koja su zapuštena nazivaju se:",
+        "options": [
+          "trabanti",
+          "brownfield područja",
+          "podcentri",
+          "greenfield područja"
+        ],
+        "correct": 1,
+        "id": "hs47b8"
+      },
+      {
+        "question": "Gradnja na dosad neizgrađenom zemljištu na rubu grada je:",
+        "options": [
+          "gentrifikacija",
+          "brownfield revitalizacija",
+          "sanacija",
+          "greenfield gradnja"
+        ],
+        "correct": 3,
+        "id": "ps4meb"
+      },
+      {
+        "question": "Integrirani dugoročni preporod gradskog područja (fizički, gospodarski, društveni) je:",
+        "options": [
+          "urbana sanacija",
+          "urbana regeneracija",
+          "fortifikacija",
+          "suburbanizacija"
+        ],
+        "correct": 1,
+        "id": "a6bu1y"
+      },
+      {
+        "question": "Registar brownfield područja modul je sustava:",
+        "options": [
+          "ISGE",
+          "ISPU",
+          "GAIA",
+          "NUTS"
+        ],
+        "correct": 1,
+        "id": "9mdyp0"
+      },
+      {
+        "question": "Rizik revitalizacije koji znači istiskivanje siromašnijih stanovnika je:",
+        "options": [
+          "gentrifikacija",
+          "policentrizam",
+          "decentralizacija",
+          "izvlaštenje"
+        ],
+        "correct": 0,
+        "id": "vy7r8w"
+      },
+      {
+        "question": "Plan obvezan za područja planirana za urbanu preobrazbu ili sanaciju je:",
+        "options": [
+          "SECAP",
+          "urbanistički plan uređenja (UPU)",
+          "Državni plan prostornog razvoja",
+          "proračun grada"
+        ],
+        "correct": 1,
+        "id": "99l0c4"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Revitalizacija zapuštenog industrijskog područja naziva se revitalizacija _______ područja.",
+        "answer": "brownfield",
+        "hint": "suprotno od greenfield",
+        "id": "sd6urt"
+      },
+      {
+        "sentence": "Jedan od ITU projekata je korištenje _______ prostora (industrijska i vojna zemljišta).",
+        "answer": "zapuštenih",
+        "hint": "napuštenih",
+        "id": "c4746f"
+      },
+      {
+        "sentence": "Metropolitanizacija dovodi do propadanja _______ dijelova grada.",
+        "answer": "središnjih",
+        "hint": "centar",
+        "id": "of1ldc"
+      }
+    ],
+    "learn": {
+      "title": "Urbana revitalizacija",
+      "content": "<p><em>Dopuna izvan predavanja: za ovu temu nema prezentacije, a obvezni udžbenik je ne obrađuje zasebnim poglavljem. Tekst je sastavljen iz općeprihvaćene literature urbane ekonomike; gdje se oslanja na udžbenik, to je naznačeno („Izvor: udžbenik\").</em></p>\n<p><strong>Napomena:</strong> prema izvedbenom planu tema „Urbana revitalizacija\" obrađuje se <strong>nakon 2. kolokvija</strong> (posljednje predavanje) i ulazi u završni ispit.</p>\n<h3>Pojmovi</h3>\n<table>\n<tr><th>Pojam</th><th>Značenje</th></tr>\n<tr><td><strong>Urbana revitalizacija</strong></td><td>oživljavanje zapuštenih ili propalih gradskih područja — fizička obnova uz gospodarski i društveni oporavak</td></tr>\n<tr><td><strong>Urbana obnova</strong></td><td>fizičko obnavljanje zgrada, javnih površina i infrastrukture</td></tr>\n<tr><td><strong>Urbana sanacija</strong></td><td>uklanjanje oštećenja, nedostataka ili nelegalne i neprimjerene gradnje</td></tr>\n<tr><td><strong>Urbana regeneracija</strong></td><td>integrirani, dugoročni preporod područja (gospodarski, društveni, okolišni, fizički)</td></tr>\n<tr><td><strong>Brownfield</strong></td><td>zapušteno ili nedovoljno korišteno prethodno izgrađeno područje (bivša industrijska, vojna, lučka, željeznička zemljišta)</td></tr>\n<tr><td><strong>Greenfield</strong></td><td>gradnja na dosad neizgrađenom zemljištu, obično na rubu grada</td></tr>\n</table>\n\n<h3>Zašto revitalizirati</h3>\n<ul>\n<li>Procesi <strong>suburbanizacije i metropolitanizacije</strong> dovode do <strong>propadanja središnjih dijelova grada</strong> (predavanje „Urbana struktura\") — revitalizacija vraća stanovnike i djelatnosti u središte.</li>\n<li>Deindustrijalizacija ostavlja <strong>brownfield</strong> područja — industrija postaje „sve manje gradska djelatnost\".</li>\n<li>Revitalizacija koristi postojeću infrastrukturu i dobru lokaciju, čuva zelene površine na rubu grada (manje raspršene gradnje), uklanja zapuštenost i podiže vrijednost okolnog zemljišta (renta raste s uređenošću ambijenta).</li>\n</ul>\n<h3>Instrumenti u RH</h3>\n<ul>\n<li><strong>ITU mehanizam</strong> — među projektima za EU fondove je i <strong>korištenje zapuštenih prostora (industrijska i vojna zemljišta)</strong> te kulturne baštine u funkciji turizma (predavanje).</li>\n<li><strong>ISPU</strong> vodi <strong>Registar brownfield područja</strong>; <strong>UPU</strong> je obvezan za izgrađene dijelove građevinskog područja planirane za <strong>urbanu preobrazbu ili sanaciju</strong>; udžbenik traži poticajne mjere za uređenje napuštenih nekretnina (Izvor: udžbenik).</li>\n<li>Javno-privatno partnerstvo i gradska renta kao izvor sredstava za uređenje ambijenta.</li>\n</ul>\n<h3>Izazovi</h3>\n<ul>\n<li>onečišćenje tla i skupa priprema zemljišta;</li>\n<li>neriješeni imovinski odnosi, neuređen katastar i zemljišne knjige;</li>\n<li><strong>gentrifikacija</strong> — uređeni kvart privlači više dohodovne skupine koje istiskuju dotadašnje stanovnike (udžbenik); zato je važno uključiti zajednicu (participativni model) i osigurati priuštivo stanovanje.</li>\n</ul>\n",
+      "id": "qeriqd"
+    },
+    "id": "6xb5py"
+  }
+}
