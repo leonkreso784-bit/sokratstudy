@@ -5,6 +5,14 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+## 2026-11-15 (OPUS) — 🚀 **MOR NA PRODUKCIJI** — `main` = `d8930c0`, token `20261115015712`
+
+Leonov OK 15.11. Fast-forward `51a90a9..d8930c0` (pre-push preflight zelen). **Provjereno:** CI na `d8930c0` zelen (lint/verify/unit,
+obje Playwright skupine, authed) · Vercel produkcija READY · živi `SW_VERSION` = repo · naslovnica 50 predmeta · `migrate-content.js`
+za 14 MOR predmeta (40 redova; `diff:db` prije: svi nemigrirani, poslije: 0 razlika) · u živom Chromiumu svih 40 MOR lekcija
+učitava, sučelje prelazi na hrvatski, 0 JS grešaka. Uz to: CI runner pinan na `ubuntu-24.04` (`ubuntu-latest` = 26.04 ne
+instalira Playwright Chromium).
+
 ## 2026-11-15 (OPUS) — ➕ **Novi program „Menadžment održivog razvoja" (MOR)** — grana `feat/mor`
 
 Treći program FMTU-a (`sustainable-development-management-hr`, HR). 9 kolegija zajedničkih s MUH-om kao kopije `-mor`;
