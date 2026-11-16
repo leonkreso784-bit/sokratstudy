@@ -30,7 +30,7 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 - **⚠️ GOTCHA:** `SokratAuth`/`SokratCatalog` su top-level `const` (leksički globali) → referenciraj **GOLO** (`typeof X !== 'undefined'`), NE `window.X`; `SokratContent`/`SokratAdmin`/`AppState` JESU na window. [[live-login-verifies-crud]]
 - **Učitavanje po ruti (2026-09-04):** `window.SokratLoad` (`js/loader.js`) — **imenovani paketi** (`study` · `blind-map` · `exercises` · `polica` · `materials` · `profile` · `sync`) stižu na SVOJ događaj, ne u markupu. ⚠️ **Novi mod = novi unos u paketu, ne novi `<script>` u `index.html`.** Token se čita iz `src` loadera (`bump` ne dira `js/**`); redoslijed u paketu je zajamčen (`async=false`) — KaTeX auto-render bez toga stiže prije `katex` i tiho pada. Brana: `tests/unit/loader-packages.test.js` (uklj. osnovicu **golih referenci preko granice paketa**).
 - **Service Worker:** `sw.js` (navigacija network-first + offline shell; asseti stale-while-revalidate; kill-switch `__swKill()`); `SW_VERSION` bumpa `npm run bump`.
-- **i18n:** 🌐 HR/EN (`js/i18n.js`, `'sokrat-ui-lang'`); bez izbora prati UREĐAJ (samo `hr`, `boot.js`); sadržaj po programu (ADR-012). Jezik nosi `lang` programa (ADR-041).
+- **i18n:** 🌐 HR/EN (`js/i18n.js`, `'sokrat-ui-lang'`); bez izbora prati UREĐAJ (samo `hr`, `boot.js`); sadržaj po programu (ADR-012).
 - **Monitoring:** GA4 (`G-ME0V58NJ1Z`) + Sentry — oboje **consent-gated**; GA ponašanje mijenjati SAMO u `js/consent.js`. [[google-analytics-consent]]
 - Konvencija semestra: `year` = studijska godina; `semester` ∈ {1,2}.
 
