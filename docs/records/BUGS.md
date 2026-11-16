@@ -17,6 +17,18 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
 
 ## Aktivni
 
+### BUG-054 — U kvizu je točan odgovor često NAJDULJA opcija: pitanje se da pogoditi bez znanja
+
+- Status: 🔴 **otvoren** (zapisano 2026-11-15) · Težina: **srednji** (kvaliteta učenja, ne kvar) · Našao: `content-review`
+  pri recenziji MOR predmeta, pa izmjereno na starim predmetima.
+- **Mjera (2026-11-15):** udio quiz pitanja gdje je točna opcija jedina najdulja — MOR predmeti 43–53 %, `te2-hr` 56 %,
+  `quality-management` 49 %, `management-hr` 43 %; slučajno bi bilo ≈ 25 %. Uz to dio pitanja ima apsurdne distraktore
+  („zakon gravitacije", „boja fasade"), koje je recenzija na MOR-u zamijenila, ali ne svugdje.
+- **Uzrok:** graditelj (čovjek ili AI) točan odgovor piše precizno i potpuno, a distraktore kratko. **Pozicija** se
+  miješa (i `js/quiz.js` miješa opcije), **duljina** ne.
+- **Rješenje (prijedlog):** upozorenje u `validate:content` — točna opcija ≥ 1,5× dulja od svih ostalih; čegrtaljka
+  kao `check:palette` (broj smije samo padati); popravljati predmet po predmet.
+
 ### BUG-052 — Brisanje računa puca za svakoga tko je objavio materijal, a slike se obrišu prije toga
 
 - Status: ✅ **riješen na PROD-u 29.09.** (SQL uz Leonov OK, provjereno `pg_get_constraintdef`: ON DELETE SET NULL); grana s branom čeka merge ·
@@ -142,6 +154,18 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
 ---
 
 ## Riješeni / Lekcije
+
+### BUG-053 — Novi hrvatski program dobio bi ENGLESKO sučelje: jezik je bio zakucan na id jednog programa
+
+- Status: ✅ **riješen 2026-11-14** (prije nego je korisnik išta vidio; na produkciji 15.11., `d8930c0`) · Težina: **srednji** ·
+  Našao: čitanje koda pri dodavanju programa MOR.
+- **Uzrok:** `js/i18n.js` je imao `const HR_PROGRAM = 'hospitality-management-hr'` i hrvatsko sučelje predlagao samo
+  za predmete tog programa. Svaki drugi hrvatski program (MOR) bez izbora jezika otvarao bi se na engleskom.
+- **Rješenje:** program u katalogu nosi `lang: 'hr'`, `SokratCatalog.uiLangOf(s)` vraća jezik programa, i18n pita
+  katalog. Brana `tests/unit/program-lang.test.js`: nabraja predmete IZ kataloga (ne rukom), ispisuje koliko ih je
+  dotaknula, i provjerava da `i18n.js` ne sadrži nijedan id programa — **pada na starom kodu**.
+- **Lekcija:** podatak o programu (jezik) živi u katalogu, ne u kodu koji ga koristi — inače svaki novi program tiho
+  nasljeđuje pretpostavku napisanu za prvi.
 
 > **BUG-047…051 (2026-09-12)** su pet nalaza jedne **vanjske recenzije repozitorija** koju je Leon donio; svih
 > pet je potvrđeno u kodu prije popravka, nijedan nije bio zapisan. Grana `fix/napredak-pouzdanost`, svaki

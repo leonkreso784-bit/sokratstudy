@@ -4,6 +4,34 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 
 ---
 
+## ADR-041 — MOR: zajednički kolegiji su KOPIJE, ne placement · jezik sučelja nosi program
+**Datum:** 2026-11-14 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Na produkciji:** 2026-11-15 (`main` `d8930c0`) ·
+**Vezano:** [ADR-022](#adr-022) (placement), [ADR-012](#adr-012) (HR klon), ADR-020 (izvor je autoritet), ADR-027 ·
+⚠️ **Broj:** ADR-039 i ADR-040 postoje samo na grani `feat/f6-mcp`, zato ova odluka nosi 041.
+
+**Kontekst.** Novi program FMTU-a, Menadžment održivog razvoja (MOR), dijeli osam kolegija 1. godine i Računovodstvo
+s MUH-om — isti kolegij i **isti nositelj** prema službenim popisima predmeta 2026/27. ADR-022 za to predviđa
+placement (jedan predmet na više koordinata), ali verify traži prefiks fakulteta u id-u placement-predmeta, pa bi
+devet **živih** id-eva (`math-hr` …) dobilo novo ime: JSON mape, baza, poveznice, testovi, sitemap.
+Usput se pokazalo da `js/i18n.js` hrvatsko sučelje predlaže samo za zakucan id `hospitality-management-hr`.
+
+**Odluka.**
+1. Zajednički kolegij u novom programu = **kopija s novim id-em** `<muh-id>` → `<osnova>-mor`: vlastiti `storageKey`
+   (vlastiti napredak), a gradivo se čita iz **istih** `data/<muh-id>/*.js` (iste window-varijable);
+   `data/json/<id>-mor/` generira `npm run export:json`, a u bazu ga upisuje `migrate-content.js`.
+2. **Jezik sučelja nosi program**: `programs[].lang` u katalogu, `SokratCatalog.uiLangOf(s)`; i18n ne smije
+   spominjati id programa (brana `tests/unit/program-lang.test.js`, pada na starom kodu).
+3. Opseg MOR-a: svi predmeti osim stranih jezika; predmeti bez objavljenog gradiva čekaju (ne izmišljaju se).
+
+**Posljedice.**
+- ➕ Nula rizika za žive MUH predmete; kopija se gradi i briše bez dodira s originalom.
+- ➖ Gradivo zajedničkog kolegija postoji **dvaput** u JSON-u i u bazi. **Izmjena MUH predmeta → `export:json` +
+  `migrate-content.js` i za `-mor` kopiju**, inače kopija u bazi zastari (read-path čita bazu prvu).
+- ➖ Broj predmeta na naslovnici broji id-eve, pa kopije ulaze u zbroj (36 → 50, od toga 9 kopija).
+- Za **novi fakultet** bez živih id-eva ovaj razlog otpada — ondje se placement smije ponovno razmotriti.
+
+---
+
 ## ADR-038 — MCP: nacrt u zasebnoj tablici · naša domena · DCR uz popis hostova · sigurnost u bazi, kvaliteta u poslužitelju
 **Datum:** 2026-09-17 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-031](#adr-031) (cjevovod, nacrt, četiri brane), [ADR-030](#adr-030), [ADR-026](#adr-026) (MCP invarijante), [ADR-024](#adr-024) (osobni otok), ADR-027 · **Faza:** F6 u [RASPORED.md](../plan/RASPORED.md)
 

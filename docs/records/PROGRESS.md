@@ -19,8 +19,15 @@ Kurikulum iz službenog popisa predmeta 2026/27 (fthm.uniri.hr), uspoređen s PE
 bajt-identičan), TTS recenzija ponovljena na Sonnetu. **Id-evi stavki su trajni** — dodano u brief nakon što je EKO graditelj
 pri ispravku regenerirao sve id-eve (bezopasno jer još nije bio commitan).
 **Commitovi:** `f6c4b97` program + 9 kopija · `65d07ab` EKO · `59c4b69` MK · `fc43af1` URB · `512a99a` POG · `dd595dc` TTS.
-**Nalaz za sve predmete:** točan odgovor je često najdulja opcija (43–56 %) — zapisano u `docs/subjects/README.md` kao dug.
-**Sljedeće:** K2 za EKO/MK/URB kad profesori objave; sem IV od veljače; PROD tek uz Leonov OK (+ `migrate-content.js` za nove JSON predmete).
+**Nalaz za sve predmete:** točan odgovor je često najdulja opcija (43–56 %) → BUG-054 (otvoren). Zakucan jezik programa → BUG-053 (riješen). Odluka → ADR-041.
+**Deploy (15.11., Leonov OK):** CI na grani je prvo pao — ne zbog koda: `ubuntu-latest` je od 19.10. Ubuntu 26.04 i
+Playwright ondje ne instalira Chromium (log, ne anotacije). Runner pinan na `ubuntu-24.04` (`d8930c0`, `docs/workflow/TESTING.md`
+§CI/CD) → CI zelen (svi jobovi) → fast-forward `main` `51a90a9..d8930c0` → Vercel READY → `diff:db` (svih 14 nemigrirano) →
+`migrate-content.js` (40 redova) → `diff:db` 0 razlika → živi Chromium: 40/40 lekcija, sučelje `hr`, 0 JS grešaka.
+Node na Windowsu pri izlasku ispisuje `Assertion failed … async.c` i kad je upis uspio — sudi `diff:db`, ne ispis.
+**Dokumentacija (16.11.):** ADR-041, BUG-053/054, `CATALOG_ARCHITECTURE` status, `CONTENT_INTAKE` §Tok s agentima,
+`TESTING` §CI pin, `CLAUDE.md` (i18n + stanje sadržaja). Prompt za novu sesiju (novi fakultet s Drivea) dan Leonu u chatu.
+**Sljedeće:** K2 za EKO/MK/URB kad profesori objave; sem IV od veljače; slijepa karta za POG; BUG-054.
 
 ## 2026-11-04 (OPUS, stablo `sokratstudy.y3`, grana `feat/y3-pf-qm`) — 3. godina HM: Public Finance + Quality Management (Midterm 1)
 

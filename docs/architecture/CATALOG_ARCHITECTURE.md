@@ -1,6 +1,10 @@
 # CATALOG_ARCHITECTURE — Identitet predmeta preko programa i fakulteta
 
 > **Status (2026-07-11):** ✅ **IMPLEMENTIRANO — U2.5 (`b969892`).** Mehanizam iz §5 (placement dual-mode: legacy `programId/year/semester` XOR `placement[]`) živi u `data/catalog.js` (`placementsOf()/isInProgram()`); §6 invarijante = `scripts/verify-catalog.js` (+ fixture-dokazi `tests/fixtures/catalog-placement-*.js`, unit `tests/unit/catalog-placement.test.js` 11/11). Legacy 18 predmeta grandfathered (bez preimenovanja — napredak/storageKey netaknut; prefiks-pravilo §2 vrijedi za NOVE placement-predmete). Stvarni MUH/MUT/MOR programi + dijeljeni predmeti = S7 (**bez vlasnika od 2026-09-04** — suradnik otkazan; silabusi presuđuju §8). Odluka: ADR-022; resekvencirano ADR-023 t.5.
+> **⚠️ 2026-11-14 (ADR-041):** MOR je dodan, ali **NE kroz placement** — 9 zajedničkih kolegija su **kopije `-mor`**
+> (vlastiti id i `storageKey`, iste `data/<muh-id>/*.js`), jer bi placement preimenovao žive id-eve. Placement je i dalje
+> neiskorišten mehanizam; za novi fakultet bez živih id-eva smije se ponovno razmotriti.
+> **Program nosi `lang`** (`'hr'`) → `SokratCatalog.uiLangOf(s)` daje jezik sučelja koji predmet predlaže (`js/i18n.js`).
 > Ovaj doc je pun model + konvencije + primjeri + verify-pravila. Rješava kako **dijeliti „vezne" predmete**
 > među smjerovima bez dupliciranja i bez rizika da baza „pukne", uz očuvanu hijerarhiju.
 

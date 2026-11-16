@@ -30,12 +30,12 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 - **⚠️ GOTCHA:** `SokratAuth`/`SokratCatalog` su top-level `const` (leksički globali) → referenciraj **GOLO** (`typeof X !== 'undefined'`), NE `window.X`; `SokratContent`/`SokratAdmin`/`AppState` JESU na window. [[live-login-verifies-crud]]
 - **Učitavanje po ruti (2026-09-04):** `window.SokratLoad` (`js/loader.js`) — **imenovani paketi** (`study` · `blind-map` · `exercises` · `polica` · `materials` · `profile` · `sync`) stižu na SVOJ događaj, ne u markupu. ⚠️ **Novi mod = novi unos u paketu, ne novi `<script>` u `index.html`.** Token se čita iz `src` loadera (`bump` ne dira `js/**`); redoslijed u paketu je zajamčen (`async=false`) — KaTeX auto-render bez toga stiže prije `katex` i tiho pada. Brana: `tests/unit/loader-packages.test.js` (uklj. osnovicu **golih referenci preko granice paketa**).
 - **Service Worker:** `sw.js` (navigacija network-first + offline shell; asseti stale-while-revalidate; kill-switch `__swKill()`); `SW_VERSION` bumpa `npm run bump`.
-- **i18n:** 🌐 HR/EN (`js/i18n.js`, `'sokrat-ui-lang'`); bez izbora prati UREĐAJ (samo `hr`, `boot.js`); sadržaj po programu (ADR-012).
+- **i18n:** 🌐 HR/EN (`js/i18n.js`, `'sokrat-ui-lang'`); bez izbora prati UREĐAJ (samo `hr`, `boot.js`); sadržaj po programu (ADR-012). Jezik nosi `lang` programa (ADR-041).
 - **Monitoring:** GA4 (`G-ME0V58NJ1Z`) + Sentry — oboje **consent-gated**; GA ponašanje mijenjati SAMO u `js/consent.js`. [[google-analytics-consent]]
 - Konvencija semestra: `year` = studijska godina; `semester` ∈ {1,2}.
 
 ## Sadržaj (autorstvo)
-- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** — 2. god 8/8 ✅ · 1. god 9/9 ✅ (⛔ Intro blokiran) · HR pilot ✅. Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
+- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** — 2. god 8/8 ✅ · 1. god 9/9 ✅ (⛔ Intro blokiran) · HR pilot ✅ · MOR ✅ (ADR-041). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
 - Schema (obavezno): `docs/architecture/CONTENT_SCHEMA.md`. Novi predmet = mapa `data/<subject>/{midterm-1,midterm-2,final}.js`; brzo: `npm run scaffold`. 4 stara sem-2 predmeta ostaju root `data-*.js` (svjesno, ADR-015).
 - PDF materijali: `_materials/` (gitignored); čitaj s `node scripts/pdf-text.js "<pdf>"` (Read ne radi za PDF). Vidi `docs/workflow/CONTENT_INTAKE.md`.
 - **KaTeX** (kvantitativni predmeti): delimiteri **`\( \)` / `\[ \]` / `$$ $$` — NIKAD jedan `$`** (valutni `$NN`); `renderMath()` u `js/math.js`. Konvencija: `docs/architecture/CONTENT_SCHEMA.md` §Matematika.

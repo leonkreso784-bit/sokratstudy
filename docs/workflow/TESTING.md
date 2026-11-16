@@ -125,6 +125,11 @@
   2. Provjeri: CI zelen + vizualni pregled na preview URL-u.
   3. Tek kad je zeleno i pregledano → merge u `main` (= produkcijski deploy) **uz izričitu potvrdu korisnika**.
 - **Lokalno prije pusha** (da CI ne bude crven): pokreni isti lanac ručno (`validate:content` → `verify` → `test:unit` → `npx playwright test`).
+- **⚠️ Runner je pinan na `ubuntu-24.04` (2026-11-15).** GitHub je `ubuntu-latest` od 19.10.2026 prebacio na Ubuntu 26.04,
+  gdje `npx playwright install chromium` pada („Playwright does not support chromium on ubuntu26.04-x64") **prije ijednog
+  testa** — crveni CI koji nema veze s kodom. Na `main`-u se to mjesec dana nije vidjelo jer nije bilo push-CI-ja, samo
+  `keep-alive`. Pin se diže tek kad Playwright podrži novi Ubuntu; uzrok pada uvijek čitaj u logu (`gh run view <id>
+  --log-failed`), ne u anotacijama koje pokazuju samo „exit code 1".
 
 
 ## ⚠️ ZELENO LOKALNO NIJE ZELENO (2026-08-24)

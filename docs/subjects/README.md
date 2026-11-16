@@ -126,9 +126,9 @@ Izvor sadržaja: Sokrat MCP materijali sa stagingu (`node_content` 2026-11-04), 
 | Urbana ekonomija | `urban-economics-mor` | 2/1 | 22 / 416 / 329 / 143 | K1 predavanja + udžbenik; K2 iz udžbenika + kraće označene dopune. ⏳ K2 predavanja (17.11.–22.12.) i literatura Šimunović / Lamza-Maronić **nemamo** → provjeriti K2 kad stignu |
 | Održivi marketing · Održivi razvoj · Održivi razvoj turizma · Menadžment znanja | — | 2/2 | — | ⏳ ljetni semestar — gradivo od veljače 2027. |
 
-⚠️ **Poznat dug (svi predmeti, i stari):** u kvizu je točan odgovor često **najdulja opcija** (mjereno 2026-11-15:
-MOR 43–53 %, `te2-hr` 56 %, `quality-management` 49 %; slučajno ≈ 25 %). Pozicija je ujednačena, duljina nije.
-Mjerač: pitanje gdje je točan ≥ 1,5× dulji od svih ostalih. Nije brana — kandidat za `validate:content` upozorenje.
+⚠️ **Poznat dug (svi predmeti, i stari):** točan odgovor u kvizu je često najdulja opcija → [BUG-054](../records/BUGS.md).
+Odluka o kopijama i jeziku programa: [ADR-041](../records/DECISIONS.md). **Na produkciji od 2026-11-15** (`d8930c0`;
+svih 14 predmeta i u bazi, `migrate-content.js`).
 
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
