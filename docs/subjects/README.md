@@ -130,6 +130,24 @@ Izvor sadržaja: Sokrat MCP materijali sa stagingu (`node_content` 2026-11-04), 
 Odluka o kopijama i jeziku programa: [ADR-041](../records/DECISIONS.md). **Na produkciji od 2026-11-15** (`d8930c0`;
 svih 14 predmeta i u bazi, `migrate-content.js`).
 
+## Pravni fakultet Rijeka (PFRI) — Integrirani studij prava — od 2026-11-16, grana `feat/pravri`
+
+> **Prvi fakultet izvan FMTU-a.** Izvor: bilješke, skripte i ispitna pitanja studenata 2011.–2022. (tekst izvađen uz
+> original, `_materials/pravri/`, gitignored) + službeni izvedbeni planovi 2025./26. za opseg i granicu međuispita.
+> Lekcije: **Međuispit · Gradivo završnog ispita · Cijelo gradivo** (model 50 + 50). Odluka: [ADR-042](../records/DECISIONS.md).
+> **Letvica:** `qa.js` → strukturna recenzija → činjenična recenzija (Opus) → ispravci → ponovna provjera SPREMNO.
+> Promijenjeno pravo provjereno na zakon.hr / NN i označeno „Napomena o izmjeni". Brojke = **final** kat / fc / quiz / fill.
+
+| Predmet | ID | God/sem | Brojke | Napomene |
+|---|---|---|---|---|
+| Teorija prava i države | `theory-law-state-pfri` | 1/1 | 27 / 401 / 435 / 188 | „Društvene grupe" i ustroj RH dopunjeni (izvori šute); abrogacija, skrbništvo, ostava po ZOO-u ispravljeni |
+| Povijest prava i države | `legal-history-pfri` | 1/1 | 48 / 449 / 660 / 210 | |
+| Sociologija | `sociology-pfri` | 1/1 | 19 / 330 / 353 / 173 | |
+| Rimsko privatno pravo | `roman-law-pfri` | 1/2 | 41 / 709 / 638 / 89 | dodan odjeljak o recepciji i kodifikacijama (OGZ 1853.) |
+| Ustavno pravo | `constitutional-law-pfri` | 1/2 | 24 / 341 / 355 / 177 | |
+| Politička ekonomija | `political-economy-pfri` | 1/2 | 38 / 300 / 329 / 119 | |
+| 15 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
+
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
 - [STATISTICS_PLAN.md](./STATISTICS_PLAN.md) — Learn Track A + vježbe Track B (✅ done)

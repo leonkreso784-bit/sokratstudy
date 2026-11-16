@@ -4,6 +4,35 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 
 ---
 
+## ADR-042 — Drugi fakultet (PFRI): sufiks `-pfri`, lekcije po modelu 50 + 50, u katalog samo predmet koji je prošao letvicu
+**Datum:** 2026-11-16 · **Status:** ✅ PRIMIJENJENO (plan izrade po fazama, Leon: „kreni") ·
+**Vezano:** [ADR-041](#adr-041) (zadnja posljedica: placement za novi fakultet), [ADR-022](#adr-022), ADR-020 (izvor je autoritet), ADR-027
+
+**Kontekst.** Pravni fakultet Sveučilišta u Rijeci, Integrirani studij prava, prvi je fakultet izvan FMTU-a. Gradivo su
+bilješke, skripte i ispitna pitanja studenata (2011.–2022.); opseg i podjelu daju službeni izvedbeni planovi 2025./26.
+Plan izrade obuhvaća 21 PFRI predmet, a gradnja ide predmet po predmet kroz više sesija. Dvije stvari nisu imale kalup:
+(1) kako se zovu predmeti novog fakulteta, (2) što se radi s predmetom koji je upisan u katalog, a nije gotov.
+
+**Odluka.**
+1. **Id = `<predmet>-pfri`**, program `law-integrated-hr` (`lang: 'hr'`). Sufiks, kao `-hr`/`-mor`; nema živih id-eva
+   pa placement nije ni trebao (ADR-041) — svaki predmet postoji jednom.
+2. **Lekcije prate model polaganja 50 + 50** (izvedbeni plan, „Sustav ocjenjivanja"): `first-midterm` = gradivo
+   međuispita, `second-midterm` = gradivo koje ostaje za završni, `final` = cijelo gradivo (M1 ⊕ M2 + `examPractice`).
+3. **Letvica prije kataloga:** strojna brana (`qa.js`: duljine, BUG-054, pozicije) → strukturna recenzija →
+   činjenična recenzija (Opus) → ispravci → ponovna provjera „SPREMNO". Izvori su stari i do 15 godina, pa se pravo
+   koje se promijenilo provjerava na zakon.hr / u Narodnim novinama i u learnu označava „Napomena o izmjeni".
+4. **Predmet koji nije prošao letvicu NIJE u `data/catalog.js`** — izvadi se prije deploya i vrati kad prođe
+   (unos se čuva izvan repoa, uz plan izrade). Katalog ne smije nuditi prazan predmet, a `npm run verify` bez
+   datoteka ionako pada.
+
+**Posljedice.**
+- ➕ Na produkciju izlazi samo recenziran sadržaj; prvi izlazak = 6 predmeta 1. godine (katalog 50 → 56).
+- ➖ Broj PFRI predmeta u katalogu raste u skokovima; „21 predmet" je opseg plana, ne stanje kataloga.
+- ➖ Dopuna prihvaća **jedan** oblik odgovora (npr. novi naziv „skrbništvo", ne stari „starateljstvo") i ne skida
+  završnu točku (`normFill`), pa rečenica mora imati jedan točan odgovor, a odgovor nikad ne završava točkom.
+
+---
+
 ## ADR-041 — MOR: zajednički kolegiji su KOPIJE, ne placement · jezik sučelja nosi program
 **Datum:** 2026-11-14 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Na produkciji:** 2026-11-15 (`main` `d8930c0`) ·
 **Vezano:** [ADR-022](#adr-022) (placement), [ADR-012](#adr-012) (HR klon), ADR-020 (izvor je autoritet), ADR-027 ·

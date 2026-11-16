@@ -5,6 +5,25 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
+
+**Izvori:** bilješke, skripte i ispitna pitanja studenata 2011.–2022. (Drive) + službeni izvedbeni planovi 2025./26.;
+sve u `_materials/pravri/` (gitignored), plan izrade po fazama u `_materials/pravri/PLAN.md`. Imena vlasnika gradiva,
+profesora i studenata nigdje u repou (`check:names`).
+**Tijek:** prvi dan je 7+ agenata odjednom dvaput potrošilo 5-satni limit → plan „sporo, jedan predmet za drugim":
+najviše 2 agenta (1 Opus), letvica `qa.js` → strukturna → činjenična recenzija (Opus) → ispravci → ponovna provjera.
+Generatori i registri id-eva su u `_materials/pravri/tools/`; **id-evi stavki trajni** (ispravci preimenuju ključ, ne id).
+**Commitovi:** `aa8657b` Politička ekonomija · `5cfbff9` (+`627080d`, `d248a8c`) Povijest prava · `e86494e` Ustavno ·
+`21ee486` Sociologija · `a4da341` Rimsko · `90c632a` Teorija · `17734d4` odgovori dopuna bez završne točke (bodovanje
+točku ne skida). Katalog: 15 nedovršenih predmeta izvađeno (ADR-042), naslovnica 50 → 56.
+**Usput:** `legacy-html coverage` je padao na grani — `<ol start>`/`<ol type>` u Ustavnom pravu (renderer ih ionako
+odbacuje; uklonjeni iz podataka, prikaz isti). Test „every faculty … reachable" (`e202038`) **nikad nije prošao**:
+nakon prvog fakulteta `goto('/')` vraća na zapamćeni predmet (`sokrat-last-position`), pa vrata naslovnice nisu
+vidljiva → test sad briše tu poziciju između fakulteta (4/4 zeleno; prije 0/4).
+**Pouka:** „ispravljanje prekinuto limitom" (Teorija) značilo je **ništa spremljeno** — generator je bio bajt-identičan
+podacima. Prije nastavka prekinutog posla prvo izmjeri što je stvarno napravljeno.
+**Slijedi:** Faza 2 do kraja (preflight, push grane, CI, preview) → **Leonov OK** → `main` + `migrate-content.js`.
+
 ## 2026-11-14/15 (OPUS, stablo `sokratstudy.mor`, grana `feat/mor`) — novi HR program MOR (Menadžment održivog razvoja)
 
 **Izvori:** kolegica s MOR smjera dala je pristup Merlinu (Leon se prijavio u pregledniku; ja sam samo čitao i preuzimao
