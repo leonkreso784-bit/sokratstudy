@@ -33,6 +33,15 @@ const SOKRAT_CATALOG = {
         // MOR (Leon, 2026-11-14): 1. god dijeli 8 kolegija s MUH-om (kopije `-mor`), 2. god ima vlastite.
         { id: 'sustainable-development-management-hr', name: 'Menadžment održivog razvoja', lang: 'hr' }
       ]
+    },
+    {
+      id: 'pfri',
+      name: 'Pravni fakultet Sveučilišta u Rijeci',
+      // Drugi fakultet (2026-11-16): gradivo s Drivea studenata + službeni izvedbeni planovi 2025./26.
+      shortName: 'PFRI',
+      programs: [
+        { id: 'law-integrated-hr', name: 'Pravo (integrirani studij)', lang: 'hr' }
+      ]
     }
   ],
 
@@ -1573,6 +1582,423 @@ const SOKRAT_CATALOG = {
           'first-midterm': 'geospaceMorM1',
           'second-midterm': 'geospaceMorM2',
           'final': 'geospaceMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    // ---- PFRI — Pravni fakultet Sveučilišta u Rijeci, Integrirani studij prava (2026-11-16) ----
+    {
+      id: 'theory-law-state-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Teorija prava i države',
+      shortName: 'TPD',
+      icon: 'fa-scale-balanced',
+      color: '#0f766e',
+      iconGradient: ['#0f766e', '#2dd4bf'],
+      description: 'Teorija prava i države (PFRI): pojam i nastanak države i prava, oblici države, pravna norma, izvori prava, pravni sustav, pravni odnos, tumačenje i primjena prava',
+      storageKey: 'theory-law-state-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign tpdPfriM1 + tpdPfriM2 + examPractice)
+        scripts: [
+          'data/theory-law-state-pfri/midterm-1.js',
+          'data/theory-law-state-pfri/midterm-2.js',
+          'data/theory-law-state-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'tpdPfriM1',
+          'second-midterm': 'tpdPfriM2',
+          'final': 'tpdPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'legal-history-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Povijest prava i države',
+      shortName: 'PPD',
+      icon: 'fa-scroll',
+      color: '#9a3412',
+      iconGradient: ['#9a3412', '#fb923c'],
+      description: 'Povijest prava i države (PFRI): opća povijest prava i države od starog vijeka do novog doba i hrvatska pravna povijest',
+      storageKey: 'legal-history-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ppdPfriM1 + ppdPfriM2 + examPractice)
+        scripts: [
+          'data/legal-history-pfri/midterm-1.js',
+          'data/legal-history-pfri/midterm-2.js',
+          'data/legal-history-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ppdPfriM1',
+          'second-midterm': 'ppdPfriM2',
+          'final': 'ppdPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'sociology-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Sociologija',
+      shortName: 'SOC',
+      icon: 'fa-people-group',
+      color: '#be185d',
+      iconGradient: ['#be185d', '#f472b6'],
+      description: 'Sociologija (PFRI): sociološke teorije i pojmovi, društvo i kultura, socijalizacija, društvene grupe i institucije, stratifikacija, devijantnost i društvena promjena',
+      storageKey: 'sociology-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign socPfriM1 + socPfriM2 + examPractice)
+        scripts: [
+          'data/sociology-pfri/midterm-1.js',
+          'data/sociology-pfri/midterm-2.js',
+          'data/sociology-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'socPfriM1',
+          'second-midterm': 'socPfriM2',
+          'final': 'socPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'roman-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Rimsko privatno pravo',
+      shortName: 'RPP',
+      icon: 'fa-building-columns',
+      color: '#a16207',
+      iconGradient: ['#a16207', '#facc15'],
+      description: 'Rimsko privatno pravo (PFRI): izvori i periodizacija, statusno, obiteljsko i nasljedno pravo, stvarno pravo i obvezno pravo s ugovorima',
+      storageKey: 'roman-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign rppPfriM1 + rppPfriM2 + examPractice)
+        scripts: [
+          'data/roman-law-pfri/midterm-1.js',
+          'data/roman-law-pfri/midterm-2.js',
+          'data/roman-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'rppPfriM1',
+          'second-midterm': 'rppPfriM2',
+          'final': 'rppPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'constitutional-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Ustavno pravo',
+      shortName: 'UP',
+      icon: 'fa-landmark',
+      color: '#b91c1c',
+      iconGradient: ['#b91c1c', '#f87171'],
+      description: 'Ustavno pravo (PFRI): ustav i ustavnost, temeljna prava, organizacija vlasti, ustavno uređenje Republike Hrvatske i ustavno sudovanje',
+      storageKey: 'constitutional-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign upPfriM1 + upPfriM2 + examPractice)
+        scripts: [
+          'data/constitutional-law-pfri/midterm-1.js',
+          'data/constitutional-law-pfri/midterm-2.js',
+          'data/constitutional-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'upPfriM1',
+          'second-midterm': 'upPfriM2',
+          'final': 'upPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'political-economy-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Politička ekonomija',
+      shortName: 'PE',
+      icon: 'fa-coins',
+      color: '#15803d',
+      iconGradient: ['#15803d', '#4ade80'],
+      description: 'Politička ekonomija (PFRI): ekonomski zakoni, roba i novac, tržište, proizvodnja i raspodjela, makroekonomija, novčani i financijski sustav',
+      storageKey: 'political-economy-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign pePfriM1 + pePfriM2 + examPractice)
+        scripts: [
+          'data/political-economy-pfri/midterm-1.js',
+          'data/political-economy-pfri/midterm-2.js',
+          'data/political-economy-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'pePfriM1',
+          'second-midterm': 'pePfriM2',
+          'final': 'pePfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'criminal-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 1,
+      name: 'Kazneno pravo',
+      shortName: 'KP',
+      icon: 'fa-gavel',
+      color: '#7f1d1d',
+      iconGradient: ['#7f1d1d', '#ef4444'],
+      description: 'Kazneno pravo (PFRI): opći dio kaznenog prava — načela, kazneni zakon, kazneno djelo i njegovi elementi, krivnja, sudioništvo, kaznenopravne sankcije',
+      storageKey: 'criminal-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign kpPfriM1 + kpPfriM2 + examPractice)
+        scripts: [
+          'data/criminal-law-pfri/midterm-1.js',
+          'data/criminal-law-pfri/midterm-2.js',
+          'data/criminal-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'kpPfriM1',
+          'second-midterm': 'kpPfriM2',
+          'final': 'kpPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'international-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 1,
+      name: 'Međunarodno pravo',
+      shortName: 'MP',
+      icon: 'fa-globe',
+      color: '#0e7490',
+      iconGradient: ['#0e7490', '#22d3ee'],
+      description: 'Međunarodno pravo (PFRI): izvori i subjekti međunarodnog prava, ugovori, državno područje, diplomatsko pravo, odgovornost država i mirno rješavanje sporova',
+      storageKey: 'international-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign mpPfriM1 + mpPfriM2 + examPractice)
+        scripts: [
+          'data/international-law-pfri/midterm-1.js',
+          'data/international-law-pfri/midterm-2.js',
+          'data/international-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'mpPfriM1',
+          'second-midterm': 'mpPfriM2',
+          'final': 'mpPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'family-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 1,
+      name: 'Obiteljsko pravo',
+      shortName: 'OP',
+      icon: 'fa-people-roof',
+      color: '#c2410c',
+      iconGradient: ['#c2410c', '#fdba74'],
+      description: 'Obiteljsko pravo (PFRI): brak i izvanbračna zajednica, roditeljska skrb, podrijetlo djeteta, posvojenje, skrbništvo, uzdržavanje i imovinski odnosi',
+      storageKey: 'family-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign opPfriM1 + opPfriM2 + examPractice)
+        scripts: [
+          'data/family-law-pfri/midterm-1.js',
+          'data/family-law-pfri/midterm-2.js',
+          'data/family-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'opPfriM1',
+          'second-midterm': 'opPfriM2',
+          'final': 'opPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'civil-obligations-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Opći dio građanskog prava i obvezno pravo',
+      shortName: 'GOP',
+      icon: 'fa-file-signature',
+      color: '#4d7c0f',
+      iconGradient: ['#4d7c0f', '#a3e635'],
+      description: 'Opći dio građanskog prava i obvezno pravo (PFRI): subjekti i objekti, pravni poslovi, zastara, nastanak, prestanak i učinci obveza, ugovori i odgovornost za štetu',
+      storageKey: 'civil-obligations-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign gopPfriM1 + gopPfriM2 + examPractice)
+        scripts: [
+          'data/civil-obligations-pfri/midterm-1.js',
+          'data/civil-obligations-pfri/midterm-2.js',
+          'data/civil-obligations-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'gopPfriM1',
+          'second-midterm': 'gopPfriM2',
+          'final': 'gopPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'criminal-procedure-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Kazneno postupovno pravo',
+      shortName: 'KPP',
+      icon: 'fa-handcuffs',
+      color: '#86198f',
+      iconGradient: ['#86198f', '#e879f9'],
+      description: 'Kazneno postupovno pravo (PFRI): načela i subjekti kaznenog postupka, dokazi i radnje, istraživanje, optužnica, rasprava, presuda i pravni lijekovi',
+      storageKey: 'criminal-procedure-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign kppPfriM1 + kppPfriM2 + examPractice)
+        scripts: [
+          'data/criminal-procedure-pfri/midterm-1.js',
+          'data/criminal-procedure-pfri/midterm-2.js',
+          'data/criminal-procedure-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'kppPfriM1',
+          'second-midterm': 'kppPfriM2',
+          'final': 'kppPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'eu-law-1-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Europsko pravo I',
+      shortName: 'EP1',
+      icon: 'fa-flag',
+      color: '#0369a1',
+      iconGradient: ['#0369a1', '#38bdf8'],
+      description: 'Europsko pravo I (PFRI): razvoj europske integracije, institucije EU, izvori i načela prava EU, odnos s nacionalnim pravom i sudska zaštita',
+      storageKey: 'eu-law-1-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep1PfriM1 + ep1PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-1-pfri/midterm-1.js',
+          'data/eu-law-1-pfri/midterm-2.js',
+          'data/eu-law-1-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep1PfriM1',
+          'second-midterm': 'ep1PfriM2',
+          'final': 'ep1PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'competition-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 5, semester: 1,
+      name: 'Pravo tržišnog natjecanja',
+      shortName: 'PTN',
+      icon: 'fa-handshake',
+      color: '#047857',
+      iconGradient: ['#047857', '#34d399'],
+      description: 'Pravo tržišnog natjecanja (PFRI, izborni 5. god.): zabranjeni sporazumi, zlouporaba vladajućeg položaja, koncentracije, državne potpore i postupak pred tijelima',
+      storageKey: 'competition-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ptnPfriM1 + ptnPfriM2 + examPractice)
+        scripts: [
+          'data/competition-law-pfri/midterm-1.js',
+          'data/competition-law-pfri/midterm-2.js',
+          'data/competition-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ptnPfriM1',
+          'second-midterm': 'ptnPfriM2',
+          'final': 'ptnPfriFinal'
         },
         dataFormat: 'json'
       }
