@@ -481,7 +481,7 @@ const upPfriM1 = {
       },
       {
         "sentence": "Bijelu knjigu o europskom upravljanju donijela je Europska komisija godine _______.",
-        "answer": "2001.",
+        "answer": "2001",
         "hint": "godina",
         "id": "mnkv8f"
       },
@@ -1097,8 +1097,8 @@ const upPfriM1 = {
         "id": "exy2ap"
       },
       {
-        "sentence": "Europska konvencija za RH je na snazi od 5. 11. _______ godine.",
-        "answer": "1997.",
+        "sentence": "Europska konvencija za RH je na snazi od 5. 11. _______. godine.",
+        "answer": "1997",
         "hint": "godina ratifikacije",
         "id": "waoa1w"
       },
@@ -1429,7 +1429,7 @@ const upPfriM1 = {
       },
       {
         "sentence": "Ustavno sudstvo kao prvi je uspostavio ustav Austrije godine _______.",
-        "answer": "1920.",
+        "answer": "1920",
         "hint": "Kelsen",
         "id": "lgddqr"
       }
@@ -2059,8 +2059,8 @@ const upPfriM1 = {
     ],
     "fillBlanks": [
       {
-        "sentence": "Ustav RH proglašen je 22. prosinca _______ godine.",
-        "answer": "1990.",
+        "sentence": "Ustav RH proglašen je 22. prosinca _______. godine.",
+        "answer": "1990",
         "hint": "godina",
         "id": "qht1pn"
       },
@@ -3395,7 +3395,7 @@ const upPfriM1 = {
       },
       {
         "sentence": "Pravobranitelj za osobe s invaliditetom uveden je 2007., a za djecu i ravnopravnost spolova godine _______.",
-        "answer": "2003.",
+        "answer": "2003",
         "hint": "godina",
         "id": "wpyzqc"
       }

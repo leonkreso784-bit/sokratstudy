@@ -477,7 +477,7 @@ const ppdPfriM2 = {
     "fillBlanks": [
       {
         "sentence": "Austro-ugarska nagodba donesena je godine _______.",
-        "answer": "1867.",
+        "answer": "1867",
         "hint": "Poraz u ratu 1866.",
         "id": "f0ti6i"
       },
@@ -3467,7 +3467,7 @@ const ppdPfriM2 = {
       },
       {
         "sentence": "Ustav FNRJ donesen je 31. siječnja _______.",
-        "answer": "1946.",
+        "answer": "1946",
         "hint": "godina nakon završetka rata",
         "id": "2h8lta"
       }
@@ -3848,7 +3848,7 @@ const ppdPfriM2 = {
       },
       {
         "sentence": "Deklaraciju o proglašenju suverene i samostalne RH Sabor donosi 25. lipnja _______.",
-        "answer": "1991.",
+        "answer": "1991",
         "hint": "godina referenduma o samostalnosti",
         "id": "8f1dre"
       }
@@ -3951,7 +3951,7 @@ const ppdPfriM2 = {
       },
       {
         "sentence": "Hrvatska je članica EU od 1. srpnja _______.",
-        "answer": "2013.",
+        "answer": "2013",
         "hint": "godina pristupanja",
         "id": "na2t57"
       }

@@ -150,7 +150,7 @@ const pePfriM1 = {
       {
         "id": "c1uih2",
         "sentence": "Izraz politička ekonomija prvi je upotrijebio francuski ekonomist Montchrétien godine _______.",
-        "answer": "1615.",
+        "answer": "1615",
         "hint": "početak 17. stoljeća"
       },
       {
@@ -2737,7 +2737,7 @@ const pePfriM1 = {
       {
         "id": "24s7qh",
         "sentence": "Socijalizam počinje Oktobarskom revolucijom godine _______.",
-        "answer": "1917.",
+        "answer": "1917",
         "hint": "početak 20. stoljeća"
       },
       {

@@ -893,7 +893,7 @@ const upPfriM2 = {
       },
       {
         "sentence": "Županijski dom Sabora ukinut je ustavnim promjenama godine _______.",
-        "answer": "2001.",
+        "answer": "2001",
         "hint": "godina",
         "id": "dtqc97"
       },

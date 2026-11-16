@@ -3149,7 +3149,7 @@ const ppdPfriM1 = {
       },
       {
         "sentence": "Rotarijev edikt zapisan je godine _______.",
-        "answer": "643.",
+        "answer": "643",
         "hint": "7. stoljeće",
         "id": "tu6tn1"
       }
@@ -5949,7 +5949,7 @@ const ppdPfriM1 = {
       },
       {
         "sentence": "Oktobarska revolucija zbila se 1917., a Hitler postaje kancelar _______.",
-        "answer": "1933.",
+        "answer": "1933",
         "hint": "godina Zakona o ovlastima",
         "id": "64u754"
       }
@@ -6215,7 +6215,7 @@ const ppdPfriM1 = {
       },
       {
         "sentence": "Zlatnu bulu iz Gradeca 1242. izdao je kralj Bela _______.",
-        "answer": "IV.",
+        "answer": "IV",
         "hint": "Tatari ga progone.",
         "id": "jh1y7o"
       },
@@ -6385,7 +6385,7 @@ const ppdPfriM1 = {
     "fillBlanks": [
       {
         "sentence": "Dubrovačko doba samostalnosti traje od 1358. do _______.",
-        "answer": "1808.",
+        "answer": "1808",
         "hint": "Ukinuo ga Napoleon.",
         "id": "oq19q4"
       },
@@ -6634,7 +6634,7 @@ const ppdPfriM1 = {
       },
       {
         "sentence": "Feudalizam i kmetsko selište ukinuti su godine _______.",
-        "answer": "1848.",
+        "answer": "1848",
         "hint": "Hrvatski sabor.",
         "id": "4jkxiq"
       },
