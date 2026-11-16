@@ -3076,7 +3076,7 @@ const ppdPfriM2 = {
       {
         "sentence": "Napad Osovine na Jugoslaviju 1941. zove se _______ rat.",
         "answer": "travanjski",
-        "hint": "Dopuna.",
+        "hint": "po mjesecu napada",
         "id": "utrhf7"
       }
     ],
@@ -3462,13 +3462,13 @@ const ppdPfriM2 = {
       {
         "sentence": "Sporazum Tito–Šubašić sklopljen je 1944. na otoku _______.",
         "answer": "Visu",
-        "hint": "Dopuna.",
+        "hint": "jadranski otok",
         "id": "r6th1e"
       },
       {
         "sentence": "Ustav FNRJ donesen je 31. siječnja _______.",
         "answer": "1946.",
-        "hint": "Dopuna.",
+        "hint": "godina nakon završetka rata",
         "id": "2h8lta"
       }
     ],
@@ -3667,7 +3667,7 @@ const ppdPfriM2 = {
       {
         "sentence": "IV. zasjedanje ZAVNOH-a održano je u Zagrebu 1945., a I. u _______.",
         "answer": "Otočcu",
-        "hint": "Dopuna.",
+        "hint": "grad u Lici",
         "id": "ex2kf0"
       }
     ],
@@ -3849,7 +3849,7 @@ const ppdPfriM2 = {
       {
         "sentence": "Deklaraciju o proglašenju suverene i samostalne RH Sabor donosi 25. lipnja _______.",
         "answer": "1991.",
-        "hint": "Dopuna.",
+        "hint": "godina referenduma o samostalnosti",
         "id": "8f1dre"
       }
     ],
@@ -3952,7 +3952,7 @@ const ppdPfriM2 = {
       {
         "sentence": "Hrvatska je članica EU od 1. srpnja _______.",
         "answer": "2013.",
-        "hint": "Dopuna.",
+        "hint": "godina pristupanja",
         "id": "na2t57"
       }
     ],

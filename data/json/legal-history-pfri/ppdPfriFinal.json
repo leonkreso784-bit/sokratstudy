@@ -676,7 +676,7 @@
       {
         "sentence": "Najviši sudac u Babilonu je _______.",
         "answer": "kralj",
-        "hint": "Dopuna.",
+        "hint": "vladar",
         "id": "9d81rb"
       }
     ],
@@ -2229,7 +2229,7 @@
       {
         "sentence": "Atenski miraz zove se _______.",
         "answer": "proix",
-        "hint": "Dopuna.",
+        "hint": "grčki izraz",
         "id": "bpq9qo"
       }
     ],
@@ -3146,7 +3146,7 @@
       {
         "sentence": "Rotarijev edikt zapisan je godine _______.",
         "answer": "643.",
-        "hint": "Dopuna.",
+        "hint": "7. stoljeće",
         "id": "tu6tn1"
       }
     ],
@@ -3447,7 +3447,7 @@
       {
         "sentence": "Kneževa vojna pratnja u Kijevskoj Rusiji zvala se _______.",
         "answer": "družina",
-        "hint": "Dopuna.",
+        "hint": "ratnici oko kneza",
         "id": "piyhgf"
       }
     ],
@@ -3833,7 +3833,7 @@
       {
         "sentence": "Bizantski car nosi naslov _______ ili autokrator.",
         "answer": "basileus",
-        "hint": "Dopuna.",
+        "hint": "grčki naslov vladara",
         "id": "ye2ufx"
       },
       {
@@ -5946,7 +5946,7 @@
       {
         "sentence": "Oktobarska revolucija zbila se 1917., a Hitler postaje kancelar _______.",
         "answer": "1933.",
-        "hint": "Dopuna.",
+        "hint": "godina Zakona o ovlastima",
         "id": "64u754"
       }
     ],
@@ -6224,7 +6224,7 @@
       {
         "sentence": "Hrvatsku krunu 1102. preuzima ugarski kralj _______.",
         "answer": "Koloman",
-        "hint": "Dopuna.",
+        "hint": "dinastija Arpadovića",
         "id": "5x05uk"
       }
     ],
@@ -10423,7 +10423,7 @@
       {
         "sentence": "Napad Osovine na Jugoslaviju 1941. zove se _______ rat.",
         "answer": "travanjski",
-        "hint": "Dopuna.",
+        "hint": "po mjesecu napada",
         "id": "utrhf7"
       }
     ],
@@ -10809,13 +10809,13 @@
       {
         "sentence": "Sporazum Tito–Šubašić sklopljen je 1944. na otoku _______.",
         "answer": "Visu",
-        "hint": "Dopuna.",
+        "hint": "jadranski otok",
         "id": "r6th1e"
       },
       {
         "sentence": "Ustav FNRJ donesen je 31. siječnja _______.",
         "answer": "1946.",
-        "hint": "Dopuna.",
+        "hint": "godina nakon završetka rata",
         "id": "2h8lta"
       }
     ],
@@ -11014,7 +11014,7 @@
       {
         "sentence": "IV. zasjedanje ZAVNOH-a održano je u Zagrebu 1945., a I. u _______.",
         "answer": "Otočcu",
-        "hint": "Dopuna.",
+        "hint": "grad u Lici",
         "id": "ex2kf0"
       }
     ],
@@ -11196,7 +11196,7 @@
       {
         "sentence": "Deklaraciju o proglašenju suverene i samostalne RH Sabor donosi 25. lipnja _______.",
         "answer": "1991.",
-        "hint": "Dopuna.",
+        "hint": "godina referenduma o samostalnosti",
         "id": "8f1dre"
       }
     ],
@@ -11299,7 +11299,7 @@
       {
         "sentence": "Hrvatska je članica EU od 1. srpnja _______.",
         "answer": "2013.",
-        "hint": "Dopuna.",
+        "hint": "godina pristupanja",
         "id": "na2t57"
       }
     ],

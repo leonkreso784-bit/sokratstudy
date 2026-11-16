@@ -680,7 +680,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Najviši sudac u Babilonu je _______.",
         "answer": "kralj",
-        "hint": "Dopuna.",
+        "hint": "vladar",
         "id": "9d81rb"
       }
     ],
@@ -2233,7 +2233,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Atenski miraz zove se _______.",
         "answer": "proix",
-        "hint": "Dopuna.",
+        "hint": "grčki izraz",
         "id": "bpq9qo"
       }
     ],
@@ -3150,7 +3150,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Rotarijev edikt zapisan je godine _______.",
         "answer": "643.",
-        "hint": "Dopuna.",
+        "hint": "7. stoljeće",
         "id": "tu6tn1"
       }
     ],
@@ -3451,7 +3451,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Kneževa vojna pratnja u Kijevskoj Rusiji zvala se _______.",
         "answer": "družina",
-        "hint": "Dopuna.",
+        "hint": "ratnici oko kneza",
         "id": "piyhgf"
       }
     ],
@@ -3837,7 +3837,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Bizantski car nosi naslov _______ ili autokrator.",
         "answer": "basileus",
-        "hint": "Dopuna.",
+        "hint": "grčki naslov vladara",
         "id": "ye2ufx"
       },
       {
@@ -5950,7 +5950,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Oktobarska revolucija zbila se 1917., a Hitler postaje kancelar _______.",
         "answer": "1933.",
-        "hint": "Dopuna.",
+        "hint": "godina Zakona o ovlastima",
         "id": "64u754"
       }
     ],
@@ -6228,7 +6228,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Hrvatsku krunu 1102. preuzima ugarski kralj _______.",
         "answer": "Koloman",
-        "hint": "Dopuna.",
+        "hint": "dinastija Arpadovića",
         "id": "5x05uk"
       }
     ],
