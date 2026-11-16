@@ -468,7 +468,7 @@ const ppdPfriM1 = {
         "id": "vpnwzz"
       },
       {
-        "question": "Dopuna: kako je uređena državna vlast u Babilonu?",
+        "question": "Kako je uređena državna vlast u Babilonu?",
         "answer": "Nasljedni kralj je vrhovni vojni zapovjednik, zakonodavac i najviši sudac; upravu vode činovnici i upravitelji gradova, a značajni su i hramovi.",
         "explanation": "Dopuna. Najpoznatiji vladar: Hamurabi.",
         "id": "if5dz2"
@@ -1743,7 +1743,7 @@ const ppdPfriM1 = {
         "id": "lmokl1"
       },
       {
-        "question": "Dopuna: što je učinio Efijalt?",
+        "question": "Što je učinio Efijalt?",
         "answer": "Oko 462. pr. n. e. oduzeo je Areopagu političke ovlasti i nadzor nad službenicima; moć prelazi na Ekleziju, Bulu i Heliaju.",
         "explanation": "Dopuna. Prethodi Periklu.",
         "id": "u5ia0s"
@@ -2021,7 +2021,7 @@ const ppdPfriM1 = {
         "id": "2e1l6k"
       },
       {
-        "question": "Dopuna: kako se sklapa brak u Ateni?",
+        "question": "Kako se sklapa brak u Ateni?",
         "answer": "Monogaman brak; djevojku zaručuje otac ili skrbnik (kyrios) uz miraz (proix); muž može otpustiti ženu.",
         "explanation": "Dopuna.",
         "id": "vfchgc"
@@ -2582,7 +2582,7 @@ const ppdPfriM1 = {
         "id": "2rvvvc"
       },
       {
-        "question": "Dopuna: kako se nasljeđuje u Franačkoj?",
+        "question": "Kako se nasljeđuje u Franačkoj?",
         "answer": "Salijsku zemlju (terra salica) ne nasljeđuju žene; žena je pod mundiumom muža, od kojeg dobiva jutarnji dar.",
         "explanation": "Dopuna.",
         "id": "rq3wzg"
@@ -2916,7 +2916,7 @@ const ppdPfriM1 = {
         "id": "qr9gnd"
       },
       {
-        "question": "Dopuna: koji je glavni langobardski zakonik?",
+        "question": "Koji je glavni langobardski zakonik?",
         "answer": "Rotarijev edikt (643.) – prvi zapis langobardskog običajnog prava.",
         "explanation": "Dopuna.",
         "id": "63lcme"
@@ -3239,7 +3239,7 @@ const ppdPfriM1 = {
         "id": "15pqry"
       },
       {
-        "question": "Dopuna: koji su državni organi Kijevske Rusije?",
+        "question": "Koji su državni organi Kijevske Rusije?",
         "answer": "Knez na čelu, uz njega družina (pratnja i savjetnici) i veče (narodna skupština).",
         "explanation": "Dopuna.",
         "id": "phxnkc"
@@ -3764,24 +3764,24 @@ const ppdPfriM1 = {
     "id": "66a6a9"
   },
   "mi1Bizant": {
-    "name": "MI1 · Bizant: državno uređenje (dopuna)",
+    "name": "MI1 · Bizant: državno uređenje",
     "icon": "fa-church",
     "color": "#0f766e",
     "flashcards": [
       {
-        "question": "Dopuna: kakav je položaj bizantskog cara?",
+        "question": "Kakav je položaj bizantskog cara?",
         "answer": "Apsolutni vladar po milosti Božjoj (basileus, autokrator): zakonodavac, vrhovni sudac i zapovjednik vojske, zaštitnik Crkve.",
         "explanation": "Dopuna.",
         "id": "79pn3t"
       },
       {
-        "question": "Dopuna: što je tema (thema) u Bizantu?",
+        "question": "Što je tema (thema) u Bizantu?",
         "answer": "Pokrajina (od 7. st.) kojom upravlja strateg s vojnom i civilnom vlašću; zamjenjuje ranije prefekture.",
         "explanation": "Dopuna.",
         "id": "6kv3n4"
       },
       {
-        "question": "Dopuna: kakva je uloga senata u Bizantu?",
+        "question": "Kakva je uloga senata u Bizantu?",
         "answer": "Zadržava ugled i savjetodavnu ulogu, ali bez stvarne moći uz apsolutnog cara.",
         "explanation": "Dopuna.",
         "id": "8duy15"
@@ -5477,7 +5477,7 @@ const ppdPfriM1 = {
         "id": "7bcspc"
       },
       {
-        "question": "Dopuna: što su Konzulstvo i I. carstvo?",
+        "question": "Što su Konzulstvo i I. carstvo?",
         "answer": "Napoleon državnim udarom 1799. uspostavlja Konzulstvo, a 1804. proglašava se carem (I. carstvo); iste godine donesen je Code civil.",
         "explanation": "Dopuna.",
         "id": "uvt5dd"
@@ -5760,7 +5760,7 @@ const ppdPfriM1 = {
         "id": "zp4aws"
       },
       {
-        "question": "Dopuna: koje su godine ključne za Weimar i Hitlera?",
+        "question": "Koje su godine ključne za Weimar i Hitlera?",
         "answer": "Weimarski ustav 1919.; Hitler kancelar 1933. i Zakon o ovlastima (23. 3. 1933.) kojim se ruši ustavnost.",
         "explanation": "Dopuna.",
         "id": "6lk222"
@@ -6027,7 +6027,7 @@ const ppdPfriM1 = {
         "id": "i0iug7"
       },
       {
-        "question": "Dopuna: što je 1102. godine?",
+        "question": "Što je 1102. godine?",
         "answer": "Ugarski kralj Koloman preuzima hrvatsku krunu; počinje Hrvatsko-ugarsko kraljevstvo u personalnoj uniji (predaja: Pacta conventa).",
         "explanation": "Dopuna.",
         "id": "khla41"

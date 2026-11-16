@@ -2908,7 +2908,7 @@ const ppdPfriM2 = {
         "id": "3dkauy"
       },
       {
-        "question": "Dopuna: kako se raspada Kraljevina Jugoslavija 1941.?",
+        "question": "Kako se raspada Kraljevina Jugoslavija 1941.?",
         "answer": "Travanjski rat (6. 4. 1941.) i raspad države; NDH proglašena 10. 4. 1941.; Rimski ugovori 18. 5. 1941. ustupaju Italiji dio Dalmacije.",
         "explanation": "Dopuna. Banovina: 26. 8. 1939.",
         "id": "la2tti"
@@ -3288,13 +3288,13 @@ const ppdPfriM2 = {
         "id": "1v0kpf"
       },
       {
-        "question": "Dopuna: što su sporazumi Tito–Šubašić?",
+        "question": "Što su sporazumi Tito–Šubašić?",
         "answer": "Dogovori na Visu (16. 6. 1944.) i u Beogradu (1. 11. 1944.) o zajedničkoj vladi i Namjesništvu umjesto kralja.",
         "explanation": "Dopuna.",
         "id": "yp35vd"
       },
       {
-        "question": "Dopuna: ključni datumi 1945.–1946.?",
+        "question": "Ključni datumi 1945.–1946.?",
         "answer": "Privremena vlada 7. 3. 1945.; izbori 11. 11. 1945.; Deklaracija o FNRJ 29. 11. 1945.; Ustav FNRJ 31. 1. 1946.",
         "explanation": "Dopuna.",
         "id": "yzvais"
@@ -3521,7 +3521,7 @@ const ppdPfriM2 = {
         "id": "r3m7sq"
       },
       {
-        "question": "Dopuna: gdje i kada su zasjedanja ZAVNOH-a?",
+        "question": "Gdje i kada su zasjedanja ZAVNOH-a?",
         "answer": "I. Otočac 13. 6. 1943.; II. Plaški 12.–15. 10. 1943.; III. Topusko 8.–9. 5. 1944.; IV. Zagreb 24.–25. 7. 1945.",
         "explanation": "Dopuna.",
         "id": "q7srg4"
@@ -3861,7 +3861,7 @@ const ppdPfriM2 = {
     "id": "gxo84a"
   },
   "europskeIntegracije": {
-    "name": "Povijest europskih integracija (dopuna)",
+    "name": "Povijest europskih integracija",
     "icon": "fa-earth-europe",
     "color": "#0369a1",
     "flashcards": [
