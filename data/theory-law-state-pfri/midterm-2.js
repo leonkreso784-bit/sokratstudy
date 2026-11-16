@@ -1,0 +1,5315 @@
+// Teorija prava i države (PFRI) — M2 (završni): pravna norma, pravni odnos, primjena i sistematizacija prava
+// Kartice <=200 znakova, detalj u learn.
+
+const tpdPfriM2 = {
+  "strukturaNormeDelikt": {
+    "name": "Struktura pravne norme, delikt, odgovornost i sankcija",
+    "icon": "fa-diagram-project",
+    "color": "#0f766e",
+    "flashcards": [
+      {
+        "question": "Koja su četiri značenjska dijela pravne norme?",
+        "answer": "Hipoteza, traženje, određenje delikta i sankcija.",
+        "explanation": "Osnovna struktura pravne norme.",
+        "id": "un1cwc"
+      },
+      {
+        "question": "Što je sadržaj hipoteze?",
+        "answer": "Adresati (subjekti kojima je norma upućena) i situacija u kojoj se moraju naći da bi se na njih primijenilo traženje norme.",
+        "explanation": "Tko i kada.",
+        "id": "e7z1kd"
+      },
+      {
+        "question": "Što je sadržaj traženja?",
+        "answer": "Pravna obveza na određenu radnju (činjenje, nečinjenje, propuštanje) jednih subjekata i pravno ovlaštenje drugih na tu radnju.",
+        "explanation": "Obveza + ovlaštenje.",
+        "id": "0zbmry"
+      },
+      {
+        "question": "Što je sadržaj određenja delikta?",
+        "answer": "Odredba neizvršenja pravne obveze, tj. radnje suprotne obveznoj ili zabranjene radnje, koja je uvjet za primjenu sankcije.",
+        "explanation": "Sekundarna hipoteza.",
+        "id": "ppwuo0"
+      },
+      {
+        "question": "Što je sadržaj sankcije?",
+        "answer": "Nadležnost (obveza i ovlast) državnog organa da subjekta obveze prisili na izvršenje obveze ili mu izrekne kaznu za delikt.",
+        "explanation": "Posljedica delikta.",
+        "id": "nxul2w"
+      },
+      {
+        "question": "Sinonimi izraza hipoteza i delikt?",
+        "answer": "Hipoteza = primarna hipoteza; delikt = sekundarna hipoteza.",
+        "explanation": "Dvije hipoteze.",
+        "id": "p3fqkh"
+      },
+      {
+        "question": "Što čini primarnu, a što sekundarnu normu i kome su upućene?",
+        "answer": "Primarna: hipoteza + traženje, upućena stanovništvu i organima. Sekundarna: delikt + sankcija, upućena samo organima nadležnim za sankciju.",
+        "explanation": "Dva dijela norme.",
+        "id": "4e45cj"
+      },
+      {
+        "question": "Što je delikt u objektivnom smislu?",
+        "answer": "Protupravna (pravno zabranjena) radnja ili njezina posljedica, bez obzira je li svjesna i koliko.",
+        "explanation": "Objektivna odgovornost.",
+        "id": "bfu6a5"
+      },
+      {
+        "question": "Što je delikt u subjektivnom smislu?",
+        "answer": "Skrivljena protupravna radnja ili njezina posljedica.",
+        "explanation": "Subjektivna odgovornost – uz krivnju.",
+        "id": "4t2lw7"
+      },
+      {
+        "question": "Razlika objektivne i subjektivne odgovornosti?",
+        "answer": "Objektivna je odgovornost za protupravnu radnju bez obzira na krivnju; subjektivna je odgovornost za skrivljenu protupravnu radnju.",
+        "explanation": "Krivnja kao razlika.",
+        "id": "f7yrgj"
+      },
+      {
+        "question": "Razlozi isključenja protupravnosti?",
+        "answer": "Slučaj (casus), zabluda (error), viša sila (vis maior), nužna obrana, krajnja nužda i činjenje štete uz pristanak oštećenog.",
+        "explanation": "Šest razloga.",
+        "id": "8x2d71"
+      },
+      {
+        "question": "Što je namjera (dolus)?",
+        "answer": "Znanje (kognitivna sastojnica) i htijenje (volitivna sastojnica) radnje.",
+        "explanation": "Dvije sastojnice.",
+        "id": "wumsgk"
+      },
+      {
+        "question": "Maksima o pretpostavljenoj svijesti o protupravnosti?",
+        "answer": "Nepoznavanje prava ne opravdava – ignorantia juris nocet.",
+        "explanation": "Svijest o protupravnosti se pretpostavlja.",
+        "id": "63y3jw"
+      },
+      {
+        "question": "Što je pravna (kaznena) odgovornost?",
+        "answer": "Pravni položaj subjekta koji je učinio delikt (protupravnu radnju s krivnjom, ili kod objektivne odgovornosti bez krivnje) i zbog toga treba biti kažnjen prema sankciji norme.",
+        "explanation": "Posljedica delikta.",
+        "id": "yxxe92"
+      },
+      {
+        "question": "Individualna i kolektivna odgovornost?",
+        "answer": "Individualna: kažnjava se samo počinitelj. Kolektivna: kažnjavaju se i osobe povezane s počiniteljem krvno, etnički ili drugačije.",
+        "explanation": "Suprotne odgovornosti.",
+        "id": "x5j6wz"
+      },
+      {
+        "question": "Što je tužba?",
+        "answer": "Tvrdnja jednog subjekta (privatnog ili državnog odvjetnika) da je drugi učinio delikt određen općom normom i zahtjev da ga se kazni prema sankciji te norme.",
+        "explanation": "Pokreće postupak.",
+        "id": "tjbl0b"
+      },
+      {
+        "question": "Što je kazna i koje su joj svrhe?",
+        "answer": "Zlo, fizičko i psihičko, nanijeto počinitelju delikta. Svrhe: osveta, uklanjanje prekršitelja, zastrašivanje drugih i promjena ponašanja kažnjenog.",
+        "explanation": "Četiri svrhe.",
+        "id": "vnml00"
+      },
+      {
+        "question": "Što je lex imperfecta?",
+        "answer": "Nesavršeni zakon, tj. norma bez sankcije.",
+        "explanation": "Latinski naziv.",
+        "id": "ce1hbg"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koji NIJE značenjski dio pravne norme?",
+        "options": [
+          "presuda",
+          "hipoteza",
+          "traženje",
+          "sankcija"
+        ],
+        "correct": 0,
+        "id": "su9j0b"
+      },
+      {
+        "question": "Hipoteza pravne norme određuje:",
+        "options": [
+          "radnju koju je adresatu zabranjeno činiti i s kojom se krši obveza",
+          "kaznu koja se izriče počinitelju zbog povrede obveze",
+          "postupak ostvarenja sankcije pred nadležnim sudom",
+          "adresate i situaciju u kojoj se na njih primjenjuje traženje"
+        ],
+        "correct": 3,
+        "id": "d0co7d"
+      },
+      {
+        "question": "Traženje pravne norme sadrži:",
+        "options": [
+          "samo opis kazne koja se izriče počinitelju delikta",
+          "pravnu obvezu jednih i pravno ovlaštenje drugih subjekata",
+          "samo popis adresata kojima je norma upućena",
+          "samo odredbu o nadležnosti suda koji izriče sankciju"
+        ],
+        "correct": 1,
+        "id": "sl3n0v"
+      },
+      {
+        "question": "Sekundarna hipoteza norme je:",
+        "options": [
+          "hipoteza u užem smislu",
+          "određenje delikta",
+          "traženje norme",
+          "sankcija norme"
+        ],
+        "correct": 1,
+        "id": "7a26ss"
+      },
+      {
+        "question": "Sekundarna pravna norma upućena je:",
+        "options": [
+          "svim stanovnicima i državnim organima podjednako",
+          "samo počinitelju delikta koji je povrijedio obvezu",
+          "samo pravnim osobama privatnog prava i udrugama",
+          "državnim organima nadležnim za određivanje sankcije"
+        ],
+        "correct": 3,
+        "id": "30wgga"
+      },
+      {
+        "question": "Primarna pravna norma sastoji se od:",
+        "options": [
+          "hipoteze i traženja",
+          "delikta i sankcije",
+          "traženja i sankcije",
+          "hipoteze i delikta"
+        ],
+        "correct": 0,
+        "id": "1yf2ua"
+      },
+      {
+        "question": "Delikt u objektivnom smislu je:",
+        "options": [
+          "samo skrivljena protupravna radnja uz postojanje krivnje",
+          "samo radnja koja je počinjena s namjerom da se šteti",
+          "protupravna radnja bez obzira na svijest o njoj",
+          "samo radnja koja je izazvala imovinsku štetu drugome"
+        ],
+        "correct": 2,
+        "id": "8q3xam"
+      },
+      {
+        "question": "Subjektivna odgovornost postoji za:",
+        "options": [
+          "svaku protupravnu radnju bez obzira na krivnju",
+          "samo radnju počinjenu u nuždi",
+          "samo radnju počinjenu u zabludi",
+          "skrivljenu protupravnu radnju"
+        ],
+        "correct": 3,
+        "id": "zqvlg0"
+      },
+      {
+        "question": "Koji NIJE razlog isključenja protupravnosti?",
+        "options": [
+          "viša sila (vis maior)",
+          "namjera počinitelja",
+          "nužna obrana od napada",
+          "krajnja nužda uz opasnost"
+        ],
+        "correct": 1,
+        "id": "0nbdy8"
+      },
+      {
+        "question": "Namjera (dolus) sastoji se od:",
+        "options": [
+          "znanja i nehaja za posljedicu",
+          "htijenja i nepažnje pri radnji",
+          "znanja i htijenja radnje",
+          "nepažnje i nemara pri radnji"
+        ],
+        "correct": 2,
+        "id": "3fwaun"
+      },
+      {
+        "question": "Ignorantia juris nocet znači:",
+        "options": [
+          "nepoznavanje prava ne opravdava",
+          "pravo štiti one koji ga ne poznaju",
+          "nema kazne bez zakona",
+          "sudac poznaje pravo po službenoj dužnosti"
+        ],
+        "correct": 0,
+        "id": "64hqel"
+      },
+      {
+        "question": "Kolektivna odgovornost znači da se kažnjavaju:",
+        "options": [
+          "i osobe povezane s počiniteljem krvno ili etnički",
+          "isključivo osoba koja je počinila delikt",
+          "isključivo državni službenici koji su sudjelovali u deliktu",
+          "samo pravne osobe privatnog prava koje su sudjelovale"
+        ],
+        "correct": 0,
+        "id": "ww5ljq"
+      },
+      {
+        "question": "Koja NIJE svrha kazne?",
+        "options": [
+          "osveta",
+          "zastrašivanje drugih osoba",
+          "naknada štete oštećeniku",
+          "promjena ponašanja kažnjenog"
+        ],
+        "correct": 2,
+        "id": "pw0vae"
+      },
+      {
+        "question": "Nesavršeni zakon (lex imperfecta) je norma:",
+        "options": [
+          "bez hipoteze",
+          "bez sankcije",
+          "bez traženja",
+          "bez adresata"
+        ],
+        "correct": 1,
+        "id": "jo0wzv"
+      },
+      {
+        "question": "Tužba je:",
+        "options": [
+          "odluka suda o osnovanosti zahtjeva jedne od stranaka u sporu",
+          "pravni lijek kojim se pobija pravomoćna presuda suda",
+          "izjava ovlaštenika o odricanju od svog subjektivnog prava",
+          "tvrdnja da je drugi učinio delikt i zahtjev da ga se kazni"
+        ],
+        "correct": 3,
+        "id": "c35f8y"
+      },
+      {
+        "question": "Apstraktna određenja delikata i sankcija postavljaju se:",
+        "options": [
+          "presudama u pojedinom slučaju",
+          "općim pravnim normama",
+          "ugovorima među strankama",
+          "upravnim rješenjima"
+        ],
+        "correct": 1,
+        "id": "uj4oo0"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Četiri dijela pravne norme su hipoteza, traženje, određenje delikta i _______.",
+        "answer": "sankcija",
+        "hint": "posljedica delikta",
+        "id": "2jwj4f"
+      },
+      {
+        "sentence": "Dio pravne norme koji određuje adresate i situaciju u kojoj se na njih primjenjuje traženje naziva se _______.",
+        "answer": "hipoteza",
+        "hint": "adresati i situacija",
+        "id": "eec406"
+      },
+      {
+        "sentence": "Delikt u _______ smislu je skrivljena protupravna radnja.",
+        "answer": "subjektivnom",
+        "hint": "uz krivnju",
+        "id": "kuawuj"
+      },
+      {
+        "sentence": "Namjera (dolus) je znanje i _______ radnje.",
+        "answer": "htijenje",
+        "hint": "volitivna sastojnica",
+        "id": "3zlijo"
+      },
+      {
+        "sentence": "Latinska maksima _______ juris nocet znači da nepoznavanje prava ne opravdava.",
+        "answer": "ignorantia",
+        "hint": "nepoznavanje",
+        "id": "w9jv1x"
+      },
+      {
+        "sentence": "_______ odgovornost postoji kada se kažnjava samo osoba koja je delikt počinila.",
+        "answer": "Individualna",
+        "hint": "suprotno kolektivnoj",
+        "id": "owyfsu"
+      },
+      {
+        "sentence": "Norma bez sankcije naziva se lex _______.",
+        "answer": "imperfecta",
+        "hint": "nesavršeni zakon",
+        "id": "s9pdoi"
+      }
+    ],
+    "learn": {
+      "title": "Struktura pravne norme, delikt, odgovornost i sankcija",
+      "content": "<h3>Struktura pravne norme</h3>\n<p>Četiri su osnovna značenjska dijela pravne norme: <strong>hipoteza, traženje, određenje delikta, sankcija</strong>.</p>\n<table><tr><th>Dio</th><th>Sadržaj</th></tr>\n<tr><td>hipoteza (primarna hipoteza)</td><td>adresati (stanovnici, građani, državni organi, pravne osobe) kojima je norma upućena i situacija u kojoj se moraju naći da bi se na njih primijenilo traženje</td></tr>\n<tr><td>traženje</td><td>pravna obveza na određenu radnju (činjenje, nečinjenje, propuštanje) jednih subjekata i pravno ovlaštenje na tu radnju drugih subjekata</td></tr>\n<tr><td>određenje delikta (sekundarna hipoteza)</td><td>odredba neizvršenja obveze, tj. radnje suprotne obveznoj ili zabranjene radnje, uvjet za primjenu sankcije</td></tr>\n<tr><td>sankcija</td><td>nadležnost (obveza i ovlast) državnog organa da subjekta obveze prisili na izvršenje obveze ili mu izrekne kaznu za delikt</td></tr></table>\n<p><strong>Primarna pravna norma</strong> = hipoteza + traženje; upućena je stanovništvu i državnim organima. <strong>Sekundarna pravna norma</strong> = određenje delikta + sankcija; upućena je samo državnim organima nadležnim za određivanje sankcije. <em>Napomena:</em> izrazi primarna i sekundarna norma ovdje označuju dijelove strukture jedne norme; u sistematizaciji prava (kategorija o pravnim područjima) isti se izrazi rabe u drugom značenju, za norme osnovnih odnosa i norme stvaranja i primjene prava.</p>\n<h3>Delikt: protupravna radnja i krivnja</h3>\n<ul>\n<li><strong>Delikt u objektivnom smislu</strong> – protupravna (pravno zabranjena) radnja ili posljedica radnje, bez obzira na to je li svjesna i koliko. Odgovornost za nju je <strong>objektivna odgovornost</strong>.</li>\n<li><strong>Delikt u subjektivnom smislu</strong> – skrivljena protupravna radnja ili posljedica. Odgovornost za nju je <strong>subjektivna odgovornost</strong>.</li>\n</ul>\n<p><strong>Razlozi isključenja protupravnosti:</strong> slučaj (<em>casus</em>), zabluda (<em>error</em>), viša sila (<em>vis maior</em>), nužna obrana, krajnja nužda, činjenje štete uz pristanak oštećenog.</p>\n<p><strong>Namjera (<em>dolus</em>)</strong> je znanje (kognitivna sastojnica) i htijenje (volitivna sastojnica) radnje. <em>Dopuna:</em> uz namjeru, krivnja se javlja i kao nehaj (<em>culpa</em>), kada počinitelj ne postupa s pažnjom koja se od njega očekuje.</p>\n<p>Svijest o protupravnosti se pretpostavlja: <strong>nepoznavanje prava ne opravdava</strong> – <em>ignorantia juris nocet</em>.</p>\n<h3>Odgovornost, sankcija i kazne</h3>\n<p><strong>Pravna odgovornost</strong> (u užem smislu kaznena) je pravni položaj subjekta koji je učinio delikt, tj. protupravnu radnju s krivnjom (ili, kod objektivne odgovornosti, bez krivnje) i koji zbog toga treba biti kažnjen onako kako određuje sankcija pravne norme.</p>\n<ul><li><strong>Individualna odgovornost</strong> – za delikt se kažnjava isključivo osoba koja ga je počinila.</li><li><strong>Kolektivna odgovornost</strong> – kažnjavaju se i osobe povezane s počiniteljem krvno, etnički ili drugačije.</li></ul>\n<p>Apstraktna određenja delikata i sankcija postavljaju se <strong>općim pravnim normama</strong>. <strong>Tužba</strong> je tvrdnja jednog subjekta (privatnog subjekta ili državnog odvjetnika) da je drugi subjekt učinio delikt određen općom normom i zahtjev da ga se zbog toga kazni onako kako propisuje sankcija opće norme.</p>\n<p><strong>Kazna</strong> je zlo, fizičko i psihičko, što se nanosi subjektu koji je počinio delikt (u pravu, moralu i običaju). Glavne svrhe: <strong>osveta; uklanjanje prekršitelja; zastrašivanje drugih osoba; promjena ponašanja kažnjene osobe</strong>.</p>\n<p><strong>Nesavršeni zakon</strong> (<em>lex imperfecta</em>) je norma bez sankcije.</p>",
+      "id": "q3rkcu"
+    },
+    "id": "no6s5z"
+  },
+  "vrsteNormiOdredbe": {
+    "name": "Pravne odredbe i vrste pravnih normi",
+    "icon": "fa-list-check",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Koje vrste znakova izražavaju pravne norme?",
+        "answer": "Jezični (pisani i usmeni jezik) i nejezični znakovi (svjetlo, boje, likovi, zvukovi).",
+        "explanation": "Primjer: semafor, sirena, prometni znak.",
+        "id": "3i0deb"
+      },
+      {
+        "question": "Odnos pravne norme i pravne odredbe?",
+        "answer": "Jedna norma može biti izražena jednom odredbom ili, češće, s dvije ili više odredaba.",
+        "explanation": "Odredba je jezični izraz norme.",
+        "id": "toexr3"
+      },
+      {
+        "question": "Zašto se određenje delikta oblikuje izričito?",
+        "answer": "Da primjenjivači svojim slobodnijim tumačenjem ne bi proglasili deliktom radnju koja to nije.",
+        "explanation": "Zaštita od proširenja kažnjivosti.",
+        "id": "laviky"
+      },
+      {
+        "question": "Glavna mjerila razlikovanja pravnih normi?",
+        "answer": "Tvorci, državne djelatnosti i organi, određenost adresata, teritorijalno važenje, vrsta društvenih odnosa i mjera slobode adresata.",
+        "explanation": "Šest mjerila.",
+        "id": "4ig0ye"
+      },
+      {
+        "question": "Vrste normi po subjektima koji ih stvaraju?",
+        "answer": "Državne pravne norme, pravne norme drugih organizacija i pravne norme građana.",
+        "explanation": "Tri vrste.",
+        "id": "yanrbv"
+      },
+      {
+        "question": "Vrste državnih normi po djelatnostima i organima?",
+        "answer": "Ustavne, zakonodavne, norme šefa države, vladine, sudske i upravne.",
+        "explanation": "Šest vrsta.",
+        "id": "71f4zi"
+      },
+      {
+        "question": "Vrste normi po određenosti adresata?",
+        "answer": "Opće i individualne; podvrsta općih normi su pravna načela.",
+        "explanation": "Opće – individualne.",
+        "id": "fg9aut"
+      },
+      {
+        "question": "Što je pravno načelo?",
+        "answer": "Najapstraktnije i temeljno pravilo pravnog sustava koje iskazuje osnovne vrijednosti kojima sustav služi.",
+        "explanation": "Primjeri: zakonitost, pravednost.",
+        "id": "qw0jpi"
+      },
+      {
+        "question": "Koja su neka pravna načela?",
+        "answer": "Zakonitost, narodna i nacionalna suverenost, neovisnost sudaca, javnost rada, pravednost, pravna sigurnost, autonomija volje, ignorantia juris non excusat, oficijelnost i akuzatornost.",
+        "explanation": "Primjeri načela.",
+        "id": "cbvg5z"
+      },
+      {
+        "question": "Vrste normi po teritorijalnom važenju?",
+        "answer": "Generalne (cijeli državni teritorij) i partikularne (dio državnog teritorija).",
+        "explanation": "Dvije vrste.",
+        "id": "rm5iw9"
+      },
+      {
+        "question": "Vrste normi po društvenim odnosima?",
+        "answer": "Ustavne, upravne, financijske, građanske, obiteljske, trgovačke, radne, socijalne, kaznene.",
+        "explanation": "Pravne grane.",
+        "id": "oe5v38"
+      },
+      {
+        "question": "Vrste odredaba po deontičkim operatorima?",
+        "answer": "Naređujuće, zabranjujuće i ovlašćujuće.",
+        "explanation": "Način jezičnog oblikovanja.",
+        "id": "ql8ugg"
+      },
+      {
+        "question": "Vrste normi po mjeri slobode adresata?",
+        "answer": "Stroge (kogentne, striktne) i disjunktivne pravne norme.",
+        "explanation": "Mjera slobode.",
+        "id": "79aysp"
+      },
+      {
+        "question": "Što je stroga (kogentna) norma?",
+        "answer": "Norma koja obvezuje na jedno čvrsto određeno ponašanje koje normotvorac svakako hoće postići; adresat bira samo hoće li obvezu ispuniti ili počiniti delikt.",
+        "explanation": "Sinonimi: kogentna, striktna.",
+        "id": "168tcy"
+      },
+      {
+        "question": "Što je norma definicija?",
+        "answer": "Stroga pravna norma koja obvezuje da se određeni pojam upotrebljava onako kako je definiran.",
+        "explanation": "Vrsta stroge norme.",
+        "id": "h9lmup"
+      },
+      {
+        "question": "Koje su vrste disjunktivnih normi?",
+        "answer": "Alternativne, dispozitivne, norme s diskrecijskom ocjenom, s okvirno određenim elementima traženja i s okvirno određenim kaznama.",
+        "explanation": "Pet vrsta.",
+        "id": "8riht1"
+      },
+      {
+        "question": "Što je alternativna norma?",
+        "answer": "Disjunktivna norma s dvije ili više obveza ponašanja, a adresat je ovlašten i dužan izabrati i provesti jednu od njih.",
+        "explanation": "Primjer: izbor prezimena u braku.",
+        "id": "mou5cm"
+      },
+      {
+        "question": "Što je dispozitivna norma?",
+        "answer": "Disjunktivna norma s obvezom ponašanja, a adresat je ovlašten umjesto nje propisati sebi drugu obvezu.",
+        "explanation": "Primjer: rok isporuke koji se može ugovoriti drugačije.",
+        "id": "oq7bk6"
+      },
+      {
+        "question": "Što je norma s diskrecijskom ocjenom?",
+        "answer": "Disjunktivna norma koja organ obvezuje i ovlašćuje da unutar općeg okvira konkretno normira odnos prema svojoj procjeni javnog interesa.",
+        "explanation": "Slobodna ocjena organa.",
+        "id": "xjzqr8"
+      },
+      {
+        "question": "Norme s okvirno određenim traženjem i kaznama?",
+        "answer": "Traženje: adresat se ponaša unutar okvira (npr. kamata od 5 do 9 posto). Kazne: organ sankcije izriče sankciju unutar zakonom određenog okvira.",
+        "explanation": "Okvir umjesto točne mjere.",
+        "id": "h7yxua"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koja je podvrsta nejezičnih znakova koji izražavaju norme?",
+        "options": [
+          "boje, npr. semafor",
+          "pisani jezik, npr. zakon",
+          "usmeni jezik, npr. ugovor",
+          "pismo vladara, kao pisani jezik"
+        ],
+        "correct": 0,
+        "id": "dubkq6"
+      },
+      {
+        "question": "Usmeni ugovor primjer je:",
+        "options": [
+          "nejezičnog znaka koji izražava normu",
+          "pravnog načela sustava",
+          "pisanog normativnog akta",
+          "izražavanja norme usmenim jezikom"
+        ],
+        "correct": 3,
+        "id": "dckw0j"
+      },
+      {
+        "question": "Jedna pravna norma može biti izražena:",
+        "options": [
+          "isključivo jednom odredbom, bez iznimke",
+          "isključivo dvjema odredbama, bez iznimke",
+          "jednom ili s više pravnih odredaba",
+          "isključivo nejezičnim znakovima kao što je semafor"
+        ],
+        "correct": 2,
+        "id": "7dipwu"
+      },
+      {
+        "question": "Određenje delikta jezično se oblikuje izričito kako:",
+        "options": [
+          "bi norma bila što kraća i jednostavnija za pamćenje",
+          "bi se adresat lakše mogao izbjeći sankciju",
+          "primjenjivači tumačenjem ne bi proširili pojam delikta",
+          "bi norma mogla važiti na cijelom državnom teritoriju"
+        ],
+        "correct": 2,
+        "id": "q62q4d"
+      },
+      {
+        "question": "Koje NIJE mjerilo razlikovanja pravnih normi?",
+        "options": [
+          "subjekti koji pravne norme stvaraju",
+          "određenost adresata kojima su norme upućene",
+          "teritorijalno važenje normi",
+          "visina kazne koja je propisana za delikt"
+        ],
+        "correct": 3,
+        "id": "ezfcdg"
+      },
+      {
+        "question": "Po subjektima koji ih stvaraju norme su:",
+        "options": [
+          "državne, drugih organizacija i građana",
+          "generalne i partikularne po teritorijalnom važenju",
+          "stroge i disjunktivne po mjeri slobode adresata",
+          "opće i individualne po određenosti adresata"
+        ],
+        "correct": 0,
+        "id": "39t08r"
+      },
+      {
+        "question": "Koja NIJE vrsta državnih pravnih normi po organima?",
+        "options": [
+          "ustavne norme države i njezina ustava",
+          "norme međunarodnih organizacija",
+          "vladine norme koje donosi vlada",
+          "sudske norme koje donose sudovi"
+        ],
+        "correct": 1,
+        "id": "xjo3g8"
+      },
+      {
+        "question": "Podvrsta općih pravnih normi su:",
+        "options": [
+          "presude",
+          "upravna rješenja",
+          "pravna načela",
+          "ugovori"
+        ],
+        "correct": 2,
+        "id": "gv69np"
+      },
+      {
+        "question": "Pravno načelo je:",
+        "options": [
+          "najapstraktnije temeljno pravilo koje iskazuje vrijednosti sustava",
+          "pojedinačna odluka suda u konkretnom sporu među strankama",
+          "norma koja važi samo na jednom dijelu državnog teritorija",
+          "odredba bez normativnog sadržaja, samo ukrasni uvod zakona"
+        ],
+        "correct": 0,
+        "id": "e0pw5m"
+      },
+      {
+        "question": "Generalne pravne norme važe:",
+        "options": [
+          "samo na dijelu državnog teritorija",
+          "samo na teritoriju općine",
+          "samo u inozemstvu",
+          "na cijelom državnom teritoriju"
+        ],
+        "correct": 3,
+        "id": "q7ix3l"
+      },
+      {
+        "question": "Partikularne pravne norme važe:",
+        "options": [
+          "na cijelom državnom teritoriju",
+          "na dijelu državnog teritorija",
+          "samo za strance",
+          "samo za državne organe"
+        ],
+        "correct": 1,
+        "id": "lyksjq"
+      },
+      {
+        "question": "Koja NIJE vrsta pravnih odredaba po deontičkim operatorima?",
+        "options": [
+          "naređujuće",
+          "opisujuće",
+          "zabranjujuće",
+          "ovlašćujuće"
+        ],
+        "correct": 1,
+        "id": "qlzifb"
+      },
+      {
+        "question": "Stroga (kogentna) norma obvezuje na:",
+        "options": [
+          "izbor između više dopuštenih ponašanja",
+          "ponašanje po slobodnoj ocjeni organa",
+          "ponašanje koje stranke same dogovore",
+          "jedno čvrsto određeno ponašanje"
+        ],
+        "correct": 3,
+        "id": "honj4i"
+      },
+      {
+        "question": "Alternativna norma adresatu daje pravo i dužnost da:",
+        "options": [
+          "izabere i provede jednu od više propisanih obveza",
+          "sebi propiše drugu obvezu sporazumom",
+          "odluči prema vlastitoj procjeni javnog interesa",
+          "ponaša se isključivo prema jednoj obvezi"
+        ],
+        "correct": 0,
+        "id": "p9yrh0"
+      },
+      {
+        "question": "Dispozitivna norma je ona koja adresata ovlašćuje da:",
+        "options": [
+          "bira između više unaprijed propisanih obveza",
+          "odlučuje prema slobodnoj ocjeni javnog interesa",
+          "umjesto propisane obveze sporazumom izabere drugu",
+          "se ponaša isključivo prema jednoj obvezi"
+        ],
+        "correct": 2,
+        "id": "rh9hsx"
+      },
+      {
+        "question": "Norma da prodavač isporučuje robu u roku od 15 dana, ako se drugačije ne ugovori, je:",
+        "options": [
+          "alternativna norma",
+          "stroga norma",
+          "norma s diskrecijskom ocjenom",
+          "dispozitivna norma"
+        ],
+        "correct": 3,
+        "id": "8phlfy"
+      },
+      {
+        "question": "Norma koja ovlašćuje banke da traže kamatu od 5 do 9 posto je norma:",
+        "options": [
+          "s okvirno određenom kaznom za počinitelja delikta",
+          "s okvirno određenim elementima traženja",
+          "stroga (kogentna) norma bez ikakve slobode adresata",
+          "alternativna norma koja traži izbor između više obveza"
+        ],
+        "correct": 1,
+        "id": "06siqv"
+      },
+      {
+        "question": "Norma s diskrecijskom ocjenom daje slobodu:",
+        "options": [
+          "strankama da ugovorom izmijene sadržaj norme",
+          "adresatu da izabere jednu od više propisanih obveza",
+          "organu da prema javnom interesu konkretno normira odnos",
+          "sudu da normu uopće ne primijeni u pojedinom slučaju"
+        ],
+        "correct": 2,
+        "id": "wwbtgr"
+      },
+      {
+        "question": "Koja NIJE vrsta disjunktivnih normi?",
+        "options": [
+          "norma definicija",
+          "alternativna norma",
+          "dispozitivna norma",
+          "norma s okvirno određenim kaznama"
+        ],
+        "correct": 0,
+        "id": "506ljf"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Dvije su vrste znakova koji izražavaju norme: jezični i _______.",
+        "answer": "nejezični",
+        "hint": "svjetlo, boje, likovi, zvukovi",
+        "id": "f8alfj"
+      },
+      {
+        "sentence": "Podvrsta općih pravnih normi su pravna _______.",
+        "answer": "načela",
+        "hint": "temeljna pravila",
+        "id": "98cskb"
+      },
+      {
+        "sentence": "_______ norme važe na cijelom državnom teritoriju.",
+        "answer": "Generalne",
+        "hint": "suprotno partikularnim",
+        "id": "2dzdea"
+      },
+      {
+        "sentence": "Po mjeri slobode norme su stroge i _______.",
+        "answer": "disjunktivne",
+        "hint": "dvije vrste",
+        "id": "wc8pfp"
+      },
+      {
+        "sentence": "Stroga pravna norma naziva se još _______ norma.",
+        "answer": "kogentna",
+        "hint": "sinonim",
+        "id": "mo2iup"
+      },
+      {
+        "sentence": "_______ norma adresatu dopušta da sporazumom umjesto propisane obveze izabere drugu.",
+        "answer": "Dispozitivna",
+        "hint": "ugovorna sloboda",
+        "id": "lktw9g"
+      },
+      {
+        "sentence": "_______ norma obvezuje adresata da izabere i provede jednu od više propisanih obveza.",
+        "answer": "Alternativna",
+        "hint": "izbor",
+        "id": "t0kllq"
+      },
+      {
+        "sentence": "Među pravna načela ubraja se načelo _______, prema kojem akti moraju biti usklađeni s višim normama.",
+        "answer": "zakonitosti",
+        "hint": "legalitet",
+        "id": "40on07"
+      },
+      {
+        "sentence": "Norme po vrstama društvenih odnosa su ustavne, upravne, financijske, građanske, obiteljske, trgovačke, radne, socijalne i _______.",
+        "answer": "kaznene",
+        "hint": "zadnja vrsta",
+        "id": "3gv0fr"
+      }
+    ],
+    "learn": {
+      "title": "Pravne odredbe i vrste pravnih normi",
+      "content": "<h3>Pravne norme i pravne odredbe</h3>\n<p>Pravne norme izražavaju se <strong>znakovima</strong>:</p>\n<ul><li><strong>jezični</strong> znakovi: pisani jezik (pisani zakon) i usmeni jezik (usmeni ugovor);</li><li><strong>nejezični</strong> znakovi: svjetlo (svjetionik), boje (semafor), likovi (prometni znakovi), zvukovi (sirena).</li></ul>\n<p><strong>Pravna odredba</strong> je jezični izraz (rečenica) kojim je norma izražena. Jedna norma može biti izražena <em>jednom</em> odredbom ili, češće, <em>dvjema ili više</em> odredaba. Određenje delikta jezično se oblikuje <strong>uvijek izričito</strong> da primjenjivači svojim slobodnijim tumačenjem ne bi odredili da je delikt radnja koja to zapravo nije.</p>\n<h3>Mjerila razlikovanja pravnih normi</h3>\n<ol><li>subjekti koji stvaraju norme (državne, drugih organizacija, građana);</li><li>državne djelatnosti i organi koji stvaraju državne norme (ustavne, zakonodavne, norme šefa države, vladine, sudske, upravne);</li><li>određenost adresata (opće i individualne);</li><li>teritorijalno važenje (generalne i partikularne);</li><li>vrste društvenih odnosa koje usmjeravaju (ustavne, upravne, financijske, građanske, obiteljske, trgovačke, radne, socijalne, kaznene);</li><li>mjera slobode koju daju adresatima (stroge i disjunktivne).</li></ol>\n<p><strong>Pravno načelo</strong> je najapstraktnije i temeljno pravilo pravnog sustava koje iskazuje osnovne vrijednosti kojima sustav služi; podvrsta je općih normi. Primjeri: načelo zakonitosti; narodne i nacionalne suverenosti; neovisnosti, stalnosti i nepokretnosti sudaca; javnosti rada službenih osoba; pravednosti; pravne sigurnosti; autonomije volje; <em>ignorantia juris non excusat</em>; oficijelnosti i akuzatornosti.</p>\n<p>Po načinu jezičnog oblikovanja (<strong>deontički operatori</strong>) odredbe mogu biti: <strong>naređujuće, zabranjujuće, ovlašćujuće</strong>.</p>\n<h3>Stroge i disjunktivne norme</h3>\n<p><strong>Stroga (kogentna, striktna) norma</strong> obvezuje na jedno čvrsto određeno ponašanje koje normotvorac svakako hoće postići. Primjeri: obveza poštovanja života, tijela, slobode i imovine drugih; obveza plaćanja poreza; obveza vojne službe tamo gdje je propisana. Adresat nema izbor između dopuštenih ponašanja; ima samo <em>egzistencijalnu slobodu</em> izabrati hoće li obvezu ispuniti ili počiniti delikt. <strong>Norma definicija</strong> je stroga norma koja obvezuje da se pojam upotrebljava onako kako je definiran.</p>\n<table><tr><th>Disjunktivna norma</th><th>Obilježje</th><th>Primjer</th></tr>\n<tr><td>alternativna</td><td>dvije ili više obveza; adresat je ovlašten i dužan izabrati i provesti jednu</td><td>izbor prezimena u braku: zadržati svoje, uzeti prezime bračnog druga ili spojiti oba</td></tr>\n<tr><td>dispozitivna</td><td>jedna obveza; adresat smije sporazumom propisati sebi drugu</td><td>prodavač isporučuje robu u roku od 15 dana ako se ne ugovori drugačije</td></tr>\n<tr><td>s diskrecijskom (slobodnom) ocjenom</td><td>organ unutar općeg okvira konkretno normira odnos prema procjeni javnog interesa</td><td>policijska uprava odlučuje o dozvoli za oružje kad su ispunjeni uvjeti i postoji javni interes</td></tr>\n<tr><td>s okvirno određenim elementima traženja</td><td>adresat se ponaša unutar okvira određenog normom</td><td>banke smiju tražiti kamatu od 5 do 9 posto</td></tr>\n<tr><td>s okvirno određenim kaznama</td><td>organ sankcije izriče sankciju unutar okvira određenog normom</td><td>kazna zatvora u rasponu od najmanje do najveće mjere</td></tr></table>",
+      "id": "w4bx1s"
+    },
+    "id": "fh5zas"
+  },
+  "pravniAktiHijerarhija": {
+    "name": "Pravni akti, hijerarhija i načelo zakonitosti",
+    "icon": "fa-layer-group",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Dva glavna značenja izraza „pravni akt”?",
+        "answer": "Normativni pravni akt (tekst koji sadrži pravne norme) i pravna radnja (ljudska radnja koja ima pravne učinke).",
+        "explanation": "Dva značenja.",
+        "id": "b0hly5"
+      },
+      {
+        "question": "Što je normativni pravni akt?",
+        "answer": "Tekst koji sadrži jednu, više ili mnogo pravnih normi; sastoji se od odredbi u kojima su cjelovite norme ili češće pojedini elementi normi.",
+        "explanation": "Zakon, pravilnik, ustav…",
+        "id": "bsk0qp"
+      },
+      {
+        "question": "Glavne vrste normativnih pravnih akata?",
+        "answer": "Državni, drugih organizacija i građana; ustavni, zakonodavni…; materijalni i formalni; opći i pojedinačni; generalni i partikularni; viši i niži.",
+        "explanation": "Dioba po različitim mjerilima.",
+        "id": "t6qscm"
+      },
+      {
+        "question": "Što je pravna snaga akta ili norme?",
+        "answer": "Položaj nadređenosti ili podređenosti prema drugim aktima i normama u hijerarhijskoj ljestvici pravnog sustava.",
+        "explanation": "Rang akta.",
+        "id": "bjs30b"
+      },
+      {
+        "question": "O čemu ovisi hijerarhija pravnih akata?",
+        "answer": "O moći subjekata, državnih i društvenih, koji ih stvaraju.",
+        "explanation": "Jači tvorac – viši akt.",
+        "id": "1p0eek"
+      },
+      {
+        "question": "Uvjet učinkovitosti i opstanka pravnog sustava?",
+        "answer": "Da se na općim i višim aktima zasnivaju individualni i niži akti, koji više akte dopunjavaju i izvršavaju u konkretnim odnosima.",
+        "explanation": "Niži se temelje na višima.",
+        "id": "rgnd0v"
+      },
+      {
+        "question": "Koja dva izraza obuhvaćaju ustave, zakone, pravilnike, običaje?",
+        "answer": "Opći akti i propisi.",
+        "explanation": "Normativni pravni akti.",
+        "id": "6zoga2"
+      },
+      {
+        "question": "Što znači „formalni izvor prava”?",
+        "answer": "Opći normativni akti (propisi) kao jezične forme koje sadrže najviše norme, temelje sustava, iz kojih izviru svi niži opći i svi individualni akti.",
+        "explanation": "Slikoviti izraz.",
+        "id": "jfnqnm"
+      },
+      {
+        "question": "Što je načelo zakonitosti (legaliteta)?",
+        "answer": "Temeljna norma sustava koja traži da svi pravni akti budu formalno i materijalno usklađeni s višim normama koje reguliraju iste odnose, uz sankcije za nepoštivanje.",
+        "explanation": "Dvije dimenzije zakonitosti.",
+        "id": "wufeg4"
+      },
+      {
+        "question": "Što je formalna zakonitost?",
+        "answer": "Zahtjev da svaki pravni akt donese nadležni subjekt, po propisanom postupku i u propisanom obliku.",
+        "explanation": "Tko, kako, u kojem obliku.",
+        "id": "ljp6fe"
+      },
+      {
+        "question": "Što su proceduralni (formalni) pravni akti?",
+        "answer": "Normativni akti koji propisuju nadležnost, postupak i oblik pravnih akata.",
+        "explanation": "Uređuju formu.",
+        "id": "0d2wh3"
+      },
+      {
+        "question": "Što je materijalna (supstantivna) zakonitost?",
+        "answer": "Zahtjev da sadržaj nižeg pravnog akta bude sukladan sadržaju viših akata koji reguliraju istu vrstu odnosa.",
+        "explanation": "Sadržaj.",
+        "id": "9cj89r"
+      },
+      {
+        "question": "Što su materijalni (supstantivni) pravni akti?",
+        "answer": "Normativni akti koji propisuju sadržaj pravnih akata, uključujući elemente normi: hipoteze, traženja, opise delikata i sankcije.",
+        "explanation": "Uređuju sadržaj.",
+        "id": "1uz5yz"
+      },
+      {
+        "question": "Kada je pravni akt ništav?",
+        "answer": "Kada je teže nezakonit; posljedica je da su ništetne (bez pravne valjanosti) sve pravne posljedice akta od njegova nastanka.",
+        "explanation": "Učinak od početka (ex tunc).",
+        "id": "i363sx"
+      },
+      {
+        "question": "Kada je pravni akt oboriv (pobojan)?",
+        "answer": "Kada je lakše nezakonit; sve se pravne posljedice akta ukidaju od donošenja odluke o ukidanju (ex nunc), a ne od nastanka.",
+        "explanation": "Učinak od ukidanja (ex nunc).",
+        "id": "6p31og"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Normativni pravni akt je:",
+        "options": [
+          "tekst koji sadrži jednu ili više pravnih normi",
+          "ljudska radnja koja ima pravne učinke u praksi",
+          "pojedinačna odluka o konkretnom pravnom odnosu",
+          "samo sudska presuda u parničnom postupku pred sudom"
+        ],
+        "correct": 0,
+        "id": "dc5k4a"
+      },
+      {
+        "question": "Pravna radnja je:",
+        "options": [
+          "tekst koji sadrži jednu ili više pravnih normi",
+          "odredba o nadležnosti organa koji akt donosi",
+          "ljudska radnja koja ima pravne učinke",
+          "načelo pravnog sustava koje određuje temeljne vrijednosti"
+        ],
+        "correct": 2,
+        "id": "hbj09e"
+      },
+      {
+        "question": "Pravna snaga akta označava:",
+        "options": [
+          "broj osoba na koje se akt odnosi u pojedinom slučaju",
+          "njegov položaj nadređenosti ili podređenosti prema drugim aktima",
+          "vrijeme u kojem je akt stupio na snagu i postao obvezan",
+          "postupak kojim je akt donesen i objavljen u glasilu"
+        ],
+        "correct": 1,
+        "id": "cvrbcr"
+      },
+      {
+        "question": "Hijerarhija pravnih akata ovisi o:",
+        "options": [
+          "duljini teksta pojedinog akta",
+          "broju članaka u aktu",
+          "vremenu donošenja akta",
+          "moći subjekata koji ih stvaraju"
+        ],
+        "correct": 3,
+        "id": "lvxini"
+      },
+      {
+        "question": "Za učinkovitost pravnog sustava nužno je da individualni i niži akti:",
+        "options": [
+          "budu neovisni o općim aktima i o višim normama",
+          "budu zasnovani na općim i višim aktima",
+          "budu doneseni prije općih akata na koje se odnose",
+          "budu doneseni od samih stranaka u sporu"
+        ],
+        "correct": 1,
+        "id": "ywvre1"
+      },
+      {
+        "question": "Opći akti i propisi obuhvaćaju:",
+        "options": [
+          "ustave, zakone, pravilnike, kolektivne ugovore i običaje",
+          "samo presude i upravna rješenja u pojedinačnim slučajevima",
+          "samo ugovore među građanima u imovinskim odnosima",
+          "samo odluke međunarodnih organizacija i njihovih tijela"
+        ],
+        "correct": 0,
+        "id": "iwytdn"
+      },
+      {
+        "question": "„Formalni izvor prava” slikovito označava:",
+        "options": [
+          "postupak donošenja presuda u sudskim postupcima",
+          "materijalne uvjete pod kojima nastaje pravo u društvu",
+          "običaje koji su prethodili donošenju zakona u zajednici",
+          "opće normativne akte iz kojih izviru svi niži akti"
+        ],
+        "correct": 3,
+        "id": "hraqhr"
+      },
+      {
+        "question": "Načelo zakonitosti traži da pravni akti budu:",
+        "options": [
+          "doneseni isključivo od državnih organa, bez drugih subjekata",
+          "doneseni bez ikakvog propisanog postupka u hitnim slučajevima",
+          "formalno i materijalno usklađeni s višim normama",
+          "usklađeni isključivo s običajima zajednice u kojoj nastaju"
+        ],
+        "correct": 2,
+        "id": "f7kzch"
+      },
+      {
+        "question": "Formalna zakonitost zahtijeva da akt donese:",
+        "options": [
+          "bilo koji subjekt, ako je sadržaj akta pravedan prema adresatima",
+          "samo vlada države, u hitnom postupku kad se to zatraži",
+          "nadležni subjekt po propisanom postupku i u propisanom obliku",
+          "samo sud, u parničnom postupku između dviju stranaka"
+        ],
+        "correct": 2,
+        "id": "cwyeyn"
+      },
+      {
+        "question": "Materijalna zakonitost zahtijeva da:",
+        "options": [
+          "akt donese nadležni subjekt po propisanom postupku",
+          "akt bude objavljen u službenom glasilu države",
+          "akt bude donesen u roku koji je propisan višom normom",
+          "sadržaj nižeg akta bude sukladan sadržaju viših akata"
+        ],
+        "correct": 3,
+        "id": "x8arm3"
+      },
+      {
+        "question": "Proceduralni pravni akti propisuju:",
+        "options": [
+          "nadležnost, postupak i oblik pravnih akata",
+          "sadržaj hipoteza, traženja i sankcija pojedinih normi",
+          "kazne za počinitelje pojedinih delikata",
+          "prava i obveze stranaka iz sklopljenog ugovora"
+        ],
+        "correct": 0,
+        "id": "tq382v"
+      },
+      {
+        "question": "Materijalni pravni akti propisuju:",
+        "options": [
+          "nadležnost organa koji donose akte i način njihova izbora",
+          "sadržaj pravnih akata, uključujući hipoteze, traženja, delikte i sankcije",
+          "oblik u kojem se akti donose i postupak njihova donošenja",
+          "vrijeme stupanja akata na snagu i način njihove objave"
+        ],
+        "correct": 1,
+        "id": "b2rcs0"
+      },
+      {
+        "question": "Ništav pravni akt je onaj koji je:",
+        "options": [
+          "nezakonit u manjoj mjeri, a posljedice mu prestaju od ukidanja",
+          "zakonit, ali u praksi neučinkovit jer ga adresati ne poštuju",
+          "teže nezakonit, a posljedice mu se poništavaju od nastanka",
+          "donesen od nadležnog organa i u propisanom postupku"
+        ],
+        "correct": 2,
+        "id": "xhhm89"
+      },
+      {
+        "question": "Oboriv pravni akt:",
+        "options": [
+          "proizvodi učinke do donošenja odluke o ukidanju",
+          "nikada nije proizvodio nikakve pravne učinke prema adresatima",
+          "ne može se ukinuti ni na koji način u postupku",
+          "vrijedi samo za strane državljane na državnom teritoriju"
+        ],
+        "correct": 0,
+        "id": "ft6jks"
+      },
+      {
+        "question": "Koja NIJE podjela normativnih pravnih akata?",
+        "options": [
+          "na opće i pojedinačne akte po adresatima",
+          "na generalne i partikularne akte po teritoriju",
+          "na više i niže akte po pravnoj snazi",
+          "na akte s usmenim i pisanim naslovom"
+        ],
+        "correct": 3,
+        "id": "slrohc"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Pravni akt u značenju ljudskog ponašanja s pravnim učincima zove se pravna _______.",
+        "answer": "radnja",
+        "hint": "drugo značenje",
+        "id": "5dks7f"
+      },
+      {
+        "sentence": "_______ snaga je položaj akta u hijerarhijskoj ljestvici pravnog sustava.",
+        "answer": "Pravna",
+        "hint": "rang",
+        "id": "vep69a"
+      },
+      {
+        "sentence": "Opći akti nazivaju se i _______.",
+        "answer": "propisi",
+        "hint": "sinonim",
+        "id": "k4up99"
+      },
+      {
+        "sentence": "_______ zakonitost traži da akt donese nadležni subjekt po propisanom postupku i obliku.",
+        "answer": "Formalna",
+        "hint": "vanjska strana akta",
+        "id": "81rnlw"
+      },
+      {
+        "sentence": "_______ zakonitost traži da sadržaj nižeg akta bude sukladan višem.",
+        "answer": "Materijalna",
+        "hint": "sadržaj",
+        "id": "okw8hk"
+      },
+      {
+        "sentence": "Teže nezakonit akt je _______, a njegove posljedice otpadaju od samog nastanka akta.",
+        "answer": "ništav",
+        "hint": "učinak od početka",
+        "id": "p8ufu1"
+      },
+      {
+        "sentence": "Akt čije se posljedice ukidaju tek od odluke o ukidanju je _______.",
+        "answer": "oboriv",
+        "hint": "pobojan",
+        "id": "1i1pvb"
+      }
+    ],
+    "learn": {
+      "title": "Pravni akti, hijerarhija i načelo zakonitosti",
+      "content": "<h3>Pravni akt</h3>\n<p>Izraz „pravni akt” ima dva glavna značenja: <strong>normativni pravni akt</strong> (jezični oblik – tekst – koji sadrži pravne norme) i <strong>pravna radnja</strong> (ljudska radnja koja ima pravne učinke).</p>\n<p><strong>Normativni pravni akt</strong> je tekst koji sadrži jednu, više ili mnogo pravnih normi. Sastoji se od jedne, više ili mnogo rečenica – odredbi – u kojima su cjelovite pravne norme ili, u pravilu, pojedini elementi normi.</p>\n<p>Glavne vrste normativnih pravnih akata (po različitim mjerilima):</p>\n<ul><li>državni akti, akti drugih organizacija (pravnih osoba), akti građana (fizičkih osoba);</li><li>ustavni, zakonodavni, akti šefa države, vlade, upravni, sudski akti;</li><li>akti ustavnog, upravnog, financijskog, građanskog itd. prava;</li><li>akti materijalnog i formalnog (procesnog) prava;</li><li>opći i pojedinačni akti;</li><li>generalni i partikularni akti;</li><li>viši i niži akti.</li></ul>\n<h3>Hijerarhija pravnih normi i akata</h3>\n<p><strong>Pravna snaga</strong> akta ili norme je njegov položaj nadređenosti ili podređenosti prema drugim aktima u hijerarhijskoj ljestvici sustava. Hijerarhija ovisi o <strong>moći subjekata</strong>, državnih i društvenih, koji akte stvaraju. Uvjet učinkovitosti i opstanka sustava: na općim i višim aktima zasnivaju se individualni i niži akti koji više akte dopunjavaju i izvršavaju u konkretnim društvenim odnosima.</p>\n<p>Dva izraza obuhvaćaju normativne akte (ustave, zakone, pravilnike, kolektivne ugovore, običaje): <strong>opći akti</strong> i <strong>propisi</strong>. Izrazom <strong>formalni izvor prava</strong> slikovito se označava činjenica da su opći normativni akti (propisi) jezične forme koje sadrže najviše norme, temelje pravnog sustava, iz kojih izviru svi niži opći i svi individualni akti.</p>\n<h3>Načelo zakonitosti (legaliteta)</h3>\n<p>Temeljna norma sustava koja zahtijeva da svi pravni akti državnih i drugih subjekata budu <strong>formalno i materijalno usklađeni s višim normama</strong> koje reguliraju iste odnose, uz sankcije protiv akata koji taj zahtjev ne poštuju.</p>\n<table><tr><th>Formalna zakonitost</th><th>Materijalna (supstantivna) zakonitost</th></tr>\n<tr><td>akt donosi nadležni subjekt, po propisanom postupku, u propisanom obliku</td><td>sadržaj nižeg akta sukladan je sadržaju viših akata koji reguliraju istu vrstu odnosa</td></tr>\n<tr><td>proceduralni (formalni) akti propisuju nadležnost, postupak i oblik</td><td>materijalni (supstantivni) akti propisuju sadržaj akata, tj. hipoteze, traženja, opise delikata i sankcije</td></tr>\n<tr><td>formalno zakonit akt</td><td>materijalno zakonit akt; kod normativnih akata sukladni su svi elementi: hipoteza, traženje, delikt, sankcija</td></tr></table>\n<h3>Ništavost i obaranje akata</h3>\n<table><tr><th>Ništav akt (poništava se)</th><th>Oboriv (pobojan) akt (obara se)</th></tr>\n<tr><td>teže nezakonit</td><td>nezakonit u manjoj mjeri</td></tr>\n<tr><td>sve pravne posljedice ništetne su od nastanka akta</td><td>pravne posljedice ukidaju se od donošenja odluke o ukidanju</td></tr></table>",
+      "id": "1evaqa"
+    },
+    "id": "alrheb"
+  },
+  "ustavZakonPodzakonski": {
+    "name": "Ustav, zakon, podzakonski akti i običajno pravo",
+    "icon": "fa-book-open",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Što je ustav u materijalnom smislu?",
+        "answer": "Skup temeljnih pravnih normi kojima se ustanovljava ili konstituira politički i pravni poredak jednoga globalnog društva.",
+        "explanation": "Sadržaj.",
+        "id": "nowqyo"
+      },
+      {
+        "question": "Što je ustav u formalnom smislu?",
+        "answer": "Pisani ustav (normativni pravni akt) donesen od narodne skupštine u ustavotvornom postupku.",
+        "explanation": "Oblik i postupak.",
+        "id": "soo8jp"
+      },
+      {
+        "question": "Uz koja je vjerovanja vezana ideja pisanog ustava?",
+        "answer": "Uz vjerovanja u vječna i univerzalna prirodna prava čovjeka i u mogućnost demokratske države po načelu narodne suverenosti.",
+        "explanation": "Prirodno pravo + narodna suverenost.",
+        "id": "ye4t9y"
+      },
+      {
+        "question": "Što je načelo ustavnosti?",
+        "answer": "Načelo da svi pravni akti u društvu (državi, pravnom sustavu) trebaju biti podređeni ustavu.",
+        "explanation": "Ustav na vrhu hijerarhije.",
+        "id": "mij95i"
+      },
+      {
+        "question": "Što je princip konstitucionalizma?",
+        "answer": "Princip da su svi nositelji političke vlasti i svi drugi subjekti u političkoj zajednici podređeni ustavu.",
+        "explanation": "Vlast je ograničena ustavom.",
+        "id": "8ndqo2"
+      },
+      {
+        "question": "Zašto konstitucionalizam traži diobu vlasti?",
+        "answer": "Da se državna vlast oslabi i onemogući samovolja, zajamče slobode i prava čovjeka i osigura sudjelovanje slobodnih i jednakopravnih građana u odlučivanju.",
+        "explanation": "Zakonodavna, izvršna (upravna), sudska.",
+        "id": "ox66y1"
+      },
+      {
+        "question": "Što uređuju norme tipičnog ustava?",
+        "answer": "Osnovna politička i socijalna prava i slobode čovjeka i građanina; ekonomski sustav (vlasništvo, novac, tržište, planiranje); državnu organizaciju.",
+        "explanation": "Tri predmeta.",
+        "id": "c7yp5k"
+      },
+      {
+        "question": "Dva sustava sudskog nadzora ustavnosti?",
+        "answer": "Američki: nadzor obavlja vrhovni sud (SAD i druge američke države). Europski: nadzor obavlja poseban ustavni sud.",
+        "explanation": "Vrhovni sud ili ustavni sud.",
+        "id": "ovkzfz"
+      },
+      {
+        "question": "Što su tvrdi, meki i oktroirani ustav?",
+        "answer": "Tvrdi: mijenja se težim postupkom od zakona. Meki: postupkom kao zakon. Oktroirani (podjela po donositelju): donosi ga sam vladar.",
+        "explanation": "Dva mjerila podjele.",
+        "id": "ow44ub"
+      },
+      {
+        "question": "Što je zakon u formalnom, a što u materijalnom smislu?",
+        "answer": "Formalni: iza ustava najviši opći akt koji donosi parlament u zakonodavnom postupku (nosi naziv zakon). Materijalni: svaki opći pravni akt.",
+        "explanation": "Dva značenja riječi zakon.",
+        "id": "irlk39"
+      },
+      {
+        "question": "Faze zakonodavnog postupka?",
+        "answer": "Prijedlog i nacrt; odbor; dom parlamenta; drugi dom (ako postoji); usklađivanje domova; sankcija/veto poglavara; promulgacija; objava; stupanje na snagu.",
+        "explanation": "Devet faza.",
+        "id": "ozppbe"
+      },
+      {
+        "question": "Što je podzakonski pravni akt?",
+        "answer": "Državni opći akt niži od zakona koji donosi izvršno-politički, upravni ili lokalni samoupravni organ.",
+        "explanation": "Razrađuje zakon.",
+        "id": "35rioq"
+      },
+      {
+        "question": "Zajednička funkcija podzakonskih akata?",
+        "answer": "Radi ostvarivanja zakona prema potrebi razrađuju zakonske norme i propisuju tehnike njihove primjene.",
+        "explanation": "Razrada i primjena.",
+        "id": "p0jlak"
+      },
+      {
+        "question": "Što je uredba i koje su joj vrste?",
+        "answer": "Najviši podzakonski opći akt koji donosi vlada i/ili šef države: za razradu i izvršenje zakona, na temelju zakonskog ovlaštenja i za slučaj nužde.",
+        "explanation": "Tri vrste uredaba.",
+        "id": "tknl95"
+      },
+      {
+        "question": "Što su uredbe u slučaju nužde?",
+        "answer": "Uredbe kojima šef države ili vlada, na temelju ustavnog ovlaštenja, u ratu ili krizi odlučuju sa zakonskom snagom, čak zadirući u neka ustavna prava.",
+        "explanation": "Iznimna ovlast.",
+        "id": "4qb0p2"
+      },
+      {
+        "question": "Što je kolektivni ugovor?",
+        "answer": "Ugovor kojim sindikat i udruga poslodavaca, uz mogući udio države, određuju osnovne uvjete rada i dohotka na razini države, grane ili organizacije.",
+        "explanation": "Opći akt radnog prava.",
+        "id": "bdvevw"
+      },
+      {
+        "question": "Što je običajno pravo?",
+        "answer": "Opće norme koje nastaju manje ili više spontano, dugotrajnim ponavljanjem ponašanja u važnim i konfliktnim odnosima; izražavaju se faktičnim ponašanjem i usmeno.",
+        "explanation": "Nije pisano.",
+        "id": "6h2bgg"
+      },
+      {
+        "question": "Uvjeti nastanka pravila običajnog prava?",
+        "answer": "Dugotrajnost (longa consuetudo) i uvjerenje o potrebi obveznosti i sankcioniranja pravila (opinio juris sive necessitatis).",
+        "explanation": "Praksa + uvjerenje.",
+        "id": "3qky6o"
+      },
+      {
+        "question": "Što je kodifikacija i kakav je njezin učinak na običajno pravo?",
+        "answer": "Zapisivanje prava u velikim zakonskim aktima; posljedica je postupni nestanak običajnog prava kao samostalnog izvora.",
+        "explanation": "Običaj se uklapa u zakone.",
+        "id": "f38znj"
+      },
+      {
+        "question": "Gdje je običajno pravo još važan izvor?",
+        "answer": "U međunarodnom pravu i trgovačkom pravu.",
+        "explanation": "Dva poretka.",
+        "id": "t4iaoo"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Ustav u materijalnom smislu je:",
+        "options": [
+          "pisani akt donesen u ustavotvornom postupku od skupštine",
+          "skup temeljnih normi koje konstituiraju politički i pravni poredak",
+          "svaki opći pravni akt koji donosi država u svom teritoriju",
+          "akt koji vlada donosi na temelju zakonskog ovlaštenja"
+        ],
+        "correct": 1,
+        "id": "3j7v9m"
+      },
+      {
+        "question": "Ustav u formalnom smislu je:",
+        "options": [
+          "skup običaja koji uređuju državnu vlast u zajednici",
+          "pisani ustav donesen od narodne skupštine u ustavotvornom postupku",
+          "svaki akt koji sadrži temeljna ljudska prava i slobode",
+          "zakon kojim se uređuje ustrojstvo sudstva u državi"
+        ],
+        "correct": 1,
+        "id": "j557f9"
+      },
+      {
+        "question": "Ideja pisanog ustava vezana je uz:",
+        "options": [
+          "apsolutnu vlast monarha nad cijelim društvom",
+          "pravni pozitivizam bez ikakvog prirodnog prava",
+          "isključivo običajno pravo i običajne norme zajednice",
+          "prirodna prava čovjeka i narodnu suverenost"
+        ],
+        "correct": 3,
+        "id": "whtaj1"
+      },
+      {
+        "question": "Načelo ustavnosti znači da su svi pravni akti podređeni:",
+        "options": [
+          "ustavu",
+          "običajima",
+          "presudama",
+          "međunarodnim organizacijama"
+        ],
+        "correct": 0,
+        "id": "n42szv"
+      },
+      {
+        "question": "Konstitucionalizam traži diobu vlasti kako bi se:",
+        "options": [
+          "vlast koncentrirala u rukama jednog poglavara države",
+          "ukinulo sudstvo i vlada kao organi državne vlasti",
+          "oslabila državna vlast i onemogućila samovolja",
+          "vlast u cijelosti prenijela na lokalne organe samouprave"
+        ],
+        "correct": 2,
+        "id": "9cl9tn"
+      },
+      {
+        "question": "Koji NIJE predmet normi tipičnog ustava?",
+        "options": [
+          "prava i slobode čovjeka i građanina",
+          "ekonomski sustav",
+          "državna organizacija",
+          "postupak izvršenja kazne zatvora"
+        ],
+        "correct": 3,
+        "id": "hlqodm"
+      },
+      {
+        "question": "Sudski nadzor ustavnosti u SAD obavlja:",
+        "options": [
+          "poseban ustavni sud",
+          "vrhovni sud",
+          "parlament sam",
+          "šef države"
+        ],
+        "correct": 1,
+        "id": "km3c2r"
+      },
+      {
+        "question": "U europskom sustavu nadzor ustavnosti obavlja:",
+        "options": [
+          "vrhovni sud",
+          "vlada",
+          "poseban ustavni sud",
+          "državno odvjetništvo"
+        ],
+        "correct": 2,
+        "id": "r1d1wa"
+      },
+      {
+        "question": "Tvrdi ustav je onaj koji se mijenja:",
+        "options": [
+          "težim postupkom od postupka za promjenu zakona",
+          "istim postupkom kao što se mijenja običan zakon",
+          "odlukom ustavnog suda na zahtjev vlade",
+          "samo odlukom vladara koji ga je i donio"
+        ],
+        "correct": 0,
+        "id": "e9wgzj"
+      },
+      {
+        "question": "Oktroirani ustav je ustav koji:",
+        "options": [
+          "donosi sam vladar",
+          "donosi narodna skupština",
+          "donosi ustavni sud",
+          "donosi vlada uredbom"
+        ],
+        "correct": 0,
+        "id": "pqmpsx"
+      },
+      {
+        "question": "Zakon u materijalnom smislu je:",
+        "options": [
+          "samo akt koji donosi parlament",
+          "samo akt koji nosi naziv zakon",
+          "svaki opći pravni akt",
+          "samo akt koji donosi vlada"
+        ],
+        "correct": 2,
+        "id": "pukw97"
+      },
+      {
+        "question": "Zakon u formalnom smislu donosi:",
+        "options": [
+          "vlada države uredbom u izvanrednim okolnostima",
+          "skupština narodnih zastupnika po zakonodavnom postupku",
+          "šef države ukazom, uz supotpis predsjednika vlade",
+          "upravni organ rješenjem u upravnom postupku"
+        ],
+        "correct": 1,
+        "id": "h2o2nn"
+      },
+      {
+        "question": "Koja NIJE faza zakonodavnog postupka?",
+        "options": [
+          "predlaganje i izrada nacrta",
+          "promulgacija",
+          "objava",
+          "pravomoćnost zakona"
+        ],
+        "correct": 3,
+        "id": "adj9eb"
+      },
+      {
+        "question": "Podzakonski akt donosi:",
+        "options": [
+          "isključivo parlament u zakonodavnom postupku",
+          "izvršno-politički, upravni ili lokalni samoupravni organ",
+          "isključivo sud u postupku odlučivanja o sporu",
+          "isključivo šef države svojim ukazom u svakom slučaju"
+        ],
+        "correct": 1,
+        "id": "nisrnz"
+      },
+      {
+        "question": "Koja NIJE vrsta uredbe?",
+        "options": [
+          "uredba za pojedinačno rješavanje spora",
+          "uredba za razradu i izvršenje zakona",
+          "uredba na temelju zakonskog ovlaštenja",
+          "uredba u slučaju nužde"
+        ],
+        "correct": 0,
+        "id": "uctda8"
+      },
+      {
+        "question": "Uredbe u slučaju nužde donose se:",
+        "options": [
+          "na temelju običaja, bez ustavne osnove za takve uredbe",
+          "samo uz prethodno odobrenje svakog redovitog suda",
+          "samo u mirnodopskim uvjetima, kad nema izvanrednog stanja",
+          "na temelju ustavnog ovlaštenja u ratu ili krizi"
+        ],
+        "correct": 3,
+        "id": "x1y13u"
+      },
+      {
+        "question": "Kolektivni ugovor sklapaju:",
+        "options": [
+          "dvije države članice saveza",
+          "sud i državno odvjetništvo",
+          "sindikat i udruga poslodavaca",
+          "poslodavac i jedan radnik"
+        ],
+        "correct": 2,
+        "id": "xvf1f9"
+      },
+      {
+        "question": "Običajno pravo nastaje:",
+        "options": [
+          "odlukom parlamenta u zakonodavnom postupku i objavom",
+          "ukazom šefa države kojim se običaj proglašava pravom",
+          "dugotrajnim ponavljanjem ponašanja i uvjerenjem o obveznosti",
+          "presudom ustavnog suda kojom se običaj potvrđuje"
+        ],
+        "correct": 2,
+        "id": "5eqgsm"
+      },
+      {
+        "question": "Dva uvjeta nastanka običajnog prava su:",
+        "options": [
+          "lex posterior i lex specialis kao pravila o antinomijama",
+          "ratio legis i occasio legis kao metode tumačenja norme",
+          "dolus i culpa kao dva oblika krivnje počinitelja",
+          "longa consuetudo i opinio juris sive necessitatis"
+        ],
+        "correct": 3,
+        "id": "weofi8"
+      },
+      {
+        "question": "Kodifikacija dovodi do:",
+        "options": [
+          "postupnog nestanka običajnog prava kao samostalnog izvora",
+          "jačanja običajnog prava nad zakonima i propisima",
+          "ukidanja svih pisanih zakona u korist običaja",
+          "prelaska na isključivo sudsku praksu kao izvor prava"
+        ],
+        "correct": 0,
+        "id": "hqs2jb"
+      },
+      {
+        "question": "Običajno pravo je još važan izvor u:",
+        "options": [
+          "kaznenom i upravnom pravu države",
+          "međunarodnom i trgovačkom pravu",
+          "ustavnom i obiteljskom pravu države",
+          "poreznom i radnom pravu države"
+        ],
+        "correct": 1,
+        "id": "571uox"
+      },
+      {
+        "question": "Zajednička funkcija svih podzakonskih akata je:",
+        "options": [
+          "stvaranje novih ustavnih normi umjesto parlamenta",
+          "nadzor ustavnosti zakona pred ustavnim sudom",
+          "razrada zakonskih normi i tehnike njihove primjene",
+          "kažnjavanje prekršitelja zakonskih normi u postupku"
+        ],
+        "correct": 2,
+        "id": "igexh6"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Ustav koji se mijenja težim postupkom od zakona je _______ ustav.",
+        "answer": "tvrdi",
+        "hint": "suprotno mekom",
+        "id": "p1qe5c"
+      },
+      {
+        "sentence": "Ustav koji donosi sam vladar zove se _______.",
+        "answer": "oktroirani",
+        "hint": "vladar daje ustav",
+        "id": "iw6j0u"
+      },
+      {
+        "sentence": "Načelo _______ traži da su svi pravni akti podređeni ustavu.",
+        "answer": "ustavnosti",
+        "hint": "ustav na vrhu",
+        "id": "sujhzp"
+      },
+      {
+        "sentence": "Zakon u _______ smislu je svaki opći pravni akt.",
+        "answer": "materijalnom",
+        "hint": "širi smisao",
+        "id": "0sdhx3"
+      },
+      {
+        "sentence": "Najviši podzakonski opći akt koji donosi vlada je _______.",
+        "answer": "uredba",
+        "hint": "razrada zakona",
+        "id": "rag7vs"
+      },
+      {
+        "sentence": "_______ je zapisivanje prava u velikim zakonskim aktima.",
+        "answer": "Kodifikacija",
+        "hint": "nestanak običaja",
+        "id": "zv2hdb"
+      },
+      {
+        "sentence": "Uvjeti običajnog prava: _______ consuetudo i opinio juris sive necessitatis.",
+        "answer": "longa",
+        "hint": "dugotrajnost",
+        "id": "2rni2l"
+      },
+      {
+        "sentence": "Princip _______ traži da su svi nositelji političke vlasti i svi drugi subjekti podređeni ustavu.",
+        "answer": "konstitucionalizma",
+        "hint": "ustav",
+        "id": "h34nah"
+      }
+    ],
+    "learn": {
+      "title": "Ustav, zakon, podzakonski akti i običajno pravo",
+      "content": "<h3>Ustav (konstitucija)</h3>\n<ul>\n<li><strong>Ustav u materijalnom smislu</strong> – skup temeljnih pravnih normi kojim se ustanovljava ili konstituira politički i pravni poredak globalnog društva.</li>\n<li><strong>Ustav u formalnom smislu</strong> – pisani ustav (normativni pravni akt) donesen od narodne skupštine u ustavotvornom postupku.</li>\n</ul>\n<p>Ideja pisanog ustava vezana je uz vjerovanja u <strong>vječna i univerzalna prirodna prava čovjeka</strong> i u mogućnost ustroja demokratske države po načelu <strong>narodne suverenosti</strong>.</p>\n<ul><li><strong>Načelo ustavnosti</strong> – svi pravni akti u društvu trebaju biti podređeni ustavu.</li><li><strong>Princip konstitucionalizma</strong> – svi nositelji političke vlasti i svi drugi subjekti podređeni su ustavu. On zahtijeva <strong>diobu državne vlasti</strong> na zakonodavnu, izvršnu (upravnu) i sudsku radi slabljenja državne vlasti, onemogućavanja samovolje, jamstva sloboda i prava čovjeka te osiguranja sudjelovanja slobodnih i jednakopravnih građana u političkom odlučivanju.</li></ul>\n<p>Pravne norme tipičnog ustava uređuju: 1) osnovna politička i socijalna prava i slobode čovjeka i građanina; 2) ekonomski sustav (vlasništvo, novac, tržište, planiranje); 3) državnu organizaciju.</p>\n<table><tr><th>Sustav sudskog nadzora ustavnosti</th><th>Tko nadzire</th><th>Gdje</th></tr>\n<tr><td>američki</td><td>vrhovni sud</td><td>SAD i druge američke države</td></tr>\n<tr><td>europski</td><td>poseban ustavni sud</td><td>europske države</td></tr></table>\n<p>Prema postupku promjene razlikuju se <strong>tvrdi ustav</strong> (mijenja se težim postupkom od zakona) i <strong>meki ustav</strong> (mijenja se postupkom kao zakon).</p>\n<p>Prema donositelju ustav može biti <strong>oktroiran</strong>: donosi ga sam vladar, bez narodne skupštine. To je drugo mjerilo podjele, neovisno o postupku promjene.</p>\n<h3>Zakon</h3>\n<ul><li><strong>Zakon u formalnom smislu</strong> – iza ustava najviši opći pravni akt što ga donosi skupština narodnih zastupnika (parlament, kongres, sabor) po zakonodavnom postupku i koji nosi naziv zakon.</li><li><strong>Zakon u materijalnom smislu</strong> – svaki opći pravni akt.</li></ul>\n<p>Glavne faze zakonodavnog postupka: 1. predlaganje i izrada nacrta; 2. rasprava i glasovanje u specijaliziranom parlamentarnom odboru; 3. rasprava i glasovanje u jednom domu; 4. u drugom domu (ako postoji); 5. usuglašavanje stajališta dvaju domova; 6. sankcija/veto državnog poglavara (ako postoji); 7. promulgacija; 8. objava; 9. stupanje na snagu.</p>\n<p><em>Dopuna:</em> u Republici Hrvatskoj zakone donosi jednodomni Hrvatski sabor, a zakone proglašava Predsjednik Republike; nema suspenzivnog veta poglavara. Predsjednik proglašava zakon u roku od osam dana od izglasavanja (čl. 89. Ustava), zakon se objavljuje u Narodnim novinama i stupa na snagu najranije osmog dana od objave, a samo iz osobito opravdanih razloga može stupiti na snagu i ranije (čl. 90. Ustava).</p>\n<h3>Podzakonski akti</h3>\n<p><strong>Podzakonski pravni akt</strong> je državni opći akt niži od zakona koji donosi izvršno-politički, upravni ili lokalni samoupravni organ. Zajednička funkcija: radi ostvarivanja zakona razrađuju zakonske norme i propisuju tehnike njihove primjene.</p>\n<p><strong>Uredba</strong> je najviši državni podzakonski opći akt što ga donosi vlada i/ili šef države. Vrste: 1) za razradu i izvršenje zakona; 2) uredbe na temelju zakonskog ovlaštenja (normiraju odnose iz nadležnosti zakonodavca); 3) <strong>uredbe u slučaju nužde</strong> – šef države ili vlada, na temelju ustavnog ovlaštenja, u ratu ili drugim kriznim situacijama odlučuju sa zakonskom snagom, čak zadirući u neka ustavna ljudska i građanska prava.</p>\n<h3>Opći akti društvenih organizacija</h3>\n<p>Opće pravne akte donose i društvene organizacije: privredna poduzeća, trgovačka društva, zdravstvene, prosvjetne, kulturne i športske organizacije. <strong>Kolektivni ugovor</strong> (radnog i socijalnog prava) sklapaju radnički sindikat i udruga poslodavaca, uz moguće sudjelovanje države, a njime određuju osnovne uvjete rada i dohotka na razini države, grane ili konkretne organizacije.</p>\n<h3>Običajno pravo</h3>\n<p>Opće pravne norme koje nastaju manje ili više spontano, neorganizirano, dugotrajnim ponavljanjem ponašanja u najvažnijim i konfliktnim odnosima globalnog društva ili posebnih skupina; izražavaju se faktičnim ponašanjem i usmeno. Dva uvjeta nastanka: <strong>dugotrajnost</strong> (<em>longa consuetudo</em>) i <strong>uvjerenje o potrebi obveznosti i sankcioniranja</strong> (<em>opinio juris sive necessitatis</em>).</p>\n<p><strong>Kodifikacija</strong> je zapisivanje prava u velikim zakonskim aktima; posljedica je postupni nestanak običajnog prava kao samostalnog izvora. Običajno je pravo još važan izvor u <strong>međunarodnom pravu</strong> i <strong>trgovačkom pravu</strong>.</p>",
+      "id": "rldgz1"
+    },
+    "id": "e8v85b"
+  },
+  "individualniPravniAkti": {
+    "name": "Individualni pravni akti: presuda, rješenje, pravni posao",
+    "icon": "fa-file-signature",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Što je individualni pravni akt?",
+        "answer": "Pisani tekst ili usmeni iskaz koji sadrži individualnu pravnu normu (ili njezine dijelove ili više normi).",
+        "explanation": "Za konkretne adresate.",
+        "id": "11xyde"
+      },
+      {
+        "question": "Vrste individualnih pravnih akata?",
+        "answer": "Ukaz, sudska presuda, upravno rješenje i pravni posao.",
+        "explanation": "Četiri vrste.",
+        "id": "juhpso"
+      },
+      {
+        "question": "Što je ukaz i što tipično sadrži?",
+        "answer": "Individualni akt kojim šef države odlučuje o poslovima iz svoje nadležnosti: promulgacija zakona, postavljanje časnika i diplomata, pomilovanje, dodjela odlikovanja.",
+        "explanation": "Pet sadržaja.",
+        "id": "h091vx"
+      },
+      {
+        "question": "Što je presuda?",
+        "answer": "Glavna sudska odluka kojom se na temelju zakona i drugih općih akata (ili načela) rješava sudski spor i određuje sankcija u sudskom postupku.",
+        "explanation": "Kazneni, građanski, trgovački, upravni spor.",
+        "id": "3zis6m"
+      },
+      {
+        "question": "O kojim pitanjima odlučuje sudac u sporu?",
+        "answer": "O pravnim pitanjima (norme koje reguliraju odnos stranaka) i o činjeničnim pitanjima (utvrđene činjenice njihovih radnji).",
+        "explanation": "Pravo i činjenice.",
+        "id": "jvebg3"
+      },
+      {
+        "question": "Koje su vrste presuda po izreci?",
+        "answer": "Osuđujuća (usvaja tužbu i obvezuje tuženog ili ga kažnjava) i oslobađajuća (odbija tužbu i utvrđuje da tužitelj nema ovlaštenje).",
+        "explanation": "Dvije vrste.",
+        "id": "8stj6c"
+      },
+      {
+        "question": "Koji je logički oblik presude?",
+        "answer": "Silogizam: opća norma je veća premisa, utvrđene činjenice manja premisa, a individualna norma zaključak.",
+        "explanation": "Premisa major, premisa minor, conclusio.",
+        "id": "kcqzgo"
+      },
+      {
+        "question": "Koja su četiri obvezna dijela presude?",
+        "answer": "Uvod, izreka, obrazloženje i uputa o pravnom lijeku.",
+        "explanation": "Struktura presude.",
+        "id": "31ni6m"
+      },
+      {
+        "question": "Što je sudski presedan (precedent)?",
+        "answer": "Presuda koja vrijedi za konkretne stranke i uz to je opći akt, formalni izvor prava za buduće presude o istovrsnim sporovima.",
+        "explanation": "Angloameričko pravo.",
+        "id": "gpi9zc"
+      },
+      {
+        "question": "Gdje su presude presedani?",
+        "answer": "U angloameričkoj pravnoj obitelji: Engleska (ne Škotska), SAD, Kanada (osim Quebeca).",
+        "explanation": "Tri sustava.",
+        "id": "rxneet"
+      },
+      {
+        "question": "Što je sudska praksa u kontinentalnoeuropskoj obitelji?",
+        "answer": "Presude vrhovnih i viših sudova koje formalno ne obvezuju niže sudove, ali ih oni poštuju i slijede u istovrsnim slučajevima.",
+        "explanation": "Faktični utjecaj.",
+        "id": "cx8811"
+      },
+      {
+        "question": "Što je upravno rješenje (upravni akt)?",
+        "answer": "Individualni akt kojim upravni organ ili nedržavno tijelo s javnim ovlastima, na temelju zakona i drugih općih akata, odlučuje o individualnom odnosu iz svoje nadležnosti.",
+        "explanation": "Npr. izdavanje diplome.",
+        "id": "afku9k"
+      },
+      {
+        "question": "Što je pravni posao?",
+        "answer": "Očitovanje volje jedne, dviju ili više osoba kojim u granicama dopuštenim pravnim sustavom slobodno zasnivaju, mijenjaju ili ukidaju pravne odnose.",
+        "explanation": "Imovinski, radni, osobni odnosi.",
+        "id": "rvkrdm"
+      },
+      {
+        "question": "Jednostrani i dvostrani pravni posao?",
+        "answer": "Jednostrani nastaje izjavom volje jednog subjekta (npr. oporuka). Dvostrani traži suglasne izjave dvaju ili više subjekata – ugovor.",
+        "explanation": "Oporuka – ugovor.",
+        "id": "zmrxtw"
+      },
+      {
+        "question": "Jednostrano i dvostrano obvezujući ugovor?",
+        "answer": "Jednostrano obvezujući: obveza samo jedne strane (npr. darovanje). Dvostrano obvezujući: obveza za obje strane (npr. kupoprodaja).",
+        "explanation": "Broj obveznih strana.",
+        "id": "6w7tcm"
+      },
+      {
+        "question": "Konsenzualni i realni ugovor?",
+        "answer": "Konsenzualni nastaje samo suglasnošću volja. Realni uz suglasnost traži i predaju stvari (klasičan primjer je ostava, no po ZOO-u je ostava danas konsenzualna).",
+        "explanation": "Kupoprodaja je konsenzualna.",
+        "id": "aasoh0"
+      },
+      {
+        "question": "Iznimke od općeg pravila da je dovoljan usmeni oblik ugovora?",
+        "answer": "Ugovori o kupoprodaji nekretnina i ugovori o licenciji.",
+        "explanation": "Traži se pisani oblik.",
+        "id": "98vk9a"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koja NIJE vrsta individualnog pravnog akta?",
+        "options": [
+          "zakon",
+          "ukaz",
+          "presuda",
+          "pravni posao"
+        ],
+        "correct": 0,
+        "id": "eqi6nh"
+      },
+      {
+        "question": "Ukaz je individualni akt kojim:",
+        "options": [
+          "sud odlučuje o sporu između stranaka u postupku",
+          "upravni organ rješava o pravu građanina u upravnom postupku",
+          "vlada razrađuje zakon i propisuje tehnike njegove primjene",
+          "šef države odlučuje o poslovima iz svoje nadležnosti"
+        ],
+        "correct": 3,
+        "id": "h2fpwl"
+      },
+      {
+        "question": "Koji NIJE tipičan sadržaj ukaza?",
+        "options": [
+          "promulgacija zakona koje je izglasao parlament",
+          "donošenje zakona umjesto parlamenta",
+          "postavljanje diplomata u inozemstvu",
+          "pomilovanje osuđenih osoba"
+        ],
+        "correct": 1,
+        "id": "urvc45"
+      },
+      {
+        "question": "Presuda je odluka kojom se:",
+        "options": [
+          "donosi opća norma za sve građane države",
+          "rješava sudski spor i određuje sankcija",
+          "mijenja ustav države u ustavotvornom postupku",
+          "razrađuje uredba vlade i njezina primjena"
+        ],
+        "correct": 1,
+        "id": "mv5fae"
+      },
+      {
+        "question": "O pravnim pitanjima u sporu odlučuje se prema:",
+        "options": [
+          "činjenicama koje stranke tvrde bez dokaza",
+          "običajima koje stranke predlože",
+          "mišljenju većine javnosti",
+          "normama koje reguliraju odnos stranaka"
+        ],
+        "correct": 3,
+        "id": "lkpayv"
+      },
+      {
+        "question": "Osuđujuća presuda:",
+        "options": [
+          "usvaja tužbu i obvezuje tuženog ili ga kažnjava",
+          "odbija tužbu i oslobađa tuženog od odgovornosti",
+          "odbacuje tužbu zbog nenadležnosti suda ili nepravodobnosti",
+          "utvrđuje da među strankama nema pravnog spora"
+        ],
+        "correct": 0,
+        "id": "1gk8gg"
+      },
+      {
+        "question": "Oslobađajuća presuda:",
+        "options": [
+          "usvaja tužbu u cijelosti i obvezuje tuženog na činjenje",
+          "obvezuje tuženog na činjenje u korist tužitelja",
+          "odbija tužbu i proglašava tuženog neodgovornim",
+          "potvrđuje nadležnost suda koji je tužbu zaprimio"
+        ],
+        "correct": 2,
+        "id": "62ig0d"
+      },
+      {
+        "question": "Veća premisa u presudi (pravni silogizam) je:",
+        "options": [
+          "utvrđeno činjenično stanje",
+          "individualna norma",
+          "pravni lijek",
+          "opća pravna norma"
+        ],
+        "correct": 3,
+        "id": "7cr7wn"
+      },
+      {
+        "question": "Zaključak presude kao silogizma je:",
+        "options": [
+          "opća norma",
+          "individualna norma",
+          "utvrđenje činjenica",
+          "pravno načelo"
+        ],
+        "correct": 1,
+        "id": "jt88gn"
+      },
+      {
+        "question": "Koji NIJE obvezni dio presude?",
+        "options": [
+          "uvod s podacima o sudu i strankama",
+          "izreka kojom se odlučuje o sporu",
+          "izjava o pomilovanju osuđenika",
+          "obrazloženje odluke s razlozima"
+        ],
+        "correct": 2,
+        "id": "4pnlfj"
+      },
+      {
+        "question": "Sudski presedan je presuda koja je:",
+        "options": [
+          "izvor prava i za buduće istovrsne sporove",
+          "važeća samo za konkretne stranke u tom postupku",
+          "nevažeća čim se objavi u službenom glasilu",
+          "isključivo upravni akt koji donosi upravni organ"
+        ],
+        "correct": 0,
+        "id": "nkh5za"
+      },
+      {
+        "question": "Presude su presedani u:",
+        "options": [
+          "Engleskoj, SAD i Kanadi (osim Quebeca)",
+          "Francuskoj, Njemačkoj i Italiji kao kontinentalnim sustavima",
+          "Škotskoj i Quebecu kao dijelovima angloameričke obitelji",
+          "svim državama svijeta bez obzira na pravnu obitelj"
+        ],
+        "correct": 0,
+        "id": "a950qp"
+      },
+      {
+        "question": "U kontinentalnoeuropskoj obitelji prava sudska praksa:",
+        "options": [
+          "formalno obvezuje sve niže sudove u svakom pojedinom slučaju",
+          "nema nikakav utjecaj na odluke nižih sudova",
+          "formalno ne obvezuje niže sudove, ali je oni poštuju",
+          "zamjenjuje zakone u svim pravnim granama i područjima"
+        ],
+        "correct": 2,
+        "id": "ygl5jf"
+      },
+      {
+        "question": "Upravno rješenje donosi:",
+        "options": [
+          "isključivo vrhovni sud države u upravnim sporovima",
+          "upravni organ ili tijelo s javnim ovlastima",
+          "isključivo parlament u zakonodavnom postupku",
+          "isključivo ustavni sud u postupku ocjene ustavnosti"
+        ],
+        "correct": 1,
+        "id": "tdnd9l"
+      },
+      {
+        "question": "Pravni posao je:",
+        "options": [
+          "odluka suda o sporu između dviju ili više stranaka",
+          "pravna činjenica koja je nastala prirodnim događajem",
+          "opći akt koji donosi vlada za cijeli državni teritorij",
+          "očitovanje volje kojim se slobodno zasnivaju pravni odnosi"
+        ],
+        "correct": 3,
+        "id": "z9z0oa"
+      },
+      {
+        "question": "Primjer jednostranog pravnog posla je:",
+        "options": [
+          "kupoprodaja",
+          "oporuka",
+          "zakup",
+          "razmjena"
+        ],
+        "correct": 1,
+        "id": "vzxkqp"
+      },
+      {
+        "question": "Primjer jednostrano obvezujućeg ugovora je:",
+        "options": [
+          "darovanje",
+          "kupoprodaja",
+          "zamjena",
+          "najam"
+        ],
+        "correct": 0,
+        "id": "8qeha6"
+      },
+      {
+        "question": "Realni ugovor nastaje:",
+        "options": [
+          "samo suglasnošću volja",
+          "samo predajom stvari bez dogovora",
+          "samo odlukom suda",
+          "suglasnošću volja i predajom stvari"
+        ],
+        "correct": 3,
+        "id": "zl5qmd"
+      },
+      {
+        "question": "Za koji se ugovor pravilom traži pisani oblik?",
+        "options": [
+          "kupnja kruha u trgovini",
+          "kupoprodaja pokretnih stvari malih vrijednosti",
+          "kupoprodaja nekretnina",
+          "usmeni dogovor o posudbi knjige"
+        ],
+        "correct": 2,
+        "id": "6lwqyw"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Ukaz donosi _______ države.",
+        "answer": "šef",
+        "hint": "poglavar",
+        "id": "gwk9t6"
+      },
+      {
+        "sentence": "Sudska presuda ima logički oblik _______.",
+        "answer": "silogizma",
+        "hint": "premise i zaključak",
+        "id": "nwktzn"
+      },
+      {
+        "sentence": "Presuda ima četiri dijela: uvod, izreka, obrazloženje i uputa o pravnom _______.",
+        "answer": "lijeku",
+        "hint": "žalba",
+        "id": "a4wpl3"
+      },
+      {
+        "sentence": "_______ je presuda koja je i opći akt, izvor prava za buduće istovrsne sporove.",
+        "answer": "Presedan",
+        "hint": "precedent",
+        "id": "u1nh3y"
+      },
+      {
+        "sentence": "_______ ugovor nastaje suglasnošću volja i predajom stvari.",
+        "answer": "Realni",
+        "hint": "nasuprot konsenzualnom",
+        "id": "szefib"
+      },
+      {
+        "sentence": "Oporuka je primjer _______ pravnog posla.",
+        "answer": "jednostranog",
+        "hint": "jedan subjekt",
+        "id": "am1e3b"
+      },
+      {
+        "sentence": "Dvostrani pravni posao zove se i _______.",
+        "answer": "ugovor",
+        "hint": "suglasne izjave volje",
+        "id": "b5fxae"
+      },
+      {
+        "sentence": "Presuda ili upravno rješenje kao pravni akt sadrži _______ pravnu normu.",
+        "answer": "individualnu",
+        "hint": "za konkretne adresate",
+        "id": "jznuuq"
+      }
+    ],
+    "learn": {
+      "title": "Individualni pravni akti: presuda, rješenje, pravni posao",
+      "content": "<h3>Individualni pravni akti</h3>\n<p><strong>Individualni pravni akt</strong> je pisani tekst ili usmeni iskaz koji sadrži individualnu pravnu normu (ili njezine dijelove ili više normi). Vrste: <strong>ukaz, sudska presuda, upravno rješenje, pravni posao</strong>.</p>\n<h4>Ukaz</h4>\n<p>Individualni akt kojim šef države odlučuje o poslovima iz svoje nadležnosti. Tipični sadržaji: promulgacija zakona, postavljanje časnika, postavljanje diplomata, pomilovanje osuđenih, dodjeljivanje odlikovanja.</p>\n<h4>Presuda</h4>\n<p>Glavna sudska odluka kojom se na temelju zakona ili drugih općih akata (ili općih mjerila, poput pravnih načela) rješava jedan sudski spor i određuje sankcija u kaznenom, građanskom, trgovačkom, upravnosudskom ili drugom postupku.</p>\n<ul>\n<li>Sudac odlučuje ima li stranka pravo s obzirom na <strong>pravna pitanja</strong> (norme koje reguliraju njihov odnos) i <strong>činjenična pitanja</strong> (utvrđene činjenice njihovih radnji).</li>\n<li><strong>Osuđujuća presuda</strong> usvaja tužbu i obvezuje tuženog na radnju u korist tužitelja ili ga kažnjava; <strong>oslobađajuća presuda</strong> odbija tužbu, utvrđuje da tužitelj nema ovlaštenje na koje se poziva i proglašava tuženog neodgovornim za utuženi delikt.</li>\n<li><strong>Logički oblik</strong> je silogizam: opća norma (veća premisa, <em>premisa major</em>) + utvrđenje činjenica (manja premisa, <em>premisa minor</em>) → individualna norma (zaključak, <em>conclusio</em>).</li>\n<li><strong>Četiri obvezna dijela:</strong> uvod (podaci o sudu, strankama i sporu), izreka (osuđujuća ili oslobađajuća odluka), obrazloženje i uputa o pravnom lijeku.</li>\n</ul>\n<h4>Sudski presedan i sudska praksa</h4>\n<p><strong>Presedan (precedent)</strong> je presuda koja vrijedi za konkretne stranke i uz to je opći akt, formalni izvor prava za buduće presude o sporovima s istim obilježjima. Presude su presedani u <strong>angloameričkoj pravnoj obitelji</strong>: Engleska (ne Škotska), SAD, Kanada (osim Quebeca). U <strong>kontinentalnoeuropskoj obitelji</strong> sličan je izvor <strong>sudska praksa</strong> – presude vrhovnih i viših sudova koje formalno ne obvezuju niže sudove, ali ih oni poštuju i slijede u istovrsnim slučajevima.</p>\n<h4>Upravno rješenje (upravni akt)</h4>\n<p>Individualni pravni akt kojim državni upravni organ (npr. porezna uprava) ili nedržavni organ u vršenju javne ovlasti (npr. fakultet pri izdavanju diplome), na temelju zakona i drugih općih akata, odlučuje o individualnom odnosu iz svoje nadležnosti.</p>\n<h4>Pravni posao</h4>\n<p>Očitovanje volje jedne, dviju ili više osoba kojim one, u granicama dopuštenim pravnim sustavom, slobodno zasnivaju, mijenjaju ili ukidaju pravne odnose (pravne obveze i ovlaštenja) u imovinskim, radnim te osobnim (npr. bračnim) odnosima.</p>\n<table><tr><th>Podjela</th><th>Vrste</th><th>Primjer</th></tr>\n<tr><td>po broju izjava volje</td><td>jednostrani (dovoljna izjava jednog subjekta); dvostrani – ugovor (suglasne izjave dvaju ili više)</td><td>oporuka (ponuda, mjenica, ček); ugovor</td></tr>\n<tr><td>po broju obveznih strana</td><td>jednostrano obvezujući; dvostrano obvezujući</td><td>darovanje; kupoprodaja</td></tr>\n<tr><td>po nastanku</td><td>konsenzualni (samo suglasnost volja); realni (suglasnost + predaja stvari)</td><td>kupoprodaja (konsenzualni); ostava u klasičnoj podjeli (realni)</td></tr></table>\n<p><em>Napomena o izmjeni:</em> u klasičnoj podjeli (rimsko pravo) ostava se navodi kao realni ugovor, ali je po važećem Zakonu o obveznim odnosima (NN 35/05 i dalje, čl. 725.) ostava konsenzualni ugovor: „Ugovorom o ostavi obvezuje se ostavoprimac da primi stvar od ostavodavca, da je čuva i da je vrati kad je ovaj bude zatražio.” Izvor: narodne-novine.nn.hr, NN 35/05.</p>\n<p>Opće je pravilo da je za sklapanje ugovora dovoljan usmeni oblik, uz raširene iznimke: ugovori o kupoprodaji nekretnina i ugovori o licenciji traže pisani oblik.</p>",
+      "id": "o9guhu"
+    },
+    "id": "er12ni"
+  },
+  "vazenjeUcinkovitost": {
+    "name": "Važenje, pravednost i djelotvornost pravnih normi",
+    "icon": "fa-hourglass-half",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što je važenje pravne norme?",
+        "answer": "Svojstvo norme da je stupila na snagu, tj. da obvezuje adresate da se po njoj ponašaju.",
+        "explanation": "Obvezatnost.",
+        "id": "jb5wwb"
+      },
+      {
+        "question": "Uvjeti pod kojima je pravna norma važeća?",
+        "answer": "Stvorena od nadležnog subjekta, nije ukinuta, objavljena je i prošao je rok za početak važenja (stupanje na snagu, odnosno pravomoćnost kod presude ili rješenja).",
+        "explanation": "Četiri uvjeta.",
+        "id": "c7xm89"
+      },
+      {
+        "question": "Dimenzije (sfere) važenja norme?",
+        "answer": "Personalno (za koje subjekte), vremensko (u kojem vremenu) i prostorno (u kojem prostoru).",
+        "explanation": "Tri dimenzije.",
+        "id": "r1w6os"
+      },
+      {
+        "question": "Od kada može norma početi važiti?",
+        "answer": "Od trenutka stvaranja, od trenutka objave ili uručenja ili po isteku roka nakon objave ili uručenja.",
+        "explanation": "Tri mogućnosti.",
+        "id": "xnhadx"
+      },
+      {
+        "question": "Načini prestanka važenja norme?",
+        "answer": "Abrogacija (izričito ukidanje), derogacija (prešutno ukidanje), istek vremena važenja i izobičajenje (dugotrajna neučinkovitost).",
+        "explanation": "Četiri načina.",
+        "id": "z8h72f"
+      },
+      {
+        "question": "Odnos važenja i zakonitosti?",
+        "answer": "Važenje je istovjetno formalnoj zakonitosti. Norma može biti važeća, tj. formalno zakonita, a materijalno nezakonita.",
+        "explanation": "Važenje ≠ materijalna zakonitost.",
+        "id": "wd369y"
+      },
+      {
+        "question": "Što je pravednost pravne norme?",
+        "answer": "Usklađenost sadržaja norme s načelom pravednosti, tj. pravilom raspodjele dobara i tereta u društvu.",
+        "explanation": "Vrijednosna dimenzija.",
+        "id": "r2ti39"
+      },
+      {
+        "question": "Što je učinkovitost (djelotvornost) pravne norme?",
+        "answer": "Ponašanje značajne većine adresata u skladu sa sadržajem norme.",
+        "explanation": "Efikasnost.",
+        "id": "vwu0lr"
+      },
+      {
+        "question": "Primarna i sekundarna učinkovitost?",
+        "answer": "Primarna: većina adresata ponaša se prema traženju norme. Sekundarna: organi primjenjuju sankciju protiv većine prekršitelja.",
+        "explanation": "Dva stupnja.",
+        "id": "etttxo"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Važenje pravne norme znači da norma:",
+        "options": [
+          "je pravedna prema svim adresatima",
+          "je djelotvorna u većini slučajeva",
+          "obvezuje adresate da se po njoj ponašaju",
+          "je doneseno uz suglasnost svih adresata"
+        ],
+        "correct": 2,
+        "id": "bhdi2f"
+      },
+      {
+        "question": "Koji NIJE uvjet važenja pravne norme?",
+        "options": [
+          "da je stvorena od nadležnog subjekta",
+          "da nije ukinuta",
+          "da je objavljena",
+          "da je norma pravedna"
+        ],
+        "correct": 3,
+        "id": "db3z7t"
+      },
+      {
+        "question": "Dimenzije važenja pravne norme su:",
+        "options": [
+          "personalna, vremenska i prostorna",
+          "formalna, materijalna i proceduralna",
+          "opća, posebna i izuzetna",
+          "primarna, sekundarna i tercijarna"
+        ],
+        "correct": 0,
+        "id": "dcbknb"
+      },
+      {
+        "question": "Koji NIJE trenutak od kada norma može početi važiti?",
+        "options": [
+          "trenutak stvaranja same norme",
+          "trenutak prestanka važenja ranije norme",
+          "trenutak objave ili uručenja norme",
+          "rok koji teče nakon objave ili uručenja"
+        ],
+        "correct": 1,
+        "id": "x01otw"
+      },
+      {
+        "question": "Abrogacija je:",
+        "options": [
+          "prešutno ukidanje pravne norme",
+          "prestanak važenja zbog nedjelovanja",
+          "izričito ukidanje pravne norme",
+          "prestanak važenja istekom roka"
+        ],
+        "correct": 2,
+        "id": "b7m8fz"
+      },
+      {
+        "question": "Derogacija je:",
+        "options": [
+          "prešutno ukidanje norme kasnijom normom",
+          "izričito ukidanje norme",
+          "prestanak norme zbog neučinkovitosti",
+          "prestanak norme istekom roka"
+        ],
+        "correct": 0,
+        "id": "cyoczt"
+      },
+      {
+        "question": "Izobičajenje je prestanak važenja norme zbog:",
+        "options": [
+          "izričitog ukidanja nadležnog organa",
+          "isteka vremena na koje je donesena",
+          "njezine nepravednosti za adresate",
+          "dugotrajne neučinkovitosti"
+        ],
+        "correct": 3,
+        "id": "28r8dn"
+      },
+      {
+        "question": "Važenje norme istovjetno je:",
+        "options": [
+          "materijalnoj zakonitosti",
+          "formalnoj zakonitosti",
+          "pravednosti norme",
+          "učinkovitosti norme"
+        ],
+        "correct": 1,
+        "id": "1pmtl8"
+      },
+      {
+        "question": "Norma koja je donesena u propisanom postupku, ali je sadržajno protivna višoj normi je:",
+        "options": [
+          "nevažeća i formalno nezakonita",
+          "važeća, ali materijalno nezakonita",
+          "važeća i materijalno zakonita",
+          "nevažeća i materijalno zakonita"
+        ],
+        "correct": 1,
+        "id": "3w51x0"
+      },
+      {
+        "question": "Pravednost norme je:",
+        "options": [
+          "ponašanje većine adresata u skladu s normom u praksi",
+          "njezino stupanje na snagu nakon proteka roka",
+          "njezina objava u službenom glasilu države",
+          "usklađenost njezina sadržaja s načelom pravednosti"
+        ],
+        "correct": 3,
+        "id": "8942hi"
+      },
+      {
+        "question": "Učinkovitost norme je:",
+        "options": [
+          "ponašanje značajne većine adresata prema normi",
+          "njezina usklađenost s ustavom i višim normama sustava",
+          "njezina objava u službenom glasilu države",
+          "njezin sadržaj o pravednoj raspodjeli dobara i tereta"
+        ],
+        "correct": 0,
+        "id": "kpfg1w"
+      },
+      {
+        "question": "Sekundarna učinkovitost norme postoji kada:",
+        "options": [
+          "većina adresata poštuje traženje norme u svom ponašanju",
+          "je norma stupila na snagu nakon proteka roka",
+          "se sankcija primjenjuje protiv većine prekršitelja",
+          "je norma objavljena u službenom glasilu države"
+        ],
+        "correct": 2,
+        "id": "og2n9k"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Važenje norme istovjetno je _______ zakonitosti.",
+        "answer": "formalnoj",
+        "hint": "postupak i nadležnost",
+        "id": "vssk5t"
+      },
+      {
+        "sentence": "_______ je izričito ukidanje pravne norme.",
+        "answer": "Abrogacija",
+        "hint": "suprotno derogaciji",
+        "id": "sgmpfi"
+      },
+      {
+        "sentence": "_______ je prešutno ukidanje pravne norme.",
+        "answer": "Derogacija",
+        "hint": "kasnija norma",
+        "id": "qwhbdn"
+      },
+      {
+        "sentence": "_______ je prestanak važenja norme zbog dugotrajne neučinkovitosti.",
+        "answer": "Izobičajenje",
+        "hint": "običaj se ne poštuje",
+        "id": "9i4va7"
+      },
+      {
+        "sentence": "_______ učinkovitost norme znači da većina adresata postupa prema traženju norme.",
+        "answer": "Primarna",
+        "hint": "prvi stupanj",
+        "id": "rw8ne5"
+      },
+      {
+        "sentence": "_______ učinkovitost znači da se sankcija primjenjuje protiv većine prekršitelja.",
+        "answer": "Sekundarna",
+        "hint": "drugi stupanj",
+        "id": "qnjei3"
+      }
+    ],
+    "learn": {
+      "title": "Važenje, pravednost i djelotvornost pravnih normi",
+      "content": "<h3>Važenje pravne norme</h3>\n<p><strong>Važenje</strong> je svojstvo norme da je stupila na snagu, tj. da obvezuje adresate da se po njoj ponašaju. Norma je važeća ako: je stvorena od nadležnog (ovlaštenog) subjekta; nije ukinuta od nadležnog subjekta; objavljena je; protekao je rok za početak važenja (stupanje na snagu kod općeg akta; pravomoćnost kod presude ili rješenja).</p>\n<p>Dimenzije (okviri, sfere) važenja: <strong>personalno</strong> (za koje adresate), <strong>vremensko</strong> (u kojem vremenu) i <strong>prostorno</strong> (u kojem prostoru).</p>\n<p>Norma može početi važiti u: a) trenutku stvaranja; b) trenutku objave ili uručenja; c) roku nakon objave ili uručenja.</p>\n<table><tr><th>Prestanak važenja</th><th>Značenje</th></tr>\n<tr><td>abrogacija</td><td>izričito ukidanje</td></tr>\n<tr><td>derogacija</td><td>prešutno ukidanje</td></tr>\n<tr><td>istek vremena važenja</td><td>norma je donesena na određeno vrijeme</td></tr>\n<tr><td>izobičajenje</td><td>dugotrajna neučinkovitost</td></tr></table>\n<h3>Važenje, pravednost i djelotvornost</h3>\n<ul>\n<li><strong>Važenje i zakonitost:</strong> važenje je istovjetno <em>formalnoj</em> zakonitosti; norma može biti važeća (formalno zakonita), a materijalno nezakonita.</li>\n<li><strong>Pravednost</strong> – usklađenost sadržaja norme s načelom pravednosti, tj. pravilom raspodjele dobara i tereta u društvu.</li>\n<li><strong>Učinkovitost (efikasnost, djelotvornost)</strong> – ponašanje značajne većine adresata u skladu sa sadržajem norme.\n<ul><li><em>Primarna</em> – većina adresata ponaša se u skladu s traženjem norme.</li><li><em>Sekundarna</em> – organi upravne i sudske vlasti primjenjuju sankciju protiv većine prekršitelja odredbe o deliktu.</li></ul></li>\n</ul>\n<p>Tri su svojstva, dakle, neovisna: norma može <strong>važiti</strong>, a biti <strong>nepravedna</strong> ili <strong>neučinkovita</strong>.</p>",
+      "id": "gq2ap8"
+    },
+    "id": "j5cytt"
+  },
+  "sastavPravnogOdnosaSubjekti": {
+    "name": "Pravni odnos i pravni subjekti",
+    "icon": "fa-people-arrows",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je pravni odnos s obzirom na društveni odnos prije normiranja?",
+        "answer": "Naročito važan, konfliktan i izvanjski kontrolabilan društveni odnos koji je reguliran pravnom normom (ili više normi).",
+        "explanation": "Pravo uređuje važne, sukobljene odnose.",
+        "id": "g7zzmn"
+      },
+      {
+        "question": "Kako norme konstituiraju pravne odnose?",
+        "answer": "Značenjski elementi koje norme nose označavaju ili kvalificiraju društvene odnose kao pravne.",
+        "explanation": "Normativne kvalifikacije.",
+        "id": "dj4weg"
+      },
+      {
+        "question": "Koji su značenjski elementi pravnog odnosa u traženju norme?",
+        "answer": "Pravni subjekti, pravna obveza, pravno ovlaštenje (subjektivno pravo) i pravni objekt.",
+        "explanation": "Četiri elementa.",
+        "id": "mhxh3r"
+      },
+      {
+        "question": "Što je pravni odnos prema elementima traženja?",
+        "answer": "Društveni odnos između najmanje dva pravna subjekta koji imaju jedan prema drugome pravnu obvezu i ovlaštenje s obzirom na neki pravni objekt.",
+        "explanation": "Najmanje dva subjekta.",
+        "id": "em34x1"
+      },
+      {
+        "question": "Što je apstraktni, a što konkretni pravni odnos?",
+        "answer": "Apstraktni je odnos izražen traženjem opće norme. Konkretni je stvarni odnos između konkretnih osoba (imenom i prezimenom) s obzirom na konkretni objekt.",
+        "explanation": "Opća norma – stvarni odnos.",
+        "id": "uwujch"
+      },
+      {
+        "question": "Ovisnost apstraktnog odnosa o konkretnom?",
+        "answer": "Apstraktni odnos može jezično postojati bez konkretnog, ali može biti učinkovit samo potvrđujući se u konkretnim odnosima.",
+        "explanation": "Učinkovitost.",
+        "id": "7c3wcn"
+      },
+      {
+        "question": "Ovisnost konkretnog odnosa o apstraktnom?",
+        "answer": "Konkretni odnos ne može postojati bez apstraktnog jer su ovlaštenja i obveze iz njega ponavljanje značenja opće norme u stvarnom odnosu.",
+        "explanation": "Osnova u normi.",
+        "id": "rykczq"
+      },
+      {
+        "question": "Jednostrano i dvostrano obvezujući pravni odnos?",
+        "answer": "Jednostrano: jedna strana ima samo obvezu, druga samo ovlaštenje. Dvostrano: svaka strana prema drugoj ima i obvezu i ovlaštenje.",
+        "explanation": "Jedan ili dva para.",
+        "id": "lt2kgn"
+      },
+      {
+        "question": "Što je pravni subjekt?",
+        "answer": "Čovjek ili društvena tvorevina koja ima pravne obveze i pravna ovlaštenja s obzirom na neke pravne objekte.",
+        "explanation": "Fizičke i pravne osobe.",
+        "id": "77u4ym"
+      },
+      {
+        "question": "Koje su glavne pravno važne sposobnosti?",
+        "answer": "Pravna sposobnost i djelatna sposobnost; podvrste djelatne su poslovna, deliktna, bračna i politička sposobnost.",
+        "explanation": "Dvije glavne vrste.",
+        "id": "hn29be"
+      },
+      {
+        "question": "Što je pravna, a što djelatna sposobnost?",
+        "answer": "Pravna: moć subjekta da posjeduje pravna ovlaštenja i obveze. Djelatna: moć da vlastitom voljom i radnjama izaziva nastanak, promjenu i prestanak ovlaštenja i obveza.",
+        "explanation": "Biti nositelj – djelovati.",
+        "id": "w469mx"
+      },
+      {
+        "question": "Koje fizičke osobe imaju samo pravnu sposobnost?",
+        "answer": "Maloljetnici (nekad: malodobnici) i neuračunljivi; punoljetni i uračunljivi imaju pravnu i djelatnu sposobnost.",
+        "explanation": "Podjela fizičkih osoba.",
+        "id": "wr2j8z"
+      },
+      {
+        "question": "Kada se stječu i gube sposobnosti fizičke osobe?",
+        "answer": "Pravna sposobnost stječe se rođenjem, a gubi smrću; djelatna se stječe punoljetnošću, a gubi neuračunljivošću.",
+        "explanation": "Rođenje – smrt; punoljetnost – neuračunljivost.",
+        "id": "uec1ig"
+      },
+      {
+        "question": "Što su poslovna, deliktna, bračna i politička sposobnost?",
+        "answer": "Poslovna: zaključivanje pravnih poslova. Deliktna: biti kriv i odgovarati za delikte. Bračna: sklapanje braka i briga o djeci. Politička: sudjelovanje u izborima i politici.",
+        "explanation": "Podvrste djelatne sposobnosti.",
+        "id": "f9xdcu"
+      },
+      {
+        "question": "Mjerila pravne diskriminacije u priznavanju sposobnosti?",
+        "answer": "Spol, vjera, obrazovanje, imovina i etnička pripadnost.",
+        "explanation": "Povijesna mjerila.",
+        "id": "huvbbt"
+      },
+      {
+        "question": "Glavne vrste pravnih osoba?",
+        "answer": "Pravne osobe javnog prava (država, općina, javna ustanova, javno poduzeće) i privatnog prava (trgovačko društvo, drugo poduzeće, udruga, zaklada).",
+        "explanation": "Javno – privatno pravo.",
+        "id": "m6i2o8"
+      },
+      {
+        "question": "Načelo slobode i načelo ograničavanja djelatne sposobnosti?",
+        "answer": "Fizička osoba smije činiti sve što joj nije zabranjeno (sloboda). Pravna osoba smije činiti samo ono što joj je izričito dopušteno (ograničavanje) – načela sve manje važna.",
+        "explanation": "Opseg djelatne sposobnosti.",
+        "id": "77l085"
+      },
+      {
+        "question": "Što je zastupanje?",
+        "answer": "Pravni odnos u kojem zastupnik ima obvezu i ovlaštenje da u ime, u interesu i za račun zastupanog obavlja određene pravne radnje.",
+        "explanation": "Učinci se uračunavaju zastupanome.",
+        "id": "wo96fq"
+      },
+      {
+        "question": "Vrste zastupstva?",
+        "answer": "Zakonsko (na temelju zakona, npr. roditelji djece), starateljsko, danas skrbničko (na temelju individualnog državnog akta) i ugovorno (na temelju ugovora, npr. odvjetnik).",
+        "explanation": "Tri tipa zastupstva.",
+        "id": "i1vvrv"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Pravni odnos je društveni odnos koji je:",
+        "options": [
+          "uređen isključivo moralnim normama koje obvezuju savjest",
+          "uređen isključivo običajima koje zajednica ponavlja",
+          "nastao samo između državnih organa u službenom postupku",
+          "važan, konfliktan, izvanjski kontrolabilan i reguliran normom"
+        ],
+        "correct": 3,
+        "id": "6vkb5w"
+      },
+      {
+        "question": "Koji NIJE značenjski element pravnog odnosa u traženju norme?",
+        "options": [
+          "pravni subjekt",
+          "pravna zastara",
+          "pravna obveza",
+          "pravni objekt"
+        ],
+        "correct": 1,
+        "id": "mhpyvm"
+      },
+      {
+        "question": "Najmanji broj pravnih subjekata u pravnom odnosu je:",
+        "options": [
+          "jedan",
+          "tri",
+          "dva",
+          "četiri"
+        ],
+        "correct": 2,
+        "id": "sn0j4p"
+      },
+      {
+        "question": "Apstraktni pravni odnos je odnos:",
+        "options": [
+          "izražen traženjem opće pravne norme",
+          "između osoba određenih imenom i prezimenom",
+          "nastao presudom u konkretnom sporu",
+          "nastao samo među pravnim osobama"
+        ],
+        "correct": 0,
+        "id": "3x58vs"
+      },
+      {
+        "question": "Konkretni pravni odnos postoji između:",
+        "options": [
+          "konkretnih osoba s obzirom na konkretni objekt",
+          "svih građana jedne države u cjelini",
+          "država članica jedne međunarodne organizacije",
+          "samo državnih organa u službenom postupku"
+        ],
+        "correct": 0,
+        "id": "5eu8ud"
+      },
+      {
+        "question": "Konkretni pravni odnos bez apstraktnog:",
+        "options": [
+          "postoji uvijek",
+          "postoji samo u privatnom pravu",
+          "ne može postojati",
+          "postoji samo u kaznenom pravu"
+        ],
+        "correct": 2,
+        "id": "rhge2y"
+      },
+      {
+        "question": "Jednostrano obvezujući pravni odnos:",
+        "options": [
+          "svaka strana ima i obvezu i ovlaštenje prema drugoj",
+          "jedna strana ima samo obvezu, druga samo ovlaštenje",
+          "nijedna strana nema nikakvu obvezu prema drugoj strani",
+          "obje strane imaju samo ovlaštenja i nikakvih obveza"
+        ],
+        "correct": 1,
+        "id": "m0lzxm"
+      },
+      {
+        "question": "Pravni subjekt je:",
+        "options": [
+          "samo punoljetna osoba koja ima djelatnu sposobnost",
+          "samo država i njezini državni organi i službenici",
+          "samo trgovačko društvo upisano u sudski registar",
+          "čovjek ili društvena tvorevina s pravnim obvezama i pravima"
+        ],
+        "correct": 3,
+        "id": "w09q1k"
+      },
+      {
+        "question": "Pravna sposobnost je moć subjekta da:",
+        "options": [
+          "sklapa pravne poslove vlastitim radnjama",
+          "posjeduje pravna ovlaštenja i pravne obveze",
+          "bude kriv i odgovara za delikte",
+          "sudjeluje na političkim izborima"
+        ],
+        "correct": 1,
+        "id": "wg2gvh"
+      },
+      {
+        "question": "Djelatna sposobnost je moć subjekta da:",
+        "options": [
+          "vlastitom voljom izaziva nastanak i prestanak pravnih odnosa",
+          "samo posjeduje pravna ovlaštenja i obveze prema drugima",
+          "samo bude nositelj obveza bez ikakvog djelovanja",
+          "samo bude upisan u službene knjige i registre države"
+        ],
+        "correct": 0,
+        "id": "vaqyd0"
+      },
+      {
+        "question": "Samo pravnu sposobnost imaju:",
+        "options": [
+          "punoljetni i uračunljivi ljudi",
+          "samo trgovačka društva i zadruge",
+          "samo državni organi i službenici",
+          "maloljetnici i neuračunljivi"
+        ],
+        "correct": 3,
+        "id": "r28qmw"
+      },
+      {
+        "question": "Pravnu sposobnost fizička osoba stječe:",
+        "options": [
+          "punoljetnošću",
+          "sklapanjem braka",
+          "rođenjem",
+          "upisom u matičnu knjigu državljana"
+        ],
+        "correct": 2,
+        "id": "biq1eu"
+      },
+      {
+        "question": "Djelatnu sposobnost fizička osoba gubi:",
+        "options": [
+          "rođenjem",
+          "punoljetnošću",
+          "neuračunljivošću",
+          "sklapanjem braka"
+        ],
+        "correct": 2,
+        "id": "tqq1er"
+      },
+      {
+        "question": "Poslovna sposobnost je sposobnost:",
+        "options": [
+          "sklapanja braka i skrbi za djecu rođenu u braku",
+          "sudjelovanja na izborima i političkim aktivnostima",
+          "biti kriv za delikt i odgovarati za njegove posljedice",
+          "vlastitim radnjama zaključivati pravne poslove"
+        ],
+        "correct": 3,
+        "id": "hz854g"
+      },
+      {
+        "question": "Deliktna sposobnost je sposobnost:",
+        "options": [
+          "da se bude kriv i da se za delikte odgovara",
+          "zaključivanja pravnih poslova vlastitim radnjama",
+          "sklapanja braka i skrbi za djecu rođenu u braku",
+          "biranja i biti biran na političkim izborima države"
+        ],
+        "correct": 0,
+        "id": "fb09qu"
+      },
+      {
+        "question": "Politička sposobnost je sposobnost:",
+        "options": [
+          "sklapanja braka i skrbi za djecu rođenu u braku",
+          "sudjelovanja u izborima i drugim političkim aktivnostima",
+          "zaključivanja ugovora o radu s poslodavcem",
+          "posjedovanja imovine na teritoriju vlastite države"
+        ],
+        "correct": 1,
+        "id": "ft2xri"
+      },
+      {
+        "question": "Pravna osoba javnog prava je:",
+        "options": [
+          "udruga",
+          "trgovačko društvo",
+          "općina",
+          "zaklada"
+        ],
+        "correct": 2,
+        "id": "c9xl07"
+      },
+      {
+        "question": "Pravna osoba privatnog prava je:",
+        "options": [
+          "zaklada",
+          "država",
+          "javna ustanova",
+          "općina"
+        ],
+        "correct": 0,
+        "id": "zywg70"
+      },
+      {
+        "question": "Načelo slobode kaže da fizička osoba smije:",
+        "options": [
+          "činiti samo ono što joj je izričito dopušteno",
+          "činiti samo ono što joj naredi država",
+          "činiti samo ono što je običaj",
+          "činiti sve što joj nije zabranjeno"
+        ],
+        "correct": 3,
+        "id": "w1b0jz"
+      },
+      {
+        "question": "Zastupanje je odnos u kojem zastupnik djeluje:",
+        "options": [
+          "isključivo u vlastito ime i za vlastiti račun",
+          "u ime i za račun zastupanog",
+          "protiv interesa zastupanog",
+          "bez ikakvih ovlasti"
+        ],
+        "correct": 1,
+        "id": "hwgyxa"
+      },
+      {
+        "question": "Roditelj koji zastupa dijete primjer je:",
+        "options": [
+          "ugovornog zastupstva",
+          "zakonskog zastupstva",
+          "starateljskog (danas skrbničkog) zastupstva",
+          "dobrovoljnog zastupstva bez osnove"
+        ],
+        "correct": 1,
+        "id": "2xuwf4"
+      },
+      {
+        "question": "Odvjetnik koji zastupa stranku u parnici primjer je:",
+        "options": [
+          "zakonskog zastupstva",
+          "starateljskog (danas skrbničkog) zastupstva",
+          "prisilnog zastupstva",
+          "ugovornog zastupstva"
+        ],
+        "correct": 3,
+        "id": "tpfped"
+      },
+      {
+        "question": "Koje NIJE bilo mjerilo pravne diskriminacije u priznavanju sposobnosti?",
+        "options": [
+          "državljanstvo osobe koja traži priznanje sposobnosti",
+          "spol i vjera osobe kojoj se sposobnost priznaje",
+          "obrazovanje i imovina osobe u društvu",
+          "etnička pripadnost osobe u društvu"
+        ],
+        "correct": 0,
+        "id": "5s7con"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Pravni odnos postoji između najmanje _______ pravna subjekta.",
+        "answer": "dva",
+        "hint": "broj",
+        "id": "dg7tea"
+      },
+      {
+        "sentence": "_______ pravni odnos izražen je traženjem opće pravne norme.",
+        "answer": "Apstraktni",
+        "hint": "suprotno konkretnom",
+        "id": "ce2e8d"
+      },
+      {
+        "sentence": "Pravna sposobnost stječe se _______, a gubi smrću.",
+        "answer": "rođenjem",
+        "hint": "početak",
+        "id": "6pryg8"
+      },
+      {
+        "sentence": "Djelatnu sposobnost fizička osoba stječe _______.",
+        "answer": "punoljetnošću",
+        "hint": "dob",
+        "id": "f0lszc"
+      },
+      {
+        "sentence": "_______ sposobnost je sposobnost subjekta da vlastitim očitovanjima volje sklapa ugovore i stječe prava i obveze.",
+        "answer": "Poslovna",
+        "hint": "podvrsta djelatne",
+        "id": "0jrpy5"
+      },
+      {
+        "sentence": "Država i općina su pravne osobe _______ prava.",
+        "answer": "javnog",
+        "hint": "suprotno privatnom",
+        "id": "b0793f"
+      },
+      {
+        "sentence": "Starateljsko (danas skrbničko) zastupstvo temelji se na individualnom _______ aktu.",
+        "answer": "državnom",
+        "hint": "sud ili organ",
+        "id": "cm9w9n"
+      }
+    ],
+    "learn": {
+      "title": "Pravni odnos i pravni subjekti",
+      "content": "<h3>Sastav i vrste pravnog odnosa</h3>\n<p>Pravni odnos je, s obzirom na obilježja društvenog odnosa prije normiranja, <strong>naročito važan, konfliktan i izvanjski kontrolabilan društveni odnos koji je reguliran pravnom normom</strong> (ili više normi). Pravne norme ga konstituiraju tako što značenjski elementi koje nose označavaju (kvalificiraju) društvene odnose kao pravne.</p>\n<p>Značenjski elementi, normativna značenja ili kvalifikacije pravnog odnosa u <strong>traženju</strong> norme: <strong>pravni subjekti; pravna obveza; pravno ovlaštenje (subjektivno pravo); pravni objekt</strong>. Pravni odnos je društveni odnos između najmanje <em>dva</em> pravna subjekta koji imaju jedan prema drugome pravnu obvezu i pravno ovlaštenje s obzirom na neki pravni objekt.</p>\n<table><tr><th>Apstraktni pravni odnos</th><th>Konkretni pravni odnos</th></tr>\n<tr><td>izražen traženjem opće pravne norme</td><td>stvarni odnos između konkretnih osoba (imenom i prezimenom) s obzirom na konkretni objekt</td></tr>\n<tr><td>može jezično postojati bez konkretnog, ali je učinkovit samo ako se potvrđuje u konkretnim odnosima</td><td>ne može postojati bez apstraktnog jer su ovlaštenja i obveze ponavljanje značenja opće norme u stvarnom odnosu</td></tr></table>\n<ul><li><strong>Jednostrano obvezujući</strong> pravni odnos – jedna strana ima samo obvezu, druga samo ovlaštenje.</li><li><strong>Dvostrano obvezujući</strong> pravni odnos – svaka strana prema drugoj ima i obvezu i ovlaštenje.</li></ul>\n<h3>Pravni subjekti</h3>\n<p><strong>Pravni subjekt</strong> je čovjek ili društvena tvorevina koja ima pravne obveze i pravna ovlaštenja s obzirom na neke pravne objekte.</p>\n<table><tr><th>Sposobnost</th><th>Značenje</th></tr>\n<tr><td>pravna sposobnost</td><td>moć posjedovanja pravnih ovlaštenja i obveza</td></tr>\n<tr><td>djelatna sposobnost</td><td>moć da vlastitom voljom i radnjama izaziva nastanak, promjenu i prestanak ovlaštenja i obveza</td></tr>\n<tr><td>– poslovna</td><td>zaključivanje pravnih poslova vlastitim radnjama</td></tr>\n<tr><td>– deliktna</td><td>biti kriv, činiti delikte i za njih odgovarati</td></tr>\n<tr><td>– bračna</td><td>sklapanje braka i briga za djecu</td></tr>\n<tr><td>– politička</td><td>sudjelovanje u izborima i drugim političkim aktivnostima</td></tr></table>\n<p>Fizičke osobe dijele se na one koje imaju <strong>samo pravnu sposobnost</strong> (maloljetnici – u starijem nazivlju malodobnici – i neuračunljivi) i one koje imaju <strong>pravnu i djelatnu sposobnost</strong> (punoljetni i uračunljivi). Pravnu sposobnost stječu rođenjem, a gube smrću; djelatnu stječu punoljetnošću, a gube neuračunljivošću. Najvažnija mjerila pravne diskriminacije u priznavanju sposobnosti bila su: spol, vjera, obrazovanje, imovina, etnička pripadnost.</p>\n<p><strong>Pravne osobe:</strong> javnog prava (država, općina, javna ustanova, javno poduzeće) i privatnog prava (trgovačko društvo, drugo privatno poduzeće, udruga, zaklada).</p>\n<ul><li>Opseg djelatne sposobnosti <strong>fizičke osobe</strong> izražava načelo slobode: smije činiti i ne činiti sve što joj nije pravno zabranjeno.</li><li>Opseg djelatne sposobnosti <strong>pravne osobe</strong> izražava načelo ograničavanja: smije činiti samo ono što joj je izričito pravno dopušteno. (Oba su načela danas sve manje važna.)</li></ul>\n<h3>Zastupanje</h3>\n<p>Pravni odnos u kojem jedna osoba (zastupnik) ima obvezu i ovlaštenje da u ime, u interesu i za račun druge osobe (zastupanog) obavlja određene pravne radnje. Posljedice radnji zastupnika uračunavaju se zastupanome kao da ih je sam obavio.</p>\n<ul><li><strong>zakonsko</strong> – temelji se neposredno na zakonu (roditelji zastupaju djecu);</li><li><strong>starateljsko</strong> (danas: skrbničko, skrbništvo) – na individualnom državnom aktu (skrbnik, nekad staratelj, djeteta bez roditelja);</li><li><strong>ugovorno</strong> – na ugovoru (odvjetnik zastupa stranku u parnici).</li></ul>\n<p><em>Napomena o izmjeni:</em> izrazi staratelj, starateljstvo i malodobnik zastarjeli su. Važeći Obiteljski zakon (NN 103/15 i dalje) govori o <strong>skrbništvu</strong> i <strong>skrbniku</strong> (skrbništvo kao oblik zaštite djeteta bez roditeljske skrbi, osobe lišene poslovne sposobnosti i drugih osoba), a o <strong>maloljetnicima</strong>. Izvor: zakon.hr, Obiteljski zakon, glava o skrbništvu (čl. 218.).</p>",
+      "id": "5nvqd0"
+    },
+    "id": "h63hqw"
+  },
+  "objektiOvlastenjeObveza": {
+    "name": "Pravni objekti, ovlaštenje i obveza",
+    "icon": "fa-handshake",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Što je pravni objekt?",
+        "answer": "Materijalno ili duhovno dobro ili vrijednost radi koje subjekti stupaju u pravni odnos i s obzirom na koju imaju obveze i ovlaštenja.",
+        "explanation": "Predmet odnosa.",
+        "id": "6alrle"
+      },
+      {
+        "question": "Tri glavne vrste dobara kao objekata pravnih odnosa?",
+        "answer": "Prirodna dobra, ljudske tvorevine i ljudske radnje.",
+        "explanation": "Tri vrste.",
+        "id": "fcuun6"
+      },
+      {
+        "question": "Koje su vrste ljudskih tvorevina?",
+        "answer": "Materijalne (npr. oruđa, zgrade, odjeća, novac) i duhovne (npr. znanje, jezik, odgoj, vjera).",
+        "explanation": "Dvije vrste.",
+        "id": "q72sua"
+      },
+      {
+        "question": "Koje su vrste ljudskih radnji kao objekata?",
+        "answer": "Činjenje (facere), nečinjenje vlastite zabranjene radnje (non facere) i trpljenje tuđe ovlaštene radnje (pati).",
+        "explanation": "Facere, non facere, pati.",
+        "id": "bj7pl9"
+      },
+      {
+        "question": "Što je radnja činjenja (facere)?",
+        "answer": "Činjenje vlastite ovlaštene ili obvezne radnje, npr. isporuka stvari, obrada zemlje, izvedba obreda.",
+        "explanation": "Pozitivna radnja.",
+        "id": "aj6ozb"
+      },
+      {
+        "question": "Što je nečinjenje (non facere)?",
+        "answer": "Nečinjenje vlastite zabranjene radnje, npr. ne pričati za vrijeme predavanja, ne parkirati na susjedovu zemljištu.",
+        "explanation": "Suzdržavanje.",
+        "id": "vqpjtq"
+      },
+      {
+        "question": "Što je pravno ovlaštenje?",
+        "answer": "Položaj subjekta, postavljen normom, da radi ostvarenja svog interesa može nešto činiti ili ne činiti te ima moć da od obveznika zahtijeva činjenje ili nečinjenje, a ako ne udovolji, da ga tuži.",
+        "explanation": "Dvostruka moć.",
+        "id": "ajnkjb"
+      },
+      {
+        "question": "Što je nudum ius?",
+        "answer": "Golo pravo: zahtijevanje bez tužbene moći, tj. bez pravne zaštite.",
+        "explanation": "Latinski naziv.",
+        "id": "3li9hq"
+      },
+      {
+        "question": "Što je pravna obveza?",
+        "answer": "Položaj subjekta, postavljen normom, da mora nešto činiti ili ne činiti nekom drugom (ovlašteniku) i da može biti tužen, prisiljen ili kažnjen ako to ne učini.",
+        "explanation": "Prisila uz obvezu.",
+        "id": "q8k449"
+      },
+      {
+        "question": "Korelativnost obveze i ovlaštenja?",
+        "answer": "Ne može postojati obveza bez ovlaštenja niti ovlaštenje bez obveze; međuovisni su.",
+        "explanation": "Dva lica jednog odnosa.",
+        "id": "ea1qs6"
+      },
+      {
+        "question": "Koliko parova obveza i ovlaštenja ima u pojedinim odnosima?",
+        "answer": "Jednostrano obvezujući odnos ima jedan par, a dvostrano obvezujući dva para korelativnih obveza i ovlaštenja.",
+        "explanation": "1 ili 2 para.",
+        "id": "2ydi3m"
+      },
+      {
+        "question": "Koje su vrste korelativnih ovlaštenja i obveza?",
+        "answer": "Neprenosive i prenosive, javne i privatne, apsolutne i relativne.",
+        "explanation": "Tri podjele.",
+        "id": "io7zpg"
+      },
+      {
+        "question": "Neprenosivo i prenosivo ovlaštenje?",
+        "answer": "Neprenosivo je trajno vezano za određenu osobu. Prenosivo nije vezano za osobu i može se prenijeti besplatno ili naplatno (cesija, nasljeđivanje).",
+        "explanation": "Prijenos na druge.",
+        "id": "5bjy71"
+      },
+      {
+        "question": "Javno i privatno ovlaštenje?",
+        "answer": "Javno dodjeljuje ili naređuje vlast i ono se prisilno uspostavlja (državljanstvo, porez). Privatno stranke određuju dogovorno, autonomnom voljom.",
+        "explanation": "Izvor odnosa.",
+        "id": "gvniz6"
+      },
+      {
+        "question": "Važna razlika javnog i privatnog ovlaštenja?",
+        "answer": "Nositelj javnog ovlaštenja (npr. pravo glasa) ne može ga se odreći, a nositelj privatnog (npr. pravo na isplatu duga) može.",
+        "explanation": "Odricanje.",
+        "id": "5giscq"
+      },
+      {
+        "question": "Apsolutno i relativno ovlaštenje?",
+        "answer": "Apsolutno vrijedi prema svim pravnim subjektima sustava; relativno prema određenom drugom subjektu.",
+        "explanation": "Prema svima ili prema jednom.",
+        "id": "s5xzzc"
+      },
+      {
+        "question": "Što je pravni status?",
+        "answer": "Ukupnost neprenosivih ovlaštenja i obveza koje subjekt ima općenito u društvu ili u posebnom području života (političkom, obiteljskom, radnom).",
+        "explanation": "Pravni položaj osobe.",
+        "id": "lpk87y"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Pravni objekt je:",
+        "options": [
+          "osoba koja u pravnom odnosu ima obveze i ovlaštenja",
+          "norma koja uređuje pravni odnos među subjektima",
+          "dobro ili vrijednost radi koje subjekti stupaju u pravni odnos",
+          "postupak kojim se pravni odnos zasniva među strankama"
+        ],
+        "correct": 2,
+        "id": "7q0z3l"
+      },
+      {
+        "question": "Koja NIJE glavna vrsta dobara kao pravnih objekata?",
+        "options": [
+          "prirodna dobra",
+          "ljudske tvorevine",
+          "ljudske radnje",
+          "pravni lijekovi"
+        ],
+        "correct": 3,
+        "id": "texz63"
+      },
+      {
+        "question": "Znanje, jezik i vjera primjeri su:",
+        "options": [
+          "materijalnih ljudskih tvorevina",
+          "duhovnih ljudskih tvorevina",
+          "prirodnih dobara",
+          "ljudskih radnji nečinjenja"
+        ],
+        "correct": 1,
+        "id": "94idf9"
+      },
+      {
+        "question": "Novac, zgrade i odjeća primjeri su:",
+        "options": [
+          "duhovnih ljudskih tvorevina i dobara",
+          "prirodnih dobara bez ljudskog rada",
+          "materijalnih ljudskih tvorevina",
+          "ljudskih radnji trpljenja i činjenja"
+        ],
+        "correct": 2,
+        "id": "x041c3"
+      },
+      {
+        "question": "Radnja „facere” označava:",
+        "options": [
+          "činjenje vlastite ovlaštene ili obvezne radnje",
+          "nečinjenje vlastite radnje koja je pravno zabranjena",
+          "trpljenje tuđe radnje koja je pravno ovlaštena",
+          "zabranu ikakvog činjenja u pravnom odnosu stranaka"
+        ],
+        "correct": 0,
+        "id": "ckkl63"
+      },
+      {
+        "question": "Radnja „non facere” označava:",
+        "options": [
+          "nečinjenje vlastite zabranjene radnje",
+          "činjenje vlastite obvezne radnje u korist drugog",
+          "trpljenje tuđe ovlaštene radnje u odnosu",
+          "isporuku stvari koja je predmet ugovora"
+        ],
+        "correct": 0,
+        "id": "emczqm"
+      },
+      {
+        "question": "Trpljenje tuđe ovlaštene radnje označava se latinskim izrazom:",
+        "options": [
+          "facere",
+          "non facere",
+          "pati",
+          "dare"
+        ],
+        "correct": 2,
+        "id": "fkj1s8"
+      },
+      {
+        "question": "Pravno ovlaštenje daje subjektu moć da:",
+        "options": [
+          "sam kazni obveznika bez ikakvog postupka pred sudom",
+          "zahtijeva ponašanje obveznika i tuži ga ako ne udovolji",
+          "izbjegne svaku obvezu prema drugim pravnim subjektima",
+          "jednostrano mijenja sadržaj norme koja ga ovlašćuje"
+        ],
+        "correct": 1,
+        "id": "mu41wy"
+      },
+      {
+        "question": "Nudum ius je:",
+        "options": [
+          "pravo koje se može prenijeti ugovorom",
+          "pravo koje vrijedi prema svima",
+          "pravo koje je istekom roka prestalo",
+          "golo pravo bez tužbene moći"
+        ],
+        "correct": 3,
+        "id": "6gs4il"
+      },
+      {
+        "question": "Pravna obveza uključuje da obveznik:",
+        "options": [
+          "nikad ne može biti prisiljen na ispunjenje obveze",
+          "može biti tužen i prisiljen ili kažnjen ako ne postupi",
+          "sam odabire hoće li uopće postupiti prema obvezi",
+          "postupa isključivo iz moralnih, a ne pravnih razloga"
+        ],
+        "correct": 1,
+        "id": "p1dtdb"
+      },
+      {
+        "question": "Korelativnost ovlaštenja i obveze znači da:",
+        "options": [
+          "jedno ne postoji bez drugog",
+          "ovlaštenje postoji i bez obveze",
+          "obveza postoji i bez ovlaštenja",
+          "obje uvijek pripadaju istoj osobi"
+        ],
+        "correct": 0,
+        "id": "qo3fcb"
+      },
+      {
+        "question": "Dvostrano obvezujući pravni odnos ima:",
+        "options": [
+          "jedan par korelativnih obveza i ovlaštenja među stranama",
+          "tri para korelativnih obveza i ovlaštenja među stranama",
+          "nijedan par korelativnih obveza i ovlaštenja među stranama",
+          "dva para korelativnih obveza i ovlaštenja"
+        ],
+        "correct": 3,
+        "id": "bzvtjy"
+      },
+      {
+        "question": "Prenosivo ovlaštenje može se prenijeti:",
+        "options": [
+          "nikada, ni na koji način, jer je vezano uz osobu",
+          "samo odlukom suda u posebnom postupku prijenosa",
+          "besplatno ili naplatno, npr. cesijom ili nasljeđivanjem",
+          "samo na državne organe i javne ustanove države"
+        ],
+        "correct": 2,
+        "id": "jkefnt"
+      },
+      {
+        "question": "Neprenosivo ovlaštenje:",
+        "options": [
+          "može se slobodno prodati drugoj osobi",
+          "prelazi na nasljednike u svakom slučaju",
+          "trajno je vezano uz određenu osobu",
+          "vrijedi samo za pravne osobe javnog prava"
+        ],
+        "correct": 2,
+        "id": "69koiw"
+      },
+      {
+        "question": "Javno ovlaštenje je ono koje:",
+        "options": [
+          "stranke dogovorno određuju svojom autonomnom voljom",
+          "vrijedi isključivo prema jednom određenom drugom subjektu",
+          "nastaje isključivo ugovorom između dviju stranaka",
+          "dodjeljuje ili naređuje vlast, a nositelj ga se ne može odreći"
+        ],
+        "correct": 3,
+        "id": "a27ln6"
+      },
+      {
+        "question": "Nositelj privatnog ovlaštenja:",
+        "options": [
+          "može se ovlaštenja odreći",
+          "ne može se ovlaštenja odreći",
+          "ovlaštenje mu je uvijek neprenosivo",
+          "ne može ga ostvariti pred sudom"
+        ],
+        "correct": 0,
+        "id": "osayov"
+      },
+      {
+        "question": "Pravo glasa na političkim izborima primjer je:",
+        "options": [
+          "privatnog ovlaštenja",
+          "javnog ovlaštenja",
+          "relativnog ovlaštenja",
+          "prenosivog ovlaštenja"
+        ],
+        "correct": 1,
+        "id": "r4x72p"
+      },
+      {
+        "question": "Apsolutno ovlaštenje vrijedi prema:",
+        "options": [
+          "samo jednom određenom subjektu",
+          "samo državnim organima",
+          "svim pravnim subjektima sustava",
+          "samo strancima"
+        ],
+        "correct": 2,
+        "id": "xfz8g6"
+      },
+      {
+        "question": "Relativno ovlaštenje vrijedi prema:",
+        "options": [
+          "određenome drugom subjektu",
+          "svim pravnim subjektima",
+          "samo pravnim osobama javnog prava",
+          "nikome u pravnom sustavu"
+        ],
+        "correct": 0,
+        "id": "d68old"
+      },
+      {
+        "question": "Pravni status je ukupnost:",
+        "options": [
+          "svih prenosivih ovlaštenja i obveza koje subjekt ima u društvu",
+          "svih ugovora koje je subjekt sklopio tijekom života",
+          "svih presuda koje su donesene protiv tog subjekta",
+          "neprenosivih ovlaštenja i obveza subjekta u društvu ili području života"
+        ],
+        "correct": 3,
+        "id": "qdhqqr"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Tri glavne vrste objekata pravnih odnosa: prirodna dobra, ljudske tvorevine i ljudske _______.",
+        "answer": "radnje",
+        "hint": "činjenje",
+        "id": "y83jcm"
+      },
+      {
+        "sentence": "Latinski izraz za činjenje je _______.",
+        "answer": "facere",
+        "hint": "radnja",
+        "id": "wwqimh"
+      },
+      {
+        "sentence": "Latinski izraz za nečinjenje je non _______.",
+        "answer": "facere",
+        "hint": "suzdržavanje",
+        "id": "iw3yxj"
+      },
+      {
+        "sentence": "_______ ius je golo pravo, zahtijevanje bez tužbene moći.",
+        "answer": "Nudum",
+        "hint": "latinski izraz",
+        "id": "hem11v"
+      },
+      {
+        "sentence": "_______ obveze i ovlaštenja znači da jedno ne postoji bez drugog.",
+        "answer": "Korelativnost",
+        "hint": "međuovisnost",
+        "id": "hk4suh"
+      },
+      {
+        "sentence": "Privatnog ovlaštenja nositelj se _______ odreći.",
+        "answer": "može",
+        "hint": "za razliku od javnog",
+        "id": "xjkx8l"
+      },
+      {
+        "sentence": "Apsolutno ovlaštenje djeluje prema _______ pravnim subjektima.",
+        "answer": "svim",
+        "hint": "relativno prema jednom",
+        "id": "i29rjm"
+      }
+    ],
+    "learn": {
+      "title": "Pravni objekti, ovlaštenje i obveza",
+      "content": "<h3>Pravni objekti</h3>\n<p><strong>Pravni objekt</strong> je materijalno ili duhovno dobro ili vrijednost radi koje pravni subjekti stupaju u pravni odnos i s obzirom na koje imaju pravne obveze i ovlaštenja. Tri su glavne vrste dobara koja norme raspodjeljuju među subjekte:</p>\n<ol><li><strong>prirodna dobra</strong>;</li><li><strong>ljudske tvorevine</strong> – materijalne (oruđa, zgrade, odjeća, novac) i duhovne (znanje, jezik, odgoj, vjera);</li><li><strong>ljudske radnje</strong>:</li></ol>\n<table><tr><th>Radnja</th><th>Latinski</th><th>Primjeri</th></tr>\n<tr><td>činjenje vlastite ovlaštene ili obvezne radnje</td><td>facere</td><td>isporuka stvari, obrada zemlje, izvedba obreda</td></tr>\n<tr><td>nečinjenje vlastite zabranjene radnje</td><td>non facere</td><td>ne pričati za vrijeme predavanja, ne parkirati auto na susjedovu zemljištu</td></tr>\n<tr><td>trpljenje tuđe ovlaštene radnje</td><td>pati</td><td>trpjeti ulazak ovlaštene osobe na zemljište</td></tr></table>\n<h3>Pravno ovlaštenje i pravna obveza</h3>\n<p><strong>Pravno ovlaštenje</strong> je položaj subjekta, postavljen pravnom normom, da radi ostvarenja svog interesa može nešto činiti ili ne činiti te ima <em>dvostruku moć</em> prema drugom subjektu (obvezniku): (1) zahtijevati određeno činjenje, davanje ili nečinjenje s obzirom na pravni objekt; (2) ako obveznik ne udovolji zahtjevu, tužiti ga pred državnim organima. <em>Nudum ius</em> (golo pravo) je zahtijevanje bez tužbene moći i pravne zaštite.</p>\n<p><strong>Pravna obveza</strong> je položaj subjekta, postavljen normom, da mora nešto činiti (i dati) ili ne činiti prema drugom subjektu (ovlašteniku) i da može biti tužen, prisiljen ili kažnjen ako to ne učini.</p>\n<p><strong>Korelativnost</strong> (međuovisnost): ne može postojati obveza bez ovlaštenja niti ovlaštenje bez obveze. U jednostrano obvezujućem odnosu postoji <em>jedan</em> par korelativnih obveza i ovlaštenja, a u dvostrano obvezujućem <em>dva</em> para.</p>\n<table><tr><th>Podjela</th><th>Obilježja</th></tr>\n<tr><td>neprenosiva / prenosiva</td><td>neprenosivo trajno je vezano za osobu; prenosivo nije vezano za osobu i prenosi se besplatno ili naplatno (cesija, nasljeđivanje)</td></tr>\n<tr><td>javna / privatna</td><td>javne dodjeljuje ili naređuje vlast (državljanstvo, porez, promet); privatne stranke dogovaraju autonomnom voljom</td></tr>\n<tr><td>apsolutna / relativna</td><td>apsolutne vrijede prema svim subjektima sustava; relativne prema određenom drugom subjektu</td></tr></table>\n<p><strong>Važna razlika javnog i privatnog ovlaštenja:</strong> nositelj javnog ovlaštenja (pravo glasa, pravo na putovnicu) ne može ga se odreći, dok se nositelj privatnog (pravo na isplatu duga, pravo na odštetu) može odreći.</p>\n<p><strong>Pravni status</strong> je ukupnost neprenosivih ovlaštenja i obveza koje subjekt ima općenito u društvu (pravnom sustavu) ili u posebnom području života (političkom, obiteljskom, radnom).</p>",
+      "id": "t7roxp"
+    },
+    "id": "ugueut"
+  },
+  "zastitaZloupotreba": {
+    "name": "Zloupotreba i zaštita pravnog ovlaštenja",
+    "icon": "fa-shield-halved",
+    "color": "#0f766e",
+    "flashcards": [
+      {
+        "question": "Što je zloupotreba subjektivnog prava?",
+        "answer": "Pretjerano i bezobzirno korištenje ovlaštenja na teret drugog subjekta, onemogućujući ili ometajući ga u korištenju njegova istovrsnog ili drugog prava.",
+        "explanation": "Zloupotreba ovlaštenja.",
+        "id": "zu77az"
+      },
+      {
+        "question": "Objektivna koncepcija zloupotrebe?",
+        "answer": "Zloupotreba je svaka radnja bezobzirnog korištenja ovlaštenja, i kad nije namjerna ni nehajna.",
+        "explanation": "Bez obzira na krivnju.",
+        "id": "ylnw4f"
+      },
+      {
+        "question": "Subjektivna koncepcija zloupotrebe?",
+        "answer": "Zloupotreba je samo namjerna radnja bezobzirnog korištenja ovlaštenja, tzv. šikana.",
+        "explanation": "Traži se namjera.",
+        "id": "yt0e0j"
+      },
+      {
+        "question": "Što je zloupotreba službenog položaja?",
+        "answer": "Bezobzirno, zlonamjerno ili privatizirajuće obavljanje ovlasti (nadležnosti) državne ili druge službene osobe.",
+        "explanation": "Službena osoba.",
+        "id": "q6eb4o"
+      },
+      {
+        "question": "Redovito pravno sredstvo zaštite ovlaštenja?",
+        "answer": "Tužba, upućena sudu; sadrži zahtjev za rješavanje pravnog spora i prisiljavanje prekršitelja obveze na dužno ponašanje, odnosno njegovo kažnjavanje.",
+        "explanation": "Zaštita pred sudom.",
+        "id": "9c3ge1"
+      },
+      {
+        "question": "Što je zaštita protiv prvostupanjskog upravnog akta?",
+        "answer": "Žalba višem upravnom organu s zahtjevom za ukidanje ili preinaku upravnog akta.",
+        "explanation": "Upravni put.",
+        "id": "kgiqxd"
+      },
+      {
+        "question": "Što protiv drugostupanjskog upravnog akta?",
+        "answer": "Tužba nadležnom upravnom sudu, a rješava se u upravnom sporu.",
+        "explanation": "Sudska kontrola uprave.",
+        "id": "px8fuc"
+      },
+      {
+        "question": "Što je odbacivanje, odbijanje i usvajanje tužbe?",
+        "answer": "Odbacivanje: procesne zapreke (nenadležnost, nepravodobnost). Odbijanje: neosnovanost tužbe. Usvajanje: osnovana tužba.",
+        "explanation": "Mogući sadržaji presude.",
+        "id": "nh5s3e"
+      },
+      {
+        "question": "Što je pravni lijek?",
+        "answer": "Sredstvo kojim obje strane u sporu mogu pobijati valjanost upravne ili sudske odluke.",
+        "explanation": "Npr. žalba.",
+        "id": "jq8duc"
+      },
+      {
+        "question": "Zbog čega se odluka pobija pravnim lijekom?",
+        "answer": "Zbog pogrešne primjene opće norme i pogrešno utvrđenih činjenica; traži se ukidanje ili preinaka odluke.",
+        "explanation": "Dva razloga.",
+        "id": "4a5epk"
+      },
+      {
+        "question": "Redoviti i izvanredni pravni lijek?",
+        "answer": "Redoviti se koristi protiv nepravomoćne odluke, izvanredni protiv pravomoćne.",
+        "explanation": "Pravomoćnost kao granica.",
+        "id": "tite62"
+      },
+      {
+        "question": "Što je pravomoćnost?",
+        "answer": "Svojstvo presude ili rješenja da je postala pravno obvezujuća i da se ne može napadati redovitim pravnim lijekom.",
+        "explanation": "Odluka je konačna.",
+        "id": "fqjyd1"
+      },
+      {
+        "question": "Prijevod izreke „res iudicata pro veritate habetur”?",
+        "answer": "Presuđena stvar drži se istinitom.",
+        "explanation": "Snaga pravomoćne odluke.",
+        "id": "dsk8fa"
+      },
+      {
+        "question": "Tko izvršava pravomoćnu odluku?",
+        "answer": "Osuđena osoba dobrovoljno, a ako to ne učini, nadležni državni organ prisilno.",
+        "explanation": "Dobrovoljno ili prisilno.",
+        "id": "i326dk"
+      },
+      {
+        "question": "Što je samopomoć i kada je dopuštena?",
+        "answer": "Samopomoć je ovlaštenikova prisila protiv dužnika radi ispunjenja obveze ili kazne; dopuštena je u nužnoj obrani i krajnjoj nuždi.",
+        "explanation": "Iznimka od monopola države.",
+        "id": "rxew5a"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Zloupotreba subjektivnog prava je:",
+        "options": [
+          "zakonito korištenje prava u granicama koje postavlja norma",
+          "pretjerano i bezobzirno korištenje prava na teret drugog subjekta",
+          "odricanje od prava u korist drugog pravnog subjekta",
+          "prijenos prava na treću osobu ugovorom o cesiji"
+        ],
+        "correct": 1,
+        "id": "wzlew6"
+      },
+      {
+        "question": "Prema objektivnoj koncepciji zloupotrebe:",
+        "options": [
+          "zloupotreba postoji samo uz namjeru",
+          "zloupotreba postoji i bez namjere ili nehaja",
+          "zloupotreba nikada ne postoji",
+          "zloupotreba postoji samo uz presudu suda"
+        ],
+        "correct": 1,
+        "id": "qw5o20"
+      },
+      {
+        "question": "Prema subjektivnoj koncepciji zloupotreba je samo:",
+        "options": [
+          "svaka radnja bezobzirnog korištenja ovlaštenja bez obzira na krivnju",
+          "nehajna radnja korištenja ovlaštenja bez ikakve namjere",
+          "radnja korištenja ovlaštenja koja nije imala štetne posljedice",
+          "namjerna radnja bezobzirnog korištenja ovlaštenja (šikana)"
+        ],
+        "correct": 3,
+        "id": "pd6617"
+      },
+      {
+        "question": "Zloupotreba službenog položaja je:",
+        "options": [
+          "zlonamjerno ili privatizirajuće obavljanje ovlasti službene osobe",
+          "zakonito obavljanje ovlasti organa u granicama nadležnosti",
+          "odricanje službene osobe od svojih ovlasti u korist stranke",
+          "pogrešno tumačenje norme u dobroj vjeri bez ikakve namjere"
+        ],
+        "correct": 0,
+        "id": "8fowv6"
+      },
+      {
+        "question": "Redovito sredstvo zaštite povrijeđenog ovlaštenja je:",
+        "options": [
+          "samopomoć u svim slučajevima",
+          "žalba vladi",
+          "tužba sudu",
+          "molba šefu države"
+        ],
+        "correct": 2,
+        "id": "p4z9yb"
+      },
+      {
+        "question": "Protiv upravnog akta prvostupanjskog organa izjavljuje se:",
+        "options": [
+          "tužba vrhovnom sudu",
+          "prijava državnom odvjetništvu",
+          "molba za pomilovanje",
+          "žalba višem upravnom organu"
+        ],
+        "correct": 3,
+        "id": "8uaazw"
+      },
+      {
+        "question": "Protiv upravnog akta drugostupanjskog organa podnosi se:",
+        "options": [
+          "žalba istom organu",
+          "tužba upravnom sudu",
+          "molba ministarstvu",
+          "tužba trgovačkom sudu"
+        ],
+        "correct": 1,
+        "id": "0qe6qu"
+      },
+      {
+        "question": "Odbacivanje tužbe nastaje zbog:",
+        "options": [
+          "materijalnopravne neosnovanosti tužbenog zahtjeva stranke",
+          "osnovanosti tužbenog zahtjeva koji je tužitelj postavio",
+          "procesnopravne neosnovanosti, npr. nenadležnosti ili nepravodobnosti",
+          "smrti jedne od stranaka u tijeku sudskog postupka"
+        ],
+        "correct": 2,
+        "id": "hbq7ic"
+      },
+      {
+        "question": "Odbijanje tužbe nastaje zbog:",
+        "options": [
+          "materijalnopravne neosnovanosti tužbenog zahtjeva",
+          "nepravodobnosti tužbe koja je podnesena nakon roka",
+          "nenadležnosti suda kojem je tužba bila podnesena",
+          "nepotpunog podneska koji tužitelj nije uredio u roku"
+        ],
+        "correct": 0,
+        "id": "wumz5i"
+      },
+      {
+        "question": "Pravni lijek je sredstvo kojim se:",
+        "options": [
+          "pobija valjanost upravne ili sudske odluke",
+          "zasniva pravni posao među strankama",
+          "stječe državljanstvo neke države",
+          "mijenja ustav u ustavotvornom postupku"
+        ],
+        "correct": 0,
+        "id": "f7uz57"
+      },
+      {
+        "question": "Pravnim lijekom odluka se pobija zbog:",
+        "options": [
+          "neslaganja sa željama stranke koja je izgubila spor",
+          "visine sudskih troškova koje je stranka dužna platiti",
+          "pogrešne primjene norme i pogrešno utvrđenih činjenica",
+          "duljine i stila obrazloženja koje je sud napisao"
+        ],
+        "correct": 2,
+        "id": "y4vvir"
+      },
+      {
+        "question": "Redoviti pravni lijek koristi se protiv:",
+        "options": [
+          "pravomoćne sudske ili upravne odluke",
+          "nepravomoćne sudske ili upravne odluke",
+          "zakona koji je stupio na snagu",
+          "ustava donesenog u ustavotvornom postupku"
+        ],
+        "correct": 1,
+        "id": "fgpqar"
+      },
+      {
+        "question": "Pravomoćnost je svojstvo odluke da:",
+        "options": [
+          "je pravedna prema svim strankama u postupku",
+          "je donesena od vrhovnog suda u državi",
+          "je objavljena u službenom glasilu države",
+          "se ne može napadati redovitim pravnim lijekom"
+        ],
+        "correct": 3,
+        "id": "72niy1"
+      },
+      {
+        "question": "„Res iudicata pro veritate habetur” znači:",
+        "options": [
+          "nepoznavanje prava ne opravdava",
+          "presuđena stvar drži se istinitom",
+          "kasniji zakon ukida raniji",
+          "nema kazne bez zakona"
+        ],
+        "correct": 1,
+        "id": "a5c7cy"
+      },
+      {
+        "question": "Pravomoćnu odluku izvršava:",
+        "options": [
+          "osuđena osoba dobrovoljno, a inače država prisilno",
+          "isključivo tužitelj, vlastitom prisilom prema dužniku",
+          "isključivo odvjetnik stranke koja je dobila spor",
+          "isključivo vrhovni sud koji je odluku potvrdio"
+        ],
+        "correct": 0,
+        "id": "fkjiow"
+      },
+      {
+        "question": "Samopomoć je dopuštena u slučaju:",
+        "options": [
+          "svakog spora među građanima",
+          "svakog nepravomoćnog akta",
+          "svakog kršenja ugovora",
+          "nužne obrane i krajnje nužde"
+        ],
+        "correct": 3,
+        "id": "9qjux8"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "_______ je redovito sredstvo zaštite povrijeđenog ovlaštenja pred sudom.",
+        "answer": "Tužba",
+        "hint": "sudu",
+        "id": "y9j4o3"
+      },
+      {
+        "sentence": "Namjerno bezobzirno korištenje prava, prema subjektivnoj koncepciji, naziva se _______.",
+        "answer": "šikana",
+        "hint": "namjera",
+        "id": "wf5oej"
+      },
+      {
+        "sentence": "Protiv prvostupanjskog upravnog akta podnosi se _______.",
+        "answer": "žalba",
+        "hint": "viši organ",
+        "id": "172vpk"
+      },
+      {
+        "sentence": "_______ je svojstvo odluke da se ne može napadati redovitim pravnim lijekom.",
+        "answer": "Pravomoćnost",
+        "hint": "konačnost",
+        "id": "6kde2y"
+      },
+      {
+        "sentence": "Redoviti pravni lijek koristi se protiv _______ odluke.",
+        "answer": "nepravomoćne",
+        "hint": "prije pravomoćnosti",
+        "id": "9m9x1w"
+      },
+      {
+        "sentence": "Samopomoć je dopuštena u nužnoj obrani i krajnjoj _______.",
+        "answer": "nuždi",
+        "hint": "dva slučaja",
+        "id": "vhdvky"
+      },
+      {
+        "sentence": "Res iudicata pro _______ habetur: presuđena stvar drži se istinitom.",
+        "answer": "veritate",
+        "hint": "istina",
+        "id": "hhoivl"
+      }
+    ],
+    "learn": {
+      "title": "Zloupotreba i zaštita pravnog ovlaštenja",
+      "content": "<h3>Zloupotreba pravnog ovlaštenja</h3>\n<p><strong>Zloupotreba subjektivnog prava (pravnog ovlaštenja)</strong> je pretjerano i bezobzirno korištenje ovlaštenja od strane ovlaštenika, na teret drugog pravnog subjekta, čime ga se onemogućuje ili ometa u korištenju njegova istovrsnog ili drugog subjektivnog prava.</p>\n<table><tr><th>Koncepcija</th><th>Što je zloupotreba</th></tr>\n<tr><td>objektivna</td><td>svaka radnja bezobzirnog korištenja ovlaštenja, čak i kad nije namjerna ni nehajna</td></tr>\n<tr><td>subjektivna</td><td>samo namjerna radnja bezobzirnog korištenja ovlaštenja – tzv. <em>šikana</em></td></tr></table>\n<p><strong>Zloupotreba službenog položaja (nadležnosti)</strong> je bezobzirno, zlonamjerno ili privatizirajuće obavljanje ovlasti državne ili druge službene osobe.</p>\n<h3>Zaštita pravnog ovlaštenja</h3>\n<ul>\n<li><strong>Tužba</strong> – redovito sredstvo subjekta koji drži da mu je povrijeđeno ovlaštenje; upućuje se <em>sudu</em>; sadrži zahtjev za rješavanje spora i prisiljavanje prekršitelja obveze na dužno ponašanje, odnosno za njegovo kažnjavanje.</li>\n<li><strong>Žalba</strong> – protiv upravnog akta <em>prvostupanjskog</em> organa; upućuje se višem upravnom organu; traži ukidanje ili preinaku upravnog akta.</li>\n<li><strong>Tužba nadležnom upravnom sudu</strong> – protiv upravnog akta <em>drugostupanjskog</em> organa; rješava se u <em>upravnom sporu</em>.</li>\n</ul>\n<p>Moguće presude (sadržaji i razlozi): <strong>odbacivanje tužbe</strong> zbog procesnopravne neosnovanosti (nenadležnost, nepravodobnost); <strong>odbijanje tužbe</strong> zbog materijalnopravne neosnovanosti; <strong>usvajanje tužbe</strong> zbog osnovanosti.</p>\n<p><strong>Pravni lijek</strong> je sredstvo kojim strane u sporu mogu pobijati valjanost upravne ili sudske odluke, zbog <em>pogrešne primjene opće norme</em> i <em>pogrešno utvrđenih činjenica</em>; može se tražiti ukidanje ili preinaka. <strong>Redoviti</strong> pravni lijek koristi se protiv nepravomoćne odluke, <strong>izvanredni</strong> protiv pravomoćne.</p>\n<p><strong>Pravomoćnost</strong> je svojstvo presude ili rješenja da je postala pravno obvezujuća i da se ne može napadati redovitim pravnim lijekom. <em>Res iudicata pro veritate habetur</em> – presuđena stvar drži se istinitom. Pravomoćnu odluku dužna je izvršiti osuđena osoba dobrovoljno, a ako to ne učini, nadležni državni organ prisilno.</p>\n<p><strong>Samopomoć</strong> je ovlaštenikova prisila protiv dužnika radi ispunjenja obveze ili kazne. Dopuštena je u slučajevima <strong>nužne obrane</strong> i <strong>krajnje nužde</strong>.</p>\n",
+      "id": "xwh0z2"
+    },
+    "id": "vvi6nu"
+  },
+  "nastanakCinjenicePraznina": {
+    "name": "Nastanak i prestanak odnosa, pravne činjenice, radnje i praznine",
+    "icon": "fa-clock-rotate-left",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Uvjet nastanka apstraktnog pravnog odnosa?",
+        "answer": "Stvaranje opće pravne norme.",
+        "explanation": "Opća norma stvara apstraktni odnos.",
+        "id": "nnni8g"
+      },
+      {
+        "question": "Uvjet prestanka apstraktnog pravnog odnosa?",
+        "answer": "Prestanak važenja opće pravne norme.",
+        "explanation": "Norma prestaje – odnos prestaje.",
+        "id": "kd9fv1"
+      },
+      {
+        "question": "Uvjet nastanka konkretnog pravnog odnosa?",
+        "answer": "Postojanje opće norme i nastanak u stvarnom odnosu činjenice koju norma hipotezom ili odredbom delikta postavlja kao uvjet primjene.",
+        "explanation": "Norma + činjenica.",
+        "id": "u2wkbl"
+      },
+      {
+        "question": "Uvjet prestanka konkretnog pravnog odnosa?",
+        "answer": "Prestanak važenja opće norme koja ga uređuje, a ponekad i nastanak činjenice koju norma postavlja kao uvjet prestanka traženja ili sankcije.",
+        "explanation": "Prestanak norme ili činjenice.",
+        "id": "347xkk"
+      },
+      {
+        "question": "Činjenice koje prekidaju konkretni pravni odnos?",
+        "answer": "Izvršenje jednokratne obveze, smrt nositelja neprenosive obveze ili ovlaštenja, propast nezamjenjive stvari, oprost duga i zastara ovlaštenja.",
+        "explanation": "Pet činjenica.",
+        "id": "uyo116"
+      },
+      {
+        "question": "Što je pravna činjenica?",
+        "answer": "Činjenica koju norma hipotezom ili odredbom delikta postavlja kao uvjet nastanka, promjene ili prestanka pravnog odnosa.",
+        "explanation": "Pokreće pravne učinke.",
+        "id": "4vvlty"
+      },
+      {
+        "question": "Vrste pravnih činjenica?",
+        "answer": "Prirodni događaji (npr. smrt, protek vremena) i ljudske radnje (npr. izgradnja kuće, sklapanje ugovora).",
+        "explanation": "Dvije vrste.",
+        "id": "zvs7fx"
+      },
+      {
+        "question": "Što je pravna pretpostavka?",
+        "answer": "Pravna činjenica koja se drži postojećom iako to nije potpuno sigurno.",
+        "explanation": "Pretpostavka.",
+        "id": "ocoy4v"
+      },
+      {
+        "question": "Što je pravna fikcija?",
+        "answer": "Pravna činjenica koja se drži postojećom iako se zna da je izmišljena.",
+        "explanation": "Fikcija.",
+        "id": "65oxsh"
+      },
+      {
+        "question": "Kako se spoznaju pravne činjenice?",
+        "answer": "Neposrednim zapažanjem i izvođenjem dokaza.",
+        "explanation": "Dva načina.",
+        "id": "ay4ijb"
+      },
+      {
+        "question": "Što je pravni dokaz, a što dokazivanje?",
+        "answer": "Dokaz je sredstvo, a dokazivanje način kojim se utvrđuje postojanje ili nepostojanje sporne pravne činjenice na koju se stranka poziva.",
+        "explanation": "Sredstvo – način.",
+        "id": "f0rstm"
+      },
+      {
+        "question": "Što je isprava?",
+        "answer": "Zapis o nekoj pravnoj činjenici.",
+        "explanation": "Dokazno sredstvo.",
+        "id": "29z269"
+      },
+      {
+        "question": "Što je pravna radnja?",
+        "answer": "Ljudsko ponašanje koje sačinjava pravni odnos, označeno normom kao činjenica-uvjet, kao ovlaštena i obvezna radnja ili kao zabranjena radnja.",
+        "explanation": "Ponašanje s pravnim značenjem.",
+        "id": "jj9ya8"
+      },
+      {
+        "question": "Koju radnju označavaju hipoteza, traženje i sekundarna hipoteza?",
+        "answer": "Hipoteza: činjenicu-uvjet nastanka, promjene ili prestanka odnosa. Traženje: ovlaštenu i obveznu radnju. Sekundarna hipoteza: zabranjenu radnju.",
+        "explanation": "Tri dijela norme – tri radnje.",
+        "id": "9mqpev"
+      },
+      {
+        "question": "Koja radnja izaziva primarnu neučinkovitost norme?",
+        "answer": "Delikt, tj. kršenje pravne obveze.",
+        "explanation": "Primarna neučinkovitost.",
+        "id": "iqbuke"
+      },
+      {
+        "question": "Glavne vrste pravnih radnji?",
+        "answer": "Materijalne i znakovne; te radnje u skladu s traženjem norme ili protivne njemu. Znakovne mogu stvarati norme ili ih ne stvarati.",
+        "explanation": "Podjele radnji.",
+        "id": "674wgu"
+      },
+      {
+        "question": "Što je pravna praznina?",
+        "answer": "Društveni odnos koji je izvanjski kontrolabilan, važan za opstanak društva, sadrži snažan sukob interesa, a nije ili nije dostatno pravno normiran.",
+        "explanation": "Neuređen važan odnos.",
+        "id": "8gwx2f"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Apstraktni pravni odnos nastaje:",
+        "options": [
+          "presudom u konkretnom sporu",
+          "sklapanjem ugovora među strankama",
+          "stvaranjem opće pravne norme",
+          "smrću jednog subjekta"
+        ],
+        "correct": 2,
+        "id": "ozzqtn"
+      },
+      {
+        "question": "Apstraktni pravni odnos prestaje:",
+        "options": [
+          "izvršenjem jednokratne obveze strane u odnosu",
+          "zastarom konkretnog pravnog ovlaštenja",
+          "prestankom važenja opće pravne norme",
+          "smrću nositelja neprenosivog ovlaštenja"
+        ],
+        "correct": 2,
+        "id": "jm45b4"
+      },
+      {
+        "question": "Konkretni pravni odnos nastaje kada:",
+        "options": [
+          "donese se opća norma, i bez ikakve činjenice u odnosu",
+          "nastane činjenica, i bez ikakve opće norme koja je uređuje",
+          "sud prekine postupak u sporu među strankama",
+          "postoji opća norma i nastane činjenica koju norma postavlja kao uvjet"
+        ],
+        "correct": 3,
+        "id": "a53vz0"
+      },
+      {
+        "question": "Koja NIJE činjenica koja prekida konkretni pravni odnos?",
+        "options": [
+          "objava zakona u službenom glasilu",
+          "izvršenje jednokratne obveze iz odnosa",
+          "oprost duga od strane vjerovnika",
+          "zastara pravnog ovlaštenja nositelja"
+        ],
+        "correct": 0,
+        "id": "bkvwru"
+      },
+      {
+        "question": "Smrt nositelja neprenosive obveze:",
+        "options": [
+          "prenosi obvezu na nasljednike",
+          "prekida konkretni pravni odnos",
+          "ne utječe na odnos",
+          "pretvara obvezu u ovlaštenje"
+        ],
+        "correct": 1,
+        "id": "pbeyfl"
+      },
+      {
+        "question": "Pravna činjenica je činjenica koju norma postavlja kao uvjet:",
+        "options": [
+          "isključivo kažnjavanja počinitelja koji je povrijedio obvezu",
+          "isključivo objave norme u službenom glasilu države",
+          "nastanka, promjene ili prestanka pravnog odnosa",
+          "isključivo važenja norme koja ju je postavila"
+        ],
+        "correct": 2,
+        "id": "t0h9gs"
+      },
+      {
+        "question": "Koje su dvije vrste pravnih činjenica?",
+        "options": [
+          "prirodni događaji i ljudske radnje",
+          "opće i individualne norme",
+          "apsolutne i relativne činjenice",
+          "javne i privatne činjenice"
+        ],
+        "correct": 0,
+        "id": "kcjo22"
+      },
+      {
+        "question": "Protek vremena je primjer:",
+        "options": [
+          "ljudske radnje kao pravne činjenice",
+          "pravne fikcije",
+          "isprave",
+          "prirodnog događaja kao pravne činjenice"
+        ],
+        "correct": 3,
+        "id": "759lgd"
+      },
+      {
+        "question": "Sklapanje ugovora je primjer:",
+        "options": [
+          "prirodnog događaja kao pravne činjenice",
+          "ljudske radnje kao pravne činjenice",
+          "pravne pretpostavke",
+          "pravne fikcije"
+        ],
+        "correct": 1,
+        "id": "nh50oi"
+      },
+      {
+        "question": "Pravna pretpostavka je činjenica koja se drži postojećom:",
+        "options": [
+          "iako se zna da je izmišljena",
+          "iako nije potpuno sigurna",
+          "samo ako je dokazana ispravom",
+          "samo ako je to presudio vrhovni sud"
+        ],
+        "correct": 1,
+        "id": "7ae35l"
+      },
+      {
+        "question": "Pravna fikcija je činjenica koja se drži postojećom:",
+        "options": [
+          "iako nije potpuno sigurna",
+          "samo uz suglasnost stranaka",
+          "samo uz pisani dokaz",
+          "iako se zna da je izmišljena"
+        ],
+        "correct": 3,
+        "id": "er02sd"
+      },
+      {
+        "question": "Pravne činjenice se spoznaju:",
+        "options": [
+          "neposrednim zapažanjem i izvođenjem dokaza",
+          "isključivo presudom vrhovnog suda u svakom pojedinom slučaju",
+          "isključivo odlukom zakonodavca u zakonodavnom postupku",
+          "isključivo vjerovanjem u tradiciju i običaje zajednice"
+        ],
+        "correct": 0,
+        "id": "vb8xjd"
+      },
+      {
+        "question": "Isprava je:",
+        "options": [
+          "sudska odluka o sporu među strankama",
+          "opća pravna norma države",
+          "zapis o nekoj pravnoj činjenici",
+          "sredstvo pravne zaštite protiv odluke"
+        ],
+        "correct": 2,
+        "id": "4ctpf5"
+      },
+      {
+        "question": "Hipoteza norme označava radnju koja je:",
+        "options": [
+          "ovlaštena i obvezna radnja koju norma traži od adresata",
+          "zabranjena radnja koja je uvjet za primjenu sankcije",
+          "kazna koja se izriče počinitelju zbog povrede obveze",
+          "činjenica-uvjet nastanka, promjene ili prestanka odnosa"
+        ],
+        "correct": 3,
+        "id": "z5njfd"
+      },
+      {
+        "question": "Sekundarna hipoteza norme označava radnju koja je:",
+        "options": [
+          "ovlaštena",
+          "zabranjena",
+          "obvezna",
+          "neutralna"
+        ],
+        "correct": 1,
+        "id": "lu5pvm"
+      },
+      {
+        "question": "Primarnu neučinkovitost norme izaziva:",
+        "options": [
+          "donošenje nove norme umjesto ranije",
+          "objava norme u službenom glasilu",
+          "delikt, tj. kršenje pravne obveze",
+          "izvršenje pravomoćne presude suda"
+        ],
+        "correct": 2,
+        "id": "izgsxe"
+      },
+      {
+        "question": "Koja NIJE vrsta pravnih radnji?",
+        "options": [
+          "radnje isključivo prirodnih sila",
+          "materijalne radnje",
+          "znakovne radnje",
+          "radnje protivne traženju norme"
+        ],
+        "correct": 0,
+        "id": "7rc012"
+      },
+      {
+        "question": "Pravna praznina je društveni odnos koji:",
+        "options": [
+          "je važan i konfliktan, a nije ili nije dostatno pravno normiran",
+          "uređen suprotnim normama koje se međusobno isključuju",
+          "uređen normom koja ne sadrži nikakvu sankciju",
+          "uređen običajem koji adresati više ne poštuju"
+        ],
+        "correct": 0,
+        "id": "zbojcx"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Apstraktni pravni odnos nastaje stvaranjem opće pravne _______.",
+        "answer": "norme",
+        "hint": "uvjet nastanka",
+        "id": "u1ef0j"
+      },
+      {
+        "sentence": "Konkretni pravni odnos prekida i _______ ovlaštenja.",
+        "answer": "zastara",
+        "hint": "protek roka",
+        "id": "w8tuqe"
+      },
+      {
+        "sentence": "Pravna _______ je činjenica koja se drži postojećom iako se zna da je izmišljena.",
+        "answer": "fikcija",
+        "hint": "izmišljena",
+        "id": "i9yy2y"
+      },
+      {
+        "sentence": "Pravna _______ je činjenica koja se drži postojećom iako nije posve sigurna.",
+        "answer": "pretpostavka",
+        "hint": "nesigurna",
+        "id": "8txemm"
+      },
+      {
+        "sentence": "_______ je zapis o nekoj pravnoj činjenici.",
+        "answer": "Isprava",
+        "hint": "dokazno sredstvo",
+        "id": "qz9z76"
+      },
+      {
+        "sentence": "Primarnu neučinkovitost norme izaziva _______.",
+        "answer": "delikt",
+        "hint": "kršenje obveze",
+        "id": "6lq0oc"
+      },
+      {
+        "sentence": "Pravna _______ je važan, konfliktan i nenormiran društveni odnos.",
+        "answer": "praznina",
+        "hint": "nedostatak norme",
+        "id": "u13ae3"
+      }
+    ],
+    "learn": {
+      "title": "Nastanak i prestanak odnosa, pravne činjenice, radnje i praznine",
+      "content": "<h3>Nastanak i nestanak pravnog odnosa</h3>\n<table><tr><th>Odnos</th><th>Nastaje</th><th>Prestaje</th></tr>\n<tr><td>apstraktni</td><td>stvaranjem opće pravne norme</td><td>prestankom važenja opće norme</td></tr>\n<tr><td>konkretni</td><td>kad postoji opća norma i u stvarnom odnosu nastane činjenica koju norma hipotezom ili odredbom delikta postavlja kao uvjet primjene traženja ili sankcije</td><td>prestankom važenja opće norme koja ga uređuje, a ponekad i nastankom činjenice koju norma postavlja kao uvjet prestanka traženja ili sankcije</td></tr></table>\n<p>Najvažnije činjenice koje prekidaju konkretni pravni odnos: a) izvršenje jednokratne obveze; b) smrt nositelja neprenosive obveze ili ovlaštenja; c) propast nezamjenjive stvari koja je objekt ugovora; d) oprost duga; e) zastara pravnog ovlaštenja.</p>\n<h3>Pravne činjenice i pravni dokazi</h3>\n<p><strong>Pravna činjenica</strong> je činjenica koju pravna norma hipotezom ili odredbom delikta postavlja kao uvjet nastanka, promjene ili prestanka pravnog odnosa. Dvije vrste: <strong>prirodni događaji</strong> (prirodna smrt, protek vremena) i <strong>ljudske radnje</strong> (izgradnja kuće, sklapanje ugovora).</p>\n<ul><li><strong>Pravna pretpostavka</strong> – činjenica koja se drži postojećom iako to nije potpuno sigurno.</li><li><strong>Pravna fikcija</strong> – činjenica koja se drži postojećom iako se zna da je izmišljena.</li></ul>\n<p>Pravne činjenice spoznaju se neposrednim zapažanjem i izvođenjem dokaza. <strong>Pravni dokaz</strong> je sredstvo, a <strong>dokazivanje</strong> način kojim se utvrđuje postojanje ili nepostojanje pravne činjenice na koju se stranka poziva, a koja je među strankama sporna. <strong>Isprava</strong> je zapis o nekoj pravnoj činjenici.</p>\n<h3>Pravne radnje</h3>\n<p><strong>Pravna radnja</strong> je ljudsko ponašanje koje sačinjava pravni odnos, a označeno je normom kao činjenica-uvjet za nastanak, promjenu ili prestanak odnosa (u početnoj hipotezi), ili kao ovlaštena i obvezna radnja (u traženju i sankciji), ili kao zabranjena radnja.</p>\n<table><tr><th>Dio norme</th><th>Označava radnju koja je</th></tr>\n<tr><td>početna hipoteza</td><td>činjenica-uvjet nastanka, promjene ili prestanka pravnog odnosa</td></tr>\n<tr><td>traženje</td><td>ovlaštena i obvezna radnja</td></tr>\n<tr><td>sekundarna hipoteza</td><td>zabranjena radnja</td></tr></table>\n<p>Radnja koja izaziva <strong>primarnu neučinkovitost</strong> norme je <strong>delikt</strong>, tj. kršenje pravne obveze. Glavne vrste pravnih radnji: materijalne i znakovne; radnje u skladu s traženjem norme ili protivne njemu. Znakovne radnje mogu <em>stvarati</em> pravne norme ili ih <em>ne stvarati</em>.</p>\n<h3>Pravna praznina</h3>\n<p>Društveni odnos koji je <strong>izvanjski kontrolabilan, važan za opstanak društva, sadrži snažan sukob interesa</strong>, a nije ili nije dostatno pravno normiran. Načini popunjavanja praznina obrađeni su u kategoriji o primjeni pravne norme.</p>",
+      "id": "b2byq3"
+    },
+    "id": "8744wo"
+  },
+  "utvrdjivanjeTumacenje": {
+    "name": "Primjena norme: utvrđivanje, antinomije i vrste tumačenja",
+    "icon": "fa-magnifying-glass",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Koje su faze primjene pravnih normi?",
+        "answer": "Utvrđivanje važećih normi, tumačenje, popunjavanje pravnih praznina te izvršenje norme (traženja ili sankcije) pravnim radnjama.",
+        "explanation": "Četiri faze.",
+        "id": "5e5zee"
+      },
+      {
+        "question": "Od kojih se istraživanja sastoji utvrđivanje važeće norme?",
+        "answer": "Pronalaženje norme koja regulira odnos i pronalaženje norme koja je personalno, teritorijalno i vremenski važeća.",
+        "explanation": "Dva istraživanja.",
+        "id": "bxwuh5"
+      },
+      {
+        "question": "Gdje se objavljuju pravne norme u RH?",
+        "answer": "U službenim glasilima, u Hrvatskoj u Narodnim novinama (a praksa sudova u zbornicima prakse).",
+        "explanation": "Službeno glasilo.",
+        "id": "6ryrzo"
+      },
+      {
+        "question": "Mjerila uklanjanja antinomija?",
+        "answer": "Hijerarhija, vrijeme i opseg.",
+        "explanation": "Tri mjerila.",
+        "id": "s9c5e0"
+      },
+      {
+        "question": "Pravilo uklanjanja antinomije po hijerarhiji?",
+        "answer": "Viši zakon ukida niži – lex superior derogat legi inferiori.",
+        "explanation": "Hijerarhija.",
+        "id": "3e3dg1"
+      },
+      {
+        "question": "Pravilo uklanjanja antinomije po vremenu?",
+        "answer": "Kasniji zakon ukida raniji – lex posterior derogat legi priori.",
+        "explanation": "Vrijeme.",
+        "id": "m09mm7"
+      },
+      {
+        "question": "Pravilo uklanjanja antinomije po opsegu?",
+        "answer": "Posebni zakon ukida opći – lex specialis derogat legi generali.",
+        "explanation": "Opseg.",
+        "id": "t9r431"
+      },
+      {
+        "question": "Koja su dva predmeta tumačenja u pravu?",
+        "answer": "Pravne odredbe i pravne radnje.",
+        "explanation": "Dva predmeta.",
+        "id": "fexnbk"
+      },
+      {
+        "question": "Što je tumačenje pravnih odredaba?",
+        "answer": "Duhovna djelatnost koja otkriva moguća značenja odredaba, a u njima hipoteze, traženja, odredbe delikata i sankcije, te odlučuje koje je značenje najbolje.",
+        "explanation": "Interpretacija.",
+        "id": "h12v2r"
+      },
+      {
+        "question": "Zašto su odredbe nejasne ili višeznačne?",
+        "answer": "Zbog složenosti stvarnosti koju normotvorac regulira, nejasnih jezičnih izraza, promjene društvenih odnosa i promjene vrijednosnih stavova i ideologija.",
+        "explanation": "Četiri čimbenika.",
+        "id": "ji3ybx"
+      },
+      {
+        "question": "Dva tipa subjekata tumačenja?",
+        "answer": "Subjekti koji ne obavljaju pravnu vlast (tumačenje nije stvaranje normi) i subjekti koji obavljaju pravnu vlast (tumačenje je dio stvaranja normi).",
+        "explanation": "Snaga tumačenja.",
+        "id": "9fcg66"
+      },
+      {
+        "question": "Apstraktno i konkretno (kazuističko) tumačenje?",
+        "answer": "Apstraktno nije vezano za primjenu na konkretne odnose. Konkretno se obavlja radi primjene na konkretne odnose.",
+        "explanation": "Opće – konkretni slučaj.",
+        "id": "me988a"
+      },
+      {
+        "question": "Što je autentično tumačenje?",
+        "answer": "Tumačenje koje daje sam normotvorac na vlastitim odredbama.",
+        "explanation": "Interpretativni zakon.",
+        "id": "p2pb4e"
+      },
+      {
+        "question": "Uobičajeni načini autentičnog tumačenja zakona?",
+        "answer": "Interpretativni zakon i tumačenje posebnog parlamentarnog odbora.",
+        "explanation": "Dva načina.",
+        "id": "0n50zu"
+      },
+      {
+        "question": "Koja su pravila (metode) tumačenja pravnih odredaba?",
+        "answer": "Jezično, logičko, sistematsko, ciljno (teleološko), subjektivno i objektivno, historijsko te doslovno, suženo i prošireno tumačenje.",
+        "explanation": "Katalog metoda.",
+        "id": "lnp8rb"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koja NIJE faza primjene pravnih normi?",
+        "options": [
+          "utvrđivanje važećih normi",
+          "tumačenje normi",
+          "donošenje ustava",
+          "popunjavanje pravnih praznina"
+        ],
+        "correct": 2,
+        "id": "u27am9"
+      },
+      {
+        "question": "Utvrđivanje važeće norme obuhvaća pronalaženje norme koja je:",
+        "options": [
+          "pravednija od svih ostalih normi koje uređuju odnos",
+          "personalno, teritorijalno i vremenski važeća",
+          "najnovija od svih normi koje postoje u pravnom sustavu",
+          "donesena od najvišeg državnog organa u hijerarhiji"
+        ],
+        "correct": 1,
+        "id": "rh1l36"
+      },
+      {
+        "question": "Pravne norme se u RH objavljuju u:",
+        "options": [
+          "Službenom listu EU isključivo",
+          "dnevnim novinama",
+          "zbornicima ugovora",
+          "Narodnim novinama"
+        ],
+        "correct": 3,
+        "id": "fwz03n"
+      },
+      {
+        "question": "Mjerila uklanjanja antinomija su:",
+        "options": [
+          "pravednost, korisnost i istina",
+          "hijerarhija, vrijeme i opseg",
+          "forma, postupak i sadržaj",
+          "nadležnost, volja i običaj"
+        ],
+        "correct": 1,
+        "id": "jnvbbp"
+      },
+      {
+        "question": "Lex superior derogat legi inferiori znači:",
+        "options": [
+          "viši zakon ukida niži",
+          "kasniji zakon ukida raniji",
+          "posebni zakon ukida opći",
+          "opći zakon ukida posebni"
+        ],
+        "correct": 0,
+        "id": "ejm9sx"
+      },
+      {
+        "question": "Lex posterior derogat legi priori znači:",
+        "options": [
+          "viši zakon ukida niži",
+          "posebni zakon ukida opći",
+          "raniji zakon ukida kasniji",
+          "kasniji zakon ukida raniji"
+        ],
+        "correct": 3,
+        "id": "2mac9x"
+      },
+      {
+        "question": "Lex specialis derogat legi generali znači:",
+        "options": [
+          "viši zakon ukida niži",
+          "kasniji zakon ukida raniji",
+          "posebni zakon ukida opći",
+          "opći zakon ukida posebni"
+        ],
+        "correct": 2,
+        "id": "qy5sjv"
+      },
+      {
+        "question": "Dva predmeta tumačenja u pravu su:",
+        "options": [
+          "pravne osobe i pravni poslovi",
+          "sudske presude i ugovori",
+          "pravne odredbe i pravne radnje",
+          "običaji i moralne norme"
+        ],
+        "correct": 2,
+        "id": "jelooq"
+      },
+      {
+        "question": "Tumačenje pravnih odredaba je djelatnost koja:",
+        "options": [
+          "donosi nove opće norme umjesto zakonodavca",
+          "izvršava sankciju prema počinitelju delikta u postupku",
+          "objavljuje pravne norme u službenom glasilu države",
+          "otkriva moguća značenja odredaba i odlučuje koje je najbolje"
+        ],
+        "correct": 3,
+        "id": "v7c7yr"
+      },
+      {
+        "question": "Koji NIJE čimbenik zbog kojeg su odredbe nejasne?",
+        "options": [
+          "strogost sankcija u odredbi",
+          "složenost stvarnosti koja se regulira",
+          "jezični izrazi bez preciznih značenja",
+          "promjena društvenih odnosa"
+        ],
+        "correct": 0,
+        "id": "661ktm"
+      },
+      {
+        "question": "Tumačenje subjekata koji obavljaju pravnu vlast:",
+        "options": [
+          "nikada nema nikakve pravne učinke",
+          "dio je stvaranja pravnih normi",
+          "je isključivo apstraktno i općenito",
+          "je isključivo neobvezno i savjetodavno"
+        ],
+        "correct": 1,
+        "id": "tzx414"
+      },
+      {
+        "question": "Kazuističko tumačenje je tumačenje:",
+        "options": [
+          "neovisno o konkretnim društvenim odnosima",
+          "koje daje sam normotvorac na svojim odredbama",
+          "radi primjene odredbe na konkretne odnose",
+          "koje daje pravna doktrina u stručnoj literaturi"
+        ],
+        "correct": 2,
+        "id": "npmoid"
+      },
+      {
+        "question": "Autentično tumačenje daje:",
+        "options": [
+          "sam normotvorac na vlastitim odredbama",
+          "sudac u pojedinom konkretnom sporu",
+          "pravni teoretičar u stručnom članku",
+          "odvjetnik stranke u sudskom postupku"
+        ],
+        "correct": 0,
+        "id": "pofera"
+      },
+      {
+        "question": "Uobičajeni način autentičnog tumačenja zakona je:",
+        "options": [
+          "presuda vrhovnog suda",
+          "mišljenje odvjetničke komore",
+          "stručni pravni komentar",
+          "interpretativni zakon"
+        ],
+        "correct": 3,
+        "id": "wo7gn5"
+      },
+      {
+        "question": "Koja NIJE metoda tumačenja pravnih odredaba?",
+        "options": [
+          "jezično tumačenje",
+          "nasljedno tumačenje",
+          "sistematsko tumačenje",
+          "historijsko tumačenje"
+        ],
+        "correct": 1,
+        "id": "g8q4f0"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Lex _______ derogat legi inferiori: viši zakon ukida niži.",
+        "answer": "superior",
+        "hint": "hijerarhija",
+        "id": "ivd37t"
+      },
+      {
+        "sentence": "Lex _______ derogat legi priori: kasniji zakon ukida raniji.",
+        "answer": "posterior",
+        "hint": "vrijeme",
+        "id": "phledj"
+      },
+      {
+        "sentence": "Lex _______ derogat legi generali: posebni zakon ukida opći.",
+        "answer": "specialis",
+        "hint": "opseg",
+        "id": "073c7n"
+      },
+      {
+        "sentence": "Pravne norme u RH objavljuju se u _______ novinama.",
+        "answer": "Narodnim",
+        "hint": "službeno glasilo",
+        "id": "7elxal"
+      },
+      {
+        "sentence": "_______ tumačenje daje sam normotvorac na vlastitim odredbama.",
+        "answer": "Autentično",
+        "hint": "interpretativni zakon",
+        "id": "kjvesz"
+      },
+      {
+        "sentence": "Konkretno tumačenje naziva se još _______ tumačenje.",
+        "answer": "kazuističko",
+        "hint": "slučaj",
+        "id": "giod2l"
+      }
+    ],
+    "learn": {
+      "title": "Primjena norme: utvrđivanje, antinomije i vrste tumačenja",
+      "content": "<h3>Faze primjene pravne norme</h3>\n<p>Tipovi radnji i, ujedno, vremenske faze primjene pravnih normi: 1. <strong>utvrđivanje važećih pravnih normi</strong>; 2. <strong>tumačenje</strong> (interpretacija); 3. <strong>popunjavanje pravnih praznina</strong>; 4. <strong>izvršenje</strong> norme (traženja ili sankcije) pravnim radnjama.</p>\n<h3>Utvrđivanje važećih pravnih normi</h3>\n<p>Sastoji se od dva istraživanja: prvo, pronalaženje norme koja regulira odnos u kojem se subjekt nalazi ili će se naći; drugo, pronalaženje norme koja je <strong>personalno, teritorijalno i vremenski važeća</strong>. Norme se objavljuju u službenim glasilima, u Republici Hrvatskoj u <strong>Narodnim novinama</strong> (praksa sudova i u zbornicima prakse).</p>\n<h4>Antinomije (protuslovlja) i njihovo uklanjanje</h4>\n<table><tr><th>Mjerilo</th><th>Pravilo</th><th>Latinski</th></tr>\n<tr><td>hijerarhija</td><td>viši zakon ukida niži</td><td>lex superior derogat legi inferiori</td></tr>\n<tr><td>vrijeme</td><td>kasniji zakon ukida raniji</td><td>lex posterior derogat legi priori</td></tr>\n<tr><td>opseg</td><td>posebni zakon ukida opći</td><td>lex specialis derogat legi generali</td></tr></table>\n<h3>Tumačenje normativnopravnih odredaba</h3>\n<p>Dva su <strong>predmeta tumačenja</strong>: pravne odredbe i pravne radnje. <strong>Tumačenje pravnih odredaba</strong> je duhovna djelatnost koja otkriva moguća značenja odredaba i u njima hipoteze, traženja, odredbe delikata i sankcije te odlučuje koje je značenje najbolje.</p>\n<p>Odredbe i norme nejasne su ili višeznačne zbog: 1) složenosti stvarnosti koju normotvorac regulira; 2) jezičnih izraza bez jedinstvenih i preciznih značenja; 3) mijenjanja društvenih odnosa; 4) mijenjanja vrijednosnih stavova i ideologija.</p>\n<h4>Subjekti i tipovi tumačenja</h4>\n<ul>\n<li>Subjekti koji <strong>ne obavljaju pravnu vlast</strong> – njihovo tumačenje nije dio stvaranja normi (npr. pravna znanost, odvjetnici).</li>\n<li>Subjekti koji <strong>obavljaju pravnu vlast</strong> – njihovo tumačenje jest dio stvaranja normi (sudovi, upravni organi).</li>\n<li><strong>Apstraktno</strong> tumačenje – nije vezano za primjenu na konkretne odnose; <strong>konkretno</strong> (kazuističko) – obavlja se radi primjene na konkretne odnose.</li>\n<li><strong>Autentično</strong> tumačenje – daje ga sam normotvorac na vlastitim odredbama; uobičajeni načini: <em>interpretativni zakon</em> i tumačenje posebnog parlamentarnog odbora.</li>\n</ul>\n<h4>Pravila (metode, kanoni) tumačenja</h4>\n<p>Jezično, logičko, sistematsko, ciljno (teleološko), subjektivno i objektivno, historijsko te doslovno, suženo i prošireno tumačenje – obrađeno u idućoj kategoriji.</p>\n<p><em>Dopuna:</em> <strong>logičko tumačenje</strong> traži značenje odredbe pravilima logike (npr. otklanjanjem proturječja među odredbama i zaključivanjem iz njih); ostvaruje se upravo kroz argumente tumačenja (<em>a contrario</em>, <em>a simili</em>, <em>a fortiori</em>, <em>ad absurdum</em>) koji se obrađuju u kategoriji o argumentima tumačenja.</p>",
+      "id": "qni8fy"
+    },
+    "id": "xid8f3"
+  },
+  "pravilaTumacenjaArgumenti": {
+    "name": "Pravila tumačenja: jezično, ciljno, sistematsko, historijsko",
+    "icon": "fa-spell-check",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Što je jezično tumačenje?",
+        "answer": "Na nejasne ili višeznačne odredbe primjenjuju se pravila leksikologije, sintakse i druga pravila gramatike koja vrijede u društvu tumača.",
+        "explanation": "Značenje riječi i rečenica.",
+        "id": "xstt2t"
+      },
+      {
+        "question": "Što su leksička pravila?",
+        "answer": "Pravila koja određuju značenja pojedinih riječi; dijelom su zabilježena u općim i pravnim rječnicima, a uglavnom su u svijesti ljudi.",
+        "explanation": "Značenje riječi.",
+        "id": "e92gr7"
+      },
+      {
+        "question": "Što je ciljno (teleološko) tumačenje?",
+        "answer": "Od mogućih značenja odredbe traži se ono koje najpotpunije ostvaruje njezin cilj.",
+        "explanation": "Cilj norme.",
+        "id": "a28ybc"
+      },
+      {
+        "question": "Što je ratio legis?",
+        "answer": "Razlog postojanja pravne norme.",
+        "explanation": "Cilj zakona.",
+        "id": "gchfhi"
+      },
+      {
+        "question": "Subjektivno ciljno tumačenje?",
+        "answer": "Traži cilj odredbe koji je normotvorac htio postići.",
+        "explanation": "Volja normotvorca.",
+        "id": "lnod2d"
+      },
+      {
+        "question": "Objektivno ciljno tumačenje?",
+        "answer": "Traži cilj odredbe koji društvo (pravni sustav) postavlja u vrijeme primjene, neovisno o volji normotvorca.",
+        "explanation": "Cilj u sadašnjosti.",
+        "id": "8rp612"
+      },
+      {
+        "question": "Kada je ispravno objektivno tumačenje?",
+        "answer": "Općenito na odredbe čiji su ciljevi koje je postavio normotvorac zastarjeli.",
+        "explanation": "Zastarjeli ciljevi.",
+        "id": "ifa8q7"
+      },
+      {
+        "question": "Koje je tumačenje pravnih poslova prihvaćala starija doktrina?",
+        "answer": "Subjektivno ciljno tumačenje, radi poštovanja autonomije volje stranaka.",
+        "explanation": "Volja stranaka.",
+        "id": "bqiim7"
+      },
+      {
+        "question": "Što je pravni standard?",
+        "answer": "Normativni pojam koji adresatima prepušta da odrede konkretno značenje koje najbolje odgovara posebnostima situacije.",
+        "explanation": "Primjeri: pažnja, savjesnost, poštenje.",
+        "id": "qlzdyw"
+      },
+      {
+        "question": "Primjeri pravnih standarda?",
+        "answer": "Odgoj, uzdržavanje, pažnja, savjesnost, poštenje, veća šteta, zloupotreba.",
+        "explanation": "Neodređeni pojmovi.",
+        "id": "f71y10"
+      },
+      {
+        "question": "Što je interpretativna norma?",
+        "answer": "Pravna norma koja upućuje na interese i ciljeve kojima treba služiti tumačenje odredaba.",
+        "explanation": "Norma o tumačenju.",
+        "id": "9j4kej"
+      },
+      {
+        "question": "Što je sistematsko tumačenje?",
+        "answer": "Značenje norme traži se povezivanjem i dopunjavanjem njezinih elemenata iz različitih odredaba ili povezivanjem s drugim normama istoga sustava.",
+        "explanation": "Norma u sustavu.",
+        "id": "lwg12x"
+      },
+      {
+        "question": "Vidovi sistematskog tumačenja?",
+        "answer": "Sastavljanje norme iz više odredaba; primjena načela zakonitosti i drugih načela; dopunjavanje normama iste ustanove; povezivanje s normama definicijama.",
+        "explanation": "Četiri vida.",
+        "id": "6uhwr4"
+      },
+      {
+        "question": "Što je historijsko tumačenje?",
+        "answer": "Traženje značenja ispitivanjem povijesnih okolnosti koje su prethodile donošenju odredbe ili su bile povod njezina donošenja (occasio legis).",
+        "explanation": "Povijest odredbe.",
+        "id": "p2y8n0"
+      },
+      {
+        "question": "Sastojci historijskog tumačenja?",
+        "answer": "Usporedba tumačene odredbe s prethodnim odredbama o istom odnosu i ispitivanje pripremnih materijala (nacrta, prijedloga).",
+        "explanation": "Dvije djelatnosti.",
+        "id": "68i4vz"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Jezično tumačenje primjenjuje:",
+        "options": [
+          "pravila o povijesti donošenja odredbe",
+          "pravila leksikologije, sintakse i gramatike",
+          "pravila o hijerarhiji akata",
+          "pravila o nadležnosti organa"
+        ],
+        "correct": 1,
+        "id": "2y5wr5"
+      },
+      {
+        "question": "Leksička pravila određuju:",
+        "options": [
+          "redoslijed riječi u rečenici",
+          "nadležnost suda",
+          "rokove u postupku",
+          "značenja pojedinih riječi"
+        ],
+        "correct": 3,
+        "id": "81v68r"
+      },
+      {
+        "question": "Ciljno tumačenje traži značenje koje:",
+        "options": [
+          "najpotpunije ostvaruje cilj odredbe",
+          "je najuže moguće prema riječima norme",
+          "je najbliže dosadašnjoj praksi sudova",
+          "je najpovoljnije za stranku koja tumači"
+        ],
+        "correct": 0,
+        "id": "oo8a1y"
+      },
+      {
+        "question": "Ratio legis je:",
+        "options": [
+          "pravna snaga norme u hijerarhiji",
+          "uvjet nastanka norme u sustavu",
+          "razlog postojanja pravne norme",
+          "postupak donošenja norme u parlamentu"
+        ],
+        "correct": 2,
+        "id": "cq4z43"
+      },
+      {
+        "question": "Subjektivno ciljno tumačenje traži:",
+        "options": [
+          "cilj koji postavlja društvo danas",
+          "značenje koje je najšire moguće",
+          "značenje u skladu s običajima",
+          "cilj koji je normotvorac htio postići"
+        ],
+        "correct": 3,
+        "id": "wben5l"
+      },
+      {
+        "question": "Objektivno ciljno tumačenje traži:",
+        "options": [
+          "cilj koji je u svoje vrijeme htio postići normotvorac",
+          "cilj koji društvo postavlja u vrijeme primjene",
+          "doslovno značenje riječi kojima je norma izražena",
+          "povijesne okolnosti u kojima je odredba donesena"
+        ],
+        "correct": 1,
+        "id": "2ntwu9"
+      },
+      {
+        "question": "Objektivno tumačenje je ispravno kad su ciljevi normotvorca:",
+        "options": [
+          "jasno određeni i aktualni",
+          "neizrečeni i nepoznati",
+          "zastarjeli",
+          "istovjetni ciljevima društva"
+        ],
+        "correct": 2,
+        "id": "m0sedx"
+      },
+      {
+        "question": "Starija doktrina je pravne poslove tumačila subjektivno radi:",
+        "options": [
+          "poštovanja autonomije volje stranaka",
+          "zaštite javnog interesa u svakom slučaju",
+          "zaštite slabije stranke u pravnom poslu",
+          "ubrzanja sudskih postupaka o poslovima"
+        ],
+        "correct": 0,
+        "id": "yxc0tz"
+      },
+      {
+        "question": "Pravni standard je:",
+        "options": [
+          "pojam koji adresatima prepušta određivanje značenja prema situaciji",
+          "pojam strogo definiran zakonom bez prostora za tumačenje",
+          "pojam koji vrijedi isključivo u kaznenom pravu države",
+          "pojam bez ikakvog pravnog značenja i učinka u praksi"
+        ],
+        "correct": 0,
+        "id": "3ecgke"
+      },
+      {
+        "question": "Koji je primjer pravnog standarda?",
+        "options": [
+          "punoljetnost s navršenih osamnaest godina",
+          "rok od osam dana",
+          "savjesnost",
+          "novčana kazna od točno određenog iznosa"
+        ],
+        "correct": 2,
+        "id": "nqrgml"
+      },
+      {
+        "question": "Interpretativna norma upućuje na:",
+        "options": [
+          "rokove za podnošenje tužbe i pravnih lijekova strankama",
+          "interese i ciljeve kojima tumačenje treba služiti",
+          "sankcije za počinitelje pojedinih delikata u zakonu",
+          "nadležnost sudova za rješavanje pojedinih vrsta sporova"
+        ],
+        "correct": 1,
+        "id": "k2ggwb"
+      },
+      {
+        "question": "Sistematsko tumačenje traži značenje:",
+        "options": [
+          "ispitivanjem povijesnih okolnosti donošenja odredbe",
+          "prema riječnicima i pravilima gramatike jezika",
+          "prema volji normotvorca koji je odredbu donio",
+          "povezivanjem s drugim odredbama i normama sustava"
+        ],
+        "correct": 3,
+        "id": "ig6v0a"
+      },
+      {
+        "question": "Koji NIJE vid sistematskog tumačenja?",
+        "options": [
+          "sastavljanje norme iz više odredaba",
+          "ispitivanje pripremnih materijala zakona",
+          "primjena načela zakonitosti",
+          "povezivanje s normama definicijama"
+        ],
+        "correct": 1,
+        "id": "g9zh8f"
+      },
+      {
+        "question": "Historijsko tumačenje ispituje:",
+        "options": [
+          "povijesne okolnosti prije donošenja i povod donošenja odredbe",
+          "današnje društvene ciljeve koje odredba treba ostvariti",
+          "značenje riječi u općim i pravnim rječnicima jezika",
+          "hijerarhijski položaj odredbe prema drugim aktima"
+        ],
+        "correct": 0,
+        "id": "lkhvrg"
+      },
+      {
+        "question": "Occasio legis je:",
+        "options": [
+          "razlog postojanja pravne norme",
+          "posljedica primjene pravne norme",
+          "prestanak važenja pravne norme istekom roka",
+          "povod (neposredan razlog) donošenja odredbe"
+        ],
+        "correct": 3,
+        "id": "a8m2sz"
+      },
+      {
+        "question": "Sastojak historijskog tumačenja je:",
+        "options": [
+          "usporedba s običajima susjednih država",
+          "izbor najpovoljnijeg ishoda za stranku",
+          "ispitivanje pripremnih materijala odredbe",
+          "odluka vrhovnog suda o presedanu"
+        ],
+        "correct": 2,
+        "id": "ov9tmw"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "_______ tumačenje primjenjuje pravila leksikologije, sintakse i gramatike.",
+        "answer": "Jezično",
+        "hint": "riječi",
+        "id": "jj668v"
+      },
+      {
+        "sentence": "_______ legis je razlog postojanja pravne norme.",
+        "answer": "Ratio",
+        "hint": "cilj zakona",
+        "id": "7ptr21"
+      },
+      {
+        "sentence": "Ciljno tumačenje naziva se još _______ tumačenje.",
+        "answer": "teleološko",
+        "hint": "telos – cilj",
+        "id": "j1h3ui"
+      },
+      {
+        "sentence": "_______ ciljno tumačenje traži cilj koji je normotvorac htio postići.",
+        "answer": "Subjektivno",
+        "hint": "volja normotvorca",
+        "id": "gpf3s2"
+      },
+      {
+        "sentence": "_______ ciljno tumačenje traži cilj koji društvo postavlja u vrijeme primjene.",
+        "answer": "Objektivno",
+        "hint": "sadašnji cilj",
+        "id": "c5irb3"
+      },
+      {
+        "sentence": "_______ tumačenje povezuje odredbu s drugim normama istoga sustava.",
+        "answer": "Sistematsko",
+        "hint": "sustav",
+        "id": "hf8593"
+      },
+      {
+        "sentence": "_______ legis je povod donošenja odredbe.",
+        "answer": "Occasio",
+        "hint": "povijesno tumačenje",
+        "id": "kc8g8p"
+      }
+    ],
+    "learn": {
+      "title": "Pravila tumačenja: jezično, ciljno, sistematsko, historijsko",
+      "content": "<h3>Jezično tumačenje</h3>\n<p>Na nejasne ili višeznačne odredbe primjenjuju se pravila <strong>leksikologije</strong>, <strong>sintakse</strong> i druga pravila <strong>gramatike</strong> koja vrijede u društvu subjekta-tumača. <strong>Leksička pravila</strong> određuju značenja pojedinih riječi; dijelom su zabilježena u općim i pravnim leksikonima (rječnicima), a uglavnom su u svijesti ljudi.</p>\n<h3>Ciljno (teleološko) tumačenje</h3>\n<p>Od mogućih značenja odredbe traži se ono koje <strong>najpotpunije ostvaruje njezin cilj</strong>. <strong>Ratio legis</strong> je razlog postojanja pravne norme.</p>\n<table><tr><th>Subjektivno ciljno</th><th>Objektivno ciljno</th></tr>\n<tr><td>traži cilj koji je normotvorac htio postići</td><td>traži cilj koji društvo (pravni sustav) postavlja u vrijeme primjene, neovisno o volji normotvorca</td></tr>\n<tr><td>starija je doktrina tako tumačila pravne poslove radi poštovanja autonomije volje stranaka</td><td>općenito ispravno kad su ciljevi koje je postavio normotvorac zastarjeli</td></tr></table>\n<p><strong>Pravni standard</strong> je normativni pojam koji adresatima prepušta da odrede konkretno značenje koje najbolje odgovara posebnostima situacije. Primjeri: odgoj, uzdržavanje, pažnja, savjesnost, poštenje, veća šteta, zloupotreba. <strong>Interpretativna norma</strong> upućuje na interese i ciljeve kojima treba služiti tumačenje odredaba. <strong>Pravno načelo</strong> je jedna od najviših normi sustava koja postavlja temeljne vrijednosti s kojima trebaju biti u skladu i prema kojima se tumače sve ostale norme.</p>\n<h3>Sistematsko tumačenje</h3>\n<p>Traži značenje norme <strong>međusobnim povezivanjem i dopunjavanjem elemenata norme</strong> iz različitih odredaba ili povezivanjem i razjašnjavanjem norme s drugim normama istoga sustava. Vidovi:</p>\n<ul><li>sastavljanje pravne norme iz više pravnih odredaba;</li><li>primjena načela zakonitosti i drugih pravnih načela;</li><li>popunjavanje i razjašnjavanje norme značenjima drugih normi iste pravne ustanove;</li><li>povezivanje s normama definicijama.</li></ul>\n<h3>Historijsko tumačenje</h3>\n<p>Traženje značenja odredbe ispitivanjem <strong>povijesnih okolnosti koje su prethodile donošenju</strong> odredbe ili su bile <strong>povod</strong> njezina donošenja (<em>occasio legis</em>). Djelatnosti: a) usporedba tumačene odredbe i prethodnih odredaba o istom odnosu; b) ispitivanje pripremnih materijala (nacrta, prijedloga odredbe).</p>",
+      "id": "532v7b"
+    },
+    "id": "xetups"
+  },
+  "argumentiPraznineSilogizam": {
+    "name": "Argumenti tumačenja, pravne praznine i pravni silogizam",
+    "icon": "fa-brain",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Što je argumentum a contrario?",
+        "answer": "Zaključak da iz izričite normativne kvalifikacije određenog ponašanja postoji suprotna prešutna kvalifikacija.",
+        "explanation": "Razlog suprotnosti.",
+        "id": "imamy0"
+      },
+      {
+        "question": "Primjer argumenta a contrario?",
+        "answer": "Ako istragu vodi istražni sudac, drugi suci je ne smiju voditi.",
+        "explanation": "Isključivanje drugih.",
+        "id": "z6loxj"
+      },
+      {
+        "question": "Kada se osobito koristi argumentum a contrario?",
+        "answer": "Pri tumačenju posebnih (specijalnih) normi, radi sprječavanja širenja izuzetaka.",
+        "explanation": "Izuzeci se ne šire.",
+        "id": "69u1dv"
+      },
+      {
+        "question": "Što je argumentum a simili (analogija)?",
+        "answer": "Zaključak da normativna kvalifikacija određenog odnosa vrijedi i za drugi, bitno sličan pravni odnos.",
+        "explanation": "Razlog sličnosti.",
+        "id": "lkcn8e"
+      },
+      {
+        "question": "Primjer analogije?",
+        "answer": "Ako je zabranjen ulaz motornim vozilima u park, zabranjen je i ulaz zaprežnim vozilima.",
+        "explanation": "Slično se jednako uređuje.",
+        "id": "im3ev1"
+      },
+      {
+        "question": "Kojoj metodi osobito služi analogija?",
+        "answer": "Ciljnom tumačenju, jer je svrha da se bitno slični odnosi uređuju jednako.",
+        "explanation": "Cilj: jednakost.",
+        "id": "pmsing"
+      },
+      {
+        "question": "Gdje je analogija zabranjena?",
+        "answer": "U modernom kaznenom (krivičnom) pravu.",
+        "explanation": "Nullum crimen sine lege.",
+        "id": "46nwnz"
+      },
+      {
+        "question": "Što je argumentum a fortiori?",
+        "answer": "Razlog „tim prije”: zaključak da ista normativna kvalifikacija još jačim razlogom pripada drugom odnosu.",
+        "explanation": "Dvije vrste.",
+        "id": "fqb8hy"
+      },
+      {
+        "question": "Dvije vrste argumenta a fortiori?",
+        "answer": "A minori ad maius (od manjeg na veće) i a maiori ad minus (od većeg na manje).",
+        "explanation": "Dvije vrste.",
+        "id": "ve6huk"
+      },
+      {
+        "question": "Što je argumentum a minori ad maius?",
+        "answer": "Posljedica vezana za nešto manjeg intenziteta vrijedi i za istovrsnu pojavu većeg intenziteta; npr. ako je zabranjeno pušenje, tim je više zabranjeno loženje vatre.",
+        "explanation": "Od manjeg na veće.",
+        "id": "r7spct"
+      },
+      {
+        "question": "Što je argumentum a maiori ad minus?",
+        "answer": "Posljedica vezana za nešto većeg intenziteta vrijedi i za istovrsnu pojavu manjeg; npr. ako je dopušten kredit od 50.000 eura, dopušten je i kredit od 20.000 eura.",
+        "explanation": "Od većeg na manje.",
+        "id": "ucv5a1"
+      },
+      {
+        "question": "Što je argument iz dobrog primjera (de exemplo)?",
+        "answer": "Zaključivanje pozivanjem na sudsku praksu i pravnu doktrinu.",
+        "explanation": "Argument autoriteta.",
+        "id": "fk5gx6"
+      },
+      {
+        "question": "Što je argumentum de natura rerum?",
+        "answer": "Zaključak u skladu s pravilnošću ili funkcioniranjem u samoj prirodi objekta ili društvenog odnosa.",
+        "explanation": "Razlog prirode stvari.",
+        "id": "eh0iwk"
+      },
+      {
+        "question": "Primjer prirode stvari u obveznom pravu?",
+        "answer": "Materijalni nedostatak stvari postoji ako stvar nema svojstva potrebna za redovitu upotrebu ili promet; redovita upotreba je upotreba po prirodi stvari.",
+        "explanation": "Zakon o obveznim odnosima.",
+        "id": "mwldx0"
+      },
+      {
+        "question": "Što je argumentum ad absurdum?",
+        "answer": "Zaključak da treba isključiti ona značenja norme koja bi vodila besmislenim posljedicama.",
+        "explanation": "Razlog apsurdnosti.",
+        "id": "nfq54y"
+      },
+      {
+        "question": "Što je zajedničko doslovnom, proširenom i suženom tumačenju?",
+        "answer": "Odlučuju o odnosu najboljeg značenja odredbe (utvrđenog ciljnim i drugim metodama) i značenja riječi kojima je norma iskazana.",
+        "explanation": "Odnos riječi i značenja.",
+        "id": "155tp9"
+      },
+      {
+        "question": "Tri moguća odnosa riječi i najboljeg značenja?",
+        "answer": "Značenje je adekvatno izraženo (doslovno), preusko (prošireno tumačenje) ili preširoko izraženo (suženo tumačenje).",
+        "explanation": "Tri odgovora.",
+        "id": "cn1ee1"
+      },
+      {
+        "question": "Što je doslovno, prošireno i suženo tumačenje?",
+        "answer": "Doslovno: riječi izražavaju najbolje značenje. Prošireno: višeznačnoj riječi daje se šire značenje. Suženo: daje joj se uže značenje.",
+        "explanation": "Tri tipa.",
+        "id": "1h6rxp"
+      },
+      {
+        "question": "Primjer proširenog tumačenja?",
+        "answer": "Ustavna odredba „sudovi sude na temelju Ustava i zakona”: riječ „zakon” tumači se široko i obuhvaća svaki propis (zakon u materijalnom smislu).",
+        "explanation": "Šire značenje.",
+        "id": "w70o23"
+      },
+      {
+        "question": "Primjer suženog tumačenja?",
+        "answer": "Kazneni zakon kažnjava sudjelovanje u tučnjavi; praksa je odredila da to djelo može počiniti najmanje troje počinitelja.",
+        "explanation": "Uže značenje.",
+        "id": "6mniyf"
+      },
+      {
+        "question": "Načelo koje niječe pravne praznine?",
+        "answer": "Načelo slobode: pravno je dopušteno sve što nije pravno zabranjeno.",
+        "explanation": "Nema praznina.",
+        "id": "0l8ojx"
+      },
+      {
+        "question": "Tko se brine za pravne praznine i kako?",
+        "answer": "Zakonodavni organi zakonodavnom intervencijom, a upravni i sudski organi stvaranjem presedana ili faktički utjecajne prakse.",
+        "explanation": "Zakonodavac i primjenjivači.",
+        "id": "s31pp9"
+      },
+      {
+        "question": "Najčešće sredstvo popunjavanja pravnih praznina?",
+        "answer": "Analogija (argumentum a simili).",
+        "explanation": "Latinski: argumentum a simili.",
+        "id": "hpmhwv"
+      },
+      {
+        "question": "Što je pravni silogizam?",
+        "answer": "Deduktivno zaključivanje: viša premisa je opća norma, manja premisa opis činjeničnog stanja, zaključak pojedinačna pravna norma.",
+        "explanation": "Podvođenje slučaja pod normu.",
+        "id": "kt88n5"
+      },
+      {
+        "question": "Primjer pravnog silogizma?",
+        "answer": "Svi s prihodom D obvezni su platiti porez P; Petar ima prihod D; Petar je dužan platiti porez P.",
+        "explanation": "Opće – činjenica – pojedinačno.",
+        "id": "clpxch"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Argumentum a contrario zaključuje da:",
+        "options": [
+          "slično vrijedi i za bitno slične odnose u zakonu",
+          "vrijedi tim prije za slučaj većeg intenziteta",
+          "iz izričite kvalifikacije proizlazi suprotna prešutna kvalifikacija",
+          "treba isključiti značenje koje vodi besmislu u praksi"
+        ],
+        "correct": 2,
+        "id": "431out"
+      },
+      {
+        "question": "Primjer argumenta a contrario: ako istragu vodi istražni sudac, onda:",
+        "options": [
+          "istragu smiju voditi i drugi suci",
+          "istragu mora voditi državni odvjetnik",
+          "istragu vodi vlada",
+          "drugi suci ne smiju voditi istragu"
+        ],
+        "correct": 3,
+        "id": "vgkl89"
+      },
+      {
+        "question": "Argumentum a contrario osobito se primjenjuje pri tumačenju:",
+        "options": [
+          "posebnih normi radi sprječavanja širenja izuzetaka",
+          "ustavnih normi, radi njihova što šireg tumačenja",
+          "običajnih normi, radi njihova ukidanja u praksi",
+          "međunarodnih ugovora, radi njihove izmjene u praksi"
+        ],
+        "correct": 0,
+        "id": "wj0mfo"
+      },
+      {
+        "question": "Argumentum a simili zaključuje da:",
+        "options": [
+          "suprotna kvalifikacija vrijedi za drugi odnos",
+          "ista kvalifikacija vrijedi za bitno sličan odnos",
+          "kvalifikacija vrijedi samo za izričito navedeno",
+          "kvalifikacija vrijedi samo prema namjeri normotvorca"
+        ],
+        "correct": 1,
+        "id": "os2352"
+      },
+      {
+        "question": "Zabrana ulaza motornim vozilima u park, protegnuta na zaprežna vozila, primjer je:",
+        "options": [
+          "argumenta a contrario",
+          "argumenta ad absurdum",
+          "analogije",
+          "autentičnog tumačenja"
+        ],
+        "correct": 2,
+        "id": "wohuzs"
+      },
+      {
+        "question": "Analogija je zabranjena u:",
+        "options": [
+          "modernom kaznenom pravu",
+          "građanskom pravu i obveznim odnosima",
+          "trgovačkom pravu i poslovima",
+          "međunarodnom pravu među državama"
+        ],
+        "correct": 0,
+        "id": "j4cumy"
+      },
+      {
+        "question": "Analogija osobito služi:",
+        "options": [
+          "jezičnom tumačenju",
+          "historijskom tumačenju",
+          "autentičnom tumačenju",
+          "ciljnom tumačenju"
+        ],
+        "correct": 3,
+        "id": "zdq037"
+      },
+      {
+        "question": "Argumentum a fortiori je razlog:",
+        "options": [
+          "suprotnosti",
+          "„tim prije”",
+          "sličnosti",
+          "apsurdnosti"
+        ],
+        "correct": 1,
+        "id": "9aek7g"
+      },
+      {
+        "question": "Ako je zabranjeno pušenje u prostoriji, tim je više zabranjeno loženje vatre – to je:",
+        "options": [
+          "argumentum a maiori ad minus",
+          "argumentum a minori ad maius",
+          "argumentum a contrario",
+          "argumentum de natura rerum"
+        ],
+        "correct": 1,
+        "id": "91lwsw"
+      },
+      {
+        "question": "Ako je dopušten kredit od 50.000 eura, dopušten je i kredit od 20.000 eura – to je:",
+        "options": [
+          "argumentum a minori ad maius",
+          "argumentum a contrario",
+          "argumentum ad absurdum",
+          "argumentum a maiori ad minus"
+        ],
+        "correct": 3,
+        "id": "n2xciy"
+      },
+      {
+        "question": "Pozivanje na sudsku praksu i pravnu doktrinu je:",
+        "options": [
+          "argument iz dobrog primjera (de exemplo)",
+          "argument prirode stvari (de natura rerum)",
+          "argument apsurdnosti (ad absurdum)",
+          "argument suprotnosti (a contrario)"
+        ],
+        "correct": 0,
+        "id": "qw3vrn"
+      },
+      {
+        "question": "Argumentum de natura rerum temelji se na:",
+        "options": [
+          "volji normotvorca izraženoj u pripremnim materijalima",
+          "jezičnom značenju riječi kojima je norma izražena",
+          "pravilnosti i funkcioniranju same prirode objekta ili odnosa",
+          "povijesnom razvoju odredbe u prethodnim propisima"
+        ],
+        "correct": 2,
+        "id": "t98hxa"
+      },
+      {
+        "question": "Argumentum ad absurdum isključuje značenja koja bi:",
+        "options": [
+          "proširila primjenu norme na slične odnose",
+          "suzila primjenu norme na izričite slučajeve",
+          "bila dulja od ostalih mogućih značenja",
+          "vodila besmislenim posljedicama"
+        ],
+        "correct": 3,
+        "id": "lrc1xz"
+      },
+      {
+        "question": "Prošireno tumačenje višeznačnoj riječi daje:",
+        "options": [
+          "uže značenje",
+          "šire značenje",
+          "suprotno značenje",
+          "nikakvo značenje"
+        ],
+        "correct": 1,
+        "id": "6uqyom"
+      },
+      {
+        "question": "Suženo tumačenje višeznačnoj riječi daje:",
+        "options": [
+          "šire značenje",
+          "isto značenje bez izmjene",
+          "uže značenje",
+          "suprotno značenje"
+        ],
+        "correct": 2,
+        "id": "nfcvkx"
+      },
+      {
+        "question": "Riječ „zakon” u odredbi „sudovi sude na temelju Ustava i zakona” obuhvaća svaki propis. To je:",
+        "options": [
+          "prošireno tumačenje",
+          "suženo tumačenje",
+          "doslovno tumačenje",
+          "autentično tumačenje"
+        ],
+        "correct": 0,
+        "id": "cgi72o"
+      },
+      {
+        "question": "Načelo koje niječe postojanje pravnih praznina je načelo:",
+        "options": [
+          "slobode: dopušteno je sve što nije zabranjeno",
+          "zakonitosti: dopušteno je samo što je izričito dopušteno",
+          "pravednosti: dopušteno je samo što je pravedno",
+          "suverenosti: dopušteno je samo što odredi država"
+        ],
+        "correct": 0,
+        "id": "ox68dw"
+      },
+      {
+        "question": "Za pravne praznine dužni su se brinuti:",
+        "options": [
+          "isključivo stranke u sporu",
+          "isključivo pravna znanost",
+          "zakonodavni, upravni i sudski organi",
+          "isključivo međunarodne organizacije"
+        ],
+        "correct": 2,
+        "id": "81nth1"
+      },
+      {
+        "question": "Najčešće sredstvo popunjavanja pravnih praznina je:",
+        "options": [
+          "argumentum a contrario (razlog suprotnosti)",
+          "analogija (argumentum a simili)",
+          "argumentum ad absurdum (razlog apsurdnosti)",
+          "autentično tumačenje normotvorca"
+        ],
+        "correct": 1,
+        "id": "q1bh9v"
+      },
+      {
+        "question": "Veća premisa pravnog silogizma je:",
+        "options": [
+          "opis činjeničnog stanja",
+          "pojedinačna norma",
+          "pravni lijek",
+          "opća pravna norma"
+        ],
+        "correct": 3,
+        "id": "8q6v6h"
+      },
+      {
+        "question": "Manja premisa pravnog silogizma je:",
+        "options": [
+          "opća pravna norma",
+          "opis činjeničnog stanja",
+          "pojedinačna pravna norma",
+          "pravno načelo"
+        ],
+        "correct": 1,
+        "id": "1smrlu"
+      },
+      {
+        "question": "Zaključak pravnog silogizma je:",
+        "options": [
+          "pojedinačna pravna norma",
+          "opća pravna norma države",
+          "pravna fikcija o činjenici",
+          "pravna pretpostavka o činjenici"
+        ],
+        "correct": 0,
+        "id": "1w2m77"
+      },
+      {
+        "question": "Iz premisa „svi s prihodom D plaćaju porez P” i „Petar ima prihod D” slijedi da:",
+        "options": [
+          "Petar ne mora platiti porez P",
+          "porez P vrijedi samo za Petra",
+          "prihod D nije oporeziv",
+          "je Petar dužan platiti porez P"
+        ],
+        "correct": 3,
+        "id": "q35a92"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Argumentum a _______ zaključuje o suprotnoj prešutnoj kvalifikaciji.",
+        "answer": "contrario",
+        "hint": "razlog suprotnosti",
+        "id": "fto6ck"
+      },
+      {
+        "sentence": "Argumentum a _______ (analogija) prenosi kvalifikaciju na bitno sličan odnos.",
+        "answer": "simili",
+        "hint": "razlog sličnosti",
+        "id": "d3xy8i"
+      },
+      {
+        "sentence": "Analogija je zabranjena u modernom _______ pravu.",
+        "answer": "kaznenom",
+        "hint": "nullum crimen",
+        "id": "uh2g0c"
+      },
+      {
+        "sentence": "Argumentum a minori ad _______ ide od manjeg na veće.",
+        "answer": "maius",
+        "hint": "veće",
+        "id": "7gb783"
+      },
+      {
+        "sentence": "Argumentum a maiori ad _______ ide od većeg na manje.",
+        "answer": "minus",
+        "hint": "manje",
+        "id": "16ypu1"
+      },
+      {
+        "sentence": "Argumentum ad _______ isključuje besmislena značenja.",
+        "answer": "absurdum",
+        "hint": "apsurd",
+        "id": "6y4xln"
+      },
+      {
+        "sentence": "Argumentum de natura _______ temelji se na prirodi stvari.",
+        "answer": "rerum",
+        "hint": "stvari",
+        "id": "ly8ty5"
+      },
+      {
+        "sentence": "Načelo _______ niječe postojanje pravnih praznina.",
+        "answer": "slobode",
+        "hint": "dopušteno što nije zabranjeno",
+        "id": "wimix1"
+      },
+      {
+        "sentence": "Zaključak pravnog silogizma je _______ pravna norma.",
+        "answer": "pojedinačna",
+        "hint": "konkretni slučaj",
+        "id": "ymkgkm"
+      }
+    ],
+    "learn": {
+      "title": "Argumenti tumačenja, pravne praznine i pravni silogizam",
+      "content": "<h3>Argumenti tumačenja</h3>\n<table><tr><th>Argument</th><th>Zaključak</th><th>Primjer</th></tr>\n<tr><td><strong>a contrario</strong> (razlog suprotnosti)</td><td>iz izričite kvalifikacije (ovlaštenja, obveze) određenog ponašanja postoji suprotna prešutna kvalifikacija</td><td>ako istragu vodi istražni sudac, drugi suci ne smiju je voditi; osobito pri tumačenju posebnih normi, da se spriječi širenje izuzetaka</td></tr>\n<tr><td><strong>a simili</strong> (analogija, razlog sličnosti)</td><td>ista kvalifikacija pripada drugom, bitno sličnom odnosu</td><td>zabrana ulaza motornim vozilima u park vrijedi i za zaprežna vozila; služi ciljnom tumačenju; zabranjena u modernom kaznenom pravu</td></tr>\n<tr><td><strong>a fortiori</strong> (razlog „tim prije”)</td><td>ista kvalifikacija još jačim razlogom pripada drugom odnosu</td><td>dvije vrste: a minori ad maius i a maiori ad minus</td></tr>\n<tr><td>– <strong>a minori ad maius</strong></td><td>posljedica vezana za manji intenzitet vrijedi i za veći</td><td>zabranjeno pušenje – tim više zabranjeno loženje vatre</td></tr>\n<tr><td>– <strong>a maiori ad minus</strong></td><td>posljedica vezana za veći intenzitet vrijedi i za manji</td><td>dopušten kredit od 50.000 eura – tim više od 20.000 eura</td></tr>\n<tr><td><strong>ab exemplo / de exemplo</strong> (argument autoriteta)</td><td>zaključivanje iz dobrog primjera</td><td>pozivanje na sudsku praksu i pravnu doktrinu</td></tr>\n<tr><td><strong>de natura rerum</strong> (priroda stvari)</td><td>zaključak sukladan pravilnosti ili funkcioniranju same prirode objekta ili odnosa</td><td>materijalni nedostatak stvari: nema svojstva za redovitu (prirodnu) upotrebu ili promet</td></tr>\n<tr><td><strong>ad absurdum</strong> (razlog apsurdnosti)</td><td>isključiti značenja norme koja vode besmislenim posljedicama</td><td>–</td></tr></table>\n<h3>Doslovno, prošireno i suženo tumačenje</h3>\n<p>Zajedničko im je da odlučuju o odnosu između <strong>najboljeg značenja odredbe</strong> (utvrđenog ciljnim i drugim metodama) i <strong>značenja riječi</strong> kojima je norma iskazana. Tri su moguća odgovora: značenje je adekvatno izraženo; preusko izraženo; preširoko izraženo.</p>\n<ul>\n<li><strong>Doslovno</strong> – značenje riječi izražava najbolje (zadovoljavajuće) ciljno značenje.</li>\n<li><strong>Prošireno (ekstenzivno)</strong> – višeznačnoj riječi daje se šire značenje. Primjer: „sudovi sude na temelju Ustava i zakona” – „zakon” obuhvaća svaki propis (zakon u materijalnom smislu).</li>\n<li><strong>Suženo (restriktivno)</strong> – višeznačnoj riječi daje se uže značenje. Primjer: odredba kažnjava sudjelovanje u tučnjavi, a praksa je odredila da djelo može počiniti najmanje troje počinitelja.</li>\n</ul>\n<h3>Popunjavanje pravnih praznina</h3>\n<p><strong>Pravna praznina</strong> je društveno važan i konfliktan odnos koji je izvanjski kontrolabilan, a nije uređen pravnom normom. Načelo koje niječe postojanje praznina je <strong>načelo slobode</strong>: pravno je slobodno ili dopušteno sve što nije pravno zabranjeno.</p>\n<p>Za praznine se dužni brinuti <strong>zakonodavni organi</strong> (zakonodavnom intervencijom) te <strong>upravni i sudski organi</strong> (stvarajući formalno obvezujuće presedane ili faktički utjecajnu praksu). Najčešće sredstvo popunjavanja je <strong>analogija</strong> (<em>argumentum a simili</em>).</p>\n<h3>Podvođenje konkretnog slučaja pod opću normu</h3>\n<p>Pravni silogizam (deduktivno zaključivanje):</p>\n<ol><li>viša premisa = opća pravna norma,</li><li>manja premisa = opis činjeničnog stanja,</li><li>zaključak = pojedinačna pravna norma.</li></ol>\n<p>Primjer: (1) Svi s prihodom D obvezni su platiti porez P; (2) Petar ima prihod D; (3) Petar je dužan platiti porez P.</p>",
+      "id": "w0ri8d"
+    },
+    "id": "seco3t"
+  },
+  "sistematizacijaGrane": {
+    "name": "Sistematizacija: pravni sustav, ustanove i pravne grane",
+    "icon": "fa-folder-open",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što je hijerarhijski pravni sustav?",
+        "answer": "Ukupnost pozitivnih normi jednog društva, državnih i nedržavnih, rangiranih kao više i niže prema pravnoj snazi.",
+        "explanation": "Po pravnoj snazi.",
+        "id": "0dr4s6"
+      },
+      {
+        "question": "Što je znanstveni pravni sustav?",
+        "answer": "Ukupnost pozitivnih i historijskih normi jednog društva razvrstanih po sadržaju, tj. po vrsti društvenih odnosa koje reguliraju.",
+        "explanation": "Po sadržaju.",
+        "id": "zhd28q"
+      },
+      {
+        "question": "Tri klasifikacijske jedinice prema društvenim odnosima?",
+        "answer": "Pravna ustanova (institucija), pravna grana i pravno područje.",
+        "explanation": "Od užeg prema širem.",
+        "id": "fgxnti"
+      },
+      {
+        "question": "Što je ustavno pravo?",
+        "answer": "Skup najviših normi državnopravnog poretka koje postavljaju osnove političkog i socijalnog uređenja, zasnivaju državnu organizaciju i jamče temeljna prava, slobode i obveze čovjeka i građanina.",
+        "explanation": "Temelj poretka.",
+        "id": "vimi6e"
+      },
+      {
+        "question": "Četiri podgrane obiteljskog prava?",
+        "answer": "Bračno pravo, roditeljsko pravo, pravo posvojenja i pravo skrbništva (u starijem nazivlju: starateljstva).",
+        "explanation": "Obitelj.",
+        "id": "gmjnn8"
+      },
+      {
+        "question": "Četiri podgrane građanskog prava?",
+        "answer": "Stvarno, obvezno, nasljedno i autorsko pravo.",
+        "explanation": "Građansko pravo.",
+        "id": "6mw5kt"
+      },
+      {
+        "question": "Razlika stvarnog i obveznog prava?",
+        "answer": "Svako stvarno pravo je apsolutno (djeluje prema svima), a svako obvezno pravo relativno (samo između vjerovnika i dužnika).",
+        "explanation": "Apsolutno – relativno.",
+        "id": "k5dokr"
+      },
+      {
+        "question": "Tri glavna predmeta trgovačkog prava?",
+        "answer": "Pravni položaj (status), pravni poslovi i odgovornost subjekata koji se bave trgovačkom i širom privrednom djelatnošću.",
+        "explanation": "Status, poslovi, odgovornost.",
+        "id": "qzympv"
+      },
+      {
+        "question": "Pet predmeta upravnog prava?",
+        "answer": "Organizacija, krug djelovanja, postupak rada, način nadzora i odgovornost subjekata koji obavljaju upravne poslove.",
+        "explanation": "Uprava.",
+        "id": "58god7"
+      },
+      {
+        "question": "Što uređuje radno pravo?",
+        "answer": "Zasnivanje radnog odnosa, uzajamna prava i obveze, radnodisciplinsku odgovornost, prestanak radnog odnosa i razna prava iz radnog odnosa.",
+        "explanation": "Radni odnos.",
+        "id": "zopm9d"
+      },
+      {
+        "question": "Predmeti socijalnog prava na početku i novo?",
+        "answer": "Na početku: osobna zdravstvena zaštita te invalidsko i mirovinsko osiguranje radnika. Novo: stambena pomoć, naknada za nezaposlenost, dječji doplatak, sindikalno djelovanje, štrajk…",
+        "explanation": "Socijalna prava.",
+        "id": "w1r9ql"
+      },
+      {
+        "question": "Glavno načelo kaznenog prava?",
+        "answer": "Nullum crimen, nulla poena sine lege: nikome se ne može suditi ni odrediti kazna ako djelo i kazna nisu određeni zakonom.",
+        "explanation": "Nema kazne bez zakona.",
+        "id": "6fwyxc"
+      },
+      {
+        "question": "Glavne vrste sudskih postupaka?",
+        "answer": "Građanski (parnični, izvanparnični, izvršni, stečajni), kazneni i upravnosudski postupak.",
+        "explanation": "Sudsko pravo.",
+        "id": "d49xqw"
+      },
+      {
+        "question": "Dvije glavne grane financijskog prava?",
+        "answer": "Monetarno bankovno pravo i pravo javnih financija.",
+        "explanation": "Financijsko pravo.",
+        "id": "q196vh"
+      },
+      {
+        "question": "Što je međunarodno privatno pravo?",
+        "answer": "Norme koje uređuju privatne odnose s elementima inozemnosti i rješavaju sukob zakona i nadležnosti dvaju ili više pravnih sustava.",
+        "explanation": "Strani element.",
+        "id": "8jvvog"
+      },
+      {
+        "question": "Što uređuju prometno i pravo zaštite okoliša?",
+        "answer": "Prometno pravo uređuje promet (cestovni, željeznički, pomorski, zračni); pravo zaštite prirode i okoliša uređuje zaštitu prirode i ljudskog okoliša.",
+        "explanation": "Ostale pravne grane.",
+        "id": "25j9bt"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Hijerarhijski pravni sustav razvrstava norme prema:",
+        "options": [
+          "sadržaju",
+          "vremenu donošenja",
+          "pravnoj snazi",
+          "tvorcu"
+        ],
+        "correct": 2,
+        "id": "65bzts"
+      },
+      {
+        "question": "Znanstveni pravni sustav razvrstava norme prema:",
+        "options": [
+          "pravnoj snazi pojedinih akata",
+          "teritorijalnom važenju normi",
+          "vrsti društvenih odnosa koje reguliraju",
+          "jeziku kojim su norme izražene"
+        ],
+        "correct": 2,
+        "id": "n3iz3b"
+      },
+      {
+        "question": "Koja NIJE klasifikacijska jedinica prava prema društvenim odnosima?",
+        "options": [
+          "pravna ustanova",
+          "pravna grana",
+          "pravno područje",
+          "pravni akt"
+        ],
+        "correct": 3,
+        "id": "nz3p33"
+      },
+      {
+        "question": "Ustavno pravo uređuje:",
+        "options": [
+          "osnove političkog i socijalnog uređenja i državnu organizaciju",
+          "isključivo imovinske odnose među građanima i pravnim osobama",
+          "isključivo kaznenu odgovornost počinitelja kaznenih djela",
+          "isključivo rad i radne odnose između radnika i poslodavaca"
+        ],
+        "correct": 0,
+        "id": "xis0ui"
+      },
+      {
+        "question": "Koja NIJE podgrana obiteljskog prava?",
+        "options": [
+          "bračno pravo",
+          "stvarno pravo",
+          "roditeljsko pravo",
+          "pravo skrbništva (nekad starateljstva)"
+        ],
+        "correct": 1,
+        "id": "2afbbs"
+      },
+      {
+        "question": "Koja NIJE podgrana građanskog prava?",
+        "options": [
+          "stvarno pravo",
+          "nasljedno pravo",
+          "pravo posvojenja",
+          "autorsko pravo"
+        ],
+        "correct": 2,
+        "id": "iknm6b"
+      },
+      {
+        "question": "Stvarno pravo je:",
+        "options": [
+          "apsolutno, djeluje prema svima",
+          "relativno, djeluje samo između vjerovnika i dužnika",
+          "djeluje samo prema državi",
+          "djeluje samo prema nasljednicima"
+        ],
+        "correct": 0,
+        "id": "0hb69f"
+      },
+      {
+        "question": "Obvezno pravo je:",
+        "options": [
+          "apsolutno, djeluje prema svim osobama u pravnom sustavu",
+          "privremeno, do donošenja pravomoćne sudske presude",
+          "pravo koje pripada isključivo državnim organima i javnim tijelima",
+          "relativno, djeluje između vjerovnika i dužnika"
+        ],
+        "correct": 3,
+        "id": "6icupc"
+      },
+      {
+        "question": "Koji NIJE glavni predmet trgovačkog prava?",
+        "options": [
+          "pravni položaj trgovačkih subjekata",
+          "kaznena odgovornost za imovinska djela",
+          "pravni poslovi trgovačkih subjekata",
+          "odgovornost trgovačkih subjekata"
+        ],
+        "correct": 1,
+        "id": "5rnctr"
+      },
+      {
+        "question": "Upravno pravo uređuje, među ostalim:",
+        "options": [
+          "osnivanje braka i skrb o djeci rođenoj u njemu",
+          "organizaciju, postupak rada i nadzor subjekata upravnih poslova",
+          "pravo vlasništva na nekretninama i stvarima",
+          "nasljeđivanje imovine ostavitelja i prava nasljednika"
+        ],
+        "correct": 1,
+        "id": "sn2tas"
+      },
+      {
+        "question": "Radno pravo uređuje:",
+        "options": [
+          "imovinske odnose među srodnicima i bračnim drugovima",
+          "odnose među državama i međunarodnim organizacijama",
+          "sukob zakona različitih država u privatnim odnosima",
+          "zasnivanje, trajanje i prestanak radnog odnosa"
+        ],
+        "correct": 3,
+        "id": "5n6bq9"
+      },
+      {
+        "question": "Koje NIJE novo pravo socijalnog prava?",
+        "options": [
+          "pravo glasa na izborima",
+          "pravo na dječji doplatak",
+          "pravo na štrajk",
+          "pravo na naknadu za nezaposlenost"
+        ],
+        "correct": 0,
+        "id": "7d153c"
+      },
+      {
+        "question": "Glavno načelo kaznenog prava glasi:",
+        "options": [
+          "lex posterior derogat legi priori",
+          "pacta sunt servanda",
+          "nullum crimen nulla poena sine lege",
+          "ignorantia juris nocet"
+        ],
+        "correct": 2,
+        "id": "5i31kc"
+      },
+      {
+        "question": "Koji NIJE sudski postupak u podjeli sudskih postupaka?",
+        "options": [
+          "parnični građanski postupak pred sudom",
+          "kazneni postupak pred nadležnim sudom",
+          "stečajni postupak pred trgovačkim sudom",
+          "upravni postupak pred upravnim organom"
+        ],
+        "correct": 3,
+        "id": "9kibpi"
+      },
+      {
+        "question": "Dvije glavne grane financijskog prava su:",
+        "options": [
+          "radno i socijalno pravo kao grane sustava",
+          "monetarno bankovno pravo i pravo javnih financija",
+          "stvarno i obvezno pravo kao podgrane građanskog prava",
+          "ustavno i upravno pravo kao grane javnog prava"
+        ],
+        "correct": 1,
+        "id": "30a389"
+      },
+      {
+        "question": "Međunarodno privatno pravo rješava:",
+        "options": [
+          "odnose između država i međunarodnih organizacija u svijetu",
+          "kaznene postupke protiv stranaca na državnom teritoriju",
+          "sukob zakona i nadležnosti u privatnim odnosima s inozemnim elementom",
+          "pitanja državljanstva i položaja stranaca u državi"
+        ],
+        "correct": 2,
+        "id": "vmenb5"
+      },
+      {
+        "question": "Prometno pravo uređuje:",
+        "options": [
+          "promet cestovni, željeznički, pomorski i zračni",
+          "osnivanje trgovačkih društava i njihove odgovornosti",
+          "nasljeđivanje imovine ostavitelja među nasljednicima",
+          "postupak pred ustavnim sudom u ocjeni ustavnosti"
+        ],
+        "correct": 0,
+        "id": "5av41l"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Hijerarhijski sustav rangira norme prema pravnoj _______.",
+        "answer": "snazi",
+        "hint": "više i niže",
+        "id": "nxf0tt"
+      },
+      {
+        "sentence": "Tri klasifikacijske jedinice: pravna ustanova, pravna grana i pravno _______.",
+        "answer": "područje",
+        "hint": "najšira jedinica",
+        "id": "e9qk73"
+      },
+      {
+        "sentence": "Stvarno pravo je _______, a obvezno pravo relativno.",
+        "answer": "apsolutno",
+        "hint": "prema svima",
+        "id": "g1gxfy"
+      },
+      {
+        "sentence": "Obvezno pravo djeluje samo između vjerovnika i _______.",
+        "answer": "dužnika",
+        "hint": "relativno",
+        "id": "j4c8lm"
+      },
+      {
+        "sentence": "Nullum crimen, nulla _______ sine lege je načelo kaznenog prava.",
+        "answer": "poena",
+        "hint": "kazna",
+        "id": "dbf1wl"
+      },
+      {
+        "sentence": "Grane prava o novcu i državnom proračunu su monetarno bankovno pravo i pravo javnih _______.",
+        "answer": "financija",
+        "hint": "javni novac",
+        "id": "i1grfb"
+      },
+      {
+        "sentence": "Bračno, roditeljsko, pravo posvojenja i pravo _______ su podgrane obiteljskog prava.",
+        "answer": "skrbništva",
+        "hint": "nekad: starateljstvo",
+        "id": "nvl8sz"
+      }
+    ],
+    "learn": {
+      "title": "Sistematizacija: pravni sustav, ustanove i pravne grane",
+      "content": "<h3>Hijerarhijski i znanstveni sustav pravnih normi</h3>\n<ul><li><strong>Hijerarhijski pravni sustav</strong> – ukupnost pozitivnih pravnih normi jednog društva, državnih i nedržavnih, rangiranih kao više i niže prema pravnoj snazi.</li><li><strong>Znanstveni pravni sustav</strong> – ukupnost pozitivnih i historijskih normi jednog društva, državnih i nedržavnih, razvrstanih u jedinice prema sadržaju, tj. prema vrsti društvenih odnosa koje reguliraju.</li></ul>\n<p>Prema kriteriju normiranih društvenih odnosa postoje tri klasifikacijske jedinice: <strong>pravna ustanova (institucija), pravna grana, pravno područje</strong>.</p>\n<h3>Dopuna: ustanova, grana i područje</h3>\n<p>Jedinice idu <strong>od užeg prema širem</strong>:</p>\n<ul>\n<li><strong>pravna ustanova (institucija)</strong> – skup pravnih normi koje uređuju jednu usku skupinu srodnih društvenih odnosa; primjeri: brak, vlasništvo, nasljeđivanje, ugovor o kupoprodaji;</li>\n<li><strong>pravna grana</strong> – skup srodnih pravnih ustanova koje uređuju širu vrstu društvenih odnosa; primjeri: obiteljsko pravo (brak, roditeljska skrb, posvojenje, skrbništvo), kazneno pravo, radno pravo;</li>\n<li><strong>pravno područje</strong> – skup srodnih pravnih grana, tj. najšira podjela prava prema zajedničkom obilježju; primjeri: javno i privatno pravo, materijalno i formalno pravo (vidi sljedeću kategoriju).</li>\n</ul>\n<h3>Pravne grane i podgrane</h3>\n<table><tr><th>Grana</th><th>Predmet / podgrane</th></tr>\n<tr><td>ustavno pravo</td><td>najviše norme državnopravnog poretka: osnove političkog i socijalnog uređenja, državna organizacija, temeljna prava, slobode i obveze čovjeka i građanina</td></tr>\n<tr><td>obiteljsko (porodično) pravo</td><td>bračno pravo, roditeljsko pravo, pravo posvojenja, pravo skrbništva (u starijem nazivlju: starateljstvo)</td></tr>\n<tr><td>građansko pravo</td><td>stvarno, obvezno, nasljedno, autorsko pravo. Stvarno pravo je <em>apsolutno</em> (prema svima), obvezno <em>relativno</em> (samo između vjerovnika i dužnika)</td></tr>\n<tr><td>trgovačko pravo</td><td>pravni položaj (status), pravni poslovi i odgovornost subjekata koji se bave trgovačkom i širom privrednom djelatnošću</td></tr>\n<tr><td>upravno pravo</td><td>organizacija, krug djelovanja, postupak rada, nadzor i odgovornost subjekata koji obavljaju upravne poslove</td></tr>\n<tr><td>radno pravo</td><td>zasnivanje radnog odnosa; prava i obveze u radnom odnosu; radnodisciplinska odgovornost; prestanak radnog odnosa; prava iz radnog odnosa</td></tr>\n<tr><td>socijalno pravo</td><td>u početku: zdravstvena zaštita, invalidsko i mirovinsko osiguranje radnika; novo: pomoć u stambenim potrebama, naknada za nezaposlenost, dodatno obrazovanje i prekvalifikacija, slobodno vrijeme, zdravstveno osiguranje članova obitelji, dječji doplatak, sindikalno djelovanje, štrajk</td></tr>\n<tr><td>kazneno (krivično) pravo</td><td>glavno načelo <em>nullum crimen, nulla poena sine lege</em> – nikome se ne može suditi ni odrediti kazna ako djelo i kazna nisu određeni zakonom</td></tr>\n<tr><td>sudski postupci (sudsko pravo)</td><td>građanski (parnični, izvanparnični, izvršni, stečajni), kazneni, upravnosudski</td></tr>\n<tr><td>financijsko pravo</td><td>monetarno bankovno pravo i pravo javnih financija</td></tr>\n<tr><td>međunarodno privatno pravo</td><td>norme o privatnim odnosima s elementom inozemnosti; rješava sukob zakona i nadležnosti dvaju ili više pravnih sustava</td></tr></table>\n<p><em>Dopuna:</em> <strong>prometno (transportno) pravo</strong> uređuje promet (cestovni, željeznički, pomorski, zračni), a <strong>pravo zaštite prirode i ljudske okoline</strong> uređuje zaštitu prirode i okoliša.</p>",
+      "id": "6udt8v"
+    },
+    "id": "8wrr5p"
+  },
+  "pravnaPodrucja": {
+    "name": "Pravna područja: materijalno i formalno, javno i privatno, državno i autonomno, unutarnje i međunarodno",
+    "icon": "fa-globe",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Objektivno i subjektivno pravo?",
+        "answer": "Objektivno: skup svih općih normi istog sustava. Subjektivno: pravno ovlaštenje.",
+        "explanation": "Dva značenja riječi „pravo”.",
+        "id": "76ix17"
+      },
+      {
+        "question": "Što su primarne pravne norme u sistematizaciji prava?",
+        "answer": "Norme koje određuju ovlaštenja, obveze, delikte i sankcije u osnovnim odnosima pravnih subjekata; istovjetne su normama materijalnog prava.",
+        "explanation": "Osnovni odnosi.",
+        "id": "uu2jay"
+      },
+      {
+        "question": "Što su sekundarne pravne norme u sistematizaciji prava?",
+        "answer": "Norme koje određuju ovlaštenja, obveze, delikte i sankcije u odnosima stvaranja i postupcima primjene normi materijalnog prava; slične su formalnom pravu, ali nisu istovjetne.",
+        "explanation": "Stvaranje i primjena normi.",
+        "id": "vkpsrz"
+      },
+      {
+        "question": "Što čini materijalno, a što formalno pravo?",
+        "answer": "Materijalno: norme o ovlaštenjima, obvezama, deliktima i sankcijama u osnovnim odnosima. Formalno: norme o stvaranju i postupcima primjene normi materijalnog prava.",
+        "explanation": "Sadržaj – postupak.",
+        "id": "nfmkrd"
+      },
+      {
+        "question": "Što čini javno, a što privatno pravo?",
+        "answer": "Javno: norme koje adresate stavljaju u odnos subordinacije, uz prisilu i obveze nametnute od vlasti. Privatno: odnos ravnopravnosti, dobrovoljno i uz obveze koje stranke slobodno dogovaraju.",
+        "explanation": "Subordinacija – ravnopravnost.",
+        "id": "a272qq"
+      },
+      {
+        "question": "Što je državno pravo?",
+        "answer": "Sustav normi koje stvaraju i nameću državni organi.",
+        "explanation": "Heteronomno pravo.",
+        "id": "lv2l07"
+      },
+      {
+        "question": "Što je autonomno (društveno) pravo?",
+        "answer": "Sustavi ili podsustavi normi koje ne stvaraju i ne nameću (barem ne isključivo) državni organi, nego drugi društveni subjekti.",
+        "explanation": "Pravni pluralizam.",
+        "id": "jgn2to"
+      },
+      {
+        "question": "Pet pravnih sustava u srednjovjekovnoj Europi?",
+        "answer": "Carsko i kraljevsko pravo, crkveno pravo, pravo feudalne gospode, gradsko (komunalno) pravo i korporativna prava.",
+        "explanation": "Pluralizam prava.",
+        "id": "3grs0g"
+      },
+      {
+        "question": "Tko stvara autonomna prava u moderno doba?",
+        "answer": "Privredne pravne osobe, poslodavci i sindikati, crkve, općinske samouprave i protupravne organizacije.",
+        "explanation": "Pet subjekata.",
+        "id": "4o1akt"
+      },
+      {
+        "question": "Što obuhvaća unutarnje pravo?",
+        "answer": "Norme, ustanove i grane stvorene i važeće na području jednog društva i jedne države.",
+        "explanation": "Nacionalno pravo.",
+        "id": "jpp356"
+      },
+      {
+        "question": "Što je međunarodno pravo?",
+        "answer": "Sustav normi koje nastaju običajno i ugovorno među državama i uređuju međunarodne odnose, tj. odnose država, država i međunarodnih organizacija, a donekle i pojedinaca.",
+        "explanation": "Običaji i ugovori.",
+        "id": "umbtcy"
+      },
+      {
+        "question": "Stajališta o temelju obveznosti međunarodnog prava?",
+        "answer": "Suglasnost država (nužna i za nastanak običaja), međunarodni običaj koji može nastati neovisno o suglasnosti pojedinih država te prirodni zakon.",
+        "explanation": "Tri stajališta.",
+        "id": "sh9esa"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Materijalno pravo čine norme koje određuju:",
+        "options": [
+          "ovlaštenja, obveze, delikte i sankcije u osnovnim odnosima subjekata",
+          "postupke stvaranja i primjene normi materijalnog prava",
+          "isključivo odnose među državama i njihovim organima",
+          "isključivo nadležnost sudova i način vođenja postupaka"
+        ],
+        "correct": 0,
+        "id": "w5p8mj"
+      },
+      {
+        "question": "Formalno pravo čine norme koje određuju:",
+        "options": [
+          "osnovne odnose među građanima i njihova ovlaštenja",
+          "odnose među državama i međunarodnim organizacijama",
+          "odnose stvaranja i postupke primjene normi materijalnog prava",
+          "vlasništvo nad stvarima i druga stvarna prava osoba"
+        ],
+        "correct": 2,
+        "id": "yqrdon"
+      },
+      {
+        "question": "U sistematizaciji prava primarne pravne norme istovjetne su:",
+        "options": [
+          "normama formalnog prava",
+          "normama materijalnog prava",
+          "normama međunarodnog prava",
+          "običajnim normama"
+        ],
+        "correct": 1,
+        "id": "jvo3aj"
+      },
+      {
+        "question": "U sistematizaciji prava sekundarne pravne norme slične su, ali ne i istovjetne:",
+        "options": [
+          "materijalnom pravu",
+          "javnom pravu",
+          "međunarodnom pravu",
+          "formalnom pravu"
+        ],
+        "correct": 3,
+        "id": "km35wu"
+      },
+      {
+        "question": "Javno pravo stavlja adresate u odnos:",
+        "options": [
+          "ravnopravnosti, uz dobrovoljno preuzete obveze",
+          "subordinacije, uz obveze nametnute od vlasti",
+          "koordinacije država članica saveza",
+          "potpune slobode bez ikakvih obveza"
+        ],
+        "correct": 1,
+        "id": "om5oyl"
+      },
+      {
+        "question": "Privatno pravo stavlja adresate u odnos:",
+        "options": [
+          "ravnopravnosti, uz obveze koje sami dogovaraju",
+          "subordinacije, uz obveze nametnute od vlasti",
+          "podređenosti prema državnom organu",
+          "isključivo prema crkvenim normama"
+        ],
+        "correct": 0,
+        "id": "2gw2qy"
+      },
+      {
+        "question": "Državno pravo je sustav normi koje:",
+        "options": [
+          "stvaraju samo međunarodne organizacije",
+          "stvaraju samo privatne osobe",
+          "stvaraju samo crkve",
+          "stvaraju i nameću državni organi"
+        ],
+        "correct": 3,
+        "id": "a4r8x3"
+      },
+      {
+        "question": "Autonomno pravo naziva se i:",
+        "options": [
+          "državno pravo",
+          "prirodno pravo",
+          "društveno pravo",
+          "međunarodno pravo"
+        ],
+        "correct": 2,
+        "id": "edoerj"
+      },
+      {
+        "question": "Koji NIJE pravni sustav srednjovjekovne Europe?",
+        "options": [
+          "carsko i kraljevsko pravo u Europi",
+          "crkveno (kanonsko) pravo Crkve",
+          "pravo suvremenih međunarodnih organizacija",
+          "gradsko (komunalno) pravo gradova"
+        ],
+        "correct": 2,
+        "id": "k1nzzp"
+      },
+      {
+        "question": "Koji NIJE subjekt koji u moderno doba stvara autonomno pravo?",
+        "options": [
+          "privredne pravne osobe",
+          "poslodavci i sindikati",
+          "općinske samouprave",
+          "ustavni sud države"
+        ],
+        "correct": 3,
+        "id": "84evm9"
+      },
+      {
+        "question": "Unutarnje pravo obuhvaća norme:",
+        "options": [
+          "stvorene i važeće na području jednog društva i jedne države",
+          "nastale među državama običajem i ugovorom",
+          "važeće u svim državama svijeta istodobno",
+          "koje po svojoj naravi nemaju nikakvu sankciju"
+        ],
+        "correct": 0,
+        "id": "acpkk8"
+      },
+      {
+        "question": "Međunarodno pravo nastaje:",
+        "options": [
+          "isključivo zakonima nacionalnih parlamenata",
+          "običajno i ugovorno među državama",
+          "isključivo presudama nacionalnih sudova",
+          "isključivo odlukama poslodavaca"
+        ],
+        "correct": 1,
+        "id": "tmuhov"
+      },
+      {
+        "question": "Koje NIJE stajalište o temelju obveznosti međunarodnog prava?",
+        "options": [
+          "suglasnost država članica zajednice",
+          "međunarodni običaj među državama",
+          "prirodna sila država",
+          "prirodni zakon kao temelj obveznosti"
+        ],
+        "correct": 2,
+        "id": "380iqx"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "_______ pravo čine norme o stvaranju i primjeni normi materijalnog prava.",
+        "answer": "Formalno",
+        "hint": "postupak",
+        "id": "6rg0l4"
+      },
+      {
+        "sentence": "Javno pravo stavlja adresate u odnos _______.",
+        "answer": "subordinacije",
+        "hint": "podređenost",
+        "id": "cstj47"
+      },
+      {
+        "sentence": "Privatno pravo stavlja adresate u odnos _______.",
+        "answer": "ravnopravnosti",
+        "hint": "dobrovoljno",
+        "id": "n4vjkp"
+      },
+      {
+        "sentence": "Autonomno pravo naziva se i _______ pravo.",
+        "answer": "društveno",
+        "hint": "nije državno",
+        "id": "r1ds4c"
+      },
+      {
+        "sentence": "_______ pravo nastaje običajno i ugovorno među državama.",
+        "answer": "Međunarodno",
+        "hint": "odnosi država",
+        "id": "ubxb7p"
+      },
+      {
+        "sentence": "Pravni _______ znači supostojanje više pravnih sustava u istom društvu.",
+        "answer": "pluralizam",
+        "hint": "državno i autonomno pravo",
+        "id": "6qqgzn"
+      }
+    ],
+    "learn": {
+      "title": "Pravna područja: materijalno i formalno, javno i privatno, državno i autonomno, unutarnje i međunarodno",
+      "content": "<h3>Pravna područja</h3>\n<p>Širu od grane jedinicu čini <strong>pravno područje</strong>. Značenja riječi „pravo”: <strong>objektivno pravo</strong> je skup svih općih pravnih normi istoga sustava, <strong>subjektivno pravo</strong> je pravno ovlaštenje. Ovlaštenje je <em>apsolutno</em> kad vrijedi prema svima, a <em>relativno</em> kad vrijedi prema određenom subjektu.</p>\n<h3>Materijalno i formalno pravo</h3>\n<table><tr><th>Materijalno pravo</th><th>Formalno pravo</th></tr>\n<tr><td>norme koje određuju ovlaštenja, obveze, delikte i sankcije u <em>osnovnim</em> odnosima subjekata</td><td>norme koje određuju ovlaštenja, obveze, delikte i sankcije u odnosima <em>stvaranja i primjene</em> normi materijalnog prava</td></tr>\n<tr><td>istovjetno <strong>primarnim</strong> pravnim normama</td><td>slično, ali ne i istovjetno <strong>sekundarnim</strong> normama</td></tr></table>\n<p><strong>Pozor – drugo značenje istih izraza:</strong> ovdje se primarne i sekundarne norme dijele prema <em>vrsti odnosa koji se normira</em> (osnovni odnosi nasuprot odnosima stvaranja i primjene normi). U strukturi jedne norme primarna je norma hipoteza + traženje, a sekundarna određenje delikta + sankcija. To su dva različita značenja istih izraza, pa ih ne treba miješati.</p>\n<h3>Javno i privatno pravo</h3>\n<ul><li><strong>Javno pravo</strong> – norme koje adresate stavljaju u odnos <em>subordinacije</em>, u koji ulaze prisilno i s obvezama koje nameće državna vlast.</li><li><strong>Privatno pravo</strong> – norme koje adresate stavljaju u odnos <em>ravnopravnosti</em>, u koji ulaze dobrovoljno i s obvezama koje slobodno dogovaraju s drugim subjektima.</li></ul>\n<h3>Državno i autonomno pravo – pravni pluralizam</h3>\n<p><strong>Pravni pluralizam</strong> je supostojanje više pravnih sustava (državnog i autonomnih) u istom društvu. <strong>Državno pravo</strong> je sustav normi koje stvaraju i nameću državni organi. <strong>Autonomno (društveno) pravo</strong> je jedan ili više sustava ili podsustava normi koje ne stvaraju i ne nameću (barem ne isključivo) državni organi, nego drugi društveni subjekti.</p>\n<ul><li>Pet pravnih sustava u srednjovjekovnoj Europi: carsko i kraljevsko pravo; crkveno pravo; pravo feudalne gospode; gradsko (komunalno) pravo; korporativna prava.</li><li>Pet subjekata autonomnih prava u moderno doba: privredne pravne osobe; poslodavci i sindikati; crkve; općinske samouprave; protupravne organizacije.</li></ul>\n<h3>Unutarnje i međunarodno pravo</h3>\n<p><strong>Unutarnje pravo</strong> obuhvaća norme, ustanove i grane stvorene i važeće na području jednog društva i jedne države. <strong>Međunarodno pravo</strong> je sustav normi koje nastaju običajno i ugovorno među državama i uređuju odnose između država, između država i međunarodnih organizacija te, u određenoj mjeri, između država i pojedinaca (stranaca i njihovih državljana).</p>\n<p>Glavna stajališta o <strong>temelju obveznosti</strong> međunarodnog prava: a) <em>suglasnost država</em> (nužna čak za nastanak međunarodnog običaja); b) <em>međunarodni običaj</em>, koji može nastati neovisno o suglasnosti pojedinih država; c) <em>prirodni zakon</em>.</p>\n<p><em>Dopuna:</em> čl. 38. st. 1. Statuta Međunarodnog suda kao izvore koje sud primjenjuje navodi: međunarodne ugovore, međunarodni običaj, opća pravna načela priznata među narodima te, kao pomoćna sredstva za utvrđivanje pravnih pravila, sudske odluke i doktrinu (nauk najuglednijih stručnjaka).</p>",
+      "id": "bufyh6"
+    },
+    "id": "oekiv4"
+  }
+};
+
+if (typeof window !== 'undefined') { window.tpdPfriM2 = tpdPfriM2; }
+if (typeof module !== 'undefined' && module.exports) { module.exports = tpdPfriM2; }
