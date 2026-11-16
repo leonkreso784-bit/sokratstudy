@@ -111,6 +111,9 @@ test('every faculty in the catalog is reachable down to a subject', async ({ pag
     await page.click(`.browse-card[data-browse="year"][data-id="${step.year}"]`);
     await page.click(`.browse-card[data-browse="subject"][data-id="${step.subject}"]`);
     await page.waitForSelector('#lessons-page.active', { timeout: 5000 });
+    // Otvoren predmet se pamti (`sokrat-last-position`) i `goto('/')` bi vratio na njegove lekcije,
+    // ne na naslovnicu — sljedeći fakultet kreće kao novi posjet.
+    await page.evaluate(() => localStorage.removeItem('sokrat-last-position'));
     await page.goto('/');
     await page.waitForFunction(() => window.SOKRAT_CATALOG && window.enterBrowse);
   }
