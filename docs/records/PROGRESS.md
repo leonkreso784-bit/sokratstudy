@@ -22,7 +22,14 @@ nakon prvog fakulteta `goto('/')` vraća na zapamćeni predmet (`sokrat-last-pos
 vidljiva → test sad briše tu poziciju između fakulteta (4/4 zeleno; prije 0/4).
 **Pouka:** „ispravljanje prekinuto limitom" (Teorija) značilo je **ništa spremljeno** — generator je bio bajt-identičan
 podacima. Prije nastavka prekinutog posla prvo izmjeri što je stvarno napravljeno.
-**Slijedi:** Faza 2 do kraja (preflight, push grane, CI, preview) → **Leonov OK** → `main` + `migrate-content.js`.
+**Deploy (17.11., Leonov OK):** CI na grani je prvo pao na jednom testu — Learn-overflow obilazi svaki predmet u jednom
+testu s fiksnih 120 s, a 6 velikih pravnih predmeta izguralo je landscape preko roka (lokalno 41 → 49 s) → rok raste s
+katalogom (`0d4c4ce`) → CI zelen → preview dimni test (OIDC header, `vercel link` lokalno) → fast-forward `main`
+`d8930c0..0d4c4ce` → Vercel READY → `diff:db` (6× nemigrirano) → `migrate-content.js` → `diff:db` 0 razlika →
+dimni test na produkciji: 18 lekcija iz baze, 0 JS grešaka.
+**Otvoreno (nije PFRI):** `check:final` pada na zastarjeloj osnovici preskočenih — 13 predmeta izvan nje (HR program
+namjerno nije u bazi; 3. godina i EKO imaju jednu lekciju). Osnovicu treba odobriti, ne tiho `--update`-ati.
+**Slijedi:** Faza 3 (2. godina PFRI) — Europsko pravo I prvo.
 
 ## 2026-11-14/15 (OPUS, stablo `sokratstudy.mor`, grana `feat/mor`) — novi HR program MOR (Menadžment održivog razvoja)
 

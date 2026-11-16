@@ -5,6 +5,14 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+## 2026-11-17 (OPUS) — 🚀 **PFRI 1. GODINA NA PRODUKCIJI** — `main` = `0d4c4ce`, token `20261116231748`
+
+Leonov OK 17.11. Fast-forward `d8930c0..0d4c4ce` (18 commita: 15 PFRI + 3 MOR docs; pre-push preflight zelen).
+**Provjereno:** CI na grani zelen (svi jobovi) · Vercel produkcija READY · živi `SW_VERSION` = repo · katalog 56 (6 PFRI) ·
+`migrate-content.js` za 6 PFRI predmeta (18 redova; `diff:db` prije: svi nemigrirani, poslije: 0 razlika) · `check:final`
+za svih 6 ✓ · u živom Chromiumu svih 18 lekcija učitava iz baze, sučelje hrvatsko, 0 JS grešaka. Usput: rok
+Learn-overflow testa raste s brojem predmeta (fiksnih 120 s isteklo je na CI-ju s 56 predmeta).
+
 ## 2026-11-16 (OPUS) — ➕ **Drugi fakultet: Pravni fakultet Rijeka (PFRI), 1. godina** — grana `feat/pravri`
 
 Fakultet `pfri`, program „Pravo (integrirani studij)" (`law-integrated-hr`, HR). Šest predmeta 1. godine, svaki s

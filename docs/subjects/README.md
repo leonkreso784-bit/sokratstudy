@@ -148,6 +148,8 @@ svih 14 predmeta i u bazi, `migrate-content.js`).
 | Politička ekonomija | `political-economy-pfri` | 1/2 | 38 / 300 / 329 / 119 | |
 | 15 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
 
+**Na produkciji od 2026-11-17** (`0d4c4ce`; svih 6 predmeta i u bazi, `migrate-content.js`).
+
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
 - [STATISTICS_PLAN.md](./STATISTICS_PLAN.md) — Learn Track A + vježbe Track B (✅ done)
