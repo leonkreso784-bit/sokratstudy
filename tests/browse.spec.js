@@ -18,8 +18,9 @@ test('browse drill-down renders from catalog and navigates to a subject', async 
   const expectedFac = await page.evaluate(() => window.SOKRAT_CATALOG.faculties.length);
   expect(facCount).toBe(expectedFac);
 
-  // Drill: faculty → programs
-  await page.click('.browse-card[data-browse="faculty"]');
+  // Drill: faculty → programs (faculties[0] izričito — od 2026-11-16 ima ih više)
+  const fid0 = await page.evaluate(() => window.SOKRAT_CATALOG.faculties[0].id);
+  await page.click(`.browse-card[data-browse="faculty"][data-id="${fid0}"]`);
   await page.waitForSelector('.browse-card[data-browse="program"]');
   const progCount = await page.$$eval('.browse-card[data-browse="program"]', (e) => e.length);
   const expectedProg = await page.evaluate(
@@ -80,6 +81,39 @@ test('browse drill-down renders from catalog and navigates to a subject', async 
   await page.waitForSelector('#browse-page.active', { timeout: 5000 });
   await page.waitForSelector('.browse-card[data-browse="subject"]');
 
+  expect(errors).toEqual([]);
+});
+
+// Drugi fakultet (PFRI, 2026-11-16): do tada je katalog imao JEDAN fakultet i svaki test je klikao
+// `.first()`. Ovdje se svaki fakultet iz kataloga prolazi do kraja (fakultet → program → godina →
+// predmet → lekcije), pa novi fakultet koji se ne da dosegnuti obara test bez ijednog zakucanog id-a.
+test('every faculty in the catalog is reachable down to a subject', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+  await page.goto('/');
+  await page.waitForFunction(() => window.SOKRAT_CATALOG && window.enterBrowse);
+
+  const plan = await page.evaluate(() => window.SOKRAT_CATALOG.faculties.map((f) => {
+    const p = f.programs.find((x) => window.SokratCatalog.subjectsOf(x.id).length > 0);
+    const y = window.SokratCatalog.yearsOf(p.id)[0];
+    const s = window.SokratCatalog.subjectsOf(p.id, y)[0];
+    return { faculty: f.id, program: p.id, year: y, subject: s.id, nPrograms: f.programs.length };
+  }));
+  expect(plan.length).toBeGreaterThanOrEqual(2);
+
+  for (const step of plan) {
+    await page.click('.doors .door--primary');
+    await page.waitForSelector('#browse-page.active', { timeout: 5000 });
+    await page.click(`.browse-card[data-browse="faculty"][data-id="${step.faculty}"]`);
+    await page.waitForSelector('.browse-card[data-browse="program"]');
+    expect(await page.$$eval('.browse-card[data-browse="program"]', (e) => e.length)).toBe(step.nPrograms);
+    await page.click(`.browse-card[data-browse="program"][data-id="${step.program}"]`);
+    await page.click(`.browse-card[data-browse="year"][data-id="${step.year}"]`);
+    await page.click(`.browse-card[data-browse="subject"][data-id="${step.subject}"]`);
+    await page.waitForSelector('#lessons-page.active', { timeout: 5000 });
+    await page.goto('/');
+    await page.waitForFunction(() => window.SOKRAT_CATALOG && window.enterBrowse);
+  }
   expect(errors).toEqual([]);
 });
 
