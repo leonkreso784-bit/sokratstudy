@@ -1,0 +1,3305 @@
+// Politička ekonomija (PFRI) — M2 (gradivo završnog ispita)
+// Autorski sadržaj; kartice <=200 znakova, cijela skripta u learn.
+
+const pePfriM2 = {
+  "peCapitalist": {
+    "name": "Kapitalizam i radna snaga kao roba",
+    "icon": "fa-user-tie",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "xjr2hu",
+        "question": "Koje su temeljne karakteristike proizvodnih odnosa u kapitalizmu?",
+        "answer": "Privatno vlasništvo nad sredstvima za proizvodnju, odvojenost radnika od njih i formalna sloboda, ekonomska prinuda da prodaju radnu snagu i stvaranje viška vrijednosti.",
+        "explanation": "Četiri točke; vrlo često ispitno pitanje."
+      },
+      {
+        "id": "0i7cvq",
+        "question": "Zašto je radna snaga roba?",
+        "answer": "Jer su umne i fizičke sposobnosti koje radnik prodaje kapitalistu predmet kupoprodaje na tržištu kao i sve druge robe; ima uporabnu vrijednost i vrijednost.",
+        "explanation": "Ekonomska prinuda."
+      },
+      {
+        "id": "3c7pdv",
+        "question": "Što je radna snaga?",
+        "answer": "Zbroj svih umnih i fizičkih sposobnosti koje pojedinac posjeduje i može koristiti u proizvodnji.",
+        "explanation": "Rad je njezino korištenje."
+      },
+      {
+        "id": "enu1tn",
+        "question": "Čime je određena vrijednost radne snage?",
+        "answer": "Društveno potrebnim radnim vremenom za proizvodnju sredstava za život potrebnih za reprodukciju radnika; viša izobrazba znači višu cijenu.",
+        "explanation": "Jeftinija roba → jeftinija radna snaga."
+      },
+      {
+        "id": "jxk5je",
+        "question": "Po čemu je radna snaga posebna naspram drugih čimbenika?",
+        "answer": "Njezinu uporabnu vrijednost stalno je moguće dopunjavati i mijenjati; njezina potrošnja stvara novu vrijednost.",
+        "explanation": "Izvor nove vrijednosti."
+      },
+      {
+        "id": "bdz7v4",
+        "question": "Što su proletarijat i buržoazija?",
+        "answer": "Proletarijat prodaje radnu snagu i nema sredstava proizvodnje; buržoazija posjeduje sredstva proizvodnje i kupuje radnu snagu.",
+        "explanation": "Klasa = odnos prema sredstvima proizvodnje."
+      },
+      {
+        "id": "7gxjl8",
+        "question": "Tri oblika reprodukcije radne snage?",
+        "answer": "Reprodukcija radnog bića (fizička), društvenog bića (kulturni razvitak) i biološka reprodukcija (nove generacije radnika).",
+        "explanation": "Obitelj i sredstva za život."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "r5ib66",
+        "question": "Što NIJE osnovno obilježje kapitalizma?",
+        "options": [
+          "privatno vlasništvo kapitalističke klase",
+          "ekonomska prinuda radnika da prodaju radnu snagu",
+          "društveno vlasništvo nad sredstvima za proizvodnju",
+          "višak vrijednosti kao pokretač proizvodnje"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "grcj9s",
+        "question": "Radna snaga u kapitalizmu je:",
+        "options": [
+          "roba",
+          "sredstvo za rad",
+          "predmet rada",
+          "stalni kapital"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "tc37tm",
+        "question": "Vrijednost radne snage određena je:",
+        "options": [
+          "visinom profita koji ostvaruje poduzeće",
+          "cijenom sirovina i energije u proizvodnji",
+          "visinom kamatne stope na kredite banke",
+          "društveno potrebnim vremenom za reprodukciju radnika"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "fas406",
+        "question": "Klasu koja prodaje radnu snagu i nema sredstava proizvodnje Marx naziva:",
+        "options": [
+          "buržoazija",
+          "proletarijat",
+          "zemljoposjednici",
+          "seljaštvo"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lva8a6",
+        "question": "Veća uloženost u izobrazbu radnika znači:",
+        "options": [
+          "nižu vrijednost radne snage",
+          "višu cijenu radne snage na tržištu",
+          "manju upotrebnu vrijednost",
+          "veći stalni kapital"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cjul6v",
+        "question": "Najveća prednost radne snage naspram ostalih čimbenika je što:",
+        "options": [
+          "svoju vrijednost prenosi na proizvod bez ikakvog gubitka",
+          "se troši samo jednom i potpuno nestaje iz proizvodnje",
+          "ne ovisi o školovanju, iskustvu i radnim navikama",
+          "svoju uporabnu vrijednost stalno dopunjava i prilagođava"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "siw97c",
+        "question": "Kako se zove klasa koju čine beskućnici, prosjaci i sitni kriminalci?",
+        "options": [
+          "lumpenproletarijat",
+          "industrijski proletarijat",
+          "sitna buržoazija i trgovci",
+          "zemljoposjednička klasa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "xabkrs",
+        "question": "Podizanje novih generacija radnika u radničkim obiteljima pripada:",
+        "options": [
+          "reprodukciji društvenog bića",
+          "tezauriranju",
+          "biološkoj reprodukciji",
+          "koncentraciji kapitala"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "uc16i1",
+        "sentence": "U kapitalizmu je radna snaga _______, tj. predmet kupoprodaje.",
+        "answer": "roba",
+        "hint": "kupuje se i prodaje"
+      },
+      {
+        "id": "0448bw",
+        "sentence": "Ekonomska _______ prisiljava radnike da prodaju radnu snagu.",
+        "answer": "prinuda",
+        "hint": "nemaju sredstava proizvodnje"
+      },
+      {
+        "id": "1tyds1",
+        "sentence": "Vrijednost radne snage određena je društveno potrebnim radnim _______.",
+        "answer": "vremenom",
+        "hint": "mjera vrijednosti"
+      }
+    ],
+    "learn": {
+      "id": "8zzq38",
+      "title": "Proizvodni proces u kapitalističkom poduzeću",
+      "content": "\n<h3>Osnovne karakteristike kapitalizma</h3>\n<p>Kapitalističko poduzeće je poduzeće koje se bavi proizvodnjom robe u uvjetima kapitalističkih proizvodnih odnosa (kapitalističke robne proizvodnje). Osnovna obilježja kapitalizma:</p>\n<ol>\n<li><strong>privatno vlasništvo nad sredstvima za proizvodnju</strong> koja se nalaze u vlasništvu manjeg dijela društva — kapitalističke klase;</li>\n<li><strong>odvojenost neposrednih proizvođača (radnika) od sredstava za proizvodnju</strong> i njihova formalno-pravna sloboda ličnosti;</li>\n<li><strong>ekonomska prinuda</strong> za neposredne proizvođače da prodaju svoju radnu snagu, što dovodi do toga da radna snaga postaje roba;</li>\n<li><strong>stvaranje viška vrijednosti</strong> (u novčanom obliku profita) kao osnovnog pokretača proizvodnje u tim uvjetima.</li>\n</ol>\n<p>Kapitalistički proizvodni odnos, kao i svaki drugi, nije vječna kategorija: rezultat je povijesnog razvitka društva i njegovih proizvodnih snaga, koji je u različitim zemljama i vremenima doveo do raspadanja feudalnih odnosa i uspostave kapitalističkih.</p>\n<h3>Marx i marksizam: klase u kapitalizmu</h3>\n<p>Marksistička teorija povijesnog materijalizma razumije društvo kao temeljno određeno materijalnim uvjetima — odnosima u koje ljudi stupaju da zadovolje osnovne potrebe. „Povijest svih dosadašnjih društava je povijest klasnih borbi.\" Klasna borba vodi se između radnika–proletarijata i vlasnika kapitala–buržoazije (nasljednika srednjovjekovnog građanstva). Identitet klase određen je odnosom prema sredstvima proizvodnje, a ne samo bogatstvom.</p>\n<ul>\n<li><strong>proletarijat</strong> — oni koji prodaju radnu snagu (dodaju vrijednost proizvodu) i ne posjeduju vlastita sredstva proizvodnje; radna snaga stvara dodanu vrijednost veću od nadnice, pa buržoazija izrabljuje proletarijat;</li>\n<li><strong>buržoazija</strong> — oni koji posjeduju sredstva proizvodnje i kupuju radnu snagu uz nadnicu;</li>\n<li><strong>lumpenproletarijat</strong> — skitnice, beskućnici, prosjaci, sitni kriminalci; ljudi bez mjesta u ekonomskim sustavima, na njegovim marginama;</li>\n<li><strong>zemljoposjednici</strong> — povijesno važna klasa, od koje netko još ima bogatstvo i moć;</li>\n<li><strong>seljaštvo i poljoprivrednici</strong> — neorganizirana klasa nesposobna za promjenu; većina će postati proletarijat, a ostali zemljoposjednici.</li>\n</ul>\n<h3>Rad i radna snaga</h3>\n<p><strong>Rad</strong> je svjesna, organizirana i svrhovita aktivnost čovjeka, manifestira se u trošenju njegovih umnih i fizičkih sposobnosti. <strong>Radna snaga</strong> je zbroj svih umnih i fizičkih sposobnosti koje pojedinac posjeduje i koje može koristiti u procesu proizvodnje. U kapitalizmu radna snaga <strong>postaje roba</strong>: prodaje se i kupuje na tržištu kao i sve ostale robe, pa ima svojstva svake robe — uporabnu vrijednost i vrijednost.</p>\n<h4>Uporabna vrijednost radne snage</h4>\n<ul>\n<li>materijalno svojstvo robe da zadovolji ljudsku potrebu; dolazi do izražaja korištenjem u proizvodnji — potrošnjom uporabne vrijednosti radne snage nastaje nova vrijednost (trošenje i dodavanje proizvodu nove količine živog rada);</li>\n<li>stječe se školovanjem, radnim navikama i iskustvom;</li>\n<li><strong>prednost</strong> radne snage naspram drugih čimbenika (sredstava za rad i predmeta rada): svoju uporabnu vrijednost može stalno dopunjavati, mijenjati i prilagođavati procesu proizvodnje.</li>\n</ul>\n<h4>Vrijednost radne snage</h4>\n<ul>\n<li>određena je <strong>društveno potrebnim radnim vremenom</strong> za njezinu proizvodnju, tj. za proizvodnju sredstava za život potrebnih za reprodukciju radnika; sniženje cijena tih roba snižava vrijednost (cijenu) radne snage;</li>\n<li>sačinjavaju je unutarnji sadržaj radne snage — umne i fizičke sposobnosti (bez njih radnik je beskoristan);</li>\n<li>onaj tko je uložio više u izobrazbu ima višu cijenu na tržištu; akumulacija znanja podrazumijeva stalno nadograđivanje (obitelj, vrtić, škola, fakultet, specijalizacije; iskustvo i radne navike);</li>\n<li>fizičke sposobnosti formiraju se i održavaju prehranom, urednim životnim uvjetima, higijenom, zdravstvenom zaštitom, tjelovježbom.</li>\n</ul>\n<h4>Reprodukcija radne snage</h4>\n<p>Treba redovito nadoknađivati ono što je radna snaga u proizvodnji utrošila, sačuvati akumulirane resurse i dodati nove elemente: <em>reprodukcija radnog bića</em> (u fizičkom smislu — količina i struktura sredstava za život potrebnih za normalnu reprodukciju radnika i obitelji; ovisi o prirodno-geografskim uvjetima), <em>reprodukcija društvenog bića</em> (društveno-ekonomski i kulturni razvitak, tehničko-tehnološki progres i uvjeti proizvodnje utječu na strukturu zadovoljavanja potreba) i <em>biološka reprodukcija</em> (potreba produženja vrste; podizanje novih generacija radnika u radničkim obiteljima, za što treba osigurati sredstva za život).</p>\n<h4>Čimbenici proizvodnje u kapitalističkom poduzeću</h4>\n<p>Sredstva za rad, predmeti rada i radna snaga. Njihovim spajanjem u poduzeću započinje proces proizvodnje robe. Cilj kapitalista je osigurati dobit: vrijednost robe mora biti veća od uloženog kapitala.</p>\n"
+    },
+    "id": "aiys76"
+  },
+  "peSurplusValue": {
+    "name": "Višak vrijednosti",
+    "icon": "fa-chart-pie",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "gqapya",
+        "question": "Što je konstantni, a što varijabilni kapital?",
+        "answer": "Konstantni (c): ulaže se u sredstva za proizvodnju i samo prenosi vrijednost. Varijabilni (v): ulaže se u radnu snagu i stvara novostvorenu vrijednost i višak vrijednosti.",
+        "explanation": "Izvor viška vrijednosti je samo v."
+      },
+      {
+        "id": "hibw6b",
+        "question": "Što je višak vrijednosti?",
+        "answer": "Dio novostvorene vrijednosti što ga radna snaga stvara u višku radnog vremena, a prisvaja ga kapitalist.",
+        "explanation": "Nastaje iznad protuvrijednosti radne snage."
+      },
+      {
+        "id": "rkk2bl",
+        "question": "Kako glasi formula robne vrijednosti?",
+        "answer": "R = c + v + m: konstantni kapital + varijabilni kapital + višak vrijednosti.",
+        "explanation": "Struktura robne vrijednosti."
+      },
+      {
+        "id": "fxd0m0",
+        "question": "Kako se izračunava stopa viška vrijednosti?",
+        "answer": "m′ = m / v × 100: višak vrijednosti podijeljen s varijabilnim kapitalom pomnožen sa 100; mjeri stupanj eksploatacije radne snage.",
+        "explanation": "Stopa 100 % = pola novog radnog dana za kapitalista."
+      },
+      {
+        "id": "oukg5m",
+        "question": "Koje su metode povećanja viška vrijednosti?",
+        "answer": "Apsolutni, relativni i ekstra višak vrijednosti.",
+        "explanation": "Tri metode."
+      },
+      {
+        "id": "i3k543",
+        "question": "Kako se postiže apsolutni višak vrijednosti?",
+        "answer": "Povećanim utroškom živog rada: produljenjem radnog dana ili povećanjem intenzivnosti rada.",
+        "explanation": "Danas rijetko produljenjem dana."
+      },
+      {
+        "id": "pprnox",
+        "question": "Kako nastaje relativni višak vrijednosti?",
+        "answer": "Povećanjem produktivnosti smanjuje se vrijednost robe i radne snage, skraćuje se potrebno radno vrijeme, a raste višak radnog vremena pri istom radnom danu.",
+        "explanation": "Ne radi se više, nego produktivnije."
+      },
+      {
+        "id": "3bpsns",
+        "question": "Što je ekstra višak vrijednosti?",
+        "answer": "Višak koji ostvaruje poduzeće čije je individualno radno vrijeme ispod društveno potrebnog u grani, jer prodaje po istoj tržišnoj cijeni.",
+        "explanation": "Nagrada tehnološkog predvodnika."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "zf1oct",
+        "question": "Kapital uložen u radnu snagu naziva se:",
+        "options": [
+          "konstantni kapital",
+          "stalni kapital",
+          "varijabilni kapital",
+          "optjecajni kapital"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "cv2fmo",
+        "question": "Izvor viška vrijednosti je:",
+        "options": [
+          "živi rad (varijabilni kapital)",
+          "konstantni kapital u strojevima",
+          "sredstva za rad i alati",
+          "predmeti rada i sirovine"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r8qhan",
+        "question": "Stopa viška vrijednosti računa se kao:",
+        "options": [
+          "m / (c + v) × 100",
+          "c / v × 100",
+          "v / m × 100",
+          "m / v × 100"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "xolvi6",
+        "question": "Ako je v = 50, m = 50, stopa viška vrijednosti iznosi:",
+        "options": [
+          "50 %",
+          "100 %",
+          "25 %",
+          "200 %"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "0r1q5z",
+        "question": "Povećanje viška vrijednosti na temelju rasta produktivnosti rada je:",
+        "options": [
+          "apsolutni višak vrijednosti",
+          "relativni višak vrijednosti",
+          "ekstra višak vrijednosti",
+          "tezaurirani višak"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "bzjjwv",
+        "question": "Produljenje radnog dana i povećanje intenzivnosti rada daju:",
+        "options": [
+          "relativni višak vrijednosti",
+          "ekstra višak vrijednosti",
+          "prosječnu profitnu stopu",
+          "apsolutni višak vrijednosti"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "ju7gou",
+        "question": "Ekstra višak vrijednosti ostvaruje poduzeće čije je individualno radno vrijeme:",
+        "options": [
+          "ispod društveno potrebnog",
+          "iznad društveno potrebnog",
+          "jednako nuli",
+          "neovisno o društvenom"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "nbplvc",
+        "question": "Kod relativnog viška vrijednosti ukupno radno vrijeme:",
+        "options": [
+          "se produljuje",
+          "se skraćuje",
+          "se ne mijenja",
+          "se udvostručuje"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "gh83qd",
+        "question": "U strukturi robne vrijednosti R = c + v + m, oznaka m je:",
+        "options": [
+          "najamnina radnika",
+          "masa novca u optjecaju",
+          "višak vrijednosti",
+          "moneta kao novčana jedinica"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "w7bbrk",
+        "sentence": "Formula robne vrijednosti glasi R = c + v + _______.",
+        "answer": "m",
+        "hint": "višak vrijednosti"
+      },
+      {
+        "id": "rcbe3l",
+        "sentence": "Stopa viška vrijednosti pokazuje stupanj _______ radne snage.",
+        "answer": "eksploatacije",
+        "hint": "sa stajališta radnika"
+      },
+      {
+        "id": "pavddh",
+        "sentence": "Povećanje produktivnosti rada daje _______ višak vrijednosti.",
+        "answer": "relativni",
+        "hint": "ne apsolutni"
+      }
+    ],
+    "learn": {
+      "id": "3b21g6",
+      "title": "Postupak stvaranja viška vrijednosti",
+      "content": "\n<h3>Konstantni i varijabilni kapital</h3>\n<p>Pri stvaranju vrijednosti robe čimbenici proizvodnje ponašaju se različito: <strong>sredstva za proizvodnju</strong> prenose dio svoje utrošene vrijednosti na novi proizvod, dok <strong>utrošeni živi rad</strong> najamnih radnika stvara novostvorenu vrijednost. To su osnovne relacije proizvodnje vrijednosti robe u kapitalističkom poduzeću.</p>\n<ul>\n<li><strong>Konstantni (postojani) kapital — c</strong> — dio kapitala utrošen u sredstva za rad i predmete rada; u proizvodnji prenosi točno onaj dio vlastite utrošene vrijednosti (ni manji ni veći) i realizacijom robe u istom se iznosu nadopunjuje. <em>Nije izvor viška vrijednosti</em> jer robnoj vrijednosti daje samo onoliko koliko je unio.</li>\n<li><strong>Varijabilni (promjenjivi) kapital — v</strong> — kapital uložen u radnu snagu; ovisi o dužini trajanja proizvodnog procesa i intenzivnosti rada. Radna snaga stvara novostvorenu vrijednost i <strong>višak vrijednosti</strong>: od trenutka kad stvori vrijednost jednaku svojoj dnevnoj vrijednosti nastavlja stvarati novu vrijednost, koja je od tada višak vrijednosti. Radna snaga također mijenja materijalni oblik sredstava za proizvodnju (tehnološki aspekt) i stvara nove uporabne vrijednosti.</li>\n</ul>\n<p><strong>Višak vrijednosti — m</strong> je dio novostvorene vrijednosti koji stvara radna snaga u višku radnog vremena, iznad protuvrijednosti radne snage, a prisvaja ga kapitalist (osoba koja ga nije proizvela).</p>\n<div class=\"formula-box\">\\[ R = c + v + m \\]\nR – robna vrijednost · c – konstantni kapital · v – varijabilni kapital · m – višak vrijednosti</div>\n<h3>Stopa viška vrijednosti</h3>\n<p><strong>Stopa viška vrijednosti</strong> izražava stupanj <em>oplodnje promjenjivog kapitala</em> (sa stajališta kapitalista) odnosno <em>stupanj eksploatacije radne snage</em> (sa stajališta radnika).</p>\n<div class=\"formula-box\">\\[ m' = \\frac{m}{v}\\cdot 100 \\]\nm' – stopa viška vrijednosti · m – masa viška vrijednosti · v – varijabilni kapital</div>\n<p>Ako je stopa 100 %, radna snaga je stvorila dvostruko veću novostvorenu vrijednost od svoje vrijednosti — polovica novostvorene vrijednosti je višak vrijednosti. Stopa pokazuje koliki je dio dana radnik radio za sebe, a koliki za kapitalista. Ako raste stopa viška vrijednosti ili raste promjenjivi kapital (uz iste ostale čimbenike), raste i masa viška vrijednosti; ako pada stopa ili se smanjuje promjenjivi kapital, masa pada. Radni dan dijeli se na <em>potrebno radno vrijeme</em> i <em>višak radnog vremena</em>.</p>\n<p><strong>Primjer:</strong> c = 80, v = 20, m = 20. Robna vrijednost R = 80 + 20 + 20 = 120; stopa viška vrijednosti m′ = 20/20 · 100 = 100 %.</p>\n<h3>Metode povećanja viška vrijednosti</h3>\n<table>\n<tr><th>Metoda</th><th>Bit</th></tr>\n<tr><td><strong>Apsolutni višak vrijednosti</strong></td><td>nastaje povećanim utroškom živog rada: (a) produljenjem radnog dana ili (b) povećanjem intenzivnosti rada unutar postojećeg radnog vremena</td></tr>\n<tr><td><strong>Relativni višak vrijednosti</strong></td><td>nastaje povećanjem produktivnosti rada, ne većim angažmanom rada</td></tr>\n<tr><td><strong>Ekstra višak vrijednosti</strong></td><td>nastaje u poduzeću čije je individualno radno vrijeme ispod društveno potrebnog u grani</td></tr>\n</table>\n<h4>Apsolutni višak vrijednosti</h4>\n<ul>\n<li><strong>Produljenje radnog dana</strong> — danas vrlo rijetko, u iznimnim slučajevima (proces treba završiti na vrijeme pa se radi prekovremeno, uz uvećanu najamninu); ima više <em>povijesni</em> karakter, osobito u manufakturnom razdoblju kad radnička klasa nije bila organizirana i nije se izborila za svoja prava. Radni dan određuju i fizičke mogućnosti radnika (fizička, psihička i kulturna obnova, rekreacija — „3 × 8\"). Radnička je klasa osnivala sindikate (početkom 19. st.), a poslije političke stranke; zakonskim utvrđivanjem dužine radnog dana produljenje je prestalo biti način povećanja viška vrijednosti.</li>\n<li><strong>Povećanje intenzivnosti rada</strong> — povećava se stupanj trošenja radne snage u jedinici vremena, razmjerno raste ukupna masa novostvorene vrijednosti; ograničeno fizičkim i psihičkim mogućnostima radnika; cijena radne snage raste sporije od porasta intenzivnosti.</li>\n</ul>\n<h4>Relativni višak vrijednosti</h4>\n<p>Veća produktivnost rada → smanjuje se vrijednost pojedine robe (cijena) → smanjuje se cijena radne snage (količina proizvoda potrebnih za reprodukciju) → smanjuje se <em>potrebno radno vrijeme</em>. Ukupno radno vrijeme (radni dan) ne mijenja se pa se povećava <em>višak radnog vremena</em>, a time i višak vrijednosti.</p>\n<h4>Ekstra višak vrijednosti</h4>\n<p>Kad u poduzeću poraste produktivnost, njegovo individualno radno vrijeme za jedinicu robe pada ispod društveno priznatog. Roba se na tržištu prodaje po istoj cijeni pa proizvođač s nižom individualnom vrijednošću ostvaruje ekstra višak vrijednosti. Proizvođači stoga usavršavaju tehnologiju i organizaciju da bi imali veću produktivnost od ostalih; to je dio novostvorene vrijednosti.</p>\n<h3>Marx i marginalisti o višku vrijednosti</h3>\n<p><strong>Marx:</strong> eksploatacija (jednog segmenta ili klase društva od drugog) inherentno je svojstvo i ključni element kapitalizma; profit kapitalista je razlika između vrijednosti proizvoda koji je stvorio radnik i nadnice koju prima — kapitalizam djeluje plaćanjem radnika manje od pune vrijednosti njegova rada. <strong>Marginalisti</strong> (teorija marginalne produktivnosti): u slobodnoj konkurenciji cijene činitelja proizvodnje (renta, najamnina, kamata) izjednačene su s njihovim marginalnim doprinosom; cijeli novostvoreni proizvod raspodjeljuje se na te dohotke, pa nema nikakvog viška — svatko je nagrađen prema graničnom proizvodu rada ili kapitala. Stoga marginalizam brani klasne interese kapitalista, ali i profinjenim analizama objašnjava ekonomiku privređivanja.</p>\n"
+    },
+    "id": "sbs9vd"
+  },
+  "peAccumulation": {
+    "name": "Akumulacija kapitala i organski sastav",
+    "icon": "fa-piggy-bank",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "g5ja2i",
+        "question": "Što je akumulacija kapitala?",
+        "answer": "Izdvajanje, najčešće novca, radi ulaganja u povećanje i modernizaciju tehnološko-proizvodnog procesa; skupljanje sredstava koja će se aktivirati u proizvodnji.",
+        "explanation": "Polazište: ostvareni višak vrijednosti."
+      },
+      {
+        "id": "bnu6kp",
+        "question": "Koje su vrste akumulacije?",
+        "answer": "Prvobitna i tekuća; te novčana i stvarna.",
+        "explanation": "Dvije podjele."
+      },
+      {
+        "id": "d8j6q4",
+        "question": "Što je prvobitna, a što tekuća akumulacija?",
+        "answer": "Prvobitna: nasilno otimanje, prevare i pljačka u prvim fazama kapitalizma. Tekuća: svakodnevna, iz eksploatacije radne snage (višak vrijednosti i profit).",
+        "explanation": "Prva je povijesna."
+      },
+      {
+        "id": "yjocbn",
+        "question": "Što je novčana, a što stvarna akumulacija?",
+        "answer": "Novčana: prikupljanje sredstava u fondu akumulacije. Stvarna: ulaganje tih sredstava u dodatna sredstva za proizvodnju i radnu snagu (investicije).",
+        "explanation": "Prvo novac, zatim investicija."
+      },
+      {
+        "id": "gqhc1b",
+        "question": "Koji su izvori akumulacije?",
+        "answer": "Vlastiti (višak vrijednosti/profit kapitalista; štednja radnika) i tuđi (krediti, slobodna sredstva poduzeća, igre na sreću, nasljedstvo).",
+        "explanation": "Pitanje s popravnog kolokvija."
+      },
+      {
+        "id": "ygfde7",
+        "question": "Što je organski sastav kapitala?",
+        "answer": "Odnos konstantnog (c) i varijabilnog (v) kapitala, izražen vrijednosno ili tehnički (količinski).",
+        "explanation": "c : v."
+      },
+      {
+        "id": "w2onkh",
+        "question": "Što donosi akumulacija uz porast organskog sastava?",
+        "answer": "Tehnički progres, veću produktivnost i profit, ali relativno (često i apsolutno) smanjenje broja zaposlenih radnika.",
+        "explanation": "c raste brže od v."
+      },
+      {
+        "id": "w9vkmu",
+        "question": "Što donosi akumulacija uz nepromijenjen organski sastav?",
+        "answer": "Isti rast c i v; stalno i brzo povećanje zaposlenosti, uz moguć rast najamnina.",
+        "explanation": "Iste tehnologije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "sn1rb2",
+        "question": "Prvobitna akumulacija ostvarivala se:",
+        "options": [
+          "nasilnim otimanjem, prijevarama i pljačkom",
+          "štednjom radnika i sitnih proizvođača",
+          "kreditima banaka i dioničkim kapitalom",
+          "tekućom prodajom robe na tržištu"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "1imufa",
+        "question": "Novčana akumulacija služi za:",
+        "options": [
+          "isplatu najamnina",
+          "plaćanje kamata",
+          "osobnu potrošnju kapitalista",
+          "ostvarivanje stvarne akumulacije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "5ye6ey",
+        "question": "Vlastiti izvor akumulacije kapitalista je:",
+        "options": [
+          "bankovni kredit",
+          "višak vrijednosti (profit)",
+          "nasljedstvo",
+          "dobitak u igrama na sreću"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "0cjigf",
+        "question": "Što spada u tuđe izvore akumulacije?",
+        "options": [
+          "profit poduzeća",
+          "krediti banaka",
+          "štednja radnika",
+          "amortizacija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2a7lmp",
+        "question": "Odnos konstantnog i varijabilnog kapitala (c : v) je:",
+        "options": [
+          "stopa viška vrijednosti",
+          "profitna stopa",
+          "brzina obrtaja",
+          "organski sastav kapitala"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "934r0b",
+        "question": "Odnos izražen u količini sredstava za proizvodnju i broju radnika je:",
+        "options": [
+          "tehnička struktura kapitala",
+          "vrijednosna struktura kapitala",
+          "profitna stopa",
+          "amortizacijska stopa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "gxp33i",
+        "question": "Akumulacija uz porast organske strukture dovodi do:",
+        "options": [
+          "brzog rasta zaposlenosti radnika",
+          "pada produktivnosti rada",
+          "relativnog smanjenja radne snage",
+          "smanjenja konkurentnosti poduzeća"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "6f6fq5",
+        "question": "Akumulacija uz nepromijenjenu organsku strukturu dovodi do:",
+        "options": [
+          "pada zaposlenosti i rasta nezaposlenih",
+          "tehničkog progresa i većeg c : v",
+          "stalnog i brzog povećanja zaposlenosti",
+          "smanjenja ukupnog kapitala poduzeća"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "rjgevz",
+        "sentence": "Ulaganje sredstava iz fonda akumulacije u dodatna sredstva za proizvodnju je _______ akumulacija.",
+        "answer": "stvarna",
+        "hint": "investicijska ulaganja"
+      },
+      {
+        "id": "ugoak8",
+        "sentence": "Organski sastav kapitala izražava odnos c : _______.",
+        "answer": "v",
+        "hint": "promjenjivi kapital"
+      },
+      {
+        "id": "mn4ls7",
+        "sentence": "Vlastiti izvor akumulacije radnika je _______.",
+        "answer": "štednja",
+        "hint": "ne profit"
+      }
+    ],
+    "learn": {
+      "id": "tuv0je",
+      "title": "Akumulacija kapitala",
+      "content": "\n<h3>Pojam i potreba akumulacije</h3>\n<p><strong>Akumulacija</strong> je izdvajanje, najčešće novca, radi njegova ulaganja u povećanje i modernizaciju tehnološko-proizvodnog procesa; skupljanje novčanih sredstava ili drugih materijalnih vrijednosti koje će se aktivirati u proizvodnji. Polazna osnova analize akumulacije je ostvareni višak vrijednosti. Osnovno pravilo: proces proizvodnje mora biti neprekidan (da bi se moglo trošiti, mora se proizvoditi — reprodukcija). Pretpostavke: realizirana je ukupna proizvedena roba poduzeća, a vlasnik prodajom prisvaja njezinu novčanu protuvrijednost. Vrijednost prodane robe sastoji se od prenesene vrijednosti (nakon transformacije služi za kupnju novih sredstava za proizvodnju) i novostvorene vrijednosti (služi za kupnju radne snage); <strong>višak vrijednosti ostaje kapitalistu</strong> u novčanom obliku.</p>\n<p><strong>Središnje pitanje</strong> je prisvajanje viška vrijednosti, njegova namjenska raspodjela, svrha i ekonomski učinci. Kapitalist ga može potrošiti za osobne potrebe (proces se nastavlja u istom opsegu — jednostavna reprodukcija; neproizvodni karakter, izvan poduzeća) ili ga <strong>oploditi</strong>: povećavati kapital, obujam proizvodnje, usavršavati tehnologiju i organizaciju. Kapitalistički način proizvodnje ne prihvaća da se sav višak vrijednosti potroši osobno; <em>akumulacija je objektivni uvjet opstanka kapitalista</em> (oplodnja kapitala osnovni je pokretač kapitalističke proizvodnje). Poželjno je da se višak vrijednosti raspodjeljuje na <strong>fond akumulacije</strong> (materijalna baza proširenja poduzeća) i <strong>fond osobne potrošnje kapitalista</strong>. Osnovni uvjet proširene reprodukcije je da se dio viška vrijednosti ulaže u povećanje kapitala.</p>\n<h3>Podjele akumulacije</h3>\n<table>\n<tr><th>Podjela</th><th>Vrste</th></tr>\n<tr><td>po vremenu</td><td><strong>prvobitna</strong> — najznačajniji proces akumulacije u prvim fazama kapitalističke robne proizvodnje; odvijao se nasilnim otimanjem, prevarama i pljačkom prirodnih i materijalnih resursa, što je kasnije postalo osnova eksploatacije i bogaćenja; <strong>tekuća</strong> — svakodnevna, sastavni dio kapitalističke proizvodnje, izvor u eksploataciji radne snage (višak vrijednosti i njegova transformacija u profit)</td></tr>\n<tr><td>po obliku</td><td><strong>novčana</strong> — novčana sredstva koja se u razdoblju prikupljaju u fondu akumulacije radi ulaganja u proširenu reprodukciju; cilj joj je stvarna akumulacija; <strong>stvarna</strong> — ulaganje tih sredstava u dodatna sredstva za proizvodnju i radnu snagu (investicijska ulaganja)</td></tr>\n</table>\n<p>Da bi se razdoblje između novčane i stvarne akumulacije skratilo, koristi se i tuđa novčana akumulacija (npr. banke).</p>\n<h4>Izvori akumulacije</h4>\n<ul>\n<li><strong>vlastiti</strong> — za kapitalista višak vrijednosti (profit); za radnika štednja (za osobnu potrošnju, najčešće trajna potrošna dobra);</li>\n<li><strong>tuđi</strong> — najčešće krediti banaka, ali i poduzeća sa slobodnim novčanim sredstvima koja ih ne namjeravaju odmah pretvoriti u stvarnu akumulaciju; ovamo spadaju igre na sreću i nasljedstvo.</li>\n</ul>\n<h3>Akumulacija i organski sastav kapitala</h3>\n<p>Cilj akumulacije je proširenje proizvodnje i rekonstrukcija postojećih kapaciteta ili izgradnja novih poduzeća. Kapital se dijeli na postojani (c) i promjenjivi (v); <strong>organski sastav kapitala</strong> izražava odnos c : v, tj. odnos vrijednosti sredstava za proizvodnju i vrijednosti radne snage u poduzeću.</p>\n<ul>\n<li><strong>vrijednosna struktura</strong> — odnos izražen u novcu;</li>\n<li><strong>tehnička struktura</strong> — odnos izražen u količini (količina sredstava za proizvodnju i broj angažiranih radnika);</li>\n<li><strong>organski sastav</strong> — povezuje promjene tehničke i vrijednosne strukture; izražava tehnički progres; visoka ili niska organska struktura.</li>\n</ul>\n<p>Tehničko-tehnološki progres: ista količina živog rada pokreće sve veću količinu sredstava za proizvodnju — raste produktivnost rada i vrijednost sredstava za proizvodnju (ali prenesena vrijednost u manjem stupnju). Tehnički sastav stalno raste, a vrijednosni nešto sporije. Nedovoljna akumulacija znači neispunjenje društveno potrebnog radnog vremena i gubitak viška vrijednosti.</p>\n<h4>Akumulacija uz nepromijenjenu organsku strukturu</h4>\n<p>Koriste se iste tehnologije; kapital raste bez promjena strukture — po istoj stopi raste ukupni, postojani i promjenjivi kapital; dovodi do stalnog i brzog <strong>povećanja zaposlenosti</strong>. Ako je tempo akumulacije brži od rasta stanovništva, raste potražnja za radnom snagom i najamnine (do trenutka dok ne ugroze obujam akumulacije). Smanjenje akumulacije smanjuje potražnju za radnom snagom i najamnine.</p>\n<h4>Akumulacija uz porast organske strukture</h4>\n<p>Obuhvaća tehnički progres; postojani kapital (c) raste brže od promjenjivog (v). Ekonomski položaj poduzeća očituje se u konkurentskoj utakmici na tržištu na kojem djeluje zakon vrijednosti. To je <strong>osnovni uvjet povećanja kapitala</strong> i proširene reprodukcije: što je akumulacija veća, tehnički je progres brži, a što je progres veći, veće su mogućnosti akumulacije (bez akumulacije ne bi došlo do tehničkog progresa). Posljedice: povećanje obujma proizvodnje, produktivnosti rada, smanjenje troškova po jedinici proizvoda, veća konkurentnost i profit (ekonomski razvitak poduzeća) te <strong>relativno (a često i apsolutno) smanjenje radne snage</strong> i radnih mjesta — povećanje promjenjivog kapitala sporije je od ukupnog, a rast postojanog brži; izvor akumulacije je upravo otpuštanje radnika i neplaćeni rad onih koji su omogućili akumulaciju. Prva tehnološka revolucija omogućila je veća ulaganja u postojani kapital; pojavom automatizacije i robotizacije nastaje problem zapošljavanja.</p>\n"
+    },
+    "id": "mz8fuf"
+  },
+  "pePopulation": {
+    "name": "Zakon stanovništva i nezaposlenost",
+    "icon": "fa-people-group",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "id": "6tsj3w",
+        "question": "Što tvrdi Malthusov zakon stanovništva?",
+        "answer": "Stanovništvo raste geometrijskom progresijom, a proizvodnja hrane aritmetičkom, pa slijedi siromaštvo; rješenje vidi u zaustavljanju rasta stanovništva.",
+        "explanation": "Pokret: maltuzijanstvo."
+      },
+      {
+        "id": "imyavy",
+        "question": "Koje dvije skupine mjera predlaže Malthus?",
+        "answer": "Pozitivna (represivna) — povećava mortalitet (rat, bolest, glad); preventivna — smanjuje natalitet (kasni brak, moralno suzdržavanje).",
+        "explanation": "Mortalitet vs. natalitet."
+      },
+      {
+        "id": "n5aof9",
+        "question": "Kritike Malthusa?",
+        "answer": "Polazi od potrošnje, a ne proizvodnje, zanemaruje tehnološki razvitak, želju kapitalista za profitom i konkurenciju; to je pojedinačni, a ne opći zakon.",
+        "explanation": "Vezan uz kapitalizam."
+      },
+      {
+        "id": "55px1w",
+        "question": "Kako se računa stopa rasta stanovništva?",
+        "answer": "SRS = SR − SS (stopa rađanja minus stopa smrtnosti, na 1000 stanovnika).",
+        "explanation": "Razvijene zemlje: „bijela kuga\"."
+      },
+      {
+        "id": "a3f1zy",
+        "question": "Koji su oblici stalne nezaposlenosti?",
+        "answer": "Tekuća, latentna i stagnantna nezaposlenost.",
+        "explanation": "Tri oblika."
+      },
+      {
+        "id": "4f3vpe",
+        "question": "Što je latentna, a što stagnantna nezaposlenost?",
+        "answer": "Latentna: prenapučenost sela, višak se pokaže mehanizacijom. Stagnantna: najneredovitije zaposleni, bez kvalifikacija, najniže plaće.",
+        "explanation": "Selo vs. nekvalificirani."
+      },
+      {
+        "id": "663ade",
+        "question": "Koja su četiri tipa nezaposlenosti suvremene teorije?",
+        "answer": "Frikcijska (normalna), sezonska, tehnološka i ciklička.",
+        "explanation": "Pitanje s ispita."
+      },
+      {
+        "id": "jmsoxp",
+        "question": "Što je politika pune zaposlenosti?",
+        "answer": "Zadaća države da brine o punoj zaposlenosti i angažiranosti kapaciteta (Keynes); uspješna u razvijenima, nije riješila problem nerazvijenih zemalja.",
+        "explanation": "Predmet makroekonomije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "5l6t9g",
+        "question": "Prema Malthusu, stanovništvo raste:",
+        "options": [
+          "geometrijskom progresijom",
+          "aritmetičkom progresijom",
+          "linearno kao hrana",
+          "ovisno o inflaciji"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "771fuf",
+        "question": "Preventivna mjera prema Malthusu je:",
+        "options": [
+          "rat i oružani sukobi",
+          "glad i nestašica hrane",
+          "bolest i epidemije",
+          "kasno sklapanje braka"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "tayr6z",
+        "question": "Prenapučenost sela i slaba mehanizacija uzroci su:",
+        "options": [
+          "tekuće nezaposlenosti",
+          "latentne nezaposlenosti",
+          "stagnantne nezaposlenosti",
+          "cikličke nezaposlenosti"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cn3lbb",
+        "question": "Nezaposlenost uvjetovana fazama poleta, prosperiteta i depresije je:",
+        "options": [
+          "sezonska",
+          "ciklička",
+          "tehnološka",
+          "frikcijska"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "l28rxe",
+        "question": "Nezaposlenost u poljoprivredi i turizmu zbog sezone je:",
+        "options": [
+          "ciklička",
+          "tehnološka",
+          "stagnantna",
+          "sezonska"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "1k1fek",
+        "question": "Uvođenje strojeva i robota koje smanjuje živi rad uzrokuje:",
+        "options": [
+          "tehnološku nezaposlenost",
+          "sezonsku nezaposlenost",
+          "cikličku nezaposlenost",
+          "latentnu nezaposlenost"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "s5uhwv",
+        "question": "Pad stanovništva u razvijenim zemljama naziva se:",
+        "options": [
+          "maltuzijanstvo",
+          "demografska eksplozija",
+          "bijela kuga",
+          "latentna nezaposlenost"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "my5ggn",
+        "question": "Politiku pune zaposlenosti najviše je zastupao:",
+        "options": [
+          "Malthus",
+          "Say",
+          "Keynes",
+          "Smith"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "u03ii7",
+        "sentence": "Malthus tvrdi da proizvodnja hrane raste _______ progresijom.",
+        "answer": "aritmetičkom",
+        "hint": "1, 2, 3, 4…"
+      },
+      {
+        "id": "rjgrlq",
+        "sentence": "Stopa rasta stanovništva jednaka je stopi rađanja minus stopa _______.",
+        "answer": "smrtnosti",
+        "hint": "SRS = SR − SS"
+      },
+      {
+        "id": "g9qdke",
+        "sentence": "Frikcijska nezaposlenost naziva se još i _______ nezaposlenost.",
+        "answer": "normalna",
+        "hint": "prisutna u dinamičnim privredama"
+      }
+    ],
+    "learn": {
+      "id": "5pw6xl",
+      "title": "Zakon stanovništva, nezaposlenost i politika pune zaposlenosti",
+      "content": "\n<h3>Zakon stanovništva</h3>\n<p>Problem zaposlenosti uz akumulaciju s rastom organskog sastava promatra se s dva aspekta: prvi počiva na zakonu opadajućih prinosa izraženom kroz zakon stanovništva, drugi na vladajućim odnosima proizvodnje.</p>\n<p><strong>R. Malthus</strong> zasniva učenje na tvrdnji da se stanovništvo povećava <em>geometrijskom progresijom</em> (1, 2, 4, 8, 16, 32…), dok proizvodnja hrane raste <em>aritmetičkom progresijom</em> (1, 2, 3, 4, 5, 6…), što uzrokuje siromaštvo stanovništva. Povezuje to sa zakonom opadajućih prinosa; smatra ga općim ekonomskim, prirodnim zakonom. Pristaše su oblikovale pokret <strong>maltuzijanstvo</strong> (danas neomaltuzijanstvo). Rješenje vidi u zaustavljanju rasta stanovništva, dvije skupine mjera:</p>\n<ul>\n<li><strong>pozitivna (represivna)</strong> — povećava stopu mortaliteta: rat, bolest, glad, lagodan način života;</li>\n<li><strong>preventivna</strong> — smanjuje stopu nataliteta: moralno suzdržavanje, kasno sklapanje braka, prostitucija.</li>\n</ul>\n<p><strong>Kritike:</strong> analiza polazi od potrošnje, a ne proizvodnje, pa ne uzima u obzir tehnološki razvitak; ne vidi želju kapitalista za profitom i njihov položaj u konkurentskoj utakmici. Nove teorije taj zakon smatraju <em>pojedinačnim</em> (a ne općim) zakonom karakterističnim za kapitalističke proizvodne odnose.</p>\n<h3>Suvremeni problemi stanovništva</h3>\n<div class=\"formula-box\">SRS = SR − SS (stopa rasta stanovništva = stopa rađanja − stopa smrtnosti, na 1000 stanovnika)</div>\n<ol>\n<li><em>predindustrijsko društvo</em> — visoka stopa rađanja i smrtnosti, niska stopa rasta;</li>\n<li><em>rani ekonomski razvoj</em> — smanjenje smrtnosti, porast stanovništva; <em>kasniji razvoj</em> — pad smrtnosti djece, pad rađanja, usporavanje rasta;</li>\n<li><em>pun ekonomski razvoj</em> — uspješna kontrola rađanja, prosječno dvoje djece po obitelji, zaposleni bračni partneri; broj stanovnika stabilizira se.</li>\n</ol>\n<p>Nerazvijene zemlje (zaostalost) vode aktivnu politiku stanovništva: kontrola rađanja prosvjećivanjem, kontracepcijom, sterilizacijom. Razvijene zemlje bilježe pad stanovništva — <strong>„bijela kuga\"</strong> (osobni komoditet, samačke obitelji, ekonomski momenti).</p>\n<h3>Oblici nezaposlenosti</h3>\n<p>Nezaposlenost se promatra s osnove trajanja i brojnosti: <em>povremena</em> (posljedica kriza) i <em>stalna</em>. Stalna ima tri oblika:</p>\n<ul>\n<li><strong>tekuća</strong> — neuravnotežena potražnja za radnom snagom (veća u prosperitetu, manja u stagnaciji); zbog nekoordinacije među poduzećima jedna propadaju, a radna snaga ostaje bez posla; i zbog porasta organske strukture;</li>\n<li><strong>latentna</strong> — prenapučenost sela; na malim imanjima uz slabu mehanizaciju treba mnogo rada pa se višak ne vidi, ali uvođenjem mehanizacije nastaje višak radne snage koji se seli u gradove;</li>\n<li><strong>stagnantna</strong> — najneredovitije zaposleni (radnici bez kvalifikacije, najteži poslovi, najniže najamnine); stalno traže posao, pritišću ponudu radne snage i ugrožavaju zaposlene.</li>\n</ul>\n<h4>Politika pune zaposlenosti</h4>\n<p>Predmet je makroekonomije. Najznačajniji je <strong>J. M. Keynes</strong>: država mora voditi brigu o punoj zaposlenosti i o potpunoj angažiranosti proizvodnih i uslužnih kapaciteta. Postigla je značajne rezultate u modernim građanskim društvima, osobito u državi blagostanja s masovnom proizvodnjom, ali nije riješila problem nerazvijenih zemalja (nizak stupanj ekonomskog razvitka i karakter proizvodnih odnosa).</p>\n<h4>Četiri tipa nezaposlenosti u suvremenoj teoriji</h4>\n<ul>\n<li><strong>frikcijska (normalna)</strong> — u dinamičnim privredama: oni koji ne žele raditi i oni koji ostaju bez posla jer nema materijala za obradu;</li>\n<li><strong>sezonska</strong> — poljoprivreda, turizam; nepogode;</li>\n<li><strong>tehnološka</strong> — posljedica tehnoloških promjena i tehnološke revolucije; smanjenje živog rada, otpuštanja i pad potražnje za radnom snagom;</li>\n<li><strong>ciklička</strong> — ciklično kretanje proizvodnje: u poletu i prosperitetu veća potražnja za radnom snagom, u depresiji otpuštanja.</li>\n</ul>\n"
+    },
+    "id": "2hi7gj"
+  },
+  "peConcentration": {
+    "name": "Koncentracija i centralizacija kapitala; obrt kapitala",
+    "icon": "fa-arrows-to-circle",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "id": "8a7udc",
+        "question": "Što je koncentracija kapitala?",
+        "answer": "Povećavanje kapitala i poduzeća dodavanjem novog kapitala iz akumulacije; povećava ukupni društveni kapital i proizvodnju.",
+        "explanation": "Rast iznutra."
+      },
+      {
+        "id": "25da9v",
+        "question": "Što je centralizacija kapitala?",
+        "answer": "Prisilno ili dobrovoljno spajanje više kapitala u jedan veći; manji broj većih poduzeća; ne povećava ukupni društveni kapital.",
+        "explanation": "Spajanje postojećeg."
+      },
+      {
+        "id": "5c8jyc",
+        "question": "Razlika koncentracije i centralizacije?",
+        "answer": "Koncentracija povećava ukupni kapital (dodavanje iz akumulacije); centralizacija samo spaja postojeće kapitale bez povećanja ukupnog.",
+        "explanation": "Povećava vs. spaja."
+      },
+      {
+        "id": "arzwcl",
+        "question": "Što je obrt kapitala?",
+        "answer": "Jedan ekonomski krug u neprestanom kretanju kapitala: kupnja, proizvodnja, realizacija — cjelina procesa reprodukcije.",
+        "explanation": "Kružno kretanje."
+      },
+      {
+        "id": "vcb80n",
+        "question": "Koje su tri faze obrta kapitala?",
+        "answer": "Kupnja (novčani kapital), proizvodnja (proizvodni kapital) i realizacija (robni kapital).",
+        "explanation": "novčani → proizvodni → robni kapital."
+      },
+      {
+        "id": "tmuwyd",
+        "question": "Što je stalni, a što optjecajni kapital?",
+        "answer": "Stalni: sredstva za rad, vrijednost prenose postupno (amortizacija). Optjecajni: predmeti rada i radna snaga, vrijednost prenose u potpunosti.",
+        "explanation": "Trajanje vrijednosti."
+      },
+      {
+        "id": "g2bxaq",
+        "question": "Što je amortizacija?",
+        "answer": "Otpisivanje dijela vrijednosti sredstava za rad; novčani iznos ulaže se u fond amortizacije za nabavu novih sredstava za proizvodnju.",
+        "explanation": "Reprodukcija sredstava za rad."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "6j9tp1",
+        "question": "Proces koji ne povećava ukupni društveni kapital, već spaja postojeće kapitale, je:",
+        "options": [
+          "centralizacija",
+          "koncentracija",
+          "akumulacija",
+          "amortizacija"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "cr40k7",
+        "question": "Dodavanje novog kapitala iz akumulacije postojećem kapitalu je:",
+        "options": [
+          "centralizacija",
+          "tezauriranje",
+          "devalvacija",
+          "koncentracija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "9msi2v",
+        "question": "Tri faze obrta kapitala su:",
+        "options": [
+          "proizvodnja, raspodjela i potrošnja",
+          "kupnja, proizvodnja i realizacija",
+          "nabava, skladištenje i prodaja",
+          "štednja, ulaganje i povrat"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "yc7jjn",
+        "question": "Kapital u fazi proizvodnje naziva se:",
+        "options": [
+          "novčani kapital",
+          "proizvodni kapital",
+          "robni kapital",
+          "kamatonosni kapital"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "b5mnyb",
+        "question": "Kapital u fazi realizacije je:",
+        "options": [
+          "novčani kapital",
+          "proizvodni kapital",
+          "stalni kapital",
+          "robni kapital"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "3g8xpw",
+        "question": "Sredstva za rad koja postupno prenose vrijednost čine:",
+        "options": [
+          "stalni kapital",
+          "optjecajni kapital",
+          "varijabilni kapital",
+          "fiktivni kapital"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "mcyao4",
+        "question": "Predmeti rada i radna snaga čine:",
+        "options": [
+          "stalni kapital",
+          "tezauriran kapital",
+          "optjecajni kapital",
+          "dionički kapital"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "inj2kt",
+        "question": "Postupak otpisivanja dijela vrijednosti sredstava za rad je:",
+        "options": [
+          "akumulacija",
+          "koncentracija",
+          "amortizacija",
+          "kapitalizacija"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "tx3kct",
+        "sentence": "Spajanje većeg broja manjih kapitala u jedan veći naziva se _______ kapitala.",
+        "answer": "centralizacija",
+        "hint": "ne povećava ukupni kapital"
+      },
+      {
+        "id": "ue24d3",
+        "sentence": "Prva faza obrta kapitala je _______.",
+        "answer": "kupnja",
+        "hint": "kapital je u novčanom obliku"
+      },
+      {
+        "id": "f5sg51",
+        "sentence": "Otpisani dio vrijednosti sredstava za rad ulaže se u fond _______.",
+        "answer": "amortizacije",
+        "hint": "zamjena sredstava za rad"
+      }
+    ],
+    "learn": {
+      "id": "rkvzsw",
+      "title": "Koncentracija i centralizacija kapitala; obrt kapitala",
+      "content": "\n<h3>Koncentracija i centralizacija kapitala</h3>\n<p>U analizi akumulacije dva su značajna procesa:</p>\n<ul>\n<li><strong>Koncentracija kapitala i proizvodnje</strong> — postupak <em>povećavanja</em> kapitala i samog poduzeća dodavanjem novog kapitala iz sredstava akumulacije postojećem kapitalu; mijenja tehniku i tehnologiju, omogućuje veću proizvodnju robe i produktivnost; <strong>povećava ukupni društveni kapital</strong> (zbroj pojedinačnih uvećanih kapitala). Želja: povećati proizvodnju.</li>\n<li><strong>Centralizacija kapitala i proizvodnje</strong> — spajanje i udruživanje većeg broja manjih u jedinstveni veći kapital, neovisno o akumulaciji; <em>prisilno ili dobrovoljno</em>, rezultat je uvijek isti — manji broj većih poduzeća. <strong>Ne povećava ukupni društveni kapital</strong>, već spaja postojeće. Javlja se kad akumulacija nije dovoljna za značajnija ulaganja i zbog razlike u produktivnosti poduzeća u istoj grani. Želja: povećati učinkovitost.</li>\n</ul>\n<p>Oba imaju za cilj veći profit.</p>\n<h4>Pojmovi M&amp;A</h4>\n<p><strong>Merger</strong> (spajanje, pripajanje) i <strong>acquisition</strong> (stjecanje većinskog udjela ili prava glasa u jednom poduzetniku od strane drugog; poduzetnici mogu nastaviti djelovati kao samostalni subjekti; može se odnositi na poduzetnika u cjelini ili njegov dio). U europskom pravu koristi se izraz <em>koncentracije poduzetnika</em>.</p>\n<h3>Obrt kapitala</h3>\n<p>Nabavom sredstava za proizvodnju i radne snage reprodukcija dovodi poduzeće u odnos s tržištem. Da bi proizvodnja bila neprekidna, u svakoj fazi nalazi se dio ukupnog kapitala. Temeljni uvjet je <strong>kružno kretanje kapitala</strong> u poduzeću. Tri sukcesivne faze:</p>\n<ol>\n<li><strong>kupnja</strong> (kapital u <em>novčanom obliku</em>): pretvorba kapitala iz novčanog u robni oblik — nabava sredstava za proizvodnju i radne snage;</li>\n<li><strong>proizvodnja</strong> (<em>proizvodni kapital</em>): spajaju se sredstva za rad, predmeti rada i radna snaga;</li>\n<li><strong>realizacija</strong> (<em>robni kapital</em>): gotov proizvod dolaskom na tržište postaje roba, pa novac — prodaja.</li>\n</ol>\n<p>Iz novčanog se kapital opet transformira u robni i proizvodni. <strong>Obrt kapitala</strong> je jedan ekonomski krug u neprestanom kretanju koji se stalno ponavlja — cjelina procesa reprodukcije. Odgovor na pitanje o kružnom kretanju: proces počinje aktom kupnje (davanje novca za čimbenike proizvodnje), zatim slijedi proizvodnja i na kraju prodaja, čime kapital ponovno poprima novčani oblik; time je jedan obrt završen, a drugi započinje. Opći obrazac kružnog kretanja kapitala: <strong>N – R – N</strong>.</p>\n<h4>Stalni i optjecajni kapital; amortizacija</h4>\n<ul>\n<li><strong>Stalni kapital</strong> — sredstva za rad: visoka vrijednost i dug vijek trajanja; postupno troše uporabnu vrijednost i prenose je na nove proizvode do funkcionalnog prestanka trajanja; dio se po realizaciji roba odvaja u fond amortizacije radi reprodukcije sredstava za rad.</li>\n<li><strong>Optjecajni kapital</strong> — predmeti rada i radna snaga: u procesu proizvodnje svoju vrijednost u potpunosti prenose na novi proizvod; prodajom robe vrijednost se u punom iznosu vraća pa odmah postoje sredstva za novi ciklus.</li>\n<li><strong>Amortizacija</strong> — postupak otpisivanja dijela vrijednosti sredstava za rad; otpisani dio u novčanom obliku ulaže se u fond amortizacije radi nabave novih sredstava za proizvodnju. Može se promatrati vremenski i funkcionalno.</li>\n</ul>\n"
+    },
+    "id": "v7p4ri"
+  },
+  "peProfitability": {
+    "name": "Rentabilnost kapitalističkog poduzeća",
+    "icon": "fa-percent",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "id": "r9ijip",
+        "question": "Što su troškovi proizvodnje, a što cijena koštanja?",
+        "answer": "Troškovi proizvodnje su utrošeni dio kapitala kapitalista; cijena koštanja je utrošeni kapital po jedinici proizvoda (ukupni troškovi / količina).",
+        "explanation": "Razlika prodajne cijene i troškova je profit."
+      },
+      {
+        "id": "g5uh4p",
+        "question": "Što su fiksni, a što proporcionalni troškovi?",
+        "answer": "Fiksni se ne mijenjaju s obujmom proizvodnje (stalni kapital); proporcionalni se kreću s korištenjem kapaciteta (optjecajni kapital).",
+        "explanation": "Utječu na cijenu koštanja po komadu."
+      },
+      {
+        "id": "8ug1vs",
+        "question": "Što je profitna stopa i kako se računa?",
+        "answer": "Relativni pokazatelj uspješnosti; odnos profita i uloženog kapitala: p = m / (c + v) × 100 ili p = P / K × 100.",
+        "explanation": "Mjera oplodnje kapitala."
+      },
+      {
+        "id": "3797d3",
+        "question": "Koji su unutrašnji čimbenici profitne stope?",
+        "answer": "Stupanj viška vrijednosti (veći → veća stopa), organska struktura kapitala (viša → manja stopa) i brzina obrtaja kapitala (brži → veća stopa).",
+        "explanation": "Ispitno pitanje."
+      },
+      {
+        "id": "ujanm6",
+        "question": "Koji su vanjski čimbenici profitne stope?",
+        "answer": "Cijene pri nabavi čimbenika proizvodnje i pri prodaji gotovih proizvoda: skuplja nabava i jeftinija prodaja smanjuju profitnu stopu.",
+        "explanation": "Vezani uz promet."
+      },
+      {
+        "id": "2qd6op",
+        "question": "Što je broj obrtaja kapitala?",
+        "answer": "n = O / o: jedna godina podijeljena s trajanjem jednog obrtaja; veći n daje veću masu viška vrijednosti uz isti uloženi kapital.",
+        "explanation": "Vrijeme obrta mjeri se u godinama."
+      },
+      {
+        "id": "nh8ol3",
+        "question": "Što je rentabilnost?",
+        "answer": "Pokazatelj uspješnosti poslovanja: odnos postignutog (dobit) i uloženog (kapital, imovina); izražava se u postotku.",
+        "explanation": "Stopa povrata."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "wdlgja",
+        "question": "Troškovi po jedinici proizvoda su:",
+        "options": [
+          "cijena koštanja",
+          "cijena proizvodnje",
+          "tržišna vrijednost",
+          "profitna stopa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "c6bq4f",
+        "question": "Profitna stopa računa se kao:",
+        "options": [
+          "m / v × 100",
+          "c / v × 100",
+          "(c + v) / m × 100",
+          "m / (c + v) × 100"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "682zf5",
+        "question": "Porast organske strukture kapitala (ostalo isto):",
+        "options": [
+          "povećava profitnu stopu",
+          "smanjuje profitnu stopu",
+          "ne utječe na nju",
+          "udvostručuje profit"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lce88r",
+        "question": "Brži obrtaj kapitala:",
+        "options": [
+          "smanjuje profitnu stopu",
+          "povećava profitnu stopu",
+          "ukida profit",
+          "smanjuje višak vrijednosti"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zqmlc6",
+        "question": "Koji čimbenik je vanjski faktor profitne stope?",
+        "options": [
+          "stupanj viška vrijednosti",
+          "organska struktura kapitala",
+          "brzina obrtaja kapitala",
+          "cijena sirovina pri nabavi"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "fpv0zb",
+        "question": "Dio troška koji se ne mijenja s obujmom proizvodnje su:",
+        "options": [
+          "fiksni troškovi",
+          "proporcionalni troškovi",
+          "varijabilni troškovi",
+          "troškovi prometa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ru2im2",
+        "question": "Idealno ulaganje kapitala je u granu s:",
+        "options": [
+          "visokim organskim sastavom, niskom stopom viška vrijednosti i sporim obrtom",
+          "visokim organskim sastavom, visokom stopom viška vrijednosti i sporim obrtom",
+          "niskim organskim sastavom, visokom stopom viška vrijednosti i brzim obrtom",
+          "niskim organskim sastavom, niskom stopom viška vrijednosti i brzim obrtom"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "c0yb7i",
+        "question": "Ako se cijene gotovih proizvoda smanje, profitna stopa:",
+        "options": [
+          "raste",
+          "ostaje ista",
+          "pada",
+          "prestaje postojati"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "kyvtgr",
+        "sentence": "Razlika između troškova proizvodnje i prodajne cijene je _______.",
+        "answer": "profit",
+        "hint": "prisvaja ga vlasnik"
+      },
+      {
+        "id": "t56bv0",
+        "sentence": "Broj obrtaja kapitala računa se kao n = O / _______.",
+        "answer": "o",
+        "hint": "trajanje jednog obrtaja"
+      },
+      {
+        "id": "ua5q81",
+        "sentence": "Porast organske strukture kapitala smanjuje profitnu _______.",
+        "answer": "stopu",
+        "hint": "p"
+      }
+    ],
+    "learn": {
+      "id": "kj9dt1",
+      "title": "Rentabilnost kapitalističkog poduzeća",
+      "content": "\n<h3>Troškovi proizvodnje i cijena koštanja</h3>\n<p><strong>Troškovi proizvodnje</strong> izražavaju utrošeni dio kapitala za kapitalističko poduzeće (točnije, za kapitalista). Vezani su uz jedan obrtaj, u kojem se utrošak stalnog kapitala i utrošak optjecajnog kapitala spajaju u jedinstvenu kategoriju troškova proizvodnje. <strong>Razlika između troškova proizvodnje i prodajne cijene je profit</strong> koji prisvaja vlasnik poduzeća. Iznos utrošenog kapitala važan je jer samo razlika između njega i robne vrijednosti čini višak vrijednosti.</p>\n<p><strong>Cijena koštanja</strong> je utrošeni kapital po jedinici proizvoda: ukupni troškovi proizvodnje stavljeni u odnos s količinom proizvedenih proizvoda.</p>\n<h4>Stalni i optjecajni kapital pri različitom korištenju kapaciteta</h4>\n<ul>\n<li>stalni kapital troši se i kad se u potpunosti ne koristi, pa je prenesena vrijednost stalnog kapitala neovisna o stupnju korištenja kapaciteta;</li>\n<li>kod optjecajnog kapitala količina predmeta rada i radne snage izravno je razmjerna stupnju korištenja kapaciteta.</li>\n</ul>\n<ul>\n<li><strong>Fiksni troškovi</strong> — dio troška koji se ne mijenja s padom ili porastom proizvodnje; stalno se obračunava u istom postotku;</li>\n<li><strong>Proporcionalni troškovi</strong> — trošenje optjecajnog kapitala koje se kreće ovisno o stupnju korištenja kapaciteta i obujmu proizvodnje.</li>\n</ul>\n<p>To kretanje fiksnih i proporcionalnih troškova izravno se odražava na cijenu koštanja jedinice proizvoda. Osnovna svrha organiziranja proizvodnje u kapitalizmu je ostvarivanje i prisvajanje viška vrijednosti uz uvjet vlasništva nad kapitalom i njegova ulaganja u proces proizvodnje.</p>\n<h3>Rentabilnost i profitna stopa</h3>\n<p><strong>Rentabilnost</strong> (profitabilnost) jedan je od najvažnijih pokazatelja ukupne uspješnosti poslovanja subjekta koji ostvaruje dobit; zasniva se na odnosu postignutog i uloženog, najčešće neto dobiti i kapitala (ukupne imovine, ukupnog prihoda); izražava se u postotku. Ako je rentabilna, pravna osoba može povećati kapital i imovinu; ako posluje s gubitkom, imovina i kapital smanjuju se. Dugotrajno nerentabilno poslovanje vodi stečaju i likvidaciji. Pokazatelj rentabilnosti (stopa povrata) pokazuje za koliko se godina poslovanjem vraćaju uložena sredstva; gdje je stopa niska, ulagači ne „jurišaju\". Kao brojnik se mogu koristiti bruto dobit, neto dobit, neto dobit uvećana za kamate ili neto novčani tok (cash flow; neto dobit + amortizacija), jer su plaćene kamate također zarađene, ali ne ostaju u poduzeću; važno je trajno se opredijeliti za jedan oblik radi usporedbe kroz vrijeme. Dobitak se utvrđuje razlikom vrijednosti imovine na kraju i početku razdoblja ili razlikom prihoda i rashoda.</p>\n<p><strong>Profit (P)</strong> je višak vrijednosti s osnove načina njegova prisvajanja — čisti dobitak, tj. pozitivna razlika uloženo–dobiveno. Odnos ostvarenog profita i uloženog kapitala pokazatelj je stupnja ekonomske uspješnosti uloženog kapitala.</p>\n<p><strong>Profitna stopa (p)</strong> je relativni pokazatelj uspješnosti poslovanja, stupanj oplodnje kapitala: odnos ostvarenog profita (mase viška vrijednosti) i uloženog kapitala K.</p>\n<div class=\"formula-box\">\\[ p = \\frac{m}{c+v}\\cdot 100 \\qquad\\text{ili}\\qquad p = \\frac{P}{K}\\cdot 100 \\]</div>\n<p>Ako dva poduzeća ulože iste kapitale, a ostvare različite mase viška vrijednosti, i profitne su im stope različite. Profitna stopa, kao pokazatelj rentabilnosti, postaje determinirajući čimbenik za odluku o angažiranju kapitala i mjerenje efikasnosti. (Profitnom stopom „zamagljuje\" se činjenica da višak vrijednosti stvara radna snaga kao dio uloženog kapitala, a ne kapital kao cjelina.)</p>\n<h3>Čimbenici koji utječu na profitnu stopu</h3>\n<table>\n<tr><th>Unutrašnji (proizvodni proces u poduzeću)</th><th>Vanjski (promet: nabava i prodaja)</th></tr>\n<tr><td><strong>stupanj viška vrijednosti</strong> — što je veći, veća je profitna stopa (raste masa viška vrijednosti)<br><strong>organska struktura kapitala</strong> — porast organskog sastava smanjuje (prvobitne) profitne stope<br><strong>brzina obrtaja kapitala</strong> — brži obrtaj povećava profitnu stopu</td><td>kretanje cijena pri prodaji roba ili pri kupnji čimbenika proizvodnje: <strong>porast cijene pri nabavi čimbenika proizvodnje i pad cijene gotovih proizvoda smanjuju</strong> profitnu stopu (i obrnuto)</td></tr>\n</table>\n<p>Svi navedeni učinci vrijede uz pretpostavku da se ostali čimbenici ne mijenjaju. Mjerna jedinica vremena obrtaja kapitala je jedna kalendarska godina. Broj obrtaja kapitala (n) računa se odnosom jedne godine (O) i vremena trajanja jednog obrtaja (o):</p>\n<div class=\"formula-box\">\\[ n = \\frac{O}{o} \\]</div>\n<p>Promjenjivi kapital u svakom obrtaju stvara višak vrijednosti, pa veći broj obrtaja daje veću masu viška vrijednosti, a da se uloženi kapital ne mijenja. Tehnička, vrijednosna i organska struktura: tehnička = odnos količine sredstava za proizvodnju i broja radnika; vrijednosna = odnos kapitala uloženog u sredstva za proizvodnju i u radnu snagu; organska = odnos postojanog (fiksnog) i promjenjivog kapitala. Idealno ulaganje je u granu s <em>niskim organskim sastavom, visokom stopom viška vrijednosti i brzim obrtom kapitala</em>.</p>\n<p><strong>Primjer:</strong> c = 80, v = 20, m = 20 → p = 20 / 100 · 100 = 20 %. Ako se kapital godišnje obrne dva puta (n = 2), a m ostaje isti po obrtaju, masa viška vrijednosti raste na 40 uz isti uloženi kapital.</p>\n"
+    },
+    "id": "4n6ft7"
+  },
+  "peDistribution": {
+    "name": "Raspodjela i najamnina",
+    "icon": "fa-hand-holding-dollar",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "id": "5kwi44",
+        "question": "Što je raspodjela?",
+        "answer": "Druga etapa društvene materijalne reprodukcije: dijeljenje rezultata rada na sudionike stvaranja vrijednosti; raspodjela uvjeta i rezultata proizvodnje.",
+        "explanation": "Uvjeti prethode rezultatima."
+      },
+      {
+        "id": "vyf5dh",
+        "question": "Što je primarna, a što sekundarna raspodjela?",
+        "answer": "Primarna: raspodjela narodnog dohotka između kapitalista i radnika. Sekundarna (preraspodjela): ponovna raspodjela državnim mjerama i cijenama neproizvodnim članovima društva.",
+        "explanation": "Porezi, trošarine, carine."
+      },
+      {
+        "id": "bw4f89",
+        "question": "Koji su temeljni, a koji izvedeni dohodci?",
+        "answer": "Temeljni: najamnine radnika i industrijski profit kapitalista. Izvedeni: dohodci trgovaca, bankara, dioničara i zemljovlasnika.",
+        "explanation": "Izvedeni nastaju preraspodjelom."
+      },
+      {
+        "id": "kxgvci",
+        "question": "Što je najamnina?",
+        "answer": "Cijena radne snage izražena u novcu; protuvrijednost za prodanu radnu snagu koju radnik dobiva od kapitalista.",
+        "explanation": "Radnik nema sredstava za proizvodnju."
+      },
+      {
+        "id": "4sdlmy",
+        "question": "Od čega ovisi visina najamnine?",
+        "answer": "Od vrijednosti radne snage, monetarnih promjena te ponude i potražnje za radnom snagom.",
+        "explanation": "Mnogo nezaposlenih snižava najamninu."
+      },
+      {
+        "id": "e0h8gg",
+        "question": "Koji su oblici najamnine prema načinu plaćanja?",
+        "answer": "Najamnina po vremenu, po komadu, kombinirana najamnina i dopunski oblici.",
+        "explanation": "Naturalna i novčana prema obliku."
+      },
+      {
+        "id": "iwlfxz",
+        "question": "Što su nominalna, realna i relativna najamnina?",
+        "answer": "Nominalna: iznos novca za radnu snagu. Realna: kupovna moć tog iznosa. Relativna: odnos nominalne najamnine i viška vrijednosti.",
+        "explanation": "Analitičke kategorije."
+      },
+      {
+        "id": "be6t6k",
+        "question": "Od čega ovisi realna najamnina?",
+        "answer": "Od visine nominalne najamnine i od cijena roba koje radnici kupuju.",
+        "explanation": "Odnos nominalne i troškova života."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "vgbsbs",
+        "question": "Cijena radne snage izražena u novcu je:",
+        "options": [
+          "najamnina",
+          "kamata",
+          "renta",
+          "dividenda"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "14f8xs",
+        "question": "Ukupan novčani iznos za prodanu radnu snagu, bez obzira na način plaćanja, je:",
+        "options": [
+          "realna najamnina",
+          "relativna najamnina",
+          "najamnina po komadu",
+          "nominalna najamnina"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "rqybyg",
+        "question": "Kupovna snaga nominalne najamnine je:",
+        "options": [
+          "nominalna najamnina",
+          "realna najamnina",
+          "relativna najamnina",
+          "kombinirana najamnina"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ib0iuz",
+        "question": "Odnos nominalne najamnine i viška vrijednosti je:",
+        "options": [
+          "realna najamnina",
+          "relativna najamnina",
+          "nominalna najamnina",
+          "satnica"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "yn8nfr",
+        "question": "Razvitak kapitalizma pokazuje tendenciju:",
+        "options": [
+          "rasta relativne najamnine",
+          "ukidanja najamnine",
+          "izjednačavanja najamnine i profita",
+          "pada relativne najamnine"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "0lj0ok",
+        "question": "Primarna raspodjela dijeli narodni dohodak između:",
+        "options": [
+          "kapitalista i najamnih radnika",
+          "države i banaka",
+          "trgovaca i bankara",
+          "zemljovlasnika i zakupaca"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v8fi48",
+        "question": "Dohodci trgovaca, bankara, dioničara i zemljovlasnika su:",
+        "options": [
+          "temeljni dohodci",
+          "nominalne najamnine",
+          "izvedeni dohodci",
+          "poduzetnička dobit"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "v2u2mr",
+        "question": "Plaćanje za svaku proizvedenu jedinicu proizvoda je:",
+        "options": [
+          "najamnina po vremenu",
+          "kombinirana najamnina",
+          "najamnina po komadu",
+          "realna najamnina"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "9x725k",
+        "question": "Veliki broj nezaposlenih omogućuje kapitalistu da najamninu:",
+        "options": [
+          "snizi ispod dnevne vrijednosti radne snage",
+          "podigne iznad dnevne vrijednosti radne snage",
+          "ukine i zamijeni dividendom dioničara",
+          "veže uz kamatnu stopu na kredite"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "lcos4j",
+        "sentence": "Najamnina je cijena radne _______ izražena u novcu.",
+        "answer": "snage",
+        "hint": "roba koju radnik prodaje"
+      },
+      {
+        "id": "umr46p",
+        "sentence": "Kupovnu moć nominalne najamnine izražava _______ najamnina.",
+        "answer": "realna",
+        "hint": "uz indeks troškova života"
+      },
+      {
+        "id": "3saveh",
+        "sentence": "Ponovna raspodjela narodnog dohotka naziva se sekundarna raspodjela ili _______.",
+        "answer": "preraspodjela",
+        "hint": "država ima ulogu"
+      }
+    ],
+    "learn": {
+      "id": "zmvwjc",
+      "title": "Raspodjela u sustavu robnog gospodarstva; najamnina",
+      "content": "\n<h3>Opći pojmovi o raspodjeli</h3>\n<p><strong>Raspodjela</strong> je druga etapa društvene materijalne reprodukcije; podrazumijeva dijeljenje rezultata rada na sudionike stvaranja vrijednosti i odražava sudjelovanje subjekata proizvodnje i potražnje u diobi prirodnih i proizvedenih dobara. Kvantitativno je uvjetovana stupnjem razvijenosti proizvodnih snaga, a kvalitativno proizvodnim odnosima u kojima se obavlja; zato utječe na proizvodnju. Promatra se kao <strong>raspodjela uvjeta proizvodnje</strong> (sredstava za proizvodnju i ljudskog rada na proizvodne djelatnosti; raspodjela uvjeta uvijek prethodi raspodjeli rezultata; temeljno obilježje kapitalizma je odvojenost neposrednih proizvođača od sredstava za proizvodnju, što dijeli sudionike na eksploatirane i eksploatatore) i <strong>raspodjela rezultata proizvodnje</strong> (raspodjela ekonomskih učinaka proizvodnje; kapitalisti na osnovi vlasništva prisvajaju rezultate tuđeg rada, a radnici samo na osnovi uloženog rada; namjenska raspodjela osigurava obnavljanje proizvodnje i radne snage).</p>\n<h4>Primarna i sekundarna raspodjela</h4>\n<ul>\n<li><strong>Primarna raspodjela</strong> — raspodjela narodnog dohotka (novčanog izraza novododanog živog rada) između sudionika materijalne proizvodnje: kapitalista i najamnih radnika. <strong>Temeljni dohodci</strong> — ono što prisvajaju najamni radnici (najamnine) i kapitalisti (industrijski profit, poduzetnička dobit, renta…); formiraju se pod utjecajem tržišnih mehanizama.</li>\n<li><strong>Sekundarna raspodjela (preraspodjela)</strong> — ponovna raspodjela već podijeljenog narodnog dohotka ili njegova dijela na druge članove zajednice koji ne sudjeluju izravno u materijalnoj proizvodnji (neproizvodno stanovništvo), državnim mjerama (porezi, trošarine, carine) ili cijenama. <strong>Izvedeni dohodci</strong> — ponikli iz prvih preraspodjelom novostvorene vrijednosti: dohodci trgovaca, bankara, dioničara i zemljovlasnika.</li>\n</ul>\n<p>Dohodci od kapitala: industrijski profit, trgovački profit, kamata, dividenda i renta. Dohodci se dijele na radne (najamnine) i dohodak od vlasništva (profit, kamata, dividenda, renta).</p>\n<h3>Najamnina</h3>\n<p><strong>Najamnina</strong> je protuvrijednost koju najamni radnici dobivaju od kapitalista za prodanu radnu snagu — <em>cijena radne snage izražena u novcu</em>. Bit: radnik koji nije vlasnik ne raspolaže materijalnim bogatstvom i ekonomski je primoran ući u najamni odnos i prodati radnu snagu; radna snaga je roba s vrijednošću i uporabnom vrijednošću. Najamninom osigurava sredstva za život i reprodukciju radne snage.</p>\n<p><strong>Visina najamnine ovisi o:</strong> promjeni veličine vrijednosti radne snage (svi čimbenici koji mijenjaju cijenu radne snage), monetarnim promjenama (kao cijene svih ostalih roba) te ponudi i potražnji za radnom snagom (pad potražnje snižava, porast potražnje diže najamninu).</p>\n<ul>\n<li><strong>Ponuda</strong> radne snage u danom je trenutku određena brojem nezaposlenih radnika; kad je nezaposlenih mnogo, kapitalist može sniziti najamninu ispod dnevne vrijednosti, što povećava stupanj eksploatacije.</li>\n<li><strong>Potražnja</strong> se mijenja s obujmom proizvodnje, ali nije proporcionalna rastu obujma; kod pojačane potražnje koja diže najamninu gornja je granica visine određena.</li>\n</ul>\n<h4>Oblici najamnine</h4>\n<p><strong>Prema načinu plaćanja:</strong> u početku kapitalizma, kao ostatak feudalnih odnosa, javlja se <em>naturalna najamnina</em>; kasnije prevladava <em>novčana</em>.</p>\n<ul>\n<li><strong>Najamnina po vremenu (od vremena)</strong> — dogovoreni iznos za određeno vrijeme (dan, tjedan, mjesec; često po satu — <em>satnica</em>). Ako se radni dan skrati uz stalnu satnicu, pogoršava se materijalni položaj radnika i smanjuje masa viška vrijednosti. Dnevna najamnina = satnica × broj radnih sati.</li>\n<li><strong>Najamnina po komadu</strong> — izvedeni oblik: plaća se određeni novčani iznos za svaku jedinicu proizvoda, pa dnevna najamnina ovisi o broju proizvedenih komada. <em>Pogodnosti za kapitalista:</em> manje nadzornika, briga o kvaliteti prenosi se na radnika, radnike potiče na kvalifikacije, intenzivnost i produktivnost; slabi zainteresiranost za skraćivanje radnog dana. U mnogim slučajevima nije moguća zbog tehnološkog procesa.</li>\n<li><strong>Kombinirana najamnina</strong> — temelji se na unaprijed određenoj normi; plaćanje za određeni broj radnih učinaka u određenom radnom vremenu.</li>\n<li><strong>Dopunski oblici</strong> — dopunjuju nedostatke osnovnih oblika.</li>\n</ul>\n<h4>Analitičke kategorije najamnina</h4>\n<table>\n<tr><th>Vrsta</th><th>Značenje</th></tr>\n<tr><td><strong>Nominalna</strong></td><td>ukupan iznos novčanih sredstava koji radnik dobiva za prodanu radnu snagu, bez obzira na način plaćanja (tržišna cijena radne snage kao robe)</td></tr>\n<tr><td><strong>Realna</strong></td><td>količina robe potrebna za reprodukciju radnika koju može kupiti za novac dobiven prodajom radne snage — kupovna snaga nominalne najamnine; ovisi o <em>visini nominalne najamnine</em> i <em>cijenama roba koje radnici kupuju</em> (odnos nominalne najamnine i indeksa troškova života)</td></tr>\n<tr><td><strong>Relativna</strong></td><td>odnos nominalne najamnine i viška vrijednosti; upućuje na stalni sukob kapitalista i radnika oko novonastale vrijednosti; raste kad raste nominalna najamnina, a pada kad raste višak vrijednosti; razvitak kapitalizma ima <em>tendenciju pada relativne najamnine</em></td></tr>\n</table>\n"
+    },
+    "id": "itt4as"
+  },
+  "peIndustrialCapital": {
+    "name": "Industrijski kapital i prosječna profitna stopa",
+    "icon": "fa-industry",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "id": "oc46ga",
+        "question": "Što je industrijski kapital?",
+        "answer": "Kapital plasiran u bilo koji oblik proizvodnje (industrija, rudarstvo, šumarstvo, poljoprivreda); njegov vlasnik je industrijski kapitalist, prvi prisvajač viška vrijednosti.",
+        "explanation": "Prisvaja rezultate rada radnika."
+      },
+      {
+        "id": "hn0i62",
+        "question": "Što je razlika između viška vrijednosti i profita?",
+        "answer": "Isti sadržaj s dviju pozicija: višak vrijednosti iz pozicije proizvodnje (nevidljiv, apstraktan); profit iz pozicije prisvajanja i raspodjele (novčani iznos).",
+        "explanation": "Dva izraza za isto."
+      },
+      {
+        "id": "x0p3gu",
+        "question": "Što je cijena proizvodnje?",
+        "answer": "Cijena koštanja uvećana za prosječni profit; cijenu robe čini cijena koštanja plus prosječni profit.",
+        "explanation": "Vrijednost = cijena koštanja + m."
+      },
+      {
+        "id": "1pazli",
+        "question": "Zašto se profitne stope razlikuju među granama?",
+        "answer": "Zbog razlika u organskom sastavu kapitala, stopi viška vrijednosti i brzini obrtaja kapitala.",
+        "explanation": "Tri razloga."
+      },
+      {
+        "id": "m35u79",
+        "question": "Što je seljenje kapitala iz grane u granu?",
+        "answer": "Preusmjeravanje kapitala (i radne snage) iz grane s niskom u granu s višom profitnom stopom, npr. promjenom proizvodnog programa.",
+        "explanation": "Ne shvaća se doslovno."
+      },
+      {
+        "id": "q2qka9",
+        "question": "Zašto dolazi do seljenja kapitala?",
+        "answer": "Zbog težnje kapitalista za većim profitom: iz grane s niskom ili nikakvom profitnom stopom u granu s višom.",
+        "explanation": "Maksimizacija profita."
+      },
+      {
+        "id": "dtflqp",
+        "question": "Kako se formira prosječna profitna stopa?",
+        "answer": "Uprosječivanjem individualnih stopa: sav višak vrijednosti u društvu dijeli se s ukupnim uloženim konstantnim i varijabilnim kapitalom (× 100).",
+        "explanation": "p′ = M / (C + V) × 100."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "ynctyi",
+        "question": "Prvi prisvajač cjelokupnog viška vrijednosti je:",
+        "options": [
+          "trgovac na malo i veliko",
+          "bankar kao davatelj kredita",
+          "zemljoposjednik kao zakupodavac",
+          "industrijski kapitalist"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "okg794",
+        "question": "Višak vrijednosti promatran s pozicije prisvajanja i raspodjele naziva se:",
+        "options": [
+          "kamata",
+          "profit",
+          "najamnina",
+          "renta"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v0s1ts",
+        "question": "Cijena proizvodnje jednaka je:",
+        "options": [
+          "cijeni koštanja umanjenoj za profit",
+          "cijeni koštanja uvećanoj za prosječni profit",
+          "najamnini uvećanoj za rentu",
+          "vrijednosti uvećanoj za kamatu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "efypqx",
+        "question": "Seljenje kapitala iz grane u granu dovodi do:",
+        "options": [
+          "trajnih razlika među profitnim stopama",
+          "ukidanja profita u svim granama",
+          "rasta cijene koštanja u svakoj grani",
+          "izjednačavanja profitnih stopa na prosječnu"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "d2zmhp",
+        "question": "Seljenje kapitala poticaj je:",
+        "options": [
+          "težnja za većim profitom",
+          "zabrana države",
+          "pad organskog sastava",
+          "smanjenje poreza"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "sk6ped",
+        "question": "Razlike u profitnim stopama među granama NE proizlaze iz:",
+        "options": [
+          "organskog sastava kapitala",
+          "stope viška vrijednosti",
+          "visine kamatne stope na štednju",
+          "brzine obrtaja kapitala"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "7aw084",
+        "question": "Prepreka seljenju kapitala u novu granu mogu biti:",
+        "options": [
+          "dostupni bankovni krediti",
+          "visoka stopa viška vrijednosti",
+          "monopoli koji već djeluju u njoj",
+          "niska organska struktura kapitala"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "x2qme2",
+        "question": "Idealno za ulaganje je grana s:",
+        "options": [
+          "niskim organskim sastavom kapitala",
+          "visokim organskim sastavom",
+          "niskom stopom viška vrijednosti",
+          "sporim obrtom kapitala"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "ed9pwb",
+        "sentence": "Višak vrijednosti i _______ dva su izraza za isti sadržaj.",
+        "answer": "profit",
+        "hint": "novčani izraz"
+      },
+      {
+        "id": "zds3dc",
+        "sentence": "Proces preusmjeravanja kapitala iz jedne grane u drugu naziva se _______ kapitala.",
+        "answer": "seljenje",
+        "hint": "iz grane u granu"
+      },
+      {
+        "id": "zwa1u3",
+        "sentence": "Prosječna profitna stopa izvodi se uprosječavanjem _______ profitnih stopa.",
+        "answer": "individualnih",
+        "hint": "pojedinačnih"
+      }
+    ],
+    "learn": {
+      "id": "rxp3gw",
+      "title": "Industrijski kapital: transformacija viška vrijednosti u profit",
+      "content": "\n<h3>Industrijski kapital i profit</h3>\n<p><strong>Industrijski kapital</strong> je kapital plasiran u bilo koji oblik proizvodnje (industriju, rudarstvo, šumarstvo, poljoprivredu i dr.); njegov vlasnik je <strong>industrijski kapitalist (industrijalac)</strong>. On je „prvi prisvajač\" cjelokupnog viška vrijednosti koji su stvorili najamni radnici, jer izravno prisvaja rezultate njihova rada prodajom robe proizvedene u svojem poduzeću. U raspodjeli viška vrijednosti sudjeluju i drugi kapitalisti (npr. trgovci).</p>\n<p><strong>Višak vrijednosti i profit</strong> su dva izraza za isti sadržaj, promatran s dviju pozicija:</p>\n<ul>\n<li>višak vrijednosti — s pozicije <em>proizvodnje</em>; apstraktna kategorija koja u strukturi robe nije vidljiva;</li>\n<li>profit — s pozicije <em>prisvajanja i raspodjele</em>; konkretna veličina u novčanom obliku (višak vrijednosti postaje profit kad se izrazi u novcu).</li>\n</ul>\n<p>U pojedinom poduzeću ili grani masa viška vrijednosti i iznos prisvojenog profita ne moraju biti jednaki; promatrano cijelo kapitalističko gospodarstvo, oni su jednaki. Vrijednost robe čine cijena koštanja (utrošeni c i v) i masa viška vrijednosti; <strong>cijena robe</strong> (cijena proizvodnje) je cijena koštanja uvećana za prosječni profit.</p>\n<h3>Formiranje profitne stope</h3>\n<p>Visina profitne stope jedino je objektivno mjerilo rentabilnosti ulaganja i izraz stupnja oplodnje cjelokupnog uloženog kapitala. Razlike u profitnim stopama među granama proizvodnje nastaju zbog razlika u <strong>organskom sastavu kapitala, stopi viška vrijednosti i brzini obrta kapitala</strong>. Idealno ulaganje: grana s niskim organskim sastavom, visokom stopom viška vrijednosti i brzim obrtom. Budući da se tržišna cijena u granama ne formira na razini vrijednosti, prisvojeni profit veći je ili manji od mase viška vrijednosti u robi.</p>\n<h4>Seljenje kapitala iz grane u granu</h4>\n<p>Kapitalist teži većem profitu: ako je uložio u granu s niskom profitnom stopom, nastoji kapital povući i uložiti u granu s visokom. To je <strong>proces seljenja kapitala iz grane u granu</strong> (ne doslovno) — preorijentacija proizvodnje jedne vrste roba na drugu u okviru istih tvornica uz odgovarajuće promjene proizvodnog procesa (npr. brodogradilište koje je proizvodilo ratne brodove preorijentira se na trgovačke). Najprije se seli kapital u novčanom obliku (akumulirani novac i novčana amortizacija), zatim radna snaga (preorijentacija najamnih radnika). Izvlačenje kapitala iz grane smanjuje potražnju za radnom snagom (otpuštanja ili pad najamnina); ulaganje u granu povećava potražnju (zapošljavanje ili rast najamnine). Postupak nije jednostavan, može trajati i traži značajna novčana sredstva i prekvalifikaciju radnika; prepreka su monopoli u novim granama; olakšavaju ga krediti i spajanja/udruživanja kapitala (M&amp;A). Relativno brzo prelijevanje kapitala (najčešće bankovnim kreditima) dovodi do <strong>izjednačavanja pojedinačnih profitnih stopa na prosječnu profitnu stopu</strong>.</p>\n<h3>Visina prosječne profitne stope</h3>\n<p>Za gospodarstvo se izračunava isto kao za poduzeće, s velikim slovima: u brojniku je sav ostvareni višak vrijednosti u društvu, a u nazivniku sav uloženi konstantni i varijabilni kapital.</p>\n<div class=\"formula-box\">\\[ p' = \\frac{M}{C+V}\\cdot 100 \\]</div>\n<p>Na nju utječu prosječna stopa viška vrijednosti, prosječni organski sastav kapitala i prosječna brzina obrtaja uloženog kapitala. Ako je prosječna stopa viška vrijednosti veća, organski sastav niži, a obrtaj brži — prosječna profitna stopa je veća; u obrnutom je manja. Prosječna profitna stopa izvodi se uprosječavanjem individualnih profitnih stopa različitih grana.</p>\n"
+    },
+    "id": "7lxc38"
+  },
+  "peTradeCapital": {
+    "name": "Trgovački kapital i troškovi prometa",
+    "icon": "fa-store",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "eiriq8",
+        "question": "Što je trgovački kapital?",
+        "answer": "Dio društvenog kapitala koji se trajno nalazi u oblasti prometa (iz novčanog u robni oblik i obrnuto); osamostaljeni dio industrijskog kapitala s neproizvodnom funkcijom.",
+        "explanation": "Ne stvara višak vrijednosti."
+      },
+      {
+        "id": "fthwz0",
+        "question": "Što je trgovački profit (komercijalna dobit)?",
+        "answer": "Dio viška vrijednosti što ga trgovac prisvaja kao razliku između nabavne cijene (niže od vrijednosti) i prodajne cijene (po vrijednosti).",
+        "explanation": "Raspodjela viška vrijednosti."
+      },
+      {
+        "id": "u9scue",
+        "question": "Kako se prisvaja profit u trgovini?",
+        "answer": "Trgovac kupuje robu od industrijalca ispod njezine vrijednosti, a prodaje je po vrijednosti; razlika je njegov profit.",
+        "explanation": "Uzima razmjerno uloženom kapitalu."
+      },
+      {
+        "id": "eeqm2e",
+        "question": "Formula za profitnu stopu s trgovačkim kapitalom?",
+        "answer": "Ps = P / (Ik + Tk): ukupni profit podijeljen zbrojem industrijskog i trgovačkog kapitala.",
+        "explanation": "Trgovački profit = Ps × Tk."
+      },
+      {
+        "id": "08ou8x",
+        "question": "Što su proizvodni troškovi prometa?",
+        "answer": "Troškovi transporta i čuvanja robe; ulaze u vrijednost robe i nadoknađuju se pri realizaciji iz novostvorene vrijednosti.",
+        "explanation": "Proizvodni karakter."
+      },
+      {
+        "id": "zj96z9",
+        "question": "Što su čisti (neproizvodni) troškovi prometa?",
+        "answer": "Troškovi trgovačke mreže, reklame, evidencije i radne snage u trgovini; ne stvaraju vrijednost i nadoknađuju se iz viška vrijednosti, tj. profita.",
+        "explanation": "Rabat."
+      },
+      {
+        "id": "g138pz",
+        "question": "Što je rabat?",
+        "answer": "Postotni popust što ga proizvođač odobrava trgovcima pri plasmanu robe; izvor nadoknade čistih troškova prometa.",
+        "explanation": "Razlika cijene proizvođača i trgovca."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "jgzbh9",
+        "question": "Funkcija trgovačkog kapitala je:",
+        "options": [
+          "proizvodna",
+          "kamatonosna",
+          "rentna",
+          "neproizvodna"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "gfnh4h",
+        "question": "Trgovac robu od industrijalca kupuje po cijeni:",
+        "options": [
+          "jednakoj prodajnoj",
+          "nižoj od njezine vrijednosti",
+          "višoj od vrijednosti",
+          "jednakoj cijeni koštanja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "6nwu2k",
+        "question": "Trgovac robu prodaje po cijeni:",
+        "options": [
+          "nižoj od njezine vrijednosti",
+          "jednakoj njezinoj vrijednosti",
+          "višoj od tržišne cijene robe",
+          "jednakoj svojoj nabavnoj cijeni"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "11kaw4",
+        "question": "Troškovi transporta i čuvanja robe su:",
+        "options": [
+          "čisti troškovi prometa",
+          "fiksni troškovi",
+          "bankovni troškovi",
+          "proizvodni troškovi prometa"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "tj6il2",
+        "question": "Čisti troškovi prometa nadoknađuju se iz:",
+        "options": [
+          "viška vrijednosti (profita)",
+          "najamnina radnika u trgovini",
+          "vrijednosti robe kao proizvodni trošak",
+          "fonda amortizacije trgovca"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "h9ydwq",
+        "question": "Ako je Ik = 800, Tk = 200 i P = 150, profitna stopa iznosi:",
+        "options": [
+          "19 %",
+          "12 %",
+          "15 %",
+          "30 %"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "1drpop",
+        "question": "Uz Ik = 800, Tk = 200 i P = 150, trgovački profit iznosi:",
+        "options": [
+          "120",
+          "150",
+          "30",
+          "15"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "7sxtdx",
+        "question": "Reklama i trgovačka mreža spadaju u:",
+        "options": [
+          "čiste troškove prometa",
+          "proizvodne troškove prometa",
+          "troškove proizvodnje",
+          "amortizaciju"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "d5ljte",
+        "sentence": "Komercijalna dobit je profit koji ostvaruje _______.",
+        "answer": "trgovac",
+        "hint": "kapital u prometu"
+      },
+      {
+        "id": "bs9l2v",
+        "sentence": "Troškovi prijevoza i skladištenja robe su _______ troškovi prometa.",
+        "answer": "proizvodni",
+        "hint": "ulaze u vrijednost robe"
+      },
+      {
+        "id": "gel300",
+        "sentence": "Postotni popust proizvođača trgovcima naziva se _______.",
+        "answer": "rabat",
+        "hint": "trgovački popust"
+      }
+    ],
+    "learn": {
+      "id": "r542z7",
+      "title": "Trgovački kapital, trgovački profit i troškovi prometa",
+      "content": "\n<h3>Trgovački kapital</h3>\n<p><strong>Trgovački kapital</strong> je dio ukupnog društvenog kapitala koji se trajno nalazi u oblasti prometa, pretvarajući se iz novčanog u robni ili iz robnog u novčani oblik (osamostaljeni dio industrijskog kapitala). Plasiran je u promet i ima <em>neproizvodnu funkciju</em>: ne stvara novostvorenu vrijednost ni višak vrijednosti; obavlja uslužnu funkciju, a rezultat je <strong>komercijalna dobit</strong>. Trgovac mora stalno raspolagati slobodnim novčanim sredstvima i nastoji što brže obaviti metamorfozu robe u novac, čime povećava broj obrta i dobit.</p>\n<p>Težnja kapitalista za profitom na uložene kapitale motivira i trgovca da ostvari odgovarajući profit — komercijalnu dobit; ako je u nepovoljnijem položaju od industrijalca, može svoj kapital povući u industriju ili tamo gdje je dobit veća. Kod industrijskih kapitalista raspodjela profita postiže se tržištem (tržišnim cijenama).</p>\n<h3>Prisvajanje prosječnog profita u trgovini</h3>\n<p>Trgovac prisvaja dio viška vrijednosti koji je već stvoren u proizvodnji. Kako trgovac realizira robu industrijalca, višak vrijednosti raspodjeljuje se između industrijalca i trgovca razmjerno uloženom kapitalu. Zato:</p>\n<ul>\n<li>pri izračunavanju profitne stope uzimaju se u obzir ukupni <strong>industrijski i trgovački kapital</strong>;</li>\n<li>trgovac kupuje robu od industrijalca po cijeni <em>nižoj od njezine vrijednosti</em> (za iznos svojeg profita);</li>\n<li>prodaje je po cijeni <em>jednakoj njezinoj vrijednosti</em>;</li>\n<li>trgovac prisvaja profit (komercijalnu dobit) kao razliku između nabavne i prodajne cijene.</li>\n</ul>\n<p>Primjer: vrijednost robe iznosila je 125 000 novčanih jedinica; roba je trgovcu prodana po 113 120, a tek njezinom realizacijom po 125 000 trgovac je realizirao vrijednost (razlika je njegov rabat, tj. komercijalna dobit i pokriće troškova). <strong>Rabat</strong> je postotni popust što ga proizvođač odobrava posrednicima pri plasmanu robe.</p>\n<div class=\"formula-box\">PROFITNA STOPA (industrijski + trgovački kapital):<br>\\[ P_s = \\frac{P}{I_k + T_k} \\]\nP – ostvareni (ukupni) profit · I<sub>k</sub> – industrijski kapital · T<sub>k</sub> – trgovački kapital</div>\n<p><strong>Računski primjer:</strong> I<sub>k</sub> = 800, T<sub>k</sub> = 200, ukupni profit P = 150. Profitna stopa P<sub>s</sub> = 150 / (800 + 200) = 15 %. Trgovački profit = 15 % × 200 = 30; industrijski profit = 15 % × 800 = 120.</p>\n<p>Na obrt kapitala trgovca utječu: vrijeme obrta trgovačkog kapitala (kod robe za svakodnevnu potrošnju kratko, kod trajnih dobara dugo; sezonska proizvodnja), lokacija radnje, organizacija poslovanja i reklame, sposobnost trgovca, istraživanje tržišta, struktura potrošnje i platežna sposobnost kupaca. Razlike u dužini obrta izravno utječu na masu trgovačkog kapitala i iznos čistih troškova prometa po jedinici realiziranog vremena, i daju poticaj za poboljšanje uvjeta poslovanja i veći obrt.</p>\n<h3>Troškovi prometa</h3>\n<table>\n<tr><th>Proizvodni troškovi prometa</th><th>Čisti (neproizvodni) troškovi prometa</th></tr>\n<tr><td>nastaju pri <strong>transportu i čuvanju robe</strong>; rad u tim oblastima ulazi u vrijednost robe; transport zatvara krug proizvodnje (proizvod je gotov kad je dostupan potrošaču); čuvanje robnih zaliha i sirovina sastavni je dio proizvodnje i prodaje; nadoknađuju se iz novostvorene vrijednosti pri realizaciji robe (kao troškovi industrijalca)</td><td>nastaju pri <strong>pretvaranju robe iz robnog u novčani oblik i obrnuto</strong>, u izravnoj vezi s trgovinom: trgovačka mreža, reklama, evidencija poslovanja, radna snaga za te poslove; ovamo i tiskanje i održavanje novca (troškovi države); neproizvodan karakter; nadoknađuju se <strong>iz viška vrijednosti, tj. profita</strong> (naplate se iz ukupnog profita prije podjele između industrijalca i trgovca) — razlikom prodajne cijene proizvođača i trgovca (trgovački rabat); podjednako ih snose proizvođač i trgovac</td></tr>\n</table>\n"
+    },
+    "id": "26xyq5"
+  },
+  "peCredit": {
+    "name": "Kreditni kapital, kamata i poduzetnička dobit",
+    "icon": "fa-handshake",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "dki5cr",
+        "question": "Što je kreditni (kamatonosni) kapital?",
+        "answer": "Kapital koji se posuđuje kao kredit i donosi kamatu; osamostaljeni dio industrijskog kapitala. Obrazac: N – N′.",
+        "explanation": "Oplodnju obavlja drugi kapitalist."
+      },
+      {
+        "id": "e2gun0",
+        "question": "Što je kamata?",
+        "answer": "Dohodak vlasnika posuđenog kapitala; cijena kreditnog kapitala za privremeno ustupljenu uporabnu vrijednost njegova novčanog kapitala.",
+        "explanation": "Dio profita dužnika."
+      },
+      {
+        "id": "gu9iuh",
+        "question": "Što je kamatna stopa?",
+        "answer": "Relativni pokazatelj plasmana novca: odnos ostvarene kamate i posuđenog kapitala.",
+        "explanation": "Izražava se u postotku."
+      },
+      {
+        "id": "steumn",
+        "question": "Što je anuitet?",
+        "answer": "Jednaki iznos koji se redovito uplaćuje za podmirenje duga; sastoji se od glavnice i kamate (omjer se mijenja, iznos ne).",
+        "explanation": "Otplata kredita."
+      },
+      {
+        "id": "79iyq8",
+        "question": "Od čega ovisi visina kamatne stope?",
+        "answer": "Od visine profitne stope (okvir), ponude i potražnje za kreditima i djelovanja države (izravno i neizravno).",
+        "explanation": "Tri faktora."
+      },
+      {
+        "id": "i371ol",
+        "question": "Razlika između kamate i poduzetničke dobiti?",
+        "answer": "Kamata je dohodak vlasnika posuđenog kapitala; poduzetnička dobit je ostatak profita nakon kamate — nagrada poduzetniku za organizaciju.",
+        "explanation": "Profit = kamata + poduzetnička dobit."
+      },
+      {
+        "id": "23zb2a",
+        "question": "Tko je poduzetnik i čijim kapitalom radi?",
+        "answer": "Privrednik koji znanjem i sposobnostima, koristeći tuđa sredstva (najčešće kredite), organizira proizvodnju i ostvaruje profit.",
+        "explanation": "Radi s tuđim kapitalom."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "xjzs2q",
+        "question": "Opći obrazac kamatonosnog kapitala je:",
+        "options": [
+          "R – N – R",
+          "N – R – N",
+          "R – R′",
+          "N – N′"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "bpm25u",
+        "question": "Dohodak vlasnika posuđenog kapitala je:",
+        "options": [
+          "poduzetnička dobit",
+          "kamata",
+          "najamnina",
+          "rabat"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zfanrw",
+        "question": "Dio profita koji ostaje nakon plaćanja kamate je:",
+        "options": [
+          "zemljišna renta vlasnika",
+          "poduzetnička dobit",
+          "dividenda dioničara",
+          "anuitet kreditne otplate"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "stu9k3",
+        "question": "Na visinu kamatne stope NE utječe izravno:",
+        "options": [
+          "visina profitne stope",
+          "ponuda i potražnja za kreditima",
+          "politika države",
+          "visina nominalne najamnine"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "qhmp1k",
+        "question": "Kamatna stopa u pravilu ne može biti viša od:",
+        "options": [
+          "profitne stope na posuđeni kapital",
+          "stope inflacije u gospodarstvu",
+          "stope viška vrijednosti u grani",
+          "devizne stope središnje banke"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "830mri",
+        "question": "Anuitet se sastoji od:",
+        "options": [
+          "najamnine i rente",
+          "dividende i profita",
+          "glavnice i kamate",
+          "amortizacije i kamate"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "hmyr2d",
+        "question": "Veća ponuda kredita dovodi do:",
+        "options": [
+          "više kamatne stope",
+          "jednake kamatne stope",
+          "niže kamatne stope",
+          "ukidanja kamate"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zgcuxe",
+        "question": "Poduzetnik radi uglavnom s:",
+        "options": [
+          "tuđim, pozajmljenim kapitalom",
+          "isključivo vlastitim kapitalom",
+          "državnim novcem",
+          "zlatnim rezervama"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "cu6zzi",
+        "sentence": "Odnos ostvarene kamate i posuđenog kapitala je _______ stopa.",
+        "answer": "kamatna",
+        "hint": "relativni pokazatelj"
+      },
+      {
+        "id": "5hlgli",
+        "sentence": "Profit se dijeli na kamatu i _______ dobit.",
+        "answer": "poduzetničku",
+        "hint": "nagrada za organizaciju"
+      },
+      {
+        "id": "rd8r96",
+        "sentence": "Jednaki periodični iznos otplate kredita naziva se _______.",
+        "answer": "anuitet",
+        "hint": "glavnica + kamata"
+      }
+    ],
+    "learn": {
+      "id": "er2lr6",
+      "title": "Kreditni (kamatonosni) kapital",
+      "content": "\n<h3>Kreditni (kamatonosni) kapital</h3>\n<p>U kapitalizmu novac osim funkcija ima i funkciju <strong>kapitala</strong>. Svaki kapitalni odnos (osim prvobitne akumulacije) počinje novčanim oblikom radi „oplodnje\". Vlasnik novca može: (1) sam kupiti kapitalna dobra, materijale i radnu snagu ili (2) ustupiti novac drugom kapitalistu koji će ga oploditi. Besplatno ga neće ustupiti — traži uz povrat glavnice i dio zarade (<strong>kamatu</strong>).</p>\n<p><strong>Kreditni (kamatonosni) kapital</strong> je kapital koji se daje kao kredit, tj. koji se posuđuje. Opći obrazac: <strong>N – N′</strong>; proces oplodnje obavlja drugi kapitalist ulažući u proizvodnju ili realizaciju robe. Kamatonosni kapital osamostaljeni je dio industrijskog kapitala jer nastaje privremenim oslobađanjem iznosa iz kružnog kretanja kapitala, i to: <em>fond amortizacije</em> (do zamjene sredstava), <em>povrat sredstava utrošenih na materijalna dobra</em> (do ponovne nabave), <em>realizirana vrijednost radne snage</em> (do isplate radnicima), <em>fond akumulacije</em> (do trenutka ulaganja) te štednja stanovništva. Gotovo svi izvori nalaze se u bankama.</p>\n<p><strong>Uloga:</strong> omogućuje brže proširenje proizvodnje, racionalno korištenje privremeno oslobođenog kapitala, osigurava kontinuitet proizvodnje i kad industrijalac ne uspije realizirati robu; visoko razvijeni kreditni sustavi omogućuju platni promet bez gotovog novca (smanjuju troškove tiskanja novca); olakšava seljenje kapitala iz grane u granu pa dovodi do izjednačavanja profitnih stopa na prosječnu.</p>\n<p>Kamatonosni kapital ima <em>dvostruku vrijednost</em>: jedna se očituje kroz društveno potreban rad, a druga je cijena upotrebne vrijednosti njegove sposobnosti da služi kao kapital.</p>\n<h3>Kamata i kamatna stopa</h3>\n<ul>\n<li><strong>Kamata</strong> — dohodak koji dobiva vlasnik posuđenog kapitala; vrsta cijene kreditnog kapitala za privremeno ustupljenu uporabnu vrijednost njegova novčanog kapitala. Zajmodavac ostaje pravi vlasnik novca; dužnik ga vraća uvećanog za kamatu (ustupajući dio profita).</li>\n<li><strong>Kamatna stopa</strong> — relativni pokazatelj uspješnosti plasmana novčanih sredstava: odnos ostvarene kamate i posuđenog kapitala.</li>\n<li><strong>Anuitet</strong> — određeni novčani iznos koji se redovito, u jednakim vremenskim razmacima uplaćuje radi podmirenja duga; sastoji se od dijela glavnice i kamate; iznos je nepromjenjiv kroz razdoblje otplate, a omjer glavnice i kamate se mijenja.</li>\n</ul>\n<h4>Faktori o kojima ovisi visina kamatne stope</h4>\n<ol>\n<li><strong>visina profitne stope</strong> — okvir u kojem se kreće kamatna stopa: ne bi bilo logično da korisnik plaća kamatu veću od profita posuđenog kapitala ni da je kamatna stopa jednaka nuli (novac besplatno); iznimno je kamatna stopa viša od profitne kad kapitalist mora spasiti proizvodnju ili zalihe;</li>\n<li><strong>ponuda i potražnja za kreditima</strong> — veća ponuda snižava, veća potražnja povisuje kamatu; dionički kapital usporava potražnju za kreditima;</li>\n<li><strong>država</strong> — izravno (određivanjem kamatne stope) ili neizravno (mjerama ekonomske politike).</li>\n</ol>\n<h3>Kamata i poduzetnička dobit</h3>\n<p><strong>Poduzetnik</strong> je privrednik koji ima znanje i sposobnosti da koristeći tuđa sredstva, najčešće kredite, organizira proizvodnju i ostvari profit; radi s pozajmljenim (tuđim) kapitalom. Od profita mora izdvojiti kamatu za kreditora; ono što ostane nakon oduzimanja kamate je <strong>poduzetnička dobit</strong>.</p>\n<div class=\"formula-box\">PROFIT = KAMATA + PODUZETNIČKA DOBIT</div>\n<p>Kamatu donosi kapital <em>svojim posuđenim</em> (nadnovčanim) kapitalom, poduzetničku dobit <em>kapital u funkciji</em> — nagrada kapitalistu u funkciji za poduzetničko-organizatorski rad. Bez proizvodnje nema profita, pa ni kamate. Poduzetnici smatraju poduzetničku dobit ekvivalentom za svoj rad, a ne dijelom viška vrijednosti.</p>\n"
+    },
+    "id": "qrg547"
+  },
+  "peBanks": {
+    "name": "Banke i bankovni poslovi",
+    "icon": "fa-building-columns",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "0246d7",
+        "question": "Što su banke?",
+        "answer": "Ustanove koje posreduju u kreditima: prikupljaju slobodna novčana sredstva iz svih izvora i plasiraju ih kreditima na tržištu novca i kapitala.",
+        "explanation": "Tržište novčanog kapitala."
+      },
+      {
+        "id": "1m6ktd",
+        "question": "Što je kredit i koje su mu osnovne vrste?",
+        "answer": "Privredno-pravni odnos ustupanja prava raspolaganja novcem na vrijeme i uz uvjete. Vrste: robni/novčani, potrošački/proizvođački (obrtni, investicijski), kratkoročni/srednjoročni/dugoročni.",
+        "explanation": "Razdvaja vlasništvo od raspolaganja."
+      },
+      {
+        "id": "gw4c3y",
+        "question": "Po kojim načelima posluje banka?",
+        "answer": "Po načelu sigurnosti (hoće li dužnik vratiti dug) i načelu likvidnosti (mogućnost izvršenja obveza u svakom trenutku).",
+        "explanation": "Dva načela."
+      },
+      {
+        "id": "j4txxu",
+        "question": "Koji su osnovni bankovni poslovi?",
+        "answer": "Aktivni (banka vjerovnik), pasivni (banka dužnik), neutralni (posrednik) i vlastiti (u korist banke).",
+        "explanation": "Četiri skupine."
+      },
+      {
+        "id": "s21uqr",
+        "question": "Što su pasivni, a što aktivni bankovni poslovi?",
+        "answer": "Pasivni: banka dužnik, plaća pasivnu kamatu (depoziti, emisija). Aktivni: banka vjerovnik, naplaćuje aktivnu kamatu (krediti, eskont mjenica).",
+        "explanation": "Depoziti vs. krediti."
+      },
+      {
+        "id": "x5yer3",
+        "question": "Što su neutralni, a što vlastiti bankovni poslovi?",
+        "answer": "Neutralni: za komitente uz proviziju (platni promet). Vlastiti: transakcije i špekulacije za svoj račun (burza, vlastite poslovnice).",
+        "explanation": "Provizija vs. dividende i profit."
+      },
+      {
+        "id": "ch6tyx",
+        "question": "Što je bankovna dobit?",
+        "answer": "Dobit banke, najčešće razlika između više aktivne i niže pasivne kamatne stope.",
+        "explanation": "Tako banka akumulira sredstva."
+      },
+      {
+        "id": "h0ewkq",
+        "question": "Koje vrste banaka postoje?",
+        "answer": "Novčane (središnje/emisijske), depozitne, poslovne, investicijske banke i osiguravajuća društva.",
+        "explanation": "Prema aktivnostima."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "tdy14s",
+        "question": "Posao u kojem je banka dužnik i plaća pasivnu kamatu je:",
+        "options": [
+          "aktivni posao",
+          "neutralni posao",
+          "vlastiti posao",
+          "pasivni posao"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "tii0ox",
+        "question": "Davanje kredita je:",
+        "options": [
+          "pasivni bankovni posao",
+          "aktivni bankovni posao",
+          "neutralni bankovni posao",
+          "vlastiti bankovni posao"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "gzmzts",
+        "question": "Provizija se naplaćuje kod:",
+        "options": [
+          "aktivnih poslova",
+          "neutralnih poslova",
+          "pasivnih poslova",
+          "vlastitih poslova"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cowkyk",
+        "question": "Burzovni poslovi za vlastiti račun banke su:",
+        "options": [
+          "neutralni poslovi",
+          "pasivni poslovi",
+          "aktivni poslovi",
+          "vlastiti poslovi"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "voom8b",
+        "question": "Mogućnost banke da u svakom trenutku izvrši svoje obveze je načelo:",
+        "options": [
+          "likvidnosti",
+          "sigurnosti",
+          "rentabilnosti",
+          "solidarnosti"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "4rq084",
+        "question": "Brigu da dužnik vrati dug po ugovoru izražava načelo:",
+        "options": [
+          "likvidnosti",
+          "provizije",
+          "sigurnosti",
+          "amortizacije"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "o9omvj",
+        "question": "Banke koje izdaju novčanice i rade poslove za državu su:",
+        "options": [
+          "depozitne i štedne",
+          "investicijske i razvojne",
+          "središnje (emisijske)",
+          "osiguravajuća društva"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "0l5xib",
+        "question": "Banke za dugoročno financiranje razvoja su:",
+        "options": [
+          "investicijske (razvojne)",
+          "depozitne",
+          "emisijske (središnje)",
+          "štedionice i zadruge"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "y45ml3",
+        "question": "Bankovna dobit najčešće je razlika između:",
+        "options": [
+          "najamnine i profita",
+          "dividende i rente",
+          "cijene koštanja i prodajne cijene",
+          "aktivne i pasivne kamatne stope"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "e83rni",
+        "sentence": "Kad je banka dužnik, riječ je o _______ bankovnim poslovima.",
+        "answer": "pasivnim",
+        "hint": "depoziti"
+      },
+      {
+        "id": "5a5438",
+        "sentence": "Za neutralne poslove banka naplaćuje bankovnu _______.",
+        "answer": "proviziju",
+        "hint": "posrednik"
+      },
+      {
+        "id": "6sn15l",
+        "sentence": "Načelo koje znači izvršavanje obveza u svakom trenutku je načelo _______.",
+        "answer": "likvidnosti",
+        "hint": "sposobnost plaćanja"
+      }
+    ],
+    "learn": {
+      "id": "hb7jdp",
+      "title": "Banke, krediti i bankovni poslovi",
+      "content": "\n<h3>Banka i kredit</h3>\n<p><strong>Banka</strong> je ustanova ili poduzeće koje se bavi posredovanjem u oblasti kredita: prikuplja slobodna novčana sredstva iz svih izvora i plasira ih kreditima na tržištu novca i kapitala; postaje tržište novčanog kapitala. Prima novac u polog (depozit) i plasira ga u kredite i novčane investicije; depozitni i kreditni poslovi najvažnije su obilježje. Banke obično posuđuju kapital kapitalistima kojima je potreban pa se pojavljuju kao kreditor i ubiru kamatu.</p>\n<p><strong>Kredit</strong> je stvarni privredno-pravni odnos zasnovan na ustupanju prava raspolaganja novcem (ili drugim predmetom) na izvjesno vrijeme i pod dogovorenim uvjetima koje kreditor daje dužniku; privremeno razdvaja vlasništvo od raspolaganja.</p>\n<ul>\n<li>prema predmetu: <strong>robni i novčani</strong>;</li>\n<li>prema svrsi: <strong>potrošački i proizvođački</strong>; proizvođački dalje na <em>obrtne i investicijske</em>;</li>\n<li>prema roku povrata: <strong>kratkoročni</strong> (do 2 godine), <strong>srednjoročni</strong> (2–10 godina) i <strong>dugoročni</strong>.</li>\n</ul>\n<h4>Načela poslovanja banke</h4>\n<ul>\n<li><strong>sigurnost</strong> — banka pazi pri odobravanju kredita hoće li dužnik moći u roku vratiti dug po ugovorenim uvjetima;</li>\n<li><strong>likvidnost</strong> — mogućnost banke da u svakom trenutku izvrši preuzete obveze, tj. svakom komitentu stavi na raspolaganje cijeli iznos njegovih deponiranih sredstava.</li>\n</ul>\n<h3>Bankovni poslovi</h3>\n<table>\n<tr><th>Posao</th><th>Uloga banke</th><th>Primjeri</th></tr>\n<tr><td><strong>Pasivni</strong></td><td>banka je <em>dužnik</em> i vjerovnicima plaća <strong>pasivnu kamatu</strong></td><td>emisija novca i vrijednosnih papira, prikupljanje depozita, poslovanje sa žiroračunima, štedni ulozi</td></tr>\n<tr><td><strong>Aktivni</strong></td><td>banka je <em>vjerovnik</em>, dužnici plaćaju <strong>aktivnu kamatu</strong></td><td>davanje kredita, kredit po tekućem računu (prekoračenje), eskontiranje mjenica, hipotekarni (dugoročni zajmovi uz zalog nekretnina), lombardni (zajam uz zalog pokretnina — nakit, roba u skladištu), investicijski krediti</td></tr>\n<tr><td><strong>Neutralni</strong> (posrednički)</td><td>banka radi za svoje komitente i naplaćuje <strong>bankovnu proviziju</strong></td><td>platni promet, devizna arbitraža, izvršenje burzovnog naloga komitenta</td></tr>\n<tr><td><strong>Vlastiti</strong></td><td>banka obavlja transakcijske ili špekulativne poslove isključivo za svoj račun (dividende, profiti)</td><td>burzovni poslovi, osnivanje vlastitih poslovnica ili poduzeća, udjeli u drugim poduzećima</td></tr>\n</table>\n<p><strong>Bankovna dobit</strong> je dobit koju banka ostvaruje poslovanjem; najčešće razlika između više, <em>aktivne</em>, i niže, <em>pasivne</em> kamatne stope. Tako banka akumulira vlastita novčana sredstva.</p>\n<h3>Vrste banaka</h3>\n<p><strong>Prema aktivnostima (vrsti poslova):</strong></p>\n<ul>\n<li><strong>novčane (novčanične) banke</strong> — središnje, emisijske ustanove: izdaju novčanice i obavljaju poslove za državu;</li>\n<li><strong>depozitne</strong> — prikupljaju novčana sredstva i štedne uloge iz svih izvora i plasiraju ih uglavnom u kratkoročne kredite (štedionice, kreditne zadruge);</li>\n<li><strong>poslovne banke</strong> — na njih se oslanjaju velika poduzeća, posebno veliki koncerni;</li>\n<li><strong>investicijske (razvojne)</strong> — dugoročni plasman sredstava (hipotekarni i investicijski krediti), dugoročno financiranje gospodarskog razvoja za osnovna sredstva i kapitalnu izgradnju;</li>\n<li><strong>osiguravajuća društva</strong> — banke posebne vrste; prikupljaju sredstva na temelju izdanih polica osiguranja.</li>\n</ul>\n<p><strong>Druga, alternativna podjela koja se također susreće u gradivu:</strong> <em>novčanične</em> banke (središnje, emisijske ustanove: izdaju novčanice i rade poslove za državu); <em>poslovne (komercijalne, depozitne, kreditne)</em> banke — prikupljaju kapitale i štedne uloge i ulažu ih u kreditne poslove, kratkoročno financiraju proizvodnju i promet, odobravaju potrošačke kredite i imaju veliku mrežu podružnica; <em>razvojne (investicijske)</em> banke — dugoročno financiraju gospodarski razvoj iz dugoročno slobodnih sredstava štednje.</p>\n<p>Prema <strong>pravnom obliku</strong>: privatne (vlasnici su privatne osobe), javnopravne (vlasnik država ili uža teritorijalno-politička jedinica) i povlaštene (uživaju zakonske povlastice, najvažnija je izdavanje novčanica). Prema <strong>širini poslovanja</strong>: univerzalne (većina ili svi bankovni poslovi) i specijalne (pojedine vrste poslova ili klijenata).</p>\n"
+    },
+    "id": "rgprgf"
+  },
+  "peShares": {
+    "name": "Dionički kapital",
+    "icon": "fa-chart-column",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "id": "qld4uz",
+        "question": "Što je dionički kapital?",
+        "answer": "Kapital nastao udruživanjem više individualnih kapitala kupnjom dionica kao vrijednosnih papira.",
+        "explanation": "Dioničko društvo."
+      },
+      {
+        "id": "rpu0rw",
+        "question": "Što je dionica?",
+        "answer": "Vrijednosni papir kojim kupac postaje suvlasnik dioničkog društva razmjerno vrijednosti dionica; pravna potvrda o suvlasništvu.",
+        "explanation": "Strogo formalan vrijednosni papir."
+      },
+      {
+        "id": "me7ufe",
+        "question": "Koja prava ima vlasnik dionice?",
+        "answer": "Pravo na dio profita (dividendu), pravo sudjelovanja u upravljanju društvom i pravo na prodaju dionica.",
+        "explanation": "Imovinska i upravljačka prava."
+      },
+      {
+        "id": "8u1tk7",
+        "question": "Što je simultano, a što sukcesivno osnivanje?",
+        "answer": "Simultano: osnivači sami otkupe sve dionice. Sukcesivno: javni poziv građanima i pravnim osobama za otkup dionica.",
+        "explanation": "Sukcesivno traži javni poziv."
+      },
+      {
+        "id": "uzvit0",
+        "question": "Što je dividenda i po čemu se razlikuje od kamate?",
+        "answer": "Dohodak dioničara ovisan o profitu društva; određuje se naknadno i cijeli je profit, dok je kamata unaprijed utvrđena i samo dio profita.",
+        "explanation": "Po ZTD-u dio dobiti ide u zakonske pričuve, a o dividendi odlučuje skupština (čl. 222, 275)."
+      },
+      {
+        "id": "4aff0n",
+        "question": "Što je nominalna vrijednost dionice?",
+        "answer": "Iznos otisnut na dionici koji se ne mijenja; određuje unesen kapital i postotak udjela u dobiti (dividendi).",
+        "explanation": "Po ZTD-u postoje i dionice bez nominalnog iznosa (čl. 163.)."
+      },
+      {
+        "id": "t1xss4",
+        "question": "Kako se računa cijena dionice?",
+        "answer": "C = N × d / k: nominalna vrijednost puta dividendna stopa podijeljeno s kamatnom stopom.",
+        "explanation": "Npr. 1000 × 9 / 6 = 1500."
+      },
+      {
+        "id": "xu9utt",
+        "question": "Kako računamo osnivačku dobit?",
+        "answer": "Zarada od prodaje svih dionica po cijeni dionice minus potreban (osnivački) kapital: npr. 45 000 000 − 30 000 000 = 15 000 000.",
+        "explanation": "Cijena dionice × broj dionica − kapital."
+      },
+      {
+        "id": "lzl0hd",
+        "question": "Zašto je dionica fiktivni kapital?",
+        "answer": "Jer je nastala kapitalizacijom prihoda: razdvaja kapital-vlasništvo od kapital-funkcije; kapital koji ustvari ne postoji u tom obliku.",
+        "explanation": "Kupoprodaja dionica."
+      },
+      {
+        "id": "0txlal",
+        "question": "Što je kontrolni paket dionica?",
+        "answer": "Broj dionica koji vlasniku ugovorom osigurava kontrolu nad upravljanjem dioničkim društvom (u trustu 25–30 % dionica).",
+        "explanation": "Kontrola bez većine svih dionica."
+      },
+      {
+        "id": "qdbwni",
+        "question": "Koji su organi dioničkog društva?",
+        "answer": "Skupština (najviše tijelo, svi dioničari), upravni odbor/uprava (upravlja) i nadzorni odbor (nadzire).",
+        "explanation": "Ispitno pitanje."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "8nuigd",
+        "question": "Cijena dionice određuje se formulom:",
+        "options": [
+          "N × k / d",
+          "N × d / k",
+          "N / (d × k)",
+          "N + d − k"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ddczs4",
+        "question": "Dionica nominalne vrijednosti 1000, uz dividendnu stopu 9 % i kamatnu 6 %, ima cijenu:",
+        "options": [
+          "600",
+          "1500",
+          "1350",
+          "1000"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r3o0gz",
+        "question": "Ako je cijena dionice 1500 i izdano je 30 000 dionica uz potreban kapital 30 000 000, osnivačka dobit je:",
+        "options": [
+          "45 000 000",
+          "30 000 000",
+          "1 500 000",
+          "15 000 000"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "fljyo4",
+        "question": "Osnivanje u kojem osnivači sami otkupe sve dionice je:",
+        "options": [
+          "simultano",
+          "sukcesivno",
+          "javno",
+          "derivirano"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "4twraf",
+        "question": "Najviše tijelo dioničkog društva je:",
+        "options": [
+          "nadzorni odbor društva",
+          "uprava (upravni odbor)",
+          "skupština dioničara",
+          "burza vrijednosnih papira"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "l0a0le",
+        "question": "Kontrolu nad poslovanjem i godišnjim izvještajima obavlja:",
+        "options": [
+          "uprava društva",
+          "burza vrijednosnih papira",
+          "nadzorni odbor",
+          "komercijalna banka društva"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "jjrbne",
+        "question": "Za razliku od kamate, dividenda:",
+        "options": [
+          "se određuje naknadno prema profitu",
+          "se utvrđuje unaprijed ugovorom",
+          "je uvijek samo dio profita",
+          "ne ovisi o poslovanju društva"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "68zq0g",
+        "question": "Dionice s pravom na dividendu u unaprijed utvrđenom iznosu su:",
+        "options": [
+          "redovne (obične)",
+          "trezorske (vlastite)",
+          "dionice na donositelja",
+          "povlaštene (prioritetne)"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "5r0tmp",
+        "question": "Cijena dionice ovisi o nominalnoj vrijednosti, dividendnoj stopi i:",
+        "options": [
+          "stopi inflacije",
+          "kamatnoj stopi",
+          "stopi viška vrijednosti",
+          "broju radnika"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "6fym3t",
+        "sentence": "Kupnjom dionica kupac postaje _______ dioničkog društva.",
+        "answer": "suvlasnik",
+        "hint": "pravna potvrda"
+      },
+      {
+        "id": "d12sda",
+        "sentence": "Prihod koji donosi dionica naziva se _______.",
+        "answer": "dividenda",
+        "hint": "ovisi o profitu"
+      },
+      {
+        "id": "e1x58g",
+        "sentence": "Dionica je _______ kapital jer kapital zapravo ne postoji u tom obliku.",
+        "answer": "fiktivni",
+        "hint": "nastao kapitalizacijom prihoda"
+      },
+      {
+        "id": "zc2e8d",
+        "sentence": "Broj dionica koji vlasniku osigurava kontrolu nad upravljanjem društvom je kontrolni _______ dionica.",
+        "answer": "paket",
+        "hint": "dio dionica uz kontrolu"
+      }
+    ],
+    "learn": {
+      "id": "bv85tj",
+      "title": "Dionički kapital",
+      "content": "\n<h3>Dioničko društvo i dionica</h3>\n<p><strong>Dionički kapital</strong> nastaje udruživanjem većeg ili manjeg broja individualnih kapitala u jedinstveni kapital, i to <strong>kupnjom dionica</strong> (vrijednosnih papira) koje predstavljaju pravnu potvrdu o suvlasništvu u dioničkom društvu. Dioničko društvo je poduzeće nastalo tim udruživanjem. Dionica je vrijednosni papir izdan u zakonskom obliku kojim kupac postaje suvlasnik društva razmjerno vrijednosti kupljenih dionica.</p>\n<p><strong>Prava vlasnika dionice:</strong> pravo sudjelovanja u raspodjeli ostvarenog profita (dividenda), pravo sudjelovanja u upravljanju društvom ovisno o vrijednosti dionica te pravo na prodaju dionica. To su <em>imovinska</em> (dividenda) i <em>upravljačka</em> prava (pravo glasa na glavnoj skupštini).</p>\n<h4>Osnivanje dioničkog društva</h4>\n<p>Osnivači izrađuju dokumentaciju iz koje je vidljiva visina osnivačkog kapitala; nakon odobrenja izdaju se dionice čija ukupna nominalna vrijednost iznosi koliko je predviđen osnivački kapital; prva emisija obavlja se putem banke, a kad se sve dionice prodaju, društvo može započeti. <strong>Osnivački kapital</strong> = broj izdanih dionica × nominalna vrijednost.</p>\n<ul>\n<li><strong>simultano osnivanje</strong> — sami osnivači pri osnivanju otkupe sve dionice;</li>\n<li><strong>sukcesivno osnivanje</strong> — javni poziv građanima i pravnim osobama za otkup dionica (osnivači nemaju dovoljno sredstava da otkupe sve).</li>\n</ul>\n<h3>Dividenda</h3>\n<p><strong>Dividenda</strong> je prihod koji donosi dionica; dohodak koji, ovisno o uspješnosti poslovanja društva, prisvajaju dioničari. Novčani je dohodak od vlasništva pa se može poistovjetiti s kamatom, ali ima specifičnosti:</p>\n<ul>\n<li>kamata je utvrđena <em>unaprijed</em>, a dividenda se određuje <em>naknadno</em> i isključivo ovisi o profitu koji je društvo ostvarilo;</li>\n<li>kamata je <em>dio</em> profita (drugi je dio poduzetnička dobit), a dividenda je <em>cijeli profit</em> dioničkog društva (na temelju vlasništva nad kapitalom).</li>\n</ul>\n<p><em>Napomena o izmjeni:</em> prema Zakonu o trgovačkim društvima dio dobiti obvezno se izdvaja u zakonske pričuve (čl. 222), a o upotrebi dobiti odlučuje glavna skupština (čl. 275), pa dividenda nije nužno cijeli profit društva.</p>\n<p>Dioničar se kupnjom izlaže riziku hoće li dobiti više nego da je novac uložio u banku. Motiv kupnje je očekivanje da će dividendna stopa rasti brže od kamatne.</p>\n<h3>Nominalna vrijednost i cijena dionice</h3>\n<p><strong>Nominalna vrijednost</strong> je iznos otisnut na dionici koji se ne može promijeniti; određuje koliko je kapitala pojedinac unio u društvo i postotak udjela u raspodjeli profita (iznos dividende). Zbroj vrijednosti svih dionica daje vrijednost društva.</p>\n<p><em>Napomena o izmjeni:</em> prema Zakonu o trgovačkim društvima dionice mogu glasiti na nominalni iznos ili biti bez nominalnog iznosa (čl. 163. st. 1), a mogu se izdati i kao nematerijalizirani vrijednosni papiri bez isprave (čl. 170. st. 2, čl. 226. st. 2). Opis dionice kao isprave s nominalnim iznosom i kuponima vrijedi za klasičnu, materijaliziranu dionicu.</p>\n<p>Vlasnik dionice prodajom ustvari prodaje dividendu koju ona donosi. <strong>Cijena dionice</strong> ovisi o tri čimbenika: nominalnoj vrijednosti, visini dividendne stope i visini kamatne stope.</p>\n<div class=\"formula-box\">\\[ C = \\frac{N \\cdot d}{k} \\]\nC – cijena dionice · N – nominalna vrijednost · d – dividendna stopa · k – kamatna stopa</div>\n<p><strong>Kontrolni paket dionica</strong> je broj dionica koji vlasniku osigurava kontrolu nad upravljanjem dioničkim društvom.</p>\n<p><strong>Burze</strong> su mjesta gdje se dionice kupuju i prodaju po načelu ponude i potražnje; vezane su uz špekulativne poslove.</p>\n<h4>Zadatak: osnivačka dobit</h4>\n<p>Potreban kapital društva 30 000 000; izdano 30 000 dionica; nominalna vrijednost dionice 1000; kamatna stopa 6 %; dividendna stopa 9 %.</p>\n<ol>\n<li>Cijena dionice: C = 1000 × 9 / 6 = <strong>1500</strong>.</li>\n<li>Zarada pri prodaji svih dionica: 30 000 × 1500 = 45 000 000.</li>\n<li>Osnivačka dobit = zarada − potreban kapital = 45 000 000 − 30 000 000 = <strong>15 000 000</strong>.</li>\n</ol>\n<h3>Dionica — fiktivni kapital</h3>\n<p>Dionica je strogo formalan vrijednosni papir koji se sastoji od dva dijela: (1) u prvom su osnovni elementi (naznaka da je dionica i vrste dionice, tvrtka i sjedište izdavatelja, ime kupca ili oznaka na koju glasi, ukupan iznos, postotak nominalne vrijednosti za dividendu, rokovi isplate, mjesto i datum izdavanja, serijski broj, faksimil potpisa) i (2) kuponi za isplatu dividende (redni broj, naziv izdavatelja, godina isplate, faksimil).</p>\n<p><strong>Vrste:</strong> prema pravima — <em>redovne (obične)</em> (pravo glasa na glavnoj skupštini, pravo na dividendu i na dio ostatka imovine nakon likvidacije) i <em>povlaštene (prioritetne)</em> (npr. pravo na dividendu u unaprijed utvrđenom iznosu); <em>vlastite (trezorske)</em> dionice — koje je steklo društvo koje ih je izdalo, ne nose prava na dividendu i glasa dok ih društvo drži. Dionica može glasiti <em>na ime</em> (vodi se u knjizi; prenosi se indosamentom ili cesijom) i <em>na donositelja</em> (prenosi se predajom).</p>\n<p><strong>Zašto je dionica fiktivni kapital?</strong> Fiktivni kapital je kapital nastao kapitalizacijom prihoda; kapital koji ustvari ne postoji u obliku u kojem se kupuje i prodaje. U razvijenom kapitalizmu razdvojen je <em>kapital-vlasništvo</em> od <em>kapital-funkcije</em>, pa vlasništvo nad novčanim iznosom postaje izvor prihoda.</p>\n<h3>Organi dioničkog društva</h3>\n<ul>\n<li><strong>skupština (glavna skupština)</strong> — najviše tijelo; čine je svi dioničari ovisno o visini vrijednosti dionica; odlučuje o statutu, programu rada i planovima razvoja, poslovnoj politici, raspodjeli dobiti (visina dividende), godišnjem obračunu;</li>\n<li><strong>upravni odbor (uprava)</strong> — operativni realizator odluka skupštine; postavlja i razrješava direktore, donosi planove i opće akte; društvom upravlja profesionalac;</li>\n<li><strong>nadzorni odbor</strong> — nadzire materijalna sredstva, kontrolira godišnje izvještaje te obračun i prijedlog raspodjele dobiti.</li>\n</ul>\n<p><em>Dopuna:</em> prema hrvatskom Zakonu o trgovačkim društvima u dvodomnom sustavu društvom upravlja uprava, a nadzorni odbor, koji bira glavna skupština, nadzire njezin rad i imenuje članove uprave; zakon dopušta i jednodomni sustav s upravnim odborom.</p>\n"
+    },
+    "id": "txdn00"
+  },
+  "peRent": {
+    "name": "Zemljišne rente",
+    "icon": "fa-seedling",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "id": "io1xzx",
+        "question": "Što je zemljišna renta?",
+        "answer": "Dohodak što ga prisvaja zakonski vlasnik na temelju privatnog vlasništva nad prirodnim dobrom; plaća ga zakupac temeljem ugovora o zakupu.",
+        "explanation": "Ako vlasnik sam obrađuje, renta je u profitu."
+      },
+      {
+        "id": "6r58h7",
+        "question": "Kako se formira cijena poljoprivrednih proizvoda?",
+        "answer": "Prema najlošijim uvjetima proizvodnje (regulatorni troškovi), uz prosječan profit i apsolutnu rentu: C = K + N + pp + ar.",
+        "explanation": "Najviši troškovi po jedinici određuju cijenu."
+      },
+      {
+        "id": "xinnce",
+        "question": "Što je diferencijalna renta i kako se dijeli?",
+        "answer": "Ekstraprofit nastao iz razlike regulatornih troškova i cijene proizvodnje; dijeli se na I.a, I.b i II.",
+        "explanation": "Tri oblika."
+      },
+      {
+        "id": "emgc0y",
+        "question": "Što je diferencijalna renta I.a, a što I.b?",
+        "answer": "I.a nastaje zbog različite plodnosti tla; I.b zbog različite udaljenosti parcela od tržišta (prijevoz).",
+        "explanation": "Plodnost vs. udaljenost."
+      },
+      {
+        "id": "nfsv49",
+        "question": "Što je diferencijalna renta II.?",
+        "answer": "Ekstraprofit zemljovlasniku zbog trajnog poboljšanja zemljišta dodatnim ulaganjem kapitala (melioracije, desalinizacija, krčenje makije, prometnica).",
+        "explanation": "Pri novom zakupu postaje renta I."
+      },
+      {
+        "id": "9b8kcy",
+        "question": "Što je apsolutna renta?",
+        "answer": "Renta na svakom zemljištu (i najlošijem) kao naknada za korištenje; razlika profita u poljodjelstvu i prosječne profitne stope; nastaje privatnim vlasništvom.",
+        "explanation": "Smetnja razvitku poljodjelstva."
+      },
+      {
+        "id": "q5jenx",
+        "question": "Kada se javlja monopolska renta?",
+        "answer": "Kad se na parceli zbog posebnih prirodnih uvjeta proizvode proizvodi koji se ne mogu proizvesti drugdje.",
+        "explanation": "Rijetka prirodna okolnost."
+      },
+      {
+        "id": "8qssw4",
+        "question": "Ima li zemljište vrijednost i cijenu?",
+        "answer": "Nema vrijednost jer nije proizvod rada, ali ima cijenu jer je na tržištu; cijena je kapitalizirana renta: R × 100 / k.",
+        "explanation": "Kupuje se renta."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "uf0xva",
+        "question": "Rentu zemljovlasniku plaća:",
+        "options": [
+          "država",
+          "zakupac",
+          "trgovac",
+          "dioničar"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zk3ycy",
+        "question": "Cijenu poljoprivrednih proizvoda određuju:",
+        "options": [
+          "najbolji uvjeti proizvodnje",
+          "prosječni uvjeti svih proizvođača",
+          "država administrativno",
+          "najlošiji uvjeti proizvodnje"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "9sv7r3",
+        "question": "Renta koja nastaje zbog različite plodnosti tla je:",
+        "options": [
+          "diferencijalna renta I.a",
+          "diferencijalna renta I.b",
+          "diferencijalna renta II.",
+          "apsolutna renta"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "4t3fg4",
+        "question": "Renta koja nastaje zbog različite udaljenosti od tržišta je:",
+        "options": [
+          "diferencijalna renta I.a",
+          "diferencijalna renta II.",
+          "diferencijalna renta I.b",
+          "monopolska renta"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "65yx63",
+        "question": "Navodnjavanje i krčenje makije radi trajnog poboljšanja tla stvaraju:",
+        "options": [
+          "diferencijalnu rentu I.",
+          "apsolutnu rentu",
+          "diferencijalnu rentu II.",
+          "monopolsku rentu"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "y538af",
+        "question": "Renta koja se ostvaruje na svakom, pa i najlošijem zemljištu, je:",
+        "options": [
+          "apsolutna renta",
+          "diferencijalna renta",
+          "monopolska renta",
+          "novčana renta"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "0xbjws",
+        "question": "Zemljište nema vrijednost jer:",
+        "options": [
+          "donosi samo apsolutnu rentu",
+          "je površinom ograničeno",
+          "se ne pojavljuje na tržištu",
+          "nije proizvod ljudskog rada"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "e8tc0q",
+        "question": "Cijena zemljišta računa se kao:",
+        "options": [
+          "renta × kamatna stopa / 100",
+          "renta × 100 / kamatna stopa",
+          "renta / profitna stopa",
+          "renta + kamatna stopa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "24k2wh",
+        "question": "Uz godišnju rentu 6 000 i kamatnu stopu 5 %, cijena zemljišta je:",
+        "options": [
+          "30 000",
+          "120 000",
+          "300 000",
+          "12 000"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "ymty6z",
+        "sentence": "Ugovor kojim se zemljište daje na korištenje uz rentu je ugovor o _______.",
+        "answer": "zakupu",
+        "hint": "plaća ga zakupac"
+      },
+      {
+        "id": "4avsmu",
+        "sentence": "Cijena zemljišta je kapitalizirana zemljišna _______.",
+        "answer": "renta",
+        "hint": "dohodak vlasnika"
+      },
+      {
+        "id": "mq21j1",
+        "sentence": "Najviši troškovi proizvodnje po jedinici proizvoda zovu se _______ troškovi.",
+        "answer": "regulatorni",
+        "hint": "određuju cijenu"
+      }
+    ],
+    "learn": {
+      "id": "zl1max",
+      "title": "Zemljišne rente",
+      "content": "\n<h3>Pojam rente</h3>\n<p><strong>Renta</strong> je stjecanje novca bez vlastitog rada, na temelju vlasništva; dohodak koji u naravi ili novcu stječe osoba (rentijer) bez vlastitog rada ili poduzetničkog djelovanja. <strong>Zemljišna renta</strong> je dohodak koji prisvaja zakonski vlasnik na temelju privatnog vlasništva nad prirodnim dobrom (zemljištem); ekonomski oblik naplate korištenja zemljišnog vlasništva. Rentu plaća <strong>zakupac</strong> temeljem <em>ugovora o zakupu</em>. Ako zemljovlasnik sam obrađuje zemlju, renta je uključena u ostvareni profit. Vlasnici zemljišta ne organiziraju proizvodnju, nego zemlju daju u zakup.</p>\n<p>Privatno vlasništvo nad zemljom karakteristika je feudalizma: vlasnik je feudalac, a prisvajao je <em>radnu, proizvodnu (naturalnu) i novčanu rentu</em>. U kapitalizmu se privatno vlasništvo nad zemljom kapitalizira i postaje predmet kupnje i prodaje radi stjecanja profita. Ulaganje kapitala u kupnju zemljišta nema proizvodni karakter, već je stjecanje prava vlasništva koje donosi dohodak; kupnjom se stječe <em>monopol za korištenje određenog prirodnog izvora</em>.</p>\n<p>Dvije specifičnosti: prirodni uvjeti svakog zemljišta različiti su (pa nastaju diferencijalne rente) i ograničena je zemljina površina (obradivo tlo).</p>\n<h3>Cijena poljoprivrednih proizvoda</h3>\n<p>Formira se na temelju <strong>najlošijih uvjeta proizvodnje</strong> — na parcelama gdje su troškovi po jedinici proizvoda najviši. To su <strong>regulatorni troškovi proizvodnje</strong> u poljoprivredi: izravno vezani uz prirodne čimbenike; proizvođač pod najlošijim uvjetima određuje cijene. Najlošiji uvjeti proizvodnje postaju regulator cijena svih poljoprivrednih proizvoda iste vrste i kvalitete. Cijena nastaje u relaciji: regulatorni troškovi (kapitalna dobra, radna snaga), prosječan profit i apsolutna renta.</p>\n<div class=\"formula-box\">C = K + N + p<sub>p</sub> + a<sub>r</sub>\nC – cijena poljodjelnog proizvoda · K – kapitalna dobra · N – najamnina · p<sub>p</sub> – prosječan profit · a<sub>r</sub> – apsolutna renta</div>\n<h3>Diferencijalne rente</h3>\n<p>Diferencijalne rente nastaju kao razlika između regulatornih troškova proizvodnje i cijene proizvodnje. Parcele iste površine uz isti uloženi kapital daju različite rezultate. Dijele se na <strong>diferencijalnu rentu I. (a i b)</strong> i <strong>diferencijalnu rentu II.</strong></p>\n<h4>Diferencijalna renta I.</h4>\n<p>Na nju utječu <strong>prirodna plodnost tla</strong> (i drugi prirodni čimbenici) i <strong>udaljenost parcele od tržišta</strong>.</p>\n<ul>\n<li><strong>I.a</strong> — nastaje zbog različite <em>plodnosti</em>: najprije se obrađuju najplodnije parcele, a rast potražnje traži obradu sve lošijih; proizvođači na boljim zemljištima imaju niže cijene proizvodnje od cijene formirane regulatornim troškovima pa ostvaruju ekstraprofit (prosječni profit + razlika = renta I.a);</li>\n<li><strong>I.b</strong> — nastaje zbog različite <em>udaljenosti od tržišta</em> (troškovi prijevoza povećavaju troškove); najudaljeniji proizvođač određuje cijenu, a bliži ostvaruju ekstraprofit.</li>\n</ul>\n<p>Najpovoljnije je zemljoposjedniku kad je najplodnija parcela i najbliža tržištu; moguće je i da najplodnija parcela bude najudaljenija, a lošija bliže tržištu, pa se i ona obrađuje.</p>\n<h4>Diferencijalna renta II.</h4>\n<p>Počiva na <strong>trajnom poboljšanju kakvoće zemljišta</strong> dodatnim ulaganjem kapitala (ili približavanju tržištu). Širenje poljodjelstva može biti <em>ekstenzivno</em> (obrada sve lošijih i udaljenijih parcela; ograničeno brojem parcela) ili <em>intenzivno</em> (dodatno ulaganje kapitala na postojećim parcelama, nova tehnologija i agrotehnika). Primjeri trajnih poboljšanja: <em>melioracije (navodnjavanje, odvodnjavanje), desalinizacija zemljišta, krčenje makije, izgradnja prometnice</em>, mehanizacija, kemizacija.</p>\n<p>Diferencijalna renta II. je <strong>ekstraprofit</strong> koji pripada zemljovlasniku ako zakupac izvrši zahvate koji trajno poboljšavaju kvalitetu zemljišta. Rokovi zakupa ne prelaze 99 godina; zakupac želi dug rok, a zemljovlasnik kratak; zakupac pri kraju ugovora smanjuje ulaganja i što više iskorištava zemljište; zemljovlasnik želi što prije ponovno ugovarati s kvalitetnijim zemljištem. Zakupac plaća ugovorenu rentu do isteka, a pri novom ugovoru kvaliteta nastala ulaganjem donosi rentu koja se u novom ugovoru <em>transformira u diferencijalnu rentu I.</em></p>\n<p>Diferencijalna renta pojavit će se i na „najlošijem\" zemljištu ako se dodatnim ulaganjem kapitala na nekoj parceli ne smanje troškovi proizvodnje — ona (iako nije najlošija) tada određuje regulatorne troškove, a proizvođač na najlošijoj parceli ima niže troškove od prethodnog pa ostvaruje diferencijalnu rentu.</p>\n<h3>Apsolutna renta</h3>\n<p><strong>Apsolutna renta</strong> ostvaruje se na <strong>svakom</strong> zemljištu, pa i najlošijem; zemljovlasnik je dobiva kao naknadu za davanje zemljišta na korištenje; stalno se pojavljuje na svim parcelama u istom relativnom iznosu. Nastaje kao razlika između profita (profitne stope) u poljodjelstvu i prosječne profitne stope u industriji — višak vrijednosti iznad prosječnog profita (zbog nadprosječnog udjela varijabilnog kapitala u poljoprivredi). Zemljovlasnici tu razliku prisvajaju ugovorom o zakupu. Privatno vlasništvo nad zemljom proizvodi apsolutnu rentu kao siguran izvor sredstava vlasnika i tako čini <strong>smetnju bržem razvitku poljodjelstva</strong>.</p>\n<h3>Monopolska renta</h3>\n<p>Javlja se kad se na određenoj parceli mogu proizvoditi određene količine i vrste proizvoda koje se ne mogu proizvoditi na drugim parcelama (posebne rijetke prirodne okolnosti — ograničen broj parcela, ograničena proizvodnja). Cijena tih proizvoda sastoji se od regulatornih troškova, apsolutne rente, svih diferencijalnih renti i monopolske rente.</p>\n<h3>Ima li zemljište vrijednost i cijenu?</h3>\n<p>Zemljište nije proizvod ljudskog rada pa prema radnoj teoriji vrijednosti <strong>nema vrijednost</strong> i ne bi trebalo imati cijenu. Ipak ima cijenu jer se pojavljuje na tržištu i za njim postoje ponuda i potražnja; stalno je, cijena mu raste, ulaganje je niskog rizika, uvijek se može prodati i donosi fiksnu rentu. <strong>Cijena zemljišta je kapitalizirana zemljišna renta</strong>: pri kupoprodaji kupuje se i prodaje renta koju zemljište donosi.</p>\n<div class=\"formula-box\">\\[ \\text{cijena zemljišta} = \\frac{R \\cdot 100}{k} \\]\nR – godišnja renta · k – kamatna stopa</div>\n<p>Primjer: renta 6 000 godišnje uz kamatnu stopu 5 % → cijena zemljišta = 6 000 × 100 / 5 = 120 000. Kapital uložen u kupnju zemljišta ostvaruje godišnju rentu kao da je isti novac uložen u banku po važećoj kamatnoj stopi.</p>\n"
+    },
+    "id": "w0s54k"
+  },
+  "peExchange": {
+    "name": "Razmjena, ponuda i potražnja, tržište",
+    "icon": "fa-shop",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "id": "qcorj6",
+        "question": "Što je razmjena u političkoj ekonomiji?",
+        "answer": "Razmjena robe: treća faza društvene reprodukcije, posrednik između proizvodnje i potrošnje; bez nje nema robne proizvodnje.",
+        "explanation": "Proizvod mora proći razmjenu prije potrošnje."
+      },
+      {
+        "id": "j3mxyz",
+        "question": "Što su ponuda i potražnja?",
+        "answer": "Ponuda: količina robe koja se nudi na tržištu po odgovarajućim cijenama. Potražnja: platežno sposobna potreba kupaca za robom (efektivna potražnja).",
+        "explanation": "Platežna sposobnost je ključna."
+      },
+      {
+        "id": "ivcqhm",
+        "question": "Kako cijene ovise o ponudi i potražnji?",
+        "answer": "Veća ponuda od potražnje snižava cijenu, veća potražnja od ponude je povisuje; rast cijene stimulira ponudu, pad je ograničava.",
+        "explanation": "Cijene osciliraju oko vrijednosti."
+      },
+      {
+        "id": "rpjqu6",
+        "question": "Što je elastična, a što nedovoljno elastična potražnja?",
+        "answer": "Elastična: promjena cijene bitno mijenja količinu potražnje. Nedovoljno elastična: promjena cijene ne mijenja je značajnije.",
+        "explanation": "Mjeri se koeficijentom."
+      },
+      {
+        "id": "24a5n1",
+        "question": "Kako se računa koeficijent elastičnosti?",
+        "answer": "Vrijednost prodanog po novim cijenama podijeljena vrijednošću prodanog po ranijim; > 1 elastična, < 1 nedovoljno elastična.",
+        "explanation": "Primjer: 1,33 → elastična."
+      },
+      {
+        "id": "2ymox0",
+        "question": "Što je tržišna ravnoteža?",
+        "answer": "Stanje u kojem ni proizvođači ni potrošači nemaju razloga mijenjati odluke; količina ponude i potražnje podudaraju se pri jednoj cijeni.",
+        "explanation": "Presjek krivulja ponude i potražnje."
+      },
+      {
+        "id": "ebeflj",
+        "question": "Što je tržište?",
+        "answer": "Ukupnost odnosa ponude i potražnje na određenom mjestu i u određeno vrijeme koja utječe na realizaciju robe, uz ustanove i sredstva organiziranog odnosa kupaca i prodavatelja.",
+        "explanation": "Skup društvenih odnosa."
+      },
+      {
+        "id": "3f5p8t",
+        "question": "Koje su osnovne podjele tržišta?",
+        "answer": "Sredstava za proizvodnju i osobnu potrošnju; globalno, nacionalno, lokalno; veliko i malo; tržište kapitala, radne snage, novca, vrijednosnica; otvoreno/zatvoreno.",
+        "explanation": "Pitanje s završnog ispita."
+      },
+      {
+        "id": "w41125",
+        "question": "Koje su funkcije tržišta?",
+        "answer": "Informativnost, alokativnost, distributivnost i koordinacija.",
+        "explanation": "Koordinira zakon vrijednosti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "er4hkm",
+        "question": "Razmjena je u političkoj ekonomiji:",
+        "options": [
+          "prva faza reprodukcije",
+          "posljednja faza reprodukcije",
+          "dio potrošnje",
+          "treća faza društvene reprodukcije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "4cev1a",
+        "question": "Potražnja koja uključuje platežnu sposobnost kupaca naziva se:",
+        "options": [
+          "efektivna potražnja",
+          "potencijalna potražnja",
+          "agregatna ponuda",
+          "tezaurirana potražnja"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "j4bte9",
+        "question": "Ako je ponuda veća od potražnje, cijena će biti:",
+        "options": [
+          "viša",
+          "nepromijenjena",
+          "niža",
+          "jednaka nuli"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "23ufz5",
+        "question": "Koeficijent elastičnosti veći od 1 znači da je potražnja:",
+        "options": [
+          "nedovoljno elastična",
+          "jedinično elastična",
+          "elastična",
+          "nepostojeća"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "nw8yas",
+        "question": "50 komada × 15 000 = 750 000, a nakon sniženja 100 × 10 000 = 1 000 000. Koeficijent iznosi:",
+        "options": [
+          "1,33",
+          "0,75",
+          "1,50",
+          "0,625"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ljxrhd",
+        "question": "Tržišna ravnoteža je stanje u kojem:",
+        "options": [
+          "cijene stalno rastu bez ograničenja",
+          "ponuda uvijek premašuje potražnju",
+          "država određuje sve cijene robe",
+          "nitko nema razloga mijenjati odluke"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "hp5ug5",
+        "question": "Koja NIJE funkcija tržišta?",
+        "options": [
+          "informativnost",
+          "amortizacija",
+          "alokativnost",
+          "koordinacija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ex1dlw",
+        "question": "Autor kojemu se pripisuje tvrdnja da ponuda stvara vlastitu potražnju je:",
+        "options": [
+          "Keynes",
+          "Say",
+          "Malthus",
+          "Aristotel"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "42sn50",
+        "question": "Ekonomist srednjeg vijeka koji je uveo potrebu (indigentia) u formulu cijene je:",
+        "options": [
+          "Albert Veliki",
+          "Jean Buridan",
+          "Henrik od Friemara",
+          "Toma Akvinski"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "61e75o",
+        "sentence": "Potražnja uz platežnu sposobnost kupaca naziva se _______ potražnja.",
+        "answer": "efektivna",
+        "hint": "novac iza želje"
+      },
+      {
+        "id": "gsnaw8",
+        "sentence": "Agregatna potražnja jednaka je AD = C + I + G + _______.",
+        "answer": "E",
+        "hint": "neto izvoz"
+      },
+      {
+        "id": "wwjzjd",
+        "sentence": "Elastičnost potražnje: koeficijent veći od 1 znači _______ potražnju.",
+        "answer": "elastičnu",
+        "hint": "jako reagira na cijenu"
+      }
+    ],
+    "learn": {
+      "id": "nm3dkq",
+      "title": "Razmjena i tržište u sustavu robnog gospodarstva",
+      "content": "\n<h3>Poimanje razmjene</h3>\n<p>Razmjena je (u političkoj ekonomiji) isključivo <strong>razmjena robe</strong> — treća faza procesa društvene materijalne reprodukcije; posrednik između proizvodnje i potrošnje u svim oblicima robnog gospodarstva. Proizvodi ljudskog rada ne mogu doći do potrošnje prije nego prođu fazu razmjene; bez razmjene robne proizvodnje ne bi bilo. Razmjena postoji i prije robne proizvodnje (razmjena viškova u naturalnoj proizvodnji).</p>\n<h4>Ekonomska misao: Aristotel</h4>\n<p>Aristotel (384.–322. pr. Kr.) razmjenu shvaća kao bilateralni proces koji je obje strane čini boljima; temelji se na reciprocitetu i pravednosti, a ne na komercijalizaciji („pravedno je ono što je zakonito i jednako\"; Nikomahova etika). Preduvjeti trgovine: (1) postoje viškovi, (2) različite subjektivne procjene vrijednosti viškova, (3) skladan odnos i svijest o uzajamnoj koristi, (4) u sporu administrativna vlast određuje ispravne udjele prema pravilima opće pravde.</p>\n<h3>Ponuda i potražnja</h3>\n<ul>\n<li><strong>Ponuda</strong> — količina robe koja se u određenom vremenu i prostoru nudi na tržištu ili se može ponuditi po odgovarajućim cijenama; kupci su obaviješteni o količini, kvaliteti, cijenama. Ukupna ponuda određuje se ukupnim obujmom proizvodnje, no ne poklapa se s njom (dio proizvodnje nije za razmjenu ili ide u robne rezerve); uključuje tek proizvedeno, zalihe i uvoz.</li>\n<li><strong>Potražnja</strong> — odraz potreba za materijalnim dobrima izražen na tržištu: količina <em>platežne sposobnosti</em> onih koji su spremni platiti robu (efektivna potražnja). Ukupna (agregatna) potražnja je potražnja za svim robama u određenom razdoblju.</li>\n</ul>\n<p>Kad se veličina i struktura ukupne ponude podudaraju s ukupnom potražnjom, gospodarstvo je u <strong>ravnoteži</strong>. <strong>Sayov zakon tržišta</strong>: ponuda stvara dohodak koji se u istom obujmu pojavljuje kao potražnja — služio je kao osnova za zagovor slobode tržišta, ali zanemaruje da se ponuda i potražnja vremenski, prostorno i strukturno ne moraju poklapati.</p>\n<h4>Ekonomska misao u srednjem vijeku</h4>\n<ul>\n<li><strong>Albert Veliki</strong> (1206.–1280.) — mentor Tome Akvinskog; komentari Nikomahove etike; pravda u razmjeni; razmjenska vrijednost mora odgovarati <em>troškovima proizvodnje</em> (cijena kao ravnotežna vrijednost; trošak kao regulator vrijednosti).</li>\n<li><strong>Toma Akvinski</strong> (1225.–1274.) — uveo <em>potrebu</em> (indigentia) u formulu cijene; cijena varira s potražnjom; najranije razmišljanje o vrijednosti određenoj potražnjom.</li>\n<li><strong>Henrik od Friemara</strong> — potrebu shvatio agregatno (potrebe svih kupaca na tržištu).</li>\n<li><strong>Jean Buridan</strong> (1295.–1358.) — približio je pojam <em>efektivnoj potražnji</em>: želja iza koje stoji sposobnost plaćanja; kupac se mora „pokoriti\" vrednovanju tržišta.</li>\n<li><strong>Gerald Odonis</strong> i <strong>Johannes Crell</strong> — odbacuju jednostavnu radnu teoriju; oskudnost i kakvoća vještina; rad je regulator vrijednosti samo ako se troši na nešto korisno i uvijek je (u nekoj mjeri) oskudan; potrebe i troškovi su „dvije oštrice istih škara\".</li>\n</ul>\n<h4>Agregatna potražnja (AD) i agregatna ponuda (AS)</h4>\n<div class=\"formula-box\">AD = C + I + G + E</div>\n<p>AD pokazuje realnu razinu potrošnje svih sektora privrede uz različite razine cijena; opadajuća je krivulja razine cijena. AS pokazuje učinak domaćeg proizvoda na razinu cijena; rastuća je krivulja. Potencijalni proizvod je maksimalna količina proizvoda koju privreda može proizvesti uz stabilne cijene i prirodnu stopu nezaposlenosti; ovisi o raspoloživosti inputa (zemlja, rad, kapital, tehnologija) i njihovoj produktivnosti. Prirodna stopa nezaposlenosti je ona pri kojoj je stvarna razina cijena jednaka očekivanoj.</p>\n<h3>Ponuda i potražnja roba i njihove cijene</h3>\n<p>Ako je ponuda veća od potražnje, cijena je niža; ako je potražnja veća od ponude, cijena je viša od normalne (pod djelovanjem zakona vrijednosti). Porast cijene stimulira proizvodnju, a pad je ograničava. Na količinu potražnje, uz cijenu robe, utječu visina osobnih primanja i struktura potrošnje (navika, psihološki motivi, moda). <strong>Mikroekonomski:</strong> viša cijena dobra smanjuje potražnju, viši dohodak povećava, više stanovnika povećava, niža cijena komplementarnog dobra povećava potražnju (benzin → automobili); utječu i ukusi.</p>\n<h4>Elastičnost potražnje</h4>\n<ul>\n<li><strong>Elastična potražnja</strong> — zbog rasta (ili pada) cijene dolazi do značajnih promjena količine potražnje;</li>\n<li><strong>Nedovoljno elastična (neelastična)</strong> — promjena cijene ne dovodi do značajnijih promjena potražnje.</li>\n</ul>\n<p>Prema obrascu gradiva, <strong>koeficijent elastičnosti</strong> = iznos vrijednosti prodanog po novim cijenama : iznos vrijednosti prodanog po ranijim cijenama. Ako je koeficijent <strong>&gt; 1</strong>, potražnja je elastična; ako je <strong>&lt; 1</strong>, nedovoljno elastična.</p>\n<p><em>Primjer (elastična):</em> 50 automobila × 15 000 = 750 000; nakon sniženja cijene 100 × 10 000 = 1 000 000; koeficijent = 1 000 000 : 750 000 = 1,33 &gt; 1. <em>Primjer (neelastična):</em> 4000 kg kruha × 4 = 16 000; nakon sniženja 5000 × 2 = 10 000; koeficijent = 10 000 : 16 000 = 0,625 &lt; 1.</p>\n<p>U općoj ekonomiji elastičnost potražnje je omjer postotne promjene tražene količine i postotne promjene cijene: promjena cijene od 1 % koja izaziva promjenu količine veću od 1 % — elastična; manju — neelastična; jednaku — jedinično elastična.</p>\n<p>IS–LM obrazloženje: pri zadanoj nominalnoj ponudi novca (M) porast razine cijena (P) smanjuje realnu ponudu novca (M/P), krivulja LM pomiče se prema gore, kamatne stope rastu i domaći proizvod pada — gospodarstvo se kreće duž IS krivulje ulijevo. Svaki događaj osim promjene P koji pomiče IS ili LM (državna potrošnja, ponuda novca, porezi) pomiče krivulju AD. Relacija AS ima dva svojstva: (1) porast domaćeg proizvoda povećava zaposlenost, smanjuje nezaposlenost, diže nominalne nadnice i troškove, pa i razinu cijena; (2) porast očekivane razine cijena diže stvarnu razinu cijena „jedan za jedan“ (viša očekivana cijena → više nadnice → viši troškovi). Kad je domaći proizvod iznad prirodne razine, razina cijena viša je od očekivane i AS se pomiče prema gore. Kod malih otvorenih ekonomija na AS utječu i troškovi uvoza: pad cijena u inozemstvu ili pad tečaja snižava uvozne cijene i troškove proizvodnje te povećava agregatnu ponudu. AD pokazuje ravnotežu i na tržištu dobara (IS) i na financijskim tržištima (LM).</p>\n<h4>Tržišna ravnoteža</h4>\n<p>Niske cijene ograničavaju ponudu, a stimuliraju potražnju; visoke obrnuto. Kod jedne cijene poklapaju se tražene i ponuđene količine (u primjeru 7 novčanih jedinica, 70 komada) — optimalan obujam razmjene za kupce i prodavače (točka presjeka krivulja ponude i potražnje). <strong>Tržišna (ekonomska) ravnoteža</strong> je stanje u kojem ni proizvođači ni potrošači nemaju razloga mijenjati svoje odluke.</p>\n<h3>Tržište</h3>\n<p><strong>Tržište</strong> je ukupnost odnosa ponude i potražnje koja na određenom mjestu i u određeno vrijeme utječe na realizaciju roba, kao i sveukupnost ustanova, područja i sredstava koji omogućuju organiziran odnos kupaca i prodavatelja. Skup društvenih odnosa; realizacija društvenog proizvoda i njegove vrijednosti; metamorfoza R–N i obrnuto. Danas sve manje traži prisutnost robe (internetska kupnja).</p>\n<p><strong>Tipovi tržišta:</strong></p>\n<ul>\n<li>sredstava za proizvodnju i sredstava za osobnu potrošnju (sa stajališta proizvodnje);</li>\n<li>po opsegu: globalno/svjetsko, nacionalno, lokalno; vanjsko i unutrašnje; malo i veliko;</li>\n<li>tržište pojedinih grana i pojedinih vrsta roba;</li>\n<li>po elementima proizvodnje: kapitala, radne snage, novca, vrijednosnih papira, hipoteka, deviza, osiguranja, zlata;</li>\n<li>otvoreno i zatvoreno; slobodno i regulirano; stabilno i nestabilno.</li>\n</ul>\n<p><strong>Funkcije tržišta:</strong> informativnost, alokativnost, distributivnost i koordinacija. Daje informacije proizvođačima i potrošačima (utječe na alokaciju sredstava), obavlja distributersku ulogu u primarnoj raspodjeli, a koordinaciju osigurava zakon vrijednosti kroz ponudu i potražnju (cijene osciliraju oko gravitacijske točke). Na cijenu utječe i <strong>struktura tržišta</strong>: ukupan broj prodavača i kupaca (konkurencija, monopol, duopol, oligopol, monopson) te različitost ponuđenih roba i mogućnost novih roba.</p>\n"
+    },
+    "id": "53j44i"
+  },
+  "peCompetition": {
+    "name": "Konkurencija",
+    "icon": "fa-trophy",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "id": "ydk8u2",
+        "question": "Što je konkurencija?",
+        "answer": "Nadmetanje dvaju ili više proizvođača istih uporabnih vrijednosti da što lakše realiziraju robu i ostvare najvišu moguću zaradu.",
+        "explanation": "Pokreće inovacije."
+      },
+      {
+        "id": "koybrk",
+        "question": "Koja su tri glavna oblika konkurencije?",
+        "answer": "Cjenovna konkurencija, prodor i monopol (monopolska moć).",
+        "explanation": "Pitanje s kolokvija."
+      },
+      {
+        "id": "c2eqji",
+        "question": "Što je cjenovna konkurencija?",
+        "answer": "Privlačenje kupaca nižim cijenama istih proizvoda; poduzeća povećavaju produktivnost i snižavaju troškove po jedinici (cijenu koštanja), a ostaje profit.",
+        "explanation": "Moguć i damping."
+      },
+      {
+        "id": "glre6y",
+        "question": "Što je prodor kao oblik konkurencije?",
+        "answer": "Poduzeće prvo uvede novi proizvod ili izađe sa starim na novo tržište i zbog toga ostvaruje izuzetno visoke profite dok je jedino.",
+        "explanation": "Lakši pristup kreditima."
+      },
+      {
+        "id": "hucvbi",
+        "question": "Što je monopol?",
+        "answer": "Stanje u kojem jedan ili manji broj subjekata kontrolira određenu proizvodnju, izbjegava konkurenciju i nameće niske nabavne i visoke prodajne cijene.",
+        "explanation": "Visoki profiti."
+      },
+      {
+        "id": "hoj8cs",
+        "question": "Što su horizontalna i vertikalna konkurencija?",
+        "answer": "Horizontalna: unutar jedne grane, formira tržišnu vrijednost. Vertikalna: između grana, svodi vrijednost na cijenu proizvodnje i izjednačava profitne stope.",
+        "explanation": "Unutar grane vs. među granama."
+      },
+      {
+        "id": "pchq80",
+        "question": "Što je slobodna, a što ograničena konkurencija?",
+        "answer": "Slobodna (savršena): bez ograničenja kretanja robe i potpuna informiranost, postoji teorijski. Ograničena (nepotpuna): ograničena monopolima i državom, postoji u stvarnosti.",
+        "explanation": "Slobodna je teorijska."
+      },
+      {
+        "id": "lwwmp4",
+        "question": "Što je damping?",
+        "answer": "Prodaja u inozemstvu po cijeni nižoj od važeće u zemlji proizvođača ili ispod troškova, radi osvajanja tržišta i istiskivanja konkurencije.",
+        "explanation": "Protiv njega: antidamping."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "4h4x2t",
+        "question": "Tri oblika konkurencije među kapitalistima su:",
+        "options": [
+          "cjenovna, prodor i monopol",
+          "horizontalna, vertikalna i slobodna",
+          "domaća, strana i regionalna",
+          "cjenovna, kvalitetna i vremenska"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "4f2dlw",
+        "question": "Konkurencija unutar jedne grane proizvodnje je:",
+        "options": [
+          "vertikalna",
+          "slobodna",
+          "horizontalna",
+          "ograničena"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "e337ip",
+        "question": "Konkurencija koja između grana izjednačava profitne stope je:",
+        "options": [
+          "horizontalna",
+          "cjenovna",
+          "vertikalna",
+          "monopolska"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "ftxfd5",
+        "question": "Slobodna (savršena) konkurencija postoji:",
+        "options": [
+          "samo teorijski",
+          "u svim granama",
+          "u monopolima",
+          "samo u poljoprivredi"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "eol2jy",
+        "question": "Konkurencija ograničena monopolima i državnom intervencijom je:",
+        "options": [
+          "slobodna (neograničena)",
+          "savršena (potpuna)",
+          "horizontalna (u grani)",
+          "ograničena (nepotpuna)"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "nxfw8u",
+        "question": "Poduzeće koje prvo uvede novi proizvod ostvaruje:",
+        "options": [
+          "damping",
+          "prodor",
+          "kartel",
+          "amortizaciju"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "a60rf8",
+        "question": "Cjenovna konkurencija navodi poduzeća na:",
+        "options": [
+          "podizanje cijena iznad vrijednosti robe",
+          "povećanje produktivnosti i smanjenje troškova",
+          "povećanje cijene koštanja po jedinici",
+          "smanjenje proizvodnje i zaliha robe"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2br34l",
+        "question": "Prodaja ispod troškova proizvodnje radi istiskivanja konkurencije je:",
+        "options": [
+          "prodor",
+          "monopsonija",
+          "rabat",
+          "damping"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "mcv9wk",
+        "sentence": "Konkurencija između svih grana proizvodnje je _______ konkurencija.",
+        "answer": "vertikalna",
+        "hint": "izjednačava profitne stope"
+      },
+      {
+        "id": "2sjn40",
+        "sentence": "Slobodnu konkurenciju nazivamo još i neograničenom, potpunom, čistom ili _______ konkurencijom.",
+        "answer": "perfektnom",
+        "hint": "posuđenica iz latinskog (perfectus)"
+      },
+      {
+        "id": "qnt32m",
+        "sentence": "Poduzeće koje prvo uvede novi proizvod ostvaruje _______.",
+        "answer": "prodor",
+        "hint": "izuzetno visoki profiti"
+      }
+    ],
+    "learn": {
+      "id": "2tlkmm",
+      "title": "Konkurencija i njezini oblici",
+      "content": "\n<h3>Pojam konkurencije</h3>\n<p><strong>Konkurencija</strong> je nadmetanje dvaju ili više proizvođača istih uporabnih vrijednosti (roba) da što jednostavnije realiziraju svoje proizvode s ciljem da ostvare u tom trenutku najvišu moguću zaradu ili postignu neki drugi očekivani učinak. Konkurencija motivirana profitom proizvodi pritisak koji vodi poduzeća na nove načine poslovanja i inovacije.</p>\n<h3>Tri glavna oblika konkurencije</h3>\n<ol>\n<li><strong>Cjenovna konkurencija</strong> — napori da se postigne prednost u prodajnim cijenama.</li>\n<li><strong>Prodor</strong> — napori da se stvore nove situacije u kojima se potencijalni konkurenti, barem privremeno, dovode u podređen položaj.</li>\n<li><strong>Monopol (monopolska moć)</strong> — napori da se posve eliminira konkurencija.</li>\n</ol>\n<h4>Cjenovna konkurencija</h4>\n<p>Zasniva se na privlačenju kupaca nudeći proizvode iste uporabne vrijednosti i iste vrijednosti po <em>nižim cijenama</em> od drugih proizvođača. Poduzeća stalno unose poboljšanja u proizvodnju ili proizvode radi povećanja produktivnosti rada, tj. smanjenja troškova proizvodnje po jedinici (nova tehnologija i organizacija proizvodnje, što može dovesti do otpuštanja radnika i smanjenja izdataka za nadnice, ubrzanja tempa rada). Time se snižava cijena koštanja, a profit je i dalje osiguran (ekstraprofit). Postoji i <strong>damping</strong> — prodaja (u inozemstvu) po cijeni nižoj od važeće u zemlji proizvođača ili ispod troškova proizvodnje; strategija osvajanja tržišta i uništavanja konkurencije (grabežljivi damping); nakon toga cijena može porasti; zemlje uvode antidampinške propise.</p>\n<h4>Prodor</h4>\n<p>Poduzeće otkrije novi proizvod ili razvije nešto novo (novi input, nova organizacija proizvodnje, novi proizvod ili novo tržište). Kao prvi mogu ostvarivati izuzetno visoke profite, ne nužno jer su najkvalitetniji ili najjeftiniji, nego jer su prvi; taj status zadržavaju dok su jedini, a zatim nastupaju učinci drugih oblika konkurencije. Prodor se može ostvariti i <strong>izlaskom sa starim proizvodom na novo tržište</strong> (novo za tržište, staro za proizvođača) ili smanjenim troškovima proizvodnje u odnosu na druge. Poduzeće koje ostvaruje prodor lakše dolazi do kredita; strah od konkurencije osnovni je pokretač novih prodora.</p>\n<h4>Monopol</h4>\n<p>Javlja se kad proizvođač isključi ostale ili ih ograniči u aktivnostima; kapitalistima osigurava visoke profitne stope izbjegavanjem svih oblika konkurencije. Ako je konkurencija slaba ili je nema, proizvođači s monopolskom moći izravno utječu na visinu profitne stope i osiguravaju <em>niske nabavne, a visoke prodajne cijene</em>. Rijetko jedan proizvođač eliminira sve ostale, ali manji broj (duopol, oligopol) može isključiti ostale ili ih ograničiti.</p>\n<h3>Horizontalna i vertikalna konkurencija</h3>\n<ul>\n<li><strong>Horizontalna</strong> — unutar <em>jedne grane</em> proizvodnje; formira tržišnu vrijednost i izjednačava tržišnu cijenu s cijenom proizvodnje;</li>\n<li><strong>Vertikalna</strong> — između <em>svih grana</em> proizvodnje; svodi vrijednost na cijenu proizvodnje i vodi k izjednačavanju profitnih stopa.</li>\n</ul>\n<h3>Slobodna i ograničena konkurencija</h3>\n<ul>\n<li><strong>Slobodna (neograničena, potpuna, čista, perfektna)</strong> — nema ograničenja u kretanju robe i elemenata proizvodnje; svaki proizvođač dolazi s malim dijelom ukupne proizvodnje i ne može značajnije utjecati na cijenu; preduvjeti: pokretljivost poduzeća (ulaz i izlaz iz grane bez prepreka) i potpuna informiranost o aktivnostima drugih i visini njihovih profitnih stopa; <em>postoji jedino teorijski</em>, nikad nije postojala.</li>\n<li><strong>Ograničena (nepotpuna)</strong> — ekonomski, institucionalni, politički i drugi čimbenici ograničavaju ili onemogućuju slobodnu utakmicu prodavatelja i kupaca; povezana s djelovanjem monopola i državnom intervencijom (i oblicima planiranja); postoji i djeluje u stvarnosti.</li>\n</ul>\n"
+    },
+    "id": "jzsii9"
+  },
+  "peMonopoly": {
+    "name": "Monopoli i monopolska razmjena",
+    "icon": "fa-crown",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "id": "hfvhmc",
+        "question": "Što je monopol?",
+        "answer": "Stanje u gospodarstvu u kojem jedan ili manji broj subjekata kontrolira određenu proizvodnju i nameće svoje robne i prodajne cijene.",
+        "explanation": "Vezan uz koncentraciju kapitala."
+      },
+      {
+        "id": "k3ifgu",
+        "question": "Koja su temeljna obilježja monopolističkog kapitalizma?",
+        "answer": "Koncentracija i centralizacija kapitala, monopolističke organizacije, financijski kapital, teže seljenje kapitala, otežano prilagođavanje ponude, manje sudionika, nove metode konkurencije.",
+        "explanation": "Osam (ili 11 s izvozom i podjelom svijeta)."
+      },
+      {
+        "id": "257h4n",
+        "question": "Što je financijski kapital?",
+        "answer": "Spoj industrijskog (proizvodnog) i bankovnog kapitala kojim raspolaže financijska oligarhija.",
+        "explanation": "Spajanje banaka i industrije."
+      },
+      {
+        "id": "h58soj",
+        "question": "U čemu se sastoji izvoz kapitala?",
+        "answer": "U ulaganju u inozemstvu radi oplodnje: nastaje kreditni odnos, ovisnost dužnika o vjerovniku i nadzor nad bogatstvom zemlje; internacionalizacija kapitala.",
+        "explanation": "Globalizacija gospodarstva."
+      },
+      {
+        "id": "3tod8t",
+        "question": "Koje su vrste monopolskih udruženja?",
+        "answer": "Kartel, sindikat, trust i koncern.",
+        "explanation": "Od najstarijeg do najvišeg."
+      },
+      {
+        "id": "mifpwp",
+        "question": "Što je kartel, što sindikat?",
+        "answer": "Kartel: sporazum o cijenama i tržištu, članovi zadržavaju samostalnost. Sindikat: članovi gube trgovačku samostalnost, proizvodnja ostaje samostalna.",
+        "explanation": "Sindikat je blizak kartelu."
+      },
+      {
+        "id": "cjvt69",
+        "question": "Što je trust, što koncern?",
+        "answer": "Trust: nastaje novo poduzeće, članovi postaju dioničari. Koncern: najviši oblik, povezuje ranije trustove i kartele; danas dominantan.",
+        "explanation": "Trust ima kontrolni paket 25–30 %."
+      },
+      {
+        "id": "09jhhr",
+        "question": "Što su monopolske cijene i monopolski ekstraprofit?",
+        "answer": "Monopolske nabavne (vrlo niske) i prodajne (vrlo visoke) cijene; ekstraprofit je profit iznad prosječnog. Mc = c + v + mep.",
+        "explanation": "Posljedica monopolskog položaja."
+      },
+      {
+        "id": "e1pu6m",
+        "question": "Zašto monopolist plaća niske nabavne cijene?",
+        "answer": "Jer je najčešće jedini ili najveći kupac (monopson) pa nabavlja ispod cijene proizvodnje.",
+        "explanation": "Dvostruko prisvaja tuđi višak vrijednosti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "li37zh",
+        "question": "Najstariji oblik monopolskog udruženja je:",
+        "options": [
+          "kartel",
+          "trust",
+          "koncern",
+          "sindikat"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "bzp64c",
+        "question": "Udruženje u kojem nastaje novo poduzeće, a članovi su dioničari, je:",
+        "options": [
+          "kartel",
+          "sindikat",
+          "trust",
+          "zadruga"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "bs3c47",
+        "question": "Najviši oblik udruživanja, danas dominantan, je:",
+        "options": [
+          "kartel",
+          "trust",
+          "koncern",
+          "sindikat"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "nhnbf7",
+        "question": "Udruženje u kojem se gubi trgovačka samostalnost je:",
+        "options": [
+          "sindikat",
+          "kartel",
+          "trust",
+          "koncern"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "3fwwg3",
+        "question": "Spoj industrijskog i bankovnog kapitala je:",
+        "options": [
+          "fiktivni kapital",
+          "kreditni kapital",
+          "trgovački kapital",
+          "financijski kapital"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "06rztg",
+        "question": "Monopolske prodajne cijene su u odnosu na cijenu proizvodnje:",
+        "options": [
+          "niže",
+          "više",
+          "jednake",
+          "neodređene"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lpji3o",
+        "question": "Monopolska nabavna cijena u odnosu na cijenu proizvodnje je:",
+        "options": [
+          "viša",
+          "niža",
+          "jednaka",
+          "dvostruko viša"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "n3o4rn",
+        "question": "Monopolist može nabavljati po niskim cijenama jer je često:",
+        "options": [
+          "jedini prodavač na tržištu",
+          "posrednik između proizvođača",
+          "zakupac državnog zemljišta",
+          "jedini kupac (monopson)"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "3hyzpo",
+        "question": "Koja metoda konkurencije prevladava u monopolskom kapitalizmu?",
+        "options": [
+          "reklama i diferenciranje proizvoda",
+          "snižavanje cijena ispod troškova",
+          "produljenje radnog dana",
+          "prodaja na kredit"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "7ljqmo",
+        "sentence": "Sporazum samostalnih kapitalista o cijenama i podjeli tržišta zove se _______.",
+        "answer": "kartel",
+        "hint": "najstariji oblik"
+      },
+      {
+        "id": "c4bmx5",
+        "sentence": "Najviši oblik udruživanja ranije povezanih poduzeća je _______.",
+        "answer": "koncern",
+        "hint": "povezuje trustove i kartele"
+      },
+      {
+        "id": "zq06fz",
+        "sentence": "Profit iznad prosječnog koji ostvaruje monopolist je monopolski _______.",
+        "answer": "ekstraprofit",
+        "hint": "nastaje iz monopolske cijene"
+      }
+    ],
+    "learn": {
+      "id": "ig0na2",
+      "title": "Monopoli i monopolska razmjena",
+      "content": "\n<h3>Osnovne karakteristike monopola</h3>\n<p><strong>Monopol</strong> je stanje u gospodarstvu u kojem jedan ili manji broj privrednih subjekata kontrolira određenu proizvodnju namećući svoje robne i prodajne cijene. Nastanak monopola vezan je uz povećani stupanj koncentracije kapitala i nove tehničke pronalaske; osim prirodnih postoje i umjetno stvoreni monopoli, osobito karakteristični za kapitalizam.</p>\n<p><strong>Elementi monopolističkog kapitalizma</strong> (proizvodna i tržišna struktura):</p>\n<ol>\n<li><strong>Velika koncentracija proizvodnje i kapitala</strong> — velika poduzeća za masovnu proizvodnju; nova tehnološka rješenja ubrzavaju koncentraciju velikih kapitala u rukama malog broja kapitalista.</li>\n<li><strong>Visok stupanj centralizacije kapitala</strong> — udružuje i kapitale različitih grana (nastaju <em>kombinati</em>); poticaj: razlike u profitnim stopama u fazama kretanja gospodarstva, izbjegavanje posredništva trgovaca i veći profit.</li>\n<li><strong>Niz monopolističkih organizacija</strong> — u razdoblju monopola pad cijena može znatno smanjiti profite pa kapitalisti ne konkuriraju sniženjem cijena, nego dogovorima o prodajnim cijenama, podjeli tržišta, količini proizvodnje, najamninama, cijenama sirovina (kartel, trust…).</li>\n<li><strong>Pojava financijskog kapitala</strong> — centralizacija industrijskog kapitala prati se centralizacijom bankovnog; spajaju se industrijski i bankovni kapital u <em>financijski kapital</em>.</li>\n<li><strong>Smanjene mogućnosti seljenja kapitala</strong> — rast organske strukture produžuje obrt cjelokupnog kapitala, teža metamorfoza u novčani oblik, monopoli u grani ometaju ulazak novog kapitala; ipak seljenje postoji jer ga uvjetuju koncentracija i centralizacija, a banke omogućuju velike kredite i osnivanje dioničkih društava (nov kapital ulazi i u monopolske grane).</li>\n<li><strong>Otežano prilagođavanje ponude promijenjenim uvjetima potražnje</strong> — velika poduzeća za masovnu proizvodnju pa pad potražnje izaziva neiskorištenost kapaciteta, rast fiksnih troškova po jedinici i cijena roba; pad cijena uz rast fiksnih troškova smanjuje rentabilnost i profitne stope.</li>\n<li><strong>Smanjen broj sudionika u razmjeni industrijskih proizvoda</strong> — oligopolska struktura: mali broj prodavača i mali broj ekonomski jakih kupaca (za razliku od liberalnog kapitalizma s mnogo kapitalista).</li>\n<li><strong>Promijenjeni oblici i metode konkurencije</strong> — oligopolska struktura; snižavanje cijena nije prikladno jer bi smanjilo profit; koriste se <em>reklama</em> (informira kupca; troškovi su gubitak za nacionalno gospodarstvo jer smanjuju narodni dohodak; stvara stalne kupce, izaziva rast izdataka konkurenata), <em>diferenciranje proizvoda</em> (psihološki utjecaj na potrošača) i <em>diferenciranje uvjeta prodaje</em> (ambalaža, garancije kvalitete i trajanja, kreditiranje kupaca, isporuka).</li>\n</ol>\n<p>Prema drugom popisu obilježja monopolističkog kapitalizma uključuju se i: <strong>izvoz kapitala</strong>, <strong>ekonomska podjela svijeta</strong> i <strong>teritorijalna podjela svijeta</strong> (ukupno 11 obilježja: izvoz kapitala; financijski kapital; ekonomska i teritorijalna podjela svijeta; velika koncentracija proizvodnje i kapitala; visok stupanj centralizacije; smanjena mogućnost seljenja kapitala; promijenjeni oblici konkurencije; otežano prilagođavanje ponude; niz monopolskih organizacija; smanjen broj sudionika u razmjeni).</p>\n<h4>Financijski kapital i izvoz kapitala</h4>\n<p><strong>Financijski kapital</strong> je spoj industrijskog (proizvodnog) i bankovnog kapitala kojim raspolaže financijska oligarhija; banke raspolažu novcem svih kapitalista i ostalih članova društva; proizvodni kapital preuzima dominantnu ulogu (samofinanciranje, često uz pomoć države). <strong>Izvoz kapitala</strong> obavlja se radi oplodnje; stvara kreditni odnos u kojem dužnik ovisi o vjerovniku; izvoznik ulaže u inozemstvu i postaje subjekt u tuđoj zemlji, osigurava plasman svojih proizvoda, stječe nadzor nad prirodnim bogatstvom dužnika i učvršćuje ovisnost — internacionalizacija kapitala i globalizacija. <strong>Ekonomska podjela svijeta</strong> nastaje zbog interesa monopolista za što većim profitom (osobito nakon Drugog svjetskog rata).</p>\n<h3>Monopolska udruženja</h3>\n<table>\n<tr><th>Oblik</th><th>Obilježja</th></tr>\n<tr><td><strong>Kartel</strong></td><td>najstariji oblik; sporazum samostalnih kapitalista o visini cijene, načinu prodaje, podjeli tržišta, raspodjeli dobiti; članovi zadržavaju <em>poslovnu i financijsku samostalnost</em>; danas ga ima kod manjih poduzeća radi zaštite od velikih sustava udruživanja</td></tr>\n<tr><td><strong>Sindikat</strong></td><td>blizak kartelu; <em>gubi se trgovačka samostalnost</em> (zajednički nastup na tržištu i nabava sirovina), a proizvodnja i financijska moć ostaju u nadležnosti svakog poduzeća</td></tr>\n<tr><td><strong>Trust</strong></td><td>kompaktan oblik: članovi gube samostalnost i nastaje <em>novo poduzeće</em>; udruženi postaju dioničari razmjerno unesenom kapitalu; kontrolni udio od 25–30 % dionica omogućuje kontrolu cijelog poduzeća; poseban oblik centralizacije kapitala</td></tr>\n<tr><td><strong>Koncern</strong></td><td>najviši oblik udruživanja već povezanih poduzeća; povezuje ranije trustove i kartele; danas dominantan</td></tr>\n</table>\n<p>Udruženi kapital ima prednosti: osnivanje dioničkih društava, stabilnija profitna stopa, lakša nabava sredstava za proizvodnju i realizacija proizvoda, lakši tehnički napredak i dominacija na tržištu (<em>monopolski ekstra profit</em>), lakše podnošenje poremećaja i depresije, ekonomska prevlast, politički utjecaj. Država se bori protiv monopola <strong>antimonopolskim zakonima</strong> (zabrana protukonkurencijskih postupaka), ali je i sama veliki monopolist (vojska, robne zalihe, strateški poslovi).</p>\n<h3>Monopolske cijene</h3>\n<p>Cijene koje monopolist formira pri nabavi potrebnih proizvoda i realizaciji vlastite proizvodnje. Dijele se na <strong>monopolske nabavne</strong> (izuzetno niske, ali s donjom granicom) i <strong>monopolske prodajne</strong> (izuzetno visoke, s gornjom granicom). Nabavna je niža od cijene proizvodnje, prodajna veća od nje. Monopolska prodajna cijena osigurava <em>monopolski ekstra profit</em>; nije rezultat ponude i potražnje, nego monopolskog položaja. Karakteristike: (a) osigurava monopolski profit, (b) ostvaruje preraspodjelu profita, (c) nastaje na temelju specifičnih odnosa na tržištu. Niske nabavne cijene moguće su jer je monopolist najčešće jedini (ili najveći) kupac — <strong>monopson</strong>; prodajne jer je jedini proizvođač. Tako monopolist dvaput prisvaja tuđi višak vrijednosti: pri kupnji i pri prodaji.</p>\n<div class=\"formula-box\">M<sub>c</sub> = c + v + m<sub>ep</sub></div>\n<p>Monopolska cijena ograničena je u rastu; visinu određuju masa profita koja se može raspodijeliti, platežno sposobna potražnja, potencijalna konkurencija i država. <strong>Monopolski ekstraprofit</strong> je profit iznad prosječnog, razlika između cijene proizvodnje i tržišne cijene.</p>\n"
+    },
+    "id": "sakxpz"
+  },
+  "peStateCapitalism": {
+    "name": "Državni kapitalizam",
+    "icon": "fa-landmark-dome",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "nkzpw9",
+        "question": "Što je državni kapitalizam?",
+        "answer": "Faza kapitalizma s jakim utjecajem države na uređenje gospodarskih odnosa: mjere i zahvati kojima kapitalistička država osigurava nesmetanu društvenu reprodukciju.",
+        "explanation": "Povezan s državnom intervencijom."
+      },
+      {
+        "id": "x7jq40",
+        "question": "Koji su uzroci nastanka državnog kapitalizma?",
+        "answer": "Zakonitost jedinstva suprotnosti društvene proizvodnje i privatnog prisvajanja kapitalista te nemogućnost privatnog vlasništva i inicijative da osiguraju normalnu reprodukciju.",
+        "explanation": "Etapa kapitalizma."
+      },
+      {
+        "id": "e7kx1w",
+        "question": "Navedi neka obilježja državnog kapitalizma.",
+        "answer": "Državno vlasništvo i upravljanje, preraspodjela dohotka proračunom, monetarna politika i kontrola banaka, subvencije, posredovanje radnik–poslodavac, zakoni, kontrola međunarodnih odnosa.",
+        "explanation": "Deset obilježja."
+      },
+      {
+        "id": "o8t1wa",
+        "question": "Koje mjere provodi država u suvremenom kapitalizmu?",
+        "answer": "Socijalne mjere, carinska politika, nacionalizacija, vojna industrija, poticanje proizvodnje, subvencije poljoprivredi, investiranje, poticanje privatne inicijative.",
+        "explanation": "Osam mjera."
+      },
+      {
+        "id": "3gksnk",
+        "question": "Kako država posreduje između radnika i poslodavaca?",
+        "answer": "Utvrđuje minimalne najamnine, obvezno zdravstveno i socijalno osiguranje, dužinu radnog vremena i godišnje odmore.",
+        "explanation": "Socijalni zakoni."
+      },
+      {
+        "id": "452y00",
+        "question": "Zašto država subvencionira poljoprivredu?",
+        "answer": "Da podigne dohodak poljoprivrednih proizvođača i uskladi tu granu s ostalim granama.",
+        "explanation": "Mjera suvremenog kapitalizma."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "0pz7wo",
+        "question": "Državni kapitalizam karakterizira:",
+        "options": [
+          "potpuna sloboda tržišta bez državnog utjecaja",
+          "ukidanje privatnog vlasništva zakonom",
+          "jak utjecaj države na uređenje gospodarstva",
+          "isključivo naturalna proizvodnja u domaćinstvima"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "n19qtj",
+        "question": "Što NIJE mjera države u suvremenom kapitalizmu?",
+        "options": [
+          "investiranje u industriju",
+          "subvencioniranje poljoprivrede",
+          "ukidanje svih poreza i carina",
+          "socijalni zakoni"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r9iz7c",
+        "question": "Preraspodjela narodnog dohotka u državnom kapitalizmu obavlja se:",
+        "options": [
+          "državnim proračunom",
+          "međusobnom trampom robe",
+          "isplatom dividendi dioničarima",
+          "sporazumima kartela"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "pzopb2",
+        "question": "Država koja utvrđuje minimalne najamnine i radno vrijeme djeluje kao:",
+        "options": [
+          "vlasnik tvornica u gospodarstvu",
+          "zakupac poljoprivrednog zemljišta",
+          "trgovac robom na veliko",
+          "posrednik radnika i poslodavaca"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "jrffwr",
+        "question": "Uzrok državnog kapitalizma je jedinstvo suprotnosti između:",
+        "options": [
+          "ponude i potražnje na tržištu robe",
+          "društvene proizvodnje i privatnog prisvajanja",
+          "kamate i dividende u dioničkim društvima",
+          "grada i sela u gospodarstvu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fitss6",
+        "question": "Otkup dionica i nacionalizacija znače sudjelovanje države u:",
+        "options": [
+          "radnom vremenu",
+          "nacionalnom kapitalu",
+          "tržišnoj ravnoteži",
+          "cijeni radne snage"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "i0uxp8",
+        "question": "Država u državnom kapitalizmu kontrolira:",
+        "options": [
+          "dividende privatnih dioničkih društava",
+          "cijene svih roba na malo",
+          "profite svakog privatnog poduzeća",
+          "banke i monetarnu politiku"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "tv0u9b",
+        "sentence": "Državni kapitalizam je faza kapitalizma s jakim utjecajem _______.",
+        "answer": "države",
+        "hint": "intervencija"
+      },
+      {
+        "id": "8m6qbe",
+        "sentence": "Država subvencionira poljoprivredu radi podizanja dohotka _______ proizvođača.",
+        "answer": "poljoprivrednih",
+        "hint": "usklađivanje grana"
+      },
+      {
+        "id": "ivv62q",
+        "sentence": "Preraspodjela narodnog dohotka obavlja se državnim _______.",
+        "answer": "proračunom",
+        "hint": "porezi i izdaci"
+      }
+    ],
+    "learn": {
+      "id": "04yt6o",
+      "title": "Državni kapitalizam",
+      "content": "\n<h3>Pojam državnog kapitalizma</h3>\n<p><strong>Državni kapitalizam</strong> je faza razvitka kapitalizma koju karakterizira jak utjecaj države na uređenje gospodarskih odnosa. Teorijski se temelji na određivanju sveukupnih mjera, akcija i zahvata kojima kapitalistička država intervenira u vlastitom gospodarstvu da bi osigurala nesmetan proces društvene reprodukcije. U ranijim razdobljima obuhvaćao je vlasničke odnose nad sredstvima za proizvodnju (šume, željeznice, rudnici); danas se proširio na razne funkcije i interventne mjere — nastao je novi odnos države i gospodarskih subjekata.</p>\n<h4>Uzroci nastanka</h4>\n<p>Nalaze se u samom kapitalizmu kao načinu proizvodnje — to je samo jedna od etapa kroz koju prolazi. Proizašao je kao zakonitost jedinstva suprotnosti između <em>društvene proizvodnje</em> i <em>privatnog prisvajanja</em> kapitalista; razlog je i nemogućnost da privatno vlasništvo i inicijativa kapitalista osiguraju normalan tijek društvene reprodukcije.</p>\n<h3>Temeljne karakteristike (obilježja) državnog kapitalizma</h3>\n<ol>\n<li>državno vlasništvo nad sredstvima za proizvodnju,</li>\n<li>državno upravljanje tim vlasništvom putem svojih tijela,</li>\n<li>preraspodjela narodnog dohotka putem državnog proračuna,</li>\n<li>država vodi monetarnu politiku i kontrolira banke,</li>\n<li>država subvencionira određene grane gospodarstva (neke oslobađa poreza),</li>\n<li>država posreduje u odnosima radnika i kapitalista (poslodavaca): utvrđuje minimalne najamnine, obvezno zdravstveno i socijalno osiguranje, dužinu radnog vremena, godišnje odmore,</li>\n<li>udio države u raznim dioničkim transakcijama i otkupu poljoprivrednih proizvoda,</li>\n<li>donošenje zakona koji reguliraju gospodarske i radne odnose,</li>\n<li>državne mjere usmjerene na održavanje određenih stopa gospodarskog rasta i zaposlenosti,</li>\n<li>državna kontrola međunarodnih ekonomskih odnosa i međunarodnog kretanja kapitala.</li>\n</ol>\n<h3>Državne mjere u suvremenom kapitalizmu</h3>\n<ul>\n<li>država <strong>investira</strong> u industrijsku proizvodnju i tako stvara novi ili širi postojeći državni sektor; određuje smjer i veličinu investicija u zemlji i utječe na promjene gospodarske strukture (ulaganje u ciljane grane);</li>\n<li><strong>stimulira privatnu inicijativu</strong> kreditnom politikom i utvrđivanjem kamatnih stopa;</li>\n<li>ulaže i razvija jaku <strong>vojnu industriju</strong> (veliki industrijski zahvati neproizvodnog karaktera);</li>\n<li><strong>carinske politike</strong> — vodi politiku prema gospodarskim tokovima;</li>\n<li><strong>socijalnim zakonima</strong> određuje minimalne najamnine, gornju granicu radnog dana, zdravstveno osiguranje, socijalnu zaštitu;</li>\n<li><strong>subvencionira poljoprivredu</strong> radi podizanja dohotka proizvođača i usklađivanja s ostalim granama;</li>\n<li><strong>potiče određene oblike proizvodnje</strong> posebnim narudžbama i otkupom u dogovoreno vrijeme po povoljnim cijenama;</li>\n<li>putem <strong>nacionalizacije</strong>, otkupa dionica i drugim načinima sudjeluje u ukupnom nacionalnom, a time i međunarodnom kapitalu;</li>\n<li>brine o odgovarajućem stupnju zaposlenosti (a time i osobne potrošnje) i prisvaja velik dio narodnog dohotka, čime preraspodjeljuje novostvorenu vrijednost.</li>\n</ul>\n"
+    },
+    "id": "dystwx"
+  },
+  "peConsumption": {
+    "name": "Potrošnja u robnom gospodarstvu",
+    "icon": "fa-cart-shopping",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "1zpjqw",
+        "question": "Što je potrošnja i kako se dijeli?",
+        "answer": "Trošenje materijalnih dobara radi zadovoljenja ljudskih potreba; dijeli se na proizvodnu i osobnu potrošnju.",
+        "explanation": "Završni cilj proizvodnje."
+      },
+      {
+        "id": "d21c9b",
+        "question": "Što je proizvodna potrošnja?",
+        "answer": "Trošenje sredstava za proizvodnju u procesu stvaranja novih uporabnih vrijednosti; bez nje nema proizvodnje.",
+        "explanation": "Robni proizvođači troše sredstva."
+      },
+      {
+        "id": "8vf3ph",
+        "question": "Što je osobna potrošnja?",
+        "answer": "Temeljni oblik potrošnje: trošenje dobara i usluga za vlastite potrebe čovjeka; uvjet njegova opstanka i reprodukcije radne snage.",
+        "explanation": "Oznaka C."
+      },
+      {
+        "id": "pfl6yr",
+        "question": "Zašto je potrošnja završni cilj proizvodnje?",
+        "answer": "Jer proizvodnju pokreće potreba podmirenja ljudskih potreba, a potrošnjom se one konkretno zadovoljavaju.",
+        "explanation": "Osnovni cilj u robnom gospodarstvu."
+      },
+      {
+        "id": "qp7nr1",
+        "question": "Kako se u robnom gospodarstvu povezuju proizvodnja i potrošnja?",
+        "answer": "Putem robne razmjene i vrijednosnog oblika raspodjele društvenog bruto proizvoda, ne izravno.",
+        "explanation": "Roba za protuvrijednost."
+      },
+      {
+        "id": "sf3f8l",
+        "question": "Što određuje obujam i strukturu potrošnje?",
+        "answer": "Veličina društvenog bruto proizvoda (BDP-a), njegova struktura i raspodjela, veličina dohodaka te životni i radni uvjeti.",
+        "explanation": "Raspoloživi dohodak."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "79kyhi",
+        "question": "Potrošnja se prema svrsi dijeli na:",
+        "options": [
+          "proizvodnu i osobnu",
+          "privatnu i javnu",
+          "domaću i stranu",
+          "trajnu i kratkotrajnu"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "xsg7dq",
+        "question": "Trošenje sredstava za proizvodnju od robnih proizvođača je:",
+        "options": [
+          "osobna potrošnja",
+          "zajednička potrošnja",
+          "proizvodna potrošnja",
+          "tezauriranje"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "z38s7w",
+        "question": "Završni cilj svake proizvodnje je:",
+        "options": [
+          "akumulacija",
+          "razmjena",
+          "potrošnja",
+          "raspodjela"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "gco0uz",
+        "question": "Proizvodnja i potrošnja u robnom gospodarstvu povezuju se putem:",
+        "options": [
+          "robne razmjene",
+          "izravne veze",
+          "naturalne podjele",
+          "državnog plana"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "34yklq",
+        "question": "Oznaka C u agregatnoj potražnji označava:",
+        "options": [
+          "kapitalna ulaganja",
+          "cijenu proizvoda",
+          "kreditni volumen",
+          "osobnu potrošnju"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "2qikz2",
+        "question": "Obujam potrošnje ovisi o veličini:",
+        "options": [
+          "ukupnog broja banaka u zemlji",
+          "društvenog bruto proizvoda (BDP-a)",
+          "cijene zlata na svjetskom tržištu",
+          "broja izdanih dionica društava"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "93fnis",
+        "question": "Što NIJE čimbenik osobne potrošnje?",
+        "options": [
+          "raspoloživi dohodak",
+          "količina rabata trgovaca",
+          "životni uvjeti",
+          "moda"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "gi770u",
+        "sentence": "Potrošnja je završni _______ svake proizvodnje.",
+        "answer": "cilj",
+        "hint": "svrha"
+      },
+      {
+        "id": "y6iqn5",
+        "sentence": "Veza proizvodnje i potrošnje ostvaruje se putem robne _______.",
+        "answer": "razmjene",
+        "hint": "treća faza"
+      },
+      {
+        "id": "w1ke20",
+        "sentence": "Agregatnu potražnju čine potrošnja, investicije, državna potrošnja i neto _______.",
+        "answer": "izvoz",
+        "hint": "E"
+      }
+    ],
+    "learn": {
+      "id": "18y3ua",
+      "title": "Potrošnja u sustavu robnog gospodarstva",
+      "content": "\n<h3>Opći pojmovi o potrošnji</h3>\n<p><strong>Potrošnja</strong> je trošenje materijalnih dobara radi zadovoljenja određenih ljudskih potreba. Kako se potrebe svrstavaju u dvije osnovne skupine, potrošnja se dijeli na <strong>proizvodnu</strong> i <strong>osobnu</strong>.</p>\n<ul>\n<li><strong>Proizvodna potrošnja</strong> javlja se u procesu stvaranja novih uporabnih vrijednosti kad se troše angažirani čimbenici; to je trošenje sredstava za proizvodnju od robnih proizvođača. Bez nje nije moguć nijedan oblik proizvodnje materijalnih dobara.</li>\n<li><strong>Osobna potrošnja</strong> temeljni je oblik potrošnje, vezan uz trošenje dobara i usluga za vlastite potrebe; proces zadovoljavanja potreba trošenjem potrošnih dobara; temeljni uvjet opstanka čovjeka — osigurava ljudski rad kao komponentu proizvodnje, a time i društvene reprodukcije. Oznaka: <strong>C</strong> (potrošnja pojedinca, obitelji, grupe, naroda u razdoblju).</li>\n</ul>\n<p>Osnovna pokretačka snaga svake proizvodnje proizlazi iz potrebe podmirenja ljudskih potreba, a potrošnjom se te potrebe konkretno zadovoljavaju — zato je <strong>potrošnja završni cilj svake proizvodnje</strong>. U robnom gospodarstvu je osnovni cilj proizvodnje.</p>\n<p><strong>Ukupna (globalna, agregatna) potrošnja</strong> je potrošnja svih materijalnih dobara u okviru zajednice u određenom razdoblju (AD — agregatna potražnja). Obujam i struktura (osobna i proizvodna) ovise o veličini društvenog bruto proizvoda (BDP-a), njegovoj naturalnoj strukturi i načinu raspodjele.</p>\n<h3>Veza proizvodnje i potrošnje u robnom gospodarstvu</h3>\n<p>Povijesna je nužnost da proizvodi rada postaju roba: oni kojima je roba potrebna moraju za nju dati protuvrijednost (robu ili novac), što stvara nužnost razmjene. Veza proizvodnje i potrošnje ne ostvaruje se izravno, nego putem <strong>robne razmjene</strong>, a međusobni utjecaj počiva na robnoj razmjeni i vrijednosnom obliku raspodjele društvenog bruto proizvoda, tj. narodnog dohotka.</p>\n<h4>Proizvodna i osobna potrošnja</h4>\n<ul>\n<li>Nakon prodaje robni proizvođači moraju dio dobivenog novca odvojiti za kupnju sredstava za proizvodnju kojima nadomještaju potrošena; ako proširuju obujam i strukturu proizvodnje, moraju odvojiti dodatni novac.</li>\n<li>Obujam i struktura BDP-a, njegova raspodjela i razmjena odlučujuće utječu na količinu i strukturu osobne potrošnje; utječu i veličina novčanih dohodaka (raspoloživi dohodak) te promjene radnih i životnih uvjeta (položaj na poslu, životna sredina, moda).</li>\n</ul>\n"
+    },
+    "id": "akdgt3"
+  },
+  "peReproCrisis": {
+    "name": "Društvena reprodukcija cjelokupnog kapitala i krize",
+    "icon": "fa-chart-line",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "g5w63e",
+        "question": "Što je društvena reprodukcija?",
+        "answer": "Proces neprekidnog obnavljanja društvene proizvodnje i društveno-ekonomskog procesa; vječna konstanta opstanka i razvitka društva.",
+        "explanation": "Prosta, umanjena, proširena."
+      },
+      {
+        "id": "0dbnbv",
+        "question": "Kako se društveni proizvod dijeli u analizi reprodukcije?",
+        "answer": "Na sredstva za proizvodnju (I. odjeljak) i sredstva za osobnu potrošnju (II. odjeljak).",
+        "explanation": "Temeljni uvjet normalne reprodukcije."
+      },
+      {
+        "id": "3wcrs1",
+        "question": "Uvjeti proste reprodukcije (formule)?",
+        "answer": "I(c+v+m) = Ic + IIc; II(c+v+m) = I(v+m) + II(v+m); I(v+m) = IIc.",
+        "explanation": "Razmjena odjeljaka je ekvivalentna."
+      },
+      {
+        "id": "sj7l71",
+        "question": "Uvjeti proširene reprodukcije (formule)?",
+        "answer": "I(c+v+m) > Ic + IIc; II(c+v+m) < I(v+m) + II(v+m); I(v+m) > IIc.",
+        "explanation": "I proizvodi više, II manje."
+      },
+      {
+        "id": "gz02td",
+        "question": "Što je kriza hiperproizvodnje?",
+        "answer": "Prevelike proizvodnje bez potražnje: akumulacija raste brže od potrošnje; padaju cijene, profiti i plaće, raste nezaposlenost; začarani krug.",
+        "explanation": "Struktura potražnje ≠ ponude."
+      },
+      {
+        "id": "q74kzv",
+        "question": "Kako Marx gleda na krize?",
+        "answer": "Kao nužne i ciklične, inherentne kapitalizmu: sklonost akumulaciji vodi hiperprodukciji i padu stope dobiti, a krize se produbljuju.",
+        "explanation": "Nisu povremene anomalije."
+      },
+      {
+        "id": "dh07o0",
+        "question": "Što je kriza, a što recesija?",
+        "answer": "Kriza: poremećaj reprodukcijskih tokova (pad proizvodnje, nezaposlenost, bankroti). Recesija: blaži oblik, znatan pad aktivnosti duži od 2–3 tromjesečja.",
+        "explanation": "Depresija: pad BDP-a > 10 %."
+      },
+      {
+        "id": "wnvgpt",
+        "question": "Što omogućuje izlazak iz krize i koje su etape ciklusa?",
+        "answer": "Investicijska potražnja (obnova proizvodnog kapitala); etape: kriza, depresija, oživljavanje i prosperitet.",
+        "explanation": "Cikličko kretanje gospodarstva."
+      },
+      {
+        "id": "8w8n37",
+        "question": "Koje su značajke prosperiteta?",
+        "answer": "Rast investicija, proizvodnje i prometa, pad nezaposlenosti, rast nacionalnog dohotka i kupovne moći, tehnološka obnova.",
+        "explanation": "Suprotno krizi."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "z2y15r",
+        "question": "Etape cikličkog kretanja kapitalističkog gospodarstva su:",
+        "options": [
+          "rast, inflacija, deflacija i stagnacija",
+          "proizvodnja, raspodjela, razmjena i potrošnja",
+          "akumulacija, koncentracija, centralizacija i rast",
+          "kriza, depresija, oživljavanje i prosperitet"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "78rdcv",
+        "question": "Izlazak iz krize omogućuje:",
+        "options": [
+          "investicijska potražnja",
+          "povećanje kamata",
+          "ukidanje poreza na štednju",
+          "smanjenje proizvodnje"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "h5lv5z",
+        "question": "Uvjet proste reprodukcije je:",
+        "options": [
+          "I(v+m) > IIc",
+          "I(v+m) < IIc",
+          "I(v+m) = IIc",
+          "II(c+v+m) < I(v+m)"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "9fdw0z",
+        "question": "Uvjet proširene reprodukcije je:",
+        "options": [
+          "I(v+m) = IIc",
+          "I(v+m) < IIc",
+          "I(v+m) > IIc",
+          "Ic = IIc"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "7ems7k",
+        "question": "Teška i duga recesija s padom BDP-a većim od 10 % je:",
+        "options": [
+          "depresija",
+          "stagnacija",
+          "usporavanje rasta",
+          "prosperitet"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "7wf4ja",
+        "question": "Recesija znači pad ekonomske aktivnosti koji traje najmanje:",
+        "options": [
+          "jedan do dva uzastopna mjeseca",
+          "pet do deset uzastopnih godina",
+          "jednu cijelu kalendarsku godinu",
+          "dva do tri uzastopna tromjesečja"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "vxug7t",
+        "question": "Kriza hiperproizvodnje nastaje jer:",
+        "options": [
+          "proizvodnja sredstava za proizvodnju zaostaje za potražnjom",
+          "akumulacija raste brže od osobne potrošnje",
+          "najamnine rastu brže od produktivnosti",
+          "potrošnja raste brže od proizvodnje"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "btb40d",
+        "question": "Prema Marxu krize su:",
+        "options": [
+          "povremene anomalije",
+          "nužne i ciklične u kapitalizmu",
+          "rezultat prirodnih katastrofa",
+          "moguće samo u socijalizmu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "i33df2",
+        "question": "Značajka razdoblja prosperiteta je:",
+        "options": [
+          "pad investicija",
+          "porast bankrota",
+          "pad nacionalnog dohotka",
+          "smanjenje nezaposlenosti"
+        ],
+        "correct": 3
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "nph7qw",
+        "sentence": "Društveni proizvod dijeli se na sredstva za proizvodnju i sredstva za _______ potrošnju.",
+        "answer": "osobnu",
+        "hint": "II. odjeljak"
+      },
+      {
+        "id": "hmv8tp",
+        "sentence": "Blaži oblik gospodarske krize naziva se _______.",
+        "answer": "recesija",
+        "hint": "pad aktivnosti"
+      },
+      {
+        "id": "88yorl",
+        "sentence": "Teška recesija s padom BDP-a većim od 10 % je gospodarska _______.",
+        "answer": "depresija",
+        "hint": "dugotrajna"
+      }
+    ],
+    "learn": {
+      "id": "xg461i",
+      "title": "Društvena reprodukcija cjelokupnog kapitala; krize i prosperitet",
+      "content": "\n<h3>Osnovne pretpostavke društvene reprodukcije</h3>\n<p>Društvena reprodukcija je proces neprekidnog obnavljanja društvene proizvodnje. Analiza polazi od mogućnosti <strong>realizacije ukupnog društvenog proizvoda</strong>: mora se osigurati odgovarajuća materijalna struktura proizvoda i odgovarajuća raspodjela kojom se formira potražnja za pojedinim dijelovima. Društveni proizvod polazište je jer je njegova podjela na <strong>sredstva za proizvodnju (I. odjeljak)</strong> i <strong>sredstva za osobnu potrošnju (II. odjeljak)</strong> temeljni uvjet normalne reprodukcije (materijalna i vrijednosna struktura).</p>\n<h4>Jednostavna (prosta) reprodukcija</h4>\n<p>Neprekidno kretanje proizvodnje u nepromijenjenoj vrijednosnoj, kvantitativnoj i kvalitativnoj strukturi. Pretpostavke: (a) proizvodnja sredstava za proizvodnju jednaka je utrošenim sredstvima za proizvodnju proizvođača sredstava za proizvodnju i sredstava za osobnu potrošnju; (b) proizvodnja sredstava za osobnu potrošnju i luksuznih proizvoda jednaka je sredstvima kojima raspolažu radnici i kapitalisti za tu potrošnju (nema izdvajanja za akumulaciju); (c) razmjena između odjeljaka mora biti ekvivalentna.</p>\n<div class=\"formula-box\">\\[ \\text{I}(c+v+m) = \\text{I}\\,c + \\text{II}\\,c \\]\n\\[ \\text{II}(c+v+m) = \\text{I}(v+m) + \\text{II}(v+m) \\]\n\\[ \\text{I}(v+m) = \\text{II}\\,c \\]</div>\n<h4>Umanjena reprodukcija</h4>\n<p>Pad društvene proizvodnje u vrijednosnoj, količinskoj i kvalitativnoj strukturi naspram prethodnog razdoblja.</p>\n<h4>Proširena reprodukcija</h4>\n<p>Gotovo uvijek prisutna (rast stanovništva i potreba). Pretpostavke: (a) proizvođači sredstava za proizvodnju moraju proizvesti <em>više</em> nego što su zajednički potrošili u prethodnom ciklusu; (b) proizvođači sredstava za osobnu potrošnju moraju proizvesti <em>manje</em> nego što imaju novčanih sredstava za osobnu potrošnju radnici i kapitalisti zajedno; (c) kapitalistima ostaje neutrošenih sredstava za kupnju dodatnih sredstava za proizvodnju i dodatne radne snage.</p>\n<div class=\"formula-box\">\\[ \\text{I}(c+v+m) > \\text{I}\\,c + \\text{II}\\,c \\]\n\\[ \\text{II}(c+v+m) < \\text{I}(v+m) + \\text{II}(v+m) \\]\n\\[ \\text{I}(v+m) > \\text{II}\\,c \\]</div>\n<h3>Kriza hiperproizvodnje u kapitalističkom društvu</h3>\n<p>Konkurencija kapitalista i težnja za širenjem i zaradom dovode do instalacije prevelikih kapaciteta i količina proizvodnje koje ne nalaze potražnju (akumulacija raste brže od osobne potrošnje). Počinje <em>pad cijena</em> (deflacija), pad profita, pad radničkih najamnina i/ili rast nezaposlenosti — struktura potražnje ne odgovara strukturi ponude. Slijedi <strong>lančani poremećaj</strong>: nemogućnost realizacije sredstava za osobnu potrošnju → smanjenje proizvodnje i otpuštanja → pad kupovne snage; smanjenje proizvodnje sredstava za osobnu potrošnju → pad potražnje za sredstvima za proizvodnju → nemogućnost njihove realizacije → otpuštanja u I. odjeljku → pad kupovne snage → začarani krug.</p>\n<p><strong>Marx</strong> je dokazao mogućnost, ali i <em>nužnost</em> izbijanja ekonomskih i monetarnih poremećaja u kapitalističkom sustavu proizvodnje (<em>cikličnost kriza</em>); krize nisu povremene anomalije nego inherentna i trajna karakteristika kapitalizma. Prema Marxu svaka je akumulacija kapitala sredstvo za novu akumulaciju; povećava koncentraciju bogatstva u rukama kapitalista i širi osnovicu proizvodnje, no beskrajna sklonost akumuliranju vodi hiperprodukciji kapitala i snažnom opadanju prosječne stope dobiti — to je signal krize; krize traju duže, pogađaju više ljudi i dovode do sve veće bijede radničke klase; time sustav ide prema kolapsu.</p>\n<h4>Mogući uzroci kriza</h4>\n<p>Unutarnji i vanjski čimbenici: neadekvatna raspodjela narodnog dohotka na najamninu i profit (pad platežne moći i potražnje), nerazmjer ponude i potražnje (nemogućnost realizacije), nerazmjer novca u optjecaju, prirodne katastrofe.</p>\n<h3>Prosperitet i ciklično kretanje</h3>\n<p>Izlazak iz krize omogućuje <strong>investicijska potražnja</strong> koja gotovo istodobno potiče aktivnosti u čitavom gospodarstvu; temelji se na uvođenju novog proizvodnog kapitala (zamjena sredstava za proizvodnju, modernizacija) pa potiče potrošnju i započinje prosperitet. <strong>Značajke prosperiteta:</strong> povećanje investicija, smanjenje nezaposlenosti, povećanje proizvodnje i prometa robe, rast nacionalnog dohotka i kupovne moći, ulaganje u tehnološku obnovu. Kapitalizam obilježavaju stalne smjene krize i prosperiteta — <strong>cikličko kretanje</strong>. Etape: <strong>kriza, depresija, oživljavanje i prosperitet</strong>.</p>\n<h4>Recesija i srodni pojmovi</h4>\n<ul>\n<li><strong>Kriza</strong> je poremećaj u kojem su narušeni reprodukcijski tokovi, što ima za posljedicu pad proizvodnje, porast nezaposlenosti, bankrote i sl.</li>\n<li><strong>Recesija</strong> — blaži oblik ekonomske krize: znatan pad ekonomske aktivnosti u različitim dijelovima gospodarstva koji traje više mjeseci (najmanje dva do tri uzastopna tromjesečja); pad industrijske proizvodnje, zaposlenosti, realnih dohodaka i trgovine.</li>\n<li><strong>Usporavanje (stagnacija) rasta</strong> — pozitivne, ali niže stope rasta od prijašnjih.</li>\n<li><strong>Globalna recesija</strong> — prema MMF-u usporavanje rasta svjetskog gospodarstva na manje od tri posto.</li>\n<li><strong>Depresija</strong> — teška, duga recesija s padom BDP-a većim od 10 %.</li>\n<li><strong>Ekonomska i/ili financijska kriza</strong> — slom gospodarstva kad država više ne može financirati obveze (servisiranje duga, javne potrebe).</li>\n</ul>\n"
+    },
+    "id": "cjdmdb"
+  }
+};
+
+if (typeof window !== 'undefined') { window.pePfriM2 = pePfriM2; }
+if (typeof module !== 'undefined' && module.exports) { module.exports = pePfriM2; }
