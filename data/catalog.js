@@ -2003,6 +2003,262 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'property-succession-pfri',
+      programId: 'law-integrated-hr',
+      year: 3, semester: 1,
+      name: 'Stvarno i nasljedno pravo',
+      shortName: 'SNP',
+      icon: 'fa-house-chimney',
+      color: '#92400e',
+      iconGradient: ['#92400e', '#fbbf24'],
+      description: 'Stvarno i nasljedno pravo (PFRI): stvari, posjed, vlasništvo i njegovo stjecanje, suvlasništvo i etažno vlasništvo, služnosti, založno pravo, zemljišne knjige te nasljeđivanje po zakonu i oporuci',
+      storageKey: 'property-succession-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign snpPfriM1 + snpPfriM2 + examPractice)
+        scripts: [
+          'data/property-succession-pfri/midterm-1.js',
+          'data/property-succession-pfri/midterm-2.js',
+          'data/property-succession-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'snpPfriM1',
+          'second-midterm': 'snpPfriM2',
+          'final': 'snpPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'eu-law-2-pfri',
+      programId: 'law-integrated-hr',
+      year: 3, semester: 1,
+      name: 'Europsko pravo II',
+      shortName: 'EP2',
+      icon: 'fa-euro-sign',
+      color: '#075985',
+      iconGradient: ['#075985', '#7dd3fc'],
+      description: 'Europsko pravo II (PFRI): unutarnje tržište i temeljne slobode — slobodno kretanje robe, osoba, usluga i kapitala — te pravo tržišnog natjecanja EU',
+      storageKey: 'eu-law-2-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep2PfriM1 + ep2PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-2-pfri/midterm-1.js',
+          'data/eu-law-2-pfri/midterm-2.js',
+          'data/eu-law-2-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep2PfriM1',
+          'second-midterm': 'ep2PfriM2',
+          'final': 'ep2PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'administrative-science-pfri',
+      programId: 'law-integrated-hr',
+      year: 3, semester: 2,
+      name: 'Upravna znanost',
+      shortName: 'UZ',
+      icon: 'fa-sitemap',
+      color: '#9d174d',
+      iconGradient: ['#9d174d', '#f9a8d4'],
+      description: 'Upravna znanost (PFRI): pojam i razvoj javne uprave, upravne organizacije, javni službenici, decentralizacija i lokalna samouprava, upravne reforme i europski upravni prostor',
+      storageKey: 'administrative-science-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign uzPfriM1 + uzPfriM2 + examPractice)
+        scripts: [
+          'data/administrative-science-pfri/midterm-1.js',
+          'data/administrative-science-pfri/midterm-2.js',
+          'data/administrative-science-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'uzPfriM1',
+          'second-midterm': 'uzPfriM2',
+          'final': 'uzPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'administrative-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 4, semester: 1,
+      name: 'Upravno pravo',
+      shortName: 'UPR',
+      icon: 'fa-stamp',
+      color: '#115e59',
+      iconGradient: ['#115e59', '#5eead4'],
+      description: 'Upravno pravo (PFRI): izvori i načela upravnog prava, upravni akt, opći upravni postupak, pravni lijekovi i upravni spor',
+      storageKey: 'administrative-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign uprPfriM1 + uprPfriM2 + examPractice)
+        scripts: [
+          'data/administrative-law-pfri/midterm-1.js',
+          'data/administrative-law-pfri/midterm-2.js',
+          'data/administrative-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'uprPfriM1',
+          'second-midterm': 'uprPfriM2',
+          'final': 'uprPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'maritime-transport-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 4, semester: 1,
+      name: 'Pomorsko i općeprometno pravo',
+      shortName: 'POP',
+      icon: 'fa-ship',
+      color: '#155e75',
+      iconGradient: ['#155e75', '#67e8f9'],
+      description: 'Pomorsko i općeprometno pravo (PFRI): pomorsko dobro i plovidba, brod i stvarna prava na brodu, ugovori o iskorištavanju brodova, prijevoz u drugim granama prometa, havarije i odgovornost',
+      storageKey: 'maritime-transport-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign popPfriM1 + popPfriM2 + examPractice)
+        scripts: [
+          'data/maritime-transport-law-pfri/midterm-1.js',
+          'data/maritime-transport-law-pfri/midterm-2.js',
+          'data/maritime-transport-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'popPfriM1',
+          'second-midterm': 'popPfriM2',
+          'final': 'popPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'commercial-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 4, semester: 1,
+      name: 'Trgovačko pravo',
+      shortName: 'TP',
+      icon: 'fa-briefcase',
+      color: '#a21caf',
+      iconGradient: ['#a21caf', '#f0abfc'],
+      description: 'Trgovačko pravo (PFRI): trgovac i trgovačko društvo, trgovački ugovori, vrijednosni papiri i platni promet, osiguranje i stečaj',
+      storageKey: 'commercial-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign tpPfriM1 + tpPfriM2 + examPractice)
+        scripts: [
+          'data/commercial-law-pfri/midterm-1.js',
+          'data/commercial-law-pfri/midterm-2.js',
+          'data/commercial-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'tpPfriM1',
+          'second-midterm': 'tpPfriM2',
+          'final': 'tpPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'labour-social-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 4, semester: 2,
+      name: 'Radno i socijalno pravo',
+      shortName: 'RSP',
+      icon: 'fa-helmet-safety',
+      color: '#b45309',
+      iconGradient: ['#b45309', '#fcd34d'],
+      description: 'Radno i socijalno pravo (PFRI): izvori radnog prava, ugovor o radu, radno vrijeme i odmori, plaća, prestanak ugovora, kolektivno radno pravo i socijalna sigurnost',
+      storageKey: 'labour-social-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign rspPfriM1 + rspPfriM2 + examPractice)
+        scripts: [
+          'data/labour-social-law-pfri/midterm-1.js',
+          'data/labour-social-law-pfri/midterm-2.js',
+          'data/labour-social-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'rspPfriM1',
+          'second-midterm': 'rspPfriM2',
+          'final': 'rspPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'company-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 4, semester: 2,
+      name: 'Pravo društava',
+      shortName: 'PD',
+      icon: 'fa-building',
+      color: '#166534',
+      iconGradient: ['#166534', '#86efac'],
+      description: 'Pravo društava (PFRI): osnivanje i ustroj trgovačkih društava — javno trgovačko i komanditno društvo, d.o.o. i dioničko društvo, povezana društva i statusne promjene',
+      storageKey: 'company-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign pdPfriM1 + pdPfriM2 + examPractice)
+        scripts: [
+          'data/company-law-pfri/midterm-1.js',
+          'data/company-law-pfri/midterm-2.js',
+          'data/company-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'pdPfriM1',
+          'second-midterm': 'pdPfriM2',
+          'final': 'pdPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
