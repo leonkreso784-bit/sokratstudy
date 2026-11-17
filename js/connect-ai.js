@@ -13,10 +13,10 @@
 // do prave stranice, a adresa se kopira (ADR-026: zajamčen put je kopiranje). Gemini prima vlastite
 // konektore samo u SAD-u, za punoljetne, na engleskom → ne nudi se (plan ②/5).
 //
-// ─── OGRADA DO ⑥ ────────────────────────────────────────────────────────────────────────────────
-// Konektor danas postoji samo na STAGINGU. Na produkciji bi gumb vodio na adresu koja ne radi, pa je
-// `adresaKonektora()` ondje `null` → gumb onemogućen (Studio) ili ga nema (Moji materijali). U ⑥ se
-// `PRODUKCIJA` postavi na kanonsku adresu (ADR-038 ②) i ograda nestaje.
+// ─── PRODUKCIJA (K/10, 17.11.) ──────────────────────────────────────────────────────────────────
+// Konektor je živ na kanonskoj adresi (ADR-038 ②), pa je ograda „null do ⑥" skinuta. `null` i dalje
+// znači „ovdje ne radi" (pokvaren override) → gumb onemogućen (Studio) ili ga nema (Moji materijali).
+// TREĆI ulaz: redak u herou naslovnice (`data-connect-ai`) — paket `connect` stiže tek na klik.
 //
 // ─── SIGURNOST ──────────────────────────────────────────────────────────────────────────────────
 // Ime povezane aplikacije dolazi iz DCR-a (registrirati ga može bilo tko, ADR-038 ③): služi SAMO za
@@ -25,16 +25,16 @@
 (function (window) {
   'use strict';
 
-  /** Kanonska adresa na produkciji — postavlja se TEK u ⑥ (vidi zaglavlje). */
-  const PRODUKCIJA = null;
+  /** Kanonska adresa na produkciji (ADR-038 ②; Vercel je prepisuje na funkciju `mcp`). */
+  const PRODUKCIJA = 'https://www.sokratstudy.com/mcp';
   /** Put funkcije na Supabase projektu (staging): `<projekt>/functions/v1/mcp`. */
   const PUT_FUNKCIJE = '/functions/v1/mcp';
 
   /** Aplikacije za koje dajemo upute (plan ②/5 ①). `otvori` = stranica s konektorima, `chat` = prečac. */
   const APLIKACIJE = [
     { id: 'claude', ime: 'Claude', prepoznaj: /claude|anthropic/i,
-      otvori: 'https://claude.ai/customize/connectors', chat: 'https://claude.ai/new',
-      koraci: ['connectAi.claude1', 'connectAi.claude2', 'connectAi.claude3', 'connectAi.claude4'],
+      otvori: 'https://claude.ai/settings/connectors', chat: 'https://claude.ai/new',
+      koraci: ['connectAi.claude1', 'connectAi.claude2', 'connectAi.claude3'],
       napomena: 'connectAi.claudeNote' },
     { id: 'chatgpt', ime: 'ChatGPT', prepoznaj: /chatgpt|openai/i,
       otvori: 'https://chatgpt.com/', chat: 'https://chatgpt.com/',
@@ -107,6 +107,14 @@
   // ── prozor ────────────────────────────────────────────────────────────────────────────────
   let _app = 'claude';
 
+  /** Je li netko prijavljen u Sokrat (bez auth modula = ne znamo → ne gnjavi savjetom). */
+  function prijavljen() {
+    try {
+      if (typeof SokratAuth === 'undefined' || typeof SokratAuth.getUser !== 'function') return true;
+      return !!SokratAuth.getUser();
+    } catch (e) { return true; }
+  }
+
   function ensureModal() {
     let m = document.getElementById('caiModal');
     if (m) return m;
@@ -148,6 +156,9 @@
       '<i class="fas fa-copy" aria-hidden="true"></i><span>' + esc(tt('connectAi.copy', 'Copy address')) + '</span></button>' +
       '  </div>' +
       '  <p class="cai__note">' + esc(tt(a.napomena, '')) + '</p>' +
+      // Izmjereno 17.11.: zahtjev za spajanje istekne za ~10 min — tko se tek tada prijavljuje, dobije
+      // „Nije uspjelo". Prijava UNAPRIJED ga skraćuje na jedan klik.
+      (prijavljen() ? '' : '  <p class="cai__note cai__note--signin">' + esc(tt('connectAi.signinFirst', 'Sign in to Sokrat first — then connecting takes one click.')) + '</p>') +
       '  <div class="cai__actions">' +
       '    <a class="cta-button primary cai__open" href="' + esc(a.otvori) + '" target="_blank" rel="noopener noreferrer">' +
       '<span>' + esc(tt('connectAi.open', 'Open') + ' ' + a.ime) + '</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>' +

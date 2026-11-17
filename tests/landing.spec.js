@@ -123,6 +123,26 @@ test('landing: dvoje vrata vode na browse i na vlastiti materijal', async ({ pag
   expect(errors).toEqual([]);
 });
 
+test('landing: „Poveži AI" u herou otvara upute s PRODUKCIJSKOM adresom, a skripta stiže tek na klik', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+
+  await page.goto('/');
+  await page.waitForFunction(() => window.SokratLoad);
+  // Naslovnica ne plaća prozor dok ga nitko ne traži.
+  expect(await page.evaluate(() => typeof window.SokratConnectAi)).toBe('undefined');
+
+  await page.click('.hero-ai[data-connect-ai]');
+  const prozor = page.locator('#caiModal');
+  await expect(prozor.locator('.cai__title')).toBeVisible({ timeout: 5000 });
+  await expect(prozor.locator('[data-cai-addr]')).toHaveText('https://www.sokratstudy.com/mcp');
+  await expect(prozor.locator('.cai__open')).toHaveAttribute('href', 'https://claude.ai/settings/connectors');
+  // Neprijavljen posjetitelj dobiva savjet koji izbjegava istek zahtjeva (izmjereno 17.11.).
+  await expect(prozor.locator('.cai__note--signin')).toBeVisible();
+
+  expect(errors).toEqual([]);
+});
+
 test('landing: kartica predmeta otvara lekcije tog predmeta', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));

@@ -96,7 +96,9 @@
         // ⚠️ Sinkronizacija napretka NE visi o stranici nego o PRIJAVI: dovlači ju `auth.js`
         // čim se pojavi korisnik. Da stoji uz profil, napredak se ne bi sinkronizirao onome
         // tko svoj profil nikad ne otvori — a to je većina prijavljenih.
-        sync: ['js/cloud-sync.js']
+        sync: ['js/cloud-sync.js'],
+        // „Poveži AI" iz heroa naslovnice — samo prozor s uputama, bez cijelih „Mojih materijala".
+        connect: ['js/connect-ai.js']
     };
 
     /* Token iz vlastite adrese (v. upozorenje u zaglavlju). Prazan = razvojni poslužitelj bez

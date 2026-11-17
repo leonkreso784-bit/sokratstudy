@@ -316,6 +316,8 @@
     'door.make.d': { en: 'From your notes to flashcards in a few minutes.', hr: 'Od bilježaka do kartica u nekoliko minuta.' },
     // F3/1 (Leon, 16.09.): do tada „private until you share it" — obećanje dijeljenja koje ne postoji (PRD §7).
     'door.make.m': { en: 'Editor · private to you', hr: 'Editor · vidljivo samo tebi' },
+    'hero.ai.q': { en: 'Use Claude or ChatGPT?', hr: 'Koristiš Claude ili ChatGPT?' },
+    'hero.ai.a': { en: 'Connect it — it builds the material from your notes.', hr: 'Poveži ga — on ti od bilježaka napravi materijal.' },
 
     // ── KATALOG + ČINJENICE ───────────────────────────────────────────────
     'cat.title': { en: 'Or start from the catalog', hr: 'Ili kreni iz kataloga' },
@@ -796,10 +798,11 @@
     'connectAi.button': { en: 'Connect your AI', hr: 'Spoji svoj AI' },
     'connectAi.title': { en: 'Connect your AI', hr: 'Spoji svoj AI' },
     'connectAi.lead': { en: 'Add Sokrat to the AI you already use, once. Then ask it to build a study material from your notes — it lands on your shelf.', hr: 'Jednom dodaj Sokrat u AI koji već koristiš. Onda ga zamoli da od tvojih bilježaka napravi materijal — stići će ti na policu.' },
-    'connectAi.claude1': { en: 'Open Claude and go to Customize → Connectors.', hr: 'Otvori Claude i idi na Customize → Connectors.' },
-    'connectAi.claude2': { en: 'Click Add custom connector.', hr: 'Klikni Add custom connector.' },
-    'connectAi.claude3': { en: 'Paste the address below and click Add.', hr: 'Zalijepi adresu ispod i klikni Add.' },
-    'connectAi.claude4': { en: 'Click Connect and allow access with your Sokrat account.', hr: 'Klikni Connect i dopusti pristup svojim Sokrat računom.' },
+    // Put u Claudeu izmjeren 17.11. (Plugins → Add → Add custom connector → Continue → Add → Connect).
+    'connectAi.claude1': { en: 'Copy the address below and click Open Claude.', hr: 'Kopiraj adresu ispod i klikni Otvori Claude.' },
+    'connectAi.claude2': { en: 'Top right: Add → Add custom connector. Name it Sokrat, paste the address, then Continue → Add.', hr: 'Gore desno: Add → Add custom connector. Ime: Sokrat, zalijepi adresu, pa Continue → Add.' },
+    'connectAi.claude3': { en: 'Click Connect, then Allow on the Sokrat page.', hr: 'Klikni Connect, pa Dopusti na Sokratovoj stranici.' },
+    'connectAi.signinFirst': { en: 'Sign in to Sokrat first — then connecting takes one click.', hr: 'Prvo se prijavi u Sokrat — onda je spajanje jedan klik.' },
     'connectAi.claudeNote': { en: 'Works on every Claude plan; the free plan allows one custom connector.', hr: 'Radi na svim Claude paketima; besplatni dopušta jedan vlastiti konektor.' },
     'connectAi.gpt1': { en: 'In ChatGPT open Settings → Apps → Advanced settings and turn on Developer mode.', hr: 'U ChatGPT-u otvori Settings → Apps → Advanced settings i uključi Developer mode.' },
     'connectAi.gpt2': { en: 'Click Create app.', hr: 'Klikni Create app.' },

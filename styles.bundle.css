@@ -541,6 +541,36 @@ section[id$="-page"] {
     border-top-color: color-mix(in srgb, var(--color-on-brand) 22%, transparent);
   }
 }
+.hero-ai {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.45rem;
+  margin-top: 1rem;
+  padding: 0.35rem 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.92rem;
+  text-align: start;
+  cursor: pointer;
+  color: var(--color-ink-2);
+}
+.hero-ai i {
+  color: var(--color-brand-500);
+}
+.hero-ai-a {
+  color: var(--color-ink-0);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-500);
+  text-underline-offset: 0.2em;
+}
+.hero-ai:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
 .cat-tools {
   display: flex;
   flex-wrap: wrap;

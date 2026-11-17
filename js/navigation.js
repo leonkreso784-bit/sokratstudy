@@ -677,6 +677,16 @@ function initMaterialsEntries() {
         navigateTo('materials');
     });
 
+    // „Poveži AI" iz heroa: prozor s uputama (`SokratConnectAi`) stiže tek na klik, paket `connect`.
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('[data-connect-ai]')) return;
+        e.preventDefault();
+        if (typeof SokratLoad === 'undefined') return;
+        SokratLoad.paket('connect').then(function () {
+            if (window.SokratConnectAi) window.SokratConnectAi.otvori();
+        }).catch(function () { /* mreža: klik se smije ponoviti — paket ne drži odbijeno obećanje */ });
+    });
+
     const back = document.getElementById('backFromMaterials');
     if (back) {
         // K2a: ovdje je živjela petlja koju je Leon našao. `materialsReturnPage` je pamtio

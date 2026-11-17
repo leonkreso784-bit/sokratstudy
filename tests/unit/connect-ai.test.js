@@ -4,8 +4,9 @@
 //
 // ZAŠTO POSTOJI: gumb vodi korisnika da u SVOJ AI upiše adresu. Pogrešna adresa = konektor koji se
 // ne spaja, a nijedna druga brana to ne vidi. Tvrdi se:
-//   ① adresa: uz staging = funkcija `mcp` TOG projekta (isti put kao `index.ts`); bez staginga
-//     (produkcija do ⑥) = nema adrese → gumb onemogućen (Studio) ili ga nema (Moji materijali)
+//   ① adresa: uz staging = funkcija `mcp` TOG projekta (isti put kao `index.ts`); bez overridea =
+//     produkcija `www.sokratstudy.com/mcp` (K/10); pokvaren override = nema adrese → gumb onemogućen
+//     (Studio) ili ga nema (Moji materijali)
 //   ② aplikacije = točno Claude i ChatGPT (plan ②/5 ①; Gemini ne radi izvan SAD-a)
 //   ③ prečac (ADR-026 ①): povezan AI → gumb ga otvara, „Spoji drugi AI" vodi na NEpovezanu
 //   ④ ime iz DCR-a (tuđi tekst, ADR-038 ③) nikad ne ulazi u markup
@@ -53,17 +54,23 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     assert.strictEqual(C.dostupno(), true);
   });
 
-  await test('① bez staginga (produkcija do ⑥) NEMA adrese; http i smeće također ne', () => {
+  await test('① produkcija (K/10): adresa = TOČNO kanonska `www.sokratstudy.com/mcp`, i nju funkcija oglašava kao resurs', () => {
     const C = ucitaj(null);
-    assert.strictEqual(C._adresaKonektora(null), null);
-    assert.strictEqual(C.dostupno(), false);
-    assert.strictEqual(C._adresaKonektora({ url: 'http://evil.example' }), null, 'http adresa prošla');
-    assert.strictEqual(C._adresaKonektora({ url: 'nije adresa' }), null);
-    assert.ok(/const PRODUKCIJA = null;/.test(IZVOR), 'PRODUKCIJA više nije null — ograda do ⑥ je skinuta (to se radi tek u ⑥, uz Leonov OK)');
+    assert.strictEqual(C._adresaKonektora(null), 'https://www.sokratstudy.com/mcp');
+    assert.strictEqual(C.dostupno(), true);
+    // Ista adresa mora biti i u brani funkcija (očekivani resurs na PROD-u) — inače bi gumb i
+    // `MCP_RESOURCE_URL` mogli tiho otići svaki na svoju stranu.
+    const brana = fs.readFileSync(path.join(KORIJEN, 'scripts', 'check-edge-functions.js'), 'utf8');
+    assert.ok(/JE_PROD \? SITE \+ '\/mcp'/.test(brana) && brana.includes("const SITE = 'https://www.sokratstudy.com'"), 'check-edge-functions više ne očekuje www.sokratstudy.com/mcp');
   });
 
-  await test('① ulaz bez konektora: Studio = onemogućen gumb, Moji materijali = ništa (i sakriveno)', () => {
-    const C = ucitaj(null);
+  await test('① pokvaren override NEMA adrese: http i smeće ne prolaze', () => {
+    assert.strictEqual(ucitaj(null)._adresaKonektora({ url: 'http://evil.example' }), null, 'http adresa prošla');
+    assert.strictEqual(ucitaj(null)._adresaKonektora({ url: 'nije adresa' }), null);
+  });
+
+  await test('① ulaz bez konektora (pokvaren override): Studio = onemogućen gumb, Moji materijali = ništa (i sakriveno)', () => {
+    const C = ucitaj({ url: 'http://evil.example' });
     const s = element(); C.ugradi(s, { bezKonektora: 'onemoguci' });
     assert.ok(/<button[^>]*disabled/.test(s.innerHTML) && !/data-cai-entry/.test(s.innerHTML), 'Studio: ' + s.innerHTML);
     assert.strictEqual(s.hidden, false);
@@ -75,7 +82,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const C = ucitaj(STAGING);
     assert.deepStrictEqual([...C._APLIKACIJE.map((a) => a.id)], ['claude', 'chatgpt']);
     for (const a of C._APLIKACIJE) for (const u of [a.otvori, a.chat]) assert.ok(/^https:\/\/[a-z.]+\//.test(u), a.id + ': ' + u);
-    assert.ok(C._APLIKACIJE.find((a) => a.id === 'claude').otvori.endsWith('/customize/connectors'), 'Claude ne vodi na stranicu s konektorima');
+    assert.ok(C._APLIKACIJE.find((a) => a.id === 'claude').otvori.endsWith('/settings/connectors'), 'Claude ne vodi na stranicu s konektorima');
   });
 
   await test('③ uz staging bez povezanog AI-ja: gumb otvara upute (data-cai-entry), vidljiv', async () => {
@@ -124,6 +131,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const editor = fs.readFileSync(path.join(KORIJEN, 'editor.html'), 'utf8');
     assert.ok(editor.indexOf('js/connect-ai.js') > 0 && editor.indexOf('js/connect-ai.js') < editor.indexOf('js/studio.js'), 'editor.html ne učita connect-ai.js prije studio.js');
     const loader = fs.readFileSync(path.join(KORIJEN, 'js', 'loader.js'), 'utf8');
+    // Treći ulaz (hero naslovnice): delegat u navigation.js učitava paket `connect` = samo ovaj modul.
+    assert.ok(/\n\s*connect: \['js\/connect-ai\.js'\]/.test(loader), 'nema paketa `connect` za hero');
+    const nav = fs.readFileSync(path.join(KORIJEN, 'js', 'navigation.js'), 'utf8');
+    assert.ok(/\[data-connect-ai\][\s\S]{0,300}SokratLoad\.paket\('connect'\)[\s\S]{0,120}SokratConnectAi\.otvori\(\)/.test(nav), 'hero delegat ne otvara prozor kroz paket `connect`');
+    const index = fs.readFileSync(path.join(KORIJEN, 'index.html'), 'utf8');
+    assert.ok(/class="hero-ai" data-connect-ai/.test(index) && !/js\/connect-ai\.js/.test(index), 'hero: ulaz nedostaje ili je skripta zakucana u markup');
     for (const paket of ['materials', 'profile']) {
       const red = (loader.match(new RegExp('\\n\\s*' + paket + ": \\[([^\\]]*)\\]")) || [])[1] || '';
       assert.ok(red.indexOf('connect-ai.js') >= 0 && red.indexOf('connect-ai.js') < red.indexOf('my-materials.js'), paket + ': connect-ai.js nije prije my-materials.js');
