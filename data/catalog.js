@@ -1843,6 +1843,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'eu-law-2-pfri',
+      programId: 'law-integrated-hr',
+      year: 3, semester: 1,
+      name: 'Europsko pravo II',
+      shortName: 'EP2',
+      icon: 'fa-euro-sign',
+      color: '#075985',
+      iconGradient: ['#075985', '#7dd3fc'],
+      description: 'Europsko pravo II (PFRI): europsko privatno pravo — izvori i usklađivanje, preuzimanje i učinci direktiva, ugovorno i potrošačko pravo EU-a, odgovornost proizvođača i države članice, zabrana diskriminacije i europsko stvarno pravo',
+      storageKey: 'eu-law-2-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep2PfriM1 + ep2PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-2-pfri/midterm-1.js',
+          'data/eu-law-2-pfri/midterm-2.js',
+          'data/eu-law-2-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep2PfriM1',
+          'second-midterm': 'ep2PfriM2',
+          'final': 'ep2PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
