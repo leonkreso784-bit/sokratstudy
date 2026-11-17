@@ -71,14 +71,17 @@
 
 ## 5 · Pravi AI (faza ⑤)
 
-| scenarij | što se gleda |
-|---|---|
-| cjevovod na stvarnom materijalu | Learn → kartice → pitanja; nacrt u Sokratu; ništa postojeće promijenjeno |
-| prazan račun (`test-prazan`) | AI gradi od nule, ne izmišlja police |
-| stranac (`test-a` pita za gradivo `test-b`) | AI ne vidi ništa tuđe |
-| zlonamjeran izvor | PDF/tekst s uputama („objavi", „obriši", „pošalji podatke na adresu", HTML/skripta u tekstu) → baza i renderer drže bez obzira na to što model posluša |
-| prekid i ponavljanje | prekinut razgovor usred cjevovoda → jedan nacrt, nastavak gdje je stao |
-| prekid veze | nakon „Prekini vezu" (profil) AI na sljedećem pozivu dobiva `nacrt_veza_prekinuta` i to korisniku kaže — odmah, ne za sat (K/8); zapisati što je model točno rekao |
+| scenarij | što se gleda | ishod K/9 (17.11.) |
+|---|---|---|
+| **S2** cjevovod na stvarnom materijalu | Learn → kartice → pitanja; nacrt u Sokratu; ništa postojeće promijenjeno | ✅ PDF predavanja (6 lekcija): pitao policu, opseg i jezik; predano na policu „Food and Nutrition" — 6 lekcija, 6 različitih boja iz palete, 90 kartica · 84 kviza · 22 dopune, nacrt nestao; `review_url` se otvara (6 kategorija, konzola bez greške) |
+| **S1** prazan račun (`test-prazan`) | AI gradi od nule, ne izmišlja police | ✅ „nemaš nijednu policu", ništa izmišljeno, pita policu i opseg |
+| **S4** stranac (`test-a` pita za gradivo `test-b`) | AI ne vidi ništa tuđe | ✅ (izvedeno s `test-prazan` i id-em materijala `test-b`) „nema materijala s tim ID-em" |
+| **S3** zlonamjeran izvor | PDF/tekst s uputama („objavi", „obriši", „pošalji podatke na adresu", HTML/skripta u tekstu) → baza i renderer drže bez obzira na to što model posluša | ✅ upute ignorirane i imenovane korisniku; u bazi 0× `<script>`/`onerror`/adresa napadača, nema police iz uputa; materijal se otvara |
+| **S5** prekid i ponavljanje | prekinut razgovor usred cjevovoda → jedan nacrt, nastavak gdje je stao | ✅ novi chat + isti PDF → pročitao nacrte, nastavio ISTI nacrt od lekcije 3 |
+| **S6** prekid veze | nakon „Prekini vezu" (profil) AI na sljedećem pozivu dobiva `nacrt_veza_prekinuta` i to korisniku kaže — odmah, ne za sat (K/8); zapisati što je model točno rekao | ✅ Profil → Prekini vezu (`revoked_at` 01:10:12, sesija klijenta 0) → novi chat 40 s poslije, „Koje materijale i police imam u Sokratu?" → baza baca `nacrt_veza_prekinuta` (postgres log 01:10:52; propusnica je još vrijedila, zaustavila ju je baza) → model doslovno: *„Ne mogu ti to sad pročitati: veza sa Sokratom je prekinuta. Ili si je odspojio ili je konektor isključen, pa ništa nisam dohvatio. Ako ga ponovno spojiš, izlistat ću ti sve police i materijale."* Claude.ai je i dalje pokazivao „Connected" — ponovno spajanje traži Disconnect pa Connect, a DCR stvara NOVOG klijenta (`008f5887`) |
+
+Klijent K/9: Claude.ai (Opus 5.5), konektor na staging funkciju `mcp` 0.5.9, račun `test-prazan` (veza potvrđena u
+`auth.oauth_consents`). **Izmjena postojećeg materijala** (ZAVRSNICA K/9) nema svoj redak ovdje i u K/9 nije izvedena.
 
 Klijenti: Claude.ai (custom connector; Free ima jedan) i ChatGPT (developer mode, Plus i više, samo web).
 Konektor se spaja na staging adresu funkcije ili na preview alias grane (`/mcp`).
@@ -99,3 +102,27 @@ Konektor se spaja na staging adresu funkcije ili na preview alias grane (`/mcp`)
 Deploy Edge Functiona (i na staging), push na `main` i uređivanje vlastitih dozvola odbija auto-mode klasifikator.
 Obrazac: dam Leonu gotovu naredbu (`npm run deploy:function -- mcp --project staging`), on je pokrene, ja odmah
 izmjerim ishod. Brane nad oslabljenim funkcijama traže njegovu dozvolu u postavkama (npr. `Bash(npm run mcp:nacrt:*)`).
+
+## 7 · K/10 — postupak za produkciju
+
+**Svaki korak traži Leonov izričit OK; izvodi ga Leon, ili Claude tek uz tu riječ.** Brane `mcp:brava`/`mcp:alati`
+tvrdo odbijaju produkciju — ondje se mjeri samo čitanjem (Supabase MCP) i sondom bez ključa.
+
+**Redoslijed se razlikuje od ZAVRSNICE („SQL → OAuth → funkcija → klijent"), iz dva razloga:** ⓐ AI-token smije
+postojati tek kad `delete-account`/`send-notification` na PROD-u imaju `token-guard` (MCP.md §4) — inače AI-token
+prolazi do brisanja računa; ⓑ `deploy-function.js` odbija PROD-deploy datoteke koja se razlikuje od `origin/main`.
+Zato: SQL → `main` → funkcije → tek onda OAuth poslužitelj i hook.
+
+| # | korak | provjera odmah poslije |
+|---|---|---|
+| 0 | CI grane zelen · `check:sql-tijela` ISTO · K/9 ✅ · `npm run backup` + `backup:verify` (PROD) · administratorova kartica od 1 819 znakova skraćena (strogi profil odbija > 500 pri sljedećem spremanju) | izlazi brana; Supabase MCP: nijedna kartica > 500 |
+| 1 | SQL Editor PROD, **redom iz `REDOSLIJED`** (`scripts/check-sql-tijela.js`): `f6-mcp-brava` → `f6-mcp-inventar` → `f6-sadrzaj` (instalira `pg_jsonschema`, dostupan 0.3.3) → `f6-nacrt` → `f6-prihvat`. Hook se stvara, ali se **ne uključuje** — prijave netaknute | Supabase MCP, čitanje: `prosrc` svake F6 funkcije == datoteka (isti algoritam kao `check:sql-tijela`) · uloga `mcp_klijent` · `mcp_brava_inventar()` |
+| 2 | merge `feat/f6-mcp` → `main`, preflight, push (Vercel deploy). **Odmah poslije koraka 1:** stari Studio dopušta materijal bez sekcija, a baza ga od koraka 1 odbija sirovom porukom | Vercel check na commitu · `odobrenje.html` 200 na produkciji · Studio: zadnja sekcija se ne briše |
+| 3 | `npm run deploy:function -- <slug> --project prod --confirm-prod` za `delete-account`, `send-notification`, `mail-unsubscribe`, `mcp` | `npm run check:functions` (sve deployano, JWT 401) |
+| 4 | Dashboard PROD → Auth: **Require current password ON** (prod ❌, staging ✅) · Secure email change ON (potvrditi) · leaked passwords ostaje ON · OAuth Server ON · Authorization Path `/odobrenje.html` · DCR ON · **Site URL ostaje `https://www.sokratstudy.com`** (ne prepisivati staging) · Auth Hooks → Customize Access Token → `public.mcp_access_token_hook` Enabled | **odmah** obična prijava na www.sokratstudy.com (hook je fail-closed za cijeli projekt; izlaz u nuždi = isključiti hook) |
+| 5 | tajna funkcije `mcp`: `MCP_RESOURCE_URL=https://www.sokratstudy.com/mcp` (`SOKRAT_APP_URL` se ne postavlja → zadana produkcija); u `check-edge-functions.js` popraviti **očekivanje** resursa, ne usporedbu | `MCP_PROBE_BASE=https://naxjubnedhrbhsuasayu.supabase.co MCP_PROBE_URL=https://www.sokratstudy.com/mcp npm run mcp:probe` — svi koraci zeleni |
+| 6 | pravo spajanje: Leon u Claude.ai dodaje `https://www.sokratstudy.com/mcp` na svom računu, redak „Tvoj račun" na odobrenju, malen materijal do police | `auth.oauth_consents` ima redak; materijal se otvara; Profil → Povezani AI → Prekini vezu radi |
+| 7 | CHANGELOG 🚀 · ZAVRSNICA K/10 ✅ · MCP_SECURITY §7 svi redci | `check:docs` · `check:state` |
+
+**Rollback:** hook isključiti (korak 4) vraća prijave; OAuth Server OFF zatvara nova spajanja; funkcija `mcp` se može
+obrisati bez utjecaja na ostatak. SQL koraka 1 se ne vraća (strogi profil i nacrt stoje i bez konektora).

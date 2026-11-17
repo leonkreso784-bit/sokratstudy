@@ -31,10 +31,15 @@ testirano, što slijedi.
   policu i opseg · **S3 ✅** zlonamjeran izvor — upute iz teksta ignorirane i imenovane korisniku; baza: polica
   „Biologija" + „Fotosinteza", 0× `<script>`/`onerror`/`napadac`, 0 polica „hakirano"; materijal se otvara · **S4 ✅**
   tuđi id (`test-b`) = „nema materijala s tim ID-em", ništa tuđe · **S5 ✅** prekid usred gradnje (l1–l2 cijele, l3 samo
-  Learn) → novi chat + isti PDF → čita nacrte, nastavlja ISTI nacrt `ff50e2f7` od l3 · **S2 ⏳** pravi PDF (FAN 4,
-  6 lekcija, pitao policu/opseg/jezik izvora) — gradnja je tekla; predaja i otvaranje linka NISU provjereni ·
-  **S6 ⏳** prekid veze iz profila — nije izveden. Usput: kartica kategorije piše „5 terms" u HR sučelju (F5 dvojezičnost).
-- **Čeka (prije):** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
+  Learn) → novi chat + isti PDF → čita nacrte, nastavlja ISTI nacrt `ff50e2f7` od l3 · **S2 ✅** pravi PDF (FAN 4,
+  6 lekcija, pitao policu/opseg/jezik izvora) → predano na „Food and Nutrition" (6 lekcija, 6 boja, 90 kartica,
+  84 kviza, 22 dopune), nacrt nestao, `review_url` se otvara · **S6 ✅** Profil → Prekini vezu → novi chat → baza baca
+  `nacrt_veza_prekinuta` 40 s poslije (propusnica još vrijedila) → model: „veza sa Sokratom je prekinuta… ako ga
+  ponovno spojiš, izlistat ću ti sve" (doslovno u MCP_TESTING §5). Ponovno spojeno: novi DCR klijent `008f5887`.
+  **Izmjena postojećeg materijala nije izvedena.** Usput: kartica kategorije piše „5 terms" u HR sučelju (F5).
+- **K/10 postupak napisan** (MCP_TESTING §7): redoslijed je **SQL → `main` → funkcije → OAuth/hook**, ne „SQL → OAuth →
+  funkcija" — AI-token ne smije postojati prije `token-guard`a na PROD-u, a `deploy-function.js` odbija PROD-deploy
+  koji se razlikuje od `origin/main`. PROD (čitanje): `pg_jsonschema` 0.3.3 dostupan, od F6 ništa. **Čeka Leonov OK.**
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 
