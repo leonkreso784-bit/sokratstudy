@@ -19,7 +19,10 @@ testirano, što slijedi.
 - **Suha provjera PROD materijala kroz strogi profil** (15 živih): 2 prolaze; kartica od ~1 800 znakova pada (poznato);
   **12 PRAZNIH (`{}`) pada na `minProperties: 1`** — shema se provodi samo pri upisu (`publish_node`), pa SQL prolazi i
   prazni ostaju; ALI Studio dopušta obrisati jedinu sekciju (`studio.js` delSection) → spremanje praznog materijala bi
-  poslije F6 bilo odbijeno. Čeka Leonovu riječ.
+  poslije F6 bilo odbijeno (izmjereno: korisnik bi vidio sirovo „sadrzaj_neispravan: {} has less than 1 property").
+  **Leon „b" (17.11.):** Studio ne ostavlja materijal bez sekcija — zadnja sekcija nosi `aria-disabled` + objašnjenje,
+  klik kaže zašto; „Objavi" bez sekcija odbija prije baze (isto pravilo kao AI-jev `alat_zadnja_lekcija`). Brana:
+  `f4-e2e.authed.spec.js` „ZADNJA sekcija" — crvena na starom kodu; svaki od dva čuvara maknut zasebno → pad.
 - **Čeka:** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina

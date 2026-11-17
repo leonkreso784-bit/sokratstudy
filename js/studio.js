@@ -534,6 +534,9 @@ const SokratStudio = (function () {
     if (!b || !editing()) return;
     var data = currentData();
     if (!data || !data[catId]) return;
+    // K/10 priprema (Leon 17.11.): materijal ne ostaje bez sekcija — strogi profil u bazi (`minProperties: 1`)
+    // odbio bi takvu objavu. Isto pravilo ima AI-jev put (`alat_zadnja_lekcija`). Pita se PRIJE potvrde.
+    if (cats(data).length <= 1) { toast(t('studio.lastCat', 'Materijal mora imati barem jednu sekciju. Najprije dodaj novu, pa obriši ovu.')); return; }
     var name = (data[catId] && data[catId].name) ? String(data[catId].name) : catId;
     if (typeof window.askConfirm === 'function') {
       var ok = await window.askConfirm({
@@ -670,6 +673,7 @@ const SokratStudio = (function () {
   function renderLearnPane(data, isEd) {
     var out = '';
     var n = 0;
+    var zadnja = cats(data).length <= 1;   // K/10 priprema: jedina sekcija se ne briše (v. delSection)
     cats(data).forEach(function (catId) {
       var c = data[catId];
       if (!c || typeof c !== 'object') return;
@@ -706,7 +710,9 @@ const SokratStudio = (function () {
         // F4: brisanje sekcije. Op `removeCategory` postojao je od U6c, ali ga je zvao SAMO stari
         // admin-overlay — Studio je imao dodaj/preimenuj/boju/presloži, a brisanja nije bilo nigdje.
         '<button type="button" class="st-catdel" data-st-catdel="' + esc(catId) + '" ' +
-        'title="' + esc(t('studio.delCat', 'Obriši sekciju')) + '" aria-label="' + esc(t('studio.delCat', 'Obriši sekciju')) +
+        (zadnja ? 'aria-disabled="true" title="' + esc(t('studio.lastCat', 'Materijal mora imati barem jednu sekciju. Najprije dodaj novu, pa obriši ovu.')) + '" '
+          : 'title="' + esc(t('studio.delCat', 'Obriši sekciju')) + '" ') +
+        'aria-label="' + esc(t('studio.delCat', 'Obriši sekciju')) +
         '"><i class="fas fa-trash"></i></button>' + '</div>' +
         '<div class="st-learn-body">';
       if (kind === 'v2') {
@@ -948,6 +954,8 @@ const SokratStudio = (function () {
     var d = currentDraft();
     if (!d || !d.dirty) { toast(t('studio.nothingToPublish', 'Nema izmjena za objavu.')); return; }
     if (!bridge()) return;
+    // Obrana uz delSection: do nula sekcija se može doći i mimo gumba — baza bi takvu objavu odbila.
+    if (!cats(currentData()).length) { toast(t('studio.publishEmpty', 'Dodaj barem jednu sekciju prije objave.')); return; }
     await bridge().publish();          // U4 publish_document RPC
     renderCanvas();                    // izašli iz draft-moda → read-only sinkroniziran sadržaj
     refreshTopbar();

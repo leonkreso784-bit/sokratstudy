@@ -829,6 +829,11 @@
     },
     'studio.del': { en: 'Delete', hr: 'Obriši' },
     'studio.delCatFail': { en: 'Could not delete the section.', hr: 'Sekciju nije bilo moguće obrisati.' },
+    'studio.lastCat': {
+      en: 'A material needs at least one section. Add a new one first, then delete this one.',
+      hr: 'Materijal mora imati barem jednu sekciju. Najprije dodaj novu, pa obriši ovu.'
+    },
+    'studio.publishEmpty': { en: 'Add at least one section before publishing.', hr: 'Dodaj barem jednu sekciju prije objave.' },
     'materials.delTitle': { en: 'Delete this item?', hr: 'Obrisati ovu stavku?' },
     'materials.delMsg': { en: 'You can restore it right after.', hr: 'Možeš je odmah vratiti.' },
     'materials.delMsgTree': { en: 'Everything inside it will be deleted too. You can restore it right after.', hr: 'Sve unutar nje se također briše. Možeš je odmah vratiti.' },
