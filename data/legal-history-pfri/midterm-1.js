@@ -5382,7 +5382,7 @@ const ppdPfriM1 = {
       {
         "sentence": "Prvi stalež čine prelati, a treći stalež građani, niže plemstvo i _______.",
         "answer": "svećenstvo",
-        "hint": "Niže svećenstvo.",
+        "hint": "crkveni službenici nižeg ranga",
         "id": "nngl9f"
       },
       {
