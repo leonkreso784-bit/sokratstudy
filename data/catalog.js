@@ -1779,6 +1779,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'eu-law-1-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Europsko pravo I',
+      shortName: 'EP1',
+      icon: 'fa-flag',
+      color: '#0369a1',
+      iconGradient: ['#0369a1', '#38bdf8'],
+      description: 'Europsko pravo I (PFRI): razvoj europske integracije, institucije EU, izvori i načela prava EU, odnos s nacionalnim pravom i sudska zaštita',
+      storageKey: 'eu-law-1-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep1PfriM1 + ep1PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-1-pfri/midterm-1.js',
+          'data/eu-law-1-pfri/midterm-2.js',
+          'data/eu-law-1-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep1PfriM1',
+          'second-midterm': 'ep1PfriM2',
+          'final': 'ep1PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 

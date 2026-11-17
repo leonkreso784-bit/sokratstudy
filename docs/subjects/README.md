@@ -146,7 +146,8 @@ svih 14 predmeta i u bazi, `migrate-content.js`).
 | Rimsko privatno pravo | `roman-law-pfri` | 1/2 | 41 / 709 / 638 / 89 | dodan odjeljak o recepciji i kodifikacijama (OGZ 1853.) |
 | Ustavno pravo | `constitutional-law-pfri` | 1/2 | 24 / 341 / 355 / 177 | |
 | Politička ekonomija | `political-economy-pfri` | 1/2 | 38 / 300 / 329 / 119 | |
-| 15 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
+| Europsko pravo I | `eu-law-1-pfri` | 2/2 | 36 / 312 / 356 / 174 | kategorija „Primjena prava EU u RH" (Ustav RH gl. VIII., ZPP/ZKP/ZUS); četiri kruga recenzije |
+| 14 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
 
 **Na produkciji od 2026-11-17** (`0d4c4ce`; svih 6 predmeta i u bazi, `migrate-content.js`).
 
