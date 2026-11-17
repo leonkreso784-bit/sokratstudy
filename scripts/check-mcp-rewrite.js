@@ -603,10 +603,14 @@ async function zivo(baza, kontrola) {
     wa ? `zaglavlje je: ${wa}` : 'zaglavlja NEMA — tako izgleda 401 s gatewaya, ne iz funkcije');
 
   // Z4 — oglašeni dokument stvarno postoji i opisuje PREDVIĐENI projekt.
-  // ⚠️ GRANICA (nalaz revizije 23.09., vrijedi do F7): ovdje se NE tvrdi da je `resource` baš
-  // NAŠA javna adresa — dok je `MCP_RESOURCE_URL` nepostavljen, ispravna vrijednost JEST
-  // Supabaseova. Kad flip padne, ova tvrdnja mora postati `new URL(resource).host === host`,
-  // inače neće razlikovati ispravnu javnu adresu od Supabaseove (obje nose isti ref).
+  // K/10 (17.11.): PRODUKCIJA ima `MCP_RESOURCE_URL` = naša javna adresa (`<baza>/mcp`), pa resurs
+  // NE nosi ref; staging (preview) ga nema i oglašava Supabaseovu adresu s refom. Prihvaća se
+  // TOČNO jedno od to dvoje — naša adresa mora biti baš `<baza>/mcp`, ne bilo što na našem hostu.
+  // Da je resurs naš a projekt tuđi, pada Z6 (prijava na `/auth/v1` predviđenog refa).
+  const opisujeNas = (resurs) => {
+    const s = String(resurs || '').replace(/\/+$/, '');
+    return s === baza.replace(/\/+$/, '') + '/mcp' || s.indexOf(d.ref) !== -1;
+  };
   if (m) {
     zadnjiResurs = m[1];
     const meta = await zahtjev(m[1], baza);
@@ -615,7 +619,7 @@ async function zivo(baza, kontrola) {
     if (ok) {
       const body = meta.json();
       tvrdi('Z5 metapodaci opisuju PREDVIĐENI projekt',
-        String(body.resource || '').indexOf(d.ref) !== -1,
+        opisujeNas(body.resource),
         `resource = ${body.resource}, a pravilo vodi na ${d.ref}`);
       tvrdi('Z6 prijava se šalje na `/auth/v1` istog projekta',
         (body.authorization_servers || []).some((s) => String(s) === `https://${d.ref}.supabase.co/auth/v1`),
@@ -630,7 +634,7 @@ async function zivo(baza, kontrola) {
   let podTijelo = null;
   if (pod.status === 200) podTijelo = pod.json();
   tvrdi('Z7 podput `/mcp' + METAPODACI + '` vraća RFC 9728 dokument NAŠEG resursa',
-    pod.status === 200 && podTijelo !== null && String(podTijelo.resource || '').indexOf(d.ref) !== -1,
+    pod.status === 200 && podTijelo !== null && opisujeNas(podTijelo.resource),
     pod.status !== 200
       ? `dobiven ${pod.status} — rewrite ne pokriva podputove, pa otkrivanje prijave staje`
       : `200, ali tijelo nije dokument našeg resursa: ${JSON.stringify(podTijelo).slice(0, 140)}`);
@@ -642,7 +646,7 @@ async function zivo(baza, kontrola) {
   const metaHost = (() => { try { return new URL(String(zadnjiResurs || '')).host; } catch (_e) { return '?'; } })();
   console.log(`\n  dotaknuto: ${izmjereno} tvrdnji protiv ${baza}`);
   console.log(`  ⓘ kroz NAŠU adresu: Z1 Z2 Z3 Z7 · izravno na \`${metaHost}\`: Z4 Z5 Z6`);
-  console.log('     (dok `MCP_RESOURCE_URL` nije postavljen, resurs se oglašava Supabaseovom adresom — F7)\n');
+  console.log('     (bez `MCP_RESOURCE_URL` — staging — resurs se oglašava Supabaseovom adresom)\n');
   if (izmjereno !== OCEKIVANO_ZIVO) {
     nalazi.push(`doseg: izvedeno ${izmjereno} živih tvrdnji, a očekivano ${OCEKIVANO_ZIVO}`);
     console.log(`  ✗ ČEGRTALJKA — izvedeno ${izmjereno}, očekivano ${OCEKIVANO_ZIVO}`);

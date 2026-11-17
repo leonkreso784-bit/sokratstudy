@@ -52,12 +52,8 @@ const MUST_BE_GONE = [
  * traži da se unos makne uz F7 korak. Obrnuto vrijedi jednako — mrtav unos (funkcija koje nema
  * u repozitoriju) pada kao i svaki drugi popis pisan rukom.
  */
-const JOS_NE_NA_PRODUKCIJI = {
-  mcp: {
-    why: 'F6: MCP poslužitelj živi SAMO na stagingu dok OAuth i brava ne padnu na produkciji (F7)',
-    gdje: 'mjeri se: CHECK_FUNCTIONS_URL=https://czljmvigkgiajzjxtndq.supabase.co npm run check:functions',
-  },
-};
+// K/10 (17.11.): `mcp` je izašao s popisa — brava, nacrt i token-guard su na produkciji.
+const JOS_NE_NA_PRODUKCIJI = {};
 
 /**
  * Funkcije koje NAMJERNO rade bez prijave, i što njihov odgovor bez ključa mora biti.
@@ -106,7 +102,9 @@ const PUBLIC_FNS = {
         meta = await r.json();
       } catch (e) { return `oglašeni resource_metadata ${m[1]} nedostupan: ${e.message}`; }
 
-      const ocekivaniResurs = BASE + '/functions/v1/mcp';
+      // PRODUKCIJA oglašava NAŠU javnu adresu (`MCP_RESOURCE_URL`, ADR-038 ②); drugi projekti
+      // (staging) nemaju tu tajnu i oglašavaju adresu funkcije. Očekivanje ovisi o cilju, usporedba ne.
+      const ocekivaniResurs = JE_PROD ? SITE + '/mcp' : BASE + '/functions/v1/mcp';
       if (meta.resource !== ocekivaniResurs) {
         return `metapodaci opisuju TUĐI resurs: "${meta.resource}" umjesto "${ocekivaniResurs}"`;
       }
