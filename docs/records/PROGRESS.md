@@ -5,6 +5,29 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-17 (OPUS, stablo `sokratstudy.pravri`) — PFRI: Kazneno postupovno + Europsko pravo II, 🚀 s Europskim pravom I na produkciji
+
+**Rad po agentima** (najviše 2 odjednom, 1 Opus; kontekst agenata štedljiv — veliki predmeti rezani na dijelove).
+**Kazneno postupovno:** recenzije A + B1 + B2 (Opus, ZKP do NN 13/26) + strukturni pregled → ispravci u tri dijela
+**izravno u podacima** (generator `gen-kpp` je jednokratan s nasumičnim id-evima — ponovno pokretanje promijenilo bi svih
+3 218 id-eva) alatom `_materials/pravri/tools/gen-kpp/kpp-edit.js` → ponovna strukturna i činjenična provjera → SPREMNO.
+Dokaz id-eva (`ids-check.js` protiv snimke): 6 373 / 0 nestalo / 0 pomaknuto / 80 novih.
+**Europsko pravo II** (od nule): skenirani izvor (Nepoštene ugovorne odredbe, 46 slajdova) i 19 slikovnih stranica
+prepisani ručno; graditelj M1 pa M2 (Sonnet) → strukturna + činjenična R1/R2 (Opus) → ispravci → R3 → R4 → SPREMNO.
+Glavni nalaz: ZZP izmijenjen NN 59/26 (točke čl. 4. prenumerirane, novi čl. 81.a) — graditelj ga je previdio.
+**Pouke:** (1) ispravak distraktora brisanjem ili izjednačavanjem oblika dvaput je od distraktora napravio **istinitu**
+tvrdnju (21q004, 04q002) — svaki dirani distraktor ide na ponovnu činjeničnu provjeru; (2) izjednačavanje oblika
+prekorigira („ističe se" → uvijek distraktor), mjeriti u oba smjera; (3) graditelj je **premjestio** stavku među
+kategorijama → 14 pomaknutih id-eva; vraćeno, a sadržaj dobio novi id.
+**Telefon** (CPU 4×, preview): Kazneno postupovno prvo otvaranje 3,7 s (brzi 4G) / 7,4 s (spori 4G), 948 KB; Rimsko
+pravo za usporedbu 3,0 / 5,0 s. Ostale lekcije istog predmeta otvaraju se trenutno. Skraćivanje predmeta ostaje opcija.
+**Deploy (Leonov OK 17.11.):** CI na grani pao na `theme-fouc` (2 testa) — izmjereno da je **postojeći flake** (na
+produkcijskom `0d4c4ce` 2/90, na grani 2/108) → rerun zelen → fast-forward `main` `0d4c4ce..72c2ebc` → Vercel READY,
+živi `SW_VERSION` = repo → `diff:db` (3× nemigrirano) → `migrate-content.js` → `diff:db` 0 razlika → `check:final` ✓ za
+svih 9 PFRI → produkcija: 27 lekcija, 0 JS grešaka, nova tri predmeta iz baze.
+**Otvoreno:** `check:final` osnovica (13 ne-PFRI, čeka Leona) · `theme-fouc` flake (~2 %) · težina Kaznenog postupovnog.
+**Slijedi:** 2. godina — Opći dio građanskog i obvezno, Kazneno, Međunarodno, Obiteljsko.
+
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 
 **Izvori:** bilješke, skripte i ispitna pitanja studenata 2011.–2022. (Drive) + službeni izvedbeni planovi 2025./26.;

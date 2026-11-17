@@ -151,7 +151,7 @@ svih 14 predmeta i u bazi, `migrate-content.js`).
 | Europsko pravo II | `eu-law-2-pfri` | 3/1 | 22 / 372 / 219 / 252 | europsko privatno pravo; ZZP s izmjenom NN 59/26, ZOO s izmjenom NN 69/26 (odgovornost proizvođača od 9. 12. 2026.) |
 | 12 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
 
-**Na produkciji od 2026-11-17** (`0d4c4ce`; svih 6 predmeta i u bazi, `migrate-content.js`).
+**Na produkciji od 2026-11-17**: 1. godina (`0d4c4ce`), Europsko pravo I, Kazneno postupovno i Europsko pravo II (`72c2ebc`); svih 9 predmeta i u bazi (`migrate-content.js`).
 
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
