@@ -18,10 +18,3 @@ Learna = prilog) · fast-forward `18610cc..347f8a1` · Vercel READY, živi token
 `mcp_access_token_hook` uključen PRIJE OAuth-a (suha proba: obična sesija `authenticated`, AI-token `mcp_klijent`) ·
 OAuth Server ON, `/odobrenje.html`, DCR ON, Site URL netaknut · obična prijava poslije svakog koraka 200.
 **⑤** `mcp:probe` protiv `www.sokratstudy.com/mcp`: 9/0. **Otvoreno:** ⑥ pravo spajanje na Leonovom računu.
-
-## 2026-11-17 (OPUS) — 🚀 **PFRI: Europsko pravo I, Kazneno postupovno, Europsko pravo II NA PRODUKCIJI** — `main` = `72c2ebc`, token `20261117035404`
-
-Leonov OK 17.11. Fast-forward `0d4c4ce..72c2ebc` (5 commita). Katalog 56 → 59 (9 PFRI). **Provjereno:** preflight · CI
-zelen (rerun poznatog `theme-fouc` flakea) · preview dimni test · Vercel READY, živi `SW_VERSION` = repo ·
-`migrate-content.js` za 3 predmeta (`diff:db` prije nemigrirano, poslije 0 razlika) · `check:final` ✓ za 9 PFRI ·
-produkcija: 27 PFRI lekcija iz baze, 0 JS grešaka.
