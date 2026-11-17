@@ -40,6 +40,10 @@ testirano, što slijedi.
 - **K/10 postupak napisan** (MCP_TESTING §7): redoslijed je **SQL → `main` → funkcije → OAuth/hook**, ne „SQL → OAuth →
   funkcija" — AI-token ne smije postojati prije `token-guard`a na PROD-u, a `deploy-function.js` odbija PROD-deploy
   koji se razlikuje od `origin/main`. PROD (čitanje): `pg_jsonschema` 0.3.3 dostupan, od F6 ništa. **Čeka Leonov OK.**
+- **K/10 izveden (Leonov OK, 17.11.)** — koraci ①–⑤ na produkciji (CHANGELOG). Pouke: `apply_migration` s DROP-ovima
+  zna biti odbijen → SQL Editor uz Leonovu riječ, sa `setEOL(LF)` da tijela ostanu md5-ista · `git checkout --ours`
+  uzima CIJELU datoteku i briše čiste izmjene s `main`-a (pao `verify` na broju predmeta) → `merge -X ours` · hook se
+  uključuje PRIJE OAuth-a, inače AI-token kratko nosi punu ulogu `authenticated`. Ostaje ⑥ i kartica od 1 819 znakova.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 
