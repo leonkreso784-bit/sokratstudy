@@ -17,4 +17,7 @@ Learna = prilog) · fast-forward `18610cc..347f8a1` · Vercel READY, živi token
 **④ Auth** — Require current password ON (Secure email change i leaked passwords već ON) · hook
 `mcp_access_token_hook` uključen PRIJE OAuth-a (suha proba: obična sesija `authenticated`, AI-token `mcp_klijent`) ·
 OAuth Server ON, `/odobrenje.html`, DCR ON, Site URL netaknut · obična prijava poslije svakog koraka 200.
-**⑤** `mcp:probe` protiv `www.sokratstudy.com/mcp`: 9/0. **Otvoreno:** ⑥ pravo spajanje na Leonovom računu.
+**⑤** `mcp:probe` protiv `www.sokratstudy.com/mcp`: 9/0. **⑥** Claude.ai → „Sokrat" (`https://www.sokratstudy.com/mcp`) na
+Leonovom računu: DCR klijent `6f13f7b4` u `oauth_consents`; `procitaj_materijale` = 1 polica + 10 materijala (== baza).
+Izgradnja materijala kroz PROD konektor još nije izvedena. Nalaz: zahtjev koji istekne dok se korisnik prijavljuje
+(~20 min) daje golo „Nije uspjelo" (Auth 404 `oauth_authorization_not_found`) — poruka treba reći „vrati se u AI i spoji ponovno".
