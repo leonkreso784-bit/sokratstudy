@@ -25,7 +25,11 @@ pravo za usporedbu 3,0 / 5,0 s. Ostale lekcije istog predmeta otvaraju se trenut
 produkcijskom `0d4c4ce` 2/90, na grani 2/108) → rerun zelen → fast-forward `main` `0d4c4ce..72c2ebc` → Vercel READY,
 živi `SW_VERSION` = repo → `diff:db` (3× nemigrirano) → `migrate-content.js` → `diff:db` 0 razlika → `check:final` ✓ za
 svih 9 PFRI → produkcija: 27 lekcija, 0 JS grešaka, nova tri predmeta iz baze.
-**Otvoreno:** `check:final` osnovica (13 ne-PFRI, čeka Leona) · `theme-fouc` flake (~2 %) · težina Kaznenog postupovnog.
+**Ispravak (isti dan):** zeleni CI bio je onaj na GRANI; push-run na `main` (`72c2ebc`, pa i docs `aaa03c2`) pao je na
+`responsive.spec.js` — ne mjera prelijevanja nego **fullPage snimka** Learna Europskog prava II (CI Chromium „Unable to capture
+screenshot“, sva 4 iPhone profila). Snimka je prilog → `18610cc`: kad fullPage ne uspije, snima se vidljivi dio; grana zelena,
+zamjena okinula samo za `eu-law-2-pfri`. Pouka: nakon deploya čekati CI **na `main`u**, ne samo na grani.
+**Otvoreno:** `check:final` osnovica (13 ne-PFRI, čeka Leona) · `theme-fouc` flake (~2 %) · težina Kaznenog postupovnog · Learn Europskog prava II previsok za snimku (provjeriti visinu na telefonu).
 **Slijedi:** 2. godina — Opći dio građanskog i obvezno, Kazneno, Međunarodno, Obiteljsko.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
