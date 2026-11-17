@@ -91,13 +91,21 @@ const OCEKIVANO_PROVJERA = 57;   // +2 (②/0a): _ugc_shema, _provjeri_sadrzaj �
  * polja sama nabrojala (za razliku od `OTVORENO` niže, koji dolazi iz `mcp_brava_inventar()`).
  * Polje koje GoTrue doda sutra ovdje se NEĆE pojaviti samo. Poznata granica, ne previd.
  */
+// ⚠️ IZMJERENO 2026-11-17 (Auth v2.198.0, staging I produkcija ista verzija): GoTrue sada odbija SVAKI
+// OAuth-token na `/user` — auth log doslovno: „403: OAuth client access tokens are not allowed to access this
+// endpoint" (`no_authorization`). Do tada su lozinka bila 400 (postavka „Require current password"), a
+// metapodaci i e-mail IMENOVANO otvoreni. Brana je promjenu uhvatila sama (4 retka „mrtav unos") — zato su sva
+// četiri retka sada ZATVORENA s točnim odgovorom: ako Supabase put ikad opet otvori, redak pada.
+// Kontrola da nije prazan token: obična sesija istog korisnika na istom putu i dalje dobiva 200 (blok niže).
+// „Require current password" na PROD-u ostaje K/10 korak — obrana u dubinu ako se ponašanje GoTruea vrati.
+const ZATVORENO_ZA_OAUTH = { status: 403, kod: 'no_authorization' };
 const AUTH_POLJA = [
     {
         ime: 'password BEZ current_password',
         tijelo: () => ({ password: 'AI-Preuzima-' + crypto.randomBytes(4).toString('hex') + '!9' }),
         zatvoreno: true,
-        ocekuj: { status: 400, kod: 'current_password_required' },
-        zasto: '①/2b — postavka „traži trenutnu lozinku"; AI lozinku korisnika ne zna'
+        ocekuj: ZATVORENO_ZA_OAUTH,
+        zasto: 'AI lozinku korisnika ne zna; GoTrue OAuth-token na /user ne pušta (17.11.)'
     },
     {
         ime: 'password s POGREŠNOM current_password',
@@ -106,44 +114,23 @@ const AUTH_POLJA = [
             current_password: 'OvoSigurnoNijeTocno!123'
         }),
         zatvoreno: true,
-        ocekuj: { status: 400, kod: 'current_password_invalid' },
-        zasto: 'provjera je STVARNA, a ne samo „polje je obavezno" — pogađanje ne prolazi'
+        ocekuj: ZATVORENO_ZA_OAUTH,
+        zasto: 'pogađanje lozinke ne prolazi ni do provjere lozinke'
     },
     {
         ime: 'data (metapodaci)',
-        // ⚠️ `biljeg` se POSLIJE traži u odgovoru: `ocekuj {200, ''}` sam po sebi svodi se na
-        // „status je 200", pa bi i PRAZAN zahtjev (`{}`) prošao jednako — a onda redak ne bi
-        // dokazivao da je rupa otvorena, nego samo da poslužitelj odgovara.
-        biljeg: 'brava_proba',
         tijelo: () => ({ data: { brava_proba: Date.now() } }),
-        zatvoreno: false,
-        ocekuj: { status: 200, kod: '' },
-        zasto: 'metapodatke korisnik smije pisati i sam (tema, zrcaljena putanja avatara); postavka o lozinci ih NE dira. `role` ondje ne živi (ADR-024), a `is_admin()` ne čita `user_metadata`.'
+        zatvoreno: true,
+        ocekuj: ZATVORENO_ZA_OAUTH,
+        zasto: 'do 17.11. imenovano otvoreno (korisnik ih piše i sam); sada ih AI-token ne dira'
     },
     {
         ime: 'email',
-        // NAMJERNO neispravna adresa: proba mjeri smije li token UOPĆE pokušati promjenu maila i
-        // NE šalje nijedan mail. `400 email_address_invalid` = prošao autorizaciju pa pao na
-        // obliku → put je OTVOREN. `401/403` bi značilo da se zatvorio → mrtav unos.
+        // NAMJERNO neispravna adresa: i kad bi se put otvorio, nijedan mail ne bi otišao.
         tijelo: () => ({ email: 'brava-proba-' + Date.now() + '@sokrat-test.invalid' }),
-        zatvoreno: false,
-        // ⚠️ DVA prihvatljiva ishoda, i to nije popuštanje nego NALAZ iz obrnute provjere: na
-        // ponovljenim vrtnjama GoTrue vrati `429 over_email_send_rate_limit` umjesto provjere
-        // oblika. Oba ishoda dokazuju ISTO — zahtjev je prošao autorizaciju i ušao u mail-put;
-        // „zatvoreno" bi ovdje izgledalo kao **401/403**. Da popis prima samo prvi ishod, brana
-        // bi crvenila na svakoj drugoj vrtnji unutar prozora — a lažna se uzbuna „popravlja"
-        // tako da se brana prestane čitati.
-        ocekuj: [
-            { status: 400, kod: 'email_address_invalid' },
-            { status: 429, kod: 'over_email_send_rate_limit' }
-        ],
-        // ⚠️ 429 stiže iz GoTrueovog MAIL-limitera, a ne iz provjere prava — pa sam po sebi
-        // dokazuje samo da zahtjev nije odbijen prije njega. Da ne zamijeni dokaz tišinom, uz
-        // njega ide KONTROLA: isti zahtjev s neispravnim tokenom mora dati 401. Ako i on dobije
-        // 429, limiter stoji ISPRED identiteta i ovaj redak tada ne dokazuje ništa → prijavljuje
-        // se kao NEMJEREN, ne kao prošao (SKIP nije PASS).
-        kontrolaNaLimitu: true,
-        zasto: 'promjenu maila postavka o lozinci ne pokriva — ali preuzimanje računa zatvara DRUGA postavka, `Secure email change`, koja traži potvrdu s OBJE adrese. ⚠️ IZMJERENO 2026-09-22, dvjema neovisnim metodama, i UKLJUČENA je na stagingu I na produkciji (vidi PROGRESS 22.09.). ⚠️ Ovdje se i dalje NE MJERI: to je postavka u dashboardu koju nijedna brana ne gleda, pa se može isključiti a da ništa ne pocrveni → imenovan korak u F7.'
+        zatvoreno: true,
+        ocekuj: ZATVORENO_ZA_OAUTH,
+        zasto: 'do 17.11. imenovano otvoreno (preuzimanje računa zatvarala je `Secure email change`); sada odbijen prije mail-puta'
     }
 ];
 

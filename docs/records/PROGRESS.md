@@ -23,7 +23,10 @@ testirano, što slijedi.
   **Leon „b" (17.11.):** Studio ne ostavlja materijal bez sekcija — zadnja sekcija nosi `aria-disabled` + objašnjenje,
   klik kaže zašto; „Objavi" bez sekcija odbija prije baze (isto pravilo kao AI-jev `alat_zadnja_lekcija`). Brana:
   `f4-e2e.authed.spec.js` „ZADNJA sekcija" — crvena na starom kodu; svaki od dva čuvara maknut zasebno → pad.
-- **Čeka:** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
+- **Poslije Leonova deploya (v25) i SQL-a:** `check:sql-tijela` 29 ISTO · `mcp:probe` 9/0 · `mcp:alati` 92/0 ·
+  `ugc:sadrzaj` 829/0 · `mcp:brava` 4 pada → **Auth v2.198.0 (oba projekta) odbija svaki OAuth-token na `/user`**
+  (auth log: „OAuth client access tokens are not allowed"; obična sesija i dalje 200) → očekivanja zatvorena, 58/0.
+- **Čeka (prije):** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 

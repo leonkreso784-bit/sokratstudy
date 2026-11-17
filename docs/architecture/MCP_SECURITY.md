@@ -33,7 +33,7 @@
 |---|---|---|---|
 | I1 | AI piše **samo u vlastiti nacrt**, nikad u živo gradivo | baza: GRANT samo za `mcp_*` + vlasnik iz tokena | ✅ `mcp:nacrt` 34/0, `mcp:brava` 46/0, mutacije 4/4 |
 | I2 | AI ne čita tuđe gradivo ni javni katalog | baza: GRANT + RLS | ✅ `mcp:brava` (iscrpna REST-proba svake tablice izvan popisa) |
-| I3 | AI-tokenom nema nepovratne radnje (brisanje računa, mail, lozinka, e-mail) | `_shared/token-guard.ts` · postavke Auth API-ja | ✅ `mcp:brava`; metapodaci korisnika imenovano otvoreni |
+| I3 | AI-tokenom nema nepovratne radnje (brisanje računa, mail, lozinka, e-mail) | `_shared/token-guard.ts` · postavke Auth API-ja | ✅ `mcp:brava`; od 17.11. GoTrue OAuth-token na `/user` odbija (403) |
 | I4 | objava = **samo obična sesija**, poslije pregleda | baza: Prihvati nije dan `mcp_klijent` | ⏳ plan ②/4 |
 | I5 | sadržaj koji napiše AI **ne izvršava kod** u pregledniku, ni kad sanitizator nije učitan | renderer + CSP | ✅ STAGING/grana 30.09. — N1, N2 zatvoreni (②/0c–e: unit + preglednik-pokusi s kontrolom); ⚠️ N17 |
 | I6 | pravila sadržaja provodi **baza** na svakom putu upisa, ne samo poslužitelj | validator u bazi | ✅ STAGING 30.09. — nacrt i `publish_node` (`ugc:sadrzaj` 813/0); Prihvati dolazi u ②/4 |

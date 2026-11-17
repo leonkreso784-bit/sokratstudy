@@ -89,6 +89,8 @@ s poljem `email` ostaje **imenovano otvoren** (izmjereno: prolazi autorizaciju).
 redak otvoren **po planu**.
 
 ## ✅ **ODGOVORENO 2026-09-22 — prekidač je UKLJUČEN na OBA projekta, put je zatvoren.**
+**➕ 2026-11-17:** Auth v2.198.0 odbija SVAKI OAuth-token na `/user` (403 `no_authorization`) — e-mail i metapodaci
+više nisu ni otvoreni; `mcp:brava` sada tvrdi zatvoreno za sva četiri polja.
 
 Provjereno **dvjema neovisnim metodama koje se slažu**:
 
