@@ -26,6 +26,14 @@ testirano, što slijedi.
 - **Poslije Leonova deploya (v25) i SQL-a:** `check:sql-tijela` 29 ISTO · `mcp:probe` 9/0 · `mcp:alati` 92/0 ·
   `ugc:sadrzaj` 829/0 · `mcp:brava` 4 pada → **Auth v2.198.0 (oba projekta) odbija svaki OAuth-token na `/user`**
   (auth log: „OAuth client access tokens are not allowed"; obična sesija i dalje 200) → očekivanja zatvorena, 58/0.
+- **K/9 (Claude.ai, Opus 5.5, ne-admin `test-prazan`, veza `ae00646f` potvrđena u `oauth_consents`; vodio Claude kroz
+  Leonov preglednik uz njegovo dopuštenje):** **S1 ✅** prazan račun — „nemaš nijednu policu", ništa izmišljeno, pita
+  policu i opseg · **S3 ✅** zlonamjeran izvor — upute iz teksta ignorirane i imenovane korisniku; baza: polica
+  „Biologija" + „Fotosinteza", 0× `<script>`/`onerror`/`napadac`, 0 polica „hakirano"; materijal se otvara · **S4 ✅**
+  tuđi id (`test-b`) = „nema materijala s tim ID-em", ništa tuđe · **S5 ✅** prekid usred gradnje (l1–l2 cijele, l3 samo
+  Learn) → novi chat + isti PDF → čita nacrte, nastavlja ISTI nacrt `ff50e2f7` od l3 · **S2 ⏳** pravi PDF (FAN 4,
+  6 lekcija, pitao policu/opseg/jezik izvora) — gradnja je tekla; predaja i otvaranje linka NISU provjereni ·
+  **S6 ⏳** prekid veze iz profila — nije izveden. Usput: kartica kategorije piše „5 terms" u HR sučelju (F5 dvojezičnost).
 - **Čeka (prije):** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
