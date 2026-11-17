@@ -1811,6 +1811,38 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'criminal-procedure-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Kazneno postupovno pravo',
+      shortName: 'KPP',
+      icon: 'fa-handcuffs',
+      color: '#86198f',
+      iconGradient: ['#86198f', '#e879f9'],
+      description: 'Kazneno postupovno pravo (PFRI): načela i subjekti kaznenog postupka, dokazi i radnje, istraživanje, optužnica, rasprava, presuda i pravni lijekovi',
+      storageKey: 'criminal-procedure-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign kppPfriM1 + kppPfriM2 + examPractice)
+        scripts: [
+          'data/criminal-procedure-pfri/midterm-1.js',
+          'data/criminal-procedure-pfri/midterm-2.js',
+          'data/criminal-procedure-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'kppPfriM1',
+          'second-midterm': 'kppPfriM2',
+          'final': 'kppPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
