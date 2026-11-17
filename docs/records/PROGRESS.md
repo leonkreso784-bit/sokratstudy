@@ -5,6 +5,23 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
+
+- **Stanje (izmjereno, samo čitanje):** PROD nema ništa od F6 (uloga `mcp_klijent`, `node_drafts`, hook, `pg_jsonschema`,
+  funkcija `mcp`); N10 je na PROD-u zelen (`ON DELETE SET NULL`). Staging `mcp` = v24 (upute 0.5.8).
+- **Nalaz K/9:** konektor u Leonovom Claudeu („sokrat test prazan") je spojen na **test-admin** (`auth.oauth_consents`
+  16.10.) — K/9 na ne-admin računu tek treba izvesti. Leon (anketa 17.11.): K/9 vodi on u Claude.ai.
+- **Nalaz kvar:** `procitaj_materijale` → „kvar"; edge log: PostgREST **401** na `mcp_veza` pri dva usporedna poziva,
+  isti token odmah zatim 200; postgres log bez greške (vjerojatno PostgREST pri provjeri tokena — nepotvrđeno). Log
+  funkcije je bio PRAZAN → popravak `0.5.9`: redak `mcp_kvar` (alat · izvor · kod), bez poruke/tokena. Unit 99/0;
+  obrnuto: stari kod 4 pada; oslabljen `pozovi` 12 padova.
+- **Merge `origin/main`** (PFRI, MOR, CI pin): sukobi = tokeni + dnevnici; granin BUG-053 → **BUG-055**. Preflight zelen.
+- **Suha provjera PROD materijala kroz strogi profil** (15 živih): 2 prolaze; kartica od ~1 800 znakova pada (poznato);
+  **12 PRAZNIH (`{}`) pada na `minProperties: 1`** — shema se provodi samo pri upisu (`publish_node`), pa SQL prolazi i
+  prazni ostaju; ALI Studio dopušta obrisati jedinu sekciju (`studio.js` delSection) → spremanje praznog materijala bi
+  poslije F6 bilo odbijeno. Čeka Leonovu riječ.
+- **Čeka:** deploy `mcp` 0.5.9 na staging (Leonova ruka) · K/9 (Leon) · brana tijela funkcija · K/10 postupak.
+
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 
 **Izvori:** bilješke, skripte i ispitna pitanja studenata 2011.–2022. (Drive) + službeni izvedbeni planovi 2025./26.;

@@ -57,7 +57,7 @@ export const UPUTE = [
   'Reply to the user in the language they write in.'
 ].join('\n');
 
-export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.8' } as const;
+export const POSLUZITELJ = { name: 'sokrat-study', version: '0.5.9' } as const;
 
 /** Stupci koje alat čita — izričito, nikad `*` (novi stupac ne smije tiho procuriti AI-ju). */
 export const STUPCI_CVORA = 'id,parent_id,kind,name,position,updated_at';
@@ -84,7 +84,7 @@ export interface CitacCvorova {
     select(stupci: string, opcije: { count: 'exact' }): {
       is(stupac: 'deleted_at', vrijednost: null): {
         order(stupac: 'id', opcije: { ascending: boolean }): {
-          range(od: number, doo: number): PromiseLike<{ data: Cvor[] | null; error: { message: string } | null; count: number | null }>;
+          range(od: number, doo: number): PromiseLike<{ data: Cvor[] | null; error: { message: string; code?: string } | null; count: number | null }>;
         };
       };
     };
@@ -119,7 +119,7 @@ async function procitajSveCvorove(klijent: CitacCvorova): Promise<Cvor[]> {
   while (od < ukupno) {
     const { data, error, count } = await klijent.from('nodes').select(STUPCI_CVORA, { count: 'exact' })
       .is('deleted_at', null).order('id', { ascending: true }).range(od, od + STRANICA_BAZE - 1);
-    if (error) throw new Error('read_failed: ' + error.message);
+    if (error) throw Object.assign(new Error('read_failed: ' + error.message), { code: error.code });   // kod samo za log kvara
     const redovi = data ?? [];
     if (typeof count !== 'number') throw new Error('read_failed: baza nije vratila ukupan broj');
     ukupno = count;
@@ -309,11 +309,31 @@ export const ODBIJANJA_ALATA: Record<string, { vrsta: VrstaOdbijanja; poruka: st
 export class Odbijanje extends Error {
   kod: string;
   vrsta: VrstaOdbijanja;
-  constructor(o: { kod: string; vrsta: VrstaOdbijanja; poruka: string }) {
+  /** Samo za „kvar": KOD greške baze (SQLSTATE ili PGRST…) za log — nikad AI-ju, nikad poruka. */
+  uzrok?: string;
+  constructor(o: { kod: string; vrsta: VrstaOdbijanja; poruka: string }, uzrok?: string) {
     super(o.poruka);
     this.kod = o.kod || 'kvar';
     this.vrsta = o.vrsta;
+    if (uzrok) this.uzrok = uzrok;
   }
+}
+
+// ─── K/10 priprema (17.11.): KVAR SE ZAPISUJE ───────────────────────────────────────────────────
+// „kvar" je bio jedini ishod bez traga: 17.11. na stagingu `procitaj_materijale` je pao (PostgREST 401 na
+// `mcp_veza` pri dva usporedna poziva), a log funkcije je bio prazan. Redak nosi alat, izvor i KOD —
+// nikad poruku (baza zna citirati korisnikov sadržaj, iznimka mreže zna nositi zaglavlje), token ni tijelo.
+// Kod prolazi samo ako IZGLEDA kao kod; sve ostalo je „nepoznat".
+const OBLIK_KODA = /^[A-Za-z0-9_]{1,40}$/;
+function zapisiKvar(okolina: Okolina | undefined, alat: string, e: unknown): void {
+  // Iz baze = Odbijanje iz `pozovi` ili greška čitanja čvorova s PostgREST kodom; inače iznimka (mreža, bug).
+  const o = (e && typeof e === 'object' ? e : {}) as { uzrok?: unknown; code?: unknown; name?: unknown };
+  const kodBaze = e instanceof Odbijanje ? o.uzrok : o.code;
+  const izBaze = e instanceof Odbijanje || typeof kodBaze === 'string';
+  const sirov = izBaze ? kodBaze : o.name;
+  const kod = typeof sirov === 'string' && OBLIK_KODA.test(sirov) ? sirov : 'nepoznat';
+  const redak = JSON.stringify({ dogadjaj: 'mcp_kvar', alat: OBLIK_KODA.test(alat) ? alat : 'nepoznat', izvor: izBaze ? 'baza' : 'iznimka', kod });
+  try { ((okolina && okolina.zapisi) || console.error)(redak); } catch (_) { /* log nikad ne obara odgovor */ }
 }
 function odbij(kod: string, dodatak?: string): never {
   const o = ODBIJANJA_ALATA[kod];
@@ -328,13 +348,14 @@ export type RpcNacrta = 'mcp_zapocni_nacrt' | 'mcp_upisi_nacrt' | 'mcp_predaj_na
 
 /** Minimalni oblik supabase-js klijenta za alate cjevovoda — test ga podmeće. */
 export interface Klijent extends CitacCvorova {
-  rpc(ime: RpcNacrta, args?: Record<string, unknown>): PromiseLike<{ data: unknown; error: { message?: string } | null }>;
+  rpc(ime: RpcNacrta, args?: Record<string, unknown>): PromiseLike<{ data: unknown; error: { message?: string; code?: string } | null }>;
 }
 
-/** JEDINI poziv baze u alatima (N9). Greška baze → prevedeno odbijanje; nikad sirova poruka. */
+/** JEDINI poziv baze u alatima (N9). Greška baze → prevedeno odbijanje; nikad sirova poruka.
+ *  Kod greške putuje uz „kvar" samo do loga (`zapisiKvar`). */
 async function pozovi<T>(klijent: Klijent, ime: RpcNacrta, args: Record<string, unknown>): Promise<T> {
   const { data, error } = await klijent.rpc(ime, args);
-  if (error) throw new Odbijanje(prevediOdbijanje(error));
+  if (error) throw new Odbijanje(prevediOdbijanje(error), error.code);
   return data as T;
 }
 
@@ -361,7 +382,8 @@ function opsegZa(d: { opseg?: Opseg | null }): { scope?: string; scope_hint?: st
 // aplikacija već dijeli (`js/navigation.js` K1: `#/subject/node%3A<id>/<lekcija>`, a osobni materijal
 // ima jednu lekciju, `LESSON_ID` u `js/my-materials.js` — unit ga čita odande). Adresa stranice dolazi
 // iz okoline (`SOKRAT_APP_URL`: staging = lokalni poslužitelj, anketa 30.09.); sve što nije http(s) → produkcija.
-export interface Okolina { appUrl?: string }
+/** `zapisi`: kamo ide redak o kvaru (zadano `console.error` → log Edge Functiona); test ga podmeće. */
+export interface Okolina { appUrl?: string; zapisi?: (redak: string) => void }
 const ZADANA_ADRESA = 'https://www.sokratstudy.com';
 export const LEKCIJA_MATERIJALA = 'content';
 export function adresaMaterijala(okolina: Okolina | undefined, materialId: string): string {
@@ -984,6 +1006,7 @@ export async function izvediAlat(ime: string, klijent: Klijent, args: unknown, o
     return { content: [{ type: 'text', text: tekstOdgovora(r) }] };
   } catch (e) {
     const o = e instanceof Odbijanje ? e : new Odbijanje(prevediOdbijanje(null));
+    if (o.vrsta === 'kvar') zapisiKvar(okolina, ime, e);
     return { isError: true, content: [{ type: 'text', text: tekstOdbijanja(o) }] };
   }
 }

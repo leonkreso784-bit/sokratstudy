@@ -258,6 +258,45 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
     assert.strictEqual(A.prevediOdbijanje(null).vrsta, 'kvar');
   });
 
+  // ── K/10 priprema (17.11.): „kvar" se ZAPISUJE — inače se na produkciji ne vidi zašto ──────────
+  // Nalaz 17.11. na stagingu: `procitaj_materijale` je vratio „kvar" (PostgREST 401 na `mcp_veza` pri dva
+  // usporedna poziva, isti token odmah poslije 200), a u logu funkcije NIJE BILO NIŠTA. Zapis nosi samo
+  // alat, izvor i KOD — nikad poruku, token ni tijelo (MCP_SECURITY §4: logovi nose samo tvrdnje iz JWT-a).
+  const zapisnik = () => { const r = []; return { redci: r, zapisi: (s) => r.push(s) }; };
+  const kvarRpc = (greska, baci) => ({ rpc() { return baci ? Promise.reject(baci) : Promise.resolve({ data: null, error: greska }); }, from() { throw new Error('ne treba'); } });
+  await test('K/10 kvar iz baze: jedan redak s alatom, izvorom i kodom — bez poruke', async () => {
+    const z = zapisnik();
+    const r = await A.izvediAlat('procitaj_nacrt', kvarRpc({ message: 'JWT tajna-poruka korisnik@x.hr', code: 'PGRST301' }), {}, { zapisi: z.zapisi });
+    assert.deepStrictEqual([r.isError, JSON.parse(r.content[0].text).kind], [true, 'kvar']);
+    assert.strictEqual(z.redci.length, 1, 'kvar mora ostaviti točno jedan redak, ostavio ' + z.redci.length);
+    assert.deepStrictEqual(JSON.parse(z.redci[0]), { dogadjaj: 'mcp_kvar', alat: 'procitaj_nacrt', izvor: 'baza', kod: 'PGRST301' });
+    assert.ok(!/tajna|korisnik@/.test(z.redci[0]), 'poruka baze procurila u log: ' + z.redci[0]);
+  });
+  await test('K/10 kvar kao iznimka (mreža): izvor „iznimka", kod = ime iznimke, poruka nikad', async () => {
+    const z = zapisnik();
+    await A.izvediAlat('procitaj_nacrt', kvarRpc(null, new TypeError('fetch failed Bearer eyJabc')), {}, { zapisi: z.zapisi });
+    assert.deepStrictEqual(z.redci.map((s) => JSON.parse(s)), [{ dogadjaj: 'mcp_kvar', alat: 'procitaj_nacrt', izvor: 'iznimka', kod: 'TypeError' }]);
+    assert.ok(!/Bearer|eyJ/.test(z.redci[0]), 'token procurio u log');
+  });
+  await test('K/10 kvar pri čitanju čvorova (`procitaj_materijale`): kod iz PostgREST-a', async () => {
+    const z = zapisnik();
+    const r = await A.izvediAlat('procitaj_materijale', lazniKlijent([], { message: 'canceling statement due to statement timeout', code: '57014' }), {}, { zapisi: z.zapisi });
+    assert.strictEqual(JSON.parse(r.content[0].text).kind, 'kvar');
+    assert.deepStrictEqual(z.redci.map((s) => JSON.parse(s)), [{ dogadjaj: 'mcp_kvar', alat: 'procitaj_materijale', izvor: 'baza', kod: '57014' }]);
+  });
+  await test('K/10 kod koji ne izgleda kao kod → „nepoznat" (log ne nosi proizvoljan tekst)', async () => {
+    const z = zapisnik();
+    await A.izvediAlat('procitaj_nacrt', kvarRpc({ message: 'x', code: 'x; DROP TABLE nodes --' }), {}, { zapisi: z.zapisi });
+    assert.strictEqual(JSON.parse(z.redci[0]).kod, 'nepoznat');
+  });
+  await test('K/10 imenovano odbijanje i loš ulaz NISU kvar → nema retka', async () => {
+    const z = zapisnik();
+    const r1 = await A.izvediAlat('procitaj_nacrt', kvarRpc({ message: 'nacrt_sukob: promijenjen', code: 'PT409' }), {}, { zapisi: z.zapisi });
+    const r2 = await A.izvediAlat('procitaj_nacrt', kvarRpc(null), { draft_id: 'nije-uuid' }, { zapisi: z.zapisi });
+    assert.deepStrictEqual([JSON.parse(r1.content[0].text).kind, JSON.parse(r2.content[0].text).kind], ['ponovno', 'ispravi']);
+    assert.strictEqual(z.redci.length, 0, 'zapisano je ono što nije kvar: ' + z.redci.join(' | '));
+  });
+
   // ── ZAVRSNICA K/5 (N11): učestalost upisa — 60 u minuti, 1 000 u 24 h, zbroj po korisniku ──
   // Baza imenuje prekoračenje i kaže za koliko sekundi se otvara; AI mora dobiti BROJ, ne samo „kasnije".
   await test('K/5 minutna granica → „ponovno" s brojem sekundi iz baze', () => {
@@ -638,7 +677,8 @@ function lazniKlijent(redovi, greska, maxRedova = 1000) {
       mjesta.length + ' × rpc, izvan pozovi/Klijent: ' + izvan.length);
     assert.strictEqual(mjesta.filter((m) => unutar(m, poz)).length, 1, 'pozovi mora zvati rpc točno jednom');
     const tijelo = src.slice(poz[0], poz[1] + 1);
-    assert.ok(/if\s*\(\s*error\s*\)\s*throw new Odbijanje\(\s*prevediOdbijanje\(\s*error\s*\)\s*\)/.test(tijelo), 'pozovi ne predaje grešku prevediOdbijanje: ' + tijelo);
+    // Drugi argument (`error.code`) smije postojati: nosi KOD samo do loga kvara (K/10 priprema, 17.11.).
+    assert.ok(/if\s*\(\s*error\s*\)\s*throw new Odbijanje\(\s*prevediOdbijanje\(\s*error\s*\)\s*(?:,\s*error\.code\s*)?\)/.test(tijelo), 'pozovi ne predaje grešku prevediOdbijanje: ' + tijelo);
   });
 
   await test('N9 statički: tokenizator vidi zaobilaske koje je revizor izmjerio (kontrola same brane)', () => {
