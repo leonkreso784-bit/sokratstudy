@@ -1,0 +1,1710 @@
+{
+  "profitMaximization": {
+    "name": "Maksimalizacija profita i konkurentna ponuda",
+    "icon": "fa-chart-line",
+    "color": "#0891b2",
+    "flashcards": [
+      {
+        "question": "Na koje tri pretpostavke počiva model savršene konkurencije?",
+        "answer": "1) preuzimanje cijena (price-takers), 2) homogenost proizvoda, 3) slobodan ulaz i izlaz.",
+        "explanation": "Homogeni proizvodi (roba): poljoprivredni proizvodi, nafta, bakar, drvo."
+      },
+      {
+        "question": "Što znači da tvrtka preuzima cijenu?",
+        "answer": "Njezina je prodaja premali dio tržišta da bi utjecala na cijenu, pa tržišnu cijenu uzima kao zadanu.",
+        "explanation": "Zato je njezina krivulja potražnje vodoravna na razini tržišne cijene."
+      },
+      {
+        "question": "Što je profit i što je granični prihod?",
+        "answer": "Profit = ukupni prihod − ukupni trošak. Granični prihod (MR) = promjena prihoda kad se output poveća za jednu jedinicu.",
+        "explanation": "U savršenoj konkurenciji \\(MR = P\\)."
+      },
+      {
+        "question": "Što kaže pravilo o razini proizvodnje?",
+        "answer": "Ako tvrtka uopće proizvodi, treba proizvoditi ondje gdje je granični prihod jednak graničnom trošku: \\(MR = MC\\).",
+        "explanation": "Za konkurentnu tvrtku: \\(P = MC\\)."
+      },
+      {
+        "question": "Kada tvrtka u kratkom roku treba zatvoriti pogon?",
+        "answer": "Kad je cijena niža od minimalnog prosječnog varijabilnog troška: \\(P < AVC\\).",
+        "explanation": "Dok je \\(P \\ge AVC\\), proizvodnjom pokriva dio fiksnih troškova i gubi manje nego da stane."
+      },
+      {
+        "question": "Što je kratkoročna krivulja ponude konkurentne tvrtke?",
+        "answer": "Dio krivulje graničnog troška (MC) IZNAD minimuma prosječnog varijabilnog troška (AVC).",
+        "explanation": "Za svaku cijenu tvrtka bira q gdje je \\(P = MC\\)."
+      },
+      {
+        "question": "Kako nastaje kratkoročna krivulja tržišne ponude?",
+        "answer": "Zbrajanjem (vodoravno) krivulja ponude svih pojedinačnih tvrtki u industriji.",
+        "explanation": "Pokazuje output industrije po svakoj cijeni u kratkom roku."
+      },
+      {
+        "question": "Što je probitak proizvođača?",
+        "answer": "Zbroj razlika između tržišne cijene i graničnog troška svake proizvedene jedinice; za tvrtku = ukupni prihod − varijabilni trošak.",
+        "explanation": "Probitak proizvođača = profit + fiksni trošak (kratki rok)."
+      },
+      {
+        "question": "Što znači nulti ekonomski profit?",
+        "answer": "Tvrtka zarađuje normalni prinos na uloženo — jednako kao da je kapital uložila u najbolju alternativu.",
+        "explanation": "Ne znači lošu tvrtku, nego da u industriji vlada konkurencija."
+      },
+      {
+        "question": "Što je dugoročna konkurencijska ravnoteža?",
+        "answer": "Sve tvrtke maksimaliziraju profit, nijedna nema poticaj ulaziti ni izlaziti (nulti ekonomski profit), a ponuda industrije jednaka je potražnji.",
+        "explanation": "Vrijedi \\(P = LMC = \\min LAC\\)."
+      },
+      {
+        "question": "Što je ekonomska renta?",
+        "answer": "Iznos koji su tvrtke spremne platiti za input umanjen za minimalni iznos potreban da se taj input pribavi.",
+        "explanation": "Može biti pozitivna i kad je ekonomski profit nula (npr. izvrsna lokacija)."
+      },
+      {
+        "question": "Industrija konstantnih, rastućih i padajućih troškova?",
+        "answer": "Dugoročna krivulja ponude je vodoravna (konstantni), rastuća (cijene inputa rastu s rastom industrije) ili padajuća (troškovi padaju).",
+        "explanation": "Rastući troškovi: npr. nestašica stručne radne snage kad se industrija širi."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Konkurentna tvrtka maksimalizira profit kad proizvodi količinu pri kojoj je:",
+        "options": [
+          "\\(P = ATC\\)",
+          "\\(P = MC\\)",
+          "\\(P = AVC\\)",
+          "\\(MC = AVC\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U savršenoj konkurenciji krivulja potražnje s kojom se suočava pojedina tvrtka je:",
+        "options": [
+          "Padajuća",
+          "Vodoravna",
+          "Okomita",
+          "Rastuća"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(C(q) = 100 + 20q + q^2\\), cijena je 60 €. Output koji maksimalizira profit je:",
+        "options": [
+          "10",
+          "20",
+          "40",
+          "30"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(C(q) = 100 + 20q + q^2\\), cijena je 60 € i tvrtka proizvodi q = 20. Profit iznosi:",
+        "options": [
+          "300 €",
+          "400 €",
+          "1200 €",
+          "−100 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(C(q) = 100 + 20q + q^2\\), cijena je 30 €. Tvrtka u kratkom roku:",
+        "options": [
+          "Zatvara pogon jer ima gubitak",
+          "Proizvodi 5 jedinica jer je P veća od AVC",
+          "Proizvodi 20 jedinica",
+          "Proizvodi 10 jedinica"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrtka u kratkom roku zatvara pogon kad je:",
+        "options": [
+          "\\(P < ATC\\)",
+          "\\(P < AVC\\)",
+          "\\(P < MC\\)",
+          "Profit manji od nule"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U dugoročnoj ravnoteži savršene konkurencije ekonomski profit je:",
+        "options": [
+          "Pozitivan",
+          "Nula",
+          "Negativan",
+          "Jednak fiksnom trošku"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Industrija čija je dugoročna krivulja ponude vodoravna je industrija:",
+        "options": [
+          "Rastućih troškova",
+          "Konstantnih troškova",
+          "Padajućih troškova",
+          "Monopolistička"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrtka ima prihod 1200 € i varijabilni trošak 800 €. Njezin probitak proizvođača je:",
+        "options": [
+          "400 €",
+          "800 €",
+          "1200 €",
+          "2000 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Porez po jedinici proizvoda nametnut konkurentnoj tvrtki pomiče njezinu krivulju MC:",
+        "options": [
+          "Prema dolje, output raste",
+          "Prema gore, output pada",
+          "Ne mijenja je",
+          "Udesno, cijena pada"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Za konkurentnu tvrtku granični prihod jednak je _______.",
+        "answer": "cijeni",
+        "hint": "Svaka dodatna jedinica prodaje se po tržišnoj cijeni."
+      },
+      {
+        "sentence": "Tvrtka u kratkom roku zatvara pogon kad je cijena manja od prosječnog _______ troška.",
+        "answer": "varijabilnog",
+        "hint": "AVC."
+      },
+      {
+        "sentence": "Kratkoročna krivulja ponude tvrtke je dio krivulje _______ troška iznad minimuma AVC.",
+        "answer": "graničnog",
+        "hint": "MC."
+      },
+      {
+        "sentence": "Uz \\(MC = 20 + 2q\\) i cijenu 60 € tvrtka proizvodi _______ jedinica.",
+        "answer": "20",
+        "hint": "\\(P = MC\\)."
+      },
+      {
+        "sentence": "Normalni prinos na uloženo znači _______ ekonomski profit.",
+        "answer": "nulti",
+        "hint": "Dugoročna ravnoteža."
+      },
+      {
+        "sentence": "Iznos koji tvrtka plaća za input iznad minimuma potrebnog za njegovo pribavljanje zove se ekonomska _______.",
+        "answer": "renta",
+        "hint": "Oskudni inputi, npr. lokacija."
+      },
+      {
+        "sentence": "Pretpostavka da su proizvodi svih tvrtki savršeno zamjenjivi zove se _______ proizvoda.",
+        "answer": "homogenost",
+        "hint": "Jedinstvena tržišna cijena."
+      }
+    ],
+    "learn": {
+      "title": "Maksimalizacija profita i konkurentna ponuda",
+      "content": "<h3>Savršena konkurencija</h3><p>Model počiva na tri pretpostavke: <strong>preuzimanje cijena</strong> (nitko ne utječe na cijenu), <strong>homogenost proizvoda</strong> (proizvodi su savršeni supstituti → jedinstvena cijena) i <strong>slobodan ulaz i izlaz</strong>. U stvarnosti ih rijetko koje tržište potpuno ispunjava, ali mnoga su <strong>visoko konkurentna</strong>: tvrtke se suočavaju s vrlo elastičnom potražnjom, a ulaz i izlaz su laki.</p><h4>Pravilo maksimalizacije profita</h4><div class=\"formula-box\">\\[ \\pi = TR - TC \\qquad \\text{maksimum: } MR = MC \\]</div><p>Konkurentna tvrtka svaku jedinicu prodaje po tržišnoj cijeni, pa je \\(MR = P\\) i pravilo glasi \\(P = MC\\).</p><div class=\"example-box\"><h4>Riješeni primjer — koliko proizvesti?</h4><p>Tvrtka ima \\(C(q) = 100 + 20q + q^2\\): FC = 100, \\(VC = 20q + q^2\\), \\(MC = 20 + 2q\\), \\(AVC = 20 + q\\).</p><p><strong>Cijena 60 €:</strong> \\(60 = 20 + 2q \\Rightarrow q = 20\\). Prihod \\(60 \\cdot 20 = 1200\\); trošak \\(100 + 400 + 400 = 900\\); <strong>profit 300 €</strong>. ATC = 45 € &lt; P.</p><p><strong>Cijena 30 €:</strong> \\(30 = 20 + 2q \\Rightarrow q = 5\\). Prihod 150; trošak \\(100 + 100 + 25 = 225\\) → gubitak 75 €. Ali \\(AVC = 25 &lt; 30\\): proizvodnjom pokriva sve varijabilne troškove i 25 € fiksnih. Zatvaranjem bi izgubila cijelih 100 € fiksnog troška → <strong>proizvodi</strong>.</p><p><strong>Cijena 18 €:</strong> ispod minimuma AVC (20) → zatvara pogon.</p><p><strong>Probitak proizvođača</strong> pri P = 60: \\(TR - VC = 1200 - 800 = 400\\) € = profit (300) + FC (100).</p></div><h4>Pravilo zatvaranja i krivulja ponude</h4><ul><li><strong>Kratki rok</strong>: proizvodi ako je \\(P \\ge \\min AVC\\); zatvara pogon ako je \\(P &lt; AVC\\) (fiksni trošak plaća u svakom slučaju).</li><li><strong>Dugi rok</strong>: izlazi iz industrije ako je \\(P &lt; ATC\\) (u dugom roku nema fiksnih troškova koje ne može izbjeći).</li><li><strong>Krivulja ponude tvrtke</strong> = dio krivulje MC iznad minimuma AVC.</li><li><strong>Kratkoročna tržišna ponuda</strong> = vodoravni zbroj krivulja ponude tvrtki.</li></ul><h4>Dugi rok</h4><p>Pozitivan profit privlači nove tvrtke → ponuda raste → cijena pada. Gubici tjeraju tvrtke van → cijena raste. <strong>Dugoročna konkurencijska ravnoteža</strong>: nulti ekonomski profit, nitko ne ulazi ni izlazi, \\(P = LMC = \\min LAC\\). Nulti ekonomski profit = normalni prinos na kapital, jednako dobro kao najbolja alternativa.</p><p><strong>Ekonomska renta</strong>: kad neke tvrtke imaju oskudan input (bolju lokaciju, iznimnog menadžera), njihov se probitak proizvođača u dugom roku sastoji od ekonomske rente tog inputa — pa i uz nulti ekonomski profit.</p><table><thead><tr><th>Industrija</th><th>Dugoročna krivulja ponude</th><th>Zašto</th></tr></thead><tbody><tr><td>konstantnih troškova</td><td>vodoravna</td><td>cijene inputa se ne mijenjaju s rastom industrije</td></tr><tr><td>rastućih troškova</td><td>rastuća</td><td>rast industrije podiže cijene inputa (stručna radna snaga)</td></tr><tr><td>padajućih troškova</td><td>padajuća</td><td>rast industrije snižava troškove (jeftiniji inputi, znanje)</td></tr></tbody></table><p><strong>Učinci poreza</strong>: porez po jedinici pomiče MC prema gore → tvrtka smanjuje output; neke tvrtke mogu napustiti tržište.</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Gubitak ne znači automatski zatvaranje: u kratkom roku presudna je usporedba P i AVC, ne P i ATC.</li><li>Neke skripte pravilo zatvaranja pišu kao „cijena manja od prosječnog ekonomskog troška” — to vrijedi za troškove koje zatvaranjem može izbjeći; nepovratni fiksni troškovi ne ulaze u odluku. Za kolokvij: kratki rok = AVC.</li><li>Krivulja ponude počinje od minimuma AVC, ne od minimuma ATC.</li></ul></div>",
+      "image": null
+    }
+  },
+  "competitiveMarkets": {
+    "name": "Analiza konkurentnih tržišta",
+    "icon": "fa-landmark",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "question": "Kako se mjeri učinak državne intervencije na blagostanje?",
+        "answer": "Izračunom promjene probitka potrošača i probitka proizvođača (i prihoda ili troška države).",
+        "explanation": "Zbroj probitaka mjeri ukupno blagostanje koje tržište donosi."
+      },
+      {
+        "question": "Što su učinci blagostanja?",
+        "answer": "Gubici i dobici koje državno uplitanje na tržištu donosi potrošačima i proizvođačima.",
+        "explanation": "Jedni dobivaju, drugi gube; bitan je neto učinak."
+      },
+      {
+        "question": "Što je gubitak probitka (mrtvi teret)?",
+        "answer": "Ukupni NETO gubitak probitka potrošača i proizvođača — dio blagostanja koji nitko ne dobiva.",
+        "explanation": "Nastaje jer se proizvodi i razmjenjuje manje od efikasne količine."
+      },
+      {
+        "question": "Što je ekonomska efikasnost?",
+        "answer": "Maksimalizacija zbroja probitka potrošača i probitka proizvođača.",
+        "explanation": "Konkurentno tržište bez tržišnog neuspjeha je efikasno."
+      },
+      {
+        "question": "Što je tržišni neuspjeh i koja su mu dva uzroka?",
+        "answer": "Neregulirano konkurentno tržište je neefikasno jer cijene ne daju prave signale. Uzroci: eksternalije i nedostatak informacija.",
+        "explanation": "Tada intervencija može povećati blagostanje."
+      },
+      {
+        "question": "Što čini plafonska cijena probitku potrošača i proizvođača?",
+        "answer": "Proizvođači sigurno gube; potrošači koji kupe dobivaju, ali neki ostaju bez robe. Ukupno nastaje gubitak probitka.",
+        "explanation": "Potrošači mogu i izgubiti ako je potražnja jako neelastična."
+      },
+      {
+        "question": "Što je cjenovna potpora?",
+        "answer": "Država određuje cijenu IZNAD tržišne i otkupljuje višak da bi je održala.",
+        "explanation": "Potrošači gube, proizvođači dobivaju, država plaća otkup; neto trošak je velik."
+      },
+      {
+        "question": "Što su proizvodne kvote?",
+        "answer": "Država podiže cijenu ograničavanjem ponude (npr. dozvole za taksi); proizvodi se manje od efikasne količine.",
+        "explanation": "Isti učinak na cijenu kao cjenovna potpora, ali bez otkupa viška."
+      },
+      {
+        "question": "Uvozna kvota ili uvozna carina?",
+        "answer": "Kvota: ograničena količina koja se smije uvesti. Carina: porez na uvezeno dobro. Obje drže domaću cijenu iznad svjetske.",
+        "explanation": "Domaći proizvođači dobivaju, domaći potrošači gube."
+      },
+      {
+        "question": "Tko snosi porezni teret?",
+        "answer": "Dijele ga kupci i prodavatelji; veći dio snosi strana s MANJE elastičnom krivuljom.",
+        "explanation": "Udio kupaca \\(= E_S/(E_S - E_D)\\)."
+      },
+      {
+        "question": "Koja četiri uvjeta vrijede nakon uvođenja poreza po jedinici?",
+        "answer": "Kupčeva cijena i količina na krivulji potražnje; prodavateljeva na krivulji ponude; \\(Q_D = Q_S\\); \\(P_b - P_s = t\\).",
+        "explanation": "Kupac plaća \\(P_b\\), prodavatelj prima \\(P_s\\)."
+      },
+      {
+        "question": "Što je subvencija?",
+        "answer": "Negativan porez: kupčeva cijena pada ispod prodavateljeve, a razlika je subvencija. Količina raste.",
+        "explanation": "I subvencija stvara gubitak probitka (proizvodi se previše)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\). Ravnotežna cijena i količina su:",
+        "options": [
+          "\\(P = 30,\\ Q = 60\\)",
+          "\\(P = 60,\\ Q = 0\\)",
+          "\\(P = 20,\\ Q = 80\\)",
+          "\\(P = 40,\\ Q = 40\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\) (ravnoteža P = 30, Q = 60). Probitak potrošača je:",
+        "options": [
+          "900",
+          "1800",
+          "600",
+          "1200"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\). Država uvede plafonsku cijenu 20. Gubitak probitka (mrtvi teret) iznosi:",
+        "options": [
+          "100",
+          "200",
+          "400",
+          "500"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\), porez t = 10 po jedinici. Cijena koju plaćaju kupci je:",
+        "options": [
+          "30",
+          "35",
+          "40",
+          "25"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\), porez t = 10 po jedinici. Porezni prihod države iznosi:",
+        "options": [
+          "300",
+          "500",
+          "600",
+          "50"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Veći dio poreznog tereta snosi strana čija je krivulja:",
+        "options": [
+          "Elastičnija",
+          "Manje elastična",
+          "Vodoravna",
+          "Svejedno je"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Država određuje cijenu iznad tržišne i otkupljuje višak. To je:",
+        "options": [
+          "Plafonska cijena",
+          "Cjenovna potpora",
+          "Subvencija potrošačima",
+          "Uvozna kvota"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uvozna carina na domaćem tržištu:",
+        "options": [
+          "Snižava cijenu",
+          "Podiže cijenu iznad svjetske i koristi domaćim proizvođačima",
+          "Koristi domaćim potrošačima",
+          "Ne mijenja ništa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz subvenciju po jedinici količina na tržištu:",
+        "options": [
+          "Pada",
+          "Raste",
+          "Ostaje ista",
+          "Pada na nulu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tržišni neuspjeh zbog akcije koja djeluje na treće strane, a nije uračunata u cijenu, zove se:",
+        "options": [
+          "Monopol",
+          "Eksternalija",
+          "Arbitraža",
+          "Mrtvi teret"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Maksimalizacija zbroja probitka potrošača i proizvođača zove se ekonomska _______.",
+        "answer": "efikasnost",
+        "hint": "Cilj bez tržišnog neuspjeha."
+      },
+      {
+        "sentence": "Ukupni neto gubitak probitka zove se i mrtvi _______.",
+        "answer": "teret",
+        "hint": "Deadweight loss."
+      },
+      {
+        "sentence": "Uz porez po jedinici razlika između cijene koju plaća kupac i cijene koju prima prodavatelj jednaka je iznosu _______.",
+        "answer": "poreza",
+        "hint": "\\(P_b - P_s = t\\)."
+      },
+      {
+        "sentence": "Uz \\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\) i porez 10 prodaje se _______ jedinica.",
+        "answer": "50",
+        "hint": "\\(P_b = 35,\\ P_s = 25\\)."
+      },
+      {
+        "sentence": "Negativni porez koji snižava kupčevu cijenu zove se _______.",
+        "answer": "subvencija",
+        "hint": "Količina raste."
+      },
+      {
+        "sentence": "Ograničena količina dobra koja se smije uvesti zove se uvozna _______.",
+        "answer": "kvota",
+        "hint": "Carina je porez, a ovo je ograničenje količine."
+      },
+      {
+        "sentence": "Veći dio poreza snosi strana s _______ elastičnom krivuljom.",
+        "answer": "manje",
+        "hint": "Tko ne može pobjeći, plaća."
+      }
+    ],
+    "learn": {
+      "title": "Analiza konkurentnih tržišta",
+      "content": "<h3>Probitak potrošača i proizvođača</h3><p><strong>Probitak potrošača</strong> = površina ispod krivulje potražnje, iznad cijene. <strong>Probitak proizvođača</strong> = površina iznad krivulje ponude, ispod cijene. Njihov zbroj mjeri <strong>ukupno blagostanje</strong>; njegov maksimum je <strong>ekonomska efikasnost</strong>. Učinke intervencije mjerimo promjenom probitaka (<strong>učinci blagostanja</strong>); neto izgubljeni dio je <strong>gubitak probitka (mrtvi teret)</strong>.</p><div class=\"example-box\"><h4>Riješeni primjer — tržište bez intervencije</h4><p>\\(Q_D = 120 - 2P\\), \\(Q_S = 2P\\). Ravnoteža: \\(120 - 2P = 2P \\Rightarrow P^* = 30,\\ Q^* = 60\\). Potražnja dotiče nulu pri P = 60, ponuda počinje pri P = 0.</p><div class=\"formula-box\">\\[ PP = \\tfrac{1}{2}(60 - 30)\\cdot 60 = 900 \\qquad PPr = \\tfrac{1}{2}(30 - 0)\\cdot 60 = 900 \\]</div><p>Ukupno blagostanje = 1800.</p></div><h4>Plafonska cijena</h4><div class=\"example-box\"><h4>Riješeni primjer — plafonska cijena P = 20</h4><p>\\(Q_S = 40\\), \\(Q_D = 80\\) → manjak 40. Prodaje se samo 40 jedinica. Za 40. jedinicu kupci bi platili \\(P = (120 - 40)/2 = 40\\).</p><ul><li>Potrošači dobivaju pravokutnik A = \\((30 - 20)\\cdot 40 = 400\\), gube trokut B = \\(\\tfrac{1}{2}(40 - 30)\\cdot 20 = 100\\) → \\(\\Delta PP = +300\\).</li><li>Proizvođači gube A = 400 i trokut C = \\(\\tfrac{1}{2}(30 - 20)\\cdot 20 = 100\\) → \\(\\Delta PPr = -500\\).</li><li><strong>Gubitak probitka</strong> = B + C = <strong>200</strong> (blagostanje pada s 1800 na 1600).</li></ul></div><h4>Minimalne cijene, cjenovne potpore, kvote</h4><ul><li><strong>Minimalna cijena</strong> (npr. minimalna nadnica): iznad ravnoteže → višak (nezaposlenost), gubitak probitka.</li><li><strong>Cjenovna potpora</strong>: država drži cijenu iznad tržišne i <strong>otkupljuje višak</strong>. Potrošači gube, proizvođači dobivaju, država snosi trošak otkupa → ukupni trošak blagostanja = ΔPP + ΔPPr − trošak države (izrazito negativan).</li><li><strong>Proizvodne kvote</strong>: država ograničava ponudu (dozvole za taksi) → viša cijena, manja količina.</li><li><strong>Uvozne kvote i carine</strong>: domaća cijena ostaje iznad svjetske; domaći proizvođači i država (carinski prihod) dobivaju, domaći potrošači gube više nego što drugi dobiju.</li></ul><h4>Porez po jedinici i subvencija</h4><p>Nakon uvođenja poreza \\(t\\): kupac plaća \\(P_b\\) (na krivulji potražnje), prodavatelj prima \\(P_s\\) (na krivulji ponude), \\(Q_D(P_b) = Q_S(P_s)\\) i \\(P_b - P_s = t\\).</p><div class=\"example-box\"><h4>Riješeni primjer — porez t = 10</h4><p>\\(120 - 2P_b = 2(P_b - 10) \\Rightarrow 140 = 4P_b \\Rightarrow P_b = 35,\\ P_s = 25,\\ Q = 50\\).</p><ul><li>Porezni prihod: \\(10 \\cdot 50 = 500\\).</li><li>Kupci plaćaju 5 više, prodavatelji primaju 5 manje → teret podijeljen napola.</li><li>Gubitak probitka: \\(\\tfrac{1}{2}\\cdot 10 \\cdot (60 - 50) = 50\\).</li></ul><p>Provjera formulom: u ravnoteži \\(E_D = -2\\cdot\\frac{30}{60} = -1\\), \\(E_S = 2\\cdot\\frac{30}{60} = 1\\):</p><div class=\"formula-box\">\\[ \\text{udio kupaca} = \\frac{E_S}{E_S - E_D} = \\frac{1}{1 - (-1)} = 0{,}5 \\]</div></div><p>Općenito: porezni teret većim dijelom pada na stranu s <strong>manje elastičnom</strong> krivuljom. <strong>Subvencija</strong> je negativan porez: prodavateljeva cijena premašuje kupčevu, količina <strong>raste</strong>, a i ona stvara gubitak probitka.</p><h4>Tržišni neuspjeh</h4><p>Konkurentno tržište ne maksimalizira blagostanje kad postoje <strong>eksternalije</strong> (troškovi ili koristi izvan cijene, npr. zagađenje) ili <strong>nedostatak informacija</strong> (potrošač ne zna kvalitetu proizvoda). Tada intervencija može povećati efikasnost (detaljno u temi Eksternalije i javna dobra).</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Plafonska cijena je MAKSIMALNA cijena (ispod ravnoteže); neke skripte je miješaju s minimalnom cijenom.</li><li>Tko formalno plaća porez nije važno — raspodjela tereta ovisi samo o elastičnostima.</li><li>Kod plafonske cijene potrošači kao grupa ne moraju dobiti: ako je potražnja jako neelastična, trokut B može biti veći od pravokutnika A.</li></ul></div>",
+      "image": null
+    }
+  },
+  "monopolyMonopsony": {
+    "name": "Tržišna moć: monopol i monopson",
+    "icon": "fa-crown",
+    "color": "#7c3aed",
+    "flashcards": [
+      {
+        "question": "Što su monopol, monopson i tržišna moć?",
+        "answer": "Monopol: tržište s jednim prodavateljem. Monopson: tržište s jednim kupcem. Tržišna moć: sposobnost prodavatelja ili kupca da utječe na cijenu.",
+        "explanation": "Oligopson = tržište s nekoliko kupaca."
+      },
+      {
+        "question": "Zašto je granični prihod monopolista manji od cijene?",
+        "answer": "Da bi prodao dodatnu jedinicu, monopolist mora sniziti cijenu SVIH jedinica, pa je \\(MR < P\\).",
+        "explanation": "Za linearnu potražnju \\(P = a - bQ\\): \\(MR = a - 2bQ\\)."
+      },
+      {
+        "question": "Kako monopolist bira količinu i cijenu?",
+        "answer": "Proizvodi gdje je \\(MR = MC\\), a cijenu očitava s krivulje potražnje za tu količinu.",
+        "explanation": "Količina je manja, a cijena viša nego u savršenoj konkurenciji."
+      },
+      {
+        "question": "Ima li monopolist krivulju ponude?",
+        "answer": "Nema: ne postoji jednoznačna veza cijene i količine — ovisi o obliku potražnje i MC.",
+        "explanation": "Pomak potražnje može promijeniti cijenu bez promjene količine ili obrnuto."
+      },
+      {
+        "question": "Što je Lernerov indeks monopolske moći?",
+        "answer": "\\(L = (P - MC)/P\\), vrijednost između 0 i 1; veći L = veća monopolska moć. Vrijedi \\(L = -1/E_D\\).",
+        "explanation": "Savršena konkurencija: \\(P = MC\\), \\(L = 0\\)."
+      },
+      {
+        "question": "Pravilo palca za određivanje cijene (marža)?",
+        "answer": "\\(P = \\dfrac{MC}{1 + 1/E_D}\\): što je potražnja poduzeća elastičnija, to je marža manja.",
+        "explanation": "\\(E_D = -4\\) → P = 1,33·MC; \\(E_D = -1{,}5\\) → P = 3·MC."
+      },
+      {
+        "question": "Koja tri faktora određuju monopolsku moć poduzeća?",
+        "answer": "Elastičnost tržišne potražnje, broj poduzeća na tržištu i interakcija među poduzećima.",
+        "explanation": "Agresivno suparništvo smanjuje moć; suradnja je povećava."
+      },
+      {
+        "question": "Što je prepreka za ulazak?",
+        "answer": "Uvjet koji sprečava ulazak novih konkurenata: patenti, koncesije, ekonomije obujma, ugled, strateške prijetnje.",
+        "explanation": "Bez prepreka monopolski profit privlači konkurente."
+      },
+      {
+        "question": "Što je društveni trošak monopola?",
+        "answer": "Gubitak probitka (mrtvi teret) zbog premale proizvodnje, plus moguće rent-seeking trošenje.",
+        "explanation": "Rent-seeking: trošenje na lobiranje za stjecanje ili zadržavanje monopolske moći."
+      },
+      {
+        "question": "Što je prirodni monopol?",
+        "answer": "Poduzeće koje cijelo tržište može opskrbiti uz niži trošak nego više poduzeća (snažne ekonomije obujma).",
+        "explanation": "Komunalne usluge; regulira se cijena (npr. regulacija stope povrata)."
+      },
+      {
+        "question": "Kako monopsonist bira količinu?",
+        "answer": "Kupuje do točke gdje je granični izdatak jednak graničnoj vrijednosti: \\(ME = MV\\). Plaća cijenu s krivulje ponude (prosječni izdatak).",
+        "explanation": "ME > AE jer viša cijena vrijedi za sve kupljene jedinice."
+      },
+      {
+        "question": "O čemu ovisi monopsonska moć?",
+        "answer": "O elastičnosti tržišne ponude (manje elastična → veća moć), broju kupaca i interakciji među kupcima.",
+        "explanation": "Npr. veliki proizvođač automobila prema dobavljačima guma."
+      },
+      {
+        "question": "Što je bilateralni monopol?",
+        "answer": "Tržište s jednim prodavateljem i jednim kupcem; monopolska i monopsonska moć teže međusobnom poništavanju.",
+        "explanation": "Ishod ovisi o pregovaračkoj snazi (npr. sindikat i jedini poslodavac)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Potražnja \\(P = 100 - 2Q\\), \\(MC = 20\\). Monopolist proizvodi:",
+        "options": [
+          "Q = 40",
+          "Q = 20",
+          "Q = 25",
+          "Q = 10"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 100 - 2Q\\), \\(MC = 20\\). Monopolska cijena je:",
+        "options": [
+          "20",
+          "40",
+          "60",
+          "80"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Potražnja \\(P = 100 - 2Q\\), \\(MC = 20\\). Lernerov indeks monopolista je približno:",
+        "options": [
+          "0,33",
+          "0,50",
+          "0,67",
+          "1,00"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Potražnja \\(P = 100 - 2Q\\), \\(MC = 20\\). Gubitak probitka (mrtvi teret) monopola iznosi:",
+        "options": [
+          "200",
+          "400",
+          "800",
+          "1600"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Monopolist uvijek proizvodi na dijelu krivulje potražnje gdje je potražnja:",
+        "options": [
+          "Neelastična",
+          "Elastična",
+          "Savršeno neelastična",
+          "Jedinično elastična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Monopolist s potražnjom elastičnosti −4 i MC = 30 € postavlja cijenu:",
+        "options": [
+          "30 €",
+          "40 €",
+          "60 €",
+          "120 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće s više pogona maksimalizira profit kad je:",
+        "options": [
+          "Output jednak u svim pogonima",
+          "\\(MR = MC_1 = MC_2\\)",
+          "\\(MC_1 > MC_2\\)",
+          "Prosječni trošak jednak u pogonima"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ponuda inputa \\(w = 10 + L\\), granična vrijednost \\(MV = 40 - L\\). Monopsonist kupuje:",
+        "options": [
+          "L = 15 uz w = 25",
+          "L = 10 uz w = 20",
+          "L = 10 uz w = 30",
+          "L = 20 uz w = 30"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Monopsonska moć je veća kad je krivulja ponude:",
+        "options": [
+          "Jako elastična",
+          "Manje elastična (strmija)",
+          "Vodoravna",
+          "Padajuća"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Trošenje novca na lobiranje radi stjecanja monopolske moći naziva se:",
+        "options": [
+          "Grabežljivo određivanje cijena",
+          "Rent-seeking",
+          "Cjenovno signaliziranje",
+          "Paralelno ponašanje"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće koje cijelo tržište opskrbljuje jeftinije nego više poduzeća zajedno je:",
+        "options": [
+          "Kartel",
+          "Prirodni monopol",
+          "Dominantno poduzeće",
+          "Monopson"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Tržište sa samo jednim kupcem zove se _______.",
+        "answer": "monopson",
+        "hint": "Suprotno od monopola."
+      },
+      {
+        "sentence": "Mjera \\((P - MC)/P\\) zove se _______ indeks.",
+        "answer": "Lernerov",
+        "hint": "Vrijednost od 0 do 1."
+      },
+      {
+        "sentence": "Monopolist proizvodi količinu pri kojoj je granični prihod jednak graničnom _______.",
+        "answer": "trošku",
+        "hint": "\\(MR = MC\\)."
+      },
+      {
+        "sentence": "Uz \\(P = 100 - 2Q\\) granični prihod glasi \\(MR = 100 - \\) _______ \\(Q\\).",
+        "answer": "4",
+        "hint": "Dvostruki nagib."
+      },
+      {
+        "sentence": "Uvjet koji sprečava ulazak novih konkurenata zove se _______ za ulazak.",
+        "answer": "prepreka",
+        "hint": "Patent, koncesija."
+      },
+      {
+        "sentence": "Tržište s jednim prodavateljem i jednim kupcem zove se _______ monopol.",
+        "answer": "bilateralni",
+        "hint": "Dvostrani."
+      },
+      {
+        "sentence": "Monopsonist kupuje dok granični izdatak ne izjednači graničnu _______.",
+        "answer": "vrijednost",
+        "hint": "\\(ME = MV\\)."
+      },
+      {
+        "sentence": "Pravila koja zabranjuju radnje koje ograničavaju konkurenciju zovu se _______ zakoni.",
+        "answer": "antitrustovski",
+        "hint": "Zakoni o zaštiti tržišnog natjecanja."
+      }
+    ],
+    "learn": {
+      "title": "Tržišna moć: monopol i monopson",
+      "content": "<h3>Monopol</h3><p><strong>Monopol</strong> je tržište s jednim prodavateljem: njegova krivulja potražnje je <strong>tržišna</strong> krivulja potražnje. Monopolist ne može naplatiti „bilo koju” cijenu — po višoj cijeni prodaje manje. Njegov <strong>prosječni prihod</strong> je cijena (krivulja potražnje), a <strong>granični prihod</strong> je manji od cijene jer za dodatnu prodaju mora sniziti cijenu svih jedinica.</p><div class=\"formula-box\">\\[ P = a - bQ \\;\\Rightarrow\\; MR = a - 2bQ \\qquad \\text{maksimum profita: } MR = MC \\]</div><div class=\"example-box\"><h4>Riješeni primjer — monopol vs konkurencija</h4><p>\\(P = 100 - 2Q\\), \\(MC = 20\\) (bez fiksnih troškova).</p><ul><li><strong>Monopol:</strong> \\(100 - 4Q = 20 \\Rightarrow Q_m = 20\\), \\(P_m = 100 - 40 = 60\\). Profit \\((60 - 20)\\cdot 20 = 800\\).</li><li><strong>Konkurencija:</strong> \\(P = MC\\): \\(100 - 2Q = 20 \\Rightarrow Q_c = 40,\\ P_c = 20\\).</li><li><strong>Gubitak probitka:</strong> \\(\\tfrac{1}{2}(60 - 20)(40 - 20) = 400\\).</li><li><strong>Lernerov indeks:</strong> \\(L = \\frac{60 - 20}{60} \\approx 0{,}67\\).</li></ul><p>Provjera pravilom palca: u točki monopola \\(E_D = -\\tfrac{1}{2}\\cdot\\frac{60}{20} = -1{,}5\\) → \\(L = 1/1{,}5 = 0{,}67\\) ✓; \\(P = \\frac{20}{1 - 1/1{,}5} = 60\\) ✓.</p></div><h4>Mjerenje monopolske moći</h4><div class=\"formula-box\">\\[ L = \\frac{P - MC}{P} = -\\frac{1}{E_D} \\qquad P = \\frac{MC}{1 + 1/E_D} \\]</div><p>Što je potražnja poduzeća elastičnija, to je marža manja. Monopolist uvijek posluje na <strong>elastičnom</strong> dijelu potražnje (gdje je MR &gt; 0). Mali dućan može imati veći L od supermarketa, ali ne i veći profit (manji promet, veći fiksni troškovi po jedinici).</p><p><strong>Izvori monopolske moći</strong>: (1) <strong>elastičnost tržišne potražnje</strong> — potražnja poduzeća je barem toliko elastična kao tržišna; (2) <strong>broj poduzeća</strong> — više poduzeća, manja moć; <strong>prepreke za ulazak</strong> (patenti, koncesije, ekonomije obujma); (3) <strong>interakcija među poduzećima</strong> — agresivno suparništvo smanjuje moć, dogovaranje je povećava.</p><h4>Promjene potražnje, porez, više pogona</h4><ul><li>Monopol <strong>nema krivulju ponude</strong>: ista količina može se prodavati po različitim cijenama i obrnuto.</li><li><strong>Porez po jedinici</strong> pomiče MC prema gore → manja količina, viša cijena. Uz linearnu potražnju cijena raste za pola poreza (s MC = 30: \\(100 - 4Q = 30 \\Rightarrow Q = 17{,}5,\\ P = 65\\)); uz neke oblike potražnje cijena može porasti i VIŠE od poreza.</li><li><strong>Više pogona</strong>: \\(MR = MC_1 = MC_2\\) — proizvodnja se raspoređuje tako da je granični trošak u svakom pogonu jednak.</li></ul><h4>Društveni trošak i regulacija</h4><p>Monopol stvara <strong>gubitak probitka</strong>; uz to se novac troši na <strong>rent-seeking</strong> (lobiranje, donacije) radi stjecanja ili zadržavanja moći. <strong>Prirodni monopol</strong> (komunalne usluge) cijelo tržište opskrbljuje jeftinije od više poduzeća; država regulira cijenu — cijena jednaka MC bi ga natjerala u gubitak, pa se regulira oko prosječnog troška ili <strong>regulacijom stope povrata</strong>.</p><h3>Monopson</h3><p>Kupac s moći kupuje dok <strong>granični izdatak (ME)</strong> ne izjednači <strong>graničnu vrijednost (MV)</strong>, a plaća cijenu s krivulje ponude (<strong>prosječni izdatak AE</strong>). Budući da viša cijena vrijedi za sve jedinice, ME &gt; AE.</p><div class=\"example-box\"><h4>Riješeni primjer — monopson</h4><p>Ponuda (AE): \\(w = 10 + L\\) → ukupni izdatak \\(10L + L^2\\), \\(ME = 10 + 2L\\). Granična vrijednost: \\(MV = 40 - L\\).</p><p>\\(10 + 2L = 40 - L \\Rightarrow L = 10\\), cijena s ponude \\(w = 20\\). Konkurentski: \\(10 + L = 40 - L \\Rightarrow L = 15,\\ w = 25\\). Monopsonist kupuje manje i plaća manje.</p></div><table><thead><tr><th>Monopol</th><th>Monopson</th></tr></thead><tbody><tr><td>MR = MC</td><td>ME = MV</td></tr><tr><td>AR (cijena) &gt; MR</td><td>ME &gt; AE (cijena)</td></tr><tr><td>P &gt; MC</td><td>MV &gt; P</td></tr></tbody></table><p>Monopsonska moć ovisi o <strong>elastičnosti tržišne ponude</strong> (strmija ponuda → veća moć), <strong>broju kupaca</strong> i <strong>interakciji kupaca</strong>. <strong>Bilateralni monopol</strong>: jedan prodavatelj i jedan kupac — moći se djelomično poništavaju.</p><h4>Antitrustovski zakoni</h4><p>Zabranjuju radnje koje ograničavaju konkurenciju: dogovor o cijenama, <strong>grabežljivo određivanje cijena</strong> (niske cijene radi istiskivanja konkurenata), zlouporabu vladajućeg položaja. <strong>Paralelno ponašanje</strong> (poduzeće dosljedno prati drugo) oblik je prešutnog dogovora. U SAD-u se provode kroz Ministarstvo pravosuđa, Federal Trade Commission i privatne tužbe (trostruka odšteta).</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Monopolist NE bira točku gdje je P = MC; bira MR = MC.</li><li>Granični trošak nije „promjena varijabilnosti” (greška u nekim skriptama) nego promjena troška za dodatnu jedinicu.</li><li>„Cijena = dvostruki MC” vrijedi samo za \\(E_D = -2\\), nije opće pravilo.</li></ul></div>",
+      "image": null
+    }
+  },
+  "pricingMarketPower": {
+    "name": "Određivanje cijena uz tržišnu moć",
+    "icon": "fa-tags",
+    "color": "#c026d3",
+    "flashcards": [
+      {
+        "question": "Što je cjenovna diskriminacija?",
+        "answer": "Naplaćivanje različitih cijena različitim kupcima za slična dobra, radi prisvajanja probitka potrošača.",
+        "explanation": "Moguća samo uz tržišnu moć i kad se preprodaja može spriječiti."
+      },
+      {
+        "question": "Što je rezervacijska cijena?",
+        "answer": "Najviša cijena koju je kupac spreman platiti za dobro.",
+        "explanation": "Temelj cjenovne diskriminacije prvog stupnja."
+      },
+      {
+        "question": "Cjenovna diskriminacija prvog stupnja?",
+        "answer": "Svakom kupcu naplaćuje se njegova rezervacijska cijena — poduzeće prisvaja cijeli probitak potrošača.",
+        "explanation": "Savršena diskriminacija; približno: odvjetnici, liječnici, pregovaranje o cijeni auta."
+      },
+      {
+        "question": "Cjenovna diskriminacija drugog stupnja?",
+        "answer": "Različite cijene po jedinici za različite KOLIČINE istog dobra (blok ili grupirano određivanje cijena).",
+        "explanation": "Npr. niža cijena struje ili vode za veću potrošnju, količinski popusti."
+      },
+      {
+        "question": "Cjenovna diskriminacija trećeg stupnja?",
+        "answer": "Potrošači se dijele u dvije ili više grupa sa zasebnim krivuljama potražnje i svakoj se grupi naplaćuje druga cijena.",
+        "explanation": "Studentski popusti, cijene za domaće i strane goste. Uvjet: \\(MR_1 = MR_2 = MC\\)."
+      },
+      {
+        "question": "Kojoj grupi se u diskriminaciji trećeg stupnja naplaćuje viša cijena?",
+        "answer": "Grupi s MANJE elastičnom potražnjom.",
+        "explanation": "Poslovni gosti (neelastični) plaćaju više od turista."
+      },
+      {
+        "question": "Što je međuvremenska cjenovna diskriminacija?",
+        "answer": "Grupe s različitom potražnjom dobivaju različite cijene u različitim trenucima (visoka cijena na početku, zatim niža).",
+        "explanation": "Nove knjige u tvrdom uvezu, premijere filmova, novi mobiteli."
+      },
+      {
+        "question": "Što je određivanje cijene maksimalnog opterećenja?",
+        "answer": "Više cijene u razdobljima najvećeg opterećenja, kad ograničeni kapacitet podiže granični trošak.",
+        "explanation": "Hotel u sezoni, avionske karte za blagdane, struja u vršnim satima."
+      },
+      {
+        "question": "Što je dvodijelna tarifa?",
+        "answer": "Potrošač plaća naknadu za „ulazak” (pravo korištenja) i cijenu po jedinici korištenja.",
+        "explanation": "Zabavni park: ulaznica + vožnje; teretana: članarina + termini."
+      },
+      {
+        "question": "Što je prodaja u paketu i kada se isplati?",
+        "answer": "Prodaja dvaju ili više proizvoda zajedno. Isplati se kad su potražnje kupaca NEGATIVNO korelirane.",
+        "explanation": "Čista: samo u paketu. Mješovita: i u paketu i pojedinačno."
+      },
+      {
+        "question": "Što je vezivanje?",
+        "answer": "Zahtjev da kupac kupi jedno dobro da bi mogao kupiti drugo.",
+        "explanation": "Npr. pisač i originalni ulošci."
+      },
+      {
+        "question": "Pravilo palca za oglašavanje?",
+        "answer": "Omjer oglašavanja i prodaje: \\(A/PQ = -E_A/E_P\\).",
+        "explanation": "\\(E_A\\) = elastičnost potražnje u odnosu na oglašavanje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Naplaćivanje svakom kupcu njegove rezervacijske cijene je diskriminacija:",
+        "options": [
+          "Prvog stupnja",
+          "Drugog stupnja",
+          "Trećeg stupnja",
+          "Međuvremenska"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Količinski popust (jeftinija jedinica uz veću kupnju) primjer je diskriminacije:",
+        "options": [
+          "Prvog stupnja",
+          "Drugog stupnja",
+          "Trećeg stupnja",
+          "Vezivanja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Studentski popust u muzeju primjer je diskriminacije:",
+        "options": [
+          "Prvog stupnja",
+          "Drugog stupnja",
+          "Trećeg stupnja",
+          "Maksimalnog opterećenja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Hotel: MC = 30 €, elastičnost poslovnih gostiju −2, turista −4. Cijene su:",
+        "options": [
+          "Poslovni 60 €, turisti 40 €",
+          "Poslovni 40 €, turisti 60 €",
+          "Oba 45 €",
+          "Poslovni 30 €, turisti 30 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "U diskriminaciji trećeg stupnja poduzeće raspoređuje prodaju tako da je:",
+        "options": [
+          "\\(P_1 = P_2\\)",
+          "\\(MR_1 = MR_2 = MC\\)",
+          "\\(MR_1 > MR_2\\)",
+          "\\(P_1 = P_2 = MC\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Viši hotelski cjenik u kolovozu nego u studenom primjer je:",
+        "options": [
+          "Vezivanja",
+          "Određivanja cijene maksimalnog opterećenja",
+          "Prodaje u paketu",
+          "Diskriminacije prvog stupnja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zabavni park naplaćuje ulaznicu i posebno svaku vožnju. To je:",
+        "options": [
+          "Dvodijelna tarifa",
+          "Čista prodaja u paketu",
+          "Vezivanje",
+          "Diskriminacija prvog stupnja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Gost A cijeni sobu 120 €, izlet 30 €; gost B sobu 100 €, izlet 40 €. Najveći prihod od dva gosta daje:",
+        "options": [
+          "Soba 100 € + izlet 30 € zasebno (260 €)",
+          "Paket po 140 € (280 €)",
+          "Paket po 150 € (150 €)",
+          "Soba 120 € + izlet 40 € (160 €)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(E_A = 0{,}1\\), \\(E_P = -4\\). Optimalni udio oglašavanja u prihodu je:",
+        "options": [
+          "0,4 %",
+          "2,5 %",
+          "4 %",
+          "10 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prodaja u paketu najviše povećava profit kad su potražnje kupaca za dva proizvoda:",
+        "options": [
+          "Savršeno pozitivno korelirane",
+          "Negativno korelirane",
+          "Jednake",
+          "Savršeno neelastične"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Najviša cijena koju je kupac spreman platiti zove se _______ cijena.",
+        "answer": "rezervacijska",
+        "hint": "Kupac je „rezervira” u glavi."
+      },
+      {
+        "sentence": "Naknada za ulazak uz cijenu po korištenju zove se _______ tarifa.",
+        "answer": "dvodijelna",
+        "hint": "Dva dijela."
+      },
+      {
+        "sentence": "Prodaja proizvoda samo u paketu zove se _______ prodaja u paketu.",
+        "answer": "čista",
+        "hint": "Suprotno od mješovite."
+      },
+      {
+        "sentence": "Zahtjev da se kupi jedno dobro kako bi se moglo kupiti drugo zove se _______.",
+        "answer": "vezivanje",
+        "hint": "Pisač i ulošci."
+      },
+      {
+        "sentence": "Viša cijena naplaćuje se grupi s _______ elastičnom potražnjom.",
+        "answer": "manje",
+        "hint": "Poslovni gosti."
+      },
+      {
+        "sentence": "Uz MC = 30 € i elastičnost −2 cijena prema pravilu palca iznosi _______ €.",
+        "answer": "60",
+        "hint": "\\(P = MC/(1 + 1/E)\\)."
+      },
+      {
+        "sentence": "Različite cijene u različitim vremenskim trenucima čine _______ cjenovnu diskriminaciju.",
+        "answer": "međuvremensku",
+        "hint": "Premijera pa kasnije jeftinije."
+      }
+    ],
+    "learn": {
+      "title": "Određivanje cijena uz tržišnu moć",
+      "content": "<h3>Prisvajanje probitka potrošača</h3><p>Poduzeće s tržišnom moći može zaraditi više od jedinstvene monopolske cijene ako prisvoji dio <strong>probitka potrošača</strong>. Uvjeti: tržišna moć, različite spremnosti plaćanja i mogućnost sprečavanja preprodaje.</p><h4>Tri stupnja cjenovne diskriminacije</h4><table><thead><tr><th>Stupanj</th><th>Ideja</th><th>Primjer</th></tr></thead><tbody><tr><td>Prvi</td><td>svakom kupcu njegova <strong>rezervacijska cijena</strong></td><td>pregovaranje, odvjetnik, liječnik</td></tr><tr><td>Drugi</td><td>različita cijena po jedinici za različite <strong>količine</strong> (blok-cijene)</td><td>struja, voda, količinski popusti</td></tr><tr><td>Treći</td><td>različite cijene za <strong>grupe</strong> kupaca</td><td>studenti, umirovljenici, domaći i strani gosti</td></tr></tbody></table><p>Kod savršene diskriminacije prvog stupnja poduzeće proizvodi do P = MC i prisvaja cijeli probitak potrošača; <strong>varijabilni profit</strong> (profit bez fiksnih troškova) je najveći mogući.</p><h4>Diskriminacija trećeg stupnja</h4><div class=\"formula-box\">\\[ MR_1 = MR_2 = MC \\qquad P_i = \\frac{MC}{1 + 1/E_i} \\qquad \\frac{P_1}{P_2} = \\frac{1 + 1/E_2}{1 + 1/E_1} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — hotel s dvije grupe gostiju</h4><p>MC po noćenju = 30 €. Poslovni gosti: \\(E_1 = -2\\); turisti: \\(E_2 = -4\\).</p><p>\\(P_1 = \\frac{30}{1 - 1/2} = 60\\) €; \\(P_2 = \\frac{30}{1 - 1/4} = 40\\) €.</p><p>Poslovni gosti, s manje elastičnom potražnjom, plaćaju 1,5 puta više. Hotel mora moći razlikovati grupe (npr. radni dan i vikend, uvjeti otkazivanja) i spriječiti „preprodaju” niže cijene.</p></div><h4>Vrijeme i opterećenje</h4><ul><li><strong>Međuvremenska diskriminacija</strong>: najprije visoka cijena za nestrpljive (neelastične), zatim niža za ostale — tvrdi uvez, premijere.</li><li><strong>Cijena maksimalnog opterećenja</strong>: više cijene u vršnim razdobljima kad ograničen kapacitet podiže MC — turistička sezona, blagdanski letovi. Ovdje je cilj i <strong>efikasnost</strong>, ne samo prisvajanje probitka.</li></ul><h4>Dvodijelna tarifa</h4><p>Cijena = naknada za pristup T + cijena po korištenju P. Uz jednake potrošače optimalno je \\(P = MC\\), a T = cijeli probitak potrošača po toj cijeni. Uz različite potrošače kompromis: P nešto iznad MC, T niža. Primjeri: zabavni park, teretana, golf-klub, mobilni paket.</p><h4>Prodaja u paketu i vezivanje</h4><div class=\"example-box\"><h4>Riješeni primjer — paket soba + izlet</h4><table><thead><tr><th></th><th>Soba</th><th>Izlet</th><th>Ukupno</th></tr></thead><tbody><tr><td>Gost A</td><td>120 €</td><td>30 €</td><td>150 €</td></tr><tr><td>Gost B</td><td>100 €</td><td>40 €</td><td>140 €</td></tr></tbody></table><p><strong>Zasebno:</strong> da bi prodao oboma, soba 100 €, izlet 30 € → prihod \\(2 \\cdot 130 = 260\\) €.</p><p><strong>Paket:</strong> 140 € (oba kupuju) → prihod 280 €.</p><p>Paket se isplati jer su sklonosti <strong>negativno korelirane</strong> (A više cijeni sobu, B izlet), pa su ukupne spremnosti plaćanja sličnije od pojedinačnih.</p></div><p><strong>Mješovita prodaja u paketu</strong> (paket i pojedinačno) često je najbolja kad su granični troškovi značajni. <strong>Vezivanje</strong>: kupnja jednog dobra uvjetuje kupnju drugog (pisač i ulošci) — omogućuje mjerenje intenziteta korištenja.</p><h4>Oglašavanje</h4><div class=\"formula-box\">\\[ \\frac{A}{PQ} = -\\frac{E_A}{E_P} = -\\frac{0{,}1}{-4} = 0{,}025 \\]</div><p>Uz \\(E_A = 0{,}1\\) (1 % više oglašavanja → 0,1 % veća prodaja) i \\(E_P = -4\\), poduzeće treba trošiti oko 2,5 % prihoda na oglašavanje. Više se oglašava kad je potražnja osjetljivija na oglase i manje osjetljiva na cijenu.</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Drugi stupanj = količine, treći stupanj = grupe kupaca (česta zamjena).</li><li>Viša cijena ide MANJE elastičnoj grupi, ne većoj grupi.</li><li>Paket ne pomaže ako su spremnosti plaćanja savršeno pozitivno korelirane.</li></ul></div>",
+      "image": null
+    }
+  },
+  "monopolisticOligopoly": {
+    "name": "Monopolistička konkurencija i oligopol",
+    "icon": "fa-building",
+    "color": "#db2777",
+    "flashcards": [
+      {
+        "question": "Što je monopolistička konkurencija?",
+        "answer": "Tržište sa slobodnim ulaskom na kojem svako poduzeće prodaje vlastitu marku diferenciranog proizvoda.",
+        "explanation": "Restorani, frizeri, hoteli, odjeća, pasta za zube."
+      },
+      {
+        "question": "Koje su dvije ključne karakteristike monopolističke konkurencije?",
+        "answer": "1) diferencirani proizvodi, zamjenjivi ali ne savršeni supstituti; 2) slobodan ulazak i izlazak.",
+        "explanation": "Unakrsna elastičnost je velika, ali ne beskonačna."
+      },
+      {
+        "question": "Kratkoročna ravnoteža u monopolističkoj konkurenciji?",
+        "answer": "Poduzeće se ponaša kao mali monopolist: \\(MR = MC\\), cijena iznad prosječnog troška → pozitivan profit.",
+        "explanation": "Profit privlači nove marke na tržište."
+      },
+      {
+        "question": "Dugoročna ravnoteža u monopolističkoj konkurenciji?",
+        "answer": "Ulazak pomiče potražnju poduzeća ulijevo dok ne tangira krivulju prosječnog troška: \\(P = AC\\), nulti profit, ali \\(P > MC\\).",
+        "explanation": "Poduzeće proizvodi lijevo od minimuma AC → višak kapaciteta."
+      },
+      {
+        "question": "Je li monopolistička konkurencija neefikasna?",
+        "answer": "Djelomično: \\(P > MC\\) i višak kapaciteta, ali gubitak je obično malen, a raznovrsnost proizvoda velika korist.",
+        "explanation": "Raznolikost ponude često nadmašuje trošak neefikasnosti."
+      },
+      {
+        "question": "Što je oligopol?",
+        "answer": "Tržište na kojem nekoliko poduzeća međusobno konkurira, a ulazak novih je ograničen. Proizvodi mogu, ali ne moraju biti diferencirani.",
+        "explanation": "Automobili, čelik, nafta, zrakoplovne tvrtke, telekomunikacije."
+      },
+      {
+        "question": "Što je Nashova ravnoteža?",
+        "answer": "Skup strategija u kojem svako poduzeće čini najbolje što može, uzimajući u obzir akcije konkurenata.",
+        "explanation": "Nitko nema poticaj jednostrano mijenjati strategiju."
+      },
+      {
+        "question": "Što je Cournotov model?",
+        "answer": "Model oligopola s homogenim proizvodom u kojem svako poduzeće output konkurenta smatra fiksnim, a sva ISTODOBNO biraju KOLIČINU.",
+        "explanation": "Cournotova ravnoteža je primjer Nashove ravnoteže."
+      },
+      {
+        "question": "Što je reakcijska krivulja?",
+        "answer": "Odnos između outputa koji poduzeću maksimalizira profit i outputa za koji ono misli da će ga proizvesti konkurent.",
+        "explanation": "Presjek dviju reakcijskih krivulja = Cournotova ravnoteža."
+      },
+      {
+        "question": "Stackelbergov ili Bertrandov model?",
+        "answer": "Stackelberg: jedno poduzeće (vođa) bira količinu PRIJE drugih — prednost prvog poteza. Bertrand: poduzeća istodobno biraju CIJENU.",
+        "explanation": "U Bertrandu s homogenim proizvodom ravnoteža je \\(P = MC\\)."
+      },
+      {
+        "question": "Što je model izlomljene krivulje potražnje?",
+        "answer": "Potražnja poduzeća lomi se pri postojećoj cijeni: iznad nje je elastična (konkurenti ne prate poskupljenje), ispod neelastična (prate pojeftinjenje).",
+        "explanation": "Objašnjava rigidnost cijena u oligopolu."
+      },
+      {
+        "question": "Cjenovno signaliziranje i cjenovno predvodništvo?",
+        "answer": "Signaliziranje: poduzeće najavljuje poskupljenje nadajući se da će ga drugi slijediti. Predvodništvo: jedno poduzeće redovito mijenja cijene, a drugi ih prate.",
+        "explanation": "Oblici prešutnog (implicitnog) dogovora."
+      },
+      {
+        "question": "Što je kartel i zašto je nestabilan?",
+        "answer": "Poduzeća eksplicitno dogovaraju cijene i količine radi zajedničkog profita. Nestabilan je jer svaki član ima poticaj varati (sniziti cijenu, prodati više).",
+        "explanation": "Uspjeh traži stabilnu organizaciju i potencijal za monopolsku moć (neelastičnu potražnju)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "U dugoročnoj ravnoteži monopolističke konkurencije vrijedi:",
+        "options": [
+          "\\(P = MC = \\min AC\\)",
+          "\\(P = AC > MC\\)",
+          "\\(P > AC\\)",
+          "\\(P < AC\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće u monopolističkoj konkurenciji dugoročno proizvodi:",
+        "options": [
+          "U minimumu prosječnog troška",
+          "Lijevo od minimuma AC (višak kapaciteta)",
+          "Desno od minimuma AC",
+          "Nultu količinu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 30 - Q\\), MC = 0, dva Cournotova poduzeća. Reakcijska krivulja poduzeća 1 je:",
+        "options": [
+          "\\(Q_1 = 30 - Q_2\\)",
+          "\\(Q_1 = 15 - Q_2/2\\)",
+          "\\(Q_1 = 15\\)",
+          "\\(Q_1 = 10 + Q_2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 30 - Q\\), MC = 0, dva Cournotova poduzeća. U ravnoteži svako proizvodi:",
+        "options": [
+          "7,5",
+          "10",
+          "15",
+          "30"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 30 - Q\\), MC = 0. Ako se dva poduzeća dogovore (kartel), ukupni output i cijena su:",
+        "options": [
+          "Q = 20, P = 10",
+          "Q = 15, P = 15",
+          "Q = 30, P = 0",
+          "Q = 10, P = 20"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 30 - Q\\), MC = 0, Stackelbergov model: vođa proizvodi 15. Sljedbenik proizvodi:",
+        "options": [
+          "15",
+          "10",
+          "7,5",
+          "0"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "U Bertrandovom modelu s homogenim proizvodom ravnotežna cijena je:",
+        "options": [
+          "Monopolska",
+          "Jednaka graničnom trošku",
+          "Iznad Cournotove",
+          "Jednaka nuli uvijek"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Model izlomljene krivulje potražnje objašnjava:",
+        "options": [
+          "Ratove cijena",
+          "Rigidnost (otpornost) cijena u oligopolu",
+          "Ulazak na tržište",
+          "Cjenovnu diskriminaciju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće s velikim tržišnim udjelom koje određuje cijenu uzimajući u obzir ponudu malih poduzeća je:",
+        "options": [
+          "Kartel",
+          "Dominantno poduzeće",
+          "Cjenovni sljedbenik",
+          "Monopson"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kartel će vjerojatnije uspjeti ako je ukupna potražnja:",
+        "options": [
+          "Jako elastična",
+          "Relativno neelastična",
+          "Savršeno elastična",
+          "Rastuća s cijenom"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Tržište na kojem samo nekoliko poduzeća konkurira, a ulazak je ograničen, zove se _______.",
+        "answer": "oligopol",
+        "hint": "„Oligo” = malo."
+      },
+      {
+        "sentence": "Tržište na kojem dva poduzeća međusobno konkuriraju zove se _______.",
+        "answer": "duopol",
+        "hint": "„Duo” = dva."
+      },
+      {
+        "sentence": "U Cournotovom modelu poduzeća istodobno biraju _______.",
+        "answer": "količinu",
+        "hint": "U Bertrandovom biraju cijenu."
+      },
+      {
+        "sentence": "Model u kojem jedno poduzeće bira output prije drugih je _______ model.",
+        "answer": "Stackelbergov",
+        "hint": "Prednost prvog poteza."
+      },
+      {
+        "sentence": "Uz \\(P = 30 - Q\\) i MC = 0 u Cournotovoj ravnoteži tržišna cijena iznosi _______.",
+        "answer": "10",
+        "hint": "Ukupni output 20."
+      },
+      {
+        "sentence": "Skup strategija u kojem nitko nema poticaj jednostrano odstupiti zove se _______ ravnoteža.",
+        "answer": "Nashova",
+        "hint": "John Nash, 1951."
+      },
+      {
+        "sentence": "Sklonost oligopolista da ne mijenjaju cijene ni kad se promijene troškovi zove se _______ cijena.",
+        "answer": "rigidnost",
+        "hint": "Izlomljena krivulja potražnje."
+      }
+    ],
+    "learn": {
+      "title": "Monopolistička konkurencija i oligopol",
+      "content": "<h3>Monopolistička konkurencija</h3><p>Kombinacija monopola i savršene konkurencije: <strong>diferencirani proizvodi</strong> (svako poduzeće jedini je proizvođač svoje marke) i <strong>slobodan ulazak i izlazak</strong>. Primjeri: restorani, kafići, hoteli, odjeća.</p><ul><li><strong>Kratki rok</strong>: poduzeće ima padajuću potražnju za svojom markom, bira \\(MR = MC\\) i može ostvariti profit (\\(P &gt; AC\\)).</li><li><strong>Dugi rok</strong>: profit privlači nove marke → potražnja pojedinog poduzeća pomiče se ulijevo dok ne <strong>tangira</strong> krivulju prosječnog troška: \\(P = AC\\), nulti ekonomski profit.</li></ul><p><strong>Neefikasnost</strong>: \\(P &gt; MC\\) (gubitak probitka) i <strong>višak kapaciteta</strong> (output lijevo od minimuma AC). Budući da je tržišna moć obično mala, gubitak je malen, a <strong>raznovrsnost proizvoda</strong> za potrošače je velika korist.</p><h3>Oligopol</h3><p>Nekoliko poduzeća, ograničen ulazak (prirodne prepreke: ekonomije obujma, patenti, ugled; strateške: prijetnja preplavljivanjem tržišta i snižavanjem cijena). Odluke su <strong>strateške</strong>: svako poduzeće mora predvidjeti reakciju konkurenata. Ravnotežni pojam je <strong>Nashova ravnoteža</strong>.</p><h4>Cournotov model (istodobni izbor količine)</h4><div class=\"example-box\"><h4>Riješeni primjer — duopol</h4><p>Tržišna potražnja \\(P = 30 - Q\\), \\(Q = Q_1 + Q_2\\), MC = 0.</p><p><strong>Reakcijska krivulja</strong> poduzeća 1: prihod \\((30 - Q_1 - Q_2)Q_1\\), \\(MR_1 = 30 - 2Q_1 - Q_2 = 0\\):</p><div class=\"formula-box\">\\[ Q_1 = 15 - \\tfrac{1}{2}Q_2 \\qquad Q_2 = 15 - \\tfrac{1}{2}Q_1 \\]</div><p>Ako misli da konkurent proizvodi 0 → proizvodi 15 (pola konkurentske količine); ako konkurent proizvodi 15 → 7,5; ako 30 → ništa.</p><p><strong>Cournotova ravnoteža</strong> (presjek): \\(Q_1 = Q_2 = 10\\), \\(Q = 20\\), \\(P = 10\\), profit svakog 100.</p><p><strong>Dogovor (kartel)</strong>: monopolska količina \\(Q = 15\\), \\(P = 15\\), po 7,5 → profit po 112,5. <strong>Konkurencija</strong>: \\(P = MC = 0\\), \\(Q = 30\\).</p><p><strong>Stackelberg</strong>: vođa uvrsti sljedbenikovu reakciju: \\((30 - Q_1 - 15 + Q_1/2)Q_1 = (15 - Q_1/2)Q_1\\) → \\(Q_1 = 15\\), sljedbenik \\(Q_2 = 7{,}5\\), \\(P = 7{,}5\\). Profit vođe 112,5, sljedbenika 56,25 — <strong>prednost prvog poteza</strong>.</p></div><table><thead><tr><th>Ishod</th><th>Ukupni Q</th><th>P</th></tr></thead><tbody><tr><td>Konkurencija</td><td>30</td><td>0</td></tr><tr><td>Stackelberg</td><td>22,5</td><td>7,5</td></tr><tr><td>Cournot</td><td>20</td><td>10</td></tr><tr><td>Kartel (monopol)</td><td>15</td><td>15</td></tr></tbody></table><h4>Bertrandov model (istodobni izbor cijene)</h4><p>Uz homogen proizvod kupci kupuju od najjeftinijeg, pa se cijene snižavaju do \\(P = MC\\) i profit je nula — iako su samo dva poduzeća. Uz <strong>diferencirane</strong> proizvode cijene ostaju iznad MC.</p><h4>Konkurencija i dogovaranje</h4><ul><li><strong>Dilema zatvorenika</strong>: dogovor o visokoj cijeni bio bi bolji za sve, ali svako poduzeće ima poticaj sniziti cijenu → ishod niskih cijena (vidi Teorija igara).</li><li><strong>Rigidnost cijena</strong> i <strong>model izlomljene krivulje potražnje</strong>: iznad postojeće cijene potražnja je elastična (drugi ne prate poskupljenje), ispod neelastična (prate pojeftinjenje) → nitko ne mijenja cijenu.</li><li><strong>Cjenovno signaliziranje</strong> i <strong>cjenovno predvodništvo</strong>: oblici prešutnog dogovora.</li><li><strong>Dominantno poduzeće</strong>: veliki udio, postavlja cijenu uzimajući u obzir ponudu malih poduzeća.</li></ul><h4>Karteli</h4><p>Članovi <strong>eksplicitno</strong> dogovaraju cijene i količine (OPEC). Razlika od monopola: rijetko kontroliraju cijelo tržište i članovi su u iskušenju varati. Uvjeti uspjeha: (1) stabilna organizacija i poštivanje dogovora; (2) <strong>potencijal za monopolsku moć</strong> — neelastična ukupna potražnja i neelastična ponuda proizvođača izvan kartela.</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Monopolistička konkurencija NIJE isto što i monopol: ulazak je slobodan, pa je dugoročni profit nula.</li><li>Cournot = količine, Bertrand = cijene, Stackelberg = redoslijed poteza.</li><li>Kartel je eksplicitan dogovor; paralelno ponašanje i signaliziranje su prešutni.</li></ul></div>",
+      "image": null
+    }
+  },
+  "gameTheory": {
+    "name": "Teorija igara i konkurentska strategija",
+    "icon": "fa-chess",
+    "color": "#e11d48",
+    "flashcards": [
+      {
+        "question": "Što su igra, isplata i strategija?",
+        "answer": "Igra: igrači donose strateške odluke uzimajući u obzir akcije i reakcije drugih. Isplata: rezultat za igrača. Strategija: plan akcija za igru.",
+        "explanation": "Optimalna strategija maksimalizira očekivanu isplatu."
+      },
+      {
+        "question": "Kooperativna ili nekooperativna igra?",
+        "answer": "Kooperativna: igrači mogu sklapati obvezujuće ugovore i planirati zajedničke strategije. Nekooperativna: pregovaranje i provođenje obvezujućih ugovora nisu mogući.",
+        "explanation": "Pregovor kupca i prodavatelja o cijeni tepiha = kooperativna igra."
+      },
+      {
+        "question": "Što je matrica isplata?",
+        "answer": "Tablica koja pokazuje isplatu (profit) svakog igrača za svaku kombinaciju njegove odluke i odluke konkurenta.",
+        "explanation": "Uobičajeno: prvi broj = igrač u retku, drugi = igrač u stupcu."
+      },
+      {
+        "question": "Što je dominantna strategija?",
+        "answer": "Strategija koja je optimalna bez obzira na to što čini protivnik.",
+        "explanation": "Ako je svi imaju → ravnoteža dominantnih strategija."
+      },
+      {
+        "question": "Nashova ravnoteža ili ravnoteža dominantnih strategija?",
+        "answer": "Dominantne: svaki igrač radi najbolje BEZ OBZIRA na druge. Nash: svaki radi najbolje S OBZIROM na ono što drugi rade. Svaka ravnoteža dominantnih strategija je Nashova, ne obrnuto.",
+        "explanation": "Nashova je slabiji (općenitiji) pojam."
+      },
+      {
+        "question": "Što je dilema zatvorenika?",
+        "answer": "Igra u kojoj obojica priznaju (dominantna strategija), iako bi im bilo bolje da obojica šute.",
+        "explanation": "Objašnjava zašto oligopolisti teško održavaju visoke cijene."
+      },
+      {
+        "question": "Što je maksimin strategija?",
+        "answer": "Strategija koja maksimalizira MINIMALNU isplatu koju igrač može dobiti.",
+        "explanation": "Oprezna strategija kad nismo sigurni da je protivnik racionalan."
+      },
+      {
+        "question": "Čista ili mješovita strategija?",
+        "answer": "Čista: igrač izvodi određenu akciju. Mješovita: igrač nasumično bira između akcija prema odabranim vjerojatnostima.",
+        "explanation": "Npr. bacanje novčića; neke igre imaju Nashovu ravnotežu samo u mješovitim strategijama."
+      },
+      {
+        "question": "Što je strategija „milo za drago”?",
+        "answer": "Strategija u ponavljajućoj igri: igrač ponavlja protivnikov prethodni potez — surađuje sa suradnicima, uzvraća nesuradnicima.",
+        "explanation": "U beskonačno ponavljanoj igri može održati suradnju."
+      },
+      {
+        "question": "Što je sekvencijalna igra i prošireni oblik igre?",
+        "answer": "Sekvencijalna: igrači povlače poteze naizmjence, reagirajući jedni na druge. Prošireni oblik: prikaz poteza u obliku stabla odlučivanja.",
+        "explanation": "Rješava se unatrag, od zadnjeg poteza."
+      },
+      {
+        "question": "Što je strateški potez?",
+        "answer": "Potez koji igraču daje prednost tako što ograničava vlastito ponašanje (npr. vjerodostojna obveza).",
+        "explanation": "Izgradnja viška kapaciteta čini prijetnju ratom cijena vjerodostojnom."
+      },
+      {
+        "question": "Koje su vrste aukcija?",
+        "answer": "Engleska (govorna, rastuće ponude), nizozemska (cijena pada dok netko ne prihvati), zapečaćenih ponuda (prve cijene ili druge najviše cijene).",
+        "explanation": "U aukciji druge cijene isplati se ponuditi svoju stvarnu procjenu."
+      },
+      {
+        "question": "Što je prokletstvo pobjednika?",
+        "answer": "Pobjednik aukcije s uobičajenom (zajedničkom) vrijednošću prolazi loše jer je precijenio vrijednost i ponudio previše.",
+        "explanation": "Pobjeđuje upravo onaj s najoptimističnijom procjenom."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Hoteli A i B biraju oglašavati ili ne. Isplate (A, B): oba oglašavaju (10, 5); A oglašava, B ne (15, 0); A ne, B oglašava (6, 8); nitko (10, 2). Ishod je:",
+        "options": [
+          "Nitko ne oglašava",
+          "Oba oglašavaju",
+          "Samo A oglašava",
+          "Samo B oglašava"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Strategija koja je optimalna bez obzira na postupke protivnika je:",
+        "options": [
+          "Maksimin strategija",
+          "Dominantna strategija",
+          "Mješovita strategija",
+          "Milo za drago"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U dilemi zatvorenika (jednokratnoj) oba zatvorenika:",
+        "options": [
+          "Šute i dobivaju blažu kaznu",
+          "Priznaju, iako bi im šutnja bila bolja",
+          "Nasumično biraju",
+          "Dogovore se"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće 1: „ne ulagati” daje −10 ili 0, „ulagati” daje −100 ili 20 (ovisno o konkurentu). Maksimin strategija poduzeća 1 je:",
+        "options": [
+          "Ulagati",
+          "Ne ulagati",
+          "Mješovita 50:50",
+          "Ne postoji"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Igra u kojoj sudionici mogu sklapati obvezujuće ugovore je:",
+        "options": [
+          "Nekooperativna",
+          "Kooperativna",
+          "Sekvencijalna",
+          "Igra konstantne sume"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U ponavljajućoj igri igrač koji surađuje dok i protivnik surađuje, a uzvraća na varanje, koristi:",
+        "options": [
+          "Maksimin",
+          "Milo za drago",
+          "Čistu dominantnu strategiju",
+          "Mješovitu strategiju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Aukcija u kojoj prodavatelj snižava cijenu dok je netko ne prihvati je:",
+        "options": [
+          "Engleska",
+          "Nizozemska",
+          "Zapečaćenih ponuda",
+          "Druge cijene"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U aukciji zapečaćenih ponuda druge najviše cijene optimalno je ponuditi:",
+        "options": [
+          "Više od svoje procjene",
+          "Svoju stvarnu procjenu",
+          "Pola procjene",
+          "Najnižu dopuštenu ponudu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Prokletstvo pobjednika javlja se kod aukcija:",
+        "options": [
+          "S privatnom vrijednošću",
+          "S uobičajenom (zajedničkom) vrijednošću",
+          "Samo nizozemskih",
+          "Samo kad je jedan ponuditelj"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće 1 prvo bira pahuljice. Isplate: oba hrskave (−5, −5), 1 hrskave / 2 slatke (10, 20), 1 slatke / 2 hrskave (20, 10), oba slatke (−5, −5). Ishod je:",
+        "options": [
+          "1 hrskave, 2 slatke",
+          "1 slatke, 2 hrskave",
+          "Oba slatke",
+          "Oba hrskave"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Tablica s isplatama igrača za svaku kombinaciju odluka zove se _______ isplata.",
+        "answer": "matrica",
+        "hint": "Retci i stupci."
+      },
+      {
+        "sentence": "Strategija koja maksimalizira minimalni mogući dobitak zove se _______ strategija.",
+        "answer": "maksimin",
+        "hint": "Maksimum minimuma."
+      },
+      {
+        "sentence": "Igra u kojoj igrači naizmjence povlače poteze zove se _______ igra.",
+        "answer": "sekvencijalna",
+        "hint": "Redoslijed je važan."
+      },
+      {
+        "sentence": "Strategija kod koje igrač nasumično bira akcije prema vjerojatnostima zove se _______ strategija.",
+        "answer": "mješovita",
+        "hint": "Suprotno od čiste."
+      },
+      {
+        "sentence": "Pobjednik aukcije koji je precijenio vrijednost pogađa prokletstvo _______.",
+        "answer": "pobjednika",
+        "hint": "Winner’s curse."
+      },
+      {
+        "sentence": "Igra u kojoj pregovaranje i obvezujući ugovori nisu mogući zove se _______ igra.",
+        "answer": "nekooperativna",
+        "hint": "Suprotno od kooperativne."
+      },
+      {
+        "sentence": "Aukcija u kojoj prodavatelj traži sve veće ponude zove se _______ aukcija.",
+        "answer": "engleska",
+        "hint": "Govorna aukcija."
+      }
+    ],
+    "learn": {
+      "title": "Teorija igara i konkurentska strategija",
+      "content": "<h3>Strateško odlučivanje</h3><p>U <strong>igri</strong> igrači donose odluke uzimajući u obzir akcije i reakcije drugih. Ključ: razumjeti protivnikovo stajalište (uz pretpostavku da je racionalan) i predvidjeti njegov odgovor.</p><ul><li><strong>Kooperativna igra</strong>: mogući su obvezujući ugovori. Primjer: tepih košta 100 €, kupcu vrijedi 200 € — svaka cijena između 101 i 199 € koristi objema stranama.</li><li><strong>Nekooperativna igra</strong>: nema obvezujućih ugovora (dva konkurenta određuju cijene).</li></ul><h4>Dominantne strategije</h4><div class=\"example-box\"><h4>Riješeni primjer — oglašavanje dvaju hotela</h4><table><thead><tr><th>A \\ B</th><th>B oglašava</th><th>B ne oglašava</th></tr></thead><tbody><tr><td>A oglašava</td><td>10, 5</td><td>15, 0</td></tr><tr><td>A ne oglašava</td><td>6, 8</td><td>10, 2</td></tr></tbody></table><p>A: ako B oglašava, 10 &gt; 6; ako ne, 15 &gt; 10 → <strong>oglašavanje je dominantno</strong>. B: ako A oglašava, 5 &gt; 0; ako ne, 8 &gt; 2 → i za B je dominantno. <strong>Ravnoteža dominantnih strategija</strong>: oba oglašavaju (10, 5).</p></div><h4>Nashova ravnoteža</h4><p>Svaki igrač radi najbolje što može <strong>s obzirom na</strong> ono što rade drugi. Svaka ravnoteža dominantnih strategija je Nashova, ali Nashova postoji i kad dominantnih strategija nema; igra može imati i više Nashovih ravnoteža (npr. pahuljice: dvije ravnoteže u istodobnoj igri).</p><h4>Dilema zatvorenika</h4><table><thead><tr><th>1 \\ 2</th><th>Prizna</th><th>Ne prizna</th></tr></thead><tbody><tr><td>Prizna</td><td>−5, −5</td><td>−1, −10</td></tr><tr><td>Ne prizna</td><td>−10, −1</td><td>−2, −2</td></tr></tbody></table><p>Priznanje je dominantno za obojicu → (−5, −5), iako bi (−2, −2) bilo bolje za obojicu. Oligopolisti su u istoj situaciji: niska cijena je dominantna, iako bi zajednička visoka cijena donijela veći profit. Zato je prešutni dogovor kratkog vijeka i ratovi cijena lako izbijaju.</p><h4>Maksimin i mješovite strategije</h4><div class=\"example-box\"><h4>Riješeni primjer — maksimin</h4><table><thead><tr><th>1 \\ 2</th><th>Ne ulaže</th><th>Ulaže</th></tr></thead><tbody><tr><td>Ne ulaže</td><td>0, 0</td><td>−10, 10</td></tr><tr><td>Ulaže</td><td>−100, 0</td><td>20, 10</td></tr></tbody></table><p>Poduzeću 2 ulaganje je dominantno; Nashova ravnoteža je (ulaže, ulaže) = (20, 10). Ali ako poduzeće 1 nije sigurno da je 2 racionalno: „ne ulaže” jamči najmanje −10, „ulaže” najmanje −100 → <strong>maksimin = ne ulagati</strong>.</p></div><p><strong>Mješovita strategija</strong>: nasumičan izbor prema vjerojatnostima (bacanje novčića); neke igre imaju Nashovu ravnotežu samo u mješovitim strategijama.</p><h4>Ponavljajuće i sekvencijalne igre</h4><ul><li><strong>Ponavljajuća igra</strong>: igrači grade reputaciju; strategija <strong>„milo za drago”</strong> (ponovi protivnikov prošli potez) može održati suradnju kad se igra ponavlja neograničeno.</li><li><strong>Sekvencijalna igra</strong>: potezi naizmjence; prikazuje se u <strong>proširenom obliku</strong> (stablo) i rješava unatrag. Stackelbergov model je sekvencijalna igra.</li></ul><div class=\"example-box\"><h4>Riješeni primjer — pahuljice (sekvencijalno)</h4><p>Isplate (1, 2): oba hrskave (−5, −5); 1 hrskave, 2 slatke (10, 20); 1 slatke, 2 hrskave (20, 10); oba slatke (−5, −5). Poduzeće 1 zna da će 2 uvijek izabrati suprotnu vrstu. Zato bira <strong>slatke</strong> (20 &gt; 10), a poduzeće 2 odgovara hrskavima → (20, 10). Prednost prvog poteza.</p></div><p><strong>Strateški potez</strong> ograničava vlastito ponašanje da bi se steklo prednost (vjerodostojna obveza). Prijetnja je djelotvorna samo ako je <strong>vjerodostojna</strong> — npr. višak kapaciteta čini prijetnju ratom cijena uvjerljivom i odvraća ulazak konkurenata.</p><h4>Aukcije</h4><ul><li><strong>Engleska (govorna)</strong>: rastuće ponude, pobjeđuje najviša.</li><li><strong>Nizozemska</strong>: cijena kreće visoko i pada dok je netko ne prihvati.</li><li><strong>Zapečaćenih ponuda</strong>: istodobne ponude; plaća se najviša ponuda (<strong>prve cijene</strong>) ili druga najviša (<strong>druge cijene</strong> — tu je optimalno ponuditi svoju stvarnu procjenu).</li><li><strong>Privatna vrijednost</strong>: svatko zna svoju procjenu, procjene se razlikuju. <strong>Uobičajena vrijednost</strong>: predmet svima vrijedi približno isto, ali nitko ne zna koliko → <strong>prokletstvo pobjednika</strong>.</li></ul><div class=\"tip-box\"><h4>Zamke</h4><ul><li>U matrici provjeri čiji je koji broj (redak prvi, stupac drugi).</li><li>Nashova ravnoteža ne mora biti najbolji zajednički ishod (dilema zatvorenika).</li><li>Dominantna strategija ne ovisi o protivniku; Nashova ovisi.</li></ul></div>",
+      "image": null
+    }
+  },
+  "factorMarkets": {
+    "name": "Tržišta faktora proizvodnje",
+    "icon": "fa-people-carry-box",
+    "color": "#ea580c",
+    "flashcards": [
+      {
+        "question": "Što je izvedena potražnja?",
+        "answer": "Potražnja za inputima koja ovisi o razini outputa poduzeća i troškovima inputa — izvedena je iz potražnje za proizvodom.",
+        "explanation": "Potražnja softverske tvrtke za programerima ovisi i o tome koliko softvera planira prodati."
+      },
+      {
+        "question": "Što je granični prihod proizvoda rada (MRPL)?",
+        "answer": "Dodatni prihod od jedne dodatne jedinice rada: \\(MRP_L = MP_L \\cdot MR\\). Jednak je vrijednosti graničnog proizvoda (\\(MP_L \\cdot P\\)) samo uz konkurentno tržište outputa.",
+        "explanation": "Na konkurentnom tržištu outputa \\(MR = P\\), pa \\(MRP_L = MP_L \\cdot P\\)."
+      },
+      {
+        "question": "Koliko radnika zapošljava poduzeće na konkurentnom tržištu rada?",
+        "answer": "Dok granični prihod proizvoda rada ne izjednači nadnicu: \\(MRP_L = w\\).",
+        "explanation": "Krivulja MRPL je krivulja potražnje za radom."
+      },
+      {
+        "question": "Zašto je krivulja MRPL padajuća?",
+        "answer": "Zbog opadajućeg graničnog proizvoda rada (a kod monopolista i zbog padajućeg graničnog prihoda).",
+        "explanation": "Svaki dodatni radnik dodaje manje outputa."
+      },
+      {
+        "question": "Kako izgleda ponuda inputa za poduzeće na konkurentnom tržištu faktora?",
+        "answer": "Savršeno elastično (vodoravno): poduzeće kupuje koliko želi po tržišnoj cijeni inputa.",
+        "explanation": "Tada je prosječni izdatak = granični izdatak = cijena inputa."
+      },
+      {
+        "question": "Što su krivulja prosječnih i krivulja graničnih izdataka?",
+        "answer": "Prosječni izdatak: krivulja ponude = cijena koju poduzeće plaća po jedinici inputa. Granični izdatak: dodatni trošak kupnje još jedne jedinice.",
+        "explanation": "Profit se maksimalizira kad je \\(MRP = ME\\)."
+      },
+      {
+        "question": "Što je unazad savinuta krivulja ponude rada?",
+        "answer": "S rastom nadnice ponuda rada najprije raste, a zatim pada, jer efekt dohotka (više dokolice) nadvlada efekt supstitucije.",
+        "explanation": "Dokolica = sve ne-radne aktivnosti, uključujući spavanje i prehranu."
+      },
+      {
+        "question": "Efekt supstitucije i efekt dohotka kod porasta nadnice?",
+        "answer": "Supstitucija: dokolica postaje skuplja → više rada. Dohodak: radnik je bogatiji → želi više dokolice → manje rada.",
+        "explanation": "Koji je jači, određuje nagib ponude rada."
+      },
+      {
+        "question": "Što je ekonomska renta na tržištu faktora?",
+        "answer": "Razlika između plaćanja faktoru i minimalnog iznosa koji je potreban da se taj faktor angažira.",
+        "explanation": "Nogometaš zarađuje 100 000 €, a igrao bi i za 30 000 € → renta 70 000 €."
+      },
+      {
+        "question": "Kako poduzeće s monopsonskom moći zapošljava rad?",
+        "answer": "Do točke gdje je \\(MRP_L = ME_L\\); nadnicu očitava s krivulje ponude rada, pa je nadnica niža od MRPL.",
+        "explanation": "Zapošljava manje i plaća manje nego na konkurentnom tržištu."
+      },
+      {
+        "question": "Tri strukture tržišta faktora?",
+        "answer": "Konkurentna tržišta faktora, tržišta faktora s monopsonskom moći i tržišta faktora s monopolskom moći (npr. sindikati).",
+        "explanation": "Sindikat kao monopolist na strani ponude rada."
+      },
+      {
+        "question": "Bilateralni monopol na tržištu rada?",
+        "answer": "Jedan prodavatelj rada (sindikat) i jedan kupac (poslodavac); nadnica ovisi o pregovaračkoj snazi.",
+        "explanation": "Monopolska i monopsonska moć djelomično se poništavaju."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Peti radnik dodaje 10 jedinica outputa koji se prodaje po 8 € na konkurentnom tržištu. Njegov MRPL je:",
+        "options": [
+          "10 €",
+          "18 €",
+          "80 €",
+          "8 €"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Proizvod se prodaje po 8 €, nadnica je 70 €. Peti radnik dodaje 10 jedinica, šesti bi dodao 8. Koliko radnika poduzeće zapošljava?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće na konkurentnom tržištu rada zapošljava dok ne vrijedi:",
+        "options": [
+          "\\(MP_L = w\\)",
+          "\\(MRP_L = w\\)",
+          "\\(AP_L = w\\)",
+          "\\(MRP_L = 0\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja za inputima koja proizlazi iz potražnje za outputom zove se:",
+        "options": [
+          "Tržišna potražnja",
+          "Izvedena potražnja",
+          "Pojedinačna potražnja",
+          "Mrežna potražnja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Unazad savinuti dio krivulje ponude rada nastaje kad je:",
+        "options": [
+          "Efekt supstitucije veći od efekta dohotka",
+          "Efekt dohotka veći od efekta supstitucije",
+          "Nadnica jednaka nuli",
+          "Tržište monopsonsko"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Na konkurentnom tržištu faktora poduzeće se suočava s krivuljom ponude inputa koja je:",
+        "options": [
+          "Rastuća",
+          "Savršeno elastična (vodoravna)",
+          "Okomita",
+          "Padajuća"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Porast upotrebe strojeva (komplementarnih radu) pomiče krivulju MRPL:",
+        "options": [
+          "Ulijevo",
+          "Udesno",
+          "Ne pomiče je",
+          "Čini je okomitom"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poduzeće s monopsonskom moći na tržištu rada, u odnosu na konkurentno tržište:",
+        "options": [
+          "Zapošljava više i plaća više",
+          "Zapošljava manje i plaća manje",
+          "Zapošljava više i plaća manje",
+          "Ništa se ne mijenja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Glumac zarađuje 50 000 €, a radio bi i za 20 000 €. Njegova ekonomska renta je:",
+        "options": [
+          "20 000 €",
+          "30 000 €",
+          "50 000 €",
+          "70 000 €"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Potražnja za inputima koja ovisi o outputu poduzeća zove se _______ potražnja.",
+        "answer": "izvedena",
+        "hint": "Izvodi se iz potražnje za proizvodom."
+      },
+      {
+        "sentence": "Poduzeće zapošljava dok granični prihod proizvoda rada ne izjednači _______.",
+        "answer": "nadnicu",
+        "hint": "\\(MRP_L = w\\)."
+      },
+      {
+        "sentence": "Ne-radne aktivnosti, uključujući spavanje i prehranu, zovu se _______.",
+        "answer": "dokolica",
+        "hint": "Alternativa radu."
+      },
+      {
+        "sentence": "Uz \\(MP_L = 10\\) i cijenu outputa 8 € granični prihod proizvoda rada iznosi _______ €.",
+        "answer": "80",
+        "hint": "\\(MP_L \\cdot P\\)."
+      },
+      {
+        "sentence": "Krivulja ponude rada koja pri visokim nadnicama pada zove se _______ savinuta.",
+        "answer": "unazad",
+        "hint": "Efekt dohotka nadvlada."
+      },
+      {
+        "sentence": "Dodatni trošak kupnje još jedne jedinice inputa zove se granični _______.",
+        "answer": "izdatak",
+        "hint": "ME."
+      }
+    ],
+    "learn": {
+      "title": "Tržišta faktora proizvodnje",
+      "content": "<h3>Potražnja za faktorima</h3><p>Tržišta faktora su tržišta rada, sirovina i drugih inputa. Potražnja za inputom je <strong>izvedena potražnja</strong>: ovisi o tome koliko outputa poduzeće želi proizvesti i prodati te o cijenama inputa. Tri strukture: <strong>konkurentna</strong> tržišta faktora, tržišta s <strong>monopsonskom</strong> moći i tržišta s <strong>monopolskom</strong> moći (sindikati).</p><h4>Jedan varijabilni faktor (rad)</h4><div class=\"formula-box\">\\[ MRP_L = MP_L \\cdot MR \\qquad \\text{(konkurentni output: } MRP_L = MP_L \\cdot P\\text{)} \\]</div><p>Na konkurentnom tržištu rada poduzeće može zaposliti koliko god želi po tržišnoj nadnici (ponuda rada za poduzeće je vodoravna). Zapošljava dok je</p><div class=\"formula-box\">\\[ MRP_L = w \\]</div><div class=\"example-box\"><h4>Riješeni primjer — koliko zaposliti?</h4><p>Proizvod se prodaje po 8 €. Nadnica 70 € dnevno.</p><table><thead><tr><th>Radnik</th><th>MPL</th><th>MRPL = MPL · 8 €</th><th>Isplati se (w = 70)?</th></tr></thead><tbody><tr><td>4.</td><td>12</td><td>96 €</td><td>da</td></tr><tr><td>5.</td><td>10</td><td>80 €</td><td>da</td></tr><tr><td>6.</td><td>8</td><td>64 €</td><td>ne</td></tr></tbody></table><p>Poduzeće zapošljava <strong>5 radnika</strong>: peti donosi 80 € uz trošak 70 €, šesti bi donio 64 € uz trošak 70 €. Padne li nadnica na 60 €, zaposlit će i šestoga — pomak <strong>uzduž</strong> krivulje potražnje za radom.</p></div><p>Krivulja MRPL je <strong>padajuća</strong> zbog opadajućeg MPL; kod monopolista na tržištu outputa pada još brže (i MR pada). Kad je više faktora varijabilno, pad nadnice potiče i veću upotrebu strojeva koji povećavaju MPL, pa je dugoročna krivulja potražnje za radom <strong>elastičnija</strong> od kratkoročne krivulje MRPL.</p><h4>Ponuda rada</h4><p>Radnik bira između rada i <strong>dokolice</strong>. Porast nadnice:</p><ul><li><strong>efekt supstitucije</strong>: dokolica je skuplja → više rada;</li><li><strong>efekt dohotka</strong>: radnik je bogatiji → želi više dokolice → manje rada.</li></ul><p>Pri visokim nadnicama efekt dohotka može nadvladati → <strong>unazad savinuta krivulja ponude rada</strong>.</p><h4>Ravnoteža i ekonomska renta</h4><p>Ravnoteža na konkurentnom tržištu faktora je gdje cijena inputa izjednači ponudu i potražnju. Kad su i tržište outputa i tržište inputa konkurentni, resursi se koriste efikasno. <strong>Ekonomska renta</strong> = plaćanje faktoru − minimum potreban da se faktor angažira (nogometaš s 100 000 € koji bi igrao i za 30 000 € ima rentu 70 000 €).</p><h4>Monopsonska i monopolska moć</h4><ul><li><strong>Monopsonist</strong> (jedini veliki poslodavac): zapošljava gdje je \\(MRP_L = ME_L\\), a plaća nadnicu s krivulje ponude (prosječni izdatak) → manje zaposlenih, niža nadnica.</li><li><strong>Sindikat</strong> kao monopolist na strani ponude rada: može podići nadnicu iznad konkurentne uz manju zaposlenost.</li><li><strong>Bilateralni monopol</strong>: sindikat pregovara s jedinim poslodavcem; ishod ovisi o pregovaračkoj snazi.</li></ul><div class=\"tip-box\"><h4>Zamke</h4><ul><li>MRPL nije isto što i MPL: MPL je u jedinicama outputa, MRPL u eurima.</li><li>Pravilo zapošljavanja uspoređuje MRPL s nadnicom (na konkurentnom tržištu rada), a s graničnim izdatkom kod monopsona.</li><li>HR skripte MRPL zovu „vrijednost graničnog proizvoda rada”; strogo uzevši, vrijednost graničnog proizvoda je \\(MP_L \\cdot P\\), a to je jednako MRPL samo na konkurentnom tržištu outputa.</li></ul></div>",
+      "image": null
+    }
+  },
+  "externalitiesPublicGoods": {
+    "name": "Eksternalije i javna dobra",
+    "icon": "fa-leaf",
+    "color": "#16a34a",
+    "flashcards": [
+      {
+        "question": "Što je eksternalija?",
+        "answer": "Aktivnost proizvođača ili potrošača koja utječe na druge proizvođače ili potrošače, a nije uračunata u tržišnu cijenu.",
+        "explanation": "Uzrok tržišnog neuspjeha."
+      },
+      {
+        "question": "Negativna ili pozitivna eksternalija?",
+        "answer": "Negativna: djelovanje jedne strane stvara trošak drugima (tvornica zagađuje rijeku ribarima). Pozitivna: stvara korist drugima (lijep vrt koristi susjedima).",
+        "explanation": "Negativna → prevelika proizvodnja; pozitivna → premala."
+      },
+      {
+        "question": "Što je granični društveni trošak?",
+        "answer": "Zbroj graničnog troška proizvodnje i graničnog eksternog troška: \\(MSC = MC + MEC\\).",
+        "explanation": "Granični eksterni trošak = trošak koji dodatna jedinica nameće drugima."
+      },
+      {
+        "question": "Što je granična društvena korist?",
+        "answer": "Zbroj granične osobne korisnosti i granične eksterne koristi: \\(MSB = MB + MEB\\).",
+        "explanation": "Kod pozitivne eksternalije MSB > privatna korist."
+      },
+      {
+        "question": "Što je emisijski standard?",
+        "answer": "Zakonsko ograničenje razine zagađenja koje tvrtka smije emitirati; prekoračenje donosi kazne.",
+        "explanation": "Tvrtka ga ispunjava ugradnjom opreme za smanjenje zagađenja."
+      },
+      {
+        "question": "Što je emisijska naknada?",
+        "answer": "Iznos koji tvrtka plaća za svaku jedinicu emisije; tvrtka smanjuje emisiju dok granični trošak smanjenja ne izjednači naknadu.",
+        "explanation": "Potiče efikasno (najjeftinije) smanjenje zagađenja."
+      },
+      {
+        "question": "Što su prenosive emisijske dozvole?",
+        "answer": "Utržive dozvole koje određuju najveću emisiju; tvrtke njima trguju, pa emisiju najviše smanjuju one s najnižim troškom smanjenja.",
+        "explanation": "Cijena dozvole u ravnoteži = granični trošak smanjenja emisije svih tvrtki."
+      },
+      {
+        "question": "Što kaže Coaseov teorem?",
+        "answer": "Ako stranke mogu pregovarati bez troškova i u obostranu korist, ishod je efikasan bez obzira na to kome pripadaju vlasnička prava.",
+        "explanation": "Vlasnička prava određuju samo raspodjelu, ne i efikasnost — ali samo uz niske transakcijske troškove."
+      },
+      {
+        "question": "Što su resursi zajednice?",
+        "answer": "Resursi kojima svatko ima slobodan pristup (ribolovna područja, zrak); zbog toga se pretjerano iskorištavaju.",
+        "explanation": "Tragedija zajedničkog dobra."
+      },
+      {
+        "question": "Nekonkurentno i neekskluzivno dobro?",
+        "answer": "Nekonkurentno: granični trošak korištenja za još jednog potrošača je nula (svjetionik). Neekskluzivno: nikoga se ne može spriječiti da ga koristi (obrana).",
+        "explanation": "Oba svojstva zajedno = javno dobro."
+      },
+      {
+        "question": "Što je javno dobro?",
+        "answer": "Dobro koje je istodobno nekonkurentno i neekskluzivno (nacionalna obrana, javna rasvjeta).",
+        "explanation": "Tržište ga nudi premalo ili nikako."
+      },
+      {
+        "question": "Što je slobodni jahač (free rider)?",
+        "answer": "Potrošač ili proizvođač koji ne plaća neekskluzivno dobro nadajući se da će platiti drugi.",
+        "explanation": "Zato javna dobra obično financira država porezima."
+      },
+      {
+        "question": "Efikasna ponuda javnog dobra?",
+        "answer": "Kad je ZBROJ graničnih koristi svih korisnika jednak graničnom trošku: \\(\\sum MB_i = MC\\).",
+        "explanation": "Kod javnog dobra krivulje potražnje zbrajaju se okomito: zbraja se spremnost na plaćanje pri svakoj količini, ne vodoravno."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Tvornica ispušta otpad u rijeku i smanjuje ulov ribarima nizvodno. To je:",
+        "options": [
+          "Pozitivna eksternalija",
+          "Negativna eksternalija",
+          "Javno dobro",
+          "Monopson"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kod negativne eksternalije konkurentno tržište proizvodi:",
+        "options": [
+          "Premalo",
+          "Previše",
+          "Efikasnu količinu",
+          "Ništa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 100 - Q\\), privatni \\(MC = 20 + Q\\), granični eksterni trošak 10. Efikasna količina je:",
+        "options": [
+          "40",
+          "35",
+          "30",
+          "45"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potražnja \\(P = 100 - Q\\), privatni \\(MC = 20 + Q\\), granični eksterni trošak 10. Porez po jedinici koji dovodi do efikasne količine iznosi:",
+        "options": [
+          "5",
+          "10",
+          "20",
+          "35"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrtka uz emisijsku naknadu smanjuje emisiju dok:",
+        "options": [
+          "Emisija ne padne na nulu",
+          "Granični trošak smanjenja emisije ne izjednači naknadu",
+          "Profit ne padne na nulu",
+          "Naknada ne postane nula"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako stranke mogu pregovarati bez troškova, ishod je efikasan bez obzira na vlasnička prava. To je:",
+        "options": [
+          "Nashova ravnoteža",
+          "Coaseov teorem",
+          "Lernerov indeks",
+          "Engelov zakon"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Svjetionik je primjer dobra koje je:",
+        "options": [
+          "Konkurentno i ekskluzivno",
+          "Nekonkurentno i neekskluzivno",
+          "Konkurentno i neekskluzivno",
+          "Privatno dobro"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dva korisnika javnog dobra: \\(MB_1 = 12 - Q\\), \\(MB_2 = 18 - Q\\), MC = 10. Efikasna količina je:",
+        "options": [
+          "2",
+          "8",
+          "10",
+          "15"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Potrošač koji koristi javno dobro ne plaćajući ga, u nadi da će platiti drugi, je:",
+        "options": [
+          "Rent-seeker",
+          "Slobodni jahač",
+          "Monopsonist",
+          "Arbitražer"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz prenosive emisijske dozvole emisiju najviše smanjuju tvrtke s:",
+        "options": [
+          "Najvišim graničnim troškom smanjenja",
+          "Najnižim graničnim troškom smanjenja",
+          "Najvećim profitom",
+          "Najviše dozvola"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Aktivnost koja utječe na treće strane, a nije uračunata u cijenu, zove se _______.",
+        "answer": "eksternalija",
+        "hint": "Vanjski učinak."
+      },
+      {
+        "sentence": "Granični društveni trošak = granični trošak proizvodnje + granični _______ trošak.",
+        "answer": "eksterni",
+        "hint": "MEC."
+      },
+      {
+        "sentence": "Zakonsko ograničenje razine zagađenja zove se emisijski _______.",
+        "answer": "standard",
+        "hint": "Ne naknada."
+      },
+      {
+        "sentence": "Dobro koje je nekonkurentno i neekskluzivno zove se _______ dobro.",
+        "answer": "javno",
+        "hint": "Nacionalna obrana."
+      },
+      {
+        "sentence": "Tko koristi neekskluzivno dobro ne plaćajući ga zove se slobodni _______.",
+        "answer": "jahač",
+        "hint": "Free rider."
+      },
+      {
+        "sentence": "Uz \\(P = 100 - Q\\), \\(MC = 20 + Q\\) i \\(MEC = 10\\) efikasna količina iznosi _______.",
+        "answer": "35",
+        "hint": "\\(P = MC + MEC\\)."
+      },
+      {
+        "sentence": "Zakonska pravila o tome što osobe smiju raditi sa svojim vlasništvom zovu se vlasnička _______.",
+        "answer": "prava",
+        "hint": "Ključna u Coaseovom teoremu."
+      }
+    ],
+    "learn": {
+      "title": "Eksternalije i javna dobra",
+      "content": "<h3>Eksternalije</h3><p><strong>Eksternalija</strong> je djelovanje proizvođača ili potrošača koje utječe na druge, a nije uračunato u tržišnu cijenu. <strong>Negativna</strong>: tvornica čelika ispušta otpad u rijeku, pa ribari nizvodno love manje. <strong>Pozitivna</strong>: kućevlasnik uredi vrt i koristi susjedima, iako njihovu korist nije uzeo u obzir.</p><div class=\"formula-box\">\\[ MSC = MC + MEC \\qquad MSB = MB + MEB \\]</div><p>Tržište proizvodi gdje je \\(P = MC\\) (privatni trošak); efikasno je \\(P = MSC\\). Negativna eksternalija → <strong>previše</strong> proizvodnje; pozitivna → <strong>premalo</strong>.</p><div class=\"example-box\"><h4>Riješeni primjer — zagađivač</h4><p>Potražnja \\(P = 100 - Q\\); privatni \\(MC = 20 + Q\\); \\(MEC = 10\\) po jedinici.</p><ul><li><strong>Tržište:</strong> \\(100 - Q = 20 + Q \\Rightarrow Q = 40,\\ P = 60\\).</li><li><strong>Efikasno:</strong> \\(100 - Q = 30 + Q \\Rightarrow Q = 35,\\ P = 65\\).</li><li><strong>Gubitak probitka</strong> prekomjerne proizvodnje: \\(\\tfrac{1}{2}\\cdot 10 \\cdot (40 - 35) = 25\\).</li><li><strong>Korekcija:</strong> porez (naknada) od 10 po jedinici pomiče privatni MC na MSC i tržište dolazi na Q = 35.</li></ul></div><h4>Kako smanjiti zagađenje</h4><ul><li><strong>Emisijski standard</strong>: zakonska gornja granica emisije; tvrtke ugrađuju opremu, prosječni trošak raste.</li><li><strong>Emisijska naknada</strong>: plaćanje po jedinici emisije; tvrtka smanjuje emisiju dok granični trošak smanjenja ne izjednači naknadu → smanjenje se ostvaruje najjeftinije.</li><li><strong>Prenosive emisijske dozvole</strong>: ukupna dopuštena emisija podijeli se u dozvole kojima se trguje. Cijena dozvole = granični trošak smanjenja emisije svih tvrtki; tvrtke s niskim troškom smanjuju najviše i prodaju dozvole, one s visokim troškom kupuju.</li></ul><h4>Vlasnička prava i Coaseov teorem</h4><p><strong>Vlasnička prava</strong> određuju što osobe smiju raditi sa svojim vlasništvom. <strong>Coaseov teorem</strong>: ako stranke mogu pregovarati bez troškova i u obostranu korist, ishod je efikasan bez obzira na to kome su prava dodijeljena.</p><div class=\"example-box\"><h4>Riješeni primjer — tvornica i ribari</h4><p>Filter košta tvornicu 50 €, a zagađenje ribarima stvara štetu 100 €.</p><ul><li>Ribari imaju pravo na čistu rijeku → tvornica ugrađuje filter (50 &lt; 100).</li><li>Tvornica ima pravo zagađivati → ribari joj plate između 50 i 100 € da ugradi filter.</li></ul><p>U oba slučaja filter se ugrađuje (efikasno); razlikuje se samo tko plaća. Uz visoke transakcijske troškove ili mnogo stranaka pregovaranje propada.</p></div><p><strong>Resursi zajednice</strong> (slobodan pristup — ribolovna područja, zrak) pretjerano se iskorištavaju, jer nitko ne snosi trošak koji nameće drugima.</p><h3>Javna dobra</h3><table><thead><tr><th></th><th>Ekskluzivno</th><th>Neekskluzivno</th></tr></thead><tbody><tr><td>Konkurentno</td><td>privatno dobro (sendvič)</td><td>resurs zajednice (riba u moru)</td></tr><tr><td>Nekonkurentno</td><td>npr. kabelska TV, most s cestarinom</td><td><strong>javno dobro</strong> (obrana, svjetionik)</td></tr></tbody></table><p><strong>Nekonkurentno</strong>: granični trošak korištenja za dodatnog potrošača je nula. <strong>Neekskluzivno</strong>: nikoga se ne može spriječiti da koristi, pa je teško naplatiti. Zbog <strong>slobodnih jahača</strong> tržište javna dobra nudi premalo; obično ih financira država.</p><div class=\"formula-box\">\\[ \\text{efikasnost javnog dobra: } \\sum_i MB_i = MC \\]</div><div class=\"example-box\"><h4>Riješeni primjer — javna rasvjeta u ulici</h4><p>\\(MB_1 = 12 - Q\\), \\(MB_2 = 18 - Q\\), \\(MC = 10\\). Budući da oba koriste ISTU rasvjetu, koristi se zbrajaju okomito: \\(\\sum MB = 30 - 2Q\\).</p><p>\\(30 - 2Q = 10 \\Rightarrow Q = 10\\). Provjera: \\(MB_1(10) = 2\\), \\(MB_2(10) = 8\\), zbroj 10 = MC ✓. Nijedan korisnik sam ne bi platio svjetiljku po 10 €, pa bez zajedničkog financiranja rasvjete ne bi bilo dovoljno.</p></div><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Kod privatnih dobara potražnje se zbrajaju vodoravno; kod javnih okomito.</li><li>Coaseov teorem ne kaže da vlasnička prava nisu važna — važna su za raspodjelu, ne za efikasnost (uz nulte transakcijske troškove).</li><li>Emisijski standard = količinsko ograničenje; naknada = cijena po jedinici emisije.</li></ul></div>",
+      "image": null
+    }
+  }
+}

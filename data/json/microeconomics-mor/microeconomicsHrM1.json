@@ -1,0 +1,1730 @@
+{
+  "introBasics": {
+    "name": "Uvodna razmatranja",
+    "icon": "fa-compass",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "Što je mikroekonomija?",
+        "answer": "Grana ekonomije koja analizira ponašanje pojedinačnih ekonomskih jedinica (potrošača, tvrtki, radnika, ulagača) i tržišta koja se sastoje od tih jedinica.",
+        "explanation": "Bavi se ograničenjima i izborima: kako postići najviše unutar zadanih granica."
+      },
+      {
+        "question": "Što je makroekonomija?",
+        "answer": "Grana ekonomije koja analizira agregatne varijable: razinu i stopu rasta nacionalnog proizvoda, kamatnjake, nezaposlenost i inflaciju.",
+        "explanation": "Inflacija, devizni tečaj i nezaposlenost = makro teme; porezni teret, nadnice, tvrtke = mikro teme."
+      },
+      {
+        "question": "Što je pozitivna analiza?",
+        "answer": "Analiza koja opisuje STVARNE veze između uzroka i posljedice (što jest i što će biti).",
+        "explanation": "Primjer: „Uvođenje carine povisit će cijenu uvoznih automobila.” Može se provjeriti podacima."
+      },
+      {
+        "question": "Što je normativna analiza?",
+        "answer": "Analiza koja razmatra kakve bi TREBALE biti veze između uzroka i posljedica; uključuje vrijednosne sudove (etika, pravednost).",
+        "explanation": "Primjer: „Država bi trebala subvencionirati javni prijevoz.” Česta kolokvijska zamka."
+      },
+      {
+        "question": "Što je tržište?",
+        "answer": "Skup kupaca i prodavatelja koji putem stvarnih ili potencijalnih međusobnih djelovanja određuju cijenu proizvoda ili skupine proizvoda.",
+        "explanation": "Tržište je šire od industrije: industrija je skup tvrtki koje prodaju iste ili slične proizvode (strana ponude)."
+      },
+      {
+        "question": "Što je arbitraža?",
+        "answer": "Kupnja po nižoj cijeni na jednom mjestu i prodaja po višoj cijeni na drugom mjestu.",
+        "explanation": "Isplati se samo ako je razlika u cijeni veća od troškova prijevoza, carina i sl."
+      },
+      {
+        "question": "Po čemu se razlikuju savršeno konkurentna i nekonkurentna tržišta?",
+        "answer": "Na savršeno konkurentnom mnogo je kupaca i prodavatelja pa nitko ne utječe na cijenu; na nekonkurentnom pojedine tvrtke mogu utjecati na cijenu.",
+        "explanation": "Na konkurentnom tržištu obično vlada jedna tržišna cijena."
+      },
+      {
+        "question": "Kako se određuje veličina (obuhvat) tržišta?",
+        "answer": "Prema geografskim granicama i prema asortimanu proizvoda koji se na njemu prodaju.",
+        "explanation": "Tržište stanova je lokalno, tržište zlata globalno."
+      },
+      {
+        "question": "Što je nominalna, a što realna cijena?",
+        "answer": "Nominalna = apsolutna (tekuća) cijena, nekorigirana za inflaciju. Realna = cijena u odnosu na agregatnu razinu cijena, korigirana za inflaciju.",
+        "explanation": "Realna cijena se računa u „konstantnim” cijenama bazne godine."
+      },
+      {
+        "question": "Što je indeks potrošačkih cijena (CPI)?",
+        "answer": "Pokazatelj agregatne razine cijena: mjeri kako se trošak košare široke potrošnje iz bazne godine mijenja tijekom vremena.",
+        "explanation": "Služi za preračunavanje nominalnih u realne cijene."
+      },
+      {
+        "question": "Što su ekonomska (oskudna) dobra?",
+        "answer": "Dobra koja su ograničena (oskudna) u odnosu na potrebe i zato imaju cijenu.",
+        "explanation": "Oskudnost je razlog zašto uopće moramo birati (trade-off)."
+      },
+      {
+        "question": "Što je kapital u ekonomskom smislu?",
+        "answer": "Trajna dobra proizvedena da bi se njima proizvodila druga dobra: strojevi, zgrade, ceste, računala, kamioni.",
+        "explanation": "Novac na računu nije kapital u ovom (proizvodnom) smislu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koja je od navedenih tema MIKROekonomska?",
+        "options": [
+          "Inflacija i nezaposlenost",
+          "Tko snosi porezni teret",
+          "Fleksibilni devizni tečajevi",
+          "Stopa rasta BDP-a"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrdnja „Država bi trebala uvesti minimalnu plaću od 1000 €” primjer je:",
+        "options": [
+          "Pozitivne analize",
+          "Normativne analize",
+          "Arbitraže",
+          "Tržišnog mehanizma"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrdnja „Porast cijene goriva smanjit će broj dolazaka automobilom” primjer je:",
+        "options": [
+          "Normativne analize",
+          "Vrijednosnog suda",
+          "Pozitivne analize",
+          "Makroekonomske politike"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Rajčica u Hrvatskoj stoji 2,00 €/kg, a u susjednoj zemlji 1,50 €/kg. Arbitraža je moguća:",
+        "options": [
+          "Uvijek, jer je razlika 0,50 €",
+          "Samo ako su prijevoz i ostali troškovi manji od 0,50 €/kg",
+          "Nikada, jer su to različita tržišta",
+          "Samo ako država to odobri"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Cijena koja nije korigirana za inflaciju je:",
+        "options": [
+          "Realna cijena",
+          "Nominalna cijena",
+          "Ravnotežna cijena",
+          "Rezervacijska cijena"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kava je 2015. stajala 1,50 € (CPI = 100), a danas 2,00 € (CPI = 125). Realna današnja cijena u eurima iz 2015. je:",
+        "options": [
+          "1,20 €",
+          "1,60 €",
+          "2,50 €",
+          "1,88 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Skup tvrtki koje prodaju iste ili slične proizvode naziva se:",
+        "options": [
+          "Tržište",
+          "Industrija",
+          "Kartel",
+          "Tržišna košara"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koje je tržište po svojoj prirodi najviše GLOBALNO?",
+        "options": [
+          "Tržište stanova u Opatiji",
+          "Tržište frizerskih usluga",
+          "Tržište zlata",
+          "Tržište dostave hrane"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Negativan nagib pravca između varijabli X i Y znači da je njihova veza:",
+        "options": [
+          "Izravna",
+          "Obrnuta (inverzna)",
+          "Nepostojeća",
+          "Uvijek linearna"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Analiza koja opisuje stvarne veze između uzroka i posljedice zove se _______ analiza.",
+        "answer": "pozitivna",
+        "hint": "Suprotno od normativne."
+      },
+      {
+        "sentence": "Kupnja po nižoj cijeni na jednom mjestu i prodaja po višoj na drugom zove se _______.",
+        "answer": "arbitraža",
+        "hint": "Iskorištavanje razlike u cijenama."
+      },
+      {
+        "sentence": "Cijena korigirana za inflaciju naziva se _______ cijena.",
+        "answer": "realna",
+        "hint": "Suprotno od nominalne."
+      },
+      {
+        "sentence": "Pokazatelj agregatne razine cijena koji prati trošak košare široke potrošnje zove se indeks _______ cijena.",
+        "answer": "potrošačkih",
+        "hint": "CPI."
+      },
+      {
+        "sentence": "Grana ekonomije koja proučava inflaciju, nezaposlenost i BDP zove se _______.",
+        "answer": "makroekonomija",
+        "hint": "Agregatne varijable."
+      },
+      {
+        "sentence": "Skup tvrtki koje prodaju iste ili slične proizvode naziva se _______.",
+        "answer": "industrija",
+        "hint": "Strana ponude na tržištu."
+      },
+      {
+        "sentence": "Analiza koja sadrži vrijednosne sudove o tome što bi trebalo biti zove se _______ analiza.",
+        "answer": "normativna",
+        "hint": "Ključna riječ: „trebalo bi”."
+      }
+    ],
+    "learn": {
+      "title": "Uvodna razmatranja",
+      "content": "<h3>Što proučava mikroekonomija?</h3><p><strong>Mikroekonomija</strong> analizira ponašanje <strong>pojedinačnih ekonomskih jedinica</strong> (potrošača, radnika, ulagača, vlasnika resursa, tvrtki) i <strong>tržišta</strong> koja te jedinice čine. <strong>Makroekonomija</strong> se bavi <strong>agregatnim</strong> veličinama: BDP, inflacija, nezaposlenost, kamatnjaci.</p><p>Središnja ideja mikroekonomije su <strong>ograničenja i izbori</strong>: dobra su <strong>oskudna</strong>, pa potrošači (ograničen dohodak), radnici (vrijeme, obrazovanje) i tvrtke (resursi, tehnologija) moraju birati između alternativa (<em>trade-off</em>). <strong>Cijene</strong> su signal koji usmjerava te izbore.</p><div class=\"tip-box\"><h4>Mikro ili makro? (pitanje s Learning Catalyticsa)</h4><ul><li>Učinci sindikata na relativne nadnice → <strong>mikro</strong></li><li>Tko snosi porezni teret → <strong>mikro</strong></li><li>Suvremena korporacija i privatno vlasništvo → <strong>mikro</strong></li><li>Inflacija, devizni tečajevi, prirodna stopa nezaposlenosti → <strong>makro</strong></li><li>Politička ekonomija prosperiteta (gospodarstvo kao cjelina) → <strong>makro</strong></li></ul></div><h4>Teorije i modeli</h4><p><strong>Teorija</strong> pojednostavljeno objašnjava ponašanje i omogućuje <strong>predviđanje</strong>. <strong>Model</strong> je matematički prikaz teorije. Model se ne ocjenjuje po tome je li „realan”, nego po tome koliko dobro objašnjava i predviđa.</p><h4>Pozitivna i normativna analiza</h4><table><thead><tr><th>Pozitivna</th><th>Normativna</th></tr></thead><tbody><tr><td>što JEST / što će biti</td><td>što bi TREBALO biti</td></tr><tr><td>stvarne veze uzroka i posljedice</td><td>uključuje vrijednosne sudove (etika, pravednost)</td></tr><tr><td>„Carina će povisiti cijenu uvoznih auta.”</td><td>„Država bi trebala uvesti carinu.”</td></tr></tbody></table><h4>Tržište, industrija, arbitraža</h4><p><strong>Tržište</strong> = kupci i prodavatelji koji svojim (stvarnim ili potencijalnim) djelovanjem određuju cijenu. <strong>Industrija</strong> = tvrtke koje prodaju iste ili slične proizvode, dakle samo strana ponude. Tržišta mogu biti <strong>savršeno konkurentna</strong> (nitko ne utječe na cijenu → jedna <strong>tržišna cijena</strong>) ili <strong>nekonkurentna</strong> (pojedine tvrtke utječu na cijenu).</p><p><strong>Veličina tržišta</strong> određuje se <strong>geografski</strong> (stanovi = lokalno, zlato = globalno) i prema <strong>asortimanu proizvoda</strong>. <strong>Arbitraža</strong> (kupi jeftino ovdje, prodaj skuplje ondje) izjednačava cijene unutar istog tržišta, ali samo dok je razlika u cijeni veća od troškova prijevoza i carina.</p><h4>Nominalne i realne cijene</h4><p><strong>Nominalna</strong> cijena je tekuća, „apsolutna” cijena. <strong>Realna</strong> cijena izražava je u cijenama bazne godine pomoću <strong>indeksa potrošačkih cijena (CPI)</strong>:</p><div class=\"formula-box\">\\[ P_{\\text{realna}} = P_{\\text{nominalna}} \\times \\frac{\\text{CPI}_{\\text{bazna}}}{\\text{CPI}_{\\text{tekuća}}} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — realna cijena kave</h4><p>Kava je 2015. stajala 1,50 € (CPI = 100), a danas 2,00 € (CPI = 125). Je li kava realno poskupjela?</p><div class=\"formula-box\">\\[ P_{\\text{realna}} = 2{,}00 \\times \\frac{100}{125} = 1{,}60 \\]</div><p class=\"highlight\">Realna cijena: 1,60 € (u eurima iz 2015.).</p><p>U eurima iz 2015. kava danas stoji 1,60 €, dakle realno je poskupjela za \\( \\frac{1{,}60 - 1{,}50}{1{,}50} \\approx 6{,}7\\% \\), iako je nominalno poskupjela 33 %. Većinu nominalnog rasta pojela je inflacija.</p></div><h4>Nagib pravca (alat za grafove)</h4><p>Nagib = promjena varijable Y po jedinici promjene X: \\( \\text{nagib} = \\frac{\\Delta Y}{\\Delta X} \\). <strong>Negativan</strong> nagib = obrnuta (inverzna) veza (jedna raste, druga pada; npr. krivulja potražnje). <strong>Pozitivan</strong> nagib = izravna veza (npr. krivulja ponude).</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>„Trebalo bi”, „bolje je”, „pravedno” u rečenici → normativna tvrdnja.</li><li>Realna cijena NIJE „prava” cijena na polici — to je nominalna cijena preračunata u baznu godinu.</li><li>Industrija ≠ tržište: tržište uključuje i kupce.</li></ul></div>",
+      "image": null
+    }
+  },
+  "supplyDemand": {
+    "name": "Osnove ponude i potražnje",
+    "icon": "fa-scale-balanced",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Što prikazuje krivulja ponude?",
+        "answer": "Količinu dobra koju su proizvođači voljni prodati po određenoj cijeni, uz ostale čimbenike nepromijenjene. Ima pozitivan nagib (rastuća je).",
+        "explanation": "Viša cijena potiče tvrtke da proizvedu i ponude više."
+      },
+      {
+        "question": "Što prikazuje krivulja potražnje?",
+        "answer": "Količinu dobra koju su potrošači voljni kupiti po određenoj cijeni, uz ostale čimbenike nepromijenjene. Ima negativan nagib (padajuća je).",
+        "explanation": "Zapis: \\(Q_D = Q_D(P)\\). Po nižoj cijeni potrošači kupuju više."
+      },
+      {
+        "question": "Pomak UZDUŽ krivulje ili pomak CIJELE krivulje?",
+        "answer": "Promjena vlastite cijene dobra → pomak uzduž krivulje (promjena tražene/ponuđene količine). Promjena bilo kojeg drugog čimbenika → pomak cijele krivulje.",
+        "explanation": "Najčešća greška na kolokviju: „cijena je pala pa je porasla potražnja” — porasla je tražena KOLIČINA."
+      },
+      {
+        "question": "Koji čimbenici pomiču krivulju ponude?",
+        "answer": "Cijene inputa (nadnice, kamate, sirovine), tehnologija, cijene povezanih proizvoda, porezi i propisi, posebni utjecaji (vrijeme, inovacije).",
+        "explanation": "Nova tehnologija branja paprika → ponuda se pomiče udesno."
+      },
+      {
+        "question": "Koji čimbenici pomiču krivulju potražnje?",
+        "answer": "Dohodak, cijene supstituta i komplemenata, ukusi i sklonosti, broj kupaca, očekivanja.",
+        "explanation": "Rast dohotka pomiče potražnju normalnog dobra udesno."
+      },
+      {
+        "question": "Što su supstituti?",
+        "answer": "Dva dobra kod kojih porast cijene jednoga dovodi do POVEĆANJA potražnje za drugim.",
+        "explanation": "Sladoledi King i Magnum: King poskupi → raste potražnja za Magnumom."
+      },
+      {
+        "question": "Što su komplementi?",
+        "answer": "Dva dobra kod kojih porast cijene jednoga dovodi do SMANJENJA potražnje za drugim.",
+        "explanation": "Mlijeko i kava: mlijeko poskupi → potražnja za kavom se pomiče ulijevo."
+      },
+      {
+        "question": "Što je ravnotežna cijena?",
+        "answer": "Cijena pri kojoj je količina ponude jednaka količini potražnje: \\(Q_D = Q_S\\). Zove se i cijena koja uravnotežuje tržište.",
+        "explanation": "U ravnoteži nema ni viška ni manjka."
+      },
+      {
+        "question": "Što je tržišni mehanizam?",
+        "answer": "Tendencija na slobodnim tržištima da se cijena mijenja sve dok se tržište ne uravnoteži, tj. dok ne nestane i višak i manjak.",
+        "explanation": "Višak ruši cijenu, manjak je podiže."
+      },
+      {
+        "question": "Što je višak, a što manjak?",
+        "answer": "Višak: količina ponude veća od količine potražnje (cijena iznad ravnotežne). Manjak: količina ponude manja od potražnje (cijena ispod ravnotežne).",
+        "explanation": "Višak = višak ponude; manjak = višak potražnje."
+      },
+      {
+        "question": "Što je plafonska (maksimalna) cijena i što izaziva?",
+        "answer": "Cijena koju država prisilno drži ISPOD ravnotežne. Izaziva manjak: tražena količina raste, ponuđena pada.",
+        "explanation": "Primjer: kontrola najamnina ili cijena goriva."
+      },
+      {
+        "question": "Što je minimalna cijena i što izaziva?",
+        "answer": "Cijena koju država drži IZNAD ravnotežne (npr. minimalna nadnica). Izaziva višak: ponuđena količina veća je od tražene.",
+        "explanation": "Kod minimalne nadnice višak ponude rada = nezaposlenost."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Poraste li cijena nekog dobra, ponuđena količina tog dobra će:",
+        "options": [
+          "Pasti",
+          "Porasti",
+          "Ostati ista",
+          "Pasti na nulu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U branju paprika primijeni se nova, jeftinija tehnologija. Krivulja ponude paprika:",
+        "options": [
+          "Pomiče se ulijevo",
+          "Pomiče se udesno",
+          "Ostaje ista, raste tražena količina",
+          "Postaje okomita"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poskupi sladoled King. Što se događa s potražnjom za sladoledom Magnum (supstitut)?",
+        "options": [
+          "Pomiče se ulijevo",
+          "Pomiče se udesno",
+          "Pomak uzduž krivulje",
+          "Ništa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poskupi mlijeko. Što se događa s krivuljom potražnje za kavom (komplement)?",
+        "options": [
+          "Pomiče se udesno",
+          "Pomiče se ulijevo",
+          "Pomak uzduž krivulje prema dolje",
+          "Postaje vodoravna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zadano je \\(Q_D = 100 - 2P\\) i \\(Q_S = 20 + 2P\\). Ravnotežna cijena i količina su:",
+        "options": [
+          "\\(P = 20,\\ Q = 60\\)",
+          "\\(P = 30,\\ Q = 40\\)",
+          "\\(P = 40,\\ Q = 20\\)",
+          "\\(P = 20,\\ Q = 40\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz \\(Q_D = 100 - 2P\\) i \\(Q_S = 20 + 2P\\) država uvede plafonsku cijenu \\(P = 15\\). Nastaje:",
+        "options": [
+          "Višak od 20 jedinica",
+          "Manjak od 20 jedinica",
+          "Manjak od 70 jedinica",
+          "Tržište ostaje u ravnoteži"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kad je tržišna cijena IZNAD ravnotežne, na tržištu postoji:",
+        "options": [
+          "Manjak, cijena raste",
+          "Višak, cijena pada",
+          "Višak, cijena raste",
+          "Ravnoteža"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rast dohotka potrošača (normalno dobro) uz nepromijenjenu ponudu dovodi do:",
+        "options": [
+          "Više ravnotežne cijene i veće količine",
+          "Niže cijene i veće količine",
+          "Više cijene i manje količine",
+          "Niže cijene i manje količine"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Istodobno poraste ponuda i padne potražnja. Ravnotežna cijena sigurno:",
+        "options": [
+          "Raste",
+          "Pada",
+          "Ostaje ista",
+          "Ne može se odrediti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Minimalna nadnica postavljena iznad ravnotežne dovodi do:",
+        "options": [
+          "Manjka radne snage",
+          "Viška ponude rada (nezaposlenosti)",
+          "Pada nadnica",
+          "Nikakvih promjena"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Krivulja potražnje ima _______ nagib: po nižoj cijeni potrošači kupuju više.",
+        "answer": "negativan",
+        "hint": "Pada slijeva nadesno."
+      },
+      {
+        "sentence": "Situacija u kojoj je količina ponude veća od količine potražnje zove se _______.",
+        "answer": "višak",
+        "hint": "Suprotno od manjka."
+      },
+      {
+        "sentence": "Dva dobra kod kojih porast cijene jednog smanjuje potražnju za drugim su _______.",
+        "answer": "komplementi",
+        "hint": "Kava i mlijeko."
+      },
+      {
+        "sentence": "Dva dobra kod kojih porast cijene jednog povećava potražnju za drugim su _______.",
+        "answer": "supstituti",
+        "hint": "Maslac i margarin."
+      },
+      {
+        "sentence": "Uz \\(Q_D = 100 - 2P\\) i \\(Q_S = 20 + 2P\\) ravnotežna cijena iznosi _______.",
+        "answer": "20",
+        "hint": "Izjednači \\(Q_D\\) i \\(Q_S\\)."
+      },
+      {
+        "sentence": "Cijena koju država prisilno drži ispod ravnotežne zove se _______ cijena.",
+        "answer": "plafonska",
+        "hint": "Gornja granica cijene."
+      },
+      {
+        "sentence": "Promjena vlastite cijene dobra uzrokuje pomak _______ krivulje potražnje, a ne pomak cijele krivulje.",
+        "answer": "uzduž",
+        "hint": "Kretanje po istoj krivulji."
+      },
+      {
+        "sentence": "Cijena pri kojoj je \\(Q_D = Q_S\\) zove se _______ cijena.",
+        "answer": "ravnotežna",
+        "hint": "Tržište je uravnoteženo."
+      }
+    ],
+    "learn": {
+      "title": "Osnove ponude i potražnje",
+      "content": "<h3>Model ponude i potražnje</h3><p>Model ponude i potražnje temeljni je alat mikroekonomije: objašnjava zašto se cijene mijenjaju i što se događa kad država intervenira na tržištu.</p><h4>Krivulja ponude</h4><p>Pokazuje koliko su proizvođači voljni prodati po svakoj cijeni, uz ostale čimbenike nepromijenjene: \\(Q_S = Q_S(P)\\). <strong>Rastuća</strong> je: viša cijena → veća ponuđena količina. Krivulju <strong>pomiču</strong>: cijene inputa (nadnice, kamate, sirovine), tehnologija, cijene povezanih proizvoda, porezi, posebni utjecaji (vrijeme).</p><h4>Krivulja potražnje</h4><p>Pokazuje koliko su potrošači voljni kupiti po svakoj cijeni: \\(Q_D = Q_D(P)\\). <strong>Padajuća</strong> je. Krivulju <strong>pomiču</strong>: dohodak, cijene supstituta i komplemenata, ukusi, broj kupaca, očekivanja.</p><div class=\"tip-box\"><h4>Pomak uzduž ili pomak krivulje?</h4><p>Promjena <strong>vlastite cijene</strong> dobra = pomak <strong>uzduž</strong> krivulje (mijenja se tražena ili ponuđena <em>količina</em>). Promjena <strong>bilo čega drugog</strong> = pomak <strong>cijele krivulje</strong> (mijenja se <em>potražnja</em> ili <em>ponuda</em>).</p></div><h4>Supstituti i komplementi</h4><ul><li><strong>Supstituti</strong>: poskupi jedno → raste potražnja za drugim (King i Magnum, maslac i margarin).</li><li><strong>Komplementi</strong>: poskupi jedno → pada potražnja za drugim (kava i mlijeko, automobili i benzin).</li></ul><h4>Ravnoteža i tržišni mehanizam</h4><p><strong>Ravnotežna cijena</strong> je ona pri kojoj je \\(Q_D = Q_S\\). Ako je cijena viša, nastaje <strong>višak</strong> (proizvođači snižavaju cijenu); ako je niža, nastaje <strong>manjak</strong> (cijena raste). Ta težnja prema ravnoteži zove se <strong>tržišni mehanizam</strong>.</p><div class=\"example-box\"><h4>Riješeni primjer — ravnoteža i kontrola cijena</h4><p>Zadano: \\(Q_D = 100 - 2P\\), \\(Q_S = 20 + 2P\\).</p><p><strong>1. Ravnoteža:</strong> \\(100 - 2P = 20 + 2P \\Rightarrow 80 = 4P \\Rightarrow P^* = 20\\). Uvrštavanjem: \\(Q^* = 100 - 40 = 60\\).</p><p><strong>2. Plafonska cijena \\(P = 15\\):</strong> \\(Q_D = 70\\), \\(Q_S = 50\\) → <strong>manjak</strong> od 20 jedinica.</p><p><strong>3. Minimalna cijena \\(P = 25\\):</strong> \\(Q_D = 50\\), \\(Q_S = 70\\) → <strong>višak</strong> od 20 jedinica.</p><p>Interpretacija: kontrola cijena ispod ravnoteže stvara redove i nestašice; iznad ravnoteže stvara neprodane zalihe (ili nezaposlenost kod minimalne nadnice).</p></div><h4>Promjene ravnoteže</h4><table><thead><tr><th>Događaj</th><th>Cijena</th><th>Količina</th></tr></thead><tbody><tr><td>Potražnja raste</td><td>↑</td><td>↑</td></tr><tr><td>Potražnja pada</td><td>↓</td><td>↓</td></tr><tr><td>Ponuda raste</td><td>↓</td><td>↑</td></tr><tr><td>Ponuda pada</td><td>↑</td><td>↓</td></tr><tr><td>Ponuda raste + potražnja pada</td><td>↓ (sigurno)</td><td>? (ovisi o veličini pomaka)</td></tr></tbody></table><h4>Državna intervencija — kontrola cijena</h4><p><strong>Plafonska (maksimalna) cijena</strong> ispod ravnoteže → manjak. <strong>Minimalna cijena</strong> iznad ravnoteže → višak. Detaljnu analizu dobitaka i gubitaka (probitak potrošača i proizvođača) radimo u 2. kolokviju (Analiza konkurentnih tržišta).</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Kad se istodobno pomiču obje krivulje, jedna od dviju veličina (cijena ili količina) ostaje neodređena.</li><li>„Supstituti i komplementi” u nekim skriptama imaju istu definiciju — to je greška: kod komplemenata potražnja za drugim dobrom PADA.</li></ul></div>",
+      "image": null
+    }
+  },
+  "elasticity": {
+    "name": "Elastičnost ponude i potražnje",
+    "icon": "fa-arrows-left-right",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "Što mjeri elastičnost?",
+        "answer": "Osjetljivost jedne varijable na drugu: za koliko POSTO se promijeni jedna varijabla kad druga poraste za 1 %.",
+        "explanation": "Elastičnost je čisti broj, neovisan o jedinicama mjere."
+      },
+      {
+        "question": "Što je cjenovna elastičnost potražnje?",
+        "answer": "Postotna promjena tražene količine izazvana porastom cijene tog dobra za 1 %: \\(E_P = \\frac{\\%\\Delta Q}{\\%\\Delta P} = \\frac{P}{Q}\\cdot\\frac{\\Delta Q}{\\Delta P}\\).",
+        "explanation": "Obično je negativna, pa gledamo apsolutnu vrijednost."
+      },
+      {
+        "question": "Kada je potražnja elastična, a kada neelastična?",
+        "answer": "Elastična: \\(|E_P| > 1\\). Neelastična: \\(|E_P| < 1\\). Jedinična: \\(|E_P| = 1\\).",
+        "explanation": "Elastična = količina reagira jače od cijene (u postocima)."
+      },
+      {
+        "question": "Kako izgleda savršeno elastična potražnja?",
+        "answer": "Vodoravna crta: po zadanoj cijeni kupuje se koliko god, a uz neznatan porast cijene tražena količina pada na nulu. \\(E_P\\) je beskonačna.",
+        "explanation": "Takvu krivulju potražnje vidi pojedina tvrtka u savršenoj konkurenciji."
+      },
+      {
+        "question": "Kako izgleda savršeno neelastična potražnja?",
+        "answer": "Okomita crta: potrošači kupuju fiksnu količinu bez obzira na cijenu. \\(E_P = 0\\).",
+        "explanation": "Približni primjer: inzulin za dijabetičara."
+      },
+      {
+        "question": "Primjer dobra s neelastičnom potražnjom?",
+        "answer": "Kruh, sol, lijekovi, gorivo u kratkom roku — nužna dobra s malo bliskih supstituta.",
+        "explanation": "Što manje supstituta i što manji udio u budžetu, to je potražnja neelastičnija."
+      },
+      {
+        "question": "Kako se elastičnost mijenja uzduž LINEARNE krivulje potražnje?",
+        "answer": "Nagib je stalan, ali elastičnost nije: pri vrhu (visoka cijena, mala količina) potražnja je elastična, pri dnu neelastična; na sredini \\(|E_P| = 1\\).",
+        "explanation": "Elastičnost ovisi o nagibu I o omjeru \\(P/Q\\)."
+      },
+      {
+        "question": "Veza elastičnosti i ukupnog prihoda (izdatka)?",
+        "answer": "Neelastična potražnja: viša cijena → veći prihod. Elastična: viša cijena → manji prihod. Jedinična: prihod se ne mijenja.",
+        "explanation": "Prihod \\(R = P \\cdot Q\\)."
+      },
+      {
+        "question": "Što je dohodovna elastičnost potražnje?",
+        "answer": "Postotna promjena tražene količine izazvana porastom dohotka za 1 %: \\(E_I = \\frac{\\%\\Delta Q}{\\%\\Delta I}\\).",
+        "explanation": "\\(E_I > 0\\) normalno dobro; \\(E_I < 0\\) inferiorno dobro."
+      },
+      {
+        "question": "Što je unakrsna cjenovna elastičnost potražnje?",
+        "answer": "Postotna promjena tražene količine jednog dobra izazvana porastom cijene DRUGOG dobra za 1 %.",
+        "explanation": "Pozitivna → supstituti (maslac–margarin); negativna → komplementi."
+      },
+      {
+        "question": "Što je cjenovna elastičnost ponude?",
+        "answer": "Postotna promjena ponuđene količine izazvana porastom cijene za 1 %. Obično je pozitivna.",
+        "explanation": "Viša cijena potiče proizvođače na veću proizvodnju."
+      },
+      {
+        "question": "Kratki i dugi rok: kako se razlikuju elastičnosti?",
+        "answer": "Potražnja je u dugom roku obično ELASTIČNIJA nego u kratkom (vrijeme za prilagodbu). Ponuda je također elastičnija u dugom roku (novi kapaciteti).",
+        "explanation": "Iznimka: trajna dobra (automobili) — potražnja je u kratkom roku elastičnija. Vidi Uči."
+      },
+      {
+        "question": "Što je lučna elastičnost?",
+        "answer": "Cjenovna elastičnost izračunata za RASPON cijena, uz prosječnu cijenu i količinu kao bazu: \\(E_P = \\frac{\\Delta Q/\\bar Q}{\\Delta P/\\bar P}\\).",
+        "explanation": "Elastičnost u točki računa se za jednu točku krivulje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Cijena poraste 15 %, a cjenovna elastičnost potražnje je \\(|E_P| = 3\\). Tražena količina se promijeni za:",
+        "options": [
+          "5 %",
+          "−45 %",
+          "−18 %",
+          "−0,2 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(|E_P| = 0{,}4\\), potražnja je:",
+        "options": [
+          "Elastična",
+          "Neelastična",
+          "Jedinično elastična",
+          "Savršeno elastična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Graf savršeno neelastične potražnje je:",
+        "options": [
+          "Vodoravna crta",
+          "Okomita crta",
+          "Pravac s nagibom −1",
+          "Hiperbola"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Hotel ima neelastičnu potražnju i podigne cijenu noćenja. Ukupni prihod će:",
+        "options": [
+          "Pasti",
+          "Porasti",
+          "Ostati isti",
+          "Pasti na nulu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Na krivulji \\(Q = 100 - 2P\\) u točki \\(P = 20\\) elastičnost u točki iznosi:",
+        "options": [
+          "\\(-2\\)",
+          "\\(-0{,}67\\)",
+          "\\(-1{,}5\\)",
+          "\\(-4\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Unakrsna elastičnost dvaju dobara je pozitivna. Ta dobra su:",
+        "options": [
+          "Komplementi",
+          "Supstituti",
+          "Inferiorna dobra",
+          "Neovisna dobra"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dohodak poraste 10 %, a tražena količina dobra padne 3 %. Dobro je:",
+        "options": [
+          "Normalno",
+          "Luksuzno",
+          "Inferiorno",
+          "Giffenovo sigurno"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Cijena padne s 12 na 10 €, a količina poraste s 80 na 100. Lučna elastičnost je približno:",
+        "options": [
+          "\\(-1{,}22\\)",
+          "\\(-0{,}82\\)",
+          "\\(-2{,}0\\)",
+          "\\(-0{,}5\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uzduž linearne krivulje potražnje, pri vrlo visokoj cijeni potražnja je:",
+        "options": [
+          "Neelastična",
+          "Elastična",
+          "Jedinično elastična",
+          "Savršeno neelastična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za benzin je cjenovna elastičnost potražnje u dugom roku, u odnosu na kratki rok:",
+        "options": [
+          "Manja",
+          "Veća",
+          "Jednaka",
+          "Uvijek nula"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Ako je \\(|E_P| > 1\\), potražnja je _______.",
+        "answer": "elastična",
+        "hint": "Količina reagira jače od cijene."
+      },
+      {
+        "sentence": "Savršeno elastična krivulja potražnje je _______ crta.",
+        "answer": "vodoravna",
+        "hint": "Beskonačna elastičnost."
+      },
+      {
+        "sentence": "Cijena poraste 10 %, a \\(|E_P| = 2\\). Tražena količina padne za _______ posto.",
+        "answer": "20",
+        "hint": "\\(\\%\\Delta Q = E_P \\cdot \\%\\Delta P\\)."
+      },
+      {
+        "sentence": "Dobro s negativnom dohodovnom elastičnošću zove se _______ dobro.",
+        "answer": "inferiorno",
+        "hint": "Kupuje se manje kad dohodak raste."
+      },
+      {
+        "sentence": "Dobra s negativnom unakrsnom elastičnošću su _______.",
+        "answer": "komplementi",
+        "hint": "Troše se zajedno."
+      },
+      {
+        "sentence": "Kad je potražnja neelastična, porast cijene _______ ukupni prihod.",
+        "answer": "povećava",
+        "hint": "\\(R = P \\cdot Q\\), količina malo pada."
+      },
+      {
+        "sentence": "Elastičnost izračunata za raspon cijena uz prosjeke kao bazu zove se _______ elastičnost.",
+        "answer": "lučna",
+        "hint": "Suprotno od elastičnosti u točki."
+      },
+      {
+        "sentence": "Industrije čije prodaje pojačavaju cikličke promjene BDP-a zovu se _______ industrije.",
+        "answer": "cikličke",
+        "hint": "Automobili, strojevi, trajna dobra."
+      }
+    ],
+    "learn": {
+      "title": "Elastičnost ponude i potražnje",
+      "content": "<h3>Elastičnost = osjetljivost u postocima</h3><p><strong>Elastičnost</strong> kaže za koliko posto se promijeni jedna varijabla kad druga poraste za 1 %. Budući da radi s postocima, neovisna je o jedinicama (kg, litre, eure).</p><h4>Cjenovna elastičnost potražnje</h4><div class=\"formula-box\">\\[ E_P = \\frac{\\%\\Delta Q}{\\%\\Delta P} = \\frac{\\Delta Q / Q}{\\Delta P / P} = \\frac{P}{Q}\\cdot\\frac{\\Delta Q}{\\Delta P} \\]</div><p>Obično je <strong>negativna</strong> (cijena gore → količina dolje), pa se tumači apsolutna vrijednost:</p><ul><li>\\(|E_P| > 1\\) → <strong>elastična</strong> potražnja</li><li>\\(|E_P| < 1\\) → <strong>neelastična</strong> potražnja (kruh, sol, lijekovi)</li><li>\\(|E_P| = 1\\) → jedinična elastičnost</li><li>\\(E_P = 0\\) → savršeno neelastična (<strong>okomita</strong> krivulja)</li><li>\\(E_P \\to \\infty\\) → savršeno elastična (<strong>vodoravna</strong> krivulja)</li></ul><p>Potražnja je elastičnija što ima više bliskih <strong>supstituta</strong> i što je vremenski horizont duži.</p><div class=\"example-box\"><h4>Riješeni primjer 1 — iz postotka u postotak (Learning Catalytics)</h4><p>Cijena poraste 15 %, \\(|E_P| = 3\\). Koliko se promijeni tražena količina?</p><div class=\"formula-box\">\\[ \\%\\Delta Q = E_P \\cdot \\%\\Delta P = -3 \\cdot 15\\% = -45\\% \\]</div><p>Tražena količina padne za 45 % (u apsolutnom iznosu 45).</p></div><div class=\"example-box\"><h4>Riješeni primjer 2 — elastičnost u točki na linearnoj krivulji</h4><p>\\(Q = 100 - 2P\\), dakle \\(\\frac{\\Delta Q}{\\Delta P} = -2\\).</p><ul><li>\\(P = 20,\\ Q = 60\\): \\(E_P = \\frac{20}{60}\\cdot(-2) = -0{,}67\\) → neelastična</li><li>\\(P = 25,\\ Q = 50\\): \\(E_P = \\frac{25}{50}\\cdot(-2) = -1\\) → jedinična (sredina krivulje)</li><li>\\(P = 40,\\ Q = 20\\): \\(E_P = \\frac{40}{20}\\cdot(-2) = -4\\) → elastična</li></ul><p>Isti nagib, a potpuno različite elastičnosti: elastičnost raste kako se penjemo uz linearnu krivulju.</p></div><h4>Lučna elastičnost</h4><p>Za raspon cijena koristi se prosjek kao baza, pa je rezultat isti bez obzira računamo li poskupljenje ili pojeftinjenje:</p><div class=\"formula-box\">\\[ E_P = \\frac{\\Delta Q / \\bar Q}{\\Delta P / \\bar P} \\]</div><div class=\"example-box\"><h4>Riješeni primjer 3 — lučna elastičnost</h4><p>Cijena padne s 12 na 10 €, količina poraste s 80 na 100.</p><p>\\(\\Delta Q = 20,\\ \\bar Q = 90\\); \\(\\Delta P = -2,\\ \\bar P = 11\\).</p><div class=\"formula-box\">\\[ E_P = \\frac{20/90}{-2/11} = \\frac{0{,}222}{-0{,}182} \\approx -1{,}22 \\]</div><p>Potražnja je u tom rasponu elastična.</p></div><h4>Elastičnost i ukupni prihod</h4><table><thead><tr><th>Potražnja</th><th>Cijena ↑</th><th>Cijena ↓</th></tr></thead><tbody><tr><td>Elastična</td><td>prihod ↓</td><td>prihod ↑</td></tr><tr><td>Neelastična</td><td>prihod ↑</td><td>prihod ↓</td></tr><tr><td>Jedinična</td><td>bez promjene</td><td>bez promjene</td></tr></tbody></table><h4>Ostale elastičnosti</h4><ul><li><strong>Dohodovna</strong> \\(E_I = \\frac{\\%\\Delta Q}{\\%\\Delta I}\\): pozitivna = normalno dobro, negativna = inferiorno dobro.</li><li><strong>Unakrsna cjenovna</strong> \\(E_{Q_A P_B} = \\frac{\\%\\Delta Q_A}{\\%\\Delta P_B}\\): pozitivna = supstituti, negativna = komplementi.</li><li><strong>Cjenovna elastičnost ponude</strong>: obično pozitivna.</li></ul><h4>Kratki i dugi rok</h4><p><strong>Kratki rok</strong> = otprilike godina ili dvije; <strong>dugi rok</strong> = dovoljno vremena da se potrošači i proizvođači potpuno prilagode.</p><ul><li><strong>Potražnja</strong> za većinu dobara (benzin) elastičnija je u <strong>dugom</strong> roku — ljudi promijene navike, kupe štedljiviji auto. <strong>Iznimka: trajna dobra</strong> (automobili, hladnjaci) — potražnja je elastičnija u <strong>kratkom</strong> roku jer kupnju novog lako odgode.</li><li><strong>Ponuda</strong> je za većinu dobara elastičnija u <strong>dugom</strong> roku (grade se novi kapaciteti). Iznimka: ponuda recikliranih materijala (npr. sekundarni bakar iz otpada) — elastičnija u kratkom roku, jer visoka cijena odmah potakne prodaju starog otpada, a zatim se zaliha otpada potroši.</li><li><strong>Cikličke industrije</strong> (trajna dobra, strojevi): prodaja im pojačava cikličke oscilacije BDP-a.</li></ul><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Elastičnost ≠ nagib: linearna krivulja ima stalan nagib, ali promjenjivu elastičnost.</li><li>Vodoravna = savršeno ELASTIČNA, okomita = savršeno NEELASTIČNA (ne obrnuto).</li><li>Neke studentske skripte pišu da je ponuda „elastičnija u kratkom roku” — za većinu dobara vrijedi obrnuto; iznimka su samo reciklirani materijali.</li></ul></div>",
+      "image": null
+    }
+  },
+  "consumerBehavior": {
+    "name": "Ponašanje potrošača",
+    "icon": "fa-cart-shopping",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Koja su tri koraka teorije ponašanja potrošača?",
+        "answer": "1) sklonosti (preferencije) potrošača, 2) budžetska ograničenja, 3) izbor potrošača koji maksimalizira zadovoljstvo.",
+        "explanation": "Potrošač bira najbolju košaru koju si može priuštiti."
+      },
+      {
+        "question": "Što je tržišna košara?",
+        "answer": "Popis određenih količina jednog ili više dobara (npr. mjesečna količina hrane, odjeće i stanovanja). Zove se i svežanj.",
+        "explanation": "Potrošač uspoređuje i rangira košare."
+      },
+      {
+        "question": "Koje su četiri osnovne pretpostavke o sklonostima?",
+        "answer": "Ukupnost (potpunost), tranzitivnost, više je bolje nego manje, opadajuća granična stopa supstitucije.",
+        "explanation": "Ukupnost: potrošač može usporediti i rangirati SVE košare."
+      },
+      {
+        "question": "Što je tranzitivnost sklonosti?",
+        "answer": "Ako potrošač više voli A od B i B od C, onda više voli A od C.",
+        "explanation": "Porsche > Cadillac i Cadillac > Chevrolet ⇒ Porsche > Chevrolet."
+      },
+      {
+        "question": "Što je krivulja indiferencije?",
+        "answer": "Krivulja koja povezuje sve tržišne košare koje potrošaču daju JEDNAKU razinu zadovoljstva. Padajuća je i konveksna prema ishodištu.",
+        "explanation": "Padajuća je jer „više je bolje”: više jednog dobra mora se nadoknaditi s manje drugog."
+      },
+      {
+        "question": "Što je mapa indiferencije i zašto se krivulje ne smiju sjeći?",
+        "answer": "Skup krivulja indiferencije koji opisuje sklonosti pojedinca; viša krivulja = veće zadovoljstvo. Sjecište bi narušilo tranzitivnost i „više je bolje”.",
+        "explanation": "Krivulje indiferencije NIKAD se ne sijeku."
+      },
+      {
+        "question": "Što je granična stopa supstitucije (MRS)?",
+        "answer": "Količina dobra koju je potrošač spreman žrtvovati za dodatnu jedinicu drugog dobra; jednaka je omjeru graničnih korisnosti \\(MU_X/MU_Y\\).",
+        "explanation": "Apsolutna vrijednost nagiba krivulje indiferencije: \\(MRS = -\\Delta Y/\\Delta X\\)."
+      },
+      {
+        "question": "Kako izgledaju krivulje indiferencije savršenih supstituta i komplemenata?",
+        "answer": "Savršeni supstituti: pravci, MRS je konstantan. Savršeni komplementi: oblik pravog kuta (L), MRS je beskonačan ili nula.",
+        "explanation": "Sok od jabuke i naranče = supstituti; lijeva i desna cipela = komplementi."
+      },
+      {
+        "question": "Što je loše dobro?",
+        "answer": "Dobro kod kojeg je MANJE poželjnije nego više (zagađenje zraka, azbest).",
+        "explanation": "Kod lošeg dobra krivulja indiferencije može imati pozitivan nagib."
+      },
+      {
+        "question": "Ordinalna ili kardinalna funkcija korisnosti?",
+        "answer": "Ordinalna samo rangira košare od najpoželjnije do najmanje poželjne. Kardinalna kaže i ZA KOLIKO je jedna košara poželjnija od druge.",
+        "explanation": "Za teoriju izbora dovoljna je ordinalna korisnost."
+      },
+      {
+        "question": "Što je budžetska crta i kako izgleda njezin nagib?",
+        "answer": "Sve kombinacije dvaju dobara za koje je potrošen cijeli dohodak: \\(P_X X + P_Y Y = I\\). Nagib je \\(-P_X/P_Y\\).",
+        "explanation": "Promjena dohotka = paralelni pomak; promjena cijene = zakretanje (promjena nagiba)."
+      },
+      {
+        "question": "Koja dva uvjeta zadovoljava košara koja maksimalizira zadovoljstvo?",
+        "answer": "1) leži NA budžetskoj crti; 2) MRS jednak je omjeru cijena \\(P_X/P_Y\\) (krivulja indiferencije dodiruje budžetsku crtu).",
+        "explanation": "Ekvivalentno: \\(MU_X/P_X = MU_Y/P_Y\\)."
+      },
+      {
+        "question": "Što je kutno rješenje?",
+        "answer": "Optimum u kojem potrošač kupuje samo jedno dobro, pa MRS u izabranoj košari nije jednak nagibu budžetske crte.",
+        "explanation": "Ne može se trošiti negativna količina drugog dobra."
+      },
+      {
+        "question": "Što je načelo jednake graničnosti?",
+        "answer": "Korisnost je maksimalna kad je granična korisnost po euru jednaka za sva dobra: \\(MU_X/P_X = MU_Y/P_Y\\).",
+        "explanation": "Ako nije jednaka, preraspodjela potrošnje povećava korisnost."
+      },
+      {
+        "question": "Što je Laspeyresov indeks cijena?",
+        "answer": "Trošak košare iz BAZNE godine po tekućim cijenama podijeljen s troškom iste košare po baznim cijenama.",
+        "explanation": "Fiksni ponderi → precjenjuje rast troškova života. Paascheov koristi TEKUĆU košaru."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Pretpostavka da potrošač može usporediti i rangirati sve moguće košare zove se:",
+        "options": [
+          "Tranzitivnost",
+          "Ukupnost",
+          "Nezasitnost",
+          "Konveksnost"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Krivulje indiferencije ne smiju se sjeći jer bi to narušilo:",
+        "options": [
+          "Budžetsko ograničenje",
+          "Pretpostavke o sklonostima (tranzitivnost, više je bolje)",
+          "Zakon ponude",
+          "Načelo opadajućih prinosa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potrošač se s košare A (2 hrane, 16 odjeće) pomakne na B (3 hrane, 12 odjeće) na istoj krivulji indiferencije. MRS hrane za odjeću je:",
+        "options": [
+          "1",
+          "4",
+          "12",
+          "0,25"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dohodak 100 €, jabuke 5 €/kg, bomboni 2 €/kg. Koliko se najviše bombona može kupiti?",
+        "options": [
+          "20 kg",
+          "50 kg",
+          "100 kg",
+          "40 kg"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dohodak potrošača poraste, cijene ostanu iste. Budžetska crta se:",
+        "options": [
+          "Zakrene oko jedne osi",
+          "Paralelno pomakne udesno",
+          "Postane strmija",
+          "Ne mijenja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Poskupi samo dobro X (na vodoravnoj osi). Budžetska crta:",
+        "options": [
+          "Paralelno se pomakne ulijevo",
+          "Zakrene se prema unutra oko sjecišta s osi Y",
+          "Postane položitija",
+          "Ne mijenja se"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za zadnji euro potrošen na X potrošač dobiva 3 jedinice korisnosti, a za zadnji euro na Y 5. Da bi povećao korisnost, treba:",
+        "options": [
+          "Trošiti više na X, manje na Y",
+          "Trošiti više na Y, manje na X",
+          "Ništa ne mijenjati",
+          "Smanjiti ukupnu potrošnju"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Krivulje indiferencije u obliku pravog kuta imaju:",
+        "options": [
+          "Savršeni supstituti",
+          "Savršeni komplementi",
+          "Loša dobra",
+          "Neutralna dobra"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Funkcija korisnosti koja samo rangira košare, bez iznosa razlike, je:",
+        "options": [
+          "Kardinalna",
+          "Ordinalna",
+          "Linearna",
+          "Očekivana"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Bazna košara stoji 50 € po baznim i 62 € po tekućim cijenama. Laspeyresov indeks je:",
+        "options": [
+          "80,6",
+          "112",
+          "124",
+          "162"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Potrošač bira košaru A iako je mogao kupiti jeftiniju košaru B. Po teoriji otkrivenih preferencija:",
+        "options": [
+          "Više voli B",
+          "Više voli A",
+          "Indiferentan je",
+          "Ne može se zaključiti ništa"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Krivulja koja povezuje košare jednake razine zadovoljstva zove se krivulja _______.",
+        "answer": "indiferencije",
+        "hint": "Potrošaču je svejedno."
+      },
+      {
+        "sentence": "MRS je jednaka omjeru _______ korisnosti dvaju dobara.",
+        "answer": "graničnih",
+        "hint": "\\(MU_X / MU_Y\\)."
+      },
+      {
+        "sentence": "Nagib budžetske crte jednak je negativnom omjeru _______ dvaju dobara.",
+        "answer": "cijena",
+        "hint": "\\(-P_X/P_Y\\)."
+      },
+      {
+        "sentence": "Optimum u kojem potrošač kupuje samo jedno dobro zove se _______ rješenje.",
+        "answer": "kutno",
+        "hint": "Na osi grafa."
+      },
+      {
+        "sentence": "Dohodak 100 €, jabuke 5 €/kg: najviše se može kupiti _______ kg jabuka.",
+        "answer": "20",
+        "hint": "\\(I / P_X\\)."
+      },
+      {
+        "sentence": "Dobro kod kojeg je manje poželjnije nego više zove se _______ dobro.",
+        "answer": "loše",
+        "hint": "Zagađenje zraka."
+      },
+      {
+        "sentence": "Indeks koji koristi košaru iz bazne godine zove se _______ indeks.",
+        "answer": "Laspeyresov",
+        "hint": "Paascheov koristi tekuću košaru."
+      },
+      {
+        "sentence": "Dodatna korisnost od povećanja budžeta za jednu jedinicu zove se Lagrangeov _______.",
+        "answer": "multiplikator",
+        "hint": "Granična korisnost dohotka."
+      }
+    ],
+    "learn": {
+      "title": "Ponašanje potrošača",
+      "content": "<h3>Kako potrošač bira?</h3><p>Teorija ponašanja potrošača objašnjava kako potrošači raspoređuju ograničen dohodak na dobra i usluge da bi <strong>maksimalizirali</strong> svoje zadovoljstvo. Tri koraka: <strong>sklonosti → budžetsko ograničenje → izbor</strong>.</p><h4>1. Sklonosti potrošača</h4><p>Potrošač uspoređuje <strong>tržišne košare</strong> (svežnjeve dobara). Četiri pretpostavke:</p><ul><li><strong>Ukupnost (potpunost)</strong>: može usporediti i rangirati sve košare (A bolje od B, B bolje od A ili je indiferentan).</li><li><strong>Tranzitivnost</strong>: A &gt; B i B &gt; C ⇒ A &gt; C.</li><li><strong>Više je bolje nego manje</strong> (nezasitnost).</li><li><strong>Opadajuća MRS</strong>: potrošači vole uravnotežene košare.</li></ul><h4>Krivulje i mapa indiferencije</h4><p><strong>Krivulja indiferencije</strong> povezuje košare jednake razine zadovoljstva. <strong>Padajuća</strong> je (više jednog dobra nadoknađuje manje drugoga) i <strong>konveksna</strong> (opadajuća MRS). <strong>Mapa indiferencije</strong> = skup takvih krivulja; krivulja dalje od ishodišta = veće zadovoljstvo. Krivulje se <strong>ne smiju sjeći</strong>.</p><h4>Granična stopa supstitucije</h4><div class=\"formula-box\">\\[ MRS = -\\frac{\\Delta Y}{\\Delta X} = \\frac{MU_X}{MU_Y} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — MRS s grafa</h4><p>Potrošač je indiferentan između A (2 hrane, 16 odjeće) i B (3 hrane, 12 odjeće). Za 1 dodatnu jedinicu hrane odriče se 4 jedinice odjeće:</p><div class=\"formula-box\">\\[ MRS = -\\frac{12 - 16}{3 - 2} = 4 \\]</div><p>Idemo li niže uz krivulju (više hrane), MRS se smanjuje — to je opadajuća MRS.</p></div><p><strong>Posebni oblici:</strong> savršeni supstituti → pravci (konstantna MRS); savršeni komplementi → pravi kut; loša dobra → krivulja može biti rastuća.</p><h4>Korisnost</h4><p><strong>Korisnost</strong> je broj koji predstavlja zadovoljstvo od košare; <strong>funkcija korisnosti</strong> pridružuje košarama razinu korisnosti, npr. \\(U(F, C) = F \\cdot C\\). <strong>Ordinalna</strong> samo rangira; <strong>kardinalna</strong> kaže i za koliko je košara bolja.</p><h4>2. Budžetsko ograničenje</h4><div class=\"formula-box\">\\[ P_X X + P_Y Y = I \\qquad \\text{nagib} = -\\frac{P_X}{P_Y} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — budžetska crta (Learning Catalytics)</h4><p>Dohodak 100 €, jabuke (X) 5 €/kg, bomboni (Y) 2 €/kg.</p><p>Sjecišta: samo jabuke \\(100/5 = 20\\) kg; samo bomboni \\(100/2 = 50\\) kg. Jednadžba: \\(5X + 2Y = 100\\), nagib \\(-5/2 = -2{,}5\\): svaki kilogram jabuka „košta” 2,5 kg bombona.</p><p>Dohodak naraste na 120 € → paralelan pomak (24 kg ili 60 kg), nagib isti. Jabuke poskupe na 10 € → crta se zakrene prema unutra oko točke 50 kg bombona.</p></div><h4>3. Izbor potrošača</h4><p>Optimalna košara (1) leži <strong>na</strong> budžetskoj crti i (2) u njoj krivulja indiferencije <strong>dodiruje</strong> budžetsku crtu:</p><div class=\"formula-box\">\\[ MRS = \\frac{P_X}{P_Y} \\iff \\frac{MU_X}{P_X} = \\frac{MU_Y}{P_Y} \\]</div><p>To je <strong>načelo jednake graničnosti</strong>. Ako je \\(MU_X/P_X = 3\\), a \\(MU_Y/P_Y = 5\\), euro prebačen s X na Y donosi 2 jedinice korisnosti više, pa treba trošiti više na Y. <strong>Kutno rješenje</strong>: optimum na osi (samo jedno dobro), MRS ≠ omjer cijena. <strong>Otkrivene preferencije</strong>: ako potrošač bira A iako si je mogao priuštiti B, onda više voli A. <strong>Lagrangeov multiplikator</strong> = granična korisnost dohotka (dodatna korisnost od 1 € budžeta više).</p><h4>Indeksi troškova života</h4><div class=\"formula-box\">\\[ LI = \\frac{\\sum P_t Q_0}{\\sum P_0 Q_0} \\qquad PI = \\frac{\\sum P_t Q_t}{\\sum P_0 Q_t} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — Laspeyres i Paasche</h4><p>Bazna košara: 10 kg kruha (1 €) i 5 kg mesa (8 €) = 50 €. Tekuće cijene: kruh 1,20 €, meso 10 €. Ista košara sada stoji 12 + 50 = 62 € → \\(LI = 62/50 = 1{,}24\\) (124).</p><p>Tekuća košara (12 kg kruha, 4 kg mesa): po tekućim cijenama 14,40 + 40 = 54,40 €, po baznim 12 + 32 = 44 € → \\(PI = 54{,}40/44 \\approx 1{,}236\\) (123,6).</p><p>Laspeyres je viši jer ne uzima u obzir da su potrošači prešli na relativno jeftiniji kruh — <strong>precjenjuje</strong> rast troškova života. Idealni indeks troškova života mjeri trošak postizanja ISTE korisnosti.</p></div><div class=\"tip-box\"><h4>Zamke</h4><ul><li>MRS se ne „čita s osi” — računa se kao omjer promjena duž krivulje ili kao \\(MU_X/MU_Y\\).</li><li>Uvjet optimuma nije „MU = granični trošak” nego jednaka granična korisnost PO EURU.</li><li>Promjena dohotka ne mijenja nagib budžetske crte; promjena cijene ga mijenja.</li></ul></div>",
+      "image": null
+    }
+  },
+  "individualMarketDemand": {
+    "name": "Pojedinačna i tržišna potražnja",
+    "icon": "fa-users",
+    "color": "#f43f5e",
+    "flashcards": [
+      {
+        "question": "Što je krivulja cijena–potrošnja?",
+        "answer": "Krivulja koja povezuje košare koje maksimaliziraju korisnost dok se mijenja cijena JEDNOG dobra.",
+        "explanation": "Iz nje se izvodi krivulja pojedinačne potražnje."
+      },
+      {
+        "question": "Što je krivulja pojedinačne potražnje?",
+        "answer": "Krivulja koja pokazuje koliko je pojedinačni potrošač spreman kupiti dobra po svakoj cijeni.",
+        "explanation": "Uzduž nje razina korisnosti raste kako cijena pada."
+      },
+      {
+        "question": "Što je krivulja dohodak–potrošnja?",
+        "answer": "Krivulja koja povezuje košare koje maksimaliziraju korisnost dok se mijenja DOHODAK potrošača (cijene nepromijenjene).",
+        "explanation": "Rastuća je za dva normalna dobra."
+      },
+      {
+        "question": "Što je Engelova krivulja?",
+        "answer": "Krivulja koja prikazuje odnos potrošene količine dobra i dohotka.",
+        "explanation": "Rastuća za normalno dobro, padajuća za inferiorno."
+      },
+      {
+        "question": "Što je efekt supstitucije?",
+        "answer": "Promjena potrošnje dobra zbog promjene njegove cijene uz NEPROMIJENJENU razinu korisnosti (kretanje po istoj krivulji indiferencije).",
+        "explanation": "Uvijek suprotan smjeru promjene cijene: jeftinije → kupuje se više."
+      },
+      {
+        "question": "Što je efekt dohotka?",
+        "answer": "Promjena potrošnje dobra zbog promjene realne kupovne moći, uz konstantne relativne cijene.",
+        "explanation": "Pojeftinjenje povećava realni dohodak. Za normalno dobro efekt dohotka povećava potrošnju."
+      },
+      {
+        "question": "Što je normalno, a što inferiorno dobro?",
+        "answer": "Normalno: potrošnja raste kad dohodak raste. Inferiorno: potrošnja PADA kad dohodak raste (negativan efekt dohotka).",
+        "explanation": "Primjer inferiornog: jeftini javni prijevoz, najjeftinija tjestenina."
+      },
+      {
+        "question": "Što je Giffenovo dobro?",
+        "answer": "Inferiorno dobro čija krivulja potražnje ima POZITIVAN nagib, jer je negativan efekt dohotka veći od efekta supstitucije.",
+        "explanation": "Iznimno rijetko u praksi; svako Giffenovo dobro je inferiorno, ali ne obrnuto."
+      },
+      {
+        "question": "Kako se dobiva krivulja tržišne potražnje?",
+        "answer": "Vodoravnim zbrajanjem pojedinačnih krivulja potražnje: po svakoj cijeni zbroje se količine svih potrošača.",
+        "explanation": "Zbrajaju se KOLIČINE, ne cijene."
+      },
+      {
+        "question": "Što je probitak potrošača?",
+        "answer": "Razlika između iznosa koji je potrošač spreman platiti za dobro i iznosa koji stvarno plati.",
+        "explanation": "Spreman platiti 13 € za ulaznicu, platio 12 € → probitak 1 €. Tržišni = površina ispod potražnje, iznad cijene."
+      },
+      {
+        "question": "Što je mrežna eksternalija?",
+        "answer": "Situacija u kojoj potražnja pojedinca ovisi o kupnjama drugih pojedinaca.",
+        "explanation": "Pozitivna: efekt stampeda. Negativna: efekt snoba."
+      },
+      {
+        "question": "Efekt stampeda ili efekt snoba?",
+        "answer": "Stampedo: dobro želim jer ga imaju drugi (moda, društvene mreže). Snob: dobro želim jer ga drugi NEMAJU (ekskluzivni satovi).",
+        "explanation": "Stampedo čini tržišnu potražnju elastičnijom, snob manje elastičnom."
+      },
+      {
+        "question": "Što je izoelastična krivulja potražnje?",
+        "answer": "Krivulja potražnje s KONSTANTNOM cjenovnom elastičnošću u svakoj točki.",
+        "explanation": "Za \\(|E_P| = 1\\) izdatak \\(P \\cdot Q\\) je stalan duž cijele krivulje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Padne cijena knjiga. Promjena potrošnje uz nepromijenjenu razinu korisnosti (ista krivulja indiferencije) je:",
+        "options": [
+          "Efekt dohotka",
+          "Efekt supstitucije",
+          "Ukupni učinak",
+          "Efekt stampeda"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Giffenovo dobro nastaje kad je:",
+        "options": [
+          "Efekt dohotka pozitivan i velik",
+          "Negativan efekt dohotka veći od efekta supstitucije",
+          "Efekt supstitucije jednak nuli",
+          "Dobro normalno i luksuzno"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Engelova krivulja prikazuje odnos:",
+        "options": [
+          "Cijene i količine",
+          "Dohotka i potrošene količine",
+          "Dviju cijena",
+          "Rada i kapitala"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za inferiorno dobro Engelova krivulja je:",
+        "options": [
+          "Rastuća",
+          "Padajuća",
+          "Vodoravna",
+          "Okomita"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Potrošač A: \\(Q_A = 10 - P\\); potrošač B: \\(Q_B = 20 - 2P\\). Tržišna potražnja pri \\(P = 4\\) je:",
+        "options": [
+          "6",
+          "12",
+          "18",
+          "14"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Tržišna potražnja \\(Q = 30 - 3P\\), cijena 4 €. Probitak potrošača iznosi:",
+        "options": [
+          "36 €",
+          "54 €",
+          "72 €",
+          "108 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Student je bio spreman platiti 13 € za ulaznicu, a platio je 12 €. Njegov probitak je:",
+        "options": [
+          "12 €",
+          "13 €",
+          "1 €",
+          "25 €"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Potrošač kupuje dobro ZATO što ga imaju i drugi. To je:",
+        "options": [
+          "Efekt snoba",
+          "Efekt stampeda",
+          "Efekt supstitucije",
+          "Giffenov paradoks"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za normalno dobro, pri padu cijene efekt supstitucije i efekt dohotka:",
+        "options": [
+          "Djeluju u istom smjeru (oba povećavaju potrošnju)",
+          "Djeluju suprotno",
+          "Oba smanjuju potrošnju",
+          "Poništavaju se"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Krivulja tržišne potražnje dobiva se:",
+        "options": [
+          "Okomitim zbrajanjem cijena",
+          "Vodoravnim zbrajanjem količina",
+          "Prosjekom pojedinačnih krivulja",
+          "Množenjem krivulja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Krivulja koja prikazuje odnos dohotka i potrošene količine dobra zove se _______ krivulja.",
+        "answer": "Engelova",
+        "hint": "Ime po statističaru iz 19. st."
+      },
+      {
+        "sentence": "Dobro čija se potrošnja smanjuje kad dohodak raste zove se _______ dobro.",
+        "answer": "inferiorno",
+        "hint": "Negativan efekt dohotka."
+      },
+      {
+        "sentence": "Inferiorno dobro s rastućom krivuljom potražnje zove se _______ dobro.",
+        "answer": "Giffenovo",
+        "hint": "Rijedak slučaj."
+      },
+      {
+        "sentence": "Razlika između onoga što je potrošač spreman platiti i onoga što plati zove se _______ potrošača.",
+        "answer": "probitak",
+        "hint": "Pindyckov naziv: potrošačev ___."
+      },
+      {
+        "sentence": "Tržišna potražnja dobiva se _______ zbrajanjem pojedinačnih krivulja potražnje.",
+        "answer": "vodoravnim",
+        "hint": "Zbrajaju se količine po istoj cijeni."
+      },
+      {
+        "sentence": "Negativna mrežna eksternalija kod koje potrošač želi unikatno dobro zove se efekt _______.",
+        "answer": "snoba",
+        "hint": "Suprotno od stampeda."
+      },
+      {
+        "sentence": "Krivulja potražnje s konstantnom elastičnošću zove se _______ krivulja potražnje.",
+        "answer": "izoelastična",
+        "hint": "„Iso” = jednak."
+      }
+    ],
+    "learn": {
+      "title": "Pojedinačna i tržišna potražnja",
+      "content": "<h3>Od izbora potrošača do krivulje potražnje</h3><h4>Promjena cijene → pojedinačna potražnja</h4><p>Mijenjamo cijenu jednog dobra i bilježimo optimalne košare: dobivamo <strong>krivulju cijena–potrošnja</strong>. Svaka točka daje par (cijena, količina) → <strong>krivulja pojedinačne potražnje</strong>. Uzduž nje razina korisnosti raste kako cijena pada, a u svakoj točki vrijedi \\(MRS = P_X/P_Y\\).</p><h4>Promjena dohotka → Engelova krivulja</h4><p>Mijenjamo dohodak uz iste cijene: dobivamo <strong>krivulju dohodak–potrošnja</strong>, a iz nje <strong>Engelovu krivulju</strong> (količina u ovisnosti o dohotku). <strong>Normalno</strong> dobro: rastuća; <strong>inferiorno</strong>: padajuća. Isto dobro može biti normalno pri niskim, a inferiorno pri visokim dohocima (npr. hamburgeri).</p><h4>Efekt supstitucije i efekt dohotka</h4><p>Pad cijene dobra ima dva učinka:</p><ul><li><strong>Efekt supstitucije</strong>: dobro je relativno jeftinije → potrošač ga kupuje više, uz <strong>istu razinu korisnosti</strong> (kretanje po početnoj krivulji indiferencije do točke gdje je nagib jednak novom omjeru cijena). Uvijek je suprotan smjeru promjene cijene.</li><li><strong>Efekt dohotka</strong>: realna kupovna moć je porasla → pomak na višu krivulju indiferencije, uz nove relativne cijene. Normalno dobro: potrošnja raste; inferiorno: pada.</li></ul><div class=\"formula-box\">\\[ \\text{ukupni učinak} = \\text{efekt supstitucije} + \\text{efekt dohotka} \\]</div><div class=\"example-box\"><h4>Kako to izgleda na grafu (tipično pitanje s tri točke X1, X2, X3)</h4><p>X1 = početni optimum, X3 = konačni optimum nakon pada cijene, X2 = pomoćna točka na <strong>početnoj</strong> krivulji indiferencije s nagibom novog budžeta.</p><ul><li><strong>Efekt supstitucije</strong>: X1 → X2 (ista krivulja indiferencije).</li><li><strong>Efekt dohotka</strong>: X2 → X3 (prijelaz na višu krivulju, paralelni pomak budžeta).</li><li><strong>Ukupni učinak</strong>: X1 → X3.</li></ul></div><p><strong>Giffenovo dobro</strong>: inferiorno dobro kod kojeg je negativni efekt dohotka VEĆI od efekta supstitucije → pad cijene smanjuje potrošnju, krivulja potražnje je rastuća. Svako Giffenovo dobro je inferiorno, ali gotovo nijedno inferiorno dobro nije Giffenovo.</p><h4>Tržišna potražnja</h4><p>Tržišna potražnja je <strong>vodoravni zbroj</strong> pojedinačnih potražnji: po svakoj cijeni zbrajaju se količine.</p><div class=\"example-box\"><h4>Riješeni primjer — zbrajanje potražnji i probitak potrošača</h4><p>A: \\(Q_A = 10 - P\\); B: \\(Q_B = 20 - 2P\\). Za \\(P \\le 10\\): \\(Q = 30 - 3P\\).</p><p>Pri \\(P = 4\\): \\(Q_A = 6\\), \\(Q_B = 12\\), ukupno \\(Q = 18\\).</p><p><strong>Probitak potrošača</strong> = trokut ispod krivulje potražnje, iznad cijene. Najviša cijena po kojoj itko kupuje je 10 €:</p><div class=\"formula-box\">\\[ PP = \\tfrac{1}{2}\\,(10 - 4)\\cdot 18 = 54 \\]</div><p>Probitak potrošača iznosi 54 €.</p><p>Kupci ukupno „dobivaju” 54 € vrijednosti iznad onoga što plate.</p></div><h4>Elastičnost i oblik potražnje</h4><p><strong>Elastičnost u točki</strong> = za jednu točku krivulje; <strong>lučna elastičnost</strong> = za raspon cijena. <strong>Izoelastična</strong> krivulja ima jednaku elastičnost u svakoj točki; za \\(|E_P| = 1\\) potrošačev izdatak je stalan bez obzira na cijenu.</p><h4>Mrežne eksternalije</h4><ul><li><strong>Efekt stampeda</strong> (pozitivna): želim dobro jer ga imaju drugi → tržišna potražnja je elastičnija.</li><li><strong>Efekt snoba</strong> (negativna): želim dobro jer ga drugi nemaju → tržišna potražnja je manje elastična.</li></ul><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Efekt supstitucije mjeri se na POČETNOJ krivulji indiferencije, efekt dohotka je prijelaz na NOVU.</li><li>Inferiorno ≠ Giffenovo: kod inferiornog potražnja i dalje obično pada s cijenom.</li><li>Probitak potrošača je razlika spremnosti i plaćenog, ne „ušteda” u odnosu na prošlu cijenu.</li></ul></div>",
+      "image": null
+    }
+  },
+  "uncertainty": {
+    "name": "Izbor u uvjetima nesigurnosti",
+    "icon": "fa-dice",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Što je očekivana vrijednost?",
+        "answer": "Ponderirani prosjek isplata svih mogućih ishoda, gdje su ponderi vjerojatnosti ishoda: \\(E(X) = \\sum p_i X_i\\).",
+        "explanation": "Mjeri „središnju” vrijednost rizične situacije."
+      },
+      {
+        "question": "Što su isplata, varijabilnost i odstupanje?",
+        "answer": "Isplata = vrijednost povezana s ishodom. Varijabilnost = koliko se ishodi razlikuju. Odstupanje (devijacija) = razlika stvarne i očekivane isplate.",
+        "explanation": "Veća varijabilnost = veći rizik."
+      },
+      {
+        "question": "Što je standardna devijacija?",
+        "answer": "Drugi korijen prosjeka kvadrata odstupanja isplata od očekivane vrijednosti (ponderiranog vjerojatnostima).",
+        "explanation": "Glavna mjera rizika: veća standardna devijacija = rizičnija opcija."
+      },
+      {
+        "question": "Što je nesklonost riziku?",
+        "answer": "Davanje prednosti sigurnom dohotku pred nesigurnim uz JEDNAKU očekivanu vrijednost.",
+        "explanation": "Opadajuća granična korisnost dohotka (konkavna funkcija korisnosti). Većina ljudi."
+      },
+      {
+        "question": "Što su sklonost riziku i indiferentnost prema riziku?",
+        "answer": "Sklonost: prednost nesigurnom dohotku uz jednaku očekivanu vrijednost. Indiferentnost: ravnodušnost između sigurnog i nesigurnog dohotka.",
+        "explanation": "Sklon riziku: konveksna korisnost; indiferentan: linearna."
+      },
+      {
+        "question": "Što je očekivana korisnost?",
+        "answer": "Zbroj korisnosti svih mogućih ishoda ponderiran vjerojatnostima: \\(E(U) = \\sum p_i U(X_i)\\).",
+        "explanation": "Racionalan pojedinac maksimalizira očekivanu korisnost, ne očekivanu vrijednost."
+      },
+      {
+        "question": "Što je premija na rizik?",
+        "answer": "Maksimalni iznos koji je osoba nesklona riziku spremna platiti da izbjegne rizik.",
+        "explanation": "Premija = očekivana vrijednost − sigurni ekvivalent."
+      },
+      {
+        "question": "Što je diverzifikacija?",
+        "answer": "Smanjenje rizika raspoređivanjem resursa na više aktivnosti čiji ishodi nisu blisko povezani.",
+        "explanation": "Najbolje djeluje kod negativne korelacije („ne stavljaj sva jaja u istu košaru”)."
+      },
+      {
+        "question": "Što su pozitivna i negativna korelacija?",
+        "answer": "Pozitivna: dvije varijable teže kretanju u istom smjeru. Negativna: teže kretanju u suprotnim smjerovima.",
+        "explanation": "Prodaja kišobrana i sunčanih naočala = negativna korelacija."
+      },
+      {
+        "question": "Što je procjeniteljeva (aktuarska) nepristranost?",
+        "answer": "Situacija u kojoj je premija osiguranja jednaka očekivanoj isplati (očekivanom gubitku).",
+        "explanation": "Uz takvu premiju osoba nesklona riziku osigurat će se u punom iznosu."
+      },
+      {
+        "question": "Što je vrijednost potpune informacije?",
+        "answer": "Razlika između očekivane vrijednosti izbora uz potpunu informaciju i očekivane vrijednosti uz nepotpunu informaciju.",
+        "explanation": "Toliko se najviše isplati platiti za istraživanje tržišta ili prognozu."
+      },
+      {
+        "question": "Što su rizična i nerizična imovina?",
+        "answer": "Rizična imovina daje nesiguran tok novca ili usluga (dionice); nerizična siguran tok (državne obveznice, oročena štednja).",
+        "explanation": "Realni povrat = nominalni povrat umanjen za inflaciju."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Posao A: 50 % šanse za 2000 €, 50 % za 1000 €. Očekivana vrijednost je:",
+        "options": [
+          "1000 €",
+          "1500 €",
+          "2000 €",
+          "3000 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Posao A daje 2000 ili 1000 € (po 50 %). Standardna devijacija je:",
+        "options": [
+          "250 €",
+          "500 €",
+          "1000 €",
+          "1500 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Osoba koja više voli sigurnih 1500 € od lutrije s očekivanom vrijednošću 1500 € je:",
+        "options": [
+          "Sklona riziku",
+          "Nesklona riziku",
+          "Indiferentna prema riziku",
+          "Iracionalna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Razlika između stvarne i očekivane isplate zove se:",
+        "options": [
+          "Varijanca",
+          "Odstupanje (devijacija)",
+          "Premija na rizik",
+          "Isplata"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Vjerojatnost provale je 10 %, a gubitak bi bio 10 000 €. Aktuarski nepristrana premija osiguranja je:",
+        "options": [
+          "100 €",
+          "1000 €",
+          "10 000 €",
+          "9000 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rizik se najviše smanjuje diverzifikacijom kad su ishodi:",
+        "options": [
+          "Savršeno pozitivno korelirani",
+          "Negativno korelirani",
+          "Identični",
+          "Uvijek jednaki nuli"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Lutrija ima očekivanu vrijednost 20 000 €, a osoba bi je mijenjala za sigurnih 16 000 €. Premija na rizik je:",
+        "options": [
+          "16 000 €",
+          "4000 €",
+          "20 000 €",
+          "36 000 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz informaciju hotel očekuje 14 000 € profita, bez nje 12 000 €. Vrijednost potpune informacije je:",
+        "options": [
+          "12 000 €",
+          "14 000 €",
+          "2000 €",
+          "26 000 €"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Funkcija korisnosti osobe nesklone riziku je:",
+        "options": [
+          "Konveksna (granična korisnost raste)",
+          "Konkavna (granična korisnost opada)",
+          "Linearna",
+          "Padajuća"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Ponderirani prosjek isplata svih ishoda zove se _______ vrijednost.",
+        "answer": "očekivana",
+        "hint": "Ponderi su vjerojatnosti."
+      },
+      {
+        "sentence": "Smanjenje rizika raspoređivanjem resursa na više nepovezanih aktivnosti zove se _______.",
+        "answer": "diverzifikacija",
+        "hint": "Sva jaja ne u istu košaru."
+      },
+      {
+        "sentence": "Davanje prednosti sigurnom dohotku pred nesigurnim uz jednaku očekivanu vrijednost zove se _______ riziku.",
+        "answer": "nesklonost",
+        "hint": "Većina ljudi se tako ponaša."
+      },
+      {
+        "sentence": "Najveći iznos koji je osoba spremna platiti da izbjegne rizik zove se _______ na rizik.",
+        "answer": "premija",
+        "hint": "Očekivana vrijednost − sigurni ekvivalent."
+      },
+      {
+        "sentence": "Dvije varijable koje teže kretanju u suprotnim smjerovima imaju _______ korelaciju.",
+        "answer": "negativnu",
+        "hint": "Ključ uspješne diverzifikacije."
+      },
+      {
+        "sentence": "Posao s isplatama 2000 € i 1000 € (po 50 %) ima očekivanu vrijednost _______ €.",
+        "answer": "1500",
+        "hint": "\\(0{,}5 \\cdot 2000 + 0{,}5 \\cdot 1000\\)."
+      },
+      {
+        "sentence": "Premija osiguranja jednaka očekivanoj isplati znači _______ nepristranost.",
+        "answer": "procjeniteljevu",
+        "hint": "Pridjev od „procjenitelj”."
+      }
+    ],
+    "learn": {
+      "title": "Izbor u uvjetima nesigurnosti",
+      "content": "<h3>Opisivanje rizika</h3><p>Mnoge odluke (posao, ulaganje, osiguranje) donose se bez sigurnosti o ishodu. Rizik opisujemo <strong>vjerojatnostima</strong>, <strong>očekivanom vrijednošću</strong> i <strong>varijabilnošću</strong>.</p><div class=\"formula-box\">\\[ E(X) = \\sum_i p_i X_i \\qquad \\sigma = \\sqrt{\\sum_i p_i\\,[X_i - E(X)]^2} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — dva posla s istom očekivanom vrijednošću</h4><p><strong>Posao 1</strong> (provizija): 2000 € ili 1000 €, svaki s vjerojatnošću 0,5.<br><strong>Posao 2</strong> (fiksna plaća): 1510 € s vjerojatnošću 0,99, a 510 € s vjerojatnošću 0,01.</p><p><strong>Očekivane vrijednosti:</strong> \\(E_1 = 0{,}5\\cdot 2000 + 0{,}5\\cdot 1000 = 1500\\); \\(E_2 = 0{,}99\\cdot 1510 + 0{,}01\\cdot 510 = 1494{,}9 + 5{,}1 = 1500\\).</p><p><strong>Standardne devijacije:</strong> posao 1: odstupanja su ±500 → \\(\\sigma_1 = 500\\). Posao 2: odstupanja +10 i −990:</p><div class=\"formula-box\">\\[ \\sigma_2 = \\sqrt{0{,}99\\cdot 10^2 + 0{,}01\\cdot 990^2} = \\sqrt{99 + 9801} = \\sqrt{9900} \\approx 99{,}5 \\]</div><p>Iste očekivane vrijednosti, ali posao 2 je znatno manje rizičan. Osoba nesklona riziku bira posao 2.</p></div><h4>Sklonosti prema riziku</h4><table><thead><tr><th>Tip</th><th>Ponašanje (uz jednaku očekivanu vrijednost)</th><th>Funkcija korisnosti</th></tr></thead><tbody><tr><td>Nesklon riziku</td><td>bira siguran dohodak</td><td>konkavna (opadajuća MU dohotka)</td></tr><tr><td>Indiferentan</td><td>svejedno mu je</td><td>linearna</td></tr><tr><td>Sklon riziku</td><td>bira nesiguran dohodak</td><td>konveksna</td></tr></tbody></table><p><strong>Očekivana korisnost</strong>: \\(E(U) = \\sum p_i\\,U(X_i)\\). Pojedinac bira opciju s najvećom očekivanom korisnošću. <strong>Premija na rizik</strong> = najveći iznos koji bi osoba nesklona riziku platila da izbjegne rizik = očekivana vrijednost − sigurni ekvivalent. Primjer: lutrija s očekivanih 20 000 € daje istu korisnost kao sigurnih 16 000 € → premija na rizik je 4000 €.</p><h4>Smanjivanje rizika</h4><ul><li><strong>Diverzifikacija</strong>: resursi na više aktivnosti čiji ishodi nisu blisko povezani; najjača kod <strong>negativne korelacije</strong> (npr. prodaja klima-uređaja i grijalica).</li><li><strong>Osiguranje</strong>: premija je <strong>aktuarski (procjeniteljski) nepristrana</strong> kad je jednaka očekivanom gubitku. Vjerojatnost provale 10 %, gubitak 10 000 € → očekivani gubitak = 1000 € = nepristrana premija. Osoba nesklona riziku uz takvu premiju osigurava se u punom iznosu.</li><li><strong>Informacija</strong>: vrijednost potpune informacije = očekivana vrijednost s informacijom − očekivana vrijednost bez nje.</li></ul><div class=\"example-box\"><h4>Riješeni primjer — vrijednost informacije (hotel)</h4><p>Hotel naručuje veliku ili malu zalihu za sezonu. Potražnja je visoka ili niska, svaka s vjerojatnošću 0,5.</p><table><thead><tr><th></th><th>Visoka potražnja</th><th>Niska potražnja</th></tr></thead><tbody><tr><td>Velika narudžba</td><td>20 000 €</td><td>4000 €</td></tr><tr><td>Mala narudžba</td><td>10 000 €</td><td>8000 €</td></tr></tbody></table><p>Bez informacije: velika = 12 000 €, mala = 9000 € → bira veliku, 12 000 €. S potpunom informacijom: visoka → velika (20 000), niska → mala (8000): \\(0{,}5\\cdot 20\\,000 + 0{,}5\\cdot 8000 = 14\\,000\\). Vrijednost informacije = 14 000 − 12 000 = <strong>2000 €</strong>.</p></div><h4>Ulaganje u rizičnu imovinu</h4><p><strong>Imovina</strong> = sve što vlasniku daje tok novca ili usluga. <strong>Rizična</strong> (dionice) vs <strong>nerizična</strong> (državne obveznice). <strong>Povrat</strong> = novčani tok izražen kao dio cijene imovine; <strong>realni povrat</strong> = nominalni minus inflacija; <strong>očekivani povrat</strong> = prosječni; <strong>stvarni povrat</strong> = ostvareni. Veći očekivani povrat u pravilu traži prihvaćanje većeg rizika (<strong>cijena rizika</strong>).</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Ista očekivana vrijednost ne znači isti rizik — gledaj standardnu devijaciju.</li><li>Diverzifikacija ne pomaže kod savršeno pozitivno koreliranih ishoda.</li><li>Premija na rizik ≠ premija osiguranja.</li></ul></div>",
+      "image": null
+    }
+  },
+  "production": {
+    "name": "Proizvodnja",
+    "icon": "fa-industry",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što su faktori proizvodnje?",
+        "answer": "Inputi u proizvodnom procesu; tri kategorije: rad, sirovine (materijal) i kapital.",
+        "explanation": "Kapital = zgrade, strojevi, oprema, zalihe."
+      },
+      {
+        "question": "Što je funkcija proizvodnje?",
+        "answer": "Funkcija koja pokazuje MAKSIMALNU količinu outputa koju tvrtka može proizvesti uz svaku kombinaciju inputa: \\(q = F(K, L)\\).",
+        "explanation": "Opisuje tehnički izvedivo kad tvrtka posluje efikasno."
+      },
+      {
+        "question": "Kratki rok ili dugi rok u proizvodnji?",
+        "answer": "Kratki rok: barem jedan faktor se NE može mijenjati (fiksni input). Dugi rok: svi inputi su varijabilni.",
+        "explanation": "Ne postoji fiksno trajanje (npr. godina) — ovisi o djelatnosti."
+      },
+      {
+        "question": "Što je prosječni proizvod rada (APL)?",
+        "answer": "Output po jedinici rada: \\(AP_L = q/L\\).",
+        "explanation": "Mjeri produktivnost radne snage tvrtke."
+      },
+      {
+        "question": "Što je granični proizvod rada (MPL)?",
+        "answer": "Dodatni output od jedne dodatne jedinice rada: \\(MP_L = \\Delta q / \\Delta L\\).",
+        "explanation": "Ovisi o količini kapitala: više kapitala → obično veći MPL."
+      },
+      {
+        "question": "Kakav je odnos graničnog i prosječnog proizvoda?",
+        "answer": "Kad je MP > AP, AP raste; kad je MP < AP, AP pada; MP siječe AP u njegovom maksimumu.",
+        "explanation": "Kao prosjek ocjena: ocjena iznad prosjeka diže prosjek."
+      },
+      {
+        "question": "Što kaže zakon opadajućih graničnih prinosa?",
+        "answer": "Povećava li se jedan input uz ostale fiksne, nakon neke točke dodatni output postaje sve manji.",
+        "explanation": "Opadajući NE znači nužno negativan granični proizvod."
+      },
+      {
+        "question": "Što je izokvanta?",
+        "answer": "Krivulja koja pokazuje sve kombinacije inputa (rada i kapitala) koje daju ISTU razinu outputa.",
+        "explanation": "Mapa izokvanti = više izokvanti; dalje od ishodišta = veći output."
+      },
+      {
+        "question": "Što je granična stopa tehničke supstitucije (MRTS)?",
+        "answer": "Koliko se kapitala može smanjiti kad se rad poveća za jednu jedinicu, uz isti output: \\(MRTS = -\\Delta K/\\Delta L = MP_L/MP_K\\).",
+        "explanation": "Opada duž izokvante (konveksnost)."
+      },
+      {
+        "question": "Što je prinos na opseg?",
+        "answer": "Stopa kojom raste output kad se svi inputi proporcionalno povećaju.",
+        "explanation": "Dugoročni pojam — mijenjaju se SVI inputi."
+      },
+      {
+        "question": "Rastući, konstantni i opadajući prinosi na opseg?",
+        "answer": "Udvostručenje svih inputa: output više nego dvostruk (rastući), točno dvostruk (konstantni), manje nego dvostruk (opadajući).",
+        "explanation": "Rastući: izokvante sve bliže; opadajući: sve dalje (problemi koordinacije)."
+      },
+      {
+        "question": "Što je produktivnost rada i tehnološka promjena?",
+        "answer": "Produktivnost rada = prosječni proizvod rada industrije ili cijelog gospodarstva. Tehnološka promjena = nove tehnologije za učinkovitije korištenje inputa.",
+        "explanation": "Tehnološka promjena može nadjačati opadajuće granične prinose (funkcija se pomiče prema gore)."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Razdoblje u kojem se barem jedan faktor proizvodnje ne može mijenjati je:",
+        "options": [
+          "Dugi rok",
+          "Kratki rok",
+          "Vrlo dugi rok",
+          "Tržišni rok"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz 3 radnika output je 60, uz 4 radnika 80. Granični proizvod 4. radnika je:",
+        "options": [
+          "20",
+          "80",
+          "60",
+          "140"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz 4 radnika output je 80. Prosječni proizvod rada je:",
+        "options": [
+          "20",
+          "80",
+          "320",
+          "4"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "10 radnika u tjednu od 40 sati proizvede 500 hladnjaka. Uz konstantan APL, koliko DODATNIH radnika treba za 850 hladnjaka?",
+        "options": [
+          "5",
+          "7",
+          "17",
+          "35"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tvrtka zaposli 7 dodatnih radnika na 40 sati tjedno uz satnicu 12 €. Dodatni tjedni trošak rada je:",
+        "options": [
+          "480 €",
+          "3360 €",
+          "840 €",
+          "8160 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kad je granični proizvod manji od prosječnog, prosječni proizvod:",
+        "options": [
+          "Raste",
+          "Pada",
+          "Ne mijenja se",
+          "Jednak je nuli"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Udvostruče se svi inputi, a output se utrostruči. Riječ je o:",
+        "options": [
+          "Opadajućim prinosima na opseg",
+          "Konstantnim prinosima na opseg",
+          "Rastućim prinosima na opseg",
+          "Zakonu opadajućih graničnih prinosa"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Tvrtka poveća rad s 1 na 2 jedinice i smanji kapital s 5 na 3 uz isti output. MRTS je:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "0,5"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zakon opadajućih graničnih prinosa odnosi se na:",
+        "options": [
+          "Proporcionalno povećanje svih inputa",
+          "Povećanje jednog inputa uz ostale fiksne",
+          "Pad cijene outputa",
+          "Tehnološki napredak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Krivulja svih kombinacija rada i kapitala koje daju isti output je:",
+        "options": [
+          "Izotroškovna crta",
+          "Izokvanta",
+          "Krivulja indiferencije",
+          "Putanja ekspanzije"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Krivulja kombinacija inputa koje daju istu razinu outputa zove se _______.",
+        "answer": "izokvanta",
+        "hint": "„Iso” + „kvantum”."
+      },
+      {
+        "sentence": "Razdoblje u kojem su svi inputi varijabilni zove se _______ rok.",
+        "answer": "dugi",
+        "hint": "Suprotno od kratkog."
+      },
+      {
+        "sentence": "Dodatni output od jedne dodatne jedinice rada zove se _______ proizvod rada.",
+        "answer": "granični",
+        "hint": "MPL."
+      },
+      {
+        "sentence": "Uz 5 radnika output je 95, uz 6 radnika 108. Granični proizvod 6. radnika je _______.",
+        "answer": "13",
+        "hint": "\\(\\Delta q / \\Delta L\\)."
+      },
+      {
+        "sentence": "Ako se udvostručenjem svih inputa output točno udvostruči, prinosi na opseg su _______.",
+        "answer": "konstantni",
+        "hint": "Ni rastući ni opadajući."
+      },
+      {
+        "sentence": "MRTS je jednaka omjeru graničnog proizvoda rada i graničnog proizvoda _______.",
+        "answer": "kapitala",
+        "hint": "\\(MP_L/MP_K\\)."
+      },
+      {
+        "sentence": "Faktor proizvodnje čija se količina u kratkom roku ne može mijenjati zove se _______ input.",
+        "answer": "fiksni",
+        "hint": "Npr. zgrada tvornice."
+      }
+    ],
+    "learn": {
+      "title": "Proizvodnja",
+      "content": "<h3>Teorija poduzeća: kako tvrtka proizvodi</h3><p><strong>Teorija poduzeća</strong> opisuje kako tvrtke donose proizvodne odluke i kako troškovi ovise o razini proizvodnje. Polazište je <strong>funkcija proizvodnje</strong>:</p><div class=\"formula-box\">\\[ q = F(K, L) \\]</div><p>Ona daje <strong>najveći</strong> output za svaku kombinaciju kapitala K i rada L, uz postojeću tehnologiju. <strong>Faktori proizvodnje</strong>: rad, sirovine, kapital.</p><h4>Kratki rok: jedan varijabilni input (rad)</h4><p>U <strong>kratkom roku</strong> barem jedan input je <strong>fiksan</strong> (obično kapital); u <strong>dugom roku</strong> svi su varijabilni.</p><div class=\"formula-box\">\\[ AP_L = \\frac{q}{L} \\qquad MP_L = \\frac{\\Delta q}{\\Delta L} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — tablica proizvodnje (kapital fiksan)</h4><table><thead><tr><th>L</th><th>q</th><th>MPL</th><th>APL</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>—</td><td>—</td></tr><tr><td>1</td><td>10</td><td>10</td><td>10</td></tr><tr><td>2</td><td>30</td><td>20</td><td>15</td></tr><tr><td>3</td><td>60</td><td>30</td><td>20</td></tr><tr><td>4</td><td>80</td><td>20</td><td>20</td></tr><tr><td>5</td><td>95</td><td>15</td><td>19</td></tr><tr><td>6</td><td>108</td><td>13</td><td>18</td></tr><tr><td>7</td><td>112</td><td>4</td><td>16</td></tr><tr><td>8</td><td>112</td><td>0</td><td>14</td></tr><tr><td>9</td><td>108</td><td>−4</td><td>12</td></tr></tbody></table><p>MPL raste do 3. radnika, zatim opada — to je <strong>zakon opadajućih graničnih prinosa</strong>. Dok je MPL &gt; APL (do L = 3), APL raste; kad je MPL &lt; APL (od L = 5), APL pada; APL je najveći (20) oko točke gdje ga MPL siječe. Deveti radnik ima negativan MPL — nitko ga razuman ne bi zaposlio.</p></div><div class=\"example-box\"><h4>Riješeni primjer — hladnjaci (Learning Catalytics)</h4><p>10 radnika u tjednu od 40 sati proizvede 500 hladnjaka → \\(AP_L = 500/10 = 50\\) hladnjaka po radniku tjedno.</p><p>Za 850 hladnjaka uz konstantan APL treba \\(850/50 = 17\\) radnika → <strong>7 dodatnih</strong>.</p><p>Uz satnicu 12 €: \\(7 \\cdot 40 \\cdot 12 = 3360\\) € dodatnog tjednog troška. (U LC-u je satnica bila 35 kn → 9800 kn.)</p></div><h4>Dugi rok: dva varijabilna inputa</h4><p><strong>Izokvanta</strong> povezuje sve kombinacije K i L koje daju isti output; <strong>mapa izokvanti</strong> prikazuje cijelu funkciju proizvodnje. Nagib izokvante mjeri <strong>granična stopa tehničke supstitucije</strong>:</p><div class=\"formula-box\">\\[ MRTS = -\\frac{\\Delta K}{\\Delta L} = \\frac{MP_L}{MP_K} \\]</div><p>Primjer: rad s 1 na 2, kapital s 5 na 3, isti output → \\(MRTS = 2\\). MRTS opada duž izokvante jer su inputi nesavršeni supstituti. Posebni slučajevi: savršeni supstituti (pravci) i fiksne proporcije (pravi kut, npr. jedan radnik – jedan stroj).</p><h4>Prinosi na opseg</h4><table><thead><tr><th>Udvostruče se svi inputi, output je…</th><th>Prinosi</th><th>Izokvante</th></tr></thead><tbody><tr><td>više nego dvostruk</td><td>rastući (tekuća traka)</td><td>sve bliže jedna drugoj</td></tr><tr><td>točno dvostruk</td><td>konstantni</td><td>jednako razmaknute</td></tr><tr><td>manje nego dvostruk</td><td>opadajući (problemi koordinacije velikih tvrtki)</td><td>sve razmaknutije</td></tr></tbody></table><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Opadajući granični prinosi (kratki rok, JEDAN input) ≠ opadajući prinosi na opseg (dugi rok, SVI inputi).</li><li>Kratki rok je razdoblje u kojem se barem jedan input NE može mijenjati (neke skripte ovdje ispuste „ne”).</li><li>Opadajući MPL nije isto što i negativan MPL.</li></ul></div>",
+      "image": null
+    }
+  },
+  "costOfProduction": {
+    "name": "Trošak proizvodnje",
+    "icon": "fa-coins",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "Računovodstveni ili ekonomski trošak?",
+        "answer": "Računovodstveni = stvarni izdaci + amortizacija opreme. Ekonomski = trošak korištenja resursa, UKLJUČUJUĆI oportunitetni trošak.",
+        "explanation": "Ekonomist gleda naprijed (odluke), računovođa unatrag (izvještaji)."
+      },
+      {
+        "question": "Što je oportunitetni trošak?",
+        "answer": "Trošak propuštenih prilika: vrijednost najbolje alternative koja se napušta kad se resurs ne koristi na najkorisniji način.",
+        "explanation": "Vlasnik koji radi u svom lokalu propušta plaću koju bi zaradio drugdje."
+      },
+      {
+        "question": "Što je nepovratni trošak?",
+        "answer": "Trošak koji je već učinjen i ne može se vratiti; zato NE smije utjecati na buduće odluke.",
+        "explanation": "Npr. specijalizirani stroj bez alternativne upotrebe."
+      },
+      {
+        "question": "Fiksni ili varijabilni trošak?",
+        "answer": "Fiksni (FC) se ne mijenja s razinom proizvodnje i nestaje samo prestankom poslovanja. Varijabilni (VC) se mijenja s proizvodnjom (plaće, sirovine).",
+        "explanation": "\\(TC = FC + VC\\). Fiksni nije isto što i nepovratni."
+      },
+      {
+        "question": "Što je granični trošak (MC)?",
+        "answer": "Porast troška zbog proizvodnje jedne dodatne jedinice: \\(MC = \\Delta VC/\\Delta q = \\Delta TC/\\Delta q\\). Zove se i inkrementalni trošak.",
+        "explanation": "Fiksni trošak ne utječe na MC."
+      },
+      {
+        "question": "Kako se računaju AFC, AVC i ATC?",
+        "answer": "\\(AFC = FC/q\\), \\(AVC = VC/q\\), \\(ATC = TC/q = AFC + AVC\\).",
+        "explanation": "ATC se zove i prosječni ekonomski trošak."
+      },
+      {
+        "question": "Gdje MC siječe AVC i ATC?",
+        "answer": "MC siječe AVC i ATC u njihovim MINIMUMIMA.",
+        "explanation": "Kad je MC ispod prosjeka, prosjek pada; kad je iznad, prosjek raste."
+      },
+      {
+        "question": "Što je uporabni trošak kapitala?",
+        "answer": "Godišnji trošak posjedovanja i korištenja imovine = ekonomska amortizacija + propuštene kamate.",
+        "explanation": "Kapitalna renta = godišnji trošak unajmljivanja jedinice kapitala."
+      },
+      {
+        "question": "Što je izotroškovna crta?",
+        "answer": "Sve kombinacije rada i kapitala koje se mogu kupiti za zadani ukupni trošak: \\(C = wL + rK\\); nagib \\(-w/r\\).",
+        "explanation": "Porast nadnice čini crtu strmijom (uz L na vodoravnoj osi)."
+      },
+      {
+        "question": "Uvjet minimalizacije troška?",
+        "answer": "Izotroškovna crta tangira izokvantu: \\(MRTS = w/r\\), tj. \\(MP_L/w = MP_K/r\\).",
+        "explanation": "Zadnji euro potrošen na svaki input donosi isti dodatni output."
+      },
+      {
+        "question": "Što je putanja ekspanzije?",
+        "answer": "Krivulja kroz točke tangencije izotroškovnih crta i izokvanti: kombinacije K i L koje minimaliziraju trošak na svakoj razini outputa.",
+        "explanation": "Iz nje se izvodi dugoročna krivulja troškova."
+      },
+      {
+        "question": "Ekonomije obujma ili ekonomije obuhvata?",
+        "answer": "Obujam: udvostručenje outputa uz manje nego dvostruk trošak (jedan proizvod). Obuhvat: zajednička proizvodnja dvaju proizvoda jeftinija je nego odvojena.",
+        "explanation": "Stupanj ekonomije obuhvata SC = postotna ušteda zajedničke proizvodnje."
+      },
+      {
+        "question": "Što je krivulja učenja?",
+        "answer": "Krivulja koja pokazuje kako količina inputa po jedinici outputa pada s kumulativnom (ukupnom dosadašnjom) proizvodnjom.",
+        "explanation": "Iskustvo snižava troškove — nije isto što i ekonomija obujma."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Trošak koji se ne mijenja s razinom proizvodnje, a nestaje samo prestankom poslovanja, je:",
+        "options": [
+          "Varijabilni trošak",
+          "Fiksni trošak",
+          "Nepovratni trošak",
+          "Granični trošak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "VC uz 4 jedinice je 112 €, a uz 5 jedinica 130 €. Granični trošak 5. jedinice je:",
+        "options": [
+          "18 €",
+          "26 €",
+          "130 €",
+          "242 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "FC = 50 €, VC(5) = 130 €. Prosječni ukupni trošak pri q = 5 je:",
+        "options": [
+          "26 €",
+          "10 €",
+          "36 €",
+          "180 €"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Vlasnica lokala ostvari računovodstveni profit 1500 €, a drugdje bi zaradila 2000 €. Ekonomski profit je:",
+        "options": [
+          "1500 €",
+          "−500 €",
+          "3500 €",
+          "500 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz w = 20 €, r = 10 €, MPL = 6 i MPK = 4, tvrtka minimalizira trošak ako:",
+        "options": [
+          "Zaposli više rada, manje kapitala",
+          "Koristi više kapitala, manje rada",
+          "Ne mijenja ništa",
+          "Smanji oba inputa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Nagib izotroškovne crte (L na vodoravnoj osi) jednak je:",
+        "options": [
+          "\\(-r/w\\)",
+          "\\(-w/r\\)",
+          "\\(-MP_L/MP_K\\) uvijek",
+          "\\(C/r\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "MC siječe krivulju AVC:",
+        "options": [
+          "U njezinom maksimumu",
+          "U njezinom minimumu",
+          "Nikada",
+          "Samo pri q = 0"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Troškovi odvojene proizvodnje su 60 i 50 €, a zajedničke 90 €. Stupanj ekonomije obuhvata je približno:",
+        "options": [
+          "0,18",
+          "0,22",
+          "0,45",
+          "−0,22"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Udvostruči li se output, a troškovi porastu manje nego dvostruko, tvrtka ima:",
+        "options": [
+          "Disekonomije obujma",
+          "Ekonomije obujma",
+          "Ekonomije obuhvata",
+          "Opadajuće prinose na opseg"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Stroj bez alternativne upotrebe, već plaćen, za buduće odluke predstavlja:",
+        "options": [
+          "Oportunitetni trošak",
+          "Nepovratni trošak koji treba zanemariti",
+          "Varijabilni trošak",
+          "Granični trošak"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Trošak propuštenih prilika zove se _______ trošak.",
+        "answer": "oportunitetni",
+        "hint": "Najbolja napuštena alternativa."
+      },
+      {
+        "sentence": "Trošak koji je već učinjen i ne može se vratiti zove se _______ trošak.",
+        "answer": "nepovratni",
+        "hint": "Sunk cost."
+      },
+      {
+        "sentence": "Granični trošak zove se još i _______ trošak.",
+        "answer": "inkrementalni",
+        "hint": "Trošak „prirasta”."
+      },
+      {
+        "sentence": "FC = 50 €, q = 5: prosječni fiksni trošak iznosi _______ €.",
+        "answer": "10",
+        "hint": "\\(FC/q\\)."
+      },
+      {
+        "sentence": "Krivulja kroz točke tangencije izotroškovnih crta i izokvanti zove se putanja _______.",
+        "answer": "ekspanzije",
+        "hint": "Kako tvrtka „raste”."
+      },
+      {
+        "sentence": "Krivulja koja prikazuje kombinacije rada i kapitala uz isti ukupni trošak zove se _______ crta.",
+        "answer": "izotroškovna",
+        "hint": "\\(C = wL + rK\\)."
+      },
+      {
+        "sentence": "Pad troška po jedinici s kumulativnom proizvodnjom prikazuje krivulja _______.",
+        "answer": "učenja",
+        "hint": "Iskustvo."
+      },
+      {
+        "sentence": "Zajednička proizvodnja dvaju proizvoda jeftinija od odvojene znači ekonomije _______.",
+        "answer": "obuhvata",
+        "hint": "Ne obujma!"
+      }
+    ],
+    "learn": {
+      "title": "Trošak proizvodnje",
+      "content": "<h3>Koji su troškovi važni za odluke?</h3><p><strong>Računovodstveni trošak</strong> = stvarni izdaci + amortizacija. <strong>Ekonomski trošak</strong> uključuje i <strong>oportunitetni trošak</strong> (vrijednost najbolje propuštene alternative). <strong>Nepovratni trošak</strong> je već učinjen i ne može se vratiti — racionalna odluka ga <strong>zanemaruje</strong>.</p><div class=\"example-box\"><h4>Riješeni primjer — ekonomski profit</h4><p>Vlasnica kafića ima prihod 5000 € i izdatke 3500 € mjesečno → računovodstveni profit 1500 €. Kao voditeljica u hotelu zaradila bi 2000 €. Ekonomski profit = 1500 − 2000 = <strong>−500 €</strong>: ekonomski gledano, bolje bi joj bilo zaposliti se u hotelu.</p></div><h4>Kratkoročni troškovi</h4><div class=\"formula-box\">\\[ TC = FC + VC \\qquad MC = \\frac{\\Delta TC}{\\Delta q} = \\frac{\\Delta VC}{\\Delta q} \\]</div><div class=\"formula-box\">\\[ AFC = \\frac{FC}{q} \\qquad AVC = \\frac{VC}{q} \\qquad ATC = \\frac{TC}{q} = AFC + AVC \\]</div><div class=\"example-box\"><h4>Riješeni primjer — tablica troškova (FC = 50 €)</h4><table><thead><tr><th>q</th><th>VC</th><th>TC</th><th>MC</th><th>AFC</th><th>AVC</th><th>ATC</th></tr></thead><tbody><tr><td>1</td><td>50</td><td>100</td><td>50</td><td>50</td><td>50</td><td>100</td></tr><tr><td>2</td><td>78</td><td>128</td><td>28</td><td>25</td><td>39</td><td>64</td></tr><tr><td>3</td><td>98</td><td>148</td><td>20</td><td>16,7</td><td>32,7</td><td>49,3</td></tr><tr><td>4</td><td>112</td><td>162</td><td>14</td><td>12,5</td><td>28</td><td>40,5</td></tr><tr><td>5</td><td>130</td><td>180</td><td>18</td><td>10</td><td>26</td><td>36</td></tr><tr><td>6</td><td>150</td><td>200</td><td>20</td><td>8,3</td><td>25</td><td>33,3</td></tr><tr><td>7</td><td>175</td><td>225</td><td>25</td><td>7,1</td><td>25</td><td>32,1</td></tr><tr><td>8</td><td>204</td><td>254</td><td>29</td><td>6,25</td><td>25,5</td><td>31,75</td></tr><tr><td>9</td><td>242</td><td>292</td><td>38</td><td>5,6</td><td>26,9</td><td>32,4</td></tr></tbody></table><p>Primjer pri q = 5: \\(MC = 130 - 112 = 18\\), \\(AVC = 130/5 = 26\\), \\(ATC = 180/5 = 36\\). MC najprije pada, a zatim raste (opadajući granični prinosi rada). AVC je najniži oko q = 6–7, ATC oko q = 8, i upravo ondje ih MC siječe odozdo.</p></div><h4>Dugi rok: minimalizacija troška</h4><p>Trošak kapitala: <strong>uporabni trošak kapitala</strong> = ekonomska amortizacija + propuštene kamate; <strong>kapitalna renta</strong> r = godišnji trošak unajmljivanja jedinice kapitala. <strong>Izotroškovna crta</strong>:</p><div class=\"formula-box\">\\[ C = wL + rK \\;\\Rightarrow\\; K = \\frac{C}{r} - \\frac{w}{r}L \\]</div><p>Tvrtka minimalizira trošak zadanog outputa u točki gdje izotroškovna crta tangira izokvantu:</p><div class=\"formula-box\">\\[ MRTS = \\frac{MP_L}{MP_K} = \\frac{w}{r} \\iff \\frac{MP_L}{w} = \\frac{MP_K}{r} \\]</div><div class=\"example-box\"><h4>Riješeni primjer — preraspodjela inputa</h4><p>w = 20 €, r = 10 €, MPL = 6, MPK = 4. Output po euru: rad \\(6/20 = 0{,}3\\), kapital \\(4/10 = 0{,}4\\). Euro u kapitalu donosi više → tvrtka treba koristiti <strong>više kapitala, a manje rada</strong> dok se omjeri ne izjednače.</p><p>Izotroškovna crta za C = 1000 €, w = 20, r = 50: sjecišta L = 50 i K = 20, nagib −0,4. Poskupi li rad, crta postaje strmija i tvrtka supstituira rad kapitalom.</p></div><p><strong>Putanja ekspanzije</strong> povezuje sve točke minimalnog troška; iz nje se izvodi dugoročna krivulja troška. <strong>LAC</strong> (dugoročni prosječni trošak) je „omotnica” kratkoročnih krivulja SAC.</p><h4>Ekonomije obujma i obuhvata</h4><ul><li><strong>Ekonomije obujma</strong>: udvostručenje outputa traži manje nego dvostruki trošak (LAC pada). Mjera: \\(E_C = \\frac{\\%\\Delta C}{\\%\\Delta q} = \\frac{MC}{AC}\\); \\(E_C &lt; 1\\) → ekonomije, \\(E_C &gt; 1\\) → disekonomije.</li><li><strong>Ekonomije obuhvata</strong>: jedna tvrtka jeftinije proizvodi dva proizvoda zajedno nego dvije odvojene tvrtke. <strong>Krivulja transformacije</strong> pokazuje kombinacije dvaju proizvoda uz zadane inpute.</li></ul><div class=\"formula-box\">\\[ SC = \\frac{C(q_1) + C(q_2) - C(q_1, q_2)}{C(q_1, q_2)} = \\frac{60 + 50 - 90}{90} \\approx 0{,}22 \\]</div><p>Zajednička proizvodnja štedi oko 22 % troška (npr. hotel koji uz smještaj nudi i wellness koristi iste zaposlenike i prostor). <strong>Krivulja učenja</strong>: trošak po jedinici pada s kumulativnom proizvodnjom zbog iskustva.</p><div class=\"tip-box\"><h4>Zamke</h4><ul><li>Fiksni ≠ nepovratni: fiksni se može izbjeći zatvaranjem, nepovratni nikako.</li><li>Granični trošak je trošak dodatne jedinice ISTOG dobra, ne „drugog dobra”.</li><li>Ekonomije obujma (jedan proizvod, veći output) ≠ ekonomije obuhvata (više proizvoda).</li></ul></div>",
+      "image": null
+    }
+  }
+}

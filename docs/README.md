@@ -112,6 +112,8 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 
 | mjesec | Dnevnik rada (PROGRESS) | Isporuke (CHANGELOG) |
 |---|---|---|
+| 2026-11 | — | [CHANGELOG-2026-11.md](./records/CHANGELOG-2026-11.md) |
+| 2026-10 | [PROGRESS-2026-10.md](./records/PROGRESS-2026-10.md) | — |
 | 2026-09 | [PROGRESS-2026-09.md](./records/PROGRESS-2026-09.md) | [CHANGELOG-2026-09.md](./records/CHANGELOG-2026-09.md) |
 | 2026-08 | [PROGRESS-2026-08.md](./records/PROGRESS-2026-08.md) | [CHANGELOG-2026-08.md](./records/CHANGELOG-2026-08.md) |
 | 2026-07 | [PROGRESS-2026-07.md](./records/PROGRESS-2026-07.md) | — |

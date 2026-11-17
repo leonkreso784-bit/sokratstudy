@@ -1,0 +1,2952 @@
+// Sociologija (PFRI) — M2 (gradivo završnog ispita: teme 7–12 službenog plana)
+// Autorski sadržaj; kartice <=200 znakova, detalj u learn. Ne mijenjati ključeve kategorija.
+const socPfriM2 = {
+  "rasaEtnicitet": {
+    "name": "Rasa, etnicitet i manjinske skupine",
+    "icon": "fa-users-between-lines",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Zašto je rasa jedan od najsloženijih socioloških pojmova?",
+        "answer": "Jer u biološkom smislu nema jasnih rasa, samo niz fizioloških različitosti; rasa je društveno konstruirana i uvelike se svodi na ideološka uvjerenja.",
+        "explanation": "Biološke razlike su društveno protumačene.",
+        "id": "w9nsg8"
+      },
+      {
+        "question": "Što je tvrdio J. A. de Gobineau?",
+        "answer": "Da postoje tri rase (bijela, žuta, crna) i da bijela ima superiornu inteligenciju, moral i volju, dok se crna opisuje kao životinjska, bez morala i emocionalno nestabilna.",
+        "explanation": "Primjer rasističke „teorije“.",
+        "id": "vzld3y"
+      },
+      {
+        "question": "Što su rasne razlike u sociološkom smislu?",
+        "answer": "Fizičke varijacije koje su pripadnici neke zajednice izdvojili kao društveno obilježje; rasa je skup društvenih odnosa u kojima se na temelju fizičkih osobina pripisuju različiti atributi.",
+        "explanation": "Važan čimbenik obrazaca moći i nejednakosti.",
+        "id": "7utqg7"
+      },
+      {
+        "question": "Što je rasizacija?",
+        "answer": "Proces kojim se shvaćanja rase rabe za klasifikaciju pojedinaca ili skupina.",
+        "explanation": "Društveni proces, ne biološki.",
+        "id": "5osiom"
+      },
+      {
+        "question": "Što je rasizam?",
+        "answer": "Proglašavanje skupina nositeljima posebnih bioloških obilježja na temelju fizičkih osobina; rasist misli da su neki pojedinci superiorni ili inferiorni zbog rasnih razlika.",
+        "explanation": "Predrasude utemeljene na društveno određenim razlikama.",
+        "id": "y34e0k"
+      },
+      {
+        "question": "Što je institucijski rasizam?",
+        "answer": "Shvaćanje da je rasizam utkan u tkivo društva i njegove institucije, a ne samo mišljenje malog broja ljudi.",
+        "explanation": "Borci za ljudska prava.",
+        "id": "2crowr"
+      },
+      {
+        "question": "Što je etnicitet?",
+        "answer": "Kulturni običaji i izgled posebne zajednice po kojima se razlikuje od drugih: jezik, povijest, podrijetlo, vjera, stilovi odijevanja i ukrašavanja.",
+        "explanation": "Posve naučena i društvena pojava.",
+        "id": "1dgjn1"
+      },
+      {
+        "question": "Zašto se kaže da je etnicitet fluidan?",
+        "answer": "Jer nije statičan ni nepromjenjiv: razvija se tijekom vremena socijalizacijom i može se prilagođavati promijenjenim okolnostima.",
+        "explanation": "Najčešće se veže uz manjinske skupine.",
+        "id": "b8liax"
+      },
+      {
+        "question": "Koja obilježja ima manjinska skupina?",
+        "answer": "Njezini pripadnici su u lošijem položaju od većine, imaju osjećaj grupne solidarnosti, često su fizički i društveno izolirani, žive na istom području i rijetko sklapaju brakove s većinom.",
+        "explanation": "Podređeni položaj, ne brojčana manjina.",
+        "id": "5ejlnb"
+      },
+      {
+        "question": "Što je endogamija?",
+        "answer": "Sklapanje braka unutar vlastite skupine radi očuvanja kulturne moći razlikovanja unutar zajednice.",
+        "explanation": "Česta kod manjinskih skupina.",
+        "id": "iqt155"
+      },
+      {
+        "question": "Što su predrasude?",
+        "answer": "Mišljenja ili stajališta pripadnika jedne skupine o pripadnicima druge, često temeljena na prepričavanju, a ne na izravnim dokazima; otporna su na promjenu i na nove informacije.",
+        "explanation": "Mogu biti pozitivne i negativne.",
+        "id": "2xxh6y"
+      },
+      {
+        "question": "Što su stereotipi i što je mehanizam transfera?",
+        "answer": "Stereotipi su čvrste, nefleksibilne karakterizacije skupina; transfer je usmjeravanje neprijateljstva ili bijesa na objekte koji nisu stvarni izvor tih osjećaja.",
+        "explanation": "Često se primjenjuju na manjine.",
+        "id": "4ao64m"
+      },
+      {
+        "question": "Što je diskriminacija i proizlazi li nužno iz predrasuda?",
+        "answer": "Stvarno ponašanje prema drugoj skupini ili pojedincu, uskraćivanje mogućnosti; ne mora nužno proizlaziti iz predrasuda.",
+        "explanation": "Predrasuda je stav, diskriminacija je ponašanje.",
+        "id": "omoxs2"
+      },
+      {
+        "question": "Po čemu se stari rasizam razlikuje od novog (kulturnog) rasizma?",
+        "answer": "Stari se temelji na biološkim fizičkim razlikama, a novi na kulturnim argumentima kako bi se isključile skupine koje odbijaju asimilaciju; ima političku dimenziju.",
+        "explanation": "Isključivanje kulturom umjesto biologijom.",
+        "id": "xd5i5h"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Rasa je u biološkom smislu:",
+        "options": [
+          "nepostojeća, postoji samo niz fizioloških različitosti",
+          "jasna i znanstveno dokazana podjela cijeloga čovječanstva",
+          "sinonim za etničku pripadnost jedne zajednice ljudi",
+          "podjela ljudi prema razini inteligencije i morala"
+        ],
+        "correct": 0,
+        "id": "7gwoy8"
+      },
+      {
+        "question": "Gobineauova teza o trima rasama služi kao primjer:",
+        "options": [
+          "empirijski dokazane klasifikacije ljudi po osobinama",
+          "rasističke teorije o superiornosti jedne rase",
+          "kulturnog relativizma u suvremenoj antropologiji",
+          "pluralističkog modela etničke integracije useljenika"
+        ],
+        "correct": 1,
+        "id": "6cba9a"
+      },
+      {
+        "question": "Rasne razlike su u sociološkom smislu:",
+        "options": [
+          "biološki dokazane razlike u sposobnostima među ljudima",
+          "nasljedne osobine inteligencije i morala pojedinaca",
+          "fizičke varijacije izdvojene kao društveno obilježje",
+          "razlike u jeziku i običajima među zajednicama"
+        ],
+        "correct": 2,
+        "id": "qqrc5u"
+      },
+      {
+        "question": "Rasizacija je:",
+        "options": [
+          "miješanje pripadnika različitih zajednica putem brakova",
+          "dobrovoljno preuzimanje običaja većinske skupine u društvu",
+          "prisilno preseljenje etničkih zajednica sa svojih područja",
+          "proces kojim se pojam rase rabi za klasifikaciju"
+        ],
+        "correct": 3,
+        "id": "d68hzd"
+      },
+      {
+        "question": "Rasizam se temelji na:",
+        "options": [
+          "pripisivanju bioloških obilježja prema fizičkim osobinama",
+          "poštovanju jednakosti svih kultura i svih naroda",
+          "proučavanju kulture unutar njezinih vlastitih vrijednosti",
+          "zakonskom ujednačavanju prava svih manjinskih skupina"
+        ],
+        "correct": 0,
+        "id": "m4wtl0"
+      },
+      {
+        "question": "Institucijski rasizam znači da je rasizam:",
+        "options": [
+          "samo mišljenje malog broja pojedinaca u društvu",
+          "utkan u tkivo društva i njegove institucije",
+          "zakonom propisana kazna za neprihvatljivo ponašanje",
+          "pojava ograničena uglavnom na vjerske organizacije"
+        ],
+        "correct": 1,
+        "id": "aniuyi"
+      },
+      {
+        "question": "Etnicitet se odnosi na:",
+        "options": [
+          "biološke osobine nasljeđene od zajedničkih predaka",
+          "državljanstvo i građanska prava svakog pojedinca",
+          "kulturne običaje po kojima se zajednica razlikuje",
+          "društvenu klasu kojoj osoba pripada po rođenju"
+        ],
+        "correct": 2,
+        "id": "fi6so7"
+      },
+      {
+        "question": "Etnicitet je u sociološkom smislu:",
+        "options": [
+          "statičan i nepromjenjiv tijekom cijele povijesti",
+          "urođen i nasljedan od samog rođenja osobe",
+          "neovisan o društvenom okruženju pojedinca",
+          "fluidan i prilagodljiv promijenjenim okolnostima"
+        ],
+        "correct": 3,
+        "id": "hiujdv"
+      },
+      {
+        "question": "Koje obilježje NE odgovara manjinskoj skupini?",
+        "options": [
+          "povoljniji položaj od većinskog stanovništva",
+          "osjećaj grupne solidarnosti i pripadnosti",
+          "fizička i društvena izoliranost od šire zajednice",
+          "rijetki brakovi s pripadnicima većinske skupine"
+        ],
+        "correct": 0,
+        "id": "ri9s00"
+      },
+      {
+        "question": "Endogamija je:",
+        "options": [
+          "brak s pripadnikom većinske skupine iz šire zajednice društva",
+          "brak unutar vlastite skupine radi očuvanja različitosti",
+          "brak jedne osobe s više partnera istodobno",
+          "zajednički život partnera bez sklapanja braka"
+        ],
+        "correct": 1,
+        "id": "arl5yk"
+      },
+      {
+        "question": "Predrasude su:",
+        "options": [
+          "stvarno ponašanje kojim se uskraćuju prava drugima",
+          "zakonski propisi o jednakom postupanju prema svima",
+          "stajališta o drugoj skupini često bez izravnih dokaza",
+          "rezultati znanstvenih mjerenja svojstava skupina"
+        ],
+        "correct": 2,
+        "id": "oywmx5"
+      },
+      {
+        "question": "Mehanizam transfera označava:",
+        "options": [
+          "prijenos kulturnih običaja s naraštaja na naraštaj",
+          "preseljenje stanovništva s jednog područja na drugo",
+          "prijenos vlasništva nad zemljom i imovinom s roditelja na djecu",
+          "usmjeravanje neprijateljstva na objekte koji nisu pravi izvor"
+        ],
+        "correct": 3,
+        "id": "whpckd"
+      },
+      {
+        "question": "Diskriminacija je:",
+        "options": [
+          "stvarno ponašanje kojim se skupini uskraćuje mogućnost",
+          "stav koji nije povezan ni s kakvim ponašanjem",
+          "oblik pozitivnog posebnog postupanja prema manjini",
+          "prirodna i neizbježna reakcija ljudi na svaku vrstu različitosti"
+        ],
+        "correct": 0,
+        "id": "cza3tj"
+      },
+      {
+        "question": "Novi (kulturni) rasizam isključuje skupine pozivajući se na:",
+        "options": [
+          "biološke osobine i boju kože pripadnika",
+          "kulturne razlike i odbijanje asimilacije",
+          "veličinu imovine i položaj u klasnoj strukturi",
+          "broj članova obitelji i vrstu zanimanja"
+        ],
+        "correct": 1,
+        "id": "5x9180"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Fizičke razlike postaju rasne tek kad im zajednica pripiše društveno značenje; zato je rasa društvena _______, a ne biološka danost.",
+        "answer": "konstrukcija",
+        "hint": "stručni sociološki izraz",
+        "id": "64fcjh"
+      },
+      {
+        "sentence": "Proces kojim se shvaćanja rase rabe za klasifikaciju skupina naziva se _______.",
+        "answer": "rasizacija",
+        "hint": "društveni proces",
+        "id": "qlwpdx"
+      },
+      {
+        "sentence": "Rasizam koji je utkan u institucije društva je _______ rasizam.",
+        "answer": "institucijski",
+        "hint": "tkivo društva",
+        "id": "p9d2jo"
+      },
+      {
+        "sentence": "Kulturne običaje i izgled posebne zajednice označava _______.",
+        "answer": "etnicitet",
+        "hint": "jezik, vjera, podrijetlo",
+        "id": "jw55qm"
+      },
+      {
+        "sentence": "Brak unutar vlastite skupine radi očuvanja različitosti zove se _______.",
+        "answer": "endogamija",
+        "hint": "česta kod manjina",
+        "id": "oxfhkq"
+      },
+      {
+        "sentence": "Čvrste i nefleksibilne karakterizacije skupina nazivaju se _______.",
+        "answer": "stereotipi",
+        "hint": "temelj predrasuda",
+        "id": "affhsn"
+      },
+      {
+        "sentence": "Stvarno ponašanje prema skupini ili pojedincu, uskraćivanje mogućnosti, je _______.",
+        "answer": "diskriminacija",
+        "hint": "za razliku od predrasude",
+        "id": "hrig9o"
+      },
+      {
+        "sentence": "Za razliku od starog rasizma utemeljenog na tjelesnim razlikama, novi rasizam ističe _______ razlike: jezik, vjeru i običaje.",
+        "answer": "kulturne",
+        "hint": "ne biološke",
+        "id": "f631y1"
+      },
+      {
+        "sentence": "Rasa je jedan od najsloženijih _______ pojmova.",
+        "answer": "socioloških",
+        "hint": "prema vrsti znanosti",
+        "id": "lj2wg1"
+      }
+    ],
+    "learn": {
+      "title": "Rasa, etnicitet, manjinske skupine, predrasude, diskriminacija i rasizam",
+      "content": "\n<h3>Rasa</h3>\n<p>Rasa je jedan od <strong>najsloženijih socioloških pojmova</strong>. U biološkom smislu nema jasnih rasa, postoji samo niz fizioloških različitosti; rasa je više <em>ideološko uvjerenje</em> nego biološka činjenica.</p>\n<ul>\n<li><strong>J. A. de Gobineau</strong> postavio je tezu o trima rasama (bijela, žuta, crna): bijela rasa ima superiornu inteligenciju, moral i volju, dok se crna opisuje kao životinjska, bez morala i emocionalno nestabilna. To je primjer rasističke teorije.</li>\n<li><strong>Rasne razlike</strong>: fizičke varijacije koje su pripadnici neke zajednice ili društva izdvojili kao društveno obilježje; zato se rasa smatra <strong>društvenom konstrukcijom</strong>, a ne biološkom danošću. <strong>Rasa</strong> je skup društvenih odnosa u kojima se, na temelju biološki utemeljenih osobina, pripisuju različiti atributi i sposobnosti; važan je čimbenik ponavljanja obrazaca moći i nejednakosti unutar društva.</li>\n<li><strong>Rasizacija</strong>: proces kojim se shvaćanja rase rabe za klasifikaciju pojedinaca ili skupina.</li>\n<li><strong>Rasizam</strong>: skupine se proglašavaju nositeljima posebnih bioloških obilježja na temelju prirodnih fizičkih osobina. Društvene su institucije postajale rasistički oblikovane zbog klasifikacije neeuropskog stanovništva nasuprot „bijeloj rasi“ i ograničavanja rasnim položajem.</li>\n</ul>\n<h3>Etnicitet</h3>\n<p>Odnosi se na <strong>kulturne običaje i izgled posebne zajednice</strong> po kojima se razlikuje od drugih. Etničke skupine razlikuju se po jeziku, povijesti, podrijetlu, vjeri, stilovima odijevanja i ukrašavanja. Etničke su razlike <strong>potpuno naučene</strong>: etnicitet je društvena pojava koja se stvara i razvija tijekom vremena (socijalizacijom mladi ljudi preuzimaju životne stilove, norme i vjerovanja svoje zajednice). Nije statičan, nego <strong>fluidan</strong> i prilagođava se promijenjenim okolnostima. (U Velikoj Britaniji: kulturni običaji i tradicije različiti od domaćih britanskih.) Najčešće se povezuje s manjinskim skupinama unutar populacije.</p>\n<h3>Manjinske skupine</h3>\n<ul>\n<li>pripadnici manjine u <strong>lošijem su položaju</strong> od većinskog stanovništva i imaju razvijen osjećaj <strong>grupne solidarnosti</strong> ili pripadnosti; pojam je nedoslovan opis podređenog položaja skupine u društvu;</li>\n<li>često sebe smatraju odvojenima od većine, fizički i društveno izolirani od šire zajednice, žive u istim dijelovima grada ili regije;</li>\n<li>brakovi većine i manjine su rijetki; unutar manjina je česta <strong>endogamija</strong>, brak radi održavanja kulturne moći razlikovanja unutar zajednice.</li>\n</ul>\n<h3>Predrasude, diskriminacija i rasizam</h3>\n<table>\n<tr><th>Pojam</th><th>Značenje</th></tr>\n<tr><td><strong>predrasude</strong></td><td>mišljenja ili stajališta pripadnika jedne skupine o pripadnicima druge; često se temelje na prepričavanju, a ne izravnim dokazima, i otporne su na promjene; mogu biti pozitivne (o skupinama s kojima se poistovjećuju) i negativne (o drugima)</td></tr>\n<tr><td><strong>stereotipi</strong></td><td>čvrste, nefleksibilne karakterizacije skupina, duboko usađene u kulturna shvaćanja; često se primjenjuju na manjine</td></tr>\n<tr><td><strong>mehanizam transfera</strong></td><td>osjećaj neprijateljstva ili bijesa usmjeren na objekte koji nisu stvarni izvor tih osjećaja</td></tr>\n<tr><td><strong>diskriminacija</strong></td><td>stvarno ponašanje prema skupini ili pojedincu; aktivnosti kojima se pripadnicima skupine uskraćuje mogućnost koja drugima stoji na raspolaganju; ne mora nužno proizlaziti iz predrasuda</td></tr>\n<tr><td><strong>rasizam</strong></td><td>predrasude utemeljene na društveno određenim fizičkim razlikama; rasist smatra da su neki pojedinci superiorni ili inferiorni zbog rasnih razlika</td></tr>\n</table>\n<ul>\n<li><strong>Institucijski rasizam</strong>: borci za ljudska prava smatrali su da je rasizam utkan u tkivo društva, a ne samo mišljenje malog broja ljudi.</li>\n<li><strong>Stari rasizam</strong> temelji se na razlikama u fizičkim osobinama. Zamjenjuje ga <strong>novi (kulturni) rasizam</strong>: rabi ideju kulturnih različitosti kako bi se isključile određene skupine; umjesto bioloških koriste se kulturni argumenti; skupine koje odskaču od većine marginaliziraju se ili ocrnjuju jer odbijaju asimilaciju; ima političku dimenziju.</li>\n</ul>\n",
+      "id": "dehdey"
+    },
+    "id": "3of3za"
+  },
+  "objasnjenjaRasizma": {
+    "name": "Objašnjenja rasizma, etnička integracija i sukob",
+    "icon": "fa-handshake-simple",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je etnocentrizam u objašnjenju rasizma?",
+        "answer": "Sumnjičavost prema autsajderima povezana s tendencijom da se tuđa kultura vrednuje prema vlastitoj kulturi.",
+        "explanation": "Često ide uz zatvorenost skupine.",
+        "id": "u5ecrt"
+      },
+      {
+        "question": "Što je zatvorenost skupine?",
+        "answer": "Proces kojim skupina održava granicu prema drugima sredstvima isključivanja: zabrana brakova izvan skupine, ograničenje društvenih kontakata i ekonomskih odnosa, fizičko odvajanje.",
+        "explanation": "Granica prema drugima.",
+        "id": "jl5s9p"
+      },
+      {
+        "question": "Što je alokacija resursa u ovom kontekstu?",
+        "answer": "Institucijska nejednakost u raspodjeli materijalnih dobara; zatvorenost se podudara s njom kad jedna skupina dominira nad drugom.",
+        "explanation": "Veza zatvorenosti i nejednakosti.",
+        "id": "qnqzxt"
+      },
+      {
+        "question": "Kako kulturna objašnjenja tumače rasizam?",
+        "answer": "Kao vrstu prirodnog konzervativizma u vremenima promjene i nestabilnosti, odnosno obranu od novih običaja, jezika i životnih stilova koji prijete postojećem poretku.",
+        "explanation": "Rasizam kao obrana poretka.",
+        "id": "or888w"
+      },
+      {
+        "question": "Kako konfliktne teorije objašnjavaju rasizam?",
+        "answer": "Povezuju rasizam i predrasude s odnosima moći i nejednakosti; marksisti ga vide kao proizvod sustava kojim vladajuća klasa eksploatira rad (ropstvo, kolonizacija).",
+        "explanation": "Neomarksisti: ne samo ekonomske snage.",
+        "id": "lpgxq0"
+      },
+      {
+        "question": "Što ističu neomarksistički teoretičari o rasizmu?",
+        "answer": "Da rasizam nije proizvod samo ekonomskih snaga, nego složena i slojevita pojava koja uključuje međuigru identiteta etničkih manjina i radničke klase.",
+        "explanation": "Solomos i Gilroy: poseban britanski rasizam.",
+        "id": "1ixhwa"
+      },
+      {
+        "question": "Što je asimilacija?",
+        "answer": "Model integracije u kojem imigranti napuštaju izvorne običaje te se prilagođavaju vrijednostima i normama većine (jezik, odjeća, životni stil, kulturni pogledi).",
+        "explanation": "Jednosmjerna prilagodba.",
+        "id": "b86i7a"
+      },
+      {
+        "question": "Što je „lonac za taljenje“ (melting pot)?",
+        "answer": "Model u kojem se tradicije useljenika ne gube, nego se stapaju s postojećima i stvaraju nove, evoluirajuće kulturne obrasce koji trajno mijenjaju društvenu sredinu.",
+        "explanation": "Obostrano miješanje.",
+        "id": "6f3qyb"
+      },
+      {
+        "question": "Što je kulturni pluralizam?",
+        "answer": "Model koji potiče istinski pluralno društvo u kojem je priznata jednaka vrijednost brojnih subkultura, a etničke se različitosti poštuju i slave kao vitalna komponenta nacionalnog života.",
+        "explanation": "Različitosti se čuvaju.",
+        "id": "m5kkbd"
+      },
+      {
+        "question": "Što je etnički sukob?",
+        "answer": "Neprijateljstvo između etničkih skupina ili zajednica koje mogu prouzročiti razlike u jeziku, vjeri i kulturi (primjer: Balkan), do otvorenog antagonizma.",
+        "explanation": "Podjela do otvorenog neprijateljstva.",
+        "id": "7hdjeq"
+      },
+      {
+        "question": "Što je etničko čišćenje?",
+        "answer": "Stvaranje etnički homogenih područja prisilnim preseljenjem etničkih zajednica sustavnim nasiljem, uznemiravanjem, prijetnjama i zastrašivanjem.",
+        "explanation": "Primjer: sukobi u bivšoj Jugoslaviji.",
+        "id": "okdvsy"
+      },
+      {
+        "question": "Što je genocid?",
+        "answer": "Sustavno uništavanje (eliminiranje) jedne etničke skupine od strane druge.",
+        "explanation": "Najkrajnji oblik etničkog sukoba.",
+        "id": "l3rsgq"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Etnocentrizam podrazumijeva:",
+        "options": [
+          "proučavanje kulture uglavnom unutar njezinih vrijednosti",
+          "prihvaćanje svih običaja kao gotovo istovrijednih",
+          "vrednovanje tuđe kulture prema vlastitoj kulturi",
+          "odbacivanje svake vrste klasifikacije ljudi"
+        ],
+        "correct": 2,
+        "id": "w1q71e"
+      },
+      {
+        "question": "Zatvorenost skupine odnosi se na:",
+        "options": [
+          "dobrovoljno miješanje s drugim zajednicama, njihovim jezikom i običajima",
+          "otvaranje granica za useljenike, trgovinu i razmjenu",
+          "ukidanje razlika među skupinama u istom društvu",
+          "održavanje granice prema drugima sredstvima isključivanja"
+        ],
+        "correct": 3,
+        "id": "ytglkf"
+      },
+      {
+        "question": "Sredstva zatvaranja skupine uključuju:",
+        "options": [
+          "zabranu brakova izvan skupine i fizičko odvajanje",
+          "poticanje brakova s pripadnicima većinske skupine",
+          "zajedničko stanovanje u istim gradskim četvrtima",
+          "slobodnu razmjenu običaja između svih skupina"
+        ],
+        "correct": 0,
+        "id": "vn6266"
+      },
+      {
+        "question": "Kulturna objašnjenja rasizam vide kao:",
+        "options": [
+          "izravan proizvod kapitalističke ekonomije i tržišta",
+          "obranu postojećeg poretka od novih običaja",
+          "urođenu biološku osobinu većine ljudi u društvu",
+          "posljedicu nedostatka zakonskih propisa o jednakosti"
+        ],
+        "correct": 1,
+        "id": "lepyev"
+      },
+      {
+        "question": "Marksistički teoretičari rasizam smatraju:",
+        "options": [
+          "prirodnim konzervativizmom u vremenima promjene",
+          "obranom lokalne kulture od novih običaja i jezika",
+          "sredstvom vladajuće klase za eksploataciju rada",
+          "posljedicom razlika u jeziku, vjeri i podrijetlu"
+        ],
+        "correct": 2,
+        "id": "rlm2np"
+      },
+      {
+        "question": "Neomarksisti naglašavaju da rasizam:",
+        "options": [
+          "proizlazi uglavnom iz ekonomskih snaga",
+          "ne uključuje pitanja identiteta manjina",
+          "nema nikakvu političku dimenziju u društvu",
+          "nije posljedica samo ekonomskih snaga"
+        ],
+        "correct": 3,
+        "id": "mrkiif"
+      },
+      {
+        "question": "Asimilacija znači da imigranti:",
+        "options": [
+          "napuštaju svoje običaje i prilagođavaju se većini",
+          "čuvaju sve vlastite običaje bez ikakve promjene",
+          "stvaraju gotovo odvojena naselja i institucije",
+          "miješaju svoje običaje s običajima domaćina i stvaraju nove"
+        ],
+        "correct": 0,
+        "id": "owpuxi"
+      },
+      {
+        "question": "„Lonac za taljenje“ opisuje model u kojem se tradicije useljenika:",
+        "options": [
+          "gotovo gube u korist dominantne kulture društva",
+          "stapaju s postojećima i stvaraju nove obrasce",
+          "strogo čuvaju odvojeno od većinske zajednice",
+          "zabranjuju zakonskim propisima i kaznama"
+        ],
+        "correct": 1,
+        "id": "wlq2us"
+      },
+      {
+        "question": "Kulturni pluralizam traži da se različite subkulture:",
+        "options": [
+          "asimiliraju u kulturu većinskog stanovništva",
+          "zakonom odvoje od ostatka cijeloga društva",
+          "poštuju i priznaju kao jednako vrijedne",
+          "ograniče uglavnom na privatni život ljudi"
+        ],
+        "correct": 2,
+        "id": "a3tmr0"
+      },
+      {
+        "question": "Etničko čišćenje obuhvaća:",
+        "options": [
+          "dobrovoljno preseljenje stanovništva radi zaposlenja",
+          "miješanje etničkih skupina putem sklapanja brakova",
+          "prilagodbu imigranata običajima većinske kulture",
+          "prisilno preseljenje zajednica sustavnim nasiljem"
+        ],
+        "correct": 3,
+        "id": "lbpomi"
+      },
+      {
+        "question": "Genocid je:",
+        "options": [
+          "sustavno uništavanje jedne etničke skupine od druge",
+          "dobrovoljno povlačenje skupine s određenog područja",
+          "miješanje dviju etničkih skupina u novu zajednicu",
+          "spor oko granica između dviju susjednih država"
+        ],
+        "correct": 0,
+        "id": "6rn3su"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Sumnjičavost prema autsajderima i vrednovanje tuđe kulture prema vlastitoj je _______.",
+        "answer": "etnocentrizam",
+        "hint": "vlastita kultura kao mjerilo",
+        "id": "dzwwqb"
+      },
+      {
+        "sentence": "Proces održavanja granice prema drugim skupinama zove se _______ skupine.",
+        "answer": "zatvorenost",
+        "hint": "sredstva isključivanja",
+        "id": "l8y2a8"
+      },
+      {
+        "sentence": "Model u kojem imigranti napuštaju svoje običaje i prilagođavaju se većini je _______.",
+        "answer": "asimilacija",
+        "hint": "jednosmjerna prilagodba",
+        "id": "hj4lo0"
+      },
+      {
+        "sentence": "Model stapanja tradicija stvarajući nove obrasce zove se „lonac za _______“.",
+        "answer": "taljenje",
+        "hint": "engl. melting pot",
+        "id": "ut4zhy"
+      },
+      {
+        "sentence": "Model koji poštuje jednaku vrijednost brojnih subkultura je kulturni _______.",
+        "answer": "pluralizam",
+        "hint": "različitosti se slave",
+        "id": "fxtgw8"
+      },
+      {
+        "sentence": "Stvaranje etnički homogenih područja prisilnim preseljenjem naziva se etničko _______.",
+        "answer": "čišćenje",
+        "hint": "sukobi u bivšoj Jugoslaviji",
+        "id": "alswsr"
+      },
+      {
+        "sentence": "Sustavno eliminiranje jedne etničke skupine od druge je _______.",
+        "answer": "genocid",
+        "hint": "najkrajniji oblik",
+        "id": "z0rgg8"
+      },
+      {
+        "sentence": "Institucijska nejednakost u raspodjeli materijalnih dobara naziva se _______ resursa.",
+        "answer": "alokacija",
+        "hint": "podudara se sa zatvorenošću skupine",
+        "id": "agmgvg"
+      }
+    ],
+    "learn": {
+      "title": "Sociološka objašnjenja rasizma, modeli etničke integracije i etnički sukob",
+      "content": "\n<h3>Etnocentrizam, zatvorenost skupine i alokacija resursa</h3>\n<ul>\n<li><strong>Etnocentrizam</strong>: sumnjičavost prema autsajderima povezana s tendencijom da se kultura drugih vrednuje pomoću vlastite kulture.</li>\n<li>Etnocentrizam i <strong>zatvorenost skupine</strong> često idu zajedno. Zatvorenost označava proces u kojem skupina održava granicu koja je razdvaja od drugih; granice se oblikuju <em>sredstvima isključivanja</em>: ograničavanje ili zabrana brakova izvan skupine, restrikcije društvenih kontakata ili ekonomskih odnosa i fizičko odvajanje.</li>\n<li>Katkad se skupine jednakih snaga odvajaju granicama (drže se na odstojanju, ali nijedna ne dominira nad drugom). Češće, međutim, jedna skupina dominira nad drugom; tada se zatvorenost skupine podudara s <strong>alokacijom resursa</strong>, institucijskom nejednakošću u raspodjeli materijalnih dobara.</li>\n</ul>\n<h3>Kulturna i konfliktna objašnjenja</h3>\n<ul>\n<li><strong>Kulturna objašnjenja</strong>: rasizam kao vrsta prirodnog konzervativizma u vremenima promjene i nestabilnosti, odnosno obrana od uvođenja novih običaja, jezika i životnih stilova koji prijete postojećem poretku.</li>\n<li><strong>Konfliktne teorije</strong> povezuju rasizam i predrasude s odnosima moći i nejednakosti. <em>Marksisti</em>: rasizam je proizvod sustava; vladajuća klasa koristi ropstvo, kolonizaciju i rasizam kao sredstva za eksploataciju rada. <em>Neomarksisti</em>: rasizam nije proizvod samo ekonomskih snaga.</li>\n<li>Solomos i Gilroy: niz povijesnih i političkih utjecaja potaknuo je poseban oblik rasizma u Velikoj Britaniji; rasizam je složena i slojevita pojava koja uključuje međuigru identiteta etničkih manjina i radničke klase te njihovih mišljenja, a ne samo skup represivnih ideja koje moćne elite rabe protiv nebijelog stanovništva.</li>\n</ul>\n<h3>Modeli etničke integracije</h3>\n<table>\n<tr><th>Model</th><th>Obilježje</th></tr>\n<tr><td><strong>asimilacija</strong></td><td>imigranti napuštaju izvorne običaje i prilagođavaju se vrijednostima i normama većine (promjena jezika, odjeće, životnog stila, kulturnih pogleda)</td></tr>\n<tr><td><strong>lonac za taljenje (melting pot)</strong></td><td>tradicije se ne rasplinjuju u dominantnu, nego se uklapaju i stvaraju nove, evoluirajuće kulturne obrasce; običaji useljenika trajno oblikuju društvenu sredinu</td></tr>\n<tr><td><strong>kulturni pluralizam</strong></td><td>istinski pluralno društvo u kojem je priznata jednaka vrijednost brojnih subkultura; etničke se različitosti poštuju i slave kao vitalna komponenta nacionalnog života</td></tr>\n</table>\n<h3>Etnički sukob</h3>\n<p>Različita jezična, vjerska i kulturna pripadnost može prouzročiti razdvajanje i potom otvoreni antagonizam među etničkim skupinama. <strong>Etnički sukobi</strong> su neprijateljstvo između različitih etničkih skupina i zajednica (primjer: Balkan). Sukobi u Jugoslaviji uključivali su pokušaje <strong>etničkog čišćenja</strong>: stvaranja etnički homogenih područja masovnim progonom druge etničke skupine, odnosno prisilnim preseljenjem zajednica uz sustavno nasilje, uznemiravanje, prijetnje i zastrašujuće pritiske. <strong>Genocid</strong> je sustavno eliminiranje jedne etničke skupine od druge.</p>\n",
+      "id": "r2n0ft"
+    },
+    "id": "8liucy"
+  },
+  "devijantnostFunkcionalizam": {
+    "name": "Devijantnost: pojam, funkcionalističke i supkulturne teorije",
+    "icon": "fa-user-secret",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Što je devijantnost?",
+        "answer": "Neprihvaćanje skupa normi koje prihvaća većina ljudi u nekoj zajednici ili društvu.",
+        "explanation": "Primjer devijantne subkulture: Hare Krišna.",
+        "id": "ywqz7q"
+      },
+      {
+        "question": "Razlikuju li se devijantnost i zločin?",
+        "answer": "Da, nisu sinonimi: mnogi oblici devijantnog ponašanja nisu sankcionirani zakonom, a zločin je ponašanje sankcionirano kaznenim zakonom.",
+        "explanation": "Devijantnost je šira.",
+        "id": "e2d2q9"
+      },
+      {
+        "question": "Čime se bave kriminologija, a čime sociologija devijantnosti?",
+        "answer": "Kriminologija ponašanjima sankcioniranim kaznenim zakonom; sociologija devijantnosti rabi kriminološka istraživanja, ali istražuje i ponašanje izvan kaznenog prava.",
+        "explanation": "Zašto neko ponašanje većina smatra devijantnim.",
+        "id": "rp0id3"
+      },
+      {
+        "question": "Na što upozorava proučavanje devijantnosti?",
+        "answer": "Na društvenu moć i utjecaj klase: pojmovi devijantnosti različito se primjenjuju na ljude u društvu, ovisno o podjeli na bogate i siromašne.",
+        "explanation": "Diferencijalna primjena pojma.",
+        "id": "dmo33t"
+      },
+      {
+        "question": "Što tvrde funkcionalističke teorije o zločinu i devijantnosti?",
+        "answer": "Da su posljedica strukturalnih napetosti i nepostojanja moralnih pravila u društvu; u središtu su anomija (Durkheim, Merton).",
+        "explanation": "Anomija: nema jasnih standarda.",
+        "id": "lwo3bd"
+      },
+      {
+        "question": "Što Durkheim kaže o zločinu i devijantnosti?",
+        "answer": "To su društvene činjenice, neizbježan i nužan element modernog društva (prostor za individualni izbor vodi nekonformizmu); održavaju granicu dobrog i lošeg i potiču promjenu.",
+        "explanation": "Adaptivna, inovativna funkcija.",
+        "id": "ngfwuy"
+      },
+      {
+        "question": "Koju korisnu funkciju devijantnost ima prema Durkheimu?",
+        "answer": "Adaptivnu: uvođenjem novih ideja i izazova može biti inovativna snaga koja dovodi do promjene; ujedno održava granicu između dobrog i lošeg ponašanja.",
+        "explanation": "Funkcije devijantnosti.",
+        "id": "yl4rsd"
+      },
+      {
+        "question": "Što je Mertonova teza o izvoru devijantnosti?",
+        "answer": "Izvor je u samoj strukturi (američkog) društva: devijantnost je nusprodukt ekonomske nejednakosti i nepostojanja jednakih mogućnosti; ističe relativnu deprivaciju.",
+        "explanation": "Pritisak između ciljeva i sredstava.",
+        "id": "2bxgl1"
+      },
+      {
+        "question": "Koje reakcije na napetost ciljeva i sredstava razlikuje Merton?",
+        "answer": "Pet: konformisti, inovatori, ritualisti, povučeni i pobunjenici.",
+        "explanation": "Prihvaćanje ili odbacivanje ciljeva i sredstava.",
+        "id": "v9h1uh"
+      },
+      {
+        "question": "Tko su konformisti, a tko inovatori (Merton)?",
+        "answer": "Konformisti prihvaćaju i ciljeve i sredstva; inovatori prihvaćaju ciljeve, ali nelegalnim sredstvima (npr. nelegalno stjecanje bogatstva).",
+        "explanation": "Ciljevi +, sredstva + / ciljevi +, sredstva −.",
+        "id": "z8lrom"
+      },
+      {
+        "question": "Tko su ritualisti, a tko povučeni (Merton)?",
+        "answer": "Ritualisti zadržavaju sredstva, ali gube cilj (slijede pravila bez šireg smisla); povučeni odbacuju i ciljeve i sredstva i napuštaju natjecanje (npr. članovi komune).",
+        "explanation": "Ritualist: ciljevi −, sredstva +.",
+        "id": "0li2kt"
+      },
+      {
+        "question": "Tko su pobunjenici (Merton)?",
+        "answer": "Odbacuju postojeće ciljeve i sredstva, ali ih aktivno žele zamijeniti novima i preobraziti društveni sustav.",
+        "explanation": "Za razliku od povučenih, djeluju.",
+        "id": "mrcqho"
+      },
+      {
+        "question": "Što su supkulturna objašnjenja devijantnosti (Cohen)?",
+        "answer": "Kolektivne reakcije kroz supkulture: dječaci iz radničke klase, frustrirani položajem, udružuju se u delikventne bande koje odbacuju vrijednosti srednje klase i slave neposluh.",
+        "explanation": "Odbacivanje vrijednosti srednje klase.",
+        "id": "phxwne"
+      },
+      {
+        "question": "Što su otkrili Cloward i Ohlin?",
+        "answer": "Da delikventne bande nastaju u supkulturnim zajednicama u kojima su mogućnosti za zakonito postizanje uspjeha male.",
+        "explanation": "Nedostatak legitimnih mogućnosti.",
+        "id": "686dzd"
+      },
+      {
+        "question": "Koja je kritika funkcionalističkih teorija devijantnosti?",
+        "answer": "Pretpostavljaju da su vrijednosti srednje klase prihvaćene u cijelom društvu i da je nesklad težnji i mogućnosti ograničen na deprivilegirane.",
+        "explanation": "Pogrešna pretpostavka.",
+        "id": "qfuzeh"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Devijantnost je:",
+        "options": [
+          "uglavnom ponašanje kažnjivo kaznenim zakonom",
+          "neprihvaćanje normi koje prihvaća većina",
+          "svako ponašanje koje je statistički vrlo rijetko",
+          "obilježje samo siromašnih društvenih slojeva"
+        ],
+        "correct": 1,
+        "id": "pww47d"
+      },
+      {
+        "question": "Devijantnost i zločin su:",
+        "options": [
+          "sinonimi koji imaju gotovo isto značenje u svakom kontekstu",
+          "pojmovi koji se odnose samo na zakon",
+          "različiti pojmovi, a devijantnost je šira",
+          "pojmovi koji vrijede samo za mlade osobe"
+        ],
+        "correct": 2,
+        "id": "k7au8m"
+      },
+      {
+        "question": "Sociologija devijantnosti za razliku od kriminologije istražuje i:",
+        "options": [
+          "samo djela sankcionirana kaznenim zakonom",
+          "uglavnom statistiku počinjenih kaznenih djela",
+          "samo rad policije, tužiteljstva i sudova",
+          "ponašanje izvan područja kaznenog prava"
+        ],
+        "correct": 3,
+        "id": "8u0v51"
+      },
+      {
+        "question": "Prema funkcionalistima zločin i devijantnost proizlaze iz:",
+        "options": [
+          "strukturalnih napetosti i nepostojanja moralnih pravila",
+          "urođenih sklonosti pojedinca prema zločinu",
+          "namjerne političke pobune protiv postojeće države",
+          "etiketa koje o pojedincima stvaraju institucije društvenog nadzora"
+        ],
+        "correct": 0,
+        "id": "zp8y3c"
+      },
+      {
+        "question": "Durkheim devijantnost smatra:",
+        "options": [
+          "uglavnom patološkom pojavom koju valja ukloniti",
+          "neizbježnim i nužnim elementom modernog društva",
+          "posljedicom djelovanja medija na ponašanje pojedinaca",
+          "rezultatom klasnih podjela u kapitalističkom društvu"
+        ],
+        "correct": 1,
+        "id": "osda9x"
+      },
+      {
+        "question": "Adaptivna funkcija devijantnosti znači da ona:",
+        "options": [
+          "uglavnom razara društveni poredak i norme",
+          "jača svaku postojeću normu u društvu bez ikakve promjene",
+          "novim idejama i izazovima može potaknuti promjenu",
+          "ne utječe ni na kakve društvene vrijednosti"
+        ],
+        "correct": 2,
+        "id": "pkhi6j"
+      },
+      {
+        "question": "Merton izvor devijantnosti vidi u:",
+        "options": [
+          "psihološkim poremećajima i poteškoćama pojedinih osoba u društvu",
+          "nasljednim biološkim osobinama ličnosti",
+          "utjecaju vršnjačkih skupina na mlade",
+          "strukturi društva i nejednakim mogućnostima"
+        ],
+        "correct": 3,
+        "id": "vh5q0y"
+      },
+      {
+        "question": "Koliko mogućih reakcija na napetost ciljeva i sredstava razlikuje Merton?",
+        "options": [
+          "pet",
+          "tri",
+          "četiri",
+          "šest"
+        ],
+        "correct": 0,
+        "id": "vbvrpm"
+      },
+      {
+        "question": "Inovatori prihvaćaju:",
+        "options": [
+          "društvena sredstva, ali ne i društvene ciljeve",
+          "društvene ciljeve, ali nelegalna sredstva",
+          "i ciljeve i sredstva koje društvo odobrava",
+          "ni ciljeve ni sredstva koja društvo odobrava"
+        ],
+        "correct": 1,
+        "id": "sgj5vr"
+      },
+      {
+        "question": "Ritualisti su oni koji:",
+        "options": [
+          "prihvaćaju ciljeve, ali krše sva pravila",
+          "odbacuju i ciljeve i pravila radi novih",
+          "slijede pravila, ali gube širi cilj",
+          "gotovo napuštaju natjecanje u društvu"
+        ],
+        "correct": 2,
+        "id": "c2mg0a"
+      },
+      {
+        "question": "Povučeni (Merton) se odlikuju time što:",
+        "options": [
+          "aktivno žele izgraditi gotovo novi društveni sustav i poredak",
+          "prihvaćaju i ciljeve i sredstva svojega društva",
+          "prihvaćaju društvene ciljeve, ali nelegalnim putem",
+          "odbacuju ciljeve i sredstva te napuštaju natjecanje"
+        ],
+        "correct": 3,
+        "id": "3bsos4"
+      },
+      {
+        "question": "Pobunjenici odbacuju postojeće ciljeve i sredstva te:",
+        "options": [
+          "žele ih aktivno zamijeniti novima",
+          "se povlače iz društva bez ikakvih zahtjeva",
+          "ih prihvaćaju iz straha od kazne i osude",
+          "ostaju neutralni prema postojećem poretku"
+        ],
+        "correct": 0,
+        "id": "9vlhmo"
+      },
+      {
+        "question": "Cohen objašnjava delikventne bande kao reakciju dječaka iz:",
+        "options": [
+          "viših slojeva koji žele zaštititi svoju imovinu",
+          "radničke klase frustriranih svojim položajem",
+          "seoskih sredina u kojima nema škola",
+          "migrantskih obitelji koje nemaju dokumenata"
+        ],
+        "correct": 1,
+        "id": "invjfa"
+      },
+      {
+        "question": "Cloward i Ohlin tvrde da bande nastaju gdje su:",
+        "options": [
+          "mogućnosti za zakonit uspjeh velike",
+          "sve društvene norme gotovo ukinute",
+          "mogućnosti za zakonit uspjeh male",
+          "obitelji gotovo stabilne i imućne"
+        ],
+        "correct": 2,
+        "id": "cuor3a"
+      },
+      {
+        "question": "Kritika funkcionalističkih teorija devijantnosti ističe pogrešnu pretpostavku da:",
+        "options": [
+          "devijantnost uopće ima ikakve društvene uzroke i posljedice u zajednici",
+          "u društvu postoje normativna pravila ponašanja",
+          "socijalizacija utječe na ponašanje pojedinaca",
+          "su vrijednosti srednje klase prihvaćene u cijelom društvu"
+        ],
+        "correct": 3,
+        "id": "o3l1gy"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Neprihvaćanje normi koje prihvaća većina zove se _______.",
+        "answer": "devijantnost",
+        "hint": "nije isto što i zločin",
+        "id": "0x6q13"
+      },
+      {
+        "sentence": "Znanost koja proučava ponašanja sankcionirana kaznenim zakonom je _______.",
+        "answer": "kriminologija",
+        "hint": "uža od sociologije devijantnosti",
+        "id": "lgjm0h"
+      },
+      {
+        "sentence": "Stanje u kojem nema jasnih standarda društvenog života zove se _______.",
+        "answer": "anomija",
+        "hint": "Durkheim i Merton",
+        "id": "5im7dm"
+      },
+      {
+        "sentence": "Merton razlikuje konformiste, inovatore, ritualiste, povučene i _______.",
+        "answer": "pobunjenike",
+        "hint": "peta reakcija",
+        "id": "z5w3pe"
+      },
+      {
+        "sentence": "Oni koji prihvaćaju ciljeve, ali nelegalnim sredstvima, su _______.",
+        "answer": "inovatori",
+        "hint": "ciljevi +, sredstva −",
+        "id": "4jny7t"
+      },
+      {
+        "sentence": "Dječake iz radničke klase u delikventnim bandama opisao je _______.",
+        "answer": "Cohen",
+        "hint": "supkulturna objašnjenja",
+        "id": "zes41a"
+      },
+      {
+        "sentence": "Osjećaj da drugi imaju više nego mi Merton naziva relativna _______.",
+        "answer": "deprivacija",
+        "hint": "nesrazmjer težnji i ostvarenja",
+        "id": "xnsdh5"
+      },
+      {
+        "sentence": "Proučavanje devijantnosti upozorava na društvenu moć i utjecaj društvene _______.",
+        "answer": "klase",
+        "hint": "podjela na bogate i siromašne",
+        "id": "z9meqb"
+      }
+    ],
+    "learn": {
+      "title": "Devijantnost: pojam, funkcionalističke i supkulturne teorije",
+      "content": "\n<h3>Sociologija devijantnosti</h3>\n<p><strong>Devijantnost</strong> je neprihvaćanje skupa normi koje prihvaća većina ljudi u nekoj zajednici ili društvu. <strong>Devijantnost i zločin nisu sinonimi</strong>: mnogi oblici devijantnog ponašanja nisu sankcionirani zakonom (primjer devijantne subkulture: Hare Krišna).</p>\n<ul>\n<li><strong>Kriminologija</strong> se bavi oblicima ponašanja sankcioniranim kaznenim zakonom.</li>\n<li><strong>Sociologija devijantnosti</strong> rabi kriminološka istraživanja, ali istražuje i ponašanje izvan područja kaznenog prava; proučava zašto većina neko ponašanje smatra devijantnim i kako se pojmovi devijantnosti <em>diferencijalno primjenjuju</em> na ljude u društvu.</li>\n<li>Proučavanje devijantnosti usmjerava pozornost na <strong>društvenu moć</strong> i utjecaj <strong>društvene klase</strong> (podjela na bogate i siromašne).</li>\n</ul>\n<h3>Funkcionalističke teorije zločina i devijantnosti</h3>\n<p>Smatraju da su zločin i devijantnost posljedica <strong>strukturalnih napetosti</strong> i nepostojanja moralnih pravila u društvu. Središnji je pojam <strong>anomija</strong> (Durkheim i Merton): postoji kada nema jasnih standarda društvenog života; ljudi su dezorijentirani i prestrašeni.</p>\n<h4>Durkheim</h4>\n<ul>\n<li>Zločin i devijantnost su <strong>društvene činjenice</strong>; neizbježan i nužan element modernog društva (jer u njemu ima prostora za individualni izbor, pa se neizbježno javlja nekonformizam).</li>\n<li><strong>Adaptivna funkcija</strong>: uvođenjem novih ideja i izazova devijantnost je inovativna snaga koja dovodi do promjene.</li>\n<li>Devijantnost održava <strong>granicu između dobrog i lošeg</strong> ponašanja u društvu.</li>\n</ul>\n<h4>Merton</h4>\n<ul>\n<li>Na njegove je ideje utjecao Durkheim jer su preusmjerile pozornost s individualnih objašnjenja na društvene sile; izvor devijantnosti je u <strong>strukturi (američkog) društva</strong>.</li>\n<li>Skrenuo je pozornost na pritisak u kojem se nalazi pojedinac kad se prihvaćene norme suprotstave društvenoj strukturi: devijantnost je nusprodukt ekonomske nejednakosti i nepostojanja jednakih mogućnosti; upozorava na <strong>relativnu deprivaciju</strong> kao važan element devijantnog ponašanja.</li>\n<li>Devijantnost je prirodna reakcija pojedinca na situaciju; pet reakcija na napetost između društveno prihvaćenih vrijednosti i ograničenih sredstava za njihovo postizanje:</li>\n</ul>\n<table>\n<tr><th>Tip</th><th>Ciljevi</th><th>Sredstva</th><th>Opis</th></tr>\n<tr><td><strong>konformisti</strong></td><td>+</td><td>+</td><td>prihvaćaju priznate vrijednosti i načine, bez obzira na uspjeh</td></tr>\n<tr><td><strong>inovatori</strong></td><td>+</td><td>−</td><td>prihvaćaju ciljeve, ali nelegalnim načinima (npr. nelegalno stjecanje bogatstva)</td></tr>\n<tr><td><strong>ritualisti</strong></td><td>−</td><td>+</td><td>slijede pravila bez šireg cilja; zanemaruju smisao standarda</td></tr>\n<tr><td><strong>povučeni</strong></td><td>−</td><td>−</td><td>napuštaju natjecateljsko stajalište i odbacuju vrijednosti i odobrene načine (npr. članovi neovisne komune)</td></tr>\n<tr><td><strong>pobunjenici</strong></td><td>− (nove)</td><td>− (nova)</td><td>odbacuju postojeće ciljeve i sredstva i aktivno ih žele zamijeniti novima, preobraziti društveni sustav</td></tr>\n</table>\n<h3>Supkulturna objašnjenja devijantnosti</h3>\n<ul>\n<li><strong>Cohen</strong>: kolektivne reakcije kroz supkulture; dječaci iz radničke klase, frustrirani svojim položajem, često se udružuju u delikventne supkulture (bande) koje odbacuju vrijednosti srednje klase i zamjenjuju ih normama koje slave neposluh.</li>\n<li><strong>Cloward i Ohlin</strong>: delikventne bande nastaju u supkulturnim zajednicama u kojima su mogućnosti za zakonito postizanje uspjeha male.</li>\n<li><strong>Kritike funkcionalističkih teorija</strong>: pretpostavka da su vrijednosti srednje klase prihvaćene u cijelom društvu; pogrešno je pretpostaviti da je nesklad težnji i mogućnosti ograničen samo na deprivilegirane.</li>\n</ul>\n",
+      "id": "2aak6s"
+    },
+    "id": "2pnd1z"
+  },
+  "devijantnostInterakcionizam": {
+    "name": "Devijantnost: interakcionističke i konfliktne teorije",
+    "icon": "fa-tags",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Kako interakcionističke teorije shvaćaju devijantnost?",
+        "answer": "Kao društveno konstruiranu pojavu: odbacuju ideju da su neka ponašanja inherentno devijantna i pitaju se tko i zašto neka ponašanja i skupine proglašava devijantnima.",
+        "explanation": "Diferencijalna asocijacija i etiketiranje.",
+        "id": "nddlht"
+      },
+      {
+        "question": "Što je diferencijalna asocijacija (Sutherland)?",
+        "answer": "Teza da u društvu s nizom supkultura neke sredine potiču ilegalne aktivnosti, a druge ne; kriminalno se ponašanje uči u primarnim skupinama, osobito među vršnjacima.",
+        "explanation": "Kriminalitet se uči.",
+        "id": "esmpr8"
+      },
+      {
+        "question": "Što tvrdi teorija etiketiranja?",
+        "answer": "Devijantnost nije skup obilježja pojedinca, nego proces interakcije između devijantnih i nedevijantnih; etikete izražavaju strukturu moći (bogati označavaju siromašne, većina manjinu).",
+        "explanation": "Etiketa konstruira devijantnost.",
+        "id": "9tcajc"
+      },
+      {
+        "question": "Što je tvrdio Howard Becker?",
+        "answer": "Da se devijantni identiteti proizvode etiketama, a ne devijantnim motivacijama ili ponašanjem; devijantno je ponašanje ono koje su ljudi tako nazvali.",
+        "explanation": "Odjeća, govor, podrijetlo utječu na etiketu.",
+        "id": "dw0sgs"
+      },
+      {
+        "question": "Što je primarna devijantnost (Lemert)?",
+        "answer": "Početni čin transgresije koji često ostaje marginalan za samoidentitet osobe, pa se ne dogodi etiketiranje kao kriminalca.",
+        "explanation": "Široko rasprostranjena i često nekažnjena.",
+        "id": "apz6zl"
+      },
+      {
+        "question": "Što je sekundarna devijantnost (Lemert)?",
+        "answer": "Slučaj kad pojedinac prihvati etiketu i počne sebe smatrati delikventom; etiketa postaje središnja točka njegova identiteta.",
+        "explanation": "Prihvaćanje etikete.",
+        "id": "0egaq1"
+      },
+      {
+        "question": "Koja je kritika teorije etiketiranja?",
+        "answer": "Zanemaruje procese koji dovode do čina definiranog kao devijantan; razlike u društvenim stajalištima i mogućnostima utječu na to tko će se upustiti u ponašanje koje se često proziva devijantnim.",
+        "explanation": "Zanemaruje uzroke prvog čina.",
+        "id": "jn0s8y"
+      },
+      {
+        "question": "Što je amplifikacija devijantnosti (Wilkins)?",
+        "answer": "Nenamjeravana posljedica kad institucija nadzora, nazivajući ponašanje devijantnim, izaziva još devijantnije ponašanje; skupina etiketirana kao neprilagođena stvara još veće probleme.",
+        "explanation": "Spirala nadzora i devijantnosti.",
+        "id": "uhzxcn"
+      },
+      {
+        "question": "Što je moralna panika?",
+        "answer": "Pretjerana reakcija na određene skupine ili ponašanje potaknuta medijima, koju stvaraju ekscesi i senzacionalistički medijski prikazi.",
+        "explanation": "Povezana s amplifikacijom.",
+        "id": "vz8u8o"
+      },
+      {
+        "question": "Što tvrdi nova kriminologija (Taylor, Walton, Young)?",
+        "answer": "Oslanja se na marksističke ideje: devijantno se ponašanje svjesno bira i često je političko; kriminal i devijantnost objašnjava strukturom društva i čuvanjem moći vladajuće klase.",
+        "explanation": "Odbacuje biologiju, anomiju, dezorganizaciju.",
+        "id": "h8ltzz"
+      },
+      {
+        "question": "Što je Stuart Hall pokazao proučavajući uličnu pljačku?",
+        "answer": "Da su moralnu paniku poticali država i mediji kako bi odvratili pozornost od strukturnih problema: nezaposlenosti, niskih plaća i drugih dubokih društvenih mana.",
+        "explanation": "Panika kao politički instrument.",
+        "id": "qcvfz0"
+      },
+      {
+        "question": "Što je realizam nove ljevice?",
+        "answer": "Grana kriminologije iz 1980-ih na tragu neomarksizma: priznaje porast kriminala i opravdanu zabrinutost javnosti te se bavi stvarnom kontrolom kriminala i socijalnom politikom.",
+        "explanation": "Pozornost na žrtve.",
+        "id": "etvzu3"
+      },
+      {
+        "question": "Što ističe realizam nove ljevice o žrtvama i policiji?",
+        "answer": "Istraživanja viktimizacije bolje pokazuju razmjere zločina od službenih statistika; kriminal je koncentriran u marginaliziranim četvrtima; policija se mora prilagoditi zajednicama i steći povjerenje.",
+        "explanation": "Minimalna policijska intervencija.",
+        "id": "6t4o8p"
+      },
+      {
+        "question": "Koje su kritike realizma nove ljevice?",
+        "answer": "Percepcije javnosti o zločinu često se temelje na stereotipima; previše se pozornosti pridaje žrtvama, a premalo motivima koji uzrokuju kriminalno ponašanje.",
+        "explanation": "Oslanja se na Mertona, Clowarda i Ohlina.",
+        "id": "jjy4ez"
+      },
+      {
+        "question": "Što je organizirani kriminal?",
+        "answer": "Kriminalna djelatnost koju provode stalne hijerarhijski organizirane skupine radi dobiti (npr. krijumčarenje, trgovina ljudima, droga), često preko državnih granica.",
+        "explanation": "Povezan s globalizacijom.",
+        "id": "3xzpym"
+      },
+      {
+        "question": "Zašto je važno promatrati žrtve i počinitelje zločina?",
+        "answer": "Jer rizik viktimizacije nije jednako raspoređen: češće pogađa deprivilegirane skupine; viktimizacijska istraživanja dopunjuju službenu statistiku.",
+        "explanation": "Veza sa realizmom nove ljevice.",
+        "id": "cpum5p"
+      },
+      {
+        "question": "Koji su glavni sociološki uzroci zločina?",
+        "answer": "Nejednakost i nedostatak zakonitih mogućnosti, anomija, učenje u skupinama, etiketiranje i odnosi moći; same biološke i psihološke teorije to ne objašnjavaju.",
+        "explanation": "Uzroci zločina (Giddens).",
+        "id": "6p7ssz"
+      },
+      {
+        "question": "Što je zločin u „društvu rizika“?",
+        "answer": "Novi oblici zločina i straha od njega: kibernetički i organizirani kriminal, terorizam; raste osjećaj nesigurnosti i traženje privatne zaštite (npr. zatvorene četvrti).",
+        "explanation": "Beck i Giddens.",
+        "id": "6t4io9"
+      },
+      {
+        "question": "Kako zločin i devijantnost djeluju na društveni poredak?",
+        "answer": "Kažnjavanjem se potvrđuju norme i granice dopuštenog (Durkheim), ali devijantnost može potaknuti i promjenu; poredak se održava kontrolom, odgojem i pravom.",
+        "explanation": "Zločin, devijantnost i društveni poredak.",
+        "id": "j9sxpz"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Interakcionističke teorije devijantnost promatraju kao:",
+        "options": [
+          "društveno konstruiranu pojavu",
+          "urođenu osobinu pojedinca",
+          "posljedicu siromaštva i anomije",
+          "posljedicu slabog obiteljskog odgoja"
+        ],
+        "correct": 0,
+        "id": "quk22k"
+      },
+      {
+        "question": "Teza o diferencijalnoj asocijaciji pripada:",
+        "options": [
+          "H. Beckeru",
+          "E. H. Sutherlandu",
+          "R. Mertonu",
+          "S. Hallu"
+        ],
+        "correct": 1,
+        "id": "gyghfx"
+      },
+      {
+        "question": "Prema diferencijalnoj asocijaciji kriminalno se ponašanje:",
+        "options": [
+          "nasljeđuje genetskim putem od roditelja na djecu",
+          "javlja slučajno bez ikakvog prepoznatljivog uzorka",
+          "uči u primarnim skupinama, osobito među vršnjacima",
+          "razvija uglavnom tijekom boravka u zatvorima"
+        ],
+        "correct": 2,
+        "id": "9t9muu"
+      },
+      {
+        "question": "Teorija etiketiranja devijantnost shvaća kao:",
+        "options": [
+          "skup stalnih i nepromjenjivih karakteristika pojedinca ili skupine",
+          "posljedicu bioloških predispozicija ličnosti",
+          "nusprodukt ekonomske nejednakosti u društvu",
+          "proces interakcije devijantnih i nedevijantnih"
+        ],
+        "correct": 3,
+        "id": "huvvmg"
+      },
+      {
+        "question": "Howard Becker tvrdi da su devijantni identiteti proizvedeni:",
+        "options": [
+          "etiketama, a ne devijantnim ponašanjem",
+          "uglavnom devijantnim motivima pojedinaca",
+          "urođenim sklonostima i osobinama ličnosti",
+          "djelovanjem anomije u suvremenom društvu"
+        ],
+        "correct": 0,
+        "id": "bibwp2"
+      },
+      {
+        "question": "Primarna devijantnost je:",
+        "options": [
+          "prihvaćanje etikete delikventa kao vlastitog identiteta",
+          "početni čin transgresije koji ne mijenja identitet",
+          "kazna koju izriče institucija društvenog nadzora",
+          "trajna kriminalna karijera jedne osobe"
+        ],
+        "correct": 1,
+        "id": "4r1vxf"
+      },
+      {
+        "question": "Sekundarna devijantnost nastaje kad pojedinac:",
+        "options": [
+          "prvi put počini neki manji prekršaj ili devijantni čin",
+          "ostane nekažnjen za svoje ponašanje",
+          "prihvati etiketu i smatra sebe delikventom",
+          "prestane činiti sva devijantna djela"
+        ],
+        "correct": 2,
+        "id": "rygofo"
+      },
+      {
+        "question": "Kritika teorije etiketiranja kaže da ona zanemaruje:",
+        "options": [
+          "ulogu društvene reakcije na neko ponašanje",
+          "činjenicu da se etikete pripisuju pojedincima",
+          "važnost moći u definiranju devijantnosti",
+          "procese koji dovode do čina definiranog kao devijantan"
+        ],
+        "correct": 3,
+        "id": "uy8uch"
+      },
+      {
+        "question": "Amplifikacija devijantnosti znači da nadzor:",
+        "options": [
+          "sam izaziva još devijantnije ponašanje",
+          "u potpunosti suzbija devijantno ponašanje",
+          "ne utječe na ponašanje etiketiranih osoba",
+          "smanjuje razinu kriminaliteta u društvu"
+        ],
+        "correct": 0,
+        "id": "z3r6bl"
+      },
+      {
+        "question": "Moralna panika je:",
+        "options": [
+          "osobni strah žrtve nakon počinjenog teškog zločina u gradu",
+          "pretjerana reakcija na skupinu potaknuta medijima",
+          "stručna procjena rizika od kriminaliteta u gradu",
+          "spontani prosvjed građana protiv vladajućih"
+        ],
+        "correct": 1,
+        "id": "vgz1ll"
+      },
+      {
+        "question": "Nova kriminologija (Taylor, Walton, Young) oslanja se na:",
+        "options": [
+          "funkcionalističke ideje",
+          "ideje simboličkog interakcionizma",
+          "marksističke ideje",
+          "ideje pozitivizma"
+        ],
+        "correct": 2,
+        "id": "9o6qq2"
+      },
+      {
+        "question": "Stuart Hall uličnu pljačku tumači kao:",
+        "options": [
+          "izravan rezultat siromaštva i anomije u društvu",
+          "posljedicu djelovanja delikventnih supkultura u siromašnim četvrtima",
+          "djelo organiziranog kriminala i njegovih skupina",
+          "povod za moralnu paniku koju potiču država i mediji"
+        ],
+        "correct": 3,
+        "id": "48qg9p"
+      },
+      {
+        "question": "Realizam nove ljevice ističe da je potrebno:",
+        "options": [
+          "baviti se kontrolom kriminala i žrtvama",
+          "zanemariti porast stope kriminala",
+          "ukinuti policiju i zatvorski sustav",
+          "oslanjati se samo na službene statistike"
+        ],
+        "correct": 0,
+        "id": "bqwwcn"
+      },
+      {
+        "question": "Prema realizmu nove ljevice policija bi trebala:",
+        "options": [
+          "djelovati gotovo neovisno o zajednici",
+          "se prilagoditi zajednicama i steći povjerenje",
+          "povećati broj uhićenja bez obzira na okolnosti",
+          "prestati istraživati lakše vrste zločina"
+        ],
+        "correct": 1,
+        "id": "l746ie"
+      },
+      {
+        "question": "Kritika realizma nove ljevice upozorava da:",
+        "options": [
+          "ne priznaje postojanje žrtava zločina niti njihovu zaštitu",
+          "odbacuje svaku društvenu politiku i reforme",
+          "previše pažnje daje žrtvama, a premalo motivima",
+          "gotovo zanemaruje ulogu policije u društvu"
+        ],
+        "correct": 2,
+        "id": "20hm90"
+      },
+      {
+        "question": "Organizirani kriminal obilježava:",
+        "options": [
+          "jednokratno djelo pojedinca bez ikakvih veza",
+          "uglavnom nasilje nad članovima vlastite obitelji",
+          "prekršaji protiv javnog reda i mira",
+          "stalna hijerarhijska skupina i težnja dobiti"
+        ],
+        "correct": 3,
+        "id": "vid43q"
+      },
+      {
+        "question": "Viktimizacija nije jednako raspoređena jer najčešće pogađa:",
+        "options": [
+          "deprivilegirane skupine u marginaliziranim četvrtima",
+          "prvenstveno bogate i obrazovane slojeve",
+          "sve slojeve u istoj mjeri",
+          "prvenstveno osobe starije od šezdeset godina"
+        ],
+        "correct": 0,
+        "id": "lo6uso"
+      },
+      {
+        "question": "Same biološke i psihološke teorije zločin objašnjavaju:",
+        "options": [
+          "dostatno, jer je zločin ponajprije osobina pojedinca",
+          "nedovoljno, jer ne obuhvaćaju društvene uzroke",
+          "bolje od socioloških, jer se mogu izmjeriti",
+          "uglavnom kroz anomiju i etiketiranje"
+        ],
+        "correct": 1,
+        "id": "cooiw2"
+      },
+      {
+        "question": "Zločin u „društvu rizika“ obilježavaju:",
+        "options": [
+          "pad organiziranog kriminala zbog globalnog nadzora",
+          "manja potražnja za privatnom zaštitom",
+          "novi oblici poput kibernetičkog kriminala i osjećaj nesigurnosti",
+          "prevlast tradicionalnih zločina protiv imovine"
+        ],
+        "correct": 2,
+        "id": "bd5ziq"
+      },
+      {
+        "question": "Prema Durkheimu kažnjavanje zločina služi:",
+        "options": [
+          "osveti žrtve i njezine obitelji",
+          "jačanju nejednakosti među skupinama",
+          "popravljanju počinitelja kroz rehabilitaciju",
+          "potvrđivanju normi i granice dopuštenog"
+        ],
+        "correct": 3,
+        "id": "js1rmr"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Devijantnost kao proces etiketiranja objasnio je Howard _______.",
+        "answer": "Becker",
+        "hint": "devijantni identiteti od etiketa",
+        "id": "g4xzq6"
+      },
+      {
+        "sentence": "Tezu o diferencijalnoj asocijaciji postavio je E. H. _______.",
+        "answer": "Sutherland",
+        "hint": "kriminalno ponašanje se uči",
+        "id": "8d6u3a"
+      },
+      {
+        "sentence": "Početni čin transgresije Lemert naziva _______ devijantnošću.",
+        "answer": "primarnom",
+        "hint": "prije prihvaćanja etikete",
+        "id": "rc9ar2"
+      },
+      {
+        "sentence": "Kad pojedinac prihvati etiketu, riječ je o _______ devijantnosti.",
+        "answer": "sekundarnoj",
+        "hint": "etiketa postaje identitet",
+        "id": "kg3v2z"
+      },
+      {
+        "sentence": "Proces u kojem nadzor nenamjerno izaziva još više devijantnog ponašanja naziva se _______ devijantnosti.",
+        "answer": "amplifikacija",
+        "hint": "Wilkins",
+        "id": "hevizp"
+      },
+      {
+        "sentence": "Medijima potaknuta pretjerana reakcija na skupinu je moralna _______.",
+        "answer": "panika",
+        "hint": "senzacionalistički prikazi",
+        "id": "nqyxwd"
+      },
+      {
+        "sentence": "Grana kriminologije iz 1980-ih koja ističe žrtve je realizam nove _______.",
+        "answer": "ljevice",
+        "hint": "neomarksistička osnova",
+        "id": "ooo8si"
+      },
+      {
+        "sentence": "Za Stuarta Halla moralnu paniku su poticali država i _______.",
+        "answer": "mediji",
+        "hint": "zaklon od nezaposlenosti",
+        "id": "aa5e8y"
+      },
+      {
+        "sentence": "Da kažnjavanje zločina potvrđuje norme i granice dopuštenog, smatrao je Émile _______.",
+        "answer": "Durkheim",
+        "hint": "autor pojma anomije",
+        "id": "4mtg6y"
+      }
+    ],
+    "learn": {
+      "title": "Interakcionističke teorije, teorija konflikta i realizam nove ljevice",
+      "content": "\n<h3>Interakcionističke teorije devijantnosti</h3>\n<p>Usmjeravaju se na devijantnost kao <strong>socijalno konstruiranu pojavu</strong>: odbacuju ideju da postoje tipovi ponašanja koji su inherentno devijantni. Pitaju se kako se određene vrste ponašanja inicijalno definiraju kao devijantne i zašto se određene skupine, a ne druge, proglašavaju devijantnima. Dva su pristupa: <em>diferencijalna asocijacija</em> i <em>teorija etiketiranja</em>.</p>\n<h3>Diferencijalna asocijacija (E. H. Sutherland)</h3>\n<p>Zločin je povezan s <strong>diferencijalnom asocijacijom</strong>: u društvu koje sadrži niz supkultura neke društvene sredine potiču ilegalne aktivnosti, a druge ne. Kriminalno se ponašanje <strong>uči</strong> unutar primarnih skupina, posebice među vršnjacima.</p>\n<h3>Teorija etiketiranja</h3>\n<ul>\n<li>Teoretičari ne tumače devijantnost kao skup karakteristika pojedinca ili skupine, nego kao <strong>proces interakcije</strong> između devijantnih i nedevijantnih. Etikete koje stvaraju kategorije devijantnosti izražavaju <em>strukturu moći</em> u društvu (bogati određuju siromašne, etnička većina etničku manjinu).</li>\n<li><strong>Howard Becker</strong>: devijantni se identiteti proizvode <em>etiketama</em>, a ne devijantnim motivacijama ili ponašanjem; devijantno je ponašanje ono koje su ljudi tako nazvali. Kritizirao je kriminološke pristupe koji tvrde da postoji jasna podjela na normalno i devijantno. Odjeća, način govora i zemlja podrijetla mogu odrediti hoće li se osoba nazvati devijantnom.</li>\n<li><strong>E. Lemert</strong>: kako devijantnost može koegzistirati s identitetom ili postati njegova središnja točka. Devijantnost je rasprostranjena, a oni koji je počine često ostaju nekažnjeni.\n <ul>\n <li><strong>primarna devijantnost</strong>: inicijalni čin transgresije; često ostaje marginalan za samoidentitet pa ne dođe do etiketiranja kao kriminalca;</li>\n <li><strong>sekundarna devijantnost</strong>: pojedinac počinje prihvaćati etiketu i smatrati sebe delikventom; etiketa postaje središnja točka identiteta.</li>\n </ul></li>\n<li><strong>Kritika</strong>: zanemaruju se procesi koji dovode do čina definiranog kao devijantan; razlike u društvenim stajalištima i mogućnostima utječu na to koliko će se ljudi upustiti u ponašanje koje će se vjerojatno prozvati devijantnim.</li>\n</ul>\n<h3>Amplifikacija devijantnosti (L. Wilkins)</h3>\n<p>Nenamjeravane posljedice koje nastaju kad institucija društvenog nadzora, nazivajući ponašanje devijantnim, zapravo izaziva još devijantnije ponašanje. Ako pojedinac prihvati etiketu kao dio identiteta, institucije nadzora vjerojatno reagiraju još jače. Skupina etiketirana kao gubitnici i neprilagođeni, u pokušaju nadzora, stvara još veće probleme; ekscesi i senzacionalistički medijski prikazi izazivaju <strong>moralnu paniku</strong>, medijima potaknutu pretjeranu reakciju na određene skupine ili tip ponašanja.</p>\n<h3>Teorija konflikta: nova kriminologija</h3>\n<ul>\n<li><strong>Taylor, Walton, Young</strong> oslanjaju se na marksističke ideje i tvrde da se devijantno ponašanje <em>svjesno odabire</em> i često je politički obojeno. Odbacuju ideju da je devijantnost određena biologijom, ličnošću, anomijom ili socijalnom dezorganizacijom. Pojedinci aktivno biraju devijantno ponašanje kao reakciju na nejednakosti. Kriminal i devijantnost analiziraju kroz strukturu društva i čuvanje moći vladajuće klase.</li>\n<li><strong>Stuart Hall</strong>: proučavao ulične pljačke; moralnu su paniku poticali država i mediji kako bi skrenuli pozornost s većeg problema nezaposlenosti, niskih plaća i drugih dubokih strukturnih mana društva.</li>\n</ul>\n<h3>Realizam nove ljevice</h3>\n<ul>\n<li>Nova grana kriminologije iz <strong>1980-ih</strong>, oslonjena na neomarksističke ideje nove kriminologije.</li>\n<li>Ističe da je stopa kriminala porasla i da javnost ima pravo biti zabrinuta; kriminologija se mora baviti <strong>stvarnim pitanjima kontrole kriminala i socijalne politike</strong>, a ne ih samo apstraktno raspravljati.</li>\n<li>Skreće pozornost na <strong>žrtve zločina</strong>: istraživanja žrtava zlostavljanja daju bolju sliku razmjera zločina od službenih statistika; kriminal i viktimizacija koncentrirani su u marginaliziranim četvrtima, a deprivilegirane skupine suočavaju se s većim rizikom.</li>\n<li>Oslanja se na Mertona, Clowarda i Ohlina. Odgovor na rast zločina: izmjena policijskih procedura (prilagodba zajednicama, minimalna intervencija, stjecanje povjerenja).</li>\n<li><strong>Kritike</strong>: percepcije javnosti o zločinu često se temelje na stereotipima; previše pozornosti žrtvama, a nedovoljno motivima koji uzrokuju kriminalno ponašanje.</li>\n</ul>\n<h3>Dopuna: organizirani kriminal, žrtve, uzroci zločina, društvo rizika i društveni poredak</h3>\n<p><strong>Organizirani kriminal</strong> provode stalne, hijerarhijski ustrojene skupine radi dobiti (krijumčarenje, trgovina ljudima, drogom), često preko državnih granica pa je povezan s globalizacijom. Viktimizacija nije jednako raspoređena: češće pogađa deprivilegirane skupine.</p>\n<p>Same biološke i psihološke teorije zločin objašnjavaju nedovoljno jer ne obuhvaćaju društvene uzroke. Sociološki uzroci su nejednakost i nedostatak zakonitih mogućnosti, anomija, učenje u skupinama, etiketiranje i odnosi moći. U <strong>društvu rizika</strong> javljaju se novi oblici zločina (kibernetički i organizirani kriminal, terorizam) te raste osjećaj nesigurnosti i traženje privatne zaštite (npr. zatvorene četvrti). Odnos <strong>zločina, devijantnosti i društvenog poretka</strong>: kažnjavanjem se potvrđuju norme i granice dopuštenog (Durkheim), ali devijantnost može potaknuti i promjenu; poredak se održava kontrolom, odgojem i pravom.</p>\n\n",
+      "id": "nqgw8l"
+    },
+    "id": "7h5vdu"
+  },
+  "moderneOrganizacije": {
+    "name": "Moderne organizacije i birokracija",
+    "icon": "fa-building-user",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Što je organizacija?",
+        "answer": "Velika skupina ljudi strukturirana prema impersonalnim linijama i okupljena radi postizanja specifičnih ciljeva.",
+        "explanation": "Weber: stabilna koordinacija aktivnosti u prostoru i vremenu.",
+        "id": "roluax"
+      },
+      {
+        "question": "Što je birokratska organizacija prema Weberu?",
+        "answer": "Neizbježna u modernom društvu; središnja za racionalizaciju: odabir najučinkovitijeg puta za postizanje cilja.",
+        "explanation": "Idealni tip birokracije.",
+        "id": "okyvuh"
+      },
+      {
+        "question": "Koje su karakteristike idealnog tipa birokracije?",
+        "answer": "Hijerarhija autoriteta, impersonalna pravila, puno radno vrijeme i plaćeni rad, odvojenost privatne i javne sfere, neposjedovanje sredstava za rad.",
+        "explanation": "Pet obilježja.",
+        "id": "g3h2xt"
+      },
+      {
+        "question": "Što je hijerarhija autoriteta u birokraciji?",
+        "answer": "Jasan lanac nadređenih i podređenih uz nadzor i izvješća.",
+        "explanation": "Prvo obilježje idealnog tipa.",
+        "id": "6tz9bn"
+      },
+      {
+        "question": "Što je proučavao Peter Blau?",
+        "answer": "Neslužbene odnose u državnoj službi: istražitelji su se, suprotno pravilima, savjetovali s kolegama jer su se bojali pokazati nestručnost nadređenima.",
+        "explanation": "Poreznici i utaje poreza.",
+        "id": "dagmyr"
+      },
+      {
+        "question": "Koji je zaključak Blauova istraživanja?",
+        "answer": "Neslužbeni odnosi stvorili su čvrstu lojalnost na razini skupine, smanjili napetosti i pomogli učinkovitijem rješavanju problema; sustavi nalik idealnom tipu stvaraju neslužbene načine rada.",
+        "explanation": "Nije jasno povećavaju li ili smanjuju učinkovitost.",
+        "id": "8nh9di"
+      },
+      {
+        "question": "Što je Merton prigovorio birokraciji?",
+        "answer": "Da elementi inherentni birokraciji mogu poremetiti njezin rad (disfunkcije): birokrati se uče slijediti pisana pravila, a ne snalaziti se i tražiti kreativna rješenja.",
+        "explanation": "Birokratski ritualizam.",
+        "id": "o2opa2"
+      },
+      {
+        "question": "Što je birokratski ritualizam?",
+        "answer": "Situacija u kojoj službenici provode pravila pod svaku cijenu, čak i kad bi drugo rješenje bilo bolje za organizaciju; pravila nadvladavaju stvarne ciljeve.",
+        "explanation": "Primjer: odbijanje odštetnog zahtjeva zbog formulara.",
+        "id": "291zoz"
+      },
+      {
+        "question": "Koje dvije vrste organizacija razlikuju Burns i Stalker?",
+        "answer": "Mehanističke (birokratske, hijerarhijske, vertikalna komunikacija) i organske (labavija struktura, difuzna komunikacija, odluke ne donose samo oni na vrhu).",
+        "explanation": "Mehanistički i organski sustavi.",
+        "id": "tidt1e"
+      },
+      {
+        "question": "Kada su organske organizacije uspješnije?",
+        "answer": "Na inovativnom tržištu s promjenjivim zahtjevima (telekomunikacije, računalni programi, biotehnologija), jer se brže prilagođavaju.",
+        "explanation": "Burns i Stalker.",
+        "id": "hb15nj"
+      },
+      {
+        "question": "Što je Foucault pokazao o arhitekturi organizacija?",
+        "answer": "Da je arhitektura izravno povezana s društvenim ustrojem i sustavom autoriteta: raspored prostora izražava hijerarhiju (viši položaj, ured bliži vrhu zgrade).",
+        "explanation": "Prostor i vrijeme su koordinirani.",
+        "id": "q09vuq"
+      },
+      {
+        "question": "Što je Panoptikon?",
+        "answer": "Idealni zatvor J. Benthama: ćelije kružno oko središnjeg nadzornog tornja; zatvorenici ne znaju promatraju li ih stražari, pa nadzor može biti stvaran ili zamišljen.",
+        "explanation": "Uzor modernih zatvora (Foucault).",
+        "id": "59rnds"
+      },
+      {
+        "question": "Koja dva oblika nadzora u organizacijama razlikujemo?",
+        "answer": "Izravno nadgledanje podređenih (npr. školska učionica) i suptilniji nadzor stvaranjem arhiva, biografija i izvještaja o ljudskim životima, uz informacijsku tehnologiju.",
+        "explanation": "Pretjeran nadzor otuđuje zaposlenike.",
+        "id": "w2jsky"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Organizacija je:",
+        "options": [
+          "velika skupina strukturirana radi postizanja ciljeva",
+          "mala skupina prijatelja koja se druži iz zadovoljstva",
+          "privremeno okupljanje ljudi bez ikakvih pravila",
+          "obitelj s više članova u istom kućanstvu"
+        ],
+        "correct": 0,
+        "id": "vwi0ro"
+      },
+      {
+        "question": "Birokracija je prema Weberu:",
+        "options": [
+          "prolazna pojava u razvoju industrijskog društva bez budućnosti",
+          "neizbježna u modernom društvu i važna za racionalizaciju",
+          "oblik tradicionalne vladavine nasljednih vladara",
+          "sustav bez ikakvih pravila i bez hijerarhije"
+        ],
+        "correct": 1,
+        "id": "dp00kq"
+      },
+      {
+        "question": "Koja NIJE karakteristika idealnog tipa birokracije?",
+        "options": [
+          "hijerarhija autoriteta s nadzorom",
+          "impersonalna pravila i rutinske dužnosti",
+          "osobna odanost nadređenom umjesto pravila",
+          "neposjedovanje sredstava za rad"
+        ],
+        "correct": 2,
+        "id": "4rzmpw"
+      },
+      {
+        "question": "Odvojenost privatne i javne sfere znači da službenik:",
+        "options": [
+          "smije koristiti službena sredstva u privatne svrhe",
+          "radi uglavnom od kuće i bez nadzora",
+          "odlučuje samo prema osobnim vezama i poznanstvima",
+          "ne smije miješati osobne i službene interese"
+        ],
+        "correct": 3,
+        "id": "ammih7"
+      },
+      {
+        "question": "Peter Blau je proučavao:",
+        "options": [
+          "neslužbene odnose u državnoj službi",
+          "arhitekturu zatvora i oblike nadzora",
+          "mehaničku i organsku solidarnost društva",
+          "razlike među spolovima u zaposlenju"
+        ],
+        "correct": 0,
+        "id": "3x2c9m"
+      },
+      {
+        "question": "Blau je utvrdio da su neslužbeni odnosi među istražiteljima:",
+        "options": [
+          "uglavnom smanjili učinkovitost cijelog rada",
+          "smanjili napetosti i pomogli rješavanju problema",
+          "bili izričito dopušteni službenim pravilima ustanove",
+          "onemogućili napredovanje svih službenika u službi"
+        ],
+        "correct": 1,
+        "id": "k5wahi"
+      },
+      {
+        "question": "Merton upozorava da birokrati nisu potaknuti na:",
+        "options": [
+          "slijeđenje pisanih pravila i procedura",
+          "dosljednost u primjeni zadanih procedura",
+          "prilagodljivost i kreativna rješenja",
+          "rješavanje slučajeva po objektivnim kriterijima"
+        ],
+        "correct": 2,
+        "id": "oe13et"
+      },
+      {
+        "question": "Birokratski ritualizam znači da službenici:",
+        "options": [
+          "odbacuju pravila radi veće učinkovitosti posla u organizaciji",
+          "rade uglavnom prema vlastitoj osobnoj procjeni",
+          "odbijaju svaku hijerarhiju i svaki nadzor",
+          "provode pravila pod svaku cijenu, i na štetu cilja"
+        ],
+        "correct": 3,
+        "id": "vyp93g"
+      },
+      {
+        "question": "Mehanističke organizacije obilježava:",
+        "options": [
+          "hijerarhijska zapovjedna linija i vertikalna komunikacija",
+          "labava struktura i difuzna komunikacija u svim smjerovima",
+          "odluke koje zajednički donose svi zaposleni",
+          "prednost općih ciljeva pred usko određenim zadacima"
+        ],
+        "correct": 0,
+        "id": "zzluow"
+      },
+      {
+        "question": "Organske organizacije bolje odgovaraju:",
+        "options": [
+          "stabilnim poslovima s rutinskim i ponavljajućim zadacima",
+          "inovativnom tržištu s promjenjivim zahtjevima",
+          "tradicionalnim obrtničkim radionicama u malim mjestima",
+          "državnoj upravi u razdobljima mira i stabilnosti"
+        ],
+        "correct": 1,
+        "id": "mjpbh1"
+      },
+      {
+        "question": "Foucault je pokazao da je arhitektura organizacije povezana s:",
+        "options": [
+          "visinom dohotka svih zaposlenika u toj organizaciji",
+          "vrstom proizvoda koje poduzeće prodaje",
+          "društvenim ustrojem i sustavom autoriteta",
+          "dobi i spolom zaposlenih osoba"
+        ],
+        "correct": 2,
+        "id": "yu486p"
+      },
+      {
+        "question": "Panoptikon je zamišljen kao:",
+        "options": [
+          "tvornica s pokretnom trakom i nadzornicima",
+          "škola s jednom velikom zajedničkom učionicom",
+          "sud s javnim raspravama i porotom",
+          "zatvor s ćelijama oko središnjeg tornja"
+        ],
+        "correct": 3,
+        "id": "pk06gn"
+      },
+      {
+        "question": "U Panoptikonu zatvorenici ne mogu znati:",
+        "options": [
+          "promatraju li ih stražari u određenom trenutku",
+          "koliko će trajati njihova izrečena kazna zatvora",
+          "tko su ostali zatvorenici koji borave u zgradi",
+          "koji je datum i koliko je sati u danu"
+        ],
+        "correct": 0,
+        "id": "j5j547"
+      },
+      {
+        "question": "Suptilniji oblik nadzora u organizacijama sastoji se od:",
+        "options": [
+          "izravnog nadgledanja podređenih na radnom mjestu i u učionici",
+          "stvaranja arhiva, biografija i izvještaja o ljudima",
+          "fizičkog zatvaranja zaposlenika u prostorije",
+          "javnog kažnjavanja svih prekršitelja pravila"
+        ],
+        "correct": 1,
+        "id": "mlk3cn"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Velika skupina strukturirana prema impersonalnim linijama radi ciljeva je _______.",
+        "answer": "organizacija",
+        "hint": "Weber: koordinacija aktivnosti",
+        "id": "da0b10"
+      },
+      {
+        "sentence": "Idealni tip birokracije počiva na hijerarhiji _______.",
+        "answer": "autoriteta",
+        "hint": "nadzor i izvješća",
+        "id": "a5rw1o"
+      },
+      {
+        "sentence": "Blau je proučavao istražitelje poreznih utaja u državnoj _______.",
+        "answer": "službi",
+        "hint": "neslužbeni odnosi među kolegama",
+        "id": "h6zwak"
+      },
+      {
+        "sentence": "Situacija u kojoj se pravila provode pod svaku cijenu je birokratski _______.",
+        "answer": "ritualizam",
+        "hint": "Mertonova disfunkcija",
+        "id": "e06npk"
+      },
+      {
+        "sentence": "Burns i Stalker razlikuju mehanističke i _______ organizacije.",
+        "answer": "organske",
+        "hint": "labavija struktura",
+        "id": "9c0lmr"
+      },
+      {
+        "sentence": "Idealni zatvor J. Benthama zove se _______.",
+        "answer": "Panoptikon",
+        "hint": "središnji toranj za nadzor",
+        "id": "5xwkv9"
+      },
+      {
+        "sentence": "Arhitekturu organizacije sa sustavom autoriteta povezao je _______.",
+        "answer": "Foucault",
+        "hint": "pisao o zatvorima",
+        "id": "cezu9v"
+      }
+    ],
+    "learn": {
+      "title": "Moderne organizacije: Weber, Blau, Merton, Burns i Stalker, Foucault",
+      "content": "\n<h3>Organizacije i Weberovo shvaćanje birokracije</h3>\n<p><strong>Organizacija</strong> je velika skupina ljudi strukturirana prema <em>impersonalnim linijama</em> i okupljena radi postizanja specifičnih ciljeva (procesi institucionalizacije i isprepletenost organizacija u suvremenim društvima: učinkovitost, proračunatost, jednoobraznost i kontrola putem automatizacije). Prema <strong>Weberu</strong>, organizacije su načini <strong>stabilne koordinacije ljudskih aktivnosti</strong> u prostoru i vremenu.</p>\n<p><strong>Birokratska organizacija</strong> neizbježna je u modernom društvu, središnja za proces racionalizacije društva: odabir najučinkovitijeg puta za postizanje cilja. Karakteristike idealnog tipa birokracije:</p>\n<ol>\n<li><strong>hijerarhija autoriteta</strong> (nadzor i izvješća);</li>\n<li><strong>impersonalna pravila</strong> (rutinske dužnosti);</li>\n<li><strong>puno radno vrijeme i plaćeni rad</strong>;</li>\n<li><strong>fizička odvojenost privatne i javne sfere</strong>;</li>\n<li><strong>neposjedovanje sredstava za rad</strong>.</li>\n</ol>\n<h3>Peter Blau: službeni i neslužbeni odnosi</h3>\n<p>Proučavao je neslužbene odnose u državnoj službi čija je zadaća istraživati moguće utaje poreza. Istražitelji su, kad bi naišli na problem koji ne znaju riješiti, prema pravilima trebali pitati nadređene; pravila su zabranjivala savjetovanje s kolegama istog posla. Većina je oklijevala obratiti se nadređenima jer su se bojali da će to biti protumačeno kao nestručnost i škoditi napredovanju, pa su se savjetovali međusobno, kršeći službena pravila. To je pomagalo kao konkretna pomoć i smanjivalo napetosti i strahove.</p>\n<ul>\n<li>Skupina koja je radila iste poslove razvila je čvrstu <strong>lojalnost</strong>; problemi su se rješavali znatno uspješnije.</li>\n<li>Nije jednostavno utvrditi povećavaju li neslužbene procedure općenito učinkovitost organizacija ili je smanjuju.</li>\n<li>Sustavi nalik Weberovu idealnom tipu često stvaraju razne neslužbene načine na koje se posao obavlja.</li>\n</ul>\n<h3>R. Merton: disfunkcije birokracije</h3>\n<p>Ispitujući Weberov idealni tip, Merton zaključuje da nekoliko elemenata inherentnih birokraciji može poremetiti njezin rad. Birokrati su uvježbani da se dosljedno oslanjaju na pisana pravila i procedure, a ne potiče ih se na prilagodljivost, vlastiti sud ili kreativna rješenja. Rigidnost može dovesti do <strong>birokratskog ritualizma</strong>: službenici provode pravila pod svaku cijenu, čak i kad bi drugo rješenje bilo bolje za organizaciju; provedba pravila može nadvladati stvarne ciljeve. Primjer: službenik za odštetne zahtjeve može odbiti isplatu opravdanog zahtjeva zbog neprikladno ispunjenog formulara; ispravnost zahtjeva ima prednost pred potrebama klijenta koji je pretrpio gubitak. Napetosti nastaju i između javnosti i birokracije.</p>\n<h3>T. Burns i G. Stalker: mehanistički i organski sustavi</h3>\n<table>\n<tr><th>Mehanistički</th><th>Organski</th></tr>\n<tr><td>birokratski sustavi s hijerarhijskom zapovjednom linijom; vertikalna komunikacija jasnim kanalima; zaposlenici odgovorni za konkretne zadaće; rad je anoniman; vrh i dno rijetko komuniciraju</td><td>labavija struktura u kojoj opći ciljevi imaju prednost pred usko određenim zadacima; komunikacija i naredbe difuzni, ne samo vertikalni; svatko ima legitimno znanje i pridonosi rješavanju problema; odluke ne donose samo oni na vrhu</td></tr>\n</table>\n<p>Organske su organizacije spremnije za promjenjive zahtjeve na inovativnom tržištu (telekomunikacije, računalni programi, biotehnologija).</p>\n<h3>M. Foucault: nadzor u organizacijama</h3>\n<ul>\n<li>Većina modernih organizacija djeluje u posebno izgrađenom fizičkom prostoru; <strong>arhitektura</strong> organizacije izravno je povezana s njezinim društvenim ustrojem i sustavom autoriteta (što je viši položaj u hijerarhiji, ured je bliži vrhu zgrade). Aktivnosti se strogo koordiniraju u prostoru i vremenu (raspored sati).</li>\n<li><strong>Zatvori kao moderne institucije:</strong> dio složene administrativne mreže državnih ustanova pravnog i kaznenog sustava. Nacrt modernog zatvora ima podrijetlo u <strong>Panoptikonu</strong>, idealnom zatvoru koji je krajem 18. stoljeća zamislio filozof Jeremy Bentham (osmišljen 1787., objavljen 1791.). Zatvorenici su izolirani u pojedinačnim ćelijama s jednim prozorom vidljivim iz središnjeg nadzornog tornja, ćelije su kružno oko tornja pa stražari promatraju sve s jednog mjesta; sjenila na prozorima tornja sprječavaju zatvorenike da znaju promatraju li ih u određenom trenutku, pa je nadzor <em>stvaran ili zamišljen</em>.</li>\n<li><strong>Dva oblika nadzora u organizacijama:</strong> (1) izravno nadgledanje podređenih (primjer školske učionice); (2) suptilnije: stvaranje arhiva, biografija i izvještaja o ljudskim životima. Informacijska tehnologija na radnim mjestima izaziva zabrinutost zbog stalnog nadzora i otkrivanja privatnih informacija; previše izravnog nadzora otuđuje zaposlenike jer osjećaju da nemaju mogućnost odlučivanja o poslu koji obavljaju.</li>\n</ul>\n",
+      "id": "tmv0oz"
+    },
+    "id": "h66dm5"
+  },
+  "vlastPolitika": {
+    "name": "Vlast, politika, država i nacionalizam",
+    "icon": "fa-landmark",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što je vlast, a što politika?",
+        "answer": "Vlast je svakodnevna provedba politike, odluka i državnih poslova; politika se tiče sredstava kojima se moć koristi da utječe na doseg i sadržaj aktivnosti vlasti.",
+        "explanation": "Političko seže izvan državnih institucija.",
+        "id": "ewtw1h"
+      },
+      {
+        "question": "Što je moć?",
+        "answer": "Sposobnost pojedinca ili skupine da provedu svoju volju; gotovo uvijek je prati ideologija, skup vrijednosti i ideja kojima se opravdava određena moć.",
+        "explanation": "Moć i ideologija.",
+        "id": "69xxvt"
+      },
+      {
+        "question": "Što su ovlast i legitimnost?",
+        "answer": "Ovlast je legitiman način na koji vlada ostvaruje svoju moć; legitimnost znači da se oni koji su podložni vlasti s time slažu.",
+        "explanation": "Priznata moć.",
+        "id": "n620vk"
+      },
+      {
+        "question": "Što je država?",
+        "answer": "Politički aparat koji vlada nad određenim područjem uz potporu pravnog sustava i legitimne uporabe sile.",
+        "explanation": "Moderna državna vlast.",
+        "id": "q3zloy"
+      },
+      {
+        "question": "Koja su temeljna obilježja moderne državne vlasti?",
+        "answer": "Suverenitet (vrhovna vlast nad područjem s jasnom granicom), građanstvo (zajednička prava i dužnosti) i nacionalizam (osjećaj pripadnosti naciji).",
+        "explanation": "Tri obilježja.",
+        "id": "5433qk"
+      },
+      {
+        "question": "Što je suverenitet?",
+        "answer": "Ideja o vlasti nad područjem s jasno utvrđenom granicom, na kojem je ona vrhovna moć.",
+        "explanation": "Prvo obilježje moderne države.",
+        "id": "i6y8xn"
+      },
+      {
+        "question": "Što je demokracija?",
+        "answer": "U osnovnom značenju politički sustav u kojem vlada narod, a ne monarsi ili aristokracija; smatra se sustavom koji najbolje osigurava političku jednakost, slobodu i opći interes.",
+        "explanation": "Može se proširiti i na druga područja života.",
+        "id": "n8jzo1"
+      },
+      {
+        "question": "Što je sudionička demokracija?",
+        "answer": "Oblik u kojem odluke zajednički donose svi kojih se tiču; izvorni tip iz antičke Grčke, danas ograničen (gradske skupštine, referendum).",
+        "explanation": "Ograničena važnost u modernim društvima.",
+        "id": "tdbqo4"
+      },
+      {
+        "question": "Što je predstavnička demokracija?",
+        "answer": "Politički sustav u kojem odluke ne donose svi pripadnici zajednice, nego ljudi koje su za to izabrali (izbori za parlament ili kongres).",
+        "explanation": "Danas uobičajena.",
+        "id": "dhd4sa"
+      },
+      {
+        "question": "Što je liberalna demokracija?",
+        "answer": "Zemlje u kojima birači biraju između dviju ili više stranaka, a većina odraslih ima pravo glasa.",
+        "explanation": "Višestranački izbori.",
+        "id": "3ls5id"
+      },
+      {
+        "question": "Što su autoritarni sustavi?",
+        "answer": "Sustavi u kojima se narodu ne dopušta ili odlučno sprječava sudjelovanje u vlasti; interesi države imaju prednost pred građanima, a nema zakonskih mehanizama za uklanjanje vladara.",
+        "explanation": "Suprotnost demokraciji.",
+        "id": "2x9oqw"
+      },
+      {
+        "question": "Koja su tri razloga širenja demokracije?",
+        "answer": "Pad komunizma, globalizacijski procesi i utjecaj masovnih komunikacija.",
+        "explanation": "Demokratizacija i globalizacija.",
+        "id": "hzrwgj"
+      },
+      {
+        "question": "Što je paradoks demokracije?",
+        "answer": "Čimbenici koji su pomogli širenju demokracije (nove tehnologije, globalizacija) smanjili su moć vlada u globalnim pitanjima, pa se politička vlast udaljila od građana.",
+        "explanation": "Odluke donose udaljeni moćnici.",
+        "id": "zu91r6"
+      },
+      {
+        "question": "Što je politička stranka?",
+        "answer": "Organizacija usmjerena na postizanje legitimne kontrole vlasti putem izbora.",
+        "explanation": "Vrste: religijske, klasne, etničke, ideološke.",
+        "id": "q2byvu"
+      },
+      {
+        "question": "Koje izborne sustave razlikujemo?",
+        "answer": "Većinski i razmjerni (proporcionalni); postoje i mješoviti sustavi te izborni prag (npr. 5 %) radi sprječavanja ulaska mnogo malih stranaka.",
+        "explanation": "Dvostranački i višestranački izbori.",
+        "id": "6sx1jz"
+      },
+      {
+        "question": "Što je nacionalizam?",
+        "answer": "Pokret i ideologija usmjereni na stvaranje nacije i nacionalne države.",
+        "explanation": "Moderne države su nacionalne.",
+        "id": "ws5tvy"
+      },
+      {
+        "question": "Što tvrde Gellner i Smith o naciji?",
+        "answer": "Gellner: nacija i nacionalizam su moderne pojave, proizvod moderne civilizacije; Smith: nacije su povezane s predmodernim etnijama (teorija kontinuiteta).",
+        "explanation": "Etnija: zajednički preci, kulturni identitet, domovina.",
+        "id": "2enajc"
+      },
+      {
+        "question": "Što je etnija (A. Smith)?",
+        "answer": "Skupina koja ima zajedničke pretke, kulturni identitet i vezu s određenom domovinom.",
+        "explanation": "Temelj nacije prema Smithu.",
+        "id": "y6io5y"
+      },
+      {
+        "question": "Koji su pojavni oblici nacionalizma i što o njemu kažu Marx, Durkheim i Weber?",
+        "answer": "Nacije bez država, postkolonijalni i postkomunistički nacionalizam; Marx i Durkheim vide u nacionalizmu destruktivnu tendenciju, a Weber ga analizira.",
+        "explanation": "Različiti pojavni oblici.",
+        "id": "6z3mw3"
+      },
+      {
+        "question": "Što je društveni pokret?",
+        "answer": "Kolektivni, organizirani pokušaj ostvarivanja promjene ili otpora promjeni izvan ustanovljenih institucija, npr. radnički, ženski, ekološki pokret i pokret za građanska prava.",
+        "explanation": "Političke i društvene promjene.",
+        "id": "uy1slh"
+      },
+      {
+        "question": "Po čemu se razlikuju reforma i revolucija?",
+        "answer": "Reforma je postupna promjena unutar postojećeg poretka, a revolucija brza i temeljita promjena političkog i društvenog poretka, često uz nasilje.",
+        "explanation": "Oblici političkih promjena.",
+        "id": "73lqew"
+      },
+      {
+        "question": "Zašto nastaju društveni pokreti?",
+        "answer": "Zbog nezadovoljstva i osjećaja nepravde (relativna deprivacija), uz organiziranje, mobilizaciju resursa i političke prilike za djelovanje.",
+        "explanation": "Objašnjenja društvenih pokreta.",
+        "id": "xy2zxj"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Moć je:",
+        "options": [
+          "legitiman način ostvarivanja državne vlasti nad građanima",
+          "svakodnevna provedba državnih poslova i političkih odluka",
+          "sposobnost pojedinca ili skupine da provedu svoju volju",
+          "skup vrijednosti kojima se opravdava poredak"
+        ],
+        "correct": 2,
+        "id": "2lb13q"
+      },
+      {
+        "question": "Ideologija je u odnosu na moć:",
+        "options": [
+          "pravni propis koji ograničava svaku vrstu moći u državi",
+          "tijelo koje nadzire provedbu moći u državi",
+          "sredstvo za mjerenje moći pojedine skupine",
+          "skup vrijednosti i ideja koji opravdava moć"
+        ],
+        "correct": 3,
+        "id": "3xez57"
+      },
+      {
+        "question": "Ovlast je:",
+        "options": [
+          "legitiman način na koji vlada ostvaruje svoju moć",
+          "puka prisila bez pristanka onih kojima se vlada",
+          "osobna karizma vođe jedne političke skupine",
+          "ekonomska nadmoć nad svim podređenima"
+        ],
+        "correct": 0,
+        "id": "0lpqwo"
+      },
+      {
+        "question": "Država se definira kao politički aparat koji vlada nad područjem uz potporu:",
+        "options": [
+          "uglavnom vjerske i moralne uvjerenosti vladara",
+          "pravnog sustava i legitimne uporabe sile",
+          "tržišne razmjene i ugovora među građanima",
+          "odluka koje donose međunarodne organizacije"
+        ],
+        "correct": 1,
+        "id": "9o84xg"
+      },
+      {
+        "question": "Koje NIJE temeljno obilježje moderne državne vlasti?",
+        "options": [
+          "suverenitet nad utvrđenim područjem",
+          "građanstvo sa zajedničkim pravima",
+          "teokracija kao jedini izvor vlasti u državi",
+          "nacionalizam kao osjećaj pripadnosti"
+        ],
+        "correct": 2,
+        "id": "wiqzws"
+      },
+      {
+        "question": "Suverenitet znači:",
+        "options": [
+          "zajednička prava i dužnosti svih građana jedne države",
+          "osjećaj pripadnosti istoj naciji i državi",
+          "neposredno odlučivanje svih građana o svemu",
+          "vrhovnu vlast nad područjem jasno utvrđenih granica"
+        ],
+        "correct": 3,
+        "id": "b6cuav"
+      },
+      {
+        "question": "Demokracija u osnovnom značenju je sustav u kojem vlada:",
+        "options": [
+          "narod, a ne monarsi ili aristokracija",
+          "jedna stranka bez ikakve konkurencije",
+          "vojska nakon sloma državnih institucija",
+          "aristokracija u ime i za račun naroda"
+        ],
+        "correct": 0,
+        "id": "mjqhdt"
+      },
+      {
+        "question": "Sudionička demokracija izvorno se vezuje uz:",
+        "options": [
+          "rimsko carstvo",
+          "antičku Grčku",
+          "srednjovjekovne kraljevine",
+          "sovjetski tip društva"
+        ],
+        "correct": 1,
+        "id": "ijiwnf"
+      },
+      {
+        "question": "Referendum je primjer:",
+        "options": [
+          "autoritarnog sustava vlasti",
+          "predstavničke demokracije",
+          "sudioničke demokracije",
+          "jednostranačkog sustava"
+        ],
+        "correct": 2,
+        "id": "p1x4b0"
+      },
+      {
+        "question": "U predstavničkoj demokraciji odluke donose:",
+        "options": [
+          "svi građani na zajedničkoj skupštini",
+          "nasljedni vladari i njihovi savjetnici",
+          "vojni zapovjednici i državni činovnici",
+          "izabrani predstavnici zajednice"
+        ],
+        "correct": 3,
+        "id": "lb3y7w"
+      },
+      {
+        "question": "Liberalnu demokraciju obilježava:",
+        "options": [
+          "izbor između više stranaka i pravo glasa odraslih",
+          "zabrana svih oporbenih stranaka u državi",
+          "izbor samo jednog kandidata na izbornoj listi jedne stranke",
+          "nasljedna monarhija koja ne poznaje izbore"
+        ],
+        "correct": 0,
+        "id": "b6ydut"
+      },
+      {
+        "question": "Autoritarne sustave obilježava to što:",
+        "options": [
+          "omogućuju smjenu vladara putem glasanja",
+          "narodu ne dopuštaju sudjelovanje u vlasti",
+          "jamče slobodne izbore svim građanima",
+          "ograničavaju moć vlade zakonskim odredbama"
+        ],
+        "correct": 1,
+        "id": "vsfali"
+      },
+      {
+        "question": "Koji NIJE među tri razloga širenja demokracije?",
+        "options": [
+          "pad komunizma i raspad sustava",
+          "globalizacijski procesi u svijetu",
+          "razvoj državne birokracije u modernim državama i upravi",
+          "utjecaj masovnih komunikacija i medija"
+        ],
+        "correct": 2,
+        "id": "fnwqc3"
+      },
+      {
+        "question": "Paradoks demokracije sastoji se u tome što je:",
+        "options": [
+          "demokracija ukinuta tamo gdje je nastala",
+          "moć vlada u globalnim pitanjima opala, a vlast daleko od građana",
+          "broj birača drastično pao u cijelom svijetu",
+          "država preuzela sve odluke o životu građana"
+        ],
+        "correct": 1,
+        "id": "0zj7ts"
+      },
+      {
+        "question": "Politička stranka je:",
+        "options": [
+          "skup građana koji nema nikakvih političkih ciljeva ni programa",
+          "državno tijelo koje provodi i nadzire zakone",
+          "vjerska zajednica s hijerarhijom i obredima",
+          "organizacija koja putem izbora traži kontrolu vlasti"
+        ],
+        "correct": 3,
+        "id": "g5htp9"
+      },
+      {
+        "question": "Prema društvenoj osnovi koju zastupaju, stranke mogu biti:",
+        "options": [
+          "religijske, klasne, etničke i ideološke",
+          "unitarne, federalne i konfederalne",
+          "državne, privatne i mješovite",
+          "vladajuće, oporbene i izvanparlamentarne"
+        ],
+        "correct": 0,
+        "id": "6mpajx"
+      },
+      {
+        "question": "Izborni prag (npr. 5 %) uvodi se zato da bi se:",
+        "options": [
+          "povećao broj stranaka u zakonodavnom tijelu",
+          "spriječio ulazak mnogo malih stranaka u parlament",
+          "ukinuo višestranački sustav na izborima",
+          "smanjila izlaznost birača na izborima"
+        ],
+        "correct": 1,
+        "id": "uxkb5e"
+      },
+      {
+        "question": "Nacionalizam je:",
+        "options": [
+          "uglavnom vjerski pokret s obredima",
+          "oblik ekonomske razmjene među državama",
+          "pokret i ideologija za stvaranje nacije i države",
+          "sustav sudioničke demokracije u gradovima"
+        ],
+        "correct": 2,
+        "id": "jmnp6h"
+      },
+      {
+        "question": "Gellner naciju i nacionalizam smatra:",
+        "options": [
+          "predmodernim etnijama sa stalnim kontinuitetom",
+          "prolaznim ideološkim pokretima srednjeg vijeka u Europi",
+          "posljedicom vjerskih podjela među narodima",
+          "modernim pojavama, proizvodom moderne civilizacije"
+        ],
+        "correct": 3,
+        "id": "ag78k4"
+      },
+      {
+        "question": "Etnija prema A. Smithu je skupina sa:",
+        "options": [
+          "zajedničkim precima, kulturom i domovinom",
+          "zajedničkim zanimanjem i jednakim dohotkom",
+          "istim državljanstvom i pravnim položajem",
+          "zajedničkim vlasništvom nad zemljom i resursima"
+        ],
+        "correct": 0,
+        "id": "xd5aum"
+      },
+      {
+        "question": "Koji oblik nacionalizma NIJE naveden među različitim pojavnim oblicima?",
+        "options": [
+          "nacije bez država",
+          "feudalni nacionalizam",
+          "postkolonijalni nacionalizam",
+          "postkomunistički nacionalizam"
+        ],
+        "correct": 1,
+        "id": "ilmtcx"
+      },
+      {
+        "question": "Društveni pokret je:",
+        "options": [
+          "tijelo državne uprave s javnim ovlastima i proračunom",
+          "interesna skupina koja lobira unutar institucija",
+          "organizirani kolektivni pokušaj promjene izvan institucija",
+          "politička stranka koja sudjeluje na parlamentarnim izborima"
+        ],
+        "correct": 2,
+        "id": "4bixs6"
+      },
+      {
+        "question": "Za razliku od revolucije, reforma je:",
+        "options": [
+          "nasilno rušenje cijeloga postojećeg poretka",
+          "preuzimanje vlasti vojnim udarom",
+          "prijelaz s demokracije na autoritarni sustav",
+          "postupna promjena unutar postojećeg poretka"
+        ],
+        "correct": 3,
+        "id": "2qkg16"
+      },
+      {
+        "question": "Koji čimbenik pomaže objasniti nastanak društvenih pokreta?",
+        "options": [
+          "osjećaj nepravde i mogućnost organiziranja",
+          "visoko povjerenje građana u političke stranke",
+          "slabljenje medija i komunikacija",
+          "redovito održavanje izbora"
+        ],
+        "correct": 0,
+        "id": "r6dvsh"
+      },
+      {
+        "question": "Što o nacionalizmu govore Marx i Durkheim?",
+        "options": [
+          "da nacionalizam nužno stvara demokraciju",
+          "da nacionalizam ima destruktivnu tendenciju",
+          "da je nacionalizam prirodan i nepromjenjiv",
+          "da nacionalizam ne utječe na društvo"
+        ],
+        "correct": 1,
+        "id": "e6x7cc"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Sposobnost pojedinca ili skupine da provedu svoju volju zove se _______.",
+        "answer": "moć",
+        "hint": "prati je ideologija",
+        "id": "dt84xi"
+      },
+      {
+        "sentence": "Legitiman način ostvarivanja moći vlade zove se _______.",
+        "answer": "ovlast",
+        "hint": "pristanak podložnih",
+        "id": "yplc87"
+      },
+      {
+        "sentence": "Ideja o vrhovnoj vlasti nad područjem s utvrđenom granicom je _______.",
+        "answer": "suverenitet",
+        "hint": "obilježje moderne države",
+        "id": "7exth2"
+      },
+      {
+        "sentence": "Najpoznatiji oblik sudioničke demokracije danas, u kojem građani izravno odlučuju o jednom pitanju, jest _______.",
+        "answer": "referendum",
+        "hint": "npr. o ulasku u EU",
+        "id": "g26ipi"
+      },
+      {
+        "sentence": "Zemlje u kojima birači biraju između više stranaka su _______ demokracije.",
+        "answer": "liberalne",
+        "hint": "višestranački izbori",
+        "id": "h994zu"
+      },
+      {
+        "sentence": "Sustav u kojem se narodu ne dopušta sudjelovanje u vlasti zove se _______ sustav.",
+        "answer": "autoritarni",
+        "hint": "suprotno demokratskom",
+        "id": "dvdkke"
+      },
+      {
+        "sentence": "Pad komunizma, globalizacija i masovne komunikacije objašnjavaju širenje _______.",
+        "answer": "demokracije",
+        "hint": "tri razloga",
+        "id": "xjubil"
+      },
+      {
+        "sentence": "Pokret usmjeren na stvaranje nacije i nacionalne države je _______.",
+        "answer": "nacionalizam",
+        "hint": "moderna pojava",
+        "id": "sp0qrs"
+      },
+      {
+        "sentence": "Izborni prag od 5 % sprječava ulazak u parlament mnogo _______ stranaka.",
+        "answer": "malih",
+        "hint": "ne velikih",
+        "id": "whbmgo"
+      },
+      {
+        "sentence": "Postupna promjena unutar postojećeg poretka je reforma, a brza i temeljita promjena poretka je _______.",
+        "answer": "revolucija",
+        "hint": "često uz nasilje",
+        "id": "s7cj5u"
+      }
+    ],
+    "learn": {
+      "title": "Vlast, politika i moć; država, demokracija, stranke i nacionalizam",
+      "content": "\n<h3>Vlast, politika i moć</h3>\n<ul>\n<li><strong>Vlast</strong>: svakodnevna provedba politike, odluka i državnih poslova, čime se bave državni dužnosnici.</li>\n<li><strong>Politika</strong>: sredstva kojima se koristi moć kako bi se utjecalo na doseg i sadržaj aktivnosti vlasti; područje političkoga može sezati daleko izvan državnih institucija.</li>\n<li><strong>Moć</strong>: sposobnost pojedinca ili skupine da provedu svoju volju. Gotovo uvijek je prati <strong>ideologija</strong> (skup vrijednosti i ideja kojima se opravdava određena moć).</li>\n<li><strong>Ovlast</strong>: legitiman način na koji vlada ostvaruje svoju moć. <strong>Legitimnost</strong> znači da se oni koji su podložni vlasti s time slažu.</li>\n</ul>\n<h3>Koncepcija države</h3>\n<p><strong>Država</strong> je politički aparat koji vlada nad određenim područjem uz potporu pravnog sustava i legitimne uporabe sile. Temeljna obilježja moderne državne vlasti:</p>\n<ol>\n<li><strong>suverenitet</strong>: ideja o vlasti nad područjem s jasno utvrđenom granicom, na kojem je ona vrhovna moć;</li>\n<li><strong>građanstvo</strong>: većina ljudi unutar granica političkog sustava su građani, imaju zajednička prava i dužnosti i sebe smatraju dijelom nacije (iako postoje politički izbjeglice ili ljudi bez države, gotovo svatko danas pripada nekom nacionalnom političkom poretku);</li>\n<li><strong>nacionalizam</strong>: sva moderna društva su nacionalne države, odnosno države u kojima velik dio stanovništva sebe smatra građanima i pripadnicima jedne nacije.</li>\n</ol>\n<h3>Tipovi političke vladavine: demokracija</h3>\n<p><strong>Demokracija</strong> je u osnovnom značenju politički sustav u kojem vlada narod, a ne monarsi ili aristokracija. U nekim je društvima službena demokracija ograničena na politiku, dok se u drugima proširuje i na druga područja društvenog života. Općenito se smatra političkim sustavom koji najbolje osigurava političku jednakost, štiti slobodu i neovisnost, brani opći interes, zadovoljava potrebe građana, promiče moralni samorazvoj i omogućuje učinkovito odlučivanje koje uzima u obzir interese svih.</p>\n<table>\n<tr><th>Oblik</th><th>Obilježja</th></tr>\n<tr><td><strong>sudionička demokracija</strong></td><td>odluke zajednički donose svi kojih se tiču; izvorni tip iz antičke Grčke; ograničene važnosti u modernim društvima jer svi ne mogu sudjelovati u svim odlukama; primjeri: gradske skupštine, referendum</td></tr>\n<tr><td><strong>predstavnička demokracija</strong></td><td>odluke ne donose svi članovi, nego ljudi koje su izabrali; na nacionalnoj razini izbori za parlament, kongres ili slično narodno tijelo; danas uobičajena</td></tr>\n<tr><td><strong>liberalna demokracija</strong></td><td>birači mogu birati između dviju i više stranaka, većina odraslih ima pravo glasa</td></tr>\n</table>\n<h3>Autoritarni sustavi</h3>\n<p>Narodu se ne dopušta sudjelovati u vlasti ili se to odlučno sprječava. Potrebe i interesi države imaju prednost pred onima prosječnih građana i nema uspostavljenih zakonskih mehanizama za suprotstavljanje vlasti ili uklanjanje vladara.</p>\n<h3>Širenje demokracije i njezin paradoks</h3>\n<p>Tri su osnovna razloga širenja demokracije: <strong>(1) pad komunizma</strong> (birači nisu mogli birati između različitih kandidata jer je Komunistička partija bila dominantna sila koja je nadzirala politiku i ekonomiju); <strong>(2) globalizacijski procesi</strong> (demokratizacija je povezana sa šire silama globalizacije); <strong>(3) utjecaj masovnih komunikacija</strong>.</p>\n<p><strong>Paradoks demokracije:</strong> upravo čimbenici koji su pomogli širenju demokracije, utjecaj novih tehnologija i globalizacija društvenog života, smanjili su moć vlada u odnosu na globalna pitanja pa su se političke vlasti udaljile od života većine građana. Mnogima se ne sviđa što odluke koje se tiču njihova života donose udaljeni moćnici.</p>\n<h3>Političke stranke i glasanje u zemljama Zapada</h3>\n<ul>\n<li><strong>Politička stranka</strong>: organizacija usmjerena na postizanje legitimne kontrole vlasti putem izbora.</li>\n<li><strong>Izborni sustavi</strong>: većinski i razmjerni. Izbori mogu biti dvostranački i višestranački. U nekim je zemljama vođa većinske stranke (ili jedne od koalicijskih) automatski premijer; u SAD-u se predsjednik bira odvojeno. Postoje mješoviti sustavi (pola članova s najviše glasova u regijama, druga polovica razmjerno); izborni prag od <strong>5 %</strong> sprječava ulazak mnogo malih stranaka u parlament. Sustavi s dominantnom strankom imaju jak centar i isključuju radikalne ideje.</li>\n<li><strong>Vrste stranaka</strong>: religijske (katoličke, protestantske, muslimanske), klasne (radničke, seljačke), etničke, ideološke (stranke ljevice i desnice).</li>\n</ul>\n<h3>Teorije nacionalizma i nacije</h3>\n<ul>\n<li><strong>Nacionalizam</strong>: pokret i ideologija usmjereni na stvaranje nacije i nacionalne države.</li>\n<li><strong>E. Gellner</strong>: nacija i nacionalizam su moderne pojave, proizvod moderne civilizacije.</li>\n<li><strong>A. Smith</strong>: teorija kontinuiteta i predmodernih etnija; nacije povezane s etnijama. <em>Etnija</em> je skupina sa zajedničkim precima, kulturnim identitetom i vezom s određenom domovinom.</li>\n<li>Različitost pojavnih oblika: nacije bez država, postkolonijalni i postkomunistički nacionalizam. <strong>Marx i Durkheim</strong>: nacionalizam ima destruktivnu tendenciju; <strong>Weber</strong> analizira nacionalizam.</li>\n</ul>\n<p><em>Dopuna:</em> nacionalna država, nacionalni identitet i globalizacija: globalizacija izaziva i jačanje nacionalnih i lokalnih identiteta kao odgovora na gubitak nadzora nad globalnim procesima.</p>\n<h3>Dopuna: političke i društvene promjene, društveni pokreti</h3>\n<p><strong>Društveni pokret</strong> je kolektivni, organizirani pokušaj ostvarivanja promjene ili otpora promjeni izvan ustanovljenih institucija (radnički, ženski, ekološki pokret, pokret za građanska prava). Nastaje zbog nezadovoljstva i osjećaja nepravde (relativna deprivacija), uz organiziranje, mobilizaciju resursa i političke prilike za djelovanje. Političke promjene mogu biti <strong>reforma</strong> (postupna promjena unutar postojećeg poretka) ili <strong>revolucija</strong> (brza i temeljita promjena političkog i društvenog poretka, često uz nasilje).</p>\n\n",
+      "id": "24qg6v"
+    },
+    "id": "olrzkn"
+  },
+  "religijaDrustvo": {
+    "name": "Religija i društvo",
+    "icon": "fa-place-of-worship",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Što religija NIJE (B. Wilson)?",
+        "answer": "Ne smije se izjednačiti s monoteizmom, moralnim uputama, objašnjenjima nastanka svijeta ni s nadnaravnim (npr. konfucijanizam i taoizam prihvaćaju prirodni sklad).",
+        "explanation": "Opseg pojma religije.",
+        "id": "1272ao"
+      },
+      {
+        "question": "Koji su elementi definicije religije (R. Johnstone)?",
+        "answer": "Grupa vjernika; bavi se svetim i nadnaravnim (sveto nasuprot profanom); poseban skup ideja (vjera); ritualna praksa; skup normi ponašanja.",
+        "explanation": "Pet elemenata.",
+        "id": "weaduv"
+      },
+      {
+        "question": "Kako se religija definira u sociologiji?",
+        "answer": "Skup simbola koji izazivaju strahopoštovanje, povezan s ritualima i ceremonijama u kojima sudjeluju zajednice vjernika.",
+        "explanation": "Sveto i profano.",
+        "id": "0l2ytp"
+      },
+      {
+        "question": "Što je Feuerbachova teza o religiji?",
+        "answer": "Religija se sastoji od ideja i vrijednosti koje ljudi stvaraju tijekom kulturnog razvoja, ali ih pogrešno projiciraju na božanske sile; to je otuđenje (alijenacija).",
+        "explanation": "Projekcija ljudskih vrijednosti.",
+        "id": "2q10us"
+      },
+      {
+        "question": "Što je otuđenje (alijenacija) u religiji?",
+        "answer": "Ustanovljavanje bogova ili svetih sila različitih od ljudskih bića, kojima se pripisuju vlastite vrijednosti.",
+        "explanation": "Feuerbach.",
+        "id": "2at6s5"
+      },
+      {
+        "question": "Što Marx misli o budućnosti religije?",
+        "answer": "Religija u tradicionalnom obliku će nestati jer pozitivne vrijednosti u njoj mogu postati ideali za poboljšanje života na ovom svijetu, a ne zato što su po sebi pogrešne.",
+        "explanation": "Vrijednosti vraćene ljudima.",
+        "id": "nupzss"
+      },
+      {
+        "question": "Kako Durkheim definira religiju?",
+        "answer": "Kao razlikovanje svetog i profanog: svete objekte i simbole ljudi razdvajaju od rutinskih aspekata života; simbol zamjenjuje središnje vrijednosti skupine.",
+        "explanation": "Štovanje totema.",
+        "id": "mx1t0a"
+      },
+      {
+        "question": "Što je prema Durkheimu stvarni predmet štovanja u religiji?",
+        "answer": "Samo društvo: štovanje totema izvodi se iz štovanja središnjih društvenih vrijednosti.",
+        "explanation": "Kolektivne ceremonije obnavljaju zajedništvo.",
+        "id": "7wacrp"
+      },
+      {
+        "question": "Koju ulogu imaju kolektivne ceremonije prema Durkheimu?",
+        "answer": "Reafirmiraju zajedništvo u vrijeme velikih životnih promjena, stvaraju nove ideje i kategorije misli te obnavljaju postojeće vrijednosti.",
+        "explanation": "Religija oblikuje način života.",
+        "id": "hzzdf6"
+      },
+      {
+        "question": "Po čemu se Weberov pristup religiji razlikuje od Durkheimova i Marxova?",
+        "answer": "Usredotočen je na vezu religije i društvenih promjena i smatra da religija nije nužno konzervativna, za razliku od Marxa.",
+        "explanation": "Religije spasa imaju revolucionarni aspekt.",
+        "id": "7od1c6"
+      },
+      {
+        "question": "Što je religija spasa (Weber)?",
+        "answer": "Religija (npr. kršćanstvo) koja uključuje vjerovanje u mogućnost spasa ako se prihvate njezina vjerovanja i moralna načela; naglasak na grijehu i spasu Božjom milošću.",
+        "explanation": "Stvara napetost i emocionalnu dinamiku.",
+        "id": "z0wkba"
+      },
+      {
+        "question": "Zašto Weber hinduizam naziva „onosvjetskom“ religijom?",
+        "answer": "Jer ističe bijeg od nedaća materijalnog svijeta prema višim sferama duhovnog; ne usredotočuje se na oblikovanje materijalnog svijeta, koji smatra velom.",
+        "explanation": "Istočne religije nemaju takvu napetost.",
+        "id": "q969nd"
+      },
+      {
+        "question": "Što je crkva (Troeltsch)?",
+        "answer": "Masovna formalna organizacija s hijerarhijom profesionalnih dužnosnika, čiji su pripadnici iz svih slojeva; snažnija i konzervativnija od drugih vjerskih skupina.",
+        "explanation": "Univerzalna privlačnost.",
+        "id": "8nrtgw"
+      },
+      {
+        "question": "Što je sekta?",
+        "answer": "Razmjerno mala, čvrsto integrirana skupina nastala odvajanjem od dominantne religije; bez hijerarhije plaćenih službenika, često odbacuje norme šireg društva i traži duboku odanost.",
+        "explanation": "Povlačenje iz svijeta.",
+        "id": "o7yugd"
+      },
+      {
+        "question": "Što je denominacija (H. Becker)?",
+        "answer": "Sekta koja se „ohladila“: ima neka obilježja crkve, ali ne univerzalnu privlačnost; sljedbenici iz različitih slojeva, odobrava odvajanje crkve od države, konzervativnija je od sekte.",
+        "explanation": "Hijerarhija plaćenih službenika.",
+        "id": "e32hla"
+      },
+      {
+        "question": "Što je kult (S. Bruce)?",
+        "answer": "Individualizirani oblik religioznosti: slaba organizacijska povezanost, nema čvrsta sustava vjerovanja, tolerantnost prema drugim religijama, karizmatski vođe.",
+        "explanation": "Udruživanje istomišljenika.",
+        "id": "umdr8c"
+      },
+      {
+        "question": "Što je sekularizacija?",
+        "answer": "Proces u kojem religija i religijske organizacije gube utjecaj u društvenom životu; dimenzije: članstvo, društveni utjecaj i bogatstvo, religioznost (uvjerenja).",
+        "explanation": "Teza je sporna (revitalizacija religije).",
+        "id": "1sgyd7"
+      },
+      {
+        "question": "Koje su vrste novih religijskih pokreta?",
+        "answer": "Pokreti koji prihvaćaju svijet (New Age), koji odbacuju svijet (ekstremizam), koji se prilagođavaju svijetu (npr. pentekostalizam) te milenaristički pokreti.",
+        "explanation": "Četiri vrste.",
+        "id": "1qbrz2"
+      },
+      {
+        "question": "Što je vjerski fundamentalizam?",
+        "answer": "Pristup vjerskih skupina koje se pozivaju na doslovno tumačenje temeljnih svetih tekstova i vjeruju da se doktrine moraju primjenjivati na sve razine društvenog, ekonomskog i političkog života.",
+        "explanation": "Doslovno tumačenje svetih tekstova.",
+        "id": "xmo9qw"
+      },
+      {
+        "question": "Što su milenaristički pokreti?",
+        "answer": "Skupine koje predviđaju neposredno kolektivno iskupljenje vjernika zbog neke kataklizmičke promjene u sadašnjosti.",
+        "explanation": "Očekivanje skorog kraja svijeta.",
+        "id": "an51s5"
+      },
+      {
+        "question": "Kako se religija povezuje s rodom?",
+        "answer": "Većina velikih religija povijesno je imala muške vođe i hijerarhije te tradicionalne rodne uloge, dok žene u mnogim zajednicama čine većinu vjernika.",
+        "explanation": "Rod i religija.",
+        "id": "oilbtn"
+      },
+      {
+        "question": "Što su totemizam i animizam?",
+        "answer": "Totemizam: štovanje životinje ili biljke kao simbola skupine; animizam: vjerovanje da prirodni objekti i bića imaju duh ili dušu.",
+        "explanation": "Jednostavnije, rane religije.",
+        "id": "uniq6l"
+      },
+      {
+        "question": "Koje su monoteističke religije?",
+        "answer": "Judaizam, kršćanstvo i islam: vjeruju u jednog boga, imaju sveta pisma i zajedničko podrijetlo u Abrahamovoj tradiciji.",
+        "explanation": "Vrste religija.",
+        "id": "5kqg58"
+      },
+      {
+        "question": "Koje su istočne religije i po čemu se razlikuju od monoteističkih?",
+        "answer": "Hinduizam, budizam, konfucijanizam i taoizam: često bez jednog osobnog boga, s naglaskom na duhovni put, sklad s prirodom i unutarnje usavršavanje.",
+        "explanation": "Weber ih suprotstavlja religijama spasa.",
+        "id": "ipsldq"
+      },
+      {
+        "question": "Što je politeizam?",
+        "answer": "Vjerovanje u više bogova, od kojih svaki ima svoje područje (npr. antička Grčka i Rim).",
+        "explanation": "Vrste religija.",
+        "id": "rdxfmp"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Religija se prema Wilsonu NE smije izjednačiti s:",
+        "options": [
+          "skupom simbola i ritualima",
+          "zajednicom vjernika",
+          "monoteizmom i nadnaravnim",
+          "normama ponašanja"
+        ],
+        "correct": 2,
+        "id": "buxgl0"
+      },
+      {
+        "question": "Koja NIJE među Johnstoneovim elementima definicije religije?",
+        "options": [
+          "grupa vjernika sljedbenika",
+          "ritualna praksa",
+          "skup normi ponašanja",
+          "isključivo vjerovanje u jednog boga"
+        ],
+        "correct": 3,
+        "id": "od9doo"
+      },
+      {
+        "question": "Odnos svetog i profanog glavna je odrednica religije prema:",
+        "options": [
+          "Durkheimu",
+          "Marxu",
+          "Weberu",
+          "Feuerbachu"
+        ],
+        "correct": 0,
+        "id": "95d2nn"
+      },
+      {
+        "question": "Feuerbach tvrdi da religija nastaje:",
+        "options": [
+          "objavom koja dolazi izravno od samih bogova",
+          "projekcijom ljudskih vrijednosti na božanske sile",
+          "razvojem znanstvenog mišljenja i racionalnosti",
+          "djelovanjem države, vojske i vladajućih slojeva"
+        ],
+        "correct": 1,
+        "id": "3bwpfv"
+      },
+      {
+        "question": "Otuđenje (alijenacija) u religiji znači da ljudi:",
+        "options": [
+          "napuštaju vjeru zbog napretka znanosti",
+          "sudjeluju u obredima samo iz navike i običaja zajednice",
+          "bogovima pripisuju vlastite vrijednosti i norme",
+          "odbacuju moralne norme svoje zajednice"
+        ],
+        "correct": 2,
+        "id": "bjea1n"
+      },
+      {
+        "question": "Marx predviđa nestanak religije jer će:",
+        "options": [
+          "država zabraniti sve vjerske obrede i vjerske zajednice u društvu",
+          "vjernici izgubiti zanimanje za moralna načela",
+          "se sve vrijednosti religije pokazati pogrešnima",
+          "njezine pozitivne vrijednosti postati ovozemaljski ideali"
+        ],
+        "correct": 3,
+        "id": "372ark"
+      },
+      {
+        "question": "Prema Durkheimu u religiji se zapravo štuje:",
+        "options": [
+          "samo društvo i njegove središnje vrijednosti",
+          "prirodne sile i nebeska tijela na nebu",
+          "osobni duh svakog pojedinog vjernika i njegovih predaka",
+          "vođa vjerske zajednice i njegova obitelj"
+        ],
+        "correct": 0,
+        "id": "gmreqo"
+      },
+      {
+        "question": "Kolektivne ceremonije prema Durkheimu služe:",
+        "options": [
+          "ukidanju društvenih normi i pravila",
+          "reafirmaciji zajedništva i vrijednosti",
+          "razdvajanju vjernika od ostatka društva",
+          "jačanju klasnih razlika među članovima"
+        ],
+        "correct": 1,
+        "id": "nqurn8"
+      },
+      {
+        "question": "Weber za razliku od Marxa religiju smatra:",
+        "options": [
+          "uglavnom konzervativnom snagom društva",
+          "tvorevinom koja nema nikakva utjecaja",
+          "snagom koja nije nužno konzervativna",
+          "pojavom ograničenom na tradicionalna društva"
+        ],
+        "correct": 2,
+        "id": "al7wmi"
+      },
+      {
+        "question": "Religija spasa (Weber) naglašava:",
+        "options": [
+          "bijeg od nedaća materijalnog svijeta",
+          "prirodni sklad s cijelim svijetom",
+          "štovanje totema kao simbola skupine",
+          "grijeh i spas Božjom milošću"
+        ],
+        "correct": 3,
+        "id": "3os543"
+      },
+      {
+        "question": "Hinduizam Weber opisuje kao:",
+        "options": [
+          "onosvjetsku religiju koja traži bijeg iz materijalnog svijeta",
+          "religiju spasa s izrazito revolucionarnim aspektom",
+          "religiju koja potiče kapitalistički duh i akumulaciju",
+          "religiju koja nema nikakvih obreda i simbola"
+        ],
+        "correct": 0,
+        "id": "y0gvjp"
+      },
+      {
+        "question": "Crkvu (Troeltsch) obilježava:",
+        "options": [
+          "mala skupina bez ikakve hijerarhije plaćenih dužnosnika",
+          "masovna organizacija s hijerarhijom plaćenih dužnosnika",
+          "odbacivanje vrijednosti šireg društva i povlačenje",
+          "individualizirani oblik religioznosti bez organizacije"
+        ],
+        "correct": 1,
+        "id": "11bmbb"
+      },
+      {
+        "question": "Sektu obilježava:",
+        "options": [
+          "masovna organizacija koja obuhvaća sve slojeve",
+          "tolerancija prema svim drugim religijama i vjerama u zajednici",
+          "mala, čvrsto integrirana skupina odvojena od religije",
+          "hijerarhija plaćenih službenika i birokracija"
+        ],
+        "correct": 2,
+        "id": "ysoa8n"
+      },
+      {
+        "question": "Denominacija je prema H. Beckeru:",
+        "options": [
+          "crkva koja je izgubila vjernike",
+          "kult s karizmatskim vođom",
+          "milenaristički pokret",
+          "sekta koja se „ohladila“"
+        ],
+        "correct": 3,
+        "id": "jbyms7"
+      },
+      {
+        "question": "Kult obilježavaju:",
+        "options": [
+          "slaba organizacija i karizmatski vođe",
+          "snažna hijerarhija plaćenih dužnosnika",
+          "čvrst i razrađen sustav vjerovanja",
+          "odobravanje spajanja crkve i države"
+        ],
+        "correct": 0,
+        "id": "it9cjf"
+      },
+      {
+        "question": "Sekularizacija označava:",
+        "options": [
+          "jačanje religijskih organizacija i njihova utjecaja u društvu",
+          "gubitak utjecaja religije u društvenom životu",
+          "nastanak novih religija u svakom novom naraštaju vjernika",
+          "spajanje religije i države u jedinstvo"
+        ],
+        "correct": 1,
+        "id": "s9e7dx"
+      },
+      {
+        "question": "Pokreti koji prihvaćaju svijet najsličniji su:",
+        "options": [
+          "milenarističkim zajednicama i pokretima",
+          "tradicionalnim crkvama s hijerarhijom",
+          "terapijskim skupinama i skupinama za samopomoć",
+          "ekstremističkim skupinama koje odbacuju svijet"
+        ],
+        "correct": 2,
+        "id": "fnm7ud"
+      },
+      {
+        "question": "Vjerski fundamentalizam podrazumijeva:",
+        "options": [
+          "odbacivanje svih svetih tekstova i doktrina",
+          "slobodno tumačenje prema potrebama društva",
+          "gotovo odvajanje vjere od politike i države",
+          "doslovno tumačenje svetih tekstova"
+        ],
+        "correct": 3,
+        "id": "7ol0hp"
+      },
+      {
+        "question": "Milenaristički pokreti predviđaju:",
+        "options": [
+          "neposredno kolektivno iskupljenje nakon kataklizme",
+          "postupno slabljenje religije kroz stoljeća razvoja društva",
+          "jačanje svjetovnih ideologija u društvu",
+          "prilagodbu vjere svijetu u kojem živimo"
+        ],
+        "correct": 0,
+        "id": "j67e7b"
+      },
+      {
+        "question": "U povijesti velikih religija vodstvo je uglavnom bilo:",
+        "options": [
+          "pretežno žensko, jer žene čine većinu vjernika",
+          "muško, uz hijerarhije i tradicionalne rodne uloge",
+          "u rukama laika, bez svećeničkog staleža",
+          "izborno, uz jednako pravo žena na svećeničku službu"
+        ],
+        "correct": 1,
+        "id": "ogg53t"
+      },
+      {
+        "question": "Štovanje životinje ili biljke kao simbola skupine je:",
+        "options": [
+          "animizam",
+          "politeizam",
+          "totemizam",
+          "monoteizam"
+        ],
+        "correct": 2,
+        "id": "3cq78a"
+      },
+      {
+        "question": "Vjerovanje da prirodni objekti imaju duh ili dušu zove se:",
+        "options": [
+          "totemizam",
+          "monoteizam",
+          "fundamentalizam",
+          "animizam"
+        ],
+        "correct": 3,
+        "id": "nwnb0a"
+      },
+      {
+        "question": "Judaizam, kršćanstvo i islam zajedno čine:",
+        "options": [
+          "monoteističke religije",
+          "politeističke religije",
+          "istočne religije",
+          "religije prirode"
+        ],
+        "correct": 0,
+        "id": "s7asjy"
+      },
+      {
+        "question": "Za istočne religije često je karakteristično:",
+        "options": [
+          "vjerovanje u jednog osobnog boga i spas milošću",
+          "naglasak na duhovni put bez jednog osobnog boga",
+          "štovanje totema kao simbola klana",
+          "objava svete knjige jednom proroku"
+        ],
+        "correct": 1,
+        "id": "di9m6d"
+      },
+      {
+        "question": "Vjerovanje u više bogova, od kojih svaki ima svoje područje, zove se:",
+        "options": [
+          "monoteizam",
+          "animizam",
+          "politeizam",
+          "totemizam"
+        ],
+        "correct": 2,
+        "id": "7tv3c5"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Prema Durkheimu religija razlikuje sveto i _______.",
+        "answer": "profano",
+        "hint": "obično, svakodnevno",
+        "id": "0l93su"
+      },
+      {
+        "sentence": "Feuerbach je religiju objasnio kao projekciju ljudskih vrijednosti, odnosno _______.",
+        "answer": "otuđenje",
+        "hint": "alijenacija",
+        "id": "ptjzc7"
+      },
+      {
+        "sentence": "Weber kršćanstvo smatra religijom _______.",
+        "answer": "spasa",
+        "hint": "grijeh i milost",
+        "id": "jd05bp"
+      },
+      {
+        "sentence": "Ernst Troeltsch opisuje masovnu organizaciju koju zovemo _______.",
+        "answer": "crkva",
+        "hint": "hijerarhija plaćenih dužnosnika",
+        "id": "87pff6"
+      },
+      {
+        "sentence": "Sektu koja se „ohladila“ Becker naziva _______.",
+        "answer": "denominacija",
+        "hint": "između sekte i crkve",
+        "id": "yglsl2"
+      },
+      {
+        "sentence": "Individualizirani oblik religioznosti s karizmatskim vođama je _______.",
+        "answer": "kult",
+        "hint": "S. Bruce",
+        "id": "ji34pv"
+      },
+      {
+        "sentence": "Proces u kojem religija gubi utjecaj naziva se _______.",
+        "answer": "sekularizacija",
+        "hint": "društveni proces",
+        "id": "6vf4gj"
+      },
+      {
+        "sentence": "Doslovno tumačenje svetih tekstova obilježava vjerski _______.",
+        "answer": "fundamentalizam",
+        "hint": "primjena doktrine na sve razine života",
+        "id": "kxujw9"
+      },
+      {
+        "sentence": "Pokreti koji predviđaju skoro kolektivno iskupljenje su _______.",
+        "answer": "milenaristički",
+        "hint": "kataklizmička promjena",
+        "id": "r72grq"
+      },
+      {
+        "sentence": "Pokreti koji prihvaćaju svijet često se nazivaju _______ pokretima.",
+        "answer": "New Age",
+        "hint": "terapijske skupine",
+        "id": "gb7mio"
+      },
+      {
+        "sentence": "Vjerovanje u jednog boga naziva se _______.",
+        "answer": "monoteizam",
+        "hint": "judaizam, kršćanstvo, islam",
+        "id": "ynbg6g"
+      }
+    ],
+    "learn": {
+      "title": "Religija i društvo: definicija, teorije, organizacije, sekularizacija i novi pokreti",
+      "content": "\n<h3>Definicija religije</h3>\n<p>U nekom je obliku religija prisutna u svim ljudskim zajednicama. Najranije zajednice o kojima imamo dokaze pokazuju tragove vjerskih simbola i obreda. U tradicionalnim društvima religija ima središnju ulogu u društvenom životu; vjerski simboli i obredi povezani su s glazbom, slikarstvom, plesom, pripovijedanjem i književnošću. Religija je do danas ostala središnji dio ljudskog iskustva (vjerski svjetonazor nasuprot modernoj racionalnoj misli).</p>\n<p><strong>Što religija nije (B. Wilson):</strong> ne smije se izjednačiti s <em>monoteizmom</em> (vjerovanjem u jednog boga), s <em>moralnim uputama</em> (starogrčki bogovi, ravnodušnost), s <em>objašnjenjima nastanka svijeta</em>, ni s <em>nadnaravnim</em> (konfucijanizam prihvaća prirodni sklad sa svijetom i ne zanima ga pronalaženje „onostranih“ istina, slično kao taoizam).</p>\n<p><strong>Što religija jest:</strong> <strong>Ronald Johnstone</strong> navodi elemente definicije:</p>\n<ol>\n<li>uključuje grupu vjernika, sljedbenika;</li>\n<li>bavi se posvećenim i nadnaravnim pitanjima: odnos <em>sveto – profano</em>;</li>\n<li>uključuje poseban skup ideja, tj. vjeru;</li>\n<li>poseban ritualni obred;</li>\n<li>uključuje skup normi ponašanja.</li>\n</ol>\n<p>Religija je skup <strong>simbola koji izazivaju strahopoštovanje</strong>, povezan s ritualima i ceremonijama u kojima sudjeluju zajednice vjernika.</p>\n<h3>Marx i Feuerbach</h3>\n<p><strong>Ludwig Feuerbach</strong>: religija se sastoji od ideja i vrijednosti koje ljudska bića stvaraju tijekom kulturnog razvoja, ali ih pogrešno projiciraju na božanske sile i bogove (socijalno stvorene vrijednosti i norme pripisuju djelovanju božanstava). <strong>Otuđenje (alijenacija)</strong> označava ustanovljavanje bogova ili svetih sila različitih od ljudskih bića. Kad ljudi shvate da su projicirane vrijednosti zapravo njihove, moći će ih ostvariti na ovom svijetu i neće se prepuštati zagrobnom životu. <strong>Marx</strong>: religija će u tradicionalnom obliku nestati jer pozitivne vrijednosti u njoj mogu postati vodeći ideali poboljšanja sudbine čovječanstva na ovom svijetu, a ne zato što su po sebi pogrešne.</p>\n<h3>Durkheim</h3>\n<ul>\n<li>Religija razlikuje <strong>sveto i profano</strong>: prema svetim objektima i simbolima ljudi se odnose kao prema odvojenima od rutinskih aspekata egzistencije (područje profanog).</li>\n<li>Simbol skupine zamjenjuje središnje vrijednosti skupine ili zajednice; <strong>štovanje totema</strong> izvodi se iz štovanja središnjih društvenih vrijednosti. U religiji se zapravo štuje i obožava <strong>društvo</strong>.</li>\n<li><strong>Kolektivne ceremonije</strong> reafirmiraju zajedništvo kad se ljudi moraju prilagoditi velikim životnim promjenama; stvaraju nove ideje i kategorije misli te obnavljaju postojeće vrijednosti.</li>\n<li>Religija nije samo niz osjećaja i aktivnosti: uvjetuje način života pojedinca u tradicijskim kulturama.</li>\n</ul>\n<h3>Weber</h3>\n<p>Za razliku od Durkheima, usredotočen je na <strong>vezu religije i društvenih promjena</strong>, a za razliku od Marxa smatra da religija nije nužno konzervativna. <strong>Kršćanstvo</strong> je religija spasa: podrazumijeva vjerovanje u mogućnost spasa ako ljudi prihvate njezina vjerovanja i slijede moralna načela; važni su pojmovi grijeha i spasa Božjom milošću. Ti pojmovi stvaraju napetost i emocionalnu dinamiku kakve u istočnim religijama nema; religije spasa imaju „revolucionarni“ aspekt. <strong>Hinduizam</strong> je „onosvjetska“ religija: ističe bijeg od nedaća materijalnog svijeta prema višim sferama duhovnog; materijalnu stvarnost smatra velom koji prikriva prave brige.</p>\n<h3>Vrste religijskih organizacija</h3>\n<table>\n<tr><th>Oblik</th><th>Obilježja</th></tr>\n<tr><td><strong>crkva</strong> (E. Troeltsch)</td><td>masovna formalna organizacija s hijerarhijom profesionalnih dužnosnika; pripadnici iz svih slojeva; snažnija i konzervativnija od ostalih skupina</td></tr>\n<tr><td><strong>sekta</strong></td><td>nastaje odvajanjem od dominantne religije; razmjerno mala, čvrsto integrirana; nema hijerarhije plaćenih službenika; često odbacuje norme i vrijednosti šireg društva i zagovara povlačenje iz svijeta; traži duboku odanost vjerovanju</td></tr>\n<tr><td><strong>denominacija</strong> (H. Becker)</td><td>sekta koja se „ohladila“; ima neka, ne sva obilježja crkve; bez univerzalne privlačnosti; sljedbenici iz različitih slojeva; odobrava odvajanje crkve od države; konzervativnija od sekte; hijerarhija plaćenih službenika i birokratska organizacija</td></tr>\n<tr><td><strong>kult</strong> (S. Bruce)</td><td>individualizirani oblik religioznosti; odbacivanje vrijednosti vanjskog društva; udruživanje istomišljenika; nema čvrsta sustava vjerovanja; tolerancija prema drugim religijama; slaba organizacijska povezanost; karizmatski vođe</td></tr>\n</table>\n<h3>Dimenzije sekularizacije</h3>\n<p><strong>Sekularizacija</strong> je proces u kojem religija i religijske organizacije gube utjecaj u društvenom životu. Dimenzije:</p>\n<ol>\n<li><strong>razina članstva</strong> u religijskim organizacijama (koliko ljudi pripada i aktivno sudjeluje u obredima);</li>\n<li><strong>društveni utjecaj, bogatstvo i ugled</strong> (materijalni uvjeti mnogih tradicionalnih organizacija postaju nesigurniji, iako su neke crkve vrlo bogate, a novi pokreti mogu brzo obogatiti);</li>\n<li><strong>religioznost: uvjerenja i vrijednosti</strong> (posjećivanje crkve i utjecaj nisu nužno izraz vjerovanja: mnogi vjernici ne idu redovito na mise, a redovito dolaženje može biti iz navike ili očekivanja zajednice).</li>\n</ol>\n<p>Teza o sekularizaciji je problematična; protivnici ističu procese <strong>revitalizacije religije</strong>: religija ostaje značajna snaga, često u novim i dotad nepoznatim oblicima.</p>\n<h3>Vrste novih religijskih pokreta</h3>\n<ul>\n<li><strong>Pokreti koji prihvaćaju svijet</strong> slični su „terapijskim“ skupinama i skupinama za samopomoć; često nemaju obrede, crkve ni formalne teologije; ne odbacuju vanjski svijet nego jačaju sposobnosti članova da budu produktivniji (New Age).</li>\n<li><strong>Pokreti koji odbacuju svijet</strong>: ekstremizam; vrlo kritični prema vanjskom svijetu; traže bitnu promjenu načina života.</li>\n<li><strong>Pokreti koji se prilagođavaju svijetu</strong>: ističu unutarnji vjerski život pred ovozemaljskim brigama; teže duhovnoj čistoći koja je u tradicionalnim religijama izgubljena (pentekostalizam).</li>\n<li><strong>Milenaristički pokreti</strong>: predviđaju neposredno kolektivno iskupljenje vjernika zbog kataklizmičke promjene u sadašnjosti.</li>\n<li><strong>Vjerski fundamentalizam</strong>: doslovno tumačenje temeljnih svetih tekstova i uvjerenje da se doktrine moraju primjenjivati na sve razine društvenog, ekonomskog i političkog života.</li>\n</ul>\n<p><em>Dopuna:</em> <strong>rod i religija</strong>: velike religije povijesno su uglavnom imale muško vodstvo i hijerarhije, a žene čine značajan dio vjernika; sociolozi proučavaju kako religija učvršćuje ili osporava rodne uloge.</p>\n<h3>Dopuna: vrste religija</h3>\n<p>Prema obliku vjerovanja razlikuju se:</p>\n<ul>\n<li><strong>totemizam</strong>: štovanje životinje ili biljke kao simbola skupine; <strong>animizam</strong>: vjerovanje da prirodni objekti i bića imaju duh ili dušu (jednostavnije, rane religije);</li>\n<li><strong>politeizam</strong>: vjerovanje u više bogova, od kojih svaki ima svoje područje (npr. antička Grčka i Rim);</li>\n<li><strong>monoteizam</strong>: vjerovanje u jednog boga; <strong>judaizam, kršćanstvo i islam</strong> imaju sveta pisma i zajedničko podrijetlo u Abrahamovoj tradiciji;</li>\n<li><strong>istočne religije</strong> (hinduizam, budizam, konfucijanizam, taoizam): često bez jednog osobnog boga, s naglaskom na duhovni put, sklad s prirodom i unutarnje usavršavanje; Weber ih suprotstavlja religijama spasa.</li>\n</ul>\n\n",
+      "id": "x3um24"
+    },
+    "id": "h5mdk7"
+  },
+  "teorijskeDileme": {
+    "name": "Protestantska etika i teorijske dileme sociologije",
+    "icon": "fa-scale-unbalanced",
+    "color": "#3b82f6",
+    "flashcards": [
+      {
+        "question": "Koje pitanje Weber postavlja u Protestantskoj etici?",
+        "answer": "Zašto se kapitalizam razvio na Zapadu, a nigdje drugdje.",
+        "explanation": "Veza religije i ekonomije.",
+        "id": "79q05a"
+      },
+      {
+        "question": "Što je „duh kapitalizma“ (Weber)?",
+        "answer": "Skup uvjerenja i vrijednosti prvih kapitalističkih trgovaca i industrijalaca: snažan nagon akumulacije bogatstva uz asketski, umjeren život i ulaganje novca u razvoj gospodarskih projekata.",
+        "explanation": "Bogatstvo se ne troši na raskoš.",
+        "id": "578bcz"
+      },
+      {
+        "question": "Što je glavna teza Protestantske etike?",
+        "answer": "Stajališta uključena u duh kapitalizma izvedena su iz religije, osobito iz protestantizma, i to puritanizma; neke su kalvinističke doktrine izravan izvor duha kapitalizma.",
+        "explanation": "Neekonomski čimbenici oblikuju kapitalizam.",
+        "id": "4q4owa"
+      },
+      {
+        "question": "Koje su kalvinističke ideje važne za duh kapitalizma?",
+        "answer": "Ljudi su Božji instrumenti na zemlji s pozivom (poslom kojim slave Boga) i predestinacija: samo su neki izabrani za Kraljevstvo nebesko.",
+        "explanation": "Poziv i predestinacija.",
+        "id": "wqjsna"
+      },
+      {
+        "question": "Što je predestinacija?",
+        "answer": "Kalvinistička ideja prema kojoj su samo neki pojedinci „izabrani“, predodređeni ući u Kraljevstvo nebesko.",
+        "explanation": "Dio Weberove teze.",
+        "id": "mzji2n"
+      },
+      {
+        "question": "Što je glavna sociološka dilema „struktura i akcija“?",
+        "answer": "Koliko smo kreativni djelatnici koji kontroliraju uvjete vlastitog života, a koliko je većina onoga što činimo rezultat društvenih pojava izvan naše kontrole.",
+        "explanation": "Durkheim nasuprot Weberu.",
+        "id": "sjfinl"
+      },
+      {
+        "question": "Što ističu Weber i simbolički interakcionisti, a što Durkheim?",
+        "answer": "Weber i simbolički interakcionisti ističu aktivne, kreativne komponente ljudskog ponašanja; Durkheim ograničavajuću prirodu društvenih utjecaja na naše djelovanje (društvena prisila).",
+        "explanation": "Društvo je izvanjsko.",
+        "id": "i9puir"
+      },
+      {
+        "question": "Koja je glavna kritika Durkheimova stajališta o strukturi?",
+        "answer": "Što je društvo ako ne zbroj mnogih pojedinačnih djelovanja; društvene činjenice mogu ograničiti što činimo, ali ne i odrediti; društvo ne postoji neovisno o ljudima kao fizički svijet.",
+        "explanation": "Ljudi su kreatori, ne samo kreature.",
+        "id": "z2t0y5"
+      },
+      {
+        "question": "Kako Giddens rješava dilemu strukture i akcije?",
+        "answer": "Pojmom strukturacije: društvo ima strukturu samo ako se ljudi ponašaju standardno, a djelovanje je moguće jer imamo društveno strukturirane spoznaje (npr. jezik).",
+        "explanation": "Struktura i djelovanje se uzajamno uvjetuju.",
+        "id": "resslt"
+      },
+      {
+        "question": "Što je dilema „konsenzus i konflikt“?",
+        "answer": "Durkheim i funkcionalisti društvo vide kao suradnju specijaliziranih dijelova uz dogovor o vrijednostima; Marx kao klase s nejednakim sredstvima, s podjelom interesa i napetostima.",
+        "explanation": "Oba stajališta nisu isključiva.",
+        "id": "hdausm"
+      },
+      {
+        "question": "Kako se razrješava dilema konsenzusa i konflikta?",
+        "answer": "Sva društva vjerojatno uključuju opći dogovor o vrijednostima, ali i sukobe; važno je ispitivati vezu konsenzusa i sukoba, ideologije i moći.",
+        "explanation": "Društva uključuju i dogovor i sukobe.",
+        "id": "eim97n"
+      },
+      {
+        "question": "U čemu je dilema rodne pripadnosti?",
+        "answer": "Postoje li osobine koje razdvajaju muškarce i žene u svim društvima ili rodne razlike treba objasniti drugim razlikama (npr. klasnim); proučavanje žena nije isto što i proučavanje roda.",
+        "explanation": "Durkheim, Marx, Butler.",
+        "id": "t8udlo"
+      },
+      {
+        "question": "Što o rodu tvrde Marx i Judith Butler?",
+        "answer": "Marx: rodne se podjele očituju u klasnim, moć muškarca nad ženom nastala je s klasnim podjelama; Butler: rod nije fiksan nego fluidna kategorija, ono što ljudi čine, a ne što jesu.",
+        "explanation": "Dva suprotna ključa.",
+        "id": "l4omg1"
+      },
+      {
+        "question": "U čemu je dilema oblikovanja modernog svijeta?",
+        "answer": "Koliko su moderni svijet oblikovali ekonomski čimbenici (kapitalizam, Marx) a koliko drugi utjecaji; Weber ističe znanost i birokraciju, tj. racionalizaciju.",
+        "explanation": "Marx nasuprot Weberu.",
+        "id": "mfl9me"
+      },
+      {
+        "question": "Kako Marx objašnjava širenje kapitalizma, a kako Weber modernizaciju?",
+        "answer": "Marx: kapitalizam se stalno širi jer se kapitalisti natječu i stalno uvode tehnološke inovacije; Weber: ključni su neekonomski čimbenici, znanost i birokracija (racionalizacija), čak i u socijalizmu.",
+        "explanation": "Racionalizacija = učinkovitost.",
+        "id": "nhwo37"
+      },
+      {
+        "question": "Zašto su sociološke teorije važne za razumijevanje svakodnevice?",
+        "answer": "Pružaju pojmove i modele (struktura, akcija, konsenzus, konflikt) kojima razumijemo i procjenjujemo društvene pojave i vlastiti položaj u društvu.",
+        "explanation": "Zaključno razmatranje.",
+        "id": "x4xswq"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Temeljno pitanje Protestantske etike je:",
+        "options": [
+          "zašto je Marx odbacio svaku religiju",
+          "kako nastaje društvena solidarnost u društvu",
+          "zašto raste stopa samoubojstava u gradovima",
+          "zašto se kapitalizam razvio na Zapadu"
+        ],
+        "correct": 3,
+        "id": "o5dvzb"
+      },
+      {
+        "question": "Duh kapitalizma obilježava:",
+        "options": [
+          "akumulacija bogatstva uz asketski, umjeren život",
+          "rasipno trošenje akumuliranog bogatstva na raskoš i luksuz",
+          "odbacivanje svake trgovine, ulaganja i profita",
+          "težnja za siromaštvom i potpunim odricanjem"
+        ],
+        "correct": 0,
+        "id": "v51tjl"
+      },
+      {
+        "question": "Prema Weberu stajališta duha kapitalizma izvedena su iz:",
+        "options": [
+          "klasnog sukoba proletarijata i buržoazije",
+          "religije, osobito puritanizma",
+          "razvoja vojne tehnike i vojnih sustava",
+          "širenja pismenosti među stanovništvom"
+        ],
+        "correct": 1,
+        "id": "h6w24y"
+      },
+      {
+        "question": "Kalvinistička ideja predestinacije tvrdi da:",
+        "options": [
+          "se spas stječe uglavnom dobrim djelima",
+          "svi ljudi imaju jednak pristup spasu",
+          "su samo neki ljudi izabrani za Kraljevstvo nebesko",
+          "spas nije moguć ni za jednog čovjeka"
+        ],
+        "correct": 2,
+        "id": "ngeckk"
+      },
+      {
+        "question": "Poziv u kalvinizmu odnosi se na:",
+        "options": [
+          "obvezu odlaska u misionarsko putovanje",
+          "prisilni rad u korist crkvene zajednice",
+          "slobodno vrijeme namijenjeno molitvi",
+          "posao kojim čovjek slavi Boga"
+        ],
+        "correct": 3,
+        "id": "msm0ex"
+      },
+      {
+        "question": "Dilema strukture i akcije pita:",
+        "options": [
+          "koliko smo kreativni djelatnici, a koliko ograničeni društvom",
+          "koliko je religija važna za razvoj ekonomije",
+          "postoji li razlika između roda i spola ljudi",
+          "koji je oblik političke vladavine najbolji"
+        ],
+        "correct": 0,
+        "id": "exxax2"
+      },
+      {
+        "question": "Durkheim ističe da društvo nad pojedincem:",
+        "options": [
+          "nema nikakvu ulogu u oblikovanju njegova ponašanja i identiteta",
+          "ima primat i ograničava njegovo djelovanje prisilom",
+          "djeluje samo preko slobodne volje pojedinaca u zajednici",
+          "postoji samo kao zbroj pojedinačnih djelovanja"
+        ],
+        "correct": 1,
+        "id": "mopn4l"
+      },
+      {
+        "question": "Weber i simbolički interakcionisti ističu:",
+        "options": [
+          "ograničavajuću prirodu društvenih činjenica i društvene prisile",
+          "primat društva nad pojedincem u svemu",
+          "aktivne i kreativne komponente ljudskog ponašanja",
+          "biološke osnove svakog ljudskog ponašanja"
+        ],
+        "correct": 2,
+        "id": "nb5f41"
+      },
+      {
+        "question": "Prema kritičarima Durkheimova stajališta, društvo je:",
+        "options": [
+          "neovisno o ljudima kao što je fizički svijet",
+          "stvarnost smještena izvan ljudske svijesti",
+          "sustav koji ne može mijenjati ljude",
+          "zbroj mnogih pojedinačnih djelovanja"
+        ],
+        "correct": 3,
+        "id": "oxiget"
+      },
+      {
+        "question": "Giddensov pojam strukturacije povezuje:",
+        "options": [
+          "društvenu strukturu i ljudsko djelovanje",
+          "klasu i status u teoriji stratifikacije",
+          "religiju i ekonomiju u razvoju kapitalizma",
+          "moć i legitimnost u političkim sustavima"
+        ],
+        "correct": 0,
+        "id": "8wd95a"
+      },
+      {
+        "question": "Dilema konsenzusa i konflikta suprotstavlja:",
+        "options": [
+          "Weberovu racionalizaciju i Giddensovu strukturaciju društva",
+          "Durkheimov dogovor o vrijednostima i Marxove klasne podjele",
+          "Freudovu psihologiju i Meadov simbolički interakcionizam",
+          "Mertona i Parsonsa u teoriji o ulogama roda"
+        ],
+        "correct": 1,
+        "id": "xvt2ge"
+      },
+      {
+        "question": "Stajališta o konsenzusu i konfliktu su:",
+        "options": [
+          "gotovo isključiva pa valja odabrati samo jedno od njih",
+          "jednako netočna za sva društva u povijesti",
+          "neisključiva jer društva uključuju i dogovor i sukobe",
+          "primjenjiva samo na moderna industrijska društva"
+        ],
+        "correct": 2,
+        "id": "qtd4m1"
+      },
+      {
+        "question": "Judith Butler tvrdi da je rod:",
+        "options": [
+          "fiksna biološka kategorija zadana rođenjem svake osobe",
+          "posljedica klasnih podjela u društvu",
+          "urođen kao i spol svake osobe",
+          "fluidna kategorija koja se očituje u onom što ljudi čine"
+        ],
+        "correct": 3,
+        "id": "ew4rrs"
+      },
+      {
+        "question": "Marx smatra da se moć muškarca nad ženom pojavila:",
+        "options": [
+          "s pojavom klasnih podjela",
+          "uz razvoj industrijskog društva i tvornica",
+          "s pojavom religije i vjerskih obreda",
+          "tek u modernom dobu i građanskim revolucijama"
+        ],
+        "correct": 0,
+        "id": "2t2cl3"
+      },
+      {
+        "question": "Dilema oblikovanja modernog svijeta pita:",
+        "options": [
+          "je li religija važnija od politike u društvu",
+          "koliko su ga oblikovali ekonomski čimbenici, a koliko drugi utjecaji",
+          "koji je oblik vladavine najbolji za društvo",
+          "kako nastaje društvena nejednakost među ljudima"
+        ],
+        "correct": 1,
+        "id": "hgzxwi"
+      },
+      {
+        "question": "Marx širenje kapitalizma objašnjava:",
+        "options": [
+          "prevlašću znanosti i birokracije u društvu",
+          "utjecajem puritanske vjere i etike rada",
+          "tržišnim natjecanjem i stalnim tehnološkim inovacijama",
+          "djelovanjem vojne moći i osvajanjima novih područja"
+        ],
+        "correct": 2,
+        "id": "59boa7"
+      },
+      {
+        "question": "Weber ključnom u razvoju modernog društva smatra:",
+        "options": [
+          "uglavnom mehanizme kapitalističkog poduzetništva",
+          "klasni sukob i stalnu pauperizaciju radnika",
+          "razvoj samo vojne tehnologije i oružja",
+          "znanost i birokraciju, odnosno racionalizaciju"
+        ],
+        "correct": 3,
+        "id": "f6aaaw"
+      },
+      {
+        "question": "Koje su dvije kalvinističke ideje povezane s duhom kapitalizma?",
+        "options": [
+          "poziv (zvanje) i predestinacija",
+          "celibat i siromaštvo",
+          "hodočašće i oprost grijeha",
+          "monaštvo i beskućništvo"
+        ],
+        "correct": 0,
+        "id": "qnz6hb"
+      },
+      {
+        "question": "Dilema rodne pripadnosti pita:",
+        "options": [
+          "koliko su žene zastupljene na političkim položajima",
+          "postoje li osobine koje razdvajaju muškarce i žene u svim društvima",
+          "koji je spol bio dominantan u ranijim povijesnim razdobljima",
+          "može li se rod promijeniti uglavnom zakonskim putem"
+        ],
+        "correct": 1,
+        "id": "0zfcu1"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Weber je u Protestantskoj etici istaknuo ulogu puritanizma i _______.",
+        "answer": "kalvinizma",
+        "hint": "vrsta protestantizma",
+        "id": "z2x6vx"
+      },
+      {
+        "sentence": "Ideja da su samo neki ljudi izabrani za spas zove se _______.",
+        "answer": "predestinacija",
+        "hint": "kalvinizam",
+        "id": "9hkfsf"
+      },
+      {
+        "sentence": "Weber i simbolički interakcionisti ističu aktivne i _______ komponente ljudskog ponašanja.",
+        "answer": "kreativne",
+        "hint": "ne pasivne",
+        "id": "xahrf2"
+      },
+      {
+        "sentence": "Durkheim društveni utjecaj na pojedinca opisuje kao društvenu _______.",
+        "answer": "prisilu",
+        "hint": "ograničenje djelovanja",
+        "id": "zjjqn4"
+      },
+      {
+        "sentence": "Giddens za proces uzajamnog uvjetovanja strukture i djelovanja rabi pojam _______.",
+        "answer": "strukturacija",
+        "hint": "jezik je primjer",
+        "id": "gmzilr"
+      },
+      {
+        "sentence": "Rod nije fiksan nego _______ kategorija, tvrdi Judith Butler.",
+        "answer": "fluidna",
+        "hint": "ono što ljudi čine",
+        "id": "lzndh8"
+      },
+      {
+        "sentence": "Weber razvoj znanosti i birokracije naziva _______.",
+        "answer": "racionalizacija",
+        "hint": "organizacija prema učinkovitosti",
+        "id": "sqkw18"
+      },
+      {
+        "sentence": "Zaključno, sociološke teorije pružaju pojmove za razumijevanje _______ suvremenih društava.",
+        "answer": "svakodnevice",
+        "hint": "smisao sociološke imaginacije",
+        "id": "dg7i85"
+      }
+    ],
+    "learn": {
+      "title": "Protestantska etika; teorijski problemi: struktura i akcija, konsenzus i konflikt, rod, moderni svijet",
+      "content": "\n<h3>Max Weber: Protestantska etika</h3>\n<p>Weber u djelu o protestantskoj etici postavlja jedno od temeljnih pitanja: <strong>zašto se kapitalizam razvio na Zapadu, a nigdje drugdje?</strong> Odgovor traži u religiji.</p>\n<ul>\n<li><strong>Duh kapitalizma</strong>: skup uvjerenja i vrijednosti svojstven prvim kapitalističkim trgovcima i industrijalcima. Imali su jak nagon akumulacije osobnog bogatstva, ali ga, za razliku od bogatih u drugim dijelovima svijeta, nisu trošili na raskošan život. Način života bio im je <em>asketski i umjeren</em>; novac su ulagali kako bi potaknuli gospodarske projekte koje su namjeravali stvoriti.</li>\n<li>Temelj teorije: stajališta uključena u duh kapitalizma <strong>izvedena su iz religije</strong>. Kršćanstvo je općenito učvrstilo takvo stajalište, no osnovnu pokretačku snagu omogućio je <strong>protestantizam, osobito puritanizam</strong>. Prvi kapitalisti bili su uglavnom puritanci, mnogi pristaše <strong>kalvinizma</strong>.</li>\n<li>Kalvinističke doktrine kao izravan izvor duha kapitalizma: (1) ljudi su <strong>Božji instrumenti</strong> na ovom svijetu, stvoreni da imaju svoj <em>poziv</em>, posao kojim proslavljaju postojanje Boga; (2) <strong>predestinacija</strong>: samo su neki pojedinci „izabrani“, predodređeni ući u Kraljevstvo nebesko.</li>\n</ul>\n<h3>Teorijski problem 1: odnos strukture i akcije</h3>\n<p>Pitanje je koliko smo <em>kreativni djelatnici</em> koji aktivno kontroliraju uvjete vlastitog života, a koliko je većina onoga što činimo rezultat općih društvenih pojava izvan naše kontrole.</p>\n<ul>\n<li><strong>Durkheim</strong>: društvo ima primat nad pojedincem; društvena struktura je izvanjska, nalik fizičkom svijetu; <em>društvena prisila</em> ograničava naše aktivnosti i postavlja granice onomu što pojedinci mogu učiniti.</li>\n<li><strong>Weber i simbolički interakcionisti</strong> ističu aktivne, kreativne komponente ljudskog ponašanja.</li>\n<li><strong>Kritičari</strong> Durkheima pitaju: što je društvo ako ne zbroj mnogih pojedinačnih djelovanja? Društvene činjenice mogu ograničiti ono što činimo, ali ne i odrediti. Mi smo <em>kreatori</em> društva, a ne samo kreature. Pretpostavka da je društvo izvanjsko kao fizički svijet je pogrešna jer bi svijet postojao i bez ljudi, a društvo ne bi.</li>\n<li><strong>Giddens</strong>: <em>strukturacija</em> je koristan pojam: društva imaju „strukturu“ samo ako se ljudi ponašaju standardno i razmjerno predvidljivo, a „djelovanje“ je moguće samo jer imamo golemu količinu društveno strukturiranih spoznaja (npr. jezik je društveno strukturiran i stalno u procesu strukturacije).</li>\n</ul>\n<h3>Teorijski problem 2: konsenzus i konflikt</h3>\n<ul>\n<li><strong>Durkheim</strong> i većina funkcionalista društvo promatraju kao integriranu cjelinu uzajamno ovisnih dijelova (analogija s fiziologijom tijela); trajnost društva ovisi o suradnji specijaliziranih institucija, koja pretpostavlja konsenzus i dogovor o temeljnim vrijednostima.</li>\n<li><strong>Marx</strong>: društva su podijeljena na <em>klase s nejednakim sredstvima</em>; zbog nejednakosti u sustav su ugrađene podjele interesa koje u nekom trenutku izbijaju na površinu i pretvaraju se u aktivnu promjenu; društvo je puno napetosti.</li>\n<li><strong>Kritika oba pristupa</strong>: stajališta nisu isključiva; sva društva vjerojatno uključuju opći dogovor o vrijednostima, ali svakako i konflikte. Valja ispitivati vezu konsenzusa i sukoba, uz pojmove <strong>ideologije</strong> i <strong>moći</strong>.</li>\n</ul>\n<h3>Teorijski problem 3: rodna pripadnost</h3>\n<p>Postoje li osobine koje razdvajaju muškarce i žene, njihove identitete i društveno ponašanje, podjednako u svim društvima? Ili rodne razlike uvijek treba objasniti drugim razlikama koje razdvajaju društva (npr. klasnim)?</p>\n<ul>\n<li>U ispitnoj se literaturi Durkheimu pripisuje stav da žene i muškarci imaju različite identitete i sklonosti jer su žene manje socijalizirane i bliže prirodi. Rodne se razlike onda temelje na biološki danim razlikama, ali to ne znači da su uglavnom urođene (identitet žena oblikovan je funkcijom odgoja i reprodukcije).</li>\n<li><strong>Marx</strong>: rodne se podjele očituju u klasnim; moć muškarca nad ženom pojavila se tek s klasnim podjelama.</li>\n<li><strong>Judith Butler</strong>: rod nije fiksna, nego <strong>fluidna kategorija</strong>, koja se očituje u onome što ljudi čine, a ne što jesu.</li>\n<li>Dio muškaraca osjeća se marginaliziranima uspjehom feminističkog pokreta, što je također dio rasprave o rodnoj pripadnosti.</li>\n<li><strong>Kritika</strong>: proučavati žene u sociologiji nije isto što i baviti se problemima roda; pitanje je koliko se problem može objasniti drugim pojmovima (klasa, etnička pripadnost).</li>\n</ul>\n<h3>Teorijski problem 4: oblikovanje modernog svijeta</h3>\n<p>Ne odnosi se na opća obilježja ljudskog ponašanja, nego na posebne odlike modernog razvoja; proizlazi iz razlike marksističkih i nemarksističkih pristupa. Dilema: koliko su moderni svijet oblikovali <em>ekonomski čimbenici</em> koje je isticao Marx (mehanizmi kapitalističkog poduzetništva), a koliko drugi utjecaji.</p>\n<table>\n<tr><th>Marksistička perspektiva</th><th>Weberova shvaćanja</th></tr>\n<tr><td>moderna društva su kapitalistička; kapitalizam se stalno širi jer se kapitalisti natječu da prodaju robu i opstanu na tržištu, što vodi stalnim tehnološkim inovacijama; objašnjava globalno širenje zapadne industrije</td><td>ključnu ulogu imaju neekonomski čimbenici (glavna teza Protestantske etike); kapitalizam je samo jedan od čimbenika; temeljniji su znanost (koja oblikuje tehnologiju, čak i u budućem socijalističkom društvu) i birokracija (jedini način učinkovite organizacije mnogih ljudi): zajedno <strong>racionalizacija</strong>, organizacija života na načelima učinkovitosti</td></tr>\n</table>\n<p><strong>Kritike:</strong> Marxu se prigovara da je pretjerao s utjecajem čisto ekonomskih čimbenika i da je kapitalizam sporedniji za moderni razvoj nego što je mislio; neki su pisci bili skeptični prema njegovoj prognozi da će socijalizam zamijeniti kapitalizam. Mišljenja su podijeljena, a stajalište često ovisi o političkoj orijentaciji.</p>\n<h3>Zaključno: značaj socioloških teorija</h3>\n<p><em>Dopuna:</em> sociološke teorije nisu međusobno isključive: svaka osvjetljava drugi dio svakodnevice (struktura, akcija, konsenzus, sukob, rod, moderni razvoj). Zajedno daju pojmove za razumijevanje i kritičko procjenjivanje suvremenih društava i vlastitog položaja u njima, što je i smisao sociološke imaginacije.</p>\n",
+      "id": "8h5ncr"
+    },
+    "id": "psh4mu"
+  }
+};
+
+if (typeof window !== 'undefined') { window.socPfriM2 = socPfriM2; }
+if (typeof module !== 'undefined' && module.exports) { module.exports = socPfriM2; }

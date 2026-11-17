@@ -23,7 +23,7 @@
     // (Bez build-koraka: ručna konstanta; kasnije može iz auto-version-bump skripte, F3 3C.)
     var APP_RELEASE = 'sokrat-study@20260699';
 
-    // Okruženje po ADRESI (BUG-053): bez njega Sentry SVE zove „production", pa je pad s
+    // Okruženje po ADRESI (BUG-055): bez njega Sentry SVE zove „production", pa je pad s
     // localhost + staging-baze izgledao kao kvar na produkciji i pojeo pola istrage.
     function appEnvironment(host) {
         if (host === 'www.sokratstudy.com' || host === 'sokratstudy.com') return 'production';

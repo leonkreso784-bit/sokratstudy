@@ -135,6 +135,11 @@
   3. Tek kad je zeleno i pregledano → merge u `main` (= produkcijski deploy) **uz izričitu potvrdu korisnika**.
 - **Lokalno prije pusha grane** (da CI ne bude crven): `npm run preflight` + **ciljani** Playwright; puni `npx playwright test` je CI-jev posao — v. [Koji testovi kada](#koji-testovi-kada-leon-2026-10-11).
 - **Pre-push hook na `main` (od S1):** `preflight` → `ci-tajne.js --zahtijevaj` → **`test:authed` (~15 min)**. Leonova odluka 2026-09-24: na `main` ide **punih 154 tvrdnji**. Zašto toliko čekanja: preflight ne vrti **nijedan** test koji se stvarno prijavi — RLS, Storage, publish-RPC i brava na lozinci mjere se **isključivo** authed suiteom, a on je dotad bio izvan i preflighta i CI-ja. Svjestan bypass ostaje `git push --no-verify`.
+- **⚠️ Runner je pinan na `ubuntu-24.04` (2026-11-15).** GitHub je `ubuntu-latest` od 19.10.2026 prebacio na Ubuntu 26.04,
+  gdje `npx playwright install chromium` pada („Playwright does not support chromium on ubuntu26.04-x64") **prije ijednog
+  testa** — crveni CI koji nema veze s kodom. Na `main`-u se to mjesec dana nije vidjelo jer nije bilo push-CI-ja, samo
+  `keep-alive`. Pin se diže tek kad Playwright podrži novi Ubuntu; uzrok pada uvijek čitaj u logu (`gh run view <id>
+  --log-failed`), ne u anotacijama koje pokazuju samo „exit code 1".
 
 
 ## Koji testovi kada (Leon, 2026-10-11)

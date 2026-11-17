@@ -28,7 +28,19 @@ const SOKRAT_CATALOG = {
         { id: 'hospitality-management', name: 'Hospitality Management' },
         // HRVATSKI paralelni program (klon, Opcija A — vidi docs/archive/HRV_PLAN.md). Isti predmeti,
         // hrvatski sadržaj (data/<subj>-hr/*.js), vlastiti storageKey. Dostupan kroz Browse.
-        { id: 'hospitality-management-hr', name: 'Menadžment u Hotelijerstvu' }
+        // `lang` = jezik SUČELJA koji se predlaže kad korisnik otvori predmet tog programa (js/i18n.js).
+        { id: 'hospitality-management-hr', name: 'Menadžment u Hotelijerstvu', lang: 'hr' },
+        // MOR (Leon, 2026-11-14): 1. god dijeli 8 kolegija s MUH-om (kopije `-mor`), 2. god ima vlastite.
+        { id: 'sustainable-development-management-hr', name: 'Menadžment održivog razvoja', lang: 'hr' }
+      ]
+    },
+    {
+      id: 'pfri',
+      name: 'Pravni fakultet Sveučilišta u Rijeci',
+      // Drugi fakultet (2026-11-16): gradivo s Drivea studenata + službeni izvedbeni planovi 2025./26.
+      shortName: 'PFRI',
+      programs: [
+        { id: 'law-integrated-hr', name: 'Pravo (integrirani studij)', lang: 'hr' }
       ]
     }
   ],
@@ -40,6 +52,50 @@ const SOKRAT_CATALOG = {
   //                    '*' = default za sve lekcije; ako lekcija nema mapiranje
   //                    i nema '*', sadržaj je prazan (npr. "coming soon").
   subjects: [
+    // ---- 3. godina, 1. semestar (zimski) — FMTU Hospitality Management ----
+    // Sadržaj: Sokrat MCP materijali (2026-11-04), samo Midterm 1; Midterm 2 i Final dolaze poslije.
+    {
+      id: 'public-finance',
+      programId: 'hospitality-management',
+      year: 3, semester: 1,
+      name: 'Public Finance',
+      shortName: 'PF',
+      icon: 'fa-landmark',
+      color: '#b45309',
+      iconGradient: ['#b45309', '#f59e0b'],
+      description: 'Public finance and ideology, public goods, externalities, social security, tax incidence and income distribution, taxation and efficiency (Rosen & Gayer)',
+      storageKey: 'public-finance-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'midterm-1', name: 'Midterm 1', description: 'T1–T6: public finance and ideology, public goods, externalities, social security, taxation and income distribution, taxation and efficiency' }
+      ],
+      content: {
+        scripts: ['data/public-finance/midterm-1.js'],
+        resolve: { 'midterm-1': 'publicFinanceM1' },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'quality-management',
+      programId: 'hospitality-management',
+      year: 3, semester: 1,
+      name: 'Quality Management',
+      shortName: 'QM',
+      icon: 'fa-award',
+      color: '#0d9488',
+      iconGradient: ['#0d9488', '#2dd4bf'],
+      description: 'Quality theory, quality gurus, the seven TQM principles, PDCA, Kaizen and quality circles, standardization of QMS and ISO 9001:2015',
+      storageKey: 'quality-management-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'midterm-1', name: 'Midterm 1', description: 'Topics 1–6: quality theory, quality gurus, TQM principles I–II (PDCA), standardization of QMS, ISO 9001:2015' }
+      ],
+      content: {
+        scripts: ['data/quality-management/midterm-1.js'],
+        resolve: { 'midterm-1': 'qualityManagementM1' },
+        dataFormat: 'json'
+      }
+    },
     {
       id: 'te2',
       programId: 'hospitality-management',
@@ -1066,7 +1122,663 @@ const SOKRAT_CATALOG = {
         codeScripts: ['data/accounting-hr/exercises.js'], // KÔD (generate()) → uvijek iz datoteke, nikad iz baze (BUG-012)
         exercises: 'accountingHrExercises'   // window var s interaktivnim vježbama (features.exercises)
       }
-    }
+    },
+
+    // ===== MOR — Menadžment održivog razvoja (FMTU, HR) =====================================
+    // KOPIJE MUH predmeta (Leon 2026-11-14, anketa): isti kolegij i nositelj na oba smjera.
+    // Vlastiti id + storageKey, a gradivo se čita iz ISTIH data/<muh-id>/*.js datoteka (window-varovi
+    // su isti). data/json/<id>-mor/ generira `npm run export:json`. Placement (ADR-022) je svjesno
+    // odbačen jer bi preimenovao 9 živih id-eva. ⚠️ Izmjena MUH gradiva → ponovi `export:json`.
+    {
+      id: 'microeconomics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Mikroekonomija',
+      shortName: 'MIKRO',
+      icon: 'fa-chart-line',
+      color: '#0ea5e9',
+      iconGradient: ['#0ea5e9', '#38bdf8'],
+      description: 'Pindyck i Rubinfeld: ponuda i potražnja, elastičnost, ponašanje potrošača, nesigurnost, proizvodnja i troškovi; konkurentna tržišta, monopol i monopson, određivanje cijena, oligopol, teorija igara, tržišta faktora, eksternalije i javna dobra (KaTeX formule i riješeni primjeri)',
+      storageKey: 'microeconomics-mor-progress',
+      features: { blindMap: false },
+      // AUTORSKI iz HR materijala (upute kolegija + studentske skripte FMTU; Pindyck kao dopuna). KaTeX (ADR-009).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Poglavlja 1–7: uvodna razmatranja, ponuda i potražnja, elastičnost, ponašanje potrošača, pojedinačna i tržišna potražnja, izbor u uvjetima nesigurnosti, proizvodnja i trošak proizvodnje' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Poglavlja 8–14 i 18: maksimalizacija profita, konkurentna tržišta, monopol i monopson, određivanje cijena uz tržišnu moć, monopolistička konkurencija i oligopol, teorija igara, tržišta faktora, eksternalije i javna dobra' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati ZADNJI (Object.assign microeconomicsHrM1 + microeconomicsHrM2 + examPractice).
+        scripts: [
+          'data/microeconomics-hr/midterm-1.js',
+          'data/microeconomics-hr/midterm-2.js',
+          'data/microeconomics-hr/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'microeconomicsHrM1',
+          'second-midterm': 'microeconomicsHrM2',
+          'final': 'microeconomicsHrFinal'
+        },
+        dataFormat: 'json' // dual-read; study iz data/json/microeconomics-hr/*.json
+      }
+    },
+    {
+      id: 'math-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Matematika',
+      shortName: 'MAT',
+      icon: 'fa-square-root-variable',
+      color: '#16a34a',
+      iconGradient: ['#16a34a', '#4ade80'],
+      description: 'Jednadžbe, funkcije i domena, derivacije, rast, pad i ekstremi, optimizacija troškova i dobiti, elastičnost potražnje; neodređeni integral, kamatni račun, rente, zajam i Gauss-Jordanova metoda (KaTeX formule i riješeni ispitni zadaci)',
+      storageKey: 'math-mor-progress',
+      features: { blindMap: false, exercises: true },
+      // Temelj: EN math (isti FMTU kolegij) + usklađeno s HR demonstraturama i starim ispitima 2023/24. KaTeX (ADR-009).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Jednadžbe (linearne, kvadratne, svodive na kvadratne), funkcije i prirodna domena, derivacije, rast, pad i ekstremi, troškovi, prihod i dobit, elastičnost potražnje' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Neodređeni integral, jednostavni i složeni kamatni račun, rente, zajam (otplatna tablica) i Gauss-Jordanova metoda' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus riješeni zadaci sa starih ispita' }
+      ],
+      content: {
+        // final.js MORA se učitati prije vježbi (Object.assign mathHrM1 + mathHrM2 + examPractice).
+        // math-lib.js (window.MathLib, ZAJEDNIČKI s EN math) mora se učitati PRIJE exercises.js.
+        scripts: [
+          'data/math-hr/midterm-1.js',
+          'data/math-hr/midterm-2.js',
+          'data/math-hr/final.js',
+          'data/math/math-lib.js',
+          'data/math-hr/exercises.js'
+        ],
+        resolve: {
+          'first-midterm': 'mathHrM1',
+          'second-midterm': 'mathHrM2',
+          'final': 'mathHrFinal'
+        },
+        dataFormat: 'json', // dual-read; study iz data/json/math-hr/*.json; vježbe UVIJEK iz .js
+        codeScripts: ['data/math/math-lib.js', 'data/math-hr/exercises.js'], // KÔD (generate() + lib) → uvijek iz datoteke, nikad iz baze (BUG-012)
+        exercises: 'mathHrExercises'   // window var s interaktivnim vježbama (features.exercises)
+      }
+    },
+    {
+      id: 'statistics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Statistika',
+      shortName: 'STAT',
+      icon: 'fa-chart-simple',
+      color: '#f43f5e',
+      iconGradient: ['#f43f5e', '#fb7185'],
+      description: 'Opisna statistika: temeljni pojmovi, uređivanje i prikazivanje podataka, relativni brojevi, srednje vrijednosti, disperzija, asimetrija i zaobljenost, metoda uzorka, korelacija i regresija, vremenski nizovi (KaTeX formule i riješeni primjeri)',
+      storageKey: 'statistics-mor-progress',
+      features: { blindMap: false, exercises: true },
+      // AUTORSKI iz HR materijala (predavanja/seminari FMTU 2025/26) — NE prijevod EN statistics. KaTeX (ADR-009).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Predavanja 1–6: temeljni pojmovi, uređivanje i prikazivanje podataka, relativni brojevi, srednje vrijednosti, mjere disperzije, asimetrija i zaobljenost' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Predavanja 7–9: metoda uzorka, korelacijska i regresijska analiza, osnovna analiza vremenskih nizova' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati ZADNJI (Object.assign statisticsHrM1 + statisticsHrM2 + examPractice).
+        scripts: [
+          'data/statistics-hr/midterm-1.js',
+          'data/statistics-hr/midterm-2.js',
+          'data/statistics-hr/final.js',
+          'data/statistics-hr/exercises.js'
+        ],
+        resolve: {
+          'first-midterm': 'statisticsHrM1',
+          'second-midterm': 'statisticsHrM2',
+          'final': 'statisticsHrFinal'
+        },
+        dataFormat: 'json', // dual-read; study iz data/json/statistics-hr/*.json; vježbe UVIJEK iz .js
+        codeScripts: ['data/statistics-hr/exercises.js'], // KÔD (generate()) → uvijek iz datoteke, nikad iz baze (BUG-012)
+        exercises: 'statisticsHrExercises'   // window var s interaktivnim vježbama (features.exercises)
+      }
+    },
+    {
+      id: 'business-informatics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Poslovna informatika',
+      shortName: 'PI',
+      icon: 'fa-laptop-code',
+      color: '#155e75',
+      iconGradient: ['#155e75', '#22d3ee'],
+      description: 'Sustavski pristup, podaci i informacije, hardver, softver, mreže, WWW, e-poslovanje, sigurnost',
+      storageKey: 'business-informatics-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'midterm-1', name: '1. kolokvij', description: 'Poglavlja 1–6: sustavski pristup, podaci, hardver, softver, mreže, WWW' },
+        { id: 'midterm-2', name: '2. kolokvij', description: 'Poglavlja 7–11: e-poslovanje, IT trendovi, podrška menadžmentu, ekspertni sustavi, sigurnost' },
+        { id: 'final', name: 'Završni ispit', description: 'Sva poglavlja 1–11 (oba kolokvija zajedno)' }
+      ],
+      content: {
+        scripts: [
+          'data/business-informatics-hr/midterm-1.js',
+          'data/business-informatics-hr/midterm-2.js',
+          'data/business-informatics-hr/final.js'
+        ],
+        resolve: {
+          'midterm-1': 'businessInformaticsHrM1',
+          'midterm-2': 'businessInformaticsHrM2',
+          'final': 'businessInformaticsHrFinal'
+        },
+        dataFormat: 'json' // F2 2A.4b (dual-read; study iz data/json/business-informatics-hr/*.json)
+      }
+    },
+    {
+      id: 'academic-writing-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Osnove izrade pisanog djela',
+      shortName: 'OIPD',
+      icon: 'fa-pen-nib',
+      color: '#a855f7',
+      iconGradient: ['#a855f7', '#c084fc'],
+      description: 'Logika i znanstvene metode (pojam, sud, zaključak, dokaz; opće i posebne metode); vrste pisanih djela, seminarski rad, dokumentacijska osnova i citat, bibliografija u Chicago stilu',
+      storageKey: 'academic-writing-mor-progress',
+      features: { blindMap: false },
+      // AUTORSKI iz HR materijala (studentske skripte FMTU) — NE prijevod EN academic-writing.
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Logika i metodologija: pojam, sud, zaključak i dokaz; obilježja znanstvene metode; opće metode (promatranje, eksperiment, modeliranje, statistička, komparativna, povijesna, analiza i sinteza, indukcija i dedukcija…)' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Pisano djelo: znanstvena, stručna i znanstveno-stručna djela, seminarski rad (stranice i dijelovi), dokumentacijska osnova i citat, bibliografske jedinice u Chicago stilu' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati ZADNJI (Object.assign academicWritingHrM1 + academicWritingHrM2 + examPractice).
+        scripts: [
+          'data/academic-writing-hr/midterm-1.js',
+          'data/academic-writing-hr/midterm-2.js',
+          'data/academic-writing-hr/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'academicWritingHrM1',
+          'second-midterm': 'academicWritingHrM2',
+          'final': 'academicWritingHrFinal'
+        },
+        dataFormat: 'json' // dual-read; study iz data/json/academic-writing-hr/*.json
+      }
+    },
+    {
+      id: 'macroeconomics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 2,
+      name: 'Makroekonomija',
+      shortName: 'MAKRO',
+      icon: 'fa-chart-area',
+      color: '#f59e0b',
+      iconGradient: ['#f59e0b', '#fbbf24'],
+      description: 'Temeljni pojmovi, BDP i nacionalno računovodstvo, AD–AS model, potrošnja, štednja i investicije, fiskalna i monetarna politika, IS-LM, otvoreno gospodarstvo i platna bilanca, tržište rada (KaTeX formule i riješeni zadaci s vježbi i priprema za kolokvij)',
+      storageKey: 'macroeconomics-mor-progress',
+      features: { blindMap: false, exercises: true },
+      // AUTORSKI iz HR materijala (Merlin 2025/26: predavanja, vježbe, pripreme za kolokvije) — NE prijevod EN macroeconomics. KaTeX (ADR-009).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Predavanja 1–5: temeljni pojmovi makroekonomije, nacionalno računovodstvo, makroekonomski model i AD–AS, potrošnja, štednja i investicije, uvod u fiskalnu politiku' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Predavanja 6–11: fiskalna politika, monetarna makroekonomija, IS-LM, otvoreno gospodarstvo i platna bilanca, tržište rada, ekonomske krize, turizam u makroekonomiji' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja iz priprema za kolokvije' }
+      ],
+      content: {
+        // final.js MORA se učitati ZADNJI (Object.assign macroeconomicsHrM1 + macroeconomicsHrM2 + examPractice).
+        scripts: [
+          'data/macroeconomics-hr/midterm-1.js',
+          'data/macroeconomics-hr/midterm-2.js',
+          'data/macroeconomics-hr/final.js',
+          'data/macroeconomics-hr/exercises.js'
+        ],
+        resolve: {
+          'first-midterm': 'macroeconomicsHrM1',
+          'second-midterm': 'macroeconomicsHrM2',
+          'final': 'macroeconomicsHrFinal'
+        },
+        dataFormat: 'json', // dual-read; study iz data/json/macroeconomics-hr/*.json; vježbe UVIJEK iz .js
+        codeScripts: ['data/macroeconomics-hr/exercises.js'], // KÔD (generate()) → uvijek iz datoteke, nikad iz baze (BUG-012)
+        exercises: 'macroeconomicsHrExercises'   // window var s interaktivnim vježbama (features.exercises)
+      }
+    },
+    {
+      id: 'management-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 2,
+      name: 'Menadžment',
+      shortName: 'MEN',
+      icon: 'fa-user-tie',
+      color: '#65a30d',
+      iconGradient: ['#65a30d', '#a3e635'],
+      description: 'Osnove menadžmenta (Lussier): četiri funkcije — planiranje, organiziranje, vođenje i kontroliranje — te odlučivanje, strategija, timski rad, upravljanje ljudskim resursima, motivacija, vođenje i sustavi kontrole',
+      storageKey: 'management-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Menadžment i povijest, odlučivanje, strateško planiranje, organiziranje, timski rad i upravljanje ljudskim resursima' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Organizacijsko ponašanje, motivacija, vođenje te sustavi kontrole i financije' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        scripts: [
+          'data/management-hr/midterm-1.js',
+          'data/management-hr/midterm-2.js',
+          'data/management-hr/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'managementHrM1',
+          'second-midterm': 'managementHrM2',
+          'final': 'managementHrFinal'
+        },
+        dataFormat: 'json' // F2 2A.4b (dual-read; study iz data/json/management-hr/*.json)
+      }
+    },
+    {
+      id: 'traffic-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 2,
+      name: 'Promet u turizmu',
+      shortName: 'PUT',
+      icon: 'fa-route',
+      color: '#f59e0b',
+      iconGradient: ['#f59e0b', '#fbbf24'],
+      description: 'Promet u turizmu: teorijske osnove prometa i njegova međuovisnost s turizmom, mobilnost i putovanja te svaki prometni oblik kao konektor i kao dio turističkog proizvoda — cestovni, željeznički (+ uspinjača/žičara), zračni i vodeni — uz vrijednost i kvalitetu usluge, sigurnost, ekološke aspekte i budućnost prometa (EU strategija održive i pametne mobilnosti)',
+      storageKey: 'traffic-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Teorijske osnove prometa, međuovisnost prometa i turizma, mobilnost i putovanja, cestovni promet (konektor i turistički proizvod) te željeznički promet kao konektor (tjedni 1–6)' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Željeznica kao turistički proizvod (+ uspinjača/žičara), zračni i vodeni promet, vrijednost i kvaliteta usluge, sigurnost, ekološki aspekti i budućnost prometa (tjedni 7–15)' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // data/traffic-hr/final.js MORA se učitati zadnji (Object.assign trafficHrM1 + trafficHrM2 + examPractice)
+        scripts: [
+          'data/traffic-hr/midterm-1.js',
+          'data/traffic-hr/midterm-2.js',
+          'data/traffic-hr/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'trafficHrM1',
+          'second-midterm': 'trafficHrM2',
+          'final': 'trafficHrFinal'
+        },
+        dataFormat: 'json' // F2 2A.4b (dual-read; study iz data/json/traffic-hr/*.json)
+      }
+    },
+    {
+      id: 'accounting-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Računovodstvo',
+      shortName: 'RAČ',
+      icon: 'fa-coins',
+      color: '#059669',
+      iconGradient: ['#059669', '#10b981'],
+      description: 'Računovodstvo: pojam i struktura računovodstva, zakon i standardi, isprave i poslovne knjige, bilanca, imovina, obveze i kapital, konta i knjiženja, bilančne promjene, kontni plan, troškovi, prihodi i rashodi, PDV, račun dobiti i gubitka i novčani tok, amortizacija, zalihe, kalkulacije, kapital i plaće te zaključivanje knjiga',
+      storageKey: 'accounting-mor-progress',
+      features: { blindMap: false, exercises: true },
+      // AUTORSKI iz HR studentskih skripti i ispitnih pitanja (Drive) — NE prijevod EN accounting. KaTeX (ADR-009).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Pojam i struktura računovodstva, Zakon o računovodstvu, standardi i načela, isprave i poslovne knjige, bilanca, imovina, obveze i kapital, konta i pravila knjiženja, bilančne promjene i kontni plan' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Troškovi, rashodi, prihodi i učinci, konta uspjeha i knjiženja s kontnim planom, vrste troškova, PDV, račun dobiti i gubitka i novčani tok, dugotrajna imovina i amortizacija, zalihe i sitni inventar, kalkulacije, kapital, obveze i plaće te popis i zaključivanje knjiga' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // data/accounting-hr/final.js MORA se učitati zadnji (Object.assign accountingHrM1 + accountingHrM2 + examPractice)
+        scripts: [
+          'data/accounting-hr/midterm-1.js',
+          'data/accounting-hr/midterm-2.js',
+          'data/accounting-hr/final.js',
+          'data/accounting-hr/exercises.js'
+        ],
+        resolve: {
+          'first-midterm': 'accountingHrM1',
+          'second-midterm': 'accountingHrM2',
+          'final': 'accountingHrFinal'
+        },
+        dataFormat: 'json', // dual-read; study iz data/json/accounting-hr/*.json; vježbe UVIJEK iz .js
+        codeScripts: ['data/accounting-hr/exercises.js'], // KÔD (generate()) → uvijek iz datoteke, nikad iz baze (BUG-012)
+        exercises: 'accountingHrExercises'   // window var s interaktivnim vježbama (features.exercises)
+      }
+    },
+    // ---- MOR vlastiti predmeti (autorski iz HR izvora s Merlina + studentskih skripti; ADR-020) ----
+    {
+      id: 'environmental-economics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Ekonomika okoliša',
+      shortName: 'EKO',
+      icon: 'fa-leaf',
+      color: '#15803d',
+      iconGradient: ['#15803d', '#4ade80'],
+      description: 'Ekonomika okoliša (FMTU, MOR): okoliš i ekonomija, uzroci i posljedice onečišćenja globalnog okoliša, ekološki sustavi i održivost te gospodarenje otpadom',
+      storageKey: 'environmental-economics-mor-progress',
+      features: { blindMap: false },
+      // ⏳ 2. kolokvij i završni ispit dolaze kad profesor objavi gradivo (stanje 2026-11-15: samo 1. kolokvij).
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Okoliš i ekonomija, onečišćenje globalnog okoliša, ekološki sustavi i održivost, gospodarenje otpadom' }
+      ],
+      content: {
+        scripts: ['data/environmental-economics-mor/midterm-1.js'],
+        resolve: { 'first-midterm': 'envEconMorM1' },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'quality-management-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Menadžment kvalitete',
+      shortName: 'MK',
+      icon: 'fa-award',
+      color: '#be123c',
+      iconGradient: ['#be123c', '#fb7185'],
+      description: 'Menadžment kvalitete (FMTU, MOR): pojam i razvoj kvalitete, utemeljitelji kvalitete, načela TQM-a, standardizacija i ISO 9001:2015; potom audit, upravljanje rizicima, troškovi i alati kvalitete, kvaliteta u uslužnom sektoru, standardi i oznake kvalitete te integralno upravljanje kvalitetom destinacije',
+      storageKey: 'quality-management-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Pojam i razvoj kvalitete, utemeljitelji kvalitete, načela TQM-a (I. i II. dio), standardizacija sustava upravljanja kvalitetom, ISO 9001:2015' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Audit sustava kvalitete, upravljanje rizicima, rezultati primjene TQM-a i troškovi kvalitete, alati za upravljanje kvalitetom, kvaliteta u uslužnom sektoru, standardi i oznake kvalitete, integralno upravljanje kvalitetom destinacije (IQM)' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus ispitna pitanja kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign qualityMorM1 + qualityMorM2 + examPractice)
+        scripts: [
+          'data/quality-management-mor/midterm-1.js',
+          'data/quality-management-mor/midterm-2.js',
+          'data/quality-management-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'qualityMorM1',
+          'second-midterm': 'qualityMorM2',
+          'final': 'qualityMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'urban-economics-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 2, semester: 1,
+      name: 'Urbana ekonomija',
+      shortName: 'URB',
+      icon: 'fa-city',
+      color: '#b45309',
+      iconGradient: ['#b45309', '#f59e0b'],
+      description: 'Urbana ekonomija (FMTU, MOR): temelji urbane ekonomije i održivi razvoj, prostorno planiranje, grad u regiji, urbana struktura i korištenje zemljišta, zemljišna i gradska renta; potom gradski promet i stanovanje, lokalna samouprava i lokalni ekonomski razvoj, gradski problemi, energija, pametni gradovi, urbani marketing, urbana ekologija i urbana revitalizacija',
+      storageKey: 'urban-economics-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Temelji urbane ekonomije, prostorno planiranje, grad u urbanoj ekonomiji, urbana struktura i korištenje zemljišta, zemljišna i gradska renta' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Gradski promet i stanovanje, lokalna samouprava i lokalni ekonomski razvoj, gradski problemi (siromaštvo, kriminal), energija u gradovima, pametni gradovi, urbani marketing, urbana ekologija i urbana revitalizacija' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign urbanEconMorM1 + urbanEconMorM2 + examPractice)
+        scripts: [
+          'data/urban-economics-mor/midterm-1.js',
+          'data/urban-economics-mor/midterm-2.js',
+          'data/urban-economics-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'urbanEconMorM1',
+          'second-midterm': 'urbanEconMorM2',
+          'final': 'urbanEconMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'tourism-system-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 2,
+      name: 'Turizam i turistički sustav',
+      shortName: 'TTS',
+      icon: 'fa-earth-europe',
+      color: '#0369a1',
+      iconGradient: ['#0369a1', '#38bdf8'],
+      description: 'Turizam i turistički sustav (FMTU, MOR): obilježja turizma i turističkog sustava, turizam i globalni procesi, održivi razvoj turizma; potom oblici turizma — zdravstveni, kulturni, sportski, eko, nautički i poslovni',
+      storageKey: 'tourism-system-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Tematske cjeline 1–6: turizam i turistički sustav' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Zdravstveni, kulturni, sportski, eko, nautički i poslovni turizam' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign tourismSystemMorM1 + tourismSystemMorM2 + examPractice)
+        scripts: [
+          'data/tourism-system-mor/midterm-1.js',
+          'data/tourism-system-mor/midterm-2.js',
+          'data/tourism-system-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'tourismSystemMorM1',
+          'second-midterm': 'tourismSystemMorM2',
+          'final': 'tourismSystemMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'natural-geospace-mor',
+      programId: 'sustainable-development-management-hr',
+      year: 1, semester: 1,
+      name: 'Prirodne osnove geoprostora',
+      shortName: 'POG',
+      icon: 'fa-mountain-sun',
+      color: '#4d7c0f',
+      iconGradient: ['#4d7c0f', '#a3e635'],
+      description: 'Prirodne osnove geoprostora (FMTU, MOR): geologija, geomorfologija i klima; potom vode, tla, biljni i životinjski svijet, pejzaž, zaštićena područja prirode, ugroze i zaštita te vrednovanje prirodnih resursa u turizmu',
+      storageKey: 'natural-geospace-mor-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: '1. kolokvij', description: 'Uvod, geološka, geomorfološka i klimatološka obilježja geoprostora' },
+        { id: 'second-midterm', name: '2. kolokvij', description: 'Hidrogeografija, pedologija, biogeografija, pejzaž, zaštićena područja prirode, ugroze i zaštita, vrednovanje zaštićenih područja' },
+        { id: 'final', name: 'Završni ispit', description: 'Sve teme (oba kolokvija) plus pitanja za ponavljanje kroz sve teme' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign geospaceMorM1 + geospaceMorM2 + examPractice)
+        scripts: [
+          'data/natural-geospace-mor/midterm-1.js',
+          'data/natural-geospace-mor/midterm-2.js',
+          'data/natural-geospace-mor/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'geospaceMorM1',
+          'second-midterm': 'geospaceMorM2',
+          'final': 'geospaceMorFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    // ---- PFRI — Pravni fakultet Sveučilišta u Rijeci, Integrirani studij prava (2026-11-16) ----
+    {
+      id: 'theory-law-state-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Teorija prava i države',
+      shortName: 'TPD',
+      icon: 'fa-scale-balanced',
+      color: '#0f766e',
+      iconGradient: ['#0f766e', '#2dd4bf'],
+      description: 'Teorija prava i države (PFRI): pojam i nastanak države i prava, oblici države, pravna norma, izvori prava, pravni sustav, pravni odnos, tumačenje i primjena prava',
+      storageKey: 'theory-law-state-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign tpdPfriM1 + tpdPfriM2 + examPractice)
+        scripts: [
+          'data/theory-law-state-pfri/midterm-1.js',
+          'data/theory-law-state-pfri/midterm-2.js',
+          'data/theory-law-state-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'tpdPfriM1',
+          'second-midterm': 'tpdPfriM2',
+          'final': 'tpdPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'legal-history-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Povijest prava i države',
+      shortName: 'PPD',
+      icon: 'fa-scroll',
+      color: '#9a3412',
+      iconGradient: ['#9a3412', '#fb923c'],
+      description: 'Povijest prava i države (PFRI): opća povijest prava i države od starog vijeka do novog doba i hrvatska pravna povijest',
+      storageKey: 'legal-history-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ppdPfriM1 + ppdPfriM2 + examPractice)
+        scripts: [
+          'data/legal-history-pfri/midterm-1.js',
+          'data/legal-history-pfri/midterm-2.js',
+          'data/legal-history-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ppdPfriM1',
+          'second-midterm': 'ppdPfriM2',
+          'final': 'ppdPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'sociology-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 1,
+      name: 'Sociologija',
+      shortName: 'SOC',
+      icon: 'fa-people-group',
+      color: '#be185d',
+      iconGradient: ['#be185d', '#f472b6'],
+      description: 'Sociologija (PFRI): sociološke teorije i pojmovi, društvo i kultura, socijalizacija, društvene grupe i institucije, stratifikacija, devijantnost i društvena promjena',
+      storageKey: 'sociology-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign socPfriM1 + socPfriM2 + examPractice)
+        scripts: [
+          'data/sociology-pfri/midterm-1.js',
+          'data/sociology-pfri/midterm-2.js',
+          'data/sociology-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'socPfriM1',
+          'second-midterm': 'socPfriM2',
+          'final': 'socPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'roman-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Rimsko privatno pravo',
+      shortName: 'RPP',
+      icon: 'fa-building-columns',
+      color: '#a16207',
+      iconGradient: ['#a16207', '#facc15'],
+      description: 'Rimsko privatno pravo (PFRI): izvori i periodizacija, statusno, obiteljsko i nasljedno pravo, stvarno pravo i obvezno pravo s ugovorima',
+      storageKey: 'roman-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign rppPfriM1 + rppPfriM2 + examPractice)
+        scripts: [
+          'data/roman-law-pfri/midterm-1.js',
+          'data/roman-law-pfri/midterm-2.js',
+          'data/roman-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'rppPfriM1',
+          'second-midterm': 'rppPfriM2',
+          'final': 'rppPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'constitutional-law-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Ustavno pravo',
+      shortName: 'UP',
+      icon: 'fa-landmark',
+      color: '#b91c1c',
+      iconGradient: ['#b91c1c', '#f87171'],
+      description: 'Ustavno pravo (PFRI): ustav i ustavnost, temeljna prava, organizacija vlasti, ustavno uređenje Republike Hrvatske i ustavno sudovanje',
+      storageKey: 'constitutional-law-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign upPfriM1 + upPfriM2 + examPractice)
+        scripts: [
+          'data/constitutional-law-pfri/midterm-1.js',
+          'data/constitutional-law-pfri/midterm-2.js',
+          'data/constitutional-law-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'upPfriM1',
+          'second-midterm': 'upPfriM2',
+          'final': 'upPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'political-economy-pfri',
+      programId: 'law-integrated-hr',
+      year: 1, semester: 2,
+      name: 'Politička ekonomija',
+      shortName: 'PE',
+      icon: 'fa-coins',
+      color: '#15803d',
+      iconGradient: ['#15803d', '#4ade80'],
+      description: 'Politička ekonomija (PFRI): ekonomski zakoni, roba i novac, tržište, proizvodnja i raspodjela, makroekonomija, novčani i financijski sustav',
+      storageKey: 'political-economy-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign pePfriM1 + pePfriM2 + examPractice)
+        scripts: [
+          'data/political-economy-pfri/midterm-1.js',
+          'data/political-economy-pfri/midterm-2.js',
+          'data/political-economy-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'pePfriM1',
+          'second-midterm': 'pePfriM2',
+          'final': 'pePfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 
@@ -1078,6 +1790,14 @@ const SokratCatalog = {
     for (const f of SOKRAT_CATALOG.faculties) {
       const p = (f.programs || []).find(p => p.id === id);
       if (p) return { ...p, facultyId: f.id, facultyName: f.name };
+    }
+    return null;
+  },
+  // Jezik sučelja koji predmet predlaže: `lang` prvog programa u kojem stoji, inače null.
+  uiLangOf(s) {
+    for (const pl of this.placementsOf(s)) {
+      const p = this.getProgram(pl.program);
+      if (p && p.lang) return p.lang;
     }
     return null;
   },

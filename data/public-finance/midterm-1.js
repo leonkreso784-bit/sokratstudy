@@ -1,0 +1,4926 @@
+// ===== Public Finance — Midterm 1 (T1–T6) =====
+// Izvor: Prof. Hodžić's lecture slides (FMTU Opatija, 2026/27), explanations from Rosen & Gayer, Public Finance; marked "not in course slides".
+// Sadržaj prenesen iz Sokrat MCP materijala (staging, 2026-11-04). Oblik po docs/architecture/CONTENT_SCHEMA.md (learn = v2 blokovi).
+
+const publicFinanceM1 = {
+  publicFinanceIdeology: {
+    "id": "z1blor",
+    "name": "Public Finance and Ideology",
+    "icon": "fa-landmark",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "90sps0",
+        "answer": "The field of economics that analyses government taxation and spending policies and their influence on resource allocation and income distribution.",
+        "question": "Public finance (definition)"
+      },
+      {
+        "id": "4bs3ft",
+        "answer": "Public sector economics, or public economics.",
+        "question": "Other names for public finance"
+      },
+      {
+        "id": "61qf5r",
+        "answer": "The microeconomic functions of government: how taxing and spending affect allocation of resources and distribution of income.",
+        "question": "What is the focus of public finance?"
+      },
+      {
+        "id": "utqlbm",
+        "answer": "Allocation = what is produced and with which inputs. Distribution = who receives how much income.",
+        "question": "Allocation of resources vs. distribution of income"
+      },
+      {
+        "id": "9gco1i",
+        "answer": "publicus = of the people/state; finis = end (settling a debt); fiscus = the Roman state's money basket, i.e. treasury.",
+        "question": "Latin roots: public, finance, fiscal",
+        "explanation": "Not in the slides; the curriculum says the exam may ask where the Latin words come from."
+      },
+      {
+        "id": "6squ2z",
+        "answer": "Society is a natural organism and government its heart; individuals are valued only by their contribution to social goals set by government.",
+        "question": "Organic view of government"
+      },
+      {
+        "id": "8uptql",
+        "answer": "The government.",
+        "question": "Organic view: who determines society's goals?"
+      },
+      {
+        "id": "l3irxl",
+        "answer": "Individuals matter only as parts of the community, which is stressed above the individual.",
+        "question": "Organic view: what is the role of the individual?"
+      },
+      {
+        "id": "cfwc3d",
+        "answer": "Government is a contrivance erected to further individual goals; it is not an organic part of society but created by individuals for individuals.",
+        "question": "Mechanistic view of government"
+      },
+      {
+        "id": "ln9pjr",
+        "answer": "Organic: the community (and government) comes first. Mechanistic: the individual comes first; government is a tool.",
+        "question": "Organic vs. mechanistic: one-line contrast"
+      },
+      {
+        "id": "9679ys",
+        "answer": "Number of workers and annual expenditures.",
+        "question": "Two measures of the size of government (slides)"
+      },
+      {
+        "id": "du5uxa",
+        "answer": "Purchases of goods and services, transfers of income, interest payments.",
+        "question": "Three types of government expenditure"
+      },
+      {
+        "id": "1on72s",
+        "answer": "A payment to people for which government receives no good or service in return, e.g. pensions or social assistance.",
+        "question": "Transfer of income"
+      },
+      {
+        "id": "iaoczn",
+        "answer": "Nominal = in actual (current) prices. Real = adjusted for inflation.",
+        "question": "Nominal vs. real expenditure"
+      },
+      {
+        "id": "dqk339",
+        "answer": "Nominal, real (inflation-adjusted), per capita, and as a percentage of GDP.",
+        "question": "Four ways to express government expenditure"
+      },
+      {
+        "id": "1gfata",
+        "answer": "The document that includes all the federal government's revenues and expenditures.",
+        "question": "Unified budget"
+      },
+      {
+        "id": "0ykkma",
+        "answer": "An annual statement of the costs imposed on the economy by government regulations.",
+        "question": "Regulatory budget"
+      },
+      {
+        "id": "jklh18",
+        "answer": "Federal – state – local.",
+        "question": "Levels of government (slides)"
+      },
+      {
+        "id": "nv84ds",
+        "answer": "National defence, social security, health insurance system, public welfare activities, interest on debt.",
+        "question": "Main government expenditures (slides)"
+      },
+      {
+        "id": "js3pfq",
+        "answer": "Programs whose spending is determined by the number of people who qualify, rather than by present budget allocations.",
+        "question": "Entitlement programs"
+      },
+      {
+        "id": "rfr9t9",
+        "answer": "Taxes (personal income, corporation, sales, property), social security contributions, grants from the federal government.",
+        "question": "Main government revenues (slides)"
+      },
+      {
+        "id": "1b6p88",
+        "answer": "Personal income tax, corporation tax, sales tax, property tax.",
+        "question": "Four taxes listed as revenues"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "1619zu",
+        "correct": 1,
+        "options": [
+          "the financial markets and stock exchanges",
+          "government taxation and spending policies",
+          "the banking system and money supply",
+          "the accounting records of public companies"
+        ],
+        "question": "Public finance is the field of economics that analyses..."
+      },
+      {
+        "id": "2alhjp",
+        "correct": 1,
+        "options": [
+          "Monetary economics",
+          "Public sector economics",
+          "Corporate finance",
+          "International economics"
+        ],
+        "question": "Which is another name for public finance?"
+      },
+      {
+        "id": "emrww1",
+        "correct": 1,
+        "options": [
+          "macroeconomic functions of government (inflation, unemployment)",
+          "microeconomic functions of government",
+          "functions of the central bank",
+          "functions of private insurance markets"
+        ],
+        "question": "Public finance focuses mainly on the..."
+      },
+      {
+        "id": "hsx927",
+        "correct": 1,
+        "options": [
+          "Exchange rates and interest rates",
+          "Allocation of resources and distribution of income",
+          "Inflation and unemployment",
+          "Imports and exports"
+        ],
+        "question": "Government taxing and spending influence which two things, according to the definition of public finance?"
+      },
+      {
+        "id": "jriwz6",
+        "correct": 1,
+        "options": [
+          "Mechanistic view",
+          "Organic view",
+          "Libertarian view",
+          "Market view"
+        ],
+        "question": "\"Society is a natural organism and government is the heart.\" Which view of government is this?"
+      },
+      {
+        "id": "doelof",
+        "correct": 2,
+        "options": [
+          "individuals",
+          "the market",
+          "the government",
+          "international organisations"
+        ],
+        "question": "Under the organic view of government, social goals are determined by..."
+      },
+      {
+        "id": "bgrrb0",
+        "correct": 0,
+        "options": [
+          "only by their contribution to the realisation of social goals",
+          "equally, regardless of their role",
+          "according to their income",
+          "as the only source of social goals"
+        ],
+        "question": "Under the organic view, individuals are valued..."
+      },
+      {
+        "id": "z2coru",
+        "correct": 1,
+        "options": [
+          "organic view of government",
+          "mechanistic view of government",
+          "regulatory budget",
+          "unified budget"
+        ],
+        "question": "\"Government is a contrivance erected to further individual goals.\" This describes the..."
+      },
+      {
+        "id": "9vq7kb",
+        "correct": 2,
+        "options": [
+          "Government is the heart of society",
+          "The community is stressed above the individual",
+          "Government is created by individuals for individuals",
+          "Individuals matter only as part of the organism"
+        ],
+        "question": "Which statement fits the mechanistic view of government?"
+      },
+      {
+        "id": "m0nu31",
+        "correct": 0,
+        "options": [
+          "Number of workers and annual expenditures",
+          "GDP and inflation",
+          "Number of laws and number of ministries",
+          "Tax rates and interest rates"
+        ],
+        "question": "Which pair are the measures of the size of government named on the slides?"
+      },
+      {
+        "id": "7zhx0q",
+        "correct": 3,
+        "options": [
+          "Purchases of goods and services",
+          "Transfers of income",
+          "Interest payments",
+          "Corporate profits"
+        ],
+        "question": "Which is NOT one of the three types of government expenditure?"
+      },
+      {
+        "id": "hd46bo",
+        "correct": 1,
+        "options": [
+          "a purchase of goods and services",
+          "a transfer of income",
+          "an interest payment",
+          "a regulatory cost"
+        ],
+        "question": "A state pension paid to a retired person is an example of..."
+      },
+      {
+        "id": "cfd0qr",
+        "correct": 1,
+        "options": [
+          "nominal terms",
+          "real terms",
+          "per capita terms",
+          "regulatory terms"
+        ],
+        "question": "Government expenditures adjusted for inflation are expressed in..."
+      },
+      {
+        "id": "2o6c0s",
+        "correct": 3,
+        "options": [
+          "Nominal terms",
+          "Per capita terms",
+          "As a percentage of GDP",
+          "As a percentage of the money supply"
+        ],
+        "question": "Which is NOT a way the slides list for expressing government expenditure?"
+      },
+      {
+        "id": "kjgl9d",
+        "correct": 1,
+        "options": [
+          "regulatory budget",
+          "unified budget",
+          "capital budget",
+          "off-budget account"
+        ],
+        "question": "The document that includes all the federal government's revenues and expenditures is the..."
+      },
+      {
+        "id": "n079fm",
+        "correct": 1,
+        "options": [
+          "unified budget",
+          "regulatory budget",
+          "trust fund",
+          "entitlement program"
+        ],
+        "question": "An annual statement of the costs imposed on the economy by government regulations is the..."
+      },
+      {
+        "id": "ngv7vu",
+        "correct": 0,
+        "options": [
+          "Federal – state – local",
+          "Central bank – ministry – agency",
+          "Executive – legislative – judicial",
+          "EU – national – regional"
+        ],
+        "question": "Which levels of government appear on the slides?"
+      },
+      {
+        "id": "2wr7c6",
+        "correct": 1,
+        "options": [
+          "Sales tax",
+          "National defence",
+          "Property tax",
+          "Grants received from federal government"
+        ],
+        "question": "Which of these is listed on the slides as a government expenditure?"
+      },
+      {
+        "id": "3v12k0",
+        "correct": 0,
+        "options": [
+          "entitlement programs",
+          "discretionary programs",
+          "regulatory programs",
+          "privatisation programs"
+        ],
+        "question": "Programs whose expenditures are determined by the number of people who qualify, rather than by present budget allocations, are called..."
+      },
+      {
+        "id": "l25347",
+        "correct": 2,
+        "options": [
+          "Interest payments on debt",
+          "Public welfare activities",
+          "Social security (contributions)",
+          "National defence"
+        ],
+        "question": "Which of these is a government REVENUE according to the slides?"
+      },
+      {
+        "id": "n3xhae",
+        "correct": 3,
+        "options": [
+          "Personal income tax",
+          "Corporation tax",
+          "Property tax",
+          "Customs duty"
+        ],
+        "question": "Which tax is NOT listed among the revenues on the T1 slides?"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "k8dkfr",
+        "hint": "Not on the slides; curriculum topic",
+        "answer": "fiscus",
+        "sentence": "The word \"fiscal\" comes from the Latin word _______, the basket in which the Roman state kept its money."
+      },
+      {
+        "id": "dbin0k",
+        "answer": "allocation",
+        "answers": [
+          "allocation",
+          "distribution"
+        ],
+        "sentence": "Public finance focuses on the taxing and spending of government and their influence on the _______ of resources and the _______ of income."
+      },
+      {
+        "id": "rely65",
+        "answer": "transfers",
+        "answers": [
+          "transfers",
+          "interest"
+        ],
+        "sentence": "The three types of government expenditure are purchases of goods and services, _______ of income and _______ payments."
+      },
+      {
+        "id": "zy1ymt",
+        "answer": "Entitlement",
+        "sentence": "_______ programs are programs whose expenditures are determined by the number of people who qualify."
+      },
+      {
+        "id": "gzvz2h",
+        "answer": "regulatory",
+        "sentence": "The _______ budget is an annual statement of the costs imposed on the economy by government regulations."
+      },
+      {
+        "id": "7f9utl",
+        "answer": "mechanistic",
+        "sentence": "Under the _______ view, government is not an organic part of society but is created by individuals for individuals."
+      }
+    ],
+    "learn": {
+      "id": "cc9v12",
+      "title": "T1 Public Finance and Ideology (Rosen, ch. 1)",
+      "blocks": [
+        {
+          "text": "Everything here follows Prof. Hodžić's slides. Where the slides only name a term, the explanation is filled in from the course textbook (Rosen & Gayer, Public Finance) and marked \"not in course slides\". Mid-term 1 (9 Nov 2026): 12 questions × 2% = 24%; 10 single-answer questions and 2 open questions (a definition in your own words, a year or a rate, or a division with explanation).",
+          "type": "callout",
+          "title": "How to use this material",
+          "variant": "info"
+        },
+        {
+          "text": "What public finance is",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Public finance"
+            },
+            {
+              "text": " is the field of economics that analyses government taxation and spending policies. It looks at how the taxing and spending of government influence two things: the "
+            },
+            {
+              "b": true,
+              "text": "allocation of resources"
+            },
+            {
+              "text": " (what the economy produces and with which inputs) and the "
+            },
+            {
+              "b": true,
+              "text": "distribution of income"
+            },
+            {
+              "text": " (who ends up with how much)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "The same field is also called "
+            },
+            {
+              "b": true,
+              "text": "public sector economics"
+            },
+            {
+              "text": " or "
+            },
+            {
+              "b": true,
+              "text": "public economics"
+            },
+            {
+              "text": ". Its focus is on the "
+            },
+            {
+              "b": true,
+              "text": "microeconomic functions of government"
+            },
+            {
+              "text": ": how government decisions change the choices of households and firms in individual markets."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Microeconomic functions = allocation and distribution. Macroeconomic questions (unemployment, inflation, stabilisation of the business cycle) are usually left to macroeconomics. Example: a tax on cigarettes changes how many cigarettes are produced (allocation) and who carries the cost (distribution).",
+          "type": "callout",
+          "title": "Background (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "The curriculum says the exam can ask where the Latin words come from. \"Public\" comes from Latin publicus, \"of the people, belonging to the state\". \"Finance\" goes back to Latin finis, \"end\", in the sense of settling (ending) a debt or payment. \"Fiscal\" comes from Latin fiscus, the basket in which the Roman state kept its money, which came to mean the state treasury. Check the wording your professor used in the lecture.",
+          "type": "callout",
+          "title": "Where the words come from (curriculum topic; not in course slides)",
+          "variant": "tip"
+        },
+        {
+          "text": "Public finance and ideology: two views of government",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "How much government should do depends on how we see the relation between the individual and the state. The slides contrast two views.",
+          "type": "paragraph"
+        },
+        {
+          "rows": [
+            [
+              "Core idea",
+              "Society is a natural organism; government is its heart",
+              "Government is a contrivance (a tool) erected to further individual goals"
+            ],
+            [
+              "Who sets the goals",
+              "Government determines the social goals",
+              "Individuals; government serves their goals"
+            ],
+            [
+              "Value of the individual",
+              "Valued only by their contribution to realising social goals",
+              "The individual is what counts; government exists for individuals"
+            ],
+            [
+              "Place of government",
+              "Organic part of society; the community is stressed above the individual",
+              "Not an organic part of society; created by individuals for individuals"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "",
+            "Organic view of government",
+            "Mechanistic view of government"
+          ]
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Organic view: "
+            },
+            {
+              "text": "individuals are like the parts of a body. A part has meaning only as part of the whole, so a person matters only as a member of the community. The goals of society are decided by the government, and a person's worth is measured by how much they contribute to reaching those goals."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Mechanistic view: "
+            },
+            {
+              "text": "government is a device that people build because it helps them reach their own goals. It is not part of society by nature. Government is created by individuals, for individuals."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Rosen adds that people who share the mechanistic view still disagree about how much government should do: libertarians want a minimal state, while social democrats accept a large role in redistribution and regulation. The textbook itself takes the mechanistic view, which is why it judges policies by their effect on individual welfare.",
+          "type": "callout",
+          "title": "Background (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "How to measure the size of government",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "The slides give two basic measures:",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Number of workers employed by government.",
+            "Annual expenditures of government."
+          ]
+        },
+        {
+          "text": "Counting workers misses a lot: a government can spend heavily with few employees, for example by buying from private firms or by paying transfers. That is why the size of government is usually measured by its spending.",
+          "type": "callout",
+          "title": "Why expenditure is the usual measure (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "Types of government expenditure",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Purchases of goods and services"
+              },
+              {
+                "text": " – the government buys something real, e.g. military equipment, a school building, teachers' work."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Transfers of income"
+              },
+              {
+                "text": " – money paid to people without receiving a good or service in return, e.g. pensions or social assistance."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Interest payments"
+              },
+              {
+                "text": " – interest paid on government debt."
+              }
+            ]
+          ],
+          "ordered": true
+        },
+        {
+          "text": "How expenditures can be expressed",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Nominal"
+              },
+              {
+                "text": " terms – in actual (current) prices."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Real"
+              },
+              {
+                "text": " terms – adjusted for inflation, so years can be compared."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Per capita"
+              },
+              {
+                "text": " – per person."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "As a percentage of GDP"
+              },
+              {
+                "text": " – spending relative to the size of the whole economy."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Example (illustrative numbers): if spending rises from 100 to 110 billion while prices rise 10%, nominal spending grew 10% but real spending did not grow at all.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Budget documents",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Unified budget"
+              },
+              {
+                "text": " – the document that includes all the federal government's revenues and expenditures."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Regulatory budget"
+              },
+              {
+                "text": " – an annual statement of the costs that government regulations impose on the economy."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Regulation can cost the economy a great deal without appearing as government spending. Example: a rule that every firm must install a filter costs firms money, but the cost never shows up in the unified budget. The regulatory budget tries to make this cost visible.",
+          "type": "callout",
+          "title": "Why a regulatory budget matters (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Levels of government"
+            },
+            {
+              "text": " on the slides: federal – state – local (the US structure the textbook uses)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Expenditures and revenues",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Main expenditures: "
+            },
+            {
+              "text": "national defence, social security, the health insurance system, public welfare activities and interest payments on debt."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Entitlement programs"
+            },
+            {
+              "text": " are programs whose expenditures are determined by the number of people who qualify, not by a budget allocation decided in advance. If more people meet the conditions, spending rises automatically. Social security pensions are the typical example."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Main revenues: "
+            },
+            {
+              "text": "taxes (personal income tax, corporation tax, sales tax, property tax), social security contributions, and grants from the federal government (a revenue for state and local governments)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Transfers and entitlement programs lead to T4 Social Security. The taxes listed as revenues are analysed in T5 (who really pays them) and T6 (what efficiency cost they create).",
+          "type": "callout",
+          "title": "Connections to later topics",
+          "variant": "tip"
+        }
+      ]
+    }
+  },
+
+  publicGoods: {
+    "id": "lms2rd",
+    "name": "Public Goods",
+    "icon": "fa-people-group",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "1ru2nt",
+        "answer": "The general welfare of the people, the best interests of the community.",
+        "question": "Public goods (slide description)"
+      },
+      {
+        "id": "en5wkg",
+        "answer": "A commodity that is nonrival and nonexcludable in consumption (e.g. national defence).",
+        "question": "Pure public good"
+      },
+      {
+        "id": "0xkky6",
+        "answer": "A commodity that is rival and excludable in consumption (e.g. a pizza).",
+        "question": "Private good"
+      },
+      {
+        "id": "8g5118",
+        "answer": "A good that is rival and/or excludable to some extent (e.g. a congested road, a pool with an entry fee).",
+        "question": "Impure public good"
+      },
+      {
+        "id": "3p4ymx",
+        "answer": "One person's consumption leaves less for others.",
+        "question": "Rival in consumption"
+      },
+      {
+        "id": "nv7eu6",
+        "answer": "One person's consumption does not reduce the amount available to others.",
+        "question": "Nonrival in consumption"
+      },
+      {
+        "id": "73u39h",
+        "answer": "Excludable: non-payers can be kept out. Nonexcludable: impossible or very costly to keep anyone out.",
+        "question": "Excludable vs. nonexcludable"
+      },
+      {
+        "id": "iln89i",
+        "answer": "Excludable but nonrival (e.g. cable TV).",
+        "question": "Natural monopoly (in the types-of-goods matrix)"
+      },
+      {
+        "id": "5tnez5",
+        "answer": "Rival but nonexcludable (e.g. fish in the sea).",
+        "question": "Common resources (in the types-of-goods matrix)"
+      },
+      {
+        "id": "rbdmx3",
+        "answer": "Rival+excludable = private goods; nonrival+excludable = natural monopoly; rival+nonexcludable = common resources; nonrival+nonexcludable = public goods.",
+        "question": "Types of goods matrix: the four cells"
+      },
+      {
+        "id": "x703rw",
+        "answer": "Creating a market demand curve by summing the quantities demanded by each individual at every price (private goods).",
+        "question": "Horizontal summation"
+      },
+      {
+        "id": "na0rgv",
+        "answer": "When supply and demand are equal.",
+        "question": "When is the market in equilibrium?"
+      },
+      {
+        "id": "wxddl1",
+        "answer": "Creating an aggregate demand curve for a public good by adding the prices each individual is willing to pay for a given quantity.",
+        "question": "Vertical summation"
+      },
+      {
+        "id": "i529rc",
+        "answer": "Everyone consumes the same quantity of a public good, so we add what each person is willing to pay for that quantity.",
+        "question": "Why vertical (not horizontal) summation for public goods?"
+      },
+      {
+        "id": "89y76p",
+        "answer": "Sum of individual willingness to pay for one more unit = marginal cost (ΣMRS = MRT).",
+        "question": "Efficient provision of a public good (Samuelson rule)",
+        "explanation": "Not in course slides; Rosen ch. 4."
+      },
+      {
+        "id": "lskcna",
+        "answer": "The incentive to let other people pay for a public good while you enjoy the benefits.",
+        "question": "Free rider"
+      },
+      {
+        "id": "9ev6wo",
+        "answer": "Private markets provide too little of a public good (or none), so government often provides it, financed by taxes.",
+        "question": "Consequence of the free-rider problem"
+      },
+      {
+        "id": "dv6ytx",
+        "answer": "When a producer charges each person the maximum he or she is willing to pay for the good.",
+        "question": "Perfect price discrimination"
+      },
+      {
+        "id": "emvllw",
+        "answer": "Turning services supplied by the government over to the private sector for provision and/or production.",
+        "question": "Privatization"
+      },
+      {
+        "id": "y5yf97",
+        "answer": "Provision = deciding a good is supplied and paying for it; production = making it. Government can provide without producing.",
+        "question": "Provision vs. production",
+        "explanation": "Not in course slides; Rosen ch. 4."
+      },
+      {
+        "id": "359oa0",
+        "answer": "Relative wage and material costs; administrative costs; diversity of tastes; distributional issues (commodity egalitarianism).",
+        "question": "Four criteria for public vs. private production (privatization)"
+      },
+      {
+        "id": "jlz6mu",
+        "answer": "The idea that some commodities ought to be made available to everybody.",
+        "question": "Commodity egalitarianism"
+      },
+      {
+        "id": "eckave",
+        "answer": "When people want different varieties of a service, private supply can offer more choice than one uniform public service.",
+        "question": "Diversity of tastes (privatization criterion)"
+      },
+      {
+        "id": "5uk0j2",
+        "answer": "Costs of contracting out: writing and monitoring contracts and checking the quality of private producers.",
+        "question": "Administrative costs (privatization criterion)"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "hfca8r",
+        "correct": 1,
+        "options": [
+          "goods produced only by state-owned firms",
+          "the general welfare of the people, the best interests of the community",
+          "goods sold below market price",
+          "goods financed by foreign grants"
+        ],
+        "question": "On the slides, public goods are introduced as..."
+      },
+      {
+        "id": "n3b8qt",
+        "correct": 3,
+        "options": [
+          "rival and excludable",
+          "rival and nonexcludable",
+          "nonrival and excludable",
+          "nonrival and nonexcludable"
+        ],
+        "question": "A pure public good is..."
+      },
+      {
+        "id": "q5k3dr",
+        "correct": 0,
+        "options": [
+          "rival and excludable in consumption",
+          "nonrival and nonexcludable",
+          "nonrival but excludable",
+          "rival but nonexcludable"
+        ],
+        "question": "A private good is..."
+      },
+      {
+        "id": "kny8d6",
+        "correct": 1,
+        "options": [
+          "pure public good",
+          "impure public good",
+          "private good",
+          "common resource"
+        ],
+        "question": "A good that is rival and/or excludable to some extent is a(n)..."
+      },
+      {
+        "id": "wgqxjw",
+        "correct": 1,
+        "options": [
+          "non-payers can be kept out",
+          "one person's consumption leaves less for others",
+          "it is provided by government",
+          "it is sold in a competitive market"
+        ],
+        "question": "A good is RIVAL in consumption when..."
+      },
+      {
+        "id": "ji47aw",
+        "correct": 1,
+        "options": [
+          "A sandwich",
+          "National defence",
+          "A litre of petrol",
+          "A hotel room for one night"
+        ],
+        "question": "Which good is the clearest example of NONRIVAL consumption?"
+      },
+      {
+        "id": "agaf29",
+        "correct": 0,
+        "options": [
+          "it is impossible or very costly to prevent anyone from consuming it",
+          "its price is zero by law",
+          "only one firm produces it",
+          "everyone consumes a different quantity"
+        ],
+        "question": "A good is NONEXCLUDABLE when..."
+      },
+      {
+        "id": "207xbs",
+        "correct": 2,
+        "options": [
+          "private good",
+          "common resource",
+          "natural monopoly",
+          "public good"
+        ],
+        "question": "In the types-of-goods matrix, a good that is excludable but NOT rival is a..."
+      },
+      {
+        "id": "m2zotx",
+        "correct": 0,
+        "options": [
+          "common resource",
+          "natural monopoly",
+          "public good",
+          "private good"
+        ],
+        "question": "In the types-of-goods matrix, a good that is rival but NOT excludable is a..."
+      },
+      {
+        "id": "8wm56p",
+        "correct": 1,
+        "options": [
+          "public goods",
+          "common resources",
+          "natural monopoly",
+          "private goods"
+        ],
+        "question": "Fish in the open sea are rival but nonexcludable. In the matrix they are..."
+      },
+      {
+        "id": "8vydly",
+        "correct": 1,
+        "options": [
+          "vertical summation",
+          "horizontal summation",
+          "perfect price discrimination",
+          "the Coase theorem"
+        ],
+        "question": "Creating a market demand curve by summing the quantities demanded by each individual at every price is..."
+      },
+      {
+        "id": "r5piw9",
+        "correct": 0,
+        "options": [
+          "supply and demand are equal",
+          "price equals zero",
+          "government sets the price",
+          "demand exceeds supply"
+        ],
+        "question": "A market is in equilibrium when..."
+      },
+      {
+        "id": "j7s9p0",
+        "correct": 1,
+        "options": [
+          "horizontal summation of quantities",
+          "vertical summation of the prices each individual is willing to pay",
+          "multiplying individual demands",
+          "taking the highest individual demand"
+        ],
+        "question": "The aggregate demand curve for a PUBLIC good is created by..."
+      },
+      {
+        "id": "1ia3e8",
+        "correct": 1,
+        "options": [
+          "Because each person buys a different quantity at the same price",
+          "Because everyone consumes the same quantity, so willingness to pay is added",
+          "Because public goods have no price",
+          "Because supply is vertical"
+        ],
+        "question": "Why are individual demands for a public good summed vertically?"
+      },
+      {
+        "id": "cb2gt9",
+        "correct": 2,
+        "options": [
+          "adverse selection",
+          "moral hazard",
+          "the free-rider problem",
+          "tax shifting"
+        ],
+        "question": "The incentive to let other people pay for a public good while you enjoy the benefits is called..."
+      },
+      {
+        "id": "41ho4a",
+        "correct": 1,
+        "options": [
+          "Too much of the public good is produced",
+          "Too little (or none) of the public good is produced",
+          "Prices of public goods rise",
+          "Public goods become rival"
+        ],
+        "question": "What is the usual result of the free-rider problem in a private market?"
+      },
+      {
+        "id": "6fjwy4",
+        "correct": 0,
+        "options": [
+          "perfect price discrimination",
+          "vertical summation",
+          "commodity egalitarianism",
+          "a lump-sum tax"
+        ],
+        "question": "When a producer charges each person the maximum he or she is willing to pay, this is..."
+      },
+      {
+        "id": "vhydbj",
+        "correct": 1,
+        "options": [
+          "nationalisation",
+          "privatization",
+          "decentralisation",
+          "regulation"
+        ],
+        "question": "Turning services supplied by the government over to the private sector for provision and/or production is..."
+      },
+      {
+        "id": "xvpavj",
+        "correct": 3,
+        "options": [
+          "Relative wage and material costs",
+          "Administrative costs",
+          "Diversity of tastes",
+          "The exchange rate"
+        ],
+        "question": "Which is NOT one of the privatization criteria on the slides?"
+      },
+      {
+        "id": "00n5rz",
+        "correct": 0,
+        "options": [
+          "commodity egalitarianism",
+          "the organic view of government",
+          "perfect price discrimination",
+          "the free-rider problem"
+        ],
+        "question": "The idea that some commodities ought to be made available to everybody is..."
+      },
+      {
+        "id": "s4fn5b",
+        "correct": 1,
+        "options": [
+          "Administrative costs",
+          "Diversity of tastes",
+          "Relative wage costs",
+          "Distributional issues"
+        ],
+        "question": "Under which privatization criterion does private supply help because people want different kinds of schools?"
+      },
+      {
+        "id": "zhdt8f",
+        "correct": 0,
+        "options": [
+          "Administrative costs",
+          "Diversity of tastes",
+          "Commodity egalitarianism",
+          "Relative material costs"
+        ],
+        "question": "The cost of writing and monitoring contracts with private producers falls under which privatization criterion?"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "t7p1hf",
+        "hint": "Samuelson rule (Rosen; not on slides)",
+        "answer": "sum",
+        "answers": [
+          "sum",
+          "cost"
+        ],
+        "sentence": "A public good is provided efficiently when the _______ of individual willingness to pay for one more unit equals its marginal _______."
+      },
+      {
+        "id": "2l1nmt",
+        "hint": "Not on slides",
+        "answer": "provide",
+        "answers": [
+          "provide",
+          "producing"
+        ],
+        "sentence": "Government can _______ a good (decide it is supplied and pay for it) without _______ it (making it itself)."
+      },
+      {
+        "id": "84ub8e",
+        "answer": "nonrival",
+        "answers": [
+          "nonrival",
+          "nonexcludable"
+        ],
+        "sentence": "A pure public good is _______ and _______ in consumption."
+      },
+      {
+        "id": "1f4tyx",
+        "answer": "Vertical",
+        "answers": [
+          "Vertical",
+          "Horizontal"
+        ],
+        "sentence": "_______ summation creates the aggregate demand curve for a public good; _______ summation creates the market demand curve for a private good."
+      },
+      {
+        "id": "erev1w",
+        "answer": "natural",
+        "answers": [
+          "natural",
+          "monopoly"
+        ],
+        "sentence": "In the types-of-goods matrix, goods that are excludable but nonrival are called _______ _______."
+      },
+      {
+        "id": "v2pasd",
+        "answer": "egalitarianism",
+        "sentence": "The fourth privatization criterion, distributional issues, is linked to the idea of commodity _______."
+      }
+    ],
+    "learn": {
+      "id": "wp5lr5",
+      "title": "T2 Public Goods (Rosen, ch. 4)",
+      "blocks": [
+        {
+          "text": "What a public good is",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "On the slides, "
+            },
+            {
+              "b": true,
+              "text": "public goods"
+            },
+            {
+              "text": " are introduced as the general welfare of the people, the best interests of the community. In economics, a good is classified by two properties of its consumption: whether it is "
+            },
+            {
+              "b": true,
+              "text": "rival"
+            },
+            {
+              "text": " and whether it is "
+            },
+            {
+              "b": true,
+              "text": "excludable"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Rival in consumption: "
+              },
+              {
+                "text": "when one person consumes the good, less is left for others. If I eat a sandwich, you cannot eat the same sandwich."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Nonrival: "
+              },
+              {
+                "text": "one person's consumption does not reduce the amount available to others. My protection by national defence does not reduce yours. (Rosen: the marginal cost of serving one more consumer is zero; not in course slides.)"
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Excludable: "
+              },
+              {
+                "text": "it is possible to stop people who do not pay from consuming it. A cinema can refuse entry without a ticket."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Nonexcludable: "
+              },
+              {
+                "text": "it is impossible, or extremely costly, to stop anyone from consuming it. A lighthouse's light is seen by every ship."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Three definitions from the slides",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Pure public good"
+              },
+              {
+                "text": " – a commodity that is nonrival and nonexcludable in consumption. Example: national defence."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Private good"
+              },
+              {
+                "text": " – a commodity that is rival and excludable in consumption. Example: a pizza, a pair of shoes."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Impure public good"
+              },
+              {
+                "text": " – a good that is rival and/or excludable to some extent. Example: a road that becomes congested at rush hour, or a public swimming pool with an entry fee."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Types of goods (the slide's matrix)",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "rows": [
+            [
+              "Excludable: YES",
+              "PRIVATE GOODS (food, clothes)",
+              "NATURAL MONOPOLY (cable TV, an uncongested toll road)"
+            ],
+            [
+              "Excludable: NO",
+              "COMMON RESOURCES (fish in the sea, a public pasture)",
+              "PUBLIC GOODS (national defence, a lighthouse)"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "",
+            "Rival: YES",
+            "Rival: NO"
+          ]
+        },
+        {
+          "text": "Start from the two extremes: private goods are YES/YES, public goods are NO/NO. The mixed cases: natural monopoly = you can be excluded but you do not use it up; common resources = you cannot be excluded but you do use it up. Examples in the table are illustrations, not from the slides.",
+          "type": "callout",
+          "title": "How to remember the matrix",
+          "variant": "tip"
+        },
+        {
+          "text": "Common resources tend to be overused because nobody can be excluded and each user reduces what is left for others (\"tragedy of the commons\": overfishing). Natural monopoly goods are often provided by one firm because once the network exists, serving one more user costs almost nothing.",
+          "type": "callout",
+          "title": "Background (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "Efficient provision of public goods",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "For a private good the market demand curve is built by "
+            },
+            {
+              "b": true,
+              "text": "horizontal summation"
+            },
+            {
+              "text": ": the process of creating a market demand curve by summing the quantities demanded by each individual at every price. At a price of €2, if Ana wants 3 units and Ivo wants 5, the market demand at €2 is 8 units. Each person buys a different quantity at the same price."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "The market is in "
+            },
+            {
+              "b": true,
+              "text": "equilibrium"
+            },
+            {
+              "text": " when supply and demand are EQUAL."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "For a public good everyone consumes the same quantity (the same level of defence protects everyone), so we cannot add quantities. Instead we use "
+            },
+            {
+              "b": true,
+              "text": "vertical summation"
+            },
+            {
+              "text": ": the process of creating an aggregate demand curve for a public good by adding the prices each individual is willing to pay for a given quantity of the good. If, for one more fireworks show, Ana would pay €6 and Ivo €4, society values that unit at €10."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "rows": [
+            [
+              "What is summed",
+              "Quantities, at each price",
+              "Prices (willingness to pay), at each quantity"
+            ],
+            [
+              "Direction on the graph",
+              "Horizontal",
+              "Vertical"
+            ],
+            [
+              "What people share",
+              "The same price",
+              "The same quantity"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "",
+            "Private good",
+            "Public good"
+          ]
+        },
+        {
+          "text": "A public good is provided efficiently when the sum of everyone's willingness to pay for one more unit equals the marginal cost of producing it (Samuelson rule: ΣMRS = MRT). In the example, produce another show only if it costs no more than €10.",
+          "type": "callout",
+          "title": "Efficiency rule (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "The free-rider problem",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Free rider"
+            },
+            {
+              "text": " – the incentive to let other people pay for a public good while you enjoy the benefits. Because a public good is nonexcludable, you get it whether you pay or not, so many people hide how much they value it. As a result, a private market tends to provide too little of a public good, or none at all. This is the main reason why government often provides public goods and finances them with taxes."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Example: residents of a street are asked to contribute to street lighting. Each one reasons that the lights will be built anyway if the neighbours pay, so each contributes less than the lights are worth to them.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Perfect price discrimination",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Perfect price discrimination"
+            },
+            {
+              "text": " is when a producer charges each person the maximum he or she is willing to pay for the good. In theory this would let a private firm collect exactly each person's valuation and so supply a public good efficiently. (Not in course slides: in practice the firm cannot know everyone's true willingness to pay, which is exactly what free riders hide.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Privatization",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Privatization"
+            },
+            {
+              "text": " is the process of turning services that are supplied by the government over to the private sector for provision and/or production."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Provision = deciding that the good is supplied and paying for it. Production = actually making it. Government can provide a good without producing it: it can pay a private firm to collect rubbish, so provision is public and production is private.",
+          "type": "callout",
+          "title": "Provision vs. production (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "The slides list four criteria for deciding between public and private production:",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Relative wage and material costs"
+              },
+              {
+                "text": " – who can produce more cheaply? Private firms may pay lower wages or buy materials more cheaply."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Administrative costs"
+              },
+              {
+                "text": " – contracting out has costs too: writing contracts, supervising the private producer, checking quality."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Diversity of tastes"
+              },
+              {
+                "text": " – when people want very different things (e.g. different kinds of schools), private supply can offer more variety than one uniform public service."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Distributional issues"
+              },
+              {
+                "text": " – the idea of "
+              },
+              {
+                "b": true,
+                "text": "commodity egalitarianism"
+              },
+              {
+                "text": ": some commodities ought to be made available to everybody (e.g. basic education, health care), whatever their income."
+              }
+            ]
+          ],
+          "ordered": true
+        },
+        {
+          "text": "The slides treat public goods as a special kind of externality: when a public good is provided, everyone benefits, also those who did not pay. T3 develops this idea.",
+          "type": "callout",
+          "title": "Connection to T3",
+          "variant": "tip"
+        }
+      ]
+    }
+  },
+
+  externalities: {
+    "id": "jxx4y6",
+    "name": "Externalities",
+    "icon": "fa-smog",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "6uii7c",
+        "answer": "A cost or benefit that occurs when the activity of one entity directly affects the welfare of another in a way that is outside the market mechanism.",
+        "question": "Externality"
+      },
+      {
+        "id": "z6s75c",
+        "answer": "Negative = external cost (pollution, noise). Positive = external benefit (pollination, vaccination).",
+        "question": "Negative vs. positive externality"
+      },
+      {
+        "id": "iwko2o",
+        "answer": "The producer counts only its private cost; social cost = private cost + marginal damage, so output is too high.",
+        "question": "Why a market overproduces with a negative externality",
+        "explanation": "Not in course slides; Rosen ch. 5."
+      },
+      {
+        "id": "no6jto",
+        "answer": "Produced by consumers as well as firms; reciprocal in nature; can be positive; public goods are a special kind of externality.",
+        "question": "Four characteristics of externalities (slides)"
+      },
+      {
+        "id": "3akkri",
+        "answer": "Both sides want incompatible uses of the same resource; limiting one party imposes a cost on the other.",
+        "question": "Externalities are reciprocal in nature – meaning"
+      },
+      {
+        "id": "v1crch",
+        "answer": "Yes – e.g. loud music or smoking near others; not only firms.",
+        "question": "Can consumers produce externalities?"
+      },
+      {
+        "id": "s1ro0m",
+        "answer": "Public goods can be viewed as a special kind of (positive) externality that benefits everyone.",
+        "question": "Public goods and externalities – link"
+      },
+      {
+        "id": "oe65e1",
+        "answer": "If transaction costs are negligible, an efficient solution to an externality is reached once someone is assigned property rights, no matter who gets them.",
+        "question": "Coase theorem"
+      },
+      {
+        "id": "430az9",
+        "answer": "Once property rights are established, government intervention is not required to deal with externalities.",
+        "question": "Implication of the Coase theorem"
+      },
+      {
+        "id": "vs4ngx",
+        "answer": "Transaction costs must be negligible.",
+        "question": "Condition for the Coase theorem"
+      },
+      {
+        "id": "fk9v2y",
+        "answer": "With many parties or when the source of damage cannot be identified (high transaction costs).",
+        "question": "When does Coase bargaining fail?",
+        "explanation": "Not in course slides; Rosen ch. 5."
+      },
+      {
+        "id": "n39qbm",
+        "answer": "A tax on each unit of an externality generator's output equal to the marginal damage at the efficient level of output.",
+        "question": "Pigouvian tax"
+      },
+      {
+        "id": "1r2xd2",
+        "answer": "Pay for pollution reduction or support activities with external benefits (vaccination, research).",
+        "question": "Subsidies as a response to externalities",
+        "explanation": "Only the word \"Subsidies\" is on the slides; explanation from Rosen."
+      },
+      {
+        "id": "yapuoz",
+        "answer": "A tax levied on each unit of pollution.",
+        "question": "Emissions fee"
+      },
+      {
+        "id": "mfkc45",
+        "answer": "Pigouvian tax: per unit of OUTPUT. Emissions fee: per unit of POLLUTION.",
+        "question": "Pigouvian tax vs. emissions fee"
+      },
+      {
+        "id": "8i45iq",
+        "answer": "Permits to pollute are granted, their number set at the desired pollution level, and polluters may trade them.",
+        "question": "Cap-and-trade"
+      },
+      {
+        "id": "3c56yj",
+        "answer": "Firms that can cut pollution cheaply sell permits to those for whom cutting is costly, so reduction happens where it is cheapest.",
+        "question": "Why trading permits helps"
+      },
+      {
+        "id": "bjvf6s",
+        "answer": "Policies that give polluters financial incentives to reduce pollution.",
+        "question": "Incentive-based regulations"
+      },
+      {
+        "id": "wqmiys",
+        "answer": "Policies requiring a given amount of pollution reduction with limited or no flexibility in how it is achieved.",
+        "question": "Command-and-control regulations"
+      },
+      {
+        "id": "j15cqz",
+        "answer": "Localized concentrations of emissions.",
+        "question": "Hot spots"
+      },
+      {
+        "id": "og1kxq",
+        "answer": "Total pollution stays at the cap, but one firm buying many permits can concentrate pollution in its area.",
+        "question": "Why hot spots are a risk of cap-and-trade"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "pm7kjk",
+        "correct": 1,
+        "options": [
+          "public good",
+          "externality",
+          "transfer payment",
+          "excess burden"
+        ],
+        "question": "A cost or benefit that occurs when the activity of one entity directly affects the welfare of another outside the market mechanism is a(n)..."
+      },
+      {
+        "id": "t9h83v",
+        "correct": 1,
+        "options": [
+          "a negative externality",
+          "a positive externality",
+          "a Pigouvian tax",
+          "a hot spot"
+        ],
+        "question": "A beekeeper's bees pollinate the neighbour's apple orchard for free. This is..."
+      },
+      {
+        "id": "eic147",
+        "correct": 3,
+        "options": [
+          "They can be produced by consumers as well as firms",
+          "They are reciprocal in nature",
+          "They can be positive",
+          "They are always caused by government"
+        ],
+        "question": "Which is NOT one of the characteristics of externalities on the slides?"
+      },
+      {
+        "id": "3etx2z",
+        "correct": 0,
+        "options": [
+          "both parties want incompatible uses of the same resource",
+          "every externality is positive for someone",
+          "the government always pays half",
+          "externalities cancel each other out"
+        ],
+        "question": "\"Externalities are reciprocal in nature\" means that..."
+      },
+      {
+        "id": "bpbmhs",
+        "correct": 2,
+        "options": [
+          "firms only",
+          "consumers only",
+          "consumers as well as firms",
+          "government only"
+        ],
+        "question": "Externalities can be produced by..."
+      },
+      {
+        "id": "gqk07x",
+        "correct": 0,
+        "options": [
+          "a special kind of externality",
+          "a type of tax",
+          "a form of adverse selection",
+          "a private good"
+        ],
+        "question": "According to the slides, public goods can be viewed as..."
+      },
+      {
+        "id": "tadc6z",
+        "correct": 1,
+        "options": [
+          "the government sets a Pigouvian tax",
+          "transaction costs are negligible",
+          "the polluter receives the rights",
+          "the victims receive the rights"
+        ],
+        "question": "The Coase theorem says an efficient solution to an externality is achieved as long as someone is assigned property rights, provided that..."
+      },
+      {
+        "id": "gwlo6o",
+        "correct": 1,
+        "options": [
+          "Government must tax the polluter",
+          "Government intervention is not required to deal with externalities",
+          "Pollution falls to zero",
+          "Command-and-control rules are needed"
+        ],
+        "question": "What does the Coase theorem imply once property rights are established?"
+      },
+      {
+        "id": "3xicl7",
+        "correct": 2,
+        "options": [
+          "Yes, rights must go to the victim",
+          "Yes, rights must go to the polluter",
+          "No, efficiency is reached independent of who is assigned the rights",
+          "Only if transaction costs are high"
+        ],
+        "question": "Under the Coase theorem, does it matter for EFFICIENCY who gets the property rights?"
+      },
+      {
+        "id": "lp5ofo",
+        "correct": 1,
+        "options": [
+          "lump-sum tax",
+          "Pigouvian tax",
+          "payroll tax",
+          "ad valorem tax"
+        ],
+        "question": "A tax on each unit of an externality generator's output, equal to the marginal damage at the efficient level of output, is a..."
+      },
+      {
+        "id": "yk1cc2",
+        "correct": 0,
+        "options": [
+          "emissions fee",
+          "cap-and-trade permit",
+          "profits tax",
+          "Pigouvian subsidy"
+        ],
+        "question": "A tax levied on each unit of pollution is a(n)..."
+      },
+      {
+        "id": "coiwcv",
+        "correct": 0,
+        "options": [
+          "Pigouvian tax is per unit of output; emissions fee is per unit of pollution",
+          "Pigouvian tax is voluntary; emissions fee is compulsory",
+          "Pigouvian tax is paid by consumers; emissions fee by workers",
+          "There is no difference"
+        ],
+        "question": "What is the key difference between a Pigouvian tax and an emissions fee?"
+      },
+      {
+        "id": "i873m9",
+        "correct": 1,
+        "options": [
+          "command-and-control",
+          "cap-and-trade",
+          "an emissions fee",
+          "privatization"
+        ],
+        "question": "Granting permits to pollute, with their number set at the desired pollution level, and allowing polluters to trade them is..."
+      },
+      {
+        "id": "ffeesb",
+        "correct": 1,
+        "options": [
+          "It raises the total amount of pollution allowed",
+          "Pollution is reduced where reducing it is cheapest",
+          "It removes the need for a cap",
+          "It eliminates hot spots"
+        ],
+        "question": "Why does allowing trade in pollution permits help?"
+      },
+      {
+        "id": "mu3ncl",
+        "correct": 0,
+        "options": [
+          "incentive-based regulations",
+          "command-and-control regulations",
+          "entitlement programs",
+          "lump-sum taxes"
+        ],
+        "question": "Policies that provide polluters with financial incentives to reduce pollution are..."
+      },
+      {
+        "id": "6ucxwr",
+        "correct": 2,
+        "options": [
+          "cap-and-trade",
+          "an emissions fee",
+          "command-and-control regulation",
+          "the Coase theorem"
+        ],
+        "question": "A rule requiring a given pollution reduction with limited or no flexibility on how to achieve it is..."
+      },
+      {
+        "id": "tkq1dx",
+        "correct": 0,
+        "options": [
+          "hot spots",
+          "dead zones",
+          "tax wedges",
+          "free riders"
+        ],
+        "question": "Localized concentrations of emissions are called..."
+      },
+      {
+        "id": "juydk2",
+        "correct": 1,
+        "options": [
+          "Because total pollution rises above the cap",
+          "Because one firm can buy many permits and concentrate pollution in its area",
+          "Because permits cannot be traded",
+          "Because government sets a tax per unit of output"
+        ],
+        "question": "Why can cap-and-trade create hot spots?"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "x666am",
+        "hint": "Rosen; not on slides",
+        "answer": "damage",
+        "answers": [
+          "damage",
+          "much"
+        ],
+        "sentence": "With a negative externality, marginal social cost = marginal private cost + marginal _______, so the market produces too _______."
+      },
+      {
+        "id": "zpmvyz",
+        "hint": "Rosen; not on slides",
+        "answer": "transaction",
+        "sentence": "Coase bargaining fails when _______ costs are high, e.g. when very many parties are affected."
+      },
+      {
+        "id": "gyvtfk",
+        "answer": "subsidies",
+        "sentence": "Besides taxes, the slides list _______ as a public response to externalities."
+      },
+      {
+        "id": "zx3ngi",
+        "answer": "damage",
+        "answers": [
+          "damage",
+          "efficient"
+        ],
+        "sentence": "A Pigouvian tax equals the marginal _______ at the _______ level of output."
+      },
+      {
+        "id": "0suua6",
+        "answer": "property",
+        "sentence": "According to the Coase theorem, the efficient solution is achieved as long as someone is assigned _______ rights, independent of who is assigned them."
+      },
+      {
+        "id": "bxadu7",
+        "answer": "permits",
+        "answers": [
+          "permits",
+          "trade"
+        ],
+        "sentence": "In cap-and-trade, the number of _______ is set at the desired pollution level and polluters are allowed to _______ them."
+      }
+    ],
+    "learn": {
+      "id": "jd4ye8",
+      "title": "T3 Externalities (Rosen, ch. 5)",
+      "blocks": [
+        {
+          "text": "What an externality is",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "An "
+            },
+            {
+              "b": true,
+              "text": "externality"
+            },
+            {
+              "text": " is a cost or benefit that occurs when the activity of one entity directly affects the welfare of another in a way that is outside the market mechanism. \"Outside the market\" means that nobody pays or gets paid for the effect: a factory that pollutes a river does not pay the fishermen downstream, and the fishermen cannot charge the factory."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Negative externality"
+              },
+              {
+                "text": " – an external cost: pollution, noise, congestion, second-hand smoke."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Positive externality"
+              },
+              {
+                "text": " – an external benefit: a beekeeper's bees pollinate a neighbour's orchard; a vaccinated person protects others."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "A producer looks only at its own (private) cost. With a negative externality, the cost to society is higher than the private cost (marginal social cost = marginal private cost + marginal damage), so the market produces too much. With a positive externality, the market produces too little.",
+          "type": "callout",
+          "title": "Why markets get it wrong (not in course slides)",
+          "variant": "info"
+        },
+        {
+          "text": "Four characteristics of externalities (slides)",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Externalities can be produced by consumers as well as firms."
+              },
+              {
+                "text": " A neighbour playing loud music at night or a smoker in a closed room creates an externality just like a polluting factory."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Externalities are reciprocal in nature."
+              },
+              {
+                "text": " It is not simply that A harms B: the problem exists because A and B want to use the same resource in incompatible ways. The river can be a dump for the factory or a clean fishery, not both. Stopping the factory would in turn impose a cost on the factory."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Externalities can be positive."
+              },
+              {
+                "text": " Not every external effect is harmful: research, education and pollination create benefits for others."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Public goods can be viewed as a special kind of externality."
+              },
+              {
+                "text": " When someone provides a public good, everyone else benefits too, without paying: a positive externality that reaches the whole community (link to T2)."
+              }
+            ]
+          ],
+          "ordered": true
+        },
+        {
+          "text": "Private solution: the Coase theorem",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Coase theorem"
+            },
+            {
+              "text": " – provided that transaction costs are negligible, an efficient solution to an externality problem is achieved as long as someone is assigned property rights, independent of who is assigned those rights."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Implication (slide): "
+            },
+            {
+              "text": "once property rights are established, government intervention is not required to deal with externalities. The parties bargain with each other."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Example: if the fishermen own the river, the factory must pay them for the right to pollute; if the factory owns it, the fishermen can pay the factory to pollute less. In both cases they bargain until the pollution level is efficient. Who gets the right changes who pays whom (the distribution of income), but not the efficient outcome.",
+          "type": "paragraph"
+        },
+        {
+          "text": "The theorem needs low transaction costs. It breaks down when very many parties are involved (millions of people breathing polluted air cannot bargain with every factory) or when the source of the damage cannot be identified. That is why public responses are still needed.",
+          "type": "callout",
+          "title": "When Coase does not work (not in course slides)",
+          "variant": "warning"
+        },
+        {
+          "text": "Public responses to externalities",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "Pigouvian tax",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "text": "A "
+            },
+            {
+              "b": true,
+              "text": "Pigouvian tax"
+            },
+            {
+              "text": " is a tax levied on each unit of an externality generator's output in an amount equal to the marginal damage at the efficient level of output. The tax makes the polluter pay the cost it imposes on others, so its private cost becomes equal to the social cost and it reduces output to the efficient level."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Example: if each tonne of steel causes €20 of damage at the efficient output, the tax is €20 per tonne.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Subsidies",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Subsidies"
+            },
+            {
+              "text": " work the other way round. (Not in course slides: the government can pay a polluter for each unit by which it reduces pollution, or subsidise activities with positive externalities, such as vaccination or research.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Emissions fee",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "text": "An "
+            },
+            {
+              "b": true,
+              "text": "emissions fee"
+            },
+            {
+              "text": " is a tax levied on each unit of pollution. The difference from a Pigouvian tax: the Pigouvian tax is on each unit of OUTPUT; the emissions fee is on each unit of POLLUTION. (Not in course slides: taxing pollution directly lets a firm keep producing while cutting emissions, e.g. by installing a cleaner technology.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Cap-and-trade",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Cap-and-trade"
+            },
+            {
+              "text": " is a policy of granting permits to pollute, with the number of permits set at the desired pollution level, and allowing polluters to trade the permits. The \"cap\" fixes total pollution; the \"trade\" lets firms that can cut pollution cheaply sell their spare permits to firms for which cutting is expensive. Total pollution stays at the cap, and it is reduced where reduction is cheapest. (Example, not in course slides: the EU Emissions Trading System for CO₂.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Incentive-based vs. command-and-control regulation",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "rows": [
+            [
+              "Policies that provide polluters with financial incentives to reduce pollution",
+              "Policies that require a given amount of pollution reduction with limited or no flexibility with respect to how it may be achieved"
+            ],
+            [
+              "Examples: Pigouvian tax, emissions fee, cap-and-trade",
+              "Examples: a rule that every plant must install a specific filter, or cut emissions by 30%"
+            ],
+            [
+              "Firm chooses how much and how to reduce",
+              "Government dictates how much (and often how)"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Incentive-based regulations",
+            "Command-and-control regulations"
+          ]
+        },
+        {
+          "text": "Hot spots",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Hot spots"
+            },
+            {
+              "text": " are localized concentrations of emissions. They are a risk of incentive-based systems: if one factory buys many permits, total pollution is at the cap, but the area around that factory gets heavily polluted."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Learn the exact pairs: Pigouvian tax = per unit of OUTPUT, equal to marginal damage at the efficient output; emissions fee = per unit of POLLUTION; cap-and-trade = permits set at the desired level and tradable; command-and-control = little or no flexibility.",
+          "type": "callout",
+          "title": "Exam tip",
+          "variant": "tip"
+        }
+      ]
+    }
+  },
+
+  socialSecurity: {
+    "id": "aycqju",
+    "name": "Social Security",
+    "icon": "fa-person-cane",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "id": "mo0zhm",
+        "answer": "Consumption smoothing and insurance against living longer than expected and using up retirement assets too early; also covers disabled, dependents and survivors.",
+        "question": "Why have social security? (main reason)"
+      },
+      {
+        "id": "5yfje9",
+        "answer": "An insurance plan that charges a premium and then pays a sum at regular intervals for as long as the policyholder lives.",
+        "question": "Annuity"
+      },
+      {
+        "id": "h1xxem",
+        "answer": "The larger the premium, the larger the annual payments in the future, other things being equal.",
+        "question": "Annuity: premium vs. payments"
+      },
+      {
+        "id": "9ml3ms",
+        "answer": "Reducing consumption in high-earning years to increase consumption in low-earning years.",
+        "question": "Consumption smoothing"
+      },
+      {
+        "id": "l5voe8",
+        "answer": "One party to an economic transaction has better information about the good or service traded than the other party.",
+        "question": "Asymmetric information"
+      },
+      {
+        "id": "m7yszr",
+        "answer": "Buyers know their life expectancy better than sellers, and the longer the buyer lives, the less the seller makes.",
+        "question": "Why does asymmetric information cause failure in the annuity market?"
+      },
+      {
+        "id": "97ljrj",
+        "answer": "The uninformed side of a deal gets exactly the wrong people trading with it.",
+        "question": "Adverse selection"
+      },
+      {
+        "id": "5kr58p",
+        "answer": "Lack of foresight and paternalism; moral hazard; economizing on decision-making and administrative costs; income redistribution; improving the economic status of the aged.",
+        "question": "Other justifications for social security (slides)"
+      },
+      {
+        "id": "iavnoi",
+        "answer": "When the existence of insurance increases the likelihood of the adverse outcome.",
+        "question": "Moral hazard"
+      },
+      {
+        "id": "d11u7x",
+        "answer": "A pension system in which benefits are paid out of deposits made during one's working life, plus accumulated interest.",
+        "question": "Fully funded plan"
+      },
+      {
+        "id": "cyeq2c",
+        "answer": "A pension system in which benefits paid to current retirees come from payments made by current workers.",
+        "question": "Pay-as-you-go (unfunded) plan"
+      },
+      {
+        "id": "qcnimb",
+        "answer": "1935.",
+        "question": "Year US social security started (slide)"
+      },
+      {
+        "id": "4axani",
+        "answer": "1939.",
+        "question": "Benefits for dependents and survivors were added in..."
+      },
+      {
+        "id": "0gaxrf",
+        "answer": "A welfare program that provides a minimum income guarantee for the aged and disabled.",
+        "question": "Supplemental Security Income (SSI)"
+      },
+      {
+        "id": "hcj065",
+        "answer": "Average Indexed Monthly Earnings: average monthly earnings in the 35 highest-paid years, wages indexed, capped at the tax ceiling.",
+        "question": "AIME"
+      },
+      {
+        "id": "wyh8f9",
+        "answer": "The 35 highest-paid years.",
+        "question": "How many years count for AIME?"
+      },
+      {
+        "id": "klx0hf",
+        "answer": "Primary Insurance Amount: the basic benefit for a worker who retires at normal retirement age or becomes disabled; found by putting AIME into the benefit formula.",
+        "question": "PIA"
+      },
+      {
+        "id": "tpygbj",
+        "answer": "+50% of the worker's benefit.",
+        "question": "Family status adjustment: spouse or dependent child"
+      },
+      {
+        "id": "chw0u3",
+        "answer": "Spouse receives 100% of the worker's benefit or their own benefit, whichever is higher.",
+        "question": "Survivor rule when the covered worker dies"
+      },
+      {
+        "id": "pyo49u",
+        "answer": "Gets the spouse benefit if married at least 10 years and not remarried while the covered worker is alive.",
+        "question": "Divorced spouse rule"
+      },
+      {
+        "id": "50f5vo",
+        "answer": "Benefits reduced $1 for every $2 earned above $14,160; those losing benefits may have later benefits increased.",
+        "question": "Earnings test"
+      },
+      {
+        "id": "egy22v",
+        "answer": "Up to 85% of benefits are taxed if income exceeds $25,000 (single) or $32,000 (married).",
+        "question": "Taxing benefits"
+      },
+      {
+        "id": "mktlpd",
+        "answer": "A fund in which social security surpluses are accumulated to pay benefits in the future.",
+        "question": "Social Security Trust Fund"
+      },
+      {
+        "id": "yaffn3",
+        "answer": "Federal expenditures and revenues excluded by law from budget totals.",
+        "question": "Off budget"
+      },
+      {
+        "id": "waa3vq",
+        "answer": "Consumption and saving decisions in a given year are based on a plan that considers lifetime circumstances.",
+        "question": "Life-cycle theory of saving"
+      },
+      {
+        "id": "gbf4bp",
+        "answer": "Crowding out of private saving because social security exists (saving falls).",
+        "question": "Wealth substitution effect"
+      },
+      {
+        "id": "20ohka",
+        "answer": "If social security makes people retire earlier, they save more to finance a longer retirement (saving rises).",
+        "question": "Retirement effect"
+      },
+      {
+        "id": "vqsgdc",
+        "answer": "People may save more to finance a larger bequest to their children (saving rises).",
+        "question": "Bequest effect"
+      },
+      {
+        "id": "kcz8ij",
+        "answer": "Ambiguous: wealth substitution lowers saving, retirement and bequest effects raise it.",
+        "question": "Net effect of social security on saving",
+        "explanation": "Conclusion from Rosen; the slides list the three effects."
+      },
+      {
+        "id": "gle3tw",
+        "answer": "The ratio of social security beneficiaries to covered workers.",
+        "question": "Dependency ratio"
+      },
+      {
+        "id": "k6h1se",
+        "answer": "The ratio of average social security benefits to average covered wages.",
+        "question": "Replacement ratio"
+      },
+      {
+        "id": "xtokj0",
+        "answer": "Expected present values of revenues and expenditures are equal into the indefinite future.",
+        "question": "Sustainable solvency"
+      },
+      {
+        "id": "yr6ie5",
+        "answer": "Raise payroll tax; raise maximum taxable earnings; raise retirement age; reduce cost-of-living adjustment; change benefit formula.",
+        "question": "Options to maintain the current system"
+      },
+      {
+        "id": "yacxot",
+        "answer": "Effect on solvency, effect on saving, carve-out vs add-on accounts, risk, administration, distribution.",
+        "question": "Privatize the system: personal accounts – points to judge"
+      },
+      {
+        "id": "attcv1",
+        "answer": "Carve-out: part of the existing payroll tax goes into the personal account. Add-on: contributions on top of the payroll tax.",
+        "question": "Carve-out vs. add-on accounts",
+        "explanation": "Terms on slides; definitions from Rosen."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "dzh042",
+        "correct": 1,
+        "options": [
+          "losing a job temporarily",
+          "living longer than expected and using up retirement assets too early",
+          "a fall in stock prices",
+          "inflation in the short run"
+        ],
+        "question": "Social security mainly insures against the possibility of..."
+      },
+      {
+        "id": "b7qa7x",
+        "correct": 0,
+        "options": [
+          "annuity",
+          "trust fund",
+          "bond",
+          "entitlement program"
+        ],
+        "question": "An insurance plan that charges a premium and then pays a sum at regular intervals for as long as the policyholder lives is a(n)..."
+      },
+      {
+        "id": "8nsgke",
+        "correct": 1,
+        "options": [
+          "smaller future payments",
+          "larger future annual payments",
+          "payments end sooner",
+          "no change in payments"
+        ],
+        "question": "Other things being the same, a larger annuity premium means..."
+      },
+      {
+        "id": "mj3hyu",
+        "correct": 0,
+        "options": [
+          "consumption smoothing",
+          "adverse selection",
+          "moral hazard",
+          "capitalization"
+        ],
+        "question": "Reducing consumption in high-earning years in order to increase consumption in low-earning years is..."
+      },
+      {
+        "id": "runkvm",
+        "correct": 1,
+        "options": [
+          "perfect competition",
+          "asymmetric information",
+          "commodity egalitarianism",
+          "tax salience"
+        ],
+        "question": "A situation in which one party to a transaction has better information about the good traded than the other is..."
+      },
+      {
+        "id": "ip475g",
+        "correct": 0,
+        "options": [
+          "Because the longer the buyer lives, the less money the seller makes, and buyers know their life expectancy better",
+          "Because annuities are taxed at 85%",
+          "Because the government forbids private annuities",
+          "Because sellers know more than buyers"
+        ],
+        "question": "Why does asymmetric information cause a failure in the annuity market?"
+      },
+      {
+        "id": "xav75i",
+        "correct": 1,
+        "options": [
+          "moral hazard",
+          "adverse selection",
+          "free riding",
+          "the wealth substitution effect"
+        ],
+        "question": "The phenomenon under which the uninformed side of a deal gets exactly the wrong people trading with it is..."
+      },
+      {
+        "id": "scytaw",
+        "correct": 3,
+        "options": [
+          "Lack of foresight and paternalism",
+          "Income redistribution",
+          "Improving the economic status of the aged",
+          "Reducing the corporate income tax"
+        ],
+        "question": "Which is NOT listed on the slides as a justification for social security?"
+      },
+      {
+        "id": "vdf4at",
+        "correct": 1,
+        "options": [
+          "adverse selection",
+          "moral hazard",
+          "tax shifting",
+          "consumption smoothing"
+        ],
+        "question": "When the existence of insurance increases the likelihood of the adverse outcome, this is..."
+      },
+      {
+        "id": "hbc68i",
+        "correct": 1,
+        "options": [
+          "pay-as-you-go",
+          "a fully funded plan",
+          "SSI",
+          "an add-on account"
+        ],
+        "question": "A pension system in which an individual's benefits are paid out of deposits made during his/her working life, plus accumulated interest, is..."
+      },
+      {
+        "id": "rmkvoi",
+        "correct": 1,
+        "options": [
+          "their own past deposits plus interest",
+          "payments made by current workers",
+          "the sale of government property",
+          "private annuities"
+        ],
+        "question": "In a pay-as-you-go (unfunded) system, benefits paid to current retirees come from..."
+      },
+      {
+        "id": "5dul9w",
+        "correct": 1,
+        "options": [
+          "1929",
+          "1935",
+          "1939",
+          "1974"
+        ],
+        "question": "According to the slide, the US social security system started in..."
+      },
+      {
+        "id": "lk5tu1",
+        "correct": 1,
+        "options": [
+          "1935",
+          "1939",
+          "1945",
+          "1974"
+        ],
+        "question": "Benefits for dependents and survivors were introduced in..."
+      },
+      {
+        "id": "514lvr",
+        "correct": 2,
+        "options": [
+          "AIME",
+          "PIA",
+          "Supplemental Security Income (SSI)",
+          "the trust fund"
+        ],
+        "question": "A welfare program that provides a minimum income guarantee for the aged and disabled is..."
+      },
+      {
+        "id": "vk84bo",
+        "correct": 1,
+        "options": [
+          "Annual Income from Monthly Employment",
+          "Average Indexed Monthly Earnings",
+          "Average Insurance Monthly Entitlement",
+          "Adjusted Income for Medical Expenses"
+        ],
+        "question": "AIME stands for..."
+      },
+      {
+        "id": "4f5gt4",
+        "correct": 2,
+        "options": [
+          "last 10 years of work",
+          "25 highest-paid years",
+          "35 highest-paid years",
+          "whole working life"
+        ],
+        "question": "AIME is the average monthly earnings in the..."
+      },
+      {
+        "id": "bzksdq",
+        "correct": 1,
+        "options": [
+          "AIME",
+          "PIA (primary insurance amount)",
+          "replacement ratio",
+          "SSI"
+        ],
+        "question": "The basic benefit payable to a worker who retires at normal retirement age or becomes disabled is the..."
+      },
+      {
+        "id": "r5o675",
+        "correct": 1,
+        "options": [
+          "+25%",
+          "+50%",
+          "+85%",
+          "+100%"
+        ],
+        "question": "For a spouse or dependent child, the benefit is increased by..."
+      },
+      {
+        "id": "uuo2cv",
+        "correct": 1,
+        "options": [
+          "50% of the worker's benefit",
+          "100% of the worker's benefit or own benefit, whichever is higher",
+          "only their own benefit",
+          "a lump sum of $14,160"
+        ],
+        "question": "If a covered worker dies, the spouse receives..."
+      },
+      {
+        "id": "yxixxs",
+        "correct": 1,
+        "options": [
+          "5 years",
+          "10 years",
+          "15 years",
+          "35 years"
+        ],
+        "question": "A divorced spouse gets the spouse benefit if married at least..."
+      },
+      {
+        "id": "drgmvs",
+        "correct": 0,
+        "options": [
+          "$1 for every $2 earned above $14,160",
+          "$1 for every $1 earned above $25,000",
+          "$2 for every $1 earned above $14,160",
+          "by 85% above $32,000"
+        ],
+        "question": "Under the earnings test, benefits are reduced..."
+      },
+      {
+        "id": "uomgb9",
+        "correct": 2,
+        "options": [
+          "50%",
+          "75%",
+          "85%",
+          "100%"
+        ],
+        "question": "Up to what share of benefits is taxed for recipients above the base amount?"
+      },
+      {
+        "id": "oek00z",
+        "correct": 1,
+        "options": [
+          "unified budget",
+          "trust fund",
+          "regulatory budget",
+          "annuity market"
+        ],
+        "question": "A fund in which social security surpluses are accumulated to pay out benefits in the future is the..."
+      },
+      {
+        "id": "cqt0vv",
+        "correct": 0,
+        "options": [
+          "off budget",
+          "on budget",
+          "entitlements",
+          "transfers"
+        ],
+        "question": "Federal expenditures and revenues that are excluded by law from budget totals are..."
+      },
+      {
+        "id": "7u2d1x",
+        "correct": 0,
+        "options": [
+          "life-cycle theory of saving",
+          "Coase theorem",
+          "theory of the second best",
+          "organic view"
+        ],
+        "question": "The theory that consumption and saving decisions in a given year are based on a plan considering lifetime circumstances is the..."
+      },
+      {
+        "id": "nlcxov",
+        "correct": 2,
+        "options": [
+          "retirement effect",
+          "bequest effect",
+          "wealth substitution effect",
+          "substitution effect of a tax"
+        ],
+        "question": "The crowding out of private saving due to the existence of social security is the..."
+      },
+      {
+        "id": "ficrd0",
+        "correct": 0,
+        "options": [
+          "retirement effect",
+          "bequest effect",
+          "wealth substitution effect",
+          "moral hazard"
+        ],
+        "question": "If social security induces people to retire earlier and they therefore save more, this is the..."
+      },
+      {
+        "id": "g9dzto",
+        "correct": 1,
+        "options": [
+          "retirement effect",
+          "bequest effect",
+          "consumption smoothing",
+          "capitalization"
+        ],
+        "question": "People saving more in order to leave a larger inheritance to their children is the..."
+      },
+      {
+        "id": "1q5wa3",
+        "correct": 1,
+        "options": [
+          "replacement ratio",
+          "dependency ratio",
+          "tax wedge",
+          "average tax rate"
+        ],
+        "question": "The ratio of social security beneficiaries to covered workers is the..."
+      },
+      {
+        "id": "wi5h5w",
+        "correct": 0,
+        "options": [
+          "replacement ratio",
+          "dependency ratio",
+          "marginal tax rate",
+          "AIME"
+        ],
+        "question": "The ratio of average social security benefits to average covered wages is the..."
+      },
+      {
+        "id": "6n838g",
+        "correct": 0,
+        "options": [
+          "sustainable solvency",
+          "balanced-budget incidence",
+          "pay-as-you-go",
+          "full funding"
+        ],
+        "question": "Expected present values of revenues and expenditures being equal into the indefinite future is called..."
+      },
+      {
+        "id": "na87jp",
+        "correct": 3,
+        "options": [
+          "Raise the payroll tax",
+          "Raise the retirement age",
+          "Reduce the cost-of-living adjustment",
+          "Introduce a Pigouvian tax"
+        ],
+        "question": "Which is NOT an option to maintain the current social security system on the slides?"
+      },
+      {
+        "id": "orglx4",
+        "correct": 1,
+        "options": [
+          "Hot spots",
+          "Carve-out accounts",
+          "Vertical summation",
+          "Tax salience"
+        ],
+        "question": "Which item belongs to the slide's list of pros and cons of personal accounts?"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "dxfq99",
+        "answer": "decreases",
+        "answers": [
+          "decreases",
+          "increases"
+        ],
+        "sentence": "The wealth substitution effect _______ private saving, while the retirement and bequest effects _______ it, so the net effect is ambiguous."
+      },
+      {
+        "id": "b6u6yo",
+        "hint": "Definitions from Rosen",
+        "answer": "carve-out",
+        "answers": [
+          "carve-out",
+          "add-on"
+        ],
+        "sentence": "In a _______ account part of the existing payroll tax is diverted into a personal account; in an _______ account contributions are made on top of it."
+      },
+      {
+        "id": "wp6you",
+        "answer": "85",
+        "answers": [
+          "85",
+          "25,000"
+        ],
+        "sentence": "Up to _______% of benefits are taxed for recipients with income above $_______ (single) and $32,000 (married)."
+      },
+      {
+        "id": "s65h3n",
+        "answer": "2",
+        "answers": [
+          "2",
+          "14,160"
+        ],
+        "sentence": "Under the earnings test, benefits are reduced $1 for every $_______ earned above $_______."
+      },
+      {
+        "id": "sg5vmq",
+        "answer": "35",
+        "sentence": "AIME is the average monthly earnings in the _______ highest-paid years."
+      },
+      {
+        "id": "s2clt8",
+        "answer": "pay",
+        "answers": [
+          "pay",
+          "as"
+        ],
+        "sentence": "In a _______-_______-you-go system, benefits of current retirees are paid by current workers."
+      },
+      {
+        "id": "gtv0i0",
+        "answer": "1935",
+        "answers": [
+          "1935",
+          "1939"
+        ],
+        "sentence": "Social security started in _______, and benefits for dependents and survivors were added in _______."
+      },
+      {
+        "id": "0oeytw",
+        "answer": "dependency",
+        "sentence": "As the population ages, the _______ ratio (beneficiaries to covered workers) rises."
+      }
+    ],
+    "learn": {
+      "id": "db3lr0",
+      "title": "T4 Social Security (Rosen, ch. 11)",
+      "blocks": [
+        {
+          "text": "Social security is the public pension and insurance system that pays benefits to retired workers, disabled workers and the dependents and survivors of covered workers. The slides follow the US system described in Rosen, and they show charts of social security expenditures in the US (1939–2011, source: Social Security Trustees 2012) and in the EU, both growing over time.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Why have social security?",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "1. Consumption smoothing and the annuity market",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": "Social security provides insurance against the possibility of living longer than expected and so using up too early all the assets saved for retirement. It also provides benefits for disabled workers and for the dependents and survivors of disabled and retired workers.",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Annuity"
+              },
+              {
+                "text": " – an insurance plan that charges a premium and then pays a sum of money at some regular interval for as long as the policyholder lives. The larger the premium, the larger the annual payments received in the future, other things being the same."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Consumption smoothing"
+              },
+              {
+                "text": " – reducing consumption in high-earning years in order to increase consumption in low-earning years. Example: saving part of your salary while working so you can keep spending in retirement."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "2. Adverse selection and the annuity market",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "text": "Why can't private annuities do the job alone? Because of "
+            },
+            {
+              "b": true,
+              "text": "asymmetric information"
+            },
+            {
+              "text": ": a situation in which one party to an economic transaction has better information about the good or service traded than the other party. A buyer of an annuity knows more about their own health and expected life span than the insurer, and the longer the buyer lives, the less money the seller makes. This causes a failure in the annuity market."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Adverse selection"
+            },
+            {
+              "text": " – the phenomenon under which the uninformed side of a deal gets exactly the wrong people trading with it. People who expect to live long buy annuities most eagerly; insurers raise prices to cover them; people with average life expectancy then find annuities too expensive and drop out. A compulsory public system covering everyone avoids this."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "3. Other justifications",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Lack of foresight and paternalism"
+              },
+              {
+                "text": " – people may not save enough for old age, so the state forces them to."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Moral hazard"
+              },
+              {
+                "text": " – occurs when the existence of insurance increases the likelihood of the adverse outcome. Example: if people know the state will support them in old age anyway, they may save less (not in course slides: this argues for a compulsory system rather than relying on welfare)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Economize on decision-making and administrative costs"
+              },
+              {
+                "text": " – one big public system can be cheaper than millions of individual decisions and private plans with high administrative costs."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Income redistribution"
+              },
+              {
+                "text": " – the benefit formula gives low earners relatively more."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Improve the economic status of the aged"
+              },
+              {
+                "text": " – reduce poverty among old people."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Structure of social security",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "Basic components: how the system is financed",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "rows": [
+            [
+              "An individual's benefits are paid out of deposits made during his or her working life, plus accumulated interest",
+              "Benefits paid to current retirees come from payments made by current workers"
+            ],
+            [
+              "You finance your own pension",
+              "Today's workers finance today's pensioners"
+            ],
+            [
+              "Sensitive to interest rates and returns",
+              "Sensitive to the ratio of retirees to workers (dependency ratio)"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Fully funded plan",
+            "Pay-as-you-go (unfunded) plan"
+          ]
+        },
+        {
+          "text": "The slide gives 1935 as the start of the US social security system (the Social Security Act). On the slide the line \"Pay-As-You-Go Financing – started in 1935\" is followed by the definition of the fully funded plan; Rosen explains that the system was first planned as funded and soon moved to pay-as-you-go. Know both definitions and the year 1935.",
+          "type": "callout",
+          "title": "Year to remember: 1935",
+          "variant": "warning"
+        },
+        {
+          "text": "Explicit transfers",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Benefits for dependents and survivors"
+              },
+              {
+                "text": " – added in 1939."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Supplemental Security Income (SSI)"
+              },
+              {
+                "text": " – a welfare program that provides a minimum income guarantee for the aged and disabled."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "How benefits are calculated",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "AIME (Average Indexed Monthly Earnings)"
+              },
+              {
+                "text": " – the average monthly earnings in the 35 highest-paid years. Past wages are indexed (the slide says for inflation) so that old and new wages are comparable. There is a ceiling on AIME: only earnings up to the tax ceiling count."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "PIA (Primary Insurance Amount)"
+              },
+              {
+                "text": " – the AIME is put into a benefit formula to find the PIA: the basic benefit payable to a worker who retires at the normal retirement age or who becomes disabled."
+              }
+            ]
+          ],
+          "ordered": true
+        },
+        {
+          "text": "Adjustments",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "rows": [
+            [
+              "Spouse or dependent child",
+              "+50% of the worker's benefit"
+            ],
+            [
+              "Covered worker dies",
+              "Spouse receives 100% of the worker's benefit or the spouse's own benefit, whichever is higher"
+            ],
+            [
+              "Divorced spouse",
+              "Gets the spouse benefit if married at least 10 years and not remarried while the covered worker is alive"
+            ],
+            [
+              "Earnings test",
+              "Benefits reduced $1 for every $2 earned above $14,160; people losing benefits may have later benefits increased"
+            ],
+            [
+              "Taxing benefits",
+              "Up to 85% of benefits taxed for recipients with income above a base amount: $25,000 single, $32,000 married"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Adjustment",
+            "Rule on the slide"
+          ]
+        },
+        {
+          "text": "1935 start · 1939 dependents and survivors · 35 highest-paid years · +50% spouse · 100% survivor · 10 years of marriage · $1 for every $2 above $14,160 · up to 85% taxed · $25,000 single / $32,000 married.",
+          "type": "callout",
+          "title": "Numbers for the open questions",
+          "variant": "tip"
+        },
+        {
+          "text": "The Social Security Trust Fund and the budget",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "The "
+            },
+            {
+              "b": true,
+              "text": "trust fund"
+            },
+            {
+              "text": " is a fund in which social security surpluses are accumulated for the purpose of paying out benefits in the future. Money flows worker → trust fund → retiree."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Off budget"
+              },
+              {
+                "text": " – federal expenditures and revenues that are excluded by law from budget totals (social security is treated this way)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Unified budget"
+              },
+              {
+                "text": " – the document that includes all the federal government's revenues and expenditures (as in T1)."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Effects of social security on saving and behaviour",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Life-cycle theory of saving"
+            },
+            {
+              "text": " – an individual's consumption and saving decisions in a given year are based on a plan that considers lifetime circumstances. People save while working and spend savings in retirement. Social security changes this plan through three effects:"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "rows": [
+            [
+              "Wealth substitution effect",
+              "Private saving is crowded out because social security already promises retirement income",
+              "Decreases saving"
+            ],
+            [
+              "Retirement effect",
+              "If social security makes people retire earlier, they save more to finance a longer retirement",
+              "Increases saving"
+            ],
+            [
+              "Bequest effect",
+              "People may save more to leave a larger bequest to their children (e.g. to offset the taxes children pay for parents' benefits)",
+              "Increases saving"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Effect",
+            "Meaning",
+            "Effect on private saving"
+          ]
+        },
+        {
+          "text": "Because the effects go in opposite directions, theory alone cannot say whether social security lowers total saving; it is an empirical question (Rosen; not in course slides).",
+          "type": "paragraph"
+        },
+        {
+          "text": "Long-term stresses on social security",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Dependency ratio"
+              },
+              {
+                "text": " – the ratio of social security beneficiaries to covered workers. As the population ages, there are more retirees per worker, which strains a pay-as-you-go system."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Replacement ratio"
+              },
+              {
+                "text": " – the ratio of average social security benefits to average covered wages: how much of a typical wage the pension replaces."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Social security reform",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "Reform is judged against a time horizon for solvency. "
+            },
+            {
+              "b": true,
+              "text": "Sustainable solvency"
+            },
+            {
+              "text": " means that the expected present values of revenues and expenditures are equal into the indefinite future."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Option A: maintain the current system",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            "Raise the payroll tax.",
+            "Raise the maximum taxable earnings level (tax more of high earners' wages).",
+            "Raise the retirement age.",
+            "Reduce the cost-of-living adjustment (smaller yearly inflation increases of benefits).",
+            "Change the benefit formula.",
+            "Compare the options (who bears the cost of each)."
+          ]
+        },
+        {
+          "text": "Option B: privatize the system – personal accounts",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": "Workers would have personal (individual) accounts invested in financial assets. The slides list the points on which pros and cons are judged:",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Effect on solvency"
+              },
+              {
+                "text": " – does it close the financing gap?"
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Effect on saving"
+              },
+              {
+                "text": " – does national saving rise?"
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Carve-out accounts"
+              },
+              {
+                "text": " – part of the existing payroll tax is diverted into the personal account (explanation from Rosen; not in course slides)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Add-on accounts"
+              },
+              {
+                "text": " – contributions to the personal account are made on top of the existing payroll tax (Rosen; not in course slides)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Risk"
+              },
+              {
+                "text": " – the pension depends on how the investments perform."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Administration"
+              },
+              {
+                "text": " – managing millions of accounts has costs."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Distribution"
+              },
+              {
+                "text": " – personal accounts redistribute less to low earners than the current formula."
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  },
+
+  taxationIncomeDistribution: {
+    "id": "nl9vt1",
+    "name": "Taxation and Income Distribution",
+    "icon": "fa-scale-balanced",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "id": "wcqwkh",
+        "answer": "Only people (owners, workers, customers), not firms or things.",
+        "question": "Who can bear taxes?"
+      },
+      {
+        "id": "gr2kki",
+        "answer": "How income is distributed among people classified by the inputs they supply to production (labour, capital, land).",
+        "question": "Functional distribution of income"
+      },
+      {
+        "id": "trej5i",
+        "answer": "How total income is distributed across income classes.",
+        "question": "Size distribution of income"
+      },
+      {
+        "id": "zlmz2r",
+        "answer": "Both should be considered: a tax can lower what people earn (sources) and raise prices of what they buy (uses).",
+        "question": "Sources and uses of income in incidence"
+      },
+      {
+        "id": "6e6jnz",
+        "answer": "Who is legally responsible for the tax.",
+        "question": "Statutory incidence"
+      },
+      {
+        "id": "76zec9",
+        "answer": "The change in the distribution of private real income induced by a tax.",
+        "question": "Economic incidence"
+      },
+      {
+        "id": "yxdzc8",
+        "answer": "The difference between statutory and economic incidence.",
+        "question": "Tax shifting"
+      },
+      {
+        "id": "05ds85",
+        "answer": "How prices are determined, and the disposition of tax revenues.",
+        "question": "Two things tax incidence depends on (slide)"
+      },
+      {
+        "id": "rzhcww",
+        "answer": "Combined effects of levying taxes and the government spending financed by those taxes.",
+        "question": "Balanced-budget tax incidence"
+      },
+      {
+        "id": "u43i9o",
+        "answer": "The effect when one tax is replaced with another, holding the government budget constant.",
+        "question": "Differential tax incidence"
+      },
+      {
+        "id": "kv7bk4",
+        "answer": "A tax whose value is independent of the individual's behaviour.",
+        "question": "Lump-sum tax"
+      },
+      {
+        "id": "8pgtpc",
+        "answer": "Effect of a tax when there is no change in either other taxes or government expenditure.",
+        "question": "Absolute tax incidence"
+      },
+      {
+        "id": "9ei36k",
+        "answer": "The ratio of taxes paid to income.",
+        "question": "Average tax rate"
+      },
+      {
+        "id": "rv25qu",
+        "answer": "The proportion of the last dollar of income taxed by the government.",
+        "question": "Marginal tax rate"
+      },
+      {
+        "id": "01chh0",
+        "answer": "The ratio of taxes paid to income is constant regardless of income level.",
+        "question": "Proportional tax system (flat tax)"
+      },
+      {
+        "id": "t5letv",
+        "answer": "The average tax rate increases with income.",
+        "question": "Progressive tax system"
+      },
+      {
+        "id": "96qtrq",
+        "answer": "The average tax rate decreases with income.",
+        "question": "Regressive tax system"
+      },
+      {
+        "id": "8nc1tr",
+        "answer": "The average tax rate.",
+        "question": "Progressivity is judged by which rate?"
+      },
+      {
+        "id": "l8kd65",
+        "answer": "Models that study only one market and ignore possible spillover effects on other markets.",
+        "question": "Partial equilibrium models"
+      },
+      {
+        "id": "kkkuyx",
+        "answer": "Elasticities of supply and demand, and tax salience.",
+        "question": "Economic incidence in partial equilibrium depends on..."
+      },
+      {
+        "id": "sv29s8",
+        "answer": "The more inelastic side of the market (the one that reacts less to price).",
+        "question": "Which side bears more of a tax?",
+        "explanation": "Rosen ch. 14; the slides only say incidence depends on elasticities."
+      },
+      {
+        "id": "2u3mav",
+        "answer": "The extent to which a tax rate is made prominent to a taxpayer.",
+        "question": "Tax salience"
+      },
+      {
+        "id": "8qwcvk",
+        "answer": "The tax-induced difference between the price paid by consumers and the price received by producers.",
+        "question": "Tax wedge"
+      },
+      {
+        "id": "ebc9y8",
+        "answer": "A tax computed as a percentage of the purchase value, e.g. VAT.",
+        "question": "Ad valorem tax"
+      },
+      {
+        "id": "qvb2pw",
+        "answer": "Value Added Tax – the slide's example of an ad valorem tax.",
+        "question": "VAT"
+      },
+      {
+        "id": "4wbb5t",
+        "answer": "A tax on labour that finances social security.",
+        "question": "Payroll tax"
+      },
+      {
+        "id": "54s2ti",
+        "answer": "Mostly workers, whatever the legal employer/employee split, because labour supply is fairly inelastic.",
+        "question": "Who really bears the payroll tax?",
+        "explanation": "Rosen ch. 14; not on the slides."
+      },
+      {
+        "id": "bwk33k",
+        "answer": "Mobile capital escapes to other countries, shifting the burden to immobile factors such as workers and land.",
+        "question": "Tax on capital in a global economy",
+        "explanation": "Rosen ch. 14; the slide only names the topic."
+      },
+      {
+        "id": "3xeszl",
+        "answer": "Quantity demanded down, consumer price up, price received by the monopolist down, profits down.",
+        "question": "Effects of a commodity tax on a monopolist"
+      },
+      {
+        "id": "ja3kjf",
+        "answer": "It can result in higher or lower profits.",
+        "question": "Effect of a commodity tax under oligopoly"
+      },
+      {
+        "id": "bhyi8w",
+        "answer": "Return to owners above the opportunity costs of all factors used in production (supranormal or excess profit).",
+        "question": "Economic profit"
+      },
+      {
+        "id": "0wnswy",
+        "answer": "A stream of tax liabilities becomes incorporated into the price of an asset.",
+        "question": "Capitalization"
+      },
+      {
+        "id": "0zx2ys",
+        "answer": "Models that show how various markets are interrelated; often a two-sector, two-factor model.",
+        "question": "General equilibrium models"
+      },
+      {
+        "id": "44yr62",
+        "answer": "1974 (slide): pioneered applying general equilibrium models to tax incidence.",
+        "question": "Harberger (year and contribution)"
+      },
+      {
+        "id": "sfo9w9",
+        "answer": "Technology, behaviour of factor suppliers, market structure, total factor supplies, consumer preferences.",
+        "question": "Assumptions of the general equilibrium incidence model"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "8zeap7",
+        "correct": 1,
+        "options": [
+          "Only corporations",
+          "Only people",
+          "Only the government",
+          "Buildings and machines"
+        ],
+        "question": "According to tax incidence theory, who can bear taxes?"
+      },
+      {
+        "id": "w8l2o8",
+        "correct": 1,
+        "options": [
+          "size distribution of income",
+          "functional distribution of income",
+          "regulatory budget",
+          "replacement ratio"
+        ],
+        "question": "The way income is distributed among people classified according to the inputs they supply to production is the..."
+      },
+      {
+        "id": "zv83ul",
+        "correct": 1,
+        "options": [
+          "functional distribution of income",
+          "size distribution of income",
+          "tax wedge",
+          "dependency ratio"
+        ],
+        "question": "The way total income is distributed across income classes is the..."
+      },
+      {
+        "id": "24hiti",
+        "correct": 2,
+        "options": [
+          "Only sources of income",
+          "Only uses of income",
+          "Both sources and uses of income",
+          "Neither; only government revenue"
+        ],
+        "question": "When analysing tax incidence, which side of a household's income should be considered?"
+      },
+      {
+        "id": "gpwbil",
+        "correct": 0,
+        "options": [
+          "who is legally responsible for the tax",
+          "who really bears the tax",
+          "how much revenue the tax raises",
+          "the excess burden of the tax"
+        ],
+        "question": "Statutory incidence of a tax indicates..."
+      },
+      {
+        "id": "hzj2be",
+        "correct": 1,
+        "options": [
+          "statutory incidence",
+          "economic incidence",
+          "absolute incidence",
+          "capitalization"
+        ],
+        "question": "The change in the distribution of private real income induced by a tax is..."
+      },
+      {
+        "id": "zmxhvx",
+        "correct": 0,
+        "options": [
+          "tax shifting",
+          "tax salience",
+          "excess burden",
+          "tax wedge"
+        ],
+        "question": "The difference between statutory and economic incidence is called..."
+      },
+      {
+        "id": "sqndmy",
+        "correct": 1,
+        "options": [
+          "the name of the tax",
+          "how prices are determined and the disposition of tax revenues",
+          "only the tax rate",
+          "the statutory incidence"
+        ],
+        "question": "According to the slides, tax incidence depends on..."
+      },
+      {
+        "id": "baeq4v",
+        "correct": 0,
+        "options": [
+          "balanced-budget tax incidence",
+          "differential tax incidence",
+          "absolute tax incidence",
+          "tax shifting"
+        ],
+        "question": "The combined effects of levying taxes and the government spending financed by those taxes is..."
+      },
+      {
+        "id": "5gsb6z",
+        "correct": 1,
+        "options": [
+          "balanced-budget tax incidence",
+          "differential tax incidence",
+          "absolute tax incidence",
+          "statutory incidence"
+        ],
+        "question": "The effect when one tax is replaced with another, holding the government budget constant, is..."
+      },
+      {
+        "id": "ga77gw",
+        "correct": 1,
+        "options": [
+          "progressive tax",
+          "lump-sum tax",
+          "payroll tax",
+          "Pigouvian tax"
+        ],
+        "question": "A tax whose value is independent of the individual's behaviour is a..."
+      },
+      {
+        "id": "rcaqp1",
+        "correct": 0,
+        "options": [
+          "absolute tax incidence",
+          "differential tax incidence",
+          "balanced-budget incidence",
+          "general equilibrium incidence"
+        ],
+        "question": "The effect of a tax when there is no change in either other taxes or government expenditure is..."
+      },
+      {
+        "id": "trah0g",
+        "correct": 1,
+        "options": [
+          "marginal tax rate",
+          "average tax rate",
+          "replacement ratio",
+          "tax wedge"
+        ],
+        "question": "The ratio of taxes paid to income is the..."
+      },
+      {
+        "id": "bbngxe",
+        "correct": 1,
+        "options": [
+          "average tax rate",
+          "marginal tax rate",
+          "flat tax",
+          "statutory rate"
+        ],
+        "question": "The proportion of the last dollar of income taxed by the government is the..."
+      },
+      {
+        "id": "f1zcet",
+        "correct": 2,
+        "options": [
+          "Progressive",
+          "Regressive",
+          "Proportional (flat tax)",
+          "Lump-sum"
+        ],
+        "question": "In which tax system is the ratio of taxes paid to income constant regardless of income level?"
+      },
+      {
+        "id": "8du6lt",
+        "correct": 0,
+        "options": [
+          "increases with income",
+          "decreases with income",
+          "is constant",
+          "is zero for everyone"
+        ],
+        "question": "In a progressive tax system the average tax rate..."
+      },
+      {
+        "id": "hykj5a",
+        "correct": 2,
+        "options": [
+          "progressive",
+          "proportional",
+          "regressive",
+          "neutral"
+        ],
+        "question": "A fixed tax of €1,000 paid by everyone is 10% of a €10,000 income but 1% of a €100,000 income. The system is..."
+      },
+      {
+        "id": "7g5pnv",
+        "correct": 1,
+        "options": [
+          "general equilibrium models",
+          "partial equilibrium models",
+          "life-cycle models",
+          "two-sector models"
+        ],
+        "question": "Models that study only one market and ignore spillover effects on other markets are..."
+      },
+      {
+        "id": "bes19m",
+        "correct": 0,
+        "options": [
+          "elasticities of supply and demand, and tax salience",
+          "only the statutory incidence",
+          "the number of taxpayers",
+          "the size of the government budget"
+        ],
+        "question": "In partial equilibrium models, economic incidence depends on..."
+      },
+      {
+        "id": "vdcl5c",
+        "correct": 0,
+        "options": [
+          "tax salience",
+          "tax shifting",
+          "tax wedge",
+          "tax incidence"
+        ],
+        "question": "The extent to which a tax rate is made prominent to a taxpayer is..."
+      },
+      {
+        "id": "5t2sjm",
+        "correct": 1,
+        "options": [
+          "excess burden",
+          "tax wedge",
+          "capitalization",
+          "economic profit"
+        ],
+        "question": "The tax-induced difference between the price paid by consumers and the price received by producers is the..."
+      },
+      {
+        "id": "7h6jmf",
+        "correct": 2,
+        "options": [
+          "unit tax",
+          "lump-sum tax",
+          "ad valorem tax",
+          "profits tax"
+        ],
+        "question": "A tax computed as a percentage of the purchase value is a(n)..."
+      },
+      {
+        "id": "8r7lza",
+        "correct": 1,
+        "options": [
+          "Payroll tax",
+          "VAT",
+          "Property tax",
+          "Lump-sum tax"
+        ],
+        "question": "Which tax is the slide's example of an ad valorem tax?"
+      },
+      {
+        "id": "9x37fe",
+        "correct": 1,
+        "options": [
+          "a tax on capital that finances defence",
+          "a tax on labour that finances social security",
+          "a tax on consumption",
+          "a tax on profits"
+        ],
+        "question": "The payroll tax is..."
+      },
+      {
+        "id": "i3reox",
+        "correct": 1,
+        "options": [
+          "Its profits rise",
+          "The price it receives goes down and its profits go down",
+          "Quantity demanded rises",
+          "Consumers pay a lower price"
+        ],
+        "question": "After a commodity tax, what happens to a monopolist?"
+      },
+      {
+        "id": "3w1fh1",
+        "correct": 2,
+        "options": [
+          "always lowers profits",
+          "always raises profits",
+          "can result in higher or lower profits",
+          "has no effect"
+        ],
+        "question": "Under oligopoly, a commodity tax..."
+      },
+      {
+        "id": "rj2scs",
+        "correct": 1,
+        "options": [
+          "accounting profit",
+          "economic profit",
+          "the tax wedge",
+          "the replacement ratio"
+        ],
+        "question": "The return to owners of a firm above the opportunity costs of all factors used in production is..."
+      },
+      {
+        "id": "riaa5e",
+        "correct": 0,
+        "options": [
+          "capitalization",
+          "tax salience",
+          "privatization",
+          "consumption smoothing"
+        ],
+        "question": "When a stream of tax liabilities becomes incorporated into the price of an asset, this is..."
+      },
+      {
+        "id": "m7may6",
+        "correct": 1,
+        "options": [
+          "partial equilibrium models",
+          "general equilibrium models",
+          "life-cycle models",
+          "annuity models"
+        ],
+        "question": "Models that show how various markets are interrelated are..."
+      },
+      {
+        "id": "t1rhc2",
+        "correct": 2,
+        "options": [
+          "Coase, 1960",
+          "Pigou, 1920",
+          "Harberger, 1974",
+          "Samuelson, 1954"
+        ],
+        "question": "According to the slide, who pioneered the application of general equilibrium models to tax incidence, and when?"
+      },
+      {
+        "id": "2hr790",
+        "correct": 3,
+        "options": [
+          "Technology",
+          "Market structure",
+          "Consumer preferences",
+          "The exchange rate regime"
+        ],
+        "question": "Which is NOT an assumption of the general equilibrium incidence model on the slide?"
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "bstl30",
+        "answer": "average",
+        "sentence": "Whether a tax system is progressive, proportional or regressive is judged by the _______ tax rate."
+      },
+      {
+        "id": "jebox4",
+        "hint": "Rosen; not on slides",
+        "answer": "inelastic",
+        "sentence": "The more _______ side of the market bears more of a tax."
+      },
+      {
+        "id": "5lwuc7",
+        "hint": "Rosen; not on slides",
+        "answer": "workers",
+        "sentence": "Because labour supply is fairly inelastic, the payroll tax is borne mostly by _______, whatever the legal split."
+      },
+      {
+        "id": "bvmoh3",
+        "hint": "Rosen; not on slides",
+        "answer": "capital",
+        "answers": [
+          "capital",
+          "land"
+        ],
+        "sentence": "In a global economy, _______ can move abroad, so a national tax on it shifts the burden to immobile factors such as workers and _______."
+      },
+      {
+        "id": "ifjb3i",
+        "answer": "shifting",
+        "answers": [
+          "shifting",
+          "statutory"
+        ],
+        "sentence": "Tax _______ is the difference between _______ and economic incidence."
+      },
+      {
+        "id": "a0bi02",
+        "answer": "1974",
+        "answers": [
+          "1974",
+          "general"
+        ],
+        "sentence": "In _______ Harberger pioneered the application of _______ equilibrium models to tax incidence."
+      },
+      {
+        "id": "nb36zu",
+        "answer": "1",
+        "sentence": "Before a €1 unit tax the price is €5; after it consumers pay €5.70 and producers keep €4.70. The tax wedge is €_______."
+      }
+    ],
+    "learn": {
+      "id": "rndoek",
+      "title": "T5 Taxation and Income Distribution (Rosen, ch. 14)",
+      "blocks": [
+        {
+          "text": "This topic asks one question: who really pays a tax? The answer is often not the person who hands the money to the tax office.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Tax incidence: the basics",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Only people can bear taxes."
+            },
+            {
+              "text": " A firm, a building or a machine cannot carry a burden; in the end the burden falls on people: owners, workers or customers. To see which people, economists look at two ways of describing income distribution:"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Functional distribution of income"
+              },
+              {
+                "text": " – the way income is distributed among people when they are classified according to the inputs they supply to the production process (workers, owners of capital, landowners)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Size distribution of income"
+              },
+              {
+                "text": " – the way total income is distributed across income classes (low, middle, high income)."
+              }
+            ]
+          ]
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Both sources and uses of income should be considered."
+            },
+            {
+              "text": " A tax can hurt someone on the sources side (their wage or return falls) and on the uses side (the prices of the goods they buy rise). Example: a tax on bread lowers bakers' income (sources) and raises the price that poor households spend much of their income on (uses)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Statutory vs. economic incidence",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "rows": [
+            [
+              "Statutory incidence",
+              "Who is legally responsible for the tax"
+            ],
+            [
+              "Economic incidence",
+              "The change in the distribution of private real income induced by a tax (who really ends up worse off)"
+            ],
+            [
+              "Tax shifting",
+              "The difference between statutory and economic incidence"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Term",
+            "Meaning"
+          ]
+        },
+        {
+          "text": "Example: the law makes petrol stations pay an excise tax (statutory incidence). If stations raise pump prices, part of the burden is shifted to drivers (economic incidence).",
+          "type": "paragraph"
+        },
+        {
+          "text": "What incidence depends on",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "How prices are determined"
+              },
+              {
+                "text": " – incidence differs in a competitive market, under monopoly or under oligopoly."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "The disposition of tax revenues"
+              },
+              {
+                "text": " – what the government does with the money matters, because spending also changes incomes."
+              }
+            ]
+          ],
+          "ordered": true
+        },
+        {
+          "text": "Three ways to handle the disposition of revenues:",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Balanced-budget tax incidence"
+              },
+              {
+                "text": " – the combined effects of levying taxes and of the government spending financed by those taxes."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Differential tax incidence"
+              },
+              {
+                "text": " – the effect when one tax is replaced with another, holding the government budget constant. The usual reference tax is a "
+              },
+              {
+                "b": true,
+                "text": "lump-sum tax"
+              },
+              {
+                "text": ": a tax whose value is independent of the individual's behaviour (e.g. a fixed €500 per person, whatever they do)."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Absolute tax incidence"
+              },
+              {
+                "text": " – the effect of a tax when there is no change in either other taxes or government expenditure."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Measuring how progressive a tax is",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Average tax rate"
+              },
+              {
+                "text": " – the ratio of taxes paid to income."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Marginal tax rate"
+              },
+              {
+                "text": " – the proportion of the last dollar of income taxed by the government."
+              }
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "Proportional (flat tax)",
+              "Stays constant regardless of income level",
+              "Everyone pays 20%: €2,000 on €10,000; €20,000 on €100,000"
+            ],
+            [
+              "Progressive",
+              "Increases with income",
+              "10% on €10,000, 30% on €100,000"
+            ],
+            [
+              "Regressive",
+              "Decreases with income",
+              "A fixed €1,000 is 10% of €10,000 but 1% of €100,000"
+            ]
+          ],
+          "type": "table",
+          "header": [
+            "Tax system",
+            "What happens to the AVERAGE tax rate as income rises",
+            "Example (illustrative)"
+          ]
+        },
+        {
+          "text": "Progressivity is defined by the AVERAGE tax rate, not the marginal one. A flat-rate tax with a tax-free allowance has a constant marginal rate but a rising average rate, so it is progressive.",
+          "type": "callout",
+          "title": "Common trap",
+          "variant": "warning"
+        },
+        {
+          "text": "Partial equilibrium models",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Partial equilibrium models"
+            },
+            {
+              "text": " study only one market and ignore possible spillover effects on other markets. In such a model the economic incidence of a tax depends on:"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Elasticities of supply and demand"
+              },
+              {
+                "text": " – (Rosen; not in course slides) the side of the market that reacts less to price (is more inelastic) bears more of the tax. Cigarette smokers react little to price, so they bear most of a cigarette tax."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Tax salience"
+              },
+              {
+                "text": " – the extent to which a tax rate is made prominent to a taxpayer. A tax shown on the price tag is more salient than one added at the till, and people react more to salient taxes."
+              }
+            ]
+          ]
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Tax wedge"
+            },
+            {
+              "text": " – the tax-induced difference between the price paid by consumers and the price received by producers. Example: before a €1 per unit tax the price is €5. After the tax consumers pay €5.70 and producers keep €4.70. The wedge is €1; consumers bear €0.70 and producers €0.30."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Ad valorem taxes",
+          "type": "heading",
+          "level": 3
+        },
+        {
+          "text": [
+            {
+              "text": "An "
+            },
+            {
+              "b": true,
+              "text": "ad valorem tax"
+            },
+            {
+              "text": " is computed as a percentage of the purchase value. The typical example is "
+            },
+            {
+              "b": true,
+              "text": "VAT (value added tax)"
+            },
+            {
+              "text": ", e.g. 25% in Croatia (standard rate; not in course slides). The alternative is a unit tax, a fixed amount per unit (Rosen; not in course slides)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Taxes on factors",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": "Here statutory and economic incidence are compared for taxes on inputs:",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "The payroll tax"
+              },
+              {
+                "text": " – a tax on labour that finances social security (link to T4). (Rosen; not in course slides: the law splits it between employer and employee, but the economic incidence does not depend on that split. Because labour supply is fairly inelastic, workers bear most of it, also the \"employer's\" share, through lower wages.)"
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Tax on capital in a global economy"
+              },
+              {
+                "text": " – (Rosen; not in course slides) capital can move to other countries, so it avoids much of a national tax; the burden shifts to factors that cannot move, such as workers and land."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Commodity taxation without competition",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Monopoly: "
+            },
+            {
+              "text": "despite its market power, a monopolist is generally made worse off by a tax. After a tax:"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Quantity demanded goes down.",
+            "The price paid by consumers goes up.",
+            "The price received by the monopolist goes down.",
+            "Profits go down."
+          ]
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Oligopoly: "
+            },
+            {
+              "text": "a tax can result in higher or lower profits; the outcome depends on how the few firms react to each other."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Profits taxes",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "Profits taxes are important for firms and companies. "
+            },
+            {
+              "b": true,
+              "text": "Economic profit"
+            },
+            {
+              "text": " is the return to the owners of a firm above the opportunity costs of all the factors used in production; it is also called supranormal or excess profit. (Rosen; not in course slides: a tax on economic profit cannot be shifted to customers or workers; the owners bear it.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Capitalization"
+            },
+            {
+              "text": " – a stream of tax liabilities becomes incorporated into the price of an asset. Example: if a new tax on a piece of land costs €1,000 every year, buyers will pay less for that land. The present value of all future taxes is subtracted from the price, so the owner at the moment the tax is announced bears the whole burden."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "General equilibrium models",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "General equilibrium models"
+            },
+            {
+              "text": " show how various markets are interrelated: a tax in one market changes prices and incomes in others. They often use a two-sector, two-factor model (e.g. two goods, labour and capital)."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "In "
+            },
+            {
+              "b": true,
+              "text": "1974"
+            },
+            {
+              "text": " (year as given on the slide) "
+            },
+            {
+              "b": true,
+              "text": "Harberger"
+            },
+            {
+              "text": " pioneered the application of general equilibrium models to tax incidence."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Assumptions of the model (slide):",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Technology",
+            "Behaviour of factor suppliers",
+            "Market structure",
+            "Total factor supplies",
+            "Consumer preferences"
+          ]
+        },
+        {
+          "text": "Together these give the tax incidence framework: the results depend on these assumptions.",
+          "type": "paragraph"
+        }
+      ]
+    }
+  },
+
+  taxationEfficiency: {
+    "id": "qkl1fu",
+    "name": "Taxation and Efficiency",
+    "icon": "fa-chart-line",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "id": "wt5z99",
+        "answer": "A cost of a tax beyond the tax revenue collected: a loss of welfare above and beyond taxes collected.",
+        "question": "Excess burden"
+      },
+      {
+        "id": "lcovyw",
+        "answer": "Welfare cost or deadweight loss.",
+        "question": "Other names for excess burden"
+      },
+      {
+        "id": "pcel8w",
+        "answer": "Tax-induced distortions in behaviour.",
+        "question": "What causes excess burden?"
+      },
+      {
+        "id": "x4849l",
+        "answer": "Indifference curves or compensated demand curves.",
+        "question": "Tools used to examine excess burden"
+      },
+      {
+        "id": "lireug",
+        "answer": "A lump-sum tax does not distort behaviour, so it creates no excess burden.",
+        "question": "Lump-sum tax and excess burden"
+      },
+      {
+        "id": "ypqpoq",
+        "answer": "They are unattractive as policy tools but are the standard against which excess burdens of other taxes are compared.",
+        "question": "Why are lump-sum taxes still important?"
+      },
+      {
+        "id": "zf7mq9",
+        "answer": "Everyone pays the same regardless of ability to pay, which is seen as unfair.",
+        "question": "Why are lump-sum taxes unattractive as policy?",
+        "explanation": "Rosen; the slide only says they are unattractive."
+      },
+      {
+        "id": "qyciq2",
+        "answer": "Yes – the compensated response (substitution effect) determines excess burden, not observed behaviour.",
+        "question": "Can there be excess burden if observed behaviour does not change?"
+      },
+      {
+        "id": "9a8m66",
+        "answer": "Income and substitution effects can cancel out; the substitution effect, which causes the distortion, is still there.",
+        "question": "Why can observed behaviour stay the same despite a tax?",
+        "explanation": "Rosen ch. 15."
+      },
+      {
+        "id": "rzfvnf",
+        "answer": "The compensated elasticity of demand and the square of the tax rate.",
+        "question": "Excess burden of a single tax is proportional to..."
+      },
+      {
+        "id": "kz3hk4",
+        "answer": "EB = ½ · η · P · Q · t²",
+        "question": "Excess burden formula (Rosen)",
+        "explanation": "Not on the slides."
+      },
+      {
+        "id": "nwj1nm",
+        "answer": "It becomes four times larger (2² = 4).",
+        "question": "What happens to excess burden if the tax rate doubles?"
+      },
+      {
+        "id": "x91tq4",
+        "answer": "The incremental excess burden of a new tax depends on its effects in other markets.",
+        "question": "Excess burden with other existing distortions"
+      },
+      {
+        "id": "g2x3o0",
+        "answer": "They encourage people to consume goods valued less than the marginal social cost of production.",
+        "question": "Why do subsidies create excess burden?"
+      },
+      {
+        "id": "l02875",
+        "answer": "Creates excess burden: inputs are used too little in taxed activities and too much in untaxed activities.",
+        "question": "Differential taxation of inputs"
+      },
+      {
+        "id": "uho4bq",
+        "answer": "Consuming more of one good and less of another because the price of the former fell relative to the latter.",
+        "question": "Substitution effect"
+      },
+      {
+        "id": "l8gi79",
+        "answer": "Shows how quantity demanded varies with price, holding utility constant.",
+        "question": "Compensated demand curve"
+      },
+      {
+        "id": "nt60q4",
+        "answer": "With existing distortions, policies that alone would increase efficiency can decrease it, and vice versa.",
+        "question": "Theory of the second best"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "umnvkp",
+        "correct": 1,
+        "options": [
+          "tax incidence",
+          "excess burden",
+          "tax shifting",
+          "capitalization"
+        ],
+        "question": "A cost of a tax beyond the tax revenue collected is called..."
+      },
+      {
+        "id": "ctgqdb",
+        "correct": 1,
+        "options": [
+          "Tax wedge",
+          "Deadweight loss",
+          "Economic profit",
+          "Replacement ratio"
+        ],
+        "question": "Which is another name for excess burden?"
+      },
+      {
+        "id": "0k443o",
+        "correct": 0,
+        "options": [
+          "tax-induced distortions in behaviour",
+          "high administrative costs of collection",
+          "tax evasion",
+          "inflation"
+        ],
+        "question": "Excess burden is caused by..."
+      },
+      {
+        "id": "azwkq1",
+        "correct": 1,
+        "options": [
+          "supply curves only",
+          "indifference curves or compensated demand curves",
+          "the Laffer curve",
+          "the Lorenz curve"
+        ],
+        "question": "Excess burden may be examined using..."
+      },
+      {
+        "id": "soky9c",
+        "correct": 2,
+        "options": [
+          "Ad valorem tax",
+          "Payroll tax",
+          "Lump-sum tax",
+          "Corporate profits tax"
+        ],
+        "question": "Which tax does NOT distort behaviour?"
+      },
+      {
+        "id": "uoya7q",
+        "correct": 1,
+        "options": [
+          "they raise the most revenue",
+          "they are a standard against which to compare the excess burdens of other taxes",
+          "they are progressive",
+          "they finance social security"
+        ],
+        "question": "Lump-sum taxes are unattractive as policy tools, but they are important because..."
+      },
+      {
+        "id": "fgkg8y",
+        "correct": 1,
+        "options": [
+          "the uncompensated response to the tax",
+          "the compensated response to the tax",
+          "the statutory incidence",
+          "the revenue collected"
+        ],
+        "question": "Excess burden may result even if observed behaviour is unaffected, because excess burden is determined by..."
+      },
+      {
+        "id": "0dpbrs",
+        "correct": 1,
+        "options": [
+          "the tax rate and the income of the taxpayer",
+          "the compensated elasticity of demand and the square of the tax rate",
+          "the revenue collected",
+          "the number of taxpayers"
+        ],
+        "question": "When a single tax is imposed, its excess burden is proportional to..."
+      },
+      {
+        "id": "jk2o56",
+        "correct": 2,
+        "options": [
+          "doubles",
+          "triples",
+          "quadruples",
+          "stays the same"
+        ],
+        "question": "If the tax rate on a good is doubled (other things equal), the excess burden..."
+      },
+      {
+        "id": "j6kbma",
+        "correct": 0,
+        "options": [
+          "its effects in other markets",
+          "only its own rate",
+          "the statutory incidence",
+          "nothing; it is always zero"
+        ],
+        "question": "If other distortions already exist, the incremental excess burden of a new tax depends on..."
+      },
+      {
+        "id": "0x6o41",
+        "correct": 1,
+        "options": [
+          "raise government revenue",
+          "encourage people to consume goods valued less than the marginal social cost of production",
+          "reduce consumption of the subsidised good",
+          "are lump-sum transfers"
+        ],
+        "question": "Subsidies create excess burdens because they..."
+      },
+      {
+        "id": "oethtm",
+        "correct": 1,
+        "options": [
+          "too much in taxed activities and too little in untaxed ones",
+          "too little in taxed activities and too much in untaxed ones",
+          "equally in all activities",
+          "only in untaxed activities"
+        ],
+        "question": "With differential taxation of inputs, inputs are used..."
+      },
+      {
+        "id": "ibdoo0",
+        "correct": 1,
+        "options": [
+          "income effect",
+          "substitution effect",
+          "bequest effect",
+          "retirement effect"
+        ],
+        "question": "The tendency to consume more of one good and less of another because the price of the former fell relative to the latter is the..."
+      },
+      {
+        "id": "x0v6r5",
+        "correct": 1,
+        "options": [
+          "market demand curve",
+          "compensated demand curve",
+          "aggregate supply curve",
+          "indifference curve"
+        ],
+        "question": "A demand curve that shows how quantity demanded varies with price, holding utility constant, is the..."
+      },
+      {
+        "id": "09835z",
+        "correct": 1,
+        "options": [
+          "Coase theorem",
+          "theory of the second best",
+          "life-cycle theory",
+          "organic view"
+        ],
+        "question": "\"In the presence of existing distortions, policies that in isolation would increase efficiency can decrease it and vice versa.\" This is the..."
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "ro7mtu",
+        "hint": "Rosen; not on slides",
+        "answer": "same",
+        "sentence": "Lump-sum taxes are seen as unfair because everyone pays the _______ amount regardless of ability to pay."
+      },
+      {
+        "id": "nj1p12",
+        "hint": "Rosen",
+        "answer": "substitution",
+        "sentence": "A worker may keep the same hours after a wage tax because the income and _______ effects cancel out, yet the excess burden remains."
+      },
+      {
+        "id": "dyv21r",
+        "hint": "Not on slides",
+        "answer": "compensated",
+        "answers": [
+          "compensated",
+          "rate"
+        ],
+        "sentence": "Rosen's formula: EB = ½ · η · P · Q · t², where η is the _______ elasticity of demand and t is the tax _______."
+      },
+      {
+        "id": "xkrs4n",
+        "answer": "deadweight",
+        "answers": [
+          "deadweight",
+          "loss"
+        ],
+        "sentence": "Excess burden is a loss of welfare above and beyond taxes collected, also called welfare cost or _______ _______."
+      },
+      {
+        "id": "1lnwe7",
+        "answer": "square",
+        "sentence": "The excess burden of a single tax is proportional to the compensated elasticity of demand and to the _______ of the tax rate."
+      },
+      {
+        "id": "mc4awf",
+        "answer": "little",
+        "answers": [
+          "little",
+          "much"
+        ],
+        "sentence": "Under differential taxation of inputs, inputs are used too _______ in taxed activities and too _______ in untaxed activities."
+      }
+    ],
+    "learn": {
+      "id": "kwzuoc",
+      "title": "T6 Taxation and Efficiency (Rosen, ch. 15)",
+      "blocks": [
+        {
+          "text": "T5 asked who pays a tax. T6 asks a different question: how much does a tax cost the economy beyond the money it raises?",
+          "type": "paragraph"
+        },
+        {
+          "text": "Excess burden",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "Taxes generally impose an "
+            },
+            {
+              "b": true,
+              "text": "excess burden"
+            },
+            {
+              "text": ": a cost beyond the tax revenue collected. It is a loss of welfare above and beyond the taxes collected, also called the "
+            },
+            {
+              "b": true,
+              "text": "welfare cost"
+            },
+            {
+              "text": " or "
+            },
+            {
+              "b": true,
+              "text": "deadweight loss"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Cause: "
+              },
+              {
+                "text": "tax-induced distortions in behaviour. People change what they buy or how much they work because of the tax, not because their real preferences or costs changed."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "How it is analysed: "
+              },
+              {
+                "text": "with either indifference curves or compensated demand curves."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "Example (illustrative): a high tax is put on chocolate. Ana, who loves chocolate, switches to biscuits she likes less. She pays no chocolate tax, so the government collects nothing from her, but she is still worse off. That loss, with no revenue in return, is pure excess burden.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Lump-sum taxes: the benchmark",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "A "
+            },
+            {
+              "b": true,
+              "text": "lump-sum tax"
+            },
+            {
+              "text": " is a tax whose value is independent of the individual's behaviour (e.g. every adult pays €500, whatever they earn or buy). Because nothing you do changes the tax, it does not distort behaviour and creates no excess burden."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Lump-sum taxes are unattractive as policy tools. (Rosen; not in course slides: a poor person and a rich person pay the same amount, which most people see as unfair.)",
+            "Nevertheless, they are an important standard against which the excess burdens of other taxes are compared."
+          ]
+        },
+        {
+          "text": "Excess burden without visible behaviour change",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "Excess burden may result even if observed behaviour is unaffected, because it is the "
+            },
+            {
+              "b": true,
+              "text": "compensated response"
+            },
+            {
+              "text": " to a tax that determines its excess burden."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "Why? A tax that changes a price has two effects. The "
+            },
+            {
+              "b": true,
+              "text": "income effect"
+            },
+            {
+              "text": " (you are poorer) and the "
+            },
+            {
+              "b": true,
+              "text": "substitution effect"
+            },
+            {
+              "text": " (the taxed good became relatively more expensive). Only the substitution effect creates the distortion. The two can cancel out, so a worker may keep working the same hours after a wage tax, yet the substitution effect is still there and so is the excess burden. (Explanation from Rosen; the slide gives the rule.)"
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "b": true,
+                "text": "Substitution effect"
+              },
+              {
+                "text": " – the tendency of an individual to consume more of one good and less of another because of a decrease in the price of the former relative to the latter."
+              }
+            ],
+            [
+              {
+                "b": true,
+                "text": "Compensated demand curve"
+              },
+              {
+                "text": " – a demand curve that shows how quantity demanded varies with price, holding utility constant. Because utility is held constant, it shows only the substitution effect, which is why it is used to measure excess burden."
+              }
+            ]
+          ]
+        },
+        {
+          "text": "How big is the excess burden?",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "text": "When a single tax is imposed, the excess burden is proportional to the "
+            },
+            {
+              "b": true,
+              "text": "compensated elasticity of demand"
+            },
+            {
+              "text": " and to the "
+            },
+            {
+              "b": true,
+              "text": "square of the tax rate"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "tex": "EB = \\tfrac{1}{2}\\,\\eta\\,P\\,Q\\,t^{2}",
+          "type": "formula",
+          "display": true
+        },
+        {
+          "text": "(The formula is from Rosen, not the slides: η = compensated elasticity of demand, P and Q = price and quantity before the tax, t = ad valorem tax rate.)",
+          "type": "paragraph"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Doubling the tax rate makes the excess burden four times larger (2² = 4). Many small taxes on different goods are therefore usually less costly than one big tax.",
+            "The more elastic the compensated demand, the bigger the excess burden: people can easily switch away, so the tax distorts a lot. Taxing goods with inelastic demand creates less excess burden."
+          ]
+        },
+        {
+          "text": "Excess-burden calculations usually assume no other distortions. If other distortions exist (e.g. another tax or a monopoly), the incremental excess burden of a new tax depends on its effects in other markets too.",
+          "type": "callout",
+          "title": "When other distortions exist",
+          "variant": "info"
+        },
+        {
+          "text": "Subsidies and taxes on inputs also create excess burden",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Subsidies"
+            },
+            {
+              "text": " create excess burdens because they encourage people to consume goods valued less than the marginal social cost of production. Example: if a good costs €10 to produce but a subsidy lets people buy it for €6, people buy units they value at only €7: each such unit wastes €3 of resources."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": [
+            {
+              "text": "The "
+            },
+            {
+              "b": true,
+              "text": "differential taxation of inputs"
+            },
+            {
+              "text": " creates an excess burden. When the same input (e.g. capital) is taxed in one activity and not in another, it is used \"too little\" in the taxed activities and \"too much\" in the untaxed activities. Example (illustrative): if capital in the corporate sector is taxed more heavily than in housing, too much capital flows into housing."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Theory of the second best",
+          "type": "heading",
+          "level": 2
+        },
+        {
+          "text": [
+            {
+              "b": true,
+              "text": "Theory of the second best"
+            },
+            {
+              "text": " – in the presence of existing distortions, policies that in isolation would increase efficiency can decrease it, and vice versa."
+            }
+          ],
+          "type": "paragraph"
+        },
+        {
+          "text": "Example (illustrative): if coffee is already heavily taxed, putting a tax on tea (a substitute) could actually improve efficiency, because it reduces the distortion between coffee and tea. In a world without the coffee tax, the same tea tax would only add excess burden.",
+          "type": "paragraph"
+        },
+        {
+          "text": "Lump-sum tax appears in both T5 (as the reference tax for differential incidence) and T6 (as the tax with no excess burden). Learn the T6 rule word by word: excess burden is proportional to the compensated elasticity of demand and to the square of the tax rate. T7 (Efficient and Equitable Taxation) builds on this.",
+          "type": "callout",
+          "title": "Connections and exam tips",
+          "variant": "tip"
+        }
+      ]
+    }
+  }
+};
+
+// Expose on window for catalog-based loading (see data/catalog.js)
+if (typeof window !== 'undefined') { window.publicFinanceM1 = publicFinanceM1; }
+if (typeof module !== 'undefined' && module.exports) { module.exports = publicFinanceM1; }

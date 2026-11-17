@@ -35,7 +35,7 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 - Konvencija semestra: `year` = studijska godina; `semester` ∈ {1,2}.
 
 ## Sadržaj (autorstvo)
-- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** (broj zna `npm run verify`; ⛔ Intro to Hospitality blokiran — nema izvora). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
+- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** (broj zna `npm run verify`; ⛔ Intro blokiran; MOR ADR-041, PFRI ADR-042). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
 - Schema (obavezno): `docs/architecture/CONTENT_SCHEMA.md`. Novi predmet = mapa `data/<subject>/{midterm-1,midterm-2,final}.js`; brzo: `npm run scaffold`. 4 stara sem-2 predmeta ostaju root `data-*.js` (svjesno, ADR-015).
 - PDF materijali: `_materials/` (gitignored); čitaj s `node scripts/pdf-text.js "<pdf>"` (Read ne radi za PDF). Vidi `docs/workflow/CONTENT_INTAKE.md`.
 - **KaTeX** (kvantitativni predmeti): delimiteri **`\( \)` / `\[ \]` / `$$ $$` — NIKAD jedan `$`** (valutni `$NN`); `renderMath()` u `js/math.js`. Konvencija: `docs/architecture/CONTENT_SCHEMA.md` §Matematika.

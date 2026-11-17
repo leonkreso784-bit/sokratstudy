@@ -1,0 +1,884 @@
+{
+  "systemApproach": {
+    "id": "xbpmhh",
+    "name": "Sustavni pristup i informatika",
+    "icon": "fa-sitemap",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "agrq0w",
+        "question": "Što je sustavni pristup?",
+        "answer": "Pogled utemeljen na ideji da je sve međusobno povezano i međuovisno.\nSustav se sastoji od međusobno povezanih i ovisnih elemenata koji, u međudjelovanju, tvore jedinstvenu cjelinu — sklop ili kombinaciju dijelova koji čine složenu cjelinu.",
+        "explanation": "Cjelina se razumijeva kroz odnose između njezinih dijelova."
+      },
+      {
+        "id": "lg4695",
+        "question": "Koji su glavni koncepti sustavnog pristupa (Dinesh Thakur)?",
+        "answer": "• Holizam\n• Specijalizacija\n• Nesumativnost\n• Grupiranje\n• Koordinacija\n• Emergentna svojstva",
+        "explanation": "Ovih šest koncepata određuje kako se sustav ponaša kao cjelina."
+      },
+      {
+        "id": "icg01j",
+        "question": "Što znači „holizam\" u sustavnom pristupu?",
+        "answer": "Promjena bilo kojeg dijela/komponente sustava utječe na cijeli sustav, izravno ili neizravno.",
+        "explanation": "Nije moguće promijeniti jedan dio izolirano od ostalih."
+      },
+      {
+        "id": "6plgp7",
+        "question": "Što znači „nesumativnost\"?",
+        "answer": "Svaka komponenta (podsustav) važna je za cjelinu, stoga je potrebno razumjeti djelovanje svake komponente kako bi se stekla holistička perspektiva. Cjelina nije jednostavno zbroj svojih dijelova.",
+        "explanation": "Razumijevanje pojedinih dijelova nije dovoljno."
+      },
+      {
+        "id": "yimjsf",
+        "question": "Što su „emergentna svojstva\"?",
+        "answer": "Skupina međusobno povezanih komponenti posjeduje, kao cjelina, svojstva koja nisu prisutna ni u jednoj pojedinačnoj komponenti.\nPrimjer: višestanični organizmi pokazuju karakteristike koje nisu prisutne u pojedinim stanicama.",
+        "explanation": "To je bit holističkog pogleda."
+      },
+      {
+        "id": "k8kms1",
+        "question": "Koja su četiri ključna elementa sustava u ugostiteljskoj industriji?",
+        "answer": "• Ulazni elementi — resursi: radna snaga, oprema, sirovine (npr. sastojci hrane)\n• Procesi — aktivnosti kojima se ulazni elementi pretvaraju u izlazne (kuhanje, čišćenje, usluga gostima)\n• Izlazni elementi — isporučene usluge/proizvodi (iskustvo objedovanja, smještaj)\n• Povratna veza — informacije od gostiju/osoblja koje se koriste za unapređenje budućeg poslovanja",
+        "explanation": "Ulazni elementi → Procesi → Izlazni elementi, pri čemu povratna veza zatvara krug."
+      },
+      {
+        "id": "luwmaq",
+        "question": "Što karakterizira sustav u ugostiteljstvu?",
+        "answer": "• Međuovisnost — svi dijelovi ovise jedni o drugima (problem u kuhinji utječe na uslugu hrane)\n• Holistički pogled — odluke u jednom području utječu na cijelu organizaciju\n• Sinergija — kada dijelovi djeluju zajedno, ukupna učinkovitost premašuje zbroj učinkovitosti pojedinih dijelova",
+        "explanation": "Sinergija je praktična korist sustavskog pristupa."
+      },
+      {
+        "id": "q1e4ox",
+        "question": "Što je sustavsko mišljenje i tko ga je utemeljio?",
+        "answer": "Holistički način istraživanja čimbenika i interakcija koji mogu doprinijeti određenom ishodu — više način razmišljanja nego propisana praksa.\nUtemeljio ga je 1956. godine profesor MIT-a Jay Forrester.",
+        "explanation": "Pomaže sagledati širu sliku i razumjeti kako struktura utječe na učinkovitost."
+      },
+      {
+        "id": "kn1njl",
+        "question": "Po čemu se sustavno mišljenje razlikuje od tradicionalne analize?",
+        "answer": "Tradicionalna analiza rastavlja predmet proučavanja na odvojene, pojedinačne dijelove.\nSustavno mišljenje umjesto toga usredotočuje se na međusobne odnose dijelova i na cjelinu.",
+        "explanation": "„Analiza\" doslovno znači rastavljanje na sastavne dijelove; sustavno mišljenje čini suprotno."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "nycmq4",
+        "question": "Sustavni pristup temelji se na ideji da su elementi:",
+        "options": [
+          "Neovisni i odvojeni",
+          "Međusobno povezani i međuovisni",
+          "Uvijek identični",
+          "Nepovezani"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jck8nz",
+        "question": "Što NIJE temeljni pojam sustavnog pristupa?",
+        "options": [
+          "Holizam",
+          "Specijalizacija",
+          "Emergentna svojstva",
+          "Randomizacija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "mgmayv",
+        "question": "U ugostiteljskom sustavu, kuhanje, čišćenje i usluga gostima primjeri su:",
+        "options": [
+          "Ulaza",
+          "Procesa",
+          "Izlaza",
+          "Povratne veze"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "b6j359",
+        "question": "Sustavno razmišljanje utemeljio je 1956. godine:",
+        "options": [
+          "Albert Einstein",
+          "Jay Forrester",
+          "Dinesh Thakur",
+          "Marie Morganelli"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "tfaog5",
+        "question": "„Učinak cjeline veći je od zbroja njezinih dijelova\" opisuje:",
+        "options": [
+          "Međuovisnost",
+          "Sinergija",
+          "Specijalizacija",
+          "Povratna veza"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "qi5mqu",
+        "sentence": "Sustav se sastoji od međusobno povezanih i ovisnih elemenata koji u međudjelovanju tvore _______ cjelinu.",
+        "answer": "jedinstvenu",
+        "hint": "Jedinstven / objedinjen."
+      },
+      {
+        "id": "1dsepg",
+        "sentence": "U sustavskom pristupu, _______ znači da promjena u jednom dijelu utječe na cijeli sustav.",
+        "answer": "holizam",
+        "hint": "Koncept „cjeline\"."
+      },
+      {
+        "id": "q1vj7t",
+        "sentence": "U ugostiteljstvu, resursi kao što su radna snaga, oprema i prehrambeni sastojci predstavljaju _______ sustava.",
+        "answer": "ulazi",
+        "hint": "Ono što ulazi u proces."
+      },
+      {
+        "id": "e7xxn6",
+        "sentence": "_______ razmišljanje je holistički način istraživanja čimbenika i interakcija koje doprinose određenom ishodu.",
+        "answer": "sustavno",
+        "hint": "Utemeljio Jay Forrester."
+      }
+    ],
+    "learn": {
+      "id": "lp5da7",
+      "content": "\n        <h3>Sustavni pristup &amp; Informatika</h3>\n        <p><strong>Sustavni pristup</strong> temelji se na generalizaciji da je sve međusobno povezano i međuovisno. <em>Sustav</em> je kombinacija međusobno povezanih i ovisnih elemenata koji u međudjelovanju tvore jedinstvenu cjelinu.</p>\n\n        <h4>Ključni pojmovi (Dinesh Thakur)</h4>\n        <ul>\n          <li><strong>Holizam</strong> — promjena bilo kojeg dijela utječe na cjelinu.</li>\n          <li><strong>Specijalizacija</strong> — cjelina se dijeli na manje komponente, od kojih svaka ima specijaliziranu ulogu.</li>\n          <li><strong>Nesumativnost</strong> — svaka je komponenta važna; cjelina nije tek zbroj svojih dijelova.</li>\n          <li><strong>Grupiranje</strong> — srodne se komponente grupiraju radi upravljanja složenošću.</li>\n          <li><strong>Koordinacija</strong> — grupirane komponente moraju biti koordinirane kako bi se izbjegao kaos.</li>\n          <li><strong>Emergentna svojstva</strong> — skupina posjeduje svojstva koja niti jedna pojedinačna komponenta nema.</li>\n        </ul>\n\n        <h4>Sustav u ugostiteljskoj industriji</h4>\n        <p>Ugostiteljska organizacija jedinstvena je cjelina u kojoj je svaki odjel međuovisan:</p>\n        <ul>\n          <li><strong>Ulazi</strong> — radna snaga, oprema, sirovine (npr. prehrambeni sastojci).</li>\n          <li><strong>Procesi</strong> — kuhanje, čišćenje, usluga gostima.</li>\n          <li><strong>Izlazi</strong> — doživljaj restoranskog objedovanja, smještaj.</li>\n          <li><strong>Povratna informacija</strong> — informacije od gostiju/osoblja u svrhu unapređenja poslovanja.</li>\n        </ul>\n        <p>Ključne karakteristike: <strong>međuovisnost</strong>, <strong>holistički pogled</strong> i\n        <strong>sinergija</strong> (cjelina funkcionira bolje od zbroja svojih dijelova).</p>\n\n        <h4>Sustavno mišljenje</h4>\n        <p><strong>Sustavno mišljenje</strong> holistički je način istraživanja čimbenika i interakcija koje doprinose određenom ishodu — više način razmišljanja nego praksa. Utemeljio ga je 1956. godine profesor MIT-a <strong>Jay Forrester</strong>. Koristi se za ispitivanje načina na koji sami stvaramo vlastite probleme, za sagledavanje šire slike te za razumijevanje načina na koji struktura utječe na učinkovitost.</p>\n        <p>Za razliku od <em>tradicionalne analize</em> (koja stvari rastavlja na odvojene dijelove), sustavno mišljenje usredotočuje se na to kako su dijelovi <strong>međusobno povezani</strong>.</p>\n      ",
+      "image": null
+    }
+  },
+  "dataInfoKnowledge": {
+    "id": "j0x5s4",
+    "name": "Podatci, informacije i znanje",
+    "icon": "fa-database",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "y5y2wg",
+        "question": "Što su podatci?",
+        "answer": "Sirove činjenice i brojke koje same po sebi nemaju značenje. Podaci mogu biti bilo koji alfanumerički znakovi — tekst, brojevi ili simboli.\nPrimjer: „15012002\", „23\", „English\" ne znače ništa bez konteksta.",
+        "explanation": "Podaci nemaju značenje sve dok im se ne dodijeli kontekst i dok se ne obrade."
+      },
+      {
+        "id": "911f5u",
+        "question": "Što je informacija?",
+        "answer": "Podaci koji su obrađeni unutar određenog konteksta kako bi dobili značenje, prikazani u korisnom obliku.\nPrimjer: „Datum rođenja Maje je 15/01/02\" ili „Računalo košta $1066\".",
+        "explanation": "Kontekst + obrada pretvaraju podatke u informaciju."
+      },
+      {
+        "id": "7xsmz0",
+        "question": "Što je znanje?",
+        "answer": "Sposobnost tumačenja informacija i njihove primjene u rješavanju problema ili donošenju odluka — razumijevanje pravila potrebnih za interpretaciju informacija.",
+        "explanation": "Debbie Jones: razumijevanje odnosa između pojedinih informacija i znanje što s njima učiniti."
+      },
+      {
+        "id": "ejf08s",
+        "question": "Kako podaci postaju informacija?",
+        "answer": "Podaci moraju biti obrađeni unutar određenog konteksta kako bi dobili značenje, a zatim prikazani u najprikladnijem obliku.",
+        "explanation": "Bez konteksta, podaci ostaju besmisleni."
+      },
+      {
+        "id": "we2b97",
+        "question": "Navedite primjere PODATAKA iz hotelske industrije.",
+        "answer": "• Jučer se prijavilo 100 gostiju\n• Prosječna cijena sobe iznosi $150\n• Restoran je prošlog tjedna prodao 250 odrezaka",
+        "explanation": "Sirovi brojevi/činjenice, još uvijek neinterpretirani."
+      },
+      {
+        "id": "vd5mh6",
+        "question": "Navedite primjere INFORMACIJA iz hotelske industrije.",
+        "answer": "• Najpopularniji tip sobe je deluxe suite\n• Najzauzetiji dan u tjednu je petak\n• Stopa popunjenosti u srpnju iznosila je 85%",
+        "explanation": "Obrađeni i organizirani podaci."
+      },
+      {
+        "id": "chnqts",
+        "question": "Navedite primjere ZNANJA iz hotelske industrije.",
+        "answer": "• Predviđanje visoke potražnje za sobama ljeti na temelju stopa popunjenosti\n• Raspoređivanje dodatnog osoblja na najzauzetiji dan\n• Korištenje preferencija gostiju radi poboljšanja iskustva gostiju",
+        "explanation": "Interpretacija informacija u svrhu donošenja odluka."
+      },
+      {
+        "id": "59dwi4",
+        "question": "Kakav je odnos Podaci → Informacije → Znanje?",
+        "answer": "Podaci (sirove činjenice) → obrađeni unutar konteksta → Informacije (smislene) → interpretirane i primijenjene → Znanje (odluke, rješavanje problema).",
+        "explanation": "Svaka faza dodaje značenje i korisnost."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "grvj50",
+        "question": "Sirove činjenice i brojke koje same po sebi nemaju značenje nazivaju se:",
+        "options": [
+          "Informacija",
+          "Podatak",
+          "Znanje",
+          "Mudrost"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "uxh8bf",
+        "question": "„Stopa popunjenosti hotela u srpnju iznosila je 85%\" primjer je:",
+        "options": [
+          "Podatka",
+          "Informacije",
+          "Znanja",
+          "Šuma (buke)"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "txr7tk",
+        "question": "Sposobnost tumačenja informacija i njihove primjene u donošenju odluka jest:",
+        "options": [
+          "Podatak",
+          "Informacija",
+          "Znanje",
+          "Unos"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "sdch7y",
+        "question": "Podaci postaju informacija kada su:",
+        "options": [
+          "Izbrisani",
+          "Obrađeni unutar konteksta",
+          "Pohranjeni na disku",
+          "Šifrirani"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "drbxam",
+        "question": "„Predviđanje visoke potražnje za sobama ljeti na temelju stopa popunjenosti\" primjer je:",
+        "options": [
+          "Podataka",
+          "Informacije",
+          "Znanja",
+          "Povratne informacije"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "hqizn6",
+        "sentence": "_______ su sirove činjenice i brojevi koji sami po sebi nemaju značenje.",
+        "answer": "podaci",
+        "hint": "Sirove činjenice i brojevi."
+      },
+      {
+        "id": "im71d0",
+        "sentence": "Informacija je podatak koji je obrađen unutar određenog _______ kako bi dobio značenje.",
+        "answer": "kontekst",
+        "hint": "Situacija koja daje značenje."
+      },
+      {
+        "id": "5y8kqx",
+        "sentence": "_______ je sposobnost tumačenja informacija i njihove primjene u rješavanju problema.",
+        "answer": "znanje",
+        "hint": "Dolazi nakon informacije."
+      },
+      {
+        "id": "sxagsj",
+        "sentence": "„Jučer se prijavilo 100 gostiju\" primjer je _______ u hotelskoj industriji.",
+        "answer": "podaci",
+        "hint": "Sirova činjenica."
+      }
+    ],
+    "learn": {
+      "id": "81ovnt",
+      "content": "\n        <h3>Podatci, Informacije &amp; Znanje</h3>\n        <h4>Podatci</h4>\n        <p><strong>Podatci</strong> su sirove činjenice i brojke (tekst, brojevi, simboli) koji sami po sebi\n        <em>nemaju značenje</em> — npr. <code>15012002</code>, <code>23</code>, „English\".</p>\n        <h4>Informacije</h4>\n        <p><strong>Informacija</strong> je podatak obrađen unutar određenog <strong>konteksta</strong> kako bi dobio\n        značenje i bio korisno prikazan — npr. „Datum rođenja Maje je 15/01/02\".</p>\n        <h4>Znanje</h4>\n        <p><strong>Znanje</strong> je sposobnost tumačenja informacija i njihove primjene u rješavanju\n        problema ili donošenju odluka (razumijevanje pravila potrebnih za interpretaciju informacija).</p>\n        <h4>Primjer iz hotelske industrije</h4>\n        <ul>\n          <li><strong>Podatci:</strong> jučer se prijavilo 100 gostiju; prosječna cijena sobe $150.</li>\n          <li><strong>Informacije:</strong> najzauzetiji dan je petak; popunjenost u srpnju iznosila je 85%.</li>\n          <li><strong>Znanje:</strong> očekuje se velika potražnja ljeti → rasporediti više osoblja.</li>\n        </ul>\n        <div class=\"tip-box\"><strong>Lanac:</strong> Podatci → (kontekst + obrada) → Informacije → (interpretacija) → Znanje.</div>\n      ",
+      "image": null
+    }
+  },
+  "hardware": {
+    "id": "v1fh8c",
+    "name": "Sklopovlje",
+    "icon": "fa-microchip",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "y6v6kv",
+        "question": "Što je računalno sklopovlje?",
+        "answer": "Fizički uređaji koji čine računalo. Računalo je sustav sastavljen od nekoliko komponenti koje zajedno funkcioniraju kao cjelina.",
+        "explanation": "Opipljivi dijelovi, za razliku od programske podrške (uputa za rad)."
+      },
+      {
+        "id": "x5l92y",
+        "question": "Koje su tipične glavne komponente računala?",
+        "answer": "• Središnja procesorska jedinica (CPU)\n• Glavna memorija (RAM)\n• Uređaji za sekundarnu pohranu podataka\n• Ulazni i izlazni uređaji",
+        "explanation": "Sve navedene komponente zajedno funkcioniraju kao jedan sustav."
+      },
+      {
+        "id": "w4byvn",
+        "question": "Što je CPU i zašto je važan?",
+        "answer": "Dio računala koji stvarno izvršava programe — najvažnija komponenta; bez nje nije moguće pokrenuti programsku podršku. CPU-ovi smješteni na malim čipovima nazivaju se mikroprocesori.",
+        "explanation": "Izvršava upute i upravlja tokom podataka."
+      },
+      {
+        "id": "939r92",
+        "question": "Što je RAM (glavna memorija)?",
+        "answer": "Mjesto gdje računalo pohranjuje program dok se izvodi i podatke koje koristi; procesor mu pristupa brzo. RAM je nestalan — njegov sadržaj se briše kada se računalo isključi (privremena pohrana).",
+        "explanation": "Nestalan = gubi se bez napajanja."
+      },
+      {
+        "id": "eb012v",
+        "question": "Što je sekundarna pohrana i čemu služi?",
+        "answer": "Pohrana koja čuva podatke dulje vremensko razdoblje. Programi se obično pohranjuju ovdje, a zatim se po potrebi učitavaju u glavnu memoriju.",
+        "explanation": "Trajna pohrana, za razliku od RAM-a."
+      },
+      {
+        "id": "oqjg1y",
+        "question": "Navedite vrste sekundarne pohrane.",
+        "answer": "• Disk (HDD) — magnetski rotirajući disk\n• Solid State Drive (SSD) — brži, bez pokretnih dijelova\n• Flash memorija — prenosiva, npr. USB pogon\n• Optički uređaji — CD, DVD, Blu-ray",
+        "explanation": "SSD je brži od mehaničkog disk pogona."
+      },
+      {
+        "id": "phm744",
+        "question": "Što su ulazni uređaji?",
+        "answer": "Komponente koje prikupljaju podatke od korisnika ili drugih uređaja — npr. tipkovnica, miš, zaslon osjetljiv na dodir, skener, kamera. Disk pogoni mogu djelovati kao ulaz (učitavaju programe u glavnu memoriju).",
+        "explanation": "Ulaz = podaci koje računalo prikuplja."
+      },
+      {
+        "id": "cci2hl",
+        "question": "Što su izlazni uređaji?",
+        "answer": "Komponente koje oblikuju i prikazuju izlazne podatke (tekst, sliku, zvuk) — npr. zaslon, pisač. Diskovni pogoni i USB pogoni mogu djelovati kao izlazni uređaji jer se podaci šalju na njih radi pohrane.",
+        "explanation": "Izlaz = podaci koje računalo proizvodi."
+      },
+      {
+        "id": "ek1m8s",
+        "question": "Kako su sklopovlje i programska oprema međusobno povezani?",
+        "answer": "Oni su komplementarni: računalni uređaj radi učinkovito i proizvodi korisne izlazne podatke samo kada sklopovlje i programska oprema rade zajedno.",
+        "explanation": "Ni jedno ni drugo nije korisno samo za sebe."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "d4hmc7",
+        "question": "Najvažnija komponenta, koja zapravo izvršava programe, jest:",
+        "options": [
+          "RAM",
+          "CPU",
+          "SSD",
+          "Monitor"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "w8nh6u",
+        "question": "RAM se opisuje kao _______ memorija (njezin sadržaj briše se kada je napajanje isključeno):",
+        "options": [
+          "Trajna",
+          "Hlapljiva",
+          "Optička",
+          "Sekundarna"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "s5sqac",
+        "question": "Koji od navedenih primjera predstavlja sekundarnu pohranu?",
+        "options": [
+          "CPU",
+          "RAM",
+          "SSD",
+          "Tipkovnica"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "6wxz9v",
+        "question": "Tipkovnica je primjer:",
+        "options": [
+          "Izlazni uređaj",
+          "Ulazni uređaj",
+          "Uređaj za pohranu",
+          "Procesor"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "9j4f1m",
+        "question": "Koja sekundarna pohrana nema pokretnih dijelova i brža je od diskovnog pogona?",
+        "options": [
+          "HDD",
+          "SSD",
+          "CD",
+          "Disketni pogon"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "06aalw",
+        "sentence": "_______ je komponenta koja stvarno izvršava programe i najvažniji je dio računala.",
+        "answer": "CPU",
+        "hint": "Središnja procesna jedinica."
+      },
+      {
+        "id": "wo1ljs",
+        "sentence": "RAM je _______ memorija, što znači da se njezin sadržaj briše kada se računalo isključi.",
+        "answer": "hlapljiva",
+        "hint": "Gubi sadržaj bez napajanja."
+      },
+      {
+        "id": "iker3i",
+        "sentence": "Uređaj _______ prikuplja podatke od korisnika, npr. tipkovnica ili miš.",
+        "answer": "ulazni",
+        "hint": "Suprotno od izlaza."
+      },
+      {
+        "id": "v9mw2y",
+        "sentence": "_______ (bez pokretnih dijelova) brži je od magnetskog diskovnog pogona.",
+        "answer": "SSD",
+        "hint": "Solid State Drive."
+      }
+    ],
+    "learn": {
+      "id": "eee2o3",
+      "content": "\n        <h3>Sklopovlje</h3>\n        <p><strong>Sklopovlje</strong> su fizički uređaji koji čine računalo. Računalo je\n        sustav komponenti koje zajedno funkcioniraju.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>CPU</strong> — izvršava programe; najvažnija komponenta (mikroprocesor na čipu).</li>\n          <li><strong>Glavna memorija (RAM)</strong> — brza, privremena pohrana za pokrenute programe i podatke; <em>hlapljiva</em> (briše se pri isključivanju).</li>\n          <li><strong>Sekundarna pohrana</strong> — dugotrajna: HDD (magnetski), SSD (brz, bez pokretnih dijelova), flash/USB, optička (CD/DVD/Blu-ray).</li>\n          <li><strong>Ulazni / izlazni uređaji</strong> — ulazni: tipkovnica, miš, skener; izlazni: zaslon, pisač.</li>\n        </ul>\n        <p>Sklopovlje i programska oprema <strong>komplementarni</strong> su — uređaj je koristan samo kada oboje rade zajedno.</p>\n      ",
+      "image": null
+    }
+  },
+  "software": {
+    "id": "fxljlm",
+    "name": "Programska oprema",
+    "icon": "fa-code",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "ckkwlu",
+        "question": "Što je programska oprema?",
+        "answer": "Skup uputa, podataka ili programa koji se koriste za upravljanje računalom i izvršavanje određenih zadataka — programska oprema govori računalu kako da funkcionira. To je opći pojam za aplikacije, skripte i programe.",
+        "explanation": "Bez programske opreme većina računala bila bi beskorisna."
+      },
+      {
+        "id": "g9hdxr",
+        "question": "Koje su dvije glavne vrste programske opreme?",
+        "answer": "1. Sistemski softver\n2. Aplikacijski softver",
+        "explanation": "Sistemski softver pokreće računalo; aplikacijski softver služi korisniku."
+      },
+      {
+        "id": "zv0o6k",
+        "question": "Što je aplikacijski softver?",
+        "answer": "Softver koji krajnjem korisniku pomaže u obavljanju zadataka (istraživanje, bilješke, grafika, računovodstvo). Nalazi se iznad sistemskog softvera, namijenjen je krajnjem korisniku i specifičan je po funkcionalnosti (ponekad se naziva „neesencijalni\" softver).",
+        "explanation": "Instalira se i koristi prema potrebama korisnika."
+      },
+      {
+        "id": "n0cbeo",
+        "question": "Navedite vrste/primjere aplikacijskog softvera.",
+        "answer": "• Tekstualni procesori — MS Word, Google Docs\n• Proračunske tablice — Excel, Google Sheets\n• Baze podataka (DBMS) — MySQL, FileMaker\n• Multimedija — Adobe Photoshop\n• Uredski paketi — Microsoft Office\n• Preglednici — Chrome\n• E-pošta — Outlook, Gmail",
+        "explanation": "Svaki je namijenjen određenom zadatku krajnjeg korisnika."
+      },
+      {
+        "id": "d1qd3u",
+        "question": "Što je sistemski softver?",
+        "answer": "Softver koji omogućuje interakciju između korisnika, sklopovlja i aplikacijskog softvera — posrednički/srednji sloj između korisnika i sklopovlja. Upravlja cjelokupnim sustavom, prvi se učitava pri pokretanju računala i radi u pozadini (krajnji ga korisnici ne koriste izravno).",
+        "explanation": "Esencijalan je, za razliku od „neesencijalnog\" aplikacijskog softvera."
+      },
+      {
+        "id": "t0fwi9",
+        "question": "Što je operacijski sustav (OS)?",
+        "answer": "Sistemski softver koji služi kao sučelje između ostalih aplikacija i sklopovlja, upravljajući svim ostalim programima u računalu.",
+        "explanation": "Najpoznatiji primjer sistemskog softvera."
+      },
+      {
+        "id": "6adojq",
+        "question": "Navedite primjere sistemskog softvera (osim operacijskog sustava).",
+        "answer": "• BIOS — ugrađeni firmware: što računalo može učiniti bez programa na disku\n• Boot — učitava operacijski sustav u RAM\n• Asembler — pretvara osnovne instrukcije u bitove koje procesor koristi\n• Upravljački program uređaja — upravlja uređajem (npr. tipkovnicom, mišem)",
+        "explanation": "Svi rade u pozadini kako bi upravljali sustavom."
+      },
+      {
+        "id": "up749g",
+        "question": "Po čemu se softver i sklopovlje razlikuju?",
+        "answer": "Softver je logičke prirode (skup instrukcija koji omogućuje interakciju), dok je sklopovlje fizičke prirode (uređaji koji pohranjuju i izvršavaju softver). Kvar softvera je sustavan i softver se ne troši (iako mogu nastati programske pogreške); kvar sklopovlja je slučajan i sklopovlje se s vremenom fizički troši.",
+        "explanation": "Međusobno se nadopunjuju, ali po svojoj su naravi različiti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "j09lvg",
+        "question": "Softver se najbolje opisuje kao:",
+        "options": [
+          "Fizički uređaji",
+          "Skup instrukcija koje računalu govore što treba učiniti",
+          "Vrsta procesora (CPU)",
+          "Mreža"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "vl7vih",
+        "question": "Dvije glavne vrste softvera su:",
+        "options": [
+          "Ulaz i izlaz",
+          "Sistemski i aplikacijski",
+          "RAM i ROM",
+          "LAN i WAN"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "84lkge",
+        "question": "Microsoft Excel i Google Docs primjeri su:",
+        "options": [
+          "Sistemski softver",
+          "Aplikacijski softver",
+          "Firmware",
+          "Upravljački programi uređaja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jvsr4z",
+        "question": "Što djeluje kao sučelje između aplikacija i sklopovlja?",
+        "options": [
+          "Proračunska tablica",
+          "Operacijski sustav",
+          "Preglednik",
+          "NIC"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "m8ctv9",
+        "question": "Što je primjer sistemskog softvera?",
+        "options": [
+          "Adobe Photoshop",
+          "Operacijski sustav",
+          "Microsoft Word",
+          "Google Chrome"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "x4tak7",
+        "sentence": "_______ je skup uputa koji računalu govori kako funkcionirati.",
+        "answer": "softver",
+        "hint": "Suprotnost od hardvera."
+      },
+      {
+        "id": "jw3g8j",
+        "sentence": "_______ softver pomaže krajnjem korisniku u izvršavanju zadataka poput pisanja dokumenata ili uređivanja fotografija.",
+        "answer": "aplikacijski",
+        "hint": "Nalazi se iznad sistemskog softvera."
+      },
+      {
+        "id": "pxftab",
+        "sentence": "_______ sustav je sistemski softver koji upravlja svim programima i komunicira s hardverom.",
+        "answer": "operacijski",
+        "hint": "OS."
+      },
+      {
+        "id": "57k2y5",
+        "sentence": "_______ je ugrađeni firmware koji određuje što računalo može učiniti bez pristupa programima s diska.",
+        "answer": "BIOS",
+        "hint": "Basic Input/Output System."
+      }
+    ],
+    "learn": {
+      "id": "4woqud",
+      "content": "\n        <h3>Softver</h3>\n        <p><strong>Softver</strong> je skup uputa, podataka ili programa koji se koriste za upravljanje\n        računalom i izvršavanje zadataka — govori računalu kako da funkcionira. Postoje dvije glavne vrste:</p>\n        <h4>Aplikacijski softver</h4>\n        <p>Pomaže <strong>krajnjem korisniku</strong> u izvršavanju zadataka; nalazi se iznad sistemskog softvera. Primjeri:\n        tekstualni procesori (Word), proračunske tablice (Excel), baze podataka (MySQL), multimedija (Photoshop),\n        paketi (MS Office), preglednici (Chrome), e-pošta (Outlook).</p>\n        <h4>Sistemski softver</h4>\n        <p><strong>Srednji sloj</strong> između korisnika i hardvera; upravlja cjelokupnim sustavom\n        i izvodi se u pozadini. Primjeri: <strong>OS</strong> (sučelje prema hardveru), BIOS, Boot,\n        Assembler, upravljački programi uređaja.</p>\n        <h4>Softver nasuprot hardveru</h4>\n        <ul>\n          <li>Softver je <strong>logičan</strong> (upute); hardver je <strong>fizički</strong> (uređaji).</li>\n          <li>Kvar softvera je sustavan i softver se ne troši; kvar hardvera je slučajan i hardver se troši.</li>\n        </ul>\n      ",
+      "image": null
+    }
+  },
+  "networks": {
+    "id": "mw807i",
+    "name": "Računalne mreže",
+    "icon": "fa-network-wired",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "30sxs2",
+        "question": "Što je računalna mreža?",
+        "answer": "Dva ili više računala međusobno povezanih radi dijeljenja podataka, resursa i aplikacija.",
+        "explanation": "Mreže se klasificiraju prema veličini i funkciji."
+      },
+      {
+        "id": "ghi7ck",
+        "question": "Koje su glavne vrste mreža prema veličini?",
+        "answer": "• LAN — Local Area Network\n• PAN — Personal Area Network\n• MAN — Metropolitan Area Network\n• WAN — Wide Area Network\n• GAN — Global Area Network",
+        "explanation": "Razlikuju se prema geografskom dosegu."
+      },
+      {
+        "id": "g42uy2",
+        "question": "Što je LAN?",
+        "answer": "Local Area Network — računala međusobno povezana na ograničenom području (stan, ured) putem komunikacijskih uređaja kao što su kabeli, usmjerivači i preklopnici.",
+        "explanation": "Najmanji uobičajeni poslovni tip mreže."
+      },
+      {
+        "id": "qoxzyk",
+        "question": "Što je PAN?",
+        "answer": "Personal Area Network — mreža vrlo kratkog dosega (~10–30 m) namijenjena osobnim uređajima: prijenosnom računalu, pametnom telefonu, igraćim konzolama i gadgetima. Može biti žična ili bežična.",
+        "explanation": "Usredotočena je na jednu osobu."
+      },
+      {
+        "id": "wzzkj8",
+        "question": "Što je MAN?",
+        "answer": "Mreža metropolitanskog područja (MAN) — pokriva veliko geografsko područje (npr. grad) međusobnim povezivanjem nekoliko LAN-ova, često putem tehnologije telefonske komunikacije.",
+        "explanation": "Veća od LAN-a, manja od WAN-a."
+      },
+      {
+        "id": "9gin74",
+        "question": "Što je WAN, a što je GAN?",
+        "answer": "WAN (Wide Area Network) pokriva veliko geografsko područje (npr. cijeli grad/regiju), često koristeći infrastrukturu mobilnih operatera.\nGAN (Global Area Network) pokriva cijelu državu ili cijeli svijet — „mreža mreža\" (satelitska/bežična).",
+        "explanation": "WAN = široko područje; GAN = globalno područje."
+      },
+      {
+        "id": "qkak7o",
+        "question": "Navedite glavne mrežne uređaje (čvorove).",
+        "answer": "NIC, ponavljač (Repeater), koncentrator (Hub), preklopnik (Switch), premosnik (Bridge), usmjerivač (Router), pristupnik (Gateway), vatrozid (Firewall).",
+        "explanation": "Svaki od njih ima ulogu u prijenosu i upravljanju podacima."
+      },
+      {
+        "id": "ec6byh",
+        "question": "Što je NIC i što je MAC adresa?",
+        "answer": "Mrežna kartica (NIC, Network Interface Card) fizički povezuje domaćina s mrežnim medijem (tiskana pločica / mrežni adapter). Svaka mrežna kartica ima jedinstvenu MAC adresu (Media Access Control) koja se koristi za upravljanje podatkovnom komunikacijom tog domaćina.",
+        "explanation": "MAC = jedinstveni hardverski identifikator."
+      },
+      {
+        "id": "2scpyq",
+        "question": "Po čemu se preklopnik (switch) razlikuje od koncentratora (hub), i što usmjerivač (router) dodaje?",
+        "answer": "Hub pasivno koncentrira veze (svi domaćini promatraju se kao jedna jedinica). Preklopnik (switch) je inteligentniji — šalje podatke samo onoj vezi kojoj su potrebni. Usmjernik (router) posjeduje sve navedene mogućnosti te se može spojiti na WAN, povezujući LAN-ove razdvojene velikim udaljenostima.",
+        "explanation": "Hub → Switch → Router: rastuća razina inteligencije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "hm3ha1",
+        "question": "Računalna mreža omogućuje spojenim računalima dijeljenje:",
+        "options": [
+          "Samo električne energije",
+          "Podataka, resursa i aplikacija",
+          "Ničega",
+          "Samo pisača"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "8r9ifr",
+        "question": "Mreža ograničena na ured ili stan naziva se:",
+        "options": [
+          "WAN",
+          "LAN",
+          "GAN",
+          "MAN"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fyy2up",
+        "question": "Mreža koja pokriva cijeli grad povezivanjem nekoliko LAN-ova je:",
+        "options": [
+          "PAN",
+          "LAN",
+          "MAN",
+          "NIC"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "vn37uv",
+        "question": "Jedinstvena hardverska adresa mrežne kartice (NIC) naziva se ___ adresa:",
+        "options": [
+          "IP",
+          "MAC",
+          "URL",
+          "DNS"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "eyh2wh",
+        "question": "Koji uređaj posjeduje sve mogućnosti i može povezivati LAN-ove na velikim udaljenostima putem WAN-a?",
+        "options": [
+          "Hub",
+          "Repetitor",
+          "Usmjernik",
+          "Most"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "sezkyn",
+        "sentence": "Računalna _______ su dva ili više računala međusobno povezanih radi dijeljenja podataka i resursa.",
+        "answer": "mreža",
+        "hint": "Tema ovog poglavlja."
+      },
+      {
+        "id": "pc6g67",
+        "sentence": "_______ (lokalna računalna mreža) povezuje računala unutar ograničenog područja, poput ureda.",
+        "answer": "LAN",
+        "hint": "Najmanji tip."
+      },
+      {
+        "id": "vm6yxd",
+        "sentence": "Svaki NIC identificira se jedinstvenom _______ adresom.",
+        "answer": "MAC",
+        "hint": "Kontrola pristupa mediju (engl. Media Access Control)."
+      },
+      {
+        "id": "77mzk7",
+        "sentence": "_______ se može spojiti na WAN i povezati LAN-ove koji su međusobno udaljeni na velikim udaljenostima.",
+        "answer": "usmjernik (router)",
+        "hint": "Najsposobniji čvor."
+      }
+    ],
+    "learn": {
+      "id": "qi4tae",
+      "content": "\n        <h3>Računalne mreže</h3>\n        <p>A <strong>računalna mreža</strong> je skup dvaju ili više međusobno povezanih računala koja mogu dijeliti\n        podatke, resurse i aplikacije.</p>\n        <h4>Vrste prema veličini</h4>\n        <ul>\n          <li><strong>LAN</strong> — lokalna mreža (ured/stan).</li>\n          <li><strong>PAN</strong> — osobna mreža (~10–30 m, osobni uređaji).</li>\n          <li><strong>MAN</strong> — gradska mreža (grad; povezuje LAN-ove).</li>\n          <li><strong>WAN</strong> — mreža širokog područja (regija/grad, mobilna infrastruktura).</li>\n          <li><strong>GAN</strong> — globalna mreža (država/svijet; mreža mreža).</li>\n        </ul>\n        <h4>Mrežni uređaji (čvorovi)</h4>\n        <p><strong>NIC</strong> (s jedinstvenom <strong>MAC</strong> adresom), ponavljač (Repeater), koncentrator (Hub), premosnik (Bridge),\n        preklopnik (Switch), usmjernik (Router), pristupnik (Gateway), vatrozid (Firewall). Inteligencija raste od pasivnog <em>koncentratora</em> →\n        <em>preklopnika</em> (šalje podatke samo tamo gdje je potrebno) → <em>usmjernika</em> (povezuje LAN-ove putem WAN-a).</p>\n      ",
+      "image": null
+    }
+  },
+  "www": {
+    "id": "8v5qiv",
+    "name": "World Wide Web",
+    "icon": "fa-globe",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "llbxj6",
+        "question": "Što je Internet?",
+        "answer": "Golema mreža mreža — masivna računalna mreža koja povezuje uređaje putem bakrenih žica, bežičnih mreža ili optičkih kabela.",
+        "explanation": "Internet je infrastruktura; Web je usluga koja se temelji na njoj."
+      },
+      {
+        "id": "rqqy3f",
+        "question": "Što je World Wide Web (WWW)?",
+        "answer": "Način pristupa informacijama putem Interneta — jedna od njegovih glavnih usluga. Radi se o velikoj zbirci web-stranica (tekst, grafika, zvuk, video) međusobno povezanih hipervezama, koje se isporučuju putem protokola HTTP i pregledavaju u web-preglednicima.",
+        "explanation": "Web je sadržaj; Internet je mreža."
+      },
+      {
+        "id": "5qkie9",
+        "question": "Koja je razlika između Interneta i WWW-a?",
+        "answer": "Internet je golema mreža mreža (infrastruktura koja povezuje uređaje putem kabela, bežičnih veza i optičkih vlakana).\nWWW je velika zbirka web-stranica međusobno povezanih hipervezama — usluga koju pruža Internet.",
+        "explanation": "Često se upotrebljavaju kao istoznačnice, no Web je samo jedna od usluga Interneta."
+      },
+      {
+        "id": "61lt4n",
+        "question": "Kako funkcionira WWW (klijenti i poslužitelji)?",
+        "answer": "Klijenti su uređaji korisnika spojeni na Internet zajedno s web-preglednikom. Poslužitelji su računala koja pohranjuju web-stranice, web-mjesta i aplikacije. Kada klijent zatraži određenu stranicu, kopija se preuzima s poslužitelja i prikazuje u pregledniku.",
+        "explanation": "Zahtjev → preuzimanje kopije → prikaz."
+      },
+      {
+        "id": "xkit5p",
+        "question": "Što je web-preglednik, a što tražilica?",
+        "answer": "Web-preglednik je programska aplikacija koja korisniku omogućuje pronalaženje, pristup i prikaz web-stranica (npr. Chrome, Firefox, Safari).\nTražilica je usluga koja korisnicima omogućuje pretraživanje sadržaja putem WWW-a.",
+        "explanation": "Preglednik = pregledavanje stranica; tražilica = pronalaženje stranica."
+      },
+      {
+        "id": "ty09fy",
+        "question": "Što je DNS (Domain Name System)?",
+        "answer": "Sustav koji preslikava lako pamtljiva domenska imena (npr. example.com) u numeričke IP adrese (npr. 93.184.216.34), čime se postiže da ljudi koriste imena, a računala IP adrese.",
+        "explanation": "„Telefonski imenik\" Interneta."
+      },
+      {
+        "id": "xc89mj",
+        "question": "Što je model klijent/poslužitelj na webu?",
+        "answer": "Klijent (web-preglednik) zahtijeva uslugu; poslužitelj (web-poslužitelj) ispunjava zahtjev i prenosi rezultate natrag putem mreže, slijedeći dogovorene protokole.",
+        "explanation": "Klijent šalje zahtjev, poslužitelj odgovara."
+      },
+      {
+        "id": "tzq5z1",
+        "question": "Navedite ključne internetske protokole i njihove uloge.",
+        "answer": "• HTTP — prijenos web-stranica\n• FTP — prijenos datoteka između računala\n• SMTP — slanje elektroničke pošte\n• POP / IMAP — primanje elektroničke pošte\n• TCP/IP — službeni internetski protokol: TCP dijeli podatke u pakete i osigurava njihov integritet, IP usmjerava pakete prema odredištu",
+        "explanation": "Protokoli su pravila komunikacije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "23qzxe",
+        "question": "Internet se najbolje opisuje kao:",
+        "options": [
+          "Skup web-stranica",
+          "Golema mreža mreža",
+          "Web-preglednik",
+          "Tražilica"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "25hwlv",
+        "question": "World Wide Web je:",
+        "options": [
+          "Potpuno isto što i Internet",
+          "Usluga koju pruža Internet (međusobno povezane web-stranice)",
+          "Vrsta kabela",
+          "Vrsta procesora (CPU)"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "wzpj0m",
+        "question": "DNS preslikava nazive domena u:",
+        "options": [
+          "MAC adrese",
+          "IP adrese",
+          "Web-preglednike",
+          "Pakete"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cy79z1",
+        "question": "Koji se protokol koristi za prijenos web-stranica?",
+        "options": [
+          "FTP",
+          "HTTP",
+          "SMTP",
+          "POP"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "42nrlz",
+        "question": "U web modelu klijent/poslužitelj, klijent je obično:",
+        "options": [
+          "Web poslužitelj",
+          "Web preglednik",
+          "DNS poslužitelj",
+          "Usmjerivač"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "biqjcd",
+        "sentence": "_______ je golema mreža mreža koja povezuje uređaje putem kabela, bežičnih veza i optičkih vlakana.",
+        "answer": "Internet",
+        "hint": "Infrastruktura."
+      },
+      {
+        "id": "97y5re",
+        "sentence": "World Wide Web jest zbirka web-stranica međusobno povezanih _______.",
+        "answer": "hipervezama",
+        "hint": "Poveznice na koje se može kliknuti."
+      },
+      {
+        "id": "3ov56k",
+        "sentence": "_______ preslikava pamtljiva domenska imena u numeričke IP adrese.",
+        "answer": "DNS",
+        "hint": "Sustav domenskih imena (Domain Name System)."
+      },
+      {
+        "id": "a68hg9",
+        "sentence": "Web koristi protokol _______ za prijenos web-stranica.",
+        "answer": "HTTP",
+        "hint": "Protokol za prijenos hiperteksta (HyperText Transfer Protocol)."
+      }
+    ],
+    "learn": {
+      "id": "usq3bn",
+      "content": "\n        <h3>World Wide Web</h3>\n        <h4>Internet i WWW</h4>\n        <p><strong>Internet</strong> je golema mreža mreža (uređaji međusobno povezani kabelima, bežičnim vezama i optičkim vlaknima). <strong>WWW</strong> je opsežna zbirka web-stranica povezanih <strong>hipervezama</strong> — <em>usluga koju pruža</em> Internet, isporučuje se putem HTTP-a i pregledava u web-preglednicima.</p>\n        <h4>Način rada</h4>\n        <p><strong>Klijenti</strong> (vaš uređaj i preglednik) zahtijevaju stranice; <strong>poslužitelji</strong> ih pohranjuju i šalju kopiju radi prikaza. Alati: <strong>web-preglednik</strong> (pregled stranica), <strong>tražilica</strong> (pronalaženje sadržaja), <strong>DNS</strong> (preslikava domenskih imena ↔ IP adresa).</p>\n        <h4>Ključni protokoli</h4>\n        <ul>\n          <li><strong>HTTP</strong> — web-stranice; <strong>FTP</strong> — datoteke.</li>\n          <li><strong>SMTP</strong> — slanje e-pošte; <strong>POP/IMAP</strong> — primanje e-pošte.</li>\n          <li><strong>TCP/IP</strong> — službeni protokol Interneta (TCP paketi + integritet, IP usmjeravanje).</li>\n        </ul>\n      ",
+      "image": null
+    }
+  }
+}

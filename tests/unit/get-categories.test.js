@@ -64,7 +64,7 @@ test('niz-vrijednosti i funkcije se NE broje kao kategorije', function () {
   assert.deepStrictEqual(getCategories(content), ['a']);
 });
 
-// ── getStudyData: JEDINI ulaz u `AppState.nav.data` (BUG-053) ──────────────────────────────────
+// ── getStudyData: JEDINI ulaz u `AppState.nav.data` (BUG-055) ──────────────────────────────────
 // `progress.js` je čitao `Object.keys(nav.data)` mimo getCategories → `(2).quiz.length` na v2
 // dokumentu (svaki materijal iz AI nacrta). Umjesto da svaki čitač pamti pravilo, ulaz propušta samo
 // lekcije, svaku s nizovima — pa nijedan čitač, ni budući, ne vidi meta-ključ ni lekciju bez `quiz`.

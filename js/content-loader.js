@@ -10,7 +10,7 @@
 // ⚠ CACHE: data/* su pod immutable cacheom (vercel.json). Pri izmjeni BILO KOJEG
 // data/* sadržaja bumpaj CONTENT_VERSION — inače preglednik servira stari cache.
 
-const CONTENT_VERSION = '20261016095738';
+const CONTENT_VERSION = '20261117011144';
 
 // subjectId -> true (sadržaj učitan) ; subjectId -> Promise (učitavanje u tijeku)
 const _contentLoaded = {};
@@ -169,7 +169,7 @@ function getCategories(content) {
     });
 }
 
-// ── BUG-053 — JEDINI ulaz u `AppState.nav.data` ────────────────────────────────
+// ── BUG-055 — JEDINI ulaz u `AppState.nav.data` ────────────────────────────────
 // Pravilo iznad je čitač morao ZAPAMTITI; `progress.js` nije, pa je v2 dokument (svaki materijal iz
 // AI nacrta) srušio napredak na `(2).quiz.length`. Zato se dokument čisti NA ULAZU: van idu samo
 // lekcije, svaka s nizovima `flashcards`/`quiz`/`fillBlanks` — nijedan čitač, ni budući, ne vidi meta-

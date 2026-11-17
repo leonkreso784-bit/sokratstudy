@@ -175,3 +175,27 @@ _materials/
 3. Ja pročitam materijale i generiram flashcards/quiz/fill/learn po `CONTENT_SCHEMA`.
 4. `npm run verify` + pregled (ti potvrdiš točnost, pogotovo formule).
 5. Deploy uz bump `?v=` (vidi [[css-cache-bump-version]] princip).
+
+## Tok s agentima za cijeli program (provjeren na MOR-u, 2026-11-14/15)
+
+Kad se gradi više predmeta odjednom (novi program ili fakultet). Primjer koji radi: MOR, `docs/subjects/README.md` §MOR.
+
+1. **Kurikulum iz službenog popisa predmeta i nositelja** (web fakulteta), ne iz mapa s materijalima. Zajednički
+   kolegij = isti naziv **i** isti nositelj u oba smjera. Odluke (imena, opseg, dijeljenje) → anketa Leonu.
+2. **Izvori u `_materials/<program>/<godina>/<predmet>/`** + izvadak teksta uz svaki original (`.txt`): PDF kroz
+   `scripts/pdf-text.js`, DOCX/PPTX kroz zip + XML. Tablica datoteka · KB · znakova · stranica otkriva slikovne
+   slajdove (tanak tekst → dubinu nosi udžbenik). Merlin drugog studenta: on se prijavljuje sam; preuzima se samo
+   nastavni materijal — **nikad** bodovi, rokovi ni popisi studenata. Ime osobe nikad u repo (`check:names`).
+3. **Katalog unos piše voditelj PRIJE graditelja** (graditelji ne diraju `catalog.js`, `index.html`, `js/`, `css/`).
+   Boja predmeta ≥ 25° od indiga znaka, inače pada `check:contrast`. Predmet bez objavljenog K2 = samo lekcija
+   `first-midterm`.
+4. **Zajednički brief za graditelje** (uzor: `_materials/mor/BRIEF-GRADITELJ.md` u stablu `sokratstudy.mor`):
+   izvor je autoritet, pokrivenost a ne uzorak, kartica ≤ 200 znakova, bogat learn, dopune označene,
+   **id-evi stavki su trajni**, pozicije i **duljine** opcija ujednačene ([BUG-054](../records/BUGS.md)).
+5. **Graditelj (Opus) → `content-review` → ispravke istom graditelju → commit po predmetu.** Najviše tri graditelja
+   odjednom: Opus ima 5-satni limit i ruši agente usred posla (MOR: pali su jedan graditelj i jedan recenzent).
+   Recenzija smije na Sonnetu. Sitne ispravke radi voditelj alatom koji `const X = {...}` blok parsira kao JSON,
+   mijenja stavke **po id-u** i vraća ga bajt-identično (prije prve izmjene dokazati round-trip na no-op izmjeni).
+6. **Zatvaranje:** `export:json` → `verify` → bump → docs → `preflight` → ciljani Playwright → dimni test u Chromiumu
+   (svaka lekcija učitava) → push grane i zeleni CI → **produkcija samo uz Leonov OK**, uz `diff:db` →
+   `migrate-content.js` → `diff:db` (0 razlika) za svaki novi predmet.

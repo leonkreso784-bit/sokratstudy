@@ -6,28 +6,28 @@
     <title data-i18n="legal.title.faq">FAQ — Sokrat Study</title>
     <meta name="description" content="Questions about Sokrat Study — studying ready subjects, making your own material, accounts, privacy and contact.">
     <link rel="canonical" href="https://www.sokratstudy.com/faq.html">
-    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261016095738">
+    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261117011144">
     <!-- paleta: GENERIRAN izvadak tokena iz bundlea; MORA prije legal.css -->
-    <link rel="stylesheet" href="css/tokens.static.css?v=20261016095738">
-    <link rel="stylesheet" href="css/legal.css?v=20261016095738">
+    <link rel="stylesheet" href="css/tokens.static.css?v=20261117011144">
+    <link rel="stylesheet" href="css/legal.css?v=20261117011144">
 
     <!-- Cookie consent + Google Analytics (Consent Mode v2; default=denied zivi u js/consent.js, D1/CSP) -->
-    <link rel="stylesheet" href="css/consent.css?v=20261016095738">
+    <link rel="stylesheet" href="css/consent.css?v=20261117011144">
     <!-- F3/1: i18n.js PRIJE consent.js (oba su defer, izvršavaju se redom) — cookie-traka tekst uzima iz `window.t`. -->
-    <script src="js/i18n.js?v=20261016095738" defer></script>
-    <script src="js/consent.js?v=20261016095738" defer></script>
+    <script src="js/i18n.js?v=20261117011144" defer></script>
+    <script src="js/consent.js?v=20261117011144" defer></script>
     <!-- ADR-034: štipanje s dva prsta gasi JS, jer Safari metu ignorira — zašto piše u js/no-zoom.js -->
-    <script src="js/no-zoom.js?v=20261016095738" defer></script>
+    <script src="js/no-zoom.js?v=20261117011144" defer></script>
 </head>
 <body>
 <!-- F1/5 (2026-09-06): tema se odlučuje PRIJE prvog crtanja, isto kao u index.html — boot.js je
      SINKRON (bez defer). `data-theme` u markupu je svijetla zadana samo bez JS-a; s JS-om odlučuje
      spremljeni izbor, inače uređaj (`prefers-color-scheme`). Do ove cigle stranica nije imala ni
      atribut ni skriptu: korisnik na tamnom telefonu dobivao je crn katalog i bijela Pravila. -->
-<script src="js/boot.js?v=20261016095738"></script>
+<script src="js/boot.js?v=20261117011144"></script>
     <header class="legal-nav">
         <!-- `alt=""`: znak stoji uz vidljivo ime u istoj poveznici; opisan alt bi čitač ekrana izgovorio dvaput. -->
-        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261016095738" alt="">Sokrat Study</a>
+        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261117011144" alt="">Sokrat Study</a>
         <div class="legal-nav-actions">
             <button type="button" class="legal-back legal-lang" data-action="toggleUiLang" data-i18n-aria="legal.lang" aria-label="Language / Jezik">
                 <span class="jezik" lang="en">EN</span><span class="jezik" lang="hr">HR</span>
@@ -57,8 +57,9 @@
 
             <div class="legal-card">
                 <h2>Which subjects are in the catalogue?</h2>
-                <p>University subjects from the Faculty of Tourism and Hospitality Management in Opatija (FMTU):
-                the Hospitality Management programme in English, and first-year subjects in Croatian. Some subjects
+                <p>University subjects from two faculties: the Faculty of Tourism and Hospitality Management in Opatija
+                (FMTU — Hospitality Management in English, plus programmes in Croatian) and the Faculty of Law in
+                Rijeka (PFRI — the integrated law degree, in Croatian). Some subjects
                 also have practice exercises or a blind map. Your subject isn't there? Build it yourself — it works
                 the same way.</p>
             </div>
@@ -145,8 +146,9 @@
 
             <div class="legal-card">
                 <h2>Koji su predmeti u katalogu?</h2>
-                <p>Fakultetski predmeti Fakulteta za menadžment u turizmu i ugostiteljstvu u Opatiji (FMTU): smjer
-                Hospitality Management na engleskom i predmeti prve godine na hrvatskom. Neki predmeti imaju i vježbe
+                <p>Fakultetski predmeti dvaju fakulteta: Fakulteta za menadžment u turizmu i ugostiteljstvu u Opatiji
+                (FMTU — Hospitality Management na engleskom i programi na hrvatskom) i Pravnog fakulteta u Rijeci
+                (PFRI — integrirani studij prava, na hrvatskom). Neki predmeti imaju i vježbe
                 ili slijepu kartu. Nema tvog predmeta? Napravi ga ovdje — radi na isti način.</p>
             </div>
 

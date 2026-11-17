@@ -1438,7 +1438,7 @@ async function initStudyPage(subjectId, lessonId, targetSection) {
     }
     showStudyLoading(false);
 
-    // BUG-053: `nav.data` puni SAMO `getStudyData` — samo lekcije, svaka s nizovima (meta-ključ v2
+    // BUG-055: `nav.data` puni SAMO `getStudyData` — samo lekcije, svaka s nizovima (meta-ključ v2
     // dokumenta i lekcija bez `quiz` ne smiju doći ni do jednog načina učenja).
     const subjectLessonMap = lessonCategoryMap[subjectId];
     AppState.nav.data = getStudyData(fullData, subjectLessonMap && subjectLessonMap[lessonId]);

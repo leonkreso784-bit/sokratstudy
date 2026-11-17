@@ -11,6 +11,18 @@
   ⚠️ **ISPRAVLJENO 2026-08-29:** ovdje je stajalo *„accounting nije u bazi"*. **Neistina** — provjereno upitom, `accounting` ima svoja tri reda kao i svi ostali. Tvrdnja je bila zapisana prije njegove migracije i nikad povučena, a slala je na krivi trag pri svakom debugiranju read-patha. Živu brojku daje `select count(*) from subject_content`, ne ova proza.
 - Kvantitativni predmeti = **KaTeX** (ADR-009; currency-safe delimiteri `\( \)` / `\[ \]` / `$$ $$`, NIKAD jedan `$`).
 
+## 3. godina HM — 2 predmeta, samo Midterm 1 (2026-11-04)
+
+| Predmet | ID | Sem | M1: kat/fc/quiz/fill | Vježbe | Napomene |
+|---|---|---|---|---|---|
+| Public Finance | `public-finance` | 1 | 6 / 155 / 140 / 39 | — | T1–T6 (Rosen & Gayer). Slajdovi tanki, dopune iz Rosena označene „not in course slides" |
+| Quality Management | `quality-management` | 1 | 6 / 180 / 182 / 31 | — | teme 1–6 (Oakland 2021, ISO 9000/9001). Sadržaj sa slika slajdova uključen (ISO brojke, SMART, PDCA-mapa točaka) |
+
+⚠️ **Iznimke od invarijanti:** (1) samo **1 lekcija** (`midterm-1`); Midterm 2 i Final dolaze kad profesori objave gradivo.
+(2) Learn je **v2 blokovi** (`learn.blocks`), ne HTML — prvi katalog-predmeti s blokovima; renderira `js/learn.js` → `renderContentBlocks`.
+(3) **Nisu u bazi `subject_content`** (Leon: ne pisati u PROD bazu) → čitaju se iz `data/json/<id>/` (dual-read fallback).
+Izvor sadržaja: Sokrat MCP materijali sa stagingu (`node_content` 2026-11-04), pretvoreni skriptom; id-jevi 6-znakovni generirani.
+
 ## 2. godina HM — 8/8 KOMPLETNO i LIVE
 
 | Predmet | ID | Sem | Final: kat/fc/quiz/fill | Vježbe | Napomene |
@@ -99,7 +111,52 @@ ponavlja: EN `marketing` ima **2 stručne greške** koje je prijevod preuzeo (uv
 dobit 0) · **vježbi za lekciju `final` nema ni u jednom paku** · sučelje vježbi je na engleskom i u HR predmetima ·
 Makro predavanja 10–11 bez izvora, grafovi samo riječima (SVG?).
 
-**S6 (examPractice iz ispitnih pitanja)**: usput, po dostupnosti Word materijala. **S7 (MUT/MOR)**: čeka U2.5 (ADR-022).
+**S6 (examPractice iz ispitnih pitanja)**: usput, po dostupnosti Word materijala. **S7 (MUT/MOR)**: MOR otvoren 2026-11-15 (odjeljak niže) — kopijama, ne kroz U2.5.
+
+## HR program „Menadžment održivog razvoja" (MOR) — od 2026-11-15, grana `feat/mor`
+
+> **Povod:** kolegica s tog smjera (2. god) dala je pristup svom Merlinu; prioritet su joj bili Ekonomika okoliša i
+> Menadžment kvalitete. **Izvor istine o kurikulumu:** službeni „Popis predmeta i nositelja 2026./2027." za MOR
+> (fthm.uniri.hr), uspoređen s PETU/MUH popisom po kolegiju **i nositelju**. MOR je 4-godišnji; jezici su izvan opsega.
+> **Odluka (Leon, anketa 14.11.):** zajednički kolegiji = **KOPIJE `<id>-mor`** (vlastiti id + storageKey, ISTE
+> `data/<muh-id>/*.js`; `data/json/<id>-mor/` iz `export:json`). Placement (ADR-022) svjesno odbačen jer bi preimenovao
+> 9 živih id-eva. ⚠️ **Izmjena MUH gradiva → ponovi `npm run export:json`** (inače drift-gate). Jezik sučelja nosi
+> `lang` programa (`SokratCatalog.uiLangOf`, brana `tests/unit/program-lang.test.js`).
+> **Kalup gradnje:** Opus graditelj po predmetu (brief u `_materials/mor/BRIEF-GRADITELJ.md`, gitignored) →
+> `content-review` → ispravke. Brojke = **final** (ili jedina lekcija) kat / fc / quiz / fill.
+
+| Predmet | ID | God/sem | Brojke | Izvor i napomene |
+|---|---|---|---|---|
+| 8 kolegija 1. god (Mikro, Matematika, Statistika, Poslovna informatika, Osnove izrade pisanog djela, Makro, Menadžment, Promet) + Računovodstvo | `<muh-id>` → `*-mor` | 1/1–2, 2/1 | = MUH | **kopije** (isti kolegij i nositelj) |
+| Prirodne osnove geoprostora | `natural-geospace-mor` | 1/1 | 22 / 496 / 449 / 169 | 11 predavanja (slikovna) + udžbenik (obavezna literatura, nosi dubinu). Kategorija **„Zaštićena područja RH (priprema za slijepu kartu)"** — interaktivna slijepa karta NIJE napravljena (platforma). Ispravljene greške slajdova (gips, galenit, serir) |
+| Turizam i turistički sustav | `tourism-system-mor` | 1/2 | 18 / 584 / 477 / 159 | Merlin 2025/26: 6 cjelina = K1, 6 oblika turizma = K2 (gusti tekst, potpun) |
+| Računovodstvo | `accounting-mor` | 2/1 | = MUH | kopija `accounting-hr` (kolegij „za sve smjerove") |
+| Ekonomika okoliša | `environmental-economics-mor` | 2/1 | 12 / 225 / 226 / 55 | **samo 1. kolokvij** — izvor: studentska skripta (sažetak ispitne knjige, koju NEMAMO) + predavanja 0–4a. ⏳ **K2 + završni: kad profesor objavi gradivo** |
+| Menadžment kvalitete | `quality-management-mor` | 2/1 | 16 / 313 / 265 / 83 | K1 iz tjednih predavanja 1–6 + studentska zbirka ispitnih pitanja K1/K2. ⏳ **K2 predavanja nisu objavljena** → rizici iz e-materijala, ostalo (audit, troškovi, alati, usluge, standardi i oznake kvalitete, IQM) stručna dopuna, označena u learnu → **dograditi kad izađu** |
+| Urbana ekonomija | `urban-economics-mor` | 2/1 | 22 / 416 / 329 / 143 | K1 predavanja + udžbenik; K2 iz udžbenika + kraće označene dopune. ⏳ K2 predavanja (17.11.–22.12.) i literatura Šimunović / Lamza-Maronić **nemamo** → provjeriti K2 kad stignu |
+| Održivi marketing · Održivi razvoj · Održivi razvoj turizma · Menadžment znanja | — | 2/2 | — | ⏳ ljetni semestar — gradivo od veljače 2027. |
+
+⚠️ **Poznat dug (svi predmeti, i stari):** točan odgovor u kvizu je često najdulja opcija → [BUG-054](../records/BUGS.md).
+Odluka o kopijama i jeziku programa: [ADR-041](../records/DECISIONS.md). **Na produkciji od 2026-11-15** (`d8930c0`;
+svih 14 predmeta i u bazi, `migrate-content.js`).
+
+## Pravni fakultet Rijeka (PFRI) — Integrirani studij prava — od 2026-11-16, grana `feat/pravri`
+
+> **Prvi fakultet izvan FMTU-a.** Izvor: bilješke, skripte i ispitna pitanja studenata 2011.–2022. (tekst izvađen uz
+> original, `_materials/pravri/`, gitignored) + službeni izvedbeni planovi 2025./26. za opseg i granicu međuispita.
+> Lekcije: **Međuispit · Gradivo završnog ispita · Cijelo gradivo** (model 50 + 50). Odluka: [ADR-042](../records/DECISIONS.md).
+> **Letvica:** `qa.js` → strukturna recenzija → činjenična recenzija (Opus) → ispravci → ponovna provjera SPREMNO.
+> Promijenjeno pravo provjereno na zakon.hr / NN i označeno „Napomena o izmjeni". Brojke = **final** kat / fc / quiz / fill.
+
+| Predmet | ID | God/sem | Brojke | Napomene |
+|---|---|---|---|---|
+| Teorija prava i države | `theory-law-state-pfri` | 1/1 | 27 / 401 / 435 / 188 | „Društvene grupe" i ustroj RH dopunjeni (izvori šute); abrogacija, skrbništvo, ostava po ZOO-u ispravljeni |
+| Povijest prava i države | `legal-history-pfri` | 1/1 | 48 / 449 / 660 / 210 | |
+| Sociologija | `sociology-pfri` | 1/1 | 19 / 330 / 353 / 173 | |
+| Rimsko privatno pravo | `roman-law-pfri` | 1/2 | 41 / 709 / 638 / 89 | dodan odjeljak o recepciji i kodifikacijama (OGZ 1853.) |
+| Ustavno pravo | `constitutional-law-pfri` | 1/2 | 24 / 341 / 355 / 177 | |
+| Politička ekonomija | `political-economy-pfri` | 1/2 | 38 / 300 / 329 / 119 | |
+| 15 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
 
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)

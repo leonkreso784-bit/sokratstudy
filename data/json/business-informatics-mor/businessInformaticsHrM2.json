@@ -1,0 +1,692 @@
+{
+  "eBusiness": {
+    "id": "2raf38",
+    "name": "E-poslovanje",
+    "icon": "fa-cart-shopping",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "8musj7",
+        "question": "Što je e-poslovanje?",
+        "answer": "Korištenje weba, interneta, intraneta ili ekstraneta u svrhu obavljanja poslovnih aktivnosti. Nadilazi jednostavnu online kupnju/prodaju te obuhvaća šire poslovne procese kao što su upravljanje lancem opskrbe, elektronička obrada narudžbi i upravljanje odnosima s kupcima (CRM).",
+        "explanation": "E-poslovanje podrazumijeva elektroničko vođenje cjelokupnog poslovanja, a ne samo prodaje."
+      },
+      {
+        "id": "s8mf08",
+        "question": "Po čemu se e-poslovanje razlikuje od e-trgovine?",
+        "answer": "E-trgovina je trgovinska aktivnost (kupnja i prodaja) koja se odvija putem elektroničkih uređaja. E-poslovanje je širi pojam — odnosi se na vođenje cjelokupnog poslovanja putem interneta (uključujući SCM, CRM, ERP i obradu narudžbi).",
+        "explanation": "E-trgovina ⊂ e-poslovanje."
+      },
+      {
+        "id": "ujitc9",
+        "question": "Koji su glavni sastavni dijelovi/područja e-poslovanja?",
+        "answer": "Ključna područja: e-nabava, online trgovine, online tržišta, online zajednice, online tvrtke.\n(Uz to: BI, CRM, ERP, SCM, suradnja i elektroničke transakcije.)",
+        "explanation": "Ona obuhvaćaju nabavu, prodaju, povezivanje i suradnju putem interneta."
+      },
+      {
+        "id": "8j8hle",
+        "question": "Što je e-nabava?",
+        "answer": "Poznata i kao „razmjena s dobavljačima\" — elektroničko nabavljanje proizvoda ili usluga (B2B, B2G, B2C) s ciljem smanjenja troškova i napora tvrtke.",
+        "explanation": "Kupovna strana e-poslovanja."
+      },
+      {
+        "id": "c47m2p",
+        "question": "Koja je razlika između internetske trgovine i internetskog tržišta?",
+        "answer": "Internetska trgovina (e-shop, web-trgovina, m-commerce) prodaje VLASTITE proizvode/usluge putem web-stranice ili aplikacije. Internetsko tržište povezuje kupce i dobavljače — operater samo prikazuje tuđu ponudu i osigurava mogućnost transakcije.",
+        "explanation": "Trgovina = vlastita roba; tržište = tuđa roba."
+      },
+      {
+        "id": "usedrk",
+        "question": "Što su internetske zajednice u e-poslovanju?",
+        "answer": "Skupine ljudi s istim interesima ili ciljevima koje koriste internet za komunikaciju, pomažući pojedincima i organizacijama u donošenju odluka o transakcijama.",
+        "explanation": "Zajednice utječu na odluke o kupnji."
+      },
+      {
+        "id": "5skop3",
+        "question": "Koji su tri sudionika tržišta u e-poslovanju?",
+        "answer": "Poduzeće (B), potrošač/građanin (C) i uprava (A). Svaki može biti kupac ili pružatelj usluge, što daje 9 mogućih kombinacija odnosa.",
+        "explanation": "B, C i A kombiniraju se u modele poput B2C, B2B itd."
+      },
+      {
+        "id": "5bdaix",
+        "question": "Koji odnosi pripadaju e-trgovini, a koji e-upravi?",
+        "answer": "B2C i B2B pripadaju e-trgovini. A2B (uprava prema poduzeću) i A2A (uprava prema upravi) pripadaju e-upravi — oboje su dio e-poslovanja.",
+        "explanation": "E-uprava je strana javne administracije u e-poslovanju."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "nzewcx",
+        "question": "E-poslovanje se najbolje opisuje kao:",
+        "options": [
+          "Isključivo kupnja i prodaja putem interneta",
+          "Korištenje weba/interneta za obavljanje cjelokupnog poslovanja",
+          "Vrsta mreže",
+          "Web-preglednik"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "85e5dy",
+        "question": "Što nadilazi e-trgovinu i uključuje SCM, CRM i obradu narudžbi?",
+        "options": [
+          "E-trgovina",
+          "E-poslovanje",
+          "E-pošta",
+          "E-nabava"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "3713sj",
+        "question": "Elektroničko nabavljanje proizvoda/usluga radi smanjenja troškova naziva se:",
+        "options": [
+          "Online trgovina",
+          "Elektronička nabava",
+          "Online zajednica",
+          "B2C"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "mvc10t",
+        "question": "Tri sudionika tržišta u e-poslovanju su:",
+        "options": [
+          "Kupac, Prodavač, Banka",
+          "Poduzeće, Potrošač, Uprava",
+          "Klijent, Poslužitelj, Usmjerivač",
+          "B2B, B2C, C2C"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "z72t8z",
+        "question": "B2C i B2B pripadaju ___, dok A2B i A2A pripadaju e-upravi:",
+        "options": [
+          "Elektronička nabava",
+          "Elektronička trgovina",
+          "E-mail",
+          "E-učenje"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "8f9kgn",
+        "sentence": "_______ je korištenje weba i interneta za vođenje cjelokupnog poslovanja, izvan okvira jednostavne kupnje i prodaje.",
+        "answer": "e-poslovanje",
+        "hint": "Širi pojam od e-trgovine."
+      },
+      {
+        "id": "rbmejh",
+        "sentence": "_______ označava elektroničku nabavu proizvoda ili usluga u svrhu smanjenja troškova.",
+        "answer": "e-nabava",
+        "hint": "Razmjena dobavljača."
+      },
+      {
+        "id": "y0l8gz",
+        "sentence": "Mrežno _______ povezuje kupce i dobavljače, prikazujući zalihe drugih sudionika.",
+        "answer": "tržište",
+        "hint": "Nije pojedinačna trgovina."
+      },
+      {
+        "id": "g3x20p",
+        "sentence": "Tri sudionika e-poslovanja su Poduzeće, Potrošač i _______.",
+        "answer": "administracija",
+        "hint": "„A\" u modelima."
+      }
+    ],
+    "learn": {
+      "id": "uqqbcr",
+      "content": "\n        <h3>E-poslovanje</h3>\n        <p><strong>E-poslovanje</strong> jest korištenje weba, interneta, intraneta i ekstraneta u\n        svrhu obavljanja poslovnih aktivnosti. Za razliku od <strong>e-trgovine</strong> (koja obuhvaća samo kupnju/prodaju putem interneta), e-poslovanje pokriva cjelokupno poslovanje: upravljanje opskrbnim lancem, obradu narudžbi, CRM i mnogo više.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>E-nabava</strong> — elektroničko nabavljanje roba/usluga radi smanjenja troškova.</li>\n          <li><strong>Online trgovina</strong> — prodaje vlastite proizvode (e-trgovina, m-trgovina).</li>\n          <li><strong>Online tržnica</strong> — povezuje kupce &amp; dobavljače (tuđe zalihe).</li>\n          <li><strong>Online zajednice</strong> — interesne skupine koje utječu na odluke o transakcijama.</li>\n          <li><strong>Online tvrtke</strong> — tvrtke koje surađuju kao virtualno poduzeće.</li>\n        </ul>\n        <h4>Sudionici tržišta</h4>\n        <p><strong>Poduzeće (B)</strong>, <strong>Potrošač (C)</strong>, <strong>Administracija (A)</strong>\n        — 9 kombinacija. B2C &amp; B2B = e-trgovina; A2B &amp; A2A = e-uprava.</p>\n      ",
+      "image": null
+    }
+  },
+  "itTrends": {
+    "id": "1dqv28",
+    "name": "IT trendovi i inovacije",
+    "icon": "fa-robot",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "r31xex",
+        "question": "Što je digitalna transformacija?",
+        "answer": "Promjena u načinu funkcioniranja organizacije — njezinih sustava, procesa, tijeka rada i kulture. Ona objedinjuje podatke iz različitih područja te koristi automatizaciju i AI/ML kako bi povezala cjelokupno korisničko iskustvo.",
+        "explanation": "„Digitalizacija ili propast\" — ona zahvaća svaku razinu organizacije."
+      },
+      {
+        "id": "ybo13u",
+        "question": "Navedite ključne digitalne tehnologije koje pokreću suvremeno poslovanje.",
+        "answer": "• Mobilna tehnologija (AR/VR)\n• Računarstvo u oblaku\n• Društvene mreže\n• Veliki podaci i analitika u stvarnom vremenu\n• Senzori i IoT (Internet of Things)\n• Umjetna inteligencija (AI)",
+        "explanation": "Te tehnologije omogućuju digitalnu transformaciju."
+      },
+      {
+        "id": "aobv2r",
+        "question": "Koja je razlika između ANI-ja i AGI-ja?",
+        "answer": "ANI (uska umjetna inteligencija) programirana je za izvršavanje jednog zadatka i dostupna je danas (npr. Siri, Google Translate). AGI (opća umjetna inteligencija) može obavljati kognitivne zadatke jednako dobro ili bolje od ljudi u širokom rasponu područja.",
+        "explanation": "Današnja umjetna inteligencija je uska (ANI); AGI je još uvijek aspirativan cilj."
+      },
+      {
+        "id": "i272wt",
+        "question": "Kako se tehnologija prepoznavanja koristi u hotelima?",
+        "answer": "Skeniranje mrežnice i otiska prsta za otključavanje hotelskih soba (bez kartice ključa koju je moguće izgubiti). U budućnosti bi biometrija lica mogla automatski odobriti plaćanja ili odjaviti goste, čime bi se smanjili redovi čekanja.",
+        "explanation": "Poboljšava iskustvo gostiju i sigurnost."
+      },
+      {
+        "id": "ezer4i",
+        "question": "Kako se roboti koriste u turizmu i putovanjima?",
+        "answer": "Za obavljanje inteligentnih zadataka — od korisničke službe do obrade podataka. Primjer: robot Amadeus 1A-TA (pokretan dubokim učenjem) djeluje kao digitalni asistent, analizirajući preferencije i preporučujući destinacije.",
+        "explanation": "Roboti nadopunjuju osoblje i personaliziraju uslugu."
+      },
+      {
+        "id": "62wpcr",
+        "question": "Što je mobilna integracija u ugostiteljstvu?",
+        "answer": "Korištenje hotelske aplikacije za rezervacije soba, rezervacije u restoranu/spa centru i sobnu uslugu; beacon tehnologija za slanje promotivnih ponuda temeljenih na lokaciji; te kombinacija s IoT-om kako bi gosti mogli upravljati uređajima u sobi putem svojeg telefona.",
+        "explanation": "Telefon postaje upravljačko središte gosta."
+      },
+      {
+        "id": "v7566l",
+        "question": "Što je Internet stvari (IoT)?",
+        "answer": "Mreža senzora i povezanih uređaja. U hotelima omogućuje gostima upravljanje uređajima u sobi te prikupljanje podataka, često u kombinaciji s mobilnim aplikacijama.",
+        "explanation": "Fizički uređaji povezani s internetom."
+      },
+      {
+        "id": "65fw45",
+        "question": "Zašto je digitalna transformacija važna („digitalizirati se ili propasti\")?",
+        "answer": "Omogućuje tvrtkama učinkovitije poslovanje, povezivanje korisničkog puta kroz podatke i održavanje konkurentnosti — utječući na svaku razinu organizacije.",
+        "explanation": "Zaostajanje u digitalnom razvoju ugrožava poslovanje."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "skdktd",
+        "question": "Digitalna transformacija mijenja:",
+        "options": [
+          "Samo njezin logotip",
+          "Sustave, procese, tijek rada i kulturu",
+          "Samo njezin hardver",
+          "Ništa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "aaw6hs",
+        "question": "Uska umjetna inteligencija namijenjena jednom zadatku (npr. Siri) naziva se:",
+        "options": [
+          "AGI",
+          "ANI",
+          "IoT",
+          "AR"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "inqw07",
+        "question": "Koja vrsta umjetne inteligencije može obavljati širok raspon kognitivnih zadataka poput čovjeka?",
+        "options": [
+          "ANI",
+          "AGI",
+          "DNS",
+          "CRM"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "llbn9y",
+        "question": "Skeniranje mrežnice i otiska prsta za otključavanje hotelskih soba primjer je:",
+        "options": [
+          "Roboti",
+          "Tehnologija prepoznavanja",
+          "Računalstvo u oblaku",
+          "FTP"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "kjjkzy",
+        "question": "Omogućavanje gostima da upravljaju uređajima u sobi putem svojeg telefona koristi:",
+        "options": [
+          "IoT",
+          "FTP",
+          "BIOS",
+          "LAN"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "uky0y2",
+        "sentence": "_______ transformacija mijenja sustave, procese, tijek rada i kulturu organizacije.",
+        "answer": "digitalna",
+        "hint": "„___ ili propast\"."
+      },
+      {
+        "id": "og7ngm",
+        "sentence": "_______ (uska UI) dizajnirana je za jedan zadatak, poput Siri ili Google Translate.",
+        "answer": "ANI",
+        "hint": "Artificial Narrow Intelligence."
+      },
+      {
+        "id": "8rbxpy",
+        "sentence": "_______ tehnologija koristi skeniranje mrežnice ili otiska prsta za otključavanje hotelskih soba.",
+        "answer": "prepoznavanje",
+        "hint": "Biometrija."
+      },
+      {
+        "id": "oiz0tb",
+        "sentence": "Internet _______ (IoT) omogućuje gostima upravljanje uređajima u sobi putem pametnog telefona.",
+        "answer": "stvari",
+        "hint": "Povezani uređaji."
+      }
+    ],
+    "learn": {
+      "id": "6dofy4",
+      "content": "\n        <h3>IT trendovi &amp; inovacije u suvremenom poslovanju</h3>\n        <p><strong>Digitalna transformacija</strong> mijenja način na koji organizacija posluje — sustave,\n        procese, tijek rada i kulturu — objedinjujući podatke te koristeći automatizaciju i AI/ML za povezivanje\n        korisničkog iskustva („digitalizirati se ili propasti\").</p>\n        <h4>Ključne digitalne tehnologije</h4>\n        <p>Mobilne tehnologije (AR/VR), računarstvo u oblaku, društvene mreže, veliki podaci &amp; analitika, senzori &amp; IoT\n        te umjetna inteligencija.</p>\n        <h4>AI: ANI vs AGI</h4>\n        <p><strong>ANI</strong> (uska umjetna inteligencija) obavlja jedan zadatak (Siri, Google Translate). <strong>AGI</strong>\n        (opća umjetna inteligencija) mogla bi se mjeriti s ljudima ili ih nadmašiti u brojnim kognitivnim zadacima.</p>\n        <h4>Trendovi u turizmu &amp; putovanjima</h4>\n        <ul>\n          <li><strong>Tehnologija prepoznavanja</strong> — mrežnica/otisak prsta za otključavanje soba; biometrija lica za plaćanje/odjavu.</li>\n          <li><strong>Roboti</strong> — korisnička podrška &amp; obrada podataka (npr. Amadeus 1A-TA digitalni asistent).</li>\n          <li><strong>Mobilna integracija + IoT</strong> — rezervacije putem aplikacije, odašiljači (beaconi) i upravljanje uređajima u sobi putem pametnog telefona.</li>\n        </ul>\n      ",
+      "image": null
+    }
+  },
+  "managementSupport": {
+    "id": "3uj41o",
+    "name": "Sustavi za potporu upravljanju",
+    "icon": "fa-chart-line",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "etvs30",
+        "question": "Koje su tri vrste odluka u organizaciji?",
+        "answer": "• Strukturirane — jasno definirani standardni postupak, mogu se automatizirati („programabilni zadaci\")\n• Polustrukturirane — imaju strukturiranu komponentu koja se može unaprijediti analitičkim modelima i IS tehnologijom\n• Nestrukturirane — jednokratne, bez standardnog postupka; oslanjaju se na intuiciju donositelja odluke (IT pruža manju potporu)",
+        "explanation": "Polustrukturirane i nestrukturirane odluke uključuju višestruke, često suprotstavljene kriterije."
+      },
+      {
+        "id": "lgrw54",
+        "question": "Što je sustav za potporu upravljanju (MSS)?",
+        "answer": "Različite vrste informacijskih sustava razvijenih radi potpore određenim aspektima i vrstama odlučivanja — svaki osmišljen s jedinstvenim ciljevima i zadacima.",
+        "explanation": "MSS = krovni pojam za sustave koji podržavaju odlučivanje."
+      },
+      {
+        "id": "1zqkug",
+        "question": "Koje su četiri faze donošenja odluka?",
+        "answer": "1. Inteligencija — skeniranje okoline, prikupljanje i obrada podataka\n2. Dizajn — definiranje kriterija i generiranje alternativa\n3. Izbor — odabir najbolje izvedive alternative\n4. Implementacija — provođenje odabira i procjena učinkovitosti",
+        "explanation": "Inteligencija → Dizajn → Izbor → Implementacija."
+      },
+      {
+        "id": "br7br1",
+        "question": "Što se događa u fazi Inteligencije?",
+        "answer": "Donositelj odluke ispituje okruženje organizacije u potrazi za uvjetima koji zahtijevaju donošenje odluka; podaci se prikupljaju iz različitih izvora i obrađuju kako bi se otkrili načini pristupa problemu.",
+        "explanation": "Pronalaženje problema."
+      },
+      {
+        "id": "ujow64",
+        "question": "Što se događa u fazi Dizajna (i podržava li je IT)?",
+        "answer": "Definiraju se kriteriji, generiraju alternative te veze između kriterija i alternativa. Informacijska tehnologija NE podržava ovu fazu.",
+        "explanation": "Kreativna faza — najmanja podrška IT-a."
+      },
+      {
+        "id": "1pyj4l",
+        "question": "Što je Sustav za podršku odlučivanju (DSS)?",
+        "answer": "Sustav koji pomaže u pregledu mogućih rješenja radi odabira najboljeg za organizaciju; uključuje alate za izračun omjera troškova i koristi te provodi naknadnu procjenu učinkovitosti odabranog rješenja.",
+        "explanation": "Podržava faze Odabira i Implementacije."
+      },
+      {
+        "id": "6k38yw",
+        "question": "Navedite primjer iz ugostiteljstva za faze donošenja odluka (Marriott).",
+        "answer": "Inteligencija: analiza povratnih informacija gostiju/tržišnih trendova (recenzije, ankete, društvene mreže). Dizajn: razvoj inicijativa (npr. „Serve 360\" održivost, digitalni ključevi). Odabir: procjena troškova/koristi/ROI (globalna strategija nasuprot strategiji po hotelu). Implementacija: uvođenje i vrednovanje.",
+        "explanation": "Svaka faza odgovara stvarnoj upravljačkoj radnji."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "q41wyf",
+        "question": "Odluka s jasno definiranim postupkom koji se može automatizirati jest:",
+        "options": [
+          "Strukturirana",
+          "Polustrukturirana",
+          "Nestrukturirana",
+          "Intuitivna"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "x8jy3x",
+        "question": "Jednokratna odluka bez standardnog postupka, koja se oslanja na intuiciju, jest:",
+        "options": [
+          "Strukturirana",
+          "Polustrukturirana",
+          "Nestrukturirano",
+          "Programabilno"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "3c7khq",
+        "question": "Četiri faze donošenja odluka su Inteligencija, Dizajn, Izbor i:",
+        "options": [
+          "Implementacija",
+          "Evaluacija",
+          "Kodiranje",
+          "Pohrana"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "70j5h2",
+        "question": "Koji sustav pomaže menadžerima u odabiru najboljeg rješenja i izračunu omjera troškova i koristi?",
+        "options": [
+          "DSS",
+          "NIC",
+          "BIOS",
+          "LAN"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "88510i",
+        "question": "U kojoj fazi donositelj odluke skenira okolinu i prikuplja podatke?",
+        "options": [
+          "Inteligencija",
+          "Dizajn",
+          "Izbor",
+          "Implementacija"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "08isk7",
+        "sentence": "_______ odluka ima jasno definiran postupak i može se automatizirati.",
+        "answer": "strukturirana",
+        "hint": "Programabilna."
+      },
+      {
+        "id": "ut8v8q",
+        "sentence": "_______ odluka je jednokratna, bez standardnog postupka, i oslanja se na intuiciju.",
+        "answer": "nestrukturirana",
+        "hint": "Suprotnost strukturiranoj."
+      },
+      {
+        "id": "d0iery",
+        "sentence": "Sustav za _______ odlučivanje (DSS) pomaže u odabiru najboljeg rješenja primjenom alata za analizu troškova i koristi.",
+        "answer": "podrška",
+        "hint": "Srednja riječ kratice DSS."
+      },
+      {
+        "id": "31az6n",
+        "sentence": "Četiri faze odlučivanja su Inteligencija, Dizajn, _______ i Implementacija.",
+        "answer": "izbor",
+        "hint": "Odabir najboljeg rješenja."
+      }
+    ],
+    "learn": {
+      "id": "ai13j6",
+      "content": "\n        <h3>Sustavi za potporu upravljanju</h3>\n        <h4>Vrste odluka</h4>\n        <ul>\n          <li><strong>Strukturirane</strong> — jasan postupak, mogu se automatizirati.</li>\n          <li><strong>Polustrukturirane</strong> — djelomično strukturirane; koriste se analitičkim modelima.</li>\n          <li><strong>Nestrukturirane</strong> — jednokratne, bez utvrđenog postupka; oslanjaju se na intuiciju.</li>\n        </ul>\n        <h4>Četiri faze donošenja odluka</h4>\n        <p><strong>Inteligencija</strong> (prepoznavanje problema, prikupljanje podataka) → <strong>Dizajn</strong>\n        (kriteriji + alternative; IT ne podržava ovu fazu) → <strong>Izbor</strong> (odabir najboljeg;\n        <strong>DSS</strong> pomaže pri analizi troškova i koristi) → <strong>Implementacija</strong> (provedba + vrednovanje).</p>\n        <div class=\"tip-box\"><strong>DSS</strong> = Decision Support System: razvrstava rješenja i izračunava omjere troškova i koristi.</div>\n      ",
+      "image": null
+    }
+  },
+  "expertSystems": {
+    "id": "ig60wu",
+    "name": "Sustavi temeljeni na znanju i ekspertni sustavi",
+    "icon": "fa-brain",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "yls5up",
+        "question": "Što je ekspertni sustav?",
+        "answer": "Računalni sustav koji oponaša (u svim aspektima djeluje poput) sposobnosti donošenja odluka ljudskog stručnjaka (prof. Edward Feigenbaum, Stanford).",
+        "explanation": "Grana umjetne inteligencije."
+      },
+      {
+        "id": "j8bc6r",
+        "question": "Koje su dvije glavne komponente ekspertnog sustava?",
+        "answer": "• Baza znanja — činjenice prikupljene iz knjiga, časopisa, stručnih osoba i sl.\n• Mehanizam zaključivanja — izvodi zaključke iz baze znanja",
+        "explanation": "Baza znanja = što sustav zna; mehanizam zaključivanja = kako zaključuje."
+      },
+      {
+        "id": "aakxfg",
+        "question": "Što radi mehanizam zaključivanja?",
+        "answer": "Izvodi zaključke iz baze znanja — primjenjuje pohranjeno znanje kako bi donijelo odluke.",
+        "explanation": "Dio sustava zadužen za zaključivanje."
+      },
+      {
+        "id": "w4m7i0",
+        "question": "Koja je razlika između problemske domene i domene znanja?",
+        "answer": "Znanje stručnjaka specifično je za jednu problemsku domenu (medicina, financije, inženjerstvo…). Znanje o rješavanju konkretnih problema čini domenu znanja. Problemska domena uvijek je nadskup domene znanja.",
+        "explanation": "Domena znanja ⊂ problemska domena."
+      },
+      {
+        "id": "rqpmuf",
+        "question": "Koje su prednosti ekspertnih sustava?",
+        "answer": "• Povećana dostupnost\n• Smanjeni troškovi\n• Smanjena opasnost\n• Učinkovitost\n• Višestruka stručnost\n• Povećana pouzdanost",
+        "explanation": "Stručno znanje čine široko i jeftino dostupnim."
+      },
+      {
+        "id": "5ma4a3",
+        "question": "Koju tehnologiju može uključivati ekspertni sustav?",
+        "answer": "Posebne jezike za ekspertne sustave (npr. CLIPS), programe i sklopovlje namijenjeno olakšavanju njihove implementacije.",
+        "explanation": "CLIPS je klasičan jezik za ekspertne sustave."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "sdd3ye",
+        "question": "Ekspertni sustav je računalni sustav koji:",
+        "options": [
+          "Pohranjuje datoteke",
+          "Oponaša odlučivanje ljudskog stručnjaka",
+          "Povezuje mreže",
+          "Šalje elektroničku poštu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "53l2ca",
+        "question": "Dvije glavne komponente ekspertnog sustava su baza znanja i:",
+        "options": [
+          "CPU",
+          "Inferencijski mehanizam",
+          "Vatrozid",
+          "Preglednik"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jazf5u",
+        "question": "Dio koji izvodi zaključke iz baze znanja jest:",
+        "options": [
+          "Baza znanja",
+          "Mehanizam zaključivanja",
+          "Tvrdi disk",
+          "NIC"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "y0gx93",
+        "question": "Stručno znanje o rješavanju specifičnih problema naziva se:",
+        "options": [
+          "Problemska domena",
+          "Domena znanja",
+          "Podatkovna domena",
+          "Javna domena"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "4jp0iu",
+        "question": "Koja je prednost ekspertnih sustava?",
+        "options": [
+          "Povećana opasnost",
+          "Smanjeni troškovi",
+          "Pojedinačna stručnost",
+          "Niža pouzdanost"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "ddvj1h",
+        "sentence": "Ekspertni sustav oponaša sposobnosti donošenja odluka ljudskog _______.",
+        "answer": "stručnjaka",
+        "hint": "Sustav se „ponaša kao\" ta osoba."
+      },
+      {
+        "id": "9phd68",
+        "sentence": "_______ mehanizam izvodi zaključke iz baze znanja.",
+        "answer": "inferencijski",
+        "hint": "Dio sustava zadužen za zaključivanje."
+      },
+      {
+        "id": "v8fli1",
+        "sentence": "Ekspertni sustav pohranjuje činjenice u svoju _______ znanja.",
+        "answer": "bazu",
+        "hint": "Baza ____ znanja."
+      },
+      {
+        "id": "5gui4s",
+        "sentence": "Problemska domena uvijek je _______ domene znanja.",
+        "answer": "nadskup",
+        "hint": "Veći skup."
+      }
+    ],
+    "learn": {
+      "id": "tuomx0",
+      "content": "\n        <h3>Sustavi temeljeni na znanju &amp; ekspertni sustavi</h3>\n        <p><strong>Ekspertni sustav</strong> je računalni sustav koji oponaša sposobnosti donošenja odluka ljudskog stručnjaka (Edward Feigenbaum). Grana je umjetne inteligencije.</p>\n        <h4>Glavne komponente</h4>\n        <ul>\n          <li><strong>Baza znanja</strong> — činjenice iz knjiga, stručnjaka i sl.</li>\n          <li><strong>Mehanizam zaključivanja</strong> — izvodi zaključke iz baze znanja.</li>\n        </ul>\n        <h4>Domene &amp; prednosti</h4>\n        <p>Znanje stručnjaka specifično je za jednu <strong>problemsku domenu</strong> (medicina, financije…);\n        <strong>domena znanja</strong> njezin je podskup. Prednosti: povećana dostupnost,\n        smanjeni troškovi, smanjena opasnost, visoka učinkovitost, višestruka stručnost, povećana pouzdanost.</p>\n      ",
+      "image": null
+    }
+  },
+  "security": {
+    "id": "9gd4p3",
+    "name": "Sigurnost informacijskih sustava",
+    "icon": "fa-shield-halved",
+    "color": "#2563eb",
+    "flashcards": [
+      {
+        "id": "m8xec1",
+        "question": "Što je sigurnost informacijskih sustava?",
+        "answer": "Zaštita informacijskih sustava od neovlaštenog pristupa ili izmjene informacija (u pohrani, obradi ili prijenosu), te od uskraćivanja usluge ovlaštenim korisnicima — uključujući mjere za otkrivanje, dokumentiranje i suzbijanje takvih prijetnji. (NIST)",
+        "explanation": "Štiti povjerljivost, integritet i dostupnost."
+      },
+      {
+        "id": "qh1qlp",
+        "question": "Što je zlonamjerni softver?",
+        "answer": "Zlonamjerni softver (malware) — svaki program ili kod stvoren s ciljem nanošenja štete računalu, mreži ili poslužitelju. Najčešći je oblik kibernetičkog napada i obuhvaća ransomware, trojance, špijunski softver, viruse, crve, keyloggere, botove i cryptojacking.",
+        "explanation": "Krovni pojam za zlonamjerni kod."
+      },
+      {
+        "id": "nzfyyv",
+        "question": "Što je ransomware?",
+        "answer": "Zlonamjerni softver koji legitimnim korisnicima onemogućuje pristup njihovu sustavu i zahtijeva plaćanje otkupnine — često u teško sljedivoj kriptovaluti. Blokira tvrdi disk ili šifrira datoteke; žrtve mogu ostati bez pristupa čak i nakon što plate otkupninu.",
+        "explanation": "Iskorištava ranjivosti kako bi zaključao/šifrirao podatke."
+      },
+      {
+        "id": "z4xoc8",
+        "question": "Što je DoS / DDoS napad?",
+        "answer": "Napad uskraćivanjem usluge (Denial-of-Service) preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovne operacije, zbog čega korisnici ne mogu obavljati rutinske zadatke (e-pošta, web-stranice, računi). Obnova operacija zahtijeva ulaganje vremena, novca i resursa.",
+        "explanation": "Cilj je ometanje, a ne krađa podataka."
+      },
+      {
+        "id": "tx4i24",
+        "question": "Što je phishing?",
+        "answer": "Kibernetički napad koji koristi e-poštu, SMS, telefon, društvene mreže i tehnike društvenog inženjeringa kako bi namamio žrtvu na otkrivanje osjetljivih informacija poput lozinki ili brojeva računa.",
+        "explanation": "Temelji se na obmanjivanju čovjeka, a ne stroja."
+      },
+      {
+        "id": "6sestv",
+        "question": "Kako se organizacija može zaštititi od kibernetičkih napada?",
+        "answer": "• Educirati osoblje\n• Održavati softver i sustave ažurnima\n• Osigurati zaštitu krajnjih točaka\n• Instalirati vatrozid\n• Izraditi sigurnosne kopije podataka\n• Kontrolirati pristup sustavima\n• Osigurati Wi-Fi",
+        "explanation": "Višeslojna obrana: ljudi + tehnologija + proces."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "9hiv8p",
+        "question": "Sigurnost informacijskih sustava štiti od neovlaštenog pristupa, izmjene i:",
+        "options": [
+          "Marketing",
+          "Uskraćivanje usluge ovlaštenim korisnicima",
+          "Unos podataka",
+          "Ažuriranja softvera"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "8xo8j8",
+        "question": "Zlonamjerni softver koji zaključava/šifrira datoteke i zahtijeva plaćanje jest:",
+        "options": [
+          "Phishing",
+          "Ransomware",
+          "DoS",
+          "Vatrozid"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "zs1jzm",
+        "question": "Napad koji preplavljuje mrežu lažnim zahtjevima kako bi poremetio rad jest:",
+        "options": [
+          "Phishing",
+          "DoS / DDoS",
+          "Ransomware",
+          "Trojan"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ri8fqe",
+        "question": "Obmanjivanje žrtve lažnom e-poštom/SMS-om radi krađe lozinki naziva se:",
+        "options": [
+          "Phishing",
+          "Malware",
+          "DoS",
+          "Enkripcija"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "hbj64n",
+        "question": "Koja je najčešća vrsta kibernetičkog napada (krovni pojam)?",
+        "options": [
+          "Malware",
+          "Vatrozid (Firewall)",
+          "Sigurnosna kopija (Backup)",
+          "VPN"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "sh0i0b",
+        "sentence": "_______ je zlonamjerni softver koji blokira pristup ili šifrira datoteke te zahtijeva otkupninu.",
+        "answer": "ransomware",
+        "hint": "Platite kako biste povratili pristup."
+      },
+      {
+        "id": "c6tcem",
+        "sentence": "Napad _______ preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovanje.",
+        "answer": "DoS",
+        "hint": "Uskraćivanje usluge (Denial of Service)."
+      },
+      {
+        "id": "b55i4n",
+        "sentence": "_______ koristi lažne e-poruke ili SMS poruke i društveni inženjering za krađu lozinki.",
+        "answer": "phishing",
+        "hint": "Obmanjuje čovjeka."
+      },
+      {
+        "id": "b6wz3g",
+        "sentence": "_______ je krovni pojam za svaki zlonamjerni softver (virusi, crvi, trojanci…).",
+        "answer": "malware",
+        "hint": "Zlonamjerni softver."
+      }
+    ],
+    "learn": {
+      "id": "yc4d3j",
+      "content": "\n        <h3>Sigurnost informacijskih sustava</h3>\n        <p><strong>Sigurnost informacijskih sustava</strong> podrazumijeva zaštitu informacijskih sustava od neovlaštenog pristupa ili izmjene (u pohrani, obradi ili prijenosu) te od uskraćivanja usluge ovlaštenim korisnicima — uključujući otkrivanje, dokumentiranje i suzbijanje prijetnji (NIST).</p>\n        <h4>Najčešći kibernetički napadi</h4>\n        <ul>\n          <li><strong>Malware</strong> — svaki zlonamjerni kôd (najčešći oblik); obuhvaća i ostale vrste navedene u nastavku.</li>\n          <li><strong>Ransomware</strong> — zaključava/šifrira podatke i zahtijeva otkupninu (u kriptovaluti).</li>\n          <li><strong>DoS / DDoS</strong> — preplavljuje mrežu lažnim zahtjevima kako bi poremetio poslovanje.</li>\n          <li><strong>Phishing</strong> — lažna e-pošta/SMS + društveni inženjering u svrhu krađe vjerodajnica.</li>\n        </ul>\n        <div class=\"warning-box\"><strong>Zaštita:</strong> educiranje osoblja, ažuriranje softvera, zaštita krajnjih točaka, vatrozid, sigurnosne kopije, kontrola pristupa, sigurna Wi-Fi mreža.</div>\n      ",
+      "image": null
+    }
+  }
+}

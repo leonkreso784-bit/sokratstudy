@@ -1,0 +1,1167 @@
+{
+  "railTransportProduct": {
+    "id": "rul7nx",
+    "name": "Željeznički promet kao turistički proizvod",
+    "icon": "fa-train-subway",
+    "color": "#0891b2",
+    "flashcards": [
+      {
+        "question": "Na koje se načine željeznica primjenjuje U TURIZMU?",
+        "answer": "Povezivanje čvorišta (zračnih/morskih luka) s odredištem, brzi i metro promet, međugradski promet, turistički vlakovi te panoramske i planinske željeznice.",
+        "explanation": "Opis svakog → sekcija Uči."
+      },
+      {
+        "question": "Što su TURISTIČKI VLAKOVI?",
+        "answer": "Vlakovi s posebnim vagonima — ugostiteljskim, noćnim (spavaćim) i za prijevoz putničkih automobila; povezuju udaljena mjesta uz snažnu sezonalnost.",
+        "explanation": "Mogu biti povremeni ili u linijskom sustavu."
+      },
+      {
+        "question": "Što je ŽELJEZNIČKI TURIZAM i koja su dva oblika?",
+        "answer": "Samo željezničko putovanje JEST odmor — prijevoznička usluga dominira proizvodom. Oblici: povijesni/luksuzni (Venice Simplon-Orient-Express) i suvremeni panoramski.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Što je PANORAMSKI željeznički promet u destinaciji?",
+        "answer": "Kratki, zatvoreni željeznički sustavi u zaštićenoj prirodi, zabavnim parkovima i špiljama koji kombiniraju visoke ekološke standarde s turizmom.",
+        "explanation": "Razlikuje se od javne željeznice svrhom i opsegom."
+      },
+      {
+        "question": "Što su željezničke EKSKURZIJE?",
+        "answer": "Atraktivna povremena putovanja: obilasci prirodnih atrakcija, kulturno-povijesnih znamenitosti i vožnje povijesnim vlakovima.",
+        "explanation": "Oblik ovisi o sadržaju ponude, vrsti vlaka i infrastrukturi."
+      },
+      {
+        "question": "Što su PLANINSKE ŽELJEZNICE i kako se vežu uz uspinjače?",
+        "answer": "Prometuju u planinskom terenu, često uskog kolosijeka zbog oštrih krivina. Na strmim nagibima koriste se zupčaste željeznice, uspinjače i žičare.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Što pokazuje EU istraživanje o zadovoljstvu željeznicom?",
+        "answer": "~67% ispitanika su povremeni putnici, ~13% česti, ~20% nikad. Glavne svrhe: slobodno vrijeme (~35%) i godišnji odmor (~23%).",
+        "explanation": "Ocjene zadovoljstva → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "0didyc",
+        "question": "Vagoni za prijevoz automobila na turističkim vlakovima vrijedni su jer:",
+        "options": [
+          "Neka vlak leti",
+          "Turistima omogućiti da zadrže vlastiti automobil na odredištu I smanje cestovni promet",
+          "Zamijeniti lokomotivu",
+          "Ukinuti potrebu za kartama"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fpl0yw",
+        "question": "U 'željezničkom turizmu' (višednevni luksuzni/panoramski vlakovi), usluga prijevoza je:",
+        "options": [
+          "Nevažan detalj",
+          "Dominantna okosnica turističkog proizvoda",
+          "Potpuno besplatna",
+          "Namijenjena isključivo teretnom prijevozu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "rs1y86",
+        "question": "Koji stil željezničkog turizma predstavlja Venice Simplon-Orient-Express?",
+        "options": [
+          "Suvremeni, usmjeren na krajolik",
+          "Povijesni/luksuzni",
+          "Prigradska podzemna željeznica",
+          "Teret"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ju2bft",
+        "question": "Funikular se najbolje opisuje kao:",
+        "options": [
+          "Zrakoplov za planine",
+          "Željezničko vozilo na žičani pogon s dva međusobno uravnotežena vagona na nagibu",
+          "Vrsta kruzera",
+          "Niskotarifna zrakoplovna kompanija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "sqxkoq",
+        "question": "Panoramski željeznički prijevoz u destinaciji razlikuje se od javnog željezničkog prijevoza po tome što je:",
+        "options": [
+          "Brži i duži",
+          "Zatvoren, kraći, sporiji, s nestandardnim vlakovima prilagođenim turističkoj potražnji",
+          "Uvijek međunarodni",
+          "Isključivo za prijevoz tereta"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "iaed9h",
+        "question": "Željezničke izlete često dodaju turističku vrijednost na sljedeće načine:",
+        "options": [
+          "Rušenje starih pruga",
+          "Valorizacija starih/zastarjelih željezničkih pruga niske brzine u svrhu razgledavanja",
+          "Zabrana povijesnih vlakova",
+          "Prijevoz isključivo putnika u lokalnom prometu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cobxh2",
+        "question": "U anketi EU-a o željezničkom prometu, najčešći razlog za NEPUTOVANJE vlakom jest:",
+        "options": [
+          "Vlakovi su prebrzi",
+          "Otežan pristup željezničkom kolodvoru",
+          "Karte su prejevtine",
+          "Previše WiFi-ja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "parycn",
+        "sentence": "Vlakovi s ugostiteljskim, vagonima za spavanje i vagonima za prijevoz automobila koji opslužuju sezonske tokove putnika su _______ vlakovi.",
+        "answer": "turistički",
+        "hint": "za odmor i rekreaciju"
+      },
+      {
+        "id": "9gpbs0",
+        "sentence": "Kada je samo željezničko putovanje odmor, govorimo o željezničkom _______.",
+        "answer": "turizmu",
+        "hint": "vožnja = proizvod"
+      },
+      {
+        "id": "6rpiz4",
+        "sentence": "Tračničko vozilo na kabelski pogon s dva međusobno uravnotežena vagona na nagibu naziva se _______.",
+        "answer": "uspinjača",
+        "hint": "nalazi se na strmim padinama"
+      },
+      {
+        "id": "adsqfj",
+        "sentence": "_______ kabinska žičara koristi kabine ovješene o kabel (bez tračnica) kako bi dosegla vidikovce.",
+        "answer": "žičana",
+        "hint": "zračna žičara"
+      },
+      {
+        "id": "l61xhs",
+        "sentence": "Planinske željeznice često koriste tračnice _______-kolosijeka kako bi omogućile oštre zavoje i niže troškove.",
+        "answer": "uskog",
+        "hint": "suprotno od širokog"
+      },
+      {
+        "id": "xqygc6",
+        "sentence": "Izletnički, zabavni i božićni vlakovi oblici su _______ željezničkog prijevoza.",
+        "answer": "povremenog",
+        "hint": "nelinijskog (izvanrednog)"
+      },
+      {
+        "id": "jdh45a",
+        "sentence": "Otprilike dvije trećine ispitanika u EU _______ su putnici željeznicom (rjeđe od jednom tjedno).",
+        "answer": "povremeni",
+        "hint": "rijetki"
+      }
+    ],
+    "learn": {
+      "id": "lwcimc",
+      "title": "Rail Transport in the Form of a Tourism Product",
+      "content": "\n                <h3>Od poveznice do atrakcije</h3>\n                <p>Kada željeznička usluga prestaje biti puka prometna poveznica i postaje samo iskustvo, željeznica se pretvara u\n                <strong>turistički proizvod</strong>. Rijetko funkcionira samostalno — cestovni prijevoz obično upotpunjuje lanac\n                od vrata do vrata.</p>\n\n                <div class=\"formula-box\">\n                    Željeznica u turizmu: veze čvorište→odredište · turistički vlakovi (prijevoz automobila) · željezničarski turizam (višednevni) ·\n                    panoramski (unutar odredišta) · izleti · planinske željeznice · uspinjača &amp; žičara\n                </div>\n\n                <h4>Proizvodi</h4>\n                <ul>\n                    <li><strong>Turistički vlakovi</strong> — uključuju vagone za ugostiteljstvo, spavanje &amp; <strong>prijevoz automobila</strong>;\n                    namijenjeni su sezonskim tokovima i smanjuju cestovni promet.</li>\n                    <li><strong>Željezničarski turizam</strong> (višednevni) — vožnja je sama po sebi odmor; <em>povijesni/luksuzni</em>\n                    (Orient-Express) nasuprot <em>modernom/slikovitom</em> (Rocky Mountaineer).</li>\n                    <li><strong>Panoramska</strong> željeznica unutar odredišta (parkovi, špilje) &amp; <strong>izleti</strong>\n                    (često uz korištenje starih pruga).</li>\n                    <li><strong>Planinske željeznice</strong> (uskog kolosijeka, strmih nagiba) → <strong>uspinjače</strong>\n                    (vagoni s protuutegom na tračnicama) &amp; <strong>žičare</strong> (kabine na čeličnom užetu) — klasične slikovite\n                    atrakcije.</li>\n                </ul>\n\n                <h4>Što misle putnici željeznicom</h4>\n                <div class=\"tip-box\">\n                    <p>~67% su povremeni putnici; zadovoljstvo je visoko pri kupnji karata (~75%) &amp; informiranju\n                    (~74%), a nisko za WiFi (~41%) &amp; rješavanje pritužbi (~38%); glavni razlog NEKORIŠTENJA vlakova je\n                    <strong>otežan pristup kolodvoru</strong> (~16%) — zbog čega ~44% putnika do kolodvora dolazi automobilom/taksijem\n                    (intermodalnost).</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Primjene u turizmu:</strong> povezivanje terminala (zračne/morske luke) s odredištem · brzi i metro promet u naseljima · međugradski promet (brzi ili konvencionalni) · turistički vlakovi · panoramske i planinske željeznice.</li>\n                    <li><strong>Željeznički turizam:</strong> povijesni/luksuzni (Orient-Express — luksuz i udobnost) i suvremeni panoramski (doživljaj krajolika).</li>\n                    <li><strong>Planinske željeznice:</strong> uski kolosijek; na strmim nagibima zupčasta željeznica, uspinjače i žičare (prijenosnici).</li>\n                </ul>\n            "
+    }
+  },
+  "airTransport": {
+    "id": "4aplbf",
+    "name": "Zračni promet",
+    "icon": "fa-plane",
+    "color": "#3b82f6",
+    "flashcards": [
+      {
+        "question": "Koje su PREDNOSTI zračnog prometa?",
+        "answer": "Dominantan u interkontinentalnim putničkim tokovima; ne traži infrastrukturu duž rute (samo zračne luke); najveća brzina i doseg.",
+        "explanation": "Rute su „zamišljeni\" koridori u zraku."
+      },
+      {
+        "question": "Koji su NEDOSTACI zračnog prometa?",
+        "answer": "Neelastičnost (ovisi o zračnim lukama), nužan drugi prijevoz do/od luke, luke su daleko od grada, visoki troškovi i osjetljivost na vremenske prilike.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Je li zračni promet isključivo ZRAKOPLOVNI?",
+        "answer": "Ne. Većina se odvija zrakoplovima, ali postoje i baloni (ekonomičniji, ali manje sigurni), zračni brodovi i helikopteri.",
+        "explanation": "Zračni promet je širi pojam od zrakoplovnog."
+      },
+      {
+        "question": "Što čini INFRASTRUKTURU zračnog prometa?",
+        "answer": "Zračna luka: uzletno-sletne staze, manevarske i parkirne površine, putnički terminali, kontrola leta te veze s ostalim prometom.",
+        "explanation": "Zračna luka je složeno multimodalno čvorište."
+      },
+      {
+        "question": "Usporedite TRADICIONALNE i NISKOTARIFNE prijevoznike.",
+        "answer": "Tradicionalni: složena mreža, državna potpora, viša razina usluge i cijena. Niskotarifni (low-cost): jednostavna mreža, sekundarne zračne luke, niska cijena uz doplate.",
+        "explanation": "Oba su linijski — objavljuju vozni red. → sekcija Uči."
+      },
+      {
+        "question": "Što je CHARTER zračni prijevoz?",
+        "answer": "Prijevoz utemeljen na visokoj popunjenosti (80–90%) na rutama velike potražnje, uz nižu kvalitetu usluge i cijenu; traži ugovor prijevoznika i organizatora putovanja.",
+        "explanation": "Vrste chartera → sekcija Uči."
+      },
+      {
+        "question": "Koji su ostali oblici zračnog prometa u turizmu?",
+        "answer": "Privatni zrakoplovi (mali udio, velika fleksibilnost), letovi malim zrakoplovima u destinaciji (panoramski) te svemirski turizam.",
+        "explanation": "Novi i rastući segmenti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "tdyniu",
+        "question": "JEDINSTVENA prednost zračnog prijevoza jest:",
+        "options": [
+          "Dostava od vrata do vrata",
+          "Velika brzina na dugim/interkontinentalnim udaljenostima",
+          "Nulta potrošnja goriva",
+          "Najveći putnički kapacitet od svih oblika prijevoza"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "hj6vx1",
+        "question": "Zračni promet zahtijeva izgradnju infrastrukture:",
+        "options": [
+          "Duž cijele rute",
+          "Samo u polazišnim/odredišnim točkama (zračne luke); rute su zamišljeni koridori",
+          "Nigdje",
+          "Samo na moru"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "eto324",
+        "question": "Niskotarifni prijevoznici NISU isto što i charter prijevoznici jer niskotarifni prijevoznici:",
+        "options": [
+          "Ne koriste zrakoplove",
+          "Posluju u sustavu REDOVNOG prometa s objavljenim redom letenja",
+          "Lete isključivo prazni",
+          "Nikada ne prodaju karte putem interneta"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "4pex06",
+        "question": "Koji tip chartera podrazumijeva ekskluzivno korištenje zrakoplova tijekom cijele sezone (najekonomičniji)?",
+        "options": [
+          "Ad hoc charter",
+          "Cjeloviti charter",
+          "Vremenski charter",
+          "Podijeljeni charter"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "jcr4c3",
+        "question": "Problem transfera do/od zračne luke znači da:",
+        "options": [
+          "Zračne luke uvijek se nalaze u središtu grada",
+          "Putovanje do/od zračne luke može trajati dulje od samog leta",
+          "Nikada nije potreban nijedan drugi oblik prijevoza",
+          "Transferi su besplatni"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2gpcj2",
+        "question": "Niskotarifni prijevoznici pomažu u stvaranju NOVIH turističkih odredišta ponajprije:",
+        "options": [
+          "Korištenjem isključivo najvećih čvorišnih zračnih luka",
+          "Odabirom sekundarnih/manjih zračnih luka i povezivanjem manjih gradova",
+          "Zabrana turistima",
+          "Letenje isključivo interkontinentalnim rutama"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "eg9fef",
+        "question": "Tko se smatra prvim svemirskim turistom (2001., ISS)?",
+        "options": [
+          "Jeff Bezos",
+          "Richard Branson",
+          "Dennis Tito",
+          "Yuri Gagarin"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "10eunc",
+        "sentence": "Zračni promet zahtijeva infrastrukturu samo na početnoj i završnoj točki, tj. u _______.",
+        "answer": "zračnim lukama",
+        "hint": "gdje avioni slijeću"
+      },
+      {
+        "id": "j8lmxr",
+        "sentence": "Budući da ovisi o fiksnim polazišnim/odredišnim točkama i zahtijeva cestovni transfer, zračni promet je _______.",
+        "answer": "neelastičan",
+        "hint": "nije fleksibilan"
+      },
+      {
+        "id": "xxzgm5",
+        "sentence": "Niskotarifni prijevoznici često lete iz jeftinijih _______ zračnih luka.",
+        "answer": "sekundaran",
+        "hint": "nije glavno čvorište"
+      },
+      {
+        "id": "glzzvy",
+        "sentence": "Charter prijevoz temelji se na visokoj _______ popunjenosti zrakoplova od 80–90%.",
+        "answer": "popunjenost",
+        "hint": "popunjena sjedala"
+      },
+      {
+        "id": "gc669n",
+        "sentence": "_______ charter rezervira zrakoplov isključivo za cijelu sezonu i ekonomski je najpovoljniji.",
+        "answer": "vremenski",
+        "hint": "prema trajanju/sezoni"
+      },
+      {
+        "id": "di84dv",
+        "sentence": "Osim zrakoplova, povijesni kruti brodovi na zraku zvani _______ nekada su prevozili putnike preko oceana.",
+        "answer": "cepelini",
+        "hint": "nazvano po njemačkom konstruktoru"
+      },
+      {
+        "id": "c1mulw",
+        "sentence": "Suborbitalna, orbitalna i lunarna putovanja pripadaju _______ turizmu.",
+        "answer": "svemirski",
+        "hint": "izvan atmosfere"
+      }
+    ],
+    "learn": {
+      "id": "98qtdm",
+      "title": "Air Transport (Connecting & Tourism Product)",
+      "content": "\n                <h3>Brzina na velikim udaljenostima</h3>\n                <p>Zračni promet dominira <strong>interkontinentalnim</strong> putničkim i turističkim tokovima. Njegova nenadmašna\n                prednost je <strong>brzina</strong> (~900 km/h) na velikim udaljenostima, pri čemu je infrastruktura potrebna samo na\n                <strong>aerodromima</strong> (rute su zamišljeni koridori).</p>\n\n                <div class=\"formula-box\">\n                    + brzina · velika udaljenost · bez infrastrukture ruta &nbsp;|&nbsp;\n                    − neelastičnost · problem transfera do aerodroma · visoka potrošnja goriva &amp; troškovi · skromni kapacitet (~500 pax)\n                </div>\n\n                <h4>Komercijalni zračni promet</h4>\n                <ul>\n                    <li><strong>Linijski (redovni):</strong> velike tradicionalne zrakoplovne kompanije nasuprot <strong>niskotarifnim prijevoznicima</strong>\n                    (LCC) — LCC smanjuju troškove bez dodatnih usluga, korištenjem sekundarnih aerodroma, brzim okretima, online prodajom i dinamičkim cijenama;\n                    LCC ≠ charter; LCC prevozi ~30% od ~9 mlrd godišnjih putnika u zračnom prometu i <strong>stvaraju nove destinacije</strong>.</li>\n                    <li><strong>Charter:</strong> visoka popunjenost (80–90%), niža kvaliteta/cijena, na temelju ugovora (zrakoplovna kompanija = prijevoz,\n                    agencija = prodaja). Vrste: cjelokupni · djelomični/podijeljeni · ad hoc · serijski · <strong>vremenski</strong> (cijela sezona, najekonomičniji).</li>\n                    <li><strong>Privatni zrakoplovi</strong>, letovi <strong>malim zrakoplovima za posebne namjene</strong> (panoramski,\n                    sportski/padobranarski) i <strong>svemirski turizam</strong> (orbitalni/suborbitalni/lunarni; prvi turist Dennis Tito,\n                    2001.; ~100× ugljični otisak u usporedbi s dalekim letom).</li>\n                </ul>\n\n                <h4>Zračni promet ≠ samo zrakoplovi</h4>\n                <div class=\"tip-box\">\n                    <p>Zrakoplovi dominiraju, no baloni (ekonomični, manje sigurni) i povijesni <strong>cepelini</strong>\n                    (transoceanskim brodovi na zrak) također su zračni prijevoznici. Aerodromi su složena, skupa multimodalna čvorišta smještena blizu velikih\n                    gradova — ali dovoljno daleko da transfer može trajati dulje od kratkog leta.</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Nedostaci:</strong> ovisnost o polazišnim/odredišnim točkama · nužan cestovni prijevoz do luke · luke zauzimaju velika područja daleko od grada (gubitak vremena) · visoki troškovi · osjetljivost na vrijeme.</li>\n                    <li><strong>Linijski prijevoznici:</strong> tradicionalni (dugotrajna dominacija, državna potpora, složena mreža, viša usluga) vs <strong>niskotarifni</strong> (jednostavna mreža, sekundarne luke, niska osnovna cijena + doplate).</li>\n                    <li><strong>Charter:</strong> popunjenost 80–90%, niža kvaliteta i cijena, ugovor prijevoznika i organizatora putovanja.</li>\n                </ul>\n            "
+    }
+  },
+  "waterTransport": {
+    "id": "clesw1",
+    "name": "Vodeni promet (pomorski i unutarnji)",
+    "icon": "fa-ship",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "question": "Kakva je uloga POMORSKOG putničkog prijevoza danas?",
+        "answer": "Nekad najvažnija grana, danas ima skroman udio u putničkim tokovima (u teretnom prometu ostaje nezamjenjiv); ograničen je na linijski i turistički promet.",
+        "explanation": "Brod: velik kapacitet, mala brzina, ovisnost o vremenu."
+      },
+      {
+        "question": "Usporedite BRZE BRODOVE i TRAJEKTE.",
+        "answer": "Brzi brodovi (katamarani, hidrogliseri): visoke brzine, manji kapacitet, više dnevnih polazaka. Trajekti: velik kapacitet, prevoze i vozila, niža brzina.",
+        "explanation": "Brzi brodovi ekonomični su samo na linijama velike potražnje."
+      },
+      {
+        "question": "Što čini INFRASTRUKTURU pomorskog prometa?",
+        "answer": "Luke sa specijaliziranim putničkim terminalima (za linijski promet i za kružna putovanja) te marine za nautički turizam.",
+        "explanation": "Terminal osigurava prihvat brodova i putnika te veze s ostalim prometom."
+      },
+      {
+        "question": "Kako je organiziran pomorski promet?",
+        "answer": "(A) linijski promet po plovidbenom redu i tarifi, (B) promet posebnih potreba (kružna putovanja i izleti — isključivo turistički), (C) promet za osobne potrebe.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Usporedite MEĐUNARODNE KRUZERE i domaća kružna putovanja.",
+        "answer": "Kruzeri: veliki brodovi s tisućama putnika (najveći ~7.600), profit kroz ekonomiju razmjera. Kružna putovanja u teritorijalnim vodama: manji brodovi, lokalne rute.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Što je NAUTIČKI TURIZAM?",
+        "answer": "Plovidba i boravak na plovilima (brodice, jahte — vlastite ili iznajmljene) radi rekreacije, sporta i odmora; turizam utemeljen na prijevoznoj komponenti.",
+        "explanation": "Marine su njegova ključna infrastruktura."
+      },
+      {
+        "question": "Što karakterizira UNUTARNJI PLOVNI promet?",
+        "answer": "Riječni, kanalski i jezerski promet. Obilježja: neelastične rute, mala brzina, velika ovisnost o vremenu i razini vode, skupo održavanje plovnosti.",
+        "explanation": "Detalj → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "8ozfp5",
+        "question": "U današnjim putničkim tokovima, pomorski promet ima:",
+        "options": [
+          "Dominantan globalni udio",
+          "Skroman udio, ograničen na linije, kružna putovanja/izlete i osobne potrebe",
+          "Nikakvu ulogu",
+          "Samo interkontinentalni redovni letovi"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "z4sir3",
+        "question": "Trajekt se od brzobrodske linije razlikuje prvenstveno po tome što:",
+        "options": [
+          "Je najbrži brod",
+          "Prevozi putnike I vozila, s vrlo kratkim boravcima u lukama radi velikog broja obrta",
+          "Ne može uploviti u luke",
+          "Ima najmanji kapacitet"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "moqqxn",
+        "question": "Međunarodni kruzerski brodovi svoju profitabilnost temelje na:",
+        "options": [
+          "Ekonomiji obujma",
+          "Državnim plaćama",
+          "Prodaji broda svake godine",
+          "Izbjegavanju svih luka"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "pjvviv",
+        "question": "„Linije od posebnog državnog interesa\" (subvencionirane pomorske linije) postoje uglavnom kako bi:",
+        "options": [
+          "Maksimizirati privatni profit",
+          "Održati život na otocima i omogućiti turizam tamo gdje bi prijevoz inače bio neisplativ",
+          "Prevoziti isključivo teret",
+          "Zamijeniti zračne luke"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ho7iq4",
+        "question": "Osnovna infrastruktura nautičkog turizma je:",
+        "options": [
+          "Zračna luka",
+          "Marina",
+          "Željeznički terminal",
+          "Autocesta"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "6hbzga",
+        "question": "U usporedbi s pomorskim krstarenjima, riječna krstarenja tipično imaju:",
+        "options": [
+          "Znatno veće brodove i uzburkane vode",
+          "Manje brodove, mirne vode i neprekidan pogled na obale",
+          "Bez putnika",
+          "Veće brzine od mlaznih zrakoplova"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "l7yhhd",
+        "question": "Brod se opisuje kao ____-sigurno prijevozno sredstvo.",
+        "options": [
+          "najmanje",
+          "drugo",
+          "treće",
+          "najopasnije"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "6vivf0",
+        "sentence": "Brod koji prevozi i putnike i vozila, s vrlo kratkim boravcima u lukama, jest _______.",
+        "answer": "trajekt",
+        "hint": "ro-ro brod"
+      },
+      {
+        "id": "h09uku",
+        "sentence": "Međunarodni brodovi za kružna putovanja ostvaruju dobit uglavnom zahvaljujući ekonomiji _______.",
+        "answer": "razmjera",
+        "hint": "uštedine troškova temeljene na veličini"
+      },
+      {
+        "id": "6o0dfi",
+        "sentence": "Ključni građevinski element putničke pomorske luke jest _______ (mol).",
+        "answer": "obala",
+        "hint": "gdje brod pristaje"
+      },
+      {
+        "id": "738rtv",
+        "sentence": "Okosnica infrastrukture nautičkog turizma jest _______.",
+        "answer": "marina",
+        "hint": "vezovi za jahte"
+      },
+      {
+        "id": "62e4xf",
+        "sentence": "Iznajmljivanje plovila sa skipperom ili bez njega oblik je _______.",
+        "answer": "chartera",
+        "hint": "najam plovila"
+      },
+      {
+        "id": "0xsoqf",
+        "sentence": "Nerentabilne, ali društveno neophodne otočne linije linije su od posebnog _______ interesa.",
+        "answer": "državnog",
+        "hint": "subvencionirano od strane države"
+      },
+      {
+        "id": "66vu7n",
+        "sentence": "Promet rijekama, kanalima i jezerima zajedno čini _______ plovidbeni promet.",
+        "answer": "unutarnji",
+        "hint": "ne more"
+      }
+    ],
+    "learn": {
+      "id": "a21hlu",
+      "title": "Water Transport — Maritime & Inland Waterway",
+      "content": "\n                <h3>Sporo, prostrano, slikovito</h3>\n                <p>Vodni promet ne zahtijeva izgrađenu trasu (samo luke), nudi ogromni kapacitet i niske troškove, ali je\n                <strong>spor</strong>. Brod je <strong>drugi najsigurniji</strong> prometni oblik (nakon željeznice). U putničkim tokovima\n                njegova je uloga skromna i uglavnom <strong>turistička</strong>.</p>\n\n                <div class=\"formula-box\">\n                    Pomorska organizacija: (A) LINIJSKA · (B) POSEBNIH POTREBA (kružna putovanja &amp; izleti = turizam) · (C) OSOBNA<br>\n                    Plovila: brzi brodovi (brzina) · trajekti (putnici + vozila, propusnost) · brodovi za kružna putovanja (razmjer)\n                </div>\n\n                <h4>Kružna putovanja &amp; nautički turizam</h4>\n                <ul>\n                    <li><strong>Međunarodna kružna putovanja</strong> — veliki brodovi (najveći ~7.600 putnika, 'Icon of the Seas'), zarada\n                    putem <strong>ekonomije razmjera</strong>; proizvod = prijevoz + ponuda na brodu + luke (Karibi &amp;\n                    Mediteran prednjače).</li>\n                    <li><strong>Kružna putovanja teritorijalnim vodama</strong> — manji brodovi, lokalna gastronomija &amp; priroda.</li>\n                    <li><strong>Nautički turizam</strong> — plovidba/boravak na brodovima &amp; jahtama; ostvaruje se putem\n                    <strong>marina</strong> (komercijalne/klubske/sportske) + <strong>charter</strong> plovila (dnevni/tjedni/lokalni/\n                    međunarodni).</li>\n                </ul>\n\n                <h4>Infrastruktura &amp; unutarnji plovni putovi</h4>\n                <div class=\"tip-box\">\n                    <p>Luke postaju specijalizirani <strong>terminali</strong> (<strong>mol/gat</strong> je ključni\n                    element); međunarodni terminali za kružna putovanja dio su proizvoda. <strong>Državno subvencionirane</strong> 'linije\n                    od posebnog interesa' održavaju otočni život &amp; turizam. <strong>Unutarnji plovni put</strong> (rijeka-jezero-kanal)\n                    promet ima malu, ali nišnu ulogu — riječna <strong>kružna putovanja</strong> (mirna voda, stalni krajolik) na\n                    Nilu, Rajni, Dunavu, Yangtzeju, Mississippiju.</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Organizacija:</strong> (A) LINIJSKI (plovidbeni red i tarifa) · (B) POSEBNE POTREBE (kružna putovanja i izleti — turistički) · (C) OSOBNE potrebe.</li>\n                    <li><strong>Terminali:</strong> za redoviti linijski promet · za kružna putovanja u teritorijalnom moru · za međunarodne kruzere · marine (nautički turizam).</li>\n                    <li><strong>Kruzeri:</strong> tisuće putnika (najveći ~7.600, „Icon of the Seas\"), do 20 paluba, ekonomija razmjera.</li>\n                </ul>\n            "
+    }
+  },
+  "valueQualityServices": {
+    "id": "klpusy",
+    "name": "Vrijednost i kvaliteta prometnih usluga",
+    "icon": "fa-gem",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što određuje VRIJEDNOST prometne usluge za turista?",
+        "answer": "Korist koju dobiva (prijevoz, udobnost, sigurnost, točnost, doživljaj) u odnosu na ono što plaća — cijenu, vrijeme i trud.",
+        "explanation": "Potražnja je izvedena pa se vrijednost mjeri i uštedom vremena."
+      },
+      {
+        "question": "Koje dimenzije određuju KVALITETU prijevozne usluge?",
+        "answer": "Sigurnost, točnost i pouzdanost, cijena (vrijednost za novac), udobnost, čistoća, informiranost i odnos osoblja.",
+        "explanation": "Potvrđeno EU istraživanjima. → sekcija Uči."
+      },
+      {
+        "question": "Kako se formira CIJENA prijevozne usluge?",
+        "answer": "Visoki fiksni troškovi + nemogućnost pohrane kapaciteta → cilj je maksimalna popunjenost; otud dinamičko određivanje cijena i niže cijene za rane rezervacije.",
+        "explanation": "Cijena prijevoza ugrađena je u cijenu turističkog proizvoda."
+      },
+      {
+        "question": "Zašto je POPUNJENOST KAPACITETA središnji problem prijevoznika?",
+        "answer": "Jer je usluga KVARLJIVA (prazno sjedalo trajno je izgubljeno), a troškovi su pretežno fiksni i u kratkom se roku gotovo ne mogu mijenjati.",
+        "explanation": "Zato je cilj cjenovne politike puni kapacitet."
+      },
+      {
+        "question": "Kako se KVALITETA mijenja za cijenu (charter vs redovni)?",
+        "answer": "Charter: niža kvaliteta (manji komfor, lošija vremena i luke) za nižu cijenu uz visoku popunjenost. Redovni: viša kvaliteta i viša cijena.",
+        "explanation": "Isto vrijedi za trajekt naspram kruzera."
+      },
+      {
+        "question": "Kakva je uloga INFORMACIJA i prava putnika?",
+        "answer": "Pravovremene informacije (vozni redovi, veze, kašnjenja u stvarnom vremenu) i jasna prava putnika (naknade, pomoć osobama smanjene pokretljivosti) bitan su dio kvalitete.",
+        "explanation": "Regulirano propisima EU-a."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "bga7md",
+        "question": "VRIJEDNOST prijevozne usluge za turista procjenjuje se ponajprije prema:",
+        "options": [
+          "Putovanju u potpunoj izolaciji",
+          "Koliko dobro služi široj turističkoj svrsi, u odnosu na cijenu/vrijeme/trud",
+          "Boji vozila",
+          "Isključivo broju osoblja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "tpbyvd",
+        "question": "Središnji ekonomski problem svakog prijevoznika jest:",
+        "options": [
+          "Smanjiti brzinu",
+          "Maksimizirati popunjenost kapaciteta na svakom polasku (usluga je kvarljiva)",
+          "Graditi više zračnih luka",
+          "Izbjegavati prodaju karata"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "2n7yem",
+        "question": "Dinamično određivanje cijena (ranije/online jeftinije) postoji ponajprije kako bi se:",
+        "options": [
+          "Zbunilo putnike",
+          "Popunilo kapacitete praćenjem odnosa ponude i potražnje",
+          "Kaznilo kupce koji kupuju online",
+          "Zamijenilo vozne redove"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "w8gvfd",
+        "question": "Charter let u usporedbi s redovnim letom tipično nudi:",
+        "options": [
+          "Višu kvalitetu po višoj cijeni",
+          "Nižu kvalitetu (udobnost/termini/zračne luke) po nižoj cijeni i uz visoku popunjenost",
+          "Jednaku kvalitetu i cijenu",
+          "Bez ijednog sjedala"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "9bw4zm",
+        "question": "Koja je DIMENZIJA KVALITETE putničkog prijevoza potvrđena istraživanjima EU-a?",
+        "options": [
+          "Točnost i pouzdanost",
+          "Veličina logotipa prijevoznika",
+          "Plaća glavnog izvršnog direktora",
+          "Starost depoa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "kg77kz",
+        "question": "U cijeni turističkog proizvoda, trošak prijevoza je:",
+        "options": [
+          "Uvijek zanemaren",
+          "Ugrađen i često velik udio koji snažno utječe na potražnju",
+          "Plaćen isključivo od strane prijevoznika",
+          "Određen od strane hotela"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "x5lymp",
+        "sentence": "Budući da je prijevoznička usluga kvarljiva, središnji cilj prijevoznika jest maksimizirati iskorištenost kapaciteta _______.",
+        "answer": "popunjenost",
+        "hint": "popunjena sjedala"
+      },
+      {
+        "id": "xb5d0e",
+        "sentence": "Naplaćivanje nižih cijena za ranije/online kupljene karte i prilagođavanje potražnji naziva se _______ određivanje cijena.",
+        "answer": "dinamično",
+        "hint": "fluktuirajuće"
+      },
+      {
+        "id": "9pf3c2",
+        "sentence": "Troškovi prijevoza ugrađeni su u konačnu _______ turističkog proizvoda.",
+        "answer": "cijenu",
+        "hint": "što turist plaća"
+      },
+      {
+        "id": "7ae681",
+        "sentence": "Točnost, udobnost, sigurnost, učestalost i informiranost _______ su dimenzije prijevozne usluge.",
+        "answer": "kvalitete",
+        "hint": "koliko je dobra"
+      },
+      {
+        "id": "9f11b1",
+        "sentence": "Charter zamjenjuje nižu kvalitetu nižom cijenom i visokom _______.",
+        "answer": "popunjenost",
+        "hint": "80–90% popunjeno"
+      },
+      {
+        "id": "f4981r",
+        "sentence": "Učinkovito organizirana _______ funkcija ključna je za popunjavanje kapaciteta prijevoznika.",
+        "answer": "prodaja",
+        "hint": "prodaja karata / marketing"
+      },
+      {
+        "id": "dkk6yp",
+        "sentence": "Naknada za kašnjenja i pomoć osobama smanjene pokretljivosti dio su putničkih _______.",
+        "answer": "prava",
+        "hint": "zakonska prava"
+      }
+    ],
+    "learn": {
+      "id": "dx50x8",
+      "title": "The Value & Quality of Transportation Services",
+      "content": "\n                <h3>Za što turist zapravo plaća</h3>\n                <p><strong>Vrijednost</strong> prijevozne usluge jest korist (udobno, sigurno i pravovremeno putovanje\n                uz određeno iskustvo) stavljena u odnos prema cijeni, vremenu i trudu — a procjenjuje se prema tome\n                koliko dobro služi široj <strong>turističkoj svrsi</strong> (izvedena potražnja). Ovo je ishod učenja 3. prema nastavnom planu.</p>\n\n                <div class=\"formula-box\">\n                    Ekonomika prijevoznika: pretežno FIKSNI troškovi + PROLAZNA usluga ⇒ cilj = maksimizirati POPUNJENOST KAPACITETA<br>\n                    Troškovi prijevoza ⇒ ugrađeni u CIJENU turističkog proizvoda ⇒ snažno utječu na potražnju\n                </div>\n\n                <h4>Dimenzije kvalitete (prema istraživanjima EU-a)</h4>\n                <ul>\n                    <li>Sigurnost &amp; osjećaj sigurnosti · točnost &amp; pouzdanost · omjer cijene i vrijednosti · udobnost &amp;\n                    čistoća · učestalost &amp; dostupnost · informacije (u stvarnom vremenu / kašnjenja) · jednostavna &amp; integrirana\n                    kupnja karata · pristupačnost &amp; rješavanje pritužbi.</li>\n                    <li>Istraživanja pokazuju da su kupnja karata &amp; informacije na vrhu ljestvice; WiFi, rješavanje pritužbi i pomoć osobama s invaliditetom zaostaju.</li>\n                </ul>\n\n                <h4>Kompromisi između cijene, popunjenosti &amp; kvalitete</h4>\n                <div class=\"tip-box\">\n                    <p>Budući da je sjedalo prolazno dobro, a troškovi su fiksni, prijevoznici opstaju ili propadaju ovisno o <strong>popunjenosti</strong> —\n                    otuda <strong>dinamično određivanje cijena</strong>, charter i niskotarifni modeli te neophodna <strong>prodajna\n                    funkcija</strong>. Kvaliteta se namjerno <strong>mijenja</strong> za cijenu &amp; svrhu: charter =\n                    niža kvaliteta / cijena / visoka popunjenost; linijski prijevoz = viša kvaliteta / cijena; trajekt = protok putnika; krstarenje = samo iskustvo. Dobre informacije &amp; <strong>prava putnika</strong> temeljne su sastavnice kvalitete.</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Dimenzije kvalitete:</strong> sigurnost i osjećaj sigurnosti · točnost i pouzdanost · cijena/tarifa · udobnost · čistoća · informiranost · odnos osoblja.</li>\n                    <li><strong>Ekonomika:</strong> visoki fiksni troškovi + kvarljiv kapacitet → dinamičke cijene, rane rezervacije, popusti izvan vršnih termina.</li>\n                </ul>\n            "
+    }
+  },
+  "safetyInTraffic": {
+    "id": "mz5ng3",
+    "name": "Sigurnost u prometu",
+    "icon": "fa-shield-halved",
+    "color": "#dc2626",
+    "flashcards": [
+      {
+        "question": "Kroz što se očituje SIGURNOST u prometu?",
+        "answer": "Kroz broj prometnih nesreća, broj poginulih i ozlijeđenih te materijalnu štetu. Obuhvaća vozila, osobe koje njima upravljaju i ostale sudionike.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Razlikujte AKTIVNU i PASIVNU sigurnost vozila.",
+        "answer": "Aktivna SPRJEČAVA nesreće (kočnice, upravljač, gume, svjetla, vidljivost). Pasivna UBLAŽAVA posljedice (pojasevi, zračni jastuci, konstrukcija).",
+        "explanation": "Primjeri → sekcija Uči."
+      },
+      {
+        "question": "Što je pristup „Sigurnog sustava\" / Vision Zero?",
+        "answer": "Paradigmatski pomak: odgovornost za sigurnost premješta se s pojedinog sudionika u prometu na one koji projektiraju i upravljaju prometnim sustavom.",
+        "explanation": "Cilj je nula poginulih u prometu."
+      },
+      {
+        "question": "Kako INFRASTRUKTURA i LJUDSKI čimbenik utječu na sigurnost?",
+        "answer": "Najviše teških nesreća događa se na nerazvrstanim cestama, najmanje na autocestama. Infrastruktura je čimbenik u ~1% teških nesreća — dominira ljudski čimbenik.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Usporedite RAZINU SIGURNOSTI po prometnim granama.",
+        "answer": "Najniža je u cestovnom (i zračnom) prometu — upravo ondje gdje je najveći putnički promet; željeznički i pomorski promet relativno su sigurni.",
+        "explanation": "Podaci EU-a → sekcija Uči."
+      },
+      {
+        "question": "Koje su značajke sigurnosti po sektorima?",
+        "answer": "Željeznica: vrlo sigurna (signalizacija i upravljanje prugom). Zrak: sigurnost kroz podsustave (navigacija, kontrola leta). Pomorstvo: relativno sigurno.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Zašto je sigurnost važna s TURISTIČKOG gledišta?",
+        "answer": "Zbog visokog udjela cestovnog prometa u turističkim tokovima turisti su izloženi riziku, a nesreće u turistički intenzivnim zemljama dosežu vrhunac u sezoni.",
+        "explanation": "Sigurnost je element konkurentnosti destinacije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "6i72nw",
+        "question": "Sigurnosni pojasevi i zračni jastuci primjeri su:",
+        "options": [
+          "Aktivne sigurnosti (sprječavanje sudara)",
+          "Pasivne sigurnosti (smanjenje štete)",
+          "Infrastruktura",
+          "Signalizacija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "nbk716",
+        "question": "Kočnice, upravljanje i gume primjeri su:",
+        "options": [
+          "Pasivne sigurnosti",
+          "Aktivne sigurnosti (smanjuju vjerojatnost nastanka nesreća)",
+          "Teretna oprema",
+          "Terminali"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "7vie84",
+        "question": "Pristup 'Sigurnog sustava' / Vision Zero pomiče odgovornost:",
+        "options": [
+          "Isključivo na individualnog vozača",
+          "S individualnog korisnika prema onima koji projektiraju i upravljaju prometnim sustavom",
+          "Isključivo na pješake",
+          "Potpuno izvan domene sigurnosti"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "b5j3ps",
+        "question": "Promatrajući prometne sektore, sigurnost je NAJNIŽA u:",
+        "options": [
+          "Željeznica",
+          "Pomorski promet",
+          "Cestovni (i zračni), koji prevozi najviše putnika",
+          "Unutarnji plovni putovi"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "z6uw85",
+        "question": "U kombinaciji s ljudskim čimbenikom, infrastruktura sudjeluje u otprilike kolikom udjelu teških nesreća?",
+        "options": [
+          "Oko 1%",
+          "Oko 35%",
+          "Oko 90%",
+          "0%"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lnlo4i",
+        "question": "S turističkog gledišta, smrtni slučajevi i ozljede u cestovnom prometu u zemljama s intenzivnim turizmom:",
+        "options": [
+          "Najniži su tijekom sezone",
+          "Dosežu vrhunac tijekom turističke sezone",
+          "Nikada se ne mijenjaju",
+          "Javljaju se samo zimi"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "kmwloz",
+        "question": "Temeljni sigurnosni okvir brodskih putničkih kompanija jest:",
+        "options": [
+          "ISM Code",
+          "TGV standard",
+          "Maglev rule",
+          "Eurovignette"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "w2u5rc",
+        "sentence": "Značajke koje SPRJEČAVAJU nesreće (kočnice, upravljač, gume) nazivaju se _______ sigurnošću.",
+        "answer": "aktivna",
+        "hint": "izbjegavanje sudara"
+      },
+      {
+        "id": "j0t3ih",
+        "sentence": "Značajke koje SMANJUJU štetu (sigurnosni pojasevi, zračni jastuci) nazivaju se _______ sigurnošću.",
+        "answer": "pasivna",
+        "hint": "zaštititi u sudaru"
+      },
+      {
+        "id": "o672jd",
+        "sentence": "Sigurnosni sustav Vision Zero prenosi odgovornost s pojedinačnog korisnika na one koji projektiraju prometni _______.",
+        "answer": "sustav",
+        "hint": "cjelina"
+      },
+      {
+        "id": "kc75ai",
+        "sentence": "Među svim sektorima, sigurnost je najniža u _______ prijevozu, koji prevozi najveći broj putnika.",
+        "answer": "cestovnom",
+        "hint": "automobili/autobusi"
+      },
+      {
+        "id": "fuzd2w",
+        "sentence": "Najčešći krivac u prometnim nesrećama je _______ (ljudski čimbenik).",
+        "answer": "vozač",
+        "hint": "osoba za upravljačem"
+      },
+      {
+        "id": "29frm1",
+        "sentence": "U zemljama s intenzivnim turizmom, smrtnost na cestama _______ tijekom turističke sezone.",
+        "answer": "dostiže vrhunac",
+        "hint": "dosegnuti maksimum"
+      },
+      {
+        "id": "yvv46y",
+        "sentence": "Sigurnost putničkog brodarstva regulirana je Kodeksom _______.",
+        "answer": "ISM",
+        "hint": "Međunarodno upravljanje sigurnošću"
+      }
+    ],
+    "learn": {
+      "id": "g2av7o",
+      "title": "Safety in Traffic",
+      "content": "\n                <h3>Odrednica kvalitete prijevoza</h3>\n                <p>Prometna sigurnost očituje se u broju <strong>nesreća, stradalih i materijalne štete</strong>\n                (~1–3% BDP-a) te obuhvaća vozila, operatere i sve sudionike u prometu. Njezino unapređenje kontinuiran je proces i\n                temeljni dio kvalitete prometnih usluga.</p>\n\n                <div class=\"formula-box\">\n                    AKTIVNA sigurnost = sprječavanje sudara (kočnice, upravljač, gume, svjetla)<br>\n                    PASIVNA sigurnost = smanjenje štete (sigurnosni pojasevi, zračni jastuci, karoserija/vrata, nasloni za glavu)\n                </div>\n\n                <h4>Tri čimbenika + Vizija nula</h4>\n                <ul>\n                    <li><strong>Vozilo</strong> (aktivna + pasivna sigurnost), <strong>infrastruktura</strong> (najlošija na nerazvrstanim\n                    cestama; čimbenik uz osobu u ~35% teških nesreća) i <strong>čovjek/vozač</strong> (najčešći\n                    krivac; mladi vozači prekomjerno zastupljeni u nesrećama uzrokovanim prekoračenjem brzine).</li>\n                    <li><strong>Vizija nula / Sigurni sustav</strong> — premještanje odgovornosti s pojedinca na\n                    projektante sustava; okviri: Valletta Declaration, EU Road Safety Policy 2021–2030; cilj EU-a: prepoloviti broj\n                    smrtnih slučajeva na cestama.</li>\n                </ul>\n\n                <h4>Sigurnost po sektorima &amp; u turizmu</h4>\n                <div class=\"tip-box\">\n                    <p>Sigurnost je <strong>najniža u cestovnom</strong> (i zračnom) prometu — najprometnijim granama; željeznica &amp; pomorstvo relativno su sigurni (željeznica ~1,8 smrtnih slučajeva/milijun u 2022.; cesta ~46/milijun u 2022.). Zračni promet oslanja se na sigurnost podsustava + zaštitu (biometrija, pregled putnika); pomorski na <strong>ISM Kodeks</strong>. S turističkog stajališta, visok udio cestovnog prometa izlaže turiste riziku, a smrtni slučajevi <strong>dosežu maksimum u turističkoj\n                    sezoni</strong> — čemu se suprotstavlja prometno-informacijskim i sustavima nadzora vozila.</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Aktivna sigurnost:</strong> kočnice, upravljač, gume, svjetla i signalizacija, vidljivost, konstrukcija sjedala, klimatizacija. <strong>Pasivna:</strong> pojasevi, zračni jastuci, deformacijske zone, nasloni za glavu.</li>\n                    <li><strong>Vision Zero:</strong> sustav se projektira tako da ljudska pogreška ne završi smrću; odgovornost je na projektantima i upraviteljima sustava.</li>\n                    <li><strong>Po granama:</strong> cestovni = najniža sigurnost (najveći promet) · željeznički i pomorski = relativno sigurni · zračni = sigurnost kroz podsustave.</li>\n                </ul>\n            "
+    }
+  },
+  "ecologicalAspects": {
+    "id": "38xtq9",
+    "name": "Ekološki aspekti prometa",
+    "icon": "fa-leaf",
+    "color": "#16a34a",
+    "flashcards": [
+      {
+        "question": "Koliki je ekološki otisak prometa u EU-u?",
+        "answer": "Promet uzrokuje oko ČETVRTINU (~25%) ukupnih emisija CO2 u EU-u; od emisija u prometu ~71,7% otpada na cestovni promet (2019.).",
+        "explanation": "Promet je jedini veliki sektor u kojem emisije rastu."
+      },
+      {
+        "question": "Tko su najveći onečišćivači unutar cestovnog prometa?",
+        "answer": "OSOBNI AUTOMOBILI — odgovorni za ~61% emisija CO2 iz cestovnog prometa EU-a; cestovni promet ukupno čini otprilike petinu svih emisija EU-a.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Koje negativne vanjske učinke uzrokuje promet?",
+        "answer": "Emisije stakleničkih plinova i onečišćenje zraka, buka, onečišćenje vode (mikroplastika s guma), gubitak bioraznolikosti i zauzimanje prostora.",
+        "explanation": "To su tzv. eksterni (vanjski) troškovi prometa."
+      },
+      {
+        "question": "Kako se načini prijevoza uspoređuju ekološki?",
+        "answer": "Željeznica je ekološki najprihvatljiviji motorizirani prijevoz (brza željeznica ~9× učinkovitija od zrakoplova); zrakoplov i osobni automobil su najlošiji.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Jesu li ELEKTRIČNI automobili zaista čišći?",
+        "answer": "Proizvodnja i zbrinjavanje električnog vozila manje su ekološki od vozila s motorom, ali tijekom uporabe emitira znatno manje — ukupno je čišći.",
+        "explanation": "Dva puta smanjenja CO2: veća učinkovitost ili promjena goriva."
+      },
+      {
+        "question": "Koje mjere EU-a ciljaju smanjenje emisija u prometu?",
+        "answer": "Standardi CO2 za nova vozila → NULA CO2 za nove osobne automobile do 2035. (prijelazno −55% do 2030.), tj. de facto zabrana novih benzinaca i dizelaša.",
+        "explanation": "Popis mjera → sekcija Uči."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "lzsz39",
+        "question": "Za koliki udio ukupnih emisija stakleničkih plinova EU-a odgovara promet?",
+        "options": [
+          "Oko 5%",
+          "Oko četvrtine (~25%)",
+          "Oko polovice",
+          "Oko 90%"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "sc0xj0",
+        "question": "Unutar cestovnog prometa EU-a, najveći izvor CO2 je:",
+        "options": [
+          "Autobusi",
+          "Osobni automobili (~61%)",
+          "Motocikli",
+          "Bicikli"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "uvszom",
+        "question": "Promet je poseban u klimatskim podacima EU-a jer je jedini veliki sektor u kojemu su emisije:",
+        "options": [
+          "Pale na nulu",
+          "Porasle tijekom posljednja tri desetljeća",
+          "Ostale potpuno nepromijenjene",
+          "Nikada nisu bile mjerene"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "iogzgj",
+        "question": "S ekološkog stajališta, ekološki najprihvatljiviji motorizirani oblik prijevoza općenito je:",
+        "options": [
+          "Zračni promet",
+          "Cestovni promet (automobili)",
+          "Željeznica (električna, učinkovita)",
+          "Nijedan od njih"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "l5erzk",
+        "question": "Koristeći prosječni europski energetski miks, električni automobili su:",
+        "options": [
+          "Uvijek zagađuju više od benzinskih automobila",
+          "Već čišći od benzinskih automobila (i sve bolji kako raste udio obnovljivih izvora)",
+          "Jednaki benzinskim automobilima",
+          "Pogonjeni isključivo ugljenom"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "na15mv",
+        "question": "Od 2035. godine, EU standardi za emisije CO2 zahtijevaju da novi automobili budu:",
+        "options": [
+          "−10% čišći",
+          "Bez emisija CO2 (de facto zabrana prodaje novih benzinskih/dizelskih vozila)",
+          "Samo dizelski",
+          "Neregulirani"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "8q2fuq",
+        "sentence": "Promet uzrokuje otprilike _______ ukupnih emisija stakleničkih plinova EU-a.",
+        "answer": "četvrtina",
+        "hint": "~25%"
+      },
+      {
+        "id": "mqjdos",
+        "sentence": "Unutar cestovnog prometa EU-a, putnički _______ čine oko 61% emisija CO2.",
+        "answer": "automobili",
+        "hint": "privatna vozila"
+      },
+      {
+        "id": "rnu0gp",
+        "sentence": "Promet je jedini veliki sektor u kojemu su emisije _______ tijekom protekla tri desetljeća.",
+        "answer": "porasle",
+        "hint": "porasle"
+      },
+      {
+        "id": "dgxox0",
+        "sentence": "Najodrživiji motorizirani oblik prijevoza, s električnim pogonom i malim zauzimanjem zemljišta, je _______.",
+        "answer": "željeznica",
+        "hint": "vlakovi"
+      },
+      {
+        "id": "vs0v86",
+        "sentence": "Načelo prema kojemu korisnici prometa snose svoje okolišne troškove jest načelo _______-plaća.",
+        "answer": "onečišćivač",
+        "hint": "koji uzrokuje onečišćenje"
+      },
+      {
+        "id": "xiv140",
+        "sentence": "Od 2035. EU zahtijeva da novi automobili budu _______-CO2.",
+        "answer": "nula",
+        "hint": "nijedno"
+      },
+      {
+        "id": "ttg6ru",
+        "sentence": "Trošenje guma stvara _______ koji onečišćuju vode i mogu ući u prehrambeni lanac.",
+        "answer": "mikroplastika",
+        "hint": "sitne plastične čestice"
+      }
+    ],
+    "learn": {
+      "id": "j68dq1",
+      "title": "Ecological Aspects of Transport",
+      "content": "\n                <h3>Ekološki problem prometa</h3>\n                <p>Promet uzrokuje oko <strong>četvrtine emisija stakleničkih plinova u EU-u</strong>, od čega ~71,7% potječe od\n                <strong>cestovnog</strong> prometa. Ključno je da je to <strong>jedini veliki sektor u kojemu su emisije porasle</strong>\n                tijekom tri desetljeća — što ga čini najtežim dijelom klimatske politike EU-a.</p>\n\n                <div class=\"formula-box\">\n                    Promet ≈ 25% stakleničkih plinova EU-a · cestovni promet ≈ 71,7% emisija prometa · osobni automobili ≈ 61% CO2 cestovnog prometa<br>\n                    Najzeleniji motorizirani oblik prijevoza = ŽELJEZNICA · najprljaviji po putniku = osobni automobil &amp; zrakoplov\n                </div>\n\n                <h4>Vanjski učinci &amp; hijerarhija prometnih modova</h4>\n                <ul>\n                    <li><strong>Vanjski učinci:</strong> CO2 &amp; onečišćenje zraka, buka, onečišćenje vode (mikroplastika od guma), gubitak staništa, zagušenje prometa — koje snosi društvo ('vanjski troškovi').</li>\n                    <li><strong>Usporedba prometnih modova:</strong> željeznica (električna, učinkovita) je najzelenija; potrebno je poticati <strong>prelaskom na druge prometne modove</strong> s cestovnog/zračnog na željezničke, javni prijevoz, biciklizam &amp; hodanje.</li>\n                    <li><strong>Električni automobili:</strong> prljaviji u proizvodnji/zbrinjavanju, ali uz energetski miks EU-a već čišći od benzinskih — i sve bolji kako raste udio obnovljivih izvora energije (treba razmatrati cijeli životni ciklus).</li>\n                </ul>\n\n                <h4>Što EU poduzima</h4>\n                <div class=\"tip-box\">\n                    <p>Novi automobili bez emisija CO2 do <strong>2035.</strong> (−55% do 2030.; de facto zabrana benzinskih/dizelskih vozila); Sustav trgovanja emisijama proširen na <strong>cestovni i pomorski</strong> promet &amp; revidiran za zračni promet; više obnovljivih goriva; ukidanje poreznih olakšica za fosilna goriva; internalizacija prema načelu <strong>'onečišćivač plaća' / 'korisnik plaća'</strong>. Sve to doprinosi cilju Zelenog plana od <strong>−90% emisija prometa do 2050.</strong> (vidi 'Budućnost prometa').</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Brojke:</strong> promet ≈ 25% emisija EU-a; cestovni ≈ 71,7% emisija prometa; osobni automobili ≈ 61% emisija cestovnog prometa.</li>\n                    <li><strong>Vanjski učinci:</strong> CO2 i onečišćenje zraka · buka · onečišćenje vode (mikroplastika s guma) · gubitak bioraznolikosti · zauzimanje prostora.</li>\n                    <li><strong>Mjere EU-a:</strong> standardi CO2 za nova vozila (nula do 2035., −55% do 2030.) · poticanje željeznice i multimodalnosti · alternativna goriva i infrastruktura punjenja.</li>\n                </ul>\n            "
+    }
+  },
+  "futureOfTransport": {
+    "id": "ofa2dk",
+    "name": "Budućnost prometa",
+    "icon": "fa-rocket",
+    "color": "#7c3aed",
+    "flashcards": [
+      {
+        "question": "Što je EU-ova „Strategija za održivu i pametnu mobilnost\"?",
+        "answer": "Plan Europske komisije (2020.) da europski promet postane održiv, pametan i otporan; identificira 10 ključnih područja djelovanja.",
+        "explanation": "Cilj Zelenog plana: −90% emisija prometa do 2050."
+      },
+      {
+        "question": "Koja su TRI STUPA buduće strategije?",
+        "answer": "(1) sve prometne grane održivije (vozila s nultim emisijama, obnovljiva goriva), (2) održive alternative dostupne u multimodalnom sustavu, (3) poticaji i infrastruktura za tranziciju.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Koje su ključne PREKRETNICE strategije?",
+        "answer": "Do 2030.: ≥30 mil. vozila s nultim emisijama, 100 klimatski neutralnih gradova, udvostručen promet vlakovima velikih brzina. Do 2050.: −90% emisija.",
+        "explanation": "Puni popis → sekcija Uči."
+      },
+      {
+        "question": "Što znači „PAMETNA\" mobilnost?",
+        "answer": "Povezanost pokretana digitalizacijom i automatizacijom: povezana i automatizirana vozila (CCAM), integrirane multimodalne karte te digitalne usluge i podaci.",
+        "explanation": "Detalj → sekcija Uči."
+      },
+      {
+        "question": "Što su MULTIMODALNOST i „Mobilnost kao usluga\" (MaaS)?",
+        "answer": "Multimodalnost kombinira prednosti različitih načina prijevoza u jedno putovanje. MaaS integrira više usluga u jednu digitalnu uslugu dostupnu na zahtjev.",
+        "explanation": "Jedinstvena karta ključan je element."
+      },
+      {
+        "question": "Koji primjer pokazuje da infrastruktura PREUSMJERAVA potražnju?",
+        "answer": "Nakon otvaranja brze pruge Barcelona–Madrid modalni udio promijenio se s ~85% avion / 15% vlak (2008.) na ~38% avion / 62% željeznica (2016.).",
+        "explanation": "Bolja infrastruktura mijenja izbor prijevoza."
+      },
+      {
+        "question": "Što znači „OTPORNA\" mobilnost i zašto ju je COVID-19 istaknuo?",
+        "answer": "Prometni sustav koji nastavlja funkcionirati u krizama (pandemije, energetski šokovi). COVID-19 uzrokovao je strmi pad putovanja i pokazao ranjivost sustava.",
+        "explanation": "Otpornost je treći stup uz održivost i pamet."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "02mkoi",
+        "question": "Glavni cilj Strategije EU-a za održivu i pametnu mobilnost jest:",
+        "options": [
+          "Povećanje emisija za 10%",
+          "Smanjenje emisija u prometu za 90% do 2050. godine",
+          "Zabrana svih oblika prijevoza",
+          "Udvostručenje cestovnog prometa"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "nkkxak",
+        "question": "Koji je jedan od TRI stupa strategije?",
+        "options": [
+          "Učiniti sve vrste prijevoza održivijima (čista vozila i goriva)",
+          "Povećanje subvencija za fosilna goriva",
+          "Uklanjanje svih željezničkih pruga",
+          "Zabrana multimodalnosti"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "pw49mh",
+        "question": "Jedan od ključnih ciljeva strategije za 2030. godinu jest:",
+        "options": [
+          "Udvostručenje prometa željeznicom velikih brzina",
+          "Uklanjanje svih vlakova",
+          "Uvođenje obveznog korištenja automobila",
+          "Zatvaranje zračnih luka"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "zr92l7",
+        "question": "'Mobilnost kao usluga' (MaaS) najbolje se opisuje kao:",
+        "options": [
+          "Posjedovanje više privatnih automobila",
+          "Integriranje mnogih prijevoznih usluga u jednu ponudu na zahtjev, digitalno dostupnu (idealno s jednom kartom)",
+          "Vrsta putničkog broda (kruzera)",
+          "Subvencija za fosilna goriva"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "yljsf7",
+        "question": "Nakon otvaranja brze željezničke pruge Barcelona–Madrid, omjer putovanja zrakom i željeznicom pomaknuo se prema:",
+        "options": [
+          "Više letenja (85% zrakoplovom)",
+          "Više željeznicom (62% željeznicom do 2016. godine)",
+          "Bez promjene",
+          "Isključivo autobusima"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "trhrit",
+        "question": "'Otporna' mobilnost podrazumijeva prometni sustav koji:",
+        "options": [
+          "Urušava se u svakoj krizi",
+          "Nastavlja funkcionirati u kriznim situacijama (pandemije, poremećaji)",
+          "Funkcionira samo ljeti",
+          "Nema digitalnih alata"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "awxs0i",
+        "question": "Pametna mobilnost oslanja se na alate kao što su:",
+        "options": [
+          "ERTMS (željeznica), Jedinstveno europsko nebo (zračni promet), umjetna inteligencija, 5G i dronovi",
+          "Samo papirni vozni redovi",
+          "Zabrana razmjene podataka",
+          "Uklanjanje automatizacije"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "7mtjxm",
+        "sentence": "Strategija EU-a predviđa smanjenje emisija u prometu za _______ % do 2050. godine.",
+        "answer": "90",
+        "hint": "devet-nula"
+      },
+      {
+        "id": "0eme7x",
+        "sentence": "Tri su stupa: čišći oblici prijevoza, održive alternative u _______ sustavu i odgovarajući poticaji.",
+        "answer": "multimodalnom",
+        "hint": "mnogi načini kombinirani"
+      },
+      {
+        "id": "8bze91",
+        "sentence": "Do 2030. godine promet željeznicom velikih brzina trebao bi _______, a do 2050. se utrostručiti.",
+        "answer": "udvostručiti",
+        "hint": "×2"
+      },
+      {
+        "id": "98d508",
+        "sentence": "Integracija prometnih usluga u jednu digitalnu ponudu na zahtjev naziva se Mobilnost kao _______.",
+        "answer": "usluga",
+        "hint": "MaaS"
+      },
+      {
+        "id": "bm7c8v",
+        "sentence": "Obvezivanje korisnika na plaćanje svojih ekoloških troškova jest načelo _______-plaća.",
+        "answer": "onaj tko zagađuje",
+        "hint": "tko zagađuje"
+      },
+      {
+        "id": "gac9zk",
+        "sentence": "Prometni sustav koji nastavlja funkcionirati u kriznim situacijama naziva se _______.",
+        "answer": "otporan",
+        "hint": "otporan na udarce"
+      },
+      {
+        "id": "bnnqf3",
+        "sentence": "Bespilotne letjelice koje se promoviraju za buduću komercijalnu upotrebu su _______.",
+        "answer": "dronovi",
+        "hint": "lete bez pilota na brodu"
+      }
+    ],
+    "learn": {
+      "id": "vrw995",
+      "title": "The Future of Transport",
+      "content": "\n                <h3>Održivo · Pametno · Otporno</h3>\n                <p>EU <strong>Strategija za održivu i pametnu mobilnost</strong> (2020, COM(2020) 789) putokaz je za\n                europski promet, organiziran oko <strong>10 vodećih inicijativa</strong>. Glavni cilj: <strong>smanjenje emisija u prometu za 90% do 2050. godine</strong> (promet = ~5% BDP-a, ~10 mil. radnih mjesta, ali ~25% emisija).</p>\n\n                <div class=\"formula-box\">\n                    TRI STUPA: (1) čišći načini prijevoza &amp; goriva · (2) održive alternative u MULTIMODALNOM sustavu ·\n                    (3) odgovarajući POTICAJI (određivanje cijene ugljika, načelo „onaj tko zagađuje, plaća\")\n                </div>\n\n                <h4>Ključne etape</h4>\n                <ul>\n                    <li><strong>2030.:</strong> ≥30 mil. vozila s nultom emisijom · 100 klimatski neutralnih gradova · udvostručena mreža brzih željeznica ·\n                    kolektivni prijevoz &lt;500 km ugljično neutralan · automatizirana mobilnost u velikim razmjerima.</li>\n                    <li><strong>2035.:</strong> veliki zrakoplovi s nultom emisijom spremni za tržište.</li>\n                    <li><strong>2050.:</strong> gotovo sva cestovna vozila s nultom emisijom · udvostručeni željeznički teretni promet · utrostručena mreža brzih željeznica ·\n                    TEN-T dovršen.</li>\n                </ul>\n\n                <h4>Pametno &amp; otporno</h4>\n                <div class=\"tip-box\">\n                    <p><strong>Pametno:</strong> povezana/automatizirana mobilnost (CCAM), <strong>Mobilnost kao usluga</strong>\n                    (jedna integrirana karta), AI, 5G, Zajednički prostor podataka o mobilnosti, ERTMS (željeznica) &amp; Jedinstveno europsko nebo\n                    (zrak), dronovi. <strong>Otporno:</strong> sustav koji preživljava krize — COVID-19 pokazao je koliko je povezanost vitalna za promet <em>i</em> turizam. Dokaz da funkcionira: nakon otvaranja brze željezničke pruge Barcelona–Madrid, omjer zrak/željeznica promijenio se s 85/15 (2008.) na <strong>38/62 u korist željeznice</strong> (2016.); vanjski troškovi EU prometa (~€388 mlrd/god.) ono su što se određivanjem cijena nastoji internalizirati.</p>\n                </div>\n                <h4>Dopuna</h4>\n                <ul>\n                    <li><strong>Tri stupa:</strong> održivost svih grana · dostupne održive alternative u multimodalnom sustavu · poticaji i infrastruktura za tranziciju.</li>\n                    <li><strong>Prekretnice:</strong> 2030. — ≥30 mil. vozila s nultim emisijama, 100 klimatski neutralnih gradova, udvostručen VVB promet, kolektivna putovanja &lt;500 km ugljično neutralna; 2050. — −90% emisija prometa.</li>\n                    <li><strong>Primjer:</strong> brza pruga Barcelona–Madrid preokrenula modalni udio (85/15 avion/vlak → 38/62 u korist željeznice).</li>\n                </ul>\n            "
+    }
+  }
+}

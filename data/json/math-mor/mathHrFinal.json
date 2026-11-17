@@ -1,0 +1,2747 @@
+{
+  "equations": {
+    "name": "Skupovi brojeva, linearne i kvadratne jednadžbe",
+    "icon": "fa-equals",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "question": "Koji su osnovni skupovi brojeva i kako su povezani?",
+        "answer": "\\(\\mathbb{N}\\subset\\mathbb{Z}\\subset\\mathbb{Q}\\subset\\mathbb{R}\\subset\\mathbb{C}\\): prirodni, cijeli, racionalni, realni i kompleksni brojevi.",
+        "explanation": "Svako proširenje nastaje jer neka jednadžba u manjem skupu nema rješenja (npr. x + 5 = 2 nema rješenja u ℕ)."
+      },
+      {
+        "question": "Po čemu se racionalni broj razlikuje od iracionalnog?",
+        "answer": "Racionalni se može zapisati kao razlomak \\(\\frac{m}{n}\\) (decimalni zapis konačan ili periodičan). Iracionalni ima beskonačan neperiodičan zapis: \\(\\sqrt2,\\ \\pi,\\ e\\).",
+        "explanation": "Realni brojevi = racionalni ∪ iracionalni."
+      },
+      {
+        "question": "Kako se rješava linearna jednadžba s razlomcima?",
+        "answer": "Pomnoži cijelu jednadžbu zajedničkim nazivnikom, oslobodi zagrade, nepoznanice prebaci na jednu stranu, podijeli koeficijentom: \\(ax=b\\Rightarrow x=\\frac{b}{a}\\).",
+        "explanation": "Npr. nazivnici 14, 21 i 7 → najmanji zajednički višekratnik je 42."
+      },
+      {
+        "question": "Opći oblik kvadratne jednadžbe i formula za rješenja?",
+        "answer": "\\(ax^2+bx+c=0,\\ a\\neq0\\). Rješenja: \\(x_{1,2}=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\).",
+        "explanation": "Prije uvrštavanja zapiši a, b i c s predznacima — najčešća greška je izgubljen minus."
+      },
+      {
+        "question": "Što je diskriminanta i što govori o rješenjima?",
+        "answer": "\\(D=b^2-4ac\\). D > 0: dva realna rješenja · D = 0: jedno dvostruko · D < 0: nema realnih, rješenja su konjugirano kompleksna.",
+        "explanation": "Na demonstraturama: „Tamo gdje realno rješenje ne postoji” — rješenja tražimo u skupu ℂ."
+      },
+      {
+        "question": "Kako riješiti \\(3x^2+21x=0\\)?",
+        "answer": "Izluči zajednički faktor: \\(3x(x+7)=0\\), pa je \\(x_1=0\\), \\(x_2=-7\\).",
+        "explanation": "Nikad ne dijeli jednadžbu s x — izgubio bi rješenje x = 0."
+      },
+      {
+        "question": "Kako riješiti \\(0{,}1x^2-40=0\\)?",
+        "answer": "\\(0{,}1x^2=40\\Rightarrow x^2=400\\Rightarrow x_{1,2}=\\pm20\\).",
+        "explanation": "Kod korjenovanja uvijek dva predznaka."
+      },
+      {
+        "question": "Što je imaginarna jedinica i kako izgleda \\(\\sqrt{-16}\\)?",
+        "answer": "\\(i^2=-1\\), pa je \\(\\sqrt{-16}=\\sqrt{16}\\cdot\\sqrt{-1}=4i\\).",
+        "explanation": "Kompleksni broj ima oblik a + bi (a = realni dio, b = imaginarni dio)."
+      },
+      {
+        "question": "Riješi \\(x^2-2x+5=0\\).",
+        "answer": "\\(D=4-20=-16\\), pa je \\(x_{1,2}=\\frac{2\\pm4i}{2}=1\\pm2i\\).",
+        "explanation": "Pazi: brojnik se dijeli CIJELI — i realni dio 2 i imaginarni 4i."
+      },
+      {
+        "question": "Riješi \\(3x^2+11x-4=0\\).",
+        "answer": "\\(D=121+48=169\\), \\(x_{1,2}=\\frac{-11\\pm13}{6}\\): \\(x_1=\\frac13\\), \\(x_2=-4\\).",
+        "explanation": "a = 3, b = 11, c = −4."
+      },
+      {
+        "question": "Što kažu Vièteove formule?",
+        "answer": "\\(x_1+x_2=-\\frac{b}{a}\\), \\(x_1\\cdot x_2=\\frac{c}{a}\\).",
+        "explanation": "Brza provjera: za 3x² + 11x − 4 = 0 je 1/3 + (−4) = −11/3 i (1/3)·(−4) = −4/3. ✓"
+      },
+      {
+        "question": "Kako riješiti \\(\\frac12x^2-\\frac23x=0\\)?",
+        "answer": "Pomnoži sa 6: \\(3x^2-4x=0\\Rightarrow x(3x-4)=0\\), pa je \\(x_1=0\\), \\(x_2=\\frac43\\).",
+        "explanation": "Razlomke je lakše ukloniti odmah nego ih nositi kroz formulu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kolika je diskriminanta jednadžbe \\(x^2-2x+5=0\\)?",
+        "options": [
+          "\\(24\\)",
+          "\\(-16\\)",
+          "\\(16\\)",
+          "\\(-24\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješenja jednadžbe \\(3x^2+21x=0\\) su:",
+        "options": [
+          "\\(0\\) i \\(7\\)",
+          "samo \\(-7\\)",
+          "\\(0\\) i \\(-7\\)",
+          "\\(3\\) i \\(-7\\)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Rješenja jednadžbe \\(x^2+8x+25=0\\) su:",
+        "options": [
+          "\\(-4\\pm3i\\)",
+          "\\(4\\pm3i\\)",
+          "\\(-8\\pm6i\\)",
+          "\\(-4\\pm\\sqrt6\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koliko realnih rješenja ima jednadžba \\(9x^2-12x+4=0\\)?",
+        "options": [
+          "Dva različita",
+          "Jedno dvostruko (\\(x=\\frac23\\))",
+          "Nijedno",
+          "Beskonačno mnogo"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješenja jednadžbe \\(16x^2-8x-3=0\\) su:",
+        "options": [
+          "\\(\\frac14\\) i \\(-\\frac34\\)",
+          "\\(-\\frac14\\) i \\(\\frac34\\)",
+          "\\(\\frac12\\) i \\(\\frac32\\)",
+          "\\(-\\frac12\\) i \\(\\frac38\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Broj \\(\\sqrt2\\) pripada skupu:",
+        "options": [
+          "prirodnih brojeva",
+          "cijelih brojeva",
+          "racionalnih brojeva",
+          "iracionalnih brojeva"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Rješenje jednadžbe \\(\\frac{2x-1}{2}=1+\\frac{2+3x}{16}\\) je:",
+        "options": [
+          "\\(x=2\\)",
+          "\\(x=\\frac{26}{19}\\)",
+          "\\(x=1\\)",
+          "\\(x=-2\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako je diskriminanta kvadratne jednadžbe negativna, u skupu ℝ jednadžba:",
+        "options": [
+          "ima dva rješenja",
+          "ima jedno dvostruko rješenje",
+          "nema rješenja (rješenja su kompleksna)",
+          "ima beskonačno mnogo rješenja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Rješenja jednadžbe \\(-2x^2+10x+25=0\\) su:",
+        "options": [
+          "\\(\\frac{5\\pm5\\sqrt3}{2}\\)",
+          "\\(\\frac{-5\\pm5\\sqrt3}{2}\\)",
+          "\\(5\\pm5\\sqrt3\\)",
+          "\\(\\frac{5\\pm\\sqrt3}{2}\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Rješenje jednadžbe \\(\\frac{x-7}{14}+\\frac{2x}{21}=\\frac{2x-5}{7}\\) je:",
+        "options": [
+          "\\(x=\\frac95\\)",
+          "\\(x=-\\frac95\\)",
+          "\\(x=\\frac{51}{5}\\)",
+          "\\(x=9\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Izraz \\(b^2-4ac\\) zove se _______.",
+        "answer": "diskriminanta",
+        "hint": "Oznaka D"
+      },
+      {
+        "sentence": "Broj i za koji vrijedi i² = −1 zove se _______ jedinica.",
+        "answer": "imaginarna",
+        "hint": "Temelj kompleksnih brojeva"
+      },
+      {
+        "sentence": "Kad je D < 0, rješenja kvadratne jednadžbe su konjugirano _______ brojevi.",
+        "answer": "kompleksni",
+        "hint": "Skup ℂ"
+      },
+      {
+        "sentence": "Kad je D = 0, kvadratna jednadžba ima jedno _______ rješenje.",
+        "answer": "dvostruko",
+        "hint": "x₁ = x₂"
+      },
+      {
+        "sentence": "Racionalni brojevi imaju konačan ili _______ decimalni zapis.",
+        "answer": "periodičan",
+        "hint": "Znamenke se ponavljaju"
+      },
+      {
+        "sentence": "Rješenja jednadžbe x² = 400 su x = ±_______.",
+        "answer": "20",
+        "hint": "Korijen iz 400"
+      },
+      {
+        "sentence": "Rješenje jednadžbe 3(x − 5) + 2(x − 2) = 5x − (2x − 3) je x = _______.",
+        "answer": "11",
+        "hint": "Oslobodi zagrade: 5x − 19 = 3x + 3"
+      }
+    ],
+    "learn": {
+      "title": "Skupovi brojeva, linearne i kvadratne jednadžbe",
+      "content": "<h3>Skupovi brojeva</h3><p>Kolegij počinje ponavljanjem srednjoškolskog gradiva, ali ono se kasnije stalno vraća: svaka stacionarna točka, svaki ekstrem i svaka elastičnost na kraju se svodi na <strong>rješavanje jednadžbe</strong>. Zato se ovdje isplati biti brz i precizan.</p><div class=\"formula-box\">\\[\\mathbb{N}\\subset\\mathbb{Z}\\subset\\mathbb{Q}\\subset\\mathbb{R}\\subset\\mathbb{C}\\]</div><ul><li><strong>ℕ</strong> — prirodni brojevi 1, 2, 3, … (brojanje). Jednadžba \\(x+5=2\\) u njima nema rješenja → uvodimo <strong>ℤ</strong> (cijeli).</li><li><strong>ℤ</strong> — cijeli brojevi … −2, −1, 0, 1, 2 … Jednadžba \\(3x=2\\) nema cijelo rješenje → <strong>ℚ</strong>.</li><li><strong>ℚ</strong> — racionalni: svaki broj oblika \\(\\frac{m}{n}\\), \\(n\\neq0\\). Decimalni zapis je konačan (0,25) ili periodičan (0,333…).</li><li><strong>ℝ</strong> — realni: racionalni i <strong>iracionalni</strong> (\\(\\sqrt2\\), \\(\\pi\\), \\(e\\)) — beskonačan neperiodičan zapis.</li><li><strong>ℂ</strong> — kompleksni: \\(a+bi\\), gdje je \\(i^2=-1\\). Potrebni su kad jednadžba poput \\(x^2+1=0\\) nema realnih rješenja.</li></ul><p>U ℝ vrijede svojstva zbrajanja i množenja (komutativnost, asocijativnost, distributivnost, neutralni elementi 0 i 1, suprotni i recipročni broj) — zato kažemo da je ℝ <strong>polje</strong>. Upravo ta svojstva opravdavaju svaki korak pri rješavanju jednadžbi.</p><h3>Linearne jednadžbe</h3><p>Oblik \\(ax=b\\) s rješenjem \\(x=\\frac{b}{a}\\) (\\(a\\neq0\\)). U zadacima dolaze „zamaskirane” zagradama i razlomcima. Postupak je uvijek isti: <strong>ukloni razlomke</strong> (pomnoži najmanjim zajedničkim nazivnikom) → <strong>oslobodi zagrade</strong> → nepoznanice lijevo, brojevi desno → podijeli koeficijentom.</p><div class=\"example-box\"><strong>Primjer 1.</strong> \\(\\frac{2x-1}{2}=1+\\frac{2+3x}{16}\\ \\big|\\cdot16\\)<br>\\(8(2x-1)=16+2+3x\\)<br>\\(16x-8=18+3x\\)<br>\\(13x=26\\Rightarrow x=2\\)</div><div class=\"example-box\"><strong>Primjer 2.</strong> \\(\\frac{3x-6}{25}-0{,}2x=\\frac{1-5x}{50}\\ \\big|\\cdot50\\)<br>\\(2(3x-6)-10x=1-5x\\)<br>\\(6x-12-10x+5x=1\\Rightarrow x=13\\)</div><div class=\"example-box\"><strong>Primjer 3.</strong> \\(1{,}5x-3(x-2)=\\frac{x-1}{10}+2{,}5\\ \\big|\\cdot10\\)<br>\\(15x-30x+60=x-1+25\\)<br>\\(-16x=-36\\Rightarrow x=\\frac{36}{16}=\\frac94\\)</div><h3>Kvadratne jednadžbe</h3><div class=\"formula-box\">\\[ax^2+bx+c=0\\ (a\\neq0),\\qquad x_{1,2}=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a},\\qquad D=b^2-4ac.\\]</div><table><thead><tr><th>Diskriminanta</th><th>Rješenja</th></tr></thead><tbody><tr><td>\\(D>0\\)</td><td>dva različita realna rješenja</td></tr><tr><td>\\(D=0\\)</td><td>jedno dvostruko realno rješenje \\(x=-\\frac{b}{2a}\\)</td></tr><tr><td>\\(D<0\\)</td><td>nema realnih rješenja; dva konjugirano kompleksna \\(x=\\frac{-b\\pm i\\sqrt{|D|}}{2a}\\)</td></tr></tbody></table><h4>Nepotpune kvadratne jednadžbe — bez formule</h4><ul><li><strong>Nema c:</strong> \\(3x^2+21x=0\\Rightarrow 3x(x+7)=0\\Rightarrow x_1=0,\\ x_2=-7\\). Izlučujemo — nikad ne dijelimo s x.</li><li><strong>Nema b:</strong> \\(3x^2-\\frac13=0\\ |\\cdot3\\Rightarrow 9x^2=1\\Rightarrow x_{1,2}=\\pm\\frac13\\).</li></ul><div class=\"example-box\"><strong>Primjer 4 (demonstrature).</strong> \\(3x^2+11x-4=0\\), \\(a=3,\\ b=11,\\ c=-4\\).<br>\\(D=11^2-4\\cdot3\\cdot(-4)=121+48=169\\)<br>\\(x_{1,2}=\\frac{-11\\pm13}{6}\\Rightarrow x_1=\\frac{2}{6}=\\frac13,\\quad x_2=\\frac{-24}{6}=-4\\)</div><div class=\"example-box\"><strong>Primjer 5 (D = 0).</strong> \\(3x^2-4x+\\frac43=0\\ |\\cdot3\\Rightarrow 9x^2-12x+4=0\\).<br>\\(D=144-144=0\\Rightarrow x_{1,2}=\\frac{12}{18}=\\frac23\\)</div><div class=\"example-box\"><strong>Primjer 6 (iracionalna rješenja).</strong> \\(-2x^2+10x+25=0\\).<br>\\(D=100+200=300\\), \\(\\sqrt{300}=10\\sqrt3\\)<br>\\(x_{1,2}=\\frac{-10\\pm10\\sqrt3}{-4}=\\frac{5\\pm5\\sqrt3}{2}\\)</div><div class=\"example-box\"><strong>Primjer 7 (D &lt; 0).</strong> \\(x^2-2x+5=0\\).<br>\\(D=(-2)^2-4\\cdot1\\cdot5=-16\\), \\(\\sqrt{-16}=4i\\)<br>\\(x_{1,2}=\\frac{2\\pm4i}{2}=1\\pm2i\\)<br>Isto: \\(x^2+8x+25=0\\Rightarrow x_{1,2}=\\frac{-8\\pm6i}{2}=-4\\pm3i\\); \\(x^2+16x+80=0\\Rightarrow x_{1,2}=-8\\pm4i\\).</div><p><strong>Vièteove formule</strong> \\(x_1+x_2=-\\frac{b}{a}\\), \\(x_1x_2=\\frac{c}{a}\\) služe za brzu provjeru, a faktorizacija \\(ax^2+bx+c=a(x-x_1)(x-x_2)\\) trebat će kasnije kod tablice predznaka.</p><div class=\"warning-box\"><strong>Zamke (i u materijalima kruže greške):</strong> u prezentaciji 1. demonstratura za \\(x^2-2x+5=0\\) piše \\(x_1=-4i,\\ x_2=4i\\), a u jednoj bilježnici \\(1\\pm\\sqrt6\\) — oboje je netočno; točno je \\(1\\pm2i\\) (brojnik \\(2\\pm4i\\) dijeli se s 2 u cijelosti, a \\(D=4-20\\), ne \\(4+20\\)). Također: \\(-b\\) za \\(b=16\\) je \\(-16\\), pa \\(x^2+16x+80=0\\) daje \\(-8\\pm4i\\), ne \\(8\\pm4i\\). Uvijek zapiši a, b, c s predznakom prije uvrštavanja.</div>"
+    }
+  },
+  "reducibleEquations": {
+    "name": "Jednadžbe koje se svode na kvadratne",
+    "icon": "fa-square-root-variable",
+    "color": "#8b5cf6",
+    "flashcards": [
+      {
+        "question": "Što je bikvadratna jednadžba i kako se rješava?",
+        "answer": "\\(ax^4+bx^2+c=0\\). Supstitucija \\(t=x^2\\) daje \\(at^2+bt+c=0\\); za svako t vrati \\(x=\\pm\\sqrt t\\).",
+        "explanation": "U ℂ ima najviše četiri rješenja."
+      },
+      {
+        "question": "Riješi \\(x^4-6x^2+8=0\\).",
+        "answer": "\\(t^2-6t+8=0\\Rightarrow t_1=2,\\ t_2=4\\). Zatim \\(x_{1,2}=\\pm\\sqrt2\\), \\(x_{3,4}=\\pm2\\).",
+        "explanation": "Četiri realna rješenja."
+      },
+      {
+        "question": "Što ako je nakon supstitucije t negativan?",
+        "answer": "\\(x^2=t<0\\) nema realnih rješenja; u ℂ je \\(x=\\pm i\\sqrt{|t|}\\). Npr. \\(x^4+3x^2-4=0\\): \\(t=-4\\Rightarrow x=\\pm2i\\), \\(t=1\\Rightarrow x=\\pm1\\).",
+        "explanation": "Uvijek napiši u kojem skupu tražiš rješenja."
+      },
+      {
+        "question": "Što je iracionalna jednadžba i koji je postupak?",
+        "answer": "Nepoznanica je pod korijenom. Izoliraj korijen, kvadriraj, riješi dobivenu jednadžbu i OBAVEZNO provjeri rješenja u početnoj jednadžbi.",
+        "explanation": "Ako su dva korijena, kvadrira se dvaput."
+      },
+      {
+        "question": "Zašto je kod iracionalnih jednadžbi provjera obavezna?",
+        "answer": "Iz \\(a=b\\) slijedi \\(a^2=b^2\\), ali ne i obrnuto — kvadriranje može unijeti lažno rješenje.",
+        "explanation": "Korijen je uvijek ≥ 0, pa ne može biti jednak negativnom broju."
+      },
+      {
+        "question": "Riješi \\(\\sqrt{8x+1}+2=11\\).",
+        "answer": "\\(\\sqrt{8x+1}=9\\Rightarrow 8x+1=81\\Rightarrow x=10\\). Provjera: \\(\\sqrt{81}+2=11\\) ✓",
+        "explanation": "Najprije izoliraj korijen, tek onda kvadriraj."
+      },
+      {
+        "question": "Riješi \\(\\sqrt{3x+4}=3x-2\\).",
+        "answer": "Kvadriranje: \\(-9x^2+15x=0\\Rightarrow x=0\\) ili \\(x=\\frac53\\). Provjera: za 0 je \\(2\\neq-2\\) ✗. Rješenje je samo \\(x=\\frac53\\).",
+        "explanation": "Tipičan primjer lažnog rješenja."
+      },
+      {
+        "question": "Kako riješiti \\(\\sqrt{2x+4}-\\sqrt{3x+25}=-3\\)?",
+        "answer": "Izoliraj jedan korijen i kvadriraj, zatim izoliraj preostali \\(6\\sqrt{3x+25}=x+30\\) i kvadriraj ponovno. Rješenja 0 i 48 prolaze provjeru.",
+        "explanation": "Provjera za 48: √100 − √169 = 10 − 13 = −3 ✓"
+      },
+      {
+        "question": "Kako se rješava sustav linearne i kvadratne jednadžbe?",
+        "answer": "Metodom supstitucije: iz linearne izrazi jednu nepoznanicu i uvrsti u kvadratnu, riješi kvadratnu, pa izračunaj drugu nepoznanicu.",
+        "explanation": "Svako rješenje sustava je UREĐENI PAR (x, y)."
+      },
+      {
+        "question": "Riješi sustav \\(x^2+3xy+1=0\\), \\(x+y=2\\).",
+        "answer": "\\(x=2-y\\Rightarrow -2y^2+2y+5=0\\Rightarrow y=\\frac{1\\pm\\sqrt{11}}{2}\\), \\(x=\\frac{3\\mp\\sqrt{11}}{2}\\).",
+        "explanation": "Uz y = (1 + √11)/2 ide x = (3 − √11)/2 i obrnuto."
+      },
+      {
+        "question": "Koji su koraci problemskog zadatka?",
+        "answer": "Označi nepoznanicu, prevedi tekst u jednadžbu, riješi, pa odbaci rješenja bez smisla (negativna dob, 0 kad se traži prirodni broj).",
+        "explanation": "Na kraju odgovori rečenicom na postavljeno pitanje."
+      },
+      {
+        "question": "Sofija je 3 godine starija od brata, a umnožak njihovih godina je 28. Koliko Sofija ima godina?",
+        "answer": "\\(s(s-3)=28\\Rightarrow s^2-3s-28=0\\Rightarrow s=7\\) (rješenje \\(s=-4\\) otpada). Sofija ima 7 godina.",
+        "explanation": "Brat ima 4 godine: 7 · 4 = 28 ✓"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Realna rješenja jednadžbe \\(16x^4-8x^2+1=0\\) su:",
+        "options": [
+          "\\(\\pm\\frac12\\)",
+          "\\(\\pm\\frac14\\)",
+          "\\(\\pm2\\)",
+          "nema realnih rješenja"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koju supstituciju koristimo kod bikvadratne jednadžbe \\(ax^4+bx^2+c=0\\)?",
+        "options": [
+          "\\(t=x^4\\)",
+          "\\(t=x^2\\)",
+          "\\(t=\\sqrt x\\)",
+          "\\(t=2x\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješenja jednadžbe \\(x^4-5x^2+4=0\\) su:",
+        "options": [
+          "\\(1\\) i \\(4\\)",
+          "\\(\\pm1\\) i \\(\\pm2\\)",
+          "\\(\\pm1\\) i \\(\\pm4\\)",
+          "samo \\(\\pm2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješenje jednadžbe \\(\\sqrt{x+7}=x+1\\) je:",
+        "options": [
+          "\\(x=2\\) i \\(x=-3\\)",
+          "samo \\(x=-3\\)",
+          "samo \\(x=2\\)",
+          "nema rješenja"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Koji brojevi su za 2 manji od svog kvadrata?",
+        "options": [
+          "\\(1\\) i \\(-2\\)",
+          "\\(-1\\) i \\(2\\)",
+          "samo \\(2\\)",
+          "\\(\\pm\\sqrt2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko najviše rješenja u skupu ℂ može imati bikvadratna jednadžba?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "8"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Zašto se kod iracionalnih jednadžbi rješenja obavezno provjeravaju?",
+        "options": [
+          "Zbog zaokruživanja",
+          "Kvadriranje može unijeti lažna rješenja",
+          "Jer korijen može biti negativan",
+          "Zato što je formula za kvadratnu jednadžbu približna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Pravokutnik ima površinu 24 cm², a jedna mu je stranica 2 cm dulja od druge. Stranice su:",
+        "options": [
+          "3 i 8 cm",
+          "4 i 6 cm",
+          "2 i 12 cm",
+          "4 i 5 cm"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješenja jednadžbe \\(x^4+3x^2-4=0\\) u skupu ℂ su:",
+        "options": [
+          "\\(\\pm1\\) i \\(\\pm2i\\)",
+          "\\(\\pm1\\) i \\(\\pm2\\)",
+          "\\(\\pm i\\) i \\(\\pm2\\)",
+          "samo \\(\\pm1\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Jednadžbu oblika ax⁴ + bx² + c = 0 zovemo _______ jednadžba.",
+        "answer": "bikvadratna",
+        "hint": "Supstitucija t = x²"
+      },
+      {
+        "sentence": "Nakon kvadriranja iracionalne jednadžbe obavezna je _______ rješenja.",
+        "answer": "provjera",
+        "hint": "Uvrsti u početnu jednadžbu"
+      },
+      {
+        "sentence": "Rješenje jednadžbe √(8x + 1) + 2 = 11 je x = _______.",
+        "answer": "10",
+        "hint": "8x + 1 = 81"
+      },
+      {
+        "sentence": "Jednadžba √(2x + 4) − √(3x + 25) = −3 ima rješenja 0 i _______.",
+        "answer": "48",
+        "hint": "Iz −x² + 48x = 0"
+      },
+      {
+        "sentence": "Sustav linearne i kvadratne jednadžbe rješavamo metodom _______.",
+        "answer": "supstitucije",
+        "hint": "Iz linearne izrazi jednu nepoznanicu"
+      },
+      {
+        "sentence": "Jednadžba x⁴ − 6x² + 8 = 0 ima ukupno _______ realna rješenja.",
+        "answer": "4",
+        "hint": "±√2 i ±2"
+      },
+      {
+        "sentence": "Kod zadatka s godinama rješenje s = −4 _______ jer dob ne može biti negativna.",
+        "answer": "odbacujemo",
+        "hint": "Rješenje bez smisla"
+      }
+    ],
+    "learn": {
+      "title": "Jednadžbe koje se svode na kvadratne",
+      "content": "<p>Mnoge jednadžbe nisu kvadratne na prvi pogled, ali se jednim trikom na njih svode. U bilješkama s predavanja to su četiri skupine: <strong>bikvadratne</strong>, <strong>iracionalne</strong>, <strong>sustavi</strong> i <strong>problemski zadaci</strong>.</p><h3>1. Bikvadratne jednadžbe</h3><div class=\"formula-box\">\\[ax^4+bx^2+c=0\\quad\\xrightarrow{\\ t=x^2\\ }\\quad at^2+bt+c=0\\]</div><p>Riješimo kvadratnu jednadžbu po t, a zatim svaki t vratimo: \\(x^2=t\\Rightarrow x=\\pm\\sqrt t\\). Pozitivan t daje dva realna rješenja, negativan t daje dva kompleksna.</p><div class=\"example-box\"><strong>Primjer 1.</strong> \\(x^4-6x^2+8=0\\), \\(t=x^2\\):<br>\\(t^2-6t+8=0\\Rightarrow t_{1,2}=\\frac{6\\pm\\sqrt{36-32}}{2}=3\\pm1\\Rightarrow t_1=2,\\ t_2=4\\)<br>\\(x^2=2\\Rightarrow x_{1,2}=\\pm\\sqrt2\\); \\(x^2=4\\Rightarrow x_{3,4}=\\pm2\\)</div><div class=\"example-box\"><strong>Primjer 2.</strong> \\(-8x^4+4x^2-\\frac12=0\\ |\\cdot(-2)\\Rightarrow 16x^4-8x^2+1=0\\).<br>\\(16t^2-8t+1=0\\), \\(D=64-64=0\\Rightarrow t=\\frac14\\)<br>\\(x^2=\\frac14\\Rightarrow x_{1,2}=\\pm\\frac12\\)</div><div class=\"example-box\"><strong>Primjer 3 (kompleksna rješenja).</strong> \\(x^4+3x^2-4=0\\):<br>\\(t^2+3t-4=0\\Rightarrow t_{1,2}=\\frac{-3\\pm5}{2}\\Rightarrow t_1=-4,\\ t_2=1\\)<br>\\(x^2=-4\\Rightarrow x_{1,2}=\\pm\\sqrt{-4}=\\pm2i\\); \\(x^2=1\\Rightarrow x_{3,4}=\\pm1\\)</div><h3>2. Iracionalne jednadžbe</h3><p>Nepoznanica je pod korijenom. Korijen „skidamo” kvadriranjem, ali kvadriranje nije ekvivalentan korak: iz \\(a=b\\) slijedi \\(a^2=b^2\\), no iz \\(a^2=b^2\\) slijedi samo \\(a=\\pm b\\). Zato se može pojaviti <strong>lažno rješenje</strong> i <strong>provjera je dio rješenja</strong>, ne ukras.</p><ol><li>Izoliraj korijen na jednoj strani.</li><li>Kvadriraj obje strane.</li><li>Riješi (najčešće kvadratnu) jednadžbu.</li><li>Svako rješenje uvrsti u <em>početnu</em> jednadžbu.</li></ol><div class=\"example-box\"><strong>Primjer 4.</strong> \\(\\sqrt{8x+1}+2=11\\Rightarrow\\sqrt{8x+1}=9\\ |^2\\)<br>\\(8x+1=81\\Rightarrow x=10\\). Provjera: \\(\\sqrt{81}+2=9+2=11\\) ✓</div><div class=\"example-box\"><strong>Primjer 5 (lažno rješenje).</strong> \\(\\sqrt{3x+4}=3x-2\\ |^2\\)<br>\\(3x+4=9x^2-12x+4\\Rightarrow -9x^2+15x=0\\ |:3\\Rightarrow x(-3x+5)=0\\)<br>\\(x_1=0,\\ x_2=\\frac53\\)<br>Provjera: \\(x=0\\): \\(\\sqrt4=2\\), a desno \\(-2\\) → <strong>nije rješenje</strong>. \\(x=\\frac53\\): \\(\\sqrt9=3=5-2\\) ✓</div><div class=\"example-box\"><strong>Primjer 6 (dva korijena).</strong> \\(\\sqrt{2x+4}-\\sqrt{3x+25}=-3\\)<br>\\(\\sqrt{2x+4}=-3+\\sqrt{3x+25}\\ |^2\\Rightarrow 2x+4=9-6\\sqrt{3x+25}+3x+25\\)<br>\\(6\\sqrt{3x+25}=x+30\\ |^2\\Rightarrow 108x+900=x^2+60x+900\\)<br>\\(-x^2+48x=0\\Rightarrow x_1=0,\\ x_2=48\\)<br>Provjera: \\(\\sqrt4-\\sqrt{25}=-3\\) ✓ i \\(\\sqrt{100}-\\sqrt{169}=-3\\) ✓ — oba su rješenja.</div><h3>3. Sustavi (jedna linearna, jedna kvadratna)</h3><p>Iz linearne jednadžbe izrazimo jednu nepoznanicu i uvrstimo je u kvadratnu (<strong>metoda supstitucije</strong>).</p><div class=\"example-box\"><strong>Primjer 7.</strong> \\(x^2+3xy+1=0,\\ x+y=2\\Rightarrow x=2-y\\)<br>\\((2-y)^2+3(2-y)y+1=0\\Rightarrow 4-4y+y^2+6y-3y^2+1=0\\)<br>\\(-2y^2+2y+5=0\\Rightarrow y_{1,2}=\\frac{1\\pm\\sqrt{11}}{2}\\)<br>\\(x=2-y\\Rightarrow x_{1,2}=\\frac{3\\mp\\sqrt{11}}{2}\\) — dva uređena para.</div><h3>4. Problemski zadaci</h3><div class=\"example-box\"><strong>Primjer 8.</strong> Broj je za 2 manji od svog kvadrata: \\(x^2-2=x\\Rightarrow x^2-x-2=0\\Rightarrow x_1=-1,\\ x_2=2\\).</div><div class=\"example-box\"><strong>Primjer 9.</strong> Tri uzastopna prirodna broja \\(n-1,\\ n,\\ n+1\\): zbroj vanjskih jednak je kvadratu srednjeg.<br>\\((n-1)+(n+1)=n^2\\Rightarrow n(2-n)=0\\Rightarrow n=0\\) ili \\(n=2\\). Kako \\(0\\notin\\mathbb{N}\\), brojevi su 1, 2, 3.</div><div class=\"example-box\"><strong>Primjer 10.</strong> Sofija (s) je 3 godine starija od brata (b), a \\(s\\cdot b=28\\). Uz \\(b=s-3\\): \\(s^2-3s-28=0\\Rightarrow s=\\frac{3\\pm11}{2}\\), dakle \\(s=7\\) (\\(s=-4\\) otpada). Sofija ima 7 godina.</div><div class=\"warning-box\"><strong>Zamke:</strong> zaboravljen ± kod \\(x=\\pm\\sqrt t\\) (izgube se dva rješenja) · kvadriranje prije izoliranja korijena (\\((\\sqrt{a}+2)^2\\neq a+4\\)) · preskočena provjera kod iracionalnih jednadžbi · kod sustava se napiše samo x, a traže se parovi (x, y).</div>"
+    }
+  },
+  "functions": {
+    "name": "Funkcije i prirodna domena",
+    "icon": "fa-chart-line",
+    "color": "#0ea5e9",
+    "flashcards": [
+      {
+        "question": "Što je funkcija?",
+        "answer": "Pravilo \\(f:D\\to K\\) koje svakom elementu domene D pridružuje TOČNO JEDAN element kodomene K.",
+        "explanation": "Jedan x ne smije imati dvije vrijednosti; dva različita x smiju imati istu vrijednost."
+      },
+      {
+        "question": "Što je prirodna domena (prirodno područje definicije)?",
+        "answer": "Najveći skup realnih brojeva x za koje formula funkcije ima smisla. Oznaka \\(D_f\\).",
+        "explanation": "Prvi korak svakog ispitivanja toka funkcije."
+      },
+      {
+        "question": "Koja su tri pravila za određivanje domene?",
+        "answer": "Nazivnik ≠ 0 · izraz pod parnim korijenom ≥ 0 · argument logaritma > 0.",
+        "explanation": "Eksponencijalna funkcija i polinomi nemaju vlastitih ograničenja."
+      },
+      {
+        "question": "Koja je domena polinoma, npr. \\(f(x)=4x^4-x^2+15x\\)?",
+        "answer": "\\(D_f=\\mathbb{R}\\) — polinom je definiran za svaki realan broj.",
+        "explanation": "Nema nazivnika, korijena ni logaritma."
+      },
+      {
+        "question": "Koja je domena funkcije \\(f(x)=\\frac{x^2-4}{x+2}\\)?",
+        "answer": "\\(x+2\\neq0\\Rightarrow D_f=\\mathbb{R}\\setminus\\{-2\\}\\).",
+        "explanation": "Iako se razlomak skraćuje na x − 2, domena se određuje iz POČETNE formule."
+      },
+      {
+        "question": "Koja je domena funkcije \\(f(x)=\\ln\\frac{x-1}{x+4}\\)?",
+        "answer": "Uvjet \\(\\frac{x-1}{x+4}>0\\); tablica predznaka daje \\(D_f=\\langle-\\infty,-4\\rangle\\cup\\langle1,+\\infty\\rangle\\).",
+        "explanation": "Razlomak je pozitivan kad su brojnik i nazivnik istog predznaka."
+      },
+      {
+        "question": "Koja je domena funkcije \\(f(x)=\\sqrt{x-3}\\)?",
+        "answer": "\\(x-3\\geq0\\Rightarrow D_f=[3,+\\infty\\rangle\\).",
+        "explanation": "Kod korijena rub je uključen (≥), kod logaritma nije (>)."
+      },
+      {
+        "question": "Koja je domena funkcije \\(f(x)=e^{\\frac{3x^2-1}{x}}\\)?",
+        "answer": "\\(e^u\\) je definirana za svaki u, ali eksponent traži \\(x\\neq0\\): \\(D_f=\\mathbb{R}\\setminus\\{0\\}\\).",
+        "explanation": "U jednoj studentskoj bilježnici piše D = ℝ — to je greška, nazivnik u eksponentu ne smije biti 0."
+      },
+      {
+        "question": "Osnovna svojstva funkcija \\(e^x\\) i \\(\\ln x\\)?",
+        "answer": "\\(e^x\\): \\(D=\\mathbb{R}\\), vrijednosti \\(\\langle0,+\\infty\\rangle\\). \\(\\ln x\\): \\(D=\\langle0,+\\infty\\rangle\\). Međusobno su inverzne.",
+        "explanation": "Obje su strogo rastuće."
+      },
+      {
+        "question": "Kako se označavaju intervali?",
+        "answer": "\\(\\langle a,b\\rangle\\) — otvoreni (rubovi nisu uključeni); \\([a,b]\\) — zatvoreni (uključeni). Uz \\(\\pm\\infty\\) uvijek ide otvorena zagrada.",
+        "explanation": "U hrvatskoj literaturi se za otvoreni interval koriste šiljaste zagrade."
+      },
+      {
+        "question": "Što su T(Q), \\(\\bar T(Q)\\) i M(Q)?",
+        "answer": "T(Q) ukupni troškovi za Q jedinica · \\(\\bar T(Q)=\\frac{T(Q)}{Q}\\) prosječni troškovi · \\(M(Q)=T'(Q)\\) marginalni troškovi.",
+        "explanation": "Q = količina proizvodnje, Q ≥ 0."
+      },
+      {
+        "question": "Kako su povezani prihod, prosječni prihod i dobit?",
+        "answer": "\\(P(Q)=\\bar P(Q)\\cdot Q\\) (ukupni prihod), \\(D(Q)=P(Q)-T(Q)\\) (dobit).",
+        "explanation": "Prosječni prihod je cijena po jedinici."
+      },
+      {
+        "question": "Na kojim intervalima raste, a na kojima pada funkcija \\(\\sin x\\)?",
+        "answer": "Raste na \\(\\langle-\\frac{\\pi}{2}+2k\\pi,\\frac{\\pi}{2}+2k\\pi\\rangle\\), pada na \\(\\langle\\frac{\\pi}{2}+2k\\pi,\\frac{3\\pi}{2}+2k\\pi\\rangle\\), \\(k\\in\\mathbb{Z}\\).",
+        "explanation": "Kosinus raste na ⟨−π + 2kπ, 2kπ⟩, a pada na ⟨2kπ, π + 2kπ⟩."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Domena funkcije \\(f(x)=\\frac{x^2-x+6}{x-1}\\) je:",
+        "options": [
+          "\\(\\mathbb{R}\\)",
+          "\\(\\mathbb{R}\\setminus\\{1\\}\\)",
+          "\\(\\mathbb{R}\\setminus\\{-1\\}\\)",
+          "\\(\\langle1,+\\infty\\rangle\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Domena funkcije \\(f(x)=\\ln(2x-6)\\) je:",
+        "options": [
+          "\\([3,+\\infty\\rangle\\)",
+          "\\(\\langle3,+\\infty\\rangle\\)",
+          "\\(\\langle-\\infty,3\\rangle\\)",
+          "\\(\\mathbb{R}\\setminus\\{3\\}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Domena funkcije \\(f(x)=\\sqrt{4-x}\\) je:",
+        "options": [
+          "\\(\\langle-\\infty,4]\\)",
+          "\\([4,+\\infty\\rangle\\)",
+          "\\(\\langle-\\infty,4\\rangle\\)",
+          "\\(\\mathbb{R}\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Domena funkcije \\(f(x)=5x^3-9\\) je:",
+        "options": [
+          "\\(\\mathbb{R}\\setminus\\{0\\}\\)",
+          "\\(\\langle0,+\\infty\\rangle\\)",
+          "\\(\\mathbb{R}\\)",
+          "\\(\\mathbb{R}\\setminus\\{9\\}\\)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Domena funkcije \\(f(x)=\\ln\\frac{x-1}{x+4}\\) je:",
+        "options": [
+          "\\(\\langle-4,1\\rangle\\)",
+          "\\(\\langle-\\infty,-4\\rangle\\cup\\langle1,+\\infty\\rangle\\)",
+          "\\(\\langle1,+\\infty\\rangle\\)",
+          "\\(\\mathbb{R}\\setminus\\{-4\\}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(T(Q)=Q^3-6Q^2+11Q\\), funkcija prosječnih troškova je:",
+        "options": [
+          "\\(3Q^2-12Q+11\\)",
+          "\\(Q^2-6Q+11\\)",
+          "\\(Q^4-6Q^3+11Q^2\\)",
+          "\\(Q^3-6Q^2+11\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je prosječni prihod \\(\\bar P(Q)=-Q+200\\), ukupni prihod je:",
+        "options": [
+          "\\(-1\\)",
+          "\\(-\\frac{Q^2}{2}+200Q\\)",
+          "\\(-Q^2+200Q\\)",
+          "\\(-1+\\frac{200}{Q}\\)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Argument logaritma mora biti:",
+        "options": [
+          "različit od nule",
+          "strogo pozitivan",
+          "veći ili jednak nuli",
+          "cijeli broj"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Funkcija dobiti definirana je kao:",
+        "options": [
+          "\\(D(Q)=P(Q)+T(Q)\\)",
+          "\\(D(Q)=P(Q)-T(Q)\\)",
+          "\\(D(Q)=\\frac{P(Q)}{T(Q)}\\)",
+          "\\(D(Q)=T(Q)-P(Q)\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Na kojem intervalu pada funkcija \\(\\cos x\\)?",
+        "options": [
+          "\\(\\langle0,\\pi\\rangle\\)",
+          "\\(\\langle-\\pi,0\\rangle\\)",
+          "\\(\\langle-\\frac{\\pi}{2},\\frac{\\pi}{2}\\rangle\\)",
+          "\\(\\langle\\pi,2\\pi\\rangle\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Argument logaritma mora biti strogo _______ od nule.",
+        "answer": "veći",
+        "hint": "Uvjet > 0"
+      },
+      {
+        "sentence": "Nazivnik razlomka mora biti različit od _______.",
+        "answer": "nule",
+        "hint": "Dijeljenje s 0 nije definirano"
+      },
+      {
+        "sentence": "Domena svakog polinoma je skup _______ brojeva.",
+        "answer": "realnih",
+        "hint": "ℝ"
+      },
+      {
+        "sentence": "Prosječni troškovi dobivaju se dijeljenjem ukupnih troškova s _______ proizvodnje.",
+        "answer": "količinom",
+        "hint": "Q"
+      },
+      {
+        "sentence": "Dobit je razlika ukupnih prihoda i ukupnih _______.",
+        "answer": "troškova",
+        "hint": "D = P − T"
+      },
+      {
+        "sentence": "Inverzna funkcija eksponencijalne funkcije eˣ je prirodni _______.",
+        "answer": "logaritam",
+        "hint": "ln x"
+      },
+      {
+        "sentence": "Funkcija svakom elementu domene pridružuje točno _______ element kodomene.",
+        "answer": "jedan",
+        "hint": "Jednoznačnost"
+      }
+    ],
+    "learn": {
+      "title": "Funkcije i prirodna domena",
+      "content": "<h3>Što je funkcija</h3><p><strong>Funkcija</strong> \\(f:D\\to K\\) je pravilo koje svakom elementu skupa D (<strong>domena</strong>) pridružuje <strong>točno jedan</strong> element skupa K (<strong>kodomena</strong>). Pišemo \\(y=f(x)\\): x je nezavisna varijabla (argument), y zavisna. U ekonomiji je argument najčešće količina Q ili cijena p.</p><h3>Prirodna domena — gdje formula „smije” raditi</h3><p>Kad je funkcija zadana samo formulom, podrazumijeva se <strong>prirodna domena</strong>: najveći skup realnih brojeva za koje se formula može izračunati. Zapamti tri zabrane:</p><table><thead><tr><th>Dio formule</th><th>Uvjet</th><th>Primjer</th></tr></thead><tbody><tr><td>razlomak \\(\\frac{u}{v}\\)</td><td>\\(v\\neq0\\)</td><td>\\(\\frac{x^2-x+6}{x-1}\\Rightarrow D=\\mathbb{R}\\setminus\\{1\\}\\)</td></tr><tr><td>parni korijen \\(\\sqrt{u}\\)</td><td>\\(u\\geq0\\)</td><td>\\(\\sqrt{x-3}\\Rightarrow D=[3,+\\infty\\rangle\\)</td></tr><tr><td>logaritam \\(\\ln u\\)</td><td>\\(u>0\\)</td><td>\\(\\ln(2x-6)\\Rightarrow D=\\langle3,+\\infty\\rangle\\)</td></tr></tbody></table><p>Polinomi, \\(e^x\\), \\(\\sin x\\) i \\(\\cos x\\) definirani su na cijelom ℝ.</p><div class=\"example-box\"><strong>Primjer 1.</strong> \\(f(x)=\\frac{x^2-4}{x+2}\\): uvjet \\(x+2\\neq0\\Rightarrow D_f=\\mathbb{R}\\setminus\\{-2\\}\\). Skraćivanjem bismo dobili \\(x-2\\), ali to je <em>druga</em> funkcija (ona je definirana i u −2).</div><div class=\"example-box\"><strong>Primjer 2 (logaritam razlomka — tablica predznaka).</strong> \\(f(x)=\\ln\\frac{x-1}{x+4}\\).<br>Uvjet: \\(\\frac{x-1}{x+4}>0\\). Nultočke brojnika i nazivnika: \\(x=1\\), \\(x=-4\\).<table><thead><tr><th></th><th>\\(\\langle-\\infty,-4\\rangle\\)</th><th>\\(\\langle-4,1\\rangle\\)</th><th>\\(\\langle1,+\\infty\\rangle\\)</th></tr></thead><tbody><tr><td>\\(x-1\\)</td><td>−</td><td>−</td><td>+</td></tr><tr><td>\\(x+4\\)</td><td>−</td><td>+</td><td>+</td></tr><tr><td>\\(\\frac{x-1}{x+4}\\)</td><td>+</td><td>−</td><td>+</td></tr></tbody></table>\\(D_f=\\langle-\\infty,-4\\rangle\\cup\\langle1,+\\infty\\rangle\\). Isto se dobije razlikovanjem slučajeva: (brojnik > 0 i nazivnik > 0) ili (brojnik &lt; 0 i nazivnik &lt; 0).</div><div class=\"example-box\"><strong>Primjer 3.</strong> \\(f(x)=e^{\\frac{3x^2-1}{x}}\\): eksponencijalna funkcija prima bilo koji eksponent, ali eksponent je razlomak s nazivnikom x → \\(D_f=\\mathbb{R}\\setminus\\{0\\}\\).</div><h3>Elementarne funkcije koje trebaš prepoznati</h3><ul><li><strong>Linearna</strong> \\(f(x)=ax+b\\) — pravac; a je koeficijent smjera.</li><li><strong>Kvadratna</strong> \\(f(x)=ax^2+bx+c\\) — parabola; za \\(a>0\\) otvorena prema gore (ima minimum), za \\(a<0\\) prema dolje (maksimum). Tjeme je u \\(x=-\\frac{b}{2a}\\).</li><li><strong>Eksponencijalna</strong> \\(e^x\\) — uvijek pozitivna, strogo rastuća; <strong>logaritamska</strong> \\(\\ln x\\) — samo za \\(x>0\\), strogo rastuća; međusobno inverzne: \\(\\ln e^x=x\\).</li><li><strong>Trigonometrijske</strong> — sinus raste na \\(\\langle-\\frac{\\pi}{2}+2k\\pi,\\frac{\\pi}{2}+2k\\pi\\rangle\\) i pada na \\(\\langle\\frac{\\pi}{2}+2k\\pi,\\frac{3\\pi}{2}+2k\\pi\\rangle\\); kosinus raste na \\(\\langle-\\pi+2k\\pi,2k\\pi\\rangle\\) i pada na \\(\\langle2k\\pi,\\pi+2k\\pi\\rangle\\).</li></ul><h3>Ekonomske funkcije</h3><p>Na ispitima se funkcije gotovo uvijek pojavljuju u ekonomskom ruhu. Oznake s demonstratura:</p><div class=\"formula-box\">\\[\\bar T(Q)=\\frac{T(Q)}{Q},\\qquad M(Q)=T'(Q),\\qquad P(Q)=\\bar P(Q)\\cdot Q,\\qquad D(Q)=P(Q)-T(Q).\\]</div><ul><li>\\(T(Q)\\) — ukupni troškovi; \\(T(0)\\) su fiksni troškovi.</li><li>\\(\\bar T(Q)\\) — prosječni troškovi (trošak po jedinici).</li><li>\\(M(Q)\\) — marginalni troškovi (derivacija, vidi sljedeću temu).</li><li>\\(P(Q)\\), \\(\\bar P(Q)\\) — ukupni i prosječni prihod; \\(D(Q)\\) — dobit.</li></ul><div class=\"example-box\"><strong>Primjer 4.</strong> \\(T(Q)=Q^3-6Q^2+11Q\\Rightarrow\\bar T(Q)=\\frac{Q^3-6Q^2+11Q}{Q}=Q^2-6Q+11\\).<br><strong>Primjer 5.</strong> \\(\\bar T(Q)=2+\\frac{100}{Q}\\Rightarrow T(Q)=\\bar T(Q)\\cdot Q=2Q+100\\).</div><p>Domena ekonomskih funkcija je \\(Q\\geq0\\) (za \\(\\bar T\\) i \\(Q>0\\)) — negativna količina nema smisla, pa se takva rješenja kasnije odbacuju.</p><div class=\"warning-box\"><strong>Zamke:</strong> domena se određuje iz početne formule, ne iz skraćene · kod logaritma rub NIJE uključen (&gt; 0), kod korijena JEST (≥ 0) · razlomak u eksponentu ili pod logaritmom i dalje traži nazivnik ≠ 0 · rješenje u obliku unije intervala piše se sa znakom ∪, ne „i”.</div>"
+    }
+  },
+  "derivatives": {
+    "name": "Derivacije",
+    "icon": "fa-superscript",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "question": "Što je derivacija funkcije u točki?",
+        "answer": "\\(f'(x_0)=\\lim\\limits_{h\\to0}\\frac{f(x_0+h)-f(x_0)}{h}\\) — koeficijent smjera tangente, odnosno trenutna brzina promjene funkcije.",
+        "explanation": "Ako je f'(x₀) > 0, funkcija u okolini x₀ raste."
+      },
+      {
+        "question": "Tablica osnovnih derivacija?",
+        "answer": "\\((c)'=0\\), \\((x^n)'=nx^{n-1}\\), \\((e^x)'=e^x\\), \\((\\ln x)'=\\frac1x\\), \\((\\sin x)'=\\cos x\\), \\((\\cos x)'=-\\sin x\\).",
+        "explanation": "Pravilo potencije vrijedi i za negativne i razlomljene eksponente."
+      },
+      {
+        "question": "Derivacije \\(a^x\\), \\(\\log_a x\\) i \\(\\sqrt x\\)?",
+        "answer": "\\((a^x)'=a^x\\ln a\\), \\((\\log_a x)'=\\frac{1}{x\\ln a}\\), \\((\\sqrt x)'=\\frac{1}{2\\sqrt x}\\).",
+        "explanation": "√x = x^(1/2), pa pravilo potencije daje (1/2)·x^(−1/2)."
+      },
+      {
+        "question": "Pravila za konstantu i zbroj?",
+        "answer": "\\((c\\cdot f)'=c\\cdot f'\\) i \\((f\\pm g)'=f'\\pm g'\\) — polinom se derivira član po član.",
+        "explanation": "(5x³ − 4x² + 8x − 2)' = 15x² − 8x + 8."
+      },
+      {
+        "question": "Pravilo za derivaciju umnoška?",
+        "answer": "\\((f\\cdot g)'=f'\\cdot g+f\\cdot g'\\).",
+        "explanation": "(8x³eˣ)' = 24x²eˣ + 8x³eˣ."
+      },
+      {
+        "question": "Pravilo za derivaciju kvocijenta?",
+        "answer": "\\(\\left(\\frac{f}{g}\\right)'=\\frac{f'\\cdot g-f\\cdot g'}{g^2}\\), uz \\(g\\neq0\\).",
+        "explanation": "Redoslijed u brojniku je bitan (minus!); nazivnik se samo kvadrira."
+      },
+      {
+        "question": "Što kaže lančano pravilo (derivacija složene funkcije)?",
+        "answer": "\\([f(g(x))]'=f'(g(x))\\cdot g'(x)\\): deriviraj vanjsku funkciju, pa pomnoži derivacijom unutarnje.",
+        "explanation": "(e^(4x+1))' = e^(4x+1)·4 · (ln(3x² + 5))' = 6x/(3x² + 5)."
+      },
+      {
+        "question": "Kako se računa derivacija u zadanoj točki?",
+        "answer": "Najprije odredi \\(f'(x)\\) općenito, zatim uvrsti \\(x_0\\). Npr. \\(y=-4x^2+1\\): \\(y'=-8x\\), \\(y'(1)=-8\\).",
+        "explanation": "Ne uvrštavaj točku prije deriviranja — derivacija konstante je 0."
+      },
+      {
+        "question": "Što su marginalni troškovi?",
+        "answer": "\\(M(Q)=T'(Q)\\) — približan trošak proizvodnje još jedne jedinice. Za \\(T=5Q^2+8000\\): \\(M=10Q\\), \\(M(10)=100\\).",
+        "explanation": "Analogno: marginalni prihod P'(Q), marginalna dobit D'(Q)."
+      },
+      {
+        "question": "Kolika je derivacija funkcije \\(y=\\ln(3x^2+5)\\)?",
+        "answer": "\\(y'=\\frac{1}{3x^2+5}\\cdot6x=\\frac{6x}{3x^2+5}\\).",
+        "explanation": "Vanjska ln u → 1/u; unutarnja 3x² + 5 → 6x."
+      },
+      {
+        "question": "Kolika je derivacija funkcije \\(y=\\frac{3x^2+2x-2}{x^2+1}\\)?",
+        "answer": "\\(y'=\\frac{(6x+2)(x^2+1)-(3x^2+2x-2)\\cdot2x}{(x^2+1)^2}=\\frac{-2x^2+10x+2}{(x^2+1)^2}\\).",
+        "explanation": "Primjer s 1. demonstratura."
+      },
+      {
+        "question": "Što je druga derivacija?",
+        "answer": "Derivacija prve derivacije: \\(f''(x)=(f'(x))'\\). Npr. \\(f=x^3\\): \\(f'=3x^2\\), \\(f''=6x\\).",
+        "explanation": "Koristi se za određivanje vrste ekstrema."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Derivacija funkcije \\(y=5x^3-4x^2+8x-2\\) je:",
+        "options": [
+          "\\(15x^2-8x+8\\)",
+          "\\(15x^2-8x+6\\)",
+          "\\(5x^2-4x+8\\)",
+          "\\(15x^3-8x^2+8x\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Derivacija funkcije \\(y=x\\,e^x\\) je:",
+        "options": [
+          "\\(e^x\\)",
+          "\\(x\\,e^{x-1}\\)",
+          "\\(e^x(1+x)\\)",
+          "\\(e^x(x-1)\\)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Derivacija funkcije \\(y=(2x+3)^3\\) je:",
+        "options": [
+          "\\(3(2x+3)^2\\)",
+          "\\(6(2x+3)^2\\)",
+          "\\(6(2x+3)^3\\)",
+          "\\((2x+3)^2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Derivacija funkcije \\(y=\\frac{x+1}{x-1}\\) je:",
+        "options": [
+          "\\(\\frac{2}{(x-1)^2}\\)",
+          "\\(\\frac{-2}{(x-1)^2}\\)",
+          "\\(\\frac{2x}{(x-1)^2}\\)",
+          "\\(1\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Derivacija funkcije \\(y=3\\sin x\\) je:",
+        "options": [
+          "\\(3\\cos x\\)",
+          "\\(-3\\cos x\\)",
+          "\\(\\cos 3x\\)",
+          "\\(-3\\sin x\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Derivacija funkcije \\(y=3x^2e^{4x+1}\\) je:",
+        "options": [
+          "\\(6x\\,e^{4x+1}\\)",
+          "\\(24x\\,e^{4x+1}\\)",
+          "\\(6x\\,e^{4x+1}+12x^2e^{4x+1}\\)",
+          "\\(6x\\,e^{4x+1}+3x^2e^{4x+1}\\)"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ako je \\(f(x)=x^2+3x\\), koliko je \\(f'(2)\\)?",
+        "options": [
+          "\\(10\\)",
+          "\\(7\\)",
+          "\\(4\\)",
+          "\\(5\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Marginalni prihod je:",
+        "options": [
+          "\\(\\frac{P(Q)}{Q}\\)",
+          "\\(P'(Q)\\)",
+          "\\(P(Q)-T(Q)\\)",
+          "\\(\\int P(Q)\\,dQ\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Derivacija funkcije \\(y=\\ln(x^2+1)\\) je:",
+        "options": [
+          "\\(\\frac{1}{x^2+1}\\)",
+          "\\(\\frac{2x}{x^2+1}\\)",
+          "\\(2x\\ln(x^2+1)\\)",
+          "\\(\\frac{x}{x^2+1}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Derivacija funkcije \\(y=\\frac{e^x}{x^2+5x-7}\\) je:",
+        "options": [
+          "\\(\\frac{e^x(x^2+3x-12)}{(x^2+5x-7)^2}\\)",
+          "\\(\\frac{e^x}{2x+5}\\)",
+          "\\(\\frac{e^x(x^2+7x-2)}{(x^2+5x-7)^2}\\)",
+          "\\(\\frac{e^x(x^2+3x-12)}{x^2+5x-7}\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Derivacija konstante jednaka je _______.",
+        "answer": "nuli",
+        "hint": "(c)' = ?"
+      },
+      {
+        "sentence": "Po pravilu za potenciju derivacija funkcije x⁵ je _______x⁴.",
+        "answer": "5",
+        "hint": "(xⁿ)' = n·xⁿ⁻¹"
+      },
+      {
+        "sentence": "Derivacija funkcije ln x jednaka je 1 podijeljeno s _______.",
+        "answer": "x",
+        "hint": "Tablica derivacija"
+      },
+      {
+        "sentence": "Marginalni troškovi su prva _______ funkcije ukupnih troškova.",
+        "answer": "derivacija",
+        "hint": "M(Q) = T'(Q)"
+      },
+      {
+        "sentence": "Pravilo za deriviranje složene funkcije f(g(x)) zove se _______ pravilo.",
+        "answer": "lančano",
+        "hint": "Vanjska puta unutarnja"
+      },
+      {
+        "sentence": "Ako je T(Q) = 5Q² + 8000, onda je T'(10) = _______.",
+        "answer": "100",
+        "hint": "T'(Q) = 10Q"
+      },
+      {
+        "sentence": "Geometrijski, derivacija u točki je koeficijent smjera _______.",
+        "answer": "tangente",
+        "hint": "Pravac koji dodiruje graf"
+      }
+    ],
+    "learn": {
+      "title": "Derivacije",
+      "content": "<h3>Što derivacija mjeri</h3><p>Derivacija odgovara na pitanje <em>koliko se brzo funkcija mijenja</em> u određenoj točki. Geometrijski je to <strong>koeficijent smjera tangente</strong> na graf; ekonomski je to <strong>marginalna</strong> veličina — za koliko se približno promijeni trošak, prihod ili dobit kad proizvodnju povećamo za jednu jedinicu.</p><div class=\"formula-box\">\\[f'(x_0)=\\lim_{h\\to0}\\frac{f(x_0+h)-f(x_0)}{h}\\]</div><p>Po definiciji se na ispitu ne derivira — koriste se tablica i pravila.</p><h3>Tablica derivacija</h3><table><thead><tr><th>\\(f(x)\\)</th><th>\\(f'(x)\\)</th><th>\\(f(x)\\)</th><th>\\(f'(x)\\)</th></tr></thead><tbody><tr><td>\\(c\\)</td><td>\\(0\\)</td><td>\\(e^x\\)</td><td>\\(e^x\\)</td></tr><tr><td>\\(x^n\\)</td><td>\\(nx^{n-1}\\)</td><td>\\(a^x\\)</td><td>\\(a^x\\ln a\\)</td></tr><tr><td>\\(\\sqrt x\\)</td><td>\\(\\frac{1}{2\\sqrt x}\\)</td><td>\\(\\ln x\\)</td><td>\\(\\frac1x\\)</td></tr><tr><td>\\(\\frac1x\\)</td><td>\\(-\\frac{1}{x^2}\\)</td><td>\\(\\log_a x\\)</td><td>\\(\\frac{1}{x\\ln a}\\)</td></tr><tr><td>\\(\\sin x\\)</td><td>\\(\\cos x\\)</td><td>\\(\\cos x\\)</td><td>\\(-\\sin x\\)</td></tr></tbody></table><h3>Pravila deriviranja</h3><div class=\"formula-box\">\\[(cf)'=cf',\\quad (f\\pm g)'=f'\\pm g',\\quad (fg)'=f'g+fg',\\quad \\left(\\frac fg\\right)'=\\frac{f'g-fg'}{g^2},\\quad [f(g(x))]'=f'(g(x))\\cdot g'(x).\\]</div><div class=\"example-box\"><strong>Primjer 1 (zbroj).</strong> \\(y=5x^3-4x^2+8x-2\\Rightarrow y'=5\\cdot3x^2-4\\cdot2x+8-0=15x^2-8x+8\\).</div><div class=\"example-box\"><strong>Primjer 2 (derivacija u točki).</strong> \\(y=-4x^2+1\\Rightarrow y'=-8x\\Rightarrow y'(1)=-8\\).</div><div class=\"example-box\"><strong>Primjer 3 (marginalni troškovi).</strong> \\(T(Q)=5Q^2+8000\\Rightarrow T'(Q)=10Q\\Rightarrow T'(10)=100\\). Pri proizvodnji od 10 jedinica, jedna dodatna jedinica košta približno 100 novčanih jedinica.</div><div class=\"example-box\"><strong>Primjer 4 (umnožak).</strong> \\(y=8x^3e^x\\)<br>\\(y'=(8x^3)'e^x+8x^3(e^x)'=24x^2e^x+8x^3e^x=8x^2e^x(3+x)\\)</div><div class=\"example-box\"><strong>Primjer 5 (kvocijent).</strong> \\(y=\\frac{3x^2+2x-2}{x^2+1}\\)<br>\\(y'=\\frac{(6x+2)(x^2+1)-(3x^2+2x-2)(2x)}{(x^2+1)^2}=\\frac{6x^3+2x^2+6x+2-6x^3-4x^2+4x}{(x^2+1)^2}=\\frac{-2x^2+10x+2}{(x^2+1)^2}\\)</div><div class=\"example-box\"><strong>Primjer 6 (lančano pravilo).</strong> \\(y=\\ln(3x^2+5)\\Rightarrow y'=\\frac{1}{3x^2+5}\\cdot(3x^2+5)'=\\frac{6x}{3x^2+5}\\).</div><div class=\"example-box\"><strong>Primjer 7 (umnožak + lanac).</strong> \\(y=3x^2e^{4x+1}\\)<br>\\(y'=6x\\,e^{4x+1}+3x^2\\cdot e^{4x+1}\\cdot4=6x\\,e^{4x+1}+12x^2e^{4x+1}\\)</div><div class=\"example-box\"><strong>Primjer 8 (potencija složene funkcije).</strong> \\(y=(2x+3)^3\\Rightarrow y'=3(2x+3)^2\\cdot2=6(2x+3)^2\\).<br>\\(y=\\frac{x+1}{x-1}\\Rightarrow y'=\\frac{1\\cdot(x-1)-(x+1)\\cdot1}{(x-1)^2}=\\frac{-2}{(x-1)^2}\\).</div><h3>Druga derivacija</h3><p>\\(f''(x)\\) je derivacija od \\(f'(x)\\). Opisuje zakrivljenost grafa: \\(f''>0\\) — graf je konveksan (oblik ∪), \\(f''<0\\) — konkavan (oblik ∩). U sljedećoj temi služi za određivanje je li stacionarna točka minimum ili maksimum.</p><div class=\"tip-box\"><strong>Ekonomsko čitanje:</strong> \\(M(Q)=T'(Q)\\) marginalni troškovi, \\(P'(Q)\\) marginalni prihod, \\(D'(Q)\\) marginalna dobit. „Marginalno” uvijek znači „derivacija ukupne veličine”.</div><div class=\"warning-box\"><strong>Zamke:</strong> derivacija umnoška NIJE umnožak derivacija · kod kvocijenta je u brojniku minus i redoslijed \\(f'g-fg'\\) · kod lančanog pravila zaboravi se pomnožiti derivacijom unutarnje funkcije (\\((e^{4x+1})'\\neq e^{4x+1}\\)) · točku uvrštavaš tek nakon deriviranja · derivacija konstante (npr. 8000 u troškovima) je 0.</div>"
+    }
+  },
+  "extrema": {
+    "name": "Rast, pad i ekstremi funkcije",
+    "icon": "fa-arrow-trend-up",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Kako predznak prve derivacije određuje rast i pad?",
+        "answer": "\\(f'(x)>0\\) na intervalu → funkcija raste; \\(f'(x)<0\\) → funkcija pada.",
+        "explanation": "Tangenta s pozitivnim nagibom ide gore, s negativnim dolje."
+      },
+      {
+        "question": "Što je stacionarna točka?",
+        "answer": "Točka \\(x_0\\) u kojoj je \\(f'(x_0)=0\\) (tangenta je vodoravna). Kandidat za lokalni ekstrem.",
+        "explanation": "Nije svaka stacionarna točka ekstrem — vidi f(x) = x³ u x = 0."
+      },
+      {
+        "question": "Koji je postupak ispitivanja rasta i pada (s demonstratura)?",
+        "answer": "1. domena funkcije · 2. stacionarne točke (\\(f'=0\\)) · 3. tablica predznaka \\(f'\\) po intervalima → očitaj rast, pad i ekstreme.",
+        "explanation": "Predznak na intervalu provjeri uvrštavanjem jedne probne točke u f'."
+      },
+      {
+        "question": "Kako iz tablice očitati lokalni ekstrem?",
+        "answer": "\\(f'\\) prelazi iz + u − → lokalni MAKSIMUM; iz − u + → lokalni MINIMUM; bez promjene predznaka → nema ekstrema.",
+        "explanation": "Koordinate ekstrema: (x₀, f(x₀)) — vrijednost se računa u POČETNOJ funkciji."
+      },
+      {
+        "question": "Kako se vrsta ekstrema određuje drugom derivacijom?",
+        "answer": "Ako je \\(f'(x_0)=0\\): \\(f''(x_0)<0\\) → maksimum, \\(f''(x_0)>0\\) → minimum.",
+        "explanation": "Ako je f''(x₀) = 0, test ne odlučuje — koristi tablicu."
+      },
+      {
+        "question": "Rast i pad funkcije \\(y=\\frac13x^3-9x+1\\)?",
+        "answer": "\\(y'=x^2-9=0\\Rightarrow x=\\pm3\\). Raste na \\(\\langle-\\infty,-3\\rangle\\cup\\langle3,+\\infty\\rangle\\), pada na \\(\\langle-3,3\\rangle\\).",
+        "explanation": "Probne točke: f'(−6) = 27 > 0, f'(2) = −5 < 0, f'(6) = 27 > 0."
+      },
+      {
+        "question": "Ekstremi funkcije \\(f(x)=6x^4-8x^3-10\\)?",
+        "answer": "\\(f'=24x^2(x-1)=0\\Rightarrow x=0,\\ x=1\\). U 0 nema ekstrema (\\(f'\\) ostaje −), u 1 je lokalni minimum \\(m(1,-12)\\).",
+        "explanation": "Tablica: − | − | +."
+      },
+      {
+        "question": "Ekstremi funkcije \\(f(x)=x^3-3x+1\\)?",
+        "answer": "\\(f'=3x^2-3=0\\Rightarrow x=\\pm1\\). Maksimum \\(M(-1,3)\\), minimum \\(m(1,-1)\\).",
+        "explanation": "Tablica: + | − | +."
+      },
+      {
+        "question": "Ekstremi funkcije \\(f(x)=2x+\\frac1x\\)?",
+        "answer": "\\(f'=2-\\frac{1}{x^2}=0\\Rightarrow x=\\pm\\frac{\\sqrt2}{2}\\); \\(f''=\\frac{2}{x^3}\\). Minimum \\(m(\\frac{\\sqrt2}{2},2\\sqrt2)\\), maksimum \\(M(-\\frac{\\sqrt2}{2},-2\\sqrt2)\\).",
+        "explanation": "D = ℝ \\ {0}; maksimum je ovdje manji od minimuma — ekstremi su lokalni."
+      },
+      {
+        "question": "Kako u tablici tretirati točku koja nije u domeni?",
+        "answer": "Ulazi u tablicu kao granica intervala (predznak se s njezinih strana može razlikovati), ali u njoj NE MOŽE biti ekstrem.",
+        "explanation": "Npr. x = 3 kod f(x) = x²/(x − 3)."
+      },
+      {
+        "question": "Rast i pad funkcije \\(f(x)=\\frac{x^2}{x-3}\\)?",
+        "answer": "\\(f'=\\frac{x(x-6)}{(x-3)^2}\\). Raste na \\(\\langle-\\infty,0\\rangle\\cup\\langle6,+\\infty\\rangle\\), pada na \\(\\langle0,3\\rangle\\cup\\langle3,6\\rangle\\).",
+        "explanation": "Maksimum (0, 0), minimum (6, 12)."
+      },
+      {
+        "question": "Ekstrem funkcije \\(f(x)=x^2-3x-7\\)?",
+        "answer": "\\(f'=2x-3=0\\Rightarrow x=\\frac32\\); minimum \\(m\\left(\\frac32,-\\frac{37}{4}\\right)\\).",
+        "explanation": "Parabola s a > 0 ima samo minimum, u tjemenu."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Stacionarne točke funkcije \\(f(x)=x^3-2x^2+x-1\\) su:",
+        "options": [
+          "\\(x=\\frac13\\) i \\(x=1\\)",
+          "\\(x=-\\frac13\\) i \\(x=-1\\)",
+          "\\(x=0\\) i \\(x=1\\)",
+          "\\(x=1\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Funkcija \\(f(x)=8x^3-x^2-x+1\\) pada na intervalu:",
+        "options": [
+          "\\(\\langle-\\frac14,\\frac16\\rangle\\)",
+          "\\(\\langle-\\frac16,\\frac14\\rangle\\)",
+          "\\(\\langle-\\infty,-\\frac16\\rangle\\)",
+          "\\(\\langle\\frac14,+\\infty\\rangle\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(f'(x_0)=0\\) i \\(f''(x_0)=-5\\), u točki \\(x_0\\) funkcija ima:",
+        "options": [
+          "lokalni minimum",
+          "lokalni maksimum",
+          "nema ekstrema",
+          "nultočku"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Tablica predznaka \\(f'\\) na intervalima \\(\\langle-\\infty,0\\rangle,\\ \\langle0,1\\rangle,\\ \\langle1,+\\infty\\rangle\\) glasi: −, −, +. Što vrijedi?",
+        "options": [
+          "U 0 je maksimum, u 1 minimum",
+          "U 0 nema ekstrema, u 1 je minimum",
+          "U 0 je minimum, u 1 nema ekstrema",
+          "Nema ekstrema"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Lokalni ekstrem funkcije \\(f(x)=x\\,e^{-x}\\) je:",
+        "options": [
+          "minimum \\((1,\\frac1e)\\)",
+          "maksimum \\((1,\\frac1e)\\)",
+          "maksimum \\((0,0)\\)",
+          "minimum \\((-1,-e)\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Lokalni ekstrem funkcije \\(f(x)=-x^2+4x+1\\) je:",
+        "options": [
+          "maksimum \\((2,5)\\)",
+          "minimum \\((2,5)\\)",
+          "maksimum \\((-2,-11)\\)",
+          "maksimum \\((4,1)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Funkcija \\(f(x)=2x^4+8x-3\\) ima:",
+        "options": [
+          "maksimum u \\(x=-1\\)",
+          "minimum \\((-1,-9)\\)",
+          "minimum \\((1,7)\\)",
+          "nema ekstrema"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Na intervalu na kojem je \\(f'(x)<0\\) funkcija:",
+        "options": [
+          "raste",
+          "pada",
+          "je konstantna",
+          "ima maksimum"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za \\(f(x)=x^3\\) točka \\(x=0\\) je:",
+        "options": [
+          "lokalni minimum",
+          "lokalni maksimum",
+          "stacionarna točka koja nije ekstrem",
+          "izvan domene"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Ekstremi funkcije \\(f(x)=x^3-2x^2+x-1\\) su:",
+        "options": [
+          "\\(M(\\frac13,-\\frac{23}{27})\\), \\(m(1,-1)\\)",
+          "\\(m(\\frac13,-\\frac{23}{27})\\), \\(M(1,-1)\\)",
+          "\\(M(1,-1)\\) samo",
+          "\\(M(\\frac13,1)\\), \\(m(1,0)\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Točka u kojoj je f'(x) = 0 zove se _______ točka.",
+        "answer": "stacionarna",
+        "hint": "Tangenta je vodoravna"
+      },
+      {
+        "sentence": "Ako f' prelazi iz + u −, u toj točki je lokalni _______.",
+        "answer": "maksimum",
+        "hint": "Funkcija raste pa pada"
+      },
+      {
+        "sentence": "Ako je f'(x₀) = 0 i f''(x₀) > 0, u x₀ je lokalni _______.",
+        "answer": "minimum",
+        "hint": "Graf je oblika ∪"
+      },
+      {
+        "sentence": "Na intervalu na kojem je f'(x) > 0 funkcija _______.",
+        "answer": "raste",
+        "hint": "Pozitivan nagib"
+      },
+      {
+        "sentence": "Funkcija f(x) = x³ − 3x + 1 ima lokalni maksimum u x = −1 i lokalni minimum u x = _______.",
+        "answer": "1",
+        "hint": "f'(x) = 3x² − 3"
+      },
+      {
+        "sentence": "Prvi korak u ispitivanju rasta i pada je određivanje _______ funkcije.",
+        "answer": "domene",
+        "hint": "D_f"
+      },
+      {
+        "sentence": "Funkcija y = ⅓x³ − 9x + 1 pada na intervalu ⟨−3, _______⟩.",
+        "answer": "3",
+        "hint": "x² − 9 = 0"
+      }
+    ],
+    "learn": {
+      "title": "Rast, pad i ekstremi funkcije",
+      "content": "<h3>Ideja</h3><p>Derivacija je nagib. Gdje je nagib pozitivan, graf ide gore — funkcija <strong>raste</strong>; gdje je negativan, <strong>pada</strong>. Na prijelazu iz rasta u pad nalazi se „vrh” (<strong>lokalni maksimum</strong>), na prijelazu iz pada u rast „dolina” (<strong>lokalni minimum</strong>). U oba slučaja tangenta je vodoravna, pa je \\(f'(x_0)=0\\) — takve točke zovemo <strong>stacionarnima</strong>.</p><div class=\"formula-box\">\\[f'(x)>0\\ \\Rightarrow\\ f\\ \\text{raste},\\qquad f'(x)<0\\ \\Rightarrow\\ f\\ \\text{pada},\\qquad f'(x_0)=0\\ \\Rightarrow\\ x_0\\ \\text{stacionarna točka}.\\]</div><h3>Postupak u tri koraka (kako ga traže demonstrature)</h3><ol><li><strong>Domena funkcije</strong> — točke izvan domene ulaze u tablicu kao granice intervala.</li><li><strong>Stacionarne točke</strong> — izračunaj \\(f'(x)\\), riješi \\(f'(x)=0\\).</li><li><strong>Tablica</strong> — podijeli brojevni pravac tim točkama, u svaki interval uvrsti jednu probnu točku u \\(f'\\) i zapiši predznak. Iz predznaka očitaj rast (↗), pad (↘) i ekstreme.</li></ol><div class=\"example-box\"><strong>Primjer 1.</strong> \\(y=\\frac13x^3-9x+1\\), \\(D_f=\\mathbb{R}\\).<br>\\(y'=x^2-9=0\\Rightarrow x_{1,2}=\\pm3\\)<table><thead><tr><th>x</th><th>\\(\\langle-\\infty,-3\\rangle\\)</th><th>\\(\\langle-3,3\\rangle\\)</th><th>\\(\\langle3,+\\infty\\rangle\\)</th></tr></thead><tbody><tr><td>probna točka</td><td>−6: \\(f'=27\\)</td><td>2: \\(f'=-5\\)</td><td>6: \\(f'=27\\)</td></tr><tr><td>\\(f'(x)\\)</td><td>+</td><td>−</td><td>+</td></tr><tr><td>\\(f(x)\\)</td><td>↗</td><td>↘</td><td>↗</td></tr></tbody></table>Raste na \\(\\langle-\\infty,-3\\rangle\\cup\\langle3,+\\infty\\rangle\\), pada na \\(\\langle-3,3\\rangle\\). Usput: \\(M(-3,19)\\), \\(m(3,-17)\\).</div><h3>Lokalni ekstremi</h3><p><strong>Test prvom derivacijom (tablica):</strong> + → − daje maksimum, − → + daje minimum, bez promjene predznaka nema ekstrema. <strong>Test drugom derivacijom:</strong> ako je \\(f'(x_0)=0\\), tada \\(f''(x_0)<0\\) znači maksimum, a \\(f''(x_0)>0\\) minimum. Koordinate su uvijek \\((x_0,f(x_0))\\) — vrijednost se računa u <em>početnoj</em> funkciji, ne u derivaciji.</p><div class=\"example-box\"><strong>Primjer 2 (stacionarna točka koja nije ekstrem).</strong> \\(f(x)=6x^4-8x^3-10\\).<br>\\(f'(x)=24x^3-24x^2=24x^2(x-1)=0\\Rightarrow x_1=0,\\ x_2=1\\)<br>Predznaci: \\(\\langle-\\infty,0\\rangle\\): −, \\(\\langle0,1\\rangle\\): −, \\(\\langle1,+\\infty\\rangle\\): +.<br>U \\(x=0\\) predznak se ne mijenja → nema ekstrema. U \\(x=1\\): − → + → minimum \\(m(1,f(1))=m(1,-12)\\).</div><div class=\"example-box\"><strong>Primjer 3.</strong> \\(f(x)=x^3-3x+1\\): \\(f'=3x^2-3=0\\Rightarrow x=\\pm1\\).<br>Tablica + | − | + → \\(M(-1,f(-1))=M(-1,3)\\), \\(m(1,f(1))=m(1,-1)\\).</div><div class=\"example-box\"><strong>Primjer 4 (druga derivacija).</strong> \\(f(x)=2x+\\frac1x\\), \\(D_f=\\mathbb{R}\\setminus\\{0\\}\\).<br>\\(f'(x)=2-\\frac{1}{x^2}=0\\Rightarrow x^2=\\frac12\\Rightarrow x_{1,2}=\\pm\\frac{\\sqrt2}{2}\\)<br>\\(f''(x)=\\frac{2}{x^3}\\): \\(f''(\\frac{\\sqrt2}{2})=4\\sqrt2>0\\) → minimum; \\(f''(-\\frac{\\sqrt2}{2})=-4\\sqrt2<0\\) → maksimum.<br>\\(m\\left(\\frac{\\sqrt2}{2},2\\sqrt2\\right)\\), \\(M\\left(-\\frac{\\sqrt2}{2},-2\\sqrt2\\right)\\).</div><div class=\"example-box\"><strong>Primjer 5 (točka izvan domene).</strong> \\(f(x)=\\frac{x^2}{x-3}\\), \\(D_f=\\mathbb{R}\\setminus\\{3\\}\\).<br>\\(f'(x)=\\frac{2x(x-3)-x^2}{(x-3)^2}=\\frac{x(x-6)}{(x-3)^2}\\); stacionarne točke 0 i 6, a 3 je granica intervala.<br>Predznaci: \\(\\langle-\\infty,0\\rangle\\) +, \\(\\langle0,3\\rangle\\) −, \\(\\langle3,6\\rangle\\) −, \\(\\langle6,+\\infty\\rangle\\) +.<br>Raste na \\(\\langle-\\infty,0\\rangle\\cup\\langle6,+\\infty\\rangle\\), pada na \\(\\langle0,3\\rangle\\cup\\langle3,6\\rangle\\); \\(M(0,0)\\), \\(m(6,12)\\).</div><div class=\"example-box\"><strong>Primjer 6.</strong> \\(f(x)=8x^3-x^2-x+1\\): \\(f'=24x^2-2x-1=0\\Rightarrow x=\\frac{2\\pm10}{48}\\Rightarrow x_1=-\\frac16,\\ x_2=\\frac14\\).<br>Raste na \\(\\langle-\\infty,-\\frac16\\rangle\\cup\\langle\\frac14,+\\infty\\rangle\\), pada na \\(\\langle-\\frac16,\\frac14\\rangle\\).</div><div class=\"tip-box\"><strong>Tablica ili druga derivacija?</strong> Tablica uvijek radi i odmah daje i intervale rasta/pada. Druga derivacija je brža kad se traži samo vrsta ekstrema (tipično u ekonomskim zadacima s jednom stacionarnom točkom), ali zakaže kad je \\(f''(x_0)=0\\).</div><div class=\"warning-box\"><strong>Zamke:</strong> vrijednost ekstrema računa se u f, ne u f' · stacionarna točka nije automatski ekstrem (\\(x^3\\) u nuli) · točku izvan domene ne proglašavaj ekstremom · intervali rasta/pada su otvoreni, a unija se piše s ∪ · u jednom studentskom rješenju za \\(f(x)=\\frac{x^2+1}{x}\\) točke su zamijenjene: \\((1,2)\\) je <em>minimum</em>, a \\((-1,-2)\\) <em>maksimum</em> (\\(f''(x)=\\frac{2}{x^3}\\)).</div>"
+    }
+  },
+  "economicOptimization": {
+    "name": "Troškovi, prihod i dobit — optimizacija",
+    "icon": "fa-coins",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "question": "Koje su oznake ekonomskih funkcija na kolegiju?",
+        "answer": "T(Q) ukupni, \\(\\bar T(Q)\\) prosječni, M(Q) marginalni troškovi; P(Q) ukupni, \\(\\bar P(Q)\\) prosječni prihod; D(Q) dobit.",
+        "explanation": "Q = količina proizvodnje."
+      },
+      {
+        "question": "Koja je domena ekonomskih funkcija i zašto je važna?",
+        "answer": "\\(Q\\geq0\\) (za prosječne \\(Q>0\\)). Stacionarne točke izvan domene (npr. \\(Q=-21\\)) se odbacuju.",
+        "explanation": "Količina proizvodnje ne može biti negativna."
+      },
+      {
+        "question": "Postupak za minimum prosječnih troškova?",
+        "answer": "\\(\\bar T=\\frac{T}{Q}\\) (skrati što se može) → \\(\\bar T'=0\\) → provjeri \\(\\bar T''>0\\) → izračunaj \\(\\bar T(Q_0)\\).",
+        "explanation": "Odgovor: točka m(Q₀, T̄(Q₀))."
+      },
+      {
+        "question": "Minimum prosječnih troškova za \\(T(Q)=4Q^2+112Q+100\\)?",
+        "answer": "\\(\\bar T=4Q+112+\\frac{100}{Q}\\), \\(\\bar T'=4-\\frac{100}{Q^2}=0\\Rightarrow Q=5\\); \\(\\bar T''=\\frac{200}{Q^3}>0\\). \\(m(5,152)\\).",
+        "explanation": "Q = −5 otpada (izvan domene)."
+      },
+      {
+        "question": "Minimum prosječnih troškova za \\(T(Q)=Q^3-6Q^2+11Q\\)?",
+        "answer": "\\(\\bar T=Q^2-6Q+11\\), \\(\\bar T'=2Q-6=0\\Rightarrow Q=3\\), \\(\\bar T''=2>0\\). \\(m(3,2)\\).",
+        "explanation": "T̄(3) = 9 − 18 + 11 = 2."
+      },
+      {
+        "question": "Postupak za maksimum dobiti?",
+        "answer": "\\(D(Q)=P(Q)-T(Q)\\) → \\(D'(Q)=0\\) → odbaci Q izvan domene → provjeri \\(D''<0\\) → izračunaj \\(D(Q_0)\\).",
+        "explanation": "Ako je zadan prosječni prihod ili trošak, najprije ga pomnoži s Q."
+      },
+      {
+        "question": "Maksimum dobiti za \\(T=Q^3-6Q^2+140Q+750\\), \\(P=-7{,}5Q^2+1400Q\\)?",
+        "answer": "\\(D=-Q^3-1{,}5Q^2+1260Q-750\\), \\(D'=-3Q^2-3Q+1260=0\\Rightarrow Q=20\\) (\\(Q=-21\\) otpada). \\(M(20;\\ 15\\,850)\\).",
+        "explanation": "D''(20) = −123 < 0 → maksimum."
+      },
+      {
+        "question": "Kako iz prosječnog prihoda naći maksimum ukupnog prihoda?",
+        "answer": "\\(P(Q)=\\bar P(Q)\\cdot Q\\). Za \\(\\bar P=-Q+200\\): \\(P=-Q^2+200Q\\), \\(P'=0\\Rightarrow Q=100\\), \\(P''=-2<0\\), \\(M(100;\\ 10\\,000)\\).",
+        "explanation": "Prosječni prihod je cijena po jedinici."
+      },
+      {
+        "question": "Kakav je uvjet maksimuma dobiti izražen marginalnim veličinama?",
+        "answer": "\\(D'(Q)=0\\Leftrightarrow P'(Q)=T'(Q)\\): marginalni prihod jednak je marginalnom trošku.",
+        "explanation": "Isti uvjet kao MR = MC u mikroekonomiji."
+      },
+      {
+        "question": "Najveća dobit za \\(P(Q)=460-\\frac{3200}{Q}\\), \\(\\bar T(Q)=2+\\frac{100}{Q}\\)?",
+        "answer": "\\(T=2Q+100\\), \\(D=360-\\frac{3200}{Q}-2Q\\), \\(D'=\\frac{3200}{Q^2}-2=0\\Rightarrow Q=40\\). \\(D=200\\), \\(P=380\\), \\(T=180\\).",
+        "explanation": "D''(40) = −6400/40³ = −0,1 < 0."
+      },
+      {
+        "question": "Kakav je odnos prosječnih i marginalnih troškova u minimumu prosječnih?",
+        "answer": "U minimumu vrijedi \\(\\bar T(Q_0)=M(Q_0)\\). Npr. za \\(T=4Q^2+112Q+100\\): \\(M(5)=8\\cdot5+112=152=\\bar T(5)\\).",
+        "explanation": "Korisna provjera rezultata."
+      },
+      {
+        "question": "Rast i pad marginalnih troškova za \\(T(Q)=Q^3-6Q^2+10Q\\)?",
+        "answer": "\\(M=3Q^2-12Q+10\\), \\(M'=6Q-12=0\\Rightarrow Q=2\\). M pada na \\(\\langle0,2\\rangle\\), raste na \\(\\langle2,+\\infty\\rangle\\).",
+        "explanation": "Rast funkcije M određuje predznak M', a ne predznak same M."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Minimum prosječnih troškova za \\(T(Q)=Q^3-8Q^2+40Q\\) je:",
+        "options": [
+          "\\(m(4,24)\\)",
+          "\\(m(8,40)\\)",
+          "\\(m(4,96)\\)",
+          "\\(m(2,28)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Za \\(T(Q)=2Q^2+50Q+200\\) minimum prosječnih troškova postiže se pri:",
+        "options": [
+          "\\(Q=5\\), \\(\\bar T=110\\)",
+          "\\(Q=10\\), \\(\\bar T=90\\)",
+          "\\(Q=20\\), \\(\\bar T=100\\)",
+          "\\(Q=10\\), \\(\\bar T=900\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Dobit je maksimalna kad je:",
+        "options": [
+          "ukupni prihod jednak ukupnom trošku",
+          "marginalni prihod jednak marginalnom trošku (uz \\(D''<0\\))",
+          "prosječni trošak minimalan",
+          "ukupni prihod maksimalan"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(D'(Q_0)=0\\) i \\(D''(Q_0)<0\\), u \\(Q_0\\) dobit ima:",
+        "options": [
+          "minimum",
+          "maksimum",
+          "nultočku",
+          "prijevojnu točku"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Rješavanjem \\(D'(Q)=0\\) dobiju se \\(Q_1=20\\) i \\(Q_2=-21\\). Što činimo s \\(Q_2\\)?",
+        "options": [
+          "Uzimamo ga jer daje veću dobit",
+          "Odbacujemo ga jer nije u domeni \\(Q\\geq0\\)",
+          "Uzimamo apsolutnu vrijednost 21",
+          "Zbrajamo ga s \\(Q_1\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Marginalni troškovi za \\(T(Q)=Q^3-6Q^2+10Q\\) su:",
+        "options": [
+          "\\(Q^2-6Q+10\\)",
+          "\\(3Q^2-12Q+10\\)",
+          "\\(6Q-12\\)",
+          "\\(3Q^2-12Q\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ukupni prihod \\(P(Q)=100Q-2Q^2\\) maksimalan je pri:",
+        "options": [
+          "\\(Q=50\\), \\(P=0\\)",
+          "\\(Q=25\\), \\(P=1250\\)",
+          "\\(Q=25\\), \\(P=2500\\)",
+          "\\(Q=20\\), \\(P=1200\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zadan je prosječni prihod \\(\\bar P(Q)=-4Q+489\\). Maksimum ukupnog prihoda postiže se pri:",
+        "options": [
+          "\\(Q=122{,}25\\)",
+          "\\(Q=61{,}125\\)",
+          "\\(Q=489\\)",
+          "\\(Q=30{,}56\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Funkcija ukupnih troškova dobiva se iz prosječnih troškova:",
+        "options": [
+          "deriviranjem",
+          "množenjem s Q",
+          "dijeljenjem s Q",
+          "oduzimanjem fiksnih troškova"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Funkcija prosječnih troškova jednaka je ukupnim troškovima podijeljenima s _______.",
+        "answer": "Q",
+        "hint": "Količina proizvodnje"
+      },
+      {
+        "sentence": "Za maksimum dobiti druga derivacija D''(Q₀) mora biti _______ od nule.",
+        "answer": "manja",
+        "hint": "Graf oblika ∩"
+      },
+      {
+        "sentence": "Za T(Q) = 4Q² + 112Q + 100 minimum prosječnih troškova postiže se za Q = _______.",
+        "answer": "5",
+        "hint": "4 − 100/Q² = 0"
+      },
+      {
+        "sentence": "U minimumu prosječnih troškova prosječni su troškovi jednaki _______ troškovima.",
+        "answer": "marginalnim",
+        "hint": "M(Q) = T'(Q)"
+      },
+      {
+        "sentence": "Ukupni prihod dobiva se kao prosječni prihod pomnožen s _______ proizvodnje.",
+        "answer": "količinom",
+        "hint": "P = P̄ · Q"
+      },
+      {
+        "sentence": "Maksimum ukupnog prihoda P(Q) = −Q² + 200Q postiže se za Q = _______.",
+        "answer": "100",
+        "hint": "−2Q + 200 = 0"
+      },
+      {
+        "sentence": "Za T = Q³ − 6Q² + 140Q + 750 i P = −7,5Q² + 1400Q najveća dobit postiže se za Q = _______.",
+        "answer": "20",
+        "hint": "−3Q² − 3Q + 1260 = 0"
+      }
+    ],
+    "learn": {
+      "title": "Troškovi, prihod i dobit — optimizacija",
+      "content": "<p>Ovo je „zašto” cijelog prvog kolokvija: poduzeće želi <strong>najmanji trošak po jedinici</strong>, <strong>najveći prihod</strong> ili <strong>najveću dobit</strong>. Matematički je to uvijek isto — nađi ekstrem odgovarajuće funkcije. Na 2. i 3. demonstraturama svaki takav zadatak ima iste korake: <strong>1. domena · 2. stacionarne točke · 3. druga derivacija</strong>.</p><div class=\"formula-box\">\\[\\bar T(Q)=\\frac{T(Q)}{Q},\\quad M(Q)=T'(Q),\\quad P(Q)=\\bar P(Q)\\cdot Q,\\quad D(Q)=P(Q)-T(Q),\\quad Q\\in[0,+\\infty\\rangle.\\]</div><h3>1. Minimum prosječnih troškova</h3><div class=\"example-box\"><strong>Primjer 1.</strong> \\(T(Q)=4Q^2+112Q+100\\).<br>Domena: \\(Q\\in\\langle0,+\\infty\\rangle\\).<br>\\(\\bar T(Q)=\\frac{4Q^2+112Q+100}{Q}=4Q+112+\\frac{100}{Q}=4Q+112+100Q^{-1}\\)<br>\\(\\bar T'(Q)=4-100Q^{-2}=4-\\frac{100}{Q^2}=0\\Rightarrow 4Q^2=100\\Rightarrow Q^2=25\\Rightarrow Q=5\\) (\\(-5\\) nije u domeni)<br>\\(\\bar T''(Q)=\\frac{200}{Q^3}\\Rightarrow\\bar T''(5)=\\frac{200}{125}>0\\) → minimum<br>\\(\\bar T(5)=20+112+20=152\\Rightarrow m(5,152)\\)</div><div class=\"example-box\"><strong>Primjer 2.</strong> \\(T(Q)=Q^3-6Q^2+11Q\\Rightarrow\\bar T(Q)=Q^2-6Q+11\\).<br>\\(\\bar T'=2Q-6=0\\Rightarrow Q=3\\); \\(\\bar T''=2>0\\) → minimum; \\(\\bar T(3)=2\\Rightarrow m(3,2)\\).<br>Isto: \\(T(Q)=Q^3-8Q^2+40Q\\Rightarrow\\bar T=Q^2-8Q+40\\), \\(Q=4\\), \\(m(4,24)\\).</div><div class=\"tip-box\"><strong>Provjera:</strong> u minimumu prosječnih troškova vrijedi \\(\\bar T(Q_0)=M(Q_0)\\). U primjeru 1: \\(M(Q)=8Q+112\\), \\(M(5)=152=\\bar T(5)\\) ✓.</div><h3>2. Maksimum ukupnog prihoda</h3><div class=\"example-box\"><strong>Primjer 3.</strong> Zadan je prosječni prihod \\(\\bar P(Q)=-Q+200\\).<br>\\(P(Q)=\\bar P(Q)\\cdot Q=-Q^2+200Q\\)<br>\\(P'(Q)=-2Q+200=0\\Rightarrow Q=100\\); \\(P''=-2<0\\) → maksimum<br>\\(P(100)=10\\,000\\Rightarrow M(100;\\ 10\\,000)\\)</div><h3>3. Maksimum dobiti</h3><div class=\"example-box\"><strong>Primjer 4.</strong> \\(T(Q)=Q^3-6Q^2+140Q+750\\), \\(P(Q)=-7{,}5Q^2+1400Q\\).<br>\\(D(Q)=-7{,}5Q^2+1400Q-(Q^3-6Q^2+140Q+750)=-Q^3-1{,}5Q^2+1260Q-750\\)<br>\\(D'(Q)=-3Q^2-3Q+1260=0\\ |:(-3)\\Rightarrow Q^2+Q-420=0\\Rightarrow Q_{1,2}=\\frac{-1\\pm41}{2}\\)<br>\\(Q_1=20\\), \\(Q_2=-21\\) (nije u domeni)<br>\\(D''(Q)=-6Q-3\\Rightarrow D''(20)=-123<0\\) → maksimum<br>\\(D(20)=-8000-600+25\\,200-750=15\\,850\\Rightarrow M(20;\\ 15\\,850)\\)</div><div class=\"example-box\"><strong>Primjer 5 (zadani prosječni troškovi).</strong> \\(P(Q)=460-\\frac{3200}{Q}\\), \\(\\bar T(Q)=2+\\frac{100}{Q}\\).<br>\\(T(Q)=\\bar T(Q)\\cdot Q=2Q+100\\)<br>\\(D(Q)=460-\\frac{3200}{Q}-2Q-100=360-\\frac{3200}{Q}-2Q\\)<br>\\(D'(Q)=\\frac{3200}{Q^2}-2=0\\Rightarrow Q^2=1600\\Rightarrow Q=40\\)<br>\\(D''(Q)=-\\frac{6400}{Q^3}\\Rightarrow D''(40)=-0{,}1<0\\) → maksimum<br>\\(D(40)=360-80-80=200\\); \\(P(40)=380\\), \\(T(40)=180\\).</div><p>Uvjet \\(D'(Q)=0\\) isto je što i \\(P'(Q)=T'(Q)\\): <strong>marginalni prihod = marginalni trošak</strong>. Dok je dodatna jedinica donosi više nego što košta, proizvodnju se isplati povećavati.</p><h3>4. Rast i pad marginalnih troškova</h3><div class=\"example-box\"><strong>Primjer 6.</strong> \\(T(Q)=Q^3-6Q^2+10Q\\). Traži se rast/pad funkcije \\(M(Q)\\), pa deriviramo nju:<br>\\(M(Q)=T'(Q)=3Q^2-12Q+10\\), \\(M'(Q)=6Q-12=0\\Rightarrow Q=2\\)<br>\\(M'<0\\) na \\(\\langle0,2\\rangle\\) → M pada; \\(M'>0\\) na \\(\\langle2,+\\infty\\rangle\\) → M raste.</div><div class=\"warning-box\"><strong>Zamke:</strong> u prezentaciji demonstratura ovaj je zadatak riješen tako da su tražene nultočke same \\(M(Q)\\) (\\(Q=\\frac{6\\pm\\sqrt6}{3}\\)) — to su točke gdje je M = 0, a ne granice rasta i pada. Za rast/pad funkcije M gleda se predznak <strong>njezine</strong> derivacije \\(M'(Q)=T''(Q)\\). Ostale zamke: prosječni ili zadani „prosječni prihod” treba prvo pomnožiti s Q · negativna stacionarna točka se odbacuje · za prosječne troškove domena je \\(Q>0\\) · provjera drugom derivacijom mora biti napisana, ne samo zaključak.</div>"
+    }
+  },
+  "elasticity": {
+    "name": "Elastičnost potražnje",
+    "icon": "fa-scale-balanced",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "question": "Što je elastičnost i što mjeri koeficijent elastičnosti potražnje?",
+        "answer": "Sposobnost jedne ekonomske veličine da reagira na promjenu druge. Koeficijent pokazuje za koliko se % približno promijeni potražnja q kad cijena p poraste 1 %.",
+        "explanation": "Postotna mjera — ne ovisi o jedinicama (eurima, komadima)."
+      },
+      {
+        "question": "Formula koeficijenta elastičnosti potražnje?",
+        "answer": "\\(E_{q,p}=\\frac{p}{q}\\cdot\\frac{dq}{dp}\\), gdje je \\(q=q(p)\\) funkcija potražnje.",
+        "explanation": "Derivacija potražnje, preračunata omjerom cijene i količine u postotke."
+      },
+      {
+        "question": "Kako se tumači vrijednost koeficijenta elastičnosti?",
+        "answer": "\\(|E|>1\\) elastična · \\(|E|<1\\) neelastična · \\(|E|=1\\) jedinična · \\(E=0\\) savršeno neelastična potražnja.",
+        "explanation": "Uspoređuje se APSOLUTNA vrijednost s 1."
+      },
+      {
+        "question": "Što znači predznak koeficijenta elastičnosti?",
+        "answer": "Smjer reakcije: \\(E<0\\) — rast cijene smanjuje potražnju (uobičajeno); \\(E>0\\) — potražnja raste s cijenom. \\(|E|\\) je jakost reakcije.",
+        "explanation": "Neki udžbenici odmah uzimaju apsolutnu vrijednost; klasifikacija je ista."
+      },
+      {
+        "question": "Elastičnost linearne potražnje \\(q=a-bp\\)?",
+        "answer": "\\(E=\\frac{p}{a-bp}\\cdot(-b)=\\frac{-bp}{a-bp}\\). Jedinična elastičnost je pri \\(p=\\frac{a}{2b}\\).",
+        "explanation": "Iako je nagib konstantan, elastičnost se mijenja duž pravca."
+      },
+      {
+        "question": "Elastičnost potražnje \\(q=100-2p\\) pri \\(p_0=10\\)?",
+        "answer": "\\(q(10)=80\\), \\(\\frac{dq}{dp}=-2\\), \\(E=\\frac{10}{80}\\cdot(-2)=-0{,}25\\): potražnja je neelastična.",
+        "explanation": "Rast cijene 1 % smanjuje potražnju za oko 0,25 %."
+      },
+      {
+        "question": "Kako protumačiti \\(E=-1{,}5\\)?",
+        "answer": "Povećanje cijene za 1 % smanjuje potražnju za približno 1,5 % — potražnja je elastična (\\(|E|>1\\)).",
+        "explanation": "Kod smanjenja cijene za 1 % potražnja raste za oko 1,5 %."
+      },
+      {
+        "question": "Kako se određuju intervali elastičnosti i neelastičnosti?",
+        "answer": "Izračunaj \\(E(p)\\), riješi \\(|E|=1\\) i uzmi u obzir \\(p>0\\), \\(q>0\\): gdje je \\(|E|>1\\) potražnja je elastična, gdje \\(|E|<1\\) neelastična.",
+        "explanation": "Takav je zadatak bio u Projektnom zadatku 1 (2023/24)."
+      },
+      {
+        "question": "Intervali elastičnosti za \\(q=100-2p\\)?",
+        "answer": "\\(|E|=1\\) pri \\(p=25\\); q > 0 traži \\(p<50\\). Neelastična na \\(\\langle0,25\\rangle\\), elastična na \\(\\langle25,50\\rangle\\).",
+        "explanation": "E = −2p/(100 − 2p)."
+      },
+      {
+        "question": "Intervali elastičnosti za \\(q=300-p^2\\)?",
+        "answer": "\\(E=\\frac{-2p^2}{300-p^2}\\); \\(|E|=1\\) pri \\(p=10\\). Neelastična na \\(\\langle0,10\\rangle\\), elastična na \\(\\langle10,\\sqrt{300}\\rangle\\).",
+        "explanation": "√300 ≈ 17,32 — iznad te cijene potražnja bi bila negativna."
+      },
+      {
+        "question": "Zašto provjeriti da je \\(q(p_0)>0\\)?",
+        "answer": "Potražnja ne smije biti negativna. Ako je \\(q(p_0)\\leq0\\), cijena je izvan ekonomskog područja funkcije i rezultat nema smisla.",
+        "explanation": "U jednoj studentskoj bilješci za q = −2p² + 12 pri p = 4 dobiveno je q = −20 — takav primjer nije ekonomski smislen."
+      },
+      {
+        "question": "Kako elastičnost utječe na ukupni prihod \\(p\\cdot q\\)?",
+        "answer": "Elastična potražnja: sniženje cijene povećava prihod. Neelastična: povišenje cijene povećava prihod. Jedinična: prihod je najveći.",
+        "explanation": "Za q = 100 − 2p prihod je najveći pri p = 25."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koeficijent elastičnosti potražnje računa se kao:",
+        "options": [
+          "\\(\\frac{q}{p}\\cdot\\frac{dp}{dq}\\)",
+          "\\(\\frac{p}{q}\\cdot\\frac{dq}{dp}\\)",
+          "\\(\\frac{dq}{dp}\\)",
+          "\\(p\\cdot q\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za potražnju \\(q=1200-25p\\) koeficijent elastičnosti pri \\(p=24\\) iznosi:",
+        "options": [
+          "\\(-25\\)",
+          "\\(-1\\)",
+          "\\(-0{,}04\\)",
+          "\\(-2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(|E|=0{,}4\\), potražnja je:",
+        "options": [
+          "elastična",
+          "neelastična",
+          "jedinično elastična",
+          "savršeno elastična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koeficijent elastičnosti iznosi \\(E=-2\\). Što se događa kad cijena poraste 1 %?",
+        "options": [
+          "potražnja poraste oko 2 %",
+          "potražnja padne oko 2 %",
+          "potražnja padne oko 0,5 %",
+          "potražnja se ne mijenja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za potražnju \\(q=100-2p\\) koeficijent elastičnosti pri \\(p=30\\) iznosi:",
+        "options": [
+          "\\(-0{,}6\\)",
+          "\\(-1{,}5\\)",
+          "\\(-2\\)",
+          "\\(-0{,}25\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za potražnju \\(q=300-p^2\\) pri \\(p=5\\) potražnja je:",
+        "options": [
+          "elastična (\\(E\\approx-1{,}8\\))",
+          "neelastična (\\(E\\approx-0{,}18\\))",
+          "jedinično elastična",
+          "savršeno neelastična"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za linearnu potražnju \\(q=a-bp\\) jedinična elastičnost postiže se pri cijeni:",
+        "options": [
+          "\\(p=\\frac{a}{b}\\)",
+          "\\(p=\\frac{a}{2b}\\)",
+          "\\(p=\\frac{b}{a}\\)",
+          "\\(p=2ab\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za potražnju \\(q=500-5p\\) potražnja je elastična na intervalu:",
+        "options": [
+          "\\(\\langle0,50\\rangle\\)",
+          "\\(\\langle50,100\\rangle\\)",
+          "\\(\\langle0,100\\rangle\\)",
+          "\\(\\langle100,+\\infty\\rangle\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Negativan koeficijent elastičnosti potražnje znači da:",
+        "options": [
+          "rast cijene povećava potražnju",
+          "rast cijene smanjuje potražnju",
+          "potražnja ne reagira na cijenu",
+          "je račun pogrešan"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Ako je |E| > 1, potražnja je _______.",
+        "answer": "elastična",
+        "hint": "Reagira jače od cijene"
+      },
+      {
+        "sentence": "Ako je |E| < 1, potražnja je _______.",
+        "answer": "neelastična",
+        "hint": "Reagira slabije od cijene"
+      },
+      {
+        "sentence": "Ako je |E| = 1, govorimo o _______ elastičnosti.",
+        "answer": "jediničnoj",
+        "hint": "Granični slučaj"
+      },
+      {
+        "sentence": "Za q = 100 − 2p potražnja je jedinično elastična pri cijeni p = _______.",
+        "answer": "25",
+        "hint": "p = a/(2b)"
+      },
+      {
+        "sentence": "Koeficijent elastičnosti potražnje najčešće je _______ jer rast cijene smanjuje potražnju.",
+        "answer": "negativan",
+        "hint": "Predznak derivacije dq/dp"
+      },
+      {
+        "sentence": "Za q = 1200 − 25p pri cijeni p = 24 potražnja iznosi q = _______.",
+        "answer": "600",
+        "hint": "1200 − 600"
+      }
+    ],
+    "learn": {
+      "title": "Elastičnost potražnje",
+      "content": "<h3>Zašto elastičnost, a ne samo derivacija</h3><p>Derivacija \\(\\frac{dq}{dp}\\) govori koliko jedinica potražnje izgubimo po jednom euru poskupljenja. No je li „−25 noćenja po euru” puno ili malo? Ovisi o tome prodajemo li 100 ili 10 000 noćenja i koliko noćenje košta. <strong>Elastičnost</strong> taj nagib pretvara u <strong>postotke</strong>: za koliko se % promijeni potražnja kad cijena poraste 1 %. Tako se mogu uspoređivati potpuno različiti proizvodi.</p><div class=\"formula-box\">\\[E_{q,p}=\\frac{p}{q}\\cdot\\frac{dq}{dp}\\]</div><p>Elastičnost je definirana za neprekidnu funkciju potražnje \\(q=q(p)\\) u točki \\(p_0\\), uz \\(p_0>0\\) i \\(q(p_0)>0\\).</p><table><thead><tr><th>Vrijednost</th><th>Naziv</th><th>Značenje</th></tr></thead><tbody><tr><td>\\(|E|>1\\)</td><td>elastična</td><td>potražnja se mijenja postotno više od cijene</td></tr><tr><td>\\(|E|<1\\)</td><td>neelastična</td><td>potražnja se mijenja postotno manje od cijene</td></tr><tr><td>\\(|E|=1\\)</td><td>jedinična</td><td>jednake postotne promjene</td></tr><tr><td>\\(E=0\\)</td><td>savršeno neelastična</td><td>potražnja ne reagira</td></tr></tbody></table><p><strong>Predznak</strong> je smjer: za uobičajenu potražnju \\(\\frac{dq}{dp}<0\\), pa je \\(E<0\\) — poskupljenje smanjuje potražnju. <strong>Apsolutna vrijednost</strong> je jakost reakcije. U nekim bilješkama elastičnost se odmah piše s apsolutnom vrijednošću, \\(E=\\left|\\frac{p}{q}\\cdot\\frac{dq}{dp}\\right|\\); klasifikacija je ista, samo se u tumačenju mora reći da potražnja <em>pada</em>.</p><h3>Elastičnost u točki — postupak</h3><ol><li>Izračunaj \\(q(p_0)\\) i provjeri da je pozitivna.</li><li>Izračunaj \\(\\frac{dq}{dp}\\) u \\(p_0\\).</li><li>Uvrsti u \\(E=\\frac{p_0}{q(p_0)}\\cdot q'(p_0)\\).</li><li>Protumači: vrsta elastičnosti + rečenica s postocima.</li></ol><div class=\"example-box\"><strong>Primjer 1.</strong> \\(q=100-2p\\), \\(p_0=10\\).<br>\\(q(10)=80\\), \\(\\frac{dq}{dp}=-2\\)<br>\\(E=\\frac{10}{80}\\cdot(-2)=-0{,}25\\)<br>\\(|E|<1\\) → neelastična: rast cijene od 1 % smanjuje potražnju za približno 0,25 %.</div><div class=\"example-box\"><strong>Primjer 2.</strong> \\(q=1200-25p\\), \\(p_0=24\\).<br>\\(q(24)=600\\), \\(E=\\frac{24}{600}\\cdot(-25)=-1\\) → jedinična elastičnost.</div><div class=\"example-box\"><strong>Primjer 3 (nelinearna potražnja).</strong> \\(q=300-p^2\\), \\(p_0=10\\).<br>\\(q(10)=200\\), \\(\\frac{dq}{dp}=-2p=-20\\)<br>\\(E=\\frac{10}{200}\\cdot(-20)=-1\\) → jedinična. Pri \\(p_0=5\\): \\(q=275\\), \\(E=\\frac{5}{275}\\cdot(-10)\\approx-0{,}18\\) → neelastična.</div><h3>Intervali elastičnosti i neelastičnosti</h3><p>Umjesto u jednoj točki, elastičnost se može promatrati kao funkcija cijene \\(E(p)\\). Granica između elastičnog i neelastičnog područja je cijena u kojoj je \\(|E(p)|=1\\).</p><div class=\"example-box\"><strong>Primjer 4.</strong> \\(q=100-2p\\). Ekonomsko područje: \\(p>0\\) i \\(q>0\\Rightarrow p\\in\\langle0,50\\rangle\\).<br>\\(E(p)=\\frac{p}{100-2p}\\cdot(-2)=\\frac{-2p}{100-2p}\\)<br>\\(|E|=1\\Rightarrow 2p=100-2p\\Rightarrow p=25\\)<br>Probna točka \\(p=10\\): \\(|E|=0{,}25<1\\); \\(p=30\\): \\(|E|=1{,}5>1\\).<br><strong>Neelastična</strong> na \\(\\langle0,25\\rangle\\), <strong>elastična</strong> na \\(\\langle25,50\\rangle\\).</div><div class=\"example-box\"><strong>Primjer 5.</strong> \\(q=300-p^2\\): \\(E(p)=\\frac{-2p^2}{300-p^2}\\); \\(|E|=1\\Rightarrow 2p^2=300-p^2\\Rightarrow p=10\\).<br>Neelastična na \\(\\langle0,10\\rangle\\), elastična na \\(\\langle10,\\sqrt{300}\\rangle\\approx\\langle10;\\ 17{,}32\\rangle\\).</div><p>Općenito za linearnu potražnju \\(q=a-bp\\): \\(|E|=1\\) pri \\(p=\\frac{a}{2b}\\) — točno na polovici između nulte cijene i cijene pri kojoj potražnja padne na nulu.</p><div class=\"tip-box\"><strong>Elastičnost i prihod.</strong> Prihod je \\(R=p\\cdot q\\). Ako je potražnja elastična, poskupljenje odbija razmjerno više kupaca pa prihod pada — isplati se pojeftiniti. Ako je neelastična, poskupljenje povećava prihod. Najveći prihod je pri jediničnoj elastičnosti (za \\(q=100-2p\\): \\(R=100p-2p^2\\) ima maksimum pri \\(p=25\\)).</div><div class=\"warning-box\"><strong>Zamke:</strong> zamijenjen omjer (\\(\\frac{q}{p}\\) umjesto \\(\\frac{p}{q}\\)) · s 1 se uspoređuje \\(|E|\\), a ne E (\\(E=-2\\) je elastična potražnja!) · q se računa u zadanoj cijeni prije uvrštavanja · negativna potražnja znači da je cijena izvan područja funkcije · u tumačenju uvijek napiši smjer (pada/raste) i postotak.</div>"
+    }
+  },
+  "indefiniteIntegral": {
+    "name": "Neodređeni integral",
+    "icon": "fa-chart-area",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "question": "Što je primitivna funkcija?",
+        "answer": "Funkcija F je primitivna funkcija od f ako je \\(F'(x)=f(x)\\). Integriranje je obrnuta operacija od deriviranja.",
+        "explanation": "Npr. x³ je primitivna funkcija od 3x²."
+      },
+      {
+        "question": "Što je neodređeni integral?",
+        "answer": "Skup svih primitivnih funkcija: \\(\\int f(x)\\,dx=F(x)+C\\), \\(C\\in\\mathbb{R}\\). f je podintegralna funkcija, C konstanta integracije.",
+        "explanation": "Sve primitivne funkcije razlikuju se samo za konstantu."
+      },
+      {
+        "question": "Zašto se dodaje konstanta C?",
+        "answer": "Jer je derivacija konstante nula: \\(x^3\\), \\(x^3+5\\) i \\(x^3-200\\) imaju istu derivaciju \\(3x^2\\).",
+        "explanation": "Deriviranjem se konstanta izgubi, pa je integriranjem ne možemo jednoznačno vratiti."
+      },
+      {
+        "question": "Pravilo za integral potencije?",
+        "answer": "\\(\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C\\), \\(n\\neq-1\\): eksponent se poveća za 1 i podijeli novim eksponentom.",
+        "explanation": "Obrnuto od (xⁿ)' = n·xⁿ⁻¹."
+      },
+      {
+        "question": "Osnovni tablični integrali?",
+        "answer": "\\(\\int dx=x+C\\), \\(\\int\\frac1x\\,dx=\\ln|x|+C\\), \\(\\int e^x\\,dx=e^x+C\\).",
+        "explanation": "∫(1/x)dx je slučaj n = −1 koji pravilo potencije ne pokriva."
+      },
+      {
+        "question": "Svojstva linearnosti integrala?",
+        "answer": "\\(\\int(f\\pm g)\\,dx=\\int f\\,dx\\pm\\int g\\,dx\\) i \\(\\int a\\,f\\,dx=a\\int f\\,dx\\) — polinom se integrira član po član.",
+        "explanation": "Konstanta ispred člana ostaje."
+      },
+      {
+        "question": "Kako provjeriti rezultat integriranja?",
+        "answer": "Deriviraj dobiveni rezultat — mora se dobiti podintegralna funkcija.",
+        "explanation": "(x⁴ − 2x³ + C)' = 4x³ − 6x² ✓"
+      },
+      {
+        "question": "Kako se iz marginalnih troškova dobivaju ukupni troškovi?",
+        "answer": "\\(T(Q)=\\int M(Q)\\,dQ\\) jer je \\(M(Q)=T'(Q)\\). Konstanta integracije C predstavlja fiksne troškove.",
+        "explanation": "T(0) = C: trošak i kad se ništa ne proizvodi."
+      },
+      {
+        "question": "Ukupni troškovi za \\(M(Q)=6Q^2+4Q+10\\) i fiksne troškove 500?",
+        "answer": "\\(T(Q)=2Q^3+2Q^2+10Q+500\\).",
+        "explanation": "∫6Q² = 2Q³, ∫4Q = 2Q², ∫10 = 10Q, C = 500."
+      },
+      {
+        "question": "Kako se iz marginalnog prihoda dobiva ukupni prihod?",
+        "answer": "\\(P(Q)=\\int P'(Q)\\,dQ\\); ovdje je \\(C=0\\) jer bez prodaje nema prihoda (\\(P(0)=0\\)).",
+        "explanation": "Npr. P'(Q) = 200 − 2Q → P(Q) = 200Q − Q²."
+      },
+      {
+        "question": "Koliko je \\(\\int(4x^3-6x^2+2x-5)\\,dx\\)?",
+        "answer": "\\(x^4-2x^3+x^2-5x+C\\).",
+        "explanation": "Član −5 postaje −5x (∫dx = x)."
+      },
+      {
+        "question": "Koja je najčešća greška s konstantnim članom?",
+        "answer": "Integral konstante nije nula: \\(\\int5\\,dx=5x+C\\). Nula je DERIVACIJA konstante.",
+        "explanation": "U studentskim bilješkama: „1Q + C → dodaš Q”."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "\\(\\int x^4\\,dx=\\)",
+        "options": [
+          "\\(4x^3+C\\)",
+          "\\(\\frac{x^5}{5}+C\\)",
+          "\\(\\frac{x^5}{4}+C\\)",
+          "\\(x^5+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(\\int(3x^2+2x)\\,dx=\\)",
+        "options": [
+          "\\(6x+2+C\\)",
+          "\\(x^3+x^2+C\\)",
+          "\\(3x^3+2x^2+C\\)",
+          "\\(x^3+2x^2+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ako je \\(M(Q)=7Q^5+5Q^4+3Q^2+2Q+1\\), ukupni troškovi su:",
+        "options": [
+          "\\(\\frac76Q^6+Q^5+Q^3+Q^2+Q+C\\)",
+          "\\(35Q^4+20Q^3+6Q+2\\)",
+          "\\(7Q^6+5Q^5+3Q^3+2Q^2+Q+C\\)",
+          "\\(\\frac76Q^6+Q^5+Q^3+Q^2+C\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(\\int e^x\\,dx=\\)",
+        "options": [
+          "\\(e^x+C\\)",
+          "\\(\\frac{e^{x+1}}{x+1}+C\\)",
+          "\\(x\\,e^{x-1}+C\\)",
+          "\\(\\ln x+C\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "\\(\\int\\frac1x\\,dx=\\)",
+        "options": [
+          "\\(-\\frac{1}{x^2}+C\\)",
+          "\\(\\ln|x|+C\\)",
+          "\\(\\frac{x^0}{0}+C\\)",
+          "\\(e^x+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "U funkciji \\(T(Q)=\\int M(Q)\\,dQ\\) konstanta integracije C predstavlja:",
+        "options": [
+          "marginalne troškove",
+          "varijabilne troškove",
+          "fiksne troškove",
+          "prosječne troškove"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Marginalni prihod je \\(P'(Q)=200-2Q\\). Ukupni prihod je:",
+        "options": [
+          "\\(-2\\)",
+          "\\(200Q-Q^2\\)",
+          "\\(200Q-2Q^2\\)",
+          "\\(200-Q^2\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "\\(\\int\\sqrt x\\,dx=\\)",
+        "options": [
+          "\\(\\frac{1}{2\\sqrt x}+C\\)",
+          "\\(\\frac23x^{3/2}+C\\)",
+          "\\(\\frac32x^{3/2}+C\\)",
+          "\\(x^{1/2}+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Marginalni troškovi su \\(M(Q)=3Q^2-4Q+5\\), a fiksni troškovi 100. Ukupni troškovi su:",
+        "options": [
+          "\\(Q^3-2Q^2+5Q+100\\)",
+          "\\(6Q-4+100\\)",
+          "\\(Q^3-4Q^2+5Q+100\\)",
+          "\\(3Q^3-4Q^2+5Q+100\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Integriranje je obrnuta operacija od:",
+        "options": [
+          "množenja",
+          "deriviranja",
+          "logaritmiranja",
+          "kvadriranja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Funkcija F za koju vrijedi F'(x) = f(x) zove se _______ funkcija od f.",
+        "answer": "primitivna",
+        "hint": "Također: antiderivacija"
+      },
+      {
+        "sentence": "Konstanta C u neodređenom integralu zove se konstanta _______.",
+        "answer": "integracije",
+        "hint": "Gubi se deriviranjem"
+      },
+      {
+        "sentence": "U funkciji ukupnih troškova T(Q) = ∫M(Q) dQ konstanta C predstavlja _______ troškove.",
+        "answer": "fiksne",
+        "hint": "T(0)"
+      },
+      {
+        "sentence": "Integriranje je obrnuta operacija od _______.",
+        "answer": "deriviranja",
+        "hint": "F' = f"
+      },
+      {
+        "sentence": "∫x³ dx = x⁴/_______ + C.",
+        "answer": "4",
+        "hint": "Novi eksponent"
+      },
+      {
+        "sentence": "Rezultat integriranja provjeravamo _______.",
+        "answer": "deriviranjem",
+        "hint": "Obrnuta operacija"
+      },
+      {
+        "sentence": "Ukupni trošak dobivamo integriranjem _______ troška.",
+        "answer": "marginalnog",
+        "hint": "M(Q)"
+      }
+    ],
+    "learn": {
+      "title": "Neodređeni integral",
+      "content": "<h3>Integriranje — derivacija unatrag</h3><p>Deriviranjem smo iz ukupnih troškova dobivali marginalne. Menadžer često ima obrnutu situaciju: zna koliko košta <em>svaka dodatna jedinica</em> (marginalni trošak), a treba mu <em>ukupni</em> trošak. Taj obrnuti korak je <strong>integriranje</strong>.</p><p>Funkcija F je <strong>primitivna funkcija</strong> od f ako je \\(F'(x)=f(x)\\). Primitivna funkcija nije jedinstvena: kako je derivacija svake konstante nula, \\(F(x)\\), \\(F(x)+5\\) i \\(F(x)-200\\) imaju istu derivaciju. Skup svih primitivnih funkcija je <strong>neodređeni integral</strong>:</p><div class=\"formula-box\">\\[\\int f(x)\\,dx=F(x)+C,\\qquad C\\in\\mathbb{R}.\\]</div><p>f je <strong>podintegralna funkcija</strong>, x varijabla integracije, a C <strong>konstanta integracije</strong>.</p><h3>Tablica i pravila</h3><table><thead><tr><th>Integral</th><th>Rezultat</th><th>Provjera deriviranjem</th></tr></thead><tbody><tr><td>\\(\\int x^n\\,dx\\ (n\\neq-1)\\)</td><td>\\(\\frac{x^{n+1}}{n+1}+C\\)</td><td>\\(\\frac{(n+1)x^n}{n+1}=x^n\\)</td></tr><tr><td>\\(\\int dx\\)</td><td>\\(x+C\\)</td><td>\\((x)'=1\\)</td></tr><tr><td>\\(\\int\\frac1x\\,dx\\)</td><td>\\(\\ln|x|+C\\)</td><td>\\((\\ln x)'=\\frac1x\\)</td></tr><tr><td>\\(\\int e^x\\,dx\\)</td><td>\\(e^x+C\\)</td><td>\\((e^x)'=e^x\\)</td></tr></tbody></table><div class=\"formula-box\">\\[\\int\\big(f(x)\\pm g(x)\\big)\\,dx=\\int f(x)\\,dx\\pm\\int g(x)\\,dx,\\qquad \\int a\\,f(x)\\,dx=a\\int f(x)\\,dx.\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> \\(\\int(4x^3-6x^2+2x-5)\\,dx=4\\cdot\\frac{x^4}{4}-6\\cdot\\frac{x^3}{3}+2\\cdot\\frac{x^2}{2}-5x+C=x^4-2x^3+x^2-5x+C\\).<br>Provjera: \\((x^4-2x^3+x^2-5x)'=4x^3-6x^2+2x-5\\) ✓</div><div class=\"example-box\"><strong>Primjer 2 (korijen kao potencija).</strong> \\(\\int\\sqrt x\\,dx=\\int x^{1/2}\\,dx=\\frac{x^{3/2}}{3/2}+C=\\frac23x^{3/2}+C\\).</div><h3>Primjena: od marginalnih do ukupnih troškova</h3><p>Budući da je \\(M(Q)=T'(Q)\\), ukupne troškove dobivamo integriranjem:</p><div class=\"formula-box\">\\[T(Q)=\\int M(Q)\\,dQ,\\qquad C=T(0)=\\text{fiksni troškovi}.\\]</div><div class=\"example-box\"><strong>Primjer 3 (studentske bilješke).</strong> \\(M(Q)=7Q^5+5Q^4+3Q^2+2Q+1\\)<br>\\(T(Q)=\\frac{7Q^6}{6}+\\frac{5Q^5}{5}+\\frac{3Q^3}{3}+\\frac{2Q^2}{2}+Q+C=\\frac76Q^6+Q^5+Q^3+Q^2+Q+C\\)<br>Zadnji član: \\(\\int1\\,dQ=Q\\) — ne smije se izgubiti.</div><div class=\"example-box\"><strong>Primjer 4 (zadani fiksni troškovi).</strong> \\(M(Q)=6Q^2+4Q+10\\), fiksni troškovi 500.<br>\\(T(Q)=2Q^3+2Q^2+10Q+C\\); uvjet \\(T(0)=500\\Rightarrow C=500\\)<br>\\(T(Q)=2Q^3+2Q^2+10Q+500\\)</div><div class=\"example-box\"><strong>Primjer 5 (prihod).</strong> Marginalni prihod \\(P'(Q)=200-2Q\\Rightarrow P(Q)=200Q-Q^2+C\\). Bez prodaje nema prihoda, \\(P(0)=0\\Rightarrow C=0\\), pa je \\(P(Q)=200Q-Q^2\\).</div><div class=\"tip-box\"><strong>Ako fiksni troškovi nisu zadani</strong>, odgovor ostavi s C: „\\(T(Q)=\\ldots+C\\), gdje je C iznos fiksnih troškova”. Marginalni trošak ne nosi nikakvu informaciju o fiksnom trošku.</div><div class=\"warning-box\"><strong>Zamke:</strong> zaboravljen \\(+C\\) · \\(\\int5\\,dx=5x\\), ne 0 · eksponent se povećava (ne smanjuje) i dijeli se <em>novim</em> eksponentom · \\(\\int\\frac1x\\,dx\\) nije \\(\\frac{x^0}{0}\\) nego \\(\\ln|x|\\) · marginalni trošak se integrira, ne derivira.</div>"
+    }
+  },
+  "interest": {
+    "name": "Jednostavni i složeni kamatni račun",
+    "icon": "fa-percent",
+    "color": "#f97316",
+    "flashcards": [
+      {
+        "question": "Koje su osnovne oznake kamatnog računa?",
+        "answer": "\\(C_0\\) glavnica (početna vrijednost), \\(C_n\\) konačna vrijednost, p kamatna stopa u %, \\(i=\\frac{p}{100}\\), n broj razdoblja, K kamate.",
+        "explanation": "Kamatni faktor: r = 1 + i."
+      },
+      {
+        "question": "Formula jednostavnog kamatnog računa?",
+        "answer": "Kamate samo na početnu glavnicu: \\(K=C_0\\cdot n\\cdot i\\), \\(C_n=C_0(1+n\\cdot i)\\).",
+        "explanation": "Kamate su svake godine jednake."
+      },
+      {
+        "question": "Formula složenog kamatnog računa?",
+        "answer": "Kamate se pribrajaju glavnici i dalje se ukamaćuju: \\(C_n=C_0(1+i)^n=C_0\\cdot r^n\\).",
+        "explanation": "„Kamate na kamate”."
+      },
+      {
+        "question": "Dekurzivni ili anticipativni obračun?",
+        "answer": "Dekurzivni: kamate na kraju razdoblja, od vrijednosti s početka razdoblja. Anticipativni: na početku, od vrijednosti s kraja. Na kolegiju: dekurzivni.",
+        "explanation": "Sve formule za rente i zajam pretpostavljaju složen dekurzivan obračun."
+      },
+      {
+        "question": "Ukamaćivanje ili diskontiranje?",
+        "answer": "Ukamaćivanje: buduća vrijednost današnjeg iznosa (\\(\\cdot r^n\\)). Diskontiranje: sadašnja vrijednost budućeg iznosa (\\(:r^n\\)).",
+        "explanation": "S formula za 2. kolokvij: ukamaćivanje — uplata; diskontiranje — posudba."
+      },
+      {
+        "question": "Kako izračunati kamatnu stopu iz \\(C_0\\), \\(C_n\\) i n?",
+        "answer": "\\(i=\\sqrt[n]{\\frac{C_n}{C_0}}-1\\), a zatim \\(p=100\\cdot i\\).",
+        "explanation": "Npr. 10 000 € naraste na 12 000 € za 3 godine: i ≈ 0,0627, tj. p ≈ 6,27 %."
+      },
+      {
+        "question": "Kako izračunati broj razdoblja n?",
+        "answer": "\\(n=\\frac{\\log\\frac{C_n}{C_0}}{\\log(1+i)}\\) (može i s ln).",
+        "explanation": "Dobiveni n često nije cijeli broj — tumači ga u kontekstu."
+      },
+      {
+        "question": "Što je relativni (proporcionalni) kamatnjak?",
+        "answer": "Godišnja stopa podijeljena brojem obračuna u godini: \\(p_r=\\frac{p}{m}\\). Uz češći obračun daje VEĆU konačnu vrijednost od godišnjeg.",
+        "explanation": "12 % godišnje, mjesečni obračun → 1 % mjesečno."
+      },
+      {
+        "question": "Što je konformni kamatnjak?",
+        "answer": "Periodični kamatnjak s istim godišnjim učinkom kao godišnja stopa: \\(p'=100\\left[\\left(1+\\frac{p}{100}\\right)^{1/m}-1\\right]\\).",
+        "explanation": "12 % godišnje, mjesečno → p' ≈ 0,9489 % mjesečno."
+      },
+      {
+        "question": "5000 € uz 6 % godišnje na 4 godine — jednostavni i složeni račun?",
+        "answer": "Jednostavni: \\(5000(1+4\\cdot0{,}06)=6200\\) €. Složeni: \\(5000\\cdot1{,}06^4\\approx6312{,}38\\) €.",
+        "explanation": "Razlika 112,38 € su „kamate na kamate”."
+      },
+      {
+        "question": "2000 € uz 12 % godišnje, mjesečni obračun, relativni kamatnjak — stanje nakon godine?",
+        "answer": "\\(p_r=1\\,\\%\\) mjesečno, \\(n=12\\): \\(C_{12}=2000\\cdot1{,}01^{12}\\approx2253{,}65\\) €.",
+        "explanation": "Godišnjim obračunom bilo bi 2240 € — relativni daje više."
+      },
+      {
+        "question": "Kako se broji n kad se obračun ne vrši godišnje?",
+        "answer": "n = broj OBRAČUNSKIH razdoblja: godine × broj obračuna u godini. 3 godine uz kvartalni obračun → \\(n=12\\).",
+        "explanation": "Stopa i broj razdoblja moraju se odnositi na isto razdoblje."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Koliko iznosi 10 000 € nakon 3 godine uz 5 % godišnje, složeni dekurzivni obračun?",
+        "options": [
+          "11 500,00 €",
+          "11 576,25 €",
+          "11 025,00 €",
+          "15 000,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko iznosi 8000 € nakon 5 godina uz 4 % godišnje, jednostavni kamatni račun?",
+        "options": [
+          "9600 €",
+          "9733,22 €",
+          "8320 €",
+          "9200 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Uz koju godišnju stopu (složeni obračun) 10 000 € za 3 godine naraste na 12 000 €?",
+        "options": [
+          "≈ 6,67 %",
+          "≈ 6,27 %",
+          "≈ 20 %",
+          "≈ 5,00 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za koliko godina 8000 € naraste na 10 000 € uz 5 % godišnje (složeni obračun)?",
+        "options": [
+          "≈ 5 godina",
+          "≈ 4,57 godina",
+          "≈ 4,00 godine",
+          "≈ 6,25 godina"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Godišnja kamatna stopa je 8 %, obračun je kvartalni. Relativni kvartalni kamatnjak je:",
+        "options": [
+          "\\(8\\,\\%\\)",
+          "\\(2\\,\\%\\)",
+          "\\(\\approx1{,}94\\,\\%\\)",
+          "\\(32\\,\\%\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "10 000 € uloženo je na 3 godine uz 8 % godišnje, kvartalni obračun, relativni kamatnjak. Konačna vrijednost je:",
+        "options": [
+          "12 597,12 €",
+          "12 682,42 €",
+          "12 400,00 €",
+          "10 824,32 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kolika je sadašnja vrijednost iznosa od 11 000 € koji dospijeva za 2 godine uz 10 % godišnje (složeno)?",
+        "options": [
+          "9900,00 €",
+          "9090,91 €",
+          "13 310,00 €",
+          "9166,67 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz isti godišnji kamatnjak i mjesečni obračun, koji kamatnjak daje veću konačnu vrijednost?",
+        "options": [
+          "konformni",
+          "relativni",
+          "daju jednako",
+          "ovisi o glavnici"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kamatni faktor uz kamatnu stopu od 6 % je:",
+        "options": [
+          "\\(r=0{,}06\\)",
+          "\\(r=1{,}06\\)",
+          "\\(r=6\\)",
+          "\\(r=1{,}6\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kamate u složenom kamatnom računu iznose:",
+        "options": [
+          "\\(K=C_n-C_0\\)",
+          "\\(K=C_0\\cdot n\\)",
+          "\\(K=C_n+C_0\\)",
+          "\\(K=\\frac{C_n}{C_0}\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Kod složenog kamatnog računa kamate se pribrajaju _______ i dalje se ukamaćuju.",
+        "answer": "glavnici",
+        "hint": "C₀"
+      },
+      {
+        "sentence": "Obračun kamata na kraju razdoblja zove se _______ obračun.",
+        "answer": "dekurzivni",
+        "hint": "Suprotno: anticipativni"
+      },
+      {
+        "sentence": "Svođenje budućeg iznosa na današnju vrijednost zove se _______.",
+        "answer": "diskontiranje",
+        "hint": "Dijeljenje s rⁿ"
+      },
+      {
+        "sentence": "Godišnja stopa 12 % uz mjesečni obračun daje relativni mjesečni kamatnjak od _______ %.",
+        "answer": "1",
+        "hint": "p/m"
+      },
+      {
+        "sentence": "Kamatnjak koji uz češći obračun daje isti godišnji učinak kao godišnja stopa zove se _______ kamatnjak.",
+        "answer": "konformni",
+        "hint": "Nije relativni"
+      },
+      {
+        "sentence": "Uz godišnju stopu 8 % i kvartalni obračun relativni kvartalni kamatnjak iznosi _______ %.",
+        "answer": "2",
+        "hint": "8/4"
+      },
+      {
+        "sentence": "Tri godine uz kvartalni obračun daju n = _______ obračunskih razdoblja.",
+        "answer": "12",
+        "hint": "3 · 4"
+      }
+    ],
+    "learn": {
+      "title": "Jednostavni i složeni kamatni račun",
+      "content": "<h3>Vremenska vrijednost novca</h3><p>Temeljna ideja financijske matematike: <strong>isti iznos novca vrijedi različito u različitim trenucima</strong>. 1000 € danas vrijedi više od 1000 € za pet godina, jer se današnji novac može uložiti i donositi kamate. Sav drugi kolokvij — rente i zajmovi — gradi se na dvije operacije: <strong>ukamaćivanju</strong> (pomak iznosa u budućnost) i <strong>diskontiranju</strong> (pomak iznosa u sadašnjost).</p><table><thead><tr><th>Oznaka</th><th>Značenje</th></tr></thead><tbody><tr><td>\\(C_0\\)</td><td>glavnica, početna (sadašnja) vrijednost</td></tr><tr><td>\\(C_n\\)</td><td>konačna (buduća) vrijednost nakon n razdoblja</td></tr><tr><td>\\(p\\), \\(i=\\frac{p}{100}\\)</td><td>kamatna stopa u postocima i kao decimalni broj</td></tr><tr><td>\\(r=1+i\\)</td><td>kamatni faktor</td></tr><tr><td>\\(K\\)</td><td>kamate, \\(K=C_n-C_0\\)</td></tr></tbody></table><h3>Jednostavni kamatni račun</h3><p>Kamate se svako razdoblje računaju <strong>samo na početnu glavnicu</strong>, pa su svaki put jednake:</p><div class=\"formula-box\">\\[K=C_0\\cdot n\\cdot i,\\qquad C_n=C_0(1+n\\cdot i).\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> 5000 € na 4 godine uz 6 %: \\(K=5000\\cdot4\\cdot0{,}06=1200\\) €, \\(C_4=6200\\) €.</div><h3>Složeni kamatni račun</h3><p>Kamate se na kraju svakog razdoblja <strong>pribrajaju glavnici</strong> i u sljedećem razdoblju i same donose kamate. Nakon jednog razdoblja \\(C_1=C_0r\\), nakon dva \\(C_2=C_0r^2\\), …</p><div class=\"formula-box\">\\[C_n=C_0(1+i)^n=C_0\\,r^n,\\qquad C_0=\\frac{C_n}{r^n}.\\]</div><div class=\"example-box\"><strong>Primjer 2.</strong> 5000 € na 4 godine uz 6 %, složeno: \\(C_4=5000\\cdot1{,}06^4\\approx6312{,}38\\) €. U odnosu na jednostavni račun to je 112,38 € više — to su kamate na kamate.</div><div class=\"example-box\"><strong>Primjer 3 (diskontiranje).</strong> Koliko danas vrijedi 11 000 € koje dospijeva za 2 godine uz 10 %? \\(C_0=\\frac{11\\,000}{1{,}1^2}\\approx9090{,}91\\) €.</div><p>Obračun je <strong>dekurzivan</strong> kad se kamate obračunavaju na kraju razdoblja od vrijednosti s početka razdoblja (tako se računa na kolegiju), a <strong>anticipativan</strong> kad se obračunavaju unaprijed.</p><h3>Kamatna stopa i vrijeme</h3><p>Iz \\(C_n=C_0(1+i)^n\\) izražavamo i ili n (formule s popisa za 2. kolokvij):</p><div class=\"formula-box\">\\[i=\\sqrt[n]{\\frac{C_n}{C_0}}-1,\\qquad n=\\frac{\\log\\frac{C_n}{C_0}}{\\log(1+i)}.\\]</div><div class=\"example-box\"><strong>Primjer 4.</strong> 10 000 € naraste na 12 000 € za 3 godine: \\(i=\\sqrt[3]{1{,}2}-1\\approx0{,}0627\\), dakle \\(p\\approx6{,}27\\,\\%\\).<br><strong>Primjer 5.</strong> Za koliko godina 8000 € naraste na 10 000 € uz 5 %? \\(n=\\frac{\\log1{,}25}{\\log1{,}05}\\approx4{,}57\\) godina.</div><h3>Obračun češći od godišnjeg: relativni i konformni kamatnjak</h3><p>Ako je zadana godišnja stopa p, a kamate se obračunavaju m puta godišnje (polugodišnje m = 2, kvartalno m = 4, mjesečno m = 12), treba stopa za jedno obračunsko razdoblje:</p><div class=\"formula-box\">\\[\\text{relativni: } p_r=\\frac{p}{m},\\qquad \\text{konformni: } p'=100\\left[\\left(1+\\frac{p}{100}\\right)^{1/m}-1\\right].\\]</div><ul><li><strong>Relativni</strong> (proporcionalni) kamatnjak jednostavno dijeli stopu — zbog kamata na kamate daje <em>više</em> od godišnjeg obračuna.</li><li><strong>Konformni</strong> kamatnjak je odabran tako da m obračuna daje <em>točno isti</em> godišnji učinak: \\((1+\\frac{p'}{100})^m=1+\\frac{p}{100}\\).</li></ul><div class=\"example-box\"><strong>Primjer 6.</strong> 2000 € na godinu dana uz 12 % godišnje, mjesečni obračun.<br>Relativni: \\(p_r=1\\,\\%\\), \\(C_{12}=2000\\cdot1{,}01^{12}\\approx2253{,}65\\) €.<br>Konformni: \\(p'=100(1{,}12^{1/12}-1)\\approx0{,}9489\\,\\%\\), \\(C_{12}=2000\\cdot1{,}12=2240\\) € — isto kao godišnji obračun.</div><div class=\"example-box\"><strong>Primjer 7.</strong> 10 000 € na 3 godine uz 8 % godišnje, kvartalni obračun, relativni kamatnjak: \\(p_r=2\\,\\%\\), \\(n=3\\cdot4=12\\), \\(C_{12}=10\\,000\\cdot1{,}02^{12}\\approx12\\,682{,}42\\) €.</div><div class=\"tip-box\"><strong>Pravilo usklađivanja:</strong> stopa i broj razdoblja uvijek se odnose na <em>isto</em> razdoblje. Ako je zadana stopa za jedno razdoblje (npr. kvartalna), a obračun je drugačiji (npr. polugodišnji), relativni kamatnjak za novo razdoblje dobiva se razmjerno: polugodište = 2 kvartala, pa je polugodišnji relativni kamatnjak dvostruk kvartalnom.</div><div class=\"warning-box\"><strong>Zamke:</strong> stopa u formuli je \\(i=\\frac{p}{100}\\), ne p · n broji obračunska razdoblja, ne godine · relativni ≠ konformni (relativni dijeli, konformni korjenuje) · kod jednostavnog računa nema potenciranja · zaokružuj tek na kraju, inače se razlike nakupe.</div>"
+    }
+  },
+  "annuities": {
+    "name": "Rente",
+    "icon": "fa-piggy-bank",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "question": "Što je renta?",
+        "answer": "Niz nominalno jednakih periodičnih uplata ili isplata R u jednakim vremenskim razmacima, uz isti kamatnjak, kroz n razdoblja.",
+        "explanation": "Pretpostavka: složen, dekurzivan obračun; r = 1 + i."
+      },
+      {
+        "question": "Prenumerando ili postnumerando?",
+        "answer": "Prenumerando: uplate na POČETKU razdoblja. Postnumerando: uplate na KRAJU razdoblja.",
+        "explanation": "Prenumerando uplata ukamaćuje se jedno razdoblje dulje."
+      },
+      {
+        "question": "Buduća (konačna) vrijednost postnumerando rente?",
+        "answer": "\\(S_n'=R\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Zbroj geometrijskog niza uplata ukamaćenih do kraja."
+      },
+      {
+        "question": "Buduća vrijednost prenumerando rente?",
+        "answer": "\\(S_n=R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\) — postnumerando vrijednost pomnožena s r.",
+        "explanation": "Svaka uplata ima jedno razdoblje kamata više."
+      },
+      {
+        "question": "Sadašnja vrijednost postnumerando rente?",
+        "answer": "\\(A_n=\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Koliko danas treba uložiti da bismo krajem svakog razdoblja podizali R."
+      },
+      {
+        "question": "Sadašnja vrijednost prenumerando rente?",
+        "answer": "\\(A_n'=\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\).",
+        "explanation": "Koliko danas vrijedi niz uplata na početku razdoblja."
+      },
+      {
+        "question": "Kako iz teksta zadatka prepoznati koju formulu koristiti?",
+        "answer": "„Koliko ćemo imati na kraju” → buduća vrijednost S. „Koliko danas uložiti / koliko danas vrijedi” → sadašnja vrijednost A. Početak → pre, kraj → post.",
+        "explanation": "Dva pitanja, četiri formule."
+      },
+      {
+        "question": "Kako iz buduće vrijednosti izračunati ratu R?",
+        "answer": "Postnumerando: \\(R=\\frac{S_n'(r-1)}{r^n-1}\\). Prenumerando: \\(R=\\frac{S_n(r-1)}{r(r^n-1)}\\).",
+        "explanation": "Samo se izrazi R iz odgovarajuće formule."
+      },
+      {
+        "question": "Kako iz sadašnje vrijednosti izračunati ratu R?",
+        "answer": "Postnumerando: \\(R=\\frac{A_n\\,r^n(r-1)}{r^n-1}\\). Prenumerando: \\(R=\\frac{A_n'\\,r^{n-1}(r-1)}{r^n-1}\\).",
+        "explanation": "Tipično pitanje: koliki se jednaki iznosi mogu podizati."
+      },
+      {
+        "question": "2000 € uplaćuje se krajem svake godine 5 godina uz 4 %. Koliko je na računu na kraju?",
+        "answer": "\\(S_5'=2000\\cdot\\frac{1{,}04^5-1}{0{,}04}\\approx10\\,832{,}65\\) €.",
+        "explanation": "Uplaćeno je 10 000 €, kamate su 832,65 €."
+      },
+      {
+        "question": "Ista renta (2000 €, 5 godina, 4 %), ali uplate početkom godine?",
+        "answer": "\\(S_5=2000\\cdot1{,}04\\cdot\\frac{1{,}04^5-1}{0{,}04}\\approx11\\,265{,}95\\) €.",
+        "explanation": "= 10 832,65 · 1,04."
+      },
+      {
+        "question": "Kako se računa broj uplata n iz buduće vrijednosti postnumerando rente?",
+        "answer": "\\(n=\\frac{\\log\\left[\\frac{S_n'(r-1)}{R}+1\\right]}{\\log r}\\).",
+        "explanation": "Za prenumerando se u nazivniku razlomka pod logaritmom piše R·r."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Kamatni faktor uz kamatnu stopu od 4 % je:",
+        "options": [
+          "\\(0{,}04\\)",
+          "\\(1{,}04\\)",
+          "\\(1{,}4\\)",
+          "\\(4\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kod prenumerando rente uplate se vrše:",
+        "options": [
+          "na kraju razdoblja",
+          "na početku razdoblja",
+          "jednom",
+          "u sredini razdoblja"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Buduća vrijednost postnumerando rente je:",
+        "options": [
+          "\\(R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(R\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(R\\cdot r^n\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Sadašnja vrijednost postnumerando rente je:",
+        "options": [
+          "\\(R\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\)",
+          "\\(\\frac{R}{r-1}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko danas treba uložiti da bi se krajem svake od idućih 8 godina podizalo 5000 € uz 6 % godišnje?",
+        "options": [
+          "≈ 31 048,97 €",
+          "≈ 32 911,91 €",
+          "≈ 49 487,34 €",
+          "≈ 40 000,00 €"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Koliko treba uplaćivati krajem svake godine da bi se za 10 godina uz 5 % skupilo 50 000 €?",
+        "options": [
+          "≈ 5000,00 €",
+          "≈ 3975,23 €",
+          "≈ 6475,23 €",
+          "≈ 3785,93 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Buduća vrijednost prenumerando rente jednaka je postnumerando vrijednosti pomnoženoj s:",
+        "options": [
+          "\\(r^n\\)",
+          "\\(r\\)",
+          "\\(\\frac1r\\)",
+          "\\(n\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zadatak pita: „Koliko danas treba uložiti da bi se…”. Koja se vrijednost rente traži?",
+        "options": [
+          "buduća",
+          "sadašnja",
+          "nominalna",
+          "prosječna"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Koliko danas vrijedi 8 uplata po 5000 € početkom svake godine uz 6 % godišnje?",
+        "options": [
+          "≈ 31 048,97 €",
+          "≈ 32 911,91 €",
+          "≈ 29 291,48 €",
+          "≈ 42 000,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Danas se uloži 100 000 € uz 6 % godišnje. Koliki se jednaki iznos može podizati krajem svake od 10 godina?",
+        "options": [
+          "≈ 10 000,00 €",
+          "≈ 13 586,80 €",
+          "≈ 12 817,74 €",
+          "≈ 7586,80 €"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Niz nominalno jednakih periodičnih uplata ili isplata zove se _______.",
+        "answer": "renta",
+        "hint": "Oznaka rate: R"
+      },
+      {
+        "sentence": "Renta s uplatama na početku razdoblja zove se _______ renta.",
+        "answer": "prenumerando",
+        "hint": "Suprotno: postnumerando"
+      },
+      {
+        "sentence": "Renta s uplatama na kraju razdoblja zove se _______ renta.",
+        "answer": "postnumerando",
+        "hint": "Suprotno: prenumerando"
+      },
+      {
+        "sentence": "Sadašnja vrijednost rente dobiva se _______ budućih uplata.",
+        "answer": "diskontiranjem",
+        "hint": "Dijeljenje potencijama od r"
+      },
+      {
+        "sentence": "Prenumerando vrijednosti jednake su postnumerando vrijednostima pomnoženima s kamatnim faktorom _______.",
+        "answer": "r",
+        "hint": "r = 1 + i"
+      },
+      {
+        "sentence": "Uplatom 2000 € krajem godine kroz 5 godina uplaćeno je ukupno _______ €.",
+        "answer": "10000",
+        "hint": "5 · 2000 (bez kamata)"
+      }
+    ],
+    "learn": {
+      "title": "Rente",
+      "content": "<h3>Što je renta</h3><p><strong>Renta</strong> je niz nominalno jednakih iznosa R koji se uplaćuju ili isplaćuju u jednakim vremenskim razmacima, uz isti kamatnjak, kroz n razdoblja. Primjeri: mjesečna štednja, mirovinski ulog, podizanje jednakih iznosa s oročenog depozita. Iznose ne smijemo samo zbrojiti, jer svaki „živi” u drugom trenutku — zato ih kamatnim faktorom \\(r=1+i\\) premještamo u isti trenutak (kraj ili početak) i onda zbrajamo. Zbroj je geometrijski niz, otud izraz \\(\\frac{r^n-1}{r-1}\\) u svim formulama.</p><h3>Prenumerando i postnumerando</h3><ul><li><strong>Prenumerando</strong> — uplata na <em>početku</em> razdoblja („početkom godine”).</li><li><strong>Postnumerando</strong> — uplata na <em>kraju</em> razdoblja („krajem godine”).</li></ul><p>Uplata s početka razdoblja ukamaćuje se jedno razdoblje dulje, pa je <strong>svaka prenumerando vrijednost jednaka postnumerando vrijednosti pomnoženoj s r</strong>.</p><h3>Četiri formule (s popisa formula za 2. kolokvij)</h3><table><thead><tr><th></th><th>Buduća vrijednost („koliko ćemo imati”)</th><th>Sadašnja vrijednost („koliko danas”)</th></tr></thead><tbody><tr><td>prenumerando</td><td>\\(S_n=R\\cdot r\\cdot\\frac{r^n-1}{r-1}\\)</td><td>\\(A_n'=\\frac{R}{r^{n-1}}\\cdot\\frac{r^n-1}{r-1}\\)</td></tr><tr><td>postnumerando</td><td>\\(S_n'=R\\cdot\\frac{r^n-1}{r-1}\\)</td><td>\\(A_n=\\frac{R}{r^n}\\cdot\\frac{r^n-1}{r-1}\\)</td></tr></tbody></table><p>Izražavanjem R dobivaju se formule za ratu, npr. \\(R=\\frac{S_n'(r-1)}{r^n-1}\\) i \\(R=\\frac{A_n\\,r^n(r-1)}{r^n-1}\\), a logaritmiranjem broj razdoblja \\(n=\\frac{\\log\\left[\\frac{S_n'(r-1)}{R}+1\\right]}{\\log r}\\).</p><h3>Riješeni primjeri</h3><div class=\"example-box\"><strong>Primjer 1 (buduća, postnumerando).</strong> Krajem svake godine uplaćuje se 2000 € kroz 5 godina uz 4 %.<br>\\(r=1{,}04\\), \\(r^5\\approx1{,}216653\\)<br>\\(S_5'=2000\\cdot\\frac{1{,}216653-1}{0{,}04}\\approx10\\,832{,}65\\) €</div><div class=\"example-box\"><strong>Primjer 2 (buduća, prenumerando).</strong> Isto, ali početkom godine: \\(S_5=1{,}04\\cdot10\\,832{,}65\\approx11\\,265{,}95\\) €.</div><div class=\"example-box\"><strong>Primjer 3 (sadašnja, postnumerando).</strong> Koliko danas treba uložiti da bi se krajem svake od 8 godina podizalo 5000 € uz 6 %?<br>\\(A_8=\\frac{5000}{1{,}06^8}\\cdot\\frac{1{,}06^8-1}{0{,}06}\\approx31\\,048{,}97\\) € — manje od 8 · 5000 = 40 000 €, jer su kasnije isplate diskontirane.</div><div class=\"example-box\"><strong>Primjer 4 (sadašnja, prenumerando).</strong> Isto, ali isplate početkom godine: \\(A_8'=\\frac{5000}{1{,}06^7}\\cdot\\frac{1{,}06^8-1}{0{,}06}\\approx32\\,911{,}91\\) € (= 31 048,97 · 1,06).</div><div class=\"example-box\"><strong>Primjer 5 (rata iz buduće vrijednosti).</strong> Koliko uplaćivati krajem godine da se za 10 godina uz 5 % skupi 50 000 €?<br>\\(R=\\frac{50\\,000\\cdot0{,}05}{1{,}05^{10}-1}\\approx3975{,}23\\) €</div><div class=\"example-box\"><strong>Primjer 6 (rata iz sadašnje vrijednosti).</strong> Danas se uloži 100 000 € uz 6 %. Koliki se jednaki iznos može podizati krajem svake od 10 godina?<br>\\(R=\\frac{100\\,000\\cdot1{,}06^{10}\\cdot0{,}06}{1{,}06^{10}-1}\\approx13\\,586{,}80\\) €</div><div class=\"tip-box\"><strong>Stablo odluke za ispit:</strong> (1) Traži li se iznos na kraju (S) ili danas (A)? (2) Uplate početkom (pre) ili krajem (post) razdoblja? (3) Traži li se vrijednost ili rata R — ako rata, izrazi R iz iste formule. (4) Uskladi stopu s razdobljem uplata.</div><div class=\"warning-box\"><strong>Zamke:</strong> zamjena S i A („koliko danas” je uvijek sadašnja vrijednost) · kod prenumerando sadašnje vrijednosti potencija je \\(r^{n-1}\\), ne \\(r^n\\) · \\(r-1=i\\), ne p · „podizati krajem godine iz uloga” je postnumerando sadašnja vrijednost · zaokruživanje \\(r^n\\) na dvije decimale unosi grešku od više eura — nosi barem šest decimala.</div>"
+    }
+  },
+  "loans": {
+    "name": "Zajam",
+    "icon": "fa-money-bill-wave",
+    "color": "#22c55e",
+    "flashcards": [
+      {
+        "question": "Od čega se sastoji anuitet zajma?",
+        "answer": "\\(a_k=R_k+I_k\\): otplatna kvota \\(R_k\\) (smanjuje dug) i kamate \\(I_k=\\frac{C_{k-1}\\cdot p}{100}\\) na ostatak duga s kraja prethodnog razdoblja.",
+        "explanation": "Anuitet = ukupna rata koju dužnik plaća."
+      },
+      {
+        "question": "Koja su dva modela otplate zajma?",
+        "answer": "1. Nominalno jednaki anuiteti (konstantan a, kvote rastu). 2. Nominalno jednake otplatne kvote (konstantan R, anuiteti padaju).",
+        "explanation": "Na formulama za 2. kolokvij oba su modela."
+      },
+      {
+        "question": "Formula jednakog anuiteta?",
+        "answer": "\\(a=C\\cdot\\frac{r^n(r-1)}{r^n-1}\\), \\(r=1+\\frac{p}{100}\\) — zajam je sadašnja vrijednost budućih jednakih anuiteta.",
+        "explanation": "Ista formula kao rata iz sadašnje vrijednosti postnumerando rente."
+      },
+      {
+        "question": "Kako se popunjava otplatna tablica (jednaki anuiteti)?",
+        "answer": "Za svaki redak: \\(I_k=\\frac{C_{k-1}p}{100}\\) → \\(R_k=a-I_k\\) → \\(C_k=C_{k-1}-R_k\\). Stupci: razdoblje, anuitet, kamate, otplatna kvota, ostatak duga.",
+        "explanation": "Redak 0 sadrži samo iznos zajma C₀."
+      },
+      {
+        "question": "Kako se kroz vrijeme mijenjaju kamate i kvote uz jednake anuitete?",
+        "answer": "Kamate PADAJU (dug se smanjuje), otplatne kvote RASTU geometrijski: \\(R_k=R_1\\cdot r^{k-1}\\). Ostatak duga pada na 0.",
+        "explanation": "Prvi anuiteti su pretežno kamate, zadnji pretežno otplata."
+      },
+      {
+        "question": "Koje su kontrole otplatne tablice?",
+        "answer": "a) zadnja kvota = prethodni ostatak duga \\(R_n=C_{n-1}\\); b) \\(\\sum R_k=C_0\\); c) \\(\\sum R_k+\\sum I_k=\\sum a_k\\).",
+        "explanation": "Zbog zaokruživanja zbroj kvota može odstupati za cent."
+      },
+      {
+        "question": "Model jednakih otplatnih kvota — formule?",
+        "answer": "\\(R=\\frac{C}{n}\\), \\(I_i=\\frac{C_{i-1}p}{100}\\), \\(a_i=R+I_i\\), \\(C_i=C\\left(1-\\frac{i}{n}\\right)\\).",
+        "explanation": "Anuitet pada jer kamate na sve manji dug padaju."
+      },
+      {
+        "question": "Koliko ukupno kamata dužnik plati?",
+        "answer": "\\(\\sum I_k=\\sum a_k-C_0\\) — zbroj svih anuiteta umanjen za iznos zajma.",
+        "explanation": "To je cijena zajma."
+      },
+      {
+        "question": "Anuitet zajma od 60 000 € na 4 godine uz 8 %?",
+        "answer": "\\(a=60\\,000\\cdot\\frac{1{,}08^4\\cdot0{,}08}{1{,}08^4-1}\\approx18\\,115{,}25\\) €.",
+        "explanation": "Prva godina: kamate 4800 €, kvota 13 315,25 €, ostatak 46 684,75 €."
+      },
+      {
+        "question": "Zajam 30 000 € na 3 godine uz 10 %, jednake otplatne kvote — anuiteti?",
+        "answer": "\\(R=10\\,000\\) €. Anuiteti: 13 000 €, 12 000 €, 11 000 € (kamate 3000, 2000, 1000 €).",
+        "explanation": "Ukupne kamate: 6000 €."
+      },
+      {
+        "question": "Kolike su kamate u prvom razdoblju uz jednake anuitete?",
+        "answer": "\\(I_1=\\frac{C_0\\cdot p}{100}\\) — kamate na cijeli iznos zajma. Npr. 60 000 € uz 8 %: 4800 €.",
+        "explanation": "Vrijedi u oba modela."
+      },
+      {
+        "question": "Koji model uz iste uvjete ima manje ukupne kamate?",
+        "answer": "Model jednakih otplatnih kvota — dug se brže smanjuje na početku, pa su kamate manje; ali su prvi anuiteti veći.",
+        "explanation": "30 000 €, 3 god., 10 %: kvote 6000 € kamata, jednaki anuiteti ≈ 6190 €."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Anuitet zajma sastoji se od:",
+        "options": [
+          "samo kamata",
+          "samo otplatne kvote",
+          "otplatne kvote i kamata",
+          "glavnice pomnožene kamatnjakom"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Kamate u k-tom razdoblju računaju se kao:",
+        "options": [
+          "\\(I_k=\\frac{C_{k-1}\\cdot p}{100}\\)",
+          "\\(I_k=\\frac{C_0\\cdot p}{100}\\)",
+          "\\(I_k=a\\cdot r\\)",
+          "\\(I_k=\\frac{C}{n}\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Zbroj svih otplatnih kvota jednak je:",
+        "options": [
+          "ukupnim kamatama",
+          "iznosu zajma \\(C_0\\)",
+          "zadnjem anuitetu",
+          "zbroju anuiteta"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Formula nominalno jednakog anuiteta je:",
+        "options": [
+          "\\(a=\\frac{C}{n}\\)",
+          "\\(a=C\\cdot\\frac{r^n(r-1)}{r^n-1}\\)",
+          "\\(a=C\\cdot r^n\\)",
+          "\\(a=C\\cdot(r-1)\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz jednake anuitete kamate kroz vrijeme:",
+        "options": [
+          "rastu",
+          "padaju",
+          "ostaju jednake",
+          "jednake su otplatnoj kvoti"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Anuitet zajma od 100 000 € na 10 godina uz 5 % (jednaki anuiteti, krajem godine) iznosi približno:",
+        "options": [
+          "10 000,00 €",
+          "12 950,46 €",
+          "15 000,00 €",
+          "12 333,33 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam od 30 000 € otplaćuje se 3 godine jednakim otplatnim kvotama uz 10 %. Prvi anuitet je:",
+        "options": [
+          "10 000 €",
+          "13 000 €",
+          "12 063,44 €",
+          "11 000 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Ukupne kamate zajma jednake su:",
+        "options": [
+          "\\(\\sum a_k+C_0\\)",
+          "\\(\\sum a_k-C_0\\)",
+          "\\(C_0\\cdot p\\)",
+          "\\(\\frac{C_0}{n}\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam 60 000 €, 4 godine, 8 %, jednaki anuiteti. Ostatak duga nakon prve godine je približno:",
+        "options": [
+          "45 000,00 €",
+          "46 684,75 €",
+          "41 884,75 €",
+          "55 200,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Uz jednake otplatne kvote anuiteti kroz vrijeme:",
+        "options": [
+          "rastu",
+          "padaju",
+          "ostaju jednaki",
+          "prvo rastu pa padaju"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Svaki anuitet sastoji se od otplatne kvote i _______.",
+        "answer": "kamata",
+        "hint": "Iₖ"
+      },
+      {
+        "sentence": "Kamate u k-tom razdoblju računaju se na ostatak _______ s kraja prethodnog razdoblja.",
+        "answer": "duga",
+        "hint": "Cₖ₋₁"
+      },
+      {
+        "sentence": "Zbroj svih otplatnih kvota jednak je iznosu _______.",
+        "answer": "zajma",
+        "hint": "C₀"
+      },
+      {
+        "sentence": "U modelu jednakih anuiteta otplatne kvote iz razdoblja u razdoblje _______.",
+        "answer": "rastu",
+        "hint": "Kamate padaju"
+      },
+      {
+        "sentence": "U modelu jednakih otplatnih kvota kvota iznosi R = C/_______.",
+        "answer": "n",
+        "hint": "Broj razdoblja"
+      },
+      {
+        "sentence": "Zajam od 30 000 € na 3 godine uz 10 % s jednakim otplatnim kvotama ima ukupne kamate od _______ €.",
+        "answer": "6000",
+        "hint": "3000 + 2000 + 1000"
+      },
+      {
+        "sentence": "Tablica s anuitetima, kamatama, kvotama i ostatkom duga zove se _______ tablica.",
+        "answer": "otplatna",
+        "hint": "Plan otplate"
+      }
+    ],
+    "learn": {
+      "title": "Zajam",
+      "content": "<h3>Zajam kao renta s druge strane šaltera</h3><p>Banka danas isplati iznos \\(C=C_0\\), a dužnik ga vraća nizom budućih uplata. Zajam je dakle <strong>sadašnja vrijednost budućih otplata</strong> — ista matematika kao kod renti, s kamatnim faktorom \\(r=1+\\frac{p}{100}\\) i složenim dekurzivnim obračunom.</p><p>Svaka uplata zove se <strong>anuitet</strong> i ima dva dijela:</p><div class=\"formula-box\">\\[a_k=R_k+I_k,\\qquad I_k=\\frac{C_{k-1}\\cdot p}{100},\\qquad C_k=C_{k-1}-R_k.\\]</div><ul><li>\\(I_k\\) — <strong>kamate</strong>, računaju se na ostatak duga s kraja <em>prethodnog</em> razdoblja;</li><li>\\(R_k\\) — <strong>otplatna kvota</strong>, dio koji stvarno smanjuje dug;</li><li>\\(C_k\\) — <strong>ostatak duga</strong> nakon k-tog anuiteta.</li></ul><h3>Model 1 — nominalno jednaki anuiteti</h3><div class=\"formula-box\">\\[a=C\\cdot\\frac{r^n(r-1)}{r^n-1},\\qquad R_k=R_1\\cdot r^{k-1},\\qquad C=a\\cdot\\frac{r^n-1}{r^n(r-1)}.\\]</div><div class=\"example-box\"><strong>Primjer 1.</strong> Zajam od 60 000 € na 4 godine uz 8 % godišnjih dekurzivnih kamata, jednaki anuiteti krajem godine.<br>\\(r=1{,}08\\), \\(r^4\\approx1{,}360489\\)<br>\\(a=60\\,000\\cdot\\frac{1{,}360489\\cdot0{,}08}{0{,}360489}\\approx18\\,115{,}25\\) €<table><thead><tr><th>k</th><th>anuitet \\(a\\)</th><th>kamate \\(I_k\\)</th><th>kvota \\(R_k\\)</th><th>ostatak \\(C_k\\)</th></tr></thead><tbody><tr><td>0</td><td></td><td></td><td></td><td>60 000,00</td></tr><tr><td>1</td><td>18 115,25</td><td>4800,00</td><td>13 315,25</td><td>46 684,75</td></tr><tr><td>2</td><td>18 115,25</td><td>3734,78</td><td>14 380,47</td><td>32 304,28</td></tr><tr><td>3</td><td>18 115,25</td><td>2584,34</td><td>15 530,91</td><td>16 773,37</td></tr><tr><td>4</td><td>18 115,24</td><td>1341,87</td><td>16 773,37</td><td>0,00</td></tr><tr><td>Σ</td><td>72 460,99</td><td>12 460,99</td><td>60 000,00</td><td></td></tr></tbody></table>Kontrole: a) zadnja kvota 16 773,37 = ostatak duga nakon 3. godine ✓; b) zbroj kvota = 60 000,00 ✓; c) 60 000,00 + 12 460,99 = 72 460,99 ✓. Zadnji anuitet (18 115,24) korigiran je za cent jer se kvota izjednačava s preostalim dugom.</div><p>Anuitet je stalan, ali mu se sastav mijenja: kamate padaju, kvote rastu (\\(R_2=R_1\\cdot1{,}08=14\\,380{,}47\\) ✓).</p><h3>Model 2 — nominalno jednake otplatne kvote</h3><div class=\"formula-box\">\\[R=\\frac{C}{n},\\quad I_i=\\frac{C_{i-1}\\,p}{100},\\quad a_i=R+I_i,\\quad C_i=C\\left(1-\\frac{i}{n}\\right).\\]</div><div class=\"example-box\"><strong>Primjer 2.</strong> Zajam od 30 000 € na 3 godine uz 10 %, jednake otplatne kvote.<br>\\(R=\\frac{30\\,000}{3}=10\\,000\\) €<table><thead><tr><th>k</th><th>anuitet</th><th>kamate</th><th>kvota</th><th>ostatak</th></tr></thead><tbody><tr><td>0</td><td></td><td></td><td></td><td>30 000</td></tr><tr><td>1</td><td>13 000</td><td>3000</td><td>10 000</td><td>20 000</td></tr><tr><td>2</td><td>12 000</td><td>2000</td><td>10 000</td><td>10 000</td></tr><tr><td>3</td><td>11 000</td><td>1000</td><td>10 000</td><td>0</td></tr><tr><td>Σ</td><td>36 000</td><td>6000</td><td>30 000</td><td></td></tr></tbody></table>Isti zajam s jednakim anuitetima: \\(a\\approx12\\,063{,}44\\) €, ukupne kamate ≈ 6190 € — više, jer se dug na početku sporije smanjuje.</div><div class=\"tip-box\"><strong>Koliko košta zajam?</strong> Ukupne kamate \\(\\sum I_k=\\sum a_k-C_0\\). To je broj koji uspoređuje ponude, neovisno o modelu otplate.</div><div class=\"warning-box\"><strong>Zamke:</strong> kamate se računaju na ostatak duga \\(C_{k-1}\\), ne na početni zajam (osim u prvom retku) · zadnji redak: kvota se uzima jednaka preostalom dugu, pa se zaokruživanje „upije” · u tablici uvijek napiši i redak Σ i sve tri kontrole — na završnom ispitu kontrola tablice nosi posebne bodove · \\(p\\) u \\(\\frac{C_{k-1}p}{100}\\) je u postocima, a \\(r=1+\\frac{p}{100}\\).</div>"
+    }
+  },
+  "gaussJordan": {
+    "name": "Sustavi linearnih jednadžbi — Gauss-Jordanova metoda",
+    "icon": "fa-table-cells",
+    "color": "#64748b",
+    "flashcards": [
+      {
+        "question": "Što je cilj Gauss-Jordanove metode?",
+        "answer": "Sustav zapisati kao proširenu matricu \\([A\\mid b]\\) i elementarnim transformacijama redaka lijevi blok svesti na jediničnu matricu; zadnji stupac je rješenje.",
+        "explanation": "Tada svaki redak glasi xᵢ = broj."
+      },
+      {
+        "question": "Koje su tri elementarne transformacije redaka?",
+        "answer": "1. zamjena dvaju redaka · 2. množenje retka brojem različitim od nule · 3. dodavanje višekratnika jednog retka drugom.",
+        "explanation": "Ne mijenjaju skup rješenja sustava."
+      },
+      {
+        "question": "Smiju li se transformacije primjenjivati na stupce?",
+        "answer": "NE — samo na retke. Redak je jedna jednadžba; stupac sadrži koeficijente jedne nepoznanice u svim jednadžbama.",
+        "explanation": "Operacija na stupcu mijenja sustav."
+      },
+      {
+        "question": "Razlika Gaussove i Gauss-Jordanove metode?",
+        "answer": "Gauss: svođenje na gornju trokutastu matricu pa supstitucija unatrag. Gauss-Jordan: nastavlja do pune jedinične matrice — rješenje se čita izravno.",
+        "explanation": "Iste transformacije, Gauss-Jordan samo ide dalje."
+      },
+      {
+        "question": "Što je stožerni (pivot) element?",
+        "answer": "Vodeća jedinica u retku kojom se poništavaju ostali elementi njezina stupca. Dobiva se zamjenom ili množenjem retka.",
+        "explanation": "Radi se stupac po stupac po dijagonali."
+      },
+      {
+        "question": "Kako prepoznati jedinstveno rješenje?",
+        "answer": "Lijevi blok postane jedinična matrica: \\(x_1=a,\\ x_2=b,\\ x_3=c\\).",
+        "explanation": "Svaka nepoznanica ima svoj stožerni element."
+      },
+      {
+        "question": "Kako prepoznati beskonačno mnogo rješenja?",
+        "answer": "Pojavi se nul-redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\): jedna je nepoznanica slobodna (\\(x_3=t\\in\\mathbb{R}\\)), ostale se izraze pomoću t.",
+        "explanation": "0 = 0 je uvijek istinito."
+      },
+      {
+        "question": "Kako prepoznati da sustav nema rješenja?",
+        "answer": "Pojavi se redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\), \\(k\\neq0\\), tj. \\(0=k\\) — proturječje. Sustav je nerješiv (nekonzistentan).",
+        "explanation": "Nula lijevo i desno = sloboda; nula samo lijevo = nemogućnost."
+      },
+      {
+        "question": "Riješi \\(x+2y=5,\\ 3x-y=1\\) Gauss-Jordanovom metodom.",
+        "answer": "\\(\\left[\\begin{array}{cc|c}1&2&5\\\\3&-1&1\\end{array}\\right]\\sim\\left[\\begin{array}{cc|c}1&0&1\\\\0&1&2\\end{array}\\right]\\Rightarrow x=1,\\ y=2\\).",
+        "explanation": "R₂ − 3R₁, pa R₂ : (−7), pa R₁ − 2R₂."
+      },
+      {
+        "question": "Kako se zapisuje proširena matrica sustava?",
+        "answer": "Koeficijenti uz nepoznanice lijevo (redak = jednadžba, stupac = nepoznanica), desne strane iza okomite crte: \\([A\\mid b]\\).",
+        "explanation": "Nepoznanica koja nedostaje u jednadžbi ima koeficijent 0."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Gauss-Jordanovom metodom lijevi blok proširene matrice svodi se na:",
+        "options": [
+          "nul-matricu",
+          "jediničnu matricu",
+          "gornju trokutastu matricu s dvojkama",
+          "jedan redak"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Što NIJE elementarna transformacija redaka?",
+        "options": [
+          "zamjena dvaju redaka",
+          "množenje retka brojem različitim od nule",
+          "dodavanje višekratnika jednog retka drugom",
+          "množenje retka nulom"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "Gaussova metoda nakon svođenja na gornju trokutastu matricu završava:",
+        "options": [
+          "supstitucijom unatrag",
+          "svođenjem na jediničnu matricu",
+          "transformacijama stupaca",
+          "formulom za kvadratnu jednadžbu"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Elementarne transformacije pri rješavanju sustava primjenjuju se na:",
+        "options": [
+          "samo stupce",
+          "samo retke",
+          "retke i stupce po volji",
+          "samo dijagonalu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\) u reduciranoj matrici znači:",
+        "options": [
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja (slobodna nepoznanica)",
+          "nema rješenja",
+          "grešku u računu"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\) uz \\(k\\neq0\\) znači:",
+        "options": [
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja",
+          "sustav nema rješenja",
+          "stožerni element"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "Rješenje sustava \\(x+y+z=6,\\ 2x-y+z=3,\\ x+2y-z=2\\) je:",
+        "options": [
+          "\\((1,2,3)\\)",
+          "\\((3,2,1)\\)",
+          "\\((2,1,3)\\)",
+          "\\((1,3,2)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Ako lijevi blok postane jedinična matrica, sustav ima:",
+        "options": [
+          "nijedno rješenje",
+          "jedinstveno rješenje",
+          "beskonačno mnogo rješenja",
+          "točno dva rješenja"
+        ],
+        "correct": 1
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Za Gauss-Jordanovu metodu sustav se zapisuje kao _______ matrica [A | b].",
+        "answer": "proširena",
+        "hint": "Koeficijenti i desne strane"
+      },
+      {
+        "sentence": "Cilj je lijevi blok svesti na _______ matricu.",
+        "answer": "jediničnu",
+        "hint": "Jedinice na dijagonali, nule drugdje"
+      },
+      {
+        "sentence": "Elementarne transformacije primjenjuju se samo na _______.",
+        "answer": "retke",
+        "hint": "Nikad na stupce"
+      },
+      {
+        "sentence": "Gaussova metoda završava supstitucijom _______.",
+        "answer": "unatrag",
+        "hint": "Od zadnje nepoznanice prema prvoj"
+      },
+      {
+        "sentence": "Redak [0 0 0 | k] uz k ≠ 0 znači da sustav _______ rješenja.",
+        "answer": "nema",
+        "hint": "0 = k"
+      },
+      {
+        "sentence": "Vodeća jedinica kojom se poništava stupac zove se _______ element.",
+        "answer": "stožerni",
+        "hint": "Pivot"
+      }
+    ],
+    "learn": {
+      "title": "Sustavi linearnih jednadžbi — Gauss-Jordanova metoda",
+      "content": "<div class=\"tip-box\"><strong>Napomena o opsegu:</strong> tema je u silabusu istog FMTU kolegija na engleskom (predavanje 11), ali se ne pojavljuje ni na popisu formula za 2. kolokvij 2023/24 ni na pregledanom završnom ispitu. Provjeri kod nastavnika ulazi li u tvoj kolokvij.</div><h3>Ideja: sustav kao tablica brojeva</h3><p>Kad više nepoznanica mora istodobno zadovoljiti više linearnih uvjeta, imamo <strong>sustav linearnih jednadžbi</strong>. Supstitucija je s tri nepoznanice nepregledna. Gauss-Jordanova metoda pretvara rješavanje u mehaničko „knjigovodstvo”: nepoznanice se izostave, ostaju samo brojevi u tablici (<strong>proširenoj matrici</strong>) koju sređujemo stalnim pravilima.</p><div class=\"formula-box\">\\[\\left[\\begin{array}{ccc|c}a_{11}&a_{12}&a_{13}&b_1\\\\a_{21}&a_{22}&a_{23}&b_2\\\\a_{31}&a_{32}&a_{33}&b_3\\end{array}\\right]\\ \\sim\\ \\left[\\begin{array}{ccc|c}1&0&0&a\\\\0&1&0&b\\\\0&0&1&c\\end{array}\\right]\\ \\Rightarrow\\ x_1=a,\\ x_2=b,\\ x_3=c.\\]</div><h3>Tri dopuštene transformacije</h3><ul><li><strong>zamjena</strong> dvaju redaka;</li><li><strong>množenje</strong> retka brojem različitim od nule;</li><li><strong>dodavanje višekratnika</strong> jednog retka drugom retku.</li></ul><p>To su upravo dopuštene operacije s jednadžbama (promijeni redoslijed, pomnoži, zbroji), pa ne mijenjaju rješenje. Radi se <strong>stupac po stupac</strong>: na dijagonali se napravi 1 (stožerni element), a zatim se njime ponište svi ostali elementi u tom stupcu. Transformacije se primjenjuju <strong>samo na retke</strong> — stupac drži koeficijente jedne nepoznanice u svim jednadžbama, pa bi njegovo mijenjanje promijenilo sustav.</p><div class=\"example-box\"><strong>Primjer 1.</strong> \\(x+y+z=6,\\ 2x-y+z=3,\\ x+2y-z=2\\).<br>\\(\\left[\\begin{array}{ccc|c}1&1&1&6\\\\2&-1&1&3\\\\1&2&-1&2\\end{array}\\right]\\xrightarrow[R_3-R_1]{R_2-2R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&-3&-1&-9\\\\0&1&-2&-4\\end{array}\\right]\\)<br>Zamijeni R₂ i R₃ (da stožer bude 1):<br>\\(\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&-2&-4\\\\0&-3&-1&-9\\end{array}\\right]\\xrightarrow[R_3+3R_2]{R_1-R_2}\\left[\\begin{array}{ccc|c}1&0&3&10\\\\0&1&-2&-4\\\\0&0&-7&-21\\end{array}\\right]\\)<br>\\(R_3:(-7)\\Rightarrow[\\,0\\ 0\\ 1\\mid3\\,]\\), zatim \\(R_1-3R_3\\), \\(R_2+2R_3\\):<br>\\(\\left[\\begin{array}{ccc|c}1&0&0&1\\\\0&1&0&2\\\\0&0&1&3\\end{array}\\right]\\Rightarrow x=1,\\ y=2,\\ z=3\\)<br>Provjera u 2. jednadžbi: \\(2-2+3=3\\) ✓</div><h3>Gauss ili Gauss-Jordan</h3><p><strong>Gaussova metoda</strong> staje kod gornje trokutaste matrice (nule ispod dijagonale), pa se rješenje dobiva <strong>supstitucijom unatrag</strong>: zadnji redak daje zadnju nepoznanicu, koja se uvrštava prema gore. <strong>Gauss-Jordanova</strong> ide do kraja — ponište se i elementi iznad dijagonale, pa se rješenje samo pročita.</p><h3>Tri moguća ishoda</h3><table><thead><tr><th>Reducirana matrica</th><th>Ishod</th></tr></thead><tbody><tr><td>jedinična matrica lijevo</td><td>jedinstveno rješenje</td></tr><tr><td>redak \\([\\,0\\ 0\\ 0\\mid0\\,]\\)</td><td>beskonačno mnogo rješenja (slobodna nepoznanica \\(t\\in\\mathbb{R}\\))</td></tr><tr><td>redak \\([\\,0\\ 0\\ 0\\mid k\\,]\\), \\(k\\neq0\\)</td><td>nema rješenja (proturječje \\(0=k\\))</td></tr></tbody></table><div class=\"warning-box\"><strong>Zamke:</strong> transformacija stupaca · množenje retka nulom · zaboravljen desni stupac pri transformaciji retka · krivo čitanje nul-retka (nula na obje strane = beskonačno rješenja, nula samo lijevo = nema rješenja) · nepoznanica koja nedostaje u jednadžbi upisuje se kao 0, ne preskače se.</div>"
+    }
+  },
+  "examPractice": {
+    "name": "Vježba za ispit (stvarni ispitni zadaci)",
+    "icon": "fa-graduation-cap",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "question": "Kako je izgledao Projektni zadatak 1 (2023/24, Redovni Opatija)?",
+        "answer": "5 zadataka po 2 boda (10): derivacija u točki · intervali rasta i pada · prosječni i marginalni troškovi · lokalni ekstremi · intervali elastičnosti potražnje.",
+        "explanation": "Cijelo gradivo 1. kolokvija u pet tipičnih zadataka."
+      },
+      {
+        "question": "Kako je izgledao Završni ispit (2023/24, grupa B)?",
+        "answer": "7 zadataka, 30 bodova: zajam s otplatnom tablicom i kontrolom · elastičnost · renta · rast i pad · ukupni trošak iz marginalnog · relativni kamatnjak · lokalni ekstrem.",
+        "explanation": "Otprilike pola financijske matematike, pola derivacija i primjena."
+      },
+      {
+        "question": "ZI: Zajam 40 000 €, 3 godine, 7 % godišnjih dekurzivnih kamata, jednaki anuiteti krajem godine. Anuitet?",
+        "answer": "\\(a=40\\,000\\cdot\\frac{1{,}07^3\\cdot0{,}07}{1{,}07^3-1}\\approx15\\,242{,}07\\) €.",
+        "explanation": "Kamate: 2800,00 · 1929,06 · 997,14 €; ukupno 5726,20 €."
+      },
+      {
+        "question": "ZI: \\(q(p)=800-16p\\). Koeficijent elastičnosti pri \\(p_0=1\\) i tumačenje?",
+        "answer": "\\(q(1)=784\\), \\(E=\\frac{1}{784}\\cdot(-16)\\approx-0{,}0204\\). Neelastična: rast cijene 1 % smanjuje potražnju za oko 0,02 %.",
+        "explanation": "Jedinična elastičnost bila bi tek pri p = 25."
+      },
+      {
+        "question": "ZI: Uloženo 60 000 €. Koliki se jednaki iznosi mogu podizati krajem svake od 7 godina uz 5 %?",
+        "answer": "Postnumerando sadašnja vrijednost: \\(R=\\frac{60\\,000\\cdot1{,}05^7\\cdot0{,}05}{1{,}05^7-1}\\approx10\\,369{,}19\\) €.",
+        "explanation": "Složen, godišnji, dekurzivan obračun."
+      },
+      {
+        "question": "ZI: Intervali rasta i pada funkcije \\(f(x)=x^3-\\frac72x^2+2x+10\\)?",
+        "answer": "\\(f'=3x^2-7x+2=0\\Rightarrow x=\\frac13,\\ x=2\\). Raste na \\(\\langle-\\infty,\\frac13\\rangle\\cup\\langle2,+\\infty\\rangle\\), pada na \\(\\langle\\frac13,2\\rangle\\).",
+        "explanation": "Tablica: + | − | +."
+      },
+      {
+        "question": "ZI: Marginalni trošak \\(M(Q)=3Q^4+4Q^3+7Q\\). Koliki je ukupni trošak?",
+        "answer": "\\(T(Q)=\\int M(Q)\\,dQ=\\frac35Q^5+Q^4+\\frac72Q^2+C\\), C = fiksni troškovi.",
+        "explanation": "Provjera: (3/5·Q⁵)' = 3Q⁴ ✓"
+      },
+      {
+        "question": "ZI: 64 666 € na 5 godina, kvartalna stopa 4 %, polugodišnji složeni dekurzivni obračun, relativni kamatnjak. Konačna vrijednost?",
+        "answer": "Polugodišnji relativni kamatnjak 8 %, \\(n=10\\): \\(C_{10}=64\\,666\\cdot1{,}08^{10}\\approx139\\,609{,}04\\) €.",
+        "explanation": "Polugodište = 2 kvartala → 2 · 4 % = 8 %."
+      },
+      {
+        "question": "ZI: Lokalni ekstrem funkcije \\(f(x)=\\frac{x^2+2}{x}\\) — maksimum ili minimum?",
+        "answer": "\\(f'=1-\\frac{2}{x^2}=0\\Rightarrow x=\\pm\\sqrt2\\). Minimum \\((\\sqrt2,2\\sqrt2)\\), maksimum \\((-\\sqrt2,-2\\sqrt2)\\).",
+        "explanation": "f''(x) = 4/x³: pozitivna u √2, negativna u −√2."
+      },
+      {
+        "question": "Kolokvij: derivacija funkcije \\(f(x)=e^{x^3-4}\\ln(4x)\\) u točki \\(x=2\\)?",
+        "answer": "\\(f'(x)=3x^2e^{x^3-4}\\ln(4x)+\\frac{e^{x^3-4}}{x}\\); \\(f'(2)=e^4\\left(12\\ln8+\\frac12\\right)\\approx1389{,}70\\).",
+        "explanation": "Umnožak + lančano pravilo za oba faktora."
+      },
+      {
+        "question": "Kolokvij: domena funkcije \\(f(x)=\\ln\\frac{x-4}{x+2}\\)?",
+        "answer": "\\(\\frac{x-4}{x+2}>0\\) → tablica predznaka: \\(D_f=\\langle-\\infty,-2\\rangle\\cup\\langle4,+\\infty\\rangle\\).",
+        "explanation": "Isti kolokvij: (3x⁶ − 5x² − 17x³)/(−x + 7) ima D = ℝ \\ {7}."
+      },
+      {
+        "question": "Kolokvij: minimum prosječnih troškova za \\(T(Q)=5Q^3-90Q^2+540Q\\)?",
+        "answer": "\\(\\bar T=5Q^2-90Q+540\\), \\(\\bar T'=10Q-90=0\\Rightarrow Q=9\\); \\(\\bar T''=10>0\\). Minimum \\((9,135)\\).",
+        "explanation": "T̄(9) = 405 − 810 + 540 = 135."
+      },
+      {
+        "question": "Kolokvij: intervali rasta i pada funkcije \\(f(x)=x^3-6x^2+9x-1\\)?",
+        "answer": "\\(f'=3x^2-12x+9=3(x-1)(x-3)\\). Raste na \\(\\langle-\\infty,1\\rangle\\cup\\langle3,+\\infty\\rangle\\), pada na \\(\\langle1,3\\rangle\\).",
+        "explanation": "Maksimum (1, 3), minimum (3, −1)."
+      },
+      {
+        "question": "Kolokvij: ekstremi funkcije \\(f(x)=\\frac{x^2+1}{x}\\)?",
+        "answer": "\\(f'=\\frac{x^2-1}{x^2}=0\\Rightarrow x=\\pm1\\). Minimum \\((1,2)\\), maksimum \\((-1,-2)\\).",
+        "explanation": "U studentskom rješenju su zamijenjeni — provjeri drugom derivacijom f'' = 2/x³."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Zajam od 40 000 € odobren je na 3 godine uz 7 % godišnjih dekurzivnih kamata i jednake anuitete krajem godine. Anuitet iznosi:",
+        "options": [
+          "13 333,33 €",
+          "15 242,07 €",
+          "16 133,33 €",
+          "14 280,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam 40 000 €, 3 godine, 7 %, jednaki anuiteti: kamate u prvoj godini iznose:",
+        "options": [
+          "933,33 €",
+          "2800,00 €",
+          "1066,94 €",
+          "3066,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam 40 000 €, 3 godine, 7 %, jednaki anuiteti: ostatak duga nakon prve godine iznosi približno:",
+        "options": [
+          "26 666,67 €",
+          "27 557,93 €",
+          "24 757,93 €",
+          "37 200,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Zajam 40 000 €, 3 godine, 7 %, jednaki anuiteti: ukupne kamate iznose približno:",
+        "options": [
+          "8400,00 €",
+          "5726,20 €",
+          "4800,00 €",
+          "2800,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Funkcija potražnje je \\(q(p)=800-16p\\). Koeficijent elastičnosti pri \\(p_0=1\\) iznosi približno:",
+        "options": [
+          "\\(-16\\)",
+          "\\(-0{,}0204\\)",
+          "\\(-49\\)",
+          "\\(-0{,}02\\cdot800\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Za potražnju \\(q(p)=800-16p\\) jedinična elastičnost postiže se pri cijeni:",
+        "options": [
+          "\\(p=50\\)",
+          "\\(p=25\\)",
+          "\\(p=16\\)",
+          "\\(p=1\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Osoba danas uloži 60 000 €. Uz 5 % godišnje (složeno, dekurzivno) koliki se jednaki iznosi mogu podizati krajem svake od idućih 7 godina?",
+        "options": [
+          "≈ 8571,43 €",
+          "≈ 10 369,19 €",
+          "≈ 9875,42 €",
+          "≈ 12 000,00 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Stacionarne točke funkcije \\(f(x)=x^3-\\frac72x^2+2x+10\\) su:",
+        "options": [
+          "\\(x=\\frac13\\) i \\(x=2\\)",
+          "\\(x=-\\frac13\\) i \\(x=-2\\)",
+          "\\(x=1\\) i \\(x=\\frac23\\)",
+          "\\(x=\\frac72\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Marginalni trošak je \\(M(Q)=3Q^4+4Q^3+7Q\\). Ukupni trošak je:",
+        "options": [
+          "\\(12Q^3+12Q^2+7\\)",
+          "\\(\\frac35Q^5+Q^4+\\frac72Q^2+C\\)",
+          "\\(3Q^5+4Q^4+7Q^2+C\\)",
+          "\\(\\frac35Q^5+Q^4+7Q+C\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Glavnica od 64 666 € ukamaćuje se 5 godina; kvartalna kamatna stopa je 4 %, obračun je složen, dekurzivan i polugodišnji (relativni kamatnjak). Konačna vrijednost je približno:",
+        "options": [
+          "≈ 78 676,08 €",
+          "≈ 139 609,04 €",
+          "≈ 95 015,57 €",
+          "≈ 141 691,17 €"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Kvartalna kamatna stopa je 4 %, a obračun je polugodišnji. Relativni polugodišnji kamatnjak je:",
+        "options": [
+          "2 %",
+          "8 %",
+          "16 %",
+          "4 %"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Lokalni minimum funkcije \\(f(x)=\\frac{x^2+2}{x}\\) je u točki:",
+        "options": [
+          "\\((\\sqrt2,2\\sqrt2)\\)",
+          "\\((-\\sqrt2,-2\\sqrt2)\\)",
+          "\\((2,3)\\)",
+          "\\((1,3)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Za \\(f(x)=e^{x^3-4}\\ln(4x)\\) vrijednost \\(f'(2)\\) iznosi približno:",
+        "options": [
+          "\\(113{,}53\\)",
+          "\\(1389{,}70\\)",
+          "\\(27{,}30\\)",
+          "\\(681{,}37\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Domena funkcije \\(f(x)=\\frac{3x^6-5x^2-17x^3}{-x+7}\\) je:",
+        "options": [
+          "\\(\\mathbb{R}\\)",
+          "\\(\\mathbb{R}\\setminus\\{7\\}\\)",
+          "\\(\\mathbb{R}\\setminus\\{-7\\}\\)",
+          "\\(\\langle7,+\\infty\\rangle\\)"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "Minimum prosječnih troškova za \\(T(Q)=5Q^3-90Q^2+540Q\\) je u točki:",
+        "options": [
+          "\\((9,135)\\)",
+          "\\((6,180)\\)",
+          "\\((9,1215)\\)",
+          "\\((18,540)\\)"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Funkcija \\(f(x)=x^3-6x^2+9x-1\\) pada na intervalu:",
+        "options": [
+          "\\(\\langle1,3\\rangle\\)",
+          "\\(\\langle-\\infty,1\\rangle\\)",
+          "\\(\\langle3,+\\infty\\rangle\\)",
+          "\\(\\langle-3,-1\\rangle\\)"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "sentence": "Za zajam od 40 000 € na 3 godine uz 7 % kamate u prvoj godini iznose _______ €.",
+        "answer": "2800",
+        "hint": "40 000 · 7/100"
+      },
+      {
+        "sentence": "Za potražnju q = 800 − 16p pri cijeni p₀ = 1 potražnja iznosi q = _______.",
+        "answer": "784",
+        "hint": "800 − 16"
+      },
+      {
+        "sentence": "Potražnja q = 800 − 16p pri p₀ = 1 je _______ jer je |E| < 1.",
+        "answer": "neelastična",
+        "hint": "|E| ≈ 0,02"
+      },
+      {
+        "sentence": "Kvartalna stopa 4 % uz polugodišnji obračun daje relativni polugodišnji kamatnjak od _______ %.",
+        "answer": "8",
+        "hint": "Polugodište = 2 kvartala"
+      },
+      {
+        "sentence": "Glavnica se 5 godina ukamaćuje polugodišnje, pa je broj obračunskih razdoblja n = _______.",
+        "answer": "10",
+        "hint": "5 · 2"
+      },
+      {
+        "sentence": "Funkcija f(x) = x³ − 6x² + 9x − 1 ima lokalni minimum u x = _______.",
+        "answer": "3",
+        "hint": "f' mijenja predznak iz − u +"
+      },
+      {
+        "sentence": "Minimum prosječnih troškova za T(Q) = 5Q³ − 90Q² + 540Q postiže se pri Q = _______.",
+        "answer": "9",
+        "hint": "10Q − 90 = 0"
+      },
+      {
+        "sentence": "Za f(x) = (x² + 1)/x točka (1, 2) je lokalni _______.",
+        "answer": "minimum",
+        "hint": "f''(1) = 2 > 0"
+      },
+      {
+        "sentence": "Funkcija ln((x − 4)/(x + 2)) definirana je za x < −2 ili x > _______.",
+        "answer": "4",
+        "hint": "Nultočka brojnika"
+      },
+      {
+        "sentence": "Funkcija x³ − 7/2·x² + 2x + 10 pada na intervalu ⟨1/3, _______⟩.",
+        "answer": "2",
+        "hint": "3x² − 7x + 2 = 0"
+      }
+    ],
+    "learn": {
+      "title": "Vježba za ispit — stvarni ispitni zadaci s rješenjima",
+      "content": "<h3>Kako izgledaju provjere</h3><p>Pregledani materijali (akademska godina 2023/24, prikupljeni od studenata) pokazuju tri vrste provjera. Pravila za tekuću godinu provjeri na Merlinu — ovo je slika prošle generacije.</p><table><thead><tr><th>Provjera</th><th>Oblik</th><th>Teme</th></tr></thead><tbody><tr><td>Projektni zadatak 1</td><td>5 zadataka × 2 boda = 10</td><td>derivacija u točki · rast i pad · prosječni i marginalni troškovi · lokalni ekstremi · intervali elastičnosti</td></tr><tr><td>2. kolokvij</td><td>uz službeni popis formula</td><td>kamatni račun · rente · zajam (jednaki anuiteti i jednake otplatne kvote)</td></tr><tr><td>Završni ispit</td><td>7 zadataka, 30 bodova</td><td>zajam + tablica + kontrola · elastičnost · renta · rast/pad · integral · relativni kamatnjak · ekstrem</td></tr></tbody></table><h3>Završni ispit 2023/24, grupa B — sva rješenja</h3><div class=\"example-box\"><strong>1. (6 bodova)</strong> Zajam od 40 000 € na 3 godine uz 7 % godišnjih dekurzivnih kamata, nominalno jednaki anuiteti krajem godine. a) otplatna tablica, b) kontrola tablice.<br>\\(r=1{,}07\\), \\(r^3=1{,}225043\\); \\(a=40\\,000\\cdot\\frac{1{,}225043\\cdot0{,}07}{0{,}225043}\\approx15\\,242{,}07\\) €<table><thead><tr><th>k</th><th>anuitet</th><th>kamate</th><th>otplatna kvota</th><th>ostatak duga</th></tr></thead><tbody><tr><td>0</td><td></td><td></td><td></td><td>40 000,00</td></tr><tr><td>1</td><td>15 242,07</td><td>2800,00</td><td>12 442,07</td><td>27 557,93</td></tr><tr><td>2</td><td>15 242,07</td><td>1929,06</td><td>13 313,01</td><td>14 244,92</td></tr><tr><td>3</td><td>15 242,06</td><td>997,14</td><td>14 244,92</td><td>0,00</td></tr><tr><td>Σ</td><td>45 726,20</td><td>5726,20</td><td>40 000,00</td><td></td></tr></tbody></table>Kontrole: a) zadnja kvota = ostatak duga nakon 2. godine (14 244,92) ✓; b) zbroj kvota = 40 000,00 ✓; c) 40 000,00 + 5726,20 = 45 726,20 ✓. Zadnji anuitet je za cent manji jer se kvota izjednačava s preostalim dugom.</div><div class=\"example-box\"><strong>2. (5 bodova)</strong> \\(q(p)=800-16p\\), koeficijent elastičnosti pri \\(p_0=1\\) i tumačenje.<br>\\(q(1)=784\\), \\(\\frac{dq}{dp}=-16\\)<br>\\(E=\\frac{1}{784}\\cdot(-16)\\approx-0{,}0204\\)<br>\\(|E|<1\\) → potražnja je <strong>neelastična</strong>: ako cijena poraste za 1 %, potražnja se smanji za približno 0,02 %. (Jedinična elastičnost bila bi pri \\(p=\\frac{800}{32}=25\\).)</div><div class=\"example-box\"><strong>3. (4 boda)</strong> Danas se uloži 60 000 €. Koliki su jednaki iznosi koji se mogu podizati krajem godine idućih 7 godina uz 5 % (složeno, godišnje, dekurzivno)?<br>„Danas uložiti” + „krajem godine” → sadašnja vrijednost postnumerando rente, traži se R:<br>\\(R=\\frac{A_n\\,r^n(r-1)}{r^n-1}=\\frac{60\\,000\\cdot1{,}05^7\\cdot0{,}05}{1{,}05^7-1}\\approx10\\,369{,}19\\) €</div><div class=\"example-box\"><strong>4. (3 boda)</strong> Intervali rasta i pada \\(f(x)=x^3-\\frac72x^2+2x+10\\).<br>\\(D_f=\\mathbb{R}\\); \\(f'(x)=3x^2-7x+2=0\\Rightarrow x_{1,2}=\\frac{7\\pm5}{6}\\Rightarrow x_1=\\frac13,\\ x_2=2\\)<br>Probne točke: \\(f'(0)=2>0\\), \\(f'(1)=-2<0\\), \\(f'(3)=8>0\\)<br>Raste na \\(\\langle-\\infty,\\frac13\\rangle\\cup\\langle2,+\\infty\\rangle\\), pada na \\(\\langle\\frac13,2\\rangle\\).</div><div class=\"example-box\"><strong>5. (5 bodova)</strong> \\(M(Q)=3Q^4+4Q^3+7Q\\). Koliki je ukupni trošak?<br>\\(T(Q)=\\int(3Q^4+4Q^3+7Q)\\,dQ=\\frac{3Q^5}{5}+\\frac{4Q^4}{4}+\\frac{7Q^2}{2}+C=\\frac35Q^5+Q^4+\\frac72Q^2+C\\)<br>C su fiksni troškovi (nisu zadani, pa ostaje C).</div><div class=\"example-box\"><strong>6. (3 boda)</strong> 64 666 € nakon 5 godina; kvartalna kamatna stopa 4 %, obračun složen, dekurzivan i polugodišnji; primjenom relativnog kamatnjaka.<br>Stopa je zadana po kvartalu, a obračun je po polugodištu (= 2 kvartala) → relativni polugodišnji kamatnjak \\(p_r=2\\cdot4\\,\\%=8\\,\\%\\).<br>\\(n=5\\cdot2=10\\) polugodišta; \\(C_{10}=64\\,666\\cdot1{,}08^{10}\\approx139\\,609{,}04\\) €</div><div class=\"example-box\"><strong>7. (4 boda)</strong> Lokalni ekstrem funkcije \\(f(x)=\\frac{x^2+2}{x}\\) — maksimum ili minimum?<br>\\(D_f=\\mathbb{R}\\setminus\\{0\\}\\); \\(f(x)=x+\\frac2x\\Rightarrow f'(x)=1-\\frac{2}{x^2}=0\\Rightarrow x=\\pm\\sqrt2\\)<br>\\(f''(x)=\\frac{4}{x^3}\\): \\(f''(\\sqrt2)>0\\) → <strong>minimum</strong> \\((\\sqrt2,\\ 2\\sqrt2)\\); \\(f''(-\\sqrt2)<0\\) → <strong>maksimum</strong> \\((-\\sqrt2,\\ -2\\sqrt2)\\).</div><h3>Riješeni kolokvij (studentska bilježnica) — zadaci 1. kolokvija</h3><div class=\"example-box\"><strong>Domena.</strong> \\(f(x)=\\frac{3x^6-5x^2-17x^3}{-x+7}\\): \\(-x+7\\neq0\\Rightarrow D_f=\\mathbb{R}\\setminus\\{7\\}\\).<br>\\(f(x)=\\ln\\frac{x-4}{x+2}\\): uvjet \\(\\frac{x-4}{x+2}>0\\); nultočke 4 i −2; tablica predznaka + | − | + → \\(D_f=\\langle-\\infty,-2\\rangle\\cup\\langle4,+\\infty\\rangle\\).</div><div class=\"example-box\"><strong>Derivacija u točki.</strong> \\(f(x)=e^{x^3-4}\\ln(4x)\\), \\(x=2\\).<br>\\(f'(x)=e^{x^3-4}\\cdot3x^2\\cdot\\ln(4x)+e^{x^3-4}\\cdot\\frac{1}{4x}\\cdot4\\)<br>\\(f'(2)=e^{4}\\cdot12\\ln8+e^{4}\\cdot\\frac12=e^4\\left(12\\ln8+\\frac12\\right)\\approx1389{,}70\\)</div><div class=\"example-box\"><strong>Rast i pad.</strong> \\(f(x)=x^3-6x^2+9x-1\\): \\(f'=3x^2-12x+9=0\\ |:3\\Rightarrow x^2-4x+3=0\\Rightarrow x_1=3,\\ x_2=1\\).<br>Tablica + | − | + → raste na \\(\\langle-\\infty,1\\rangle\\cup\\langle3,+\\infty\\rangle\\), pada na \\(\\langle1,3\\rangle\\).</div><div class=\"example-box\"><strong>Minimum prosječnih troškova.</strong> \\(T(Q)=5Q^3-90Q^2+540Q\\).<br>\\(\\bar T(Q)=5Q^2-90Q+540\\), \\(\\bar T'(Q)=10Q-90=0\\Rightarrow Q=9\\), \\(\\bar T''=10>0\\)<br>\\(\\bar T(9)=405-810+540=135\\) → minimum u točki \\((9,135)\\).</div><div class=\"example-box\"><strong>Ekstremi.</strong> \\(f(x)=\\frac{x^2+1}{x}\\): \\(f'(x)=\\frac{2x\\cdot x-(x^2+1)}{x^2}=\\frac{x^2-1}{x^2}=0\\Rightarrow x=\\pm1\\) (\\(x\\neq0\\)).<br>Tablica: \\(\\langle-\\infty,-1\\rangle\\) +, \\(\\langle-1,0\\rangle\\) −, \\(\\langle0,1\\rangle\\) −, \\(\\langle1,+\\infty\\rangle\\) +.<br>Maksimum \\((-1,-2)\\), minimum \\((1,2)\\).</div><div class=\"warning-box\"><strong>Greške u kružećim studentskim materijalima — što je točno:</strong> kod \\(\\frac{x^2+1}{x}\\) bilješka zamjenjuje minimum i maksimum (točno: \\((1,2)\\) minimum, \\((-1,-2)\\) maksimum) · \\(x^2-2x+5=0\\) ima rješenja \\(1\\pm2i\\) (ne \\(\\pm4i\\) ni \\(1\\pm\\sqrt6\\)) · kod rasta/pada marginalnih troškova gleda se predznak \\(M'(Q)\\), a ne nultočke \\(M(Q)\\) · domena \\(e^{\\frac{3x^2-1}{x}}\\) je \\(\\mathbb{R}\\setminus\\{0\\}\\), ne ℝ · primjer elastičnosti s \\(q(p)=-2p^2+12\\) pri \\(p_0=4\\) daje negativnu potražnju (−20) i nije ekonomski smislen.</div><div class=\"tip-box\"><strong>Strategija za ispit:</strong> financijska matematika nosi oko pola bodova i najviše je „mehanička” — nauči prepoznati formulu iz teksta i nosi dovoljno decimala. Kod zadataka s derivacijama piši sve korake (domena → stacionarne točke → tablica ili druga derivacija → koordinate), jer se boduje postupak.</div>"
+    }
+  }
+}

@@ -1,0 +1,3090 @@
+// Politička ekonomija (PFRI) — M1 (međuispit)
+// Autorski sadržaj; kartice <=200 znakova, cijela skripta u learn. Id-evi su trajni (ne regenerirati ručno).
+
+const pePfriM1 = {
+  "peScience": {
+    "name": "Pojam, predmet i ekonomski odnosi",
+    "icon": "fa-landmark",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "nvbw6g",
+        "question": "Što je politička ekonomija?",
+        "answer": "Znanost koja istražuje objektivne zakone koji reguliraju društvenu proizvodnju: proizvodnju, raspodjelu, razmjenu i potrošnju na različitim stupnjevima razvitka društva.",
+        "explanation": "Cilj: uočiti i definirati razvoj društveno-ekonomskih odnosa."
+      },
+      {
+        "id": "8kldr0",
+        "question": "Tko je i kada prvi upotrijebio izraz „politička ekonomija\"?",
+        "answer": "Francuski ekonomist Antoine de Montchrétien, 1615. godine.",
+        "explanation": "Izraz je stariji od klasične političke ekonomije."
+      },
+      {
+        "id": "u48629",
+        "question": "Zašto je politička ekonomija društvena, a zašto ekonomska znanost?",
+        "answer": "Društvena jer istražuje zakone koji reguliraju odnose među ljudima; ekonomska jer istražuje zakone odnosa u ekonomskoj sferi društvenog života.",
+        "explanation": "Uz to je trodimenzionalna."
+      },
+      {
+        "id": "wkm998",
+        "question": "Koje su tri dimenzije političke ekonomije?",
+        "answer": "Horizontalna, vertikalna i vremenska dimenzija.",
+        "explanation": "Politička ekonomija je trodimenzionalna znanstvena disciplina."
+      },
+      {
+        "id": "2xyc7i",
+        "question": "Što su ekonomski odnosi?",
+        "answer": "Složen, međuzavisan splet odnosa u ekonomskoj aktivnosti: počinju proizvodnjom i raspodjelom, nastavljaju se razmjenom, završavaju potrošnjom, kojom se krug ponovo otvara.",
+        "explanation": "Potrošnja ponovo pokreće proizvodnju."
+      },
+      {
+        "id": "mk37if",
+        "question": "Koje su četiri faze društvene proizvodnje?",
+        "answer": "Proizvodnja, raspodjela, razmjena i potrošnja — jedinstven proces u koji ljudi ulaze u međusobne odnose.",
+        "explanation": "Redoslijed je ciklički."
+      },
+      {
+        "id": "ax3e7d",
+        "question": "Zašto je proizvodnja društvena?",
+        "answer": "Jer čovjek što kvalitetnije prilagođava prirodu potrebama, a ljudi stupaju u međusobne odnose nužno i neovisno o svojoj volji.",
+        "explanation": "Dva razloga."
+      },
+      {
+        "id": "50aehl",
+        "question": "Koja su obilježja odnosa društvene proizvodnje?",
+        "answer": "Ulazi se u njih nužno i neovisno o volji; impliciraju društvenu nadgradnju (država, pravo); povijesno se mijenjaju razvitkom proizvodnih snaga.",
+        "explanation": "Nadgradnja = oblik države i pravno uređenje."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "7alunj",
+        "question": "Izraz „politička ekonomija\" prvi je upotrijebio:",
+        "options": [
+          "Adam Smith krajem 18. stoljeća",
+          "Karl Marx sredinom 19. stoljeća",
+          "Antoine de Montchrétien 1615.",
+          "David Ricardo početkom 19. st."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "fwsrlv",
+        "question": "Društvena proizvodnja obuhvaća faze:",
+        "options": [
+          "proizvodnju, raspodjelu, razmjenu i potrošnju",
+          "proizvodnju, štednju, ulaganje i potrošnju",
+          "planiranje, proizvodnju, prodaju i naplatu",
+          "nabavu, proizvodnju, prodaju i distribuciju"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "0x1owt",
+        "question": "Politička ekonomija je „trodimenzionalna\" jer počiva na dimenzijama:",
+        "options": [
+          "prostornoj, pravnoj i političkoj",
+          "proizvodnoj, uslužnoj i financijskoj",
+          "mikro, makro i globalnoj",
+          "horizontalnoj, vertikalnoj i vremenskoj"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "zior9m",
+        "question": "Proizvodni odnosi u koje ljudi ulaze nastaju:",
+        "options": [
+          "isključivo slobodnim dogovorom",
+          "nužno i neovisno o njihovoj volji",
+          "samo odlukom države",
+          "samo ugovorom o radu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "jj8y89",
+        "question": "Politička ekonomija je društvena znanost jer istražuje:",
+        "options": [
+          "zakone koji reguliraju kretanje cijena",
+          "zakone koji reguliraju međusobne odnose ljudi",
+          "prirodne zakone proizvodnje",
+          "pravila državnog financiranja"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "rslnnk",
+        "question": "Što NIJE obilježje odnosa društvene proizvodnje?",
+        "options": [
+          "Ulazi se u njih nužno",
+          "Impliciraju društvenu nadgradnju",
+          "Mijenjaju se razvitkom proizvodnih snaga",
+          "Ne mijenjaju se kroz povijest"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "h76t42",
+        "question": "Predmet proučavanja koji se poistovjećuje sa sadržajem političke ekonomije jesu:",
+        "options": [
+          "ekonomski zakoni",
+          "porezni propisi",
+          "burzovni tečajevi",
+          "računovodstveni standardi"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "t3l6hl",
+        "question": "Ekonomski odnosi završavaju fazom koja ih ponovo pokreće, a to je:",
+        "options": [
+          "raspodjela",
+          "razmjena",
+          "potrošnja",
+          "akumulacija"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "c1uih2",
+        "sentence": "Izraz politička ekonomija prvi je upotrijebio francuski ekonomist Montchrétien godine _______.",
+        "answer": "1615",
+        "hint": "početak 17. stoljeća"
+      },
+      {
+        "id": "p68gal",
+        "sentence": "Politička ekonomija je znanost koja istražuje objektivne _______ društvene proizvodnje.",
+        "answer": "zakone",
+        "hint": "regulatori procesa"
+      },
+      {
+        "id": "7oi9z0",
+        "sentence": "Društvena proizvodnja ima četiri faze: proizvodnju, raspodjelu, razmjenu i _______.",
+        "answer": "potrošnju",
+        "hint": "zadnja faza kruga"
+      }
+    ],
+    "learn": {
+      "id": "23e97b",
+      "title": "Politička ekonomija kao znanost",
+      "content": "\n<h3>Pojam i predmet političke ekonomije</h3>\n<p><strong>Politička ekonomija</strong> je znanost koja istražuje i proučava <strong>objektivne zakone</strong> koji reguliraju <strong>društvenu proizvodnju</strong>, tj. proizvodnju, raspodjelu, razmjenu i potrošnju na različitim stupnjevima razvitka ljudskog društva. Ona je znanstvena disciplina jer je ukupnost sintetiziranih i argumentiranih saznanja o stvarnosti. Izraz „politička ekonomija\" prvi je upotrijebio francuski ekonomist <strong>Antoine de Montchrétien 1615. godine</strong>.</p>\n<p><strong>Društvena proizvodnja</strong> temeljni je element ekonomske oblasti društvenog života: čovjek djeluje na prirodu, transformira je i prilagođava svojim potrebama. To je društveno-ekonomski proces, tj. <strong>društvena reprodukcija</strong>.</p>\n<ul>\n<li>Politička ekonomija je <strong>društvena znanost</strong> jer istražuje zakone koji reguliraju međusobne odnose ljudi.</li>\n<li>Politička ekonomija je <strong>ekonomska znanost</strong> jer istražuje zakone koji reguliraju međusobne odnose u ekonomskoj sferi društvenog života.</li>\n<li>Politička ekonomija je <strong>trodimenzionalna</strong> disciplina: počiva na <em>horizontalnoj, vertikalnoj i vremenskoj</em> dimenziji.</li>\n</ul>\n<h4>Što je politička ekonomija</h4>\n<ul>\n<li>znanost o uvjetima i oblicima proizvodnje, razmjene i raspodjele djelovanjem ljudskih društava;</li>\n<li>istražuje određeni način proizvodnje kao način proizvodnje materijalnog života ljudi;</li>\n<li>istražuje određeni način proizvodnje i odnose proizvodnje i prometa koji mu odgovaraju;</li>\n<li>bavi se društvenim uređenjem proizvodnje i odnosima među ljudima;</li>\n<li>proučava odnose, zakone i kategorije u okviru društveno-ekonomskog procesa.</li>\n</ul>\n<p><strong>Cilj</strong> je uočavanje i definiranje razvoja društveno-ekonomskih odnosa.</p>\n<h4>Što izučava politička ekonomija</h4>\n<p>Ekonomske zakone u najširem smislu, društvenu proizvodnju ili društveno-ekonomske formacije, reprodukciju, proizvode, materijalna dobra, resurse, umne i fizičke sposobnosti, sredstva za rad, društveno-materijalnu proizvodnju, proizvodne odnose i proizvodne snage. Njezin se sadržaj <strong>poistovjećuje s izučavanjem ekonomskih zakona</strong> jer je predmet istraživanja proučavanje odnosa, zakona i kategorija društveno-ekonomskog procesa, a zakoni su nepromjenjivi regulatori tog procesa i čine suštinu njezina proučavanja.</p>\n\n<h3>Ekonomski odnosi</h3>\n<p><strong>Ekonomski odnosi</strong> obuhvaćaju složen i međuzavisan splet odnosa koji se formiraju tijekom ekonomske aktivnosti: započinju proizvodnjom dobara, nastavljaju se raspodjelom i razmjenom, a završavaju potrošnjom, kojom se krug ponovo otvara.</p>\n<p><strong>Proizvodnja je društvena</strong> jer (1) čovjek nastoji što kvalitetnije prilagoditi prirodu svojim potrebama i (2) ljudi stupaju u međusobne odnose nužno i neovisno o svojoj volji.</p>\n<div class=\"formula-box\">DRUŠTVENA PROIZVODNJA = jedinstven proces s 4 faze:<br>PROIZVODNJA → RASPODJELA → RAZMJENA → POTROŠNJA</div>\n<h4>Karakteristike proizvodnih odnosa</h4>\n<ul>\n<li>postoje vlasnici (kapitalisti) sredstava za proizvodnju i radna snaga (nevlasnici) — eksploatacijom radne snage stvara se novostvorena vrijednost;</li>\n<li>u društvenoj proizvodnji djeluje niz osamostaljenih proizvodnih subjekata (npr. tvornica kao zatvorena tehnološka cjelina);</li>\n<li>zahtijeva se jedinstvo upravljanja radnim procesom (odnos upravljanja i izvršavanja);</li>\n<li>pri prisvajanju proizvedenog proizvođači dolaze u odnos konkurencije, odnosno u odnos razmjene različitih upotrebnih vrijednosti.</li>\n</ul>\n<h4>Karakteristike odnosa društvene proizvodnje</h4>\n<ul>\n<li>to su odnosi u koje ljudi ulaze u ekonomskoj oblasti društvenog života;</li>\n<li>ulaze u njih <strong>nužno i neovisno o volji</strong> — zatječu postojeće stanje kao rezultat svoje generacije, ali i naslijeđene elemente ranijih generacija;</li>\n<li>impliciraju se i na <strong>društvenu nadgradnju</strong> (oblik države, pravno uređenje);</li>\n<li>povijesno se mijenjaju — promjene su uvjetovane razvitkom proizvodnih snaga društva.</li>\n</ul>\n"
+    },
+    "id": "pc27z7"
+  },
+  "peLaws": {
+    "name": "Ekonomski zakoni i ekonomske kategorije",
+    "icon": "fa-scale-balanced",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "vo23a0",
+        "question": "Što su ekonomski zakoni?",
+        "answer": "Društveni zakoni koji vladaju u procesu društvene materijalne reprodukcije i upravljaju proizvodnjom, raspodjelom, razmjenom i potrošnjom materijalnih dobara.",
+        "explanation": "Regulatori društveno-ekonomskog procesa."
+      },
+      {
+        "id": "91axgg",
+        "question": "Koja su svojstva ekonomskih zakona?",
+        "answer": "Objektivni (djeluju mimo volje ljudi), apstraktni, povijesni (vezani uz povijesne oblike proizvodnje) i ne mogu se mijenjati.",
+        "explanation": "Ne mogu se promijeniti ni ukinuti odlukom."
+      },
+      {
+        "id": "hgmbwo",
+        "question": "Zašto se ekonomski zakoni ne mogu mijenjati?",
+        "answer": "Jer izražavaju ono bitno i zajedničko pojavama te su sila na koju ljudi ne mogu utjecati, bez obzira jesu li je upoznali ili ne.",
+        "explanation": "Objektivni su, djeluju mimo volje i svijesti."
+      },
+      {
+        "id": "0s4qm5",
+        "question": "Kako se ekonomski zakoni dijele prema vremenu djelovanja?",
+        "answer": "Opći, posebni, pojedinačni i specifični.",
+        "explanation": "Od najšireg do najužeg djelovanja."
+      },
+      {
+        "id": "1vkcjn",
+        "question": "Koji su OPĆI, a koji POSEBNI ekonomski zakoni?",
+        "answer": "Opći djeluju u svim načinima proizvodnje (zakon proizvodnje); posebni u dva ili više, ali ne u svima (npr. zakon ponude i potražnje, vrijednosti).",
+        "explanation": "Razlika: u svim načinima ili u nekima."
+      },
+      {
+        "id": "2xwjqp",
+        "question": "Koji su POJEDINAČNI, a koji SPECIFIČNI zakoni?",
+        "answer": "Pojedinačni djeluju u jednom načinu proizvodnje (zakon profita); specifični samo u nekoj fazi tog načina (zakoni monopola).",
+        "explanation": "Specifični su najuži."
+      },
+      {
+        "id": "e02wsd",
+        "question": "Što su ekonomske kategorije?",
+        "answer": "Teorijski izrazi odgovarajućih društveno-ekonomskih odnosa; mijenjaju se kad se mijenjaju sami odnosi (roba, novac, cijena, tržište, profit, kamata, renta).",
+        "explanation": "Promjenjive su."
+      },
+      {
+        "id": "qqhe9c",
+        "question": "Zašto su ekonomske kategorije promjenjive?",
+        "answer": "Jer se mijenjaju sami društveni odnosi čiji su teorijski izraz; kategorije istog naziva (novac) sadržajno se razlikuju u različitim sustavima.",
+        "explanation": "Novac u feudalizmu nije kapital."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "hu2ggo",
+        "question": "Zakoni koji djeluju u svim načinima društvene proizvodnje su:",
+        "options": [
+          "posebni",
+          "pojedinačni",
+          "opći",
+          "specifični"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "c3ulun",
+        "question": "Zakon koji djeluje samo u jednom načinu proizvodnje (npr. kapitalizmu) je:",
+        "options": [
+          "pojedinačni",
+          "opći",
+          "posebni",
+          "funkcionalni"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "1f30c3",
+        "question": "Ekonomski zakoni su objektivni jer:",
+        "options": [
+          "ih donosi država kao propise",
+          "ih proizvođači slobodno dogovaraju",
+          "vrijede samo za jedno društvo",
+          "djeluju mimo volje, svijesti i namjere ljudi"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "jfeuel",
+        "question": "Ekonomske kategorije su:",
+        "options": [
+          "nepromjenjivi prirodni zakoni proizvodnje",
+          "teorijski izrazi društveno-ekonomskih odnosa",
+          "državni propisi o gospodarstvu",
+          "pravila ponašanja kapitalista"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "oo8hyo",
+        "question": "Zakoni koji djeluju u najmanje dva, ali ne u svim načinima proizvodnje su:",
+        "options": [
+          "opći",
+          "posebni",
+          "pojedinačni",
+          "specifični"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "f9wg9d",
+        "question": "Koji od navedenih pojmova je ekonomska kategorija?",
+        "options": [
+          "sila teža",
+          "dijalektika",
+          "zakonitost",
+          "roba"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "mcyfhk",
+        "question": "Zakoni koji se prikazuju pomoću matematičkih funkcija su:",
+        "options": [
+          "funkcionalni",
+          "uzročni",
+          "dinamički",
+          "koegzistencije"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "1o8csx",
+        "question": "Zakoni koji djeluju samo u nekoj fazi jednog načina proizvodnje su:",
+        "options": [
+          "opći",
+          "posebni",
+          "specifični",
+          "pojedinačni"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "3etrl6",
+        "sentence": "Ekonomski zakoni su objektivni jer djeluju mimo volje, _______ i namjere ljudi.",
+        "answer": "svijesti",
+        "hint": "volja, svijest i namjera"
+      },
+      {
+        "id": "2vun6x",
+        "sentence": "Zakoni koji djeluju u svim načinima proizvodnje nazivaju se _______ zakoni.",
+        "answer": "opći",
+        "hint": "najširi"
+      },
+      {
+        "id": "0f22fc",
+        "sentence": "Ekonomske kategorije su teorijski izrazi društveno-ekonomskih _______.",
+        "answer": "odnosa",
+        "hint": "ono što izražavaju"
+      }
+    ],
+    "learn": {
+      "id": "4lmv3l",
+      "title": "Ekonomski zakoni i ekonomske kategorije",
+      "content": "\n<h3>Zakonitost i vrste zakona</h3>\n<p><strong>Zakonitost</strong> je odgovarajuća ljudska spoznaja o okruženju, o jedinstvu uzročnosti i cjelovitosti mnogobrojnih ispoljavanja. Zakone u društvu treba shvatiti kao <strong>prosjek koji djeluje</strong> i <strong>tendenciju koja vlada kao nužnost</strong>, a pojavljuje se posredstvom mnoštva pojedinačnih pojava.</p>\n<p><strong>Znanstveni zakoni:</strong> zakoni dijalektičke prirode (univerzalni karakter); opći i posebni (odnos i karakteristike među grupama); specifični (odnosi s posebnim svojstvima materije i društva).</p>\n<h4>Vrste ekonomskih zakona prema prirodi</h4>\n<ul>\n<li><strong>dinamički</strong> — vezani za unutarnju strukturu stvari i njihovo okruženje;</li>\n<li><strong>uzročni</strong> — nakon uzroka dolazi posljedica u određenom vremenu;</li>\n<li><strong>zakon koegzistencije</strong> — zajednička pojava dvaju ili više događaja koji uvijek idu zajedno i tvore stanovitu pravilnu strukturu;</li>\n<li><strong>funkcionalni</strong> — prikazuju se pomoću matematičkih funkcija.</li>\n</ul>\n<p>Postoje i <em>tehnološko-bilančni</em> ekonomski zakoni, koji imaju karakteristike prirodno-tehnoloških zakona.</p>\n<h3>Što su ekonomski zakoni</h3>\n<p><strong>Ekonomski zakoni</strong> su društveni zakoni koji vladaju u procesu društvene materijalne reprodukcije i upravljaju proizvodnjom, raspodjelom, razmjenom i potrošnjom materijalnih dobara na različitim stupnjevima razvitka ljudskog društva. Izražavaju jedinstvo, zavisnost i uzajamnu uvjetovanost svih prirodnih i ekonomskih odnosa među ljudima. Oni su <strong>regulatori društveno-ekonomskog procesa</strong>:</p>\n<ul>\n<li><strong>objektivni</strong> — djeluju mimo volje, svijesti i namjere ljudi;</li>\n<li><strong>apstraktni</strong> — jer su i njihove pretpostavke apstrakcije;</li>\n<li><strong>povijesni</strong> — djeluju u povijesno određenim oblicima proizvodnje;</li>\n<li><strong>ne mogu se mijenjati</strong> — očituju se u onome što je bitno i zajedničko određenim pojavama i kretanjima, pa su sila na koju ljudi ne mogu utjecati bez obzira jesu li je upoznali ili ne.</li>\n</ul>\n<p>Ekonomski zakoni uvjetovani su <strong>vremenom, načinom proizvodnje, razinom i stupnjem razvijenosti te ekonomskom strukturom stanovništva</strong>.</p>\n<h4>Podjela s obzirom na vremensko (povijesno) razdoblje djelovanja</h4>\n<table>\n<tr><th>Vrsta</th><th>Djeluje</th><th>Primjeri iz gradiva</th></tr>\n<tr><td><strong>Opći</strong></td><td>u svim načinima proizvodnje; najduže traju, izražavaju opće odlike privređivanja (kontinuiranost reprodukcije, ravnoteža proizvodnje i potrošnje)</td><td>zakon proizvodnje, zakon potrošnje</td></tr>\n<tr><td><strong>Posebni</strong></td><td>u najmanje dva ili više, ali ne u svim načinima proizvodnje; izražavaju objektivnu nužnost odnosa</td><td>zakon ponude i potražnje, zakon vrijednosti, zakon cijena; zakon eksploatacije</td></tr>\n<tr><td><strong>Pojedinačni</strong></td><td>u jednom načinu proizvodnje (npr. u kapitalizmu)</td><td>zakon profita (prosječnog profita), zakon koncentracije i centralizacije, zakon rente i najamnine</td></tr>\n<tr><td><strong>Specifični</strong></td><td>u nekoj fazi jednog načina proizvodnje</td><td>zakoni monopola (monopolskih cijena), zakon slobodne konkurencije u fazi liberalnog kapitalizma, državne intervencije</td></tr>\n</table>\n<h3>Ekonomske kategorije</h3>\n<p><strong>Ekonomske kategorije</strong> su teorijski izrazi odgovarajućih društveno-ekonomskih odnosa. One su <strong>promjenjive</strong> jer se mijenjaju ovisno o promjeni samih odnosa (roba, novac, cijena, tržište, profit, kamata, renta…).</p>\n<ul>\n<li>U više sustava postoje imenom iste kategorije (roba, novac) — susrećemo ih u feudalizmu, kapitalizmu i socijalizmu, ali se <strong>sadržajno razlikuju</strong>: novac u feudalizmu nema svojstvo kapitala, tu promjenu doživljava tek u kapitalizmu.</li>\n<li>Ipak, kategorije istog naziva imaju nešto zajedničko u svakom sustavu: roba je proizvod ljudskog rada namijenjen razmjeni na tržištu i u feudalizmu i u kapitalizmu.</li>\n</ul>\n<p><strong>Što je uvjetovalo promjene načina proizvodnje?</strong> Egzistencija i broj potreba vezanih za opstanak čovjeka kao pojedinca i društva stalno su rasli, kao i broj pripadnika društva. Uvjeti su se mijenjali, a resursi bili fiksna varijabla, pa je čovjek, da bi zadovoljio osnovne potrebe, bio primoran naći rješenje koje se očitovalo u promjeni načina proizvodnje.</p>\n"
+    },
+    "id": "h0axu6"
+  },
+  "peMethods": {
+    "name": "Metode političke ekonomije",
+    "icon": "fa-flask",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "hl9uvk",
+        "question": "Što je metoda i kojim redom teče znanstveno istraživanje?",
+        "answer": "Metoda je postupak istraživanja, analiziranja i prezentiranja pojava. Redoslijed: predmet, činjenice, hipoteze, rezultati, sudovi, provjera, dotjerivanje.",
+        "explanation": "Sedam koraka."
+      },
+      {
+        "id": "0bc91y",
+        "question": "Od čega ovisi primjena znanstvenih metoda?",
+        "answer": "Od rezultata znanosti, razvoja društva i ideološke opredijeljenosti istraživača.",
+        "explanation": "Istraživač slobodno bira."
+      },
+      {
+        "id": "pgcf56",
+        "question": "Što je dijalektički, a što historijski materijalizam?",
+        "answer": "Dijalektički: materija je primarna, promjene proizlaze iz promjena materije. Historijski: njegova primjena na povijest — povijesne promjene uvjetuje ekonomski razvitak.",
+        "explanation": "Suprotnost je idealizam."
+      },
+      {
+        "id": "5mprll",
+        "question": "Koja su tri temeljna dijalektička zakona?",
+        "answer": "Prijelaz kvantitete u kvalitetu, prožimanje proturječnosti i negacija negacije.",
+        "explanation": "Svaki razvitak je borba suprotnosti."
+      },
+      {
+        "id": "dg2pot",
+        "question": "Što su indukcija i dedukcija?",
+        "answer": "Indukcija zaključuje od pojedinačnog prema općem, dedukcija od općeg prema pojedinačnom.",
+        "explanation": "Dvije logičke metode."
+      },
+      {
+        "id": "kxcht7",
+        "question": "Što su analiza i sinteza?",
+        "answer": "Analiza raščlanjuje misaone tvorevine na sastavne dijelove; sinteza spaja jednostavne u složene i u cjelinu. Zajedno čine jedinstvenu metodu spoznaje.",
+        "explanation": "Razlaganje i spajanje."
+      },
+      {
+        "id": "yjol6y",
+        "question": "Što je apstrakcija i koja su joj tri kriterija?",
+        "answer": "Izdvajanje bitnih svojstava i veza predmeta: biti obazriva prema predmetu, nebitno otkloniti, bitno zadržati.",
+        "explanation": "Misaoni postupak."
+      },
+      {
+        "id": "49m92w",
+        "question": "Koje su matematičko-statističke metode?",
+        "answer": "Matematička (formule, simboli), statistička (masovne pojave) i ekonometrijska (matematički formulirane hipoteze statistički se provjeravaju).",
+        "explanation": "Tri metode."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "p8sofm",
+        "question": "Svijet se razvija kretanjem materije, a materija je primarna — to je stav:",
+        "options": [
+          "subjektivnog idealizma",
+          "merkantilističkog nauka",
+          "dijalektičkog materijalizma",
+          "marginalističke škole"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "gpnht2",
+        "question": "Zaključivanje od pojedinačnog prema općem je:",
+        "options": [
+          "indukcija",
+          "dedukcija",
+          "analiza",
+          "sinteza"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "fgt7g2",
+        "question": "Tri temeljna dijalektička zakona su:",
+        "options": [
+          "indukcija, dedukcija i apstrakcija kao logičke metode spoznaje",
+          "hipoteza, činjenica i provjera zaključka kao koraci istraživanja",
+          "ponuda, potražnja i ravnoteža kao temeljni zakoni tržišta",
+          "prijelaz kvantitete u kvalitetu, prožimanje proturječnosti, negacija negacije"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "v9kffd",
+        "question": "Metoda koja matematički formulirane hipoteze statistički provjerava je:",
+        "options": [
+          "dedukcija",
+          "ekonometrijska",
+          "historijski materijalizam",
+          "apstrakcija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "w9elmb",
+        "question": "Spajanje jednostavnih misaonih tvorevina u složenije je:",
+        "options": [
+          "analiza",
+          "sinteza",
+          "indukcija",
+          "apstrakcija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "9ku977",
+        "question": "Znanstvena metoda koja primjenjuje dijalektički materijalizam na povijest zove se:",
+        "options": [
+          "dijalektička metoda spoznaje",
+          "deduktivna metoda zaključivanja",
+          "ekonometrijska analiza podataka",
+          "historijski materijalizam"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "jzuwvr",
+        "question": "Koji kriterij NE vrijedi za metodu apstrakcije?",
+        "options": [
+          "nebitni elementi moraju ostati",
+          "mora biti obazriva prema predmetu",
+          "nebitni elementi se otklanjaju",
+          "bitni elementi trebaju ostati"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "tta83x",
+        "question": "Raščlanjivanje misaonih tvorevina na sastavne dijelove je:",
+        "options": [
+          "sinteza",
+          "dedukcija",
+          "analiza",
+          "ekonometrija"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "z65zhf",
+        "sentence": "Zaključivanje od općeg prema pojedinačnom naziva se _______.",
+        "answer": "dedukcija",
+        "hint": "suprotno indukciji"
+      },
+      {
+        "id": "1tjg76",
+        "sentence": "Prema dijalektičkom materijalizmu primarna je _______.",
+        "answer": "materija",
+        "hint": "ne duh"
+      },
+      {
+        "id": "etzd0x",
+        "sentence": "Primjena statističkih operacija na masovne pojave je _______ metoda.",
+        "answer": "statistička",
+        "hint": "masovne pojave"
+      }
+    ],
+    "learn": {
+      "id": "jxwfsa",
+      "title": "Metode političke ekonomije",
+      "content": "\n<h3>Pojam metode i postupak istraživanja</h3>\n<p><strong>Metoda</strong> je postupak istraživanja i analiziranja pojava i zakona te njihovo prezentiranje.</p>\n<p><strong>Redoslijed postupka znanstvenog istraživanja:</strong></p>\n<ol>\n<li>definirati predmet proučavanja,</li>\n<li>istražiti činjenice,</li>\n<li>postaviti hipoteze i teorije,</li>\n<li>konkretizirati rezultate,</li>\n<li>utvrditi znanstvene sudove,</li>\n<li>provjeriti točnost zaključka,</li>\n<li>dotjerivanje.</li>\n</ol>\n<p><strong>Od čega ovisi primjena znanstvenih metoda:</strong> o rezultatu znanosti (kvalitetnija metodologija znači brži i kvalitetniji razvoj), o razvoju društva (složenije društveno biće koristi složeniju metodologiju) i o ideološkoj opredijeljenosti istraživača (istraživač slobodno bira).</p>\n<h3>Filozofske metode</h3>\n<ul>\n<li><strong>Dijalektički materijalizam</strong> temelji se na načelu materijalnosti svijeta: sve promjene uvjetovane su promjenama same materije. Svijet se razvija kretanjem materije, <em>materija je primarna</em> (suprotnost idealizmu, kod kojeg su primarni duh i ideja).</li>\n<li><strong>Dijalektička metoda</strong> analizira stvarnost i promatra svijet kao cjelinu čiji smo mi aktivni dio; svijet se mijenja i razvija u skladu sa zakonima prirode i društva. Temelj društvenog organizma je ekonomska osnova (materijalna proizvodnja), a opstanak društvenog života ovisi o političkoj i pravnoj nadgradnji.</li>\n<li><strong>Historijski materijalizam</strong> je znanstvena metoda primjene dijalektičkog materijalizma na povijesna zbivanja u društvu: sve povijesne promjene uvjetovane su ekonomskim razvitkom društva.</li>\n</ul>\n<h4>Dijalektička metoda</h4>\n<p>Kao <em>znanost</em> proučava opće zakone kretanja u prirodi i društvu po ljudskom mišljenju; kao <em>filozofska metoda</em> temelji se na dijalektičkom materijalizmu.</p>\n<p><strong>Tri temeljna dijalektička zakona:</strong> (1) prijelaz kvantitete u kvalitetu, (2) prožimanje proturječnosti, (3) negacija negacije.</p>\n<p><strong>Načela dijalektike:</strong></p>\n<ul>\n<li>sveopća povezanost, uzajamna zavisnost i interaktivnost svih pojava;</li>\n<li>kretanje i razvitak (nema mirovanja) — pojave se ne mogu promatrati statički nego dinamički;</li>\n<li>prelazak kvantitativnih promjena u kvalitativne;</li>\n<li>svaki razvitak je borba suprotnosti (proturječnosti u predmetima i pojavama te njihov sukob);</li>\n<li>negacija negacije — ono što nastaje negirano je onim što je postalo.</li>\n</ul>\n<h3>Logičke metode (misaoni postupci za formiranje pojmova)</h3>\n<ul>\n<li><strong>indukcija</strong> — zaključivanje od pojedinačnog prema općem;</li>\n<li><strong>dedukcija</strong> — zaključivanje od općeg prema pojedinačnom;</li>\n<li><strong>analiza</strong> — raščlanjivanje misaonih tvorevina na sastavne dijelove i elemente;</li>\n<li><strong>sinteza</strong> — spajanje jednostavnih misaonih tvorevina u složene i složenijih u cjelinu (analiza i sinteza čine jedinstvenu metodu spoznaje);</li>\n<li><strong>apstrakcija</strong> — izdvajanje bitnih svojstava, veza i odnosa predmeta istraživanja radi njihova upoznavanja i analiziranja; tri kriterija: mora biti obazriva prema predmetu, nebitni elementi moraju se otkloniti, bitni moraju ostati.</li>\n</ul>\n<h3>Matematičko-statističke metode</h3>\n<ul>\n<li><strong>matematička</strong> — primjena matematičke logike, formula, simbola i operacija;</li>\n<li><strong>statistička</strong> — primjena statističkih operacija na masovne pojave radi objašnjavanja i otkrivanja činjenica u prirodi i društvu;</li>\n<li><strong>ekonometrijska</strong> — matematički formulirane ekonomske hipoteze statistički se provjeravaju.</li>\n</ul>\n"
+    },
+    "id": "7sqt1j"
+  },
+  "peModes": {
+    "name": "Povijesni razvoj načina proizvodnje",
+    "icon": "fa-clock-rotate-left",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "id": "cmmx22",
+        "question": "Koji su povijesni oblici odnosa proizvodnje?",
+        "answer": "Prvobitna zajednica, robovlasništvo, feudalizam, kapitalizam i socijalizam (prijelaz prema komunizmu).",
+        "explanation": "Razlikuje ih vlasništvo nad sredstvima za proizvodnju."
+      },
+      {
+        "id": "eqdreg",
+        "question": "Koji su načini proizvodnje eksploatatorski, a koji neeksploatatorski?",
+        "answer": "Eksploatatorski: robovlasništvo, feudalizam, kapitalizam. Neeksploatatorski: prvobitna zajednica i komunizam.",
+        "explanation": "Tri i dva."
+      },
+      {
+        "id": "8vx7r9",
+        "question": "Kakvo je robovlasništvo i koja su mu dva oblika?",
+        "answer": "Prvi klasni oblik proizvodnje (robovlasnici – robovi). Istočnjačko: država vlasnik robova i sredstava. Antičko: privatno vlasništvo (patrijarhalno pa dužničko ropstvo).",
+        "explanation": "Egipat vs. Grčka i Rim."
+      },
+      {
+        "id": "50rr9c",
+        "question": "Koja su tri oblika feudalne rente?",
+        "answer": "Radna (dani rada na feudalčevu posjedu), naturalna (dio plodova) i novčana (novčani iznos nakon prodaje proizvoda).",
+        "explanation": "Redom: rani, razvijeni, raspadanje feudalizma."
+      },
+      {
+        "id": "av7x6e",
+        "question": "Što je kapital kao društveni odnos?",
+        "answer": "Društveni odnos koji pojedincu omogućava da bez rada prisvaja rezultate tuđeg rada i od toga živi, tj. da ga eksploatira.",
+        "explanation": "Kapitalist vs. najamni radnik."
+      },
+      {
+        "id": "ihdelm",
+        "question": "Koje su razvojne faze kapitalizma?",
+        "answer": "Manufaktura, liberalni kapitalizam, monopolizam/imperijalizam, državni kapitalizam i neoliberalistička faza.",
+        "explanation": "Slijed od 14. st. do danas."
+      },
+      {
+        "id": "4fzoie",
+        "question": "Obilježja monopolizma (imperijalizma) kao faze kapitalizma?",
+        "answer": "Koncentracija i centralizacija kapitala, financijski kapital, izvoz kapitala, podjela svijeta na interesne sfere i kolonije, dominacija monopola, dionički kapital.",
+        "explanation": "Kraj 19. do polovice 20. st."
+      },
+      {
+        "id": "m3rwhj",
+        "question": "Što je samoupravni socijalizam?",
+        "answer": "Sredstva za proizvodnju daju se radnicima i nastaje društveno vlasništvo; radnički organi upravljaju, a osobni doprinos rada vrednuje se osobnim dohotkom.",
+        "explanation": "Počeci socijalizma: Oktobarska revolucija 1917."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "k5dp56",
+        "question": "Prvi klasni oblik društvene proizvodnje je:",
+        "options": [
+          "prvobitna zajednica",
+          "feudalizam",
+          "robovlasništvo",
+          "kapitalizam"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "obdmzp",
+        "question": "Tri oblika feudalne rente su:",
+        "options": [
+          "radna, naturalna i novčana",
+          "radna, kamatna i dividendna",
+          "zemljišna, trgovačka i novčana",
+          "naturalna, apsolutna i diferencijalna"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "jzj3l9",
+        "question": "Kmet je dio uroda ustupao feudalcu u obliku:",
+        "options": [
+          "radne rente",
+          "novčane rente",
+          "apsolutne rente",
+          "naturalne rente"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "i23mgg",
+        "question": "Strojna proizvodnja i slobodno tržište obilježja su faze:",
+        "options": [
+          "manufakture",
+          "liberalnog kapitalizma",
+          "državnog kapitalizma",
+          "neoliberalizma"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "lmu6a0",
+        "question": "Financijski kapital nastaje spajanjem:",
+        "options": [
+          "trgovačkog i zemljišnog kapitala",
+          "proizvodnog i bankarskog kapitala",
+          "kamatonosnog i dioničkog kapitala",
+          "fiksnog i optjecajnog kapitala"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "41y5b9",
+        "question": "Država kontrolira banke i kredite, subvencionira i posreduje između radnika i poslodavaca u fazi:",
+        "options": [
+          "liberalnog kapitalizma",
+          "manufakture",
+          "prvobitne zajednice",
+          "državnog kapitalizma"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "svwnoz",
+        "question": "Neeksploatatorski načini proizvodnje su:",
+        "options": [
+          "prvobitna zajednica i komunizam",
+          "robovlasništvo i feudalizam",
+          "feudalizam i kapitalizam",
+          "kapitalizam i socijalizam"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "4bciuq",
+        "question": "Kolonat se javlja u okviru:",
+        "options": [
+          "feudalizma",
+          "kapitalizma",
+          "robovlasništva",
+          "prvobitne zajednice"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "clcvsr",
+        "sentence": "Kmet je u ranom feudalizmu davao feudalcu _______ rentu, odnosno radio određen broj dana.",
+        "answer": "radnu",
+        "hint": "rad na posjedu"
+      },
+      {
+        "id": "ow3gkp",
+        "sentence": "Kad je feudalac naplaćivao određeni novčani iznos, riječ je o _______ renti.",
+        "answer": "novčanoj",
+        "hint": "faza raspadanja"
+      },
+      {
+        "id": "cxlsxg",
+        "sentence": "Osnovni element koji razlikuje načine proizvodnje je _______ nad sredstvima za proizvodnju.",
+        "answer": "vlasništvo",
+        "hint": "tko posjeduje"
+      }
+    ],
+    "learn": {
+      "id": "6g23zi",
+      "title": "Povijesni razvoj načina proizvodnje",
+      "content": "\n<h3>Povijesni oblici odnosa proizvodnje</h3>\n<p>Ljudsko društvo prošlo je kroz razdoblja: <strong>prvobitna zajednica → robovlasništvo → feudalizam → kapitalizam → socijalizam (prema komunizmu)</strong>. Osnovni element koji određuje razlike među njima je <strong>vlasništvo nad sredstvima za proizvodnju</strong>. Dosadašnji razvitak prošao je kroz <strong>tri eksploatatorska</strong> načina proizvodnje (robovlasništvo, feudalizam, kapitalizam); <strong>neeksploatatorskima</strong> se smatraju prvobitna zajednica i komunizam.</p>\n<h4>1. Predcivilizacijsko razdoblje (od oko 45 000 god. pr. Kr.)</h4>\n<p><strong>Prvobitna zajednica:</strong> nema države, prava ni privatnog vlasništva; svi sudionici proizvodnje u istom su položaju prema prirodi i međusobno (samoradna zajednica); postoji fizička potreba zadovoljavanja vlastitih potreba; dijeli se na razdoblje divljaštva i barbarstva; nema eksploatacije.</p>\n<h4>2. Civilizacijska razdoblja</h4>\n<p><strong>Robovlasništvo</strong> je prvi klasni oblik društvene proizvodnje (robovlasnici – robovi). Sredstva za rad dijele se na ona koja <em>šute</em> (alati), <em>ispuštaju neartikulirane glasove</em> (stoka) i <em>govore</em> (robovi). Razlikuju se dva oblika:</p>\n<ul>\n<li><strong>istočnjačko ropstvo</strong> — država je vlasnik sredstava za proizvodnju i robova (Egipat, Asirija, Babilon);</li>\n<li><strong>antičko ropstvo</strong> — oblik privatnog vlasništva (Grčka, Rim); dvije faze: <em>patrijarhalno ropstvo</em> (rob samo pomaže u procesu proizvodnje unutar obitelji) i <em>dužničko ropstvo</em> (rob je glavni nositelj fizičkog rada).</li>\n</ul>\n<p>Radi rješavanja napetosti i pobuna javlja se <strong>kolonat</strong> (robovima se daje zemlja na obradu, a oni su dužni plaćati preuzetu obvezu). Privreda je naturalnog karaktera, usmjerena na seosku proizvodnju; pred kraj razdoblja u gradovima se razvija zanatstvo, a time i robna proizvodnja.</p>\n<p><strong>Feudalizam:</strong> feudalac (vlasnik zemlje) i kmet koji je obrađuje i prisiljen je feudalcu ustupati rentu. <strong>Tri oblika feudalne rente:</strong></p>\n<ol>\n<li><strong>radna renta</strong> — kmet određeni broj dana radi za feudalca na njegovu posjedu (rani feudalizam);</li>\n<li><strong>naturalna renta</strong> — daje feudalcu određenu količinu plodova (razvijeni feudalizam);</li>\n<li><strong>novčana renta</strong> — proizvod prodaje na tržištu i dogovoreni dio plaća feudalcu (faza raspadanja feudalizma).</li>\n</ol>\n<p>Feudalizam proširuje podjelu rada i razvija sredstva za proizvodnju, rad postaje stimulativniji, novi pronalasci ubrzavaju razvoj, raste broj sloboda.</p>\n<h4>Kapitalizam</h4>\n<p><strong>Kapital</strong> je društveni odnos koji pojedincu omogućava da bez rada prisvaja rezultate tuđeg rada i od toga živi — da ga eksploatira. Obilježja: kapitalist naspram najamnog radnika, privatno vlasništvo, poduzetništvo, konkurencija, koncentracija i centralizacija kapitala, masovna robna proizvodnja, težnja za što većim profitom.</p>\n<table>\n<tr><th>Faza građanskog društva</th><th>Razdoblje</th><th>Obilježja</th></tr>\n<tr><td><strong>manufaktura</strong></td><td>14.–18. st.</td><td>ručna obrada predmeta rada, podjela rada, slobodna konkurencija, razvitak sredstava za rad</td></tr>\n<tr><td><strong>liberalni kapitalizam</strong></td><td>kraj 18. st. do posljednje četvrtine 19. st.</td><td>strojna proizvodnja, slobodno tržište, poduzetništvo, krize, nezaposlenost; država se ne miješa, štiti slobodno poduzetništvo i privatno vlasništvo</td></tr>\n<tr><td><strong>monopolizam / imperijalizam</strong></td><td>kraj 19. st. do polovice 20. st.</td><td>koncentracija i centralizacija kapitala, <em>financijski kapital</em> (spoj proizvodnog i bankarskog), izvoz kapitala, podjela svijeta na interesne sfere, kolonije; dominacija monopola koji sputavaju konkurenciju; pojava dioničkog kapitala</td></tr>\n<tr><td><strong>državni kapitalizam</strong></td><td>od 1929.–1933. (velika kriza) do 80-ih god. 20. st.</td><td>jak utjecaj države: kontrola banaka i kredita, subvencije, posredovanje radnik–poslodavac, socijalna i zdravstvena zaštita</td></tr>\n<tr><td><strong>neoliberalistička faza</strong></td><td>od 70-ih god. 20. st.</td><td>ograničena uloga države, privatizacija državnog vlasništva, oživljavanje tržišta i poduzetništva, globalizacija</td></tr>\n</table>\n<h4>Socijalizam</h4>\n<p>Počinje <strong>Oktobarskom revolucijom 1917.</strong> Nacionalizacija i konfiskacija privatne imovine pretvaraju je u državno vlasništvo; država nadzire banke i monetarno-kreditnu politiku te vodi brigu o školstvu, kulturi, zdravstvu. <strong>Samoupravni socijalizam:</strong> sredstva za proizvodnju daju se radnicima i nastaje društveno vlasništvo; uspostavljaju se radnički organi upravljanja, a osobni doprinos radu vrednuje se osobnim dohotkom.</p>\n<h4>Šest stadija razvoja materijalnih uvjeta (u Zapadnoj Europi)</h4>\n<p>primitivni komunizam → robovlasničko društvo → feudalizam → kapitalizam → diktatura proletarijata (prijelazni stadij, socijalizam) → komunizam (besklasno i bezdržavno društvo). Povijest svih dosadašnjih društava je <em>povijest klasnih borbi</em>.</p>\n<h3>Suvremeno društvo</h3>\n<p>Obilježja: znanstveno-tehnička revolucija, nove tehnologije, nove sirovine i energija, povećana produktivnost rada i smanjenje svih troškova proizvodnje, <strong>tripartizam</strong> (poslodavac, radnik i država), javno obilježje politike, pravo ide prema zaštiti ljudskih prava i sloboda, poboljšanje životnih uvjeta, obrazovanje, porast informacija, povećavanje međunarodnih ekonomskih elemenata.</p>\n"
+    },
+    "id": "ei38qx"
+  },
+  "peThought": {
+    "name": "Povijest ekonomske misli",
+    "icon": "fa-book-open",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "id": "bldxw6",
+        "question": "Što je merkantilizam?",
+        "answer": "Škola prema kojoj su osnovni izvori bogatstva društva trgovina i izvoz; bogatstvo je u novcu i plemenitim metalima, pa se proučava promet.",
+        "explanation": "Predstavnici: Malynes, Bodin, Hales."
+      },
+      {
+        "id": "5sgc5j",
+        "question": "Što je fiziokratizam?",
+        "answer": "Francuska teorija iz 18. st. prema kojoj je izvor bogatstva poljoprivreda; nastala kao reakcija na merkantilizam; zalaže se za slobodu bez državne intervencije.",
+        "explanation": "„Vladavina prirode\"; Turgot, Mirabeau."
+      },
+      {
+        "id": "earix1",
+        "question": "Što je klasična građanska politička ekonomija?",
+        "answer": "Prva politekonomska znanost (Petty, Smith, Ricardo); njezin je doprinos radna teorija vrijednosti i upozorenje na eksploataciju.",
+        "explanation": "Radna teorija vrijednosti."
+      },
+      {
+        "id": "7t669q",
+        "question": "Što tvrdi radna teorija vrijednosti?",
+        "answer": "Vrijednost robe određena je količinom rada utrošenog u njezinu proizvodnju.",
+        "explanation": "Petty ju je formulirao, Ricardo i Marx razvili."
+      },
+      {
+        "id": "suz99f",
+        "question": "Tko je predstavnik apologetike buržoazije i što zastupa?",
+        "answer": "Say, Senior i Malthus; vulgarna građanska politička ekonomija odbacuje znanstvene metode i vrijednost izvodi iz troškova proizvodnje.",
+        "explanation": "Nastavak apologetike."
+      },
+      {
+        "id": "vtrp0q",
+        "question": "Što je Sayova tvrdnja o tržištu?",
+        "answer": "Da će tržište u kapitalističkom gospodarstvu omogućiti punu zaposlenost i racionalnu upotrebu svih elemenata proizvodnje.",
+        "explanation": "Sayov zakon tržišta."
+      },
+      {
+        "id": "q9w809",
+        "question": "Što su glavne ideje kenezijanske škole?",
+        "answer": "Privredni ciklusi i krize, nezaposlenost, državna intervencija i raspodjela dohotka; makroekonomija radi spašavanja kapitalizma (Keynes, Hansen, Hicks).",
+        "explanation": "Država intervenira."
+      },
+      {
+        "id": "llj68m",
+        "question": "Koje je glavno Marxovo djelo i što u njemu analizira?",
+        "answer": "„Kapital\": anatomija kapitalističkog društva, robna proizvodnja, teorija vrijednosti, novac, kapital te bit i oblici viška vrijednosti.",
+        "explanation": "Metoda: dijalektički historijski materijalizam."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "mkdkjx",
+        "question": "Osnovni doprinos klasične građanske političke ekonomije je:",
+        "options": [
+          "zakon ponude i potražnje",
+          "teorija graničnih korisnosti",
+          "radna teorija vrijednosti",
+          "monetarna politika"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "tt3cxn",
+        "question": "Prema fiziokratima, izvor bogatstva je:",
+        "options": [
+          "poljoprivreda",
+          "trgovina",
+          "novac i zlato",
+          "izvoz"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "tpcisd",
+        "question": "Prema merkantilistima, osnovni izvori bogatstva društva su:",
+        "options": [
+          "poljoprivreda i rudarstvo",
+          "industrija i inovacije",
+          "štednja i porezi",
+          "trgovina i izvoz"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "44vd99",
+        "question": "Koji je ekonomist formulirao radnu teoriju vrijednosti?",
+        "options": [
+          "Keynes",
+          "Petty",
+          "Malthus",
+          "Say"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "cdpdll",
+        "question": "Za vulgarnu građansku političku ekonomiju vrijednost robe određena je:",
+        "options": [
+          "količinom društveno potrebnog rada",
+          "troškovima proizvodnje robe",
+          "ponudom države",
+          "prometnom vrijednošću ekvivalenta"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "p7nebz",
+        "question": "Koja škola proučava konjunkturu i mogućnost njezina predviđanja?",
+        "options": [
+          "čikaška",
+          "lozanska",
+          "štokholmska",
+          "harvardska"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "5v3khd",
+        "question": "Mančesterska škola zalaže se za:",
+        "options": [
+          "slobodu trgovine i ukidanje carina",
+          "državnu intervenciju u cijene",
+          "monetarizam",
+          "matematičku analizu ravnoteže"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "y7u9hn",
+        "question": "Tvorac klasične marksističke političke ekonomije je:",
+        "options": [
+          "David Ricardo",
+          "John Keynes",
+          "Karl Marx",
+          "Adam Smith"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "vu8r78",
+        "sentence": "Merkantilizam smatra da su osnovni izvori bogatstva trgovina i _______.",
+        "answer": "izvoz",
+        "hint": "kretanje robe u inozemstvo"
+      },
+      {
+        "id": "zwik2j",
+        "sentence": "Radna teorija vrijednosti kaže da vrijednost robe određuje količina utrošenog _______.",
+        "answer": "rada",
+        "hint": "ključni čimbenik"
+      },
+      {
+        "id": "jo74a5",
+        "sentence": "Fiziokrati su izvor bogatstva vidjeli u _______.",
+        "answer": "poljoprivredi",
+        "hint": "zemlja"
+      }
+    ],
+    "learn": {
+      "id": "n8yvkg",
+      "title": "Povijest ekonomske misli",
+      "content": "\n<h3>Pojam</h3>\n<p><strong>Povijest ekonomske misli</strong> proučava povijesno oblikovanje znanstvenih spoznaja, zakona, kategorija, metoda i drugih komponenata ekonomske znanosti.</p>\n<h3>Škole i razdoblja</h3>\n<table>\n<tr><th>Škola / razdoblje</th><th>Predstavnici</th><th>Glavne ideje</th></tr>\n<tr><td><strong>Grčka</strong></td><td>Ksenofont, Platon, Aristotel</td><td>problem trgovine, razmjene, korištenje robovskog rada, podjela rada, vrijednost, zemljoradnja</td></tr>\n<tr><td><strong>Rimljani</strong></td><td>Katon, braća Grakho, Ciceron, Lukrecije, Seneka</td><td>pravne regulative ekonomskih odnosa</td></tr>\n<tr><td><strong>Kanonisti</strong></td><td>Toma Akvinski</td><td>spaja teološke dogme i ekonomsko stanje društva</td></tr>\n<tr><td><strong>Merkantilizam</strong> (15. st.)</td><td>Malynes, Bodin, Hales (i Steuart)</td><td>osnovni izvori bogatstva su trgovina i izvoz; bogatstvo je u novcu i plemenitim metalima</td></tr>\n<tr><td><strong>Fiziokratizam</strong> (18. st.)</td><td>Turgot, Mirabeau</td><td>izvori bogatstva su proizvodnja i poljoprivreda</td></tr>\n<tr><td><strong>Klasična građanska politička ekonomija</strong></td><td>Petty, Smith, Ricardo</td><td>prva politekonomska znanost; <em>radna teorija vrijednosti</em></td></tr>\n<tr><td><strong>Revolucionarna znanstvena kritika</strong> kapitalizma</td><td>Marx i Engels</td><td>marksistička politička ekonomija</td></tr>\n<tr><td><strong>Apologetika buržoazije i kapitalizma</strong></td><td>Say, Senior, Malthus</td><td>vulgarna građanska politička ekonomija; vrijednost iz troškova proizvodnje (teorija troškova)</td></tr>\n<tr><td><strong>Povijesna škola</strong> (Njemačka)</td><td>Roscher, Knies, Brentano</td><td>opisna disciplina, historijska metoda, protiv engleskih klasika i marksizma</td></tr>\n<tr><td><strong>Austrijska (psihološka) škola</strong></td><td>Menger, Wieser</td><td>kategorije su psihološke i subjektivne; teorija korisnosti</td></tr>\n<tr><td><strong>Marginalistička škola</strong></td><td>Clark (te Jevons, Walras, Marshall)</td><td>granične gospodarske pojave</td></tr>\n<tr><td><strong>Kenezijanska škola</strong></td><td>Keynes, Hansen, Hicks</td><td>privredni ciklusi, krize, nezaposlenost, državna intervencija, makroekonomija</td></tr>\n<tr><td><strong>Lozanska škola</strong></td><td>Pareto, Barone</td><td>matematičko-ekonomska analiza ekonomske ravnoteže</td></tr>\n<tr><td><strong>Harvardska škola</strong></td><td>Persons</td><td>konjunktura i mogućnost njenog predviđanja</td></tr>\n<tr><td><strong>Čikaška škola</strong></td><td>Stigler, Friedman</td><td>monetarizam i struktura tržišta</td></tr>\n<tr><td><strong>Mančesterska škola</strong></td><td>Cobden, Bright</td><td>sloboda trgovine među narodima, ukidanje carina</td></tr>\n<tr><td><strong>Štokholmska škola</strong></td><td>Lindahl, Ohlin</td><td>investicije i odnos očekivanog i ostvarenog</td></tr>\n<tr><td><strong>Socijalisti utopisti</strong></td><td>More, Owen</td><td>kritika kapitalističkog načina proizvodnje</td></tr>\n<tr><td><strong>Socijalisti radikalci</strong></td><td>Gray, Bray</td><td>branili radnu teoriju vrijednosti i interese radnika</td></tr>\n</table>\n<h4>Klasična građanska politička ekonomija</h4>\n<p>Osnovni doprinos je <strong>radna teorija vrijednosti</strong>: vrijednost robe određena je količinom rada utrošenog u njezinu proizvodnju. Klasici upozoravaju na eksploatatorski karakter kapitalističke robne proizvodnje: dohodak stvaraju najamni radnici svojim radom, a kapitalisti ga prisvajaju. Radnu teoriju vrijednosti prvi je formulirao Petty, doprinio je Smith, razvili su je Ricardo i Marx.</p>\n<h4>Apologetika buržoazije</h4>\n<ul>\n<li><strong>Say:</strong> tržište u kapitalističkom gospodarstvu omogućit će punu zaposlenost i racionalnu upotrebu svih elemenata proizvodnje.</li>\n<li><strong>Senior:</strong> odbacuje radnu teoriju vrijednosti, a ne prihvaća ni teoriju korisnosti.</li>\n<li><strong>Malthus:</strong> teorija o stanovništvu i zakon opadajućih prinosa u poljoprivredi; treba smanjiti rast stanovništva; sve temelji na teoriji troškova.</li>\n</ul>\n<p>Vulgarna građanska politička ekonomija odbacuje znanstvene metode i vrijednost robe izvodi iz troškova proizvodnje (teorija troškova), dok se teorija korisnosti (vrijednost iz korisnosti za potrošača) veže uz austrijsku, subjektivnu i marginalističku školu.</p>\n<h4>Merkantilizam i fiziokratizam</h4>\n<p><strong>Merkantilisti</strong> smatraju da je izvor bogatstva u novcu i plemenitim metalima pa proučavaju područje prometa (trgovine). Steuart: stvarnu vrijednost robe određuju tri čimbenika — količina robe koju radnik prosječno proizvede u određenom vremenu, vrijednost radnikova uzdržavanja i nužnih izdataka te vrijednost materijala; sve iznad toga profit je poduzetnika i ovisi o ponudi i potražnji.</p>\n<p><strong>Fiziokratizam</strong> je ekonomska teorija razvijena u Francuskoj u 18. stoljeću, nastala kao oštra reakcija na merkantilizam; naučava da su izvori bogatstva u poljoprivrednoj aktivnosti („zemlja je izvor svih bogatstava\"). Naziv potječe od grčkih riječi <em>fisis</em> (priroda) i <em>kratos</em> (moć, vladati) — „vladavina prirode\". Prirodni poredak temelji se na nepromjenjivim prirodnim zakonima i najbolji je; svako uplitanje države samo smeta, pa je državni protekcionizam štetan i gospodarstvo treba prepustiti vlastitim zakonitostima. Glavna im je zasluga da su prvi dali čisti model kapitalističkog društva, premda temeljen na poljoprivredi.</p>\n<h4>Karl Marx (19. st.)</h4>\n<p>Tvorac klasične marksističke političke ekonomije. Služi se mislima socijalista utopista i drugim kritikama kapitalizma. Glavno djelo <strong>„Kapital\"</strong> izlaže anatomiju kapitalističkog društva kao klasnog društva otuđenog rada, robnog svijeta punog suprotnosti. Posebnu pažnju posvećuje robnoj proizvodnji i teoriji vrijednosti, analizira novac, kapital te bit i oblike viška vrijednosti; koristi materijalističku filozofsku osnovu i dijalektički historijski materijalizam kao metodu; upozorio je kapitaliste na opasnosti koje im prijete iz samog načina proizvodnje. <strong>Engels</strong> analizira ulogu rada u postanku i razvitku čovječanstva i kritizira građansku političku ekonomiju s pozicije radničke klase.</p>\n"
+    },
+    "id": "loocsv"
+  },
+  "peMicroMacro": {
+    "name": "Mikroekonomija, makroekonomija i ekonomska politika",
+    "icon": "fa-chart-line",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "id": "c210wh",
+        "question": "Čime se bavi mikroekonomija?",
+        "answer": "Pojedinačnim ekonomskim pojavama i subjektima (proizvođači, potrošači, poduzeća, domaćinstva); metodom mikroanalize; ponuda, potražnja, efikasnost poslovanja.",
+        "explanation": "Efikasnost: produktivnost, ekonomičnost, rentabilnost."
+      },
+      {
+        "id": "dkcamo",
+        "question": "Čime se bavi makroekonomija?",
+        "answer": "Društvenim gospodarstvom kao cjelinom, na malom broju agregata (društveni proizvod, nacionalni dohodak): zaposlenost, potrošnja, ravnoteža, monetarna stabilnost, rast.",
+        "explanation": "Metoda makroanalize (Petty)."
+      },
+      {
+        "id": "0ml4kh",
+        "question": "Koji su ciljevi suvremene makroekonomije?",
+        "answer": "Visok stupanj proizvodnje i rasta, visoka zaposlenost, stabilnost cijena te ravnoteža u međunarodnoj razmjeni uz stabilan devizni tečaj.",
+        "explanation": "Četiri cilja; ispitno pitanje."
+      },
+      {
+        "id": "qgdnn9",
+        "question": "Što je ekonomska politika i tko je nositelj makroekonomske politike?",
+        "answer": "Sveukupnost mjera, instrumenata i akcija koje provodi država; država je glavni nositelj makroekonomske politike.",
+        "explanation": "Vanjski faktori: ratovi, nepogode."
+      },
+      {
+        "id": "tsanw7",
+        "question": "Koji su makroekonomski instrumenti?",
+        "answer": "Fiskalna politika, monetarna politika, politika međunarodne razmjene i politika dohotka.",
+        "explanation": "Četiri instrumenta."
+      },
+      {
+        "id": "h80bba",
+        "question": "Što je fiskalna, a što monetarna politika?",
+        "answer": "Fiskalna: prikupljanje novca od poreznih obveznika, carine, državne takse. Monetarna: usklađivanje mase robe i usluga s količinom novca u optjecaju.",
+        "explanation": "Porezi vs. novac."
+      },
+      {
+        "id": "mo49dk",
+        "question": "Što obuhvaća politika međunarodne razmjene, a što politika dohotka?",
+        "answer": "Prva: carine, kvote, dozvole i kontrola deviznog tečaja. Druga: utjecaj na kretanje i kontrolu cijena i najamnina.",
+        "explanation": "Instrumenti države."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "kw8iqu",
+        "question": "Koji se pristup bavi pojedinačnim cijenama, troškovima i stanjem poduzeća?",
+        "options": [
+          "makroekonomija",
+          "ekonomska politika",
+          "mikroekonomija",
+          "fiskalna politika"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "fvx49t",
+        "question": "Ciljevi suvremene makroekonomije NE uključuju:",
+        "options": [
+          "maksimiranje profita pojedinog poduzeća",
+          "visoku zaposlenost čimbenika proizvodnje",
+          "stabilnost cijena",
+          "ravnotežu u međunarodnoj razmjeni"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "y15aen",
+        "question": "Prikupljanje novca od poreza, carina i taksi je:",
+        "options": [
+          "monetarna politika",
+          "politika dohotka",
+          "politika razmjene",
+          "fiskalna politika"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "07tf2i",
+        "question": "Usklađivanje mase robe i količine novca u optjecaju je zadaća:",
+        "options": [
+          "fiskalne politike",
+          "monetarne politike",
+          "politike dohotka",
+          "carinske politike"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "00eg3d",
+        "question": "Carine, kvote i kontrola deviznog tečaja pripadaju:",
+        "options": [
+          "fiskalnoj politici države",
+          "politici međunarodne razmjene",
+          "monetarnoj politici banke",
+          "politici dohotka i cijena"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "00wgpg",
+        "question": "Glavni nositelj makroekonomske politike je:",
+        "options": [
+          "poduzeće",
+          "domaćinstvo",
+          "burza",
+          "država"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "sg8l9y",
+        "question": "Efikasnost privređivanja koju analizira mikroekonomija uključuje:",
+        "options": [
+          "produktivnost, ekonomičnost i rentabilnost",
+          "zaposlenost, uvoz i izvoz robe",
+          "inflaciju, deflaciju i devalvaciju",
+          "porez, carinu i kvotu na uvoz"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ae5fny",
+        "question": "Politika dohotka utječe na:",
+        "options": [
+          "visinu poreznih stopa",
+          "devizni tečaj",
+          "kretanje cijena i najamnina",
+          "količinu tiskanog novca"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "fyaj18",
+        "sentence": "Makroekonomija se služi metodom _______.",
+        "answer": "makroanalize",
+        "hint": "suprotno mikroanalizi"
+      },
+      {
+        "id": "ye0qqj",
+        "sentence": "Fiskalna, monetarna, politika međunarodne razmjene i politika dohotka su makroekonomski _______.",
+        "answer": "instrumenti",
+        "hint": "sredstva države"
+      },
+      {
+        "id": "kjjs0z",
+        "sentence": "Idealna ravnoteža u međunarodnoj razmjeni bila bi kad bi se uvoz i izvoz _______.",
+        "answer": "izjednačili",
+        "hint": "bez neravnoteže"
+      }
+    ],
+    "learn": {
+      "id": "kzbwmi",
+      "title": "Mikroekonomija i makroekonomija",
+      "content": "\n<h3>Podjela ekonomije prema obujmu predmeta izučavanja</h3>\n<p>Ekonomija se prema obujmu izučavanja dijeli na <strong>mikroekonomiju</strong> i <strong>makroekonomiju</strong>.</p>\n<h4>Mikroekonomija</h4>\n<p>Proučava pojedinačne čimbenike u sastavu pojedinog gospodarstva (pojedinačne cijene, troškove, stanje pojedinog poduzeća) i služi se metodom <strong>mikroanalize</strong>. Cilj je analizirati ponašanje pojedinih gospodarskih subjekata: individualnih proizvođača, potrošača, poduzeća, domaćinstava. Aktivnost započinje utvrđivanjem opravdanosti postojanja poduzeća te određuje optimalnost veličine, kapaciteta i proizvodnog programa. Bavi se odnosom ponude i potražnje, monopolskim odnosima, raspodjelom, dobivenim prihodima i kretanjem sredstava koja prisvaja država, te sagledava efikasnost privređivanja: <em>produktivnost, proizvodnju, ekonomičnost i rentabilnost</em>.</p>\n<h4>Makroekonomija</h4>\n<p>Proučava opće ekonomske odnose i kategorije, služi se metodom <strong>makroanalize</strong> (Petty). Prati ukupna kretanja i analizira ih na malom broju agregata (društveni proizvod, nacionalni dohodak). Zanimaju je opća razina društvene proizvodnje, zaposlenost i potrošnja, uvjeti gospodarske ravnoteže, monetarna stabilnost, ekonomski rast i razvoj. Problemi koje je potaknula: pojam viška radne snage, pojava papirnatog novca i pojava međunarodne razmjene.</p>\n<p><strong>Ciljevi suvremene makroekonomije:</strong></p>\n<ol>\n<li>osigurati visok stupanj proizvodnje i brži rast stope gospodarskog rasta;</li>\n<li>osigurati visok stupanj zaposlenosti svih čimbenika proizvodnje;</li>\n<li>osigurati visok stupanj stabilnosti cijena;</li>\n<li>osigurati ravnotežu u međunarodnoj razmjeni uz stabilan devizni tečaj (idealno bi se uvoz i izvoz izjednačili, što je teško postići, pa se najčešće govori o neravnoteži u kojoj je uvoz veći od izvoza ili obrnuto).</li>\n</ol>\n<h3>Ekonomska politika</h3>\n<p><strong>Ekonomska politika</strong> je sveukupnost mjera, instrumenata, akcija i drugih aktivnosti koje poduzima država. Glavni nositelj makroekonomske politike je država (unutarnji faktor utjecaja); vanjski faktori mogu biti ratovi, elementarne nepogode. Država svojim ovlaštenim tijelima utvrđuje politiku novca, kredita i bankarskog sustava te regulira količinu novca u optjecaju.</p>\n<p><strong>Makroekonomski instrumenti:</strong></p>\n<ul>\n<li><strong>fiskalna politika</strong> — prikupljanje novca od poreznih obveznika, carine i ostalih državnih taksi;</li>\n<li><strong>monetarna politika</strong> — postizanje sklada između mase ponuđene robe i usluga (zbroja njihovih cijena) i količine gotovog novca, bezgotovinskih plaćanja i surogata novca u optjecaju;</li>\n<li><strong>politika međunarodne razmjene</strong> — carine, izvozno-uvozne kvote i dozvole te regulacija i kontrola deviznog tečaja;</li>\n<li><strong>politika dohotka</strong> — utječe na kretanje i kontrolu cijena i najamnine.</li>\n</ul>\n"
+    },
+    "id": "iaskhw"
+  },
+  "peNeedsProduction": {
+    "name": "Proizvodnja kao uvjet opstanka društva",
+    "icon": "fa-industry",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "id": "usjixx",
+        "question": "Zašto su ljudske potrebe temeljna nužnost proizvodnje?",
+        "answer": "Jer čovjek mora svakodnevno podmirivati egzistencijalne potrebe materijalnim dobrima koja netko mora proizvesti.",
+        "explanation": "Potrebe su najosnovniji uzrok proizvodnje."
+      },
+      {
+        "id": "p9g13v",
+        "question": "Kako se dijele ljudske potrebe?",
+        "answer": "Prirodne (hrana, piće, stan), prirodno-geografske (uvjetovane područjem življenja) i povijesno nastale (nametnute društvenom sredinom, stalno se šire).",
+        "explanation": "Povijesne se šire razvojem društva."
+      },
+      {
+        "id": "tshvw9",
+        "question": "Razlika između prirodnih i proizvedenih materijalnih dobara?",
+        "answer": "Prirodna daje sama priroda i koriste se izravno (zrak, voda, sunce); proizvedena nastaju ljudskim radom kad izravno korištenje prirode ne podmiruje potrebe.",
+        "explanation": "Prirodna su ograničena po količini."
+      },
+      {
+        "id": "2xtg9e",
+        "question": "Koji su temeljni čimbenici materijalne proizvodnje?",
+        "answer": "Rad, sredstva za rad i predmeti rada.",
+        "explanation": "Sredstva za rad + predmeti rada = sredstva za proizvodnju."
+      },
+      {
+        "id": "td87x0",
+        "question": "Što su sredstva za proizvodnju?",
+        "answer": "Zbroj sredstava za rad i predmeta rada — materijalni (objektivni) čimbenik proizvodnje.",
+        "explanation": "Ljudski rad je subjektivni čimbenik."
+      },
+      {
+        "id": "0x75yl",
+        "question": "Što su sredstva za rad u užem, a što u širem smislu?",
+        "answer": "U užem: u izravnom kontaktu s predmetom i radom (čekić, traktor). U širem: opći uvjeti rada bez izravnog kontakta (tvornice, vodovod, električna energija).",
+        "explanation": "Alati vs. opći uvjeti."
+      },
+      {
+        "id": "4puvwh",
+        "question": "Što su proizvodna, osobna i zajednička potrošnja?",
+        "answer": "Proizvodna: troše se dobra radi novih dobara. Osobna: podmirenje osobnih potreba čovjeka. Zajednička: troši je veći broj pojedinaca (kino, bolnica).",
+        "explanation": "Proizvodna → proizvodnja; osobna → život."
+      },
+      {
+        "id": "sg0ssp",
+        "question": "Što je uporabna vrijednost?",
+        "answer": "Korisnost i sposobnost materijalnog dobra da zadovolji neku ljudsku potrebu.",
+        "explanation": "Svojstvo dobra, ne rada."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "fpyc9d",
+        "question": "Najosnovniji uzrok (faktor) nužnosti materijalne proizvodnje su:",
+        "options": [
+          "novac i kapital",
+          "državni propisi",
+          "ljudske potrebe",
+          "tržišna konkurencija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "rbx9iv",
+        "question": "Sredstva za rad i predmeti rada zajedno čine:",
+        "options": [
+          "sredstva za proizvodnju",
+          "proizvodne snage",
+          "radnu snagu",
+          "društveni proizvod"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "vodjaq",
+        "question": "Dobra koja stvara sama priroda i koja se izravno koriste su:",
+        "options": [
+          "proizvodna materijalna dobra",
+          "trajna potrošna dobra",
+          "proizvedena osobna dobra",
+          "prirodna materijalna dobra"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "rvoef4",
+        "question": "Čekić i traktor su sredstva za rad:",
+        "options": [
+          "u širem smislu",
+          "u užem smislu",
+          "u prenesenom smislu",
+          "u pravnom smislu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "nu8tec",
+        "question": "Tvornice, vodovod i električna energija su sredstva za rad:",
+        "options": [
+          "u užem smislu",
+          "u širem smislu",
+          "kao predmet rada",
+          "kao potrošna dobra"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "7kt85s",
+        "question": "Potrošnja u kojoj se troše dobra da bi se proizvela druga dobra je:",
+        "options": [
+          "osobna potrošnja",
+          "zajednička potrošnja",
+          "individualna potrošnja",
+          "proizvodna potrošnja"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "wos4zb",
+        "question": "Korištenje kina, kazališta i bolnice primjer je:",
+        "options": [
+          "zajedničke potrošnje",
+          "proizvodne potrošnje",
+          "individualne potrošnje",
+          "tezauriranja"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "ho8afd",
+        "question": "Dijelovi prirode koji nisu do kraja dovršeni i transformirani nazivaju se:",
+        "options": [
+          "sredstva za rad",
+          "potrošna dobra",
+          "sirovine",
+          "proizvodna dobra"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "vvcnjq",
+        "sentence": "Najosnovniji predmet rada je _______.",
+        "answer": "priroda",
+        "hint": "iz nje dolaze sirovine"
+      },
+      {
+        "id": "osb5fb",
+        "sentence": "Potrošna dobra služe _______ potrošnji, a proizvodna dobra proizvodnoj.",
+        "answer": "osobnoj",
+        "hint": "potrebe čovjeka"
+      },
+      {
+        "id": "d24d2m",
+        "sentence": "Korisnost i sposobnost dobra da zadovolji ljudsku potrebu naziva se uporabna ili _______ vrijednost.",
+        "answer": "upotrebna",
+        "hint": "sinonim za uporabna"
+      }
+    ],
+    "learn": {
+      "id": "cc2lao",
+      "title": "Proizvodnja kao uvjet opstanka ljudskog društva",
+      "content": "\n<h3>Potrebe i materijalna dobra</h3>\n<p>Bez materijalnih dobara čovjek ne bi mogao opstati ni kao društveno ni kao prirodno biće. Da bi živio, svakodnevno mora podmiriti niz egzistencijalnih potreba, a gotovo sve zadovoljava materijalnim dobrima koja netko mora proizvesti — zato se proizvodnja nameće kao nužnost. <strong>Ljudske potrebe najosnovniji su uzrok (faktor)</strong> koji uvjetuje nužnost materijalne proizvodnje.</p>\n<h4>Čovjekove potrebe</h4>\n<ul>\n<li><strong>prirodne</strong> — nastaju po samoj prirodi čovjeka (hrana, piće, stan), te <strong>prirodno-geografske</strong> — uvjetovane područjem u kojem čovjek živi;</li>\n<li><strong>povijesno nastale</strong> — nametnute društvenom sredinom, stalno se mijenjaju i šire jer se razvojem društva širi krug potreba za materijalnim dobrima.</li>\n</ul>\n<h4>Podjela materijalnih dobara prema načinu nastanka</h4>\n<ul>\n<li><strong>prirodna materijalna dobra</strong> — stvorila ih je sama priroda i mogu se izravno koristiti (zrak, voda, sunčana energija, šume); relativno su malena i nedostatna po količini i ponudi;</li>\n<li><strong>proizvedena materijalna dobra</strong> — proizvod ljudskog rada; nastaju kad se potrebe ne mogu zadovoljiti izravnim korištenjem prirodnih dobara, pa čovjek utroškom rada prilagođava prirodu.</li>\n</ul>\n<h3>Materijalna proizvodnja i njezini čimbenici</h3>\n<p><strong>Materijalna proizvodnja</strong> je oblik društveno organizirane proizvodnje dobara i usluga s ciljem zadovoljavanja ljudskih potreba. Stvara se uporabom i mobilizacijom <strong>čimbenika proizvodnje</strong>: rada, sredstava za rad i predmeta rada (njihova se nužnost mijenja razvojem društva).</p>\n<ul>\n<li><strong>Ljudski rad</strong> — umne i fizičke sposobnosti čovjeka koje koristi u proizvodnji materijalnih dobara. <em>Proizvodni rad</em> je onaj iz kojega izlaze materijalni proizvodi; mora biti društveno koristan jer bi inače bio uzaludan.</li>\n<li><strong>Sredstva za rad</strong> — pomoću njih čovjek prilagođava materiju svojim potrebama (alati). <em>U užem smislu</em>: u izravnom su kontaktu između predmeta rada i ljudskog rada koji njime upravlja (čekić, traktor). <em>U širem smislu</em>: sudjeluju u procesu proizvodnje i bez njih se ne bi mogao odvijati, ali nisu u izravnom kontaktu s predmetom rada ni s radom (opći uvjeti rada i rezultati znanstvenih otkrića: tvornice, vodovod, električna energija).</li>\n<li><strong>Predmeti rada</strong> — prirodna materija na koju čovjek djeluje radom i sredstvima za rad i prilagođava je potrebama; najosnovniji predmet rada je priroda. <strong>Sirovine</strong> su dijelovi prirode koji nisu do kraja dovršeni i transformirani.</li>\n</ul>\n<div class=\"formula-box\">SREDSTVA ZA RAD + PREDMETI RADA = MATERIJALNI (OBJEKTIVNI) ČIMBENIK PROIZVODNJE = SREDSTVA ZA PROIZVODNJU<br>Ljudski rad (subjektivni čimbenik) + sredstva za proizvodnju = PROIZVODNE SNAGE</div>\n<h3>Proizvodnja i potrošnja</h3>\n<p>Proces proizvodnje uvijek podrazumijeva trošenje (čovjekove energije, materijalnih dobara sadržanih u sredstvima za rad i predmetima rada).</p>\n<ul>\n<li><strong>Proizvodna potrošnja</strong> — oblik potrošnje u kojem se troše materijalna dobra da bi se u proizvodnom procesu dobila druga materijalna dobra (trošenje sredstava za proizvodnju od robnih proizvođača). <strong>Proizvodni rad</strong> je rad utrošen u proizvodnoj potrošnji.</li>\n<li><strong>Osobna potrošnja</strong> — proces trošenja dobara kojim se podmiruju osobne potrebe čovjeka kao prirodnog društvenog bića radi održavanja i reprodukcije njegove vrste. <em>Individualna</em> — trošenje dobara od strane pojedinca; <em>zajednička</em> — trošenje od strane većeg broja pojedinaca u isto ili različito vrijeme (kino, kazalište, bolnica).</li>\n<li><strong>Potrošnja</strong> općenito je proces trošenja materijalnih dobara radi zadovoljenja određenih ljudskih potreba.</li>\n</ul>\n<p><strong>Podjela dobara prema namjeni:</strong> <em>potrošna dobra</em> služe osobnoj potrošnji; <em>proizvodna dobra</em> služe proizvodnoj potrošnji.</p>\n<p><strong>Uporabna vrijednost</strong> je korisnost i sposobnost materijalnog dobra da zadovolji neku ljudsku potrebu (čovjek je tijekom vremena dolazio do sve potpunijih i raznovrsnijih mogućnosti korištenja dobara).</p>\n"
+    },
+    "id": "k42w50"
+  },
+  "peFactors": {
+    "name": "Čimbenici veličine društvene proizvodnje",
+    "icon": "fa-gears",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "id": "hmgv8t",
+        "question": "Što je društveni proizvod?",
+        "answer": "Ukupna količina proizvoda i usluga proizvedenih u društvenoj zajednici u određenom vremenskom razdoblju.",
+        "explanation": "Obuhvaća proizvode i usluge."
+      },
+      {
+        "id": "8fcjp2",
+        "question": "Koji čimbenici određuju veličinu društvene materijalne proizvodnje?",
+        "answer": "Prirodni uvjeti, razvijenost sredstava za proizvodnju, stanovništvo, dužina radnog vremena, intenzivnost rada, produktivnost rada i društveni odnosi.",
+        "explanation": "Sedam čimbenika."
+      },
+      {
+        "id": "9r9ous",
+        "question": "Što je prirodno bogatstvo, a što društveno bogatstvo?",
+        "answer": "Prirodno: sveukupnost prirodnih uvjeta za proizvodnju. Društveno: ukupno stvorena a neutrošena dobra kojima raspolaže zajednica (potrošna, trajna i proizvodna).",
+        "explanation": "Prirodno nastaje samo od sebe."
+      },
+      {
+        "id": "n0vns8",
+        "question": "Kako se dijeli stanovništvo kao subjektivni čimbenik proizvodnje?",
+        "answer": "Radno sposobno (aktivno i neaktivno) i radno nesposobno (djeca, starci, invalidi); još i zaposleno/nezaposleno, proizvodno/neproizvodno.",
+        "explanation": "Neaktivni: nezaposleni, studenti."
+      },
+      {
+        "id": "g4e6fk",
+        "question": "Što je intenzivnost rada?",
+        "answer": "Stupanj trošenja radne snage (umnih i fizičkih sposobnosti) u jedinici vremena.",
+        "explanation": "Raste s kvalitetnijim strojevima i društvenim željama."
+      },
+      {
+        "id": "jgmd97",
+        "question": "Što je produktivnost rada?",
+        "answer": "Pokazatelj utroška ukupnog rada po jedinici proizvoda; stvaralačka moć rada da u jedinici vremena stvori više upotrebnih vrijednosti.",
+        "explanation": "Raste kad isti rad daje više proizvoda."
+      },
+      {
+        "id": "qlmc1c",
+        "question": "Od čega ovisi produktivnost rada?",
+        "answer": "Iskustvo radnika, razvijenost sredstava za proizvodnju, prirodni uvjeti, znanost, organizacija rada i uvjeti života i rada.",
+        "explanation": "Šest čimbenika."
+      },
+      {
+        "id": "3xrlpd",
+        "question": "Kako društveni odnosi utječu na obujam proizvodnje?",
+        "answer": "Djeluju na sve ostale čimbenike (iskorištavanje bogatstava, razvoj sredstava, stanovništvo, radno vrijeme, intenzivnost, produktivnost) pa izravno utječu na opseg proizvodnje.",
+        "explanation": "Posredno djeluju na sve čimbenike."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "b0a6wz",
+        "question": "Koliko čimbenika određuje veličinu društvene materijalne proizvodnje?",
+        "options": [
+          "pet",
+          "tri",
+          "sedam",
+          "devet"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "522bhp",
+        "question": "Stupanj trošenja radne snage u jedinici vremena je:",
+        "options": [
+          "intenzivnost rada",
+          "produktivnost rada",
+          "dužina radnog vremena",
+          "društveni fond rada"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "yc8c36",
+        "question": "Pokazatelj utroška ukupnog rada po jedinici proizvoda je:",
+        "options": [
+          "intenzivnost rada",
+          "društveno bogatstvo",
+          "radni dohodak",
+          "produktivnost rada"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "53e52w",
+        "question": "Čimbenik koji djeluje na sve ostale čimbenike društvene proizvodnje jesu:",
+        "options": [
+          "prirodni uvjeti",
+          "društveni odnosi",
+          "dužina radnog vremena",
+          "intenzivnost rada"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "qzvysm",
+        "question": "Radno neaktivno stanovništvo čine primjerice:",
+        "options": [
+          "zaposleni u industriji",
+          "nezaposleni i studenti",
+          "poljoprivredni radnici",
+          "tvornički radnici"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "u0gc23",
+        "question": "Što NIJE čimbenik produktivnosti rada?",
+        "options": [
+          "stručnost radnika",
+          "razvoj znanosti",
+          "organizacija rada",
+          "visina dividende"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "upwck0",
+        "question": "Sveukupnost prirodnih uvjeta koji utječu na proizvodnju je:",
+        "options": [
+          "prirodno bogatstvo",
+          "društveno bogatstvo",
+          "društveni proizvod",
+          "društveni fond rada"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "cdm35n",
+        "question": "Ukupno stvorena, a neutrošena dobra neke zajednice čine:",
+        "options": [
+          "prirodno bogatstvo",
+          "društveni proizvod",
+          "društveno bogatstvo",
+          "narodni dohodak"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "vklecq",
+        "sentence": "Ukupna količina proizvoda i usluga neke zajednice u određenom razdoblju je društveni _______.",
+        "answer": "proizvod",
+        "hint": "za razliku od bogatstva"
+      },
+      {
+        "id": "hm2q3b",
+        "sentence": "Radno vrijeme je vremensko razdoblje od početka do kraja _______ procesa.",
+        "answer": "proizvodnog",
+        "hint": "proces stvaranja dobara"
+      },
+      {
+        "id": "q1dx6n",
+        "sentence": "Intenzivnost rada je stupanj trošenja radne snage u _______ vremena.",
+        "answer": "jedinici",
+        "hint": "mjera po vremenu"
+      }
+    ],
+    "learn": {
+      "id": "jlxdme",
+      "title": "Čimbenici od kojih ovise količina i veličina društvene materijalne proizvodnje",
+      "content": "\n<h3>Društveni proizvod i čimbenici njegove veličine</h3>\n<p><strong>Društveni proizvod</strong> je ukupna količina proizvoda i usluga proizvedenih u okvirima neke društvene zajednice u određenom vremenskom razdoblju. Veličinu društvene materijalne proizvodnje određuje <strong>sedam čimbenika</strong>:</p>\n<ol>\n<li>prirodni uvjeti,</li>\n<li>razvijenost sredstava za proizvodnju i njihova primjena,</li>\n<li>subjektivni čimbenici proizvodnje (stanovništvo),</li>\n<li>dužina radnog vremena,</li>\n<li>intenzivnost rada,</li>\n<li>produktivnost rada,</li>\n<li>društveni odnosi.</li>\n</ol>\n<h4>1. Prirodni uvjeti</h4>\n<p>Sveukupnost prirodnih uvjeta koji mogu utjecati na materijalnu proizvodnju i na cjelokupni ekonomski život zemlje naziva se <strong>prirodno bogatstvo</strong> (veličina i kvaliteta zemlje, raznovrsnost ruda, bogatstvo mora, otoci, morska obala, klima, flora i fauna, riječni slivovi). Što su prirodni uvjeti kvalitetniji, veće su mogućnosti materijalne proizvodnje.</p>\n<h4>2. Razvijenost sredstava za proizvodnju i njihova primjena</h4>\n<p><strong>Društveno bogatstvo</strong> je ukupna količina materijalnih dobara nastalih ljudskim radom, stvorenih a neutrošenih, kojima raspolaže društvena zajednica. Čine ga potrošna dobra za osobnu potrošnju (kratkotrajna — hrana, obuća; <em>trajna</em> — zgrade, bolnice) i dobra namijenjena proizvodnoj potrošnji (zalihe, sirovine). Što su sredstva razvijenija, veća je mogućnost povećanja količine proizvodnje.</p>\n<h4>3. Subjektivni čimbenici (stanovništvo)</h4>\n<p>Ljudi su temeljni i najznačajniji čimbenik proizvodnje; što je zajednica brojnija, veća je mogućnost proizvodnje. Struktura:</p>\n<ul>\n<li><strong>radno sposobno stanovništvo</strong> — po zakonskoj regulativi može raditi; <em>radno aktivno</em> (angažirano u proizvodnji; izvan materijalne proizvodnje) i <em>radno neaktivno</em> (nezaposleni, studenti — uzdržavano stanovništvo);</li>\n<li><strong>radno nesposobno stanovništvo</strong> — djeca, starije osobe, invalidi.</li>\n</ul>\n<p>Stanovništvo se dijeli i na zaposleno/nezaposleno, proizvodno/neproizvodno te se analizira po spolnoj, dobnoj, obrazovnoj, ekonomskoj i socijalnoj strukturi. Veći broj proizvodnog stanovništva = veća mogućnost proizvodnje.</p>\n<h4>4. Dužina radnog vremena</h4>\n<p>Radno vrijeme je vremensko razdoblje od početka do kraja proizvodnog procesa (tehnološki proces za sve radnike mora početi u isto vrijeme i trajati jednako dugo). Predstavlja proces trošenja ljudskog rada u određenu svrhu — rezultat je materijalno dobro. Priroda čovjeka uvjetuje ograničavanje radnog vremena; produljenje je iznimno (prekovremeni rad, nepogode, posljedice ratnog stanja). U većini zemalja radno je vrijeme predmet zakonske regulative. <em>Dopuna:</em> u Hrvatskoj puno radno vrijeme prema Zakonu o radu iznosi najviše 40 sati tjedno. Uz nepromijenjene ostale čimbenike, produljenje radnog vremena povećava proizvodnju, a skraćenje je smanjuje.</p>\n<h4>5. Intenzivnost rada</h4>\n<p><strong>Intenzivnost rada</strong> je stupanj trošenja čovjekove radne snage (umnih i fizičkih sposobnosti) u jedinici vremena: radnik u jedinici vremena može raditi brže i napornije (intenzivnost raste) ili sporije i uz manji napor (pada). Ovisi o <em>tehničkoj osnovi proizvodnje</em> (kvalitetni strojevi povećavaju intenzitet) i o <em>društvenim čimbenicima</em> (želja i potreba za većom količinom dobara). Povećani utrošak radne snage u okviru radnog vremena povećava količinu dobara.</p>\n<h4>6. Produktivnost rada</h4>\n<p><strong>Produktivnost rada</strong> je pokazatelj utroška ukupnog rada po jedinici proizvoda — stvaralačka moć rada da u jedinici radnog vremena proizvede veću ili manju količinu upotrebnih vrijednosti. Raste kad se uz isti utrošak rada u jedinici vremena proizvede veća količina dobara. Čimbenici o kojima ovisi:</p>\n<ul>\n<li>proizvodno iskustvo i stručnost radnika,</li>\n<li>razvijenost sredstava za proizvodnju (električni stroj naspram igle),</li>\n<li>prirodni uvjeti (kvaliteta tla),</li>\n<li>razvitak znanosti i njezina primjena,</li>\n<li>organizacija rada i cjelokupne proizvodnje,</li>\n<li>uvjeti u kojima ljudi žive i rade (zainteresiranost).</li>\n</ul>\n<h4>7. Društveni odnosi</h4>\n<p>Djeluju na način i opseg iskorištavanja prirodnih bogatstava, ubrzavanje ili usporavanje usavršavanja sredstava za proizvodnju, prirast i kretanje stanovništva, njegovu profesionalnu strukturu i zaposlenost, a osobito na dužinu radnog vremena te intenzivnost i produktivnost rada. Dakle djeluju na <strong>sve čimbenike</strong> od kojih ovisi društvena proizvodnja, pa izravno utječu na njezin opseg.</p>\n"
+    },
+    "id": "hx10jv"
+  },
+  "peStructure": {
+    "name": "Struktura društvene proizvodnje, potreban proizvod i višak proizvoda",
+    "icon": "fa-sitemap",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "32znm2",
+        "question": "Što je ukupni društveni fond rada?",
+        "answer": "Količina raspoloživog ljudskog rada u zajednici koju može uložiti u proizvodnju u određenom razdoblju: zbroj živog i minulog rada.",
+        "explanation": "Mijenja se s brojem radnika, radnim vremenom i intenzivnošću."
+      },
+      {
+        "id": "0lfgsk",
+        "question": "Što su minuli, a što živi rad?",
+        "answer": "Minuli rad je rad sadržan u sredstvima za proizvodnju; živi (tekući) rad je novi rad koji radnik unosi radeći na predmetima rada uz sredstva za proizvodnju.",
+        "explanation": "Prošli vs. tekući."
+      },
+      {
+        "id": "84eqsj",
+        "question": "Zašto su potrebni razmjeri u društvenoj proizvodnji?",
+        "answer": "Da se društveni fond rada razmjerno rasporedi na djelatnosti prema potrebama zajednice; pogrešan raspored daje viškove ili manjkove dobara.",
+        "explanation": "Opći zakon svake društvene proizvodnje."
+      },
+      {
+        "id": "agygi6",
+        "question": "Koji zakon regulira razmjere u robnoj proizvodnji?",
+        "answer": "Zakon vrijednosti — opći ekonomski zakon koji neovisno o volji sudionika regulira raspored društvenog fonda rada na razne djelatnosti.",
+        "explanation": "U naturalnoj proizvodnji razmjere određuju ljudi izravno."
+      },
+      {
+        "id": "d3w8il",
+        "question": "Od čega se sastoji vrijednosna struktura društvenog proizvoda?",
+        "answer": "Od prenesene vrijednosti (minuli rad u sredstvima za proizvodnju) i novostvorene vrijednosti (živi rad).",
+        "explanation": "Ispitno pitanje: objasniti."
+      },
+      {
+        "id": "xnuatq",
+        "question": "Što su potreban proizvod i potreban rad?",
+        "answer": "Potreban proizvod: dobra za osobne potrebe radnika i reprodukciju radne snage. Potreban rad: živi rad kojim se taj proizvod stvara.",
+        "explanation": "Potrebno radno vrijeme = dužina tog rada."
+      },
+      {
+        "id": "ip50a6",
+        "question": "Što je višak proizvoda i koja mu je namjena?",
+        "answer": "Proizvodi nastali u višku radnog vremena; sastoji se od potrošnih dobara i dobara za daljnju proizvodnju — služi osobnim i proizvodnim potrebama društva.",
+        "explanation": "Osnova mogućnosti eksploatacije."
+      },
+      {
+        "id": "qrmipk",
+        "question": "Što su višak radnog vremena i višak rada?",
+        "answer": "Višak radnog vremena: vrijeme rada nakon potrebnog. Višak rada: dio rada kojim raspolaže netko drugi, a ne onaj koji ga je utrošio.",
+        "explanation": "Izvor eksploatacije."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "vmhvqw",
+        "question": "Ukupni društveni fond rada čine:",
+        "options": [
+          "rad i kapital",
+          "plaće i profit",
+          "živi i minuli rad",
+          "sirovine i energija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "l97fut",
+        "question": "Rad sadržan u sredstvima za proizvodnju naziva se:",
+        "options": [
+          "minuli rad",
+          "živi rad",
+          "potreban rad",
+          "višak rada"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "wsorgf",
+        "question": "Vrijednost društvenog proizvoda sastoji se od:",
+        "options": [
+          "kamate i poduzetničke dobiti",
+          "cijene koštanja i prosječnog profita",
+          "najamnine i zemljišne rente",
+          "prenesene i novostvorene vrijednosti"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "84365a",
+        "question": "U robnom gospodarstvu raspored društvenog fonda rada regulira:",
+        "options": [
+          "plan države",
+          "zakon vrijednosti",
+          "dogovor radnika",
+          "zakon stanovništva"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "nzha82",
+        "question": "Novostvorenu vrijednost stvara:",
+        "options": [
+          "minuli rad",
+          "živi rad",
+          "sredstvo za rad",
+          "predmet rada"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "fb45nc",
+        "question": "Količina dobara potrebna za osobne potrebe radnika i reprodukciju radne snage je:",
+        "options": [
+          "višak proizvoda",
+          "društveno bogatstvo",
+          "tezauriran novac",
+          "potreban proizvod"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "6k5sl7",
+        "question": "Višak proizvoda nastaje u:",
+        "options": [
+          "višku radnog vremena",
+          "potrebnom radnom vremenu",
+          "vremenu odmora",
+          "obrtu kapitala"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "6pk1q8",
+        "question": "Višak proizvoda NE služi za:",
+        "options": [
+          "odgoj djece i školovanje u društvu",
+          "zdravstvo, znanost i sigurnost zajednice",
+          "pokriće potrebnog proizvoda radnika",
+          "dodatna dobra za proširenje proizvodnje"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "6el95n",
+        "sentence": "Živi i minuli rad zajedno čine ukupni društveni fond _______.",
+        "answer": "rada",
+        "hint": "resurs ljudskog rada"
+      },
+      {
+        "id": "jobajn",
+        "sentence": "Prenesena i _______ vrijednost čine vrijednosnu strukturu društvenog proizvoda.",
+        "answer": "novostvorena",
+        "hint": "stvara je živi rad"
+      },
+      {
+        "id": "b1ut4q",
+        "sentence": "Višak proizvoda stvorio je mogućnost _______ radnika.",
+        "answer": "eksploatacije",
+        "hint": "iskorištavanje tuđeg rada"
+      }
+    ],
+    "learn": {
+      "id": "c5akbm",
+      "title": "Struktura društvene proizvodnje; potreban proizvod i višak proizvoda",
+      "content": "\n<h3>Ukupni društveni fond rada</h3>\n<p><strong>Ukupni društveni fond rada</strong> je količina raspoloživog ljudskog rada u društvenoj zajednici koju ona u određenom razdoblju može uložiti u proizvodnju materijalnih dobara. Sastoji se od zbroja <strong>živog (tekućeg)</strong> i <strong>minulog (prošlog)</strong> rada. Povećava se ili smanjuje s brojem ljudi angažiranih u proizvodnji, dužinom radnog vremena i prosječnim stupnjem intenzivnosti rada, uz postojeću produktivnost; ovisi o istim čimbenicima kao i veličina društvene proizvodnje.</p>\n<ul>\n<li><strong>Minuli (prošli) rad</strong> — rad uložen i sadržan u sredstvima za proizvodnju; sudjeluje u stvaranju novih proizvoda.</li>\n<li><strong>Živi (tekući) rad</strong> — novi rad koji radnik unosi radeći na predmetima rada pomoću sredstava za proizvodnju i dobiva novu uporabnu vrijednost.</li>\n</ul>\n<h3>Društvena podjela rada i razmjeri</h3>\n<p>Ako ne postoji društvena podjela rada, isti ljudi obavljaju različite poslove (nizak stupanj razvitka proizvodnih snaga; npr. seoska gospodarstva). Uz društvenu podjelu rada pojedinci se opredjeljuju za jednu vrstu djelatnosti i dobivaju <strong>zanimanja</strong> (po vrsti materijalnog dobra i po orijentaciji na trajno profesionalno bavljenje proizvodnjom). Podjela rada vodi osamostaljenju pojedinca ili proizvodnih organizacija, a istodobno jača njihovu međusobnu ekonomsku povezanost i međuovisnost, čime se osigurava jedinstvo društvenog procesa proizvodnje.</p>\n<p><strong>Zašto su potrebni razmjeri?</strong> Važna nije samo količina proizvedenih dobara nego i njihova namjenska struktura. Zato je nužan <strong>razmjerni raspored ukupnog društvenog fonda rada na razne djelatnosti</strong> — to je opći zakon svake društvene proizvodnje. Bit razmjera: pravilna raspodjela fonda rada na različite djelatnosti razmjerno potrebama članova zajednice i daljnje proizvodnje. Pogrešan raspored daje viškove nekih dobara ili manjak drugih. To ne znači jednake količine rada u svakoj djelatnosti.</p>\n<p>U društvenoj proizvodnji postoje pravilni razmjeri: (1) u raspodjeli fonda rada na proizvodnju proizvodnih i potrošnih dobara; (2) u proizvodnji konkretnih količina i vrsta upotrebnih vrijednosti unutar svake skupine. Kad se promijene potrebe ili uvjeti proizvodnje (važniji čimbenik), moraju se promijeniti i razmjeri.</p>\n<p><strong>Dva načina uspostavljanja razmjera:</strong></p>\n<ol>\n<li><em>svjesna, izravna aktivnost ljudi</em> — razmjere prije proizvodnje određuju sami ljudi; vezano uz naturalnu proizvodnju i niži stupanj razvitka;</li>\n<li><em>u robnoj proizvodnji</em> — proces je složeniji (veća količina minulog i živog rada, o kojoj odlučuju sami proizvođači radi razmjene; čimbenici razmjera brzo se mijenjaju). Razmjere tada regulira <strong>zakon vrijednosti</strong> — opći ekonomski zakon koji neovisno o volji sudionika regulira raspored društvenog fonda rada na razne djelatnosti.</li>\n</ol>\n<h3>Društveni proizvod i njegova vrijednosna struktura</h3>\n<ul>\n<li><strong>Društveni (bruto) proizvod</strong> — ukupna količina proizvoda i usluga proizvedenih u društvu u određenom razdoblju (uključuje amortizaciju).</li>\n<li><strong>Vrijednost</strong> društvenog proizvoda određena je količinom ljudskog rada utrošenog u njegovu proizvodnju.</li>\n<li><strong>Vrijednosna struktura</strong> = <em>prenesena vrijednost</em> (rad koji sredstva za proizvodnju prenose na novi proizvod — minuli rad) + <em>novostvorena vrijednost</em> (izravna aktivnost radne snage — živi rad).</li>\n<li><strong>Novostvorena vrijednost</strong> — vrijednost stvorena novododanim živim ljudskim radom u proizvodima i uslugama.</li>\n<li><strong>Društveni neto proizvod</strong> — dio bruto proizvoda raspoloživ zajednici za tekuću potrošnju, tj. novostvorena vrijednost (narodni dohodak).</li>\n</ul>\n<p><strong>Namjenska raspodjela:</strong> da bi proizvodnja bila kontinuirana, dio društvenog proizvoda mora nadoknaditi utrošena sredstva za proizvodnju; za daljnju raspodjelu ostaje <em>narodni dohodak</em>, također namjenski raspoređen na proizvodna i potrošna dobra.</p>\n<h3>Potreban proizvod i višak proizvoda</h3>\n<ul>\n<li><strong>Potreban proizvod</strong> — količina materijalnih dobara za podmirenje osobnih potreba radnika (osobna potrošnja); pretpostavka normalne reprodukcije radne snage i života neposrednih proizvođača.</li>\n<li><strong>Potreban rad</strong> — količina živog rada kojom čovjek stvara količinu proizvoda potrebnu za vlastitu reprodukciju.</li>\n<li><strong>Potrebno radno vrijeme</strong> — dužina radnog vremena potrebna da proizvođači proizvedu potreban proizvod.</li>\n<li><strong>Višak radnog vremena</strong> — radno vrijeme koje radnici provode u proizvodnji nakon potrebnog radnog vremena.</li>\n<li><strong>Višak rada</strong> — dio utrošenog rada kojim raspolaže netko drugi, a ne onaj koji ga je utrošio.</li>\n<li><strong>Višak proizvoda</strong> — količina proizvoda koju su radnici proizveli u višku radnog vremena; sastoji se od dijela potrošnih dobara i dobara za daljnju proizvodnju. Omogućio je da čovjek trajno proizvodi više nego što mu treba za redovitu potrošnju — time je nastala <strong>mogućnost eksploatacije</strong>.</li>\n</ul>\n<p>Višak proizvoda dijeli se na dobra za <em>osobne potrebe</em> (odgoj djece, zdravstvo, školstvo, znanost, policija…) i <em>proizvodne potrebe</em> (nova dodatna dobra koja povećavaju materijalnu proizvodnju društva). Sastavni dijelovi društvenog proizvoda su potreban proizvod i višak proizvoda.</p>\n"
+    },
+    "id": "woltwz"
+  },
+  "peReproBasics": {
+    "name": "Društvena reprodukcija (osnove)",
+    "icon": "fa-arrows-rotate",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "dtugre",
+        "question": "Što je reprodukcija?",
+        "answer": "Proces stalnog obnavljanja proizvodnje i kontinuiteta ljudskog postojanja.",
+        "explanation": "Vječna konstanta opstanka društva."
+      },
+      {
+        "id": "jv5kpj",
+        "question": "Koja su tri uvjeta društvene reprodukcije?",
+        "answer": "Nova materijalna dobra (sredstva za proizvodnju), potrošni proizvodi te odgovarajući razmjeri, posebno između proizvodnje potrošnih i proizvodnih dobara.",
+        "explanation": "Količina, potrošnja, razmjeri."
+      },
+      {
+        "id": "xkb20a",
+        "question": "Koje su tri vrste društvene reprodukcije?",
+        "answer": "Prosta (jednostavna), umanjena (opadajuća) i proširena.",
+        "explanation": "Proširena je dominantna."
+      },
+      {
+        "id": "nfk46d",
+        "question": "Što je prosta reprodukcija?",
+        "answer": "Veličina proizvodnje ostaje ista; proizvodi se jednako koliko je utrošeno sredstava za proizvodnju, a neto proizvod ide u osobnu potrošnju.",
+        "explanation": "Nije karakteristična za povijest društva."
+      },
+      {
+        "id": "7gujdo",
+        "question": "Što je umanjena reprodukcija?",
+        "answer": "Društveni proizvod manji je nego u prethodnom razdoblju; proizvodnja i potrošnja održavaju se samo na račun umanjenja društvenog bogatstva.",
+        "explanation": "Opadajuća."
+      },
+      {
+        "id": "op8mm5",
+        "question": "Što je proširena reprodukcija?",
+        "answer": "Društveni proizvod stalno se povećava jer se dio neto proizvoda ne troši, nego ulaže u proširenje proizvodnje; dominantan je oblik.",
+        "explanation": "Uvjet: akumulacija."
+      },
+      {
+        "id": "dt9h0i",
+        "question": "Zašto je proširena reprodukcija gotovo uvijek prisutna?",
+        "answer": "Zbog stalnog porasta broja stanovnika i porasta njihovih potreba uvjetovanih rastom životnog standarda.",
+        "explanation": "Rast stanovništva i potreba."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "93jtto",
+        "question": "Dominantan oblik društvene reprodukcije je:",
+        "options": [
+          "prosta",
+          "umanjena",
+          "proširena",
+          "ekstenzivna"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "tqoywm",
+        "question": "Kad veličina proizvodnje ostaje ista iz razdoblja u razdoblje, riječ je o:",
+        "options": [
+          "prostoj reprodukciji",
+          "proširenoj reprodukciji",
+          "umanjenoj reprodukciji",
+          "akumulaciji"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "jc43nl",
+        "question": "Umanjena reprodukcija održava se na račun:",
+        "options": [
+          "povećanja ukupne proizvodnje društva",
+          "novih proizvodnih ulaganja kapitalista",
+          "porasta viška proizvoda u zajednici",
+          "umanjenja postojećeg društvenog bogatstva"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "2w0gx6",
+        "question": "Koji NIJE uvjet društvene reprodukcije?",
+        "options": [
+          "nova materijalna dobra za proizvodnju",
+          "povećanje cijena radne snage",
+          "proizvodnja potrošnih proizvoda",
+          "uspostavljeni razmjeri"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "wu83ri",
+        "question": "Proširena reprodukcija uvjetuje da se dio neto proizvoda:",
+        "options": [
+          "potroši u cijelosti na osobne potrebe",
+          "upotrijebi za proširenje proizvodnje",
+          "izuzme iz proizvodnje u korist države",
+          "pretvori u potrošna dobra radnika"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "sn63ta",
+        "question": "Proces stalnog obnavljanja proizvodnje naziva se:",
+        "options": [
+          "razmjena",
+          "raspodjela",
+          "tezauriranje",
+          "reprodukcija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "d5s794",
+        "question": "Proširena reprodukcija gotovo je uvijek prisutna zbog:",
+        "options": [
+          "rasta stanovništva i potreba",
+          "pada potrošnje",
+          "smanjenja radnog vremena",
+          "zabrane uvoza"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "bb6n0k",
+        "sentence": "Tri su vrste društvene reprodukcije: prosta, umanjena i _______.",
+        "answer": "proširena",
+        "hint": "dominantna"
+      },
+      {
+        "id": "swm7ba",
+        "sentence": "Kod proste reprodukcije neto proizvod troši se za _______ potrošnju.",
+        "answer": "osobnu",
+        "hint": "ne za proširenje"
+      }
+    ],
+    "learn": {
+      "id": "isdnep",
+      "title": "Društvena reprodukcija",
+      "content": "\n<h3>Pojam reprodukcije</h3>\n<p><strong>Reprodukcija</strong> je proces stalnog obnavljanja proizvodnje i kontinuiteta ljudskog postojanja. Čovjek, da bi opstao, mora stalno trošiti, a da bi se potrošnja mogla nastaviti, mora se stalno i proizvoditi. Društvena reprodukcija vječna je konstanta opstanka i razvitka ljudskog društva, i u njoj postoji jedinstvo i međuzavisnost proizvodnje, raspodjele, razmjene i potrošnje.</p>\n<h3>Tri uvjeta društvene reprodukcije</h3>\n<ol>\n<li>Da bi se osigurao kontinuitet proizvodnje, moraju se po veličini i strukturi proizvesti zadovoljavajuće količine <strong>novih materijalnih dobara</strong> (sredstva za proizvodnju koja se troše).</li>\n<li>Potrebno je proizvesti i određenu količinu <strong>potrošnih proizvoda</strong>.</li>\n<li>Potrebno je osigurati određene <strong>razmjere</strong> u društvenoj proizvodnji, posebno međuzavisnost proizvodnje potrošnih i proizvodnih dobara.</li>\n</ol>\n<h3>Vrste društvene reprodukcije</h3>\n<table>\n<tr><th>Vrsta</th><th>Obilježja</th></tr>\n<tr><td><strong>Prosta (jednostavna)</strong></td><td>Veličina ukupne proizvodnje ne mijenja se iz razdoblja u razdoblje; treba osigurati količinu proizvodnih dobara jednaku količini utrošenih sredstava za proizvodnju; društveni neto proizvod troši se za osobnu potrošnju. Nije karakteristična za dosadašnji razvoj ljudskog društva.</td></tr>\n<tr><td><strong>Umanjena (opadajuća)</strong></td><td>Količina društvenog proizvoda manja je nego u prethodnom razdoblju; kontinuitet proizvodnje i dio osobne potrošnje mogu se održati samo na račun umanjenja postojećeg društvenog bogatstva. Nije opća karakteristika dosadašnjih načina proizvodnje.</td></tr>\n<tr><td><strong>Proširena</strong></td><td>Društveni proizvod stalno se povećava; <em>dominantan oblik</em> društvene reprodukcije; povećani neto proizvod (radni dohodak) ne troši se sav za osobnu potrošnju, nego se dio upotrebljava za proširenje proizvodnje. Gotovo je uvijek prisutna zbog stalnog rasta broja stanovnika i potreba (rast životnog standarda).</td></tr>\n</table>\n<p><strong>Zašto je društveni proizvod polazište analize reprodukcije?</strong> Zato što je njegova podjela na sredstva za proizvodnju i sredstva za osobnu potrošnju temeljni uvjet normalne reprodukcije; polazi se od njegove materijalne i vrijednosne strukture.</p>\n"
+    },
+    "id": "pv6crs"
+  },
+  "peCommodity": {
+    "name": "Robna proizvodnja i svojstva robe",
+    "icon": "fa-boxes-stacked",
+    "color": "#f59e0b",
+    "flashcards": [
+      {
+        "id": "kr5pxs",
+        "question": "Što je naturalna proizvodnja?",
+        "answer": "Proizvodnja bez razmjene: proizvođači su ujedno potrošači vlastitih proizvoda. Dominira u prvobitnoj zajednici, robovlasništvu i feudalizmu, a danas još na seoskim domaćinstvima.",
+        "explanation": "Izravna veza proizvodnje i potrošnje."
+      },
+      {
+        "id": "z0ix33",
+        "question": "Što je robna proizvodnja?",
+        "answer": "Oblik proizvodnje u kojem je rezultat namijenjen tržištu i razmjeni; razvila se pojavom viškova proizvoda; potpuni oblik je kapitalizam.",
+        "explanation": "Prosta robna proizvodnja je prvi oblik."
+      },
+      {
+        "id": "l4u8vh",
+        "question": "Što je roba?",
+        "answer": "Koristan proizvod ljudskog rada namijenjen razmjeni na tržištu.",
+        "explanation": "Svojstva: uporabna vrijednost i vrijednost."
+      },
+      {
+        "id": "ld0dt5",
+        "question": "Koja su osnovna svojstva robe?",
+        "answer": "Uporabna vrijednost (vanjsko svojstvo zadovoljenja potrebe) i vrijednost (unutarnje svojstvo, određeno količinom apstraktnog rada).",
+        "explanation": "Vanjsko i unutarnje svojstvo."
+      },
+      {
+        "id": "4xk5i4",
+        "question": "Što daje robi konkretni, a što apstraktni rad?",
+        "answer": "Konkretni rad daje robi uporabnu vrijednost, a apstraktni rad (ukupno utrošeni živi i opredmećeni rad) određuje njezinu vrijednost.",
+        "explanation": "Dvostruki karakter rada."
+      },
+      {
+        "id": "4yadqu",
+        "question": "Obilježja krupne robne proizvodnje?",
+        "answer": "Mnogo kapitalnih dobara i radne snage, proizvodnja za tržište, konkurentska borba i međuzavisnost zbog specijalizacije.",
+        "explanation": "Tipična za kapitalizam."
+      },
+      {
+        "id": "vsk76z",
+        "question": "Što je sitna robna proizvodnja?",
+        "answer": "Proizvođač je ujedno vlasnik sredstava za proizvodnju i radnik (s obitelji), radi za poznatog kupca i proizvodi malo proizvoda.",
+        "explanation": "Suprotnost krupnoj."
+      },
+      {
+        "id": "sm33zu",
+        "question": "Radna i subjektivna teorija vrijednosti?",
+        "answer": "Radna: vrijednost određuje utrošeni rad (Petty, Smith, Ricardo, Marx). Subjektivna: vrijednost ovisi o potrebama i korisnosti za kupca (marginalisti).",
+        "explanation": "Ponuda vs. potražnja."
+      },
+      {
+        "id": "slr85y",
+        "question": "Što kaže zakon opadajuće granične korisnosti?",
+        "answer": "Granična korisnost posljednje jedinice potrošenog proizvoda opada kako se povećava njegova količina.",
+        "explanation": "Načelo marginalizma."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "nkyf0a",
+        "question": "Proizvodnja u kojoj se ne odvija razmjena, a proizvođači su i potrošači, je:",
+        "options": [
+          "robna",
+          "krupna robna",
+          "naturalna",
+          "kapitalistička"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "m4y270",
+        "question": "Unutarnje svojstvo robe, određeno količinom apstraktnog rada, je:",
+        "options": [
+          "uporabna vrijednost",
+          "prometna vrijednost",
+          "vrijednost",
+          "cijena"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "lvwl29",
+        "question": "Uporabnu vrijednost robi daje:",
+        "options": [
+          "konkretni rad",
+          "apstraktni rad",
+          "minuli rad",
+          "višak rada"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "xmyvzt",
+        "question": "Vrijednost robe određuje:",
+        "options": [
+          "iznos kapitala uloženog u proizvodnju",
+          "visina najamnine radnika u poduzeću",
+          "tržišna potražnja za tom robom",
+          "količina društveno potrebnog apstraktnog rada"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "hnsxc6",
+        "question": "Tko je prvi formulirao radnu teoriju vrijednosti?",
+        "options": [
+          "Aristotel",
+          "Petty",
+          "Ricardo",
+          "Jevons"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "azbal6",
+        "question": "Cijenu određenu subjektivnom ocjenom korisnosti potrošača zastupaju:",
+        "options": [
+          "klasičari",
+          "marginalisti",
+          "fiziokrati",
+          "merkantilisti"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "dhpkcf",
+        "question": "Prvi povijesni oblik robne proizvodnje je:",
+        "options": [
+          "krupna kapitalistička proizvodnja",
+          "državna proizvodnja",
+          "samoupravna proizvodnja",
+          "prosta (jednostavna) robna proizvodnja"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "xv0apy",
+        "question": "Što NIJE obilježje krupne robne proizvodnje?",
+        "options": [
+          "proizvođač je ujedno jedini radnik",
+          "veliki broj radne snage",
+          "konkurentska borba proizvođača",
+          "međuzavisnost zbog specijalizacije"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "6fddh4",
+        "question": "Koji je pojam suprotan radnoj teoriji vrijednosti u odgovoru na „što određuje vrijednost\"?",
+        "options": [
+          "teorija prirodnih zakona",
+          "teorija viška proizvoda",
+          "subjektivna teorija vrijednosti",
+          "zakon stanovništva"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "rmjp7a",
+        "sentence": "Konkretni rad daje robi uporabnu ili _______ vrijednost.",
+        "answer": "upotrebnu",
+        "hint": "sinonim za uporabnu"
+      },
+      {
+        "id": "1d4pbv",
+        "sentence": "Roba je proizvod ljudskog rada namijenjen _______ na tržištu.",
+        "answer": "razmjeni",
+        "hint": "kupoprodaja"
+      },
+      {
+        "id": "dd4whu",
+        "sentence": "Granična korisnost posljednje jedinice proizvoda _______ kako raste njegova količina.",
+        "answer": "opada",
+        "hint": "zakon opadajuće granične korisnosti"
+      }
+    ],
+    "learn": {
+      "id": "qa0uxv",
+      "title": "Pojam i nastanak proizvodnje; svojstva robe",
+      "content": "\n<h3>Naturalna i robna proizvodnja</h3>\n<p><strong>Proizvodnja</strong> je društveno organiziran postupak stvaranja dobara i usluga. Može biti naturalna ili robna.</p>\n<ul>\n<li><strong>Naturalna proizvodnja</strong> — oblik proizvodnje u kojem se <em>ne odvija razmjena</em>: proizvođači su ujedno potrošači vlastitih proizvoda. Proizvodi se uzimaju gotovi iz prirode ili uz neznatne izmjene koriste najviše za osobnu potrošnju; postoji izravna veza proizvodnje i potrošnje. Dominira u prvobitnoj zajednici (primitivni komunizam), robovlasništvu i feudalizmu, a danas je ima na mnogim seoskim domaćinstvima (samodostatna). U robovlasništvu se proizvodilo na latifundijama (krupni zemljišni posjed u privatnom vlasništvu); kmet u feudalizmu proizvodi za feudalca, ali raspolaže dijelom proizvoda.</li>\n<li><strong>Robna proizvodnja</strong> — oblik proizvodnje u kojem je rezultat (proizvod) namijenjen tržištu, tj. razmjeni. Razvila se pojavom <em>viškova proizvoda</em> koje su ljudi razmjenjivali. Proizvodi ljudskog rada namijenjeni potrošnji prolaze kroz fazu razmjene. Potpuni oblik robne proizvodnje ostvaren je u kapitalizmu, a <em>prosta (jednostavna) robna proizvodnja</em> prvi je povijesni oblik.</li>\n</ul>\n<p><strong>Uvjeti nastanka robne proizvodnje:</strong> višak proizvoda (kasne faze prvobitne zajednice, gdje počinju i prvi oblici eksploatacije; značajno u kasnom feudalizmu), podjela rada i razvoj trgovine. Svi robni proizvođači čine zajednicu jedinstvenog procesa proizvodnje i reprodukcije; međusobno su zavisni.</p>\n<h3>Roba</h3>\n<p><strong>Roba</strong> je koristan proizvod ljudskog rada namijenjen razmjeni na tržištu. Osnovna svojstva robe su <strong>uporabna vrijednost</strong> i <strong>vrijednost</strong>.</p>\n<ul>\n<li><strong>Uporabna (upotrebna) vrijednost</strong> — vanjsko svojstvo robe da zadovolji određenu ljudsku potrebu; to svojstvo dobiva ljudskim radom utrošenim u stvaranju upotrebljivosti. Samo proizvođači različitih uporabnih vrijednosti spremni su razmjenjivati.</li>\n<li><strong>Vrijednost</strong> — unutarnje svojstvo robe, uvjetovano količinom <em>apstraktnog rada</em> (živi i opredmećeni) utrošenog u njezinu proizvodnju.</li>\n</ul>\n<h4>Dvostruki karakter rada</h4>\n<ul>\n<li><strong>Konkretni rad</strong> — ljudski rad koji proizvodu daje određenu uporabnu vrijednost (u trenutku izrade automobila čovjek je konkretno stvarao baš njega).</li>\n<li><strong>Apstraktni rad</strong> — ljudski rad općenito, ukupno utrošen živi i preneseni, opredmećeni rad; on određuje vrijednost svake robe.</li>\n</ul>\n<p>Dakle: <em>konkretni rad robi daje uporabnu vrijednost, a apstraktni rad određuje vrijednost robe</em> (supstanca vrijednosti).</p>\n<h4>Krupna i sitna robna proizvodnja</h4>\n<p><strong>Krupna robna proizvodnja</strong> (u kapitalizmu gotovo sva proizvodnja ima robnu namjenu): ogromno angažiranje kapitalnih dobara i materijala; velik broj radne snage; proizvodnja za tržište na kojem su svi sudionici potencijalni kupci; konkurentska borba različitih proizvođača; međuzavisnost uvjetovana specijalizacijom.</p>\n<p><strong>Sitna robna proizvodnja</strong> — proizvođač koji radi ujedno je vlasnik sredstava za proizvodnju i radi za poznatog kupca; ako s njim rade članovi obitelji, također je sitna robna proizvodnja; obilježava je mali broj proizvoda. U razmjenu ulaze oni koji imaju viškove, a oni koji ih nemaju razmjenjuju dio vlastitog potrebnog proizvoda — to su prvi oblici eksploatacije; ponuda i potražnja izravno se susreću.</p>\n<h3>Radna i subjektivna teorija vrijednosti</h3>\n<p>Na pitanje zašto je neki proizvod skup i što čini razliku u cijeni dvaju sličnih proizvoda odgovaraju radna i subjektivna teorija vrijednosti.</p>\n<ul>\n<li><strong>Radna teorija vrijednosti</strong> — vrijednost robe izvodi iz proizvodne aktivnosti, svodi je na rad kao jedini trošak proizvodnje, jedini izvor i mjeru razmjene; svaka vrijednost zavisi od količine u nju utrošenog rada. Aristotel je prvi objasnio rad kao osnovicu gospodarskih odnosa, ali ju je prvi formulirao W. Petty u 2. pol. 17. st.; pridonio je A. Smith, razvili D. Ricardo i K. Marx.</li>\n<li><strong>Subjektivna teorija vrijednosti</strong> — vrijednost nije određena samo svojstvima stvari nego i potrebama, željama, ukusom i sklonostima korisnika; bliža je tržišnoj razmjeni i ističe važnost potražnje i istraživanja potrošnje.</li>\n</ul>\n<p><strong>Marginalizam</strong> (W. S. Jevons, L. Walras, A. Marshall; potkraj 19. st. u Velikoj Britaniji, Austriji i Švicarskoj) — granična teorija, alternativa marksističkoj ekonomiji i kritika Smithove radne teorije; unosi načela marginalne korisnosti i marginalne produktivnosti. <strong>Zakon opadajuće granične korisnosti</strong>: granična korisnost posljednje jedinice potrošenog proizvoda smanjuje se kako raste njegova količina. Marginalisti zastupaju subjektivnu teoriju: cijena je određena subjektivnom ocjenom korisnosti potrošača, stvar košta zato što za kupca ima vrijednost, a ne zbog uloženog rada. Na pitanje „što određuje vrijednost robe?\" klasičari odgovor traže u proizvodnji (ponuda), a marginalisti u potrošnji (potražnja).</p>\n"
+    },
+    "id": "l72bfi"
+  },
+  "peValueMagnitude": {
+    "name": "Veličina vrijednosti i prometna vrijednost robe",
+    "icon": "fa-tags",
+    "color": "#ef4444",
+    "flashcards": [
+      {
+        "id": "3rmou7",
+        "question": "Što je jednostavan, a što složen rad?",
+        "answer": "Jednostavan rad obavlja svaki radnik bez posebnog školovanja; složen rad traži školovanje i praksu i računa se kao multipliciran jednostavan rad.",
+        "explanation": "Složen = više sati jednostavnog."
+      },
+      {
+        "id": "y01l1p",
+        "question": "Što je društveno potrebno radno vrijeme?",
+        "answer": "Vrijeme nužno da se uz normalne uvjete proizvodnje i prosječnu intenzivnost i produktivnost rada proizvede određena vrsta robe.",
+        "explanation": "Mjeri veličinu vrijednosti."
+      },
+      {
+        "id": "s963yv",
+        "question": "Što su prenesena, a što novostvorena vrijednost?",
+        "answer": "Prenesena: rad sadržan u utrošenim sredstvima za proizvodnju. Novostvorena: vrijednost koju stvara novododani živi rad.",
+        "explanation": "Zajedno čine vrijednost robe."
+      },
+      {
+        "id": "x075wz",
+        "question": "Što je prometna (relativna) vrijednost robe?",
+        "answer": "Kvantitativni odnos u kojem se razmjenjuju dvije robe različitih uporabnih vrijednosti (npr. 1 stol = 4 stolice).",
+        "explanation": "Ne mora biti jednaka vrijednosti."
+      },
+      {
+        "id": "z5lda5",
+        "question": "Kada se mijenja prometna vrijednost robe?",
+        "answer": "Kad se mijenja vrijednost same robe ili vrijednost ekvivalenta; ne mijenja se ako se obje mijenjaju proporcionalno.",
+        "explanation": "Ispitno pitanje; pazi na smjer."
+      },
+      {
+        "id": "fhahe9",
+        "question": "Ako vrijednost robe ostane ista, a ekvivalent poraste, što je s prometnom vrijednošću?",
+        "answer": "Prometna vrijednost robe pada (za nju se dobiva manje ekvivalenta).",
+        "explanation": "Obrnuto, ako ekvivalent padne, prometna raste."
+      },
+      {
+        "id": "6y471o",
+        "question": "Kada je robna razmjena ekvivalentna?",
+        "answer": "Kad vlasnik za svoju robu dobije jednaku količinu apstraktnog rada sadržanu u drugoj robi (protuvrijednost).",
+        "explanation": "Jednako za jednako."
+      },
+      {
+        "id": "8xeavs",
+        "question": "Kako produktivnost i intenzivnost rada utječu na vrijednost?",
+        "answer": "Veća produktivnost najčešće smanjuje vrijednost jedinice robe; veća intenzivnost povećava ukupnu vrijednost proizvedene mase robe.",
+        "explanation": "U praksi djeluju zajedno."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "8gy2cr",
+        "question": "Veličina vrijednosti robe mjeri se:",
+        "options": [
+          "tržišnom cijenom robe u trgovini",
+          "brojem proizvedenih komada u danu",
+          "društveno potrebnim radnim vremenom",
+          "visinom najamnine radnika"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "6sw5xk",
+        "question": "Ako vrijednost robe raste, a ekvivalent ostaje isti, prometna vrijednost robe:",
+        "options": [
+          "raste",
+          "pada",
+          "ostaje ista",
+          "postaje jednaka nuli"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "i8l34i",
+        "question": "Ako vrijednost ekvivalenta raste, a vrijednost robe ostaje ista, prometna vrijednost robe:",
+        "options": [
+          "raste",
+          "ostaje ista",
+          "raste proporcionalno",
+          "pada"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "umcffu",
+        "question": "Kad se vrijednost robe i ekvivalenta proporcionalno mijenjaju, prometna vrijednost:",
+        "options": [
+          "raste",
+          "se ne mijenja",
+          "pada",
+          "postaje neekvivalentna"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "65otro",
+        "question": "Rad koji zahtijeva školovanje i računa se kao više sati jednostavnog rada je:",
+        "options": [
+          "konkretni rad",
+          "složen rad",
+          "minuli rad",
+          "višak rada"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "6ttvc9",
+        "question": "Dio vrijednosti robe koji potječe od utrošenih sredstava za proizvodnju je:",
+        "options": [
+          "novostvorena vrijednost",
+          "višak vrijednosti",
+          "prometna vrijednost",
+          "prenesena vrijednost"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "7i0rje",
+        "question": "Kvantitativni odnos u kojem se razmjenjuju dvije robe je:",
+        "options": [
+          "prometna vrijednost",
+          "cijena koštanja",
+          "tržišna vrijednost",
+          "nominalna vrijednost"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "fjboea",
+        "question": "Povećanje produktivnosti rada označava:",
+        "options": [
+          "duži radni dan uz istu proizvodnju",
+          "napornije radno vrijeme radnika",
+          "više robe uz isti utrošak rada",
+          "više najamnine za isti rad"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "avnc3f",
+        "sentence": "Odnos u kojem se razmjenjuju dvije robe naziva se prometna ili _______ vrijednost.",
+        "answer": "relativna",
+        "hint": "sinonim za prometna"
+      },
+      {
+        "id": "q0rgyd",
+        "sentence": "Na prometnu vrijednost robe utječe njezina vlastita vrijednost i vrijednost _______.",
+        "answer": "ekvivalenta",
+        "hint": "robe za koju se mijenja"
+      },
+      {
+        "id": "cynu20",
+        "sentence": "Vrijeme nužno za proizvodnju robe uz normalne uvjete naziva se društveno potrebno _______ vrijeme.",
+        "answer": "radno",
+        "hint": "mjera vrijednosti"
+      }
+    ],
+    "learn": {
+      "id": "38pp4c",
+      "title": "Veličina vrijednosti i prometna vrijednost",
+      "content": "\n<h3>Veličina vrijednosti robe</h3>\n<p>Pri određivanju vrijednosti treba voditi računa o utrošenom jednostavnom i složenom radu:</p>\n<ul>\n<li><strong>Jednostavan rad</strong> — može ga obavljati svaki radnik u materijalnoj proizvodnji, bez posebnog školovanja (radne operacije savladive uputama na radnom mjestu, rad radnika bez kvalifikacije).</li>\n<li><strong>Složen rad</strong> (multipliciran jednostavan rad) — zahtijeva odgovarajuće školovanje i praksu; svaki sat složenog rada obračunava se kao više sati jednostavnog rada.</li>\n</ul>\n<p>Svođenjem svih utrošenih radova (kapitalnih dobara, materijala, jednostavnih i složenih radova) na zajedničku masu <strong>apstraktnog rada</strong> određuje se veličina vrijednosti, koja se mjeri <strong>društveno potrebnim radnim vremenom</strong>.</p>\n<p><strong>Društveno potrebno radno vrijeme</strong> je vrijeme nužno da se uz postojeće normalne uvjete proizvodnje i uz prosječan stupanj intenzivnosti i produktivnosti rada proizvede određena vrsta robe. Promjenom uvjeta proizvodnje mijenja se i ono.</p>\n<ul>\n<li><strong>Prenesena vrijednost</strong> — utrošeni prenijeti apstraktni rad sadržan u kapitalnim dobrima i materijalima.</li>\n<li><strong>Novostvorena vrijednost</strong> — vrijednost stvorena novododanim živim radom u proizvodima i uslugama.</li>\n</ul>\n<p>Što je više društveno potrebnog apstraktnog rada u robi, to više vrijedi (čokolada vrijedi više od kuglice sladoleda).</p>\n<h4>Promjena veličine vrijednosti: produktivnost i intenzivnost</h4>\n<ul>\n<li><strong>Povećanje produktivnosti</strong> — veća količina robe uz istu masu utrošenog rada ili ista količina uz manju masu apstraktnog rada; vrijednost jedinice robe u većini slučajeva pada.</li>\n<li><strong>Povećanje intenzivnosti</strong> — povećani napori radnika u jedinici vremena ili više jedinica vremena na poslu; povećava ukupnu vrijednost proizvedene mase robe.</li>\n</ul>\n<p>Kombinacijom prosječnog stupnja produktivnosti i intenzivnosti može se povećati ili smanjiti ukupna vrijednost mase robe i pojedinačna vrijednost svake robe. Veličina vrijednosti mijenja se promjenom utroška apstraktnog rada u promatranoj robi; u praksi najčešće oba čimbenika djeluju zajedno.</p>\n<h3>Prometna (relativna) vrijednost robe</h3>\n<p><strong>Prometna vrijednost</strong> je <em>kvantitativni odnos u kojem se razmjenjuju dvije robe</em> različitih uporabnih vrijednosti (koliko se količine neke druge robe daje za robu koja se nudi). Npr. 1 stol = 4 stolice. Ne mora biti jednaka vrijednosti iskazanoj količinom apstraktnog rada (neekvivalentna razmjena). Na prometnu vrijednost utječu: <strong>njezina vlastita vrijednost</strong> i <strong>vrijednost ekvivalenta</strong>.</p>\n<table>\n<tr><th>Promjena</th><th>Prometna vrijednost robe</th></tr>\n<tr><td>vrijednost robe raste, ekvivalent isti</td><td>raste</td></tr>\n<tr><td>vrijednost robe pada, ekvivalent isti</td><td>pada</td></tr>\n<tr><td>vrijednost robe ista, ekvivalent raste</td><td>pada</td></tr>\n<tr><td>vrijednost robe ista, ekvivalent pada</td><td>raste</td></tr>\n<tr><td>vrijednost robe i ekvivalenta mijenjaju se proporcionalno</td><td>ne mijenja se</td></tr>\n</table>\n<p><strong>Primjer:</strong> 1 stol (100 h) = 4 stolice (4 × 25 h). Ako se rad za stol udvostruči (200 h), a stolica ostane 25 h: 1 stol = 8 stolica. Ako rad za stol padne na 50 h: 1 stol = 2 stolice. Ako rad za stolicu padne na 12,5 h (stol 100 h): 1 stol = 8 stolica. Ako se i stol i stolica proporcionalno pojeftine, odnos ostaje 1 stol = 4 stolice.</p>\n<p><strong>Ekvivalentna razmjena:</strong> razmjena je ekvivalentna kad vlasnik jedne robe za nju dobiva jednaku količinu vrijednosti sadržanu u drugoj robi, tj. za određenu količinu apstraktnog rada dobiva jednaku količinu apstraktnog rada u robi s drugom uporabnom vrijednošću.</p>\n"
+    },
+    "id": "84yg8u"
+  },
+  "peMoney": {
+    "name": "Oblici vrijednosti, novac i njegove funkcije",
+    "icon": "fa-coins",
+    "color": "#06b6d4",
+    "flashcards": [
+      {
+        "id": "evnma0",
+        "question": "Koji su povijesni oblici vrijednosti?",
+        "answer": "Jednostavni (slučajni), razvijeni, opći i novčani oblik vrijednosti.",
+        "explanation": "Zadnji: jedna roba trajno opći ekvivalent."
+      },
+      {
+        "id": "dk6jfd",
+        "question": "Što je novac?",
+        "answer": "Roba koja ima ulogu trajnog općeg ekvivalenta u razmjeni; proizvod ljudskog rada, ima vrijednost i posebnu uporabnu vrijednost.",
+        "explanation": "Opći ekvivalent."
+      },
+      {
+        "id": "tfx3vc",
+        "question": "Koja su svojstva, a koje funkcije novca?",
+        "answer": "Svojstva: mjerilo vrijednosti i mjerilo cijena. Funkcije: prometno sredstvo, blago, sredstvo plaćanja, svjetski novac.",
+        "explanation": "Dva svojstva, četiri funkcije."
+      },
+      {
+        "id": "namwnw",
+        "question": "Što je cijena?",
+        "answer": "Vrijednost robe izražena u novcu; nije nužno pouzdan pokazatelj stvarne prometne vrijednosti robe.",
+        "explanation": "Novčani izraz vrijednosti."
+      },
+      {
+        "id": "i1yest",
+        "question": "Što je metamorfoza robe i kako izgleda?",
+        "answer": "Preobrazba robe u novac, a novca u robu: R–N–R. R–N je akt prodaje, N–R akt kupnje.",
+        "explanation": "Najteži je prvi čin (prodaja)."
+      },
+      {
+        "id": "mi0p22",
+        "question": "Što je tezauriranje i zašto se provodi?",
+        "answer": "Povlačenje novca iz optjecaja i čuvanje na posebnim računima: za nabavu utrošenih sredstava, fond akumulacije (proširenje proizvodnje) i štednju.",
+        "explanation": "Novac kao blago."
+      },
+      {
+        "id": "caxayk",
+        "question": "Kada novac djeluje kao sredstvo plaćanja?",
+        "answer": "Kad kupac prodavatelju za preuzetu robu isplati određenu količinu novca; kredit razdvaja akt kupnje i plaćanja.",
+        "explanation": "Bez toga nema trgovine."
+      },
+      {
+        "id": "fnw4sb",
+        "question": "Što je svjetski novac i razgolićavanje novca?",
+        "answer": "Valuta koja služi međunarodnim plaćanjima (dolar, euro, jen). Razgolićavanje: nacionalne valute svode se na zajednički standard vrijednosti i tako postaju usporedive.",
+        "explanation": "Skidanje nacionalne odore."
+      },
+      {
+        "id": "xw6pi2",
+        "question": "Što su devizni tečaj, paritet i konvertibilnost?",
+        "answer": "Tečaj: iznos valute za iznos druge valute. Paritet: odnos vrijednosti novca dviju zemalja. Konvertibilnost: valuta se zakonito mijenja za drugu.",
+        "explanation": "Tečaj je osnova pariteta."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "f58lov",
+        "question": "Izraz „1 ovca = 5 ćupova\" primjer je:",
+        "options": [
+          "općeg oblika vrijednosti u kojem je jedna roba ekvivalent svih",
+          "novčanog oblika vrijednosti uz zlato kao novac",
+          "jednostavnog (slučajnog) oblika vrijednosti",
+          "razvijenog oblika vrijednosti s mnogo ekvivalenata"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "8ehyzm",
+        "question": "Kad jedna roba trajno ima ulogu općeg ekvivalenta, nastaje:",
+        "options": [
+          "novčani oblik vrijednosti",
+          "jednostavni oblik vrijednosti",
+          "razvijeni oblik vrijednosti",
+          "trampa"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "wkfj2k",
+        "question": "Razmjena roba bez posredovanja novca je:",
+        "options": [
+          "metamorfoza",
+          "tezauriranje",
+          "konvertibilnost",
+          "trampa"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "380aj0",
+        "question": "U relaciji R–N–R, R–N označava:",
+        "options": [
+          "akt kupnje",
+          "akt prodaje",
+          "tezauriranje",
+          "plaćanje na kredit"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "y47dal",
+        "question": "Povlačenje novca iz optjecaja i čuvanje na posebnim računima je:",
+        "options": [
+          "metamorfoza",
+          "tezauriranje",
+          "devalvacija",
+          "amortizacija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "aptsu0",
+        "question": "Dva svojstva novca su:",
+        "options": [
+          "blago i sredstvo plaćanja",
+          "prometno sredstvo i svjetski novac",
+          "tečaj i paritet",
+          "mjerilo vrijednosti i mjerilo cijena"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "uk6mlu",
+        "question": "Odnos vrijednosti novca jedne zemlje prema novcu druge zemlje je:",
+        "options": [
+          "paritet",
+          "konvertibilnost",
+          "tezaurus",
+          "moneta"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "igzhl9",
+        "question": "Valuta ili novčana jedinica koja se zakonito može zamijeniti drugom je:",
+        "options": [
+          "tezaurirana",
+          "robna",
+          "konvertibilna",
+          "nominalna"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "eqk27b",
+        "question": "Novčana jedinica iskovana u metalu, s težinom, nazivom i oblikom je:",
+        "options": [
+          "ček",
+          "banknota",
+          "moneta",
+          "mjenica"
+        ],
+        "correct": 2
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "w705jw",
+        "sentence": "Razmjena robe za robu bez novca naziva se _______.",
+        "answer": "trampa",
+        "hint": "R–R"
+      },
+      {
+        "id": "oabac0",
+        "sentence": "Čin prodaje označava se kao R–N, a čin kupnje kao _______.",
+        "answer": "N–R",
+        "hint": "preobrazba novca u robu"
+      },
+      {
+        "id": "oviawm",
+        "sentence": "Izdvojena roba koja trajno služi kao opći ekvivalent postaje _______.",
+        "answer": "novac",
+        "hint": "novčani oblik vrijednosti"
+      }
+    ],
+    "learn": {
+      "id": "f3jsvi",
+      "title": "Novac: oblici vrijednosti, svojstva i funkcije",
+      "content": "\n<h3>Povijesni oblici vrijednosti</h3>\n<ol>\n<li><strong>Jednostavni ili slučajni oblik</strong> — javlja se u prvobitnoj zajednici kad plemena proizvode viškove; vrijednost robe podređena je njezinoj uporabnoj vrijednosti; količina ekvivalenta određuje se prema potrebi u trenutku (1 ovca = 5 ćupova).</li>\n<li><strong>Razvijeni (potpuni) oblik</strong> — jedna roba dolazi u relativni odnos s većim brojem ekvivalenata (1 ovca = 5 ćupova = 3 kože = 20 ćupova žita…); razmjena je razvijenija i češća.</li>\n<li><strong>Opći oblik</strong> — jedna roba počinje imati ulogu ekvivalenta svim ostalim robama (5 ćupova = 1 ovca; 3 kože = 1 ovca…).</li>\n<li><strong>Novčani oblik</strong> — jedna roba trajno ima ulogu općeg ekvivalenta na određenom području; ta izdvojena roba postaje <strong>novac</strong>.</li>\n</ol>\n<h3>Novac</h3>\n<p><strong>Novac</strong> je roba koja ima ulogu trajnog općeg (univerzalnog) ekvivalenta u razmjeni. Novac mora: (1) biti roba — proizvod ljudskog rada, (2) imati vrijednost — jer je proizvod rada (utrošena je količina apstraktnog rada), (3) imati posebnu uporabnu vrijednost — obavljanje uloge općeg ekvivalenta; prometnu vrijednost ima jer je stalno u relativnom odnosu prema ostalim robama. Prvi novac bio je robni (stoka, krzno, sol, kovine), a vremenom su ulogu novca preuzeli metali, zlato i srebro.</p>\n<div class=\"formula-box\">SVOJSTVA NOVCA: mjerilo vrijednosti · mjerilo cijena<br>FUNKCIJE NOVCA: prometno sredstvo · blago (pričuva vrijednosti) · sredstvo plaćanja · svjetski novac</div>\n<h4>1. Novac kao mjerilo vrijednosti</h4>\n<p>Novac omogućuje jednostavnu razmjenu različitih uporabnih vrijednosti: robe različitih količina i kvaliteta mogu se vrijednosno uspoređivati. Zbog apstraktnog rada sadržanog u robama sve su međusobno mjerljive. Da bi novac imao vrijednost, mora se u njega utrošiti određena količina apstraktnog rada; njegovom se vrijednošću određuje vrijednost svih ostalih roba. Vrijednosti se mogu izraziti i bez prisutnosti robe.</p>\n<h4>2. Novac kao mjerilo cijena</h4>\n<p>Omogućuje da se različite veličine robnih vrijednosti izraze različitim količinama jedne iste robe. Prije cijene pojavila se novčana jedinica. <strong>Moneta</strong> je novčana jedinica iskovana u metalu (ima težinu, naziv, sastav, oblik); nekad od zlata, danas od legura. Svaka država ima nacionalnu valutu. Potrebno je utvrditi monetu, njezinu vrijednost i izabrati cijenu. <strong>Cijena</strong> je vrijednost robe izražena u novcu, ali nije pouzdan pokazatelj stvarne prometne vrijednosti robe. Dok je vrijedio zlatni standard (do 1971.), članice MMF-a morale su odrediti odnos svoje nacionalne monete prema zlatu; ako država smanji količinu zlata naspram svoje papirnate novčane jedinice, vrijednost tog novca u prometu otpada.</p>\n<h4>3. Novac kao prometno sredstvo</h4>\n<p><strong>Trampa</strong> je razmjena robe za robu bez posredovanja novca (R–R); problem je što se ne mora naći dva proizvođača kojima treba roba onoga drugog. Pojavom novca relacija dobiva posrednika: <strong>R – N – R</strong>. <strong>Metamorfoza robe</strong> je proces preobrazbe robe u novac, a zatim novca u robu.</p>\n<ul>\n<li><strong>R–N = čin (akt) prodaje</strong> — najteži čin; nitko ne garantira da će roba biti prodana; potrebna je platežno sposobna potražnja.</li>\n<li><strong>N–R = čin (akt) kupnje</strong> — priznaje se društveno potrebno radno vrijeme; onaj tko ima novac može kupiti bilo koju robu.</li>\n</ul>\n<p>Problemi: prodavatelj ne mora odmah kupiti drugu robu (razdvajanje akta kupnje i prodaje), što može dovesti do usporavanja proizvodnje, gomilanja zaliha i poslovne nesigurnosti.</p>\n<h4>4. Novac kao blago (pričuva vrijednosti)</h4>\n<p>Novac može biti u prometu, deponiran u bankama ili u kućnim blagajnama; takav novac tek ima namjenu pojaviti se na tržištu u funkciji kupnje. <strong>Tezauriranje</strong> je povlačenje novca iz optjecaja i čuvanje na posebnim računima (u trezorima). Novac u trezoru sam po sebi nije blago; njegova transformacija u robe ili druge vrijednosti (zemljišta, šume) predstavlja blago. Mirujući novac ima vrijednost troškova izrade.</p>\n<p><strong>Razlozi tezauriranja:</strong> kapitalist izdvaja sredstva amortizacije za redovitu nabavu utrošenih kapitalnih dobara; izdvaja dio profita u <em>fond akumulacije</em> radi proširenja i osuvremenjivanja kapitala; fizičke osobe štede (u banci ili kod kuće, npr. za kupnju dionica ili kućnih dobara). <strong>Akumulacija</strong> je izdvajanje, najčešće novčano, radi ulaganja u povećanje i modernizaciju tehnološko-proizvodnog procesa.</p>\n<h4>5. Novac kao sredstvo plaćanja</h4>\n<p>Javlja se kad kupac prodavatelju za preuzetu robu isplati određenu količinu novca. Bez ove funkcije nema trgovine. Razvoj kreditnih odnosa razdvojio je akt kupnje od akta plaćanja (kredit — naknadno plaćanje, u roku ili u obrocima). Negativne posljedice: ako se cijene mijenjaju, onaj tko predaje robu na kredit gubi kad cijene rastu (i obrnuto); u inflaciji dužnik možda neće moći platiti potraživanje. Kupac, banka i prodavač: prodavač isporučuje robu, banka ga isplaćuje, a kupac je kreditnim ugovorom vezan za banku.</p>\n<h4>6. Svjetski novac</h4>\n<p>U granicama države u optjecaju je njezin nacionalni novac, a zakonodavac regulira njegovu upotrebu; (povijesno, do napuštanja zlatnog standarda) u zemljama je bila zabranjena upotreba zlata kao sredstva plaćanja. Svjetski robno-novčani tokovi traže prelazak preko nacionalnih granica jer nijedna zajednica ne može sama proizvesti sve što joj treba. Za potrebe međunarodne razmjene nacionalne valute treba dovesti u isti pojavni oblik — <strong>razgolićavanje novca</strong>: na vidjelo izlazi roba koja služi kao standard vrijednosti svake nacionalne jedinice (skidanje „nacionalne odore\"). Tako ogoljen novac javlja se kao jedinstven novac u međunarodnom kretanju roba — svjetski novac. Jedan gram zlata ima uglavnom istu vrijednost u svim zemljama. Danas ulogu svjetskog novca preuzimaju valute ekonomski najjačih zemalja (dolar, euro, jen), čija vrijednost ovisi o općem stanju svjetske ekonomije i odnosima valuta.</p>\n<ul>\n<li><strong>Devizni tečaj (kurs)</strong> — iznos jedne valute koji se daje za iznos druge; odnos dviju novčanih jedinica koji određuje njihov odnos razmjene na tržištu novca.</li>\n<li><strong>Paritet</strong> — odnos vrijednosti novca jedne zemlje prema novcu druge zemlje, utvrđen njihovim mjerilom cijena.</li>\n<li><strong>Konvertibilnost</strong> — zamjenjivost jedne novčane jedinice drugom; novčana je jedinica konvertibilna kad ju je zakonito moguće zamijeniti drugom valutom.</li>\n</ul>\n<p><em>Napomena o izmjeni:</em> primjeri u gradivu govore o kuni; prema Zakonu o uvođenju eura kao službene valute u Republici Hrvatskoj euro je službena valuta od 1. siječnja 2023., čime je kuna zamijenjena eurom.</p>\n"
+    },
+    "id": "0v98b5"
+  },
+  "peMoneyCirculation": {
+    "name": "Novčani optjecaj, surogati i bolesti novca",
+    "icon": "fa-money-bill-wave",
+    "color": "#a855f7",
+    "flashcards": [
+      {
+        "id": "4fk8x9",
+        "question": "Što je brzina optjecaja novca?",
+        "answer": "Broj transakcija koje jedna novčana jedinica učini u nekom razdoblju; što ih je više, to je manje novca potrebno u optjecaju.",
+        "explanation": "Ovisi o brzini pretvorbe novca u robu."
+      },
+      {
+        "id": "r6dj59",
+        "question": "Što su surogati novca?",
+        "answer": "Nadomjesci novca koji smanjuju količinu novca u optjecaju: platni nalog, ček, mjenica, banknota i kreditne kartice.",
+        "explanation": "Bezgotovinsko plaćanje."
+      },
+      {
+        "id": "awhcdi",
+        "question": "Što je ček, a što mjenica?",
+        "answer": "Ček: isprava kojom izdavatelj nalaže banci da isplati iznos donositelju. Mjenica: vrijednosni papir, bezuvjetni nalog ili obećanje isplate iznosa na dan, neovisno o robi.",
+        "explanation": "Banka se čekom ne obvezuje (Zakon o čeku, o mjenici)."
+      },
+      {
+        "id": "oc4vou",
+        "question": "Što je inflacija?",
+        "answer": "Opći porast cijena i pad vrijednosti novca, najčešće zbog prekomjerne novčane mase u optjecaju; smanjuje kupovnu moć.",
+        "explanation": "Više novca nego potrebno."
+      },
+      {
+        "id": "70dkej",
+        "question": "Što je deflacija i zašto je opasna?",
+        "answer": "Pad opće razine cijena i rast vrijednosti novca; vodi u krug manje potrošnje, pada proizvodnje i profita te rasta nezaposlenosti.",
+        "explanation": "Kupci odgađaju kupnju."
+      },
+      {
+        "id": "p57km6",
+        "question": "Što je devalvacija?",
+        "answer": "Mjera monetarne politike kojom se smanjuje vrijednost novca, a time i mjerilo cijena.",
+        "explanation": "Namjerno smanjenje vrijednosti."
+      },
+      {
+        "id": "cu52gd",
+        "question": "Kako se regulira optjecaj kad ima PREVIŠE novca?",
+        "answer": "Obustavlja se tiskanje novca, počinje tezauriranje (viša kamata na štednju, porezi) i obustavlja se izdavanje kredita.",
+        "explanation": "Povlačenje novca iz prometa."
+      },
+      {
+        "id": "xvg5er",
+        "question": "Kako se regulira optjecaj kad ima PREMALO novca?",
+        "answer": "Potiče se kreditiranje, deponirani novac vraća se u promet (niže kamate na štednju), smanjuju se porezi, a po potrebi se tiska novi novac.",
+        "explanation": "Primarna emisija je zadnje sredstvo."
+      },
+      {
+        "id": "pojxjy",
+        "question": "Čime je određena vrijednost papirnog novca?",
+        "answer": "Ekonomskom moći države izdavatelja: razvijenošću, međunarodnim statusom te ponudom i potražnjom za tim novcem.",
+        "explanation": "Zlatni standard ukinut 1971."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "cxoaem",
+        "question": "Dospjela plaćanja količinu novca u optjecaju:",
+        "options": [
+          "povećavaju",
+          "smanjuju",
+          "ne mijenjaju",
+          "ukidaju"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "gkqe34",
+        "question": "Opći porast cijena i pad vrijednosti novca naziva se:",
+        "options": [
+          "deflacija",
+          "devalvacija",
+          "tezauriranje",
+          "inflacija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "4sej06",
+        "question": "Pad opće razine cijena i rast vrijednosti novca je:",
+        "options": [
+          "inflacija",
+          "deflacija",
+          "devalvacija",
+          "amortizacija"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "5iuc62",
+        "question": "Surogat novca koji se može naplatiti „na ime\" ili „na donosioca\" je:",
+        "options": [
+          "mjenica",
+          "ček",
+          "banknota",
+          "virman"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "ja0qem",
+        "question": "Kad u prometu ima previše novca, država:",
+        "options": [
+          "smanjuje kamate na štednju",
+          "snižava poreze",
+          "odobrava nove kredite",
+          "obustavlja daljnje tiskanje novca"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "aeiup5",
+        "question": "Kad u prometu ima premalo novca, jedna od mjera je:",
+        "options": [
+          "izdavanje novih kredita uz niže kamate",
+          "povećanje kamatnih stopa na štednju",
+          "obustava izdavanja novih kredita",
+          "povećanje poreza na dodanu vrijednost"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "7gao4j",
+        "question": "Mjera kojom se smanjuje vrijednost novca i mjerilo cijena je:",
+        "options": [
+          "deflacija",
+          "konvertibilnost",
+          "devalvacija",
+          "emisija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "fjuiut",
+        "question": "Osnovni čimbenik vrijednosti papirnog novca je:",
+        "options": [
+          "količina zlata u državnim trezorima",
+          "težina i materijal novčanice",
+          "ekonomska moć države izdavatelja",
+          "cijena sirovina na svjetskom tržištu"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "kzop5o",
+        "question": "Prodaja robe na kredit količinu novca potrebnu u optjecaju:",
+        "options": [
+          "smanjuje",
+          "povećava",
+          "ne dotiče",
+          "udvostručuje"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "rm59b0",
+        "sentence": "Broj transakcija koje jedna novčana jedinica učini u razdoblju je brzina _______ novca.",
+        "answer": "optjecaja",
+        "hint": "cirkulacije"
+      },
+      {
+        "id": "oxbygo",
+        "sentence": "Opći pad vrijednosti novca i porast cijena je _______.",
+        "answer": "inflacija",
+        "hint": "bolest novca"
+      },
+      {
+        "id": "19d8wi",
+        "sentence": "Isprava kojom izdavatelj nalaže banci isplatu iznosa donositelju je _______.",
+        "answer": "ček",
+        "hint": "surogat novca"
+      }
+    ],
+    "learn": {
+      "id": "basmm1",
+      "title": "Novčani optjecaj, surogati novca i regulacija optjecaja",
+      "content": "\n<h3>Novčani optjecaj</h3>\n<p>Čim je roba iznesena na tržište, dobila je cijenu; da bi se sve robe mogle prodati, kupci moraju posjedovati toliko novca koliko iznosi zbroj svih cijena ponuđenih roba. Istom novčanom jedinicom tijekom razdoblja može se obaviti više kupoprodaja.</p>\n<p><strong>Brzina optjecaja novca</strong> označava broj transakcija koje jedna novčana jedinica učini u nekom razdoblju; ovisi o brzini transformacije iz novčanog u robni oblik. Potrebna količina novca u optjecaju utvrđuje se stavljanjem brzine optjecaja u odnos sa zbrojem robnih cijena (što je novac učinio više kupoprodaja, to ga je u optjecaju potrebno manje). Količina novca ovisi o iznosu robnih cijena: ako se on smanjuje, smanjuje se i potrebna količina novca.</p>\n<p>Na potrebnu količinu novca utječu:</p>\n<ol>\n<li><strong>bezgotovinsko plaćanje – platni nalog (virman)</strong> — pravne osobe sa žiroračunima plaćaju bez gotovog novca;</li>\n<li><strong>prodaja robe na kredit</strong> — u trenutku preuzimanja nije potreban novac, pa se od zbroja robnih cijena oduzima zbroj cijena prodanih na kredit (što je on veći, potrebno je manje gotovog novca);</li>\n<li><strong>dospjela plaćanja</strong> — iznosi koje dužnik mora isplatiti vjerovniku za robu na kredit; <em>povećavaju</em> količinu novca u optjecaju;</li>\n<li><strong>međusobna prebijanja (kompenzacije)</strong> — kupac i prodavač prebijaju potraživanja.</li>\n</ol>\n<h3>Surogati novca</h3>\n<p><strong>Surogati</strong> su nadomjesci za novac; djeluju u smjeru smanjenja količine novca u optjecaju. To su: platni nalog, ček, mjenica, banknota, kreditne kartice. <strong>Bezgotovinsko plaćanje</strong> je plaćanje ili kretanje novca bez upotrebe gotovog novca.</p>\n<ul>\n<li><strong>Kredit (kreditno pismo)</strong> — instrument plaćanja na temelju odobrenog kredita; banka se osigurava (hipoteka, jamstvo, polica osiguranja).</li>\n<li><strong>Virmanski nalog</strong> — vlasnik žiroračuna daje banci nalog da s njegova računa prenese označeni iznos na račun drugog poduzeća.</li>\n<li><strong>Ček</strong> — pismena isprava kojom izdavatelj (trasant) bezuvjetno nalaže banci (trasatu) da s njegova računa isplati naznačeni iznos donositelju; banka se njime ne obvezuje. <em>Ček na donosioca</em> može naplatiti svatko tko ga predoči, <em>ček na ime</em> osoba na koju glasi (može se prenositi indosamentom, osim ako je izdan s klauzulom „ne po naredbi“); važan je rok za predočenje računat od dana izdavanja (u gradivu: 8 dana). <em>Napomena o izmjeni:</em> pravnu definiciju čeka propisuje Zakon o čeku (NN 74/94), čl. 1 i 4; rok od 8 dana za ček plativ u zemlji izdanja odgovara čl. 29.</li>\n<li><strong>Mjenica</strong> — pisana isprava (vrijednosni papir) kojom izdavatelj bezuvjetno nalaže (trasirana mjenica) ili obećava (vlastita mjenica) da će na određeni dan isplatiti naznačeni iznos; nije vezana uz kupnju robe i može se prenositi na drugu osobu (indosamentom). <em>Napomena o izmjeni:</em> kamata se smije ugovoriti samo u mjenici po viđenju ili u određeno vrijeme poslije viđenja — Zakon o mjenici (NN 74/94), čl. 1 i 5.</li>\n<li><strong>Banknota</strong> — vrijednosni papir: vlasnici zlata polagali su ga u banku zbog rizika posjedovanja i dobivali potvrdu o pohranjenom zlatu; takvim su potvrdama počeli plaćati dugove.</li>\n<li><strong>Elektroničko plaćanje i bankovne kartice</strong> — novac prelazi s računa na račun; kompjuterom se daju nalozi banci. Kartica je najznačajniji surogat novca.</li>\n</ul>\n<h3>Novčana masa, papirni novac i bolesti novca</h3>\n<p><strong>Novčana masa</strong> je količina novca u optjecaju; ukupni novčani fond zemlje = gotov novac u optjecaju + iznos bezgotovinskih plaćanja. Ako se ukupni kupovni fond i masa robe ne poklapaju, u prometu ima manje ili više novca od potrebnog.</p>\n<p><strong>Naturalni (robni) novac</strong> — određena roba kao novac (stoka, krzno, žito, sol, školjke). <strong>Papirni (fiat) novac</strong> — nastao iz banknota (potvrda o pohranjenom zlatu ili srebru); u početku imao podlogu u zlatu. Od 1971., kad je predsjednik SAD-a Nixon ukinuo zlatni standard, moderni novac izgubio je materijalnu podlogu. Papirni novac nema materijalnu vrijednost, samo nominalnu koju određuje država; monetarna funkcija postoji neovisno o vrijednosti metala. Središnja (emisijska) banka određuje količinu tiskanog novca. Osnovni čimbenik određivanja vrijednosti papirnog novca je <strong>ekonomska moć države izdavatelja</strong> (razvijenost, međunarodni status, ponuda i potražnja za tim novcem). Prijelaz sa zlatnog na papirni novac rasteretio je društvo velikih troškova prometa.</p>\n<p><strong>Bolesti novca:</strong></p>\n<ul>\n<li><strong>Inflacija</strong> — opći porast cijena i pad vrijednosti novca (kad je u prometu više papirnog novca nego što bi bilo zlatnog). Razmjerno više novca daje se za istu robu. Smanjuje kupovnu moć; uzrok je prekomjerno povećanje novčane mase; središnja banka monetarnom politikom nastoji inflaciju održati stabilnom i niskom (gradivo navodi 2–3 %). <em>Napomena o izmjeni:</em> Hrvatska je od 2023. u europodručju, a Europska središnja banka cilja inflaciju od 2 % u srednjem roku; umjerena je inflacija poželjna zbog povezanosti sa stopom nezaposlenosti.</li>\n<li><strong>Deflacija</strong> — pad opće razine cijena i rast vrijednosti novca kad je u prometu manje novca od potrebnog. Destruktivna: začarani krug smanjenja potrošnje (potrošači odgađaju kupnju), pad proizvodnje i profita, rast nezaposlenosti, nemogućnost podmirenja obveza, udar na banke.</li>\n<li><strong>Devalvacija</strong> — mjera monetarne politike kojom se smanjuje vrijednost novca, a time i mjerilo cijena.</li>\n</ul>\n<h3>Regulacija novčanog optjecaja</h3>\n<table>\n<tr><th>Ako je u prometu PREVIŠE novca</th><th>Ako je u prometu PREMALO novca</th></tr>\n<tr><td>obustavlja se daljnje tiskanje novca (nove emisije); započinje tezauriranje (povišenje kamatnih stopa na štednju, povećanje poreza, npr. PDV-a); smanjuje se ili obustavlja izdavanje novih kredita</td><td>potiče se izdavanje novih kredita (snižavanjem kamata), deponirani novac vraća se u promet (snižavanjem kamata na štednju), smanjuju se porezi i drugi nameti, a po potrebi se tiska novi novac (primarna emisija)</td></tr>\n</table>\n<p>Kod zlatnog novca aktivira se prije tezauriran zlatni novac (potrebe se zadovolje odmah), a ako ni tada nema dovoljno, kuje se iz zlatnih rezervi. Kod papirnog novca emisijska banka pušta dodatna sredstva u promet i povlači ih, vodeći monetarno-kreditnu politiku; odobravanjem kredita, aktiviranjem neiskorištenih depozita ili emisijom dodatnog novca povećava se platežna sposobnost tržišta.</p>\n"
+    },
+    "id": "80oso7"
+  },
+  "peValueLaw": {
+    "name": "Zakon vrijednosti, tržišna vrijednost i cijena",
+    "icon": "fa-scale-unbalanced",
+    "color": "#ec4899",
+    "flashcards": [
+      {
+        "id": "gn3qx7",
+        "question": "Što je zakon vrijednosti?",
+        "answer": "Najopćenitiji objektivni zakon robne proizvodnje koji, neovisno o volji ljudi, regulira njihove ekonomske odnose i raspored društvenog fonda rada.",
+        "explanation": "Unutrašnji zakon robne privrede."
+      },
+      {
+        "id": "tk4zpc",
+        "question": "Kako djeluje zakon vrijednosti?",
+        "answer": "Na tržištu preko ponude i potražnje: individualna radna vremena svodi na zajedničku osnovu te regulira odnose unutar i između grana proizvodnje.",
+        "explanation": "Posredstvom ponude i potražnje."
+      },
+      {
+        "id": "qzhvdl",
+        "question": "Što je tržišna vrijednost robe?",
+        "answer": "Vrijednost pojedine robe određena društveno potrebnim radnim vremenom; prosječna vrijednost robe proizvedene u grani pod prosječnim uvjetima.",
+        "explanation": "Ne mjeri se uloženim, već nužnim radom."
+      },
+      {
+        "id": "o0p07t",
+        "question": "Što su regulatorni uvjeti proizvodnje?",
+        "answer": "Individualni uvjeti dominantnih proizvođača grane: pod njima se proizvodi najveća količina proizvoda i troši najveći dio ukupnog rada grane.",
+        "explanation": "Određuju tržišnu vrijednost."
+      },
+      {
+        "id": "af5k1i",
+        "question": "Što je tržišna cijena robe?",
+        "answer": "Cijena po kojoj se roba kupuje i prodaje na tržištu; uvjetovana vrijednošću robe, vrijednošću novca te ponudom i potražnjom.",
+        "explanation": "Formira se na tržištu."
+      },
+      {
+        "id": "gnqmfu",
+        "question": "Kako se formira tržišna cijena u grani?",
+        "answer": "Konkurencijom se formira jedinstvena prodajna cijena kao prosjek pojedinačnih cijena, neovisno o volji sudionika; individualna radna vremena svode se na društveno potrebno.",
+        "explanation": "Ni prodavač ni kupac ne mogu je unaprijed znati."
+      },
+      {
+        "id": "4c1qwo",
+        "question": "Što raste ili pada kad se mijenja potražnja?",
+        "answer": "Porast potražnje povisuje cijenu i donosi veću protuvrijednost; pad platežno sposobne potražnje donosi gubitke, pa proizvođači propadaju ili se prilagođavaju.",
+        "explanation": "Ponuda i potražnja oko vrijednosti."
+      },
+      {
+        "id": "ee4q5x",
+        "question": "Razlika cijene koštanja, cijene proizvodnje i tržišne cijene?",
+        "answer": "Cijena koštanja: troškovi po jedinici. Cijena proizvodnje: cijena koštanja + prosječni profit. Tržišna cijena: stvarna cijena na tržištu.",
+        "explanation": "Klasično ispitno pitanje."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "ehyvwa",
+        "question": "Zakon koji regulira ekonomske odnose u svakoj robnoj proizvodnji neovisno o volji ljudi je zakon:",
+        "options": [
+          "stanovništva",
+          "monopolskih cijena",
+          "koegzistencije",
+          "vrijednosti"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "lgj77b",
+        "question": "Tržišnu vrijednost robe određuje:",
+        "options": [
+          "najveći utrošak rada u grani",
+          "društveno potrebno radno vrijeme",
+          "najniža cijena u grani",
+          "cijena koštanja jednog poduzeća"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "xeqeix",
+        "question": "Individualne uvjete dominantnih proizvođača grane nazivamo:",
+        "options": [
+          "prirodnim uvjetima proizvodnje",
+          "regulatornim uvjetima proizvodnje",
+          "monopolskim uvjetima proizvodnje",
+          "tržišnim uvjetima proizvodnje"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "qgn9dz",
+        "question": "Cijena proizvodnje sastoji se od:",
+        "options": [
+          "najamnine radnika i kamate kredita",
+          "zemljišne rente i dividende dioničara",
+          "cijene koštanja i bankovne kamate",
+          "cijene koštanja i prosječnog profita"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "zlx5z4",
+        "question": "Cijena po kojoj se roba stvarno kupuje i prodaje na tržištu je:",
+        "options": [
+          "tržišna cijena",
+          "cijena koštanja",
+          "cijena proizvodnje",
+          "nominalna vrijednost"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "cwtrfl",
+        "question": "Pad platežno sposobne potražnje proizvođače dovodi do:",
+        "options": [
+          "viših profita i širenja proizvodnje",
+          "monopolskog položaja na tržištu",
+          "gubitaka i potrebe prilagodbe",
+          "ukidanja konkurencije u grani"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "6yqm4x",
+        "question": "Koji čimbenik NE uvjetuje veličinu tržišne vrijednosti robe?",
+        "options": [
+          "ukupna količina utrošenog rada",
+          "ukupna količina proizvedene robe",
+          "visina dividende dioničara",
+          "uvjeti proizvodnje u grani"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "oykm3w",
+        "question": "Troškovi proizvodnje po jedinici proizvoda nazivaju se:",
+        "options": [
+          "cijena koštanja",
+          "cijena proizvodnje",
+          "tržišna cijena",
+          "tržišna vrijednost"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "zvvzzn",
+        "sentence": "Zakon vrijednosti regulira raspored društvenog fonda _______.",
+        "answer": "rada",
+        "hint": "sredstva i radnici"
+      },
+      {
+        "id": "ctispl",
+        "sentence": "Cijena proizvodnje jednaka je cijeni koštanja uvećanoj za prosječni _______.",
+        "answer": "profit",
+        "hint": "ostvaruje ga kapitalist"
+      },
+      {
+        "id": "ajwomj",
+        "sentence": "Konkurencijom se individualna radna vremena svode na društveno _______ radno vrijeme.",
+        "answer": "potrebno",
+        "hint": "mjera vrijednosti"
+      }
+    ],
+    "learn": {
+      "id": "1oqb1j",
+      "title": "Karakteristike djelovanja zakona vrijednosti",
+      "content": "\n<h3>Zakon vrijednosti</h3>\n<p><strong>Zakon vrijednosti</strong> je najopćenitiji objektivni zakon koji u uvjetima svake robne proizvodnje, nezavisno od volje ljudi, regulira njihove međusobne ekonomske odnose (u proizvodnji, raspodjeli, razmjeni i potrošnji). On je <em>unutrašnji zakon koji regulira funkcioniranje robne privrede</em>; djeluje na tržištu putem mehanizma ponude i potražnje tako što individualna radna vremena svodi na zajedničku osnovu; regulira ekonomske odnose unutar svake grane proizvodnje i između različitih grana.</p>\n<h3>Tržišna vrijednost robe</h3>\n<p><strong>Tržišna vrijednost</strong> je vrijednost pojedinačne robe određena društveno potrebnim radnim vremenom — prosječna vrijednost robe proizvedene u određenoj grani, odnosno individualna vrijednost proizvedena pod prosječnim uvjetima proizvodnje. Vrijednost pojedine robe ne određuje količina rada koja je uložena u njezinu proizvodnju, već količina rada koja je <em>neophodno potrebna</em> uz normalne uvjete te prosječan stupanj intenzivnosti i produktivnosti rada.</p>\n<p>Veličinu tržišne vrijednosti robe uvjetuju dva elementa: (1) ukupna količina utrošenog ljudskog rada (apstraktnog i opredmećenog) i (2) ukupna količina proizvedene robe. Ako se uvjeti proizvodnje u grani kao cjelini promijene, mijenja se i tržišna vrijednost pojedine robe, jer se mijenja društveno potrebno radno vrijeme.</p>\n<p><strong>Regulatorni uvjeti proizvodnje</strong> su individualni uvjeti onih robnih proizvođača koji u grani dominiraju: pod njima se proizvodi najveća količina proizvoda te grane i uključen je najveći dio ukupne mase rada uložene u grani. Prodaja robe po vrijednosti favorizira proizvođače čije je individualno radno vrijeme ispod društveno potrebnog, a potiče ostale (lošije) da mijenjaju uvjete (povećavaju produktivnost i štede u predmetima rada, snižavaju individualno radno vrijeme).</p>\n<h3>Tržišna cijena robe</h3>\n<p><strong>Tržišna cijena</strong> je cijena po kojoj se proizvod prodaje na tržištu, tj. ona koja se formira na samom tržištu. Uvjetovana je vrijednošću robe, vrijednošću novca te ponudom i potražnjom za tom robom.</p>\n<p><strong>Formiranje:</strong> ni prodavač ni kupac ne mogu unaprijed predvidjeti konkretan iznos tržišne cijene; u uvjetima konkurencije u grani formira se jedna jedinstvena prodajna cijena koja je prosjek pojedinačnih cijena proizvođača, nezavisno od volje bilo kojeg sudionika. Konkurencijom se individualna radna vremena svode na društveno potrebno, čime se formira tržišna vrijednost.</p>\n<p>U stvarnosti je tržišna cijena češće niža ili viša od tržišne vrijednosti. Veličine koje određuju vrijednost robe i cijenu: društveno potrebno radno vrijeme, vrijednost novca, visina mjerila cijena te ponuda i potražnja. Scenariji: pri porastu potražnje proizvođači razmjenom po povišenim cijenama ostvaruju veću protuvrijednost od rada potrebnog za proizvodnju; pri padu platežno sposobne potražnje ostvaruju gubitke pa ili propadaju ili se prilagođavaju (razvitak proizvodnih snaga, manji utrošak sredstava, veća produktivnost).</p>\n<h4>Cijena koštanja, cijena proizvodnje i tržišna cijena</h4>\n<ul>\n<li><strong>cijena koštanja</strong> — troškovi proizvodnje (utrošeni kapital) po jedinici proizvoda;</li>\n<li><strong>cijena proizvodnje</strong> — cijena koju uvjetuje djelovanje zakona vrijednosti u robnoj proizvodnji, a sastoji se od cijene koštanja i prosječnog profita;</li>\n<li><strong>tržišna cijena</strong> — cijena koja se stvarno formira na tržištu (ponuda i potražnja, vrijednost robe i novca).</li>\n</ul>\n<h3>Razmjena i raspored društvenog fonda rada</h3>\n<p>U robnom gospodarstvu zakon o razmjernom rasporedu društvenog fonda rada (odnos radnika i sredstava za proizvodnju) djeluje u vidu zakona vrijednosti. Do promjene razmjera dolazi zbog promjenjivosti ljudskih potreba za različitim uporabnim vrijednostima i promjenjivosti uvjeta u kojima se ta dobra proizvode. U uvjetima robne proizvodnje ukupan društveni fond rada u količini u kojoj je uložen u materijalnu proizvodnju određuje vrijednost društvenog bruto proizvoda. Tržišne cijene određuju i raspodjelu rada između različitih grana: u interesu je proizvođača da proda proizvod, pa se tržišna cijena formira na razini koja omogućuje realizaciju prodaje svih proizvoda grane.</p>\n"
+    },
+    "id": "c0qbq0"
+  },
+  "peCommodityForms": {
+    "name": "Oblici robne proizvodnje i proizvodnja u poduzeću",
+    "icon": "fa-building",
+    "color": "#14b8a6",
+    "flashcards": [
+      {
+        "id": "6a3ikl",
+        "question": "Koji su temeljni povijesni oblici robne proizvodnje?",
+        "answer": "Jednostavna robna, kapitalistička robna i socijalistička robna proizvodnja.",
+        "explanation": "Tri oblika."
+      },
+      {
+        "id": "rkdu8o",
+        "question": "Što je jednostavna robna proizvodnja?",
+        "answer": "Početak robne proizvodnje: neposredni proizvođači ujedno su privatni vlasnici sredstava za proizvodnju; javlja se u raspadu prvobitne zajednice i traje kao dopunski oblik.",
+        "explanation": "Zakon vrijednosti diferencira proizvođače."
+      },
+      {
+        "id": "4u3il6",
+        "question": "Na čemu se zasniva kapitalizam?",
+        "answer": "Na privatnom vlasništvu, robnoj proizvodnji, poduzetništvu i klasnoj podjeli na kapitaliste i najamne radnike; počiva na eksploataciji najamnog radnika.",
+        "explanation": "Najamni radnik prodaje radnu snagu."
+      },
+      {
+        "id": "bb8mvu",
+        "question": "Što je socijalizam?",
+        "answer": "Prijelazno razdoblje iz kapitalizma prema komunizmu s ciljem bogatijeg i pravičnijeg društva; državni i samoupravni; počinje Oktobarskom revolucijom 1917.",
+        "explanation": "Dva oblika."
+      },
+      {
+        "id": "663sgu",
+        "question": "Razlika državnog i samoupravnog socijalizma?",
+        "answer": "Državni: država je vlasnik sredstava kao zastupnik radničke klase. Samoupravni: radnici odlučuju o proizvodnji i raspodjeli na društvenim sredstvima.",
+        "explanation": "Državno vs. društveno vlasništvo."
+      },
+      {
+        "id": "p2uodu",
+        "question": "Što je poduzeće i koja su dva aspekta proizvodnje u njemu?",
+        "answer": "Konkretan oblik organizirane proizvodnje, robni proizvođač sa strojnom osnovom. Aspekti: tehničko-tehnološki i stvaranje vrijednosti.",
+        "explanation": "Cilj: proizvodnja robe."
+      },
+      {
+        "id": "9oz3up",
+        "question": "Koja su dva elementa stvaranja vrijednosti?",
+        "answer": "Sredstva za proizvodnju (prenose svoju vrijednost) i živi rad (stvara novu vrijednost).",
+        "explanation": "Vrijednost = prenesena + novostvorena."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "rhudby",
+        "question": "Prvi povijesni oblik robne proizvodnje je:",
+        "options": [
+          "kapitalistička proizvodnja",
+          "samoupravna proizvodnja",
+          "državna proizvodnja",
+          "jednostavna robna proizvodnja"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "xz69ct",
+        "question": "Kod jednostavne robne proizvodnje neposredni proizvođač je:",
+        "options": [
+          "najamni radnik na imanju kapitalista",
+          "ujedno vlasnik sredstava za proizvodnju",
+          "kmet vezan uz zemlju feudalca",
+          "rob u vlasništvu robovlasnika"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "8kdf58",
+        "question": "Kapitalizam počiva na:",
+        "options": [
+          "zajedničkom vlasništvu radnika",
+          "eksploataciji najamnog radnika",
+          "naturalnoj razmjeni",
+          "prisilnom radu kmetova"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "irmc9h",
+        "question": "Radnici odlučuju o proizvodnji i raspodjeli na društvenim sredstvima u:",
+        "options": [
+          "državnom socijalizmu",
+          "liberalnom kapitalizmu",
+          "feudalizmu",
+          "samoupravnom socijalizmu"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "qraimi",
+        "question": "Sredstva za proizvodnju u proizvodnom procesu:",
+        "options": [
+          "prenose svoju vrijednost na novi proizvod",
+          "stvaraju novostvorenu vrijednost",
+          "povećavaju svoju vrijednost sama",
+          "gube vrijednost bez traga"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "vj7tjs",
+        "question": "Novu količinu rada i novostvorenu vrijednost dodaje:",
+        "options": [
+          "minuli rad",
+          "sirovina",
+          "živi rad",
+          "amortizacija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "nnfu4k",
+        "question": "Opća struktura vrijednosti robe je:",
+        "options": [
+          "cijena koštanja + zemljišna renta",
+          "najamnina + kamata + dividenda",
+          "prenesena + novostvorena vrijednost",
+          "profit + poduzetnička dobit"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "eee52v",
+        "question": "Koji je jedan od dva aspekta proizvodnje u poduzeću?",
+        "options": [
+          "stvaranje vrijednosti",
+          "financijsko-kreditni aspekt",
+          "trgovinsko-prometni aspekt",
+          "pravno-vlasnički aspekt"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "9co54p",
+        "sentence": "Ekonomska prisila prisiljava neposrednog proizvođača da prodaje svoju radnu _______.",
+        "answer": "snagu",
+        "hint": "jedino što posjeduje"
+      },
+      {
+        "id": "24s7qh",
+        "sentence": "Socijalizam počinje Oktobarskom revolucijom godine _______.",
+        "answer": "1917",
+        "hint": "početak 20. stoljeća"
+      },
+      {
+        "id": "kvugjp",
+        "sentence": "Vrijednost robe čine prenesena i _______ vrijednost.",
+        "answer": "novostvorena",
+        "hint": "stvara je živi rad"
+      }
+    ],
+    "learn": {
+      "id": "odotp8",
+      "title": "Povijesni oblici robne proizvodnje i proizvodnja u poduzeću",
+      "content": "\n<h3>Povijesni oblici robne proizvodnje</h3>\n<p>Temeljni povijesni oblici robne proizvodnje su <strong>jednostavna robna proizvodnja</strong>, <strong>kapitalistička robna proizvodnja</strong> i <strong>socijalistička robna proizvodnja</strong>; svaki ima svoje specifične karakteristike.</p>\n<h4>Jednostavna robna proizvodnja</h4>\n<ul>\n<li>početak je robne proizvodnje: vlasnik sredstava najčešće je i sam aktivan radnik; neposredni proizvođači ujedno su privatni vlasnici sredstava za proizvodnju;</li>\n<li>pojavljuje se u razdoblju raspada prvobitne zajednice;</li>\n<li>u svim stupnjevima razvitka društva (robovlasništvo, feudalizam, kapitalizam, socijalizam) djeluje uz neki dominirajući oblik (naturalna, krupna robna) kao dopunski oblik sitne proizvodnje;</li>\n<li>omogućila je razvoj krupne kapitalističke robne proizvodnje;</li>\n<li>djelovanje zakona vrijednosti diferencira sitne robne proizvođače: jedni propadaju, drugi se bogate.</li>\n</ul>\n<h4>Kapitalizam</h4>\n<p>Zasniva se na <strong>privatnom vlasništvu, robnoj proizvodnji, poduzetništvu i klasnoj podjeli na kapitaliste i najamne radnike</strong>. Pretpostavka su dvije suprotne klase. Neposredni proizvođač prisiljen je prodavati jedino što posjeduje — radnu snagu — i tako postaje najamni radnik (<em>ekonomska prisila</em>). Vlasnik sredstava za proizvodnju postaje kapitalist i nositelj gospodarskih odluka. Kapitalistički način proizvodnje počiva na eksploataciji najamnog radnika (besplatnom prisvajanju rezultata tuđeg rada); u njemu robna proizvodnja po prvi put postaje dominantan oblik, a zakon vrijednosti gotovo isključivi regulator procesa reprodukcije.</p>\n<p>Kapitalizam se najjednostavnije definira kao ekonomsko uređenje koje preferira privatno vlasništvo kao sredstvo proizvodnje, slobodno tržište kao sredstvo razdiobe dobara i vladavinu prava. Kao ni jedan proizvodni odnos, nije vječna kategorija: rezultat je povijesnog razvitka društva i njegovih proizvodnih snaga.</p>\n<h4>Socijalizam</h4>\n<p>Prijelazno razdoblje iz kapitalizma prema komunizmu s ciljem stvaranja bogatijeg i pravičnijeg društva; povijest poznaje <strong>državni</strong> i <strong>samoupravni</strong> socijalizam. Javlja se Oktobarskom revolucijom 1917.</p>\n<ul>\n<li><strong>državni socijalizam</strong> — država je vlasnik sredstava za proizvodnju kao pravni zastupnik interesa radničke klase; smatralo se da radnik radi na svojim sredstvima pa nema eksploatacije;</li>\n<li><strong>samoupravni socijalizam</strong> — društveno-ekonomski sustav s radničkim samoupravljanjem i društvenim sredstvima za proizvodnju; radnici neovisno odlučuju o proizvodnji, raspodjeli, razmjeni i potrošnji, tj. o rezultatima svog rada; neposredni proizvođač kao član kolektiva postaje i neposredni upravljač — radnici ne služe proizvodnji, nego ona njima.</li>\n</ul>\n<h3>Proizvodnja u poduzeću</h3>\n<p>Proizvodnja je osnova čovjekove egzistencije. Postiže se organiziranjem konkretnih proizvodnih procesa na određenom mjestu, s početnim sredstvima za proizvodnju, adekvatnom radnom snagom i ciljem u pogledu vrste proizvoda. <strong>Poduzeće</strong> je konkretan oblik organizirane proizvodnje, formiran kao robni proizvođač sa strojnom tehničkom osnovom proizvodnje; osnovni ekonomski cilj i rezultat je proizvodnja robe.</p>\n<p><strong>Dva aspekta proizvodnje:</strong> tehničko-tehnološki (mehanička rješenja) i stvaranje vrijednosti. Središnje je pitanje proizvodnog procesa proces proizvodnje vrijednosti robe. Veličinu vrijednosti određuje društveno potrebna količina apstraktnog ljudskog rada za normalnu reprodukciju robe. Rad se u proizvodnji javlja u dva stanja: <em>materijalizirani rad</em> (sredstva za rad i predmeti rada) i <em>živi ljudski rad</em> (trošenje radne snage).</p>\n<p><strong>Dva konstituirajuća elementa stvaranja vrijednosti:</strong></p>\n<ul>\n<li><strong>sredstva za proizvodnju</strong> — materijalizirani rad iz ranijih procesa; u tekućem procesu prenose svoju vrijednost na novi proizvod, a ona se ne gubi niti povećava sama od sebe;</li>\n<li><strong>živi rad</strong> — presudna uloga: mijenja predmete rada, daje im novu uporabnu vrijednost i dodaje novu količinu rada (novostvorenu vrijednost razmjernu dužini radnog procesa). Proizvodnja je jedinstvo prenošenja stare i stvaranja nove vrijednosti.</li>\n</ul>\n<div class=\"formula-box\">VRIJEDNOST ROBE = PRENESENA VRIJEDNOST + NOVOSTVORENA VRIJEDNOST<br>(opća, nepromjenjiva struktura vrijednosti)</div>\n<p>Opredmećeni i živi rad mogu biti prisutni u različitim omjerima; razlika u strukturi vrijednosti posljedica je nejednakog korištenja opredmećenog ili živog rada, a o tim odnosima ovisi veličina vrijednosti robne jedinice.</p>\n"
+    },
+    "id": "pg7c74"
+  },
+  "peOwnership": {
+    "name": "Vlasništvo",
+    "icon": "fa-key",
+    "color": "#6366f1",
+    "flashcards": [
+      {
+        "id": "pvv992",
+        "question": "Koji su ekonomski aspekti vlasništva?",
+        "answer": "Sustav upravljanja i raspolaganja imovinom, sustav prava korištenja i raspolaganja proizvodima te sustav potrošnje proizvoda.",
+        "explanation": "Tri aspekta; ispitno pitanje."
+      },
+      {
+        "id": "0yrm1h",
+        "question": "Što znači odvajanje ekonomske i pravne funkcije vlasništva?",
+        "answer": "Ekonomske ovlasti vlasništva može koristiti i nevlasnik (upravljač) kod državnog, zadružnog, društvenog i dioničkog vlasništva.",
+        "explanation": "Upravljači nisu pravi vlasnici."
+      },
+      {
+        "id": "wlgbhu",
+        "question": "Kako država ograničava moć vlasnika?",
+        "answer": "Politikom vlasništva u okviru ekonomske politike: pravilima koja štite opće interese i interese nevlasničkih grupa.",
+        "explanation": "Vlasništvo je sve manje potpuno privatno."
+      },
+      {
+        "id": "qxkbw2",
+        "question": "Što je vlasnički pluralizam, a što monizam?",
+        "answer": "Pluralizam: veći broj vlasnika, tipičan za robnu proizvodnju. Monizam: manji broj vlasnika, svojstven nerobnoj proizvodnji.",
+        "explanation": "Demokracija traži pluralizam."
+      },
+      {
+        "id": "s6yl93",
+        "question": "Što je privatno vlasništvo?",
+        "answer": "Društveni odnos u kojem vlasnik ima sva prava nad svojim dobrima i isključuje druge; sam odlučuje o sudbini kapitala.",
+        "explanation": "Robovlasnik, feudalac, kapitalist."
+      },
+      {
+        "id": "zvoi02",
+        "question": "Što je društveno vlasništvo?",
+        "answer": "Grupno posjedovanje i prisvajanje rezultata rada (dionička društva, zadruge, državno); ne ukida privatno; u strogom smislu: samoupravni socijalizam.",
+        "explanation": "Radnici vlasnici rezultata rada."
+      },
+      {
+        "id": "ec605w",
+        "question": "Kako radnik nevlasnik postaje radnik vlasnik?",
+        "answer": "Prodajom dionica radnicima; stječe dohodak s dva naslova: najamninu (rad) i dividendu (kapital).",
+        "explanation": "Smanjuje napetosti."
+      }
+    ],
+    "quiz": [
+      {
+        "id": "neasl9",
+        "question": "Ekonomski aspekti vlasništva NE uključuju:",
+        "options": [
+          "sustav upravljanja imovinom",
+          "sustav prava korištenja proizvoda",
+          "sustav potrošnje proizvoda",
+          "sustav oporezivanja dohotka"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "sav9uz",
+        "question": "Veći broj vlasnika, tipičan za robnu proizvodnju, naziva se:",
+        "options": [
+          "vlasnički monizam",
+          "vlasnički pluralizam",
+          "kolektivizam",
+          "monopol"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "wxlxv7",
+        "question": "Demokracija je moguća samo uz:",
+        "options": [
+          "vlasnički monizam",
+          "vlasnički pluralizam",
+          "državni kapitalizam",
+          "naturalnu proizvodnju"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "4le2my",
+        "question": "Dohodak od kapitala radnika koji je suvlasnik poduzeća je:",
+        "options": [
+          "najamnina",
+          "renta",
+          "kamata",
+          "dividenda"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "dra988",
+        "question": "Dioničko društvo i zadruga su oblici vlasništva:",
+        "options": [
+          "društvenog (grupnog)",
+          "privatnog (pojedinačnog)",
+          "zajedničkog (općeg)",
+          "robovlasničkog"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "3tf6qh",
+        "question": "Odvajanje ekonomske i pravne funkcije vlasništva posljedica je toga što:",
+        "options": [
+          "država ukida privatno vlasništvo zakonom",
+          "vlasnici dobrovoljno nestaju s tržišta",
+          "ovlasti može koristiti i nevlasnik upravljač",
+          "tržište zabranjuje pravo vlasništva"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "mn4a4d",
+        "question": "Prema političkoj ekonomiji, vlasništvo vlasniku nameće i obvezu da ga:",
+        "options": [
+          "preda državi",
+          "podijeli radnicima",
+          "očuva, poveća i unaprijedi",
+          "prodaje svake godine"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "snkr4m",
+        "question": "Povijesno gledano, ukidanje gotovo svih oblika vlasništva i kolektivizam vezuje se uz:",
+        "options": [
+          "komunizam",
+          "kapitalizam",
+          "feudalizam",
+          "merkantilizam"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "w5zumt",
+        "sentence": "Odvajanje pravne i _______ funkcije vlasništva događa se kad upravljač nije pravi vlasnik.",
+        "answer": "ekonomske",
+        "hint": "druga komponenta vlasništva"
+      },
+      {
+        "id": "2c05vc",
+        "sentence": "Radnik koji je ujedno suvlasnik stječe najamninu i _______.",
+        "answer": "dividendu",
+        "hint": "dohodak od kapitala"
+      },
+      {
+        "id": "mjhb99",
+        "sentence": "Demokracija je moguća samo uz vlasnički _______.",
+        "answer": "pluralizam",
+        "hint": "suprotno monizmu"
+      }
+    ],
+    "learn": {
+      "id": "58fz7p",
+      "title": "Vlasništvo",
+      "content": "\n<h3>Ekonomsko određivanje vlasništva</h3>\n<p>Pri određivanju vlasništva u obzir se uzimaju dvije komponente: <strong>pravna</strong> (proučava se u pravnim disciplinama) i <strong>ekonomska</strong> (temelj za spoznaju odnosa proizvodnje). <strong>Ekonomski aspekti vlasništva</strong> su: (1) sustav upravljanja i raspolaganja imovinom, (2) sustav prava korištenja i raspolaganja proizvodima, (3) sustav potrošnje proizvoda.</p>\n<p>Ekonomske funkcije vlasništva pokazuju tko ima mogućnost koristiti se vlasništvom, tko postaje vlasnik rezultata i tko njima raspolaže. Ovlaštenje prvenstveno pripada pravom vlasniku dok god ga koristi, no njime se može koristiti i nevlasnik (kod državnog, zadružnog, društvenog, pa i dioničkog vlasništva) — dolazi do <strong>odvajanja ekonomske i pravne funkcije vlasništva</strong>. Upravljači vlasništvom izravno utječu na odnose u proizvodnji, a položaj čovjeka prema ekonomskoj funkciji vlasništva odražava njegov položaj u društvu.</p>\n<p><strong>Povijesni razvoj:</strong> u prvobitnoj zajednici sredstva za proizvodnju bila su u pojedinačnom vlasništvu članova, ali je rezultat rada pripadao svim članovima. U robovlasništvu su prirodni izvori, sredstva za proizvodnju, robovi i rezultati njihova rada bili vlasništvo robovlasnika. U kapitalizmu se vlasnički odnosi temeljito mijenjaju: procesom prvobitne akumulacije, najčešće nasilnim putem, pojedinci stječu vlasništvo nad prirodnim izvorima i sredstvima za proizvodnju, a ostali (radnici) prisiljeni su prodavati jedino što imaju — vlastiti rad.</p>\n<h3>Vlasništvo i ekonomska aktivnost</h3>\n<ul>\n<li>Vlasništvo je <strong>privilegij</strong> nositelja: oni odlučuju o proizvodnom procesu i raspodjeli rezultata; vlasnik ima povlašten društveno-ekonomski položaj, veća i kvalitetnija potrošnja.</li>\n<li>Povijesno se prema vlasništvu pristupalo kao motivaciji društvenog blagostanja, ali i kao glavnom krivcu za društvena zla; zato je bilo pokušaja ukidanja vlasništva (komunizam: ukidanje gotovo svih oblika vlasništva i uvođenje kolektivizma nad svim resursima; kapitalizam: nacionalizacija prirodnih i društvenih resursa).</li>\n<li>Danas se problem rješava <strong>ograničavanjem moći vlasnika politikom vlasništva</strong> koju provodi država u okviru ekonomske politike (pravila radi zaštite općih interesa i interesa nevlasničkih grupa). Primjer „too big to fail\" (TBTF) kompanija. Klasično vlasništvo sve je manje potpuno privatno, a sve više regulirano.</li>\n</ul>\n<h4>Ostali učinci vlasništva</h4>\n<ul>\n<li>vlasništvo nameće obveze nositelju: očuvati, povećati i unaprijediti ga (vrijedi za pojedinca, dionički kapital i sve oblike);</li>\n<li>vlasništvo je prirodna pojava srasla s prirodom čovjeka u borbi za siguran opstanak;</li>\n<li>oblici vlasništva utječu na proizvodnju i društvenu reprodukciju — povijest bilježi vezu između rasta proizvodnje i porasta broja vlasnika (raspad robovlasništva, uspostava feudalizma, građansko društvo). Socijalizam: manji broj vlasnika, pad proizvodnje — vlasnici su osnovni pokretači novih znanja;</li>\n<li>gospodarstvo reagira poticajnim mjerama — širenjem broja nositelja vlasništva: radnik nevlasnik postaje <strong>radnik vlasnik</strong> prodajom dionica radnicima i stječe dohodak s dva naslova: <em>dohodak od rada (najamninu)</em> i <em>dohodak od kapitala (dividendu)</em>.</li>\n</ul>\n<p>Nekad: ranije tehnologije, masovno angažiranje radne snage, velika poduzeća. Danas, u razvijenim zemljama: velik broj malih fleksibilnih robnih proizvođača i više vlasnika.</p>\n<h4>Vlasnički pluralizam i monizam</h4>\n<ul>\n<li><strong>robni oblik proizvodnje</strong> karakterističan je za veći broj vlasnika (<em>vlasnički pluralizam</em>), a nerobni tip za manji broj (<em>vlasnički monizam</em>);</li>\n<li>kod monizma često dolazi do deformiranja sustava akumulacije zbog malog broja centara odlučivanja i promašenih ili političkih investicija;</li>\n<li>kod pluralizma konkurencija velikog broja vlasnika potiče inovacije i modernizaciju;</li>\n<li>pri manjem broju vlasnika brže nastaju napetosti i sukobi, jer je veći broj isključenih od prava vlasništva;</li>\n<li>demokracija i monizam ne mogu opstati zajedno — demokracija je moguća samo uz vlasnički pluralizam;</li>\n<li>pluralizam vlasništva, pluralizam tržišta i politički pluralizam međusobno su uvjetovani, progresivni procesi.</li>\n</ul>\n<h3>Oblici vlasništva</h3>\n<p>Dva su pristupa analizi: ekonomski i pravni (prava na materijalnim dobrima, služnosti, nematerijalnim dobrima). Vlasništvo je dinamička kategorija. Osim evolutivnih, bilo je i <em>nasilnih putova razvoja</em> koji su često završavali neuspjehom (npr. komunisti su razvlastili dotadašnje vlasnike i sami postali monopolizirani vlasnici): jedan čovjek, grupa ili država ne može uspostaviti adekvatne vlasničke odnose.</p>\n<p>Povijesno: vlasništvo robovlasnika, feudalaca i kapitalista. Sa stajališta ekonomije: <strong>privatno</strong> (pojedinačno ili dijeljeno), <strong>društveno</strong> (državno ili grupno) i <strong>zajedničko</strong> (opće ili univerzalno).</p>\n<ul>\n<li><strong>Privatno vlasništvo</strong> — društveni odnos u kojem pojedinac (jedna ili više fizičkih ili pravnih osoba) ima pravo i mogućnost koristiti se svim pravima nad dobrima čiji je vlasnik, a sve druge isključuje; sami odlučuju o sudbini kapitala. Tri povijesna oblika: vlasništvo robovlasnika; feudalaca (manji broj vlasničkih subjekata, diskriminirana većina nevlasnika); kapitalista (povećao se broj vlasničkih subjekata).</li>\n<li><strong>Državno vlasništvo</strong> — šira kategorija: država kao vlasnik raspolaže nizom kapitalnih vrijednosti, prirodnih izvora koje sama eksploatira ili daje u zakup uz rentu, infrastrukturom.</li>\n<li><strong>Društveno vlasništvo</strong> (državno ili grupno) — nije negiralo privatno vlasništvo, ono i dalje postoji. Obilježja: grupno posjedovanje dobara, usluga i prava i grupno prisvajanje rezultata rada; grupe koje upravljaju javljaju se kao suvlasnici. Nalazi se u dioničkim društvima i zadrugama. U strogom smislu karakteristično je za samoupravni socijalizam: država ustupa vlasnička prava radnim kolektivima koji preko samoupravnih tijela upravljaju sredstvima; radnici nisu vlasnici sredstava, ali jesu vlasnici rezultata rada pa sami odlučuju o raspodjeli dohotka (u teoriji). Društveno je slično samoupravnom socijalizmu, ali do njega nije došlo dobrovoljnim spajanjem kapitala više vlasnika, nego diktatom vlasti.</li>\n</ul>\n<p>Društveno vlasništvo može se grupirati kao: državno, dioničko, zadružno i drugi oblici suvlasništva i partnerstva. Dionička društva, zadruge i grupna udruživanja dokaz su da društveno vlasništvo ne ukida privatno: vlasnici participiraju veličinom dobrovoljno unesenog vlasništva.</p>\n<p><strong>Razaranje kapitalističkog sustava počinje jer</strong> se velikim koncentracijama temeljenim na privatnom vlasništvu nije moglo održati upravljanje i odlučivanje; tehnološki napredak uključio je veći broj ljudi u organizaciju proizvodnje i oslobodio slobodna sredstva za društvenu proizvodnju; sve zahtjevnije potrebe društva traže objekte općeg interesa i nova sredstva. Novi vlasnički sustav treba svim članovima osigurati podjednak pristup vlasničkim pravima.</p>\n"
+    },
+    "id": "gff5ad"
+  },
+  "peOrganization": {
+    "name": "Oblici organizacije proizvodnje",
+    "icon": "fa-hammer",
+    "color": "#10b981",
+    "flashcards": [
+      {
+        "id": "kj2ny5",
+        "question": "Što je jednostavna kooperacija?",
+        "answer": "Spajanje većeg broja proizvođača istih uporabnih vrijednosti pod nadzorom jednoga; ručni rad bez podjele rada; ušteda u materijalu, prostoru i energiji.",
+        "explanation": "Svatko radi cijeli posao."
+      },
+      {
+        "id": "dhu2z8",
+        "question": "Što je manufakturna proizvodnja?",
+        "answer": "Složena kooperacija: razvijena podjela rada i sredstava za proizvodnju pod organizatorom-vlasnikom; heterogena i organska; radnik postaje ovisan o vlasniku.",
+        "explanation": "Podjela rada → ovisan radnik."
+      },
+      {
+        "id": "evn4ks",
+        "question": "Zašto je industrijsko poduzeće prekretnica?",
+        "answer": "Jer je nastala krupna robna proizvodnja uz parni stroj i najamnu radnu snagu; porasla produktivnost, ali i socijalne suprotnosti i uništavanje sitnih proizvođača.",
+        "explanation": "18.–19. st."
+      },
+      {
+        "id": "f3ih6y",
+        "question": "Obilježja mehaniziranog poduzeća?",
+        "answer": "Tekuća vrpca, standardizacija, podjela rada, dioničko društvo, razdvajanje vlasništva i upravljanja, jača uloga države (država blagostanja) i birokracija.",
+        "explanation": "Masovno društvo, 19.–20. st."
+      },
+      {
+        "id": "6n4fgw",
+        "question": "Što je država blagostanja?",
+        "answer": "Masovno društvo zapadnog tipa: razrađeno socijalno osiguranje, mnogo besplatnih usluga, težnja punoj zaposlenosti i izjednačavanje prihoda porezima.",
+        "explanation": "Skupa, opterećuje privredu."
+      },
+      {
+        "id": "5aek0i",
+        "question": "Koje su slabosti kolektivizma?",
+        "answer": "Skupa država blagostanja opterećuje privredu, rastu transferi koji smanjuju radni napor, a slijede stagnacija, rast cijena i nezaposlenost.",
+        "explanation": "Pozitivno: puna zaposlenost, zdravstvo."
+      },
+      {
+        "id": "ne9zin",
+        "question": "Tri karakteristike informatičkog poduzeća?",
+        "answer": "Individualizacija, informatizacija i internacionalizacija; manja i fleksibilnija poduzeća, suradnja umjesto hijerarhije.",
+        "explanation": "„Radi regionalno, misli globalno.\""
+      }
+    ],
+    "quiz": [
+      {
+        "id": "36h4yb",
+        "question": "Spajanje proizvođača istih uporabnih vrijednosti pod jednim nadzorom, uz ručni rad bez podjele rada, je:",
+        "options": [
+          "manufaktura",
+          "mehanizirano poduzeće",
+          "informatičko poduzeće",
+          "jednostavna kooperacija"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "40y1ee",
+        "question": "Razvijena podjela rada i ovisnost radnika o vlasniku obilježja su:",
+        "options": [
+          "jednostavne kooperacije",
+          "manufakturne proizvodnje",
+          "informatičkog poduzeća",
+          "naturalnog gospodarstva"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "p2fbcr",
+        "question": "Parni stroj ključan je za:",
+        "options": [
+          "manufakturu",
+          "industrijsko poduzeće",
+          "informatičko poduzeće",
+          "prvobitnu zajednicu"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "vf97q6",
+        "question": "Tekuća vrpca i standardizacija proizvodnje pripadaju:",
+        "options": [
+          "jednostavnoj kooperaciji",
+          "informatičkom poduzeću",
+          "feudalnom imanju",
+          "mehaniziranom poduzeću"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "6kol2b",
+        "question": "Individualizacija, informatizacija i internacionalizacija obilježja su:",
+        "options": [
+          "informatičkog poduzeća",
+          "mehaniziranog poduzeća",
+          "manufakture",
+          "industrijskog poduzeća"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "vjm3ph",
+        "question": "Država blagostanja povezuje se s:",
+        "options": [
+          "prvobitnom zajednicom i naturalnom proizvodnjom",
+          "jednostavnom kooperacijom i ručnim radom",
+          "mehaniziranim poduzećem i masovnim društvom",
+          "robovlasničkom privredom i latifundijama"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "zsn62z",
+        "question": "Koji je negativan učinak industrijskog poduzeća?",
+        "options": [
+          "jeftinija i obilnija proizvodnja robe",
+          "olakšan napor radnika pri radu",
+          "uništavanje sitnih proizvođača",
+          "nova sredstva za rad i nova energija"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "nrr93u",
+        "question": "U informatičkom poduzeću hijerarhiju i subordinaciju zamjenjuje:",
+        "options": [
+          "suradnja i međuzavisnost",
+          "jača birokratska kontrola",
+          "strogi centralizam odlučivanja",
+          "nadzor vlasnika nad radom"
+        ],
+        "correct": 0
+      }
+    ],
+    "fillBlanks": [
+      {
+        "id": "x34tlm",
+        "sentence": "Razdvajanje vlasništva i posjeda nad kapitalom razvija se u _______ društvima.",
+        "answer": "dioničkim",
+        "hint": "upravitelji i vlasnici"
+      },
+      {
+        "id": "gqw5mp",
+        "sentence": "Ključan izum industrijskog poduzeća bio je _______ stroj.",
+        "answer": "parni",
+        "hint": "nova energija"
+      },
+      {
+        "id": "qjrbpr",
+        "sentence": "Individualizacija, informatizacija i _______ su karakteristike informatičkog poduzeća.",
+        "answer": "internacionalizacija",
+        "hint": "radi regionalno, misli globalno"
+      }
+    ],
+    "learn": {
+      "id": "dj4w8x",
+      "title": "Oblici organizacije proizvodnje",
+      "content": "\n<h3>Jednostavna kooperacija</h3>\n<ul>\n<li>spajanje većeg broja proizvođača istih uporabnih vrijednosti pod nadzorom i organizacijom jednoga;</li>\n<li>ručni rad, bez podjele rada (svatko sam obavlja cijeli posao, neovisni su jedan o drugom);</li>\n<li>ušteda u materijalu, prostoru, energiji, zajedničko korištenje alata, izmjena iskustava;</li>\n<li>veća i jeftinija ukupna proizvodnja.</li>\n</ul>\n<h3>Manufakturna proizvodnja (složena kooperacija)</h3>\n<ul>\n<li>spajanje kooperanata iz prethodne faze u više oblike udruživanja;</li>\n<li>raznovrsni proizvođači ili veći broj istorodnih proizvođača pod nadzorom organizatora-vlasnika; razlikuje se <em>heterogena</em> i <em>organska</em> manufaktura;</li>\n<li>napredak: razvitak podjele rada i razvitak sredstava za proizvodnju;</li>\n<li>pojava radnika — zbog podjele rada postaje ovisan o vlasniku sredstava za proizvodnju;</li>\n<li>nastaju novi proizvodi, raste produktivnost rada i ukupna društvena proizvodnja.</li>\n</ul>\n<h3>Industrijsko poduzeće (od pol. 18. do pol. 19. st.)</h3>\n<ul>\n<li>industrijska proizvodnja bila je osnovna prekretnica: nastala je <strong>krupna robna proizvodnja</strong>; ključan je <strong>parni stroj</strong> — novi oblik energije i tehnološke promjene;</li>\n<li>industrijalac (vlasnik sredstava) angažira veći broj radnika (najamna radna snaga) koji su ujedno temeljni potrošači;</li>\n<li>pozitivno: povećan opseg i produktivnost rada, smanjeni troškovi, olakšan napor, nova sredstva za rad;</li>\n<li>negativno: slabije plaćena radna snaga, smanjeno zapošljavanje, duže radno vrijeme, uništavanje sitnih proizvođača, sve veće socijalne suprotnosti.</li>\n</ul>\n<h3>Mehanizirano poduzeće (od pol. 19. do pol. 20. st.)</h3>\n<ul>\n<li>organizacijski oblik proizvodnje u masovnom društvu; izuzetno velika poduzeća traže stalna ulaganja, privlače druga poduzeća i slobodne kapitale, građane-ulagače — <strong>formiranje dioničkog društva</strong>;</li>\n<li>tri skupine operacija: planiranje, organizacija, kontrola (Ford — tekuća vrpca, Taylor — organizacija rada);</li>\n<li>utjecaj znanosti povećao efikasnost: tekuća vrpca, standardizacija i tipizacija proizvodnje, elektrifikacija i mehanizacija, podjela rada, hijerarhijski odnosi, praćenje poslovanja, stimulativno plaćanje i udio radnika u uspjehu poduzeća;</li>\n<li>povećanje proizvodnje, uspostava kolektivističkog društva;</li>\n<li><strong>uloga države</strong>: vlasnik značajnih dijelova prirodnog i društvenog bogatstva, mjere ekonomske politike, raspodjela i potrošnja putem poreza i nameta (akumulacija i usmjeravanje novca); dio ide socijalno ugroženima — <strong>država blagostanja</strong> ili masovno društvo zapadnog tipa: razrađeno socijalno osiguranje, mnogo besplatnih usluga, težnja punoj zaposlenosti, izjednačavanje prihoda poreznom politikom, podržavanje određenih grana;</li>\n<li>koncentracija i centralizacija kapitala; jačaju dionička društva; <strong>razdvajanje vlasništva nad kapitalom</strong> (vlasnici prisvajaju dividende) <strong>i posjeda nad kapitalom</strong> (upravitelji, unajmljeni profesionalci);</li>\n<li><strong>birokracija</strong> jača raspolaganjem društvenim proizvodom; karakteristična za kolektivistički način proizvodnje;</li>\n<li>pozitivne tendencije kolektivizma: ekstenzivan rast proizvodnje, puna zaposlenost, zdravstvena zaštita, školstvo; slabosti: država blagostanja je skupa i opterećuje privredu, velik porast potrošnje, rastu transferna davanja koja stimuliraju smanjenje radnog napora, stagnacija u privredi, rast cijena, nezaposlenost.</li>\n</ul>\n<h3>Informatičko poduzeće (od sredine 20. st. do danas)</h3>\n<ul>\n<li>TV, kompjuter, robot, telefaks, sateliti, nuklearna energija; podložnost brzim promjenama; elektronska tehnologija, visokosofisticiran rad, visokoobrazovani stručni živi rad;</li>\n<li>tri osnovne karakteristike: <strong>individualizacija</strong> (ne podnosi masovnost, cijeni kreativnost pojedinca), <strong>informatizacija</strong> i <strong>internacionalizacija</strong> („radi regionalno, a misli globalno\");</li>\n<li>poduzeća su manja i fleksibilnija radi lakše prilagodbe; hijerarhija i subordinacija zamjenjuju se suradnjom i međuzavisnošću (mrežna samouprava).</li>\n</ul>\n<p><strong>Prisutnost informatičkog razdoblja očituje se u:</strong> smanjenju troškova i boljoj organizaciji materijalne proizvodnje uporabom informatičke tehnologije (ekonomiziranje); novim materijalima i energijama; mogućnosti nabave proizvoda izravno od proizvođača (eliminira tržišnu anarhiju); afirmaciji individualne sposobnosti i kreativnosti (manje značenje administracije i birokracije); povratnom učinku na razvoj i primjenu novih znanja; demokratizaciji društva (više subjekata odlučivanja, jačanje regionalnog i lokalnog odlučivanja, ukidanje centralizma); liberalizaciji domaćih i inozemnih odnosa. Takva je informatizacija neravnopravno raspoređena — pretežno u razvijenim zemljama.</p>\n"
+    },
+    "id": "nqg0no"
+  }
+};
+
+if (typeof window !== 'undefined') { window.pePfriM1 = pePfriM1; }
+if (typeof module !== 'undefined' && module.exports) { module.exports = pePfriM1; }

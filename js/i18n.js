@@ -1,6 +1,6 @@
 // ===== Sokrat Study — UI i18n (HRV program; vidi docs/archive/HRV_PLAN.md, Cigla 5) =====
 // Lagani rječnik SUČELJA (NE sadržaja — sadržaj je već jednojezičan po datoteci/programu).
-// Jezik se bira po AKTIVNOM PROGRAMU: predmet iz "hospitality-management-hr" → 'hr', inače 'en'.
+// Jezik se bira po AKTIVNOM PROGRAMU: program s `lang: 'hr'` u katalogu → 'hr', inače 'en'.
 //
 // Korištenje:
 //   - statički HTML: <span data-i18n="nav.flashcards">Flashcards</span>  → applyTranslations() postavi tekst
@@ -902,7 +902,6 @@
     'loading.subject': { en: 'Loading subject…', hr: 'Učitavanje predmeta…' }
   };
 
-  const HR_PROGRAM = 'hospitality-management-hr';
   const LS_KEY = 'sokrat-ui-lang';   // GLOBALNI izbor jezika sučelja (master); sadržaj se NE dira
 
   function readStored() {
@@ -1009,7 +1008,9 @@
     if (readStored()) return;                 // korisnik je već odlučio → ne diraj
     if (subjectId && typeof SokratCatalog !== 'undefined') {
       const s = SokratCatalog.getSubject(subjectId);
-      if (s && SokratCatalog.isInProgram(s, HR_PROGRAM)) setUiLang('hr', true);
+      // Jezik nosi PROGRAM (`lang` u katalogu), ne zakucano ime — do 2026-11-14 je ovdje stajao
+      // samo MUH, pa bi svaki novi HR program (MOR) tiho dobio englesko sučelje.
+      if (s && SokratCatalog.uiLangOf(s) === 'hr') setUiLang('hr', true);
     }
   }
 

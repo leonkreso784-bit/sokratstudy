@@ -68,6 +68,9 @@ test('Learn section has no horizontal overflow on iPhone widths', async ({ page 
 
   const subjects = await getSubjectsWithContent(page);
   expect(subjects.length).toBeGreaterThan(0);
+  // Test obilazi SVAKI predmet iz kataloga, pa mu rok raste s katalogom: fiksnih 120 s pao je na CI-ju
+  // (landscape) kad je katalog narastao 50 -> 56 (PFRI, 2026-11-16). ~5 s po predmetu + start.
+  testInfo.setTimeout(30000 + subjects.length * 5000);
 
   const deviceWidth = page.viewportSize().width;
   const report = [];
