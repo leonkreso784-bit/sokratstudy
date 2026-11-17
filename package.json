@@ -58,6 +58,7 @@
     "check:mcp-rewrite": "node scripts/check-mcp-rewrite.js",
     "deploy:function": "node scripts/deploy-function.js",
     "sql:staging": "node scripts/sql-staging.js",
+    "check:sql-tijela": "node scripts/check-sql-tijela.js",
     "mcp:probe": "node scripts/mcp-probe.js",
     "css:debt": "node scripts/css-debt.js",
     "css:diff": "node scripts/css-diff.js",
