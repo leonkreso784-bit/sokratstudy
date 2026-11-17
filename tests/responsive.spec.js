@@ -92,10 +92,16 @@ test('Learn section has no horizontal overflow on iPhone widths', async ({ page 
     const tag = `${testInfo.project.name} · ${s.subjectId}`;
     report.push({ tag, vw: m.vw, innerWidth: m.innerWidth, docScrollW: m.docScrollW, pageOverflow: m.pageOverflow, self: m.selfOverflow, beyond: m.beyond });
 
-    await page.screenshot({
-      path: path.join(SHOT_DIR, `${testInfo.project.name}__${s.subjectId}.png`),
-      fullPage: true,
-    });
+    // Snimka je PRILOG za otklanjanje grešaka, ne tvrdnja. Learn najvećih predmeta (PFRI, 2026-11-17)
+    // zna biti previsok za fullPage capture u CI Chromiumu ("Unable to capture screenshot") — tada
+    // snimamo samo vidljivi dio; mjera prelijevanja iznad se time ne mijenja.
+    const shot = path.join(SHOT_DIR, `${testInfo.project.name}__${s.subjectId}.png`);
+    try {
+      await page.screenshot({ path: shot, fullPage: true });
+    } catch (e) {
+      console.log(`  (fullPage snimka nije uspjela za ${tag} — snimam vidljivi dio: ${String(e.message).split('\n')[0]})`);
+      await page.screenshot({ path: shot });
+    }
   }
 
   // Ispis čitljivog izvještaja
