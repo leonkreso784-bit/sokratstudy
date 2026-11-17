@@ -64,6 +64,21 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     assert.ok(/JE_PROD \? SITE \+ '\/mcp'/.test(brana) && brana.includes("const SITE = 'https://www.sokratstudy.com'"), 'check-edge-functions više ne očekuje www.sokratstudy.com/mcp');
   });
 
+  await test('① javne upute (ai.html, imenik): ista adresa i isti koraci sučelja kao gumb', () => {
+    // ai.html = „documentation URL" u Claudeovom imeniku. Ponavlja korake iz `connectAi.*` u pregledniku
+    // koji nema ovaj modul; ako se adresa ili sučelje promijeni samo na jednom mjestu, upute lažu.
+    const ai = fs.readFileSync(path.join(KORIJEN, 'ai.html'), 'utf8');
+    const adrese = [...ai.matchAll(/<code data-ai-addr>([^<]*)<\/code>/g)].map((m) => m[1]);
+    assert.deepStrictEqual(adrese, ['https://www.sokratstudy.com/mcp', 'https://www.sokratstudy.com/mcp'], 'adresa u ai.html (EN + HR)');
+    assert.strictEqual(ucitaj(null)._adresaKonektora(null), adrese[0]);
+    const i18n = fs.readFileSync(path.join(KORIJEN, 'js', 'i18n.js'), 'utf8');
+    for (const izraz of ['Add custom connector', 'Continue → Add', 'Settings → Apps → Advanced settings', 'Developer mode', 'Create app']) {
+      assert.ok(i18n.includes(izraz), 'gumb više ne kaže „' + izraz + '"');
+      const [en, hr] = ai.split('<div class="jezik" lang="hr">');
+      assert.ok(en.includes(izraz) && hr.includes(izraz), 'ai.html ne kaže „' + izraz + '" u oba jezika');
+    }
+  });
+
   await test('① pokvaren override NEMA adrese: http i smeće ne prolaze', () => {
     assert.strictEqual(ucitaj(null)._adresaKonektora({ url: 'http://evil.example' }), null, 'http adresa prošla');
     assert.strictEqual(ucitaj(null)._adresaKonektora({ url: 'nije adresa' }), null);

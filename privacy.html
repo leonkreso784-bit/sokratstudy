@@ -6,28 +6,28 @@
     <title data-i18n="legal.title.privacy">Privacy Policy — Sokrat Study</title>
     <meta name="description" content="Privacy Policy for Sokrat Study — what data we collect, how we use it, and your rights (GDPR).">
     <link rel="canonical" href="https://www.sokratstudy.com/privacy.html">
-    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261117182025">
+    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261117232815">
     <!-- paleta: GENERIRAN izvadak tokena iz bundlea; MORA prije legal.css -->
-    <link rel="stylesheet" href="css/tokens.static.css?v=20261117182025">
-    <link rel="stylesheet" href="css/legal.css?v=20261117182025">
+    <link rel="stylesheet" href="css/tokens.static.css?v=20261117232815">
+    <link rel="stylesheet" href="css/legal.css?v=20261117232815">
 
     <!-- Cookie consent + Google Analytics (Consent Mode v2; default=denied zivi u js/consent.js, D1/CSP) -->
-    <link rel="stylesheet" href="css/consent.css?v=20261117182025">
+    <link rel="stylesheet" href="css/consent.css?v=20261117232815">
     <!-- F3/1: i18n.js PRIJE consent.js (oba su defer, izvršavaju se redom) — cookie-traka tekst uzima iz `window.t`. -->
-    <script src="js/i18n.js?v=20261117182025" defer></script>
-    <script src="js/consent.js?v=20261117182025" defer></script>
+    <script src="js/i18n.js?v=20261117232815" defer></script>
+    <script src="js/consent.js?v=20261117232815" defer></script>
     <!-- ADR-034: štipanje s dva prsta gasi JS, jer Safari metu ignorira — zašto piše u js/no-zoom.js -->
-    <script src="js/no-zoom.js?v=20261117182025" defer></script>
+    <script src="js/no-zoom.js?v=20261117232815" defer></script>
 </head>
 <body>
 <!-- F1/5 (2026-09-06): tema se odlučuje PRIJE prvog crtanja, isto kao u index.html — boot.js je
      SINKRON (bez defer). `data-theme` u markupu je svijetla zadana samo bez JS-a; s JS-om odlučuje
      spremljeni izbor, inače uređaj (`prefers-color-scheme`). Do ove cigle stranica nije imala ni
      atribut ni skriptu: korisnik na tamnom telefonu dobivao je crn katalog i bijela Pravila. -->
-<script src="js/boot.js?v=20261117182025"></script>
+<script src="js/boot.js?v=20261117232815"></script>
     <header class="legal-nav">
         <!-- `alt=""`: znak stoji uz vidljivo ime u istoj poveznici; opisan alt bi čitač ekrana izgovorio dvaput. -->
-        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261117182025" alt="">Sokrat Study</a>
+        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261117232815" alt="">Sokrat Study</a>
         <div class="legal-nav-actions">
             <button type="button" class="legal-back legal-lang" data-action="toggleUiLang" data-i18n-aria="legal.lang" aria-label="Language / Jezik">
                 <span class="jezik" lang="en">EN</span><span class="jezik" lang="hr">HR</span>
@@ -41,7 +41,7 @@
              Blokovi moraju imati ISTI oblik (naslovi · odlomci · stavke · poveznice) — `npm run check:i18n`. -->
         <div class="jezik" lang="en">
             <h1>Privacy Policy</h1>
-            <p class="legal-updated">Last updated: 15 September 2026 (email updates, sign-up questionnaire and profile added)</p>
+            <p class="legal-updated">Last updated: 17 November 2026 (AI apps you connect added)</p>
 
             <p>Sokrat Study ("we", "us") is a free study platform available at
             <a href="https://www.sokratstudy.com">www.sokratstudy.com</a>, operated by
@@ -173,17 +173,45 @@
                     <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a> — we respond within 30 days.</li>
             </ul>
 
-            <h2>8. Children</h2>
+            <h2>8. AI apps you connect (Sokrat connector)</h2>
+            <p>If you choose to, you can connect your own AI app (for example Claude or ChatGPT) to your account
+            through the <strong>Sokrat connector</strong>, so that it builds study materials for you. You connect it
+            yourself: you sign in on our site and approve access on our page. How it works is described on
+            <a href="ai.html">Connect your AI</a>.</p>
+            <ul>
+                <li><strong>What the AI app can reach:</strong> only your own shelves and personal materials — it can
+                    read them, build new materials and change them when you ask. It cannot reach the public catalogue,
+                    anyone else’s materials, your email address, password, profile or study progress.</li>
+                <li><strong>What we receive:</strong> only what the AI app sends through the connector — the material it
+                    builds (lesson text, flashcards, questions). We <strong>never</strong> receive your conversation
+                    with the AI, or files you give it. When the AI reads one of your materials, we send that material
+                    to the AI app.</li>
+                <li><strong>What we store:</strong> a record of the connection (which app, and when you approved it);
+                    drafts the AI is building, deleted automatically after 7 days without changes or as soon as the
+                    material is submitted; a short note linking a submitted draft to its material, deleted after 7 days;
+                    a count of the AI’s recent write calls, used only to limit their rate and deleted after 1 day.
+                    When the AI changes an existing material, the previous version is kept in that material’s history,
+                    so the change can be undone. Error logs contain only the tool name and an error code —
+                    never your content or sign-in details.</li>
+                <li><strong>The AI provider:</strong> the company behind your AI app (for example Anthropic or OpenAI)
+                    processes your conversation under its own privacy policy. It is a separate controller; we have no
+                    access to that conversation.</li>
+                <li><strong>Disconnecting:</strong> <em>Profile → Connected AI apps → Disconnect</em> works at once.
+                    Deleting your account also removes every connection and every draft. The legal basis is
+                    <strong>performance of a contract</strong> (Art. 6(1)(b) GDPR) — the feature you ask for.</li>
+            </ul>
+
+            <h2>9. Children</h2>
             <p>The platform is intended for university and secondary-school students. You need to be
             <strong>at least 16</strong> to create an account, and you confirm this when you sign up. We do not
             knowingly collect data from children under 16; if you believe a child under 16 has created an
             account, contact us and we will delete it.</p>
 
-            <h2>9. Changes to this policy</h2>
+            <h2>10. Changes to this policy</h2>
             <p>We may update this policy as the platform evolves. Material changes will be announced on
             the website. The date above always reflects the latest version.</p>
 
-            <h2>10. Contact</h2>
+            <h2>11. Contact</h2>
             <p>Data controller: Leon Kreso ·
             <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a> ·
             <a href="contact.html">Contact page</a></p>
@@ -191,7 +219,7 @@
 
         <div class="jezik" lang="hr">
             <h1>Pravila privatnosti</h1>
-            <p class="legal-updated">Zadnja izmjena: 15. rujna 2026. (dodane obavijesti mailom, upitnik pri registraciji i profil)</p>
+            <p class="legal-updated">Zadnja izmjena: 17. studenoga 2026. (dodane AI aplikacije koje povežeš)</p>
 
             <p>Sokrat Study („mi“) je besplatna platforma za učenje dostupna na
             <a href="https://www.sokratstudy.com">www.sokratstudy.com</a>, kojom upravlja
@@ -318,17 +346,43 @@
                     <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a> — odgovaramo u roku od 30 dana.</li>
             </ul>
 
-            <h2>8. Djeca</h2>
+            <h2>8. AI aplikacije koje povežeš (Sokratov konektor)</h2>
+            <p>Ako želiš, svoju AI aplikaciju (na primjer Claude ili ChatGPT) možeš povezati sa svojim računom
+            preko <strong>Sokratova konektora</strong>, kako bi ti izrađivala materijale za učenje. Povezuješ je sam:
+            prijaviš se na našoj stranici i odobriš pristup na našoj stranici. Kako to radi opisano je na stranici
+            <a href="ai.html">Poveži svoj AI</a>.</p>
+            <ul>
+                <li><strong>Do čega AI aplikacija dolazi:</strong> samo do tvojih polica i osobnih materijala — može ih
+                    čitati, izrađivati nove materijale i mijenjati ih kad to tražiš. Ne dolazi do javnog kataloga, tuđih
+                    materijala, tvoje e-mail adrese, lozinke, profila ni napretka u učenju.</li>
+                <li><strong>Što primamo:</strong> samo ono što AI aplikacija pošalje kroz konektor — materijal koji izrađuje
+                    (tekst lekcije, kartice, pitanja). Tvoj razgovor s AI-jem ni datoteke koje mu daš <strong>nikad</strong>
+                    ne primamo. Kad AI pročita neki tvoj materijal, taj materijal šaljemo AI aplikaciji.</li>
+                <li><strong>Što spremamo:</strong> zapis o vezi (koja aplikacija i kada si je odobrio); nacrte koje AI
+                    izrađuje, koji se brišu sami nakon 7 dana bez izmjena ili čim je materijal predan; kratku bilješku koja
+                    predani nacrt veže uz materijal, briše se nakon 7 dana; broj nedavnih AI upisa, samo radi ograničenja
+                    učestalosti, briše se nakon 1 dana. Kad AI izmijeni postojeći materijal, prethodna inačica ostaje u
+                    povijesti tog materijala, kako bi se izmjena mogla poništiti. Zapisi o greškama sadrže samo naziv
+                    alata i kod greške — nikad tvoj sadržaj ni podatke za prijavu.</li>
+                <li><strong>Pružatelj AI-ja:</strong> tvrtka koja stoji iza tvoje AI aplikacije (na primjer Anthropic ili
+                    OpenAI) obrađuje tvoj razgovor prema vlastitim pravilima privatnosti. Ona je zaseban voditelj obrade;
+                    mi tom razgovoru nemamo pristup.</li>
+                <li><strong>Odspajanje:</strong> <em>Profil → Povezani AI-jevi → Prekini vezu</em> djeluje odmah. Brisanje
+                    računa uklanja i svaku vezu i svaki nacrt. Pravna osnova je <strong>izvršenje ugovora</strong>
+                    (čl. 6. st. 1. t. (b) GDPR-a) — mogućnost koju tražiš.</li>
+            </ul>
+
+            <h2>9. Djeca</h2>
             <p>Platforma je namijenjena studentima i srednjoškolcima. Za izradu računa moraš imati
             <strong>najmanje 16 godina</strong>, što potvrđuješ pri registraciji. Svjesno ne prikupljamo podatke djece
             mlađe od 16 godina; ako misliš da je dijete mlađe od 16 godina napravilo račun, javi nam se i obrisat ćemo
             ga.</p>
 
-            <h2>9. Izmjene ovih pravila</h2>
+            <h2>10. Izmjene ovih pravila</h2>
             <p>Ova pravila možemo mijenjati kako se platforma razvija. Bitne izmjene objavit ćemo na stranici. Datum na
             vrhu uvijek odgovara najnovijoj inačici.</p>
 
-            <h2>10. Kontakt</h2>
+            <h2>11. Kontakt</h2>
             <p>Voditelj obrade: Leon Kreso ·
             <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a> ·
             <a href="contact.html">Stranica za kontakt</a></p>

@@ -44,6 +44,10 @@ testirano, što slijedi.
   zna biti odbijen → SQL Editor uz Leonovu riječ, sa `setEOL(LF)` da tijela ostanu md5-ista · `git checkout --ours`
   uzima CIJELU datoteku i briše čiste izmjene s `main`-a (pao `verify` na broju predmeta) → `merge -X ours` · hook se
   uključuje PRIJE OAuth-a, inače AI-token kratko nosi punu ulogu `authenticated`. Ostaje ⑥ i kartica od 1 819 znakova.
+- **„Poveži AI" + Claudeov imenik (17.11.)** — gumb s PROD adresom i redak u herou otišli su na `main` (`bdad6e9`) **bez
+  previewa**: `git push origin HEAD:main` u pozadini, a ja sam za trajanja pre-push preflighta (~10 min) commitao na novu
+  granu u istom stablu. Sadržajno ispravno, proces prekršen → push na `main` samo kao eksplicitni SHA. Imenik (grana
+  `feat/imenik`): `ai.html` + privatnost §8 + FAQ + `workflow/CLAUDE_IMENIK.md`. Predaje Leon, nakon testa svih alata.
 
 ## 2026-11-16 (OPUS, stablo `sokratstudy.pravri`, grana `feat/pravri`) — drugi fakultet: PFRI, 1. godina
 

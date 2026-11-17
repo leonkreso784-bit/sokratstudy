@@ -6,6 +6,7 @@ const PAGES = [
   { url: '/terms.html', h1: 'Terms of Use' },
   { url: '/faq.html', h1: 'Frequently Asked Questions' },
   { url: '/contact.html', h1: 'Contact' },
+  { url: '/ai.html', h1: 'Connect your AI to Sokrat' },
 ];
 
 for (const p of PAGES) {
@@ -66,6 +67,7 @@ for (const [shema, tema] of [['dark', 'carbon'], ['light', 'academic']]) {
 // blok ikad ušao u stranicu dok `<html>` još nije rekao hrvatski (bljesak).
 // Od F3/1 ③d su sve četiri pravne stranice dvojezične — tvrdnja ispod traži da popis ostane == PAGES.
 const DVOJEZICNE = [
+  { url: '/ai.html', h1: { en: 'Connect your AI to Sokrat', hr: 'Poveži svoj AI sa Sokratom' }, naslov: { en: 'Connect your AI — Sokrat Study', hr: 'Poveži svoj AI — Sokrat Study' } },
   { url: '/contact.html', h1: { en: 'Contact', hr: 'Kontakt' }, naslov: { en: 'Contact — Sokrat Study', hr: 'Kontakt — Sokrat Study' } },
   { url: '/faq.html', h1: { en: 'Frequently Asked Questions', hr: 'Česta pitanja' }, naslov: { en: 'FAQ — Sokrat Study', hr: 'Česta pitanja — Sokrat Study' } },
   { url: '/privacy.html', h1: { en: 'Privacy Policy', hr: 'Pravila privatnosti' }, naslov: { en: 'Privacy Policy — Sokrat Study', hr: 'Pravila privatnosti — Sokrat Study' } },

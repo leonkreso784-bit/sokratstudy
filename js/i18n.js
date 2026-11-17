@@ -681,6 +681,7 @@
     // pravnih stranica NIJE ovdje nego u jezičnim blokovima same stranice (`.jezik[lang]`).
     'legal.lang': { en: 'Language: English / Croatian', hr: 'Jezik: hrvatski / engleski' },
     'legal.back': { en: '← Back to app', hr: '← Natrag u aplikaciju' },
+    'legal.title.ai': { en: 'Connect your AI — Sokrat Study', hr: 'Poveži svoj AI — Sokrat Study' },
     'legal.title.contact': { en: 'Contact — Sokrat Study', hr: 'Kontakt — Sokrat Study' },
     'legal.title.faq': { en: 'FAQ — Sokrat Study', hr: 'Česta pitanja — Sokrat Study' },
     'legal.title.privacy': { en: 'Privacy Policy — Sokrat Study', hr: 'Pravila privatnosti — Sokrat Study' },

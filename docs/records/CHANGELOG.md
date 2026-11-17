@@ -5,6 +5,13 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+- **Claudeov imenik — materijali za prijavu (grana `feat/imenik`, 17.11.)** — anketa 17.11. Javne upute
+  `ai.html` (EN/HR: što treba, spajanje Claudea i ChatGPT-a, što tražiti, što AI smije, odspajanje, istekao zahtjev) ·
+  `privacy.html` **§8 AI aplikacije** (što primamo, što spremamo i koliko: nacrt 7 d, bilješka predaje 7 d, brojač
+  upisa 1 d; pružatelj AI-ja = zaseban voditelj; brisanje računa kaskadno briše veze, izmjereno u shemi) · FAQ kartica ·
+  `docs/workflow/CLAUDE_IMENIK.md` (odgovori za 10 koraka portala, listing 146/200 i 1289/2000). Brana:
+  `connect-ai.test.js` — adresa i nazivi sučelja u `ai.html` == gumb. Stranica upisana u legal/phone/zoom/kontrast/paletu.
+  **Predaje Leon**; prije toga svaki alat isproban u Claudeu na PROD-u (korak 8).
 - **„Poveži AI" (grana `feat/povezi-ai`, 17.11.)** — Leon: *„cijeli taj proces spajanja mora biti puno jednostavniji"*.
   Na PROD-u gumba NIJE BILO (`connect-ai.js` `PRODUKCIJA = null`, ograda do ⑥ ostala) → adresa `www.sokratstudy.com/mcp`.
   Treći ulaz: redak u herou ispod vrata; paket `connect` stiže tek na klik (naslovnica 0 B više). Upute za Claude po

@@ -109,7 +109,7 @@ function walk(dir, out = []) {
    starim indigom — a upravo su te kartice ono što posjetitelj prvo vidi.
    Isti razlog vrijedi za pravne stranice: one ne učitavaju bundle, pa im je paleta
    jedino ovdje vidljiva. */
-const HTML_FILES = ['index.html', 'privacy.html', 'terms.html', 'faq.html', 'contact.html']
+const HTML_FILES = ['index.html', 'privacy.html', 'terms.html', 'faq.html', 'contact.html', 'ai.html']
   .map((f) => path.join(ROOT, f))
   .filter((f) => fs.existsSync(f));
 

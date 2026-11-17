@@ -68,6 +68,7 @@ const DOKUMENTI = {
     'terms.html': { gdje: 'ova suita (①/3c)', ekrani: ['terms'] },
     'faq.html': { gdje: 'ova suita (①/3c)', ekrani: ['faq'] },
     'contact.html': { gdje: 'ova suita (①/3c)', ekrani: ['contact'] },
+    'ai.html': { gdje: 'ova suita (imenik, 17.11.)', ekrani: ['ai'] },
     'odjava.html': { gdje: 'ova suita (①/3c), bez tokena', ekrani: ['odjava'] }
 };
 

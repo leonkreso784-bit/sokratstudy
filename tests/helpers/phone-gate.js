@@ -130,7 +130,7 @@ const BEZ_IZREZA = {};
  * `odjava` se otvara BEZ tokena — tada stranica kaže da poveznica nije potpuna i ništa ne šalje
  * mreži. To je stanje u kojem je pravi posjetitelj najčešće i zatekne (istekao ili prepisan link).
  */
-const SAMOSTALNE = ['privacy', 'terms', 'faq', 'contact', 'odjava'];
+const SAMOSTALNE = ['privacy', 'terms', 'faq', 'contact', 'ai', 'odjava'];
 
 /**
  * Stanja stranice odobrenja koja mjerač OBILAZI (①/3b).

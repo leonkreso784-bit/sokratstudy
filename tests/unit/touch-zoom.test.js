@@ -102,7 +102,7 @@ console.log('\n=== ništa ne zumira: meta + touch-action + 16 px (F1/10 → F1/1
 
 // ⓪ META — šest stranica, jedna politika
 const APP = ['index.html', 'editor.html'];                                  // bundle + `--safe-*` → viewport-fit=cover
-const PRAVNE = ['contact.html', 'faq.html', 'privacy.html', 'terms.html']; // legal.css, bez safe-area
+const PRAVNE = ['ai.html', 'contact.html', 'faq.html', 'privacy.html', 'terms.html']; // legal.css, bez safe-area
 const OBAVEZNO = ['width=device-width', 'initial-scale=1.0', 'minimum-scale=1.0', 'maximum-scale=1.0', 'user-scalable=no'];
 
 for (const f of APP.concat(PRAVNE)) {

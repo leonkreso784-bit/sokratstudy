@@ -87,6 +87,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 | Dokument | Svrha |
 |---|---|
 | [MCP_TESTING.md](./workflow/MCP_TESTING.md) | Kako se testira MCP: staging računi, brane `mcp:*`, zamke suđenja, scenariji s pravim AI-jem |
+| [CLAUDE_IMENIK.md](./workflow/CLAUDE_IMENIK.md) | Prijava konektora u Claudeov imenik: preduvjeti, odgovori za svaki korak portala, tekstovi listinga |
 | [TESTING.md](./workflow/TESTING.md) | QA checklista + automatske provjere (verify, validatori, unit, Playwright, authed, CI) |
 | [CONTENT_GUIDE.md](./workflow/CONTENT_GUIDE.md) | Kako dodati predmet/lekciju (playbook) |
 | [CONTENT_INTAKE.md](./workflow/CONTENT_INTAKE.md) | Kako slagati profesorske materijale (PDF/JPG) za točnu ekstrakciju |

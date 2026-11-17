@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="academic">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title data-i18n="legal.title.ai">Connect your AI — Sokrat Study</title>
+    <meta name="description" content="Connect Claude or ChatGPT to Sokrat Study: your AI builds study materials (Learn, flashcards, quiz) from your notes, right on your shelf.">
+    <link rel="canonical" href="https://www.sokratstudy.com/ai.html">
+    <link rel="icon" type="image/png" href="assets/logo.svg?v=20261117232815">
+    <!-- paleta: GENERIRAN izvadak tokena iz bundlea; MORA prije legal.css -->
+    <link rel="stylesheet" href="css/tokens.static.css?v=20261117232815">
+    <link rel="stylesheet" href="css/legal.css?v=20261117232815">
+
+    <!-- Cookie consent + Google Analytics (Consent Mode v2; default=denied zivi u js/consent.js, D1/CSP) -->
+    <link rel="stylesheet" href="css/consent.css?v=20261117232815">
+    <!-- F3/1: i18n.js PRIJE consent.js (oba su defer, izvršavaju se redom) — cookie-traka tekst uzima iz `window.t`. -->
+    <script src="js/i18n.js?v=20261117232815" defer></script>
+    <script src="js/consent.js?v=20261117232815" defer></script>
+    <!-- ADR-034: štipanje s dva prsta gasi JS, jer Safari metu ignorira — zašto piše u js/no-zoom.js -->
+    <script src="js/no-zoom.js?v=20261117232815" defer></script>
+</head>
+<body>
+<!-- Javna dokumentacija konektora (Claudeov imenik traži „documentation URL", 17.11.). Upute za spajanje
+     ponavljaju korake iz `connectAi.*` u js/i18n.js — ondje je izvor; mijenjaš li sučelje, mijenjaj oboje
+     (brana: tests/unit/connect-ai.test.js — ista adresa i isti nazivi u sučelju). -->
+<script src="js/boot.js?v=20261117232815"></script>
+    <header class="legal-nav">
+        <!-- `alt=""`: znak stoji uz vidljivo ime u istoj poveznici; opisan alt bi čitač ekrana izgovorio dvaput. -->
+        <a class="legal-logo" href="/"><img src="assets/logo.svg?v=20261117232815" alt="">Sokrat Study</a>
+        <div class="legal-nav-actions">
+            <button type="button" class="legal-back legal-lang" data-action="toggleUiLang" data-i18n-aria="legal.lang" aria-label="Language / Jezik">
+                <span class="jezik" lang="en">EN</span><span class="jezik" lang="hr">HR</span>
+            </button>
+            <a class="legal-back" href="/" data-i18n="legal.back">&larr; Back to app</a>
+        </div>
+    </header>
+
+    <main class="legal">
+        <!-- Oba jezika u stranici — vidi se onaj iz `<html data-ui-lang>` (boot.js, prije crtanja).
+             Blokovi moraju imati ISTI oblik (naslovi · odlomci · stavke · poveznice) — `npm run check:i18n`. -->
+        <div class="jezik" lang="en">
+            <h1>Connect your AI to Sokrat</h1>
+            <p class="legal-updated">Last updated: 17 November 2026</p>
+
+            <p>The Sokrat connector lets <strong>your own AI app</strong> (Claude or ChatGPT) build study materials
+            for you on Sokrat Study. Give it your notes, a PDF or any text in the chat; it writes the lesson text
+            (Learn), flashcards, quiz questions and fill-in-the-blanks, and the finished material lands on your
+            shelf. Connector address: <code data-ai-addr>https://www.sokratstudy.com/mcp</code></p>
+
+            <div class="legal-card">
+                <h2>What you need</h2>
+                <ul>
+                    <li>A free Sokrat Study account — sign up at <a href="https://www.sokratstudy.com">www.sokratstudy.com</a>.</li>
+                    <li><strong>Claude</strong> (web, desktop or mobile). Works on every Claude plan; the free plan allows one custom connector.</li>
+                    <li>or <strong>ChatGPT</strong> Plus or higher, with Developer mode turned on.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Connect Claude</h2>
+                <ol>
+                    <li>Sign in to Sokrat first, in the same browser — then connecting takes one click.</li>
+                    <li>In Claude open <em>Settings → Connectors</em>. Top right: <em>Add → Add custom connector</em>.</li>
+                    <li>Name it <strong>Sokrat</strong>, paste the connector address above, then <em>Continue → Add</em>.</li>
+                    <li>Click <em>Connect</em>, then <em>Allow</em> on the Sokrat page.</li>
+                </ol>
+            </div>
+
+            <div class="legal-card">
+                <h2>Connect ChatGPT</h2>
+                <ol>
+                    <li>In ChatGPT open <em>Settings → Apps → Advanced settings</em> and turn on <em>Developer mode</em>.</li>
+                    <li>Click <em>Create app</em>.</li>
+                    <li>Paste the connector address above, leave <em>Authentication</em> on OAuth and create the app.</li>
+                    <li>Sign in with your Sokrat account and allow access.</li>
+                </ol>
+            </div>
+
+            <div class="legal-card">
+                <h2>What to ask</h2>
+                <p>Attach your notes or a PDF and write, for example:</p>
+                <ul>
+                    <li>“Make a Sokrat material from these notes.”</li>
+                    <li>“Add flashcards about the second chapter to my material Marketing.”</li>
+                    <li>“Undo the last change you made to Marketing.”</li>
+                </ul>
+                <p>Before it starts, the AI asks which shelf the material goes on and how deep it should be: a
+                summary, a full study script, or detailed exam preparation. It always covers the whole source.</p>
+            </div>
+
+            <div class="legal-card">
+                <h2>What the AI can and cannot do</h2>
+                <ul>
+                    <li><strong>Can:</strong> read your own shelves and materials; build a new material; change one of
+                        your materials when you ask; undo its last change to a material.</li>
+                    <li><strong>Works in a draft:</strong> you see nothing until the AI submits the whole material at once,
+                        never half of it. An unfinished draft disappears by itself after 7 days without changes.</li>
+                    <li><strong>Cannot:</strong> see the public catalogue or anyone else’s materials, publish anything,
+                        delete a whole material, or read your email, password, profile or study progress.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Disconnect</h2>
+                <p>In Sokrat, open <em>Profile → Connected AI apps</em> and click <strong>Disconnect</strong>. It works at
+                once: from that moment the app can no longer read or change your materials. You can also remove the
+                connector in your AI app’s settings.</p>
+            </div>
+
+            <div class="legal-card">
+                <h2>If connecting fails</h2>
+                <ul>
+                    <li><strong>“That did not work — please try again.”</strong> on the Sokrat page usually means the request expired:
+                        it is valid for about 10 minutes. Go back to your AI app and click <em>Connect</em> again.</li>
+                    <li><strong>The material is not on your shelf:</strong> ask the AI to continue its draft — it can see
+                        where it stopped.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Privacy and support</h2>
+                <p>What the connector stores and for how long is in section 8 of the
+                <a href="privacy.html">Privacy Policy</a>. Questions or a problem? Write to
+                <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a>.</p>
+            </div>
+        </div>
+
+        <div class="jezik" lang="hr">
+            <h1>Poveži svoj AI sa Sokratom</h1>
+            <p class="legal-updated">Zadnja izmjena: 17. studenoga 2026.</p>
+
+            <p>Sokratov konektor omogućuje <strong>tvojoj AI aplikaciji</strong> (Claude ili ChatGPT) da ti na Sokrat
+            Studyju izrađuje materijale za učenje. Daj mu bilješke, PDF ili bilo koji tekst u chatu; on napiše tekst
+            lekcije (Learn), kartice, kviz i dopune, a gotov materijal stiže na tvoju policu.
+            Adresa konektora: <code data-ai-addr>https://www.sokratstudy.com/mcp</code></p>
+
+            <div class="legal-card">
+                <h2>Što ti treba</h2>
+                <ul>
+                    <li>Besplatan Sokrat Study račun — registriraj se na <a href="https://www.sokratstudy.com">www.sokratstudy.com</a>.</li>
+                    <li><strong>Claude</strong> (web, desktop ili mobitel). Radi na svim Claude paketima; besplatni dopušta jedan vlastiti konektor.</li>
+                    <li>ili <strong>ChatGPT</strong> Plus ili više, s uključenim Developer modeom.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Poveži Claude</h2>
+                <ol>
+                    <li>Prvo se prijavi u Sokrat, u istom pregledniku — onda je spajanje jedan klik.</li>
+                    <li>U Claudeu otvori <em>Settings → Connectors</em>. Gore desno: <em>Add → Add custom connector</em>.</li>
+                    <li>Ime: <strong>Sokrat</strong>, zalijepi adresu konektora odozgo, pa <em>Continue → Add</em>.</li>
+                    <li>Klikni <em>Connect</em>, pa <em>Dopusti</em> na Sokratovoj stranici.</li>
+                </ol>
+            </div>
+
+            <div class="legal-card">
+                <h2>Poveži ChatGPT</h2>
+                <ol>
+                    <li>U ChatGPT-u otvori <em>Settings → Apps → Advanced settings</em> i uključi <em>Developer mode</em>.</li>
+                    <li>Klikni <em>Create app</em>.</li>
+                    <li>Zalijepi adresu konektora odozgo, <em>Authentication</em> ostavi na OAuth i napravi aplikaciju.</li>
+                    <li>Prijavi se svojim Sokrat računom i dopusti pristup.</li>
+                </ol>
+            </div>
+
+            <div class="legal-card">
+                <h2>Što tražiti</h2>
+                <p>Priloži bilješke ili PDF i napiši, na primjer:</p>
+                <ul>
+                    <li>„Napravi Sokrat materijal od ovih bilješki.“</li>
+                    <li>„Dodaj kartice o drugom poglavlju u moj materijal Marketing.“</li>
+                    <li>„Poništi zadnju izmjenu koju si napravio u Marketingu.“</li>
+                </ul>
+                <p>Prije početka AI te pita na koju policu ide materijal i koliko detaljan treba biti: sažetak, cijela
+                skripta ili detaljna priprema za ispit. Uvijek obuhvati cijeli izvor.</p>
+            </div>
+
+            <div class="legal-card">
+                <h2>Što AI smije, a što ne</h2>
+                <ul>
+                    <li><strong>Smije:</strong> čitati tvoje police i materijale; izraditi novi materijal; izmijeniti
+                        tvoj materijal kad to tražiš; poništiti svoju zadnju izmjenu materijala.</li>
+                    <li><strong>Radi u nacrtu:</strong> ne vidiš ništa dok AI ne preda cijeli materijal odjednom, nikad
+                        pola. Nedovršen nacrt sam nestane nakon 7 dana bez izmjena.</li>
+                    <li><strong>Ne smije:</strong> vidjeti javni katalog ni tuđe materijale, išta objaviti, obrisati cijeli
+                        materijal, ni čitati tvoj e-mail, lozinku, profil ili napredak u učenju.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Odspajanje</h2>
+                <p>U Sokratu otvori <em>Profil → Povezani AI-jevi</em> i klikni <strong>Prekini vezu</strong>. Djeluje
+                odmah: od tog trenutka aplikacija više ne može čitati ni mijenjati tvoje materijale. Konektor možeš
+                ukloniti i u postavkama svoje AI aplikacije.</p>
+            </div>
+
+            <div class="legal-card">
+                <h2>Ako spajanje ne uspije</h2>
+                <ul>
+                    <li><strong>„Nije uspjelo — pokušaj ponovno“</strong> na Sokratovoj stranici obično znači da je zahtjev
+                        istekao: vrijedi otprilike 10 minuta. Vrati se u AI aplikaciju i ponovno klikni <em>Connect</em>.</li>
+                    <li><strong>Materijala nema na polici:</strong> zamoli AI da nastavi svoj nacrt — vidi gdje je stao.</li>
+                </ul>
+            </div>
+
+            <div class="legal-card">
+                <h2>Privatnost i podrška</h2>
+                <p>Što konektor sprema i koliko dugo piše u odjeljku 8
+                <a href="privacy.html">Pravila privatnosti</a>. Pitanje ili problem? Piši na
+                <a href="mailto:sokrat@sokratstudy.com">sokrat@sokratstudy.com</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="legal-footer">
+        <nav>
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+            <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
+            <a href="faq.html" data-i18n="footer.faq">FAQ</a>
+            <a href="contact.html" data-i18n="footer.contact">Contact</a>
+            <a href="#" data-consent-settings data-i18n="footer.cookies">Cookie settings</a>
+        </nav>
+        <p data-i18n="footer.rights">&copy; 2026 Sokrat Study &middot; Leon Kreso. All rights reserved.</p>
+    </footer>
+</body>
+</html>
