@@ -5,7 +5,7 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 ---
 
 ## ADR-042 — Drugi fakultet (PFRI): sufiks `-pfri`, lekcije po modelu 50 + 50, u katalog samo predmet koji je prošao letvicu
-**Datum:** 2026-11-16 · **Status:** ✅ PRIMIJENJENO (plan izrade po fazama, Leon: „kreni") ·
+**Datum:** 2026-11-16 · **Status:** ✅ PRIMIJENJENO (plan izrade po fazama, Leon: „kreni") · **Na produkciji:** 2026-11-17 (`main` `0d4c4ce`) ·
 **Vezano:** [ADR-041](#adr-041) (zadnja posljedica: placement za novi fakultet), [ADR-022](#adr-022), ADR-020 (izvor je autoritet), ADR-027
 
 **Kontekst.** Pravni fakultet Sveučilišta u Rijeci, Integrirani studij prava, prvi je fakultet izvan FMTU-a. Gradivo su

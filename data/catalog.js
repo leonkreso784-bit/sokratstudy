@@ -1779,6 +1779,102 @@ const SOKRAT_CATALOG = {
         dataFormat: 'json'
       }
     },
+    {
+      id: 'eu-law-1-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Europsko pravo I',
+      shortName: 'EP1',
+      icon: 'fa-flag',
+      color: '#0369a1',
+      iconGradient: ['#0369a1', '#38bdf8'],
+      description: 'Europsko pravo I (PFRI): razvoj europske integracije, institucije EU, izvori i načela prava EU, odnos s nacionalnim pravom i sudska zaštita',
+      storageKey: 'eu-law-1-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep1PfriM1 + ep1PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-1-pfri/midterm-1.js',
+          'data/eu-law-1-pfri/midterm-2.js',
+          'data/eu-law-1-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep1PfriM1',
+          'second-midterm': 'ep1PfriM2',
+          'final': 'ep1PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'criminal-procedure-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Kazneno postupovno pravo',
+      shortName: 'KPP',
+      icon: 'fa-handcuffs',
+      color: '#86198f',
+      iconGradient: ['#86198f', '#e879f9'],
+      description: 'Kazneno postupovno pravo (PFRI): načela i subjekti kaznenog postupka, dokazi i radnje, istraživanje, optužnica, rasprava, presuda i pravni lijekovi',
+      storageKey: 'criminal-procedure-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign kppPfriM1 + kppPfriM2 + examPractice)
+        scripts: [
+          'data/criminal-procedure-pfri/midterm-1.js',
+          'data/criminal-procedure-pfri/midterm-2.js',
+          'data/criminal-procedure-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'kppPfriM1',
+          'second-midterm': 'kppPfriM2',
+          'final': 'kppPfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
+      id: 'eu-law-2-pfri',
+      programId: 'law-integrated-hr',
+      year: 3, semester: 1,
+      name: 'Europsko pravo II',
+      shortName: 'EP2',
+      icon: 'fa-euro-sign',
+      color: '#075985',
+      iconGradient: ['#075985', '#7dd3fc'],
+      description: 'Europsko pravo II (PFRI): europsko privatno pravo — izvori i usklađivanje, preuzimanje i učinci direktiva, ugovorno i potrošačko pravo EU-a, odgovornost proizvođača i države članice, zabrana diskriminacije i europsko stvarno pravo',
+      storageKey: 'eu-law-2-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ep2PfriM1 + ep2PfriM2 + examPractice)
+        scripts: [
+          'data/eu-law-2-pfri/midterm-1.js',
+          'data/eu-law-2-pfri/midterm-2.js',
+          'data/eu-law-2-pfri/final.js'
+        ],
+        resolve: {
+          'first-midterm': 'ep2PfriM1',
+          'second-midterm': 'ep2PfriM2',
+          'final': 'ep2PfriFinal'
+        },
+        dataFormat: 'json'
+      }
+    },
   ]
 };
 

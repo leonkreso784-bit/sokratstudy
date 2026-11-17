@@ -156,7 +156,12 @@ svih 14 predmeta i u bazi, `migrate-content.js`).
 | Rimsko privatno pravo | `roman-law-pfri` | 1/2 | 41 / 709 / 638 / 89 | dodan odjeljak o recepciji i kodifikacijama (OGZ 1853.) |
 | Ustavno pravo | `constitutional-law-pfri` | 1/2 | 24 / 341 / 355 / 177 | |
 | Politička ekonomija | `political-economy-pfri` | 1/2 | 38 / 300 / 329 / 119 | |
-| 15 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
+| Europsko pravo I | `eu-law-1-pfri` | 2/2 | 36 / 312 / 356 / 174 | kategorija „Primjena prava EU u RH" (Ustav RH gl. VIII., ZPP/ZKP/ZUS); četiri kruga recenzije |
+| Kazneno postupovno pravo | `criminal-procedure-pfri` | 2/2 | 27 / 1516 / 1343 / 399 | najveći predmet (JSON finala 1,9 MB); provjereno prema ZKP-u do NN 13/26; recenzija u tri dijela (A · B1 · B2), ispravci izravno u podacima (generator je jednokratan) |
+| Europsko pravo II | `eu-law-2-pfri` | 3/1 | 22 / 372 / 219 / 252 | europsko privatno pravo; ZZP s izmjenom NN 59/26, ZOO s izmjenom NN 69/26 (odgovornost proizvođača od 9. 12. 2026.) |
+| 12 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
+
+**Na produkciji od 2026-11-17**: 1. godina (`0d4c4ce`), Europsko pravo I, Kazneno postupovno i Europsko pravo II (`72c2ebc`); svih 9 predmeta i u bazi (`migrate-content.js`).
 
 ## Detaljni planovi (u ovoj mapi)
 - [ACCOUNTING_PLAN.md](./ACCOUNTING_PLAN.md) — analiza izvora + katalog vježbi (✅ done)
