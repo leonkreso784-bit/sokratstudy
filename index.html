@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link rel="stylesheet" href="styles.css?v=20260401b">
+    <link rel="stylesheet" href="styles.css?v=20260406b">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -61,6 +61,7 @@
             <div class="gradient-orb orb-3"></div>
             <div class="gradient-orb orb-4"></div>
             <div class="grid-overlay"></div>
+            <div class="noise-overlay"></div>
         </div>
 
         <!-- Landing Header -->
@@ -69,112 +70,164 @@
                 <div class="logo-wrapper"><img src="logo.png" alt="Sokrat Study Logo" class="logo-image"></div>
                 <span class="logo-text">Sokrat Study</span>
             </div>
-
+            <div class="header-badge">
+                <span class="badge-dot"></span>
+                <span>v2.0 &mdash; 6 Subjects Live</span>
+            </div>
         </header>
 
         <!-- Hero Section -->
         <main class="landing-hero">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>Free exam toolkit &mdash; 6 subjects ready</span>
-                </div>
                 <h1 class="hero-title">
-                    Study Smart.<br>
-                    <span class="gradient-text">Score Higher.</span>
+                    <span class="hero-line hero-line-1">Your Exam</span>
+                    <span class="hero-line hero-line-2">Prep <span class="gradient-text">Toolkit</span></span>
                 </h1>
                 <p class="hero-subtitle">
-                    Flashcards, quizzes, and in-depth lessons across 6 university subjects.
-                    Built for students who want results, not just notes.
+                    Master 6 university subjects with interactive flashcards, quizzes, and comprehensive study materials. 100% free, forever.
                 </p>
                 <div class="hero-actions">
                     <button class="cta-button primary" id="openStudyBtn">
-                        <i class="fas fa-book-open"></i>
                         <span>Start Studying</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
                     <button class="cta-button secondary" onclick="showAboutUs()">
-                        <i class="fas fa-info-circle"></i>
-                        <span>About Us</span>
+                        <span>Learn More</span>
                     </button>
                 </div>
             </div>
             
-            <!-- Hero Visual -->
+            <!-- Hero Visual — 3D Card Stack -->
             <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="float-card card-1">
-                        <i class="fas fa-brain"></i>
-                        <span>Learn</span>
+                <div class="hero-3d-scene">
+                    <div class="hero-card hero-card-back">
+                        <div class="hero-card-inner">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Progress</span>
+                            <div class="card-glow"></div>
+                        </div>
                     </div>
-                    <div class="float-card card-2">
-                        <i class="fas fa-layer-group"></i>
-                        <span>Flashcards</span>
+                    <div class="hero-card hero-card-mid">
+                        <div class="hero-card-inner">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Quiz</span>
+                            <div class="card-glow"></div>
+                        </div>
                     </div>
-                    <div class="float-card card-3">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>Quiz</span>
-                    </div>
-                    <div class="float-card card-4">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Progress</span>
+                    <div class="hero-card hero-card-front">
+                        <div class="hero-card-inner">
+                            <i class="fas fa-brain"></i>
+                            <span>Learn</span>
+                            <div class="hero-card-preview">
+                                <div class="preview-line"></div>
+                                <div class="preview-line short"></div>
+                                <div class="preview-line"></div>
+                                <div class="preview-line medium"></div>
+                            </div>
+                            <div class="card-glow"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Stats Bar -->
-        <div class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-num">6</span>
-                <span class="stat-label">Subjects</span>
+        <!-- Metrics Strip -->
+        <div class="metrics-strip">
+            <div class="metric">
+                <span class="metric-value">6</span>
+                <span class="metric-label">Subjects</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-num">400+</span>
-                <span class="stat-label">Questions</span>
+            <div class="metric">
+                <span class="metric-value">400+</span>
+                <span class="metric-label">Questions</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-num">5</span>
-                <span class="stat-label">Study Modes</span>
+            <div class="metric">
+                <span class="metric-value">5</span>
+                <span class="metric-label">Study Modes</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Free</span>
+            <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Free</span>
             </div>
         </div>
 
-        <!-- Features Section -->
+        <!-- How It Works -->
+        <section class="landing-how" aria-label="How it works">
+            <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+            <div class="steps-row">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-hand-pointer" aria-hidden="true"></i></div>
+                    <h3>Pick a Subject</h3>
+                    <p>Choose from 6 university courses covering tourism, business, and accounting</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-chevron-right" aria-hidden="true"></i></div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-book-reader" aria-hidden="true"></i></div>
+                    <h3>Study Your Way</h3>
+                    <p>Learn with lessons, flashcards, quizzes, or fill-in-the-blanks mode</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-chevron-right" aria-hidden="true"></i></div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                    <h3>Ace Your Exam</h3>
+                    <p>Track progress and master the material before exam day</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
         <section class="landing-features" aria-labelledby="features-heading">
-            <h2 id="features-heading" class="visually-hidden">App Features</h2>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-layer-group" aria-hidden="true"></i>
+            <h2 id="features-heading" class="section-title">Built for <span class="gradient-text">Students</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+                    <h3>6 Subjects</h3>
+                    <p>Tourism, Accounting, Marketing, E-Business, Entrepreneurship &amp; Hospitality</p>
                 </div>
-                <h3>6 Subjects Ready</h3>
-                <p>Tourism, Accounting, Marketing, E-Business, Entrepreneurship and Hospitality</p>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                    <h3>5 Study Modes</h3>
+                    <p>Learn, Flashcards, Quiz, Fill-in-Blanks and Progress tracking</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                    <h3>Works Everywhere</h3>
+                    <p>PWA — install on any device, works offline, fully responsive</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                    <h3>Privacy First</h3>
+                    <p>No account needed. No tracking. Your data stays on your device.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-bolt" aria-hidden="true"></i>
+        </section>
+
+        <!-- Trust Banner -->
+        <section class="landing-trust-banner" aria-label="Trust">
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-university" aria-hidden="true"></i>
+                    <span>Faculty of Tourism, Opatija</span>
                 </div>
-                <h3>5 Study Modes</h3>
-                <p>Learn, Flashcards, Quiz, Fill-in-Blanks and Progress &mdash; all in one place</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                <div class="trust-divider"></div>
+                <div class="trust-badge">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>No Account Required</span>
                 </div>
-                <h3>Works Everywhere</h3>
-                <p>Install as a PWA, works offline and fully optimized for mobile</p>
+                <div class="trust-divider"></div>
+                <div class="trust-badge">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                    <span>Always 100% Free</span>
+                </div>
             </div>
         </section>
 
         <!-- Landing Footer -->
         <footer class="landing-footer">
-            <p>Built with <i class="fas fa-heart"></i> for students by <strong>Leon Kreso</strong></p>
+            <p>Crafted with <i class="fas fa-heart" aria-hidden="true"></i> by <strong>Leon Kreso</strong> &mdash; FTHM Opatija</p>
         </footer>
     </section>
 

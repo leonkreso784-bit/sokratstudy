@@ -364,14 +364,27 @@
    ===================================================== */
 
 #learn .learn-card-content table {
-    width: max-content;
-    min-width: 100%;
-    border-collapse: collapse;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: collapse !important;
     margin: 14px 0;
     font-size: 0.85rem;
-    display: block;
+    display: table !important;
+    table-layout: auto;
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+#learn .learn-card-content .table-scroll-wrapper {
+    width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    margin: 14px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+#learn .learn-card-content .table-scroll-wrapper table {
+    margin: 0;
 }
 
 #learn .learn-card-content th,
@@ -379,7 +392,8 @@
     padding: 8px 10px;
     text-align: left;
     border-bottom: 1px solid var(--border);
-    white-space: nowrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Long tokens like formulas/URLs can otherwise overflow on smaller phones. */
@@ -399,6 +413,30 @@
     font-weight: 600;
 }
 
+/* Override any inline style on table cells */
+#learn .learn-card-content td[style],
+#learn .learn-card-content th[style] {
+    border-color: var(--border) !important;
+    padding: 8px 10px !important;
+}
+
+#learn .learn-card-content tr[style] {
+    background: rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Override inline styles on tip/formula boxes */
+#learn .learn-card-content .tip-box[style],
+#learn .learn-card-content .warning-box[style],
+#learn .learn-card-content .example-box[style],
+#learn .learn-card-content .formula-box[style] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#learn .learn-card-content [style*="font-size"] {
+    font-size: inherit !important;
+}
+
 #learn .learn-card-content tr:nth-child(even) {
     background: var(--bg-tertiary);
 }
@@ -414,6 +452,19 @@
     margin: 14px 0;
     border-radius: 10px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+    display: block;
+    object-fit: contain;
+}
+
+/* Catch ANY image inside learn cards, even from inline HTML */
+#learn .learn-card-content img {
+    max-width: 100% !important;
+    width: auto;
+    height: auto !important;
+    display: block;
+    border-radius: 10px;
+    margin: 14px auto;
+    box-sizing: border-box;
 }
 
 #learn .learn-zoomable {
@@ -709,7 +760,26 @@ body.modal-open {
     }
 
     #learn .learn-card-content table {
-        font-size: 0.82rem;
+        font-size: 0.78rem;
+    }
+    
+    #learn .learn-card-content th,
+    #learn .learn-card-content td {
+        padding: 6px 8px !important;
+        white-space: normal !important;
+        word-break: break-word;
+    }
+    
+    /* Force inline-styled font sizes to scale on mobile */
+    #learn .learn-card-content h4[style],
+    #learn .learn-card-content h3[style] {
+        font-size: 1rem !important;
+    }
+    
+    /* Ensure images with inline width don't overflow */
+    #learn .learn-card-content img[style] {
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
 

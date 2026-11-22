@@ -34,13 +34,15 @@
     background: var(--bg-secondary);
     padding: 1rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .stat-card:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
 }
 
 .stat-card i { font-size: 1.5rem; color: var(--primary); margin-bottom: 0.25rem; }
@@ -70,7 +72,7 @@
     padding: 1rem;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all var(--transition);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -83,7 +85,11 @@
 .category-btn:hover {
     border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
+}
+
+.category-btn:active {
+    transform: scale(0.97);
 }
 
 .category-btn.active {
@@ -119,9 +125,13 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: var(--transition);
+    transition: all var(--transition);
     min-height: var(--touch-target-large);
     width: 100%;
+}
+
+.action-btn:active {
+    transform: scale(0.97);
 }
 
 .action-btn.primary {

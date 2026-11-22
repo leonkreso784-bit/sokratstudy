@@ -70,7 +70,7 @@
     justify-content: center;
     align-items: center;
     padding: 1.25rem;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
     overflow-y: auto;
 }
 
@@ -82,7 +82,7 @@
 .flashcard-back {
     background: var(--bg-secondary);
     transform: rotateY(180deg);
-    border: 3px solid var(--secondary);
+    border: 2px solid var(--secondary);
 }
 
 .card-category {
@@ -151,8 +151,12 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: var(--transition);
+    transition: all var(--transition);
     min-height: var(--touch-target);
+}
+
+.control-btn:active {
+    transform: scale(0.96);
 }
 
 .control-btn.wrong {

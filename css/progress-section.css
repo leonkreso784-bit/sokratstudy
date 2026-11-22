@@ -21,7 +21,8 @@
     background: var(--bg-secondary);
     padding: 1.25rem;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
 }
 
 .progress-card.main {

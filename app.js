@@ -1452,8 +1452,22 @@ function renderLearnContent() {
     // Make all Learn images clickable and keyboard accessible.
     enhanceLearnImages(container);
 
+    // Wrap tables in scroll containers for mobile
+    wrapLearnTables(container);
+
     // Apply mobile class hooks once Learn cards are in the DOM.
     cleanupLearnContentForMobile();
+}
+
+function wrapLearnTables(container) {
+    if (!container) return;
+    container.querySelectorAll('.learn-card-content table').forEach(table => {
+        if (table.parentElement.classList.contains('table-scroll-wrapper')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll-wrapper';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+    });
 }
 
 function enhanceLearnImages(container) {
