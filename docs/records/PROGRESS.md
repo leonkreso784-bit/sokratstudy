@@ -5,6 +5,43 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-27 (OPUS, stablo `sokratstudy.pravri`) — PFRI 1. godina izmjerena protiv službenog silabusa; lokalno stanje izvan gita obnovljeno
+
+**Povod (Leon):** nastavak PFRI-ja, pa „ja bi završio cijelu prvu godinu" i „pretražiti po cijelom internetu
+možemo li naći još materijala s prve godine".
+**Nalaz o 1. godini:** nema više običnih predmeta — šest obveznih kolegija je izgrađeno i živo, a na Driveu od
+1. godine ostaju samo Engleski 1/2 i Seminar. Novog **studentskog** gradiva nema ni javno (indeksirano je tuđe —
+Split/Zagreb, ili iz 2008., ili piratske kopije udžbenika).
+**Što je nađeno umjesto toga:** službeni **izvedbeni plan kolegija 2026./2027.** (`IPK_2026_pravo.pdf`, 434 str.,
+**73 kolegija**) i „Opis svih kolegija" — po kolegiju: ishodi, sadržaj po tematskim cjelinama, granica međuispita,
+propisana literatura s rasponom stranica. Oboje u `_materials/pravri/sluzbeno/` (gitignored), strojno čitljivo.
+⚠️ Sadrži imena i mailove nositelja → ne ulazi u repo. Time **7 predmeta 3./4. godine bez ikakvog gradiva dobiva izvor**.
+**Provjera opsega (novi alat `_materials/pravri/tools/`):** 388 teza iz silabusa × podaci šest predmeta →
+**374 pokriveno**. Od 14 nepokrivenih 13 je šum rezanja proze na teze (provjereno grepom: neoapsolutizam 14 pojava,
+iudex 21, diobe prava 29, izvori spoznaje 37). **Jedina prava praznina: političke stranke i glasovanje u Sociologiji**
+(Giddens pogl. 14 propisuje str. 420–433 **i 439–446**; kategorija `vlastPolitika` ima vlast, državu i nacionalizam).
+**Pouka (mjerač):** prva verzija mjere tražila je pojmove bilo gdje u predmetu i vratila „0 % nepokriveno" za svih
+šest — **obrnuta provjera ju je oborila** (silabus Teorije „prošao" na podacima Rimskog prava, 14 % nepokriveno).
+Prepisana: teza mora stati u JEDNU stavku, gledaju se samo razlikovni pojmovi → kontrola odvaja 0–8 % (vlastiti)
+od 37–62 % (tuđi).
+**Lokalno stanje izvan gita NE POSTOJI na ovom stroju** (PFRI posao 16.–17.11. rađen je na drugom): nema
+`_materials/pravri/` (izvori, `PLAN.md`, generatori `gen-kpp`, registri id-eva, brana `qa.js`), nema
+`.imena-zabrana.txt`, memorija projekta je bila prazna. Posljedica: `check:names` i `check:docs` pali su zatvoreno
+→ push na `main` blokiran. **Riješeno:** popis 21 PFRI predmeta vraćen iz gita (`0f56bfa2` + `169a0ceb`, `e596f5a5`
+ih je izvadio) · memorija napunjena (4 zapisa) · `.imena-zabrana.txt` sastavljen iz mailova i imena nositelja u IPK-u
++ vlasnika gradiva (**119 stavki**, Leon: *„nemam ništa od toga"*). Brana je odmah uhvatila **četiri lažna sudara** —
+`Herc*` ↔ „Bosna i Hercegovina", `Menger*` ↔ ekonomist Carl Menger, `Babić*`/`Škorić*` ↔ citirani autori udžbenika →
+upisani **s kontekstom** (`prof. Herc`), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
+**Brana veličine:** prag za `windows-git-bash-zamke.md` izbačen iz tablice (Leonova odluka) — memorija je po stroju,
+a ta je vezana na Windows; gdje postoji, pada pod `OSTALE_MEMORIJE`. Test prilagođen, a broj dotaknutih datoteka se
+sad **izvodi iz tablice** (zakucana 6 je pala, mjera je bila ispravna).
+**Deploy (u toku):** merge `origin/main` u granu — sukobi samo dnevnici, od rotacije studenog; `main` nije imao
+PROGRESS-sesiju od 17.11. ni napomenu o `18610cc`, oboje vraćeno ručno. `export:json --check` round-trip čist ·
+**bump `20261127121859`** (dva sadržajna commita mijenjala `data/**` bez bumpa) · `test:unit` 68/68 · **preflight zelen** ·
+grana pushana, CI vrti. Čeka Leonov OK za `main`.
+**Slijedi:** praznina u Sociologiji iz `sociologija-skripta.doc` (Drive), pa 2. godina: Opći dio građanskog i obvezno →
+Kazneno → Međunarodno → Obiteljsko. Gradivo za sva četiri postoji; **Obiteljsko je najtanje** (samo liste pitanja, bez skripte).
+
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 
 - **Stanje (izmjereno, samo čitanje):** PROD nema ništa od F6 (uloga `mcp_klijent`, `node_drafts`, hook, `pg_jsonschema`,
