@@ -68,7 +68,11 @@ const DOKUMENTI = {
     'terms.html': { gdje: 'ova suita (①/3c)', ekrani: ['terms'] },
     'faq.html': { gdje: 'ova suita (①/3c)', ekrani: ['faq'] },
     'contact.html': { gdje: 'ova suita (①/3c)', ekrani: ['contact'] },
-    'odjava.html': { gdje: 'ova suita (①/3c), bez tokena', ekrani: ['odjava'] }
+    'odjava.html': { gdje: 'ova suita (①/3c), bez tokena', ekrani: ['odjava'] },
+    // ADR-043: čvor kataloga je ULAZ S GOOGLEA, pa se mjeri kao i ostale samostalne stranice.
+    // Stranice predmeta (`predmet/**`) nisu u korijenu pa ih ⑪ ne vidi; mjeri se jedna,
+    // izvedena iz kataloga u `phone-gate.js` — sve dijele isti generator i isti okvir.
+    'predmeti.html': { gdje: 'ova suita (ADR-043) — uz jednu stranicu predmeta', ekrani: ['predmeti'] }
 };
 
 test.beforeEach(({}, testInfo) => {
@@ -153,9 +157,23 @@ test.beforeAll(async ({ browser }, testInfo) => {
     const snimka = [];
 
     for (const e of G.EKRANI) {
+        // ⚠️ `reducedMotion` NIJE utišavanje brane nego uvjet da uopće mjeri ono što tvrdi.
+        // Tvrdnja ⑥ govori o onome što na dnu OSTAJE („ono što iz pojasa ne može izaći"), a
+        // cookie-traka ulazi `transform` animacijom od 280 ms (`css/consent.css`). Mjerač ju
+        // je zaticao u letu i prijavljivao upad od 1–3 px koji se po pokretanjima MIJENJAO
+        // (geometrija se ne mijenja, vrijeme da) — izmjereno 54 px na 120 ms, 28 px na 180 ms,
+        // 4 px na 240 ms, 0 px kad animacija završi. Index je bio čist samo zato što ispod
+        // stoji `waitForTimeout(800)`, a prelasci na pravne stranice nemaju ekvivalent.
+        // `smiriPrikaz` to ne hvata jer prati `innerHTML`, broj djece i VISINU — `transform`
+        // ne mijenja nijedno. Umjesto nagađanja čekanja, gasimo animaciju pravilom koje CSS
+        // već ima (`@media (prefers-reduced-motion: reduce)`), pa se mjeri ZAVRŠNO stanje.
+        // Kvar koji ostaje u pojasu i dalje pada — mijenja se determinizam, ne strogost.
+        // (BUG-058. Isti popravak stoji i na grani `fix/kategorija-quick-start`/PR #11, koja
+        //  još nije spojena; napisan je ovdje ISTOVJETNO da spajanje ostane trivijalno.)
         const ctx = await browser.newContext({
             viewport: { width: e.w, height: e.h },
             deviceScaleFactor: 3, isMobile: true, hasTouch: true,
+            reducedMotion: 'reduce',
             baseURL
         });
         const page = await ctx.newPage();

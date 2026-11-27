@@ -130,7 +130,27 @@ const BEZ_IZREZA = {};
  * `odjava` se otvara BEZ tokena — tada stranica kaže da poveznica nije potpuna i ništa ne šalje
  * mreži. To je stanje u kojem je pravi posjetitelj najčešće i zatekne (istekao ili prepisan link).
  */
-const SAMOSTALNE = ['privacy', 'terms', 'faq', 'contact', 'odjava'];
+const SAMOSTALNE = ['privacy', 'terms', 'faq', 'contact', 'odjava', 'predmeti', prviPredmet()];
+
+/**
+ * Jedna GENERIRANA stranica predmeta (ADR-043), izvedena iz kataloga — ne zakucana.
+ *
+ * ⚠️ Zašto uopće: tih 64 stranica su od 28.11. **ulaz s Googlea**, dakle prvo što dio
+ * posjetitelja vidi, i gotovo svi će ih otvoriti na telefonu. Stranica koju brana ne
+ * posjećuje je stranica koju brana ne vidi (ista pouka kao ①/3c, kad pet stranica iz
+ * podnožja nije imalo nijednu brojku).
+ *
+ * ⚠️ Zašto JEDNA, a ne svih 64: sve dijele isti generator i isti okvir, pa 64 mjerenja
+ * mjere isti predložak 64 puta — a suita se vrti na tri širine. Mjeri se predložak.
+ * Id se ČITA IZ KATALOGA: zakucan bi pao na preimenovanju predmeta, a to bi izgledalo
+ * kao kvar telefona umjesto kao preimenovanje.
+ */
+function prviPredmet() {
+    const { SokratCatalog } = require('../../data/catalog.js');
+    const s = SokratCatalog.all()[0];
+    if (!s) throw new Error('katalog je prazan — mjera bi bila prazna, ne zelena');
+    return 'predmet/' + s.id;
+}
 
 /**
  * Stanja stranice odobrenja koja mjerač OBILAZI (①/3b).
