@@ -17,9 +17,15 @@ Split/Zagreb, ili iz 2008., ili piratske kopije udžbenika).
 propisana literatura s rasponom stranica. Oboje u `_materials/pravri/sluzbeno/` (gitignored), strojno čitljivo.
 ⚠️ Sadrži imena i mailove nositelja → ne ulazi u repo. Time **7 predmeta 3./4. godine bez ikakvog gradiva dobiva izvor**.
 **Provjera opsega (novi alat `_materials/pravri/tools/`):** 388 teza iz silabusa × podaci šest predmeta →
-**374 pokriveno**. Od 14 nepokrivenih 13 je šum rezanja proze na teze (provjereno grepom: neoapsolutizam 14 pojava,
-iudex 21, diobe prava 29, izvori spoznaje 37). **Jedina prava praznina: političke stranke i glasovanje u Sociologiji**
-(Giddens pogl. 14 propisuje str. 420–433 **i 439–446**; kategorija `vlastPolitika` ima vlast, državu i nacionalizam).
+**375 pokriveno**, a svih 13 nepokrivenih je provjereno grepom i teme SU u podacima (neoapsolutizam 14 pojava,
+iudex 21, diobe prava 29, izvori spoznaje 37) → **sadržajnih praznina 1. godina nema**.
+**Lažna uzbuna i njezina cijena:** mjera je prvo prijavila prazninu „političke stranke i glasovanje" u Sociologiji i
+ja sam je zapisao u docs i CHANGELOG kao stvarnu. Pala je kad sam otvorio izvor: skripta ima odjeljak „51. POLITIČKE
+STRANKE I GLASANJE U ZEMLJAMA ZAPADA", a podaci ga nose s 7 kartica, 12 kviz pitanja i 4 dopune — silabus piše
+„glasovanje", podaci po izvoru (Giddens u hrv. prijevodu) „glasanje", a 5-znakovni korijen se razilazi na 5. slovu.
+**Pokušaj popravka 4-znakovnim rezervnim korijenom razbio je mjeru** (kontrola na tuđem predmetu pala s 37–62 % na
+10–45 %) → vraćeno na strogo, a varijanta **imenovana** u `VARIJANTE`, kao osnovice drugih brana.
+**Pouka:** nalaz mjerača nije nalaz dok se ne otvori izvor; ja sam ga upisao u dokumentaciju prije toga.
 **Pouka (mjerač):** prva verzija mjere tražila je pojmove bilo gdje u predmetu i vratila „0 % nepokriveno" za svih
 šest — **obrnuta provjera ju je oborila** (silabus Teorije „prošao" na podacima Rimskog prava, 14 % nepokriveno).
 Prepisana: teza mora stati u JEDNU stavku, gledaju se samo razlikovni pojmovi → kontrola odvaja 0–8 % (vlastiti)
