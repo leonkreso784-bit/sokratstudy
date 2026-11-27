@@ -1,0 +1,565 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.sokratstudy.com/schema/ugc-content.schema.json",
+  "title": "Sokrat Study — osobni sadrzaj (UGC), strogi profil",
+  "description": "Oblik JEDNOG payloada osobnog materijala (Studio i AI isto; Leon, anketa 30.09.). Provodi ga BAZA na svakom putu upisa (mcp_upisi_nacrt, publish_node, Prihvati) kroz pg_jsonschema; kopija u SQL-u je GENERIRANA (npm run build:ugc-sql). Ovdje su SIGURNOST i GRANICE, ne kvaliteta: prazna polja u izradi prolaze (Studio ih sprema, renderer ih preskace), a pravila kvalitete su F6 faza 3. Razlike od kataloske sheme: nema legacy-html ni learn.content (sirovi HTML), slike samo vlastite (node-img:<uid>/<cvor>/<datoteka>, bez .. i tudjih oblika), poveznice bez kontrolnih i Unicode-razmaka i bez sheme osim http/https/mailto, granice broja i duljine.",
+  "type": "object",
+  "minProperties": 1,
+  "maxProperties": 100,
+  "propertyNames": {
+    "pattern": "^[A-Za-z0-9_-]{1,64}$"
+  },
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/definitions/category"
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    },
+    "accent": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "slika": {
+      "type": "string",
+      "pattern": "^node-img:[0-9a-f-]{36}/[0-9a-f-]{36}/[0-9A-Za-z-]{1,64}\\.(png|jpg|webp|gif)$"
+    },
+    "href": {
+      "type": "string",
+      "maxLength": 2000,
+      "pattern": "^[^\\u0000-\\u0020\\u007f\\u00a0\\u1680\\u2000-\\u200b\\u2028\\u2029\\u202f\\u205f\\u3000\\ufeff]*$",
+      "anyOf": [
+        {
+          "pattern": "^([hH][tT][tT][pP][sS]?|[mM][aA][iI][lL][tT][oO]):"
+        },
+        {
+          "not": {
+            "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:"
+          }
+        }
+      ]
+    },
+    "category": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "icon": {
+          "type": "string",
+          "pattern": "^fa-[a-z0-9-]{1,40}$"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "flashcards": {
+          "type": "array",
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/definitions/flashcard"
+          }
+        },
+        "quiz": {
+          "type": "array",
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/definitions/quiz"
+          }
+        },
+        "fillBlanks": {
+          "type": "array",
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/definitions/fillBlank"
+          }
+        },
+        "learn": {
+          "$ref": "#/definitions/learn"
+        }
+      }
+    },
+    "flashcard": {
+      "type": "object",
+      "required": [
+        "question",
+        "answer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "question": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "answer": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "explanation": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        }
+      }
+    },
+    "quiz": {
+      "type": "object",
+      "required": [
+        "question",
+        "options",
+        "correct"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "question": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "options": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "correct": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "image": {
+          "$ref": "#/definitions/slika"
+        },
+        "imageAlt": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "card": {
+          "$ref": "#/definitions/id"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        }
+      }
+    },
+    "fillBlank": {
+      "type": "object",
+      "required": [
+        "sentence",
+        "answer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "sentence": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "answer": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "answers": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "maxLength": 200
+          }
+        },
+        "hint": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "card": {
+          "$ref": "#/definitions/id"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        }
+      }
+    },
+    "learn": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "blocks": {
+          "type": "array",
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/definitions/block"
+          }
+        }
+      }
+    },
+    "inline": {
+      "oneOf": [
+        {
+          "type": "string",
+          "maxLength": 10000
+        },
+        {
+          "type": "array",
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/definitions/run"
+          }
+        }
+      ]
+    },
+    "run": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "b": {
+          "type": "boolean"
+        },
+        "i": {
+          "type": "boolean"
+        },
+        "color": {
+          "type": "string",
+          "enum": [
+            "indigo",
+            "green",
+            "amber",
+            "red",
+            "cyan",
+            "blue",
+            "violet",
+            "pink",
+            "default"
+          ]
+        },
+        "href": {
+          "$ref": "#/definitions/href"
+        },
+        "math": {
+          "type": "boolean"
+        }
+      }
+    },
+    "block": {
+      "$comment": "ZALIHOST (izmjereno mutacijom 30.09., 165 brisanja kroz cijeli unit: preživi tocno ova 3): block.required (svaki oneOf krak trazi type s const) te type:string uz enum samih tekstova u run.color i blockCallout.variant. Stoje radi jasnije poruke greske AI-ju; nijedan payload ih ne razlikuje.",
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "heading",
+            "paragraph",
+            "list",
+            "callout",
+            "image",
+            "video",
+            "table",
+            "formula"
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "$ref": "#/definitions/blockHeading"
+        },
+        {
+          "$ref": "#/definitions/blockParagraph"
+        },
+        {
+          "$ref": "#/definitions/blockList"
+        },
+        {
+          "$ref": "#/definitions/blockCallout"
+        },
+        {
+          "$ref": "#/definitions/blockImage"
+        },
+        {
+          "$ref": "#/definitions/blockVideo"
+        },
+        {
+          "$ref": "#/definitions/blockTable"
+        },
+        {
+          "$ref": "#/definitions/blockFormula"
+        }
+      ]
+    },
+    "blockHeading": {
+      "type": "object",
+      "required": [
+        "type",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "heading"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 4
+        },
+        "text": {
+          "$ref": "#/definitions/inline"
+        }
+      }
+    },
+    "blockParagraph": {
+      "type": "object",
+      "required": [
+        "type",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "paragraph"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "text": {
+          "$ref": "#/definitions/inline"
+        }
+      }
+    },
+    "blockList": {
+      "type": "object",
+      "required": [
+        "type",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "list"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "ordered": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/definitions/inline"
+          }
+        }
+      }
+    },
+    "blockCallout": {
+      "type": "object",
+      "required": [
+        "type",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "callout"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "tip"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "text": {
+          "$ref": "#/definitions/inline"
+        }
+      }
+    },
+    "blockImage": {
+      "type": "object",
+      "required": [
+        "type",
+        "src"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "image"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "src": {
+          "$ref": "#/definitions/slika"
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "caption": {
+          "$ref": "#/definitions/inline"
+        },
+        "width": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 100
+        }
+      }
+    },
+    "blockVideo": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "video"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "videoId": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "url": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    "blockTable": {
+      "type": "object",
+      "required": [
+        "type",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "table"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "header": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/definitions/inline"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "$ref": "#/definitions/inline"
+            }
+          }
+        }
+      }
+    },
+    "blockFormula": {
+      "type": "object",
+      "required": [
+        "type",
+        "tex"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "formula"
+        },
+        "color": {
+          "$ref": "#/definitions/accent"
+        },
+        "tex": {
+          "type": "string",
+          "maxLength": 5000
+        },
+        "display": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

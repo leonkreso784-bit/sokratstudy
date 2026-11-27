@@ -401,18 +401,21 @@ test.describe('M3b — boja kartice, pitanja i dopune', () => {
     }
   });
 
-  test('NEVALJANA boja stavke pada na sekciju, ne procuri u CSS', async ({ page }) => {
+  // F6 ②/0b: nevaljanu boju od 30.09. ne prima ni BAZA (strogi profil na `publish_node`), pa se
+  // do prikazivača više ne da dovesti kroz objavu. Obje linije stoje: ovdje se mjeri baza, a da
+  // prikazivač i dalje pada na sekciju mjeri unit `blocks-renderer` (`accentFrom`, '#fff').
+  test('NEVALJANA boja stavke: baza je ne primi, materijal ostaje netaknut', async ({ page }) => {
     await openMaterials(page);
     const id = await mkNode(page, null, 'study', 'M3b Nevaljana boja');
     try {
-      await page.evaluate(async (nodeId) => {
+      const ishod = await page.evaluate(async (nodeId) => {
         const c = SokratAuth.getClient();
-        await c.rpc('publish_node', {
+        const r = await c.rpc('publish_node', {
           p_node_id: nodeId,
           p_payload: {
             tema1: {
               name: 'M3b Tema', icon: 'fa-book', color: '#6366f1',
-              // Namjerno NEVALJANE boje: prikazivač ih mora odbiti, ne interpolirati.
+              // Namjerno NEVALJANE boje: baza ih mora odbiti (②/0b), prikazivač ih ne interpolira.
               flashcards: [{ question: 'p', answer: 'o', color: '#fff' }],
               quiz: [{ question: 'q', options: ['a', 'b'], correct: 0 }],
               fillBlanks: [{ sentence: 'r _______ x', answer: 'y' }],
@@ -421,15 +424,12 @@ test.describe('M3b — boja kartice, pitanja i dopune', () => {
           },
           p_base_version: 1
         });
+        const { data } = await c.from('node_content').select('version').eq('node_id', nodeId).single();
+        return { poruka: r.error ? r.error.message : null, verzija: data && data.version };
       }, id);
-      await page.evaluate(() => window.SokratMaterials.refresh());
-      await openForStudy(page, id);
-
-      await gotoSection(page, 'flashcards');
-      await expect(page.locator('#cardQuestion')).toBeVisible();
-      // `#fff` je nevaljan (traži se točno 6 znamenki) → padni na sekciju, ne na smeće.
-      expect(await accentOn(page, '#flashcard'),
-        'nevaljana boja stavke mora pasti na sekciju, ne procuriti u CSS').toBe('#6366f1');
+      // `#fff` je nevaljan (traži se točno 6 znamenki) → baza odbija imenovanom greškom.
+      expect(ishod.poruka, 'baza je primila nevaljanu boju stavke').toMatch(/^sadrzaj_neispravan/);
+      expect(ishod.verzija, 'odbijena objava je ipak promijenila materijal').toBe(1);
     } finally {
       await rmNode(page, id);
     }

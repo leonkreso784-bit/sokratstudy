@@ -113,6 +113,12 @@ test('runsToEditable: b/i/color/href → strong/em/span.lb-color/a', function ()
   assert.strictEqual(E._runsToEditable([{ text: 'z', color: 'green' }]), '<span class="lb-color-green">z</span>');
   assert.ok(E._runsToEditable([{ text: 'l', href: 'https://a.b' }]).indexOf('<a href="https://a.b" data-be-link>l</a>') !== -1);
 });
+test('runsToEditable: opasna poveznica (i s kontrolnim znakom) izlazi kao TEKST, bez <a> (F6 ②/0c)', function () {
+  ['javascript:alert(1)', 'java\tscript:alert(1)', '\u0001javascript:alert(1)', 'data:text/html,x'].forEach(function (h) {
+    const out = E._runsToEditable([{ text: 'klik', href: h }]);
+    assert.strictEqual(out, 'klik', JSON.stringify(h) + ' → ' + out);
+  });
+});
 test('runsToEditable: nepoznata boja se ignorira (kurirani token-set)', function () {
   assert.strictEqual(E._runsToEditable([{ text: 'q', color: 'brown' }]), 'q');
 });

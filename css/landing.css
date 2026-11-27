@@ -369,6 +369,34 @@
     border-top-color: color-mix(in srgb, var(--color-on-brand) 22%, transparent);
 }
 
+/* ── Poveži AI (redak ispod vrata) ────────────────────────────────────
+   Tiši od vrata namjerno: vodi u ISTO odredište kao „Make your own", samo
+   drugim alatom. Podvlaka nosi „klikni me" bez hovera (dodir ga nema). */
+.hero-ai {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.45rem;
+    margin-top: 1rem;
+    padding: 0.35rem 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 0.92rem;
+    text-align: start;
+    cursor: pointer;
+    color: var(--color-ink-2);
+}
+.hero-ai i { color: var(--color-brand-500); }
+.hero-ai-a {
+    color: var(--color-ink-0);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-brand-500);
+    text-underline-offset: 0.2em;
+}
+.hero-ai:focus-visible { outline: 2px solid var(--color-brand-500); outline-offset: 3px; border-radius: var(--radius-sm); }
+
 /* ── Katalog: tražilica i filtar programa ─────────────────────────────
    Namjerno TIHI: alat, ne obrazac. Boju ne nose — jedina zasićena stvar u
    ovoj sekciji su pločice predmeta, gdje boja nešto ZNAČI (§7.13). */

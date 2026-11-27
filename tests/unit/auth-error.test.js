@@ -185,6 +185,31 @@ test('kad i18n postoji, poruka ide KROZ njega (ne zaobilazi ga)', () => {
       assert.ok(/\bhr:\s*'/.test(redak[0]), 'nedostaje hr — HR korisnik bi tiho dobio engleski');
     });
   });
+
+  // ⚠️ F6 ①/2b, nalaz revizije: sve tvrdnje o `authError` gore sude ENGLESKI fallback — `at()`
+  // bez `window.t` vraća drugi argument, a test `window.t` namjerno ne postavlja. Rečenicu koju
+  // hrvatski student stvarno čita nitko nije gledao, a `boot.js` bez spremljenog izbora uzima
+  // jezik uređaja → HR je za našu publiku ZADANO.
+  // Dvije poruke s istim tekstom znače da jedna od dvije greške govori krivu stvar. Baš to je
+  // kvar zbog kojeg cigla postoji (poslužitelj za oba slučaja šalje istu rečenicu), pa bi
+  // doslovan duplikat u `hr` vratio kvar a sve ostalo ostalo zeleno.
+  // Popis se NE piše rukom — nabraja se iz istog `kljucevi`, pa novi ključ ulazi po defaultu.
+  ['en', 'hr'].forEach((jezik) => {
+    test('nijedne dvije poruke iz authError nemaju isti tekst na "' + jezik + '"', () => {
+      const poTekstu = new Map();
+      kljucevi.forEach((k) => {
+        const redak = new RegExp("'" + k.replace(/\./g, '\\.') + "':\\s*\\{[^}]*\\}").exec(i18nCode);
+        const v = redak && new RegExp('\\b' + jezik + ":\\s*'((?:[^'\\\\]|\\\\.)*)'").exec(redak[0]);
+        if (!v) return;
+        const tekst = v[1];
+        poTekstu.set(tekst, (poTekstu.get(tekst) || []).concat(k));
+      });
+      assert.ok(poTekstu.size >= 6, 'pročitano samo ' + poTekstu.size + ' poruka — regex je promašio, tvrdnja ne mjeri ništa');
+      const dupli = [...poTekstu.entries()].filter(([, ks]) => ks.length > 1);
+      assert.deepStrictEqual(dupli.map(([t, ks]) => ks.join(' = ') + ' → "' + t + '"'), [],
+        'dvije različite greške daju istu rečenicu — jedna od njih korisniku govori krivu stvar');
+    });
+  });
 }
 
 // ────────────────────────────────────────────────────────────────────────

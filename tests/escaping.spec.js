@@ -87,6 +87,23 @@ test.describe('BUG-025 — sadržaj u innerHTML se prikazuje doslovno i ne izvr�
     expect(await page.evaluate(() => window.__pwned)).toBeUndefined();
   });
 
+  test('kviz: slika pitanja ide kroz safeUrl — opasna shema ne postane <img>, valjana da (F6 ②/0c)', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'iPhone-SE-375', 'dovoljno je jednom');
+    await openStudyWithFixture(page);
+    const slikaZa = async (image) => {
+      await page.evaluate((image) => {
+        window.AppState.nav.data.tema.quiz = [{ question: 'Slika?', options: ['a', 'b'], correct: 0, image: image }];
+        window.switchSection('quiz'); window.startQuiz();
+      }, image);
+      await expect(page.locator('#questionText')).toHaveText('Slika?', { timeout: 10000 });
+      return page.locator('#questionImage').count();
+    };
+    // kontrola: valjana slika se crta — inače bi „nema <img>" značilo samo da se slika nikad ne crta
+    expect(await slikaZa('data:image/png;base64,iVBORw0KGgo='), 'KONTROLA: valjana slika se ne crta').toBe(1);
+    expect(await slikaZa('java\tscript:alert(1)'), 'kontrolni znak + javascript: postao je <img>').toBe(0);
+    expect(await slikaZa('data:image/svg+xml,<svg onload=alert(1)>'), 'SVG (može nositi skriptu) postao je <img>').toBe(0);
+  });
+
   test('learn: naziv sekcije je TEKST, a nevaljana ikona ne ulazi u class', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'iPhone-SE-375', 'dovoljno je jednom');
     await openStudyWithFixture(page);
@@ -105,6 +122,29 @@ test.describe('BUG-025 — sadržaj u innerHTML se prikazuje doslovno i ne izvr�
     // Nevaljan oblik ikone pada na siguran default umjesto da procuri u atribut.
     const cls = await page.locator('#learnContent .learn-card-title i').first().getAttribute('class');
     expect(cls).toBe('fas fa-book');
+  });
+
+  // F6 ②/0d (brana-revizor 30.09. F1): krajnji fallback u `learn.js` — renderer (`renderContentBlocks`)
+  // nije stigao, a sekcija nosi sirov `learn.content`. Prije je ovdje išao SIROV HTML u innerHTML.
+  test('learn bez renderera: learn.content NE postaje HTML i ništa se ne izvrši (kontrola: sirov se izvrši)', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'iPhone-SE-375', 'dovoljno je jednom');
+    await openStudyWithFixture(page);
+    const ZLO = '<p>tekst</p><iframe srcdoc="<script>parent.__fb = (parent.__fb || 0) + 1</script>"></iframe><img src="x-nema.png" onerror="window.__fbimg=1">';
+    const ishod = await page.evaluate(async (zlo) => {
+      delete window.renderContentBlocks;                     // renderer „nije stigao"
+      window.AppState.nav.data.tema.learn = { content: zlo };
+      window.switchSection('learn');
+      window.renderLearnContent();
+      await new Promise((r) => setTimeout(r, 1500));
+      const el = document.getElementById('learnContent');
+      return { oznake: el.querySelectorAll('iframe, img:not(.learn-card-header img)').length, fb: window.__fb || 0, img: window.__fbimg || 0 };
+    }, ZLO);
+    expect(ishod.oznake, 'fallback je napravio iframe/img iz podataka').toBe(0);
+    expect(ishod.fb, 'skripta iz srcdoc se IZVRŠILA kroz fallback').toBe(0);
+    expect(ishod.img, 'onerror se IZVRŠIO kroz fallback').toBe(0);
+    // kontrola: isti sadržaj upisan sirovo MORA izvršiti skriptu — inače pokus ništa ne dokazuje
+    await page.evaluate((zlo) => { const d = document.createElement('div'); d.innerHTML = zlo; document.body.appendChild(d); }, ZLO);
+    await expect.poll(() => page.evaluate(() => window.__fb || 0), { message: 'KONTROLA: sirov sadržaj se nije izvršio', timeout: 5000 }).toBe(1);
   });
 
   test('napredak: naziv/ikona/boja sekcije ne izlaze iz svojih atributa', async ({ page }, testInfo) => {

@@ -36,7 +36,10 @@
     var KATEX_SRI = 'sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8';
     var KATEX_AUTORENDER_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js';
     var KATEX_AUTORENDER_SRI = 'sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05';
-    var DOMPURIFY_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.6/purify.min.js';
+    // DOMPurify se od F6 ②/0d poslužuje s NAŠE domene (Leon, anketa 30.09.): bez njega sadržaj s HTML-om
+    // ide kao tekst, pa pad tuđeg CDN-a ne smije biti čest razlog ružne lekcije. Bajtovi su identični
+    // cdnjs 3.2.6 (isti SRI, provjereno pri preuzimanju) i SRI ostaje — preglednik ih i dalje mjeri.
+    var DOMPURIFY_SRC = 'vendor/dompurify/3.2.6/purify.min.js';
     var DOMPURIFY_SRI = 'sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla+3';
 
     /* PAKETI — što ide zajedno i ZAŠTO baš tako.
@@ -85,14 +88,17 @@
         // ovu datoteku; ovdje je samo njezino sučelje (skini / obriši / popis).
         // `row-menu.js` = izbornik „⋯" (F2/5c): ide PRIJE police i radionice, koje ga obje crtaju.
         polica: ['js/row-menu.js', 'js/offline-store.js'],
-        materials: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/my-materials.js'],
+        // `connect-ai.js` = gumb „Spoji svoj AI" (F6 ②/5.1); crta ga `my-materials.js`, pa ide prije.
+        materials: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/connect-ai.js', 'js/my-materials.js'],
         // Profil montira „Moje materijale" i otkriva admin-karticu → nosi oboje sa sobom.
-        profile: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/my-materials.js', 'js/image-crop.js', 'js/profile-images.js',
+        profile: ['js/row-menu.js', 'js/offline-store.js', 'js/node-images.js', 'js/connect-ai.js', 'js/my-materials.js', 'js/image-crop.js', 'js/profile-images.js',
             'js/admin-reveal.js', 'js/mail-admin.js', 'js/profile.js'],
         // ⚠️ Sinkronizacija napretka NE visi o stranici nego o PRIJAVI: dovlači ju `auth.js`
         // čim se pojavi korisnik. Da stoji uz profil, napredak se ne bi sinkronizirao onome
         // tko svoj profil nikad ne otvori — a to je većina prijavljenih.
-        sync: ['js/cloud-sync.js']
+        sync: ['js/cloud-sync.js'],
+        // „Poveži AI" iz heroa naslovnice — samo prozor s uputama, bez cijelih „Mojih materijala".
+        connect: ['js/connect-ai.js']
     };
 
     /* Token iz vlastite adrese (v. upozorenje u zaglavlju). Prazan = razvojni poslužitelj bez

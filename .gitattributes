@@ -10,3 +10,8 @@ styles.bundle.css text eol=lf
 # Git hookovi (deploy-guard, risk-sanacija #1) — UVIJEK LF: CRLF u shell-shebangu
 # (`#!/bin/sh\r`) puca izvršavanje na Unix/CI klonovima. Radna kopija ostaje LF.
 .githooks/** text eol=lf
+
+# Vendorane biblioteke (F6 2/0d) — BAJT-ISTE izdavačevima: loader ih provjerava SRI-hashem, a
+# autocrlf bi ih na Windows-klonu pretvorio u CRLF → drugi hash → preglednik ih BLOKIRA i sadržaj
+# s HTML-om ide kao tekst. `-text` = git ih nikad ne dira.
+vendor/** -text

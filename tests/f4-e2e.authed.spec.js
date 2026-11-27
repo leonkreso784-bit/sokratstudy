@@ -169,4 +169,48 @@ test.describe('F4 — puni životni ciklus osobnog gradiva', () => {
       await rmNode(page, id);
     }
   });
+
+  // K/10 priprema (Leon 17.11., odluka „b"): materijal NE SMIJE ostati bez sekcija. Strogi profil (F6
+  // `schema/ugc-content.schema.json`, `minProperties: 1`) odbija `{}` pri objavi — bez ovoga bi korisnik obrisao
+  // jedinu sekciju, kliknuo „Objavi" i dobio grešku baze. Isto pravilo AI-jev put već ima (`alat_zadnja_lekcija`).
+  test('Studio: ZADNJA sekcija se ne briše; „Objavi" bez sekcija odbija i baza ostaje netaknuta', async ({ page }) => {
+    await openMaterials(page);
+    const id = await mkNode(page, null, 'study', 'F4 Zadnja sekcija');
+    try {
+      await publishSections(page, id, 'F4 Zadnja sekcija', [
+        { key: 'sekcija-1', name: 'Prva', text: 'a' },
+        { key: 'sekcija-2', name: 'Druga', text: 'b' },
+      ]);
+      await page.evaluate((nodeId) => window.SokratStudio.openNode(nodeId, 'F4 Zadnja sekcija'), id);
+      await page.waitForSelector('#editor-page.active', { timeout: 15000 });
+      await page.click('#stEdit');
+      await page.waitForSelector('.st-learn-cat [data-st-catdel]', { timeout: 15000 });
+
+      // Dok su dvije, nijedna nije označena kao zadnja.
+      expect(await page.$$eval('[data-st-catdel][aria-disabled="true"]', (els) => els.length)).toBe(0);
+      await page.click('[data-st-catdel="sekcija-1"]');
+      await page.click('sokrat-confirm .sokrat-confirm__ok');
+      await expect.poll(() => page.$$eval('.st-learn-cat', (els) => els.length), { timeout: 5000 }).toBe(1);
+
+      // Zadnja: označena, klik NE otvara potvrdu nego kaže zašto, i draft je i dalje ima.
+      await expect(page.locator('[data-st-catdel="sekcija-2"]')).toHaveAttribute('aria-disabled', 'true');
+      // `force`: Playwright `aria-disabled` gumb smatra onemogućenim i čekao bi ga do isteka; preglednik
+      // klik propušta (aria je samo opis), a upravo taj klik mora reći ZAŠTO umjesto da tiho ne radi ništa.
+      await page.click('[data-st-catdel="sekcija-2"]', { force: true });
+      await expect(page.locator('#toast')).toContainText(/at least one section|barem jednu sekciju/i);
+      await expect(page.locator('sokrat-confirm .sokrat-confirm__ok')).toBeHidden();
+      const working = await page.evaluate((nodeId) => Object.keys(window.SokratDraft.get('node:' + nodeId, 'content').working), id);
+      expect(working).toEqual(['sekcija-2']);
+
+      // Mimo gumba (izravan op) do NULA sekcija → „Objavi" odbija PRIJE baze.
+      await page.evaluate((nodeId) => window.SokratDraft.applyOp('node:' + nodeId, 'content', { type: 'removeCategory', catId: 'sekcija-2' }), id);
+      await page.click('#stPublish');
+      await expect(page.locator('#toast')).toContainText(/before publishing|prije objave/i);
+      const stored = await readContent(page, id);
+      expect(stored.version, 'objava bez sekcija ne smije stići do baze').toBe(2);
+      expect(Object.keys(stored.payload).sort()).toEqual(['sekcija-1', 'sekcija-2']);
+    } finally {
+      await rmNode(page, id);
+    }
+  });
 });

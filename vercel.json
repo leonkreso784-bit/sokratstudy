@@ -1,6 +1,52 @@
 {
   "version": 2,
   "name": "sokrat-study",
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "eq": "www.sokratstudy.com"
+          }
+        }
+      ],
+      "destination": "https://naxjubnedhrbhsuasayu.supabase.co/functions/v1/mcp"
+    },
+    {
+      "source": "/mcp/:put*",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "eq": "www.sokratstudy.com"
+          }
+        }
+      ],
+      "destination": "https://naxjubnedhrbhsuasayu.supabase.co/functions/v1/mcp/:put*"
+    },
+    {
+      "source": "/mcp",
+      "has": [
+        {
+          "type": "host",
+          "value": "^studymaster-git-feat-[a-z0-9-]+-leon-kresos-projects\\.vercel\\.app$"
+        }
+      ],
+      "destination": "https://czljmvigkgiajzjxtndq.supabase.co/functions/v1/mcp"
+    },
+    {
+      "source": "/mcp/:put*",
+      "has": [
+        {
+          "type": "host",
+          "value": "^studymaster-git-feat-[a-z0-9-]+-leon-kresos-projects\\.vercel\\.app$"
+        }
+      ],
+      "destination": "https://czljmvigkgiajzjxtndq.supabase.co/functions/v1/mcp/:put*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -23,7 +69,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://js-de.sentry-cdn.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self' https://api.pwnedpasswords.com https://naxjubnedhrbhsuasayu.supabase.co wss://naxjubnedhrbhsuasayu.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.ingest.de.sentry.io https://js-de.sentry-cdn.com; frame-src https://www.youtube-nocookie.com; media-src 'self' https://naxjubnedhrbhsuasayu.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'"
+          "value": "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.8/dist/umd/supabase.js https://cdn.jsdelivr.net/npm/mathlive@0.110.0/mathlive.min.js https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js https://js-de.sentry-cdn.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self' https://api.pwnedpasswords.com https://naxjubnedhrbhsuasayu.supabase.co wss://naxjubnedhrbhsuasayu.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.ingest.de.sentry.io https://js-de.sentry-cdn.com; frame-src https://www.youtube-nocookie.com; media-src 'self' https://naxjubnedhrbhsuasayu.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'"
         }
       ]
     },

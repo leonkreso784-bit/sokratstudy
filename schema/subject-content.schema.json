@@ -54,6 +54,7 @@
         "correct":  { "type": "integer", "minimum": 0 },
         "image":    { "type": "string", "minLength": 1 },
         "imageAlt": { "type": "string" },
+        "card":     { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
         "color":    { "$ref": "#/definitions/accent" }
       }
     },
@@ -67,6 +68,7 @@
         "answer":   { "type": "string", "minLength": 1 },
         "answers":  { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
         "hint":     { "type": "string" },
+        "card":     { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
         "color":    { "$ref": "#/definitions/accent" }
       }
     },

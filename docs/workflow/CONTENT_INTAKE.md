@@ -160,6 +160,15 @@ _materials/
   prezentacija ide u koji kolokvij (iz silabusa) — označi to mapom ili porukom.
 - `NN_` prefiks za redoslijed; jedna prezentacija = jedan fajl.
 
+## HR izvori — Merlin (2025/26) i pouke iz HR 1. godine (27.–29.09.2026)
+- **Merlin ide preko računa kolegice** (smjer Održivi razvoj; prijavila se sama); sesija se čuva u
+  `_materials/.merlin-session.json` (gitignored). Skida se **SAMO materijal kolegija** — rezultati, grupe i
+  životopisi se preskaču. Odredište: `_materials/<id>-hr/`.
+- Merlin je bogat samo za Statistiku i Makro; Mikro/OIPD su s Drivea, Matematika = 3 pptx + 18 fotografija ispita.
+- **Kviz miješa pitanja I opcije** (`js/quiz.js`) → nema ulančanih „Nastavak:" pitanja; pristranost po indeksu je nevažna.
+- `answers` kod dopuna = **više praznina**, ne alternativni odgovori.
+- `<small>` nije na popisu oznaka koje renderer propušta — ne koristiti ga u gradivu.
+
 ## Tok rada
 1. Ti složiš materijale po gornjoj strukturi (ili samo pošalješ putanju + koji su za koji kolokvij).
 2. `npm run scaffold -- <id> "<Naziv>" <godina> <semestar>` (kostur predmeta).

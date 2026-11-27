@@ -47,7 +47,12 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.9rem 1.5rem;
+    /* ①/3d — SIGURNA ZONA. Od trenutka kad se stranica `viewport-fit=cover`-om prijavila da
+       crta ispod izreza, nadoknada je NAŠA obveza (mjeri je `tests/phone.spec.js` ①/⑥/⑦).
+       `env()` ovdje ne smije stajati (brana `check:safearea`: jedan izvor je `css/variables.css`,
+       a ove stranice ga dobivaju kroz generirani `css/tokens.static.css`). Podloga trake ide do
+       ruba ekrana — pomiče se samo ono što se tapka i čita. */
+    padding: calc(0.9rem + var(--safe-top)) calc(1.5rem + var(--safe-right)) 0.9rem calc(1.5rem + var(--safe-left));
     /* Bila je zakucana `rgba(15, 23, 42, .85)` = stari slate `#0f172a` — preživjela je
        promjenu palete jer se hex-pretragom ne vidi u `rgba()` obliku. `color-mix` drži
        providnost, a boju uzima iz teme. */
@@ -85,7 +90,7 @@ main.legal {
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 3rem;
+    padding: 2.5rem calc(1.5rem + var(--safe-right)) 3rem calc(1.5rem + var(--safe-left));
 }
 
 /* ── Oba jezika u stranici (F3/1, Leon 2026-09-16) ──
@@ -141,6 +146,31 @@ html[data-ui-lang="hr"] .jezik[lang="en"] { display: none; }
 .unsub-status[data-state="done"] { color: var(--color-ok); }
 .unsub-status[data-state="error"] { color: var(--color-danger-ink); }
 
+/* F6 ①/1 — odobrenje za korisnikov AI (`odobrenje.html`). Gumb „Dopusti" je `.unsub-btn`;
+   „Odbij" je sporedan, i zato PUNA ploha, ne obrub (ADR-032). */
+.oauth-details p { margin: 0.35rem 0; }
+/* `:not([hidden])`: `display: flex` bi inače pregazio atribut `hidden`, pa bi se gumbi vidjeli i kad
+   je povratak odbijen (uhvatio `tests/odobrenje.spec.js` ④). */
+.oauth-actions:not([hidden]) { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.oauth-deny {
+    min-height: 48px;
+    padding: 0 1.4rem;
+    font: inherit;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--color-surface-2);
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.oauth-deny:disabled { opacity: 0.55; cursor: default; }
+
+@media (hover: hover) {
+    .oauth-deny:hover:not(:disabled) { background: var(--color-surface-1); }
+}
+
 .legal h1 { font-size: 1.8rem; margin-bottom: 0.4rem; }
 
 .legal .legal-updated {
@@ -173,7 +203,8 @@ html[data-ui-lang="hr"] .jezik[lang="en"] { display: none; }
 
 .legal-footer {
     border-top: 1px solid var(--color-line);
-    padding: 1.2rem 1.5rem;
+    /* Donji rub je home-indikator (⑥ se mjeri NA DNU SKROLA, gdje je kvar trajan). */
+    padding: 1.2rem calc(1.5rem + var(--safe-right)) calc(1.2rem + var(--safe-bottom)) calc(1.5rem + var(--safe-left));
     text-align: center;
     color: var(--text-dim);
     font-size: 0.85rem;
@@ -193,11 +224,14 @@ html[data-ui-lang="hr"] .jezik[lang="en"] { display: none; }
 }
 
 @media (max-width: 480px) {
-    main.legal { padding: 1.8rem 1.1rem 2.2rem; }
+    main.legal { padding: 1.8rem calc(1.1rem + var(--safe-right)) 2.2rem calc(1.1rem + var(--safe-left)); }
     /* F3/1: zaglavlje nosi i prekidač jezika, a hrvatski „Natrag u aplikaciju" je dulji —
        na 320 px je izmjereno 332 px širine (vodoravni pomak). Rub isti kao `main.legal`,
        a ako i dalje ne stane, red se prelomi umjesto da izađe iz ekrana. */
-    .legal-nav { padding: 0.75rem 1.1rem; flex-wrap: wrap; row-gap: 0.4rem; }
+    .legal-nav {
+        padding: calc(0.75rem + var(--safe-top)) calc(1.1rem + var(--safe-right)) 0.75rem calc(1.1rem + var(--safe-left));
+        flex-wrap: wrap; row-gap: 0.4rem;
+    }
     .legal-nav-actions { gap: 0.5rem; margin-left: auto; }
     .legal h1 { font-size: 1.45rem; }
 }

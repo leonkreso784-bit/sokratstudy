@@ -61,8 +61,79 @@ Usput se pokazalo da `js/i18n.js` hrvatsko sučelje predlaže samo za zakucan id
 
 ---
 
+## ADR-040 — Novi smjer: glavni projekt je HotelixSim (zaseban repo); Sokrat se dovršava u užem opsegu pa ide u održavanje
+**Datum:** 2026-10-03 · **Status:** ✅ ODLUČENO (Leon, sesija planiranja, ankete) · **Vezano:** mijenja [ADR-029](#adr-029),
+[ADR-025](#adr-025) (dijeljenje), [ADR-031](#adr-031) (brane), [ADR-036](#adr-036) (o simulaciji) · zamrzava [ADR-035](#adr-035),
+[ADR-036](#adr-036) · obara živo pravilo „znak je nepromjenjiv" · **Plan:** [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md)
+
+**Kontekst.** Leon (03.10.): *„mijenjamo cijeli smjer razvoja"*. Profesor s FMTU-a je zainteresiran za simulaciju
+vođenja hotela, ali prvo želi vidjeti demo; Leon želi nešto pokazati već idući tjedan i prezentaciju unutar mjesec
+dana. Sokrat je na produkciji i radi, a MCP je na stagingu blizu kraja.
+
+**Odluke (Leon, 2026-10-03):**
+1. **HotelixSim je zaseban proizvod u zasebnom repozitoriju** (`Documents\hotelixsim`, privatni GitHub). Ne nosi Sokratov
+   kod ni njegova pravila; smije posuditi ono što znamo (Supabase, RLS, način rada s branama). Leon od sada **više
+   radi na simulaciji nego na Sokratu**; Sokrat teče usporedo.
+2. **Sokrat se dovršava, pa ide u održavanje.** Dovršetak: MCP do produkcije u **užem opsegu** · dijeljenje linkom s
+   tajnim tokenom · učenje bez mreže za vlastite i dijeljene materijale · mali prolaz izgleda Mojih materijala ·
+   **novi znak (ime ostaje)** · ostatak dvojezičnosti · čišćenje CSS-duga · recepti za vježbe · povijest učenja i
+   grafikoni. Poslije toga: bugovi, sigurnost, sadržaj; nov razvoj samo Leonovom riječju.
+3. **Uži MCP:** od četiri brane ostaju jedan izvor, duljina, pitanje po kartici i boja; od limita učestalost, kvota,
+   veličina/vrijeme i opoziv; pa pravi AI i produkcija. Odgođeno (ne otkazano): mjerenje pragova, brana dopune,
+   „Learn pokriva kartice", noćno čišćenje, šifrirani backup. ②/5.2 animirani tutorial **otpada**.
+4. **Zamrznuto, ne poništeno:** tržište gradiva (ADR-035 — javna objava, prodaja, natjecanje) i organizacije s exam
+   modulom (ADR-036). Ne grade se u Sokratu; ideje se smiju prenijeti u simulaciju.
+
+**Što obara ili mijenja:**
+- **ADR-029** — UGC ostaje glavna stvar *unutar Sokrata*, ali Sokrat više nije Leonov glavni projekt.
+- **ADR-025** „dijeljenje privatno sad" i PRD ne-cilj „nema dijeljenja" — **oboreni** linkom s tokenom; njegova imenovana
+  cijena (slike vezane na vlasnički prefiks) postaje cigla D/2.
+- **ADR-024** ostaje, ali dobiva nov put **čitanja** (uz token), ne upisa.
+- **ADR-031** — četiri brane sužene (t. 3); bez „Learn pokriva kartice" kvalitetu od AI-ja drže samo uže brane i validator.
+- **ADR-036** — presuda „HOTEL_SIM nije proizvod za inkubator" više ne stoji; koji projekt ide u inkubator je otvoreno.
+- **„🔒 Znak je nepromjenjiv"** (CLAUDE.md, Leonova riječ) — **oboreno**: Sokrat dobiva novi znak.
+
+**Što ostaje netaknuto:** sva sigurnosna pravila (ADR-016/018/024/026/038/039, owner-RLS, `service_role` samo u Edge
+Functions) · deploy samo uz izričit OK · ADR-027 (jedna činjenica, jedno mjesto).
+
+**Posljedice:** `plan/RASPORED.md` i `plan/MCP.md` → `archive/` s pečatom „zamijenjen"; jedini aktivni plan je
+`plan/ZAVRSNICA.md`. `ideas/HOTEL_SIM.md` postaje pokazivač; puni zapis i plan simulacije žive u novom repozitoriju.
+
+---
+
+## ADR-039 — Materijal od AI-ja ide na policu SAM, cijel, bez ekrana za pregled; izmjene na korisnikovu riječ
+**Datum:** 2026-10-01 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** mijenja [ADR-031](#adr-031) („sve ide u nacrt,
+korisnik prihvaća") i [ADR-038](#adr-038) t.1 („materijal nastaje tek korisnikovim Prihvati iz obične sesije") ·
+smjer [ADR-035](#adr-035) · **Faza:** F6 ②/4 u [plan/MCP.md](../archive/MCP.md)
+
+**Kontekst.** Prvi pravi pokus s ②/4.2 (01.10., „Kemija 3. razred", 12 lekcija / 194 kartice, ~7 min): Claude je javio
+„gotovo", a na polici nije bilo ničega — nacrt čeka ekran za Prihvati (②/4.3). Leon: ekran ne treba. Pregled je
+trebao zaustaviti loš sadržaj prije nego ga itko vidi, a osobni materijal je **privatan** — vidi ga samo vlasnik, javna
+objava je zasebna buduća faza. Najgori ishod je loš materijal u vlastitoj polici, koji se briše jednim klikom.
+
+**Odluke (Leon, 2026-10-01):**
+1. **Nov materijal ide na policu sam, ali CIJEL, na kraju.** AI i dalje gradi u nacrtu (`node_drafts`, skriven od
+   korisnika); `predaj_nacrt` ga u **jednoj transakciji** pretvori u materijal u polici iz nacrta i nacrt obriše.
+   Nikad pola-materijal na polici (prekid usred gradnje ostavlja samo nacrt, koji istječe). **Ekran ②/4.3 otpada.**
+2. **AI smije mijenjati postojeći vlastiti materijal — ono što mu korisnik kaže.** Bez ekrana za pregled. Stara verzija
+   ostaje u povijesti verzija (`node_content_versions`), pa je izmjena povratna; ako se materijal promijenio otkad ga je
+   AI pročitao, upis se **odbija, ne prepisuje**.
+3. **Smjer, ne posao sad:** platforma postaje društvena (javna objava, blog, profili); korisnici će moći vidjeti
+   **analitiku jedni drugih — samo ako to sami dopuste**. Ništa od toga ne ulazi u F6.
+
+**Što ostaje netaknuto:** doseg = samo vlastito gradivo (tuđe i katalog nikad) · token AI-ja ne dobiva ništa izvan
+nacrta i tog jednog prijelaza · validator ②/0a i četiri brane ③ vrijede **na prijelazu u materijal** (sad bez
+čovjeka u petlji su one jedina kontrola kvalitete — ③ time dobiva na važnosti) · materijal je privatan.
+
+**Posljedice:** ograda iz ②/4.1 („samo obična sesija smije prihvatiti") se za `predaj_nacrt` **svjesno** diže, i to samo
+za nov materijal u vlastitu policu; `prihvati_nacrt`/`odbaci_nacrt` iz obične sesije ostaju (npr. za nacrt koji je AI
+predao prije ove odluke). `review_url` postaje link na **materijal**, ne na nacrt. ②/4b više nije „nacrt izmjene +
+prihvat" nego izravna izmjena s provjerom verzije.
+
+---
+
 ## ADR-038 — MCP: nacrt u zasebnoj tablici · naša domena · DCR uz popis hostova · sigurnost u bazi, kvaliteta u poslužitelju
-**Datum:** 2026-09-17 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-031](#adr-031) (cjevovod, nacrt, četiri brane), [ADR-030](#adr-030), [ADR-026](#adr-026) (MCP invarijante), [ADR-024](#adr-024) (osobni otok), ADR-027 · **Faza:** F6 u [RASPORED.md](../plan/RASPORED.md)
+**Datum:** 2026-09-17 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-031](#adr-031) (cjevovod, nacrt, četiri brane), [ADR-030](#adr-030), [ADR-026](#adr-026) (MCP invarijante), [ADR-024](#adr-024) (osobni otok), ADR-027 · **Faza:** F6 u [plan/MCP.md](../archive/MCP.md)
 
 **Kontekst.** [ADR-031](#adr-031) je presudio **što** MCP radi, ali je dvije stvari uzeo kao riješene: da šav za nacrt
 postoji i da je pristup pitanje jedne prijave. Mjerenje 17.09. (RASPORED §F6 „Provjereno") oborilo je obje: nacrt
@@ -99,7 +170,7 @@ CIMD, pa se klijent identificira kroz DCR ili unaprijed registriran klijent.
 ---
 
 ## ADR-037 — Pravne stranice nose OBA jezika u stranici; `boot.js` bira prije crtanja
-**Datum:** 2026-09-16 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-033](#adr-033) (sučelje je dvojezično), ADR-012 (jezik gradiva = program), ADR-027, BUG-025 (`innerHTML` granica) · **Faza:** F3/1 u [RASPORED.md](../plan/RASPORED.md)
+**Datum:** 2026-09-16 · **Status:** ✅ ODLUČENO (Leon, anketa) · **Vezano:** [ADR-033](#adr-033) (sučelje je dvojezično), ADR-012 (jezik gradiva = program), ADR-027, BUG-025 (`innerHTML` granica) · **Faza:** F3/1 u [RASPORED.md](../archive/RASPORED.md)
 
 **Kontekst.** Četiri pravne stranice (`contact` · `faq` · `privacy` · `terms`) nisu učitavale `js/i18n.js`, a tekst im
 je pun podebljanja i poveznica usred rečenice. Mehanizam sučelja (`data-i18n` → `textContent`) taj markup briše.
@@ -125,6 +196,7 @@ prekidač postaje navigacija.
 
 ## ADR-036 — Monetizacija: najam je ORGANIZACIJA, firme plaćaju prve, prodaju prvo organizacije
 **Datum:** 2026-09-07 · **Status:** ✅ ODLUČENO (Leon) · **Vezano:** [ADR-035](#adr-035) (proizvod je tržište gradiva), [ADR-029](#adr-029), [ADR-031](#adr-031) (korisnik plaća svoj AI), [ADR-024](#adr-024) (osobni otok) · **Model u cijelosti:** [MONETIZATION.md](../product/MONETIZATION.md)
+> ⚠️ **2026-10-03: ZAMRZNUTO ([ADR-040](#adr-040))** — ne gradi se; presuda o HOTEL_SIM-u ne stoji.
 
 **Kontekst.** [ADR-035](#adr-035) je definirao **što** je proizvod, ali ne i **tko plaća**. Dotadašnji
 model ([MONETIZATION.md](../product/MONETIZATION.md), 2026-06-27) pretpostavljao je maturu kao tržište i „donesi svoj ključ"
@@ -180,7 +252,8 @@ Uz to (isti dan): *„platforma bi trebala biti prilagođena za sve ustanove, ne
 ---
 
 ## ADR-035 — Proizvod je TRŽIŠTE studentskog gradiva: objavi · (možda) prodaj · natječi se. Katalog je POČETNA ZALIHA, ne priča
-**Datum:** 2026-09-06 · **Status:** ✅ ODLUČENO (Leon) · **Vezano:** [ADR-029](#adr-029) (UGC je glavni proizvod), [ADR-030](#adr-030) (MCP je glavni put stvaranja), [ADR-031](#adr-031) (MCP je cjevovod), [ADR-025](#adr-025) (doseg osobnog materijala), [ADR-018](#) (podatak, nikad kod) · **Faza:** F7 objava u [RASPORED.md](../plan/RASPORED.md)
+**Datum:** 2026-09-06 · **Status:** ✅ ODLUČENO (Leon) · **Vezano:** [ADR-029](#adr-029) (UGC je glavni proizvod), [ADR-030](#adr-030) (MCP je glavni put stvaranja), [ADR-031](#adr-031) (MCP je cjevovod), [ADR-025](#adr-025) (doseg osobnog materijala), [ADR-018](#) (podatak, nikad kod) · **Faza:** F7 objava u [RASPORED.md](../archive/RASPORED.md)
+> ⚠️ **2026-10-03: ZAMRZNUTO ([ADR-040](#adr-040))** — ne gradi se; dijeljenje linkom ide kroz ZAVRSNICA.
 
 **Kontekst.** [ADR-029](#adr-029) je već presudio da katalog nije srce platforme, a [ADR-030](#adr-030)/[ADR-031](#adr-031)
 da gradivo nastaje kroz korisnikov AI. Ali **kamo to gradivo ide nakon što nastane nije nigdje bilo
@@ -218,7 +291,7 @@ mu se uloga **preimenuje**: on je **početna zaliha i dokaz da stroj radi** — 
   RPC), [ADR-026](#adr-026)/[ADR-030](#adr-030) MCP-invarijante (nikad katalog · nikad `is_admin()` · nikad
   `service_role`) i [ADR-018](#) (podaci, nikad kod) stoje **netaknuti**. Ovo je odluka o **proizvodu i
   redoslijedu**, ne o pravima.
-- **Redoslijed:** objava je **F7** u [RASPORED.md](../plan/RASPORED.md) i dolazi iza računa (F2) i MCP-a (F6). **Prodaja i
+- **Redoslijed:** objava je **F7** u [RASPORED.md](../archive/RASPORED.md) i dolazi iza računa (F2) i MCP-a (F6). **Prodaja i
   natjecanje dolaze IZA objave** — objava bez njih je upotrebljiv proizvod, obrnuto nije.
 - **Kriterij prihvaćanja (objava):** gotovo kad korisnik svoj materijal iz police objavi javno, drugi
   ga korisnik nađe i uči iz njega bez ijedne posebne ovlasti, a autor to može povući.
@@ -354,6 +427,7 @@ kontroliramo mi → token po temi; gdje dolazi izvana → `inkForTint()`.** Puna
 
 ## ADR-031 — MCP je CJEVOVOD `Learn → kartice → dopune/kviz`, u nacrt, kroz KORISNIKOV AI
 **Datum:** 2026-08-30 · **Status:** ✅ ODLUČENO (Leon) · **Vezano:** [ADR-030](#adr-030) (MCP je glavni put stvaranja), [ADR-026](#adr-026) (MCP invarijante), [ADR-025](#adr-025) (doseg osobnog materijala), [ADR-018](#) (podatak, nikad kod)
+> ⚠️ **2026-10-03: brane SUŽENE ([ADR-040](#adr-040))** — ostaju duljina, pitanje po kartici, boja (+ jedan izvor); ostalo odgođeno.
 
 **Kontekst.** [ADR-030](#adr-030) je odlučio **da** MCP postane glavni put stvaranja, ali je ostavio
 otvorenim **što točno radi** i **kako korisnik do njega dolazi** — i sam je zapisao da je *pristup prvi
@@ -471,6 +545,7 @@ dotjera.** Editor se time smije **pojednostaviti** — smije IZGUBITI funkcije, 
 
 ## ADR-029 — UGC je glavni proizvod; javni katalog je JEDAN izvor gradiva, ne srce platforme
 **Datum:** 2026-08-09 · **Status:** ✅ ODLUČENO (Leon: *„to nam postaje glavna stvar, predmeti su samo jedna stvar"*) · **Plan:** [archive/FRONTEND_REDIZAJN.md](../archive/FRONTEND_REDIZAJN.md)
+> ⚠️ **2026-10-03: izmijenjeno ([ADR-040](#adr-040))** — vrijedi unutar Sokrata; Sokrat više nije glavni projekt.
 
 **Kontekst.** `PRD.md` je od početka pisao *„zvijezda je UGC"*, ali proizvod to nikad nije odražavao.
 Provjereno u kodu, ne po dojmu: **„Moji materijali" nisu stranica** — montiraju se kao `<div class="mm">`
@@ -706,6 +781,7 @@ nedovršenom spremniku. Redoslijed ostaje: **dovrši model → pa MCP.** Gumb do
 
 ## ADR-025 — Osobno gradivo: osam presuda o dosegu (vježbe, dijeljenje, napredak, boje, opseg)
 **Datum:** 2026-08-07 · **Status:** ✅ ODLUČENO (Leon, odgovori na izravna pitanja) · **Dokument:** [ARCHITECTURE.md](../architecture/ARCHITECTURE.md)
+> ⚠️ **2026-10-03: „dijeljenje privatno sad" OBORENO ([ADR-040](#adr-040))** — dijeljenje linkom s tokenom.
 
 **Kontekst.** ADR-024 je presudio *gdje* osobno gradivo živi, ali ne i *dokle seže*. Posljedica: fazni plan je
 isporučio instalacije (baza, stablo, editor, produkcija) a da nitko nije zapisao **što korisnik mora moći

@@ -60,7 +60,11 @@ console.log('\n=== git-okolina: preflight iz kuke ne dira pravi repozitorij ===\
   const z = zrtva();
   const bin = fs.mkdtempSync(path.join(os.tmpdir(), 'lazni-npm-'));
   const zapis = path.join(bin, 'vidio.txt');
-  fs.writeFileSync(path.join(bin, 'npm'), '#!/bin/sh\nprintf \'%s\' "${GIT_DIR-<nema>}" > "$ZAPIS"\nexit 0\n', { mode: 0o755 });
+  // Kuka na main ima VIŠE koraka (preflight · tajne · authed suite): svaki poziv dopisuje što je vidio,
+  // pa GIT_DIR ne smije doći ni do jednog, ne samo do prvog. `node` je podmetnut jer ga zove korak tajni.
+  for (const alat of ['npm', 'node']) {
+    fs.writeFileSync(path.join(bin, alat), '#!/bin/sh\nprintf \'%s\\n\' "${GIT_DIR-<nema>}" >> "$ZAPIS"\nexit 0\n', { mode: 0o755 });
+  }
   const r = spawnSync('sh', [KUKA], {
     cwd: z,
     encoding: 'utf8',
@@ -74,8 +78,10 @@ console.log('\n=== git-okolina: preflight iz kuke ne dira pravi repozitorij ===\
   // Mjerač mora reći da je nešto dotaknuo: bez zapisa npm nije ni pozvan (npr. kuka ne prepoznaje main).
   tvrdi(fs.existsSync(zapis), '② kuka je za push na main stvarno pozvala preflight (npm)',
     'stdout: ' + (r.stdout || '').trim() + ' | stderr: ' + (r.stderr || '').trim());
-  const vidio = fs.existsSync(zapis) ? fs.readFileSync(zapis, 'utf8') : '(nije pozvan)';
-  tvrdi(vidio === '<nema>', '② preflight iz kuke NE vidi GIT_DIR', 'vidio: ' + vidio);
+  const vidio = fs.existsSync(zapis) ? fs.readFileSync(zapis, 'utf8').trim().split(/\r?\n/) : [];
+  tvrdi(vidio.length >= 3, '② kuka je pozvala sva tri koraka (preflight · tajne · authed)', 'poziva: ' + vidio.length);
+  tvrdi(vidio.length > 0 && vidio.every((v) => v === '<nema>'), '② NIJEDAN korak iz kuke ne vidi GIT_DIR',
+    'vidio: ' + vidio.join(' | '));
   tvrdi(r.status === 0, '② kuka propušta kad preflight prođe', 'exit ' + r.status);
 }
 

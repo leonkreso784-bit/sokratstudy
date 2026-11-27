@@ -96,6 +96,52 @@ const NACINI_UVJETNI = [
  *  admin-CRUD je ekran kao i svaki drugi (isti popis vozi i `reach-gate`). */
 const EKRANI_PRIJAVLJENI = ['materials', 'profile', 'admin', 'editor'];
 
+/**
+ * Ekrani koji se SMIJU mjeriti bez pravila o sigurnoj zoni — svaki s razlogom (①/3b).
+ *
+ * Tvrdnje ①/⑥/⑦/⑦b imaju smisla samo ako se stranica `viewport-fit=cover`-om prijavila da
+ * crta ispod izreza. Bez te prijave iOS je slaže UNUTAR sigurne zone, pa ispod izreza nema
+ * što stajati. Do ①/3b je to bila TIHA pretpostavka jer je svaka mjerena stranica imala
+ * `cover`; `odobrenje.html` je prva koja ga nema i dala bi **14 izmišljenih nalaza**.
+ *
+ * ⚠️ Popis je obveza u oba smjera: ekran koji izgubi `cover` a nije ovdje obara branu (netko
+ *    bi inače pravila o sigurnoj zoni ugasio brisanjem jedne riječi iz `<meta>`), a mrtav
+ *    unos ovdje obara je isto (stranica je u međuvremenu dobila `cover`, a pravila i dalje
+ *    stoje ugašena).
+ *
+ * ✅ **DANAS JE PRAZAN, i to je ISHOD, ne propust** (①/3d, Leon 2026-09-21: *„naravno da treba
+ *    sve poravnati"*). Svih šest samostalnih dokumenata — stranica odobrenja i pet pravnih —
+ *    dobilo je `viewport-fit=cover` i nadoknadu kroz `var(--safe-*)` u `css/legal.css`, pa
+ *    nijednom više ne treba iznimka. Prazan popis znači da se na **svakoj** mjerenoj stranici
+ *    pravila o sigurnoj zoni stvarno primjenjuju. Kad nešto opet uđe, uz njega mora stajati
+ *    razlog. (Isti oblik kao `scripts/contrast-live-allow.json`, koji je također prazan.)
+ */
+const BEZ_IZREZA = {};
+
+/**
+ * Samostalni dokumenti koje mjeri JAVNA brana (①/3c) — ime ekrana = ime datoteke bez `.html`.
+ *
+ * ⚠️ Do ①/3c ih nije mjerio NITKO. Brana je mjerila aplikaciju (`index.html`), Studio
+ * (`editor.html`) i stranicu odobrenja, a pet stranica do kojih vodi podnožje svake druge
+ * stranice — pravila, uvjeti, FAQ, kontakt i odjava s maila — nisu imale nijednu brojku za
+ * telefon. To je isti razred rupe zbog kojeg je ①/3b i nastao: *ekran koji brana ne posjećuje
+ * je ekran koji brana ne vidi*.
+ *
+ * `odjava` se otvara BEZ tokena — tada stranica kaže da poveznica nije potpuna i ništa ne šalje
+ * mreži. To je stanje u kojem je pravi posjetitelj najčešće i zatekne (istekao ili prepisan link).
+ */
+const SAMOSTALNE = ['privacy', 'terms', 'faq', 'contact', 'odjava'];
+
+/**
+ * Stanja stranice odobrenja koja mjerač OBILAZI (①/3b).
+ *
+ * ⚠️ Namjerno ODVOJENO od `BEZ_IZREZA`, iako danas sadrže isto. To su dva različita pitanja —
+ * „kamo mjerač ide" i „tko smije biti bez `viewport-fit=cover`" — i prva verzija ih je
+ * spojila, pa bi buduća stranica bez `cover`-a koja NIJE dio obilaska tiho podigla očekivani
+ * broj ekrana u tvrdnji ⓪ i srušila je bez veze sa stvarnim kvarom.
+ */
+const EKRANI_ODOBRENJE = ['prijavi-se', 'dopusti-odbij'];
+
 /** Aplikacija je spremna kad su i stanje i katalog na mjestu. */
 const spreman = (page) => page.waitForFunction(
     () => window.AppState && window.SOKRAT_CATALOG && typeof window.navigateTo === 'function',
@@ -113,13 +159,21 @@ const spreman = (page) => page.waitForFunction(
  * golim `env()`, i zato **nemjerljivo**. Zato T1 uvodi `npm run check:safearea`, koji
  * goli `env()` drži u jednoj jedinoj datoteci (`css/variables.css`).
  */
+// ⚠️ Stranica bez `viewport-fit=cover` na iOS-u sigurnu zonu NIKAD ne dobiva (slaže se
+// unutar nje), pa joj se ovdje ne smije ubrizgati — inače mjera pomakne stranicu za 59/34 px
+// kojih ondje nema, i mjeri raspored koji ne postoji. Premisa se čita sa stranice, po istom
+// pravilu kao u `mjeri()`.
 const postaviRub = (page, rub = RUB_PORTRET) =>
     page.evaluate((v) => {
+        const podIzrezom = Array.prototype.slice
+            .call(document.querySelectorAll('meta[name="viewport"]'))
+            .some((m) => /viewport-fit\s*=\s*cover/.test(m.content || ''));
+        const r = podIzrezom ? v : { top: 0, bottom: 0, left: 0, right: 0 };
         const d = document.documentElement.style;
-        d.setProperty('--safe-top', v.top + 'px');
-        d.setProperty('--safe-bottom', v.bottom + 'px');
-        d.setProperty('--safe-left', v.left + 'px');
-        d.setProperty('--safe-right', v.right + 'px');
+        d.setProperty('--safe-top', r.top + 'px');
+        d.setProperty('--safe-bottom', r.bottom + 'px');
+        d.setProperty('--safe-left', r.left + 'px');
+        d.setProperty('--safe-right', r.right + 'px');
     }, rub);
 
 /**
@@ -292,7 +346,24 @@ function mjeri(page, rub, faza) {
     // Unutrašnjost mjere barata jednim brojem za gornji rub (`OTOK`) — u landscapeu je to
     // 0, pa tvrdnja ① ondje ispravno ne nalazi ništa, a ② mjeri udio pune visine.
     return page.evaluate((ARG) => {
-        const R = ARG.rub;
+        // ── PREMISA PRAVILA O SIGURNOJ ZONI ───────────────────────────────────────
+        // Tvrdnje ①/⑥/⑦/⑦b vrijede samo za stranicu koja se `viewport-fit=cover`-om
+        // IZRIČITO prijavila da crta ispod izreza. Bez te prijave iOS stranicu slaže
+        // UNUTAR sigurne zone, pa ispod izreza doslovno nema što stajati i svaki bi
+        // nalaz tih tvrdnji bio izmišljen.
+        // ⚠️ Do ①/3b se premisa PRETPOSTAVLJALA, jer je svaka mjerena stranica imala
+        //    `cover`. Prva bez njega (`odobrenje.html`) dala bi 14 lažnih nalaza.
+        //    Zato se sad ČITA sa stranice; tko je smije nemati, piše u `BEZ_IZREZA`.
+        // ⚠️ Premisa teče kroz JEDNU varijablu — sam `rub`. Prva verzija je gasila četiri
+        //    kategorije nalaza posebno, a ② KROMO je pritom ostao raditi s otokom od 59 px:
+        //    stranica koja izrez nikad ne dobije dobivala je **popust na budžet trake**
+        //    (izmjereno 12 % ondje gdje je stvarno 21 %). Pojasevi su već svi čuvani s
+        //    `if (R.x > 0)`, pa rub na nuli gasi ta pravila SAM, bez ijedne iznimke.
+        const podIzrezom = Array.prototype.slice
+            .call(document.querySelectorAll('meta[name="viewport"]'))
+            .some((m) => /viewport-fit\s*=\s*cover/.test(m.content || ''));
+
+        const R = podIzrezom ? ARG.rub : { top: 0, bottom: 0, left: 0, right: 0 };
         const OTOK = R.top;
         const FAZA = ARG.faza;
         const vw = window.innerWidth, vh = window.innerHeight;
@@ -458,12 +529,32 @@ function mjeri(page, rub, faza) {
                 });
             }
 
-            return { dno: dno, bocno: bocno, spremnik: spremnik };
+            // Bez `cover`-a je `R` sav na nuli, pa su sva tri popisa prazna sama od sebe —
+            // svaki pojas je gore čuvan s `if (R.x > 0)`. Nema iznimke koju bi trebalo pamtiti.
+            return { dno: dno, bocno: bocno, spremnik: spremnik, podIzrezom: podIzrezom };
         }
 
         // ── ① OTOK ────────────────────────────────────────────────────────────────
         // Kromo SMIJE crtati podlogu ispod otoka (za to `viewport-fit=cover` i postoji);
         // ne smije ondje staviti ništa što se tapka ili čita.
+        // ── ⑦ BOČNI POJAS — MJERI SE I NA VRHU, NE SAMO NA DNU ────────────────────
+        // ⚠️ Do ①/3e se bočni pojas mjerio ISKLJUČIVO u fazi „rubovi", koja stranicu prvo
+        // spusti do dna (to treba ⑥, jer je ondje kvar trajan). Na svakoj stranici koja se
+        // skrola zaglavlje dotad ode s ekrana: izmjereno, pravna stranica odskrola 3 461 px
+        // i logo završi na y = −3442, pa ga ⑦ nikad ne vidi. Kratke stranice (odobrenje,
+        // odjava) prijavljivale su ga, duge nikad — a razlika nije bila u kvaru nego u
+        // DULJINI TEKSTA. Bočni pojas tu ogradu nema (stranica se ne skrola vodoravno), pa
+        // je svaki pogodak trajan i mora se mjeriti ODMAH, prije spuštanja.
+        const PRAG_RUB = 1;
+        const bocnoNaVrhu = [];
+        interaktivni.forEach((k) => {
+            const opisK = (koliko) => ime(k.el) + ' ' + Math.round(koliko) + ' px u pojasu'
+                + ' [' + Math.round(k.b.l) + ',' + Math.round(k.b.t) + '…'
+                + Math.round(k.b.r) + ',' + Math.round(k.b.b) + ']';
+            if (R.left > 0 && R.left - k.b.l > PRAG_RUB) bocnoNaVrhu.push('lijevo · ' + opisK(R.left - k.b.l));
+            if (R.right > 0 && k.b.r - (vw - R.right) > PRAG_RUB) bocnoNaVrhu.push('desno · ' + opisK(k.b.r - (vw - R.right)));
+        });
+
         const uOtoku = interaktivni
             .filter((k) => k.b.t < OTOK - 0.5)
             .map((k) => ime(k.el) + ' y=' + Math.round(k.b.t) + '…' + Math.round(k.b.b));
@@ -717,9 +808,16 @@ function mjeri(page, rub, faza) {
             stranica: (window.AppState && AppState.nav && AppState.nav.page) || '?',
             vw: vw, vh: vh,
             kromoPx: Math.round(kromoPx), nasKromo: Math.round(nasKromo), kromoPct: kromoPct,
+            // Nazivnik postotka IDE UZ postotak. Poruke su ga prije računale same, kao
+            // `vh - 59`, pa je stranica bez izreza dobivala redak u kojem se broj i postotak
+            // ne slažu („21 % (120 od 509 px)" — 120/509 je 24 %). Mjera koja ispisuje dva
+            // broja koja se međusobno poriču ne da se provjeriti pogledom.
+            upotrebljivaVisina: Math.round(upotrebljivaVisina),
             trake: trake.map((t) => t.ime + ' ' + Math.round(t.t) + '…' + Math.round(t.b)),
             bannerPx: bannerPx, bannerPct: Math.round(bannerPx / vh * 100),
             uOtoku: uOtoku,
+            podIzrezom: podIzrezom,
+            bocno: bocnoNaVrhu,
             sudari: sudari,
             upotrebljivih: upotrebljivi.length,
             prviUpotrebljiv: upotrebljivi.length ? ime(upotrebljivi[0].el) : '—',
@@ -846,7 +944,7 @@ function spremiOsnovicu(suita, nalazi) {
 
 module.exports = {
     OTOK, RUB_PORTRET, RUB_LANDSCAPE, EKRANI, EKRANI_JAVNI, EKRANI_PRIJAVLJENI, NACINI,
-    NACINI_UVJETNI,
+    NACINI_UVJETNI, BEZ_IZREZA, EKRANI_ODOBRENJE, SAMOSTALNE,
     KROMO_BUDZET_PCT,
     spreman, postaviRub, idiNa, otvoriNacin, mjeriStranicu, mjeriRubove,
     usporediSOsnovicom, spremiOsnovicu, kljucNalaza

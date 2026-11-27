@@ -98,7 +98,62 @@ if (!csp) {
     }
 }
 
-console.log(`check:csp — dotaknuto: ${htmlDatoteke.length} html datoteka, ${ukupnoTagova} tagova, vercel.json`);
+// ── 4: script-src je POPIS OTVORENOG (F6 ②/0e, MCP_SECURITY N2; brana-revizor 30.09. F2) ──────
+// jsdelivr poslužuje BILO KOJU javnu datoteku s GitHuba i npm-a, a cdnjs tisuće biblioteka. Dok je
+// u `script-src` goli host, `iframe srcdoc` iz ubačenog HTML-a smije učitati napadačevu skriptu i
+// CSP ne pomaže (dionica A: pročitana sesija uz produkcijski CSP).
+// Prva verzija ove tvrdnje gledala je samo dva ručno zadana hosta, pa su `https:`, `*.jsdelivr.net`,
+// unpkg, host bez sheme ili DRUGI CSP header prolazili (revizor, izmjereno). Zato je okrenuta:
+// svaki izvor u `script-src` SVAKOG CSP headera mora biti `'self'`, TOČNA CDN datoteka koju kod
+// učitava (izvodi se iz tagova u *.html i adresa u js/**), ili imenovan u `OTVORENO` s razlogom.
+// Sve ostalo pada po defaultu. I obrnuto: CDN datoteka iz koda koju CSP ne dopušta = pokvarena
+// stranica; imenovan izvor koji nijedan header više ne nosi = mrtav redak.
+const CDN = /^https:\/\/(?:cdn\.jsdelivr\.net|cdnjs\.cloudflare\.com)\//;
+/** Izvori koji svjesno ostaju hostovi (MCP_SECURITY N17). Sužavanje traži mjerenje što učitavaju. */
+const OTVORENO = {
+    "'self'": 'naše datoteke (uključuje vendor/ s SRI-jem i rewrite /mcp, koji nosi nosniff)',
+    'https://js-de.sentry-cdn.com': 'Sentry loader (consent-gated); nije izmjereno koje datoteke loader dalje vuče s istog hosta — N17',
+    'https://www.googletagmanager.com': 'gtag.js (consent-gated); putanja ne suzuje ?id= pa tuđa GA/GTM konfiguracija ostaje moguća — N17'
+};
+const koristeno = new Set();
+for (const f of htmlDatoteke) {
+    const html = makniKomentare(fs.readFileSync(path.join(KORIJEN, f), 'utf8'));
+    for (const m of html.matchAll(/<script\b[^>]*\bsrc\s*=\s*"(https:\/\/[^"]+)"/gi)) if (CDN.test(m[1])) koristeno.add(m[1]);
+}
+/** js/** REKURZIVNO (revizor: `js/components/` je prije bio preskočen). */
+function jsIzMape(dir) {
+    return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => e.isDirectory()
+        ? jsIzMape(path.join(dir, e.name)) : (e.name.endsWith('.js') ? [path.join(dir, e.name)] : []));
+}
+const jsDatoteke = jsIzMape(path.join(KORIJEN, 'js'));
+for (const f of jsDatoteke) {
+    const src = fs.readFileSync(f, 'utf8');
+    for (const m of src.matchAll(/['"](https:\/\/(?:cdn\.jsdelivr\.net|cdnjs\.cloudflare\.com)\/[^'"\s]+\.js)['"]/g)) koristeno.add(m[1]);
+}
+if (koristeno.size === 0) { padova++; nalazi.push('script-src: iz koda nije izvučena NIJEDNA CDN skripta — izvlačenje je pokvareno'); }
+const cspHeaderi = sviHeaderi.filter((h) => /^content-security-policy(-report-only)?$/i.test(h.key));
+const viden = new Set();
+for (const h of cspHeaderi) {
+    const izvori = ((h.value.match(/script-src([^;]*)/) || ['', ''])[1]).trim().split(/\s+/).filter(Boolean);
+    for (const x of izvori) {
+        viden.add(x);
+        if (OTVORENO[x] || koristeno.has(x)) continue;
+        padova++;
+        nalazi.push(h.key + ' script-src: izvor nije ni točna datoteka iz koda ni imenovan u OTVORENO — ' + x);
+    }
+    for (const u of koristeno) {
+        if (h.key.toLowerCase() === 'content-security-policy' && !izvori.includes(u)) {
+            padova++;
+            nalazi.push('script-src: kod učitava, CSP ne dopušta (stranica bi pukla) — ' + u);
+        }
+    }
+}
+for (const x of Object.keys(OTVORENO)) {
+    if (!viden.has(x)) { padova++; nalazi.push('OTVORENO: imenovan izvor koji nijedan CSP header ne nosi (mrtav redak) — ' + x); }
+}
+
+console.log(`check:csp — dotaknuto: ${htmlDatoteke.length} html datoteka, ${ukupnoTagova} tagova, ${jsDatoteke.length} js datoteka, `
+    + `${koristeno.size} CDN skripti iz koda, ${cspHeaderi.length} CSP header(a) u vercel.json`);
 if (padova > 0) {
     console.error(`❌ check:csp — ${padova} nalaz(a):`);
     for (const n of nalazi) console.error('   ' + n);

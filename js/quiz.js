@@ -114,11 +114,15 @@ function showQuestion() {
     const existingImage = document.getElementById('questionImage');
     if (existingImage) existingImage.remove();
 
-    if (q.image) {
+    // F6 ②/0c: adresa slike iz PODATAKA kroz istu provjeru sheme kao renderer (`learn.image` je već
+    // tako). Odbijena ili neučitan renderer = bez slike (fail closed); pitanje se i dalje prikazuje.
+    const imgSrc = (q.image && window.SokratBlocks && typeof SokratBlocks.safeUrl === 'function')
+        ? SokratBlocks.safeUrl(q.image, { image: true }) : '';
+    if (imgSrc) {
         const img = document.createElement('img');
         img.id = 'questionImage';
         img.className = 'quiz-question-image';
-        img.src = q.image;
+        img.src = imgSrc;
         img.alt = q.imageAlt || 'Quiz question image';
         img.loading = 'lazy';
         document.getElementById('questionText').insertAdjacentElement('afterend', img);

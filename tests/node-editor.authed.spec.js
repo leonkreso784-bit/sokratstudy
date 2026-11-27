@@ -123,16 +123,16 @@ test.describe('F3 — editor u čvoru (studioBridge → node_content)', () => {
       const err = await page.evaluate(async (nodeId) => {
         const c = SokratAuth.getClient();
         // netko drugi (drugi tab/uređaj) objavi PRIJE nas → verzija u bazi odmakne
-        await c.rpc('publish_node', { p_node_id: nodeId, p_payload: { a: {} }, p_base_version: 1 });
+        await c.rpc('publish_node', { p_node_id: nodeId, p_payload: { a: { name: 'A' } }, p_base_version: 1 });
         // mi objavljujemo na ZASTARJELU bazu
-        const r = await c.rpc('publish_node', { p_node_id: nodeId, p_payload: { b: {} }, p_base_version: 1 });
+        const r = await c.rpc('publish_node', { p_node_id: nodeId, p_payload: { b: { name: 'B' } }, p_base_version: 1 });
         return r.error ? r.error.message : null;
       }, id);
       expect(err, 'zastarjeli base_version je prošao — optimistic concurrency ne radi').toMatch(/publish_version_conflict/);
 
       // izgubljeni pokušaj NIJE upisan
       const after = await readContent(page, id);
-      expect(after.payload).toEqual({ a: {} });
+      expect(after.payload).toEqual({ a: { name: 'A' } });
     } finally {
       await rmNode(page, id);
     }

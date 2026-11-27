@@ -220,7 +220,7 @@ function renderProgressPage() {
     if (!barsContainer || !nav.data) return;
     barsContainer.innerHTML = '';
 
-    Object.keys(nav.data).forEach(category => {
+    getCategories(nav.data).forEach(category => {
         const data = nav.data[category];
         const catProgress = progress.categoryProgress[category] || 0;
         
@@ -248,10 +248,10 @@ function updateHomeStats() {
     const nav = AppState.nav;
     if (!nav.data) return;
 
-    const totalQ = getAllFlashcards().length + Object.keys(nav.data).reduce((acc, cat) => acc + nav.data[cat].quiz.length, 0);
+    const totalQ = getAllFlashcards().length + getCategories(nav.data).reduce((acc, cat) => acc + (nav.data[cat].quiz || []).length, 0);
     document.getElementById('totalQuestions').textContent = `${totalQ}+`;
 
-    document.getElementById('totalCategories').textContent = Object.keys(nav.data).length;
+    document.getElementById('totalCategories').textContent = getCategories(nav.data).length;
 
     const subtitle = document.getElementById('homeSubtitle');
     const meta = currentSubjectMeta();   // BUG-023: nepoznat subjekt → ostavi zatečen naslov

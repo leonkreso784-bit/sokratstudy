@@ -20,8 +20,9 @@
 //    SVAKI mail ondje. Na produkciji je nema. Mail na izmišljenu adresu (npr. `@sokrat.local`
 //    testnog računa) vraća se kao bounce i kvari ugled verificirane domene.
 
-import { createClient } from 'jsr:@supabase/supabase-js@2';
+import { createClient } from 'jsr:@supabase/supabase-js@2.117.0';
 import { primatelji, provjeriPoruku, sastaviMail, tokenOdjave, SEGMENTI } from '../_shared/mail-core.ts';
+import { biljegTokena } from '../_shared/token-guard.ts';
 
 const BATCH = 100;          // Resend `/emails/batch` prima najviše 100 mailova po pozivu
 const PER_PAGE = 1000;      // `auth.admin.listUsers` stranica
@@ -48,6 +49,13 @@ Deno.serve(async (req: Request): Promise<Response> => {
   // ── 1) TKO ZOVE — iz tokena, pravo kroz `is_admin()` ──
   const authHeader = req.headers.get('Authorization') ?? '';
   if (!authHeader.toLowerCase().startsWith('bearer ')) return json(401, { error: 'missing_token' });
+
+  // Ova funkcija šalje mail PREMA VAN u ime platforme → token korisnikovog AI-ja nema što ovdje
+  // tražiti, pa staje prije `is_admin()`. Sama brava u bazi (skinut PUBLIC EXECUTE s `is_admin`)
+  // ovdje bi dala 500 `admin_check_failed` umjesto 403 — točno odbijanje, netočan razlog.
+  const biljeg = biljegTokena(authHeader);
+  if (biljeg.aiToken) return json(403, { error: 'ai_token_forbidden', detail: biljeg.razlog });
+
   const asUser = createClient(url, anonKey, { global: { headers: { Authorization: authHeader } } });
   const { data: userData, error: userErr } = await asUser.auth.getUser();
   const caller = userData?.user;

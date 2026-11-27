@@ -75,12 +75,15 @@ spremljeni napredak korisnika.
   options: ["Production", "Customer needs", "Ads", "Quotas"], // obavezno — 2–6 opcija
   correct: 1,                                               // obavezno — INDEX točne (0-based)
   image: "assets/geography/city-dubrovnik.jpg",             // opcionalno — slika uz pitanje
-  imageAlt: "Aerial of walled old city on Adriatic coast"   // opcionalno — alt tekst slike
+  imageAlt: "Aerial of walled old city on Adriatic coast",  // opcionalno — alt tekst slike
+  card: "k3f9a1c-0"                                         // opcionalno — id kartice iz koje je pitanje nastalo (F6 ②/3)
 }
 ```
 Pravila: `correct` mora biti valjan indeks u `options`. Opcije se u aplikaciji
 nasumično miješaju, pa redoslijed nije bitan — bitan je točan indeks PRIJE miješanja.
 `image`/`imageAlt` koristi npr. Tourism Geography („koji grad je na slici").
+`card` (kviz i dopuna) je **aditivno** polje oblika id-a (`^[A-Za-z0-9_-]{1,64}$`): pitanja koja AI gradi kroz MCP
+nose id kartice iz koje su nastala (ADR-031, „pitanja iz kartica"). Renderer ga ne čita; katalog ga nema.
 
 ## FillBlank
 ```js
@@ -88,7 +91,8 @@ nasumično miješaju, pa redoslijed nije bitan — bitan je točan indeks PRIJE 
   sentence: "Modern marketing creates and exchanges _______.", // obavezno; _______ = praznina
   answer: "value",                                              // obavezno; provjera nije osjetljiva na velika/mala slova
   answers: ["value", "utility"],                                // opcionalno (2+) — VIŠE praznina, redom
-  hint: "Utility for customers..."                              // opcionalno
+  hint: "Utility for customers...",                             // opcionalno
+  card: "k3f9a1c-0"                                             // opcionalno — id kartice iz koje je pitanje nastalo (F6 ②/3)
 }
 ```
 

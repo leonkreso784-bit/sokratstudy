@@ -156,6 +156,7 @@ const SokratStudio = (function () {
              : emptyCanvas()) + '</main>' +
       '  <aside class="st-inspector" id="stInspector">' + inspectorStub(false) + '</aside>' +
       '</div>';
+    mountAi();
 
     // C0: iz OSOBNOG čvora „natrag" vodi na stranicu vlastitog materijala — odande se i ušlo.
     // Prije C0 je stablo živjelo na profilu pa je tvrdi 'profile' bio točan; sada ondje stoji samo
@@ -265,14 +266,19 @@ const SokratStudio = (function () {
     return top +
       '<div class="st-icard"><h3>⬆ Publish</h3><p>' +
       esc(t('studio.publishHint', 'Objava = publish-RPC: atomično, verzija, konflikt se ne gazi.')) + '</p></div>' +
-      // M4 — panel je OBEĆAVAO tuđu značajku: „napiši Learn, kartice nastaju automatski" znači da
-      // MI vrtimo model i plaćamo ga. Odlučeno je drugo (ADR-026): AI dolazi s KORISNIKOVE strane —
-      // gumb ga spaja s AI-em koji već koristi, kroz MCP. Tekst sad govori to, i pošteno kaže da
-      // još ne radi. Ostaje `disabled` dok MCP ne postoji; ništa se ne obećava o vježbama (ADR-025 §1).
+      // M4 → F6 ②/5.1: AI dolazi s KORISNIKOVE strane (ADR-026) — gumb ga spaja kroz MCP. Gumb crta
+      // `SokratConnectAi.ugradi` (isti kao na „Mojim materijalima"); dok konektor ovdje ne radi
+      // (produkcija do ⑥) stoji onemogućen uz „Uskoro". Ništa se ne obećava o vježbama (ADR-025 §1).
       '<div class="st-premium"><h4>✨ ' + esc(t('studio.aiTitle', 'Tvoj AI')) +
-      ' <span class="st-pill">' + esc(t('studio.soon', 'USKORO')) + '</span></h4>' +
-      '<p>' + esc(t('studio.aiHint', 'Spoji AI koji već koristiš pa mu daj svoje bilješke — gradi materijal izravno ovdje.')) + '</p>' +
-      '<button class="st-btn primary" style="width:100%" disabled>' + esc(t('studio.aiBtn', 'Spoji svoj AI')) + '</button></div>';
+      (aiDostupan() ? '' : ' <span class="st-pill">' + esc(t('studio.soon', 'USKORO')) + '</span>') + '</h4>' +
+      '<p>' + esc(t('studio.aiHint', 'Spoji AI koji već koristiš pa mu daj svoje bilješke — gotov materijal stavit će ti na policu.')) + '</p>' +
+      '<div class="st-ai-entry" data-cai-mount></div></div>';
+  }
+  function aiDostupan() { return !!(window.SokratConnectAi && window.SokratConnectAi.dostupno()); }
+  /** Gumb „Spoji svoj AI" u inspektoru — nakon SVAKOG crtanja inspektora (innerHTML ga briše). */
+  function mountAi() {
+    var el = document.querySelector('#stInspector [data-cai-mount]');
+    if (el && window.SokratConnectAi) window.SokratConnectAi.ugradi(el, { bezKonektora: 'onemoguci' });
   }
 
   /**
@@ -528,6 +534,9 @@ const SokratStudio = (function () {
     if (!b || !editing()) return;
     var data = currentData();
     if (!data || !data[catId]) return;
+    // K/10 priprema (Leon 17.11.): materijal ne ostaje bez sekcija — strogi profil u bazi (`minProperties: 1`)
+    // odbio bi takvu objavu. Isto pravilo ima AI-jev put (`alat_zadnja_lekcija`). Pita se PRIJE potvrde.
+    if (cats(data).length <= 1) { toast(t('studio.lastCat', 'Materijal mora imati barem jednu sekciju. Najprije dodaj novu, pa obriši ovu.')); return; }
     var name = (data[catId] && data[catId].name) ? String(data[catId].name) : catId;
     if (typeof window.askConfirm === 'function') {
       var ok = await window.askConfirm({
@@ -664,6 +673,7 @@ const SokratStudio = (function () {
   function renderLearnPane(data, isEd) {
     var out = '';
     var n = 0;
+    var zadnja = cats(data).length <= 1;   // K/10 priprema: jedina sekcija se ne briše (v. delSection)
     cats(data).forEach(function (catId) {
       var c = data[catId];
       if (!c || typeof c !== 'object') return;
@@ -700,7 +710,9 @@ const SokratStudio = (function () {
         // F4: brisanje sekcije. Op `removeCategory` postojao je od U6c, ali ga je zvao SAMO stari
         // admin-overlay — Studio je imao dodaj/preimenuj/boju/presloži, a brisanja nije bilo nigdje.
         '<button type="button" class="st-catdel" data-st-catdel="' + esc(catId) + '" ' +
-        'title="' + esc(t('studio.delCat', 'Obriši sekciju')) + '" aria-label="' + esc(t('studio.delCat', 'Obriši sekciju')) +
+        (zadnja ? 'aria-disabled="true" title="' + esc(t('studio.lastCat', 'Materijal mora imati barem jednu sekciju. Najprije dodaj novu, pa obriši ovu.')) + '" '
+          : 'title="' + esc(t('studio.delCat', 'Obriši sekciju')) + '" ') +
+        'aria-label="' + esc(t('studio.delCat', 'Obriši sekciju')) +
         '"><i class="fas fa-trash"></i></button>' + '</div>' +
         '<div class="st-learn-body">';
       if (kind === 'v2') {
@@ -924,7 +936,7 @@ const SokratStudio = (function () {
 
     // #7: inspektor je mode-svjestan → osvježi ga SAMO kad se edit-stanje promijeni (ne na svaku op).
     var insp = byId('stInspector');
-    if (insp && _inspEd !== isEd) { _inspEd = isEd; insp.innerHTML = inspectorStub(isEd); }
+    if (insp && _inspEd !== isEd) { _inspEd = isEd; insp.innerHTML = inspectorStub(isEd); mountAi(); }
 
     if (!chip) return;
     if (!hasLesson) { chip.textContent = '—'; chip.classList.remove('dirty'); return; }
@@ -942,6 +954,8 @@ const SokratStudio = (function () {
     var d = currentDraft();
     if (!d || !d.dirty) { toast(t('studio.nothingToPublish', 'Nema izmjena za objavu.')); return; }
     if (!bridge()) return;
+    // Obrana uz delSection: do nula sekcija se može doći i mimo gumba — baza bi takvu objavu odbila.
+    if (!cats(currentData()).length) { toast(t('studio.publishEmpty', 'Dodaj barem jednu sekciju prije objave.')); return; }
     await bridge().publish();          // U4 publish_document RPC
     renderCanvas();                    // izašli iz draft-moda → read-only sinkroniziran sadržaj
     refreshTopbar();

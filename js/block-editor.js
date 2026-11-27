@@ -70,7 +70,11 @@
     if (run.b) html = '<strong>' + html + '</strong>';
     if (run.i) html = '<em>' + html + '</em>';
     if (run.color && INLINE_COLORS[run.color]) html = '<span class="lb-color-' + run.color + '">' + html + '</span>';
-    if (run.href) html = '<a href="' + esc(run.href) + '" data-be-link>' + html + '</a>';
+    // F6 ②/0c: ista provjera sheme kao renderer. Poveznica koju `safeUrl` odbije (ili kad renderer
+    // nije učitan) izlazi kao OBIČAN TEKST — fail closed; sljedeći focusout je ne vraća u model.
+    const href = (run.href && window.SokratBlocks && typeof window.SokratBlocks.safeUrl === 'function')
+      ? window.SokratBlocks.safeUrl(run.href) : '';
+    if (href) html = '<a href="' + esc(href) + '" data-be-link>' + html + '</a>';
     return html;
   }
   function runsToEditable(inline) {

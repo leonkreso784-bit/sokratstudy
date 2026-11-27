@@ -183,7 +183,7 @@ async function main() {
     const baseVersion = verRes && verRes.ok ? ((await verRes.json())[0] || {}).version : null;
     const pub = await http('/rest/v1/rpc/publish_node', {
       method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, asUser),
-      body: JSON.stringify({ p_node_id: nodeId, p_payload: { lekcija: { flashcards: [{ q: 'H1', a: 'provjera' }] } }, p_base_version: baseVersion })
+      body: JSON.stringify({ p_node_id: nodeId, p_payload: { lekcija: { name: 'H1', flashcards: [{ question: 'H1', answer: 'provjera' }] } }, p_base_version: baseVersion })
     });
     const autorski = await http(`/rest/v1/node_content_versions?edited_by=eq.${user.id}&select=id`, { headers: svcHeaders() })
       .then((r) => r.ok ? r.json() : null).catch(() => null);

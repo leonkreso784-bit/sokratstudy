@@ -5,7 +5,7 @@
 
 > **👤 Repo ima JEDNOG suradnika: Leona.** Content-suradnik je otkazan 2026-09-04 → **role-router je
 > ukinut**, `git config user.name` se više ne provjerava. Povijest tog modela: `docs/archive/TEAM.md`,
-> ADR-023 (otkazan). Sedam HR predmeta koje je proizveo **ostaje na produkciji**.
+> ADR-023 (otkazan). HR predmeti koje je proizveo **ostaju na produkciji**.
 
 ## Što je projekt
 Interaktivna platforma za učenje (flashcards / quiz / fill / learn + interaktivne vježbe). Live: **www.sokratstudy.com**.
@@ -35,7 +35,7 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 - Konvencija semestra: `year` = studijska godina; `semester` ∈ {1,2}.
 
 ## Sadržaj (autorstvo)
-- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** — 2. god 8/8 ✅ · 1. god 9/9 ✅ (⛔ Intro blokiran) · HR pilot ✅ · MOR ✅ (ADR-041). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
+- **Stanje svih predmeta (brojevi/izvori/posebnosti): `docs/subjects/README.md`** (broj zna `npm run verify`; ⛔ Intro blokiran; MOR ADR-041, PFRI ADR-042). Sadržajna staza PAUZIRANA (ADR-018); HR je od 2026-09-04 **bez vlasnika**.
 - Schema (obavezno): `docs/architecture/CONTENT_SCHEMA.md`. Novi predmet = mapa `data/<subject>/{midterm-1,midterm-2,final}.js`; brzo: `npm run scaffold`. 4 stara sem-2 predmeta ostaju root `data-*.js` (svjesno, ADR-015).
 - PDF materijali: `_materials/` (gitignored); čitaj s `node scripts/pdf-text.js "<pdf>"` (Read ne radi za PDF). Vidi `docs/workflow/CONTENT_INTAKE.md`.
 - **KaTeX** (kvantitativni predmeti): delimiteri **`\( \)` / `\[ \]` / `$$ $$` — NIKAD jedan `$`** (valutni `$NN`); `renderMath()` u `js/math.js`. Konvencija: `docs/architecture/CONTENT_SCHEMA.md` §Matematika.
@@ -45,7 +45,7 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 1. **Cache bump:** pri izmjeni BILO KOJEG `css/*.css`/`js/*.js`/`data*.js` pokreni **`npm run bump`** (svi `?v=` + `CONTENT_VERSION` + `SW_VERSION` odjednom). `bump:check` = CI gate. Bez bumpa deploy je NEVIDLJIV (immutable cache 1 god; BUG-004, ADR-017). (`.md` izmjene ne traže bump.)
 2. **SVAKI push na `main` traži Leonov IZRIČIT OK** — `git push` na main = produkcija. **Vrijedi i za čiste `.md` pusheve** (Leon, 2026-08-10: *„da sve ide uz moj OK"*; povod: nakon odobrenog mergea pushao sam još 4 docs-commita po vlastitoj procjeni opsega — odobrenje jedne radnje ne proteže se na sljedeću). Pravilo #3 traži da docs **napišeš**, ne da ih **pushaš**. Commit lokalno / push na feature-granu (preview) je i dalje slobodan. [[push-to-main-needs-ok]] **Deploy-guard:** pre-push hook (`.githooks/pre-push`) blokira push na `main` ako `npm run preflight` padne (aktiviraj po klonu: `git config core.hooksPath .githooks`; svjestan bypass = `--no-verify`). Direktan bypass-push na `main` preskače CI → **preflight je zadnja mreža** (BUG-004).
 3. **Uvijek ažuriraj `docs/`** nakon izmjene (PROGRESS/CHANGELOG + tematske; stanje predmeta u `docs/subjects/README.md`).
-4. **Provjeri prije commita:** `npm run verify` + `npm run test:responsive`; nakon izmjene css-a i `npm run build:css` (`studio.css`/moduli = bundle → inače CI drift-gate padne). [[preflight-before-every-push]]
+4. **Provjeri prije commita:** `npm run verify` + **CILJANI** Playwright (specovi koji diraju promijenjeno); **puni skup vrti CI na push grane i ja pročitam ishod**; puni lokalni `test:responsive` samo prije `main`-a (Leon 11.10., `TESTING.md` §Koji testovi kada). Nakon css-a i `npm run build:css` (bundle → inače CI drift-gate padne). [[preflight-before-every-push]]
 5. Radi pažljivo, korak po korak, s provjerama; pazi na bugove. **Tempo = FAZA-CHECKPOINT** (Leon 2026-08-02): teci kroz cigle unutar faze (gate na svakoj), STANI na kraju faze za OK; **deploy = uvijek izričit OK**. [[pace-short-stretches-check-in]]
 6. **PRIJE SVAKOG COMPACTA (korisnikovo pravilo, 2026-06-24):** proći **APSOLUTNO SVE `.md` datoteke** (root + `docs/**` + memorija) i provjeriti točnost (status, brojevi, ADR-ovi, linkovi) — ispraviti zastarjelo PRIJE compacta. [[doc-audit-before-compact]]
 7. **Nakon pusha provjeri i Vercel check na commitu, ne samo GitHub Actions** (Actions ne validira `vercel.json`!); `vercel.json` = bez komentar-ključeva (ruše schema-validaciju prije builda).
@@ -69,7 +69,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 ### `npm run preflight` — sve brze brane odjednom (pokreni PRIJE svakog main-pusha)
 
 `check:lockfile` · `check:node` · `verify` · `bump:check` · css-drift · `check:tailwind` · `check:cdn` ·
-`check:palette` · `check:tokens` · `check:i18n` · `check:orphan-css` · `check:safearea` · `check:names` · `check:hover` · `check:csp` · `check:budget` · `check:seo` · `check:contrast` ·
+`check:palette` · `check:tokens` · `check:i18n` · `check:orphan-css` · `check:safearea` · `check:names` · `check:hover` · `check:csp` · `check:mcp-rewrite` · `check:budget` · `check:seo` · `check:contrast` ·
 `typecheck` · `validate:schema` · `export:json --check` · `check:docs` · `check:state` ·
 `test:unit`. Pre-push hook ga automatski vrti na `main`.
 
@@ -78,7 +78,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `check:lockfile` | bi li `npm ci` prošao — vrti **dva npm-a** (lokalni + onaj iz CI-ja), pada zatvoreno. Lock se popravlja s `npx npm@10 install` |
 | `check:node` | `.nvmrc` == `engines` == CI == proces koji vrti — **isti major**, inače pada zatvoreno |
 | `check:state` | tvrdnje o stanju se slažu s gitom (broj commita žive grane · **zapovijed koja je već izvršena**). Pokriva `CLAUDE.md`, `docs/plan/**`, `BACKLOG.md` |
-| `check:docs` | jedan aktivni plan · svaki `.md` u indeksu · nula mrtvih poveznica · **nula ćirilice** u kodu i sadržaju |
+| `check:docs` | jedan aktivni plan · svaki `.md` u indeksu · nula mrtvih poveznica · **nula ćirilice** u kodu i sadržaju · zapisi rotirani po mjesecima (`docs:rotate`) · **veličina** memorije, plana i `architecture` |
 | `check:tailwind` | 6 brana oko Tailwind sloja (dinamička imena klasa · sudar s legacy klasom · `@source` ugovor · klase bez bundlea · šum · **sudar `@keyframes`**) |
 | `check:cdn` | vanjski podresursi imaju **SRI + `crossorigin` + verzioniran URL**; `check:cdn:live --verify` uspoređuje bajtove s izdavačevim hashem (mrežno) |
 | `check:palette` | **čegrtaljka**: broj ostataka stare palete ne smije **porasti** (`--update` spušta osnovicu). Uz nju **četiri tvrde zabrane**: zakucan tekst na ispuni marke · isto to na **POTOMKU** ispune · `--primary-light` kao tekst · **zakucana tamna ploha** |
@@ -89,6 +89,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `check:names` | nijedno ime stvarne osobe; popis **izvan gita** (`.imena-zabrana.txt`) — nema ga = pad |
 | `check:hover` | svaki `:hover` pod `(hover: hover)` + prefiks `:where(:root:not([data-hover-paused]))` — ne lijepi se ni dodir ni miš |
 | `check:csp` | 0 inline `<script>` (iznimka ld+json) i 0 `on*` atributa u `*.html` + enforce header bez `unsafe-inline` za skripte |
+| `check:mcp-rewrite` | routing za `/mcp` se **izvodi** iz `vercel.json`, ne čita: imenovan host → svoj projekt, **nepoznat → ništa**. `--zivo` mjeri pravi poslužitelj (mrežno, izvan preflighta) |
 | `check:budget` | posjetiteljev put: **nijedna editorska datoteka** + **≤ 200 KB prenesenih** skripti (mjeri PRENESENE bajtove, ne disk) |
 | `check:seo` | ono što tražilica i pretpregled VIDE: sitemap == disk · robots ne `Disallow`-a `noindex` stranicu · jedan tekst u `<title>`/`og:`/`twitter:` · `og:image` **1200×630** · JSON-LD **parsira**. `--write` regenerira sitemap |
 | `check:contrast` | WCAG **po temi** — 358 provjera kroz sve teme; parsira `css/tokens.css`, ne drži kopiju vrijednosti |
@@ -110,6 +111,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `npm run check:final` | bazni `final` red == M1⊕M2(+examPractice); preskočene **imenuje** protiv zakucane osnovice (osmi = pad) | mrežno (anon, read-only) |
 | `npm run diff:db [id]` | usporedi bazu s datotekama **prije re-synca** — `migrate-content.js` piše PREKO baze, a `content_versions` je audit, ne undo | mrežno |
 | `npm run check:functions` | Edge Functions na PRODUKCIJI: sve deployano, JWT (401) osim imenovanih javnih, stranci 404 | mrežno, bez ključa |
+| `npm run mcp:brava` | brava nad AI-tokenom (F6 ①/2): pravi OAuth token bez preglednika; zabranjeno pada, MCP alat radi. **TVRDO odbija prod** | mrežno + staging tajne |
 | `npm run backup` / `backup:verify` | DB snapshot → gzip-JSON + sha256 manifest u `backups/` (gitignored, KORISNIČKI podaci) | mrežno; restore je guarded (`--restore` dry-run · `--confirm` · `--force-prod`) |
 | `npm run load-probe [N] [R]` | simulira razred: N paralelnih anon readova × rundi | mrežno |
 
@@ -118,8 +120,9 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 - **`npm run test:responsive`** — Playwright, default suite (iPhone profili).
   ⚠️ Prijava zna pasti **iz utrke**, i to nije naš kod — dva lica su opisana u `tests/auth.setup.js`
   (drugo, `is_admin() = false` uz prazan `rpcError`, obori **cijeli** `authenticated` projekt).
-- **`npm run test:authed`** — pozitivan admin-put (storageState; traži `TEST_ADMIN_EMAIL/PASSWORD`;
-  gađa **STAGING** kad su `STAGING_*` u `.env`; u CI-ju zaseban secret-gated job).
+- **`npm run test:authed`** — admin-put, **154 tvrdnje, ~15 min**, **STAGING** kad su `STAGING_*` u
+  `.env`. **Od S1 i u CI-ju i u pre-push hooku na `main`.**
+  ⚠️ `gate` job = jedina required-provjera → `main` je **PR-only**.
 - **`tests/phone.spec.js` + `phone.authed.spec.js`** (mjera: `tests/helpers/phone-gate.js`) —
   **telefon kao STRANICA**: 9 tvrdnji na 320/393/430 px i 852×393, + **sedam** načina učenja
   (`progress` · `exercises`/`blind-map` uvjetni — predmet iz kataloga po značajci). ⚠️ **568×320 svjesno NIJE u brani** (22 tuđa nalaza; `BACKLOG.md`).
@@ -147,7 +150,7 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 
 > **„F4", „U8", „K6" u starim zapisima = ZATVORENE oznake faza** (temelj F1–F6 · graditelj F0–F5 · editor U/F7/K). Sve tri serije su ispunjene i žive samo kao povijest u `docs/archive/` i `docs/plan/ROADMAP.md`. **Nova faza dobiva ime, ne slovo.**
 
-## Stanje — TRENUTNO (2026-09-04)
+## Stanje — TRENUTNO
 
 > **Ovdje stoji samo ono što vrijedi SAD** (ADR-027). **Povijest cigli je IZAŠLA odavde**
 > (2026-08-25): mjere, pouke i obrnute provjere žive u specu i zapisima — ova je sekcija do
@@ -163,7 +166,7 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 > | što je isporučeno i kada | `CHANGELOG.md` · dnevnik sesija: `PROGRESS.md` |
 >
 > **Brojka prepisana u prozu ostari istog dana** → zato **`npm run check:state`** (zašto: u
-> skripti). ⚠️ **Memorija je izvan repozitorija pa ju gate ne doseže** — poznata rupa, ne previd.
+> skripti). ⚠️ **Memorija je izvan repozitorija:** `check:state` ju ne doseže; `check:docs` joj mjeri samo veličinu (na stroju gdje postoji).
 
 ### Gdje smo
 
@@ -176,15 +179,14 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 ⚠️ **Mjerač mora ispisati i koliko je toga dotaknuo** — bio je prvi kvar 12× u fazi redizajna
 i dvaput vratio uvjerljiv krivi broj umjesto da padne.
 
-### 🎯 FRONTEND REDIZAJN + MREŽA = ✅ **NA PRODUKCIJI (2026-09-01)** — dalje: **RASPORED F2 (račun)**
+### 🎯 FRONTEND REDIZAJN + MREŽA = ✅ **NA PRODUKCIJI (2026-09-01)**
 
-Oba speca u `docs/archive/`; što je točno isporučeno zna CHANGELOG. **Next.js odbijen (ADR-028).**
-**🚚 SEOBA je OTKAZANA** (Leon, 2026-09-01) → `BACKLOG.md` §SELF-HOST = arhiv odluke, ne plan.
-Aktivni spec: **`docs/plan/RASPORED.md`** (2026-09-04) — cijela preostala lista razrezana na
-**sedam faza kroz sesije**: F1 uređaj · F2 račun (R2+R3 + CSS profila) · F3 dvojezičnost ·
-F4 čišćenje CSS-duga · F5 vježbe/recepti · F6 MCP · F7 objava. **§6: nula otvorenih (anketa 06.09.).**
+Oba speca u `docs/archive/`; isporučeno zna CHANGELOG. **Next.js odbijen (ADR-028)** · **🚚 SEOBA OTKAZANA**
+(Leon, 01.09.) → `BACKLOG.md` §SELF-HOST = arhiv, ne plan.
 
-**F1 isporučen; KARTICE parkirane (Leon 08.09., `feat/tinder-kadar`, CI ondje crven, ne otvarati bez njegove riječi; BUG-045/046 ondje → samo cherry-pick). F2 gotov na granama (PROD čeka Leona). **F3/1 ✅** (ADR-037) · F3/2 ①–④ ✅ → **MCP (F6)** (RASPORED §2).**
+> **🧭 NOVI SMJER (2026-10-03, ADR-040):** Leonov **glavni projekt je HotelixSim** — zaseban repo
+> `Documents\hotelixsim`. **Sokrat se dovršava usporedo, pa ide u ODRŽAVANJE.**
+> Aktivni spec: **`docs/plan/ZAVRSNICA.md`** (faze i uvjeti ondje); `RASPORED.md` i `MCP.md` su u `docs/archive/`. **Zamrznuto:** tržište gradiva (ADR-035), organizacije i exam (ADR-036).
 
 **Živa pravila IZGLEDA** (nadžive fazu; obrazloženja u spec-arhivi):
 
@@ -193,8 +195,6 @@ F4 čišćenje CSS-duga · F5 vježbe/recepti · F6 MCP · F7 objava. **§6: nul
   smjer, naravno"*): grotesk svugdje (**serif nadglašen**), praznina, tipografija nosi, monokrom
   + jedan akcent. Spec §7.3–7.8.
 - **Traka nosi TOČNO DVA odredišta: vlastito gradivo i profil** (F2/0 — **okreće T2**, Leon: *„gore treba biti profil i UGC"*). Ulaz je u TRAJNOM KROMU, na svakoj stranici; **drugi ulaz u istu traku vraća kvar koji je K2b uklonio**, zato brana traži točno jedan.
-- **🔒 ZNAK JE NEPROMJENJIV** (Leon: *„sokrat logo je nezamjenjiv"*) — ne prepravlja se nego
-  dobiva PROSTOR, i **zadržava indigo kroz sve teme = konstanta marke**.
 - **Broj predmeta se NIKAD ne piše rukom.** Jedini ručno pisan je statični fallback u
   `index.html` i njega čuva `npm run verify`; landing je taj razred greške već imao **na
   produkciji** (pisao 17 kad ih je bilo 22).
@@ -246,11 +246,12 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
 - **STAGING Supabase:** `sokrat-staging` (ref `czljmvigkgiajzjxtndq`) — write/draft testovi, da
   prod-audit ostane čist. `test:authed`/`rls-check` gađaju staging kad su `STAGING_*` u `.env`;
   seed = `node scripts/seed-staging.js`.
+- **⏸️ KARTICE parkirane** (Leon 08.09.): `feat/tinder-kadar` se ne otvara bez njegove riječi (CI ondje crven); BUG-045/046 → samo cherry-pick.
 - **⏳ Grane izvan `main`-a:** zna ih `git branch --no-merged main`, ne ova datoteka. ⚠️ Grana zna
   izgledati kao platformski zahvat a nositi samo `?v=` tokene → *uzmi `main`, pa `npm run bump`*.
 - **⚰️ Content-suradnik OTKAZAN 2026-09-04** (Leon) — role-router ukinut, `docs/archive/TEAM.md` je
-  povijest, ADR-023 nosi pečat. **Gradivo ostaje:** sedam HR predmeta je živo. **S4+S5** (4
-  kvantitativna HR predmeta, vježbe = samo string-polja) je time **BEZ VLASNIKA**, ne otkazan.
+  povijest, ADR-023 nosi pečat. **Gradivo ostaje** i živo je. **S4+S5** (kvantitativni HR
+  predmeti s vježbama) izgradili smo mi 27.–29.09.; stanje po predmetu: `docs/subjects/README.md`.
   `content-review` agent i dalje vrijedi za bilo koji content-zahvat. [[content-model-standard]]
 - **HR-ekspanzija:** HR 1. god × 3 smjera FMTU dijele vezne predmete (ADR-022). Kad HR program
   bude potpun → **HR u Supabase** (`migrate-content.js`). [[hrv-program]]
@@ -259,37 +260,38 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
   ostaje); klijentski dvojnik (D4, `js/auth.js`) svejedno stoji.
   ⚠️ **NE „popravljaj" `js/auth.js:343`** — tvrdnja o `WeakPasswordError` je **oborena**: u
   zakucanom `supabase-js@2.110.8` slaba lozinka dolazi kao `data.weakPassword` uz `error: null`.
-- **Sitni dug (ne blokira):** siročad u Storageu · PROD čeka `f1-nodes.sql` (staging) ·
+- **Sitni dug (ne blokira):** siročad u Storageu · PROD čeka `f2-temelj-mreze.sql` + mail (18.09.) ·
   `set_updated_at` ima promjenjiv `search_path` (jedini nenamjeran WARN). ⚠️ **`is_admin()` se NE smije
-  revokeati `authenticated`-u** — zovu ga RLS politike kao pozivatelj.
+  revokeati `authenticated`-u** — zovu ga RLS politike kao pozivatelj (F6 ①/2 skinuo mu je samo PUBLIC).
 - **Napomene:** Supabase org je `pro` i **plaća se do daljnjeg** (Leon, 2026-09-01) →
   free-tier spavanje nije prijetnja · `content_versions`/`node_content_versions` =
   **append-only audit**, brisanje **samo uz izričit OK** · PWA drži staru ikonu do
-  reinstalacije (nije bug) · `mcp-admin/` = untracked read-only spike [[mcp-admin-spike]].
+  reinstalacije (nije bug).
 
-## Ključne odluke — samo one koje MIJENJAJU današnji rad
+## Ključne odluke — jedan redak po ADR-u, puni tekst u `docs/records/DECISIONS.md`
 
-> Puni tekst i sve starije: **`docs/records/DECISIONS.md` (ADR-001…038)**.
-> Ovdje su ADR-ovi koji su **živa ograničenja**, ne povijesno obrazloženje.
+> Samo ADR-ovi koji su **živa ograničenja**. Redak je kuka, ne zamjena: prije zahvata u tom području pročitaj ADR.
 
-- **ADR-034:** **stranica se NE zumira** (Leon, 2026-09-05) — ni štipanje ni dodir ni fokus; nadjačava WCAG 1.4.4; **F1/11 ✅** (`ISKLJUCENO_ODLUKOM` u `axe-gate.js`).
-- **ADR-031:** **MCP je CJEVOVOD, ne CRUD** (Leon, 2026-08-30): `Learn` je podloga svega → AI prvo prepozna lekcije/sekcije i napiše skriptu → iz nje kartice (**pojam/pitanje → objašnjenje**, boja po lekciji da se vidi kojoj pripada) → iz kartica dopune i kviz, uz **pokrivenost, ne uzorak**. **AI je KORISNIKOV** (ne plaćamo tokene → kvalitetu držimo samo branama), **materijal dolazi kroz chat** (datoteku nikad ne vidimo), **sve ide u NACRT**, doseg = **samo vlastito gradivo** (ni čitanje kataloga). **Četiri tvrde brane u write-putu:** duljina kartice · svaka kartica daje bar jedno pitanje · svaka lekcija dobiva boju · dopuna ima jednoznačan odgovor. **Radi se TEK NAKON FRONTENDA**, a konektor traži OAuth → čeka **RAČUN blok** (seoba otkazana 2026-09-01, OAuth više ne čeka nju).
-- **ADR-030:** **AI kroz MCP je GLAVNI put stvaranja; editor je DORADA** (Leon, 2026-08-13) — smije IZGUBITI funkcije, ne dobiti ih. MCP je proizvod, ne spike (danas untracked read-only pokus), i najveći neriješeni komad plana; **kontrola kvalitete seli s ekrana u write-put** (`js/card-limits.js` = **treći čitatelj, nikad treća kopija**); nikad katalog/`is_admin()`/`service_role`; **vježbe izvan MCP-a** (ADR-018).
+- **040** novi smjer (03.10.): glavni projekt je HotelixSim; Sokrat se dovršava po ZAVRSNICI pa održavanje · dijeljenje linkom obara 025 · brane 031 sužene (uži MCP) · 035/036 zamrznuti · novi znak, ime ostaje.
+- **039** materijal od AI-ja ide na policu SAM i cijel (`predaj_nacrt`, jedna transakcija), bez ekrana za pregled · izmjena postojećeg samo na korisnikovu riječ, uz provjeru verzije (sukob = odbij, ne prepiši).
+- **038** MCP: nacrt u `node_drafts`, AI nikad u žive tablice · adresa `www.sokratstudy.com/mcp` · DCR uz popis hostova · **sigurnost u bazi** (token s `client_id` = zabrana po defaultu, nov RPC zatvoren dok se ne otvori), **kvaliteta u poslužitelju**.
+- **037** pravne stranice nose oba jezika u stranici; `boot.js` bira prije crtanja.
+- **035 · 036** ❄️ zamrznuti (040): tržište gradiva i najam organizacijama se u Sokratu ne grade.
+- **034** stranica se NE zumira (štipanje, dodir, fokus); nadjačava WCAG 1.4.4 (`ISKLJUCENO_ODLUKOM` u `axe-gate.js`).
+- **033** dvojezičnost se prevodi, ne gasi; jezik sučelja nikad ne dira predmete.
+- **032** semantika je uvijek PUNA ISPUNA, obrub nije zamjena; po temi se prilagođava tinta (`--color-on-ok/danger`, `inkForTint()`).
+- **031** MCP je cjevovod: Learn → kartice (pojam → objašnjenje, boja po lekciji) → dopune/kviz, uz pokrivenost · AI je KORISNIKOV (ne plaćamo tokene), materijal kroz chat, sve u nacrt, doseg samo vlastito gradivo · brane u write-putu.
+- **030** AI kroz MCP = glavni put stvaranja, editor = dorada (smije gubiti funkcije) · MCP je proizvod, ne spike · kvaliteta u write-putu, `js/card-limits.js` treći čitatelj, nikad kopija · vježbe izvan MCP-a.
+- **029** UGC je glavni proizvod unutar Sokrata; katalog je jedan izvor gradiva · Moji materijali = ravnopravno odredište · sigurnosno ne popušta ništa.
+- **028** Tailwind v4 samo kroz CLI, generirani CSS se commita, CDN nikad · nikad u `data/` · zabranjene dinamičke klase (`'bg-' + boja`).
+- **027** znanje u kod i testove, proza samo ZAŠTO · jedna činjenica = jedno mjesto · prepoznat rub isti čas dobiva test.
+- **026** „materijal" u „polici" (EN `folder`), „gradivo" = katalog · mobilno autorstvo preko korisnikovog AI-a · MCP nikad katalog, `is_admin()`, `service_role`.
+- **025** osobni materijal: vježbe odgođene · napredak kao katalog · boje se nasljeđuju od sekcije i smiju se pregaziti · korisnik je bilo tko · slike vezane na vlasnički prefiks.
+- **024** osobni graditelj = zaseban otok (`nodes`, owner-RLS, upis samo RPC-om); dva publish-puta svjesno koegzistiraju.
+- **022** identitet predmeta preko programa (placement ≠ sadržaj) · 023 otkazan 04.09., njegova t.5 ostaje.
+- **018** korisnik uploada PODATKE, nikad KOD (i UGC) · **017** jedan auto-bumpani token (`npm run bump`) · **016** `service_role` samo u Edge Functions · **011** read-path = anon + RLS, bez `/api`, uz file-fallback.
+- Ostali (001–015, 019–021) su povijesno obrazloženje, u `DECISIONS.md`. Logo danas: `assets/logo.svg` (indigo, potrace), favikoni iz SVG-a — mijenja ga faza ZNAK.
 
-- **ADR-029:** **UGC je GLAVNI proizvod**, javni katalog (broj predmeta zna `npm run verify`) je **jedan izvor gradiva**, ne srce platforme. „Moji materijali" prestaju biti pododjeljak profila i postaju **ravnopravno odredište** (stranica + ulaz u navigaciji i na landingu). **Ne popušta ništa sigurnosno** — ADR-024/025/018 stoje netaknuti; ovo je odluka o **istaknutosti**. **➕ Dopuna 2026-08-14:** *„UGC PRIJE kataloga"* ublaženo u **„ravnopravno, i to u herou"** — doslovna primjena skrivala je jedini dokaz da sadržaja ima. **Ublažavanje, ne ispunjenje.**
-- **ADR-028:** frontend ide na **Tailwind v4, ali SAMO preko CLI-ja** (generirani CSS se commita, kao i dosad `styles.bundle.css`) — **CDN nikad** (kompajler u pregledniku se tuče sa SW-om i immutable cacheom). **Tailwind NIKAD ne ulazi u `data/`** — gradivo zadržava semantičke klase, inače stil živi u podatku. **Dinamički sastavljene klase (`'bg-' + boja`) su zabranjene** — Tailwind skenira izvor, ne runtime; paleta od 8 boja ostaje na CSS varijablama.
-- **ADR-027:** znanje ide u **kod i testove**; proza nosi samo **ZAŠTO**. Jedna činjenica = **jedno mjesto**. Rub koji prepoznaš isti čas dobiva test — inače je zapis samo uredno dokumentiran propust (povod: BUG-023).
-- **ADR-026:** korisnik gradi **„materijal"**, spremnik je **„polica"** (EN ostaje `folder`); „gradivo" = javni katalog. **Mobilno autorstvo ide preko korisnikovog AI-a (MCP)**, ne preko editora na dodir. MCP invarijante: nikad katalog, nikad `is_admin()`, nikad `service_role`.
-- **ADR-025:** doseg osobnog materijala — vježbe **odgođene** · dijeljenje privatno sad (**cijena: slike su vezane na vlasnički prefiks**) · napredak isti kao katalog · **boje se nasljeđuju od sekcije i smiju se pregaziti** · korisnik je **bilo tko**.
-- **ADR-024:** osobni graditelj = **zaseban otok** (`nodes` + owner-RLS + RPC-only upis), NE proširenje kataloga; dva publish-puta svjesno koegzistiraju.
-- **ADR-023:** ⚰️ **otkazan 2026-09-04** (suradnik); t.5 (ADR-022 pull-forward) ostaje.
-- **ADR-022:** identitet predmeta preko programa (placement ≠ sadržaj) — temelj HR-ekspanzije.
-- **ADR-018:** student uploada **PODATKE, nikad KOD** (vrijedi i za UGC).
-- **ADR-017:** cache-busting = **jedan** auto-bumpani token (`npm run bump`), ne per-file hash.
-- **ADR-016:** `service_role` → **samo** Supabase Edge Functions, nikad Vercel/klijent.
-- **ADR-011:** read-path = Supabase **anon + RLS, bez `/api`**, uz file-fallback.
-- Ostalo (013 · 014 · 015 · 019 · 020 · 021 · 006–012 · 001/008) = **povijesno obrazloženje**, u `DECISIONS.md`.
-- **Logo:** `assets/logo.svg` (vektoriziran potraceom, indigo gradijent); favikoni iz SVG-a.
 ## Dokumentacija — **ulaz je SAMO `docs/README.md`**
 Od 2026-08-07 je `docs/` složen **po ulozi dokumenta**, ne po temi. Ne traži fajlove napamet — otvori indeks.
 

@@ -15,7 +15,7 @@
 //
 // Odgovor ne otkriva postoji li račun: nepostojeći korisnik s valjanim potpisom = „odjavljen" (200).
 
-import { createClient } from 'jsr:@supabase/supabase-js@2';
+import { createClient } from 'jsr:@supabase/supabase-js@2.117.0';
 import { provjeriToken } from '../_shared/mail-core.ts';
 
 const CORS: Record<string, string> = {

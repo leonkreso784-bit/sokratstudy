@@ -46,7 +46,7 @@ function renderLearnContent() {
         const flashcardsCount = data.flashcards ? data.flashcards.length : 0;
         // U7c: SAV learn ide kroz JEDAN renderer (sigurnosna granica). v2 = blokovi (escapani po tipu);
         // v1 = legacy-html blok kroz DOMPurify (allowlist pokriva naš sadržaj — legacy-html-coverage.test.js).
-        // Krajnji fallback (renderer nekako nije učitan) = staro ponašanje, da učenje nikad ne ostane prazno.
+        // Krajnji fallback (renderer nekako nije učitan) = escapan tekst, nikad sirov HTML (F6 ②/0d).
         // BUG-024: `renderContentBlocks` (ne goli `renderBlocks`) — on razriješi privatne slike
         // osobnog materijala. Izravan poziv je ovdje sliku tiho gutao pri učenju.
         let learnHtml;
@@ -55,7 +55,9 @@ function renderLearnContent() {
         } else if (data.learn && data.learn.content) {
             learnHtml = (typeof renderContentBlocks === 'function')
                 ? renderContentBlocks([{ type: 'legacy-html', html: data.learn.content }])
-                : data.learn.content;
+                // F6 ②/0d (N2): bez renderera nema ni sanitizatora → nikad sirov HTML. `lEsc` bez
+                // renderera vraća prazno (fail-safe, v. gore) — prazna lekcija, ne izvršen kôd.
+                : lEsc(data.learn.content);
         } else {
             learnHtml = '<p>No learn content available for this category.</p>';
         }

@@ -13,6 +13,157 @@
 > Njihovi zapisi ostaju **ovdje i nedirnuti** jer nose obrazloženje i mjerenja; spec nosi **redoslijed
 > i dokaz**. Kad cigla padne, ovdje se stavlja ✅ s brojkom — ne briše se.
 
+### ⏳ ČEKA LEONA — izvan repozitorija (preneseno iz checkpointa 2026-10-11)
+
+> Do 11.10. su ove stavke živjele samo u memoriji (`current-checkpoint`), koju nijedna brana ne doseže.
+> Svaka je provjerena na dan prijenosa; status koji ne znam piše „provjeriti", ne „gotovo".
+
+- **Required check `Gate (sve brane zelene)` na `main`-u** (Settings → Branches) — **provjeriti** je li uključen
+  (Leon 11.10.: ne zna; API zaštite grane traži admin pa ga ne mogu pročitati). Izbor je bio da se uključi, uz
+  svjesnu cijenu: **`main` postaje PR-only** — required check odbija i izravan push, pa lokalni `git merge` + `git push`
+  prestaje raditi. 29.09. je `main` pushan izravno, što s uključenom provjerom ne bi prošlo.
+- **Suvišan `STAGING_MAIL_UNSUB_SECRET` na PRODUKCIJI** (staging vrijednost, nitko ga ne čita; 26.09.) — brisanje
+  čeka Leonov OK. Ime koje funkcija čita je u Supabaseu uvijek `MAIL_UNSUB_SECRET`; prefiks `STAGING_` postoji samo u `.env`.
+- **Trajna Vercel bypass-tajna** (`VERCEL_AUTOMATION_BYPASS_SECRET` u `.env`; Vercel → `studymaster` → Settings →
+  Deployment Protection → Protection Bypass for Automation) — **još nije stvorena**; Vercel API meni odbija (403).
+  Dotad zaštićeni preview mjeri jednokratni put iz `docs/workflow/MCP_TESTING.md` §1.
+- **Ispale stavke (21.09.):** PRD redak „Frontend redizajn" još nosi stari status — provjeriti · Supabase
+  `TRUNCATE`-grantovi nisu provjereni drugdje osim na `nodes` (`ARCHITECTURE.md` §122) · **48 grana na originu**
+  (11.10.) — čišćenje uz Leonov popis · F2/3a+3b nisu potvrđeni na iPhoneu · zapis BUG-046 u `BUGS.md` kaže da kvar
+  „stoji na produkciji" — istina dok se popravak s grane ne deploya.
+- **Mape izvan repozitorija koje se smiju obrisati** (`Documents\`): `sokratstudy.f6-k5-mutacije`,
+  `sokratstudy.f6-k6-mutacije`, `sokratstudy.hr1-mkt-tmp`, prazna `sokratstudy.h1` (zaključana jer je Leonov cmd
+  bio unutra; grana `fix/h1-brisanje-racuna` živi na GitHubu).
+- **CI: `ubuntu-latest` prelazi na Ubuntu 26 između 19.10. i 19.11.2026.** (anotacija na svakom jobu runa `d6e3362`;
+  [runner-images#14748](https://github.com/actions/runner-images/issues/14748)). Druge metrike fontova → Playwright mjere
+  koje ovise o crtanju (širine, prelamanje, `phone.spec`) mogu pocrvenjeti **bez ijedne izmjene u kodu**. Ako se to dogodi,
+  prvo usporediti sliku runnera u logu joba; privremeni izlaz = `runs-on: ubuntu-24.04`.
+- **CI: `actions/checkout@v4` i `actions/setup-node@v4` ciljaju Node 20** — runner ih već sad **prisilno vrti na Node 24**
+  (upozorenje na svakom jobu runa `d6e3362`, run je zelen). Nadogradnja na verziju koja deklarira `node24` = zasebna cigla
+  uz pun gate (pravilo #9: verzija se pina točno).
+
+### 🔥 NAŠ AI + API KREDITI — popis i plan NAKON MCP-a (Leon, 2026-10-01)
+
+**Odluka (Leon):** put „kopiraj-zalijepi s korisnikovim AI-jem" **ne dolazi u obzir**. MCP ne doseže sve (Claude,
+plaćeni ChatGPT, znanje spajanja) → Sokrat dobiva **vlastiti AI**, plaćen **legitimnim** kreditima, što više.
+**Ne:** više računa / ključeva za zbrajanje besplatnih kvota (krši uvjete, ban svih povezanih računa). Mijenja
+ADR-031 („ne plaćamo tokene") → nov ADR + faza u planu. **Kad: nakon MCP-a (F6).** Dotad samo ovaj zapis.
+
+**Istraživanje 01.10.** (izvori u sesiji `bb99d98a`, ponoviti provjeru prije prijave — uvjeti se mijenjaju):
+- **Cijena materijala** (~50k ulaz + 30k izlaz, +30–50 % za HR): Gemini Flash-Lite / GPT-5 nano ~0,02 USD ·
+  Mistral Small ~0,03 · Gemini Flash ~0,15 · Claude Haiku ~0,10–0,20. → „naš AI" = naša Edge Function +
+  jeftin API, **ne** vlastiti model (samohostan / WebLLM je skuplji i slabiji do velikog prometa).
+- **Bez firme, odmah:** Google Cloud Free Trial **300 USD / 90 d** (Gemini preko Vertex AI, EU regija; NE AI Studio)
+  — aktivirati tek kad AI-cigla krene · **Azure for Students 100 USD/god** (@uniri, obnavlja se; ⚠️ produkcija
+  dopuštena? neprovjereno) · besplatni slojevi za razvoj: Cerebras 1M tok/dan, Mistral 10 USD/mj (EU; isključiti
+  trening), Cloudflare Workers AI.
+- **Najveća poluga = INKUBATOR:** Microsoft 100–150k i AWS Activate do 200k traže **partner-kod** (inkubator /
+  akcelerator) → pitati Rijeku / STEP RI jesu li partneri; i HAMAG-BICRO PoC (fizička osoba preko „prepoznatog centra").
+- **S firmom (j.d.o.o.):** Google for Startups 2k · Microsoft 1k+4k · AWS Activate 1–5k (uklj. Claude/Bedrock) ·
+  Cloudflare 10k (2,5k Workers AI) · Vercel do 30k · ≈ 10–20k USD ukupno; 100k+ gotovo svugdje traži i investitora.
+- ⚠️ **Besplatni Gemini API je ZABRANJEN za aplikacije s korisnicima iz EEA** (samo plaćeno / Vertex) ·
+  **DeepSeek izbjegavati** (podaci u Kini, zabrana u Italiji) · GitHub Models ugašen 30.07.2026. · GDPR: DPA + SCC/DPF
+  s pružateljem, spomen u politici privatnosti; maloljetni korisnici = otvoreno.
+- **Što ide u plan (nakon MCP-a):** popis kredita s rokovima i koracima · ADR · Edge Function s ključem (ADR-016) +
+  granica po korisniku · izbor modela mjerenjem na pravom materijalu (kvaliteta HR) · brane ③ na istom write-putu.
+
+### 🔥 Produkcija javno poslužuje `.md` — `CLAUDE.md`, `docs/**` (2026-09-30, izmjereno)
+
+**Izmjereno 30.09. (samo GET):** `www.sokratstudy.com/CLAUDE.md`, `/docs/README.md`, `/docs/records/PROGRESS.md`,
+`/docs/records/BUGS.md` → **200** `text/markdown`. Projekt nema `.vercelignore`, pa Vercel poslužuje svaku datoteku iz
+repoa. Kad F6 uđe u `main`, javno bi se posluživao i `architecture/MCP_SECURITY.md` (karta otvorenih nalaza).
+**Odluka (Leon, 30.09.):** sakriti **samo sa stranice**; GitHub-repo ostaje javan („github ćemo drugom prilikom"), a
+repo NE postaje privatan (izmjereno: ~244 CI-runa/mj. → privatni repo bi potrošio besplatnu kvotu Actions minuta).
+**Cigla:** `.vercelignore` (ili pravilo u `vercel.json`) za `*.md` i `docs/**` · brana u preflightu koja nabraja `.md`
+iz repoa i tvrdi da nijedan nije u deployu · poslije deploya izmjeriti 404 na istim adresama. Grana od `main`-a, deploy uz
+Leonov izričit OK. **Prije F6 → main.**
+**Poslije (zasebno, nije odlučeno):** docs izvan javnog GitHuba (npr. privatni repo) — povijest ostaje javna bez
+prepisivanja, koje NE preporučujem.
+
+### 🔥 AI-token smije promijeniti E-MAIL — je li „Secure email change" uopće uključen? (2026-09-22, F6 ①/2b)
+
+**Povod.** ①/2b je postavkom „Require current password" zatvorio **lozinku** AI-tokenu, ali `PUT /auth/v1/user`
+s poljem `email` ostaje **imenovano otvoren** (izmjereno: prolazi autorizaciju). Ako dvostruka potvrda
+(**Secure email change** — klik na **OBA** maila, stari i novi) **nije uključena**, put glasi:
+**AI promijeni mail → zatraži reset lozinke → preuzme račun.** Brava bi pritom ostala zelena, jer je taj
+redak otvoren **po planu**.
+
+## ✅ **ODGOVORENO 2026-09-22 — prekidač je UKLJUČEN na OBA projekta, put je zatvoren.**
+**➕ 2026-11-17:** Auth v2.198.0 odbija SVAKI OAuth-token na `/user` (403 `no_authorization`) — e-mail i metapodaci
+više nisu ni otvoreni; `mcp:brava` sada tvrdi zatvoreno za sva četiri polja.
+
+Provjereno **dvjema neovisnim metodama koje se slažu**:
+
+1. **Mjerenje pravim putem (staging).** Jednokratni korisnik, njegov vlastiti token, `PUT /auth/v1/user`
+   s poljem `email` — točno put kojim bi išao AI. U bazi su nakon toga **oba** tokena:
+   `email_change_token_current` **I** `email_change_token_new` → traži se potvrda i sa **stare** adrese.
+2. **Čitanje prekidača u dashboardu (staging I produkcija).** *Secure email change* = **uključen** na oba.
+
+**Zato put „AI promijeni mail → reset lozinke → preuzme račun" NE PROLAZI**: bez pristupa staroj adresi
+promjena ostaje „pending" i nikad se ne primijeni.
+
+⚠️ **Što je pritom oboreno, i vrijedi izvan ove stavke:** prvi pokušaj mjerenja išao je preko admin poziva
+`generate_link`, i dao je **dva suprotna odgovora u dvije minute**. Razlog: `generate_link` piše **onaj token
+koji zatražiš** (`email_change_current` → token za staru adresu, `email_change_new` → za novu), **neovisno o
+postavci**. Mjerio je dakle **alat, ne postavku**. Pouka: kad alat sam bira što će zapisati, on ne može biti
+mjerač te iste stvari — mjeri se put kojim ide napadač.
+
+⚠️ **Što i dalje NIJE zatvoreno:** ovo je **postavka u dashboardu koju nijedna brana ne gleda**. Može se
+isključiti a da ništa ne pocrveni. → **imenovan korak u F7** (uz „Require current password", koji je na
+produkciji **isključen**). Stanje prekidača na dan 22.09.:
+
+| postavka | STAGING | PRODUKCIJA |
+|---|---|---|
+| Secure email change | ✅ uključen | ✅ uključen |
+| Require current password when updating | ✅ uključen | ❌ **isključen** (F7) |
+| Prevent use of leaked passwords | ❌ isključen | ✅ uključen |
+| Secure password change (24 h reauth) | ❌ isključen | ❌ isključen |
+
+⚠️ **Usput nađeno:** staging i produkcija razilaze se u **dvije** postavke, pa staging **nije vjerna proba**
+za F7 — to treba poravnati prije objave, inače se na produkciji prvi put mjeri ono što nitko nije vidio.
+
+### ➖ AI-jevo preimenovanje materijala nema povijest (2026-10-15, priprema K/9)
+
+Od ②/4b AI na korisnikovu riječ mijenja **vlastiti** materijal, uključivo ime (`mcp_preimenuj_nacrt`). Sadržaj ima
+povijest i `vrati_izmjenu`, **ime nema** (`supabase/f6-nacrt.sql` ②/4b t.③) — zaveden model (zlonamjeran izvor)
+može preimenovati materijal, a korisnik staro ime ne može vratiti. **Leon, anketa 15.10.: prihvaćen rizik**
+(dopušten put, ADR-039), u K/9 S4 se ne broji kao pad; zapisano da se ne izgubi. Zatvara ga: ime u retku povijesti
+pa `vrati_izmjenu` vraća i ime. MCP_SECURITY §5a.
+
+### ➖ Odstranjivač komentara na DVA mjesta može pojesti KOD (2026-09-24, nađeno mutacijom u F6 S2)
+
+`scripts/ci-tajne.js:114` i `tests/unit/axe-gate-usage.test.js` odstranjuju komentare **blok pa redak**:
+
+```js
+src.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/^\s*\/\/.*$/gm, ' ')
+```
+
+⚠️ **Redoslijed je kvar, ne stil.** Običan redak-komentar koji sadrži kosu crtu sa zvjezdicom (npr. kad
+spominje `tests/unit/` + zvjezdicu + `.test.js`) **otvori prividni blok-komentar**, koji se zatvori tek na
+sljedećem pravom `*/` — i sve između nestane, **uključujući kod**. Brana tada sudi tekstu koji je sama
+obrisala, pa tvrdi „nema zabranjenog obrasca" nad prazninom.
+
+**Izmjereno 2026-09-24:** u brani `test-unit-runner` je to bilo **živo** — mutacija koja u runner ubaci
+zakucanu putanju prolazila je **ZELENO**. Ondje je popravljeno (`samoKod`, ide **po retku**, uz tvrdnju
+koja baš to mjeri). Na ova dva mjesta je danas **latentno**: nijedan `a11y*.spec.js` nema taj obrazac u
+retku-komentaru (provjereno), pa brane trenutno mjere ispravno.
+
+**Zašto svejedno stoji ovdje:** latentno znači „čeka prvi komentar koji spomene obrazac koji zabranjuje" —
+a brana o zabranjenim obrascima ih po prirodi spominje. **Gotovo kad** oba mjesta dijele isti odstranjivač
+po retku i kad mutacija nad svakim od njih padne crveno.
+
+### ➖ Nijedna brana ne nabraja MJESTA koja mijenjaju lozinku (2026-09-22, revizija ①/2b, nalaz N3)
+
+Danas su dva: `js/profile.js` (profil, šalje `current_password`) i **`js/auth.js:865`** (oporavak lozinke, svjesno
+bez nje — korisnik staru ne zna). Unit-brana ①/2b čita **samo `js/profile.js`**, pa je drugi put **nemjeren**, a
+treći koji netko doda sutra bio bi **nevidljiv**.
+
+**Oblik rješenja je već u kući** (`OTVORENO` u `scripts/mcp-brava-check.js`): pobroji sve `auth.updateUser(`
+pozive u `js/**` čiji argument nosi `password:`, i traži da je svaki **ili** popraćen `current_password` **ili**
+na imenovanom popisu **s razlogom**. Oporavak je svjesna iznimka. Desetak redaka, **pada po defaultu** na treće mjesto.
+
+**Zašto nije riješeno odmah:** Leon 22.09. izabrao **S1** i **`test:unit` popis** kao prva dva; ovo čeka.
+
 ### 🌐 SPREMNOST ZA DRUŠTVENU MREŽU — gap-analiza identiteta i slika (2026-09-13, Leon: *„razmišljaj kao Zuckerberg"*)
 
 **Povod.** F2/2 (slike profila + izrez) je na produkciji; Leon: *„moramo sve pripremiti za kada bude bila socijalna
@@ -64,6 +215,36 @@ GDPR-brisanje čisti sve osobne buckete · i18n na oba jezika · telefon i a11y 
 
 **Prijedlog reda:** A1–A4 kao jedna cigla „TEMELJ MREŽE" odmah iza F2/1 (dira isti šav: RPC + `user_metadata`) ·
 B5–B6 u §4 stalnu traku · C i D uz F7. ~~Ništa od ovoga nije započeto~~ A1–A4 izvedeno 14.09. (v. gore); B, C, D čekaju.
+
+## ✅ **ZATVORENO 2026-09-24 — uzrok je HLADNA MREŽA, ne trajanje prijelaza.**
+
+Dijagnoza ispod („boja uhvaćena usred prijelaza") bila je **točna ali nepotpuna**: nije govorila
+**zašto** prijelaz uopće krene, pa se lokalno **nije dalo reproducirati** i stavka je stajala 10 dana.
+
+**Mehanizam, izmjeren:** kad `styles.bundle.css` stigne **nakon prvog izračuna stila**, pozadina se
+mijenja iz zadane svijetle u temsku i prijelaz **KRENE** — jer ga propisuje stil koji je tek stigao
+(`body { transition: all .3s }`, `css/variables.css:126`). Lokalno je CSS instantan pa se to nikad ne
+dogodi; na CI runneru povremeno da. Odatle omjer ~2/72.
+
+**Dokaz da je to isti kvar:** oba zabilježena pada rekonstruiraju se **točno** kao interpolacija
+svijetle (247,249,252) i tamne (15,17,21) pozadine — `rgb(75,77,81)` = **74,1 %** puta,
+`rgb(199,201,203)` = **20,9 %**. Uz kašnjenje CSS-a izmjereno: bez smirivanja `rgb(247,249,252)` i
+`getAnimations()` = `["background-color","color"]`; sa smirivanjem `rgb(15,17,21)`.
+
+**Popravak:** boja se mjeri kroz `konacnaPozadina()` → postojeći `smiri()` iz `tests/helpers/axe-gate.js`
+(pisan za BUG-042, isti razred, **pada zatvoreno**). Popravljena **oba** mjesta u specu, ne samo ono koje
+je palo. ⚠️ **Tvrdnje o atributu se i dalje sude BEZ smirivanja** — one su pravi sadržaj testa.
+
+**Uz popravak ide NOVI trajni test** „hladna mreža: CSS stigne poslije prvog kadra" — tvrdi što korisnik
+na sporoj vezi stvarno dobije, i **na starom kodu pada**, dakle je i obrnuta provjera. To je ono što je
+ovoj stavci nedostajalo: rupa je bila zapisana, ali **nije imala test** (ADR-027).
+**Mjera:** `theme-fouc` **84/84** (28 × 3 ponavljanja, 4 profila).
+
+⚠️ **DVIJE POGREŠNE HIPOTEZE PRIJE TE, zapisane u testu da se ne ponove:** spori prijelaz ubačen na
+`DOMContentLoaded` ne reproducira (tema je već primijenjena), a ubačen u `<head>` prije `boot.js`
+također ne — **promjena prije prvog izračuna stila ne stvara prijelaz.**
+
+---
 
 **🧪 Povremeni pad `theme-fouc.spec.js` (nađeno 14.09., star):** scenariji s tamnim uređajem padaju ~2/72 na tvrdnji
 „pozadina nije tamna" — boja `body` uhvaćena USRED prijelaza (npr. `rgb(199,201,203)`), dok je atribut teme točan od prvog
@@ -497,7 +678,7 @@ dashboardu**, pa se mijenjaju na dva mjesta. Zasebna, sitna cigla.
 palete zaredom pale na živom ekranu"*. Ova odluka to **ne poništava** — tamna se daje onome tko je
 uređajem već tražio, ne svakom posjetitelju. Tko dođe s Googlea na svijetlom telefonu vidi isto što i danas.
 
-**Plan izvedbe: [RASPORED.md](../plan/RASPORED.md) §F1.**
+**Plan izvedbe: [RASPORED.md](../archive/RASPORED.md) §F1.**
 
 > ### ✅ F1/2 ISPORUČENA 2026-09-04 — tema `carbon` (hr „Ugljen")
 > Blok `:root[data-theme="carbon"]` s doslovnim heksovima predloška; ono što mail ne definira

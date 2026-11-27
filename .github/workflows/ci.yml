@@ -135,15 +135,29 @@ jobs:
           if-no-files-found: ignore
 
   # Authenticated (admin) suite — POZITIVAN admin-put (F4). Zaseban job: traži pravu Supabase
-  # admin-sesiju (storageState), pa treba tajne. Pokreće se SAMO ako je secret TEST_ADMIN_EMAIL
-  # postavljen (Settings → Secrets → Actions); inače se čisto preskoči (exit 0) → forkovi/PR-ovi
-  # bez tajni ostaju zeleni. ⚠ Može pasti ako je free-tier Supabase uspavan (login ne prođe) —
-  # zato je ODVOJEN od glavnog `build` gate-a (ne blokira merge osim ako ga korisnik učini required).
-  # Bonus: redoviti run drži bazu budnom. Vidi docs/workflow/TESTING.md §Authenticated.
+  # admin-sesiju (storageState), pa treba tajne. Vidi docs/workflow/TESTING.md §Authenticated.
+  #
+  # ⚠️ OVAJ JOB JE DO 2026-09-24 BIO PRAZAN HOD. Izmjereno: korak koji pokreće suite trajao je
+  # 0 sekundi u zadnjih 12 vrtnji (e23d658 … 921cfbc), jer je bio napisan kao „ako je
+  # TEST_ADMIN_EMAIL prazan → exit 0", a taj secret nikad nije bio postavljen (PROGRESS,
+  # 34b3612, 2026-07-08: „⏳ Leon doda repo-secrete"). Dakle 34 authed datoteke nisu se
+  # izvrtjele NI NA JEDNOM commitu — a job je svaki put uredno instalirao Chromium (25 s) pa
+  # ga nije upotrijebio. Zeleno je značilo „nisam ništa izmjerio", što se ne razlikuje od
+  # „sve je u redu". Zato je `exit 0` zamijenjen granom koja PADA (scripts/ci-tajne.js).
+  #
+  # ⚠️ TAJNE SU STAGING_*, NE PRODUKCIJSKE (Leonova odluka 2026-09-24, anketa). auth.setup.js
+  # na njih preusmjeri aplikaciju, pa write-testovi gađaju izolirani test-DB i PROD audit
+  # (content_versions, append-only) ostaje čist — pravilo #8. S produkcijskim TEST_ADMIN_*
+  # isti bi suite pisao u živi sadržaj.
+  #
+  # ⚠️ KOJE TAJNE OVDJE STOJE NIJE STVAR PROCJENE: `tests/unit/ci-tajne.test.js` čita
+  # `tests/**` s diska i traži da env-blok ispod sadrži TOČNO ono što testovi koriste — ni
+  # manje (propuštena) ni više (mrtav unos). Peti spec koji sutra zatreba novu tajnu obori
+  # branu umjesto da se tiho preskoči.
   authed:
     name: Authed admin suite (positive path)
     runs-on: ubuntu-24.04  # pin: ubuntu-latest = 26.04 od 19.10.2026, a Playwright na njemu ne instalira Chromium
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -156,16 +170,36 @@ jobs:
         run: npm ci
       - name: Install Playwright browser (chromium)
         run: npx playwright install --with-deps chromium
-      - name: Run authenticated suite (skips if no creds)
+      # Tajne se ne smiju „provjeriti" u YAML-u: takav `if` nitko ne može pokrenuti, pa nitko
+      # ne može izmjeriti da uvijek ide u exit 0 — točno to se i dogodilo. Provjera je zato
+      # SKRIPTA koja se izvodi i ovdje i u brani (tests/unit/ci-tajne.test.js ju STVARNO pusti
+      # s podmetnutom praznom tajnom i traži exit 1). Jedna činjenica, jedno mjesto (ADR-027).
+      - name: Obavezne tajne su tu (pada ako nisu — NE preskače)
         env:
-          TEST_ADMIN_EMAIL: ${{ secrets.TEST_ADMIN_EMAIL }}
-          TEST_ADMIN_PASSWORD: ${{ secrets.TEST_ADMIN_PASSWORD }}
-        run: |
-          if [ -z "$TEST_ADMIN_EMAIL" ]; then
-            echo "TEST_ADMIN_EMAIL secret nije postavljen → preskačem authenticated suite."
-            exit 0
-          fi
-          npm run test:authed
+          STAGING_SUPABASE_URL: ${{ secrets.STAGING_SUPABASE_URL }}
+          STAGING_SUPABASE_ANON: ${{ secrets.STAGING_SUPABASE_ANON }}
+          STAGING_TEST_ADMIN_EMAIL: ${{ secrets.STAGING_TEST_ADMIN_EMAIL }}
+          STAGING_TEST_ADMIN_PASSWORD: ${{ secrets.STAGING_TEST_ADMIN_PASSWORD }}
+          STAGING_SUPABASE_SERVICE_KEY: ${{ secrets.STAGING_SUPABASE_SERVICE_KEY }}
+        run: node scripts/ci-tajne.js --zahtijevaj
+
+      # ⚠️ NIŠTA SE VIŠE NE PRESKAČE. Do 2026-09-24 je ovdje stajalo da se 6 tvrdnji iz
+      # tests/temelj-mreze.authed.spec.js preskače jer STAGING_SUPABASE_SERVICE_KEY svjesno ne
+      # ide u GitHub secrets. Leon ga je isti dan ipak dodao, pa je ta rečenica postala
+      # neistinita → ključ je prešao u OBAVEZNE, CI sad mjeri svih 154 tvrdnji kao i lokalno, a
+      # dopušteni broj preskočenih se IZVODI iz imenovanih iznimki i danas je NULA.
+      # ⚠️ MJERAČ, NE GOLI SUITE. `npm run test:authed` sudi samo izlazni kod, a Playwright pada
+      # zatvoreno tek na DOSLOVNO nula testova — suita u kojoj se sve preskoči završava EXIT 0.
+      # `authed-mjera` ispisuje koliko je tvrdnji dotaknuo i PADA ako ih je manje od osnovice
+      # ili je preskočenih više od imenovanih. Brojka time prestaje biti proza u imenu koraka.
+      - name: Run authenticated suite (mjeri koliko je dotaknuo, ~15 min)
+        env:
+          STAGING_SUPABASE_URL: ${{ secrets.STAGING_SUPABASE_URL }}
+          STAGING_SUPABASE_ANON: ${{ secrets.STAGING_SUPABASE_ANON }}
+          STAGING_TEST_ADMIN_EMAIL: ${{ secrets.STAGING_TEST_ADMIN_EMAIL }}
+          STAGING_TEST_ADMIN_PASSWORD: ${{ secrets.STAGING_TEST_ADMIN_PASSWORD }}
+          STAGING_SUPABASE_SERVICE_KEY: ${{ secrets.STAGING_SUPABASE_SERVICE_KEY }}
+        run: npm run test:authed:mjeri
       - name: Upload Playwright artifacts on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -176,3 +210,50 @@ jobs:
             playwright-report/
           retention-days: 7
           if-no-files-found: ignore
+
+  # ── ROLL-UP: JEDNA provjera koja presuđuje sve ostale ──────────────────────────────────
+  # Povod (2026-09-24): `authed` je bio namjerno odvojen od `build` gatea, uz obrazloženje da
+  # „ne blokira merge osim ako ga korisnik učini required". Posljedica je bila da njegov pad
+  # ne zaustavlja ništa — a kako nikad nije ni vrtio, to se nije imalo gdje pokazati.
+  #
+  # Zašto roll-up a ne „označi svaki job kao required": broj jobova raste (build → +playwright
+  # shardovi → +authed), a required-popis u GitHub postavkama je RUČNO pisan popis izvan
+  # repozitorija — dakle isti razred greške koji ovu ciglu i pokreće. S roll-upom označiš JEDNU
+  # provjeru (`Gate`), a koje jobove ona pokriva živi u ovoj datoteci i čuva ga brana
+  # (tests/unit/ci-tajne.test.js traži da `needs` nabraja SVE ostale jobove).
+  #
+  # ⚠️ `if: always()` je OBAVEZAN. Bez njega se gate na padu ovisnosti SAM preskoči, a
+  # preskočena required-provjera u GitHubu visi kao „pending" → PR se ne da mergeati ni
+  # odbiti. Zato gate uvijek vrti i SUDI rezultate, umjesto da se na njih naslanja.
+  #
+  # ⚠️ Sudi se na `!= success`, ne na `== failure`. Job koji je `cancelled` ili `skipped` nije
+  # izmjerio ništa, a `== failure` bi ga pustio kao da je prošao — isti razred greške kao
+  # „0 sekundi i zeleno" zbog kojeg cijela cigla postoji.
+  gate:
+    name: Gate (sve brane zelene)
+    needs: [build, playwright, authed]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Presudi sve jobove
+        env:
+          R_BUILD: ${{ needs.build.result }}
+          R_PLAYWRIGHT: ${{ needs.playwright.result }}
+          R_AUTHED: ${{ needs.authed.result }}
+        run: |
+          echo "build=$R_BUILD  playwright=$R_PLAYWRIGHT  authed=$R_AUTHED"
+          pao=0
+          for par in "build:$R_BUILD" "playwright:$R_PLAYWRIGHT" "authed:$R_AUTHED"; do
+            ime="${par%%:*}"; ishod="${par#*:}"
+            if [ "$ishod" != "success" ]; then
+              echo "::error::job '$ime' nije prošao (ishod: $ishod)"
+              pao=1
+            fi
+          done
+          if [ "$pao" -ne 0 ]; then
+            echo ""
+            echo "Gate CRVEN — barem jedan job nije prošao (vidi ::error iznad)."
+            exit 1
+          fi
+          echo "Gate ZELEN — sva tri joba prosla."

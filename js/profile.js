@@ -107,6 +107,31 @@ function identityOf(user) {
     };
 }
 
+/**
+ * F6 ①/2b — SMIJEMO LI OD OVOG KORISNIKA TRAŽITI „TRENUTNU LOZINKU"?
+ *
+ * Polje ide samo onome tko lozinku IMA. Tko je došao Googleom nema što upisati, a tražiti mu to
+ * znači zatvoriti mu jedini put do lozinke — isti razred kvara koji cijela cigla sprječava
+ * (postavka bez polja ruši promjenu lozinke svima).
+ *
+ * ⚠️ IZMJERENO 21.09. na stagingu, i nalaz je NEGATIVAN: `app_metadata.providers` i `identities`
+ * NE razlikuju račun BEZ lozinke od onoga s njom — korisnik kojeg admin API napravi bez lozinke
+ * svejedno dobije identitet `email` (oba puta `{"providers":["email"],"identities":["email"]}`).
+ * Zato ovo NIJE provjera „ima li hash" nego „je li ovo račun s e-mail putem": naši putovi upisa
+ * (registracija, oporavak) lozinku uvijek postave, a Google-račun identitet `email` nema.
+ */
+function imaLozinku(user) {
+    if (!user) return false;
+    const identiteti = user.identities;
+    if (Array.isArray(identiteti) && identiteti.length) {
+        return identiteti.some(function (i) { return i && i.provider === 'email'; });
+    }
+    // Rezerva kad `identities` nije u objektu (npr. korisnik složen samo iz JWT-a).
+    const am = user.app_metadata || {};
+    const lista = Array.isArray(am.providers) ? am.providers : (am.provider ? [am.provider] : []);
+    return lista.indexOf('email') !== -1;
+}
+
 // ── SLIKE (F2/2, 2026-09-13) ─────────────────────────────────────────────────
 // Putanja iz baze → javni URL preko `SokratProfileImages.publicUrl` (bucket je javan,
 // Leon 09.09.). URL ide u `src` atribut, dakle u innerHTML: prolazi kroz escape I kroz
@@ -424,6 +449,110 @@ function mailCardHtml(user) {
         '  </div>';
 }
 
+/* ===== F6 ①/5 — POVEZANI AI-JEVI ============================================================
+ * Korisnik je svom Claudeu/ChatGPT-u dao pristup vlastitom gradivu (MCP konektor). Do ove cigle
+ * taj pristup NIJE mogao povući: nije bilo ni popisa ni prekidača.
+ *
+ * ⚠️ Tekst kaže „vrijedi odmah" tek od K/8 (15.10.). Do tada je prekid ubijao samo OBNOVU, a
+ *    propusnica je radila do isteka (3600 s, izmjereno 20.09.) — pa je kartica govorila „još najviše
+ *    sat vremena". Sad baza na svakom pozivu konektora traži živu sesiju (`_nacrt_pozivatelj`,
+ *    `mcp_veza`; brana `npm run mcp:opoziv`). „Kroz Sokratov konektor" nije ukras: izravan REST mimo
+ *    konektora i dalje do isteka vidi NAZIVE vlastitih čvorova. Istina stoji kao TRAJAN tekst u
+ *    kartici, ne kao poruka koja nestane.
+ *
+ * ⚠️ Ime aplikacije dolazi iz DCR-a — registrirati ga može BILO TKO (ADR-038 ③), dakle to je
+ *    tuđi tekst u našem `innerHTML`: ide kroz `escapeHtmlProfile`.
+ */
+function aiCardHtml() {
+    return '  <div class="profile-card profile-card--wide" id="profileAiCard">' +
+        '    <h3 class="profile-card-title"><i class="fas fa-robot" aria-hidden="true"></i> ' + pt('profile.aiTitle', 'Connected AI apps') + '</h3>' +
+        '    <p class="profile-meta">' + pt('profile.aiDesc', 'AI apps you allowed to reach your own materials. They never see the public catalogue or anyone else’s materials.') + '</p>' +
+        '    <div class="profile-ai" id="profileAiList" aria-busy="true"><p class="profile-meta">' + pt('profile.aiLoading', 'Loading…') + '</p></div>' +
+        '  </div>';
+}
+
+/** Oblik odgovora `listGrants()` podnosi i polje i `{ grants: [...] }` — izmjereno je samo da radi. */
+function aiGrantsIz(data) {
+    if (Array.isArray(data)) return data;
+    if (data && Array.isArray(data.grants)) return data.grants;
+    return [];
+}
+
+async function fillAiGrants() {
+    const box = document.getElementById('profileAiList');
+    if (!box) return;
+    const client = (typeof SokratAuth !== 'undefined') ? SokratAuth.getClient() : null;
+    const oauth = client && client.auth && client.auth.oauth;
+    // Stariji SDK bez `auth.oauth` → kartica se ne pretvara u trajni „Loading…", nego nestane.
+    if (!oauth || typeof oauth.listGrants !== 'function') {
+        const card = document.getElementById('profileAiCard');
+        if (card) card.hidden = true;
+        return;
+    }
+
+    let veze = null;
+    try {
+        const r = await oauth.listGrants();
+        if (r && r.error) throw r.error;
+        veze = aiGrantsIz(r && r.data);
+    } catch (e) {
+        veze = null;
+    }
+    const b = document.getElementById('profileAiList');
+    if (!b) return;
+    b.setAttribute('aria-busy', 'false');
+
+    if (veze === null) {
+        b.innerHTML = '<p class="profile-meta">' + pt('profile.aiError', 'The list of connected apps did not load.') + '</p>' +
+            '<div class="profile-actions"><button type="button" class="cta-button secondary" data-ai-retry>' +
+            '<i class="fas fa-rotate"></i><span>' + pt('profile.aiRetry', 'Try again') + '</span></button></div>';
+        return;
+    }
+    if (!veze.length) {
+        b.innerHTML = '<p class="profile-meta">' + pt('profile.aiNone', 'No AI app is connected right now.') + '</p>';
+        return;
+    }
+
+    const jezikDatuma = (typeof window.getUiLang === 'function' && window.getUiLang() === 'hr') ? 'hr-HR' : 'en-GB';
+    b.innerHTML = veze.map(function (g) {
+        const k = (g && g.client) ? g.client : {};
+        const ime = escapeHtmlProfile(k.name || pt('profile.aiUnnamed', 'Unnamed app'));
+        const kada = (g && g.granted_at)
+            ? new Date(g.granted_at).toLocaleDateString(jezikDatuma, { day: 'numeric', month: 'long', year: 'numeric' })
+            : '—';
+        return '<div class="profile-ai-row">' +
+            '<div class="profile-ai-who"><strong>' + ime + '</strong>' +
+            '<span class="profile-meta">' + pt('profile.aiSince', 'Connected') + ' ' + escapeHtmlProfile(kada) + '</span></div>' +
+            '<button type="button" class="cta-button secondary" data-ai-revoke="' + escapeHtmlProfile(k.id || '') + '">' +
+            '<i class="fas fa-link-slash" aria-hidden="true"></i><span>' + pt('profile.aiRevoke', 'Disconnect') + '</span></button>' +
+            '</div>';
+    }).join('') +
+        // Trajna istina, ne nestajuća poruka — v. mjerenje u zaglavlju odjeljka.
+        '<p class="profile-meta profile-ai-note">' + pt('profile.aiNote', 'Disconnecting works at once: through the Sokrat connector the app can no longer read or change your materials.') + '</p>';
+}
+
+async function revokeAiGrant(clientId) {
+    const client = (typeof SokratAuth !== 'undefined') ? SokratAuth.getClient() : null;
+    const oauth = client && client.auth && client.auth.oauth;
+    if (!oauth || !clientId) return;
+    const ok = await window.askConfirm({
+        title: pt('profile.aiRevokeTitle', 'Disconnect this app?'),
+        message: pt('profile.aiRevokeAsk', 'From that moment it can no longer read or change your materials through the Sokrat connector.'),
+        confirmText: pt('profile.aiRevoke', 'Disconnect'),
+        danger: true
+    });
+    if (!ok) return;
+    try {
+        const r = await oauth.revokeGrant({ clientId: clientId });
+        if (r && r.error) throw r.error;
+    } catch (e) {
+        if (typeof showToast === 'function') showToast(pt('profile.aiRevokeErr', 'Not disconnected — please try again.'));
+        return;
+    }
+    if (typeof showToast === 'function') showToast(pt('profile.aiRevoked', 'Disconnected.'));
+    fillAiGrants();
+}
+
 async function toggleMailConsent(btn) {
     const client = (typeof SokratAuth !== 'undefined') ? SokratAuth.getClient() : null;
     if (!client || btn.disabled) return;
@@ -500,6 +629,16 @@ function renderProfilePage() {
         '      <button type="button" class="cta-button secondary" id="profileSignOutBtn"><i class="fas fa-sign-out-alt"></i><span>' + pt('profile.signOut', 'Sign out') + '</span></button>' +
         '    </div>' +
         '    <form id="profileChangePassForm" class="profile-pass-form" hidden>' +
+        // F6 ①/2b: „Trenutna lozinka" ide PRVA i samo korisniku koji lozinku ima (`imaLozinku`).
+        // `autocomplete="current-password"` je ovdje mjera, ne ukras: bez njega upravitelj lozinki
+        // u isto polje nudi NOVU. Bez `minlength` — zatečena lozinka smije biti kraća od današnjeg
+        // praga; provjerava je poslužitelj, ne preglednik.
+        (imaLozinku(user)
+            ? '      <div class="auth-pass-wrap">' +
+              '        <input type="password" id="profileCurrentPassword" class="auth-modal__input" placeholder="' + pt('profile.currentPassPlaceholder', 'Current password') + '" required autocomplete="current-password">' +
+              '        <button type="button" class="auth-pass-toggle" aria-label="' + pt('auth.showPassword', 'Show password') + '"><i class="fas fa-eye"></i></button>' +
+              '      </div>'
+            : '') +
         '      <div class="auth-pass-wrap">' +
         '        <input type="password" id="profileNewPassword" class="auth-modal__input" placeholder="' + pt('profile.newPassPlaceholder', 'New password (min. 8 characters)') + '" required minlength="8" autocomplete="new-password">' +
         '        <button type="button" class="auth-pass-toggle" aria-label="' + pt('auth.showPassword', 'Show password') + '"><i class="fas fa-eye"></i></button>' +
@@ -514,6 +653,7 @@ function renderProfilePage() {
         '  </div>' +
 
         mailCardHtml(user) +
+        aiCardHtml() +
 
         // Admin (F4) — renderira se skriveno; SokratAdmin.refresh() ga otkrije samo adminu.
         '  <div class="profile-card profile-card--wide admin-only" style="display:none">' +
@@ -573,6 +713,7 @@ function renderProfilePage() {
 
     renderProfileStats();
     fillShelf(user.id);
+    fillAiGrants();
     // Zid se crta asinkrono i ponovno pri svakom crtežu profila → JEDAN delegat na `#profileContent`
     // (on sam preživi `innerHTML`). „Svi materijali" i prazna pločica idu kroz globalni
     // `[data-goto-materials]` (navigation.js).
@@ -587,6 +728,9 @@ function renderProfilePage() {
             if (e.target.closest('[data-shelf-retry]')) { const u = SokratAuth.getUser(); fillShelf(u && u.id); return; }
             const sw = e.target.closest('#profileMailSwitch');
             if (sw) { toggleMailConsent(sw); return; }
+            const opoziv = e.target.closest('[data-ai-revoke]');
+            if (opoziv) { revokeAiGrant(opoziv.getAttribute('data-ai-revoke')); return; }
+            if (e.target.closest('[data-ai-retry]')) { fillAiGrants(); return; }
             if (e.target.closest('[data-mail-admin]') && window.SokratMailAdmin) window.SokratMailAdmin.open();
         });
     }
@@ -601,7 +745,12 @@ function renderProfilePage() {
     document.getElementById('profileChangePassBtn').addEventListener('click', function () {
         const form = document.getElementById('profileChangePassForm');
         form.hidden = !form.hidden;
-        if (!form.hidden) document.getElementById('profileNewPassword').focus();
+        // ①/2b: fokus ide na PRVO polje koje forma stvarno ima — korisnik bez lozinke
+        // (Google) „Trenutnu lozinku" nema, pa bi zakucan `profileCurrentPassword` pukao.
+        if (!form.hidden) {
+            (document.getElementById('profileCurrentPassword')
+                || document.getElementById('profileNewPassword')).focus();
+        }
     });
     document.getElementById('profileChangePassForm').addEventListener('submit', changePassword);
     document.getElementById('profileSyncNowBtn').addEventListener('click', async function () {
@@ -820,6 +969,7 @@ async function changePassword(e) {
     if (!client) return;
     const input = document.getElementById('profileNewPassword');
     const repeat = document.getElementById('profileNewPassword2');
+    const current = document.getElementById('profileCurrentPassword');
     const status = document.getElementById('profilePassStatus');
     if (!input || !repeat || !status) return;
     status.hidden = false;
@@ -837,7 +987,17 @@ async function changePassword(e) {
         status.textContent = window.t ? t('auth.st.weakPwned') : 'This password has appeared in a known data breach — please pick a different one.';
         return;
     }
-    const { error } = await client.auth.updateUser({ password: input.value });
+    // F6 ①/2b — UZ NOVU LOZINKU ŠALJE SE I TRENUTNA.
+    // ⚠️ Zakucani `supabase-js@2.110.8` `current_password` NE spominje ni jednom (0 pogodaka u
+    // bundleu), ali `updateUser` cijeli objekt atributa šalje kao tijelo `PUT /auth/v1/user` —
+    // IZMJERENO 21.09. na samom paketu, s kontrolnim izmišljenim poljem koje je prošlo jednako.
+    // Ime polja je dakle jedino što vrijedi; TypeScript tip nije prepreka.
+    // ⚠️ Dok je postavka „traži trenutnu lozinku" ISKLJUČENA, poslužitelj polje tiho ignorira
+    // (izmjereno: i POGREŠNA vrijednost prolazi s HTTP 200) — zato ovaj upis ništa ne mijenja
+    // dok se postavka ne uključi. Baš zato polje mora ići PRVO, a postavka tek za njim.
+    const atributi = { password: input.value };
+    if (current) atributi.current_password = current.value;
+    const { error } = await client.auth.updateUser(atributi);
     if (error) {
         status.classList.add('is-error');
         // F3/2 cigla 4c: ista poruka kao u prozoru za prijavu — dotad je ovdje išla sirova i engleska.
@@ -847,6 +1007,7 @@ async function changePassword(e) {
     status.hidden = true;
     input.value = '';
     repeat.value = '';
+    if (current) current.value = '';
     document.getElementById('profileChangePassForm').hidden = true;
     if (typeof showToast === 'function') showToast(window.t ? t('msg.passwordUpdated') : 'Password updated.');
 }

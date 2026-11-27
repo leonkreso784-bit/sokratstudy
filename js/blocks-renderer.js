@@ -10,8 +10,8 @@
 //
 // U7b JE IZOLIRAN — datoteka se učitava i definira `window.renderBlocks`, ali JOŠ nije
 // ožičena na student-view (to radi U7c: `learn.js` dual-mode). DOMPurify se koristi AKO je
-// `window.DOMPurify` prisutan (pouzdano učitavanje = U7c); dotad legacy-html ima siguran
-// fallback (v1 = NAŠ povjerljiv sadržaj). YouTube = klik-za-učitavanje (nocookie), autor
+// `window.DOMPurify` prisutan; bez njega legacy-html izlazi kao TEKST (F6 ②/0d, N2 — nikad
+// sirov HTML, ni za katalog). YouTube = klik-za-učitavanje (nocookie), autor
 // unosi SAMO link/ID, mi gradimo iframe → nula third-party poziva prije klika (consent-safe).
 
 (function () {
@@ -26,15 +26,22 @@
   // ── URL sanitizacija: dopusti relativne/anchor/protocol-relative + http(s)/mailto;
   //    za slike još data:image/(png|jpg|gif|webp). Sve s eksplicitnom drugom shemom
   //    (javascript:, data:text, vbscript:, file:, …) → ODBIJ (prazan string). ──
+  //
+  //    ⚠️ F6 ②/0c (MCP_SECURITY N1): shema se čita iz niza BEZ kontrolnih znakova i razmaka.
+  //    Preglednik ih pri parsiranju adrese izbacuje (vodeće/prateće C0 i razmak, TAB/LF/CR bilo
+  //    gdje), pa je `java<TAB>script:` za njega `javascript:` — a regex nad neočišćenim nizom
+  //    nije vidio nikakvu shemu i propustio ga kao „relativan". `probe` izbacuje NADSKUP onoga što
+  //    izbacuje preglednik, pa svaku shemu koju vidi preglednik vidi i provjera.
   function safeUrl(url, opts) {
     const u = String(url == null ? '' : url).trim();
     if (!u) return '';
-    const m = u.match(/^([a-zA-Z][a-zA-Z0-9+.-]*):/); // ima li eksplicitnu shemu?
+    const probe = u.replace(/[\u0000-\u0020\u007f]/g, '');
+    const m = probe.match(/^([a-zA-Z][a-zA-Z0-9+.-]*):/); // ima li eksplicitnu shemu?
     if (!m) return u;                                  // relativni / #anchor / //host → OK
     const scheme = m[1].toLowerCase();
     if (scheme === 'http' || scheme === 'https' || scheme === 'mailto') return u;
     // data:image (bez svg — SVG može nositi skripte) samo za <img>
-    if (opts && opts.image && /^data:image\/(png|jpe?g|gif|webp)[;,]/i.test(u)) return u;
+    if (opts && opts.image && /^data:image\/(png|jpe?g|gif|webp)[;,]/i.test(probe)) return u;
     return '';                                         // nepoznata/opasna shema
   }
 
@@ -223,10 +230,23 @@
       }
       return '<div class="lb-legacy">' + window.DOMPurify.sanitize(html, DOMPURIFY_CFG) + '</div>';
     }
-    // Fallback (DOMPurify još nije učitan): legacy = NAŠ povjerljiv v1 sadržaj (datoteke) →
-    // zadrži postojeće ponašanje (raw), bez regresije. U7c dodaje pouzdano učitavanje DOMPurify-a;
-    // UGC (F6) će zahtijevati DOMPurify (nema raw fallbacka za neprovjeren sadržaj).
-    return '<div class="lb-legacy">' + html + '</div>';
+    // ⚠️ F6 ②/0d (MCP_SECURITY N2): BEZ sanitizatora = TEKST, nikad HTML — i za katalog.
+    // Do tada je ovdje stajao „raw za naš povjerljiv v1 sadržaj", ali renderer ne zna odakle blok
+    // dolazi, a isti put crta i osobni sadržaj: `iframe srcdoc` sa skriptom s dopuštenog CDN-a je uz
+    // produkcijski CSP pročitao sesiju (lokalni pokus, dionica A). DOMPurify se zato poslužuje s naše
+    // domene (`js/loader.js`), pa je ovaj put rijedak — ružan, ali siguran.
+    return '<div class="lb-legacy lb-legacy--tekst">' + esc(htmlUTekst(html)) + '</div>';
+  }
+
+  // Čitljiv tekst iz HTML-a BEZ izvršavanja: `DOMParser` gradi INERTAN dokument (skripte se ne
+  // pokreću, slike i okviri se ne učitavaju), pa `textContent` samo čita. Bez `DOMParser`-a (Node)
+  // izlazi sirov niz — pozivatelj ga svejedno escapa, pa oznaka nikad ne postane oznaka.
+  function htmlUTekst(html) {
+    if (typeof DOMParser === 'function') {
+      try { return new DOMParser().parseFromString(html, 'text/html').body.textContent || ''; }
+      catch (e) { /* pada na escape sirovog niza */ }
+    }
+    return html;
   }
 
   const RENDERERS = {

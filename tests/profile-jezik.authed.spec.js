@@ -35,6 +35,9 @@ test.describe('F3/2 cigla 4c — profil prati jezik', () => {
     await page.fill('#profileEditHandle', 'napola_ime');
     await page.click('#profileChangePassBtn');
     await page.fill('#profileNewPassword', 'nije-spremljeno-1');
+    // F6 ①/2b: i „Trenutna lozinka" mora preživjeti prekidač — prazno polje nakon promjene
+    // jezika znači da korisnik lozinku upisuje iznova, a to je kvar ① zbog kojeg spec postoji.
+    await page.fill('#profileCurrentPassword', 'nije-spremljeno-0');
     await page.click('#profileDeleteAccountBtn');
     await page.fill('#profileDeleteConfirm', 'DEL');
 
@@ -49,6 +52,7 @@ test.describe('F3/2 cigla 4c — profil prati jezik', () => {
     await expect(page.locator('#profileEditHandle')).toHaveValue('napola_ime');
     await expect(page.locator('#profileChangePassForm'), 'prekidač je zatvorio „Promijeni lozinku"').toBeVisible();
     await expect(page.locator('#profileNewPassword')).toHaveValue('nije-spremljeno-1');
+    await expect(page.locator('#profileCurrentPassword')).toHaveValue('nije-spremljeno-0');
     await expect(page.locator('#profileDeleteAccountForm'), 'prekidač je zatvorio brisanje računa').toBeVisible();
     await expect(page.locator('#profileDeleteConfirm')).toHaveValue('DEL');
   });
@@ -73,6 +77,9 @@ test.describe('F3/2 cigla 4c — profil prati jezik', () => {
     expect(await page.evaluate(() => window.getUiLang())).toBe('hr');
 
     await page.click('#profileChangePassBtn');
+    // F6 ①/2b: polje je `required` — bez njega forma ne bi ni krenula, pa bi spec tiho mjerio
+    // prazno. Ovdje je točna (ista lozinka ide i kao stara i kao nova → `same_password`).
+    await page.fill('#profileCurrentPassword', lozinka);
     await page.fill('#profileNewPassword', lozinka);
     await page.fill('#profileNewPassword2', lozinka);
     const [odgovor] = await Promise.all([
@@ -80,6 +87,13 @@ test.describe('F3/2 cigla 4c — profil prati jezik', () => {
       page.click('#profileChangePassForm button[type="submit"]'),
     ]);
     expect(odgovor.status(), 'ista lozinka mora biti odbijena — inače se ništa nije izmjerilo').toBeGreaterThanOrEqual(400);
+
+    // ⚠️ JEDINA tvrdnja koja mjeri ŽICU: `current_password` nije u zakucanom supabase-js-u (0
+    // pogodaka u bundleu) i prolazi samo zato što `updateUser` cijeli objekt šalje kao tijelo.
+    // Unit-test to mjeri na pozivu `updateUser`; ovdje se gleda ono što je stvarno OTIŠLO na
+    // poslužitelj — da nas budući SDK koji polja filtrira ne zatekne s uključenom postavkom.
+    const poslano = JSON.parse(odgovor.request().postData() || '{}');
+    expect(poslano.current_password, 'tijelo PUT-a ne nosi trenutnu lozinku').toBe(lozinka);
     const tijelo = await odgovor.json().catch(() => ({}));
     const sirovo = tijelo.msg || tijelo.message || '';
     // ⚠️ IZMJERENO 25.09.: poslužitelj vraća DVA oblika iste greške. Goli GoTrue (REST, `apikey`)

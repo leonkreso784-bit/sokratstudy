@@ -1,0 +1,15 @@
+{
+  "_zasto": "Zivi osobni materijali na STAGINGU koji NE prolaze strogi profil (schema/ugc-content.schema.json). Svi su ostaci testnih skripti koje su prije F6 2/0b objavljivale proizvoljan oblik ({a:{}}, {m1:{naslov}}); nijedan nije iz Studija (izmjereno 30.09.: 26/26 Studio-materijala prolazi). Cegrtaljka u `npm run ugc:sadrzaj` blok 4: nov prekrsitelj = pad, nestao = pad. PROD (30.09., samo citanje): 3/4 prolaze, cetvrti pada samo na kartici od 1 819 znakova (administratorov testni materijal) — vidi MCP_SECURITY N4.",
+  "node_ids": [
+    "08a6819e-a7de-4f8a-99c1-2cc5928517da",
+    "1e3fbbb9-ee32-41b4-9bac-35e329fb2746",
+    "34f95b62-33aa-474e-aad1-e0f9724673ae",
+    "37852df9-f826-4f04-86ab-0ead31af0d70",
+    "3926e4a6-d776-4bcd-a654-870746d98740",
+    "41a8fe7c-59c1-4dee-b600-3c1a4f7f9cd6",
+    "86149833-be0b-4623-acb4-fc9a2dd4a6cd",
+    "e5da3c4e-fb6f-4ace-8e2c-26b31e84ae46",
+    "e85c3511-f8f6-4d3e-8bf5-342924e3d747",
+    "f8fc9f25-284d-4f1c-9895-6d24d60add08"
+  ]
+}

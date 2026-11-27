@@ -64,10 +64,20 @@ test.describe('kaskada (prijavljen) — iznimka pobjeđuje bez `!important`', ()
   });
 
   test('onemogućen `.st-btn` se NE podiže pod mišem — a omogućeni se podiže', async ({ page }) => {
+    // Uzorak je do F6 ②/5.1 bio onemogućeni „Spoji svoj AI"; otkad konektor uz staging RADI, gumb
+    // je omogućen (crta ga connect-ai.js), pa uzorka u Studiju više nema. Mjeri se CSS pravilo
+    // (`.st-btn.primary:disabled`), zato test sam postavi takav gumb na ISTO mjesto (`.st-premium`
+    // u inspektoru) — ne ovisi o tome što Studio danas slučajno onemogućava.
+    await page.evaluate(() => {
+      const kut = document.querySelector('#editor-page .st-premium');
+      const b = document.createElement('button');
+      b.className = 'st-btn primary'; b.disabled = true; b.textContent = 'uzorak'; b.setAttribute('data-test-uzorak', '');
+      kut.appendChild(b);
+    });
     // Selektor NAMJERNO ne sadrži `[disabled]` — isti element služi i kao kontrola, pa mora
     // ostati uhvatljiv nakon što mu se atribut skine.
-    const gumb = page.locator('#editor-page .st-premium .st-btn.primary');
-    await expect(gumb, '„Spoji svoj AI" (studio.js) — jedini onemogućen primarni gumb').toHaveCount(1);
+    const gumb = page.locator('#editor-page .st-premium .st-btn.primary[data-test-uzorak]');
+    await expect(gumb, 'uzorak onemogućenog primarnog gumba u inspektoru').toHaveCount(1);
     await expect(gumb).toBeDisabled();
 
     const d = await podMisem(page, gumb, ['transform', 'boxShadow']);

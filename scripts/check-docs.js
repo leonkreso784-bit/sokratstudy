@@ -12,6 +12,8 @@
 //   4) .md postoji, a nije naveden u docs/README.md  → dokument-duh koji nitko ne nađe
 //   5) CONTENT_SCHEMA nabraja druge tokene boje       → dokument zaostaje za KODOM (ne samo za sobom)
 //                       nego schema/*.json
+//   8) zatvoren mjesec u PROGRESS.md / unos stariji od zadnjeg 🚀 u CHANGELOG.md → `npm run docs:rotate`
+//   9) memorija / checkpoint / aktivni plan / docs/architecture preko praga → skrati ili SVJESNO podigni prag
 //
 // Pokreni: npm run check:docs   (dio `npm run preflight`)
 
@@ -70,9 +72,11 @@ for (const abs of allMd) {
 // ima jedan odgovor, samo ga sada daje spec sam.
 const PLAN = path.join(DOCS, 'plan');
 const PAUZIRAN = /^\s*\*\*Status:\*\*\s*⏸️\s*PAUZIRAN\b/m;
+let AKTIVNI_PLANOVI = [];   // čita ih i odjeljak 9 (veličina aktivnog plana)
 if (fs.existsSync(PLAN)) {
   const specs = fs.readdirSync(PLAN).filter((f) => f.endsWith('.md') && f !== 'ROADMAP.md');
   const aktivni = specs.filter((f) => !PAUZIRAN.test(fs.readFileSync(path.join(PLAN, f), 'utf8')));
+  AKTIVNI_PLANOVI = aktivni;
   if (aktivni.length > 1) {
     problems.push('VIŠE AKTIVNIH PLANOVA u docs/plan/: ' + aktivni.join(', ') +
       '\n      → ispunjen plan ide u docs/archive/ ISTI DAN (pravilo 1)' +
@@ -266,7 +270,7 @@ if (fs.existsSync(SCHEMA) && fs.existsSync(CS)) {
 // ⚠️ Brana NE zabranjuje pisanje nego RAST: pouka cigle ide u spec, a `CLAUDE.md` dobiva
 // najviše jedan redak s pointerom. Obrazac je posuđen od `check:palette` — osnovica se
 // **spušta svjesno** (uredi konstantu ispod i reci zašto), a nikad ne raste prijećutno.
-const CLAUDE_BUDGET = 33150; // znakova; 2026-08-25: izmjereno 31 349 nakon rezanja (bilo 87 970); 2026-09-29: +150 za redak nove preflight-brane check:names (bio 32 996, bez rezerve)
+const CLAUDE_BUDGET = 32550; // znakova; 2026-08-25: izmjereno 31 349 nakon rezanja (bilo 87 970); 2026-09-29: +150 za redak nove preflight-brane check:names (bio 32 996, bez rezerve); 2026-10-11: SPUŠTENO — ADR blok na jedan redak po ADR-u (izmjereno 32 243, +300 rezerve za pravilo testiranja)
 const CLAUDE_MD = path.join(ROOT, 'CLAUDE.md');
 if (fs.existsSync(CLAUDE_MD)) {
   // ⚠️ BEZ ZNAKA POVRATKA: `.length` broji i CR, pa je ISTA datoteka mjerila 33 148 znakova
@@ -345,10 +349,25 @@ if (duhovi.length) {
     jedinstveni.map((d) => '\n      • ' + d).join(''));
 }
 
+// ── 8) ZAPISI SU ROTIRANI (PROGRESS/CHANGELOG po mjesecima) ─────────
+// Zatvoren mjesec u PROGRESS.md, unos stariji od zadnjeg 🚀 u CHANGELOG.md ili zastario popis mjeseci
+// u indeksu = pad s naredbom za popravak. Zašto i kako: zaglavlje `scripts/rotiraj-zapise.js`
+// (ADR-027 — obrazloženje stoji uz kod koji ga provodi). Brana: tests/unit/rotiraj-zapise.test.js.
+problems.push(...require('./rotiraj-zapise.js').provjeri(ROOT));
+
+// ── 9) VELIČINA: memorija, checkpoint, aktivni plan, docs/architecture ──
+// Kalup je odjeljak 6 (CLAUDE_BUDGET), pragovi s datumom i razlogom su u JEDNOJ tablici u
+// `scripts/velicina-dokumenata.js`, uz obrazloženje i opis kako se nalazi memorija (izvan repozitorija).
+// Brana: tests/unit/velicina-dokumenata.test.js.
+const velicina = require('./velicina-dokumenata.js').provjeri({ korijen: ROOT, aktivniPlanovi: AKTIVNI_PLANOVI });
+problems.push(...velicina.problemi);
+
 // ── izvještaj ───────────────────────────────────────────────────────
 console.log('\n=== check:docs ===');
 console.log('  .md dokumenata : ' + allMd.length);
 console.log('  poveznica      : ' + links);
+console.log('  veličina       : ' + velicina.dotaknuto + ' datoteka');
+velicina.napomene.forEach((n) => console.log('  ' + n));
 if (problems.length === 0) {
   console.log('\n✅ dokumentacija je konzistentna\n');
   process.exit(0);

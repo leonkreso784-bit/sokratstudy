@@ -1,6 +1,6 @@
 # RASPORED — sve što čeka, razrezano na faze kroz sesije
 
-**Status:** 🟩 AKTIVAN · **Otvoren:** 2026-09-04 (Leon: *„napravi strukturiran plan koji će ići
+**Status:** ⛔ ZAMIJENJEN 2026-10-03 planom [plan/ZAVRSNICA.md](../plan/ZAVRSNICA.md) (ADR-040): F3 ostatak, F4, F5 i F7/2–3 nastavljaju ondje; F7/1 dijeljenje postaje faza DIJELJENJE · ranije pauziran 2026-09-29 zbog [MCP.md](./MCP.md) · **Otvoren:** 2026-09-04 (Leon: *„napravi strukturiran plan koji će ići
 fazama kroz sesije da ga imamo da riješimo ovu listu kako treba"*)
 
 > **Što ovaj dokument JEST:** **redoslijed i izlazni uvjet.** Odgovara na dva pitanja — *što sada*
@@ -267,97 +267,9 @@ korisnički JS (ruši ADR-018 — prava cijena nije sandbox nego to da tuđi kô
 
 ### F6 · MCP
 
-Presuđeno je **što** i **kojim oblikom** (ADR-030/031) i **kako se gradi** ([ADR-038](../records/DECISIONS.md#adr-038)):
-MCP je **cjevovod** `Learn → kartice → dopune/kviz`, ne skup CRUD-alata. Danas postoji samo read-only pokus izvan
-repozitorija. **Plan napisan 17.09., kod čeka Leonov OK.** Grana: `feat/f6-mcp` od `659ada3` (stranica za odobrenje
-treba F3 mehanizam jezika, „Povezani AI-jevi" profil iz F2). Sve prvo na STAGINGU.
-
-**Invarijante:** AI je **korisnikov** (mi ne plaćamo tokene → kvalitetu drže brane) · materijal
-dolazi kroz chat, datoteku nikad ne vidimo · **sve ide u NACRT** · doseg je **samo vlastito
-gradivo**, ni čitanje kataloga · nikad `is_admin()`, nikad `service_role` · **vježbe su izvan MCP-a**.
-
-**🔎 Provjereno 17.09.** Izvori: izvorni kôd `supabase/auth` (master, v2.197.0) · Supabase *OAuth 2.1 Server · MCP
-Authentication · Token Security · Deploy MCP servers* · Claude *custom connectors · Authentication for connectors* ·
-OpenAI *Developer mode* · upit nad STAGING bazom (samo čitanje).
-
-1. **Supabase Auth = OAuth 2.1 poslužitelj** (beta, bez naplate; AI-korisnik je već naš MAU) — **isključen na oba
-   projekta** (`feature_disabled`). Stranicu za odobrenje gradimo mi; zakucani `supabase-js@2.110.8` ima `auth.oauth`
-   (`getAuthorizationDetails` · `approveAuthorization` · `denyAuthorization` · `listGrants` · `revokeGrant`).
-2. **CIMD NE postoji** (metapodaci nemaju `client_id_metadata_document_supported`, `client_id` mora biti UUID) → Claude
-   bira DCR ili unaprijed registriran klijent. **`resource` (RFC 8707) se prihvaća** i veže na kod, ali token nosi
-   `aud: authenticated` → **token nije vezan na naš poslužitelj.** DCR ne ograničava hostove preusmjeravanja (samo shemu).
-3. **Token AI-ja = korisnički JWT + `client_id`.** Na STAGINGU izmjereno što takav token danas smije pisati: 7 RPC-ova
-   čvorova (i `publish_node`) · `set_profile_handle/identity/image` · tablice `profiles` i `progress` (katalog iza
-   admin-RLS-a) · Storage `node-images` i `profile-images` · Edge Functions `delete-account` i `send-notification`.
-   ⚠️ **Auth API brava u bazi ne doseže:** `PUT /auth/v1/user` prima OAuth token; lozinka traži ponovnu prijavu tek za
-   sesiju stariju od 24 h, osim uz postavku „traži trenutnu lozinku".
-4. **Prijavu MCP-a na Edge Functions NE pišemo sami** (ispravak ranije bilješke): `@supabase/server` ≥ 1.6.0
-   (`withOAuthProtectedResource` = 401 + `WWW-Authenticate` + metapodaci resursa · `withSupabase({ auth: 'user' })`;
-   ugniježđeni oblik je stabilan, `pipeline` je alpha) + `@modelcontextprotocol/server@2.0.0`, uz `verify_jwt = false`.
-   Traži asimetrične ključeve — **oba projekta imaju ES256**. Vodič piše `^` → pinamo točno (pravilo #9).
-   `check:functions` već ima kalup imenovane iznimke (`mail-unsubscribe`).
-5. **Klijenti:** Claude custom connector na **Free (jedan) · Pro · Max · Team · Enterprise**, callback
-   `https://claude.ai/api/mcp/auth_callback`; DCR registrira novi klijent pri svakom spajanju. ChatGPT developer mode samo
-   **Plus · Pro · Business · Enterprise · Edu, samo web**.
-6. **Token drži broker Anthropica/OpenAI-ja, ne model** → sigurnost u bazi, kvaliteta u poslužitelju (ADR-038 ④).
-7. **ADR-031 pretpostavke koje ne stoje:** ⓐ nacrt osobnog materijala na poslužitelju nije postojao (`publish_document`
-   = katalog + `is_admin()`, `SokratDraft` živi u pregledniku, `publish_node` piše živo) → ADR-038 ① · ⓑ „tek nakon
-   seobe" — seoba otkazana, OAuth ide na postojeće projekte.
-8. **Oblik podataka za brane:** kategorija ima obavezan `color` (`KURIRANE_BOJE` u `js/utils.js`) · dopuna se ocjenjuje
-   kroz `normFill` (`js/fill-blanks.js`) · `answers` = broj praznina (D2) · shema nema polje veze kartica→pitanje
-   (`additionalProperties:false`).
-
-**Cigle** — jedna cigla = jedan commit, gate na svakoj; „crveno" = provjera koja pada na starom kodu.
-
-**① Konektor + OAuth**
-
-| cigla | posao | crveno na starom kodu |
-|---|---|---|
-| **①/1** okomiti pokus | minimalna stranica za odobrenje + Edge Function `mcp` s jednim alatom (vlastite police i materijali, samo čitanje); Leon spaja Claude na staging URL | `scripts/mcp-probe.js`: 401 + `resource_metadata` → staging Auth, S256 (danas 404); ručno: Claude izlista Leonove staging materijale |
-| **①/2** brava | Custom Access Token Hook: token s `client_id` → uloga `mcp_klijent`, **zabrana po defaultu** (samo `mcp_*` RPC + čitanje vlastitih čvorova); `delete-account` i `send-notification` → 403. **Rezerva** ako hook ne smije mijenjati ulogu: provjera `client_id` u svakom RPC-u + inventarska brana | `tests/mcp-brava.authed.spec.js` s PRAVIM OAuth tokenom (test-klijent, Playwright odobri): `publish_node` · `delete_node` · `set_profile_handle` · upload slike · `delete-account` · `PUT /user` na starom kodu prolaze; + svaka RPC ruta koju token vidi mora biti na popisu dopuštenih |
-| **①/3** stranica za odobrenje | prijava uz očuvan `authorization_id` · ime klijenta i host preusmjeravanja · **popis dopuštenih hostova** (`claude.ai`, `chatgpt.com`) · HR/EN · telefon | nepoznat host → nema „Dopusti"; `check:csp/i18n/seo/budget`, Vercel check |
-| **①/4** ugradnja | imenovana iznimka u `check:functions` · točno pinani paketi · **`www.sokratstudy.com/mcp` kroz Vercel rewrite** (provjera na previewu) | `check:functions` crven bez iznimke |
-| **①/5** Povezani AI-jevi | u profilu popis veza + opoziv (`listGrants` / `revokeGrant`) | poslije opoziva token pada |
-
-Rizici: beta poslužitelj, mlad `@supabase/server` · **greška u hooku = nitko se ne prijavi** (hook ide na svako izdavanje
-tokena) → nekoliko redaka, prvo staging, izlaz = isključiti hook u dashboardu · `PUT /user` ovisi o postavci ·
-ograničeno CPU vrijeme Edge Functiona · besplatni Claude = jedan konektor · rewrite za MCP promet neprovjeren.
-
-**② Cjevovod u nacrt**
-
-| cigla | posao | crveno na starom kodu |
-|---|---|---|
-| **②/1** nacrt | tablica `node_drafts` + `mcp_*` RPC-ovi · kvota (nacrti u izradi, veličina) | tuđi nacrt nevidljiv · kvota · živi `node_content` bajt-isti nakon svih MCP poziva |
-| **②/2** alati | `procitaj_materijale` → `zapocni_nacrt` (lekcije s bojom) → `napisi_learn` → `dodaj_kartice` (pada bez Learna) → `dodaj_pitanja` (pada bez kartice) → `predaj_nacrt` · `procitaj_nacrt`; upute cjevovoda u `instructions` poslužitelja | unit nad modulom alata + e2e: Node MCP klijent s pravim tokenom prođe cjevovod na stagingu |
-| **②/3** oblik materijala | nacrt → payload (kategorija po lekciji, v2 id-evi, bez slika i videa u prvom izdanju); veza kartica→pitanje = opcionalno polje `card` u shemi (aditivno) | `validate:schema` nad izlazom |
-| **②/4** pregled i prihvat | „Nacrti od AI-ja" u Mojim materijalima, isti renderer · **Prihvati** = jedna transakcija, samo obična sesija · **Odbaci** | nacrt → prihvat → materijal se uči; OAuth token ne može prihvatiti |
-| **②/5** ulaz | „Spoji svoj AI" (ADR-026: jedna radnja, dva ulaza) → upute + kopiraj URL; lažni tekst `studio.js:235` nestaje | spec |
-
-Rizici: 200 kartica u jednom pozivu → alati po lekciji · AI preskoči korak → redoslijed u potpisu alata · prompt
-injection iz PDF-a → doseg je vlastiti nacrt (ADR-026).
-
-**③ Četiri brane** — u MCP poslužitelju, iz istih modula koje čita preglednik, i ponovno pri **Prihvati**.
-
-| cigla | posao | crveno na starom kodu |
-|---|---|---|
-| **③/0** mjerenje | katalog: duljina odgovora dopune, nalazi li se odgovor u kartici → prag brane ④ | — (brojke se upisuju ovdje) |
-| **③/1** jedan izvor | `card-limits.js`, paleta i `normFill` u Deno-u: uvoz izvan `supabase/functions/` ili generirana kopija s drift-branom (kalup `build:css`); `KURIRANE_BOJE` i `normFill` u male module po kalupu `card-limits.js` | drift-brana pada na razlici |
-| **③/2** duljina | 501 odbija s mjestom; 201–500 prolazi uz upozorenje AI-ju | 500 prolazi, 501 pada |
-| **③/3** pitanje po kartici | `predaj_nacrt` pada ako kartica nema ni kviz ni dopunu | unit + e2e |
-| **③/4** boja | svaka lekcija ima boju iz kurirane palete | unit |
-| **③/5** jednoznačna dopuna | praznine = odgovori · neprazan poslije `normFill` · bez HTML-a i LaTeX-a (razred BUG-024/025) · kratak (prag iz ③/0) · nalazi se u izvornoj kartici · nije već napisan u rečenici | unit po obliku (danas prolazi 2 praznine uz 1 odgovor) |
-| **③/6** druga linija | iste brane pri **Prihvati** | nacrt ubačen izravnim RPC-om s karticom od 501 znaka → prihvat odbija |
-
-Rizik: prestrog prag ④ → AI zapne; zato ③/0 ide prvo.
-
-**PROD — zadnje, svaki korak uz Leonov izričit OK:** SQL u SQL Editoru → OAuth poslužitelj + hook u dashboardu →
-funkcija → klijent.
-
-**Čeka Leona prije ①/1 (STAGING dashboard):** uključiti *OAuth Server* i DCR · Site URL za pokus =
-`http://localhost:5051` (stranica za odobrenje = Site URL + put; točan put javljam u ①/1) · stanje postavki „traži
-trenutnu lozinku" i „Secure email change" · Claude račun za pokus. U ①/2: *Auth Hooks → Custom Access Token*.
-
----
+**Izdvojeno u vlastiti plan: [MCP.md](./MCP.md)** (2026-09-29, Leon: *„uhvatio bi se sada jako ozbiljno na razvoj"*).
+Ovaj raspored je za to vrijeme ⏸️ pauziran; nastavlja se s F7 kad F6 završi. Povijest ①/S1/S2:
+[archive/MCP_KONEKTOR.md](../archive/MCP_KONEKTOR.md).
 
 ### F7 · OBJAVA
 

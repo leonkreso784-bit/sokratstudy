@@ -7,26 +7,67 @@
 # AKTIVIRAJ JEDNOM po klonu:   git config core.hooksPath .githooks
 #
 # Pušta SVE ostale grane bez provjere (brzi feature/preview pushevi netaknuti);
-# preflight se vrti ISKLJUČIVO kad je odredište refs/heads/main.
+# provjere se vrte ISKLJUČIVO kad je odredište refs/heads/main.
+#
+# ── DRUGI KORAK: AUTHED SUITE (od 2026-09-24, cigla S1) ──────────────────────
+# Leonova odluka (anketa, 2026-09-24): na `main` ide PUNIH 154 tvrdnji, ~14 min
+# 45 s (izmjereno lokalno istog dana, 154/154, EXIT 0) povrh preflighta.
+#
+# ZAŠTO JE TO VRIJEDNO TOLIKO ČEKANJA: preflight ne vrti NIJEDAN test koji se
+# stvarno prijavi. Sve o RLS-u, Storageu, publish-RPC-u i bravi na lozinci mjeri
+# isključivo authed suite — a on je do danas bio IZVAN i preflighta i CI-ja
+# (korak u ci.yml trajao je 0 s u zadnjih 12 vrtnji). Dakle nije riječ o
+# dupliranju CI-ja nego o jedinoj lokalnoj mreži nad prijavljenim putem.
+#
+# ⚠️ GAĐA STAGING, NE PRODUKCIJU — `auth.setup.js` preusmjeri aplikaciju kad su
+# `STAGING_*` u `.env` (pravilo #8). Bez tih tajni suite ne bi mjerio ništa, pa
+# `scripts/ci-tajne.js --zahtijevaj` PADA ZATVORENO umjesto da ga preskoči:
+# preskočena tvrdnja izgleda jednako kao prošla, i upravo je tako `profile-jezik`
+# ③ (jedina mjera ŽICE) bila nevidljiva 12 CI-vrtnji zaredom.
 # ─────────────────────────────────────────────────────────────────────────────
 
 while read -r local_ref local_sha remote_ref remote_sha; do
   case "$remote_ref" in
     refs/heads/main)
       echo "[pre-push] Odredište = main (PRODUKCIJA) → pokrećem 'npm run preflight'…"
-      # GIT_* se BRIŠE prije preflighta (2026-09-26): git kuki izvozi GIT_DIR, a preflight vrti testove
+      # GIT_* se BRIŠE prije SVIH koraka (2026-09-26): git kuki izvozi GIT_DIR, a preflight vrti testove
       # koji pozivaju git u VLASTITIM privremenim mapama. S naslijeđenim GIT_DIR-om `git init` u takvoj
       # mapi ponovno inicijalizira OVAJ repozitorij i postavi `core.bare = true` — glavno stablo prestane
-      # biti radno stablo, a push padne. Preflight bez GIT_* nalazi repozitorij iz cwd-a (korijen stabla
-      # iz kojeg se pusha) — isto kao kad se vrti ručno. Brana: tests/unit/git-okolina.test.js.
-      if ! (unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE GIT_COMMON_DIR GIT_PREFIX GIT_OBJECT_DIRECTORY; npm run preflight); then
+      # biti radno stablo, a push padne. Bez GIT_* se repozitorij nalazi iz cwd-a (korijen stabla iz kojeg
+      # se pusha) — isto kao kad se vrti ručno. Brana: tests/unit/git-okolina.test.js.
+      # ⚠️ Za CIJELU granu, ne samo preflight (2026-09-29, spajanje main → f6): brisanje u podljusci oko
+      # preflighta ostavljalo je GIT_DIR authed suiteu, koji je u kuku ušao iz druge grane.
+      unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE GIT_COMMON_DIR GIT_PREFIX GIT_OBJECT_DIRECTORY
+      if ! npm run preflight; then
         echo ""
         echo "[pre-push] ❌ PREFLIGHT PAO — push na main ODBIJEN."
         echo "[pre-push]    Popravi gate-ove (najčešće: 'npm run bump' nakon izmjene css/js/data),"
         echo "[pre-push]    pa pokušaj ponovno. (Svjestan bypass: 'git push --no-verify' — NE preporuča se.)"
         exit 1
       fi
-      echo "[pre-push] ✅ Preflight prošao — dopuštam push na main."
+      echo "[pre-push] ✅ Preflight prošao."
+
+      echo "[pre-push] Obavezne tajne za authed suite…"
+      if ! node scripts/ci-tajne.js --zahtijevaj; then
+        echo ""
+        echo "[pre-push] ❌ NEMA OBAVEZNIH TAJNI — push na main ODBIJEN."
+        echo "[pre-push]    Bez njih authed suite ne mjeri prijavljeni put, a to je jedina"
+        echo "[pre-push]    lokalna mreža nad RLS-om, Storageom i bravom na lozinci."
+        echo "[pre-push]    Dopuni '.env' (vidi ispis iznad), pa pokušaj ponovno."
+        exit 1
+      fi
+
+      echo "[pre-push] Authed suite (~15 min — izmjereno 14 min 45 s)…"
+      if ! npm run test:authed:mjeri; then
+        echo ""
+        echo "[pre-push] ❌ AUTHED SUITE PAO — push na main ODBIJEN."
+        echo "[pre-push]    Pogledaj 'playwright-report/' i 'test-results/'."
+        echo "[pre-push]    ⚠️ Prijava zna pasti IZ UTRKE i to nije naš kod (tests/auth.setup.js"
+        echo "[pre-push]    opisuje dva lica) — ako je pao SAMO auth-setup, pokušaj ponovno prije"
+        echo "[pre-push]    nego što tražiš kvar u svojoj izmjeni."
+        exit 1
+      fi
+      echo "[pre-push] ✅ Authed suite prošao — dopuštam push na main."
       ;;
   esac
 done

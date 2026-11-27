@@ -149,9 +149,17 @@ test('legacy-html: koristi window.DOMPurify.sanitize ako postoji', function () {
   assert.ok(Array.isArray(gotCfg.ALLOWED_TAGS));       // proslijeđen config
   delete win.DOMPurify;
 });
-test('legacy-html: fallback (bez DOMPurify) = raw za NAŠ povjerljiv v1 sadržaj', function () {
-  const out = R([{ type: 'legacy-html', html: '<p>trusted</p>' }]);
-  assert.strictEqual(out, '<div class="lb-legacy"><p>trusted</p></div>');
+// F6 ②/0d (MCP_SECURITY N2): bez sanitizatora HTML izlazi kao TEKST, i za katalog. Do sad je fallback
+// bio „raw za naš povjerljiv v1" — a isti put crta i osobni sadržaj, pa je pad CDN-a otvarao
+// `iframe srcdoc` koji je uz produkcijski CSP pročitao sesiju (lokalni pokus, dionica A).
+test('legacy-html: bez DOMPurify NIJEDNA oznaka ne prolazi — sadržaj ostaje kao tekst (N2)', function () {
+  assert.strictEqual(win.DOMPurify, undefined, 'test mora vrtjeti BEZ sanitizatora');
+  const zlo = '<p>trusted</p><iframe srcdoc="<script src=https://cdn.jsdelivr.net/gh/x/y/a.js></script>"></iframe>'
+    + '<img src=x onerror=alert(1)><a href="javascript:alert(1)">k</a>';
+  const out = R([{ type: 'legacy-html', html: zlo }]);
+  const oznake = (out.match(/<[a-z]+/gi) || []).filter(function (t) { return t !== '<div'; });
+  assert.deepStrictEqual(oznake, [], out);
+  assert.ok(out.indexOf('trusted') !== -1, 'tekst je izgubljen: ' + out);
 });
 
 // ── safeUrl (izravno) ──
@@ -162,6 +170,32 @@ test('safeUrl: dopušta http(s)/mailto/relativni/#/protocol-relative', function 
 test('safeUrl: odbija javascript:/data:text/vbscript:/file: (→ prazno)', function () {
   ['javascript:alert(1)', 'JAVAScript:x', 'data:text/html,<script>', 'vbscript:x', 'file:///etc/passwd']
     .forEach(function (u) { assert.strictEqual(B._safeUrl(u), '', u); });
+});
+// ── F6 ②/0c (MCP_SECURITY N1): preglednik iz adrese IZBACUJE kontrolne znakove prije nego pročita
+// shemu (vodeće/prateće C0 i razmak, TAB/LF/CR bilo gdje). Provjera koja shemu traži u NEOČIŠĆENOM
+// nizu vidi „nema sheme" dok preglednik vidi `javascript:`. Adrese dolaze iz ISTIH primjera koje
+// odbija baza (`tests/fixtures/ugc-sadrzaj.js`) — renderer ih mora odbiti i za sadržaj koji do
+// njega stigne mimo baze (katalog, lokalni nacrt, stari redak).
+const { pada: UGC_PADA } = require(path.join(__dirname, '..', 'fixtures', 'ugc-sadrzaj.js'));
+const OPASNE_IZ_PRIMJERA = UGC_PADA
+  .map(function (p) { try { return p.payload.l1.learn.blocks[0].text[0].href; } catch (e) { return undefined; } })
+  .filter(function (h) { return typeof h === 'string'; })
+  // Samo one koje SRICAJU opasnu shemu kad se izbace razmaci/kontrolni znakovi. `pada` nosi i
+  // poveznice koje shema odbija iz drugih razloga (razmak u adresi) — za renderer bezopasne.
+  .filter(function (h) { return /^(javascript|vbscript|data):/.test(h.replace(/[\u0000- \u007f ﻿]/g, '').toLowerCase()); });
+const OPASNE_DODATNO = [' javascript:alert(1)', '\u0001java\tscript:alert(1)', 'java\u0001script:alert(1)',
+  'javascript\t:alert(1)', 'javascript:alert(1)\u0000', ' \u0009data:text/html,x', 'JaVaScRiPt:alert(1)'];
+test('safeUrl: primjeri poveznica iz baza-brane postoje (≥ 10) — inače test ne mjeri ništa', function () {
+  assert.ok(OPASNE_IZ_PRIMJERA.length >= 10, 'nađeno ' + OPASNE_IZ_PRIMJERA.length);
+});
+test('safeUrl: odbija SVE opasne adrese iz primjera i s kontrolnim znakovima (N1)', function () {
+  const propusteno = OPASNE_IZ_PRIMJERA.concat(OPASNE_DODATNO)
+    .filter(function (u) { return B._safeUrl(u) !== '' || B._safeUrl(u, { image: true }) !== ''; });
+  assert.deepStrictEqual(propusteno.map(function (u) { return JSON.stringify(u); }), []);
+});
+test('safeUrl: kontrola — valjane adrese s razmakom/TAB-om i dalje prolaze (nije „odbij sve")', function () {
+  ['https://example.com/a', ' https://example.com/b ', 'https://exa\tmple.com/c', 'mailto:a@b.hr', 'www.example.com', '#sidro']
+    .forEach(function (u) { assert.notStrictEqual(B._safeUrl(u), '', JSON.stringify(u)); });
 });
 test('safeUrl: data:image/png samo uz {image:true}; svg uvijek odbijen', function () {
   assert.strictEqual(B._safeUrl('data:image/png;base64,AA', { image: true }), 'data:image/png;base64,AA');

@@ -677,6 +677,16 @@ function initMaterialsEntries() {
         navigateTo('materials');
     });
 
+    // „Poveži AI" iz heroa: prozor s uputama (`SokratConnectAi`) stiže tek na klik, paket `connect`.
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('[data-connect-ai]')) return;
+        e.preventDefault();
+        if (typeof SokratLoad === 'undefined') return;
+        SokratLoad.paket('connect').then(function () {
+            if (window.SokratConnectAi) window.SokratConnectAi.otvori();
+        }).catch(function () { /* mreža: klik se smije ponoviti — paket ne drži odbijeno obećanje */ });
+    });
+
     const back = document.getElementById('backFromMaterials');
     if (back) {
         // K2a: ovdje je živjela petlja koju je Leon našao. `materialsReturnPage` je pamtio
@@ -1438,19 +1448,10 @@ async function initStudyPage(subjectId, lessonId, targetSection) {
     }
     showStudyLoading(false);
 
+    // BUG-055: `nav.data` puni SAMO `getStudyData` — samo lekcije, svaka s nizovima (meta-ključ v2
+    // dokumenta i lekcija bez `quiz` ne smiju doći ni do jednog načina učenja).
     const subjectLessonMap = lessonCategoryMap[subjectId];
-    if (subjectLessonMap && subjectLessonMap[lessonId]) {
-        const allowedCategories = subjectLessonMap[lessonId];
-        const filteredData = {};
-        for (const key of allowedCategories) {
-            if (fullData[key]) {
-                filteredData[key] = fullData[key];
-            }
-        }
-        AppState.nav.data = filteredData;
-    } else {
-        AppState.nav.data = fullData;
-    }
+    AppState.nav.data = getStudyData(fullData, subjectLessonMap && subjectLessonMap[lessonId]);
 
     // K2b: `#studyBreadcrumb` je obrisan — pisao je „Predmet > Lekcije" dok je globalni
     // drugi red već crtao `Predmeti › Predmet › Lekcija`, i to kao NAVIGACIJU, a ovaj je
