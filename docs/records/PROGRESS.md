@@ -33,8 +33,22 @@ testirano, što slijedi.
   EFEKTIVNE kategorije pa zastarjeli ključ pali „Sve". Usput: zakucani engleski „All" u traci Učenja prešao na isti
   i18n ključ (`progress.js` dug **3 → 2**). Četvrti korak testa tvrdi i da korisnik **ostaje u istoj lekciji**.
 - **Obrnuta provjera i za to:** bez kartice „Sve" test pada. (Ukupno tri obrnute provjere u ovoj sesiji.)
-- **Slijedi:** Leonova odluka o memorijskom pragu `windows-git-bash-zamke.md` — dok stoji, `check:docs` obara
-  preflight, pa pre-push kuka ne da `main`. **Bez pusha na `main` do izričitog OK-a.**
+- **Leon „sve riješi" → skinute obje blokade preflighta + zatečeni phone-nalaz:**
+  - **`check:names`** je padao jer `.imena-zabrana.txt` ne putuje među worktreejevima (gitignored, a Mac ih ima 10) —
+    popis je živio samo u `.pravri`. Kopija po stablu ODBAČENA (dva popisa se raziđu → ishod sigurnosne brane ovisi o
+    tome odakle je pokrenuta). Jedan kanonski primjerak u **glavnom stablu** + fallback u `check-names.js`
+    (`IMENA_ZABRANA` → svoje stablo → glavno, preko `git rev-parse --git-common-dir`). Sad 119 imena, 815 datoteka, 0.
+  - **`check:docs`** je tvrdo padao na `PRAG BEZ DATOTEKE memorija/windows-git-bash-zamke.md`. Redak NIJE obrisan (on
+    je fixture za „imenovanu iznimku" u unit testu, a na Windowsu ta datoteka postoji) — ispravljena je
+    **nedosljednost brane**: odsutna memorijska datoteka je sad napomena, kao što već jest kad nema cijele mape.
+    ⚠️ Razlika se ČUVA: `docs/architecture/**` JEST u gitu → ondje ostaje tvrdi pad.
+  - **BUG-058** (phone ⑥, cookie traka 1–3 px): artefakt mjerenja, ne kvar — mjerač je zaticao traku usred 280 ms
+    animacije. `reducedMotion: 'reduce'` na kontekstu; nula promjena u produkcijskom CSS-u.
+- **Obrnute provjere u ovoj sesiji: pet.** Posebno za BUG-058, jer popravak ide u smjeru „brana prestaje padati":
+  podmetnut stvaran prekrivač od 14 px → brana pada na SVAKOM ekranu, stabilno.
+- **⚠️ Dvije zamke s izlaznim kodom** (obje zamalo dale lažno zeleno): `gh run watch --exit-status` vraća **0 na
+  OTKAZANOM** runu; `npx playwright test … | tail` daje izlazni kod **taila**, ne Playwrighta. Čitaj ispis, ne kod.
+- **Slijedi:** puni preflight i push grane. **Bez pusha na `main` do izričitog OK-a.**
 
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 

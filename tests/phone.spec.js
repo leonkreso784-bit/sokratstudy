@@ -153,9 +153,21 @@ test.beforeAll(async ({ browser }, testInfo) => {
     const snimka = [];
 
     for (const e of G.EKRANI) {
+        // ⚠️ `reducedMotion` NIJE utišavanje brane nego uvjet da uopće mjeri ono što tvrdi.
+        // Tvrdnja ⑥ govori o onome što na dnu OSTAJE („ono što iz pojasa ne može izaći"), a
+        // cookie-traka ulazi `transform` animacijom od 280 ms (`css/consent.css`). Mjerač ju
+        // je zaticao u letu i prijavljivao upad od 1–3 px koji se po pokretanjima MIJENJAO
+        // (geometrija se ne mijenja, vrijeme da) — izmjereno 54 px na 120 ms, 28 px na 180 ms,
+        // 4 px na 240 ms, 0 px kad animacija završi. Index je bio čist samo zato što ispod
+        // stoji `waitForTimeout(800)`, a prelasci na pravne stranice nemaju ekvivalent.
+        // `smiriPrikaz` to ne hvata jer prati `innerHTML`, broj djece i VISINU — `transform`
+        // ne mijenja nijedno. Umjesto nagađanja čekanja, gasimo animaciju pravilom koje CSS
+        // već ima (`@media (prefers-reduced-motion: reduce)`), pa se mjeri ZAVRŠNO stanje.
+        // Kvar koji ostaje u pojasu i dalje pada — mijenja se determinizam, ne strogost.
         const ctx = await browser.newContext({
             viewport: { width: e.w, height: e.h },
             deviceScaleFactor: 3, isMobile: true, hasTouch: true,
+            reducedMotion: 'reduce',
             baseURL
         });
         const page = await ctx.newPage();

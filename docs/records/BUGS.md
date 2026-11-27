@@ -66,6 +66,30 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
 - **Lekcija.** **Kontrola koja ne radi ništa gora je od kontrole koje nema** — korisnik joj vjeruje i misli da je
   birao težinu. Isti test kao gore: grepni čitatelje `id`-a, ne samo postoji li element.
 
+### BUG-058 — Mjerač telefona ⑥ je mjerio cookie-traku U LETU: nestabilan nalaz od 1–3 px
+
+- Status: ✅ **riješen** na grani `fix/kategorija-quick-start` 2026-11-27 · Težina: **nizak za korisnika, visok za
+  povjerenje u brane** · Našao: puni lokalni skup na macOS-u (CI ga nije vidio).
+- **Opis.** `tests/phone.spec.js` ⑥ („na dnu skrola ništa se ne krije ispod home-indikatora") prijavljivao je
+  `#cookieAccept`/`#cookieReject` **1–3 px** u pojasu, i to samo na `privacy`/`terms`/`faq`/`contact`.
+- **Nije bio kvar proizvoda.** Cookie traka ulazi `transform` animacijom od **280 ms** (`css/consent.css`), a mjerač
+  ju je zaticao u letu: izmjereno **54 px na 120 ms · 28 px na 180 ms · 4 px na 240 ms · 0 px kad animacija završi**.
+  Dokaz da je riječ o vremenu, a ne geometriji: vrijednosti su se **mijenjale među pokretanjima istog testa**.
+  Geometrija je ispravna — `padding-bottom` = 34 px, gumb završava točno na `vh − 34`, upad **0**.
+- **Zašto samo pravne stranice.** Ne zbog CSS-a (`consent.css` je isti svuda): prvi `goto('/')` ima
+  `waitForTimeout(800)`, dulji od animacije, pa je index stizao sjesti; kasniji prelasci nemaju ekvivalent.
+- **Zašto `smiriPrikaz` nije pomogao.** Prati `innerHTML`, broj djece i **visinu** — `transform` ne mijenja nijedno,
+  pa je stranicu proglašavao smirenom dok se traka još kretala. Pomoćnik je time kršio vlastiti ugovor („čeka se da
+  crtanje prestane").
+- **Rješenje.** Kontekst mjerača dobiva `reducedMotion: 'reduce'`, pa `@media (prefers-reduced-motion: reduce)` koji
+  `consent.css` **već ima** ugasi animaciju i mjeri se ZAVRŠNO stanje. Nijedna promjena u produkcijskom CSS-u.
+- **Obrnuta provjera (bitna, jer popravak ide u smjeru „brana prestaje padati").** Podmetnut STVARAN trajan prekrivač
+  (`transform: translateY(14px)`): brana pada s **točno 14 px na SVAKOM ekranu**, stabilno — dok je prije popravka
+  prijavljivala 1–3 px samo na četiri stranice i neponovljivo. Mijenja se determinizam, ne strogost.
+- **Lekcija.** **Mjerač koji ne čeka kraj animacije mjeri vrijeme, ne izgled.** Nalaz koji se mijenja među
+  pokretanjima nikad nije geometrija — prije nego se takav popravlja „na oko", izmjeri ga u nekoliko trenutaka i
+  vidi mijenja li se. I: detektor smirenja mora pratiti POLOŽAJ, ne samo sadržaj i visinu.
+
 ### BUG-054 — U kvizu je točan odgovor često NAJDULJA opcija: pitanje se da pogoditi bez znanja
 
 - Status: 🔴 **otvoren** (zapisano 2026-11-15) · Težina: **srednji** (kvaliteta učenja, ne kvar) · Našao: `content-review`

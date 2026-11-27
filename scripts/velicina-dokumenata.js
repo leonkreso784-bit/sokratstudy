@@ -105,9 +105,17 @@ function provjeri({ korijen, aktivniPlanovi, env, dom, arhitektura }) {
         });
       }
     }
+    // ⚠️ NAPOMENA, ne problem — i to je ista odluka koju ova brana već donosi desetak redaka
+    // više (`PRESKOČENO — memorija nije na ovom stroju`). Memorija je IZVAN gita i po stroju,
+    // pa odsutnost imenovane datoteke ne dokazuje da je tablica zastarjela: dokazuje samo da
+    // se radi s drugog računala. Dok je ovo bio tvrdi pad, selidba Windows → Mac je oborila
+    // `check:docs`, dakle CIJELI preflight, dakle svaki push na `main` — a ništa u repozitoriju
+    // nije bilo krivo. Prag i dalje VRIJEDI kad datoteka postoji (gore), i i dalje se vidi da
+    // redak visi; samo ne zaustavlja rad.
+    // ⚠️ Za `docs/architecture` ostaje TVRDI pad (v. niže): ono JEST u gitu, pa ondje redak bez
+    // datoteke stvarno znači zastarjelu tablicu. Razlika je u tome je li datoteka u gitu.
     for (const p of MEMORIJA) {
-      if (!fs.existsSync(path.join(mem.put, p.datoteka))) problemi.push('PRAG BEZ DATOTEKE  memorija/' + p.datoteka +
-        '\n      → datoteka je preimenovana ili obrisana: popravi tablicu u scripts/velicina-dokumenata.js');
+      if (!fs.existsSync(path.join(mem.put, p.datoteka))) napomene.push('prag bez datoteke (memorija je po stroju): memorija/' + p.datoteka);
     }
     napomene.push('memorija: ' + mem.put);
   }

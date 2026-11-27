@@ -119,10 +119,21 @@ test('prag za obrisanu datoteku arhitekture = pad', () => {
   fs.unlinkSync(path.join(s.k, 'docs', 'architecture', 'A.md'));
   tvrdi(ispis(vrti(s)).indexOf('PRAG BEZ DATOTEKE  docs/architecture/A.md') >= 0, ispis(vrti(s)));
 });
-test('imenovana memorija koja ne postoji (preimenovana) = pad', () => {
+// Memorija je IZVAN gita i po stroju, pa odsutna imenovana datoteka NE smije rušiti branu —
+// inače selidba na drugo računalo obori `check:docs`, dakle preflight, dakle svaki push, a da
+// u repozitoriju ništa nije krivo (točno se to dogodilo pri prelasku Windows → Mac, 27.11.).
+// Vidjeti se MORA (napomena), zaustavljati ne smije. Suprotnost je tvrdnja ispod nje: za
+// `docs/architecture` isti slučaj OSTAJE pad, jer to jest u gitu — razlika je u tome je li
+// datoteka pod verzioniranjem, ne u tome koliko je važna.
+test('imenovana memorija koja ne postoji (drugi stroj) = NAPOMENA, ne pad', () => {
   const s = stablo();
   fs.unlinkSync(path.join(s.mem, 'current-checkpoint.md'));
-  tvrdi(ispis(vrti(s)).indexOf('PRAG BEZ DATOTEKE  memorija/current-checkpoint.md') >= 0, ispis(vrti(s)));
+  const r = vrti(s);
+  tvrdi(r.problemi.length === 0, 'odsutna memorijska datoteka ne smije biti problem: ' + ispis(r));
+  // ⚠️ Gađa `napomene`, ne `ispis()` — `ispis` spaja samo probleme, pa bi tvrdnja protiv njega
+  // „prošla" i da napomene uopće nema. Tiho zeleno je ovdje gore od crvenog.
+  tvrdi((r.napomene || []).join('\n').indexOf('prag bez datoteke (memorija je po stroju): memorija/current-checkpoint.md') >= 0,
+    'napomena mora IMENOVATI datoteku koja nedostaje: ' + (r.napomene || []).join(' | '));
 });
 test('stvarna tablica arhitekture pokriva TOČNO datoteke u pravom docs/architecture', () => {
   const pravi = fs.readdirSync(path.join(__dirname, '..', '..', 'docs', 'architecture')).filter((d) => d.endsWith('.md')).sort();
