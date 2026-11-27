@@ -1844,6 +1844,41 @@ const SOKRAT_CATALOG = {
       }
     },
     {
+      id: 'civil-obligations-pfri',
+      programId: 'law-integrated-hr',
+      year: 2, semester: 2,
+      name: 'Opći dio građanskog prava i obvezno pravo',
+      shortName: 'OGP',
+      icon: 'fa-file-contract',
+      color: '#4d7c0f',
+      iconGradient: ['#4d7c0f', '#a3e635'],
+      description: 'Opći dio građanskog prava (subjekti, objekti, pravni posao, zastupanje) i obvezno pravo — nastanak, vrste, učinci, promjene i prestanak obveza, zastara, pojedini ugovori i izvanugovorne obveze',
+      storageKey: 'civil-obligations-pfri-progress',
+      features: { blindMap: false },
+      lessons: [
+        { id: 'first-midterm', name: 'Međuispit', description: 'Gradivo međuispita' },
+        { id: 'second-midterm', name: 'Gradivo završnog ispita', description: 'Gradivo koje se polaže na završnom ispitu nakon položenog međuispita' },
+        { id: 'final', name: 'Cijelo gradivo', description: 'Sve teme kolegija plus pitanja za ponavljanje kroz cijelo gradivo' }
+      ],
+      content: {
+        // final.js MORA se učitati zadnji (Object.assign ogpPfriM1 + ogpPfriM2 + examPractice)
+        scripts: [
+          'data/civil-obligations-pfri/midterm-1.js',
+          'data/civil-obligations-pfri/midterm-2.js',
+          'data/civil-obligations-pfri/final.js'
+        ],
+        // 🚧 GRADNJA U TIJEKU: mapirana je SAMO lekcija koja stvarno ima gradivo. Lekcija bez
+        // unosa ovdje je „uskoro" (`isLessonComingSoon` je data-driven) — a to je istina koju
+        // student treba vidjeti. Mapirati ih prazne značilo bi obećati gradivo pa otvoriti
+        // prazan ekran; prazan dokument uz to pada na `validate:schema` (`minProperties: 1`).
+        // Unosi za `second-midterm` i `final` dodaju se ČIM njihov sadržaj postoji.
+        resolve: {
+          'first-midterm': 'ogpPfriM1'
+        },
+        dataFormat: 'json'
+      }
+    },
+    {
       id: 'eu-law-2-pfri',
       programId: 'law-integrated-hr',
       year: 3, semester: 1,

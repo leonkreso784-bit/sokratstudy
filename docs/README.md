@@ -126,6 +126,7 @@ Ovo je nastalo jer smo istu ciglu pisali u **četiri** dokumenta, pa ih onda tri
 |---|---|
 | [subjects/README.md](./subjects/README.md) | **Autoritativna tablica svih predmeta** (status/brojevi/vježbe) |
 | [ACCOUNTING_PLAN.md](./subjects/ACCOUNTING_PLAN.md) · [STATISTICS_PLAN.md](./subjects/STATISTICS_PLAN.md) · [TRAFFIC_PLAN.md](./subjects/TRAFFIC_PLAN.md) · [MATH_PLAN.md](./subjects/MATH_PLAN.md) | Planovi pojedinih predmeta (✅ gotovi) |
+| [CIVIL_OBLIGATIONS_PLAN.md](./subjects/CIVIL_OBLIGATIONS_PLAN.md) | Plan `civil-obligations-pfri` (🟡 gradnja u tijeku) — 16 kategorija međuispita + 13 završnog, izvori i granica |
 
 ## `ideas/` — ideje koje nisu projekt
 
