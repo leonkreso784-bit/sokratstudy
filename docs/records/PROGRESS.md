@@ -5,6 +5,29 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-27 (OPUS, `sokratstudy.dev`) — BUG-056/057: izbor kategorije nije radio ništa
+
+- **Povod:** Leon je na produkciji primijetio da izbor lekcije/kategorije „ne pokazuje" ništa u sljedećem ekranu, uz
+  sumnju da je problem u navigaciji. Reproducirano uživo na `te2/first-midterm`: klik na kategoriju → toast potvrdi →
+  „Start Learning" otvori Learn s filtrom na **„All"**.
+- **Korijen (izmjeren, ne pretpostavljen):** `grep -rn "nav.category" js/` → **dva pisca, nijedan čitatelj**. Nije
+  pokvaren gumb nego nespojena žica; `js/app-state.js` JSDoc ju od početka zove „Aktivni filter kategorije".
+- **Usput nađeno:** `#quizDifficulty` postoji samo u markupu, čita ga **0 linija** JS-a → BUG-057.
+- **Paralelni rad (4 agenta):** ① kod-ready snippeti za `progress.js` ② skeniranje iste klase kvara po `js/`
+  ③ uklanjanje mrtvog dropdowna (`index.html` + `i18n.js`) ④ regresijski spec. Disjunktne datoteke po agentu.
+- **⚠️ Prijedlog agenta ① bio je kriv i uhvaćen provjerom:** filtrirao bi **zatečeni** špil umjesto obnove iz izvora →
+  sužavanja se slažu, špil se nikad ne vrati (razred BUG-020). Ispravljeno: `primijeniKategoriju()` zove
+  `initFlashcards()`/`initFill()`. Test to izričito tvrdi. **Pouka: snippet od agenta se čita, ne lijepi.**
+- **Dizajn:** jedan poziv s dva mjesta (klik + kraj `initStudyPage`) umjesto filtra u svakom ulazu — zato i tab u
+  traci poštuje izbor, a Quick Start gumbi ne moraju znati ništa o kategoriji.
+- **Testirano:** `typecheck` ✅ · `test:unit` 68/68 ✅ · `check:i18n` ✅ (osnovica `progress.js` **4 → 3**, spuštena —
+  zakucani engleski toast zamijenjen ključevima) · `check:csp` ✅.
+- **Okolina:** `node_modules` je na ovom stroju bio prazan (`npm ci`), Playwright browseri nedostajali.
+  **`.imena-zabrana.txt` NIJE u `sokratstudy.dev` nego u worktreeju `sokratstudy.pravri`** — dakle po KLONU, ne po
+  stroju; `check:names` se dotad vrti uz `IMENA_ZABRANA=…`.
+- **Slijedi:** pokrenuti `tests/kategorija-fokus.spec.js` kad browseri dođu, pa `npm run bump` + preflight. **Bez
+  pusha na `main` do Leonova OK-a.**
+
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 
 - **Stanje (izmjereno, samo čitanje):** PROD nema ništa od F6 (uloga `mcp_klijent`, `node_drafts`, hook, `pg_jsonschema`,

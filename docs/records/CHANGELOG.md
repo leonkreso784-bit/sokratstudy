@@ -5,6 +5,16 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+- **Kategorija za učenje napokon nešto radi (grana `fix/kategorija-quick-start`, 27.11.)** — Leon na živom ekranu:
+  izabereš lekciju i kategoriju, stisneš „Kreni učit", i *„ne pokazuje joj se ta lekcija"*. **BUG-056:**
+  `AppState.nav.category` se pisao na dva mjesta a čitalo ga je **nula** — značajka projektirana (JSDoc je zove
+  „Aktivni filter kategorije") pa nikad spojena; `startQuickQuiz` ga je uz to poimence brisao. Sad jedno mjesto zna
+  što znači odabrana kategorija (`aktivnaKategorija()` + `primijeniKategoriju()`, ADR-027), gura je u **sva četiri
+  moda** (Learn · kviz · kartice · dopune), i to tako da i **tab u traci** poštuje izbor, ne samo Quick Start gumb.
+  Ponovni klik poništava izbor. Napredak ostaje na cijelom predmetu (BUG-047) jer filtar ide kao **argument**.
+  **BUG-057:** Difficulty dropdown (Easy/Medium/Hard) čitala je **nijedna** linija JS-a → uklonjen, jer težina bez
+  oznaka u sadržaju nije implementabilna (ADR-018). Brana: `tests/kategorija-fokus.spec.js`.
+
 - **„Poveži AI" (grana `feat/povezi-ai`, 17.11.)** — Leon: *„cijeli taj proces spajanja mora biti puno jednostavniji"*.
   Na PROD-u gumba NIJE BILO (`connect-ai.js` `PRODUKCIJA = null`, ograda do ⑥ ostala) → adresa `www.sokratstudy.com/mcp`.
   Treći ulaz: redak u herou ispod vrata; paket `connect` stiže tek na klik (naslovnica 0 B više). Upute za Claude po

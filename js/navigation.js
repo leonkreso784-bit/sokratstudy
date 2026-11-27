@@ -1479,6 +1479,12 @@ async function initStudyPage(subjectId, lessonId, targetSection) {
     renderProgressPage();
     updateHomeStats();
 
+    // BUG-056: kategorija odabrana na početnoj (i obnovljena iz zadnje pozicije, 24 h) gura
+    // se u sva četiri moda TEK SADA — poslije `renderLearnContent`, jer ona prevezuje čipove
+    // filtra i pregazila bi raniji izbor. Stoji na kraju namjerno: jedan poziv koji ne ovisi
+    // o tome kojim redom su se modovi inicijalizirali iznad.
+    if (typeof primijeniKategoriju === 'function') primijeniKategoriju();
+
     // Data-driven optional tabs (blind map, exercises, …) from catalog `features`.
     applyFeatureNav(subjectId);
 
