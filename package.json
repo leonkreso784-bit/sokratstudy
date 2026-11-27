@@ -68,7 +68,7 @@
     "backup": "node scripts/backup-db.js",
     "backup:verify": "node scripts/backup-db.js --verify",
     "export:json": "node scripts/export-content-json.js",
-    "preflight": "npm run check:lockfile && npm run check:node && npm run verify && npm run bump:check && npm run build:css -- --check && npm run check:tailwind && npm run check:cdn && npm run check:palette && npm run check:tokens && npm run check:i18n && npm run check:orphan-css && npm run check:safearea && npm run check:names && npm run check:hover && npm run check:csp && npm run check:mcp-rewrite && npm run check:budget && npm run check:seo && npm run check:contrast && npm run typecheck && npm run validate:schema && npm run build:ugc-sql -- --check && npm run build:pravila -- --check && npm run export:json -- --check && npm run check:docs && npm run check:state && npm run test:unit",
+    "preflight": "npm run check:lockfile && npm run check:node && npm run verify && npm run bump:check && npm run build:css -- --check && npm run check:tailwind && npm run check:cdn && npm run check:kviz && npm run check:palette && npm run check:tokens && npm run check:i18n && npm run check:orphan-css && npm run check:safearea && npm run check:names && npm run check:hover && npm run check:csp && npm run check:mcp-rewrite && npm run check:budget && npm run check:seo && npm run check:contrast && npm run typecheck && npm run validate:schema && npm run build:ugc-sql -- --check && npm run build:pravila -- --check && npm run export:json -- --check && npm run check:docs && npm run check:state && npm run test:unit",
     "scaffold": "node scripts/scaffold-subject.js",
     "check:contrast": "node scripts/check-contrast.js",
     "check:safearea": "node scripts/check-safe-area.js",
@@ -77,7 +77,8 @@
     "check:csp": "node scripts/check-csp.js",
     "check:budget": "node scripts/check-budget.js",
     "check:seo": "node scripts/check-seo.js",
-    "build:og": "node scripts/build-og-image.js"
+    "build:og": "node scripts/build-og-image.js",
+    "check:kviz": "node scripts/check-kvaliteta-kviza.js"
   },
   "keywords": [
     "sokrat-study",

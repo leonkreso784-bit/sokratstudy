@@ -1,0 +1,297 @@
+{
+  "public-finance": {
+    "najdulji": 58,
+    "pitanja": 140,
+    "odaje": 0
+  },
+  "quality-management": {
+    "najdulji": 90,
+    "pitanja": 182,
+    "odaje": 1
+  },
+  "te2": {
+    "najdulji": 57,
+    "pitanja": 93,
+    "odaje": 3
+  },
+  "entrepreneurship": {
+    "najdulji": 87,
+    "pitanja": 134,
+    "odaje": 3
+  },
+  "accounting": {
+    "najdulji": 117,
+    "pitanja": 204,
+    "odaje": 4
+  },
+  "ebusiness": {
+    "najdulji": 88,
+    "pitanja": 124,
+    "odaje": 0
+  },
+  "econ-hospitality": {
+    "najdulji": 55,
+    "pitanja": 106,
+    "odaje": 2
+  },
+  "marketing": {
+    "najdulji": 27,
+    "pitanja": 66,
+    "odaje": 3
+  },
+  "geography": {
+    "najdulji": 40,
+    "pitanja": 127,
+    "odaje": 0
+  },
+  "food-nutrition": {
+    "najdulji": 78,
+    "pitanja": 182,
+    "odaje": 2
+  },
+  "business-informatics": {
+    "najdulji": 24,
+    "pitanja": 55,
+    "odaje": 1
+  },
+  "sit": {
+    "najdulji": 48,
+    "pitanja": 83,
+    "odaje": 2
+  },
+  "management": {
+    "najdulji": 30,
+    "pitanja": 84,
+    "odaje": 1
+  },
+  "traffic": {
+    "najdulji": 73,
+    "pitanja": 97,
+    "odaje": 3
+  },
+  "math": {
+    "najdulji": 30,
+    "pitanja": 82,
+    "odaje": 2
+  },
+  "microeconomics": {
+    "najdulji": 48,
+    "pitanja": 148,
+    "odaje": 4
+  },
+  "statistics": {
+    "najdulji": 36,
+    "pitanja": 102,
+    "odaje": 1
+  },
+  "academic-writing": {
+    "najdulji": 84,
+    "pitanja": 143,
+    "odaje": 4
+  },
+  "macroeconomics": {
+    "najdulji": 59,
+    "pitanja": 127,
+    "odaje": 2
+  },
+  "business-informatics-hr": {
+    "najdulji": 20,
+    "pitanja": 55,
+    "odaje": 1
+  },
+  "statistics-hr": {
+    "najdulji": 32,
+    "pitanja": 137,
+    "odaje": 2
+  },
+  "microeconomics-hr": {
+    "najdulji": 41,
+    "pitanja": 175,
+    "odaje": 2
+  },
+  "academic-writing-hr": {
+    "najdulji": 57,
+    "pitanja": 156,
+    "odaje": 2
+  },
+  "math-hr": {
+    "najdulji": 23,
+    "pitanja": 131,
+    "odaje": 0
+  },
+  "macroeconomics-hr": {
+    "najdulji": 60,
+    "pitanja": 456,
+    "odaje": 2
+  },
+  "management-hr": {
+    "najdulji": 46,
+    "pitanja": 108,
+    "odaje": 3
+  },
+  "sit-hr": {
+    "najdulji": 51,
+    "pitanja": 87,
+    "odaje": 1
+  },
+  "traffic-hr": {
+    "najdulji": 72,
+    "pitanja": 97,
+    "odaje": 7
+  },
+  "te2-hr": {
+    "najdulji": 53,
+    "pitanja": 94,
+    "odaje": 4
+  },
+  "entrepreneurship-hr": {
+    "najdulji": 36,
+    "pitanja": 84,
+    "odaje": 1
+  },
+  "ebusiness-hr": {
+    "najdulji": 33,
+    "pitanja": 82,
+    "odaje": 1
+  },
+  "food-nutrition-hr": {
+    "najdulji": 67,
+    "pitanja": 299,
+    "odaje": 0
+  },
+  "geography-hr": {
+    "najdulji": 66,
+    "pitanja": 272,
+    "odaje": 0
+  },
+  "econ-hospitality-hr": {
+    "najdulji": 48,
+    "pitanja": 254,
+    "odaje": 1
+  },
+  "marketing-hr": {
+    "najdulji": 31,
+    "pitanja": 66,
+    "odaje": 0
+  },
+  "accounting-hr": {
+    "najdulji": 69,
+    "pitanja": 325,
+    "odaje": 4
+  },
+  "microeconomics-mor": {
+    "najdulji": 41,
+    "pitanja": 175,
+    "odaje": 2
+  },
+  "math-mor": {
+    "najdulji": 23,
+    "pitanja": 131,
+    "odaje": 0
+  },
+  "statistics-mor": {
+    "najdulji": 32,
+    "pitanja": 137,
+    "odaje": 2
+  },
+  "business-informatics-mor": {
+    "najdulji": 20,
+    "pitanja": 55,
+    "odaje": 1
+  },
+  "academic-writing-mor": {
+    "najdulji": 57,
+    "pitanja": 156,
+    "odaje": 2
+  },
+  "macroeconomics-mor": {
+    "najdulji": 60,
+    "pitanja": 456,
+    "odaje": 2
+  },
+  "management-mor": {
+    "najdulji": 46,
+    "pitanja": 108,
+    "odaje": 3
+  },
+  "traffic-mor": {
+    "najdulji": 72,
+    "pitanja": 97,
+    "odaje": 7
+  },
+  "accounting-mor": {
+    "najdulji": 69,
+    "pitanja": 325,
+    "odaje": 4
+  },
+  "environmental-economics-mor": {
+    "najdulji": 98,
+    "pitanja": 226,
+    "odaje": 0
+  },
+  "quality-management-mor": {
+    "najdulji": 140,
+    "pitanja": 265,
+    "odaje": 1
+  },
+  "urban-economics-mor": {
+    "najdulji": 158,
+    "pitanja": 329,
+    "odaje": 0
+  },
+  "tourism-system-mor": {
+    "najdulji": 226,
+    "pitanja": 477,
+    "odaje": 1
+  },
+  "natural-geospace-mor": {
+    "najdulji": 194,
+    "pitanja": 449,
+    "odaje": 1
+  },
+  "theory-law-state-pfri": {
+    "najdulji": 129,
+    "pitanja": 435,
+    "odaje": 0
+  },
+  "legal-history-pfri": {
+    "najdulji": 171,
+    "pitanja": 660,
+    "odaje": 0
+  },
+  "sociology-pfri": {
+    "najdulji": 97,
+    "pitanja": 353,
+    "odaje": 0
+  },
+  "roman-law-pfri": {
+    "najdulji": 159,
+    "pitanja": 638,
+    "odaje": 0
+  },
+  "constitutional-law-pfri": {
+    "najdulji": 86,
+    "pitanja": 355,
+    "odaje": 0
+  },
+  "political-economy-pfri": {
+    "najdulji": 89,
+    "pitanja": 329,
+    "odaje": 0
+  },
+  "eu-law-1-pfri": {
+    "najdulji": 102,
+    "pitanja": 356,
+    "odaje": 0
+  },
+  "criminal-procedure-pfri": {
+    "najdulji": 208,
+    "pitanja": 1343,
+    "odaje": 0
+  },
+  "eu-law-2-pfri": {
+    "najdulji": 51,
+    "pitanja": 219,
+    "odaje": 0
+  }
+}

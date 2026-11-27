@@ -36,8 +36,8 @@ od 37–62 % (tuđi).
 → push na `main` blokiran. **Riješeno:** popis 21 PFRI predmeta vraćen iz gita (`0f56bfa2` + `169a0ceb`, `e596f5a5`
 ih je izvadio) · memorija napunjena (4 zapisa) · `.imena-zabrana.txt` sastavljen iz mailova i imena nositelja u IPK-u
 + vlasnika gradiva (**119 stavki**, Leon: *„nemam ništa od toga"*). Brana je odmah uhvatila **četiri lažna sudara** —
-`Herc*` ↔ „Bosna i Hercegovina", `Menger*` ↔ ekonomist Carl Menger, `Babić*`/`Škorić*` ↔ citirani autori udžbenika →
-upisani **s kontekstom** (`prof. Herc`), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
+prezime koje je ujedno dio naziva države, prezime ekonomista iz 19. st. i dva citirana autora udžbenika →
+upisani **s kontekstom** (uz titulu), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
 **Brana veličine:** prag za `windows-git-bash-zamke.md` izbačen iz tablice (Leonova odluka) — memorija je po stroju,
 a ta je vezana na Windows; gdje postoji, pada pod `OSTALE_MEMORIJE`. Test prilagođen, a broj dotaknutih datoteka se
 sad **izvodi iz tablice** (zakucana 6 je pala, mjera je bila ispravna).

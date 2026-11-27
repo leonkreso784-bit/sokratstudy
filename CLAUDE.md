@@ -68,7 +68,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 
 ### `npm run preflight` — sve brze brane odjednom (pokreni PRIJE svakog main-pusha)
 
-`check:lockfile` · `check:node` · `verify` · `bump:check` · css-drift · `check:tailwind` · `check:cdn` ·
+`check:lockfile` · `check:node` · `verify` · `bump:check` · css-drift · `check:tailwind` · `check:cdn` · `check:kviz` ·
 `check:palette` · `check:tokens` · `check:i18n` · `check:orphan-css` · `check:safearea` · `check:names` · `check:hover` · `check:csp` · `check:mcp-rewrite` · `check:budget` · `check:seo` · `check:contrast` ·
 `typecheck` · `validate:schema` · `export:json --check` · `check:docs` · `check:state` ·
 `test:unit`. Pre-push hook ga automatski vrti na `main`.
@@ -81,6 +81,7 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `check:docs` | jedan aktivni plan · svaki `.md` u indeksu · nula mrtvih poveznica · **nula ćirilice** u kodu i sadržaju · zapisi rotirani po mjesecima (`docs:rotate`) · **veličina** memorije, plana i `architecture` |
 | `check:tailwind` | 6 brana oko Tailwind sloja (dinamička imena klasa · sudar s legacy klasom · `@source` ugovor · klase bez bundlea · šum · **sudar `@keyframes`**) |
 | `check:cdn` | vanjski podresursi imaju **SRI + `crossorigin` + verzioniran URL**; `check:cdn:live --verify` uspoređuje bajtove s izdavačevim hashem (mrežno) |
+| `check:kviz` | pitanje se ne da pogoditi bez znanja: dopuna ne odaje odgovor (**čegrtaljka**; nov predmet = nula) ni ne završava rečeničnom točkom (tvrdo) · BUG-054 brojka |
 | `check:palette` | **čegrtaljka**: broj ostataka stare palete ne smije **porasti** (`--update` spušta osnovicu). Uz nju **četiri tvrde zabrane**: zakucan tekst na ispuni marke · isto to na **POTOMKU** ispune · `--primary-light` kao tekst · **zakucana tamna ploha** |
 | `check:tokens` | svaka `var(--x)` u `css/**` ima definiciju (CSS ili runtime u JS-u) — `var()` s fallbackom bez definicije je **zakucana vrijednost s ukrasom**. Osnovica **imenuje** svjesne iznimke |
 | `check:i18n` | nijedan korisniku vidljiv tekst zakucan mimo `js/i18n.js` (HTML · JS sinkovi · ključ bez rječnika); osnovica = brojač po datoteci |
