@@ -53,15 +53,21 @@ function aktivnaKategorija() {
  * ulaz). Zato svaki ulaz u mod — i Quick Start gumb i tab u traci — zatekne već točno
  * stanje, umjesto da svaki od njih zasebno pamti isto pravilo (ADR-027).
  */
-function primijeniKategoriju() {
+function primijeniKategoriju(obnoviModove = true) {
     const kat = aktivnaKategorija();
 
-    // Kartice i dopune: špil/pitanja se grade IZNOVA pa suze. ⚠️ Obnova je OBAVEZNA —
-    // filtriranje zatečenog špila slagalo bi sužavanja jedno na drugo, pa bi onaj tko
-    // jednom uđe s kategorijom A ostao na A i kad poslije uđe bez izbora. Špil se ne bi
-    // imao odakle vratiti (isti razred curenja kao BUG-020).
-    if (typeof initFlashcards === 'function') initFlashcards();
-    if (typeof initFill === 'function') initFill();
+    // Kartice i dopune: špil/pitanja se grade IZNOVA pa suze. ⚠️ Obnova je OBAVEZNA kad se
+    // izbor MIJENJA — filtriranje zatečenog špila slagalo bi sužavanja jedno na drugo, pa bi
+    // onaj tko jednom uđe s kategorijom A ostao na A i kad poslije uđe bez izbora. Špil se ne
+    // bi imao odakle vratiti (isti razred curenja kao BUG-020).
+    //
+    // ⚠️ `obnoviModove = false` šalje SAMO `initStudyPage`: ondje su `initFlashcards()` i
+    // `initFill()` upravo pozvani i oba sama čitaju `aktivnaKategorija()`, pa su špil i dopune
+    // već točni — druga izgradnja bila bi isti posao dvaput po svakom otvaranju lekcije.
+    if (obnoviModove) {
+        if (typeof initFlashcards === 'function') initFlashcards();
+        if (typeof initFill === 'function') initFill();
+    }
 
     // Kviz: `select` JE vidljivi pokazatelj, a `startQuiz()` ga ionako čita — dovoljno je
     // postaviti vrijednost, bez drugog puta do istog podatka.

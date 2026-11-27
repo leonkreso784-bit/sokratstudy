@@ -100,7 +100,18 @@ test('Learn section has no horizontal overflow on iPhone widths', async ({ page 
       await page.screenshot({ path: shot, fullPage: true });
     } catch (e) {
       console.log(`  (fullPage snimka nije uspjela za ${tag} — snimam vidljivi dio: ${String(e.message).split('\n')[0]})`);
-      await page.screenshot({ path: shot });
+      // ⚠️ I OVO može pasti, i palo je (CI, 27.11.: `Protocol error (Page.captureScreenshot)`
+      // na `responsive.spec.js:65`, uz 365 prolaza i nijednu palu tvrdnju). Kad je renderer
+      // iscrpljen Learnom najvećih PFRI predmeta, ne uspije ni snimka vidljivog dijela, pa je
+      // dotadašnji fallback samo pomaknuo pad za jedan red. Snimka je PRILOG, ne tvrdnja —
+      // ono što se mjeri (`measureOverflow`) već je izmjereno gore i ne ovisi o njoj. Zato
+      // neuspjeh priloga smije samo zabilježiti, nikad oboriti branu: inače gate crveni zbog
+      // pomoćnog sredstva, a pravi nalaz (`expect.soft` dolje) ostane neispričan.
+      try {
+        await page.screenshot({ path: shot });
+      } catch (e2) {
+        console.log(`  (ni snimka vidljivog dijela nije uspjela za ${tag}: ${String(e2.message).split('\n')[0]})`);
+      }
     }
   }
 

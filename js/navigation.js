@@ -1483,7 +1483,10 @@ async function initStudyPage(subjectId, lessonId, targetSection) {
     // se u sva četiri moda TEK SADA — poslije `renderLearnContent`, jer ona prevezuje čipove
     // filtra i pregazila bi raniji izbor. Stoji na kraju namjerno: jedan poziv koji ne ovisi
     // o tome kojim redom su se modovi inicijalizirali iznad.
-    if (typeof primijeniKategoriju === 'function') primijeniKategoriju();
+    // `false` = ne gradi špil i dopune ponovno: `initFlashcards()`/`initFill()` gore su ih
+    // upravo izgradili i oba sama čitaju `aktivnaKategorija()`. Ovdje treba samo uskladiti
+    // ono što oni ne diraju — kviz-select i čip u Učenju.
+    if (typeof primijeniKategoriju === 'function') primijeniKategoriju(false);
 
     // Data-driven optional tabs (blind map, exercises, …) from catalog `features`.
     applyFeatureNav(subjectId);
