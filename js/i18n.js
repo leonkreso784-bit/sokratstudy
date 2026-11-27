@@ -154,6 +154,9 @@
     // a druga poruka je potrebna jer se ponovnim klikom izbor poništava.
     'home.categoryOn': { en: 'Category:', hr: 'Kategorija:' },
     'home.categoryOff': { en: 'All categories', hr: 'Sve kategorije' },
+    // Vidljiv put natrag na cijelu lekciju — kartica „Sve" i prvi čip u traci Učenja dijele
+    // isti ključ jer su ista odluka na dva ekrana.
+    'home.categoryAll': { en: 'All', hr: 'Sve' },
     'home.quickStart': { en: '🚀 Quick Start', hr: '🚀 Brzi početak' },
     'home.quickQuiz': { en: 'Quick Quiz (10 questions)', hr: 'Brzi kviz (10 pitanja)' },
     'home.allFlashcards': { en: 'Flashcards', hr: 'Kartice' },

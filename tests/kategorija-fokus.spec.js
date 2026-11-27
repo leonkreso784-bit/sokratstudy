@@ -132,12 +132,42 @@ test('izbor kategorije drži u sva četiri moda i poništava se (BUG-056)', asyn
   const natrag = await page.evaluate(probe);
   expect(natrag.navKat, 'ponovni klik na istu karticu poništava izbor').toBe('all');
   expect(natrag.aktivna, 'poslije poništenja nema aktivne kategorije').toBeNull();
-  expect(natrag.aktivnaKartica, 'nijedna kartica ne smije ostati `active`').toBeNull();
+  expect(natrag.aktivnaKartica, 'kartica „Sve" mora preuzeti `active` — ekran uvijek pokazuje ŠTO se uči').toBe('all');
   expect(natrag.quizSel, 'KVIZ se vraća na sve kategorije').toBe('all');
   expect(natrag.deckKat, 'KARTICE: špil se mora VRATITI na obje kategorije — ako ostane sužen, sužavanja se slažu (isti razred curenja kao BUG-020)').toEqual(expect.arrayContaining([meta, druga]));
   expect(natrag.deckLen, 'vraćeni špil mora biti veći od suženog').toBeGreaterThan(poslije.deckLen);
   expect(natrag.fillKat, 'DOPUNE se moraju vratiti na obje kategorije').toEqual(expect.arrayContaining([meta, druga]));
   expect(natrag.fillLen, 'vraćene dopune moraju biti brojnije od suženih').toBeGreaterThan(poslije.fillLen);
+
+  // ── 4) VIDLJIV put natrag na cijelo gradivo ────────────────────────────────────────
+  // Leon, 27.11.: *„mora biti gumb i da se sve može učit… ne može se ići na sve kao prije bez
+  // da se ne izlazi kompletno iz pripreme za ispit"*. Poništavanje ponovnim klikom (korak 3)
+  // rješava mehaniku, ali se NE VIDI — korisnik koji je suzio gradivo mora IMATI ŠTO kliknuti.
+  // Zato kartica „Sve" mora biti PRVA, stvarno vidljiva i sama vraćati cijelu lekciju.
+  await page.evaluate(kliknikarticu, meta);          // opet suzi
+  await page.waitForTimeout(150);
+  const suzeno = await page.evaluate(probe);
+  expect(suzeno.aktivna, 'priprema koraka 4: gradivo mora biti suženo').toBe(meta);
+
+  const sveKartica = page.locator('.category-btn[data-category="all"]');
+  await expect(sveKartica, 'kartica „Sve" mora postojati i biti VIDLJIVA, inače izlaza nema').toBeVisible();
+  expect(
+    await page.evaluate(() => [...document.querySelectorAll('.category-btn')][0].dataset.category),
+    'kartica „Sve" mora biti PRVA — put natrag se ne traži pogledom'
+  ).toBe('all');
+
+  await sveKartica.click();                          // pravi klik, ne `evaluate`
+  await page.waitForTimeout(150);
+
+  const preko = await page.evaluate(probe);
+  expect(preko.navKat, 'klik na „Sve" vraća na cijelu lekciju').toBe('all');
+  expect(preko.quizSel, 'KVIZ se vraća na sve kategorije').toBe('all');
+  expect(preko.learnFiltar, 'UČENJE se vraća na sve kategorije').toBe('all');
+  expect(preko.deckKat, 'KARTICE: špil se vraća na obje kategorije').toEqual(expect.arrayContaining([meta, druga]));
+  expect(preko.fillKat, 'DOPUNE se vraćaju na obje kategorije').toEqual(expect.arrayContaining([meta, druga]));
+  // I ono što je Leon zapravo tražio: sve se to dogodilo BEZ napuštanja pripreme za ispit.
+  expect(new URL(page.url()).hash, 'korisnik je i dalje u istoj lekciji — nije ispao iz pripreme')
+    .toContain('/subject/' + fixture.id + '/' + fixture.lesson);
 });
 
 // Zasebna tvrdnja, zasebna posljedica: izbor iz PROŠLE lekcije ne smije „procuriti" u novu.

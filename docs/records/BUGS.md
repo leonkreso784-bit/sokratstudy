@@ -37,6 +37,12 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
   gumbi ne filtriraju sami. Kartice i dopune primaju filtar kao **argument** (`getAllFlashcards(kat)`,
   `getAllFillQuestions(kat)`) da `renderProgressPage()` ostane na cijelom predmetu (BUG-047). Ponovni klik na
   aktivnu kategoriju je **poništava** — bez toga sužen špil izgleda kao da je gradivo nestalo.
+- **Dopuna 27.11. (Leon, nakon pregleda previewa):** *„mora biti gumb i da se sve može učit… ne može se ići na sve
+  kao prije bez da se ne izlazi kompletno iz pripreme za ispit"*. Poništavanje ponovnim klikom rješava mehaniku, ali
+  se **ne vidi** — tko suzi gradivo ostane bez puta natrag osim napuštanjem lekcije. Zato je **„Sve" sada PRVA
+  kartica i stoji uvijek** (isti obrazac koji traka čipova u Učenju već ima), nosi ukupan broj pojmova, a `active`
+  se računa iz **efektivne** kategorije — zastarjeli ključ iz prošle lekcije pali „Sve", jer se tada i prikazuje
+  cijela lekcija. **Pouka: izlaz koji se ne vidi nije izlaz** — mehanika bez afordancije je i dalje kvar.
 - **Rub koji je prvi prijedlog popravka promašio:** filtrirati **zatečeni** špil umjesto da se gradi iznova slaže
   sužavanja jedno na drugo — tko jednom uđe s kategorijom A ostaje na A i kad poslije uđe bez izbora, jer se špil
   nema odakle vratiti (razred curenja iz BUG-020). Zato `primijeniKategoriju()` zove `initFlashcards()`/`initFill()`,

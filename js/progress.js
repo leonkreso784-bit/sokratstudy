@@ -83,40 +83,59 @@ function updateCategoryButtons() {
     if (!container || !content) return;
 
     container.innerHTML = '';
+    const kategorije = getCategories(content);
 
-    getCategories(content).forEach(category => {
-        const data = content[category];
+    // Što je STVARNO prikazano, ne što je zapisano: zastarjeli ključ iz prošle lekcije
+    // `aktivnaKategorija()` svede na „sve", pa tada mora zasvijetliti kartica „Sve" —
+    // inače ekran tvrdi da je suženo, a prikazuje cijelu lekciju.
+    const efektivna = (typeof aktivnaKategorija === 'function' ? aktivnaKategorija() : null) || 'all';
+
+    /** Jedna kartica izbora; `kljuc === 'all'` znači cijelu lekciju. */
+    function dodajKarticu(kljuc, ime, ikona, broj) {
         const btn = document.createElement('button');
         btn.className = 'category-btn';
-        btn.dataset.category = category;
+        btn.dataset.category = kljuc;
         btn.innerHTML = `
-            <i class="fas ${pIcon(data.icon)}"></i>
-            <span>${pEsc(data.name)}</span>
-            <small>${data.flashcards ? data.flashcards.length : 0} terms</small>
+            <i class="fas ${pIcon(ikona)}"></i>
+            <span>${pEsc(ime)}</span>
+            <small>${broj} terms</small>
         `;
-        // Obnovljen izbor (24 h, `restoreLastPosition`) mora se VIDJETI i na hladan ulaz —
-        // inače je gradivo suženo, a nijedna kartica ne pokazuje čime.
-        if (AppState.nav.category === category) btn.classList.add('active');
+        if (efektivna === kljuc) btn.classList.add('active');
 
         btn.addEventListener('click', () => {
-            // PONOVNI klik na već odabranu kategoriju je poništava. Bez toga korisnik koji
-            // je suzio gradivo nema kako vratiti cijelu lekciju osim ponovnim ulaskom — a
-            // sužen špil izgleda kao da je gradivo nestalo.
-            const bioAktivan = AppState.nav.category === category;
-            AppState.nav.category = bioAktivan ? 'all' : category;
+            // Klik na VEĆ odabranu kategoriju je poništava — isti ishod kao klik na „Sve",
+            // samo bez traženja pogledom.
+            const bioAktivan = AppState.nav.category === kljuc;
+            AppState.nav.category = (kljuc === 'all' || bioAktivan) ? 'all' : kljuc;
+
             document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-            if (!bioAktivan) btn.classList.add('active');
+            const sad = AppState.nav.category;
+            const aktivna = container.querySelector('.category-btn[data-category="' + CSS.escape(sad) + '"]');
+            if (aktivna) aktivna.classList.add('active');
 
             primijeniKategoriju();
 
-            if (bioAktivan) {
+            if (sad === 'all') {
                 showToast((typeof t === 'function') ? t('home.categoryOff') : 'All categories');
             } else {
                 const nat = (typeof t === 'function') ? t('home.categoryOn') : 'Category:';
-                showToast(nat + ' ' + data.name);
+                showToast(nat + ' ' + ime);
             }
         });
         container.appendChild(btn);
+    }
+
+    // ⚠️ „Sve" je PRVA kartica i stoji UVIJEK (Leon, 27.11.): *„mora biti gumb i da se sve
+    // može učit… ne može se ići na sve kao prije bez da se ne izlazi kompletno iz pripreme za
+    // ispit"*. Poništavanje ponovnim klikom postoji od prve verzije ovog popravka, ali se NE
+    // VIDI — a nevidljiv izlaz nije izlaz: tko suzi gradivo ostane bez puta natrag na cijelu
+    // lekciju osim napuštanjem pripreme. Traka čipova u Učenju isti obrazac već ima.
+    const ukupno = kategorije.reduce((n, k) => n + ((content[k].flashcards || []).length), 0);
+    dodajKarticu('all', (typeof t === 'function') ? t('home.categoryAll') : 'All', 'fa-layer-group', ukupno);
+
+    kategorije.forEach((category) => {
+        const data = content[category];
+        dodajKarticu(category, data.name, data.icon, (data.flashcards || []).length);
     });
 }
 
@@ -126,7 +145,14 @@ function updateLearnFilters() {
     const content = AppState.nav.data;
     if (!container || !content) return;
 
-    container.innerHTML = '<button class="filter-btn active" data-filter="all">All</button>';
+    // Isti ključ kao kartica „Sve" na početnoj — ista odluka, pa i isti natpis na oba ekrana.
+    const sveNatpis = (typeof t === 'function') ? t('home.categoryAll') : 'All';
+    container.innerHTML = '';
+    const sve = document.createElement('button');
+    sve.className = 'filter-btn active';
+    sve.dataset.filter = 'all';
+    sve.textContent = sveNatpis;
+    container.appendChild(sve);
 
     getCategories(content).forEach(category => {
         const data = content[category];

@@ -11,7 +11,10 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
   „Aktivni filter kategorije") pa nikad spojena; `startQuickQuiz` ga je uz to poimence brisao. Sad jedno mjesto zna
   što znači odabrana kategorija (`aktivnaKategorija()` + `primijeniKategoriju()`, ADR-027), gura je u **sva četiri
   moda** (Learn · kviz · kartice · dopune), i to tako da i **tab u traci** poštuje izbor, ne samo Quick Start gumb.
-  Ponovni klik poništava izbor. Napredak ostaje na cijelom predmetu (BUG-047) jer filtar ide kao **argument**.
+  **„Sve" je prva kartica i stoji uvijek** (Leon nakon pregleda previewa: *„mora biti gumb i da se sve može učit…
+  ne može se ići na sve kao prije bez da se ne izlazi kompletno iz pripreme za ispit"*) — poništavanje ponovnim
+  klikom postoji, ali se ne vidi, a nevidljiv izlaz nije izlaz. Napredak ostaje na cijelom predmetu (BUG-047) jer
+  filtar ide kao **argument**.
   **BUG-057:** Difficulty dropdown (Easy/Medium/Hard) čitala je **nijedna** linija JS-a → uklonjen, jer težina bez
   oznaka u sadržaju nije implementabilna (ADR-018). Brana: `tests/kategorija-fokus.spec.js`.
 

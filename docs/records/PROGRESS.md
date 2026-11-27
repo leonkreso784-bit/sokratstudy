@@ -25,8 +25,16 @@ testirano, što slijedi.
 - **Okolina:** `node_modules` je na ovom stroju bio prazan (`npm ci`), Playwright browseri nedostajali.
   **`.imena-zabrana.txt` NIJE u `sokratstudy.dev` nego u worktreeju `sokratstudy.pravri`** — dakle po KLONU, ne po
   stroju; `check:names` se dotad vrti uz `IMENA_ZABRANA=…`.
-- **Slijedi:** pokrenuti `tests/kategorija-fokus.spec.js` kad browseri dođu, pa `npm run bump` + preflight. **Bez
-  pusha na `main` do Leonova OK-a.**
+- **Push grane + provjera uživo na previewu** (Leonov OK za granu): kviz/učenje/kartice/dopune poštuju izbor, i to
+  i kroz **tab**, ne samo Quick Start gumb; poništavanje vraća špil 13 → 61. Vercel ✅.
+- **Leonov nalaz na previewu → druga iteracija:** *„mora biti gumb i da se sve može učit… ne može se ići na sve kao
+  prije bez da se ne izlazi kompletno iz pripreme za ispit."* Bio je u pravu: toggle rješava mehaniku, ali je
+  **nevidljiv**. Dodana kartica **„Sve"** kao prva i trajna, s ukupnim brojem pojmova; `active` se računa iz
+  EFEKTIVNE kategorije pa zastarjeli ključ pali „Sve". Usput: zakucani engleski „All" u traci Učenja prešao na isti
+  i18n ključ (`progress.js` dug **3 → 2**). Četvrti korak testa tvrdi i da korisnik **ostaje u istoj lekciji**.
+- **Obrnuta provjera i za to:** bez kartice „Sve" test pada. (Ukupno tri obrnute provjere u ovoj sesiji.)
+- **Slijedi:** Leonova odluka o memorijskom pragu `windows-git-bash-zamke.md` — dok stoji, `check:docs` obara
+  preflight, pa pre-push kuka ne da `main`. **Bez pusha na `main` do izričitog OK-a.**
 
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 
