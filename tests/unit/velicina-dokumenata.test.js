@@ -48,10 +48,14 @@ function vrti(s, dodatno) {
 const ispis = (r) => r.problemi.join('\n');
 
 // ── čisto stablo ──
-test('čisto stablo: nula problema, dotaknute sve datoteke (memorija 4 + plan 1 + arhitektura 1)', () => {
+test('čisto stablo: nula problema, dotaknute sve datoteke (memorija iz tablice + ostala + plan + arhitektura)', () => {
   const r = vrti(stablo());
   tvrdi(r.problemi.length === 0, ispis(r));
-  tvrdi(r.dotaknuto === 6, 'dotaknuto ' + r.dotaknuto);
+  // IZVEDENO iz tablice, ne zakucano: lažno stablo piše po jednu datoteku za svaki imenovani
+  // prag + 'ostala.md' + PLAN.md + A.md. Zakucana 6 je 27.11. pala kad je prag izbačen iz tablice,
+  // a mjera je bila ispravna — brojku zato daje tablica.
+  const ocekivano = V.MEMORIJA.length + 3;
+  tvrdi(r.dotaknuto === ocekivano, 'dotaknuto ' + r.dotaknuto + ', očekivano ' + ocekivano);
 });
 
 // ── svaki prag: točno prag prolazi, prag + 1 pada ──
@@ -59,7 +63,6 @@ const SLUCAJEVI = [
   ['MEMORY.md', (s) => path.join(s.mem, 'MEMORY.md'), prag('MEMORY.md')],
   ['current-checkpoint.md', (s) => path.join(s.mem, 'current-checkpoint.md'), prag('current-checkpoint.md')],
   ['ostale memorije', (s) => path.join(s.mem, 'ostala.md'), V.OSTALE_MEMORIJE.prag],
-  ['iznimka windows-git-bash-zamke.md', (s) => path.join(s.mem, 'windows-git-bash-zamke.md'), prag('windows-git-bash-zamke.md')],
   ['aktivni plan', (s) => path.join(s.k, 'docs', 'plan', 'PLAN.md'), V.AKTIVNI_PLAN.prag],
   ['docs/architecture (izmjereno + 10 %)', (s) => path.join(s.k, 'docs', 'architecture', 'A.md'), V.pragArhitekture(1000)],
 ];
@@ -74,14 +77,16 @@ for (const [ime, put, granica] of SLUCAJEVI) {
   });
 }
 
-test('pragovi su oni iz odluke (8 000 · 5 000 · 6 000 · 9 000 · 12 000 · +10 %)', () => {
+test('pragovi su oni iz odluke (8 000 · 5 000 · 6 000 · 12 000 · +10 %)', () => {
   tvrdi(prag('MEMORY.md') === 8000 && prag('current-checkpoint.md') === 5000 && V.OSTALE_MEMORIJE.prag === 6000 &&
-    prag('windows-git-bash-zamke.md') === 9000 && V.AKTIVNI_PLAN.prag === 12000 && V.pragArhitekture(1000) === 1100, 'pragovi');
+    V.AKTIVNI_PLAN.prag === 12000 && V.pragArhitekture(1000) === 1100, 'pragovi');
 });
 
-test('iznimka vrijedi SAMO za imenovanu datoteku: windows-git-bash-zamke 6 001 prolazi, druga 6 001 pada', () => {
+// 2026-11-27: iznimka se mjeri na MEMORY.md (prag 8 000) — imenovani prag 9 000 za
+// 'windows-git-bash-zamke.md' izbačen je iz tablice jer je ta memorija vezana na drugi stroj.
+test('imenovani prag vrijedi SAMO za svoju datoteku: MEMORY.md 6 001 prolazi, druga 6 001 pada', () => {
   const s = stablo();
-  fs.writeFileSync(path.join(s.mem, 'windows-git-bash-zamke.md'), tekst(6001));
+  fs.writeFileSync(path.join(s.mem, 'MEMORY.md'), tekst(6001));
   tvrdi(vrti(s).problemi.length === 0, ispis(vrti(s)));
   fs.writeFileSync(path.join(s.mem, 'druga.md'), tekst(6001));
   tvrdi(ispis(vrti(s)).indexOf('druga.md') >= 0, 'druga nije uhvaćena');
