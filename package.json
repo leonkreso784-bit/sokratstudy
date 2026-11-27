@@ -78,7 +78,8 @@
     "check:budget": "node scripts/check-budget.js",
     "check:seo": "node scripts/check-seo.js",
     "build:og": "node scripts/build-og-image.js",
-    "check:kviz": "node scripts/check-kvaliteta-kviza.js"
+    "check:kviz": "node scripts/check-kvaliteta-kviza.js",
+    "pravri:izvori": "python3 scripts/pravri-izvori.py"
   },
   "keywords": [
     "sokrat-study",
