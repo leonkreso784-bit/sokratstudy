@@ -45,8 +45,30 @@ sad **izvodi iz tablice** (zakucana 6 je pala, mjera je bila ispravna).
 PROGRESS-sesiju od 17.11. ni napomenu o `18610cc`, oboje vraćeno ručno. `export:json --check` round-trip čist ·
 **bump `20261127121859`** (dva sadržajna commita mijenjala `data/**` bez bumpa) · `test:unit` 68/68 · **preflight zelen** ·
 grana pushana, CI vrti. Čeka Leonov OK za `main`.
-**Slijedi:** praznina u Sociologiji iz `sociologija-skripta.doc` (Drive), pa 2. godina: Opći dio građanskog i obvezno →
-Kazneno → Međunarodno → Obiteljsko. Gradivo za sva četiri postoji; **Obiteljsko je najtanje** (samo liste pitanja, bez skripte).
+**Nastavak iste sesije — brana i izvori za 2. godinu:**
+**🚩 Nova brana `check:kviz`** (`scripts/check-kvaliteta-kviza.js`, u preflightu) — vraća strojni korak letvice
+ADR-042 koji je živio u `_materials/pravri/qa.js` i izgubljen je. TVRDO: odgovor dopune ne završava **rečeničnom**
+točkom (skratice izuzete — prva verzija je sedam latinskih skratica u `academic-writing` prijavila kao kvar, a nisu;
+puki broj „1689." JEST kvar). ČEGRTALJKA (`scripts/kviz-baseline.json`): dopuna koja odaje odgovor (**zatečeno 95
+od 6 342**, po cijelom katalogu — te2, accounting, traffic, marketing, ne samo PFRI) i BUG-054 najdulja točna opcija
+(**4 262 od 13 231 = 32,2 %**, slučajno ≈ 25 %); nov predmet mora imati nulu. **Obrnuta kontrola:** na podacima prije
+`09066b57` brana nalazi **svih 6** kvarova koje je taj commit ispravio, na današnjima nula.
+**🚩 `npm run pravri:izvori`** — što imamo a što fali od gradiva, izvedeno iz izvedbenog plana 2026./2027.
+(propisana literatura, semestar, status), manifesta dijeljene mape na Driveu i kataloga. **Ishod za 21 predmet: 9
+gotovo · 2 imaju skriptu · 3 samo ispitne materijale · 7 NEMA NIŠTA** (sva 3. i 4. godina osim Europskog prava II;
+u dijeljenoj mapi 3. i 4. godina ne postoje). Skripta je u `scripts/`, podaci u `_materials/` — jer nose imena.
+**Izvori za `civil-obligations-pfri` (2/2, sljedeći predmet):** granica međuispita je iz izvedbenog plana točna
+(Klarić/Vedriš 3–182, 377–491, 557–566 + Slakoper 218–240 zastara; završni = pojedini ugovori + izvanugovorne +
+čl. 1130.–1162.). **Klarić/Vedriša NEMA**, a tri PDF-a s Drivea su korekturni primjerci i staju na str. 141 / 87 / 81
+(„opći dio" ne doseže propisanih 218–240; „Posebni dio I" pokriva praktički samo kupoprodaju). Leonova odluka: graditi
+iz **ZOO-a sa zakon.hr** (pročišćen do NN 69/26, na snazi 7.7.2026., skinut cijel: 644 k znakova, 1 186 članaka) +
+korekturni primjerci + **90 ispitnih kartica** (334 k znakova) i tri kolokvija. Plan: 16 kategorija međuispita + 13
+završnog, potvrđen. **Gradnja NIJE započeta.**
+**Pouka o imenima:** brana `check:names` uhvatila je **moj vlastiti zapis** — u PROGRESS sam naveo primjer ispravka
+s punim prezimenom. Primjer je prepisan bez imena.
+
+**Slijedi:** gradnja `civil-obligations-pfri` po potvrđenom planu (međuispit prvo), pa Kazneno → Međunarodno →
+Obiteljsko. Na grani čekaju 2 commita za `main` (`check:kviz`, `pravri:izvori`) — traže CI i Leonov OK.
 
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 
