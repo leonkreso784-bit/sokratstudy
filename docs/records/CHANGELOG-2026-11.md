@@ -3,6 +3,23 @@
 > **Arhiva jednog mjeseca** — ovamo ju je premjestio `npm run docs:rotate`; tekst unosa je nepromijenjen.
 > Tekući zapis: [CHANGELOG.md](CHANGELOG.md) · svi mjeseci: [docs/README.md](../README.md).
 
+## 2026-11-17 (OPUS) — 🚀 **F6 MCP KONEKTOR NA PRODUKCIJI (K/10)** — `main` = `347f8a1`, token `20261117164433`
+
+Leonov OK 17.11. („imaš OK za sve, i push na main"). Redoslijed iz MCP_TESTING §7:
+**① SQL** — 5 datoteka po `REDOSLIJED`; 29/29 tijela md5-isto s datotekama; inventar `mcp_klijent` čist (SELECT samo na
+`nodes`, EXECUTE samo `mcp_*`). `f6-nacrt`/`f6-prihvat` je `apply_migration` dvaput odbio → SQL Editor (Leonov Chrome).
+**② `main`** — merge `origin/main` (PFRI EP II + KPP) · preflight · CI zelen (uz preuzet `18610cc`: fullPage snimka
+Learna = prilog) · fast-forward `18610cc..347f8a1` · Vercel READY, živi token = repo.
+**③ funkcije** — `delete-account`, `send-notification`, `mail-unsubscribe`, `mcp` · tajna `MCP_RESOURCE_URL` =
+`https://www.sokratstudy.com/mcp` · `check:functions` 6/6.
+**④ Auth** — Require current password ON (Secure email change i leaked passwords već ON) · hook
+`mcp_access_token_hook` uključen PRIJE OAuth-a (suha proba: obična sesija `authenticated`, AI-token `mcp_klijent`) ·
+OAuth Server ON, `/odobrenje.html`, DCR ON, Site URL netaknut · obična prijava poslije svakog koraka 200.
+**⑤** `mcp:probe` protiv `www.sokratstudy.com/mcp`: 9/0. **⑥** Claude.ai → „Sokrat" (`https://www.sokratstudy.com/mcp`) na
+Leonovom računu: DCR klijent `6f13f7b4` u `oauth_consents`; `procitaj_materijale` = 1 polica + 10 materijala (== baza).
+Izgradnja materijala kroz PROD konektor još nije izvedena. Nalaz: zahtjev koji istekne dok se korisnik prijavljuje
+(~20 min) daje golo „Nije uspjelo" (Auth 404 `oauth_authorization_not_found`) — poruka treba reći „vrati se u AI i spoji ponovno".
+
 ## 2026-11-17 (OPUS) — 🚀 **PFRI: Europsko pravo I, Kazneno postupovno, Europsko pravo II NA PRODUKCIJI** — `main` = `72c2ebc`, token `20261117035404`
 
 - **2026-11-17 kasnije:** `main` → `18610cc` (docs `aaa03c2` + test-popravak: fullPage snimka u `responsive.spec.js` više ne ruši test kad CI Chromium ne može snimiti predugi Learn Europskog prava II; push-CI na `72c2ebc` bio je crven upravo na tome). Bez izmjene koda aplikacije.

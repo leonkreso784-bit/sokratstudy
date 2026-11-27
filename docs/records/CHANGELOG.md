@@ -12,19 +12,18 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
   Brane: `connect-ai.test.js` (PROD adresa == očekivanje u `check-edge-functions`, hero ulaz kroz paket) · `landing.spec`
   (klik → prozor s PROD adresom, modul nije učitan prije klika). Anketa 17.11.: i Claudeov imenik + video vodič (slijede).
 
-## 2026-11-17 (OPUS) — 🚀 **F6 MCP KONEKTOR NA PRODUKCIJI (K/10)** — `main` = `347f8a1`, token `20261117164433`
+## 2026-11-27 (OPUS) — 🚀 **PFRI: ispravci Kaznenog postupovnog i 6 dopuna NA PRODUKCIJI** — `main` = `a97c25d2`, token `20261127121859`
 
-Leonov OK 17.11. („imaš OK za sve, i push na main"). Redoslijed iz MCP_TESTING §7:
-**① SQL** — 5 datoteka po `REDOSLIJED`; 29/29 tijela md5-isto s datotekama; inventar `mcp_klijent` čist (SELECT samo na
-`nodes`, EXECUTE samo `mcp_*`). `f6-nacrt`/`f6-prihvat` je `apply_migration` dvaput odbio → SQL Editor (Leonov Chrome).
-**② `main`** — merge `origin/main` (PFRI EP II + KPP) · preflight · CI zelen (uz preuzet `18610cc`: fullPage snimka
-Learna = prilog) · fast-forward `18610cc..347f8a1` · Vercel READY, živi token = repo.
-**③ funkcije** — `delete-account`, `send-notification`, `mail-unsubscribe`, `mcp` · tajna `MCP_RESOURCE_URL` =
-`https://www.sokratstudy.com/mcp` · `check:functions` 6/6.
-**④ Auth** — Require current password ON (Secure email change i leaked passwords već ON) · hook
-`mcp_access_token_hook` uključen PRIJE OAuth-a (suha proba: obična sesija `authenticated`, AI-token `mcp_klijent`) ·
-OAuth Server ON, `/odobrenje.html`, DCR ON, Site URL netaknut · obična prijava poslije svakog koraka 200.
-**⑤** `mcp:probe` protiv `www.sokratstudy.com/mcp`: 9/0. **⑥** Claude.ai → „Sokrat" (`https://www.sokratstudy.com/mcp`) na
-Leonovom računu: DCR klijent `6f13f7b4` u `oauth_consents`; `procitaj_materijale` = 1 polica + 10 materijala (== baza).
-Izgradnja materijala kroz PROD konektor još nije izvedena. Nalaz: zahtjev koji istekne dok se korisnik prijavljuje
-(~20 min) daje golo „Nije uspjelo" (Auth 404 `oauth_authorization_not_found`) — poruka treba reći „vrati se u AI i spoji ponovno".
+Leonov OK 27.11. Push `bdad6e9c..a97c25d2` (5 commita; GitHub je ispisao napomenu o pull requestu, push je prošao).
+Sadržaj: tri najveće cjeline međuispita Kaznenog postupovnog razdvojene (24 kategorije), 6 dopuna kojima se odgovor
+vidio u rečenici ili je imao završnu točku (Ustavno, Povijest prava, Politička ekonomija, Rimsko).
+**Provjereno:** preflight zelen (izlaz 0) · CI na grani zelen, svih 5 jobova uklj. `Gate` i `Authed admin suite` ·
+živi `SW_VERSION` = repo · `diff:db` prije: 483 razlike u **točno 5 predmeta** koje su commiti i mijenjali →
+`migrate-content.js` (15 redova) → `diff:db` **0 razlika** · `check:final` ✓ za svih 9 PFRI · u bazi koju produkcija
+čita potvrđene sve tri nove kategorije KPP-a.
+**Usput (ne sadržaj):** obnovljeno lokalno stanje izvan gita koje je blokiralo push — `.imena-zabrana.txt` sastavljen
+iz službenog izvedbenog plana PFRI-ja (119 stavki; brana odmah uhvatila 4 lažna sudara: „Hercegovina", ekonomist
+Menger, citirani autori Babić i Škorić → upisani s kontekstom) i prag za `windows-git-bash-zamke.md` izbačen iz
+tablice veličina (memorija je po stroju). Opseg 1. godine PFRI izmjeren protiv plana 2026./2027.: 374/388 teza.
+**Ostaje otvoreno:** `check:final` osnovica (13 ne-PFRI predmeta izvan nje, od 17.11. čeka odluku) · praznina u
+Sociologiji (političke stranke i glasovanje).
