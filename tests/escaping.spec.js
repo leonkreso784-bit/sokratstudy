@@ -160,7 +160,11 @@ test.describe('BUG-025 — sadržaj u innerHTML se prikazuje doslovno i ne izvr�
       if (typeof window.updateCategoryBars === 'function') window.updateCategoryBars();
     });
 
-    const btn = page.locator('.categories .category-btn').first();
+    // ⚠️ Kartica se traži po KLJUČU, ne po položaju: od BUG-056 je prva kartica „Sve"
+    // (vidljiv put natrag na cijelu lekciju), pa bi `.first()` mjerio nju i tvrdnja o
+    // escapeu bi tiho prestala gađati podmetnuti naziv. Ključ je i inače točniji opis
+    // onoga što se mjeri — ovaj test govori o kartici sekcije `tema`.
+    const btn = page.locator('.categories .category-btn[data-category="tema"]');
     await expect(btn).toContainText(XSS, { timeout: 10000 });   // naziv je TEKST, ne markup
     expect(await page.locator('.categories img').count()).toBe(0);
 
