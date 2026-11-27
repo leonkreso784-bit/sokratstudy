@@ -32,7 +32,7 @@ testirano, što slijedi.
   **nevidljiv**. Dodana kartica **„Sve"** kao prva i trajna, s ukupnim brojem pojmova; `active` se računa iz
   EFEKTIVNE kategorije pa zastarjeli ključ pali „Sve". Usput: zakucani engleski „All" u traci Učenja prešao na isti
   i18n ključ (`progress.js` dug **3 → 2**). Četvrti korak testa tvrdi i da korisnik **ostaje u istoj lekciji**.
-- **Obrnuta provjera i za to:** bez kartice „Sve" test pada. (Ukupno tri obrnute provjere u ovoj sesiji.)
+- **Obrnuta provjera i za to:** bez kartice „Sve" test pada.
 - **Leon „sve riješi" → skinute obje blokade preflighta + zatečeni phone-nalaz:**
   - **`check:names`** je padao jer `.imena-zabrana.txt` ne putuje među worktreejevima (gitignored, a Mac ih ima 10) —
     popis je živio samo u `.pravri`. Kopija po stablu ODBAČENA (dva popisa se raziđu → ishod sigurnosne brane ovisi o
@@ -48,7 +48,26 @@ testirano, što slijedi.
   podmetnut stvaran prekrivač od 14 px → brana pada na SVAKOM ekranu, stabilno.
 - **⚠️ Dvije zamke s izlaznim kodom** (obje zamalo dale lažno zeleno): `gh run watch --exit-status` vraća **0 na
   OTKAZANOM** runu; `npx playwright test … | tail` daje izlazni kod **taila**, ne Playwrighta. Čitaj ispis, ne kod.
-- **Slijedi:** puni preflight i push grane. **Bez pusha na `main` do izričitog OK-a.**
+- **CI je pao na `d2282743` — i to BEZ ijedne pale tvrdnje** (365 prolaza): `responsive.spec.js:65` javio je
+  `Protocol error (Page.captureScreenshot)`. Snimka Learna je **prilog za otklanjanje grešaka, ne tvrdnja** (test
+  to i kaže), a mjera prelijevanja izmjerena je prije nje. Test je već imao `try/catch` za tu grešku, ali je pao i
+  **fallback** — kad je renderer iscrpljen Learnom najvećih PFRI predmeta, ne uspije ni snimka vidljivog dijela, pa
+  je dotadašnja zaštita samo pomaknula pad za jedan red. Sada neuspjeh priloga samo zabilježi.
+- **Usput uklonjena vlastita suvišnost:** `initStudyPage` je špil i dopune već izgradio (`initFlashcards`/`initFill`
+  sami čitaju `aktivnaKategorija()`), a `primijeniKategoriju()` ih je gradio **drugi put** — 118 nepotrebnih
+  izgradnji na testu koji obiđe svih 59 predmeta u jednoj sesiji. Sada `initStudyPage` šalje
+  `primijeniKategoriju(false)`; klik i dalje obnavlja, jer ondje obnova MORA biti.
+- **Zatečeni phone-nalaz razlučen od vlastitog:** puni skup je javio pad `phone.spec.js` na cookie gumbima. Isti
+  test pušten na **čistom `main`-u (`bdad6e9c`) pada identično, s istim pikselima** → zatečeno i vezano uz macOS
+  iscrtavanje, nije iz ovog posla. Dokaz prije zaključka, ne poslije.
+- **ZAVRŠNO STANJE GRANE:** 5 commita, zadnji **`4f735aa2`**, **pushana**, **CI ✅ ZELEN**, `preflight` izlaz 0,
+  puni lokalni Playwright skup na `iPhone-SE-375` **205 prošlo / 0 palo** (prije popravaka 204 + 1 pad).
+- ⚠️ **GRANA JE ODREZANA SA ZASTARJELOG `main`-a.** Lokalni ref je pokazivao `bdad6e9c` (od 17.11.), a produkcijski
+  `main` je **`8cb95d31`** — grana je time **9 commita IZA** i 5 ispred. Prije mergea traži `git fetch` pa spajanje
+  `origin/main` u granu, i ponovni preflight. **Pouka: ne mjeri protiv lokalnog `main`-a bez `fetch`-a** — isti
+  razred greške kao brojka prepisana u prozu.
+- **Slijedi:** **ništa od ovoga nije na produkciji.** Grana čeka Leonov izričit OK za `main`.
+  **Bez pusha na `main` do tog OK-a.**
 
 ## 2026-11-17 (OPUS, `sokratstudy.f6`) — priprema K/10: main u granu, kvar se zapisuje
 
