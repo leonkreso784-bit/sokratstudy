@@ -49,7 +49,7 @@ const rppPfriFinalExamPractice = {
   fillBlanks: [
     { id: "dzwez7", sentence: "Nitko ne može prenijeti više prava nego što ima: nemo plus _______ ad alium transferre potest quam ipse haberet.", answer: "iuris", hint: "Prava." },
     { id: "9qkqhn", sentence: "Pater vero is est, quem _______ demonstrant.", answer: "nuptiae", hint: "Brak." },
-    { id: "9gl7qk", sentence: "Semel heres, semper _______.", answer: "heres", hint: "Nasljednik." },
+    { id: "9gl7qk", sentence: "_______ heres, semper heres.", answer: "Semel", hint: "Jednom." },
     { id: "tqk92z", sentence: "Casum sentit _______.", answer: "dominus", hint: "Vlasnik." },
     { id: "kiatam", sentence: "Emptio tollit _______.", answer: "locatum", hint: "Zakup." },
     { id: "yity8d", sentence: "Iura novit _______.", answer: "curia", hint: "Sud." }

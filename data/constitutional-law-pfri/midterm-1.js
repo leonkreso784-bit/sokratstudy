@@ -2065,8 +2065,8 @@ const upPfriM1 = {
         "id": "qht1pn"
       },
       {
-        "sentence": "Prvi nacrt ustavnog teksta radne skupine zove se Krčki _______.",
-        "answer": "nacrt",
+        "sentence": "Prvi nacrt ustavnog teksta radne skupine nazvan je _______ nacrt.",
+        "answer": "Krčki",
         "hint": "1990.",
         "id": "wijt0s"
       },

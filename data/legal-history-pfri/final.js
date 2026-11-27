@@ -661,8 +661,8 @@ const ppdPfriFinalExamPractice = {
       "id": "moaz90"
     },
     {
-      "sentence": "Magna Carta potpisana je 1215., a Bill of Rights _______.",
-      "answer": "1689.",
+      "sentence": "Magna Carta potpisana je 1215., a Bill of Rights _______. godine.",
+      "answer": "1689",
       "hint": "Slavna revolucija.",
       "id": "apy7s7"
     },

@@ -161,6 +161,15 @@ svih 14 predmeta i u bazi, `migrate-content.js`).
 | Europsko pravo II | `eu-law-2-pfri` | 3/1 | 22 / 372 / 219 / 252 | europsko privatno pravo; ZZP s izmjenom NN 59/26, ZOO s izmjenom NN 69/26 (odgovornost proizvođača od 9. 12. 2026.) |
 | 12 predmeta 2.–5. god | — | — | — | u izradi; **izvan kataloga** dok ne prođu letvicu (ADR-042) |
 
+**Opseg 1. godine izmjeren 2026-11-27** protiv službenog izvedbenog plana kolegija **2026./2027.**
+(`_materials/pravri/sluzbeno/IPK_2026_pravo.pdf`, 73 kolegija; predmeti su građeni protiv plana 2025./26.):
+**375 od 388 teza pokriveno, a svih 13 preostalih je provjereno grepom i teme SU u podacima** — promašaji su
+šum rezanja proze na teze i razlike u obliku riječi. **Sadržajnih praznina 1. godina nema.**
+⚠️ Prvo je prijavljena praznina u `sociology-pfri` (političke stranke i glasovanje) — **lažna**: silabus piše
+„glasovanje", a podaci po izvoru (Giddens u hrv. prijevodu) „glasanje"; tema ima 7 kartica, 12 kviz pitanja i
+4 dopune. Varijanta je imenovana u mjeri. Alat: `_materials/pravri/tools/opseg2.py` — mjera koja ne razlikuje
+predmete je lažno zelena, pa uz nju ide kontrola na tuđem predmetu (vlastiti 0–8 % nepokriveno, tuđi 37–62 %).
+
 **Na produkciji od 2026-11-17**: 1. godina (`0d4c4ce`), Europsko pravo I, Kazneno postupovno i Europsko pravo II (`72c2ebc`); svih 9 predmeta i u bazi (`migrate-content.js`).
 
 ## Detaljni planovi (u ovoj mapi)

@@ -1508,9 +1508,9 @@
     "fillBlanks": [
       {
         "id": "6el95n",
-        "sentence": "Živi i minuli rad zajedno čine ukupni društveni fond _______.",
+        "sentence": "Ukupni društveni fond _______ obuhvaća njegov živi i minuli (opredmećeni) oblik.",
         "answer": "rada",
-        "hint": "resurs ljudskog rada"
+        "hint": "ljudski napor u proizvodnji"
       },
       {
         "id": "jobajn",

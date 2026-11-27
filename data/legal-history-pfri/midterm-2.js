@@ -3438,7 +3438,7 @@ const ppdPfriM2 = {
       {
         "sentence": "Privremenu vladu DFJ vodi _______, koji je i ministar obrane.",
         "answer": "Tito",
-        "hint": "Sporazum Tito–Šubašić.",
+        "hint": "vođa partizanskog pokreta",
         "id": "gilm6n"
       },
       {

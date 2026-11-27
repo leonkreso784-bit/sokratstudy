@@ -28,8 +28,10 @@ const MEMORIJA = [
     zasto: 'indeks se učitava svaku sesiju; 11 191 → 6 911 rezanjem ①, jedan redak = jedna kuka' },
   { datoteka: 'current-checkpoint.md', prag: 5000, od: '2026-10-11',
     zasto: 'samo trenutno stanje; 98 777 znakova u 62 bloka bio je najveći izvor halucinacije' },
-  { datoteka: 'windows-git-bash-zamke.md', prag: 9000, od: '2026-10-11',
-    zasto: 'IMENOVANA IZNIMKA: 23+ zamke alata, svaka je koštala sat ili lažan nalaz (8 678 na dan uvođenja)' },
+// 'windows-git-bash-zamke.md' je imao prag 9000 (od 2026-10-11, imenovana iznimka: 23+ zamke alata).
+// IZBAČEN 2026-11-27 (Leonova odluka): memorija je po stroju, a ta je zamka po imenu i sadržaju vezana
+// na Windows — na Macu je nema, pa je prag ondje trajno „PRAG BEZ DATOTEKE" i ruši cijeli preflight.
+// Datoteka, gdje postoji, pada pod OSTALE_MEMORIJE (prag 6000) — mjeri se, samo blaže.
 ];
 const OSTALE_MEMORIJE = { prag: 6000, od: '2026-10-11', zasto: 'jedna činjenica po datoteci; najveća 5 238 (10.10.)' };
 const AKTIVNI_PLAN = { prag: 12000, od: '2026-10-11', zasto: 'jedan spec za ono što sada radimo; ZAVRSNICA 9 032 (10.10.)' };
@@ -105,17 +107,9 @@ function provjeri({ korijen, aktivniPlanovi, env, dom, arhitektura }) {
         });
       }
     }
-    // ⚠️ NAPOMENA, ne problem — i to je ista odluka koju ova brana već donosi desetak redaka
-    // više (`PRESKOČENO — memorija nije na ovom stroju`). Memorija je IZVAN gita i po stroju,
-    // pa odsutnost imenovane datoteke ne dokazuje da je tablica zastarjela: dokazuje samo da
-    // se radi s drugog računala. Dok je ovo bio tvrdi pad, selidba Windows → Mac je oborila
-    // `check:docs`, dakle CIJELI preflight, dakle svaki push na `main` — a ništa u repozitoriju
-    // nije bilo krivo. Prag i dalje VRIJEDI kad datoteka postoji (gore), i i dalje se vidi da
-    // redak visi; samo ne zaustavlja rad.
-    // ⚠️ Za `docs/architecture` ostaje TVRDI pad (v. niže): ono JEST u gitu, pa ondje redak bez
-    // datoteke stvarno znači zastarjelu tablicu. Razlika je u tome je li datoteka u gitu.
     for (const p of MEMORIJA) {
-      if (!fs.existsSync(path.join(mem.put, p.datoteka))) napomene.push('prag bez datoteke (memorija je po stroju): memorija/' + p.datoteka);
+      if (!fs.existsSync(path.join(mem.put, p.datoteka))) problemi.push('PRAG BEZ DATOTEKE  memorija/' + p.datoteka +
+        '\n      → datoteka je preimenovana ili obrisana: popravi tablicu u scripts/velicina-dokumenata.js');
     }
     napomene.push('memorija: ' + mem.put);
   }

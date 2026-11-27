@@ -48,10 +48,14 @@ function vrti(s, dodatno) {
 const ispis = (r) => r.problemi.join('\n');
 
 // ── čisto stablo ──
-test('čisto stablo: nula problema, dotaknute sve datoteke (memorija 4 + plan 1 + arhitektura 1)', () => {
+test('čisto stablo: nula problema, dotaknute sve datoteke (memorija iz tablice + ostala + plan + arhitektura)', () => {
   const r = vrti(stablo());
   tvrdi(r.problemi.length === 0, ispis(r));
-  tvrdi(r.dotaknuto === 6, 'dotaknuto ' + r.dotaknuto);
+  // IZVEDENO iz tablice, ne zakucano: lažno stablo piše po jednu datoteku za svaki imenovani
+  // prag + 'ostala.md' + PLAN.md + A.md. Zakucana 6 je 27.11. pala kad je prag izbačen iz tablice,
+  // a mjera je bila ispravna — brojku zato daje tablica.
+  const ocekivano = V.MEMORIJA.length + 3;
+  tvrdi(r.dotaknuto === ocekivano, 'dotaknuto ' + r.dotaknuto + ', očekivano ' + ocekivano);
 });
 
 // ── svaki prag: točno prag prolazi, prag + 1 pada ──
@@ -59,7 +63,6 @@ const SLUCAJEVI = [
   ['MEMORY.md', (s) => path.join(s.mem, 'MEMORY.md'), prag('MEMORY.md')],
   ['current-checkpoint.md', (s) => path.join(s.mem, 'current-checkpoint.md'), prag('current-checkpoint.md')],
   ['ostale memorije', (s) => path.join(s.mem, 'ostala.md'), V.OSTALE_MEMORIJE.prag],
-  ['iznimka windows-git-bash-zamke.md', (s) => path.join(s.mem, 'windows-git-bash-zamke.md'), prag('windows-git-bash-zamke.md')],
   ['aktivni plan', (s) => path.join(s.k, 'docs', 'plan', 'PLAN.md'), V.AKTIVNI_PLAN.prag],
   ['docs/architecture (izmjereno + 10 %)', (s) => path.join(s.k, 'docs', 'architecture', 'A.md'), V.pragArhitekture(1000)],
 ];
@@ -74,14 +77,16 @@ for (const [ime, put, granica] of SLUCAJEVI) {
   });
 }
 
-test('pragovi su oni iz odluke (8 000 · 5 000 · 6 000 · 9 000 · 12 000 · +10 %)', () => {
+test('pragovi su oni iz odluke (8 000 · 5 000 · 6 000 · 12 000 · +10 %)', () => {
   tvrdi(prag('MEMORY.md') === 8000 && prag('current-checkpoint.md') === 5000 && V.OSTALE_MEMORIJE.prag === 6000 &&
-    prag('windows-git-bash-zamke.md') === 9000 && V.AKTIVNI_PLAN.prag === 12000 && V.pragArhitekture(1000) === 1100, 'pragovi');
+    V.AKTIVNI_PLAN.prag === 12000 && V.pragArhitekture(1000) === 1100, 'pragovi');
 });
 
-test('iznimka vrijedi SAMO za imenovanu datoteku: windows-git-bash-zamke 6 001 prolazi, druga 6 001 pada', () => {
+// 2026-11-27: iznimka se mjeri na MEMORY.md (prag 8 000) — imenovani prag 9 000 za
+// 'windows-git-bash-zamke.md' izbačen je iz tablice jer je ta memorija vezana na drugi stroj.
+test('imenovani prag vrijedi SAMO za svoju datoteku: MEMORY.md 6 001 prolazi, druga 6 001 pada', () => {
   const s = stablo();
-  fs.writeFileSync(path.join(s.mem, 'windows-git-bash-zamke.md'), tekst(6001));
+  fs.writeFileSync(path.join(s.mem, 'MEMORY.md'), tekst(6001));
   tvrdi(vrti(s).problemi.length === 0, ispis(vrti(s)));
   fs.writeFileSync(path.join(s.mem, 'druga.md'), tekst(6001));
   tvrdi(ispis(vrti(s)).indexOf('druga.md') >= 0, 'druga nije uhvaćena');
@@ -119,21 +124,10 @@ test('prag za obrisanu datoteku arhitekture = pad', () => {
   fs.unlinkSync(path.join(s.k, 'docs', 'architecture', 'A.md'));
   tvrdi(ispis(vrti(s)).indexOf('PRAG BEZ DATOTEKE  docs/architecture/A.md') >= 0, ispis(vrti(s)));
 });
-// Memorija je IZVAN gita i po stroju, pa odsutna imenovana datoteka NE smije rušiti branu —
-// inače selidba na drugo računalo obori `check:docs`, dakle preflight, dakle svaki push, a da
-// u repozitoriju ništa nije krivo (točno se to dogodilo pri prelasku Windows → Mac, 27.11.).
-// Vidjeti se MORA (napomena), zaustavljati ne smije. Suprotnost je tvrdnja ispod nje: za
-// `docs/architecture` isti slučaj OSTAJE pad, jer to jest u gitu — razlika je u tome je li
-// datoteka pod verzioniranjem, ne u tome koliko je važna.
-test('imenovana memorija koja ne postoji (drugi stroj) = NAPOMENA, ne pad', () => {
+test('imenovana memorija koja ne postoji (preimenovana) = pad', () => {
   const s = stablo();
   fs.unlinkSync(path.join(s.mem, 'current-checkpoint.md'));
-  const r = vrti(s);
-  tvrdi(r.problemi.length === 0, 'odsutna memorijska datoteka ne smije biti problem: ' + ispis(r));
-  // ⚠️ Gađa `napomene`, ne `ispis()` — `ispis` spaja samo probleme, pa bi tvrdnja protiv njega
-  // „prošla" i da napomene uopće nema. Tiho zeleno je ovdje gore od crvenog.
-  tvrdi((r.napomene || []).join('\n').indexOf('prag bez datoteke (memorija je po stroju): memorija/current-checkpoint.md') >= 0,
-    'napomena mora IMENOVATI datoteku koja nedostaje: ' + (r.napomene || []).join(' | '));
+  tvrdi(ispis(vrti(s)).indexOf('PRAG BEZ DATOTEKE  memorija/current-checkpoint.md') >= 0, ispis(vrti(s)));
 });
 test('stvarna tablica arhitekture pokriva TOČNO datoteke u pravom docs/architecture', () => {
   const pravi = fs.readdirSync(path.join(__dirname, '..', '..', 'docs', 'architecture')).filter((d) => d.endsWith('.md')).sort();
