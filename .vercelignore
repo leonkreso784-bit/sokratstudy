@@ -1,0 +1,25 @@
+# Što deploy NE nosi.
+#
+# ⚠️ Povod (2026-11-28): produkcija je posluživala CIJELI repozitorij s odgovorom 200 —
+#    `CLAUDE.md`, cijeli `docs/`, svaku branu iz `scripts/` i svaki test. Uz to
+#    `design/mockups/index.html` („U-UX mockupi — Leon presuđuje") i tri predloška
+#    maila, bez `noindex` i bez reda u sitemapu. Nijedna brana to nije vidjela jer su
+#    sve čitale samo korijen repozitorija.
+#
+#    Nije bilo sakriveno, nego samo nepovezano — a tražilici poveznica nije potrebna
+#    da nađe adresu. *Nepovezano nije privatno.*
+#
+# Provjereno prije isključivanja: nijedna `.md` datoteka ni mapa odavde ne učitava se
+# u pregledniku (nema `fetch` na njih u `js/**` ni u `sw.js`), a deploy je čisto
+# statičan — `vercel.json` nema `buildCommand`, `package.json` nema `prepare`/`build`.
+#
+# `scripts/check-seo.js` čita OVU datoteku da zna što je objavljeno, pa je popis na
+# jednom mjestu: mapa dodana ovdje istodobno izlazi iz deploya i iz sitemapa.
+
+design/
+spikes/
+supabase/
+tests/
+scripts/
+docs/
+*.md

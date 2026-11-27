@@ -287,7 +287,42 @@ function parseRoute(hash) {
  * potrebna zastavica koja se može zaglaviti. Jedini čuvar je usporedba s trenutnom
  * adresom, dakle idempotencija umjesto stanja.
  */
+/**
+ * Naslov dokumenta prati rutu.
+ *
+ * ⚠️ Do 2026-11-28 `document.title` se NIJE mijenjao NIGDJE (nula pojava u cijelom
+ * `js/`), pa je svih 59 predmeta i 171 lekcija dijelilo naslov naslovnice: u povijesti
+ * preglednika, u popisu kartica i u čitaču ekrana sve je pisalo isto. Ovo nije SEO —
+ * hash-rute se ionako ne indeksiraju, za to služe generirane stranice — nego
+ * orijentacija: naslov je prvo što čitač ekrana izgovori nakon promjene stranice.
+ *
+ * Marka ostaje na kraju: naziv predmeta je ono što se vidi u uskoj kartici.
+ */
+function syncTitle(page, data) {
+    if (typeof document === 'undefined') return;
+    const MARKA = 'Sokrat Study';
+    if (!ZADANI_NASLOV) ZADANI_NASLOV = document.title || MARKA;
+
+    const d = data || {};
+    const subjectId = d.subject || AppState.nav.subject;
+    const subject = (subjectId && typeof SokratCatalog !== 'undefined')
+        ? SokratCatalog.getSubject(subjectId) : null;
+
+    let naslov = null;
+    if ((page === 'lessons' || page === 'study') && subject) {
+        const lessonId = d.lesson || AppState.nav.lesson;
+        const lekcija = lessonId && (subject.lessons || []).find((l) => l.id === lessonId);
+        naslov = (page === 'study' && lekcija)
+            ? subject.name + ' · ' + lekcija.name + ' — ' + MARKA
+            : subject.name + ' — ' + MARKA;
+    }
+    // Ostale stranice nemaju vlastito ime koje bi bilo točnije od naslovnice.
+    document.title = naslov || ZADANI_NASLOV;
+}
+let ZADANI_NASLOV = '';
+
 function syncRoute(page, data) {
+    syncTitle(page, data);
     if (!history || !history.pushState) return;
     const want = routeFor(page, data);
     const sad = location.hash;

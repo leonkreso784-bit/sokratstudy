@@ -5,6 +5,52 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-28 (OPUS, grana `feat/seo-adrese`) — katalog dobio prave adrese; repozitorij prestao biti javno poslužen
+
+**Povod (Leon):** *„moramo updejtat seo same stranice i poboljšat jer se promijenilo dosta toga… treba nam dobar
+plan."* Plan-mod, tri paralelna istraživanja (infrastruktura · rute · zapisane odluke), pa četiri odluke kroz pitanja.
+
+**Nalaz koji je odredio sve ostalo.** `check:seo` je bio zelen i Lighthouse SEO 100 — a to ne znači ništa o dosegu,
+jer brana mjeri **dosljednost `<head>`-a, ne pokrivenost**. Izmjereno: **5 indeksabilnih URL-ova** naspram **59
+predmeta i 171 lekcije**, **nula** imena predmeta u posluženom HTML-u, **nula** stranica na hrvatskom za hrvatsku
+publiku, i **nijedan spomen Search Consolea u cijelom repou** — sve dosadašnje SEO-radnje nitko nije prijavio.
+Katalog je od zadnjeg dodira SEO-a (25.08.) narastao **25 → 59**, uz drugi fakultet i dva programa.
+
+**Ovo nije bio nov nalaz nego parkirana odluka.** `BACKLOG:1098` ju je držao od 24.08. uz riječi *„arhitektonska
+odluka, ne cigla — namjerno stoji ovdje umjesto u planu, da se ne izvede prije nego je odlučena"*, a `index.html`
+je nosio uvjet: *„Kad predmeti dobiju prave adrese, ovdje se dodaje i `Course`."* Odluka je pala na **generator**
+(64 commitane stranice), ne na seobu routera — ADR-028 i ADR-040 time ostaju netaknuti. **5 → 69 adresa.**
+
+**Što je mjerenje ispravilo u hodu (ne pretpostavke):**
+- `final` lekcija je ispisivala **sve teme dvaput** — prepoznaje se po tome da SADRŽI sve viđene, ne po tome da nema
+  nijednu novu (`examPractice` je upravo nova). · Hrvatski broji u tri oblika, pa je „2 kartica" bila greška.
+- Šest opisa ispalo je **162–170 znakova** jer sam brojio sirovo, a `&` u atributu zauzima pet znakova (`&amp;`).
+- Izmišljene CSS klase (`.legal-cta`, `.legal-doc`) — stranica se crtala bez stilova dok ih nisam zamijenio
+  postojećima iz `legal.css`. Vlastiti test je zbog toga visio dvije minute: gađao je klasu koju sam maknuo.
+- `boot.js` je hrvatskoj stranici upisivao `lang="en"` (jezik SUČELJA) → `data-lang-fixed`. **Obrnuta provjera:
+  bez popravka test pada s „Received: en".** Usput: tri druga unit-testa imaju svoj lažni `<html>` bez
+  `hasAttribute` — puknuli su i morali dobiti potpuniji model.
+- **FAQPage nije dodan**: Google je FAQ rich results ugasio potpuno **07.05.2026.** Plan ga je navodio kao „jedini
+  kandidat za rich result"; provjera prije gradnje je to oborila.
+
+**Usput, izvan SEO-a ali isti razred kvara.** Produkcija je posluživala **cijeli repozitorij** s odgovorom 200:
+`CLAUDE.md`, `docs/`, `scripts/check-seo.js`, `tests/phone.spec.js`, i `design/mockups/*.html` pod naslovom
+„U-UX mockupi — Leon presuđuje". Nijedna brana to nije vidjela jer **sve čitaju samo korijen repozitorija** — ista
+rupa kroz koju je prošao i `check:seo`. Izvedeno točno kako je Leon propisao 30.09.: `.vercelignore` + brana koja
+nabraja `.md` i tvrdi da nijedan nije u deployu. *Nepovezano nije privatno.*
+
+**Provjereno:** `preflight` izlaz **0**, bez ijednog pada (čitan ispis, ne samo kod) · `tests/seo.spec.js` 6/6 ·
+`legal.spec.js` zelen · stranica bez JS-a: 3 004 znaka, 18 tema, 8 kartica, `lang="hr"` · 703 tokena usklađena,
+svih 64 generiranih stranica nosi novi (`bump` ih dotad nije dosezao — BUG-004 u podmapama) · obrnuta provjera
+za **četiri** brane: `data-lang-fixed`, `build:seo --check` (nov predmet · mrtva adresa · ručna izmjena) i `*.md`.
+**`check:names` je opet uhvatio ime stvarne osobe koje je ušlo kroz `main`** — i opet u retku koji govori O TOJ
+BRANI. Popravljeno; brana se po dizajnu ne može vrtjeti u CI-ju jer je popis izvan gita.
+
+**Slijedi:** Leonov pregled, pa merge i deploy uz izričit OK; poslije deploya izmjeriti 404 na `CLAUDE.md` i
+`design/mockups/`. Zatim Search Console (njegov račun) i tek **iz podataka** odluka o stranicama po lekciji (171).
+
+---
+
 ## 2026-11-27 (OPUS, stablo `sokratstudy.pravri`) — PFRI 1. godina izmjerena protiv službenog silabusa; lokalno stanje izvan gita obnovljeno
 
 **Povod (Leon):** nastavak PFRI-ja, pa „ja bi završio cijelu prvu godinu" i „pretražiti po cijelom internetu
@@ -37,7 +83,10 @@ od 37–62 % (tuđi).
 ih je izvadio) · memorija napunjena (4 zapisa) · `.imena-zabrana.txt` sastavljen iz mailova i imena nositelja u IPK-u
 + vlasnika gradiva (**119 stavki**, Leon: *„nemam ništa od toga"*). Brana je odmah uhvatila **četiri lažna sudara** —
 `Herc*` ↔ „Bosna i Hercegovina", `Menger*` ↔ ekonomist Carl Menger, `Babić*`/`Škorić*` ↔ citirani autori udžbenika →
-upisani **s kontekstom** (`prof. Herc`), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
+upisani **s kontekstom** (titula + prezime, ne goli uzorak prezimena), kako brana i nalaže. Konačno: 119
+imena, 814 datoteka, 0 nalaza. ⚠️ Ovaj je redak 28.11. i sam pao na brani: opisujući da zabrana traži
+kontekst, ispisao je jedan takav unos doslovno. `check:names` se po dizajnu NE vrti u CI-ju (popis je
+izvan gita, pa bi ga CI uvijek čitao kao „nema ga = pad") — hvata ga samo lokalni preflight.
 **Brana veličine:** prag za `windows-git-bash-zamke.md` izbačen iz tablice (Leonova odluka) — memorija je po stroju,
 a ta je vezana na Windows; gdje postoji, pada pod `OSTALE_MEMORIJE`. Test prilagođen, a broj dotaknutih datoteka se
 sad **izvodi iz tablice** (zakucana 6 je pala, mjera je bila ispravna).

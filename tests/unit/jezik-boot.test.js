@@ -33,10 +33,13 @@ const tvrdi = (uvjet, ime, detalj) => {
 /* Lažni svijet: `<html lang="en" data-theme="academic">` kao na svakoj stranici. */
 function svijet(o) {
     const store = Object.assign({}, o.spremljeno || {});
-    const attrs = { lang: 'en', 'data-theme': 'academic' };
+    const attrs = { lang: o.lang || 'en', 'data-theme': 'academic' };
+    // Stranice iz `build-seo-pages.js` nose `data-lang-fixed` — jezik SADRŽAJA, ne sučelja.
+    if (o.langFiksan) attrs['data-lang-fixed'] = '';
     const zapisi = [];
     const html = {
         getAttribute: (k) => (k in attrs ? attrs[k] : null),
+        hasAttribute: (k) => k in attrs,
         setAttribute: (k, v) => { attrs[k] = String(v); zapisi.push(k); },
         style: {},
     };
@@ -96,6 +99,28 @@ console.log('\n=== jezik prije prvog crtanja (boot.js + i18n.js u sandboxu) ===\
 {
     const s = svijet({ spremljeno: {} });
     tvrdi(typeof s.ctx.__sokratPrimijeniJezik === 'function', 'boot izlaže window.__sokratPrimijeniJezik');
+}
+
+/* ⑤ `data-lang-fixed` — generirane stranice predmeta (`scripts/build-seo-pages.js`).
+   Dokument je CIJEL na jeziku svog programa i nema para na drugom jeziku, pa `lang`
+   ondje opisuje SADRŽAJ. Prebacivanje sučelja ga ne smije pregaziti — inače čitač
+   ekrana hrvatsku skriptu izgovara engleskim glasom (WCAG 3.1.1).
+   Obrnuta provjera: bez `if (!fiksan …)` u `boot.js` prva tvrdnja pada. */
+console.log('\n--- ⑤ data-lang-fixed: sadržaj nadjača sučelje ---\n');
+{
+    const s = svijet({ lang: 'hr', langFiksan: true, spremljeno: { 'sokrat-ui-lang': 'en' } });
+    tvrdi(s.attrs.lang === 'hr', '⑤ hrvatska stranica predmeta + englesko sučelje → lang OSTAJE hr', s.attrs.lang);
+}
+{
+    const s = svijet({ lang: 'en', langFiksan: true, spremljeno: { 'sokrat-ui-lang': 'hr' } });
+    tvrdi(s.attrs.lang === 'en', '⑤ engleska stranica + hrvatsko sučelje → lang ostaje en', s.attrs.lang);
+    tvrdi(s.attrs['data-ui-lang'] === 'hr',
+        '⑤ … a data-ui-lang se I DALJE postavlja (cookie-traka, podnožje)', s.attrs);
+}
+{
+    // Bez atributa se ništa ne mijenja: aplikacija i pravne stranice rade kao dosad.
+    const s = svijet({ lang: 'en', spremljeno: { 'sokrat-ui-lang': 'hr' } });
+    tvrdi(s.attrs.lang === 'hr', '⑤ bez data-lang-fixed → staro ponašanje (lang prati sučelje)', s.attrs.lang);
 }
 {
     // ② prekidač: i18n.js mora ići kroz boot-funkciju, inače tijelo pravne stranice ne prati prekidač

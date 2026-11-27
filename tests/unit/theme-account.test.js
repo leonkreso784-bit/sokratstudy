@@ -39,6 +39,8 @@ function svijet(o) {
     const attrs = { 'data-theme': 'academic' };
     const html = {
         getAttribute: (k) => (k in attrs ? attrs[k] : null),
+        // `boot.js` pita `hasAttribute('data-lang-fixed')` — pravi <html> ga uvijek ima.
+        hasAttribute: (k) => k in attrs,
         setAttribute: (k, v) => { attrs[k] = String(v); },
         style: {},
     };
