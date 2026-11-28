@@ -395,7 +395,11 @@ function stranicaPredmeta(subject) {
       url,
       inLanguage: lang,
       isAccessibleForFree: true,
-      teaches: gradivo.flatMap((l) => l.teme.map((x) => x.ime)).slice(0, 25),
+      // ⚠️ `Set`, i bez lekcije koja PONAVLJA. Prva verzija je ravno spljoštila sve lekcije,
+      // pa je `final` (kopija M1 ⊕ M2) vratio svaku temu DVAPUT — shema je tvrdila da predmet
+      // uči „Što je sociologija?" dva puta. Ispis je bio ispravan jer se ondje ponavljanje
+      // skriva; shema je išla mimo tog puta. Nađeno tek čitanjem posluženog HTML-a na deployu.
+      teaches: [...new Set(gradivo.filter((l) => !l.ponavlja).flatMap((l) => l.teme.map((x) => x.ime)))].slice(0, 30),
       provider: { '@type': 'EducationalOrganization', name: 'Sokrat Study', url: BASE + '/' },
       hasCourseInstance: {
         '@type': 'CourseInstance',
