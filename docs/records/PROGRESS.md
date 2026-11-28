@@ -5,6 +5,70 @@ testirano, što slijedi.
 
 ---
 
+## 2026-11-27 (OPUS, `sokratstudy.dev`) — BUG-056/057: izbor kategorije nije radio ništa
+
+- **Povod:** Leon je na produkciji primijetio da izbor lekcije/kategorije „ne pokazuje" ništa u sljedećem ekranu, uz
+  sumnju da je problem u navigaciji. Reproducirano uživo na `te2/first-midterm`: klik na kategoriju → toast potvrdi →
+  „Start Learning" otvori Learn s filtrom na **„All"**.
+- **Korijen (izmjeren, ne pretpostavljen):** `grep -rn "nav.category" js/` → **dva pisca, nijedan čitatelj**. Nije
+  pokvaren gumb nego nespojena žica; `js/app-state.js` JSDoc ju od početka zove „Aktivni filter kategorije".
+- **Usput nađeno:** `#quizDifficulty` postoji samo u markupu, čita ga **0 linija** JS-a → BUG-057.
+- **Paralelni rad (4 agenta):** ① kod-ready snippeti za `progress.js` ② skeniranje iste klase kvara po `js/`
+  ③ uklanjanje mrtvog dropdowna (`index.html` + `i18n.js`) ④ regresijski spec. Disjunktne datoteke po agentu.
+- **⚠️ Prijedlog agenta ① bio je kriv i uhvaćen provjerom:** filtrirao bi **zatečeni** špil umjesto obnove iz izvora →
+  sužavanja se slažu, špil se nikad ne vrati (razred BUG-020). Ispravljeno: `primijeniKategoriju()` zove
+  `initFlashcards()`/`initFill()`. Test to izričito tvrdi. **Pouka: snippet od agenta se čita, ne lijepi.**
+- **Dizajn:** jedan poziv s dva mjesta (klik + kraj `initStudyPage`) umjesto filtra u svakom ulazu — zato i tab u
+  traci poštuje izbor, a Quick Start gumbi ne moraju znati ništa o kategoriji.
+- **Testirano:** `typecheck` ✅ · `test:unit` 68/68 ✅ · `check:i18n` ✅ (osnovica `progress.js` **4 → 3**, spuštena —
+  zakucani engleski toast zamijenjen ključevima) · `check:csp` ✅.
+- **Okolina:** `node_modules` je na ovom stroju bio prazan (`npm ci`), Playwright browseri nedostajali.
+  **`.imena-zabrana.txt` NIJE u `sokratstudy.dev` nego u worktreeju `sokratstudy.pravri`** — dakle po KLONU, ne po
+  stroju; `check:names` se dotad vrti uz `IMENA_ZABRANA=…`.
+- **Push grane + provjera uživo na previewu** (Leonov OK za granu): kviz/učenje/kartice/dopune poštuju izbor, i to
+  i kroz **tab**, ne samo Quick Start gumb; poništavanje vraća špil 13 → 61. Vercel ✅.
+- **Leonov nalaz na previewu → druga iteracija:** *„mora biti gumb i da se sve može učit… ne može se ići na sve kao
+  prije bez da se ne izlazi kompletno iz pripreme za ispit."* Bio je u pravu: toggle rješava mehaniku, ali je
+  **nevidljiv**. Dodana kartica **„Sve"** kao prva i trajna, s ukupnim brojem pojmova; `active` se računa iz
+  EFEKTIVNE kategorije pa zastarjeli ključ pali „Sve". Usput: zakucani engleski „All" u traci Učenja prešao na isti
+  i18n ključ (`progress.js` dug **3 → 2**). Četvrti korak testa tvrdi i da korisnik **ostaje u istoj lekciji**.
+- **Obrnuta provjera i za to:** bez kartice „Sve" test pada.
+- **Leon „sve riješi" → skinute obje blokade preflighta + zatečeni phone-nalaz:**
+  - **`check:names`** je padao jer `.imena-zabrana.txt` ne putuje među worktreejevima (gitignored, a Mac ih ima 10) —
+    popis je živio samo u `.pravri`. Kopija po stablu ODBAČENA (dva popisa se raziđu → ishod sigurnosne brane ovisi o
+    tome odakle je pokrenuta). Jedan kanonski primjerak u **glavnom stablu** + fallback u `check-names.js`
+    (`IMENA_ZABRANA` → svoje stablo → glavno, preko `git rev-parse --git-common-dir`). Sad 119 imena, 815 datoteka, 0.
+  - **`check:docs`** je tvrdo padao na `PRAG BEZ DATOTEKE memorija/windows-git-bash-zamke.md`. Redak NIJE obrisan (on
+    je fixture za „imenovanu iznimku" u unit testu, a na Windowsu ta datoteka postoji) — ispravljena je
+    **nedosljednost brane**: odsutna memorijska datoteka je sad napomena, kao što već jest kad nema cijele mape.
+    ⚠️ Razlika se ČUVA: `docs/architecture/**` JEST u gitu → ondje ostaje tvrdi pad.
+  - **BUG-058** (phone ⑥, cookie traka 1–3 px): artefakt mjerenja, ne kvar — mjerač je zaticao traku usred 280 ms
+    animacije. `reducedMotion: 'reduce'` na kontekstu; nula promjena u produkcijskom CSS-u.
+- **Obrnute provjere u ovoj sesiji: pet.** Posebno za BUG-058, jer popravak ide u smjeru „brana prestaje padati":
+  podmetnut stvaran prekrivač od 14 px → brana pada na SVAKOM ekranu, stabilno.
+- **⚠️ Dvije zamke s izlaznim kodom** (obje zamalo dale lažno zeleno): `gh run watch --exit-status` vraća **0 na
+  OTKAZANOM** runu; `npx playwright test … | tail` daje izlazni kod **taila**, ne Playwrighta. Čitaj ispis, ne kod.
+- **CI je pao na `d2282743` — i to BEZ ijedne pale tvrdnje** (365 prolaza): `responsive.spec.js:65` javio je
+  `Protocol error (Page.captureScreenshot)`. Snimka Learna je **prilog za otklanjanje grešaka, ne tvrdnja** (test
+  to i kaže), a mjera prelijevanja izmjerena je prije nje. Test je već imao `try/catch` za tu grešku, ali je pao i
+  **fallback** — kad je renderer iscrpljen Learnom najvećih PFRI predmeta, ne uspije ni snimka vidljivog dijela, pa
+  je dotadašnja zaštita samo pomaknula pad za jedan red. Sada neuspjeh priloga samo zabilježi.
+- **Usput uklonjena vlastita suvišnost:** `initStudyPage` je špil i dopune već izgradio (`initFlashcards`/`initFill`
+  sami čitaju `aktivnaKategorija()`), a `primijeniKategoriju()` ih je gradio **drugi put** — 118 nepotrebnih
+  izgradnji na testu koji obiđe svih 59 predmeta u jednoj sesiji. Sada `initStudyPage` šalje
+  `primijeniKategoriju(false)`; klik i dalje obnavlja, jer ondje obnova MORA biti.
+- **Zatečeni phone-nalaz razlučen od vlastitog:** puni skup je javio pad `phone.spec.js` na cookie gumbima. Isti
+  test pušten na **čistom `main`-u (`bdad6e9c`) pada identično, s istim pikselima** → zatečeno i vezano uz macOS
+  iscrtavanje, nije iz ovog posla. Dokaz prije zaključka, ne poslije.
+- **ZAVRŠNO STANJE GRANE:** 5 commita, zadnji **`4f735aa2`**, **pushana**, **CI ✅ ZELEN**, `preflight` izlaz 0,
+  puni lokalni Playwright skup na `iPhone-SE-375` **205 prošlo / 0 palo** (prije popravaka 204 + 1 pad).
+- ⚠️ **GRANA JE ODREZANA SA ZASTARJELOG `main`-a.** Lokalni ref je pokazivao `bdad6e9c` (od 17.11.), a produkcijski
+  `main` je **`8cb95d31`** — grana je time **9 commita IZA** i 5 ispred. Prije mergea traži `git fetch` pa spajanje
+  `origin/main` u granu, i ponovni preflight. **Pouka: ne mjeri protiv lokalnog `main`-a bez `fetch`-a** — isti
+  razred greške kao brojka prepisana u prozu.
+- **Slijedi:** **ništa od ovoga nije na produkciji.** Grana čeka Leonov izričit OK za `main`.
+  **Bez pusha na `main` do tog OK-a.**
+
 ## 2026-11-27 (OPUS, stablo `sokratstudy.pravri`) — PFRI 1. godina izmjerena protiv službenog silabusa; lokalno stanje izvan gita obnovljeno
 
 **Povod (Leon):** nastavak PFRI-ja, pa „ja bi završio cijelu prvu godinu" i „pretražiti po cijelom internetu
@@ -37,7 +101,7 @@ od 37–62 % (tuđi).
 ih je izvadio) · memorija napunjena (4 zapisa) · `.imena-zabrana.txt` sastavljen iz mailova i imena nositelja u IPK-u
 + vlasnika gradiva (**119 stavki**, Leon: *„nemam ništa od toga"*). Brana je odmah uhvatila **četiri lažna sudara** —
 `Herc*` ↔ „Bosna i Hercegovina", `Menger*` ↔ ekonomist Carl Menger, `Babić*`/`Škorić*` ↔ citirani autori udžbenika →
-upisani **s kontekstom** (`prof. Herc`), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
+upisani **s kontekstom** (`prof. Prezime`), kako brana i nalaže. Konačno: 119 imena, 814 datoteka, 0 nalaza.
 **Brana veličine:** prag za `windows-git-bash-zamke.md` izbačen iz tablice (Leonova odluka) — memorija je po stroju,
 a ta je vezana na Windows; gdje postoji, pada pod `OSTALE_MEMORIJE`. Test prilagođen, a broj dotaknutih datoteka se
 sad **izvodi iz tablice** (zakucana 6 je pala, mjera je bila ispravna).

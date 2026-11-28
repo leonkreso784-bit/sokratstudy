@@ -27,6 +27,61 @@ function pInk(boja) {
     return (typeof inkForTint === 'function') ? inkForTint(boja) : 'light';
 }
 
+// ── AKTIVNA KATEGORIJA (BUG-056) ───────────────────────────────────────────────
+//
+// `AppState.nav.category` se do ovog popravka ZAPISIVAO na dva mjesta (klik ispod i obnova
+// pozicije u `navigation.js`), a čitalo ga NIJE NIŠTA — ni Learn, ni kviz, ni kartice, ni
+// dopune. JSDoc u `js/app-state.js` ga od početka zove „Aktivni filter kategorije": žica je
+// bila projektirana, samo nikad spojena. Toast je bio jedina povratna informacija, pa je
+// obećavao izbor koji nijedan sljedeći ekran nije poštovao.
+//
+// Vraća `null` umjesto 'all' kad filtra nema — pozivatelj time ne mora poznavati dogovorenu
+// vrijednost, nego samo „ima filtra / nema ga".
+function aktivnaKategorija() {
+    const nav = (typeof AppState !== 'undefined') ? AppState.nav : null;
+    const k = nav && nav.category;
+    if (!k || k === 'all') return null;
+    // Izbor se pamti po PREDMETU i preživi 24 h (`restoreLastPosition`), a kategorije su po
+    // LEKCIJI — isti ključ u drugoj lekciji ne mora postojati. Bez ove provjere korisnik bi
+    // se vratio u prazan špil bez ijednog traga zašto je prazan.
+    return (nav.data && nav.data[k]) ? k : null;
+}
+
+/**
+ * Gurni aktivnu kategoriju u SVA ČETIRI moda. Zove se s točno dva mjesta: iz klika na
+ * karticu kategorije i s kraja `initStudyPage` (da obnovljeni izbor proradi i na hladan
+ * ulaz). Zato svaki ulaz u mod — i Quick Start gumb i tab u traci — zatekne već točno
+ * stanje, umjesto da svaki od njih zasebno pamti isto pravilo (ADR-027).
+ */
+function primijeniKategoriju(obnoviModove = true) {
+    const kat = aktivnaKategorija();
+
+    // Kartice i dopune: špil/pitanja se grade IZNOVA pa suze. ⚠️ Obnova je OBAVEZNA kad se
+    // izbor MIJENJA — filtriranje zatečenog špila slagalo bi sužavanja jedno na drugo, pa bi
+    // onaj tko jednom uđe s kategorijom A ostao na A i kad poslije uđe bez izbora. Špil se ne
+    // bi imao odakle vratiti (isti razred curenja kao BUG-020).
+    //
+    // ⚠️ `obnoviModove = false` šalje SAMO `initStudyPage`: ondje su `initFlashcards()` i
+    // `initFill()` upravo pozvani i oba sama čitaju `aktivnaKategorija()`, pa su špil i dopune
+    // već točni — druga izgradnja bila bi isti posao dvaput po svakom otvaranju lekcije.
+    if (obnoviModove) {
+        if (typeof initFlashcards === 'function') initFlashcards();
+        if (typeof initFill === 'function') initFill();
+    }
+
+    // Kviz: `select` JE vidljivi pokazatelj, a `startQuiz()` ga ionako čita — dovoljno je
+    // postaviti vrijednost, bez drugog puta do istog podatka.
+    const sel = document.getElementById('quizCategory');
+    if (sel) sel.value = kat || 'all';
+
+    // Learn: čipovi nose ŽIVI handler iz `renderLearnContent` (ona ih klonira i prevezuje,
+    // pa onaj iz `updateLearnFilters` više nije na njima). Simulirani klik zato obavi i
+    // `active` klasu i skrivanje kartica — jedan put umjesto dvostruke logike.
+    const trazi = '.learn-filter .filter-btn[data-filter="' + (kat ? CSS.escape(kat) : 'all') + '"]';
+    const cip = document.querySelector(trazi);
+    if (cip) cip.click();
+}
+
 // ========== CATEGORY BUTTONS ==========
 function updateCategoryButtons() {
     const container = document.querySelector('.categories');
@@ -34,24 +89,59 @@ function updateCategoryButtons() {
     if (!container || !content) return;
 
     container.innerHTML = '';
+    const kategorije = getCategories(content);
 
-    getCategories(content).forEach(category => {
-        const data = content[category];
+    // Što je STVARNO prikazano, ne što je zapisano: zastarjeli ključ iz prošle lekcije
+    // `aktivnaKategorija()` svede na „sve", pa tada mora zasvijetliti kartica „Sve" —
+    // inače ekran tvrdi da je suženo, a prikazuje cijelu lekciju.
+    const efektivna = (typeof aktivnaKategorija === 'function' ? aktivnaKategorija() : null) || 'all';
+
+    /** Jedna kartica izbora; `kljuc === 'all'` znači cijelu lekciju. */
+    function dodajKarticu(kljuc, ime, ikona, broj) {
         const btn = document.createElement('button');
         btn.className = 'category-btn';
-        btn.dataset.category = category;
+        btn.dataset.category = kljuc;
         btn.innerHTML = `
-            <i class="fas ${pIcon(data.icon)}"></i>
-            <span>${pEsc(data.name)}</span>
-            <small>${data.flashcards ? data.flashcards.length : 0} terms</small>
+            <i class="fas ${pIcon(ikona)}"></i>
+            <span>${pEsc(ime)}</span>
+            <small>${broj} terms</small>
         `;
+        if (efektivna === kljuc) btn.classList.add('active');
+
         btn.addEventListener('click', () => {
-            AppState.nav.category = category;
+            // Klik na VEĆ odabranu kategoriju je poništava — isti ishod kao klik na „Sve",
+            // samo bez traženja pogledom.
+            const bioAktivan = AppState.nav.category === kljuc;
+            AppState.nav.category = (kljuc === 'all' || bioAktivan) ? 'all' : kljuc;
+
             document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            showToast(`Category: ${data.name}`);
+            const sad = AppState.nav.category;
+            const aktivna = container.querySelector('.category-btn[data-category="' + CSS.escape(sad) + '"]');
+            if (aktivna) aktivna.classList.add('active');
+
+            primijeniKategoriju();
+
+            if (sad === 'all') {
+                showToast((typeof t === 'function') ? t('home.categoryOff') : 'All categories');
+            } else {
+                const nat = (typeof t === 'function') ? t('home.categoryOn') : 'Category:';
+                showToast(nat + ' ' + ime);
+            }
         });
         container.appendChild(btn);
+    }
+
+    // ⚠️ „Sve" je PRVA kartica i stoji UVIJEK (Leon, 27.11.): *„mora biti gumb i da se sve
+    // može učit… ne može se ići na sve kao prije bez da se ne izlazi kompletno iz pripreme za
+    // ispit"*. Poništavanje ponovnim klikom postoji od prve verzije ovog popravka, ali se NE
+    // VIDI — a nevidljiv izlaz nije izlaz: tko suzi gradivo ostane bez puta natrag na cijelu
+    // lekciju osim napuštanjem pripreme. Traka čipova u Učenju isti obrazac već ima.
+    const ukupno = kategorije.reduce((n, k) => n + ((content[k].flashcards || []).length), 0);
+    dodajKarticu('all', (typeof t === 'function') ? t('home.categoryAll') : 'All', 'fa-layer-group', ukupno);
+
+    kategorije.forEach((category) => {
+        const data = content[category];
+        dodajKarticu(category, data.name, data.icon, (data.flashcards || []).length);
     });
 }
 
@@ -61,7 +151,14 @@ function updateLearnFilters() {
     const content = AppState.nav.data;
     if (!container || !content) return;
 
-    container.innerHTML = '<button class="filter-btn active" data-filter="all">All</button>';
+    // Isti ključ kao kartica „Sve" na početnoj — ista odluka, pa i isti natpis na oba ekrana.
+    const sveNatpis = (typeof t === 'function') ? t('home.categoryAll') : 'All';
+    container.innerHTML = '';
+    const sve = document.createElement('button');
+    sve.className = 'filter-btn active';
+    sve.dataset.filter = 'all';
+    sve.textContent = sveNatpis;
+    container.appendChild(sve);
 
     getCategories(content).forEach(category => {
         const data = content[category];
@@ -269,7 +366,10 @@ function updateHomeStats() {
 // ========== QUICK START FUNCTIONS ==========
 window.startQuickQuiz = function() {
     document.getElementById('questionCount').value = '10';
-    document.getElementById('quizCategory').value = 'all';
+    // ⚠️ Ovdje je do BUG-056 stajalo `quizCategory.value = 'all'` — gumb je POIMENCE brisao
+    // izbor koji je korisnik napravio dva reda iznad, na istom ekranu. Ništa ga ne mijenja:
+    // `primijeniKategoriju()` je select već postavio pri kliku na kategoriju, a `startQuiz()`
+    // ga čita. Kad kategorije nema, u selectu stoji 'all' — isto što je i prije bilo.
     switchSection('quiz');
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.querySelector('[data-section="quiz"]').classList.add('active');
@@ -287,3 +387,11 @@ window.startLearning = function() {
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.querySelector('[data-section="learn"]').classList.add('active');
 };
+
+// ⚠️ `startFlashcards` i `startLearning` NAMJERNO ne spominju kategoriju: špil i čip su već
+// suženi iz `primijeniKategoriju()`, koja je odradila posao u trenutku izbora. Da svaki od
+// ovih gumba filtrira sam, isto bi pravilo stajalo na četiri mjesta — i tab u traci, koji
+// ne prolazi kroz njih, opet ne bi poštovao izbor. To je bio cijeli BUG-056.
+
+window.aktivnaKategorija = aktivnaKategorija;
+window.primijeniKategoriju = primijeniKategoriju;

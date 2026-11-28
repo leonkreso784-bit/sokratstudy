@@ -149,9 +149,17 @@
     'home.stat.bestScore': { en: 'Best Score', hr: 'Najbolji rezultat' },
     'home.stat.streak': { en: 'Day Streak', hr: 'Niz dana' },
     'home.chooseCategory': { en: '📚 Choose a category to study', hr: '📚 Odaberi kategoriju za učenje' },
+    // BUG-056: toast kategorije. Do popravka je bio zakucan engleski (`Category: …`) i bio je
+    // JEDINA posljedica klika — izbor nije čitao nijedan mod. Sad potvrđuje stvarno suženje,
+    // a druga poruka je potrebna jer se ponovnim klikom izbor poništava.
+    'home.categoryOn': { en: 'Category:', hr: 'Kategorija:' },
+    'home.categoryOff': { en: 'All categories', hr: 'Sve kategorije' },
+    // Vidljiv put natrag na cijelu lekciju — kartica „Sve" i prvi čip u traci Učenja dijele
+    // isti ključ jer su ista odluka na dva ekrana.
+    'home.categoryAll': { en: 'All', hr: 'Sve' },
     'home.quickStart': { en: '🚀 Quick Start', hr: '🚀 Brzi početak' },
     'home.quickQuiz': { en: 'Quick Quiz (10 questions)', hr: 'Brzi kviz (10 pitanja)' },
-    'home.allFlashcards': { en: 'All Flashcards', hr: 'Sve kartice' },
+    'home.allFlashcards': { en: 'Flashcards', hr: 'Kartice' },
     'home.startLearning': { en: 'Start Learning', hr: 'Započni učenje' },
 
     // Learn
@@ -200,10 +208,6 @@
     'quiz.opt.20': { en: '20 questions', hr: '20 pitanja' },
     'quiz.opt.all': { en: 'All questions', hr: 'Sva pitanja' },
     'quiz.categoryLabel': { en: 'Category:', hr: 'Kategorija:' },
-    'quiz.difficulty': { en: 'Difficulty:', hr: 'Težina:' },
-    'quiz.easy': { en: 'Easy', hr: 'Lako' },
-    'quiz.medium': { en: 'Medium', hr: 'Srednje' },
-    'quiz.hard': { en: 'Hard', hr: 'Teško' },
     'quiz.start': { en: 'Start Quiz', hr: 'Pokreni kviz' },
     'quiz.reviewWrong': { en: 'Review Wrong Answers', hr: 'Pregled netočnih odgovora' },
     'quiz.tryAgain': { en: 'Try Again', hr: 'Pokušaj ponovno' },

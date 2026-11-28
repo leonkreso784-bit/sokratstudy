@@ -33,7 +33,34 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const KORIJEN = path.join(__dirname, '..');
-const POPIS = process.env.IMENA_ZABRANA || path.join(KORIJEN, '.imena-zabrana.txt');
+
+/**
+ * Gdje popis živi: izričit put (`IMENA_ZABRANA`) → OVO radno stablo → GLAVNO radno stablo.
+ *
+ * ⚠️ Treći korak nije udobnost nego ispravak kvara (27.11.2026.). Popis je gitignored — to je
+ * namjerno (v. gore) — ali projekt se razvija kroz ~10 `git worktree` stabala, a gitignorirana
+ * datoteka među njima NE putuje. Popis je zato postojao samo u jednom stablu; u svim ostalima
+ * je brana padala zatvoreno i time rušila preflight, dakle i push na `main` — iako popis na
+ * stroju POSTOJI i brana ga je imala čime mjeriti.
+ *
+ * Zašto baš glavno stablo, a ne kopija po stablu: kopije se razilaze, a popis koji u jednom
+ * stablu ima ime a u drugom nema je gori od jednog popisa — brana bi ovisila o tome iz kojeg
+ * se stabla pokrene. Glavno stablo je jedno i svako vezano ga zna naći.
+ */
+function nadjiPopis() {
+  if (process.env.IMENA_ZABRANA) return process.env.IMENA_ZABRANA;
+  const ovdje = path.join(KORIJEN, '.imena-zabrana.txt');
+  if (fs.existsSync(ovdje)) return ovdje;
+  try {
+    // `--git-common-dir` je `.git` GLAVNOG stabla i iz vezanog stabla; njegov roditelj je korijen.
+    const zajednicki = execFileSync('git', ['rev-parse', '--path-format=absolute', '--git-common-dir'],
+      { cwd: KORIJEN, encoding: 'utf8' }).trim();
+    const uGlavnom = path.join(path.dirname(zajednicki), '.imena-zabrana.txt');
+    if (fs.existsSync(uGlavnom)) return uGlavnom;
+  } catch (e) { /* bez gita: ostaje put u ovom stablu, pa niže slijedi pad — i to je točno */ }
+  return ovdje;
+}
+const POPIS = nadjiPopis();
 
 /** Binarno i generirano iz tuđeg (lock) — nema smisla čitati kao tekst. */
 const PRESKOCI = /\.(png|jpe?g|gif|webp|ico|pdf|xlsx|docx|woff2?|ttf|otf|mp4|zip|gz)$|(^|\/)package-lock\.json$/i;

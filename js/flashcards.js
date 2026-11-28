@@ -4,7 +4,10 @@ let flashcardListenersInitialized = false;
 
 function initFlashcards() {
     const cards = AppState.cards;
-    cards.deck = getAllFlashcards();
+    // BUG-056: špil poštuje kategoriju odabranu na početnoj. Filtar se PREDAJE, ne čita se
+    // ovdje iz stanja, jer isti `getAllFlashcards()` treba i napredak — a napredak je po
+    // PREDMETU (BUG-047) i mora vidjeti sve kartice, ne samo odabranu kategoriju.
+    cards.deck = getAllFlashcards(typeof aktivnaKategorija === 'function' ? aktivnaKategorija() : null);
     shuffleArray(cards.deck);
     cards.index = 0;
     cards.known = [];
@@ -28,11 +31,16 @@ function initFlashcards() {
     }
 }
 
-function getAllFlashcards() {
+/**
+ * Sve kartice lekcije, ili samo one jedne kategorije.
+ * @param {string|null} [samoKategorija] ključ kategorije; izostavljeno/`null` = cijela lekcija.
+ */
+function getAllFlashcards(samoKategorija) {
     const content = AppState.nav.data;
     if (!content) return [];
     let all = [];
     getCategories(content).forEach(category => {
+        if (samoKategorija && category !== samoKategorija) return;
         if (content[category] && content[category].flashcards && Array.isArray(content[category].flashcards)) {
             content[category].flashcards.forEach(card => {
                 all.push({
