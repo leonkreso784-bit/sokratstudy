@@ -168,8 +168,6 @@ test.beforeAll(async ({ browser }, testInfo) => {
         // ne mijenja nijedno. Umjesto nagađanja čekanja, gasimo animaciju pravilom koje CSS
         // već ima (`@media (prefers-reduced-motion: reduce)`), pa se mjeri ZAVRŠNO stanje.
         // Kvar koji ostaje u pojasu i dalje pada — mijenja se determinizam, ne strogost.
-        // (BUG-058. Isti popravak stoji i na grani `fix/kategorija-quick-start`/PR #11, koja
-        //  još nije spojena; napisan je ovdje ISTOVJETNO da spajanje ostane trivijalno.)
         const ctx = await browser.newContext({
             viewport: { width: e.w, height: e.h },
             deviceScaleFactor: 3, isMobile: true, hasTouch: true,

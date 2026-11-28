@@ -17,6 +17,79 @@ Pratimo greške i učimo iz njih. Aktivne bugove gore, riješene + lekcije dolje
 
 ## Aktivni
 
+### BUG-056 — „Odaberi kategoriju za učenje" nije radilo ništa: `nav.category` se pisao, a čitao ga nitko
+
+- Status: ✅ **riješen na grani `fix/kategorija-quick-start` 2026-11-27** (nije na produkciji) · Težina: **visok**
+  (tiha nefunkcionalnost na glavnom studentskom putu) · Našao: **Leon**, na živom ekranu.
+- **Reprodukcija (produkcija, prije popravka):** predmet → lekcija → početna → klik na karticu u „Odaberi kategoriju
+  za učenje" (toast potvrdi „Category: …") → **Start Learning**. Learn se otvori s filtrom na **„All"**. Isto na
+  **Quick Quiz** (dropdown na „All Categories") i na **Flashcards** (cijeli špil).
+- **Uzrok.** `AppState.nav.category` se **zapisivao na dva mjesta** (`js/progress.js` klik na karticu,
+  `js/navigation.js:60` obnova pozicije) i **čitalo ga je NULA mjesta**. Jedina preostala pojava
+  (`navigation.js:11`) samo ga je ponovno serijalizirala u `localStorage`. Nije bio pokvaren gumb nego
+  **nespojena žica**: JSDoc u `js/app-state.js` ga od početka zove *„Aktivni filter kategorije"* — značajka je
+  bila projektirana, nikad spojena. `startQuickQuiz` ga je uz to **poimence brisao** (`quizCategory.value = 'all'`),
+  dva reda ispod ekrana na kojem ga je korisnik upravo odabrao.
+- **Rješenje.** Jedno mjesto zna što znači „odabrana kategorija" (ADR-027): `aktivnaKategorija()` vraća ključ ili
+  `null`, uz provjeru postoji li ključ u aktualnom `nav.data` (izbor se pamti po PREDMETU 24 h, a kategorije su po
+  LEKCIJI). `primijeniKategoriju()` gurne izbor u sva četiri moda i zove se s **točno dva mjesta** — iz klika i s
+  kraja `initStudyPage`. Zato svaki ulaz u mod, i Quick Start gumb i **tab u traci**, zatekne već točno stanje;
+  gumbi ne filtriraju sami. Kartice i dopune primaju filtar kao **argument** (`getAllFlashcards(kat)`,
+  `getAllFillQuestions(kat)`) da `renderProgressPage()` ostane na cijelom predmetu (BUG-047). Ponovni klik na
+  aktivnu kategoriju je **poništava** — bez toga sužen špil izgleda kao da je gradivo nestalo.
+- **Dopuna 27.11. (Leon, nakon pregleda previewa):** *„mora biti gumb i da se sve može učit… ne može se ići na sve
+  kao prije bez da se ne izlazi kompletno iz pripreme za ispit"*. Poništavanje ponovnim klikom rješava mehaniku, ali
+  se **ne vidi** — tko suzi gradivo ostane bez puta natrag osim napuštanjem lekcije. Zato je **„Sve" sada PRVA
+  kartica i stoji uvijek** (isti obrazac koji traka čipova u Učenju već ima), nosi ukupan broj pojmova, a `active`
+  se računa iz **efektivne** kategorije — zastarjeli ključ iz prošle lekcije pali „Sve", jer se tada i prikazuje
+  cijela lekcija. **Pouka: izlaz koji se ne vidi nije izlaz** — mehanika bez afordancije je i dalje kvar.
+- **Rub koji je prvi prijedlog popravka promašio:** filtrirati **zatečeni** špil umjesto da se gradi iznova slaže
+  sužavanja jedno na drugo — tko jednom uđe s kategorijom A ostaje na A i kad poslije uđe bez izbora, jer se špil
+  nema odakle vratiti (razred curenja iz BUG-020). Zato `primijeniKategoriju()` zove `initFlashcards()`/`initFill()`,
+  koji grade iz izvora. Druga polovica `tests/kategorija-fokus.spec.js` tvrdi točno to.
+- **Lekcija.** **Stanje koje se piše a nitko ga ne čita je mrtva značajka, i to ona koja izgleda živo** — toast je
+  korisniku potvrđivao izbor koji nijedan sljedeći ekran nije poštovao. Jeftina provjera: za svako polje u
+  `AppState` grepni **čitatelje**, ne pisce. Ovdje bi `grep -rn "nav.category" js/` odmah pokazao dva pisca i
+  nijednog čitatelja. Nijedan test nije dirao Quick Start gumbe ni `.category-btn` — zato je preživjelo do produkcije.
+
+### BUG-057 — Difficulty dropdown u kvizu (Easy/Medium/Hard) nije radio ništa
+
+- Status: ✅ **riješen uklanjanjem** na grani `fix/kategorija-quick-start` 2026-11-27 (nije na produkciji) ·
+  Težina: **srednji** · Našao: skeniranje iste klase kvara uz BUG-056.
+- **Opis.** `#quizDifficulty` je postojao **samo u markupu** (`index.html`). Nijedna linija JS-a u projektu ga nije
+  čitala — `startQuiz()` čita `questionCount` i `quizCategory`, a `getQuizQuestions(category, count)` nema treći
+  parametar. Korisnik bira „Hard" i dobije identičan kviz kao na „Medium".
+- **Rješenje.** Kontrola uklonjena (select + labela + i18n ključevi `quiz.difficulty`/`easy`/`medium`/`hard`;
+  provjereno da ih ništa drugo ne koristi). **Težina se ne da implementirati bez sadržajnog posla** — nijedno
+  pitanje ni u jednom predmetu nema oznaku težine, pa bi filtar tražio shemu + označavanje svih 30+ predmeta, a
+  sadržajna staza je pauzirana (ADR-018). Odluka (Leon, 2026-11-27): maknuti, ne glumiti.
+- **Lekcija.** **Kontrola koja ne radi ništa gora je od kontrole koje nema** — korisnik joj vjeruje i misli da je
+  birao težinu. Isti test kao gore: grepni čitatelje `id`-a, ne samo postoji li element.
+
+### BUG-058 — Mjerač telefona ⑥ je mjerio cookie-traku U LETU: nestabilan nalaz od 1–3 px
+
+- Status: ✅ **riješen** na grani `fix/kategorija-quick-start` 2026-11-27 · Težina: **nizak za korisnika, visok za
+  povjerenje u brane** · Našao: puni lokalni skup na macOS-u (CI ga nije vidio).
+- **Opis.** `tests/phone.spec.js` ⑥ („na dnu skrola ništa se ne krije ispod home-indikatora") prijavljivao je
+  `#cookieAccept`/`#cookieReject` **1–3 px** u pojasu, i to samo na `privacy`/`terms`/`faq`/`contact`.
+- **Nije bio kvar proizvoda.** Cookie traka ulazi `transform` animacijom od **280 ms** (`css/consent.css`), a mjerač
+  ju je zaticao u letu: izmjereno **54 px na 120 ms · 28 px na 180 ms · 4 px na 240 ms · 0 px kad animacija završi**.
+  Dokaz da je riječ o vremenu, a ne geometriji: vrijednosti su se **mijenjale među pokretanjima istog testa**.
+  Geometrija je ispravna — `padding-bottom` = 34 px, gumb završava točno na `vh − 34`, upad **0**.
+- **Zašto samo pravne stranice.** Ne zbog CSS-a (`consent.css` je isti svuda): prvi `goto('/')` ima
+  `waitForTimeout(800)`, dulji od animacije, pa je index stizao sjesti; kasniji prelasci nemaju ekvivalent.
+- **Zašto `smiriPrikaz` nije pomogao.** Prati `innerHTML`, broj djece i **visinu** — `transform` ne mijenja nijedno,
+  pa je stranicu proglašavao smirenom dok se traka još kretala. Pomoćnik je time kršio vlastiti ugovor („čeka se da
+  crtanje prestane").
+- **Rješenje.** Kontekst mjerača dobiva `reducedMotion: 'reduce'`, pa `@media (prefers-reduced-motion: reduce)` koji
+  `consent.css` **već ima** ugasi animaciju i mjeri se ZAVRŠNO stanje. Nijedna promjena u produkcijskom CSS-u.
+- **Obrnuta provjera (bitna, jer popravak ide u smjeru „brana prestaje padati").** Podmetnut STVARAN trajan prekrivač
+  (`transform: translateY(14px)`): brana pada s **točno 14 px na SVAKOM ekranu**, stabilno — dok je prije popravka
+  prijavljivala 1–3 px samo na četiri stranice i neponovljivo. Mijenja se determinizam, ne strogost.
+- **Lekcija.** **Mjerač koji ne čeka kraj animacije mjeri vrijeme, ne izgled.** Nalaz koji se mijenja među
+  pokretanjima nikad nije geometrija — prije nego se takav popravlja „na oko", izmjeri ga u nekoliko trenutaka i
+  vidi mijenja li se. I: detektor smirenja mora pratiti POLOŽAJ, ne samo sadržaj i visinu.
+
 ### BUG-054 — U kvizu je točan odgovor često NAJDULJA opcija: pitanje se da pogoditi bez znanja
 
 - Status: 🔴 **otvoren** (zapisano 2026-11-15) · Težina: **srednji** (kvaliteta učenja, ne kvar) · Našao: `content-review`

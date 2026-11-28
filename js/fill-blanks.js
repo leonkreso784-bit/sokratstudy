@@ -70,7 +70,8 @@ if (typeof window !== 'undefined') {
 
 function initFill() {
     const fill = AppState.fill;
-    fill.questions = getAllFillQuestions();
+    // BUG-056 — v. `initFlashcards`: filtar se PREDAJE, da ga ne naslijedi i napredak.
+    fill.questions = getAllFillQuestions(typeof aktivnaKategorija === 'function' ? aktivnaKategorija() : null);
     shuffleArray(fill.questions);
     fill.index = 0;
     fill.correct = 0;
@@ -97,11 +98,16 @@ function initFill() {
     }
 }
 
-function getAllFillQuestions() {
+/**
+ * Sve dopune lekcije, ili samo one jedne kategorije.
+ * @param {string|null} [samoKategorija] ključ kategorije; izostavljeno/`null` = cijela lekcija.
+ */
+function getAllFillQuestions(samoKategorija) {
     const content = AppState.nav.data;
     if (!content) return [];
     let all = [];
     getCategories(content).forEach(category => {
+        if (samoKategorija && category !== samoKategorija) return;
         if (content[category].fillBlanks) {
             content[category].fillBlanks.forEach(q => {
                 all.push({
