@@ -1,7 +1,7 @@
 {
   "name": "Sokrat Study",
   "short_name": "Sokrat",
-  "description": "Interactive learning platform with flashcards, quizzes, and comprehensive study materials",
+  "description": "Study from ready subjects, or turn your own notes into flashcards, quizzes and fill-in-the-blanks. Free, no sign-up, works offline.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f9fc",
@@ -9,24 +9,27 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "icon-192.png?v=20261127223317",
+      "src": "icon-192.png?v=20261128035315",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png?v=20261127223317",
+      "src": "icon-512.png?v=20261128035315",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "apple-touch-icon.png?v=20261127223317",
+      "src": "apple-touch-icon.png?v=20261128035315",
       "sizes": "180x180",
       "type": "image/png"
     }
   ],
-  "categories": ["education", "productivity"],
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "lang": "en",
   "dir": "ltr"
 }

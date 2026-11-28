@@ -270,7 +270,7 @@ if (fs.existsSync(SCHEMA) && fs.existsSync(CS)) {
 // ⚠️ Brana NE zabranjuje pisanje nego RAST: pouka cigle ide u spec, a `CLAUDE.md` dobiva
 // najviše jedan redak s pointerom. Obrazac je posuđen od `check:palette` — osnovica se
 // **spušta svjesno** (uredi konstantu ispod i reci zašto), a nikad ne raste prijećutno.
-const CLAUDE_BUDGET = 32550; // znakova; 2026-08-25: izmjereno 31 349 nakon rezanja (bilo 87 970); 2026-09-29: +150 za redak nove preflight-brane check:names (bio 32 996, bez rezerve); 2026-10-11: SPUŠTENO — ADR blok na jedan redak po ADR-u (izmjereno 32 243, +300 rezerve za pravilo testiranja)
+const CLAUDE_BUDGET = 33250; // znakova; 2026-08-25: izmjereno 31 349 nakon rezanja (bilo 87 970); 2026-09-29: +150 za redak nove preflight-brane check:names (bio 32 996, bez rezerve); 2026-10-11: SPUŠTENO — ADR blok na jedan redak po ADR-u (izmjereno 32 243, +300 rezerve za pravilo testiranja); 2026-11-28: +700 za NOVU branu `build:seo` + prošireni redak `check:seo` (69 stranica umjesto 5) + redak ADR-043 — isti razlog kao 29.09.: tablica brana raste kad projekt dobije branu. Obrazloženja su u zaglavljima skripti, ovdje su pointeri (izmjereno 33 074, ~175 rezerve)
 const CLAUDE_MD = path.join(ROOT, 'CLAUDE.md');
 if (fs.existsSync(CLAUDE_MD)) {
   // ⚠️ BEZ ZNAKA POVRATKA: `.length` broji i CR, pa je ISTA datoteka mjerila 33 148 znakova

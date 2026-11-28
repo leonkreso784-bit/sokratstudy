@@ -67,7 +67,15 @@ ADR-031 („ne plaćamo tokene") → nov ADR + faza u planu. **Kad: nakon MCP-a 
 - **Što ide u plan (nakon MCP-a):** popis kredita s rokovima i koracima · ADR · Edge Function s ključem (ADR-016) +
   granica po korisniku · izbor modela mjerenjem na pravom materijalu (kvaliteta HR) · brane ③ na istom write-putu.
 
-### 🔥 Produkcija javno poslužuje `.md` — `CLAUDE.md`, `docs/**` (2026-09-30, izmjereno)
+### ✅ Produkcija javno poslužuje `.md` — `CLAUDE.md`, `docs/**` (2026-09-30, **riješeno 2026-11-28**)
+
+> **Izvedeno uz [ADR-043](DECISIONS.md), točno kako je cigla ovdje propisana.** `.vercelignore`
+> (`*.md`, `docs/`, plus `scripts/`, `tests/`, `design/`, `spikes/`, `supabase/`) + brana koja
+> **nabraja `.md` iz repoa i tvrdi da nijedan nije u deployu** (`check:seo` ⑧, u preflightu; obrnuta
+> provjera: makneš li `*.md`, brana padne). Ponovno izmjereno 28.11. prije zahvata — uz `.md` su
+> **200** vraćali i `/scripts/check-seo.js`, `/tests/phone.spec.js` i `design/mockups/*.html`
+> („U-UX mockupi — Leon presuđuje"), koje nijedna brana nije vidjela jer su sve čitale samo korijen.
+> ⏳ **Preostaje izmjeriti 404 na istim adresama POSLIJE deploya** — deploy traži Leonov izričit OK.
 
 **Izmjereno 30.09. (samo GET):** `www.sokratstudy.com/CLAUDE.md`, `/docs/README.md`, `/docs/records/PROGRESS.md`,
 `/docs/records/BUGS.md` → **200** `text/markdown`. Projekt nema `.vercelignore`, pa Vercel poslužuje svaku datoteku iz
@@ -1095,10 +1103,24 @@ zašto neka brana postoji — a to već stoji u zaglavlju svakog speca.
 
 </details>
 
-## ➖ Katalog je tražilici NEVIDLJIV — hash-rute nisu URL-ovi (izmjereno 2026-08-24)
+## ✅ Katalog je tražilici NEVIDLJIV — hash-rute nisu URL-ovi (izmjereno 2026-08-24, **riješeno 2026-11-28**)
 
 > Izašlo iz Leonova pitanja o SEO-u. **Nije cigla nego arhitektonska odluka**, i namjerno stoji
 > ovdje umjesto u planu — da se ne izvede prije nego je odlučena.
+
+> ### ✅ ODLUČENO I IZVEDENO 2026-11-28 — [ADR-043](DECISIONS.md)
+> Odluka je pala na **generirani statični HTML**, ne na seobu routera: `scripts/build-seo-pages.js`
+> emitira **64 stranice** iz `data/catalog.js` (`predmet/` · `program/` · `predmeti.html`), koje se
+> commitaju kao `styles.bundle.css` i `og-cover.png` — **bez build-koraka na deployu**, pa ADR-028
+> ostaje netaknut. Seoba na `pushState` je odbijena: prepisala bi `navigation.js`, `sw.js` i svaki
+> test rute, a ADR-040 kaže da Sokrat ide u održavanje.
+>
+> **Izmjereno poslije: 5 → 69 indeksabilnih adresa**, od toga **40 hrvatskih** gdje ih je bilo nula.
+> Zatečeni brojevi iz 24.08. (24 predmeta) narasli su do tada na **59 predmeta i 171 lekciju**.
+> `Course` + `BreadcrumbList` po predmetu, `WebSite` na naslovnici; brana `build:seo -- --check` +
+> `check:seo` nad svakom stranicom, oboje u preflightu I u CI-ju; brana `tests/seo.spec.js`.
+> Otvoreno ostaje samo ono što traži podatke: **stranice po lekciji (171)** se ne rade dok Search
+> Console ne pokaže isplati li se, i **prijava sitemapa Googleu** (Leonov račun).
 
 **Izmjereno:**
 

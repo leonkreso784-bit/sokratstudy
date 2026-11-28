@@ -48,6 +48,21 @@ function targetFiles() {
     }
   }
   files.push('manifest.json');                                 // PWA ikone s ?v=
+  /* ⚠️ Generirane stranice kataloga (`scripts/build-seo-pages.js`) stoje u PODMAPAMA
+     (`predmet/`, `program/`), a gornja petlja čita samo korijen. Bez ovoga bi njihov
+     `?v=` ostao zamrznut zauvijek: `vercel.json` drži CSS na `max-age=31536000,
+     immutable`, pa bi posjetitelj koji je stigao iz Googlea dobivao staru paletu i
+     nakon svakog deploya — točno BUG-004, samo na stranicama koje nitko ne otvara
+     ručno. Mape se ne popisuju: traže se one koje NOSE token. */
+  for (const d of ['predmet', 'program']) {
+    const dir = path.join(ROOT, d);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.html')) continue;
+      const rel = path.posix.join(d, f);
+      if (/\?v=\d+/.test(fs.readFileSync(path.join(ROOT, rel), 'utf8'))) files.push(rel);
+    }
+  }
   return [...new Set(files)].filter(f => fs.existsSync(path.join(ROOT, f)));
 }
 

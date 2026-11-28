@@ -68,7 +68,11 @@ const DOKUMENTI = {
     'terms.html': { gdje: 'ova suita (①/3c)', ekrani: ['terms'] },
     'faq.html': { gdje: 'ova suita (①/3c)', ekrani: ['faq'] },
     'contact.html': { gdje: 'ova suita (①/3c)', ekrani: ['contact'] },
-    'odjava.html': { gdje: 'ova suita (①/3c), bez tokena', ekrani: ['odjava'] }
+    'odjava.html': { gdje: 'ova suita (①/3c), bez tokena', ekrani: ['odjava'] },
+    // ADR-043: čvor kataloga je ULAZ S GOOGLEA, pa se mjeri kao i ostale samostalne stranice.
+    // Stranice predmeta (`predmet/**`) nisu u korijenu pa ih ⑪ ne vidi; mjeri se jedna,
+    // izvedena iz kataloga u `phone-gate.js` — sve dijele isti generator i isti okvir.
+    'predmeti.html': { gdje: 'ova suita (ADR-043) — uz jednu stranicu predmeta', ekrani: ['predmeti'] }
 };
 
 test.beforeEach(({}, testInfo) => {

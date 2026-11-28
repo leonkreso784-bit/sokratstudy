@@ -404,6 +404,11 @@
     // sama po sebi priznanje da proizvod nije razumljiv.
     'footer.tagline': { en: 'Write your own study material, or use one that is ready. Free, for everyone.', hr: 'Napravi vlastito gradivo ili uzmi gotovo. Besplatno, za svakoga.' },
     'footer.explore': { en: 'Explore', hr: 'Istraži' },
+    /* Jedina POVEZNICA na generirane stranice kataloga (`/predmeti.html`) iz aplikacije.
+       Namjerno u podnožju, ne u traci: ADR-035 kaže da je katalog „početna zaliha, nikad
+       naslov priče", pa ulaz iz tražilice ne smije postati naslov. Tražilici je dovoljna
+       jedna poveznica + sitemap; čovjeku je hero i dalje UGC. */
+    'footer.allSubjects': { en: 'All subjects', hr: 'Svi predmeti' },
     'footer.about': { en: 'About', hr: 'O nama' },
     'footer.aboutUs': { en: 'About us', hr: 'O nama' },
     'footer.contact': { en: 'Contact', hr: 'Kontakt' },

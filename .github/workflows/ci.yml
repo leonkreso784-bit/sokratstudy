@@ -70,6 +70,18 @@ jobs:
       - name: CSS bundle in sync (no drift)
         run: npm run build:css -- --check
 
+      # Stranice kataloga (`predmet/`, `program/`, `predmeti.html`) su GENERIRANE iz
+      # data/catalog.js. Nov predmet bez `npm run build:seo` = adresa koje nema, ili
+      # stranica koja laže o gradivu. Isti obrazac kao `export:json --check`.
+      - name: SEO pages in sync with catalog (no drift)
+        run: npm run build:seo -- --check
+
+      # ⚠️ Do 2026-11-28 `check:seo` NIJE bio u CI-ju — vrtio ga je samo pre-push hook na
+      # `main`, pa grana nikad nije znala je li pokvarila sitemap, canonical ili OG.
+      # Otkad katalog ima prave adrese, ovo mjeri 69 stranica, ne 5.
+      - name: SEO head + sitemap (canonical, one story, JSON-LD parses)
+        run: npm run check:seo
+
       - name: Unit tests (exercises-core / acc-kernel / stat-parse / stat-lib)
         run: npm run test:unit
 

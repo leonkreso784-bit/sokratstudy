@@ -5,6 +5,22 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
 
 ## [Unreleased] — rad u tijeku (cilj: 3.0.0)
 
+- **🔎 Katalog je dobio PRAVE adrese (grana `feat/seo-adrese`, 28.11., [ADR-043](DECISIONS.md))** — tražilica je vidjela
+  **5 stranica** dok je katalog nosio **59 predmeta i 171 lekciju**; u posluženom HTML-u nije bilo **nijednog** imena
+  predmeta. Odluka parkirana u BACKLOG-u od 24.08. („arhitektonska odluka, ne cigla") i sad izvedena kao **generator**,
+  ne seoba routera: `scripts/build-seo-pages.js` → **64 stranice** (`predmet/` · `program/` · `predmeti.html`), commitane
+  kao bundle i OG-kartica. **5 → 69 indeksabilnih adresa, 40 hrvatskih gdje ih je bilo nula.** Svaka nosi `<h1>`, teme,
+  brojeve i 8 pravih kartica — bez JS-a (izmjereno: 3 004 znaka teksta, 18 tema). `Course` + `BreadcrumbList` po
+  predmetu, `WebSite` na naslovnici. Jezik je jezik programa (`data-lang-fixed`, pa ga `boot.js` ne pregazi) → hreflang
+  ne treba, ADR-037 netaknut. Poveznica u podnožju, ne u traci (ADR-035).
+  **Usput zatvoreno:** produkcija je posluživala **cijeli repozitorij** s 200 — `CLAUDE.md`, `docs/`, `scripts/`,
+  `tests/` i interni mockupi („Leon presuđuje") → `.vercelignore` + brana koja nabraja `.md` i tvrdi da nijedan nije u
+  deployu (Leonova cigla od 30.09.). `document.title` prati rutu (dotad su svih 171 lekcija dijelile jedan naslov);
+  `og:description` i `manifest.json` usklađeni s `description` — bile su **četiri** različite rečenice o istome.
+  **Brane:** `build:seo -- --check` (drift) · `check:seo` nad svih 69 stranica, sad i **u CI-ju** · **`tests/seo.spec.js`
+  napokon POSTOJI** — tri su ga datoteke tri mjeseca navodile kao branu, a nikad nije napisan.
+  ⏳ Ostaje Leonu: prijava sitemapa u Search Console (u repou nije bilo ni spomena) i mjerenje 404 poslije deploya.
+
 - **Kategorija za učenje napokon nešto radi (grana `fix/kategorija-quick-start`, 27.11.)** — Leon na živom ekranu:
   izabereš lekciju i kategoriju, stisneš „Kreni učit", i *„ne pokazuje joj se ta lekcija"*. **BUG-056:**
   `AppState.nav.category` se pisao na dva mjesta a čitalo ga je **nula** — značajka projektirana (JSDoc je zove
@@ -26,9 +42,9 @@ Tekuća live verzija je 2.x. Platformska pregradnja (Faza 0+) vodi prema 3.0.0.
   + fallback preko `git rev-parse --git-common-dir`. `check:docs` je tvrdo padao na odsutnoj **memorijskoj**
   datoteci → sada napomena, kao što već jest kad nema cijele mape; za `docs/architecture/**` (koji JEST u gitu)
   ostaje tvrdi pad. Time `preflight` prolazi bez ijedne zaobilaznice.
-  Stanje: 5 commita, `4f735aa2`, CI ✅, preflight 0, puni lokalni skup 205/0. **Nije na produkciji** i grana je
-  odrezana sa **zastarjelog** lokalnog `main`-a (`bdad6e9c`) — produkcijski je `8cb95d31`, pa grana zaostaje
-  **9 commita**; prije mergea `git fetch` + spajanje `origin/main` + ponovni preflight.
+  Stanje: CI ✅, preflight 0, puni lokalni skup 205/0. **Spojeno u `main` 28.11.** (PR #11, `e31ffe34`).
+  ⚠️ Grana je bila odrezana sa **zastarjelog** lokalnog `main`-a (`bdad6e9c`) i zaostajala 9 commita — spojena je
+  s `origin/main` prije mergea. *Prvo `git fetch`, pa mjeri.*
 
 - **„Poveži AI" (grana `feat/povezi-ai`, 17.11.)** — Leon: *„cijeli taj proces spajanja mora biti puno jednostavniji"*.
   Na PROD-u gumba NIJE BILO (`connect-ai.js` `PRODUKCIJA = null`, ograda do ⑥ ostala) → adresa `www.sokratstudy.com/mcp`.

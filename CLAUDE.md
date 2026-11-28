@@ -64,12 +64,12 @@ Počelo na **FMTU Opatija** (smjer Hospitality Management), ali **cilj = UGC-pla
 **`npm run bump`** (svi `?v=` + `CONTENT_VERSION` + `SW_VERSION` na isti timestamp; `bump:check`
 = CI gate) · **`npm run build:css`** (regeneriraj `styles.bundle.css` iz manifesta `css/app.css`;
 emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-gate) ·
-`npm run test:unit` · `npm run serve:test` (:5050).
+`npm run test:unit` · `npm run serve:test` (:5050) · **`npm run build:seo`** (poslije izmjene kataloga/gradiva, pa `check-seo --write`).
 
 ### `npm run preflight` — sve brze brane odjednom (pokreni PRIJE svakog main-pusha)
 
 `check:lockfile` · `check:node` · `verify` · `bump:check` · css-drift · `check:tailwind` · `check:cdn` ·
-`check:palette` · `check:tokens` · `check:i18n` · `check:orphan-css` · `check:safearea` · `check:names` · `check:hover` · `check:csp` · `check:mcp-rewrite` · `check:budget` · `check:seo` · `check:contrast` ·
+`check:palette` · `check:tokens` · `check:i18n` · `check:orphan-css` · `check:safearea` · `check:names` · `check:hover` · `check:csp` · `check:mcp-rewrite` · `check:budget` · `build:seo --check` · `check:seo` · `check:contrast` ·
 `typecheck` · `validate:schema` · `export:json --check` · `check:docs` · `check:state` ·
 `test:unit`. Pre-push hook ga automatski vrti na `main`.
 
@@ -91,7 +91,8 @@ emitira i `css/tokens.static.css` za stranice bez bundlea; `-- --check` = drift-
 | `check:csp` | 0 inline `<script>` (iznimka ld+json) i 0 `on*` atributa u `*.html` + enforce header bez `unsafe-inline` za skripte |
 | `check:mcp-rewrite` | routing za `/mcp` se **izvodi** iz `vercel.json`, ne čita: imenovan host → svoj projekt, **nepoznat → ništa**. `--zivo` mjeri pravi poslužitelj (mrežno, izvan preflighta) |
 | `check:budget` | posjetiteljev put: **nijedna editorska datoteka** + **≤ 200 KB prenesenih** skripti (mjeri PRENESENE bajtove, ne disk) |
-| `check:seo` | ono što tražilica i pretpregled VIDE: sitemap == disk · robots ne `Disallow`-a `noindex` stranicu · jedan tekst u `<title>`/`og:`/`twitter:` · `og:image` **1200×630** · JSON-LD **parsira**. `--write` regenerira sitemap |
+| `build:seo` | stranice kataloga su **generirane** iz `data/catalog.js` (64). `-- --check` = drift-brana: nov predmet bez regeneracije pada (ADR-043) |
+| `check:seo` | što tražilica VIDI, nad **svih 69** stranica (korijen + podmape iz `.vercelignore`): sitemap == disk · canonical == vlastita adresa · jedan tekst · `og:image` **1200×630** · JSON-LD parsira · **nijedan `.md` u deployu**. `--write` regenerira sitemap |
 | `check:contrast` | WCAG **po temi** — 358 provjera kroz sve teme; parsira `css/tokens.css`, ne drži kopiju vrijednosti |
 
 ### Izvan preflighta — traže mrežu ili preglednik
@@ -161,7 +162,7 @@ generator predmeta: `docs/workflow/CONTENT_GENERATOR.md`.
 > | što je na produkciji | zadnji **🚀** redak u `docs/records/CHANGELOG.md` |
 > | grana · commiti · je li pushano | `git status -sb` · `git log --oneline -1 origin/main` |
 > | koliko predmeta | `npm run verify` |
-> | zašto je cigla izvedena baš tako | `docs/archive/FRONTEND_REDIZAJN.md` §7–§12 (C0–C5b, landing · KOSTUR · TELEFON · SEO) |
+> | zašto je cigla izvedena baš tako | `docs/archive/FRONTEND_REDIZAJN.md` §7–§12 (C0–C5b, landing · KOSTUR · TELEFON; SEO-temelji su §9.15) |
 > | koji su bugovi bili i što su naučili | `docs/records/BUGS.md` |
 > | što je isporučeno i kada | `CHANGELOG.md` · dnevnik sesija: `PROGRESS.md` |
 >
@@ -272,6 +273,7 @@ Odbačeno (ruši ADR-018): evaluator izraza i sandbox za korisnički JS. Izvan M
 
 > Samo ADR-ovi koji su **živa ograničenja**. Redak je kuka, ne zamjena: prije zahvata u tom području pročitaj ADR.
 
+- **043** katalog ima PRAVE adrese kroz **generirani statični HTML** (`build:seo`, 64 stranice), ne kroz seobu routera · stranica nosi jezik svog programa, pa hreflang ne treba · `.vercelignore`: repo se više ne poslužuje javno.
 - **040** novi smjer (03.10.): glavni projekt je HotelixSim; Sokrat se dovršava po ZAVRSNICI pa održavanje · dijeljenje linkom obara 025 · brane 031 sužene (uži MCP) · 035/036 zamrznuti · novi znak, ime ostaje.
 - **039** materijal od AI-ja ide na policu SAM i cijel (`predaj_nacrt`, jedna transakcija), bez ekrana za pregled · izmjena postojećeg samo na korisnikovu riječ, uz provjeru verzije (sukob = odbij, ne prepiši).
 - **038** MCP: nacrt u `node_drafts`, AI nikad u žive tablice · adresa `www.sokratstudy.com/mcp` · DCR uz popis hostova · **sigurnost u bazi** (token s `client_id` = zabrana po defaultu, nov RPC zatvoren dok se ne otvori), **kvaliteta u poslužitelju**.

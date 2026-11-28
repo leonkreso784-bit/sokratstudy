@@ -4,6 +4,50 @@ Svaka značajna odluka: kontekst → odluka → posljedice. Najnovija na vrhu.
 
 ---
 
+## ADR-043 — Katalog dobiva PRAVE adrese kroz GENERIRANI statični HTML, ne kroz seobu routera
+**Datum:** 2026-11-28 · **Status:** ✅ ODLUČENO (Leon) · **Vezano:** [ADR-028](#adr-028) (Next.js odbijen),
+[ADR-037](#adr-037) (hreflang se ne uvodi), [ADR-012](#adr-012) (jezik gradiva = program),
+[ADR-035](#adr-035) (katalog nije naslov priče), [ADR-040](#adr-040) (Sokrat ide u održavanje), ADR-027 ·
+**Zatvara:** `BACKLOG.md` „Katalog je tražilici NEVIDLJIV" (24.08.)
+
+**Kontekst.** Tražilica je vidjela **5 stranica**, a katalog je nosio **59 predmeta i 171 lekciju**. Nijedno
+ime predmeta nije postojalo u posluženom HTML-u: sve živi iza `#/subject/…`, a fragment nije zaseban URL.
+Izmjereno 24.08.2026. i **namjerno parkirano u BACKLOG** uz obrazloženje *„arhitektonska odluka, ne cigla — da
+se ne izvede prije nego je odlučena."* U međuvremenu je katalog narastao **25 → 59**, dobio drugi fakultet
+(PFRI) i dva hrvatska programa, a SEO-artefakti nisu dirani 94 dana. `check:seo` je cijelo to vrijeme bio
+zelen, jer mjeri **dosljednost `<head>`-a, ne pokrivenost**.
+
+**Odluka.**
+1. **Generator, ne seoba routera.** `scripts/build-seo-pages.js` čita `data/catalog.js` + `data/json/` i
+   emitira **64 stranice** (`predmet/<id>.html` · `program/<id>.html` · `predmeti.html`), koje se **commitaju**.
+   Isti obrazac koji projekt već ima triput (`build:css`, `build:og`, `check-seo --write`): **nema build-koraka
+   na deployu**, pa ADR-028 ostaje netaknut. Seoba na `pushState` je odbijena — tražila bi prepisivanje
+   `navigation.js`, `sw.js` i svakog testa rute, a ADR-040 kaže da Sokrat ide u održavanje.
+2. **Stranica nosi jezik SVOG PROGRAMA** (`programs[].lang`): 40 hrvatskih, 19 engleskih. To nije prijevod nego
+   činjenica — gradivo JEST na tom jeziku i nema para na drugom, pa bi `hreflang` (koji opisuje prijevode)
+   ovdje lagao. **ADR-037 ostaje netaknut.** `<html data-lang-fixed>` govori `boot.js`-u da ne pregazi `lang`
+   jezikom sučelja: ondje `lang` opisuje SADRŽAJ (WCAG 3.1.1).
+3. **Stranica nosi i gradivo, ne samo metapodatke** — teme, brojevi i 8 pravih kartica kao tekst. Stranica koja
+   samo gura u aplikaciju je „doorway"; ova ima vrijednost i ako je nitko ne klikne dalje.
+4. **Naslovnica ostaje engleska** (odluka §9.15 se ne dira), a **poveznica na katalog stoji u PODNOŽJU**, ne u
+   traci: po ADR-035 katalog je ulaz iz tražilice, nikad naslov priče.
+
+**Posljedice.**
+- 5 → **69 indeksabilnih adresa**; `Course` + `BreadcrumbList` po predmetu, `WebSite` na naslovnici. Uvjet koji
+  je stajao u `index.html` („kad predmeti dobiju prave adrese") je ispunjen.
+- **`build:seo -- --check` je brana zastarjelosti** (uzor: `export:json --check`): nov predmet bez regeneracije
+  pada. Bez nje bi ovaj plan ostario isti dan kao zatečeni sitemap.
+- `check:seo` mjeri **svaku** stranicu (duljine, jedna priča, canonical, JSON-LD), čita **podmape** i **ulazi u
+  CI** — dotad ga je vrtio samo pre-push hook na `main`, pa grana nikad nije znala.
+- `bump-version.js` prepisuje tokene i u podmapama. Bez toga bi 64 stranice zauvijek služile zamrznut CSS
+  (immutable cache 1 god) — BUG-004 na stranicama koje nitko ne otvara ručno.
+- **`.vercelignore`**: produkcija je posluživala cijeli repozitorij (`CLAUDE.md`, `docs/`, `scripts/`, `tests/`,
+  interni mockupi) s odgovorom **200**. *Nepovezano nije privatno.*
+- **Nema `FAQPage`**: Google je FAQ rich results ugasio potpuno **07.05.2026.**
+- Stranice po LEKCIJI (171) se **ne** rade — rizik tankog sadržaja; odluka iz podataka Search Consolea.
+
+---
+
 ## ADR-042 — Drugi fakultet (PFRI): sufiks `-pfri`, lekcije po modelu 50 + 50, u katalog samo predmet koji je prošao letvicu
 **Datum:** 2026-11-16 · **Status:** ✅ PRIMIJENJENO (plan izrade po fazama, Leon: „kreni") · **Na produkciji:** 2026-11-17 (`main` `0d4c4ce`) ·
 **Vezano:** [ADR-041](#adr-041) (zadnja posljedica: placement za novi fakultet), [ADR-022](#adr-022), ADR-020 (izvor je autoritet), ADR-027

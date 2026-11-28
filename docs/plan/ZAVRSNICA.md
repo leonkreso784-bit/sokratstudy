@@ -126,6 +126,8 @@ Ništa — sve četiri točke presuđene anketom 03.10.: redoslijed (§1) · pri
 - **HotelixSim** — vlastiti repozitorij i vlastiti plan (`Documents\hotelixsim`); [ideas/HOTEL_SIM.md](../ideas/HOTEL_SIM.md) je od 03.10. samo pokazivač.
 - **Zamrznuto (ADR-040):** tržište gradiva (ADR-035: javna objava, prodaja, natjecanje) · organizacije i exam modul
   (ADR-036) · monetizacija. Ne grade se; nisu poništeni.
-- **Ne dira se bez Leonove riječi:** produkcija javno poslužuje `.md` (BACKLOG) · brisanje 9 starih testnih računa na
-  stagingu · plan „naš AI + API krediti" (BACKLOG).
-- Matura, kartice na telefonu (`feat/tinder-kadar`, parkirano), spaced repetition, SEO adrese — kao i dosad, izvan plana.
+- **Ne dira se bez Leonove riječi:** brisanje 9 starih testnih računa na stagingu · plan „naš AI + API krediti" (BACKLOG).
+- Matura, kartice na telefonu (`feat/tinder-kadar`, parkirano), spaced repetition — kao i dosad, izvan plana.
+- ✅ **SEO adrese više NISU izvan plana** (28.11., [ADR-043](../records/DECISIONS.md)): katalog je dobio prave adrese kroz
+  generirani statični HTML (5 → 69 indeksabilnih stranica). Istom ciglom je zatvoreno i „produkcija javno poslužuje
+  `.md`" — `.vercelignore` po Leonovoj odluci od 30.09., uz branu koja nabraja `.md` i tvrdi da nijedan nije u deployu.

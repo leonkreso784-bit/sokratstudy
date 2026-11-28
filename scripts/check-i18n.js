@@ -595,7 +595,18 @@ function jsDatoteke(mapa) {
   return rez;
 }
 
-const htmlPutanje = fs.readdirSync(KORIJEN).filter((f) => f.endsWith('.html'));
+/* Stranice koje GENERIRA `scripts/build-seo-pages.js` nose sadržaj kataloga na jeziku
+   svog programa — naziv predmeta, teme i prave kartice. To nije tekst SUČELJA nego
+   GRADIVO, a gradivo se po ADR-012 ne prevodi kroz `i18n.js` (jezik gradiva nosi
+   program, jezik sučelja je neovisna os). Ključ za „Sociologija" ne postoji i ne
+   smije postojati.
+   Preskače se po OZNACI U DATOTECI, ne po popisu imena: ručni popis bi prva nova
+   generirana stranica pregazila — istu je grešku projekt platio dvaput u T6
+   (`check:cdn`, `check:tailwind`). */
+const OZNAKA_GENERIRANO = 'GENERIRANO: scripts/build-seo-pages.js';
+const htmlPutanje = fs.readdirSync(KORIJEN)
+  .filter((f) => f.endsWith('.html'))
+  .filter((f) => !fs.readFileSync(path.join(KORIJEN, f), 'utf8').includes(OZNAKA_GENERIRANO));
 const jsPutanje = jsDatoteke(path.join(KORIJEN, 'js'))
   .map((p) => path.relative(KORIJEN, p).replace(/\\/g, '/'))
   .filter((p) => p !== 'js/i18n.js'); // rječnik sam sebe ne sudi

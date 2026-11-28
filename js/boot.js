@@ -87,8 +87,15 @@
     function primijeniJezik(jezik) {
         var j = JEZICI.indexOf(jezik) >= 0 ? jezik : 'en';
         var html = document.documentElement;
+        /* ⚠️ `data-lang-fixed` (stranice iz `scripts/build-seo-pages.js`): dokument je
+           CIJEL na jeziku svog programa i nema para na drugom jeziku. Ondje `lang`
+           opisuje SADRŽAJ, a ne sučelje, pa ga prebacivanje ne smije dirati — inače
+           čitač ekrana hrvatsku skriptu izgovara engleskim glasom, točno onaj kvar
+           (WCAG 3.1.1) zbog kojeg je ovaj upis i uveden, samo obrnut. `data-ui-lang`
+           se i dalje postavlja, pa cookie-traka i podnožje ostaju prevedeni. */
+        var fiksan = html.hasAttribute('data-lang-fixed');
         // Samo stvarne promjene: `<html lang="en">` iz markupa bez atributa = engleski, bez zapisa.
-        if ((html.getAttribute('lang') || 'en') !== j) html.setAttribute('lang', j);
+        if (!fiksan && (html.getAttribute('lang') || 'en') !== j) html.setAttribute('lang', j);
         if ((html.getAttribute('data-ui-lang') || 'en') !== j) html.setAttribute('data-ui-lang', j);
         return j;
     }
